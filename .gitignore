@@ -17,9 +17,7 @@ __pycache__/
 
 # Downloaded tools and generated reverse-engineering output
 /python_workspace/tools/
-/python_workspace/il2cpp_output/*
-# Required by export_naninovel.py to reconstruct command parameters
-!/python_workspace/il2cpp_output/dump.cs
+/python_workspace/il2cpp_output/
 
 # Local release outputs
 /dist/

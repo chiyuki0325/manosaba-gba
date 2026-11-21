@@ -1,11 +1,17 @@
 # Naninovel extraction workspace
 
-The Python environment is managed by uv (`unitypy==1.25.4`). Generated IL2CPP metadata is in `il2cpp_output/`; it supplies command aliases, parameter aliases, and defaults needed when rebuilding the Japanese scripts.
+The Python environment is managed by uv (`unitypy==1.25.4`). `command_metadata.json` contains the command aliases, parameter aliases, and defaults used by the original scripts. The full IL2CPP output stays local and is excluded from the repository.
 
 Regenerate both available languages from the default game path:
 
 ```sh
 uv run --project python_workspace python -X faulthandler python_workspace/export_naninovel.py
+```
+
+When updating to a different original game build, regenerate the compact definitions from a local dump:
+
+```sh
+uv run --project python_workspace python python_workspace/export_naninovel.py --dump python_workspace/il2cpp_output/dump.cs --write-command-metadata python_workspace/command_metadata.json --out /tmp/manosaba-script-extraction
 ```
 
 Output goes to `../original_scripts/`:

@@ -70,6 +70,8 @@ include $(LIBBUTANOABS)/butano.mak
 # This project-local rule leaves the shared Butano checkout untouched.
 ifeq ($(BUILD),$(notdir $(CURDIR)))
 $(OFILES_SOURCES): $(MANOSABA_GBA_ROOT)/Butano.mk
+# The .incbin wrapper can stay unchanged when prepared home art is replaced.
+home_bytes.o: $(MANOSABA_GBA_ROOT)/assets/home/home.bin
 bn_hw_sram.bn_noflto.o: $(MANOSABA_GBA_ROOT)/tools/flash_sram_init.cpp $(MANOSABA_GBA_ROOT)/Butano.mk
 	$(CXX) -MMD -MP -MF $(DEPSDIR)/bn_hw_sram.bn_noflto.d $(CPPFLAGS) $(CXXFLAGS) -fno-lto -c $< -o $@
 stdgba_ldiv.o: $(LIBBUTANOABS)/hw/3rd_party/stdgba/src/stdgba_ldiv.s $(MANOSABA_GBA_ROOT)/Butano.mk

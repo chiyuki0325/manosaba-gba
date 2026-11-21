@@ -89,7 +89,7 @@ void application::draw_home_confirm()
 {
     _canvas.rectangle(24,42,192,68,text_canvas::background);
     _canvas.rectangle(24,42,192,1,text_canvas::muted);
-    _canvas.text(48,49,_home_confirm==2 ? "关闭原作文字拆行？" : "已有存档",text_canvas::accent);
+    _canvas.text(48,49,_home_confirm==2 ? "关闭原作文字拆行？" : "已有自动存档",text_canvas::accent);
     _canvas.text(40,68,_home_confirm==2 ? "可能导致剧情表现力下降" : "开始新游戏会覆盖自动存档",text_canvas::white);
     _canvas.rectangle(41,84,68,20,_confirm_ok ? text_canvas::background : text_canvas::selection);
     _canvas.rectangle(129,84,68,20,_confirm_ok ? text_canvas::selection : text_canvas::background);

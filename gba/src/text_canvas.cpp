@@ -737,9 +737,9 @@ void text_canvas::frame_corners(const uint32_t* tiles)
             int tile=y*30+x;std::memcpy(canvas_tiles[tile].data,tiles+tile*8,32);dirty(tile);
         }
 }
-bool text_canvas::picture(const ui_picture& image)
+bool text_canvas::picture(const ui_picture& image,bool reload)
 {
-    if(_picture!=&image || !_choice_ui)
+    if(reload || _picture!=&image || !_choice_ui)
     {
         if(!_choice_ui || _palette_colors!=256)
         {

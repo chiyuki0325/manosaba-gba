@@ -25,7 +25,7 @@ void home_screen::title()
 }
 void home_screen::repaint()
 {
- _paint=0;_dirty=_page ? 31 : 0;_shown=false;_advance.reset();
+ _paint=-1;_dirty=_page ? 31 : 0;_shown=false;_advance.reset();
 }
 home_action home_screen::update(text_canvas& canvas,save_system& saves)
 {
@@ -70,9 +70,10 @@ home_action home_screen::update(text_canvas& canvas,save_system& saves)
 }
 void home_screen::draw(text_canvas& canvas,const save_system& saves)
 {
- if(_paint==0)
+ if(_paint<=0)
  {
-  bool loaded=canvas.picture(_page ? home_menus[_page-1] : home_titles[_hiro]);canvas.visible(false);
+  bool reload=_paint<0;_paint=0;
+  bool loaded=canvas.picture(_page ? home_menus[_page-1] : home_titles[_hiro],reload);canvas.visible(false);
   if(loaded){_paint=_page ?1:2;if(_page==2)canvas.text(108,5,"选项");}return;
  }
  if(!_page)return;

@@ -25,7 +25,7 @@ uv sync --project sfx
 git submodule update --init manosaba-web
 ```
 
-`manosaba-web` 作为固定提交的 Git 子模块保留，本次使用 `da31228ac5531e85afa298e58f4a49224074c289`。原作提取器和拼合代码保留在 `python_workspace/`、`character_composition_demo/compose.py`；IL2CPP 命令元数据保留在 `python_workspace/il2cpp_output/dump.cs`。
+`manosaba-web` 作为固定提交的 Git 子模块保留，本次使用 `da31228ac5531e85afa298e58f4a49224074c289`。原作提取器和拼合代码保留在 `python_workspace/`、`character_composition_demo/compose.py`；提取器只读取 `python_workspace/command_metadata.json` 中实际用到的命令别名、参数类型和默认值。完整IL2CPP转储仅留本机，不进入仓库；更新命令定义的方法见[提取工作区说明](../python_workspace/README.md)。
 
 原版或译文发生变化时，按需要执行提取（不要无故覆盖已校订剧本）：
 

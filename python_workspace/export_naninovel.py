@@ -8,7 +8,7 @@ import json
 import re
 import sys
 from collections import Counter
-from dataclasses import dataclass, field
+from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from output_paths import report_path
 
@@ -19,6 +19,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_GAME = ROOT / "original_game"
 DEFAULT_OUT = ROOT / "original_scripts"
 DUMP = Path(__file__).resolve().parent / "il2cpp_output" / "dump.cs"
+COMMAND_METADATA = Path(__file__).resolve().parent / "command_metadata.json"
 
 STREAMING = Path("manosaba_Data/StreamingAssets/aa/StandaloneWindows64")
 JA_GLOB = "naninovel-scripts_assets_naninovelscripts-*.bundle"
@@ -117,6 +118,29 @@ def parse_dump(dump_path: Path) -> dict[str, CommandDef]:
         command = aliases[cls]
         aliases.setdefault(command.alias, command)
     return aliases
+
+
+def read_command_metadata() -> dict[str, CommandDef]:
+    data = json.loads(COMMAND_METADATA.read_text(encoding="utf-8"))
+    return {name: CommandDef(value["name"], value["alias"],
+                             [VarDef(**item) for item in value["fields"]])
+            for name, value in data.items()}
+
+
+def write_command_metadata(trees: list[dict], definitions: dict[str, CommandDef], path: Path):
+    used = set()
+    for tree in trees:
+        refs = {item["rid"]: item for item in tree["references"]["RefIds"]}
+        for item in tree["lines"]:
+            line = refs[item["rid"]]
+            kind, data = line["type"]["class"], line["data"]
+            commands = ([data["command"]] if kind == "CommandScriptLine" else
+                        data.get("inlinedCommands", []) if kind == "GenericTextScriptLine" else [])
+            for ref in commands:
+                info = refs[ref["rid"]]["type"]
+                used.add(f"{info['ns']}.{info['class']}")
+    path.write_text(json.dumps({name: asdict(definitions[name]) for name in sorted(used)},
+                               ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
 def read_ja_scripts(streaming: Path) -> tuple[list[dict], dict[str, list[str]]]:
@@ -323,14 +347,17 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--game", type=Path, default=DEFAULT_GAME)
     parser.add_argument("--out", type=Path, default=DEFAULT_OUT)
-    parser.add_argument("--dump", type=Path, default=DUMP)
+    parser.add_argument("--dump", type=Path, help="Use a local full IL2CPP dump instead of the command metadata")
+    parser.add_argument("--write-command-metadata", type=Path, help="Write only command definitions used by the scripts")
     args = parser.parse_args()
     streaming = args.game / STREAMING
     if not streaming.is_dir():
         parser.error(f"StreamingAssets not found: {streaming}")
-    command_defs = parse_dump(args.dump)
+    command_defs = parse_dump(args.dump) if args.dump else read_command_metadata()
 
     ja_scripts, sources = read_ja_scripts(streaming)
+    if args.write_command_metadata:
+        write_command_metadata(ja_scripts, command_defs, args.write_command_metadata)
     if len(ja_scripts) != 440:
         raise ValueError(f"Expected 440 Japanese scripts, found {len(ja_scripts)}")
     ja_scripts.sort(key=lambda tree: tree["path"])

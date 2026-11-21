@@ -30,7 +30,7 @@ public:
     void title_show() {_bg->set_visible(true);}
     void bad_end();
     void frame_corners(const uint32_t* tiles);
-    bool picture(const ui_picture& image);
+    bool picture(const ui_picture& image,bool reload=false);
     bool save_page(const uint32_t* tiles,const uint16_t* palette);
     void prepare();
     void restore(int x,int y,int width,int height);

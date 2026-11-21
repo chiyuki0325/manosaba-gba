@@ -1,0 +1,3141 @@
+{
+  "GigaCreation.NaninovelExtender.Common.GotoModified": {
+    "name": "GotoModified",
+    "alias": "goto",
+    "fields": [
+      {
+        "name": "SoftReset",
+        "type_name": "BooleanParameter",
+        "alias": "soft",
+        "default": null
+      },
+      {
+        "name": "Path",
+        "type_name": "NamedStringParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "ResetState",
+        "type_name": "StringListParameter",
+        "alias": "reset",
+        "default": null
+      },
+      {
+        "name": "Hold",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Release",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "GigaCreation.NaninovelExtender.Common.Quit": {
+    "name": "Quit",
+    "alias": "Quit",
+    "fields": []
+  },
+  "GigaCreation.NaninovelExtender.Common.SetCustomVariableAsFlag": {
+    "name": "SetCustomVariableAsFlag",
+    "alias": "setFlag",
+    "fields": [
+      {
+        "name": "Number",
+        "type_name": "IntegerParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "VariableName",
+        "type_name": "StringParameter",
+        "alias": "var",
+        "default": null
+      },
+      {
+        "name": "BitwiseOp",
+        "type_name": "StringParameter",
+        "alias": "op",
+        "default": null
+      }
+    ]
+  },
+  "GigaCreation.NaninovelExtender.Common.WaitForNextFrame": {
+    "name": "WaitForNextFrame",
+    "alias": "WaitForNextFrame",
+    "fields": []
+  },
+  "GigaCreation.NaninovelExtender.Effects.HideMattes": {
+    "name": "HideMattes",
+    "alias": "HideMattes",
+    "fields": [
+      {
+        "name": "Duration",
+        "type_name": "StringParameter",
+        "alias": "time",
+        "default": null
+      },
+      {
+        "name": "SubId",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "GigaCreation.NaninovelExtender.Effects.ShowMattes": {
+    "name": "ShowMattes",
+    "alias": "ShowMattes",
+    "fields": [
+      {
+        "name": "Width",
+        "type_name": "StringListParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "PositionZ",
+        "type_name": "StringParameter",
+        "alias": "posZ",
+        "default": null
+      },
+      {
+        "name": "TintColor",
+        "type_name": "StringParameter",
+        "alias": "tint",
+        "default": null
+      },
+      {
+        "name": "Duration",
+        "type_name": "StringListParameter",
+        "alias": "time",
+        "default": null
+      },
+      {
+        "name": "EasingTypeName",
+        "type_name": "StringParameter",
+        "alias": "easing",
+        "default": null
+      },
+      {
+        "name": "SubId",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "GigaCreation.NaninovelExtender.ExtendedActors.AnimateActorExtended": {
+    "name": "AnimateActorExtended",
+    "alias": "animate",
+    "fields": [
+      {
+        "name": "EasingTypeNameForPosX",
+        "type_name": "StringParameter",
+        "alias": "easingPosX",
+        "default": null
+      },
+      {
+        "name": "EasingTypeNameForPosY",
+        "type_name": "StringParameter",
+        "alias": "easingPosY",
+        "default": null
+      },
+      {
+        "name": "Relative",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Multiplier",
+        "type_name": "DecimalParameter",
+        "alias": "multi",
+        "default": null
+      },
+      {
+        "name": "MatchScreenWidth",
+        "type_name": "BooleanParameter",
+        "alias": "match",
+        "default": null
+      },
+      {
+        "name": "ActorIds",
+        "type_name": "StringListParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "Loop",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": "false"
+      },
+      {
+        "name": "Appearance",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Transition",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Visibility",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "ScenePositionX",
+        "type_name": "StringParameter",
+        "alias": "posX",
+        "default": null
+      },
+      {
+        "name": "ScenePositionY",
+        "type_name": "StringParameter",
+        "alias": "posY",
+        "default": null
+      },
+      {
+        "name": "PositionZ",
+        "type_name": "StringParameter",
+        "alias": "posZ",
+        "default": null
+      },
+      {
+        "name": "Rotation",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Scale",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "TintColor",
+        "type_name": "StringParameter",
+        "alias": "tint",
+        "default": null
+      },
+      {
+        "name": "EasingTypeName",
+        "type_name": "StringParameter",
+        "alias": "easing",
+        "default": null
+      },
+      {
+        "name": "Duration",
+        "type_name": "StringParameter",
+        "alias": "time",
+        "default": null
+      },
+      {
+        "name": "Wait",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "GigaCreation.NaninovelExtender.ExtendedActors.ChangeActorMaskability": {
+    "name": "ChangeActorMaskability",
+    "alias": "mask",
+    "fields": [
+      {
+        "name": "ActorIds",
+        "type_name": "StringListParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "Enable",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": "true"
+      }
+    ]
+  },
+  "GigaCreation.NaninovelExtender.ExtendedActors.ChangeActorPivot": {
+    "name": "ChangeActorPivot",
+    "alias": "pivot",
+    "fields": [
+      {
+        "name": "ActorIds",
+        "type_name": "StringListParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "PivotPoint",
+        "type_name": "DecimalListParameter",
+        "alias": "point",
+        "default": null
+      }
+    ]
+  },
+  "GigaCreation.NaninovelExtender.ExtendedActors.ModifyBackgroundExtended": {
+    "name": "ModifyBackgroundExtended",
+    "alias": "back",
+    "fields": [
+      {
+        "name": "SubId",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "MatchScreenWidth",
+        "type_name": "BooleanParameter",
+        "alias": "match",
+        "default": null
+      },
+      {
+        "name": "AppearanceAndTransition",
+        "type_name": "NamedStringParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "ScenePosition",
+        "type_name": "DecimalListParameter",
+        "alias": "pos",
+        "default": null
+      },
+      {
+        "name": "Id",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Appearance",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Pose",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Transition",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "TransitionParams",
+        "type_name": "DecimalListParameter",
+        "alias": "params",
+        "default": null
+      },
+      {
+        "name": "DissolveTexturePath",
+        "type_name": "StringParameter",
+        "alias": "dissolve",
+        "default": null
+      },
+      {
+        "name": "Visible",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Position",
+        "type_name": "DecimalListParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Rotation",
+        "type_name": "DecimalListParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Scale",
+        "type_name": "DecimalListParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "TintColor",
+        "type_name": "StringParameter",
+        "alias": "tint",
+        "default": null
+      },
+      {
+        "name": "EasingTypeName",
+        "type_name": "StringParameter",
+        "alias": "easing",
+        "default": null
+      },
+      {
+        "name": "Duration",
+        "type_name": "DecimalParameter",
+        "alias": "time",
+        "default": "0.35"
+      },
+      {
+        "name": "Lazy",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": "false"
+      },
+      {
+        "name": "Wait",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "GigaCreation.NaninovelExtender.ExtendedActors.ModifyCharacterExtended": {
+    "name": "ModifyCharacterExtended",
+    "alias": "char",
+    "fields": [
+      {
+        "name": "SubId",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "MatchScreenWidth",
+        "type_name": "BooleanParameter",
+        "alias": "match",
+        "default": null
+      },
+      {
+        "name": "IdAndAppearance",
+        "type_name": "NamedStringParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "LookDirection",
+        "type_name": "StringParameter",
+        "alias": "look",
+        "default": null
+      },
+      {
+        "name": "AvatarTexturePath",
+        "type_name": "StringParameter",
+        "alias": "avatar",
+        "default": null
+      },
+      {
+        "name": "IsGenericPrefix",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "ScenePosition",
+        "type_name": "DecimalListParameter",
+        "alias": "pos",
+        "default": null
+      },
+      {
+        "name": "Id",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Appearance",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Pose",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Transition",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "TransitionParams",
+        "type_name": "DecimalListParameter",
+        "alias": "params",
+        "default": null
+      },
+      {
+        "name": "DissolveTexturePath",
+        "type_name": "StringParameter",
+        "alias": "dissolve",
+        "default": null
+      },
+      {
+        "name": "Visible",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Position",
+        "type_name": "DecimalListParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Rotation",
+        "type_name": "DecimalListParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Scale",
+        "type_name": "DecimalListParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "TintColor",
+        "type_name": "StringParameter",
+        "alias": "tint",
+        "default": null
+      },
+      {
+        "name": "EasingTypeName",
+        "type_name": "StringParameter",
+        "alias": "easing",
+        "default": null
+      },
+      {
+        "name": "Duration",
+        "type_name": "DecimalParameter",
+        "alias": "time",
+        "default": "0.35"
+      },
+      {
+        "name": "Lazy",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": "false"
+      },
+      {
+        "name": "Wait",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "GigaCreation.NaninovelExtender.ExtendedSpawn.DestroySpawnedExtended": {
+    "name": "DestroySpawnedExtended",
+    "alias": "despawn",
+    "fields": [
+      {
+        "name": "SubId",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "LogWarning",
+        "type_name": "BooleanParameter",
+        "alias": "warn",
+        "default": "true"
+      },
+      {
+        "name": "Path",
+        "type_name": "StringParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "Params",
+        "type_name": "StringListParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Wait",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "GigaCreation.NaninovelExtender.ExtendedSpawn.SpawnExtended": {
+    "name": "SpawnExtended",
+    "alias": "spawn",
+    "fields": [
+      {
+        "name": "SubId",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "MatchScreenWidth",
+        "type_name": "BooleanParameter",
+        "alias": "match",
+        "default": null
+      },
+      {
+        "name": "Path",
+        "type_name": "StringParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "Params",
+        "type_name": "StringListParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "ScenePosition",
+        "type_name": "DecimalListParameter",
+        "alias": "pos",
+        "default": null
+      },
+      {
+        "name": "Position",
+        "type_name": "DecimalListParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Rotation",
+        "type_name": "DecimalListParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Scale",
+        "type_name": "DecimalListParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Wait",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "GigaCreation.NaninovelExtender.Localization.BeginIfCurrentLanguage": {
+    "name": "BeginIfCurrentLanguage",
+    "alias": "ifLang",
+    "fields": [
+      {
+        "name": "LanguageName",
+        "type_name": "StringParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "Unless",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Expression",
+        "type_name": "StringParameter",
+        "alias": "",
+        "default": null
+      }
+    ]
+  },
+  "Naninovel.Commands.AddChoice": {
+    "name": "AddChoice",
+    "alias": "choice",
+    "fields": [
+      {
+        "name": "ChoiceSummary",
+        "type_name": "LocalizableTextParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "Lock",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": "false"
+      },
+      {
+        "name": "ButtonPath",
+        "type_name": "StringParameter",
+        "alias": "button",
+        "default": null
+      },
+      {
+        "name": "ButtonPosition",
+        "type_name": "DecimalListParameter",
+        "alias": "pos",
+        "default": null
+      },
+      {
+        "name": "HandlerId",
+        "type_name": "StringParameter",
+        "alias": "handler",
+        "default": null
+      },
+      {
+        "name": "GotoPath",
+        "type_name": "NamedStringParameter",
+        "alias": "goto",
+        "default": null
+      },
+      {
+        "name": "GosubPath",
+        "type_name": "NamedStringParameter",
+        "alias": "gosub",
+        "default": null
+      },
+      {
+        "name": "SetExpression",
+        "type_name": "StringParameter",
+        "alias": "set",
+        "default": null
+      },
+      {
+        "name": "AutoPlay",
+        "type_name": "BooleanParameter",
+        "alias": "play",
+        "default": "true"
+      },
+      {
+        "name": "ShowHandler",
+        "type_name": "BooleanParameter",
+        "alias": "show",
+        "default": "true"
+      },
+      {
+        "name": "Duration",
+        "type_name": "DecimalParameter",
+        "alias": "time",
+        "default": "0.35"
+      }
+    ]
+  },
+  "Naninovel.Commands.BeginIf": {
+    "name": "BeginIf",
+    "alias": "if",
+    "fields": [
+      {
+        "name": "Expression",
+        "type_name": "StringParameter",
+        "alias": "",
+        "default": null
+      }
+    ]
+  },
+  "Naninovel.Commands.ClearBacklog": {
+    "name": "ClearBacklog",
+    "alias": "ClearBacklog",
+    "fields": []
+  },
+  "Naninovel.Commands.ClearChoiceHandler": {
+    "name": "ClearChoiceHandler",
+    "alias": "clearChoice",
+    "fields": [
+      {
+        "name": "HandlerId",
+        "type_name": "StringParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "Hide",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": "true"
+      }
+    ]
+  },
+  "Naninovel.Commands.Else": {
+    "name": "Else",
+    "alias": "Else",
+    "fields": []
+  },
+  "Naninovel.Commands.Gosub": {
+    "name": "Gosub",
+    "alias": "Gosub",
+    "fields": [
+      {
+        "name": "Path",
+        "type_name": "NamedStringParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "ResetState",
+        "type_name": "StringListParameter",
+        "alias": "reset",
+        "default": null
+      }
+    ]
+  },
+  "Naninovel.Commands.HideActors": {
+    "name": "HideActors",
+    "alias": "hide",
+    "fields": [
+      {
+        "name": "ActorIds",
+        "type_name": "StringListParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "Duration",
+        "type_name": "DecimalParameter",
+        "alias": "time",
+        "default": "0.35"
+      },
+      {
+        "name": "Lazy",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": "false"
+      },
+      {
+        "name": "Wait",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "Naninovel.Commands.HideAllActors": {
+    "name": "HideAllActors",
+    "alias": "hideAll",
+    "fields": [
+      {
+        "name": "Duration",
+        "type_name": "DecimalParameter",
+        "alias": "time",
+        "default": "0.35"
+      },
+      {
+        "name": "Lazy",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": "false"
+      },
+      {
+        "name": "Wait",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "Naninovel.Commands.HideAllCharacters": {
+    "name": "HideAllCharacters",
+    "alias": "hideChars",
+    "fields": [
+      {
+        "name": "Duration",
+        "type_name": "DecimalParameter",
+        "alias": "time",
+        "default": "0.35"
+      },
+      {
+        "name": "Lazy",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": "false"
+      },
+      {
+        "name": "Wait",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "Naninovel.Commands.HidePrinter": {
+    "name": "HidePrinter",
+    "alias": "HidePrinter",
+    "fields": [
+      {
+        "name": "PrinterId",
+        "type_name": "StringParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "Duration",
+        "type_name": "DecimalParameter",
+        "alias": "time",
+        "default": null
+      },
+      {
+        "name": "Wait",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "Naninovel.Commands.HideUI": {
+    "name": "HideUI",
+    "alias": "HideUI",
+    "fields": [
+      {
+        "name": "UINames",
+        "type_name": "StringListParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "AllowToggle",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": "false"
+      },
+      {
+        "name": "Duration",
+        "type_name": "DecimalParameter",
+        "alias": "time",
+        "default": null
+      },
+      {
+        "name": "Wait",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "Naninovel.Commands.ModifyCamera": {
+    "name": "ModifyCamera",
+    "alias": "camera",
+    "fields": [
+      {
+        "name": "Offset",
+        "type_name": "DecimalListParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Roll",
+        "type_name": "DecimalParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Rotation",
+        "type_name": "DecimalListParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Zoom",
+        "type_name": "DecimalParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Orthographic",
+        "type_name": "BooleanParameter",
+        "alias": "ortho",
+        "default": null
+      },
+      {
+        "name": "ToggleTypeNames",
+        "type_name": "StringListParameter",
+        "alias": "toggle",
+        "default": null
+      },
+      {
+        "name": "SetTypeNames",
+        "type_name": "NamedBooleanListParameter",
+        "alias": "set",
+        "default": null
+      },
+      {
+        "name": "EasingTypeName",
+        "type_name": "StringParameter",
+        "alias": "easing",
+        "default": null
+      },
+      {
+        "name": "Duration",
+        "type_name": "DecimalParameter",
+        "alias": "time",
+        "default": "0.35"
+      },
+      {
+        "name": "Lazy",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": "false"
+      },
+      {
+        "name": "Wait",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "Naninovel.Commands.ModifyTextPrinter": {
+    "name": "ModifyTextPrinter",
+    "alias": "printer",
+    "fields": [
+      {
+        "name": "IdAndAppearance",
+        "type_name": "NamedStringParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "MakeDefault",
+        "type_name": "BooleanParameter",
+        "alias": "default",
+        "default": "true"
+      },
+      {
+        "name": "HideOther",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": "true"
+      },
+      {
+        "name": "ScenePosition",
+        "type_name": "DecimalListParameter",
+        "alias": "pos",
+        "default": null
+      },
+      {
+        "name": "Id",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Appearance",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Pose",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Transition",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "TransitionParams",
+        "type_name": "DecimalListParameter",
+        "alias": "params",
+        "default": null
+      },
+      {
+        "name": "DissolveTexturePath",
+        "type_name": "StringParameter",
+        "alias": "dissolve",
+        "default": null
+      },
+      {
+        "name": "Visible",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Position",
+        "type_name": "DecimalListParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Rotation",
+        "type_name": "DecimalListParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Scale",
+        "type_name": "DecimalListParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "TintColor",
+        "type_name": "StringParameter",
+        "alias": "tint",
+        "default": null
+      },
+      {
+        "name": "EasingTypeName",
+        "type_name": "StringParameter",
+        "alias": "easing",
+        "default": null
+      },
+      {
+        "name": "Duration",
+        "type_name": "DecimalParameter",
+        "alias": "time",
+        "default": "0.35"
+      },
+      {
+        "name": "Lazy",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": "false"
+      },
+      {
+        "name": "Wait",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "Naninovel.Commands.PlayBgm": {
+    "name": "PlayBgm",
+    "alias": "bgm",
+    "fields": [
+      {
+        "name": "BgmPath",
+        "type_name": "StringParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "IntroBgmPath",
+        "type_name": "StringParameter",
+        "alias": "intro",
+        "default": null
+      },
+      {
+        "name": "Volume",
+        "type_name": "DecimalParameter",
+        "alias": null,
+        "default": "1"
+      },
+      {
+        "name": "Loop",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": "true"
+      },
+      {
+        "name": "FadeInDuration",
+        "type_name": "DecimalParameter",
+        "alias": "fade",
+        "default": "0"
+      },
+      {
+        "name": "GroupPath",
+        "type_name": "StringParameter",
+        "alias": "group",
+        "default": null
+      },
+      {
+        "name": "Duration",
+        "type_name": "DecimalParameter",
+        "alias": "time",
+        "default": "0.35"
+      },
+      {
+        "name": "Wait",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "Naninovel.Commands.PlayMovie": {
+    "name": "PlayMovie",
+    "alias": "movie",
+    "fields": [
+      {
+        "name": "MovieName",
+        "type_name": "StringParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "Duration",
+        "type_name": "DecimalParameter",
+        "alias": "time",
+        "default": null
+      },
+      {
+        "name": "BlockInteraction",
+        "type_name": "BooleanParameter",
+        "alias": "block",
+        "default": null
+      },
+      {
+        "name": "Wait",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "Naninovel.Commands.PlayVoice": {
+    "name": "PlayVoice",
+    "alias": "voice",
+    "fields": [
+      {
+        "name": "VoicePath",
+        "type_name": "StringParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "Volume",
+        "type_name": "DecimalParameter",
+        "alias": null,
+        "default": "1"
+      },
+      {
+        "name": "GroupPath",
+        "type_name": "StringParameter",
+        "alias": "group",
+        "default": null
+      },
+      {
+        "name": "AuthorId",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "Naninovel.Commands.ProcessInput": {
+    "name": "ProcessInput",
+    "alias": "ProcessInput",
+    "fields": [
+      {
+        "name": "InputEnabled",
+        "type_name": "BooleanParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "SetEnabled",
+        "type_name": "NamedBooleanListParameter",
+        "alias": "set",
+        "default": null
+      }
+    ]
+  },
+  "Naninovel.Commands.ResetText": {
+    "name": "ResetText",
+    "alias": "ResetText",
+    "fields": [
+      {
+        "name": "PrinterId",
+        "type_name": "StringParameter",
+        "alias": "",
+        "default": null
+      }
+    ]
+  },
+  "Naninovel.Commands.Return": {
+    "name": "Return",
+    "alias": "Return",
+    "fields": [
+      {
+        "name": "ResetState",
+        "type_name": "StringListParameter",
+        "alias": "reset",
+        "default": null
+      }
+    ]
+  },
+  "Naninovel.Commands.SetCustomVariable": {
+    "name": "SetCustomVariable",
+    "alias": "set",
+    "fields": [
+      {
+        "name": "Expression",
+        "type_name": "StringParameter",
+        "alias": "",
+        "default": null
+      }
+    ]
+  },
+  "Naninovel.Commands.ShowActors": {
+    "name": "ShowActors",
+    "alias": "show",
+    "fields": [
+      {
+        "name": "ActorIds",
+        "type_name": "StringListParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "Duration",
+        "type_name": "DecimalParameter",
+        "alias": "time",
+        "default": "0.35"
+      },
+      {
+        "name": "Lazy",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": "false"
+      },
+      {
+        "name": "Wait",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "Naninovel.Commands.ShowPrinter": {
+    "name": "ShowPrinter",
+    "alias": "ShowPrinter",
+    "fields": [
+      {
+        "name": "PrinterId",
+        "type_name": "StringParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "Duration",
+        "type_name": "DecimalParameter",
+        "alias": "time",
+        "default": null
+      },
+      {
+        "name": "Wait",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "Naninovel.Commands.ShowToastUI": {
+    "name": "ShowToastUI",
+    "alias": "toast",
+    "fields": [
+      {
+        "name": "Text",
+        "type_name": "LocalizableTextParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "Appearance",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Duration",
+        "type_name": "DecimalParameter",
+        "alias": "time",
+        "default": null
+      }
+    ]
+  },
+  "Naninovel.Commands.ShowUI": {
+    "name": "ShowUI",
+    "alias": "ShowUI",
+    "fields": [
+      {
+        "name": "UINames",
+        "type_name": "StringListParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "Duration",
+        "type_name": "DecimalParameter",
+        "alias": "time",
+        "default": null
+      },
+      {
+        "name": "Wait",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "Naninovel.Commands.Skip": {
+    "name": "Skip",
+    "alias": "Skip",
+    "fields": [
+      {
+        "name": "Enable",
+        "type_name": "BooleanParameter",
+        "alias": "",
+        "default": "true"
+      }
+    ]
+  },
+  "Naninovel.Commands.SpawnBlur": {
+    "name": "SpawnBlur",
+    "alias": "blur",
+    "fields": [
+      {
+        "name": "ActorId",
+        "type_name": "StringParameter",
+        "alias": "",
+        "default": "MainBackground"
+      },
+      {
+        "name": "Intensity",
+        "type_name": "DecimalParameter",
+        "alias": "power",
+        "default": null
+      },
+      {
+        "name": "FadeDuration",
+        "type_name": "DecimalParameter",
+        "alias": "time",
+        "default": null
+      },
+      {
+        "name": "Wait",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "Naninovel.Commands.SpawnShake": {
+    "name": "SpawnShake",
+    "alias": "shake",
+    "fields": [
+      {
+        "name": "ActorId",
+        "type_name": "StringParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "ShakeCount",
+        "type_name": "IntegerParameter",
+        "alias": "count",
+        "default": null
+      },
+      {
+        "name": "ShakeDuration",
+        "type_name": "DecimalParameter",
+        "alias": "time",
+        "default": null
+      },
+      {
+        "name": "DurationVariation",
+        "type_name": "DecimalParameter",
+        "alias": "deltaTime",
+        "default": null
+      },
+      {
+        "name": "ShakeAmplitude",
+        "type_name": "DecimalParameter",
+        "alias": "power",
+        "default": null
+      },
+      {
+        "name": "AmplitudeVariation",
+        "type_name": "DecimalParameter",
+        "alias": "deltaPower",
+        "default": null
+      },
+      {
+        "name": "ShakeHorizontally",
+        "type_name": "BooleanParameter",
+        "alias": "hor",
+        "default": null
+      },
+      {
+        "name": "ShakeVertically",
+        "type_name": "BooleanParameter",
+        "alias": "ver",
+        "default": null
+      },
+      {
+        "name": "Wait",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "Naninovel.Commands.Stop": {
+    "name": "Stop",
+    "alias": "Stop",
+    "fields": []
+  },
+  "Naninovel.Commands.StopBgm": {
+    "name": "StopBgm",
+    "alias": "StopBgm",
+    "fields": [
+      {
+        "name": "BgmPath",
+        "type_name": "StringParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "FadeOutDuration",
+        "type_name": "DecimalParameter",
+        "alias": "fade",
+        "default": "0.35"
+      },
+      {
+        "name": "Wait",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "Naninovel.Commands.StopSfx": {
+    "name": "StopSfx",
+    "alias": "StopSfx",
+    "fields": [
+      {
+        "name": "SfxPath",
+        "type_name": "StringParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "FadeOutDuration",
+        "type_name": "DecimalParameter",
+        "alias": "fade",
+        "default": "0.35"
+      },
+      {
+        "name": "Wait",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "Naninovel.Commands.StopVoice": {
+    "name": "StopVoice",
+    "alias": "StopVoice",
+    "fields": []
+  },
+  "Naninovel.Commands.Wait": {
+    "name": "Wait",
+    "alias": "Wait",
+    "fields": [
+      {
+        "name": "WaitMode",
+        "type_name": "StringParameter",
+        "alias": "",
+        "default": null
+      }
+    ]
+  },
+  "Naninovel.Commands.WaitForInput": {
+    "name": "WaitForInput",
+    "alias": "i",
+    "fields": []
+  },
+  "WitchTrials.Debugging.BlockInteraction": {
+    "name": "BlockInteraction",
+    "alias": "BlockInteraction",
+    "fields": [
+      {
+        "name": "Duration",
+        "type_name": "DecimalParameter",
+        "alias": "time",
+        "default": "0.35"
+      },
+      {
+        "name": "Wait",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "WitchTrials.Debugging.ShowLoadingUiForDebug": {
+    "name": "ShowLoadingUiForDebug",
+    "alias": "showLoading",
+    "fields": [
+      {
+        "name": "LoadingMode",
+        "type_name": "StringParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "Duration",
+        "type_name": "DecimalParameter",
+        "alias": "time",
+        "default": "0.35"
+      },
+      {
+        "name": "HaltInput",
+        "type_name": "BooleanParameter",
+        "alias": "halt",
+        "default": null
+      },
+      {
+        "name": "Wait",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "WitchTrials.Views.CancelGosub": {
+    "name": "CancelGosub",
+    "alias": "CancelGosub",
+    "fields": []
+  },
+  "WitchTrials.Views.ChangeCourtFireFxActivity": {
+    "name": "ChangeCourtFireFxActivity",
+    "alias": "courtFire",
+    "fields": [
+      {
+        "name": "Enable",
+        "type_name": "BooleanParameter",
+        "alias": "",
+        "default": "true"
+      }
+    ]
+  },
+  "WitchTrials.Views.ChangeDebateMode": {
+    "name": "ChangeDebateMode",
+    "alias": "debate",
+    "fields": [
+      {
+        "name": "Enable",
+        "type_name": "BooleanParameter",
+        "alias": "",
+        "default": null
+      }
+    ]
+  },
+  "WitchTrials.Views.ChangeTrialMode": {
+    "name": "ChangeTrialMode",
+    "alias": "trialMode",
+    "fields": [
+      {
+        "name": "Enable",
+        "type_name": "BooleanParameter",
+        "alias": "",
+        "default": null
+      }
+    ]
+  },
+  "WitchTrials.Views.ChangeTrialPauseMode": {
+    "name": "ChangeTrialPauseMode",
+    "alias": "pauseTrial",
+    "fields": [
+      {
+        "name": "Enable",
+        "type_name": "BooleanParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "ProcessTimer",
+        "type_name": "BooleanParameter",
+        "alias": "timer",
+        "default": "true"
+      }
+    ]
+  },
+  "WitchTrials.Views.ChoiceEvidence": {
+    "name": "ChoiceEvidence",
+    "alias": "evidence",
+    "fields": [
+      {
+        "name": "CorrectEvidenceId",
+        "type_name": "StringParameter",
+        "alias": "correct",
+        "default": null
+      },
+      {
+        "name": "CategoryNames",
+        "type_name": "StringListParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "Back",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": "false"
+      },
+      {
+        "name": "Global",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": "false"
+      }
+    ]
+  },
+  "WitchTrials.Views.ChoiceMapArea": {
+    "name": "ChoiceMapArea",
+    "alias": "map",
+    "fields": [
+      {
+        "name": "MapAreaNames",
+        "type_name": "StringListParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "FlagVariableName",
+        "type_name": "StringParameter",
+        "alias": "flag",
+        "default": null
+      },
+      {
+        "name": "CategoryNames",
+        "type_name": "StringListParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "Back",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": "false"
+      },
+      {
+        "name": "Global",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": "false"
+      }
+    ]
+  },
+  "WitchTrials.Views.ClearWitchBook": {
+    "name": "ClearWitchBook",
+    "alias": "clearBook",
+    "fields": [
+      {
+        "name": "CategoryNames",
+        "type_name": "StringListParameter",
+        "alias": "",
+        "default": null
+      }
+    ]
+  },
+  "WitchTrials.Views.Damage": {
+    "name": "Damage",
+    "alias": "Damage",
+    "fields": []
+  },
+  "WitchTrials.Views.EmoteFall": {
+    "name": "EmoteFall",
+    "alias": "EmoteFall",
+    "fields": [
+      {
+        "name": "EasingTypeNameForPosX",
+        "type_name": "StringParameter",
+        "alias": "easingPosX",
+        "default": null
+      },
+      {
+        "name": "EasingTypeNameForPosY",
+        "type_name": "StringParameter",
+        "alias": "easingPosY",
+        "default": null
+      },
+      {
+        "name": "Relative",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Multiplier",
+        "type_name": "DecimalParameter",
+        "alias": "multi",
+        "default": null
+      },
+      {
+        "name": "MatchScreenWidth",
+        "type_name": "BooleanParameter",
+        "alias": "match",
+        "default": null
+      },
+      {
+        "name": "ActorIds",
+        "type_name": "StringListParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "Loop",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": "false"
+      },
+      {
+        "name": "Appearance",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Transition",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Visibility",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "ScenePositionX",
+        "type_name": "StringParameter",
+        "alias": "posX",
+        "default": null
+      },
+      {
+        "name": "ScenePositionY",
+        "type_name": "StringParameter",
+        "alias": "posY",
+        "default": null
+      },
+      {
+        "name": "PositionZ",
+        "type_name": "StringParameter",
+        "alias": "posZ",
+        "default": null
+      },
+      {
+        "name": "Rotation",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Scale",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "TintColor",
+        "type_name": "StringParameter",
+        "alias": "tint",
+        "default": null
+      },
+      {
+        "name": "EasingTypeName",
+        "type_name": "StringParameter",
+        "alias": "easing",
+        "default": null
+      },
+      {
+        "name": "Duration",
+        "type_name": "StringParameter",
+        "alias": "time",
+        "default": null
+      },
+      {
+        "name": "Wait",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "WitchTrials.Views.EmoteJump": {
+    "name": "EmoteJump",
+    "alias": "EmoteJump",
+    "fields": [
+      {
+        "name": "Speed",
+        "type_name": "DecimalParameter",
+        "alias": null,
+        "default": "1"
+      },
+      {
+        "name": "EasingTypeNameForPosX",
+        "type_name": "StringParameter",
+        "alias": "easingPosX",
+        "default": null
+      },
+      {
+        "name": "EasingTypeNameForPosY",
+        "type_name": "StringParameter",
+        "alias": "easingPosY",
+        "default": null
+      },
+      {
+        "name": "Relative",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Multiplier",
+        "type_name": "DecimalParameter",
+        "alias": "multi",
+        "default": null
+      },
+      {
+        "name": "MatchScreenWidth",
+        "type_name": "BooleanParameter",
+        "alias": "match",
+        "default": null
+      },
+      {
+        "name": "ActorIds",
+        "type_name": "StringListParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "Loop",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": "false"
+      },
+      {
+        "name": "Appearance",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Transition",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Visibility",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "ScenePositionX",
+        "type_name": "StringParameter",
+        "alias": "posX",
+        "default": null
+      },
+      {
+        "name": "ScenePositionY",
+        "type_name": "StringParameter",
+        "alias": "posY",
+        "default": null
+      },
+      {
+        "name": "PositionZ",
+        "type_name": "StringParameter",
+        "alias": "posZ",
+        "default": null
+      },
+      {
+        "name": "Rotation",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Scale",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "TintColor",
+        "type_name": "StringParameter",
+        "alias": "tint",
+        "default": null
+      },
+      {
+        "name": "EasingTypeName",
+        "type_name": "StringParameter",
+        "alias": "easing",
+        "default": null
+      },
+      {
+        "name": "Duration",
+        "type_name": "StringParameter",
+        "alias": "time",
+        "default": null
+      },
+      {
+        "name": "Wait",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "WitchTrials.Views.EmoteJumpDouble": {
+    "name": "EmoteJumpDouble",
+    "alias": "EmoteJumpDouble",
+    "fields": [
+      {
+        "name": "Speed",
+        "type_name": "DecimalParameter",
+        "alias": null,
+        "default": "1"
+      },
+      {
+        "name": "EasingTypeNameForPosX",
+        "type_name": "StringParameter",
+        "alias": "easingPosX",
+        "default": null
+      },
+      {
+        "name": "EasingTypeNameForPosY",
+        "type_name": "StringParameter",
+        "alias": "easingPosY",
+        "default": null
+      },
+      {
+        "name": "Relative",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Multiplier",
+        "type_name": "DecimalParameter",
+        "alias": "multi",
+        "default": null
+      },
+      {
+        "name": "MatchScreenWidth",
+        "type_name": "BooleanParameter",
+        "alias": "match",
+        "default": null
+      },
+      {
+        "name": "ActorIds",
+        "type_name": "StringListParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "Loop",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": "false"
+      },
+      {
+        "name": "Appearance",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Transition",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Visibility",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "ScenePositionX",
+        "type_name": "StringParameter",
+        "alias": "posX",
+        "default": null
+      },
+      {
+        "name": "ScenePositionY",
+        "type_name": "StringParameter",
+        "alias": "posY",
+        "default": null
+      },
+      {
+        "name": "PositionZ",
+        "type_name": "StringParameter",
+        "alias": "posZ",
+        "default": null
+      },
+      {
+        "name": "Rotation",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Scale",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "TintColor",
+        "type_name": "StringParameter",
+        "alias": "tint",
+        "default": null
+      },
+      {
+        "name": "EasingTypeName",
+        "type_name": "StringParameter",
+        "alias": "easing",
+        "default": null
+      },
+      {
+        "name": "Duration",
+        "type_name": "StringParameter",
+        "alias": "time",
+        "default": null
+      },
+      {
+        "name": "Wait",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "WitchTrials.Views.EmoteNod": {
+    "name": "EmoteNod",
+    "alias": "EmoteNod",
+    "fields": [
+      {
+        "name": "Speed",
+        "type_name": "DecimalParameter",
+        "alias": null,
+        "default": "1"
+      },
+      {
+        "name": "EasingTypeNameForPosX",
+        "type_name": "StringParameter",
+        "alias": "easingPosX",
+        "default": null
+      },
+      {
+        "name": "EasingTypeNameForPosY",
+        "type_name": "StringParameter",
+        "alias": "easingPosY",
+        "default": null
+      },
+      {
+        "name": "Relative",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Multiplier",
+        "type_name": "DecimalParameter",
+        "alias": "multi",
+        "default": null
+      },
+      {
+        "name": "MatchScreenWidth",
+        "type_name": "BooleanParameter",
+        "alias": "match",
+        "default": null
+      },
+      {
+        "name": "ActorIds",
+        "type_name": "StringListParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "Loop",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": "false"
+      },
+      {
+        "name": "Appearance",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Transition",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Visibility",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "ScenePositionX",
+        "type_name": "StringParameter",
+        "alias": "posX",
+        "default": null
+      },
+      {
+        "name": "ScenePositionY",
+        "type_name": "StringParameter",
+        "alias": "posY",
+        "default": null
+      },
+      {
+        "name": "PositionZ",
+        "type_name": "StringParameter",
+        "alias": "posZ",
+        "default": null
+      },
+      {
+        "name": "Rotation",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Scale",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "TintColor",
+        "type_name": "StringParameter",
+        "alias": "tint",
+        "default": null
+      },
+      {
+        "name": "EasingTypeName",
+        "type_name": "StringParameter",
+        "alias": "easing",
+        "default": null
+      },
+      {
+        "name": "Duration",
+        "type_name": "StringParameter",
+        "alias": "time",
+        "default": null
+      },
+      {
+        "name": "Wait",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "WitchTrials.Views.EmoteShake": {
+    "name": "EmoteShake",
+    "alias": "EmoteShake",
+    "fields": [
+      {
+        "name": "EasingTypeNameForPosX",
+        "type_name": "StringParameter",
+        "alias": "easingPosX",
+        "default": null
+      },
+      {
+        "name": "EasingTypeNameForPosY",
+        "type_name": "StringParameter",
+        "alias": "easingPosY",
+        "default": null
+      },
+      {
+        "name": "Relative",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Multiplier",
+        "type_name": "DecimalParameter",
+        "alias": "multi",
+        "default": null
+      },
+      {
+        "name": "MatchScreenWidth",
+        "type_name": "BooleanParameter",
+        "alias": "match",
+        "default": null
+      },
+      {
+        "name": "ActorIds",
+        "type_name": "StringListParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "Loop",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": "false"
+      },
+      {
+        "name": "Appearance",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Transition",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Visibility",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "ScenePositionX",
+        "type_name": "StringParameter",
+        "alias": "posX",
+        "default": null
+      },
+      {
+        "name": "ScenePositionY",
+        "type_name": "StringParameter",
+        "alias": "posY",
+        "default": null
+      },
+      {
+        "name": "PositionZ",
+        "type_name": "StringParameter",
+        "alias": "posZ",
+        "default": null
+      },
+      {
+        "name": "Rotation",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Scale",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "TintColor",
+        "type_name": "StringParameter",
+        "alias": "tint",
+        "default": null
+      },
+      {
+        "name": "EasingTypeName",
+        "type_name": "StringParameter",
+        "alias": "easing",
+        "default": null
+      },
+      {
+        "name": "Duration",
+        "type_name": "StringParameter",
+        "alias": "time",
+        "default": null
+      },
+      {
+        "name": "Wait",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "WitchTrials.Views.GosubResetWitchBook": {
+    "name": "GosubResetWitchBook",
+    "alias": "gosubResetBook",
+    "fields": [
+      {
+        "name": "Version",
+        "type_name": "IntegerParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "IsDebugDirectJump",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Path",
+        "type_name": "NamedStringParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "ResetState",
+        "type_name": "StringListParameter",
+        "alias": "reset",
+        "default": null
+      }
+    ]
+  },
+  "WitchTrials.Views.GosubToModifyPerspectiveStageCamera": {
+    "name": "GosubToModifyPerspectiveStageCamera",
+    "alias": "gosubModifyCamera",
+    "fields": [
+      {
+        "name": "Index",
+        "type_name": "IntegerParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "LookCharacterId",
+        "type_name": "StringParameter",
+        "alias": "look",
+        "default": null
+      },
+      {
+        "name": "Composition",
+        "type_name": "StringParameter",
+        "alias": "comp",
+        "default": null
+      },
+      {
+        "name": "RollDirection",
+        "type_name": "StringParameter",
+        "alias": "rollDir",
+        "default": null
+      },
+      {
+        "name": "ZoomLevel",
+        "type_name": "IntegerParameter",
+        "alias": "zoomLvl",
+        "default": null
+      },
+      {
+        "name": "LabelNameParams",
+        "type_name": "StringListParameter",
+        "alias": "params",
+        "default": null
+      }
+    ]
+  },
+  "WitchTrials.Views.GosubToObjectionCutIn": {
+    "name": "GosubToObjectionCutIn",
+    "alias": "gosubCutIn",
+    "fields": [
+      {
+        "name": "CutInKind",
+        "type_name": "StringParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "Index",
+        "type_name": "IntegerParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "WitchTrials.Views.GosubToSplitPerspectiveStageScreens": {
+    "name": "GosubToSplitPerspectiveStageScreens",
+    "alias": "gosubSplitStageScreen",
+    "fields": [
+      {
+        "name": "Index",
+        "type_name": "IntegerParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "LookCharacterId",
+        "type_name": "StringParameter",
+        "alias": "look",
+        "default": null
+      },
+      {
+        "name": "Composition",
+        "type_name": "StringParameter",
+        "alias": "comp",
+        "default": null
+      },
+      {
+        "name": "RollDirection",
+        "type_name": "StringParameter",
+        "alias": "rollDir",
+        "default": null
+      },
+      {
+        "name": "LabelNameParams",
+        "type_name": "StringListParameter",
+        "alias": "params",
+        "default": null
+      }
+    ]
+  },
+  "WitchTrials.Views.HideCreditsUi": {
+    "name": "HideCreditsUi",
+    "alias": "hideCredit",
+    "fields": []
+  },
+  "WitchTrials.Views.HidePerspectiveStageScreen": {
+    "name": "HidePerspectiveStageScreen",
+    "alias": "hideStageScreen",
+    "fields": [
+      {
+        "name": "Index",
+        "type_name": "IntegerParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "Duration",
+        "type_name": "DecimalParameter",
+        "alias": "time",
+        "default": "0.35"
+      },
+      {
+        "name": "Reset",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": "true"
+      },
+      {
+        "name": "Wait",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "WitchTrials.Views.LoadPerspectiveStage": {
+    "name": "LoadPerspectiveStage",
+    "alias": "loadStage",
+    "fields": [
+      {
+        "name": "Id",
+        "type_name": "StringParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "Wait",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "WitchTrials.Views.ModifyPerspectiveStageCamera": {
+    "name": "ModifyPerspectiveStageCamera",
+    "alias": "stageCamera",
+    "fields": [
+      {
+        "name": "Index",
+        "type_name": "IntegerParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "Height",
+        "type_name": "DecimalParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Rotation",
+        "type_name": "DecimalListParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Distance",
+        "type_name": "DecimalParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Duration",
+        "type_name": "DecimalParameter",
+        "alias": "time",
+        "default": "0.35"
+      },
+      {
+        "name": "EaseName",
+        "type_name": "StringParameter",
+        "alias": "easing",
+        "default": null
+      },
+      {
+        "name": "Wait",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "WitchTrials.Views.PlaySfxModified": {
+    "name": "PlaySfxModified",
+    "alias": "sfx",
+    "fields": [
+      {
+        "name": "SfxPath",
+        "type_name": "StringParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "Volume",
+        "type_name": "DecimalParameter",
+        "alias": null,
+        "default": "1"
+      },
+      {
+        "name": "Loop",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": "false"
+      },
+      {
+        "name": "FadeInDuration",
+        "type_name": "DecimalParameter",
+        "alias": "fade",
+        "default": "0"
+      },
+      {
+        "name": "GroupPath",
+        "type_name": "StringParameter",
+        "alias": "group",
+        "default": null
+      },
+      {
+        "name": "Duration",
+        "type_name": "DecimalParameter",
+        "alias": "time",
+        "default": "0.35"
+      },
+      {
+        "name": "Wait",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "WitchTrials.Views.PrintDebateText": {
+    "name": "PrintDebateText",
+    "alias": "printDebate",
+    "fields": [
+      {
+        "name": "ScenePosition",
+        "type_name": "DecimalListParameter",
+        "alias": "pos",
+        "default": null
+      },
+      {
+        "name": "Roll",
+        "type_name": "DecimalParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "AnimationKind",
+        "type_name": "StringParameter",
+        "alias": "anim",
+        "default": null
+      },
+      {
+        "name": "Text",
+        "type_name": "LocalizableTextParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "PrinterId",
+        "type_name": "StringParameter",
+        "alias": "printer",
+        "default": null
+      },
+      {
+        "name": "AuthorId",
+        "type_name": "StringParameter",
+        "alias": "author",
+        "default": null
+      },
+      {
+        "name": "AuthorLabel",
+        "type_name": "LocalizableTextParameter",
+        "alias": "as",
+        "default": null
+      },
+      {
+        "name": "RevealSpeed",
+        "type_name": "DecimalParameter",
+        "alias": "speed",
+        "default": "1"
+      },
+      {
+        "name": "ResetPrinter",
+        "type_name": "BooleanParameter",
+        "alias": "reset",
+        "default": null
+      },
+      {
+        "name": "DefaultPrinter",
+        "type_name": "BooleanParameter",
+        "alias": "default",
+        "default": null
+      },
+      {
+        "name": "WaitForInput",
+        "type_name": "BooleanParameter",
+        "alias": "waitInput",
+        "default": null
+      },
+      {
+        "name": "Append",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "ChangeVisibilityDuration",
+        "type_name": "DecimalParameter",
+        "alias": "fadeTime",
+        "default": null
+      },
+      {
+        "name": "Wait",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "WitchTrials.Views.PrintTextModified": {
+    "name": "PrintTextModified",
+    "alias": "print",
+    "fields": [
+      {
+        "name": "Text",
+        "type_name": "LocalizableTextParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "PrinterId",
+        "type_name": "StringParameter",
+        "alias": "printer",
+        "default": null
+      },
+      {
+        "name": "AuthorId",
+        "type_name": "StringParameter",
+        "alias": "author",
+        "default": null
+      },
+      {
+        "name": "AuthorLabel",
+        "type_name": "LocalizableTextParameter",
+        "alias": "as",
+        "default": null
+      },
+      {
+        "name": "RevealSpeed",
+        "type_name": "DecimalParameter",
+        "alias": "speed",
+        "default": "1"
+      },
+      {
+        "name": "ResetPrinter",
+        "type_name": "BooleanParameter",
+        "alias": "reset",
+        "default": null
+      },
+      {
+        "name": "DefaultPrinter",
+        "type_name": "BooleanParameter",
+        "alias": "default",
+        "default": null
+      },
+      {
+        "name": "WaitForInput",
+        "type_name": "BooleanParameter",
+        "alias": "waitInput",
+        "default": null
+      },
+      {
+        "name": "Append",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "ChangeVisibilityDuration",
+        "type_name": "DecimalParameter",
+        "alias": "fadeTime",
+        "default": null
+      },
+      {
+        "name": "Wait",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "WitchTrials.Views.ProcessBadEnd": {
+    "name": "ProcessBadEnd",
+    "alias": "badEnd",
+    "fields": [
+      {
+        "name": "Number",
+        "type_name": "IntegerParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "VariableName",
+        "type_name": "StringParameter",
+        "alias": "var",
+        "default": null
+      },
+      {
+        "name": "BitwiseOp",
+        "type_name": "StringParameter",
+        "alias": "op",
+        "default": null
+      }
+    ]
+  },
+  "WitchTrials.Views.QuickLoad": {
+    "name": "QuickLoad",
+    "alias": "QuickLoad",
+    "fields": [
+      {
+        "name": "SlotNumber",
+        "type_name": "IntegerParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "Wait",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "WitchTrials.Views.QuickSave": {
+    "name": "QuickSave",
+    "alias": "QuickSave",
+    "fields": [
+      {
+        "name": "SlotNumber",
+        "type_name": "IntegerParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "Wait",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "WitchTrials.Views.RecordCorrectChoice": {
+    "name": "RecordCorrectChoice",
+    "alias": "correctChoice",
+    "fields": [
+      {
+        "name": "Number",
+        "type_name": "IntegerParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "VariableName",
+        "type_name": "StringParameter",
+        "alias": "var",
+        "default": null
+      },
+      {
+        "name": "BitwiseOp",
+        "type_name": "StringParameter",
+        "alias": "op",
+        "default": null
+      }
+    ]
+  },
+  "WitchTrials.Views.ReturnToTitle": {
+    "name": "ReturnToTitle",
+    "alias": "ReturnToTitle",
+    "fields": [
+      {
+        "name": "FadeDuration",
+        "type_name": "DecimalParameter",
+        "alias": "time",
+        "default": "1.2"
+      },
+      {
+        "name": "MinDelayDuration",
+        "type_name": "DecimalParameter",
+        "alias": "delay",
+        "default": "0.6"
+      },
+      {
+        "name": "Wait",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "WitchTrials.Views.SetBadId": {
+    "name": "SetBadId",
+    "alias": "badId",
+    "fields": [
+      {
+        "name": "CommonBadEndId",
+        "type_name": "IntegerParameter",
+        "alias": "",
+        "default": null
+      }
+    ]
+  },
+  "WitchTrials.Views.SetTrialTimer": {
+    "name": "SetTrialTimer",
+    "alias": "timer",
+    "fields": [
+      {
+        "name": "Time",
+        "type_name": "DecimalParameter",
+        "alias": "",
+        "default": null
+      }
+    ]
+  },
+  "WitchTrials.Views.ShakePerspectiveStageCamera": {
+    "name": "ShakePerspectiveStageCamera",
+    "alias": "shakeStageCamera",
+    "fields": [
+      {
+        "name": "Index",
+        "type_name": "IntegerParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "Force",
+        "type_name": "DecimalListParameter",
+        "alias": null,
+        "default": "1,0,0"
+      },
+      {
+        "name": "Frequency",
+        "type_name": "IntegerParameter",
+        "alias": null,
+        "default": "10"
+      },
+      {
+        "name": "DampingRatio",
+        "type_name": "DecimalParameter",
+        "alias": "damp",
+        "default": "1"
+      },
+      {
+        "name": "Randomly",
+        "type_name": "BooleanParameter",
+        "alias": "random",
+        "default": null
+      },
+      {
+        "name": "Duration",
+        "type_name": "DecimalParameter",
+        "alias": "time",
+        "default": "0.35"
+      },
+      {
+        "name": "Wait",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "WitchTrials.Views.ShowCreditsUi": {
+    "name": "ShowCreditsUi",
+    "alias": "credit",
+    "fields": [
+      {
+        "name": "ActNumber",
+        "type_name": "IntegerParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "Wait",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "WitchTrials.Views.ShowPerspectiveStageScreen": {
+    "name": "ShowPerspectiveStageScreen",
+    "alias": "showStageScreen",
+    "fields": [
+      {
+        "name": "Index",
+        "type_name": "IntegerParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "Duration",
+        "type_name": "DecimalParameter",
+        "alias": "time",
+        "default": "0.35"
+      },
+      {
+        "name": "Wait",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  },
+  "WitchTrials.Views.ShowWitchBookUi": {
+    "name": "ShowWitchBookUi",
+    "alias": "book",
+    "fields": [
+      {
+        "name": "CategoryNames",
+        "type_name": "StringListParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "Back",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": "false"
+      },
+      {
+        "name": "Global",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": "false"
+      }
+    ]
+  },
+  "WitchTrials.Views.SplitPerspectiveStageScreen": {
+    "name": "SplitPerspectiveStageScreen",
+    "alias": "splitStageScreen",
+    "fields": [
+      {
+        "name": "Index",
+        "type_name": "IntegerParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "ScenePositionX",
+        "type_name": "DecimalParameter",
+        "alias": "posX",
+        "default": null
+      },
+      {
+        "name": "Roll",
+        "type_name": "DecimalParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "SplitDirection",
+        "type_name": "StringParameter",
+        "alias": "direction",
+        "default": null
+      }
+    ]
+  },
+  "WitchTrials.Views.StopForChoice": {
+    "name": "StopForChoice",
+    "alias": "StopForChoice",
+    "fields": [
+      {
+        "name": "Clear",
+        "type_name": "BooleanParameter",
+        "alias": null,
+        "default": "false"
+      }
+    ]
+  },
+  "WitchTrials.Views.UnloadPerspectiveStage": {
+    "name": "UnloadPerspectiveStage",
+    "alias": "unloadStage",
+    "fields": []
+  },
+  "WitchTrials.Views.UpdateAudioPlayerUi": {
+    "name": "UpdateAudioPlayerUi",
+    "alias": "audioPlayer",
+    "fields": [
+      {
+        "name": "TrackName",
+        "type_name": "StringParameter",
+        "alias": "",
+        "default": null
+      }
+    ]
+  },
+  "WitchTrials.Views.UpdateWitchBook": {
+    "name": "UpdateWitchBook",
+    "alias": "update",
+    "fields": [
+      {
+        "name": "Id",
+        "type_name": "StringParameter",
+        "alias": "",
+        "default": null
+      },
+      {
+        "name": "Category",
+        "type_name": "StringParameter",
+        "alias": null,
+        "default": null
+      },
+      {
+        "name": "Version",
+        "type_name": "IntegerParameter",
+        "alias": null,
+        "default": null
+      }
+    ]
+  }
+}
