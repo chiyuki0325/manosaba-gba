@@ -1,7 +1,5 @@
 # 魔法少女的魔女审判 GBA 移植
 
-《魔法少女的魔女审判》的非官方 GBA 移植。
-
 基于 Steam 简体中文版进行移植。不包含 NS 版新增内容。
 
 <img src="output/packaging/final/product-mockup-v2.webp" width="100%">
