@@ -1,0 +1,715 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act01_Chapter02/Act01_Chapter02_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# 冒頭非表示処理
+@char Warden.1 { Position:,{hiddenCharacterPositionY} time:0 }
+@char Jailer.1 { Position:,{hiddenCharacterPositionY} time:0 }
+# ==============================================================================
+# MARK: 3: 💬 ゴクチョーが犯人の理由
+# ==============================================================================
+# ＠ト書き▼議論2-3 ゴクチョーが犯人の理由
+# BGM変更：rAwTell Owk...
+@bgm Bgm_7_1
+
+@badId 3
+
+# Judge2-3-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Angry_Closed1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@printDebate 遠野ハンナと<br>沢渡ココの証言によれば、<br>死体を発見した当時<br>あの部屋は密室だった<br>という事よ。
+
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@printDebate ここにいる私たちには<br>鍵を開けることはおろか、<br>鍵をかけることすら<br>できなかった……。
+
+@char Nanoka.Normal1,ArmR1,ArmL10,Eyes1_Angry_Open1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@printDebate ……なら、<br>誰にも犯行は<br>不可能だったことになる。<br>そうでしょう？
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@printDebate 誰にも犯行が不可能って……<br>ならアイツは<br>どうやって死んだんだよ！
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@printDebate "<link=\"Objection_01_02_03_01\">自殺</link>か！？<br><link=\"Objection_01_02_03_02\">事故</link>か！？<br>それとも<link=\"Objection_01_02_03_03\">病死</link>とか言う気！？<br>そんなんありえねーだろ！"
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@printDebate ……さっきと言ってること、<br>違うんじゃねーの～！？
+
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Normal_Closed2,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@printDebate いいえ。<br>他殺だった事は<br>否定しないわ。
+
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Normal_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@printDebate 私の主張は<br>【犯人は私たちの中にいない】<br>というだけよ。
+
+@char Nanoka.Eyes1_Angry_Open1
+@gosubModifyCamera 0
+@printDebate だって鍵を開けるなんて……<br>この施設の管理者にしか<br>できないはずだもの。
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-
+@gosubModifyCamera 0
+@printDebate ……それで<br>ゴクチョーが殺したって<br>言いたいのか？
+
+@char Nanoka.Normal1,ArmR1,ArmL10,Eyes1_Normal_Open1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@printDebate ええ。<br>懲罰房の鍵を<br>自由に開ける事ができた<br>運営が犯人よ。
+
+@char Nanoka.Normal1,ArmR2,ArmL9,Eyes1_Normal_Open3,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@printDebate "私たちにはできない。<br>なぜなら<br><link=\"Objection_01_02_03_04\">鍵が閉まっていた</link>の<br>だから……。"
+
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Normal_Closed1,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@printDebate 拷問中に殺してしまったか……<br>もしくは最初から<br>口封じが目的だったのか。
+
+@char Nanoka.Eyes1_Angry_Open1
+@gosubModifyCamera 0
+@printDebate なんにせよ、<br>運営側が私たちに<br>佐伯ミリアを殺した罪を<br>なすりつけようと<br>しているだけ……。
+
+@char Nanoka.Normal1,ArmR3,ArmL6,Eyes1_Angry_Open1,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@printDebate それがこの事件の真相よ。
+
+
+# ==============================================================================
+# ADVシーン
+# ==============================================================================
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Ema.Pensive1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@Wait 0.2
+
+@print （運営が犯人……？<br>　たしかにボクたちの中に<br>　犯人がいないとは信じたいけど……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+
+@print （そのためにも、ナノカちゃんの推理が<br>　間違ってないか検証してみよう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge2-3-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_01_02_03_01
+
+@Skip false
+@pauseTrial true
+
+@choice 自殺だった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge2-3-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_01_02_03_02
+
+@Skip false
+@pauseTrial true
+
+@choice 事故死だった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge2-3-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_01_02_03_03
+
+@Skip false
+@pauseTrial true
+
+@choice 病死だった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge2-3-5
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論4
+# ------------------------------------------------------------------------------
+
+# Objection_01_02_03_04
+
+@Skip false
+@pauseTrial true
+
+@choice 誰でも鍵は開けられた
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge2-3-6
+
+@choice 元から開いてたのかも
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge2-3-2
+
+@choice 鍵がかかっていても殺せる
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge2-3-7
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# ミス選択肢
+# ==============================================================================
+
+# MARK: 2-3-3: ❌ 自殺だった
+
+# Judge2-3-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print いや、やっぱりミリアちゃんは<br>自殺だったんじゃないかな……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print でもミリアちゃんは拘束された状態で<br>胸を突かれて死亡……。<br>自殺だとするには、無理があるんじゃないかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default
+@gosubModifyCamera 0
+@print エマさん……？<br>もしや、どうしても自殺と思い込ませたい<br>理由でもありますの……！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print あやし～！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （そんなことないのに……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （変な疑いをかけられちゃった……！<br>　みんなからの心証が悪くなったかも……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （そうだよね、現場の状況から考えて<br>　無理がある主張は議論を混乱させるだけ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （もう一度、ナノカちゃんの言葉を聞いてみよう） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （ゴクチョーを疑うのは簡単だけど、<br>　他の可能性もあるかもしれない……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge2-3-1
+
+# MARK: 2-3-4: ❌ 事故死だった
+
+# Judge2-3-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print いや、やっぱりミリアちゃんは<br>事故死だったんだよ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print ナイフがうっかり刺さっちゃったとか……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print 腹にも胸にもグッサリ刺しておいて<br>うっかりは……ありえないと思いますわ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default
+@gosubModifyCamera 0
+@print 殺意ありすぎだろ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Gross_Open
+@gosubModifyCamera 0
+@print エマっち、一回黙っててくんない！？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （い、一回黙ろう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default,ArmR1_1,ArmL5,Eyes1_Normal_Open2,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print エ、エマさん……<br>もしかしたらナノカさんは、<br>憎悪のせいで視野が狭まっているのかも……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default,ArmR1_1,ArmL1,Eyes1_Normal_Open2,Mouth1_Flushed_Closed1
+@gosubModifyCamera 0
+@print みなさんの話、注意して聞いてみてください……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （もう一度、ナノカちゃんの言葉を聞いてみよう） { author:Ema speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge2-3-1
+
+# MARK: 2-3-5: ❌ 病死だった
+
+# Judge2-3-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print "そうか！ ミリアちゃんは病死だったんだよ！" { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default
+@gosubModifyCamera 0
+@print 刺されて死んだって話になったろ、さっき！！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_02,Angle01/Head/Facial/Eyes>Eyes_Uncomfortable_Open02
+@gosubModifyCamera 0
+@print 『さすがにテキトーすぎるな』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （テキトーって言われちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （そうだよね、現場の状況から考えて<br>　無理がある主張は議論を混乱させるだけ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （もう一度、ナノカちゃんの言葉を聞いてみよう） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （ゴクチョーを疑うのは簡単だけど、<br>　他の可能性もあるかもしれない……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge2-3-1
+
+# MARK: 2-3-6: ❌ 誰でも鍵は開けられた
+
+# Judge2-3-6
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ちょっと待って、ナノカちゃん……。<br>懲罰房の鍵は誰でも開けられたんじゃないかな……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print "どういうこと？ 桜羽エマ。" { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print たとえば、ピッキングとか……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print ピッキングが得意な人がいるなら名乗り出て欲しいわね？<br>ここから脱出するためにも。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default,ArmR1_1,ArmL8,Eyes1_Pensive_Open2,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print そ、そもそもゴクチョーさんたちが<br>簡単に開くような鍵をつけているでしょうか……？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print じゃ、じゃあ、あの……<br>怪力とかで……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR15,ArmL8,Angle01/Facial/Eyes>Eyes_Wink_Open01,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print バコーン☆<br>そうなると私が犯人ですか！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print いや、現場についたとき、<br>鍵は閉まってたし、壊れてもなかったじゃん。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Normal_Open4,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print 桜羽エマ。<br>それは誰もが把握していることよ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Eyes1_Uncomfortable_Open1
+@gosubModifyCamera 0
+@print 意味のない反論をしないで。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle
+@gosubModifyCamera 0
+@print （怒られちゃった……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （でも、本当に運営が犯人なのかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （あまり考えたくはないけど、<br>　他の可能性についても考えてみよう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge2-3-1
+
+# MARK: 2-3-7: ❌ 密室でも犯行できた
+
+# Judge2-3-7
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print ナノカちゃん、<br>密室だと本当に犯行はできなかったのかな……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ボクたちはもう、<br>部屋に入らずに殺人を犯す方法を知ってるよね……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmR3,ArmL1,Eyes01_Normal_Open02,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print 城ケ崎ノアの事件のことを<br>言ってるのかしら。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print そう、長槍を作って――。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print エマちゃん……。<br>監房と懲罰房では、条件が違うでしょう？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print 懲罰房の扉から槍は入んないっしょ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open
+@gosubModifyCamera 0
+@print あっ、そっか……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR2,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Closed,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Open01
+@gosubModifyCamera 0
+@print 現場をよく見て話してくださいまし！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle
+@gosubModifyCamera 0
+@print （お説教されちゃったぁ……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （そうだよね、現場の状況から考えて<br>　無理がある主張は議論を混乱させるだけ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （もう一度、ナノカちゃんの言葉を聞いてみよう） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （ゴクチョーを疑うのは簡単だけど、<br>　他の可能性もあるかもしれない……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge2-3-1
+
+# ==============================================================================
+# MARK: 2-3-2: ⭕ 元から開いてたかも
+# ==============================================================================
+
+# Judge2-3-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+@StopBgm 
+@gosubCutIn Ema
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ……たしかに<br>ナノカちゃんの言う事はもっともだけど……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print でも、最初から鍵が開いてた可能性も<br>あるんじゃないかな。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print ……どういうことかしら。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_45_1
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print もしもの話だけど……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL12,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print 犯行前から鍵が開いていたとしたら、<br>誰でも中に入れるんじゃないかな……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print 鍵が開いていた……？<br>そんなわけないでしょう。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Angry_Closed1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print 懲罰房は運営に反抗した<br>囚人を捕らえる為のもの……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_Common_4
+
+@char Nanoka.Eyes1_Flushed_Open1
+@gosubModifyCamera 0
+@print 鍵がかかっていないなら、<br>この部屋の意味がないじゃない……！ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL12,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print でも、ミリアちゃんは拘束されたんだ。<br>懲罰房の扉が開いてたとしても、<br>逃げることはできないはずだよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print つーかさ。<br>あいつら拷問ショーしようとしてたんだろ？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print だったら鍵が開いてたって、<br>なーんもおかしくないんじゃねーの？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Sweat1_1
+@gosubModifyCamera 0
+@print ……そんなわけない。<br>佐伯ミリアを隔離する為に、<br>奴らは誰も入れないよう鍵をかけていたはず……！ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Mouth1_Angry_Closed2
+@gosubModifyCamera 0
+@print 【鍵はかかっていた】……！<br>懲罰房の鍵を持っていない私たちに<br>犯行は不可能よ……！ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （懲罰房の鍵……？<br>　それって……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL3
+@gosubModifyCamera 0
+@print ……それなら、説明できるかもしれませんよ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Eyes1_Confused_Open1,Mouth1_Normal_Open2,ArmL5
+@gosubModifyCamera 0
+@print えっ……？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# 小さな鍵アイテム表示
+@spawn Clue
+
+@char Sherry.Default,ArmR17,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Closed01
+@gosubModifyCamera 0
+@print 私たちは、この鍵を<br>とある場所で見つけました。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@despawn Clue
+@Wait 0.5
+
+@char AnAn.Angry1,Angle01/Option_Arms-,ArmR-Option-Off,ArmR5,ArmL1,Angle01/Head/Facial/Eyes>Eyes_Surprised_Open,Angle01/Head/Facial/Mouth>Mouth_Uncomfortable_Open
+@gosubModifyCamera 0
+@print ……その鍵は……！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open03
+@gosubModifyCamera 0
+@print ミリアさんの死体から発見されました。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print つまり、これを使えば扉の鍵を自由に<br>開け締めできるはずです！<br>ナノカさんの推理は間違いですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_Common_6
+
+@char Nanoka.Normal1,ArmR2,ArmL9,Eyes1_Confused_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print そんな……！？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print まあどうやって中から鍵をかけたのかは<br>わかりませんけどね～……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL3,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print でも、鍵をミリアさんが<br>持っていたのは間違いありません。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL3,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print これで懲罰房に入るのは<br>誰でもできたって事ですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Eyes1_Confused_Open1,Mouth1_Angry_Closed2,Sweat1_1
+@gosubModifyCamera 0
+@print ……それは懲罰房の鍵じゃないわ。<br>そんなはずない……！ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_Common_1
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open
+@gosubModifyCamera 0
+@print ……え？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print "あら？ どうしてそんなことが言い切れるのかしら？" { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print 材質は似ているみたいだし……<br>懲罰房の鍵だとしても<br>不自然ではないと思うけど？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Angry_Closed1,Sweat1_1
+@gosubModifyCamera 0
+@print ……でも、本当のはずよ。<br>その鍵は懲罰房の扉についていた<br>錠前には合わないはず……！ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04
+@gosubModifyCamera 0
+@print でも錠前の方は私が壊してしまいましたし<br>確認は取れませんね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print それにしてもナノカさん、<br>どうしてこれが懲罰房の鍵じゃないって<br>思ったんですか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Eyes1_Pensive_Open1,Mouth1_Cry_Closed1
+@gosubModifyCamera 0
+@print ……それは。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open
+@gosubModifyCamera 0
+@print ナノカちゃん……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char Nanoka.Eyes1_Flushed_Open1,Mouth1_Flushed_Closed1
+@gosubModifyCamera 0
+@print …………。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_Common_1
+
+@char Nanoka.Eyes1_Angry_Closed1,Mouth1_Normal_Open1,ArmR5,ArmL8
+@gosubModifyCamera 0
+@print ……なれない事はするものではないわね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# 気任せの蝶［チェロ有り］
+@bgm Bgm_45_2
+
+@char Nanoka.Normal1,ArmL6,Eyes1_Pensive_Open1,ArmR2,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print 新しい証拠を提出するわ。<br>……みんなで好きに見てちょうだい。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# アイテム表示・懲罰房の鍵
+@spawn Clue
+@char Ema.Surprised1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print これって……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_Common_3
+
+@char Hanna.Surprised1
+@gosubModifyCamera 0
+@print 鍵ですわ！！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@despawn Clue
+
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Uncomfortable_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print ……この鍵は、懲罰房の中で拾ったのよ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# ☆証拠追加：懲罰房の鍵
+# 【懲罰房の鍵】
+# ナノカの持っていた鍵。
+# 懲罰房の扉を開く鍵らしい。
+# 懲罰房の中に落ちていたのを、ナノカが拾った。
+@spawn Clue
+@update 2-4
+@toast "魔女図鑑 更新…"
+@Wait i1.2
+@despawn Clue
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print 懲罰房の中って……どういうこと？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Eyes1_Pensive_Open1,Mouth1_Surprised_Open1,ArmR2,ArmL9
+@gosubModifyCamera 0
+@print ……私の見たことを、正直に証言するわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmL3
+@gosubModifyCamera 0
+@print 信じるかどうかは……あなたたちに任せるけれど。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@goto Act01_Chapter02/Act01_Chapter02_Trial04

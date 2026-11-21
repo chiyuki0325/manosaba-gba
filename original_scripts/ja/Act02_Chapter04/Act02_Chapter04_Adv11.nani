@@ -1,0 +1,190 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-4-11
+
+# ========================================
+# ●シーン2‐4‐11
+# ========================================
+
+@back 22_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent.Custom { time:0.99 }
+@Wait 0.9
+
+@bgm Bgm_24_1
+
+@print "翌日の正午、<br>私はひとりでゲストハウスの方へと<ruby=\"おもむ\">赴</ruby>いていた。" { speed:1 waitInput:true Wait:true }
+
+@print 朝の自由時間のうちに倉庫へ行き、<br>ピッケルや防寒対策のアイテム、<br>非常食をバッグに詰めて万全の準備をしてきた。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print （今度こそ真実を明らかにするんだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 決意を胸に宿し、<br>歩き始めてすぐだった。 { speed:1 waitInput:true Wait:true }
+
+# 駆け足SE
+@sfx Sfx_173
+@Wait 1
+
+@hideChars 
+
+@print ――ヒロくん！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Angry1
+
+@print 背後から声をかけられ振り返れば、<br>レイアとシェリー、ハンナ、ミリアまで<br>こちらに向かって走ってくる。 { speed:1 waitInput:true Wait:true }
+
+@print 全員、私同様バッグを持っている。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 君たち……何か用か？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria
+@char Hanna
+@char Sherry
+
+@print 朝食の時から、ヒロさんの様子がおかしいって<br>みなさんで話し合っていましたの。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 何か大きなものを<br>背負っているような風に見えて……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print ひとりで思い悩まないでください！<br>私たちは仲間なんですから！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@char Leia.Smile1
+
+@print ヒロくんが連日地下を調べていることは、<br>私たち全員の知るところなんだよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 今日も地下施設を調べに行くんだろう？<br>私たちも一緒に――。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# 手をはらう音
+@sfx Sfx_18
+
+@Wait 0.1
+@hideChars 
+
+@print 近寄って差し出されたレイアの手を、<br>私は思わずはねのけてしまった。 { speed:1 waitInput:true Wait:true }
+
+@print 気まずさから、<br>レイアの顔をまともに見れない。 { speed:1 waitInput:true Wait:true }
+
+@print 私に近寄るな。ひとりでやる。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Surprised1
+
+@print ヒロくん、一体どう――。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 君たちは足手まといだ！<br>いざ殺人事件が起きたら私を犯人扱いし、<br>いつだって私の邪魔ばかりして……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆苦しそうに
+
+@print もう私に近寄るな！<br>けがらわしい、魔女……どもめ……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 彼女たちを遠ざけたくて、<br>あえてひどい言葉を選んだ。 { speed:1 waitInput:true Wait:true }
+
+@print そうしてぶつけた言葉は、<br>自分すらもひどく傷つける。 { speed:1 waitInput:true Wait:true }
+
+# 倒れるSE
+@shake Camera
+
+@print "私は言葉の途中で、<ruby=\"かたひざ\">片膝</ruby>をついてしまう。" { speed:1 waitInput:true Wait:true }
+
+@print 荒い息が漏れる。<br>うまく思考できず、心が闇に染まっていく。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1
+
+@print ヒロさん、<br>もしかして魔女化が進んでませんか……？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print "私の頭にぽつりと降ってきた<ruby=\"つぶや\">呟</ruby>きに、<br>びくりと体が強張ってしまう。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Surprised1
+
+@print ひっ、だ、誰かに<br>殺意を抱いていますの……！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 私は魔女ではない！<br>君たちと一緒にするな！！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna
+@char Sherry
+@Wait 0.1
+@char Hanna
+@Wait 0.4
+
+@print "<ruby=\"にら\">睨</ruby>み上げて言い放つと、<br>ハンナはシェリーの後ろに隠れてしまった。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 乱れた呼吸のままなんとか立ち上がり、<br>再びゲストハウスに向かって歩き出す。 { speed:1 waitInput:true Wait:true }
+
+@print （まだ理性は残っている。<br>　私は大丈夫だ。きっと時間は残されている） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia.Smile1
+
+@print ヒロくんは私たちを殺したりしないよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print あれだけ拒否したのに、<br>レイアは私の後ろについてきていた。 { speed:1 waitInput:true Wait:true }
+
+@char Miria.Smile1
+
+@print ひとりで探索するより、<br>みんなで協力した方が効率はいいと思うんだ……<br>どうかな？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Smile1
+@char Hanna.Smile1
+
+@print ミリアも。シェリーも、ハンナも。<br>そして……。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@ResetText 
+
+# 野外を走る音・1人
+@sfx Sfx_173
+
+# ＠備考◆遠くから走ってくる
+
+@print ヒロちゃーん、みんなー！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@StopSfx 
+
+# ＠備考◆走った後の息切れ
+@char Ema.Pensive1,ArmR3
+
+@print ボ、ボクも手伝うよ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマまでもがやってきて、<br>私は深くため息をついた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Smile1,ArmR3
+
+@print 熱も下がって頭もスッキリしたし、<br>もう大丈夫。みんなで地下の調査しよう！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ……勝手にしろ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "正直、誰かが<ruby=\"そば\">傍</ruby>にいることで、<br>我を失ってしまうのではないかという恐怖があった。" { speed:1 waitInput:true Wait:true }
+
+@print きっとそれは先日会話を交わしたアリサも同様。 { speed:1 waitInput:true Wait:true }
+
+@print （誰も傷つけたくない。<br>　誰も殺したくないんだ……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print アリサがこの場に現れなかったのは、<br>無差別な殺意を誰かに向けてしまいそうで<br>接触を避けたかったのだろう。 { speed:1 waitInput:true Wait:true }
+
+@print 彼女らは<br>どうやらその私の気持ちまでは察することが<br>できないらしい。 { speed:1 waitInput:true Wait:true }
+
+@print これ以上拒絶しても無駄だと悟り、<br>私は彼女らの協力を受け入れることにした。 { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter04/Act02_Chapter04_Adv12

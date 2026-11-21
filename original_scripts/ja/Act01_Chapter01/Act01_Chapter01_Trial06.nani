@@ -1,0 +1,821 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act01_Chapter01/Act01_Chapter01_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# ==============================================================================
+# MARK: 6: 💬 ハンナが犯人の理由
+# ==============================================================================
+# ＠ト書き▼議論シーン1-6 ハンナが犯人の理由
+# BGM変更：rAwTell Owk...
+@bgm Bgm_7_1
+@badId 2
+
+# Judge1-6-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Leia.Normal1,Angle01/Facial/Mouth>Mouth_Surprised_Open,Arms
+@gosubModifyCamera 0
+@printDebate 犯人はハンナくんしか<br>考えられないと思うよ。<br>そして、<br>それを指し示す証拠が<br>２つある……。
+
+@spawn Clue
+
+@char Leia.Normal1,ArmR3,ArmL5,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@printDebate １つ目は<br>先程証明された通り、<br>シェリーくんに盗まれ、<br>破壊されたボウガンだ。
+@despawn Clue
+
+@char Sherry.Normal1,ArmR1,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04
+@gosubModifyCamera 0
+@printDebate お借りしただけですし、<br>ちょっと分解した<br>だけですよ～！
+
+@char Leia.Normal1,ArmR3,ArmL5,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@printDebate "……ともかく、<br>犯行があった<link=\"Objection_01_01_06_01\">タイミング</link>では<br>既にボウガンは<link=\"Objection_01_01_06_02\">破壊</link>されていた。<br>つまりボウガンを<br><link=\"Objection_01_01_06_03\">使う事はできなかった</link>……。"
+
+@spawn Clue
+@char Leia.Normal1,ArmR6,ArmL5,Angle01/Facial/Mouth>Mouth_Yell_Open01
+@gosubModifyCamera 0
+@printDebate よって、<br>犯人はノアくんに近付いて<br>【直接矢を突き立てた】と<br>考えるのが妥当だ。
+
+@despawn Clue
+
+@back 270_2
+@char Leia.Angry1
+@gosubModifyCamera 0
+@printDebate そして２つ目の証拠は、<br>あの白一面に塗られた<br>部屋だ。
+
+@char Leia.Normal1
+@gosubModifyCamera 0
+@printDebate " 一切の<link=\"Objection_01_01_06_04\">痕跡を残さず</link>に<br>部屋に侵入して<link=\"Objection_01_01_06_05\">被害者を刺す</link>……<br><link=\"Objection_01_01_06_06\">ハンナくん以外は飛べない</link>のだから、<br>そんなことは他の誰にも<br>不可能なのだよ。"
+
+@hide Stills
+
+@char Hanna.Cry1,ArmR2,ArmL2,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@printDebate 違いますぅ！<br>わたくし<br>何もやってねーですわ～！
+
+@char Leia.Pensive1
+@gosubModifyCamera 0
+@printDebate じゃあやはり、<br>犯人が矢を外から投げたとでも？<br>誰が納得するんだい？<br>そんな話で……。
+
+@char Leia.Angry1
+@gosubModifyCamera 0
+@printDebate 反論があるというなら……<br>まずは私の話が<br>間違っていることを<br>証明してからにしてもらおう！
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Ema.Pensive1 { time:0 }
+@gosubModifyCamera 0
+@Wait 0.2
+
+# ==============================================================================
+# ADVシーン
+# ==============================================================================
+
+@print （他の可能性がないわけじゃないけど、<br>　一番怪しいのはたしかにハンナちゃんなのかも……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@char Meruru.Normal1,ArmR1_1,ArmL8,Eyes1_Pensive_Open1,Mouth1_Normal_Open2
+@gosubSplitStageScreen 1
+
+@print ……レイアさんの言っている事は、<br>本当に正しいんでしょうか。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal1,ArmR1_1,ArmL8,Eyes1_Pensive_Open1,Mouth1_Pensive_Closed1
+
+@print 何か……見落としていることがあるような。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideStageScreen 1
+
+@char Ema.Pensive1,ArmR4,ArmL5,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@print （メルルちゃんの違和感……<br>　いったいなんだろう。<br>　もう一度考えてみよう！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-6-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_01_01_06_01
+
+@Skip false
+@pauseTrial true
+
+@choice 犯行は破壊される前に起きた
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge1-6-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_01_01_06_02
+
+@Skip false
+@pauseTrial true
+
+@choice ボウガンは破壊されていない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge1-6-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_01_01_06_03
+
+@Skip false
+@pauseTrial true
+
+@choice ボウガンを使う事はできた
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge1-6-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論4
+# ------------------------------------------------------------------------------
+
+# Objection_01_01_06_04
+
+@Skip false
+@pauseTrial true
+
+@choice 痕跡は残っていた
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge1-6-7
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論5
+# ------------------------------------------------------------------------------
+
+# Objection_01_01_06_05
+
+@Skip false
+@pauseTrial true
+
+@choice 被害者は刺されていない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge1-6-5
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論6
+# ------------------------------------------------------------------------------
+
+# Objection_01_01_06_06
+
+@Skip false
+@pauseTrial true
+
+@choice ハンナ以外も跳び越えられる
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge1-6-6
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# ミス選択肢
+# ==============================================================================
+# ==============================================================================
+# MARK: 6-2: ❌ 犯行は破壊される前に起きた
+# ==============================================================================
+
+# Judge1-6-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Pensive1,ArmR5,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01
+@gosubModifyCamera 0
+@print ……待って、レイアちゃん！<br>ノアちゃんは本当にボウガンが壊された後に<br>死んだのかな……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Surprised1,ArmR5,ArmL2
+@gosubModifyCamera 0
+@print "な、何を言い出すんだい？ エマくん。<br>それをさっき証言したのはキミじゃないか。" { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print え？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal2,ArmR5_2,ArmL2,Eyes2_Normal_Open3,Mouth2_Normal_Open1
+@gosubModifyCamera 0
+@print ええと……間違いなく、<br>ボウガンのパーツを見つけた後に<br>私たちはノアさんと会っています……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR5,ArmL5,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print つまり私の話は何も間違っていない……<br>ということだね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR5,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Flushed_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ……そう、なるかも……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR5,ArmL5
+@gosubModifyCamera 0
+@print ハハ、私の推理を補強してくれたんだね。<br>ありがとう、エマくん。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+@gosubModifyCamera 0
+@print エマさん、もしかして頭をぶつけたりしました？<br>記憶喪失ってヤツですか！？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Pensive1,ArmR6,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （記憶を疑われちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@char Meruru.Normal2,ArmR5_2,ArmL2,Eyes2_Pensive_Open1,Mouth2_Normal_Open1
+@gosubSplitStageScreen 1
+@print 落ち着いて考え直しましょう、エマさん……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print うん……！<br>みんなが見落としてることが何かあるはず……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideStageScreen 1
+
+@goto .Judge1-6-1
+
+# ==============================================================================
+# MARK: 6-3: ❌ ボウガンは破壊されていない
+# ==============================================================================
+
+# Judge1-6-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Pensive1,ArmR5,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01
+@gosubModifyCamera 0
+@print ……待って、レイアちゃん！<br>ボウガンが破壊されたって……<br>その証拠はあるの？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Surprised1,ArmR5,ArmL2
+@gosubModifyCamera 0
+@print ええと……キミが見せてくれたのは、<br>ボウガンのパーツじゃなかったのかい……？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+@gosubModifyCamera 0
+@print 間違いなくボウガンのパーツですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL3,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print えっと……<br>もしかしたらもう１台ある可能性も……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Angry1,ArmR5,ArmL5
+@gosubModifyCamera 0
+@print ならそれを見せてくれないかい？<br>実物と言わないまでも、<br>存在すると思われる根拠をね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR3,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open02
+@gosubModifyCamera 0
+@print 根拠がないなら……<br>それはただの妄想の類だと思うけどね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Pensive1,ArmR6,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （ううっ！<br>　妄想癖扱いされちゃった……。<br>　根拠のない発言は控えよう……） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+@ResetText 
+@char Meruru.Normal2,ArmR5_2,ArmL2,Eyes2_Pensive_Open1,Mouth2_Normal_Open1
+@gosubSplitStageScreen 1
+@print 落ち着いて考え直しましょう、エマさん……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@print うん……！<br>みんなが見落としてることが何かあるはず……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideStageScreen 1
+
+@goto .Judge1-6-1
+
+# ==============================================================================
+# MARK: 6-4: ❌ ボウガンを使う事はできた
+# ==============================================================================
+
+# Judge1-6-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Pensive1,ArmR5,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01
+@gosubModifyCamera 0
+@print ……待って、レイアちゃん！<br>このボウガン……<br>まだ使えるかもしれないよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Surprised1,ArmR5,ArmL2
+@gosubModifyCamera 0
+@print それは……どうやって？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL3,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print こう……なくなった部分を代用したりすれば、<br>どうにか……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR2,ArmL3
+@gosubModifyCamera 0
+@print 無理ですよぉ。<br>全然元に戻りませんでしたし。<br>素人に組み立てることは不可能だと思います。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal1,ArmR8_1,ArmL8,Eyes1_Pensive_Open1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print それに一部のパーツは、<br>今も私の部屋にありますし……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR5,ArmL5
+@gosubModifyCamera 0
+@print どうやらボウガンも、そしてキミも……<br>私たちには上手く扱えなさそうだね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Cry1,ArmR6,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （使い物にならないって言われちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+@ResetText 
+@char Meruru.Normal2,ArmR5_2,ArmL2,Eyes2_Pensive_Open1,Mouth2_Normal_Open1
+@gosubSplitStageScreen 1
+@print 落ち着いて考え直しましょう、エマさん……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@print うん……！<br>みんなが見落としてることが何かあるはず……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideStageScreen 1
+
+@goto .Judge1-6-1
+
+# ==============================================================================
+# MARK: 6-5: ❌ 被害者は刺されていない
+# ==============================================================================
+
+# Judge1-6-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+@hide Stills
+
+@char Ema.Pensive1,ArmR5,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01
+@gosubModifyCamera 0
+@print ……待って、レイアちゃん！<br>そもそも……<br>本当にノアちゃんは刺されていたのかな？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Normal1,ArmR3,ArmL5,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print ああ、死体には刺し傷があったね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal1,ArmR5_1,ArmL4,Eyes1_Normal_Open2,Mouth1_Fearful_Open1
+@gosubModifyCamera 0
+@print はい。それは私も確認してます。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1
+@gosubModifyCamera 0
+@print エマさんは確認してないんですか？<br>ならちょっとの間、<br>静かにして待っててくださいね～！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Pensive1,ArmR6,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （子どもをたしなめるみたいに、<br>　黙ってろって言われちゃった……） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+@ResetText 
+@char Meruru.Normal2,ArmR5_2,ArmL2,Eyes2_Pensive_Open1,Mouth2_Normal_Open1
+@gosubSplitStageScreen 1
+@print 落ち着いて考え直しましょう、エマさん……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@print うん……！<br>みんなが見落としてることが何かあるはず……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideStageScreen 1
+
+@goto .Judge1-6-1
+
+# ==============================================================================
+# MARK: 6-6: ❌ ハンナ以外も飛び越えられる
+# ==============================================================================
+
+# Judge1-6-6
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+@hide Stills
+
+@char Ema.Pensive1,ArmR5,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ……待って、レイアちゃん！<br>ハンナちゃん以外でも<br>飛び越えられない距離じゃないよね？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Normal1,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print なるほど、足跡をつけずジャンプしたと言うわけだね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR3,ArmL5
+@gosubModifyCamera 0
+@print しかしそれでは、<br>【着地の足跡】がない理由が説明できない。<br>普通のジャンプでは不可能な犯行なんだよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL3,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ……ええと、なら、<br>ノアちゃんを踏むような形で……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open01
+@gosubModifyCamera 0
+@print ……ノアくんに飛びかかって刺し殺しながら着地し、<br>同じ距離を助走もなしに飛び越えて戻った、と……？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print 少なくとも、<br>死体にタックルするような形で殺したなら、<br>返り血でべっちょりになってそうですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print えっと……さすがに、無理があるかも……<br>エマちゃん……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Pensive1,ArmR6,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （ミリアちゃんにまで呆れられちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+@ResetText 
+@char Meruru.Normal2,ArmR5_2,ArmL2,Eyes2_Pensive_Open1,Mouth2_Normal_Open1
+@gosubSplitStageScreen 1
+@print 落ち着いて考え直しましょう、エマさん……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@print うん……！<br>みんなが見落としてることが何かあるはず……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideStageScreen 1
+
+@goto .Judge1-6-1
+
+# ==============================================================================
+# MARK: 6-7: ⭕ 痕跡は残っていた
+# ==============================================================================
+
+# Judge1-6-7
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+@StopBgm 
+@gosubCutIn Ema
+@Gosub System/System_Subroutine.EndDebate-Last
+@hide Stills
+
+# ==============================================================================
+# 反論成功カットイン
+# ==============================================================================
+# [spawn カットインエフェクトのID]
+
+@char Ema.Determined2,ArmR3,ArmL1,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print ……いや、レイアちゃん。<br>１つ見落としている証拠があるよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR7,ArmL5
+@gosubModifyCamera 0
+@print ……へえ。なんのことだい。<br>私に教えてくれないかな。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR8,ArmL1,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print ……床に残されていた傷跡だよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# ==============================================================================
+# アイテム表示 床の跡
+# ==============================================================================
+@spawn Clue
+
+@char Leia.Smile1,ArmR3,ArmL5
+@gosubModifyCamera 0
+@print それは、さっきマーゴくんが言っていた床の傷だね……。<br>それがどうかしたのかい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@despawn Clue
+# 気任せの蝶［チェロ有り］
+@bgm Bgm_45_1
+
+@char Ema.Determined2,ArmR8,ArmL1,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print レイアちゃんはさっき<br>【犯人は一切の痕跡を残してない】って言ってたよね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR3,ArmL12,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print けど見ての通り……<br>実際には、現場に痕跡が残ってるんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed01,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print そんな些細なもの――。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Hanna.Angry1,ArmR3
+@gosubModifyCamera 0
+@print ――さ……些細だとしても、<br>【一切痕跡がなかった】は嘘ですわ！<br>間違った話で人を犯人扱いしないでくださいまし！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1,ArmR7,ArmL3,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print ……それに、その証拠は<br>私たちが【ノアちゃんは他殺である】と<br>考えるきっかけになった証拠じゃないかしら。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR7,ArmL3,Angle01/Facial/Eyes>Eyes_Smile_Closed,Angle01/Facial/Mouth>Mouth_Smile_Open
+@print 決して【些細】とは言いきれない気がするけどね？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print ……たしかに、<br>その傷のことは私も見落としていたようだね。<br>申し訳ないよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR3,ArmL5,Angle01/Facial/Mouth>Mouth_Smile_Closed
+@gosubModifyCamera 0
+@print でも、だとしても何が変わるんだい？<br>ハンナくん以外に大きな痕跡を残さずに<br>侵入できた人物がいたとでも？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print そ、それは……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （他にできた人……本当にいるのかな？<br>　もしいないなら、やっぱりハンナちゃんが……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Meruru.Normal1,ArmR1_1,ArmL8,Eyes1_Normal_Open2,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print ……そ、それなら……<br>別の角度から考えてみたらどうでしょうか……？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3,ArmL1,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Closed
+@gosubModifyCamera 0
+@print （メルルちゃん……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal1,ArmR1_1,ArmL8,Eyes1_Normal_Open2,Mouth1_Flushed_Closed1
+@gosubModifyCamera 0
+@print たとえば……ハンナさんが<br>【侵入できるタイミングがあったか】は<br>まだ検討されてないと思うんです……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR3,ArmL5
+@gosubModifyCamera 0
+@print ……というと？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Eyes1_Normal_Open2,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print ……誰が犯行可能なのかは<br>被害者が死んだタイミングにもよると思うわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR3,ArmL2
+@char Nanoka.Eyes1_Normal_Open2,Mouth1_Surprised_Open1,Eyes1_Neutral_Open1
+
+@print 被害者が死んだタイミングで<br>そこにいる事ができないなら、<br>その人物は犯人ではない……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+# 目キラキラ
+# ＠備考◆発音として「ア・リ・バ・イッ」と強調／嬉しそうに
+@char Sherry.Normal1,Angle01/Facial/Eyes>Eyes_Sparkle_Open03,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 【現場不在証明】……<br>つまり、【アリバイ】……ですね～！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE・ネガティブ音
+@sfx Sfx_Common_7
+
+@char Coco.Pensive1,ArmR8,ArmL7,Angle01/Facial/Mouth>Mouth_Gross_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print いきなり大声あげてなんなん……！？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1
+@gosubModifyCamera 0
+@print だってだって、ミステリーの基本中の基本ですよ！？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR6,ArmL4
+@gosubModifyCamera 0
+@print そういえば私たちまだお互いのアリバイについては<br>お話していませんでしたよね～！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print でもそもそも【死亡推定時刻】がいつなのかも<br>わからないんじゃないかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char AnAn.Angry1,ArmR-Option-Off,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_03
+@gosubModifyCamera 0
+@print 『ならば、アリバイ証明のしようもない』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print う～ん、詳しい検死でもできたら死亡推定時刻が<br>わかるんですけどね～！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1,Option-ArmL-Off
+@gosubModifyCamera 0
+@print ……お前はできねーのかよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR3,ArmL4
+@gosubModifyCamera 0
+@print 検死は探偵ではなく鑑識のお仕事なので～！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal1
+@gosubModifyCamera 0
+@print ……私も少しは医療の知識はありますけど、<br>そんなに詳しくはなくて……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR1,ArmL10,Eyes1_Neutral_Open1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print ……この中で、城ケ崎ノアを最後に視認した人は？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR3,ArmL3
+@gosubModifyCamera 0
+@print ……ああ、目撃証言は重要ですね！<br>昨日の晩、最後にノアさんが生きているのを<br>見た人は誰なんでしょう？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char Sherry.Smile1,ArmR3,ArmL4
+@print ……………。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+@char Sherry.Normal1,ArmR3,ArmL11
+@print ……あれ？<br>もしかして、誰もいないんですか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print ……えっと……じゃあボクらが見たのが<br>最後になるのかな？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@char Meruru.Normal1,ArmR8_1,ArmL8,Eyes1_Normal_Open2,Mouth1_Angry_Open2
+@gosubSplitStageScreen 1
+
+@print そう……かもしれませんね……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR8,ArmL1
+@print ボクたち、昨日の夕飯前にノアちゃんと話したんだ。<br>そのあと夕食のために食堂に行ったら<br>他のみんながいて……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal1,ArmR8_1,ArmL8,Eyes1_Normal_Open2,Mouth1_Angry_Open2
+@print はい。<br>……ですので、その後でないと<br>ノアさんを殺すことは誰にもできないはずです。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideStageScreen 1
+
+@char Coco.Smile1,ArmR3,ArmL2
+@gosubModifyCamera 0
+@print "夕飯の後ぉ～……？ んん～？<br>……はっはぁ～ん……！" { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Miria.Surprised1
+@gosubModifyCamera 0
+@print "ど、どうしたんだい？ ココちゃん……。" { author:Miria speed:1 waitInput:true Wait:true }
+
+# BGM変更：Sar-gedy-動-
+@bgm Bgm_4_1
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char Coco.Smile1,ArmR6,ArmL1
+@gosubModifyCamera 0
+@print "あてぃしわかっちゃった～！ 犯人が！<br>……いや、正確には２択なんだけど。" { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Miria.Surprised1,ArmR5,ArmL5,Angle01/Facial/Mouth>Mouth_Confused_Open
+@gosubModifyCamera 0
+@print "ええ！？ 本当かい！？" { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Coco.Smile1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print モチ。<br>まずはこの牢屋敷の見取り図を見てもらえば<br>わかると思うんだけどさ～。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@ResetText 
+# [map] Map_A01C01_01
+@spawn Map_A01C01_01
+
+@spawn Map_A01C01_01
+
+@char Coco.Smile1,ArmR2,ArmL2
+@print あてぃしたち、配信の後にノアの部屋の前を通って<br>自分たちの部屋に帰ってるっしょ～？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@spawn Map_A01C01_01
+
+@char Miria.Normal1
+@print ……ああ、そうだね。<br>たしかにその時、ノアちゃんの部屋の前を<br>通ってるかも……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+@spawn Map_A01C01_01
+
+@char Leia.Smile1,ArmR5,ArmL3
+@print ……なるほどね。<br>私達は３人一緒に、配信が終わった後、<br>彼女の部屋の前を通っている……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+@spawn Map_A01C01_01
+
+@char Leia.Smile1,ArmR5,ArmL2
+@print しかし、死体を見つけてはいないんだよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@despawn Map_A01C01_01
+
+@char Coco.Smile1,ArmR2,ArmL2,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print さすがにあんな状態の部屋の前を通ったら、<br>気付かないはずないっしょ！<br>あてぃしが見逃すはずないもん！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char Coco.Smile1,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Closed,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print だから必然的にぃ、犯人は――！ { author:Coco speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char Coco.Smile1,ArmR2,ArmL4
+@gosubModifyCamera 0
+@print ――桜羽エマ！<br>夏目アンアン！<br>あんたらのどっちかだろ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print ボ、ボク……！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char AnAn.Angry1,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Cry_Closed,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_01
+@gosubModifyCamera 0
+@print 『どういうことだ』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1
+@gosubModifyCamera 0
+@print ……おい、何言ってるかわかんねーよ。<br>ウチらにもわかるように話せ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Coco.Smile1,ArmR3,ArmL11,Angle01/Facial/Eyes>Eyes_Normal_Closed
+@gosubModifyCamera 0
+@print はいは～い、任せときな！<br>あてぃしの名推理、<br>聞かせてやんよ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+
+
+@goto Act01_Chapter01/Act01_Chapter01_Trial07

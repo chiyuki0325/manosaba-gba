@@ -1,0 +1,42 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-5-8
+
+# ========================================
+# ●シーン1‐5-8
+# ========================================
+
+@back 19_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_24_1
+
+@print どれだけ走っただろうか。 { speed:1 waitInput:true Wait:true }
+
+@print ココの姿も、マーゴの姿も、<br>看守やゴクチョー、メルルの気配もない。 { speed:1 waitInput:true Wait:true }
+
+@print エマはひとりぼっちにされて<br>――牢屋敷の前へと戻ってきていた。 { speed:1 waitInput:true Wait:true }
+
+@print そこで力なく膝を折り、うずくまった。 { speed:1 waitInput:true Wait:true }
+
+@print （もう誰もいない。逃げることもできない） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （ボクはなにひとつ、できなかった） { author:Ema speed:1 waitInput:true Wait:true }
+
+@blur MainBackground
+
+# ＠備考◆絶望で泣く
+
+@print あぁっ――あぁぁあああぁーっ！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print うあああああぁ――ああぁぁあぁ！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print あ、ぁっ、あぁぁぅ――あぁああああ！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマはもはや耐えきれず、<br>身を震わせてただただ<ruby=\"どうこく\">慟哭</ruby>の声をあげた。" { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter05/Act01_Chapter05_Adv09

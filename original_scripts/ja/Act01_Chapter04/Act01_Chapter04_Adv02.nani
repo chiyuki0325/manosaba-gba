@@ -1,0 +1,356 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-4-2
+
+# ========================================
+# ●シーン1‐4-2
+# ========================================
+
+@back 17_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_17_1
+
+@print エマは湖方面へと走った。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+
+@print やっぱり雪が降ってる……<br>ここだけどうして……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "湖畔に立つエマの目の前で、<br>しんしんと雪が降り、<ruby=\"はかな\">儚</ruby>く消えていく。" { speed:1 waitInput:true Wait:true }
+
+@print おそらく長時間雪が降っているわけでもないのに、<br>湖は凍っていた。 { speed:1 waitInput:true Wait:true }
+
+@print 他の場所では雪が降っている気配もなく、<br>この湖周辺だけ季節が切り取られたような光景だ。 { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1,Option-ArmL-Off,ArmL2
+
+@print 花畑の虹と一緒だろ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print きっと誰かの魔法の痕跡が残って、<br>何かがキッカケでおかしな現象を起こしてる。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Surprised1
+
+@print ――アリサちゃん！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print いつの間にかエマの隣には、アリサが立っていた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+@char Alisa.Normal1,Option-ArmL-Off,ArmL2
+
+@print 桜羽も見に来たんだな。<br>ウチも遠くから見つけてさ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print ウチ、よくここに来るんだ。<br>落ち着くから。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print アリサちゃん、よくここにいるもんね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Pensive1,Option-ArmL-Off,ArmL2
+
+@print ああ、今は凍っちまってるけど……<br>なるべく水のそばにいたくて。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print それは、アリサちゃんの魔法と関係してる……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print アリサが地面に腰を降ろしたので、<br>エマも隣に座り、おそるおそる問いかけた。 { speed:1 waitInput:true Wait:true }
+
+@print そうだな。ウチは自分のことが怖い。<br>自分のことが許せない。<br>大嫌いなんだよ、自分が。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@print アリサが遠くを見つめながら、<br>ぽつりぽつりと自分の過去を語りだした。 { speed:1 waitInput:true Wait:true }
+
+@print それはきっと、彼女の禁忌―― { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 演出：処刑以外のトラウマシーンですが、UIなしでお願いします。
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@bgm Bgm_1_1
+
+@printer Normal.Simple
+
+@print 恵まれた家庭に育って、<br>穏やかな両親に愛を注がれて、<br>甘えきっていたのだと思う。 { speed:1 waitInput:true Wait:true }
+
+@print 良い子ちゃんとしてすくすく育って、<br>ほんの少しの抑圧から<br>些細な悪戯心が芽生えた。 { speed:1 waitInput:true Wait:true }
+
+@print 叱られたことがない。<br>だから叱られてみたい。 { speed:1 waitInput:true Wait:true }
+
+@print たったそれだけの理由。 { speed:1 waitInput:true Wait:true }
+
+@print 物の配置を変えた。<br>言い返してみた。<br>大切にしていたものを壊した。 { speed:1 waitInput:true Wait:true }
+
+@print けれど両親は優しく、<br>ウチに決して辛く当たらなかった。 { speed:1 waitInput:true Wait:true }
+
+@print どうして？<br>どうして叱ってくれないの？ { speed:1 waitInput:true Wait:true }
+
+@print もしかして、愛してないの？<br>もしかして、興味がないの？ { speed:1 waitInput:true Wait:true }
+
+@print もやもやした感情はねじれていき、<br>行為はエスカレートしていった。 { speed:1 waitInput:true Wait:true }
+
+@print 家出した。<br>万引きした。<br>薬物に溺れた。 { speed:1 waitInput:true Wait:true }
+
+@print それでも両親は怒らなかった。<br>肯定し、宥めて、受け入れてくれた。 { speed:1 waitInput:true Wait:true }
+
+@print ピアスをたくさんあけた。<br>服も髪も不良めいたものにした。<br>暴力が日常になった。 { speed:1 waitInput:true Wait:true }
+
+@print いつしか叱られることに<br>憧れすら抱いた。 { speed:1 waitInput:true Wait:true }
+
+@print どこまでやったらウチを叱ってくれる？<br>ウチに罰を与えてくれる？ { speed:1 waitInput:true Wait:true }
+
+# 左上にフォーカス
+@back 260_1 { time:0 }
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@print いつの間にか火を出せるようになっていたから、<br>その力を使って、家に火をつけた。 { speed:1 waitInput:true Wait:true }
+
+@print 生まれ育った家が、<br>目の前でぼろぼろと崩れ落ちていった。 { speed:1 waitInput:true Wait:true }
+
+@print ――悲鳴が聞こえる。<br>両親が招いていた人が、火に巻かれて怯える声だ。 { speed:1 waitInput:true Wait:true }
+
+@print 悪いことをした。<br>悪いことをできたんだ。 { speed:1 waitInput:true Wait:true }
+
+# 中央下にフォーカス
+@back 260_1 { time:0.8 }
+@Wait 0.5
+@animate Stills-Middle
+
+@print 近くにあった薬箱から、たくさんの薬を飲んで、<br>ぼんやりした気持ちよさの中で、<br>罪の意識に酔っていた。 { speed:1 waitInput:true Wait:true }
+
+@print 取り返しのつかないことをした。 { speed:1 waitInput:true Wait:true }
+
+@print これで叱られる。<br>良い子のウチは、もうおしまい。 { speed:1 waitInput:true Wait:true }
+
+# 全体にフォーカス
+@back 260_1 { Scale:{g_backgroundDefaultScale} time:0.5 }
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@print ウチは助け出されて、両親に抱きしめられた。<br>両親は深い悲しみの表情を浮かべていた。 { speed:1 waitInput:true Wait:true }
+
+@print さあ叱ってほしいと、その顔を見上げた。 { speed:1 waitInput:true Wait:true }
+
+@back SolidColor { time:0 }
+@hide Stills,Stills-Middle,Stills-Front
+
+
+@print ――事故だったんだよ。 { speed:1 waitInput:true Wait:true }
+
+@print それが最初の言葉だった。<br>心が絶望に落ちるには十分だった。 { speed:1 waitInput:true Wait:true }
+
+@print ――アリサちゃんがそんなことをするはずない。<br>――たまたま運が悪かっただけ。<br>――アリサちゃんは悪くない。 { speed:1 waitInput:true Wait:true }
+
+@print ぜんぶ呪いの言葉に聞こえた。<br>誰もウチの罪を見つけてくれない。 { speed:1 waitInput:true Wait:true }
+
+@print 赦されて、赦されて、赦されて――<br>自分を許せなくなった。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# UIなしここまで
+# ========================================
+
+@back Transparent { time:0.9 }
+@Wait 0.9
+@StopBgm 
+
+@HidePrinter 
+
+@printer Normal.Default
+
+@print アリサが、深く深く息を吐き出す。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print アリサちゃん……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_24_1
+
+@hideChars 
+@char Alisa.Pensive1,Option-ArmL-Off
+
+@print ここに捕まる前から、ウチは家出してた。<br>ずっと家に帰ってない。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print もう帰れねえよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Pensive1,Option-ArmL-Off
+
+@print 親はもうウチのことなんか忘れて、<br>幸せになってくれた方がいい。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print ウチはこのままここで魔女になって、<br>果てるだろうから。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print （そんな、ボクはやっぱり、ひとりに……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 湖周辺だけ降る雪の下に長くいるので、<br>体が冷え切ってしまっている。 { speed:1 waitInput:true Wait:true }
+
+@print 自身を抱えてエマは震えた。<br>すると、次の瞬間じんわりと熱を感じた。 { speed:1 waitInput:true Wait:true }
+
+# 炎をぼっと点す音
+@sfx Sfx_30
+
+@char Ema.Normal1,ArmR3
+@char Alisa.Normal1,ArmL11,Angle01/Option_ArmL+
+
+@print ああ、ありがとうアリサちゃん……あったかい。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print アリサが指先から炎を生み出してくれたのだと気付き、<br>エマの顔は綻ぶ。 { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Pensive1,ArmL11,Angle01/Option_ArmL+
+
+@print ウチにはこれくらいしかできねえ。<br>……ああ、ただ、ずいぶん高温まで出せるようになったな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print "――何もかも<ruby=\"と\">熔</ruby>かせるくらい。" { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print それって……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 魔女化が進んで、魔法が強くなってるんだろうな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print "ぽつりと落とした<ruby=\"つぶや\">呟</ruby>きは、<br>どこまでも暗い。" { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Surprised1,ArmL11,Angle01/Option_ArmL+
+
+@print ぐっ、抑えられなく――。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# ========================================
+# アリサの立ち絵 OUT
+# ========================================
+
+@print 不意にアリサがうずくまり、<br>胸をおさえて苦しみだす。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3,ArmL7
+
+@print アリサちゃん！？<br>大丈夫アリサちゃん！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマが近寄ってその肩に触れる寸前、<br>右腕がぬっと伸びてきて―― { speed:1 waitInput:true Wait:true }
+
+@print （え――） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@HidePrinter 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@mask MainBackground-Middle,Alisa-Front { Enable:false }
+@back 17_2 { time:0 }
+@char Ema.Pensive1,ArmR6,ArmL6 { time:0 }
+@blur Ema-Middle
+@char Alisa.Angry1,Option-ArmL-Off,ArmL7 { time:0 }
+@blur Alisa-Front
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@print "首を<ruby=\"つか\">掴</ruby>まれ、猛烈な勢いで<br>エマの背中は大木に押し付けられていた。" { speed:1 waitInput:true Wait:true }
+
+# 首を絞める音
+@sfx Sfx_153
+
+# ＠備考◆首絞め状態
+
+@print ぐっ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@QuickSave 13
+
+@print "お前が近付くと不安になんだよ。なんか怖いんだよお前。<br>お前、魔女なんだろ？ なぁ、なぁ！" { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print アリ、サちゃん、ちが……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 魔女なら殺さないといけないだろ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print 容赦のない力が込められ、<br>足が宙に浮く。息ができない。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Fearful1,ArmR6,ArmL6
+
+@print （このままじゃ、ボク、殺され……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 強い力で首を絞められ、エマは―― { speed:1 waitInput:true Wait:true }
+
+@choice 抵抗した
+	@goto .Choice1-4-1
+
+@choice 身を任せた
+	@goto Act01_Chapter04/Act01_Chapter04_Bad01
+
+@StopForChoice 
+
+# Choice1-4-1
+
+@correctChoice 13
+
+# ＠備考◆首絞め状態
+
+@print やめ……て……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print アリサの手を離そうと、なんとかもがく。 { speed:1 waitInput:true Wait:true }
+
+@print ……っ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@HidePrinter 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@hide MainBackground-Middle
+@blur Alisa-Front
+@blur Ema-Middle
+@back 17_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@print アリサはギリギリのところで踏みとどまったらしく、<br>エマを解放した。 { speed:1 waitInput:true Wait:true }
+
+@print "エマはその場に膝を折る。<br>同時にアリサもうずくまって<ruby=\"うめ\">呻</ruby>き声をあげる。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL7
+
+@print げほっ、げほげほっ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa.Angry1,Option-ArmL-Off,ArmR7,ArmL6
+
+@print ――さっさと行け！<br>理性がまだ残っているうちに！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3,ArmL7
+
+@print そんな、アリサちゃ――。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa.Angry1,Option-ArmL-Off,ArmR7,ArmL6
+
+@print ウチに殺させるな！<br>行けぇ……っ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3,ArmL7
+
+@print ……っ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマは泣きそうになりながら、<br>アリサに背を向け、ひとり駆けだした。 { speed:1 waitInput:true Wait:true }
+
+# 野外を走る音・1人
+@sfx Sfx_173
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter04/Act01_Chapter04_Adv03

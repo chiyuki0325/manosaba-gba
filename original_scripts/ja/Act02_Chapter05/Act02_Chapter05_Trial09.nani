@@ -1,0 +1,1163 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter05/Act02_Chapter05_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# クリーチャー化初期化
+@hide Hiro
+@char CreatureHiro.2 { Position:{hiroPositionX},{characterPositionY},{hiroPositionZ} Rotation:,{hiroRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Meruru
+@char CreatureMeruru.3-5 { Position:{meruruPositionX},{characterPositionY},{meruruPositionZ} Rotation:,{meruruRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Leia
+@char CreatureLeia.0-8 { Position:{leiaPositionX},{characterPositionY},{leiaPositionZ} Rotation:,{leiaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Noah
+@char CreatureNoah.0-3 { Position:{noahPositionX},{characterPositionY},{noahPositionZ} Rotation:,{noahRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+# ==============================================================================
+# MARK: 10-9: 💬 【宝生マーゴ】
+# ==============================================================================
+# ＠ト書き▼議論10-9【宝生マーゴ】
+# 議論開始カットイン
+# BGM変更：HirO（Voなし）
+@bgm Bgm_37_1_Loop
+
+# ボス演出
+@ResetText 
+@char CreatureHiro.2 { time:0 }
+@stageCamera 1 { Rotation:0,{ (8 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+
+@stageCamera 1 { Rotation:0,{ (8.1 / courtStandCount * 360) },0 time:1 }
+@showStageScreen 1
+@Wait 1.5
+
+@ResetText 
+@char Margo.Default,ArmR6,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open { time:0 }
+@stageCamera 0 { Rotation:0,{ (9 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+
+@stageCamera 0 { Rotation:0,{ (8.9 / courtStandCount * 360) },0 time:1 }
+@hideStageScreen 1
+@Wait 1.5
+
+# Judge10-9-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char CreatureHiro.18
+@gosubModifyCamera 0
+@printDebate 私は今朝目覚める前まで、<br>この牢屋敷で<br>君たちと生活をしていた……。
+
+@char CreatureHiro.18
+@gosubModifyCamera 0
+@printDebate 今と同じように<br>連れて来られた虜囚としてね。
+
+@char Margo.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Normal_Closed
+@gosubModifyCamera 0
+@printDebate それで私が<br>殺人事件を起こした……<br>あなたは<br>そう主張していたわね。
+
+@char CreatureHiro.19
+@gosubModifyCamera 0
+@printDebate ……そうだ。
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@printDebate 私が体験した中では、<br>４つの事件が起こり……<br>そして５人が死んだ。
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@printDebate その中で……<br>殺人を起こしてしまった<br>１人が君、マーゴだ。
+
+@char Margo.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@printDebate ……被害者については、<br>配慮として<br>隠しているのかしら？
+
+@char Margo.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Closed,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@printDebate 今の自分とは関係ない<br>別の世界の<br>自分であったとしても、<br>私に殺されたなんて知ったら<br>身構えちゃうものね♡
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@printDebate ……察してくれて助かるよ。
+
+@char CreatureHiro.10
+@gosubModifyCamera 0
+@printDebate 私たち魔女候補の少女は、<br>次第にその思考が凶暴化して<br>排他的になっていく……。
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@printDebate け、喧嘩が<br>絶えなかったりとか……<br>したの……？
+
+@char CreatureHiro.8
+@gosubModifyCamera 0
+@printDebate 表立って荒れるならいい方だ。
+
+@char CreatureHiro.8
+@gosubModifyCamera 0
+@printDebate だいたいは人が死んで<br>手遅れになってから、<br>それに気付く。
+
+@char CreatureHiro.10
+@gosubModifyCamera 0
+@printDebate 本人が自覚する暇すら<br>与えられず……<br>私たちは<br>他者を殺害するための刃を<br>磨いてしまう。
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@printDebate ……だが、<br>それではいけないんだ。
+
+@char CreatureHiro.7
+@gosubModifyCamera 0
+@printDebate 我々は全員が生きたまま<br>魔女にならなくてはならない。<br>そうでなくては、<br>生き残れない。
+
+@char CreatureHiro.7
+@gosubModifyCamera 0
+@printDebate だから私に協力して欲しい。
+
+@char Margo.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Neutral_Closed
+@gosubModifyCamera 0
+@printDebate ……手放しに<br>信用できる話じゃないわね。
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@printDebate もしあなたの言うことが<br>正しいのなら、<br>あなた自身は<br>どうだったのかしら？
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Open,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@printDebate "誰もが殺人衝動を<br>抱くのであれば、<br>あなたも人を<br><link=\"Objection_02_05_09_01\">殺したくなった</link>と<br>いうことでしょう？"
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@printDebate ……私は、<br>殺すには至らなかった。
+
+@char CreatureHiro.19
+@gosubModifyCamera 0
+@printDebate そして最後は、<br>自らの手で命を断ったんだ。
+
+@char CreatureHiro.18
+@gosubModifyCamera 0
+@printDebate ……生きているみんなと<br>再び会うために……！
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@printDebate 自殺……ね。
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@printDebate あなたの話では私たちは<br>殺し合っていたのよね？
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@printDebate "なら、恨みこそすれ<br><link=\"Objection_02_05_09_02\">信頼</link>関係なんて<br>微塵もなかったはず……。"
+
+@char Margo.Default,ArmR6,ArmL5,Angle01/Facial/Eyes>Eyes_Pensive_Middle,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@printDebate なのに<br>【みんな仲良く<br>ここを出ましょう】<br>……なんて<br>子供じみた主張をするの？
+
+@char Margo.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Angry_Closed
+@gosubModifyCamera 0
+@printDebate ……信用できないわ。<br>あなたの言葉は<br>理屈が通っていないもの。
+
+
+# ==============================================================================
+# 10-9議論後独白
+# ==============================================================================
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@Wait 0.2
+
+@char CreatureHiro.5
+@print （彼女の言葉はもっともだ） { author:Hiro speed:1 waitInput:true Wait:true }
+@char CreatureHiro.5
+@print （私が逆の立場でもそう思ったことだろう） { author:Hiro speed:1 waitInput:true Wait:true }
+@char CreatureHiro.17
+@print （だが……今私が提示すべきカードは真実だ） { author:Hiro speed:1 waitInput:true Wait:true }
+@char CreatureHiro.17
+@print （マーゴ相手でも……<br>　いや、マーゴ相手だからこそ） { author:Hiro speed:1 waitInput:true Wait:true }
+@char CreatureHiro.3
+@print （……時には正面から気持ちをぶつけることも必要か） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-9-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_09_01
+
+@Skip false
+@pauseTrial true
+
+@choice 殺したくなったことなどない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-9-3
+
+@choice 殺した
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-9-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_09_02
+
+@Skip false
+@pauseTrial true
+
+@choice 私はみんなを信じている
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-9-2
+
+@choice ずっと信じ合っていた
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-9-5
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 10-9: ❌ 議論ミス選択肢
+# ==============================================================================
+
+# MARK: 10-9-3: ❌ 偽証・殺したくなったことなどない
+
+# Judge10-9-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.18
+@gosubModifyCamera 0
+@print 殺したくなったことなんて……ない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print 嘘ね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.18
+@gosubModifyCamera 0
+@print ……いつも正しい行動を心がけている。<br>全員で生き残るすべを考え続けてきた。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print でも過去の世界ではそれが実現しなかった……<br>だから今度こそみんなで生き延びたいんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print 少し話しただけでわかったわ。<br>あなたは直情的で正義を重んじる人間――。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print 目的のためなら一直線に走り……時に間違う。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print ……そして、自分の正義に従って<br>誰かを殺そうとした……違うかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.1
+@gosubModifyCamera 0
+@print …………。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print ……図星ね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR6,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Closed,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print あなたは私たちを騙そうとしている……<br>信用に足る人物じゃないわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char CreatureHiro.1
+@gosubModifyCamera 0
+@print （嘘はお見通しか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （……マーゴに下手な嘘は通じない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （となれば、<br>　本心をぶつけてみるしかない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print （嘘偽りのない、本心を） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-9-1
+
+# MARK: 10-9-4: ❌ 偽証・殺した
+
+# Judge10-9-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print ……ああ、実際に殺したよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Fearful1,ArmR13,ArmL16,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Middle
+@gosubModifyCamera 0
+@print ヒロちゃん、そんな……！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.18
+@gosubModifyCamera 0
+@print 殺人衝動に抗えなかったんだ。<br>悔やんでも悔やみきれない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.7
+@gosubModifyCamera 0
+@print だからこそ、みんなにはそうなって欲しくないんだよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print ……その言葉や後悔自体に<br>嘘はなさそうね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print でも、あなたは人殺しの目をしてないわ？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.14
+@gosubModifyCamera 0
+@print …………。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print 未遂に終わったのかしら？<br>となると、もしかして――。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Pensive_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print 今度こそ、殺しに来たのかもしれないわね？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char CreatureHiro.1
+@gosubModifyCamera 0
+@print （自称殺人鬼の言葉など響くわけもないか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （……マーゴに下手な嘘は通じない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （となれば、<br>　本心をぶつけてみるしかない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print （嘘偽りのない、本心を） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-9-1
+
+# MARK: 10-9-5: ❌ 偽証・ずっと信じ合っていた
+
+# Judge10-9-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.7
+@gosubModifyCamera 0
+@print 恨むなんてとんでもない、<br>最後までずっと信じ合っていたよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.8
+@gosubModifyCamera 0
+@print 悪いのは魔女の力なんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.8
+@gosubModifyCamera 0
+@print それによって、信じ合っていた仲間たちの絆は<br>引き裂かれていったんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Pensive_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print ……ふふふ♡ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Closed,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print ある程度の仲間意識はあったでしょうけど、<br>殺人事件が起きたあとまで信じ合えるわけがないわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Pensive_Middle,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 笑わせてくれるわね、<br>絆だなんて――。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Pensive_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print 思ってもないことを言うのはやめたら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char CreatureHiro.1
+@gosubModifyCamera 0
+@print （嘘はお見通しか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （……マーゴに下手な嘘は通じない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （となれば、<br>　本心をぶつけてみるしかない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print （嘘偽りのない、本心を） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-9-1
+
+# ==============================================================================
+# MARK: 10-9-2: ⭕ 反論・私はみんなを信じている
+# ==============================================================================
+
+# Judge10-9-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+# カットイン
+@StopBgm 
+@gosubCutIn CreatureHiro
+@Gosub System/System_Subroutine.EndDebate-Last
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print マーゴは……嘘つきだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆ムッ、程度
+
+@char Margo.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Pensive_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……！ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.10
+@gosubModifyCamera 0
+@print ナノカは何を考えているかわからない。<br>アリサだって愛想はないし反抗的だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL7,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print "……ああ！？ んだと……！？" { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.8
+@gosubModifyCamera 0
+@print ココは口が悪く、シェリーは言う事を聞かない。<br>ハンナは直情的で、レイアも自分のことばかり……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR13,ArmL10,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print "はー？ なんかディスられてんですけど！" { author:Coco speed:1 waitInput:true Wait:true }
+
+# ＠備考◆苦笑
+
+@char CreatureHiro.8
+@gosubModifyCamera 0
+@print ……誰も彼も、<br>本当にみんな手のかかる。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print ……だが。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print だからといって、<br>ここで死んでいい人間などいない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# BGM変更：HirO（Voなし）
+@bgm Bgm_37_1_Loop
+
+@char CreatureHiro.7
+@gosubModifyCamera 0
+@print 私たちが犠牲になる必要なんてない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.7
+@gosubModifyCamera 0
+@print 私たちは……<br>自由に生きるために、<br>ここから出ていいんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.7
+@gosubModifyCamera 0
+@print そのためにはみんなの協力が不可欠だし……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print こうして話せば、協力してもらえると思っている。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print 私は――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print ――みんなを、信じているんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ……ヒロちゃん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# ＠備考◆忌々しげに
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open02,Angle01/Facial/Mouth>Mouth_Neutral_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……そんなの、欺瞞だわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Pensive_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print 本心で何を思っていても、<br>口でならどうだって言えるもの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Pensive_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print あなただって裏切るかもしれない。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR6,ArmL1,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Pensive_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……それは、私も一緒。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR6,ArmL1,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Pensive_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print あなたが私たちを信頼しているなんて……<br>嘘よ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.1
+@gosubModifyCamera 0
+@print …………。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# モノローグ演出
+
+@char CreatureHiro.1
+@gosubModifyCamera 0
+@print （……やはり、そうだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.1
+@gosubModifyCamera 0
+@print （マーゴは追い詰められると、<br>　他人の嘘を見破れなくなる……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （私は今回、本心から……<br>　【みんなを信じる】と宣言した） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （だが今のマーゴには<br>　それが真実かどうか判断できていない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （それはつまり……<br>　彼女の心がかき乱され、動揺しているということ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （彼女は人に寄り添われたとき……<br>　どうしたらいいのか、わからなくなるのかもしれない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print （……今が攻め時だな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print （思い出せ……。<br>　マーゴが魔女として覚醒した、そのひと言――それは） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# Judge10-9-6
+
+@choice 君を愛している
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge10-9-7
+
+@choice 君は歪んでいる
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge10-9-8
+
+@choice 君の愛は嘘
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge10-9-9
+
+@StopForChoice 
+
+# MARK: 10-9-8: ❌ 選択・君は歪んでいる
+
+# Judge10-9-8
+
+@char CreatureHiro.8
+@gosubModifyCamera 0
+@print ……人の思いやりを素直に受け取れないんだね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.7
+@gosubModifyCamera 0
+@print 【君は歪んでいる】よ、マーゴ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Pensive_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……知ったようなことを言うのね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print 誰の言葉も信じることが出来ないまま――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print これから先も、<br>出会う人間全員を疑いながら<br>生きていくつもりかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.8
+@gosubModifyCamera 0
+@print そんな人生、息苦しいよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print ……誰かに裏切られるくらいなら、<br>ひとりで息苦しいほうがずっとマシよ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Closed,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print 人間多かれ少なかれ歪んでいるの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR6,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Closed,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print 他人を信じられる人間もいれば、<br>そうでない人間もいる……それだけのことでしょう。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL1,Angle01/Facial/Eyes>Eyes_Pensive_Middle,Angle01/Facial/Mouth>Mouth_Cry_Closed
+@gosubModifyCamera 0
+@print あなたの正義を押しつけられても――。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL1,Angle01/Facial/Eyes>Eyes_Pensive_Middle,Angle01/Facial/Mouth>Mouth_Cry_Closed
+@gosubModifyCamera 0
+@print 息苦しいだけよ、ヒロちゃん。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （ただマーゴを傷付けただけになってしまったな……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （……よく思い出そう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （私が過去の世界で聞いた<br>　マーゴの最期の叫びを……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （彼女が最も【言われたくない】言葉……<br>　それは――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-9-6
+
+# MARK: 10-9-9: ❌ 選択・君の愛は嘘
+
+# Judge10-9-9
+
+@char CreatureHiro.8
+@gosubModifyCamera 0
+@print ……君が、他人を信じられない理由は<br>はっきりしているよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.7
+@gosubModifyCamera 0
+@print 【君の愛は嘘】だからだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print 私が見てきた過去の世界で<br>君は愛を語っていた。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print だがマーゴが思う愛は<br>【狂気じみた思い込み】のようだった。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Pensive_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print 思い込み……？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print 君は正しい愛の形がわからないから、<br>……誰の言葉も欺瞞に感じるんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Neutral_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print 愛の形なんて、人それぞれよ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open,Angle01/Facial/Mouth>Mouth_Neutral_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print 私と愛し合ったこともないあなたに<br>理解できるものじゃないわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+# ＠備考◆静かに怒り
+
+@char Margo.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Pensive_Middle,Angle01/Facial/Mouth>Mouth_Cry_Closed
+@gosubModifyCamera 0
+@print 私の愛を否定しないで。<br>何様のつもり？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+# ＠備考◆別選択肢共通
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （ただマーゴを傷付けただけになってしまったな……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （……よく思い出そう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （私が過去の世界で聞いた<br>　マーゴの最期の叫びを……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （彼女が最も【言われたくない】言葉……<br>　それは――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-9-6
+
+# ==============================================================================
+# MARK: 10-9-7: ⭕ 君を愛している
+# ==============================================================================
+
+# Judge10-9-7
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （マーゴは処刑される間際……<br>　魔女化していた） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ==============================================================================
+# 回想シーン（流用）●シーン2‐1-21
+# ==============================================================================
+
+@bgm Bgm_37_1_Loop { Volume:0.2 }
+@Wait 0.2
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+@back 440_7 { Scale:{g_backgroundDefaultScale} time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+
+@print 私は愛を知っているのよ！！<br>これが愛なのよ！！ { author:Margo speed:1 waitInput:true Wait:true }
+
+@print もうやめて！！<br>私の愛を否定しないで！！ { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 私を【愛さないで】――！ { author:Margo speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+@hide Stills { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+@bgm Bgm_37_1_Loop
+
+# ==============================================================================
+# 回想ここまで
+# ==============================================================================
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （ならば……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char CreatureHiro.15
+@gosubModifyCamera 0
+@print …………。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.15
+@gosubModifyCamera 0
+@print （さすがに……<br>　面と向かって言うには少しためらってしまうが） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.1
+@gosubModifyCamera 0
+@print ……マーゴ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print 君が人を信用できない気持ちも、わかるよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.8
+@gosubModifyCamera 0
+@print 君は多くの人間に裏切られてきた。<br>だから人を信用できない。<br>それは経験則から来る理屈だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.9
+@gosubModifyCamera 0
+@print だが……世の中には理屈を超える感情もある。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.9
+@gosubModifyCamera 0
+@print 私は……みんなのことが大事なんだ。<br>１人たりとも、失いたくない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print その感情を人は……<br>【博愛】と呼ぶんじゃないかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@bgm Bgm_13_1_Loop
+
+# ＠備考◆息を呑む
+@char Margo.Fearful1,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Fearful_Open,Angle01/Facial/Mouth>Mouth_Neutral_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ――！ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.19
+@gosubModifyCamera 0
+@print もちろんその対象は……君もだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Margo.Fearful1,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Fearful_Open,Angle01/Facial/Mouth>Mouth_Neutral_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……やめて。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print 私と共に、来て欲しい。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Margo.Fearful1,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Fearful_Open,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print ……やめて！ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.16
+@gosubModifyCamera 0
+@print ……【愛している】よ、マーゴ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+# ＠備考◆叫び
+@char Margo.Fearful1,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Pensive_Middle,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print ……やめてよ！！ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.16
+@gosubModifyCamera 0
+@print （……歯の浮くようなセリフだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （普段のマーゴであればこんな偽証<br>　見破られるかもしれないが……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆錯乱
+
+@char Margo.Fearful1,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Pensive_Middle,Angle01/Facial/Mouth>Mouth_Pensive_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print もう……やめてよ……！<br>私が……何をしたって言うの……！ { author:Margo speed:1 waitInput:true Wait:true }
+
+# ＠備考◆年相応に／泣きそう
+
+@char Margo.Fearful1,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed,Angle01/Facial/Mouth>Mouth_Pensive_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print 嫌よ……！<br>勝手に私のことを――！ { author:Margo speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+# ＠備考◆叫び
+@char Margo.Fearful1,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed,Angle01/Facial/Mouth>Mouth_Surprised_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ――【愛さないで】！！ { author:Margo speed:1 waitInput:true Wait:true }
+
+# マーゴ魔女化 エフェクト
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.8
+
+@hide Margo
+@char CreatureMargo.1-6 { Position:{margoPositionX},{characterPositionY},{margoPositionZ} Rotation:,{margoRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@back SolidColor.Custom { time:0.8 }
+@Wait 0.8
+@back SolidColor.Custom { time:2 }
+@Wait 1
+
+@char CreatureMargo.1-6
+@gosubModifyCamera 0
+@print …………！ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ……マーゴちゃん……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.22
+@gosubModifyCamera 0
+@print "……メルル！ マーゴを……！" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureMeruru.2-8
+@gosubModifyCamera 0
+@print は、はい……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char CreatureMargo.3-6
+@gosubModifyCamera 0
+@print ――近寄らないでっ！ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char CreatureMeruru.3-8
+@gosubModifyCamera 0
+@print ……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+# ＠備考◆心の激痛に耐えている／余裕はない
+
+@char CreatureMargo.1-7
+@gosubModifyCamera 0
+@print ……大丈夫よ。<br>私は、大丈夫。<br>だから……来ないで。 { author:Margo speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print ……マーゴ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print 君の精神は今、多大な負荷を受けている。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.25
+@gosubModifyCamera 0
+@print 無理せずメルルの治療を受けるんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureMargo.3-1
+@gosubModifyCamera 0
+@print いやよ！ { author:Margo speed:1 waitInput:true Wait:true }
+
+# ＠備考◆次第に落ち着いてくるもまだ苦しそう
+@char CreatureMargo.2-7
+@gosubModifyCamera 0
+@print ……本当に、大丈夫なの。<br>耐えられないほどじゃないわ……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char CreatureMargo.1-7
+@gosubModifyCamera 0
+@print ……意地悪ね、ヒロちゃん。<br>あなたにとって私は目的を果たすためのコマ……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char CreatureMargo.1-7
+@gosubModifyCamera 0
+@print ……最初からこうやって、<br>苦しめるつもりだったのね？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print ……そうだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print 私は君に、嘘はつかない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureMargo.1-7
+@gosubModifyCamera 0
+@print ……そう。 { author:Margo speed:1 waitInput:true Wait:true }
+
+# @備考◆汗を浮かべ、無理やり笑みを作っているイメージ
+@char CreatureMargo.1-7
+@gosubModifyCamera 0
+@print ありがとう。<br>……嘘ついたら、殺しちゃう所だったわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print ……それでこそ、マーゴだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆余裕を取り戻してくる
+@char CreatureMargo.0-7
+@gosubModifyCamera 0
+@print ……ふふ。<br>いいわ。そうでなくっちゃ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char CreatureMargo.0-7
+@gosubModifyCamera 0
+@print 覚えてなさい？<br>いつか後悔させてあげるから。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.8
+@gosubModifyCamera 0
+@print ……ああ。<br>その時はよろしく頼む。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# @備考◆まだ汗はかきつつも、笑顔。安堵のため息イメージ
+@char CreatureMargo.0-4
+@gosubModifyCamera 0
+@print …………。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.1
+@gosubModifyCamera 0
+@print （……己の精神力で、<br>　魔女化するほどの精神負荷を耐えきったか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@update Margo
+@toast "魔女図鑑 更新…"
+
+@bgm Bgm_45_2
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （……メルル、レイア、ノア、マーゴ……<br>　魔女化したのは、私も入れて５人） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （そろそろ目的を共有しても問題ない頃合いか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print ……マーゴも私の目的について気になっていたようだし、<br>君たちにはここで話しておこう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.9
+@gosubModifyCamera 0
+@print ……私は、君たちを魔女化させようとしている。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print "はぁ！？ どゆこと！？" { author:Coco speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.10
+@gosubModifyCamera 0
+@print 私のこれまでの話を聞いていたら<br>察することはできるかもしれないが……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.10
+@gosubModifyCamera 0
+@print 【私たちがここに連れてこられたこと】……<br>【魔法を使えること】……<br>そして【殺し合いを始めること】……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.7
+@gosubModifyCamera 0
+@print これらの破滅的な流れの根本は、<br>黒幕である【大魔女】によって<br>引き起こされたことだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.7
+@gosubModifyCamera 0
+@print このままでは……<br>全て大魔女の手のひらの上だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print 私は君たちを救うためにここにいる。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print よって、１３人の【魔女化】した少女を集め、<br>大魔女を呼び出す――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print それが私の目的だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# カットイン・ナノカ
+@StopBgm 
+@Wait 0.5
+@sfx Sfx_Common_5
+
+@ResetText 
+@voice CommonTrial_Nanoka00526
+@char Nanoka.ArmR1,ArmL10,Eyes1_Angry_Open1,Mouth1_Normal_Open1
+@gosubSplitStageScreen 1
+@Wait 1.5
+
+@hideStageScreen 1
+@Wait 0.3
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print ――二階堂ヒロ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.15
+@gosubModifyCamera 0
+@print ……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print あなたがとても多くのことを知っているのは<br>よくわかったわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR6,ArmL9,Eyes1_Normal_Open2,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print だから……<br>私はあなたの話を聞かなくてはいけない。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR6,ArmL9,Eyes1_Angry_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print 教えてちょうだい。<br>……あなたが知っていること、全てを。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.15
+@gosubModifyCamera 0
+@print （ナノカ……<br>　君は……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 処刑スチルフラッシュバック
+
+@ResetText 
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+# ========================================
+@back 450_4 { Scale:{g_backgroundDefaultScale} time:0 }
+# ========================================
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+@Wait 2
+
+@ResetText 
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+# ========================================
+@hide Stills { time:0 }
+# ========================================
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+
+# ＠備考◆ちょっと怯む
+@char CreatureHiro.15
+@gosubModifyCamera 0
+@print （………） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto Act02_Chapter05/Act02_Chapter05_Trial10

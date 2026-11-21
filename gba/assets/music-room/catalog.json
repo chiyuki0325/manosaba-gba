@@ -1,0 +1,303 @@
+{
+  "tracks": [
+    {
+      "id": "Bgm001",
+      "title": "燦色の檻",
+      "catalog": 0,
+      "bit": 0
+    },
+    {
+      "id": "Bgm002",
+      "title": "eXi' N'o FooKah",
+      "catalog": 1,
+      "bit": 1
+    },
+    {
+      "id": "Bgm003",
+      "title": "Sar-gedy (-流-)",
+      "catalog": 2,
+      "bit": 2
+    },
+    {
+      "id": "Bgm004",
+      "title": "Sar-gedy (-動-)",
+      "catalog": 3,
+      "bit": 3
+    },
+    {
+      "id": "Bgm005",
+      "title": "Sar-gedy (-静-)",
+      "catalog": 4,
+      "bit": 4
+    },
+    {
+      "id": "Bgm006",
+      "title": "その牢",
+      "catalog": 5,
+      "bit": 5
+    },
+    {
+      "id": "Bgm007",
+      "title": "rAwTell Owk...",
+      "catalog": 6,
+      "bit": 6
+    },
+    {
+      "id": "Bgm008",
+      "title": "Guil-me N'o sinruits (-水-)",
+      "catalog": 7,
+      "bit": 7
+    },
+    {
+      "id": "Bgm009",
+      "title": "深層の畝",
+      "catalog": 8,
+      "bit": 8
+    },
+    {
+      "id": "Bgm010",
+      "title": "看るモノ達",
+      "catalog": 9,
+      "bit": 9
+    },
+    {
+      "id": "Bgm011",
+      "title": "迷宮の徒",
+      "catalog": 10,
+      "bit": 10
+    },
+    {
+      "id": "Bgm012",
+      "title": "EmA (-虚-)",
+      "catalog": 11,
+      "bit": 11
+    },
+    {
+      "id": "Bgm013",
+      "title": "EmA (-狂-)",
+      "catalog": 12,
+      "bit": 12
+    },
+    {
+      "id": "Bgm015",
+      "title": "AccUhEarts (-発-)",
+      "catalog": 13,
+      "bit": 14
+    },
+    {
+      "id": "Bgm017",
+      "title": "pAciKa' ConWa",
+      "catalog": 14,
+      "bit": 16
+    },
+    {
+      "id": "Bgm018",
+      "title": "小鳥達の閑話休題",
+      "catalog": 15,
+      "bit": 17
+    },
+    {
+      "id": "Bgm019",
+      "title": "ボクとワタシの",
+      "catalog": 16,
+      "bit": 18
+    },
+    {
+      "id": "Bgm020",
+      "title": "蠢きの寝屋",
+      "catalog": 17,
+      "bit": 19
+    },
+    {
+      "id": "Bgm021",
+      "title": "鉛の腱",
+      "catalog": 18,
+      "bit": 20
+    },
+    {
+      "id": "Bgm022",
+      "title": "靴の裏",
+      "catalog": 19,
+      "bit": 21
+    },
+    {
+      "id": "Bgm023",
+      "title": "迫るその足音",
+      "catalog": 20,
+      "bit": 22
+    },
+    {
+      "id": "Bgm024",
+      "title": "海の森",
+      "catalog": 21,
+      "bit": 23
+    },
+    {
+      "id": "Bgm025",
+      "title": "Kei-Plne Co-Jundic",
+      "catalog": 22,
+      "bit": 24
+    },
+    {
+      "id": "Bgm026",
+      "title": "交々のいと (-絡-)",
+      "catalog": 23,
+      "bit": 25
+    },
+    {
+      "id": "Bgm027",
+      "title": "慄き鳴き",
+      "catalog": 24,
+      "bit": 26
+    },
+    {
+      "id": "Bgm027_002",
+      "title": "慄き鳴き (2/3)",
+      "catalog": 25,
+      "bit": 49
+    },
+    {
+      "id": "Bgm028",
+      "title": "望むのは日常",
+      "catalog": 26,
+      "bit": 27
+    },
+    {
+      "id": "Bgm029",
+      "title": "DArime",
+      "catalog": 27,
+      "bit": 28
+    },
+    {
+      "id": "Bgm030",
+      "title": "bloom (piano version)",
+      "catalog": 28,
+      "bit": 29
+    },
+    {
+      "id": "Bgm031",
+      "title": "飛者の迎え (-序-)",
+      "catalog": 29,
+      "bit": 30
+    },
+    {
+      "id": "Bgm032",
+      "title": "あなたたちの聲で",
+      "catalog": 30,
+      "bit": 31
+    },
+    {
+      "id": "Bgm033",
+      "title": "Reka N'o Ro-Coh",
+      "catalog": 31,
+      "bit": 32
+    },
+    {
+      "id": "Bgm034",
+      "title": "人形さんの詰込袋 (-正-)",
+      "catalog": 32,
+      "bit": 33
+    },
+    {
+      "id": "Bgm035",
+      "title": "吸われた祈り",
+      "catalog": 33,
+      "bit": 34
+    },
+    {
+      "id": "Bgm036",
+      "title": "gDie Divil JIO",
+      "catalog": 34,
+      "bit": 35
+    },
+    {
+      "id": "Bgm037",
+      "title": "HirO (-線-)",
+      "catalog": 35,
+      "bit": 36
+    },
+    {
+      "id": "Bgm038",
+      "title": "Sen-Choose N'o SurC (-触-)",
+      "catalog": 36,
+      "bit": 37
+    },
+    {
+      "id": "Bgm039",
+      "title": "鐘楼の鐘 (-兆-)",
+      "catalog": 37,
+      "bit": 38
+    },
+    {
+      "id": "Bgm040",
+      "title": "救いを求めるヒトの音",
+      "catalog": 38,
+      "bit": 39
+    },
+    {
+      "id": "Bgm041",
+      "title": "身罷りの香り",
+      "catalog": 39,
+      "bit": 40
+    },
+    {
+      "id": "Bgm042",
+      "title": "野花",
+      "catalog": 40,
+      "bit": 41
+    },
+    {
+      "id": "Bgm043",
+      "title": "weRer N'o Hir (-処-)",
+      "catalog": 41,
+      "bit": 42
+    },
+    {
+      "id": "Bgm044",
+      "title": "飛者の迎え (-終-)",
+      "catalog": 42,
+      "bit": 43
+    },
+    {
+      "id": "Bgm045",
+      "title": "気任せの蝶",
+      "catalog": 43,
+      "bit": 44
+    },
+    {
+      "id": "Bgm046",
+      "title": "yUki (前奏)",
+      "catalog": 44,
+      "bit": 45
+    },
+    {
+      "id": "Bgm048",
+      "title": "yUki",
+      "catalog": 46,
+      "bit": 47
+    },
+    {
+      "id": "Bgm049",
+      "title": "愛の残滓（前奏）",
+      "catalog": 47,
+      "bit": 48
+    },
+    {
+      "id": "Song001",
+      "title": "愛の残滓",
+      "catalog": 48,
+      "bit": 50
+    },
+    {
+      "id": "Song004",
+      "title": "bloom",
+      "catalog": 49,
+      "bit": 51
+    }
+  ],
+  "texture_tiles": 113,
+  "texture_bytes": 4848,
+  "links": 64,
+  "global_music_bytes": 8,
+  "bpp": 4
+}

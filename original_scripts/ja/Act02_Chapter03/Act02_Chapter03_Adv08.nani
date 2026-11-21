@@ -1,0 +1,150 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-3-8
+
+# ========================================
+# ●シーン2‐3‐8
+# ========================================
+
+@back 19_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# ========================================
+# ＞『牢屋敷前』を選択
+# ========================================
+
+@bgm Bgm_18_1_Loop
+
+@char Hanna.Default,ArmR1,ArmL1
+@char Sherry.Default,ArmR8,ArmL8
+
+@print 牢屋敷から外に出てみると、<br>すぐにハンナとシェリーの姿が目に入った。 { speed:1 waitInput:true Wait:true }
+
+@print "２人とも木の下で、<br><ruby=\"ぬ\">濡</ruby>れた服を手に持っている。" { speed:1 waitInput:true Wait:true }
+
+@print 木の間にロープを通して、<br>そこに服を干しているらしい。 { speed:1 waitInput:true Wait:true }
+
+@print ちょっと、シェリーさん！<br>干す時はちゃんとシワを伸ばしてくださいまし！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print はーい、こんな感じですか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ハンナに注意されたシェリーが、<br>服を引っぱると…… { speed:1 waitInput:true Wait:true }
+
+# 布が破れる音
+@sfx Sfx_45
+
+@char Sherry.Surprised1
+
+@print あっ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print "シェリーの持っていた服が、<br>見るも<ruby=\"むざん\">無残</ruby>に<ruby=\"ひ\">引</ruby>き<ruby=\"さ\">裂</ruby>かれてしまった。" { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Flushed,ArmR7,ArmL1
+
+@print 破れちゃいました……てへ☆。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1
+
+@print てへ、じゃねーですわよ！<br>ほんっとに馬鹿力なんですから！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1
+
+@print ごめんなさい～！<br>そんなに力を入れたつもりはなかったんですけど……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print "ハンナは<ruby=\"あき\">呆</ruby>れたように息を吐いて、<br>シェリーの手から服をひったくる。" { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default
+
+@print 縫えばまだ着られますわね。<br>衣装の材料に使ってもいいですし……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print ……もう、わたくしがシワを伸ばしますから、<br>シェリーさんが干していってください。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR5,ArmL1
+
+@print りょーかいでーす！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ２人ともご苦労。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私がねぎらいの声をかけると、<br>２人が振り返ってくる。 { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default
+@char Sherry.Smile1,ArmR10,ArmL1
+
+@print "あっ、ヒロさん！<br>えっへん！ 私たち洗濯をしているんですよ！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print そのようだな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 以前、ハンナは<br>囚人たちの服について不満を漏らしていた。 { speed:1 waitInput:true Wait:true }
+
+@print 毎日焼却処分にするのはもったいない、<br>洗濯すればまだ着られるのにと。 { speed:1 waitInput:true Wait:true }
+
+@print "規則の面で心配だったが、<br>ハンナはゴクチョーに<ruby=\"じかだんぱん\">直談判</ruby>をして許可を得たらしい。<br>その行動力には感心した。" { speed:1 waitInput:true Wait:true }
+
+@print それから毎日、<br>ハンナがせっせと洗濯している姿を見かける。 { speed:1 waitInput:true Wait:true }
+
+@print "慣れた手つきで次々と洗濯物をさばいていくハンナは、<br>完全に所帯じみている。まるで<ruby=\"じゅくれん\">熟練</ruby>の主婦だ。" { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default
+
+@print さ、とりあえず干すのはこれで最後です。<br>次は、こっちのカゴにある分を洗っていきますわよ。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "ハンナは近くに置いてあるカゴから服を出し、<br>水を張ったたらいの中に<ruby=\"ひた\">浸</ruby>す。" { speed:1 waitInput:true Wait:true }
+
+@print それからどこで用意してきたのか、<br>洗濯板を使って服を手洗いし始めた。 { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1
+
+@print ごしごしごしごしごしごしですわー！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1,ArmR10,ArmL11
+
+@print なんというか……<br>お嬢様要素はどこいったんですかね？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ハンナから受け取った服を干しながら、<br>シェリーが疑問を口にする。 { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1
+
+@print うるせーですわね！<br>いいから黙って干しやがれですわ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1,ArmR8,ArmL8
+
+@print ハンナにどやされて、<br>シェリーはせっせと服を干していく。 { speed:1 waitInput:true Wait:true }
+
+@char Hanna
+
+@print ヒロさんも、一緒にいるなら手伝えですわ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "黙って様子を眺めていた私へと急に<ruby=\"ほこさき\">矛先</ruby>が向いた。" { speed:1 waitInput:true Wait:true }
+
+@print え？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "問答無用でまだ洗っていない服を投げ渡されて、<br><ruby=\"とっさ\">咄嗟</ruby>に受け取ってしまう。" { speed:1 waitInput:true Wait:true }
+
+@print 何故私まで？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default
+
+@print 自分で着るものなんですから、<br>ちゃんと自分で洗って自分で干す！<br>当たり前のことでしょう？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 受け取ったのは、<br>たしかに私自身に用意された服だった。 { speed:1 waitInput:true Wait:true }
+
+@print ……そう言われると返す言葉もないな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ハンナの言い分は正しい。<br>少なくとも、私はそう判断した。 { speed:1 waitInput:true Wait:true }
+
+@print もうひとつ用意されてあるたらいと洗濯板で、<br>服を洗っていく。 { speed:1 waitInput:true Wait:true }
+
+@print （しばらく付き合ってやるか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私はハンナとシェリーに付き合い、<br>洗濯を手伝った。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン2‐3‐4
+# 全てのイベントを消化している＞シーン2‐3‐9
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter03/Act02_Chapter03_Adv04

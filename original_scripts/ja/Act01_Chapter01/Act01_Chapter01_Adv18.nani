@@ -1,0 +1,508 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-1-14
+
+@back 19_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@print 牢屋敷での囚人生活は、<br>４日目へと突入し―― { speed:1 waitInput:true Wait:true }
+
+@print 本日もエマとシェリーは、自由時間に連れだって<br>探索をしようと話し合った。 { speed:1 waitInput:true Wait:true }
+
+@print 本格的に牢屋敷の外を見てまわり、<br>脱獄方法を探るのが本日の目標だ。 { speed:1 waitInput:true Wait:true }
+
+@back Transparent { time:0.6 }
+
+@print 正面玄関から外に出て、<br>エマはいちど牢屋敷の方を振り返る。 { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_17_1
+@bgm Ambi_1_1
+
+@char Ema.Pensive1
+@char Sherry.Normal1
+
+@print これが牢屋敷……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print こうやって見ると、やっぱり堅牢そうですねぇ。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print うん……で、でも自由に外に出られるなら<br>きっとどこかに脱出口が見つけられるよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "屋敷は<ruby=\"たかだい\">高台</ruby>に位置していた。<br>そしてレイアの話にあったように、<br>エマの<ruby=\"がんか\">眼下</ruby>には、<ruby=\"かいが\">絵画</ruby>のような美しい風景が広がっていた。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [back 17]
+# ========================================
+
+@back 17_1 { Scale:{g_backgroundDefaultScale} }
+
+@print "大地を包み込むように遠くまで続く<ruby=\"しんりょく\">深緑</ruby>の森――" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [back 16]
+# ========================================
+
+@back 16_1 { Scale:{g_backgroundDefaultScale} }
+
+@print 色とりどりの花が咲き誇る花畑――<br>どこかに小川があるのか、せせらぎの音も聞こえる。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [back 19]
+# ========================================
+
+@back 19_1 { Scale:{g_backgroundDefaultScale} }
+
+@char Ema.Normal1
+@char Sherry.Normal1
+
+@print すごく綺麗なところ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 風が吹くたびに、森の木々はささやくように葉を揺らし、<br>鳥たちのさえずりがかすかに届いた。 { speed:1 waitInput:true Wait:true }
+
+@print めちゃくちゃ広いですね。<br>自由に出入りできるなら、どこかに身を隠すことも<br>可能なのでは。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print うん、でもアリサちゃんが言ってた<br>【監視フクロウ】が気になるよね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ですねえ。<br>このあたりには飛んでいないようですが……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1
+
+@print 時間も限られていますし、<br>とりあえず見まわってみましょうか！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2
+
+@print そうだね、行こう！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@StopBgm Ambi_1_1 { fade:5 }
+@hideChars 
+
+# ========================================
+# [back 22]
+# ========================================
+
+@back 22_1 { Scale:{g_backgroundDefaultScale} }
+
+@print 石畳の道に沿って歩いていくと、<br>牢屋敷のすぐ傍にログハウス風の建物が３棟並んでいた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+@char Sherry.Normal1
+
+@print ここなんだろう……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print なんでしょうね。看守の家とか……？<br>とりあえず入ってみましょうか！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "並ぶ建物の扉には、<br>意味深なプレートが<ruby=\"さ\">提</ruby>げられていた。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 演出：火精の間のプレートをアップで出す
+# ========================================
+
+@ResetText 
+@Wait 0.5
+@camera { time:0.9 }
+@Wait 0.9
+
+@print "マップで見た感じ、<br>ここは【<ruby=\"サラマンダー\">火精</ruby>の間】……？" { author:Ema speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 演出：水精の間のプレートをアップで出す
+# ========================================
+
+@ResetText 
+@Wait 0.5
+@camera { time:0.9 }
+@Wait 0.9
+
+@print "こっちは【<ruby=\"ウンディーネ\">水精</ruby>の間】ですね！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 演出：地精の間のプレートをアップで出す
+# ========================================
+
+@ResetText 
+@Wait 0.5
+@camera { time:0.9 }
+@Wait 0.9
+
+@print "で、ここは【<ruby=\"ノーム\">地精</ruby>の間】だね。<br>何か違いがあるのかな……？" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 鍵がかかっている可能性も考えられたが、<br>扉はあっさりと開く。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [sfx 22：木の扉を開く音]
+# ========================================
+
+@sfx Sfx_22
+
+# ========================================
+# [back 23]
+# ========================================
+
+@ResetText 
+@camera { time:0 }
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+@back 23_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent.Custom { time:0.9 }
+@Wait 0.9
+
+@print 建物内部は小綺麗で、<br>誰かが生活しているというより、<br>宿泊用施設である印象だった。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+@char Sherry.Normal1
+
+@print ボクらの牢屋よりずっと綺麗だね……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR9,ArmL4
+
+@print むむむ……これはおそらく、<br>【ゲストハウス】ではないでしょうか！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ゲストハウス……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 牢屋敷の運営が国家ぐるみであると想定すれば、<br>要人がこの監獄施設に来ることもあると思うんです。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+
+@print ああ、そうか！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 想像でしかないのですが、<br>要人が牢屋敷に宿泊するのは<br>避けたいと思うんですよね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 何せ私たちは、世界に害をなす<br>おそろしい魔女らしいですから。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print そうなると、たとえば要人が視察に来るとか<br>そういった場合、<br>このゲストハウスに宿泊するわけですよ。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR6,ArmL4
+
+@print わぁ、私の推理、冴えてません！？<br>できればその証拠を見つけたい～！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "シェリーは<ruby=\"じがじさん\">自画自賛</ruby>してから、<br>虫眼鏡で室内を<ruby=\"くま\">隈</ruby>なくチェックしはじめている。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+
+@print あ、あの、シェリーちゃん、<br>他のところも見回りたいから……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 仕方なくといった風に、<br>エマはシェリーを引きずって出るのであった。 { speed:1 waitInput:true Wait:true }
+
+@print 他のゲストハウスも軽く調べてみたところ、<br>室内は同様の構造になっていた。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [back 18]
+# ========================================
+
+@back 18_1 { Scale:{g_backgroundDefaultScale} }
+
+@print それからエマたちがしばらく歩いていくと、<br>高い塀の前にたどりついた。 { speed:1 waitInput:true Wait:true }
+
+@print 頑強な造りのコンクリート塀は、<br>はるか上空を見上げるほどに高い。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3,ArmL1
+@char Sherry.Normal1,ArmR1,ArmL1
+
+@print この塀の向こうに行けたら、<br>外部と連絡が取れるんじゃないかな？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print そうかもしれませんね。<br>でも、めちゃくちゃ高いですよ。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ボク、のぼってみようかな。<br>ほら、少しなら足場もある。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマは塀のひび割れた部分に足をかけ、<br>体を持ち上げた。 { speed:1 waitInput:true Wait:true }
+
+@print エマの背の高さくらいまでは登れたが、<br>そこから先に足場が見つからない。 { speed:1 waitInput:true Wait:true }
+
+@print う、うう……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [sfx 23：どすんと落ちる音]
+# ========================================
+
+@sfx Sfx_23
+
+@print 指の力が続かなかったのか、<br>地面に落ちてしまった。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+
+@print ダメでしたねぇ。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 確かアリサさんが<br>塀には不思議な力が宿っているとも言っていましたし、<br>そもそものぼれないようになっているのかもしれませんね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Normal1
+
+@print あなたたち、何をやっていやがりますの？<br>看守に見つかったら懲罰房行きになりますわよ。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "どこかから、<ruby=\"あき\">呆</ruby>れた表情のハンナが現れた。" { speed:1 waitInput:true Wait:true }
+
+@print どこで見られてるのか、<br>わかったもんじゃねえですわよ。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1
+
+@print う……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"こかげ\">木陰</ruby>に看守が潜んでいるかもと想像したのか、<br>エマは視線をぐるりと巡らす。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Normal1
+
+@print 少し遠くまで歩いていってみたのですが、<br>監視の化け物フクロウが大量に飛んでいましたわ。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Normal1
+
+@print このあたりはいないんですけどね。<br>見張られずに自由に散策できるのは、<br>牢屋敷の近くだけなんでしょうね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Normal1
+
+@print ええ……正確な仕組みはわかりませんが、<br>遠くまで逃亡して監視のフクロウに発見されたら、<br>看守に連絡が入るんでしょう。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Pensive1
+
+@print フクロウなら夜目もきくでしょうし……<br>夜闇にまぎれて脱獄しようとする囚人もいるのでしょうね。<br>はぁ……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print そんなことを話していると、<br>エマの視界の端に、ちらりと人影が映った。 { speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Default
+
+# ========================================
+# [char 黒部ナノカ.通常,CenterRigth]
+# ========================================
+
+@print （ナノカちゃん……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 黒部ナノカ OUT
+# ========================================
+
+@hideChars 
+
+@print その人影はすぐに森の茂みの向こうへと消えた。<br>まるで暗躍しているかのような挙動だった。 { speed:1 waitInput:true Wait:true }
+
+@print どうやら気付いたのはエマだけだったらしい。 { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Normal1
+@char Ema.Normal1
+@char Sherry.Normal1
+
+@print ハンナさんは、何をしていたんですか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print わたくしも、どこか出られる場所がないか<br>探してみてたんですわ。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 出られそうな場所あった！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print エマはハンナへとぐいっと近寄る。 { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Normal1
+
+@print "しかし、ハンナはその距離を<ruby=\"いと\">厭</ruby> うように<br>――すっと、一歩下がった。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+
+@print "（あれ……？ 気のせい、だよね）" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマは胸にちくりとした痛みを覚え、<br>表情を<ruby=\"こわば\">強張</ruby>らせる。" { speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"のうり\">脳裏</ruby>に<ruby=\"よぎ\">過</ruby>ったのは、かつての友人の<ruby=\"そぶ\">素振</ruby>り。<br>中学時代の嫌な思い出と重なる。" { speed:1 waitInput:true Wait:true }
+
+@print そんな簡単にいくわけねえですわ。見たらわかるでしょう？<br>一帯全てが高いコンクリート塀に囲まれていて。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Pensive1
+
+@print 残念ながらわたくしたちが閉じ込められているという事実に、<br>変わりはねーですわ。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print それに加えて遠くに行けば、<br>監視フクロウが常に巡回している……<br>うーん、思ったよりもセキュリティレベル高そうですね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna.Normal1
+
+@print それと、ひとつわかったことがありますわ。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print なんでしょう？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ここは島ですわね。微かに潮のにおいと……<br>塀に耳をつけたら波の音が聞こえました。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマはハンナの言葉にならい、<br>塀に耳をつけてみる。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [sfx 24：微かな波音]
+# ========================================
+
+@StopBgm 
+@sfx Sfx_24
+@char Hanna.Normal1
+@char Ema.Surprised1
+@char Sherry.Normal1
+
+@print ほんとだ……！<br>そういえばゴクチョーも【島】って言ってたっけ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1
+
+@print シェリーは、ぽんっと手を打った。 { speed:1 waitInput:true Wait:true }
+
+@print "おおっ！ 予感はしていましたが<br>ここは絶海の孤島ってやつですよ、きっと！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 我々は眠らされて、ここに連れてこられたんでしょうね。<br>おそらくヘリとかで。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print そしてこの島全体を塀で囲っているのなら、<br>ここからの脱出は相当難しいですわ。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+
+@print そんな……<br>塀を越えられたとしても、海じゃあ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [bgm Bgm_023_001_Loop]
+# ========================================
+
+@bgm Bgm_23_1
+
+@char Hanna.Fearful1,ArmR4
+
+@print "ハンナは青ざめて、爪を噛んでいる。<br>小さな声で何かをぶつぶつと<ruby=\"つぶや\">呟</ruby>いていた。" { speed:1 waitInput:true Wait:true }
+
+@print 早く、早くここを出ないと……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print ハ、ハンナちゃん、大丈夫？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1,ArmR3
+
+@print ――大丈夫なわけないじゃない！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+# ＠備考◆驚いて息を呑む
+
+@char Ema.Surprised1
+
+@print ……っ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print おぞましい化け物が<br>常にわたくしたちのことを見張っていますのよ！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print こんなところはもう嫌ですわ！！<br>いつかわたくしたちもあんな化け物に――。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# ========================================
+# [sfx 25：壁を殴る音]
+# ========================================
+
+@sfx Sfx_25
+@spawn ShakeBackground
+
+@print 凄まじい音がして、<br>エマとハンナは飛び上がった。 { speed:1 waitInput:true Wait:true }
+
+@print "シェリーが、塀を思いきり殴ったのだ。<br>その<ruby=\"ごうおん\">轟音</ruby>は塀全体を揺るがしたかのように感じる。" { speed:1 waitInput:true Wait:true }
+
+@print ただ、残念ながら破壊はできていなかった。<br>ひびひとつ入っていない。 { speed:1 waitInput:true Wait:true }
+
+@print シェリーは、エマとハンナの方を見て<br>ぺろっと舌を出してみせた。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR8,ArmL4
+
+@print ハンナさんがかわいそうで見てられなくて、<br>塀を破壊して脱獄しようと試みたんですが、ダメでした。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print この塀は、かたい！！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1
+
+@print 素手でどうにかしようという思考がどうにかしてますわよ！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Ema.Fearful1
+
+@print シェ、シェリーちゃん、ハンナちゃん……<br>やばいかも……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマは森のように茂っている木々の方を指さし、<br>震える声を放つ。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back 18_1
+@char Jailer.1
+
+@print ――看守が、近付いてきている。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@hideChars 
+@hide MainBackground-Middle
+
+@char Hanna.Fearful1
+
+@print ひっ……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Pensive1,ArmR7,ArmL1
+
+@print あらら。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "看守は鎌を<ruby=\"かか\">掲</ruby>げて、<br>いつもよりずっと移動速度が速い。" { speed:1 waitInput:true Wait:true }
+
+@print おそらく、シェリーが塀を殴った音を聞きつけ、<br>様子を見に来たのだ。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Fearful1
+
+@ResetText 
+@QuickSave 4
+@QuickSave 5
+
+@print 逃げよう――！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_71
+@hideChars 
+
+@print エマが呼びかけ、<br>３人は全速力で駆け出した。 { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Fearful1
+
+@print 一体どこに逃げるんですの！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print ハンナの叫びにエマは―― { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# ========================================
+# 選択肢
+# 『ゲストハウスと答えた』-> 1‐1‐b4へ
+# 『とにかく逃げようと答えた』-> 1‐1‐b5へ
+# 『牢屋敷と答えた』
+# ========================================
+
+@choice ゲストハウスと答えた
+	@goto Act01_Chapter01/Act01_Chapter01_Bad04
+
+@choice 牢屋敷と答えた
+	@goto .Choice1-1-4
+
+@choice とにかく逃げようと答えた
+	@goto Act01_Chapter01/Act01_Chapter01_Bad05
+
+@StopForChoice 
+
+# Choice1-1-4
+
+@correctChoice 4
+@correctChoice 5
+
+@print 牢屋敷と答えた。 { speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_71
+
+# ========================================
+# [transition Out,Fade,1,Black]
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter01/Act01_Chapter01_Adv19

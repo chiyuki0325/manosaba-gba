@@ -1,0 +1,696 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-4-14
+
+# ========================================
+# ●シーン2‐4‐14
+# ========================================
+
+@back 14_1 { time:0 }
+@char Hanna.Cry1,ArmR1,ArmL1
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_42_1
+@Wait 0.5
+
+@print うっ……うぅ……っ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print わたくし、わたくしなんてことを……っ<br>エマさんを、エマさんを殺すなんてぇっ……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 心から悔いている様子で、<br>膝をついたハンナは涙を流し続けていた。 { speed:1 waitInput:true Wait:true }
+
+@print うぅうぅ……っ<br>どんなに責められても、仕方ありません……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 大切なお友だちだと思っていたエマさんを、<br>わたくしは殺めてしまったのですから……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@animate MainBackground,Warden
+@back 590_4 { Scale:{g_backgroundDefaultScale} time:0.6 }
+@Wait 0.6
+
+@print "泣きじゃくるハンナを前に、<br>私たちはいつも通りゴクチョーに<ruby=\"うなが\">促</ruby>され、<br>処刑執行の選択を迫られる。" { speed:1 waitInput:true Wait:true }
+
+@print （ハンナはエマとレイアを殺した魔女。<br>　処刑されて当然だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （何も迷うことなど、あるものか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "しかし私の指先は、<ruby=\"しゅんじゅん\">逡巡</ruby>してしまっていた。" { speed:1 waitInput:true Wait:true }
+
+@StopBgm { fade:3 }
+@hide MainBackground { time:0 }
+@hideChars { time:0 }
+
+@print （何故、何故だ……<br>　どうして私はいつも迷う――！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （正しさを知っているはずなのに！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# TODO: ループ再生化する
+@sfx Sfx_35
+
+@ProcessInput false
+@HidePrinter 
+@HideUI ControlPanel,AutoToggle,WitchBookButtonUI
+@ShowUI ExecutionButton
+
+@if !enableDebugSkip
+	@Skip false
+	@Stop 
+
+# ExecutionConfirmed
+
+@bgm Bgm_31_1
+@HideUI ExecutionButton
+@hide Stills-Middle { time:0.6 }
+@Wait 0.9
+
+@ProcessInput true
+@ShowUI ControlPanel,AutoToggle,WitchBookButtonUI
+@back 14_1 { time:0 }
+@char Warden.1 { time:0 }
+@animate MainBackground-Middle
+@animate Warden-Middle
+@Wait 0.5
+
+@EmoteJump Warden-Middle
+@print "はい！ ではこれより、<br>魔女の処刑を執行します～。" { author:Warden speed:1 waitInput:true Wait:true }
+
+# 歯車がまわる音
+@sfx Sfx_36
+
+@print "どうしようもなく心を<ruby=\"きし\">軋</ruby>ませる、<br>歯車の回転音が聞こえはじめる。" { speed:1 waitInput:true Wait:true }
+
+@Wait 0.5
+
+@HidePrinter 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@hideChars 
+@hide MainBackground-Middle
+
+@back 470_1 { time:0 }
+@animate Stills
+@back Transparent { time:1.2 }
+@Wait 2.4
+
+@animate Stills
+@back 470_1 { time:0.6 }
+@animate Stills-Middle
+@Wait 2.4
+
+@animate Stills-Middle
+@back 470_1 { time:0 }
+@blur Stills
+@animate Stills
+@blur Stills
+@hide Stills-Middle { time:0.6 }
+@Wait 3
+
+@print やがて中央に現れた処刑台は、<br>信じられないほどに巨大な――砂時計。 { speed:1 waitInput:true Wait:true }
+
+@print それは裁判所の天井に届きそうなほどに背が高く、<br>私たちの前にそびえ立っていた。 { speed:1 waitInput:true Wait:true }
+
+@print "透明なガラスの球体が上下にひろがり、<br>２つの世界を<ruby=\"へだ\">隔</ruby>てるように細い首で<ruby=\"つな\">繋</ruby>がれている。" { speed:1 waitInput:true Wait:true }
+
+@print 上部の球体には大量の岩石が詰まっていた。<br>ぎっしりと重みを持って。 { speed:1 waitInput:true Wait:true }
+
+@print 私たちにとっては１つ１つ大きな岩だが、<br>巨大な砂時計の中にあると、砂粒のように小さくも見えた。 { speed:1 waitInput:true Wait:true }
+
+@print まさか……あれを落として<br>生き埋めにする気かよ……？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print い、いやでも、これだと、<br>岩が落下してきただけで相当重いよ……。<br>潰す、気なのかも。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print "ハンナが見上げてごくりと喉を鳴らす。<br><ruby=\"きぜん\">毅然</ruby>としているが、拳は震えてしまっていた。" { speed:1 waitInput:true Wait:true }
+
+@print "そして看守に手首を<ruby=\"つか\">掴</ruby>まれ、<br>ハンナは処刑台へと連行されていく。" { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@animate MainBackground
+@spawn MaskingRectangle
+@back 14_1
+@blur MainBackground-Front
+@char Sherry.Pensive1,ArmR4 { time:0 }
+@mask MainBackground-Front,Sherry-Front
+@animate MainBackground-Front
+@animate Sherry-Front
+@Wait 0.4
+
+@print ……ハンナさん。<br>ひとつ、聞かせてください。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print その途中、静かに口を開いたのはシェリーだった。 { speed:1 waitInput:true Wait:true }
+
+@print ハンナはひきつった表情で、シェリーを振り返る。 { speed:1 waitInput:true Wait:true }
+
+@print なんですの、シェリーさん……。<br>わたくしはもう、言い残したことなんてありません。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 罪を犯したのだから……潔く受け入れます。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 震える声でそれだけ言ってハンナは背を向け、<br>再び処刑台へと歩きだす。 { speed:1 waitInput:true Wait:true }
+
+@print レイアさんを殺した理由はなんですか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print "シェリーはそれでも背中に言葉を浴びせた。<br>どこか必死に、<ruby=\"すが\">縋</ruby>るように。" { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@print 魔女の殺意が心から向いたのは、<br>エマさんではなく、レイアさんですよね？<br>では、その動機は？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ……っ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print ハンナの背中が、揺れた。 { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_42_2
+
+@print 私、ハンナさんと一番長く一緒にいたので、<br>ちょっとだけハンナさんの気持ちが<br>わかるようになって……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ハンナさんは、<br>レイアさんを嫌っていました。<br>きっと、最初に会った時から。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print その気持ちが魔女化と共に、<br>徐々に殺意へと膨らんでいっても、<br>おかしくありません。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print （……最初、から？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ハンナがずっとレイアに<br>劣等感を抱き続けていたのだとしたら。 { speed:1 waitInput:true Wait:true }
+
+@print 初めて会った時からその闇が生まれ、<br>やがて殺意に変わるまで<br>少しずつ少しずつ育まれていったとしたら――。 { speed:1 waitInput:true Wait:true }
+
+@print （そんな、それなら、もう――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 全てをなかったことには、できない。 { speed:1 waitInput:true Wait:true }
+
+@print その事実にたどりついた時、<br>私の中で何かが音を立てて崩れていった。 { speed:1 waitInput:true Wait:true }
+
+@print あまりのことに、<br>胸を押さえてうずくまる。 { speed:1 waitInput:true Wait:true }
+
+@print ヒロちゃんっ？<br>どうしたの、大丈夫かい！？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@print ……平気だ。<br>最後まで、見届ける。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 膝は震えていたが、なんとか立ち上がる。 { speed:1 waitInput:true Wait:true }
+
+@print ぐらつく視界の端で、<br>シェリーが身を乗り出しているのが映った。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Cry1,ArmR4 { time:0 }
+
+@print ……言いたくないかもしれません。<br>でも、私、ちゃんと知りたいんです。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 本当のハンナさんの気持ちが知りたい。<br>もっとあなたのこと、知りたいんです。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print シェリーの声は、<br>今まで聞いたことのないほど震えていた。 { speed:1 waitInput:true Wait:true }
+
+@print 今にも泣きだしてしまいそうに、震えていた。 { speed:1 waitInput:true Wait:true }
+
+@print お願いします、ハンナさん……っ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ……どうして。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print ハンナは振り返らないまま、<br>肩を震わせ、かすれた声をしぼりだす。 { speed:1 waitInput:true Wait:true }
+
+@print どうしてあなたはいつも……<br>わたくしの中にズカズカと<br>勝手に踏み込んできますの？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@hide Sherry-Front,MainBackground-Front
+@blur MainBackground-Front
+@despawn MaskingRectangle
+@Wait 0.3
+
+@print 砂時計の下部分には扉が取り付けられており、<br>その扉を看守が開く。 { speed:1 waitInput:true Wait:true }
+
+@print ハンナが砂時計の中に放り込まれた。 { speed:1 waitInput:true Wait:true }
+
+@back 470_2 { Scale:{g_backgroundDefaultScale} }
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+# ＠備考◆倒れる
+
+@print ……っ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 扉の前に看守が立ったのを皮切りに、<br>落石が始まった。 { speed:1 waitInput:true Wait:true }
+
+@back 470_3 { Scale:{g_backgroundDefaultScale} }
+
+# パラパラと石が落ちてくる音
+@sfx Sfx_149
+
+@print 容赦なく降り注ぐ石の中、<br>倒れ伏していたハンナはよろよろと上体を起こす。 { speed:1 waitInput:true Wait:true }
+
+@print "座り込んだまま、<br>ガラス越しに私たちの方へと視線を<ruby=\"や\">遣</ruby>った。" { speed:1 waitInput:true Wait:true }
+
+@back 470_3 { time:0.6 }
+
+@print ……ええ、ええ、その通りですわ。<br>わたくしは、レイアさんを憎んでいた。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 内心ずっと嫌っていました。<br>それでもなんとかうまくやっていこうとは、<br>努力していました……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print あの時レイアさんが、<br>あんなことを言わなければ――。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ◎回想シーン（新規）
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@hide Stills-Middle
+@back 31_3 { time:0 }
+@Wait 0.2
+
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print それはわたくしが一度上に戻ろうと、<br>エレベーターに乗り込んだ時でした。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Surprised1
+
+@print 偶然レイアさんと一緒になって。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1
+
+@print わたくしたちは、一緒に昇っていきました。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "その時のわたくしは、<ruby=\"ひょうかい\">氷塊</ruby>を抱えていました。" { speed:1 waitInput:true Wait:true }
+
+@print シェリーさんが氷サッカーなんかして、<br>落ちていて危なかったので、回収しておいたんです。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Normal1
+
+@print アンアンくんに舞台衣装を着せたいって話だけども。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 中でふとレイアさんが切り出してきたのは、<br>舞台衣装の話でした。 { speed:1 waitInput:true Wait:true }
+
+@print みんなで地下施設探索に行こうと決まった時、<br>わたくしの頭に思い浮かんだのはアンアンさんでした。 { speed:1 waitInput:true Wait:true }
+
+@print アンアンさんの遺体が<br>地下施設にあることは知っていたので、<br>せめてその遺体を着飾ってあげたいと思い立ちました。 { speed:1 waitInput:true Wait:true }
+
+@print だからわたくしは<br>アトリエに行き、舞台衣装を持ち出していて。 { speed:1 waitInput:true Wait:true }
+
+@print そこをレイアさんに目撃されてしまったのです。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1
+
+@print ハンナくんの想いは本当に素晴らしいよ。<br>私も乗じさせてもらおうと思っている。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print レイアさんがバッグから<br>ちらりと取り出してみせたのは、主役の王冠でした。 { speed:1 waitInput:true Wait:true }
+
+@print 彼女の前で、<br>舞台を演じようと思ってね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print いたずらっぽく笑うレイアさんに、<br>その時のわたくしはただそっぽを向くだけでした。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1
+
+@print それにしてもハンナくん……<br>手がひどく荒れているね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 洗濯なんてやめた方がいいんじゃないかな。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print どうしてですの……？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 正直、キミが毎日洗濯している理由がわからないんだ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print レイアさんは困ったように笑って、<br>その時エレベーターが上に着きました。 { speed:1 waitInput:true Wait:true }
+
+@print その何気ない、悪気のないひと言は、<br>わたくしの胸の奥底にしまいこんだ気持ちを刺激しました。 { speed:1 waitInput:true Wait:true }
+
+@print ……わかりませんの。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Leia.Surprised1
+
+@print え？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@print わたくしはぎゅっと自分の唇をかみました。 { speed:1 waitInput:true Wait:true }
+
+@print 住む世界が違うあなたには、<br>到底わかるはずがありませんの……！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print ……はぁ、はぁ。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print と、取り乱して申し訳ありませんわ。<br>少しだけ待っていただけるかしら。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1
+
+@print "それきり<ruby=\"うつむ\">俯</ruby>いて呼吸が荒くなったわたくしに、<br>レイアさんは、何を思っていたのでしょう。<br>黙りこくっていました。" { speed:1 waitInput:true Wait:true }
+
+@print 恐れを抱いたのか。<br>不気味に思ったのか。<br>あるいは――哀れに思ったのか。 { speed:1 waitInput:true Wait:true }
+
+@print すまないが、私は【先にいくよ】。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 【先にいくよ】。<br>その言葉は私の心を駆り立てました。 { speed:1 waitInput:true Wait:true }
+
+@print 大きな、焦りを。 { speed:1 waitInput:true Wait:true }
+
+@print ……はぁ、はぁ……！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print ――やっぱりわたくしと彼女は、いる場所が違う。 { speed:1 waitInput:true Wait:true }
+
+@print 彼女は１人、<br>キラキラとした華々しい世界に行ってしまう。 { speed:1 waitInput:true Wait:true }
+
+@print ――わたくしを置いて。 { speed:1 waitInput:true Wait:true }
+
+@print "……なぜ置いていくのでしょう。<br><ruby=\"みじ\">惨</ruby>めなわたくしを――置いていかないで。" { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆大きく息を吸う
+
+@print ――ッ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+# 殴るSE
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@print "衝動的に、わたくしはレイアさんの後頭部を<br><ruby=\"ひょうかい\">氷塊</ruby>で殴りつけていました。" { speed:1 waitInput:true Wait:true }
+
+@print そしてエレベーターの扉が開き…… { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@char Ema.Surprised1,ArmR3 { time:0 }
+
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print え……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"ぼうぜん\">呆然</ruby>としたエマさんが、そこには立っていて――" { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@hideChars 
+@hide MainBackground-Middle
+
+# ========================================
+# 回想ここまで
+# ========================================
+
+@back 470_4 { time:0 }
+
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print レイアさんに嫉妬して、羨ましくて、焦がれて、<br>焦がれて、焦がれて、焦がれて……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print どんなにわたくしが望んでも、<br>彼女のいるところには決して届かない。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 結局わたくしは置き去りにされると思い知って……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 本当に惨めでした。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@back 470_5 { time:0.6 }
+
+@print だからわたくし、<br>レイアさんを殺しましたの。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "ハンナは――泣きながら、<ruby=\"わら\">嗤</ruby>っていた。" { speed:1 waitInput:true Wait:true }
+
+@back 470_6 { time:0.6 }
+
+@print 心底醜いですわね。<br>こんなの、知られたく、ありませんでしたわ。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "ガラス越しに見える彼女の顔には、<br><ruby=\"きれつ\">亀裂</ruby>が入っていた。" { speed:1 waitInput:true Wait:true }
+
+@print "降り注ぐ石が彼女を何度も<ruby=\"おうだ\">殴打</ruby>し、<br>傷跡から流血しているかのように思う。" { speed:1 waitInput:true Wait:true }
+
+@print けれどそれはもっと、もっと深い。 { speed:1 waitInput:true Wait:true }
+
+
+@print "鋭い音を立てながら、<br>黒々とした<ruby=\"きれつ\">亀裂</ruby>は顔全体に広がっていく。" { speed:1 waitInput:true Wait:true }
+
+@StopBgm { fade:3 }
+
+@print そして私たちは、<br>ハンナの暗黒の中にある【禁忌】を知る。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@StopBgm 
+
+# ========================================
+# トラウマシーン
+# ========================================
+
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@hide Stills-Middle,Stills
+@Wait 1
+@bgm Bgm_1_1
+
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@printer Normal.Simple
+
+@print "――<ruby=\"つか\">束</ruby>の間の夢を見ていましたの。" { speed:1 waitInput:true Wait:true }
+
+@print ある日、遠野ハンナはゴミ捨て場で<br>資源ごみとして積まれた少女漫画を拾った。 { speed:1 waitInput:true Wait:true }
+
+@print 夜泣きと夜泣きの間に本を開けば、<br>ハンナはお嬢様の気持ちになれた。 { speed:1 waitInput:true Wait:true }
+
+@print "ページをめくるたび、<br>ほんの<ruby=\"せつな\">刹那</ruby>の夢の時間が訪れる。<br>それはハンナの日常となった。" { speed:1 waitInput:true Wait:true }
+
+@print わずかな夢の日々を過ごしたのち、<br>自分の魔法にも気がついた。 { speed:1 waitInput:true Wait:true }
+
+@print 少しだけ宙に浮くことができたのだ。 { speed:1 waitInput:true Wait:true }
+
+@print ――漫画のヒロインと同じ。 { speed:1 waitInput:true Wait:true }
+
+@print ――わたくしは、特別。 { speed:1 waitInput:true Wait:true }
+
+@print ――わたくしは、選ばれた存在。 { speed:1 waitInput:true Wait:true }
+
+@print "やっと順番が来たと、ハンナはそう思った。<br><ruby=\"むく\">報</ruby>われる日がきた。" { speed:1 waitInput:true Wait:true }
+
+@print 夢は大きく大きく膨らんだ。 { speed:1 waitInput:true Wait:true }
+
+@print ハンナは夜にこっそりと抜け出して、<br>空を飛ぶ練習をした。 { speed:1 waitInput:true Wait:true }
+
+@print 暑い日も寒い日も、<br>雨の日も風の日も。 { speed:1 waitInput:true Wait:true }
+
+@print もっともっと大空高く駆けられるはず。 { speed:1 waitInput:true Wait:true }
+
+@back 170_1 { time:1 }
+
+@print その日は真冬で、<br>雪がしんしんと降っていた。 { speed:1 waitInput:true Wait:true }
+
+@print いつも抜け出すのはわずかな時間、<br>ほんの少し目を離すだけだから、<br>きっと今日も大丈夫。 { speed:1 waitInput:true Wait:true }
+
+@print 今日も１ミリだけ高く飛べた気がする。<br>きっと練習の成果が出ている。 { speed:1 waitInput:true Wait:true }
+
+@print ハンナは満足げな笑顔で、家に帰った。 { speed:1 waitInput:true Wait:true }
+
+@print 高熱を出している妹に<br>ようやく気が付いた。 { speed:1 waitInput:true Wait:true }
+
+@print 電話はない。お金も持たず、必死に病院へと走った。 { speed:1 waitInput:true Wait:true }
+
+@back 170_1 { time:1 }
+@Wait 0.5
+@animate Stills-Middle
+
+@print 愚かだった。<br>絶え間なく押し寄せる後悔に、<br>誰も救いの言葉などかけてくれない。 { speed:1 waitInput:true Wait:true }
+
+@print ――ハンナはお姉ちゃんだから<br>責任をもってきょうだいを守ってね。 { speed:1 waitInput:true Wait:true }
+
+@print 母に置き去りにされ、かけられた言葉が、<br>何度も何度も頭にこだました。 { speed:1 waitInput:true Wait:true }
+
+@print "――これは<ruby=\"つか\">束</ruby>の間の夢。" { speed:1 waitInput:true Wait:true }
+
+@print ――妹は死んでいないし、<br>置き去りになんてしていない。 { speed:1 waitInput:true Wait:true }
+
+@print ――わたくしたちは、<br>置き去りになんてされていない。 { speed:1 waitInput:true Wait:true }
+
+@print ――お金持ちのあたたかな家で、<br>わたくしたちはお嬢様のような暮らしをしているの。 { speed:1 waitInput:true Wait:true }
+
+@print ――あばら家も。 { speed:1 waitInput:true Wait:true }
+
+@print ――ぼろきれのような服も。 { speed:1 waitInput:true Wait:true }
+
+@print "――<ruby=\"こご\">凍</ruby>えるような雪も。" { speed:1 waitInput:true Wait:true }
+
+@print ――死も。 { speed:1 waitInput:true Wait:true }
+
+@back 170_1 { Scale:{g_backgroundDefaultScale} time:1 }
+@StopBgm { fade:3 }
+
+@print ――こんなものは全部、全部夢だから。 { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+@HidePrinter 
+
+# ========================================
+# トラウマシーンここまで
+# ========================================
+
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@hide Stills,Stills-Middle,Stills-Front
+@Wait 1
+
+# 激しい落石の音
+@sfx Sfx_150
+
+@back 470_6 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@printer Normal.Default
+
+@print 徐々に勢いを増した落石が、<br>ハンナの身を襲った。 { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_43_2
+
+@print ぐっ……ああぁっ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 足が変な方向に曲がっていて、<br>折れているように見えた。 { speed:1 waitInput:true Wait:true }
+
+@print "ハンナは荒い息を吐きながら、<br>赤い血を引きずりながら、<br>ガラスの壁面へと<ruby=\"は\">這</ruby>いずってくる。" { speed:1 waitInput:true Wait:true }
+
+@back 470_7 { Scale:{g_backgroundDefaultScale} }
+
+@print 嫉妬に駆られて殺したなんて、<br>醜くて汚くて最低で……っ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 処刑されて当然なのはわかっています！<br>けれど、けれど……っ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "石に埋もれていく砂時計の中で、<br>ハンナが拳で何度もガラスを<ruby=\"たた\">叩</ruby>く。" { speed:1 waitInput:true Wait:true }
+
+@back 470_7 { time:0.6 }
+
+@print でも……でも、わたくし、<br>魔女になりたくありませんの……っ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print どんなに汚くても、<br>罪深くても、人間のままでいさせてほしいの……っ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@back 470_8 { time:0.6 }
+
+@print どうか人間のままで殺して――！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print わたくしを化け物にしないでよぉっ！<br>わたくしのままでいさせてよぉっ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 壮絶な光景を目の当たりにし、<br>私たちは息すらできなかった。 { speed:1 waitInput:true Wait:true }
+
+@print その心からの叫びに、悲痛な願いに、<br>応えられる者などいない。 { speed:1 waitInput:true Wait:true }
+
+@print ハンナの魔女化は、本人の望みに反して<br>めきめきと進んでいく。 { speed:1 waitInput:true Wait:true }
+
+@print その時だった。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@hide Stills-Forefront,Stills-Front,Stills-Middle,Stills
+
+@print わかりました！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print シェリーが声を張り上げたことで<br>処刑をただ苦しげに見守っていた私は、<br>ハッとさせられる。 { speed:1 waitInput:true Wait:true }
+
+@print シェリーの方を見れば、<br>猛烈な勢いで砂時計の方へ駆け出していた。 { speed:1 waitInput:true Wait:true }
+
+@print シェリーちゃん！？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@print おめえ一体何考えて――！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print 砂時計の扉の前には看守が立っている。<br>そこへ猛然と突っ込んで行ったシェリーは―― { speed:1 waitInput:true Wait:true }
+
+# ぶんっと武器が振り下ろされる音
+@sfx Sfx_9
+@Wait 0.5
+
+# ざんっと肉が切れる音
+@sfx Sfx_12
+@Wait 0.8
+
+@print 看守に鎌で斬りつけられた。 { speed:1 waitInput:true Wait:true }
+
+@print シェリー！！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "ギリギリで致命傷は逃れたものの、<br>シェリーの体から鮮血が<ruby=\"ほとばし\">迸</ruby>る。" { speed:1 waitInput:true Wait:true }
+
+@print うあああああああ！！<br>ああああああああっ！！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ざんっと肉が切れる音
+@sfx Sfx_12
+@Wait 0.8
+
+@print しかしシェリーは止まらず、<br>看守に深く何度も斬りつけられながらも、<br>扉の向こうへと飛び込んだ。 { speed:1 waitInput:true Wait:true }
+
+@print 落下してくる岩はもうハンナの体を半分以上埋めていて、<br>ハンナも怪我を負いながら、呆然としていた。 { speed:1 waitInput:true Wait:true }
+
+@back 470_8 { time:0.6 }
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print あなた、あなた一体どういうつもりですの！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"ちまみ\">血塗</ruby>れのシェリーが<br>岩を強引にかきわけながらハンナへと近付いていく。" { speed:1 waitInput:true Wait:true }
+
+@print その間も落石は止まらない。 { speed:1 waitInput:true Wait:true }
+
+@print 置き去りが嫌だって言ったので、<br>一緒に逝きましょう！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 私が一緒ですから、ハンナさんはもう大丈夫！<br>置き去りにしてもいないし、<br>置き去りにされてもいません！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@back 470_9 { Scale:{g_backgroundDefaultScale} time:0.6 }
+
+@print なれはてには、させませんっ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print "シェリーは<ruby=\"ちまみ\">血塗</ruby>れになりながらも満面の笑顔で、<br>震える手を伸ばした。" { speed:1 waitInput:true Wait:true }
+
+@print "ハンナの顔がくしゃりと<ruby=\"ゆが\">歪</ruby>む。" { speed:1 waitInput:true Wait:true }
+
+@back 470_10 { Scale:{g_backgroundDefaultScale} time:0.6 }
+
+@print なんて、なんてバカなのかしら――。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+# 激しい落石の音
+@sfx Sfx_150
+
+@print 岩が完全に２人を埋めつくす前に、<br>ハンナはふっと笑顔になった。 { speed:1 waitInput:true Wait:true }
+
+@print "その時、<ruby=\"かいまみ\">垣間見</ruby>えたハンナの顔は、<br><ruby=\"きれつ\">亀裂</ruby>が消え失せて<br>元の姿に戻っているように見えた。" { speed:1 waitInput:true Wait:true }
+
+@StopBgm { fade:3 }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@hide Stills-Forefront,Stills-Front,Stills-Middle,Stills
+
+@print 砂時計の上部にあった岩は、<br>全て下部へと落下し―― { speed:1 waitInput:true Wait:true }
+
+@print "大量に降り注いだ岩の下に、<br>２人の姿は完全に<ruby=\"つぶ\">潰</ruby>され、消えた。" { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_44_1
+
+@print 岩の隙間からじわじわとひろがる赤が、<br>鮮やかな蝶になっていく。 { speed:1 waitInput:true Wait:true }
+
+@print "なれはての<ruby=\"ほうこう\">咆哮</ruby>は、<br>いつまでたっても聞こえてこないまま……" { speed:1 waitInput:true Wait:true }
+
+@print 処刑台は地下へと降りていった。 { speed:1 waitInput:true Wait:true }
+
+@back 13_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print なんで、橘まで、なんでだよ……！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+# ＠備考◆泣き崩れる
+
+@print うっ、うぅっ、うぅう……っ { author:Miria speed:1 waitInput:true Wait:true }
+
+@print 裁判が終わった後も、<br>私たちはしばらく動けなかった。 { speed:1 waitInput:true Wait:true }
+
+@Wait 1
+
+@update Ema
+@update Leia
+@update Hanna
+@update Sherry
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter04/Act02_Chapter04_Adv15

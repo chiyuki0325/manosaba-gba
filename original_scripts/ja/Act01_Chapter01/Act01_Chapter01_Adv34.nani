@@ -1,0 +1,197 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-1-30
+
+# ========================================
+# ●シーン1-1‐30
+# [back 10]
+# ========================================
+
+@back 10_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@print "長い調査の末、<br>すっかり<ruby=\"ひ\">陽</ruby>が暮れて――" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [sfx 33：荘厳な鐘の音]
+# ========================================
+
+@sfx Sfx_33
+
+@print "今まで聞いたことのない、<br><ruby=\"そうごん\">荘厳</ruby>な鐘の音が牢屋敷に響きわたった。" { speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"はじ\">弾</ruby>かれるように、<br>エマ、シェリー、ハンナは顔を上げる。" { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1
+@char Sherry.Surprised1
+
+@print 鐘の音……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print これってもしかして……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [sfx 14：フクロウの通知音]
+# ========================================
+
+@sfx Sfx_14
+
+@hideChars 
+
+@print 『魔女裁判の時間となりました』 { speed:1 waitInput:true Wait:true }
+
+@print "『皆さん、必ず自身のスマホを持って、<br>　<ruby=\"すみ\">速</ruby>やかに裁判所に集合してください』" { speed:1 waitInput:true Wait:true }
+
+@print 『従わない者は看守によって<br>　強制連行します』 { speed:1 waitInput:true Wait:true }
+
+@print ゴクチョーからのメッセージは、<br>予想したとおりのものだった。 { speed:1 waitInput:true Wait:true }
+
+@print （時間切れだ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1
+
+@print 行くしかないですね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "シェリーがお手上げと肩をすくめ、<br>エマもハンナも<ruby=\"しぶしぶ\">渋々</ruby>と<ruby=\"うなず\">頷</ruby>き、通路を歩きだした。" { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+# ========================================
+# [sfx 165：ゆっくりと大扉を開く音]
+# ========================================
+
+@sfx Sfx_165
+
+# ========================================
+# [back 13]
+# ========================================
+
+# ========================================
+# [bgm Bgm_002_001_Loop]
+# ========================================
+
+@back 13_1 { time:0 }
+@back Transparent.Custom { time:0.9 }
+@Wait 0.9
+
+@bgm Bgm_2_1_Loop
+
+@back Transparent { time:1.8 }
+@WaitForNextFrame 
+
+@animate MainBackground
+@Wait 1.5
+
+@print これまで牢屋敷を何度か探索してきたが、<br>鍵がかかって開かなかった大部屋―― { speed:1 waitInput:true Wait:true }
+
+@print そこが、裁判所だった。 { speed:1 waitInput:true Wait:true }
+
+@print ホールのように広い室内中央には意味深な台座があり、<br>それを取り囲む形で、ぐるりと証言台が並んでいた。 { speed:1 waitInput:true Wait:true }
+
+@print 証言台には各囚人の番号が振ってあり、<br>席は決められているらしい。 { speed:1 waitInput:true Wait:true }
+
+@print 出入口の大扉の前には、<br>見張りなのか看守が立っている。 { speed:1 waitInput:true Wait:true }
+
+@print "そして、高い位置の手すりで<br>羽を休めているゴクチョーが<ruby=\"しゃべ\">喋</ruby>りはじめた。" { speed:1 waitInput:true Wait:true }
+
+@back 13_1
+
+@char Warden.1
+
+@print あのー……まずは魔女裁判のルールについて<br>説明しますね。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print １時間の議論の後、<br>犯人と思われる人物に各自の端末で投票してもらいます。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 投票で魔女に決められた人物は<br>中央の台座へと連行、処刑執行になる……て感じです。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print １１名の少女たちは証言台に立ち、<br>お互いを探り合うようにじっとにらみ合っている。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （犯人を、魔女を確定させないと……<br>　でも、一体誰なの……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,Option-ArmL-Off
+
+@print １時間もいらねーよ。<br>さっさと投票して終わらせろ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Margo.Normal1,ArmL4
+
+@print あら、それならあなたが犯人だって<br>名乗り出てくれるかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@print そうしたらお話は簡単に終わるけれど。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa.Angry1,Option-ArmL-Off
+
+@print ……ウチは殺ってねえ。疑うのは勝手だけどな。<br>覚えのない殺人犯になるつもりはねえよ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Smile1
+
+@print いやぁ、アンタ何人か殺してそうだけどね～？<br>ほんとは殺したんじゃないの～？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print あてぃし、アリサに投票しちゃおっかな～。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa.Angry1,Option-ArmL-Off
+
+@print てめえ……っ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "<ruby=\"さっそく\">早速</ruby>火花を散らし始めた少女らに、<br>エマは<ruby=\"いしゅく\">萎縮</ruby>してしまう。" { speed:1 waitInput:true Wait:true }
+
+@print （こんな空気の中で発言するなんて、<br>　ボクには……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Pensive
+
+@print "エマが<ruby=\"うつむ\">俯</ruby>き加減に視線を<ruby=\"さまよ\">彷徨</ruby>わせていると、<br>隣にいるメルルが視界に入る。" { speed:1 waitInput:true Wait:true }
+
+@print "メルルも泣きそうな表情だ。<br>青ざめて震え、険悪な空気に<ruby=\"おび\">怯</ruby>えきっている。" { speed:1 waitInput:true Wait:true }
+
+@print う、うぅ……皆さん怖いです……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print （メルルちゃんも不安なんだ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Normal1
+@char Meruru.Pensive
+
+@print メルルちゃん、大丈夫。<br>ボクらは信じ合って頑張ろう。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマがそっと励ましの声をかけると、<br>メルルはハッと顔を上げた。 { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default
+
+@print は、はい……ありがとうございます、エマさん。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 私、こういう時に強く出られる自信がなく……。<br>きっとまともに何も言えないと思います……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print だから、<br>エマさんのサポートさせてください……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR3
+
+@print ありがとう！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 近くに心強い味方を得て、エマの瞳に光が宿る。 { speed:1 waitInput:true Wait:true }
+
+@print "（負けない！ 絶対に犯人を探し当てるんだ！）" { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Warden.1
+
+@print それでは、魔女裁判開廷です！ { author:Warden speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ＞議論パートへ
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter01/Act01_Chapter01_Trial00

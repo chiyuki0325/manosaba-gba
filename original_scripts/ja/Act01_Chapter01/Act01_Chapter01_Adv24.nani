@@ -1,0 +1,295 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-1-20
+
+# ========================================
+# ●シーン1-1‐20
+# [back 5]
+# ========================================
+
+# ========================================
+# [bgm Bgm_035_001_Loop]
+# ========================================
+
+@back 5_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+@bgm Bgm_35_1
+
+@print ラウンジに集った少女たちは、１１人。<br>誰もが、どこか気まずそうに目を合わさないようにしている。 { speed:1 waitInput:true Wait:true }
+
+@print そんな中、エマの隣に立ったのは、<br>シェリーとメルルの２人だった。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL7
+@char Meruru.Pensive
+@char Sherry.Pensive1,ArmR4,ArmL1
+
+@print エマさん、大丈夫ですか？<br>今にも倒れそうですけど……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ソ、ソファーに座った方が……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print この状況下で心配してくれる彼女らに、<br>エマはなんとか笑顔を作る。 { speed:1 waitInput:true Wait:true }
+
+@print 大丈夫だよ。ショックなのは、<br>みんなきっとおんなじだろうし……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR2,ArmL1
+
+@print 犯人以外は。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ＠備考◆息を呑む
+
+@char Ema.Pensive1
+
+@print ……っ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （……この中に、ノアちゃんを殺した犯人がいる？<br>　そんな、まさか） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "エマの視線は、<br>ラウンジにいる全員の様子を<ruby=\"うかが\">窺</ruby>うように<ruby=\"さまよ\">彷徨</ruby>う。" { speed:1 waitInput:true Wait:true }
+
+@print 誰もが青ざめ、<br>信じられないといった表情だ。 { speed:1 waitInput:true Wait:true }
+
+@print 犯人なんて、いるわけないよ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "エマの<ruby=\"つぶや\">呟</ruby>きは、どこか<ruby=\"くうきょ\">空虚</ruby>に響いた。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [sfx 8：フクロウの羽ばたき音]
+# ========================================
+
+@sfx Sfx_8
+
+@char Warden
+
+@print そこで、天井近くからの羽ばたき音とともに、<br>ゴクチョーが現れる。 { speed:1 waitInput:true Wait:true }
+
+@print はぁ……殺人事件……<br>起きちゃいましたね……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 今夜、【魔女裁判】を開廷します。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 今いる囚人の中から必ず殺人犯を特定してください。<br>その者は、【魔女】として処刑するので。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print やすやすと死なない魔女の活動を<br>確実に沈黙させる方法での処刑です。<br>かなり酷いこととか……しちゃうので。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print また、囚人全員への告知ですが、<br>特定ができなかった場合は、全員処刑とします。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 簡単に言ってきたあまりにおぞましい宣言に、<br>少女たちはざわついた。 { speed:1 waitInput:true Wait:true }
+
+@char Warden
+
+@print 私としても仕事が増えるんで避けたいんですが、<br>もともと皆さんは、<br>危険人物として捕らえられているので……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print "ただ……<ruby=\"あるじ\">主</ruby>が、いや……<br>まぁこの牢屋敷側の気持ちとしては、<br>そんなのはあまりにかわいそうだと思っているんですよ。" { author:Warden speed:1 waitInput:true Wait:true }
+
+@print だから投票で確実に<br>【魔女】を選んでもらって、<br>【魔女】だけを排除しましょう。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 全員処刑措置は、<br>あくまで【魔女】を選出できなかった場合にだけ<br>適用します。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print がんばって犯人を特定してくださいね……<br>犯人を見つければ、生き残れるので……<br>まあ、あの、前向きに楽しんでください。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print あ、あと捜査中に不正がされないように<br>みだりに遺体に触れたりしないでください。<br>現場はそのまま保持しておいてくださいね。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print "では捜査をお願いします。<br>あっ！ どうせ難しいので、無理はしないでくださいね……。<br>わからなくても皆さんが死ぬだけなので……。" { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 期限は魔女裁判開廷のアナウンスが入るまでです。<br>業務中なら万が一気が向けば質問も答えますね……たぶん。 { author:Warden speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [sfx 8：フクロウの羽ばたき音]
+# ========================================
+
+@sfx Sfx_8
+
+@hideChars 
+
+@print 一方的な話を終え、<br>ゴクチョーは去っていった。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Fearful1
+
+@print 裁判にて、誰かを選ばなければいけない。<br>エマは全身の血の気が引いたようだった。 { speed:1 waitInput:true Wait:true }
+
+@print （今日中に犯人を特定しなきゃ、全員処刑……？<br>　そんな、時間がなさすぎる！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Angry1
+
+@print （いやそれよりも、<br>　この中の誰かが殺人を犯してるなんて、信じたくない！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （でも、誰かがノアちゃんを殺したんだ……。<br>　ひどすぎる……許せない……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ラウンジ内に、気まずい沈黙が落ちていた。 { speed:1 waitInput:true Wait:true }
+
+@print "少女たちは、お互いの腹を探り合うように<br>誰もが視線を<ruby=\"さまよ\">彷徨</ruby>わせている。" { speed:1 waitInput:true Wait:true }
+
+@print 数日間、共同生活をしてきた少女たち。 { speed:1 waitInput:true Wait:true }
+
+@print マーゴが言っていたように、<br>お互いのことをほとんど知らない。 { speed:1 waitInput:true Wait:true }
+
+@print その中で信じ合うことは、<br>とても、とても難しい。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1,ArmR1,ArmL3
+
+@print やがてレイアが室内の中央に立つ。<br>全員の注目は、レイアへと集まった。 { speed:1 waitInput:true Wait:true }
+
+@print こんな事態になってしまい、本当に辛いと思うが……<br>私は、犯人を特定したいと思う。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Margo.Normal1,ArmR5,ArmL1
+
+@print 賛成よ。<br>私もいわれない理由で選ばれて死にたくないもの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 殺人事件の犯人を、<br>きちんと【魔女】として裁いてもらうべきだと思うわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia.Normal1,ArmR1,ArmL2
+
+@print ああ、みんな同じ気持ちだと思う。<br>時間はあまりない。手分けして捜査をはじめよう。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Normal1,ArmR1,ArmL1
+
+@print 出入口に向かって歩きだす、<br>レイアとマーゴの２人。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 慌てたのはエマだ。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+
+@print ま、待ってレイアちゃん！<br>誰が犯人かわかったら、それでその子を処刑させるの！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "レイアはエマの横をすれ違っていく。<br>その表情は、辛そうに<ruby=\"ゆが\">歪</ruby>んでいた。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@HidePrinter 
+@spawn MaskingRectangle
+@back 5_2
+@blur MainBackground-ForeFront
+@char Leia.Normal1
+@mask MainBackground-ForeFront,Leia-ForeFront
+@animate MainBackground-ForeFront
+@animate Leia-ForeFront
+@Wait 0.4
+
+@print みんなを助けるためだ。<br>疑わしい人物も、目星がついている。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+
+@print え……！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print レイアの言葉に、<br>エマは衝撃で立ち尽くす。 { speed:1 waitInput:true Wait:true }
+
+@hide Ema
+
+@print レイアの眼差しは、<br>ハンナへと向けられていた。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Angry1,ArmR3,ArmL1
+
+@print 遠野ハンナ。<br>――キミが、城ケ崎ノアを殺したんじゃないか？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@hide Ema
+@char Hanna.Surprised1
+
+@print なっ……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Leia.Angry1
+
+@print まだしっかり調べていないが、<br>あの現場は足跡が残っていなかった。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print つまり……浮ける魔法を持つ者が<br>犯行に及んだんじゃないか？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@hide Hanna
+@char Ema.Angry1
+
+@print ハンナちゃんが犯人なわけない！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hide Ema
+@char Leia.Angry1,ArmR2,ArmL1
+
+@print ……そう思うなら、キミたちも捜査を進めたまえ。<br>今夜には全てがはっきりする。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@animate MainBackground-ForeFront
+@animate Leia-ForeFront
+@hide MainBackground-ForeFront,Leia-ForeFront
+@despawn MaskingRectangle
+
+@print 立ち去るレイアの表情は険しかった。 { speed:1 waitInput:true Wait:true }
+
+@print （みんなを助けたかったら、誰かを魔女にしなくちゃいけない……<br>　だからレイアちゃんは、シビアになってるんだ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （わかるけど、でも、ハンナちゃんを疑うなんて！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ココ、ナノカ、アリサも<br>それぞれが勝手にラウンジを出ていく。 { speed:1 waitInput:true Wait:true }
+
+@print ソファーに座っているアンアンの隣には、<br>メルルが心配そうに寄り添っている。 { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Pensive
+
+@print あの、私アンアンさんを医務室に連れていきます。<br>アンアンさんは、とても捜査なんてできる状態じゃ……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char AnAn.Fearful1,Angle01/Option_Arms-
+
+@print ノアの死体を最初に見たアンアンは、<br>ショックが大きいのか青ざめて震えていた。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3,ArmL1
+
+@print そうだね……お願いできると助かる。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print メルルに支えられ、アンアンたちも出ていった。 { speed:1 waitInput:true Wait:true }
+
+@print 残されたのは、エマとシェリー、<br>そしてハンナの３人だった。 { speed:1 waitInput:true Wait:true }
+
+@print "ハンナは唇を噛み、<ruby=\"うつむ\">俯</ruby>いていた。<br>よっぽど悔しいのか、涙目になっている。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1
+
+@print ハンナちゃん……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Smile1,ArmR15,ArmL1
+
+@print 探偵の出番ですねっ！<br>真犯人を見つけて、ハンナさんの疑いを晴らしましょう！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print シェリーが明るく言い放ったことで、<br>エマはほっと表情を緩ませた。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Normal1
+
+@print そ、そうだよ。ハンナちゃんは犯人じゃない。<br>処刑なんて、絶対させない！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2
+
+@print ボクたちで、真犯人を探そう！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Pensive1
+
+@print ……そうね、絶対に犯人を見つけましょう。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 泣きそうになっているハンナが、<br>ようやく顔を上げてくれた。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマたちは勢いづき、<br>城ケ崎ノア殺人事件の捜査へと乗り出すこととなった。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [transition Out,Fade,1,Black]
+# ========================================
+
+@set "chosenAreaFlag = 0"
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter01/Act01_Chapter01_Adv25

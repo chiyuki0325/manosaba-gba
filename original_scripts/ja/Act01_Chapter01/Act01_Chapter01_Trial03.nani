@@ -1,0 +1,653 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act01_Chapter01/Act01_Chapter01_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@bgm Bgm_7_1
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# ==============================================================================
+# MARK: 💬 1-3-1 ノアの死因について
+# ==============================================================================
+
+# Judge1-3-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+@char Margo.Normal1,ArmR2,ArmL1,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@printDebate ノアちゃんの<br>死体の状況を<br>思い出して<br>欲しいのだけど……。
+
+@back 270_2
+@printDebate その死体はまるで、<br>真っ白なキャンバスに<br>自分を蝶と見立てたかのように<br>横たわっていたわ。
+
+@printDebate あの子は自分の肉体を<br>最期の作品の<br>画材として使った……<br>そうは考えられないかしら？
+
+@hide Stills
+@char Alisa.Pensive1,ArmR2,ArmL1,Option-ArmL-Off
+@gosubModifyCamera 0
+@printDebate ……そんなこと、<br>ありえんのか？
+
+@char Margo.Normal1,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@printDebate ……心が疲弊してしまった<br>天才芸術家のノアちゃんは<br>凶器を手にとって<br>自らの胸を貫いたの。
+
+# ＠備考◆恍惚
+@char Margo.Smile1,ArmR7,ArmL3
+@printDebate そして傷口から血が噴き出て、<br>それはあらかじめ<br>塗料で塗られていた部屋を<br>真っ赤に染めた……。
+
+# 恍惚
+@char Margo.Smile1,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@printDebate そうしてノアちゃんは、<br>一枚の絵を<br>完成させたのよ。<br>自分の人生<br>最後の遺作を……。
+
+@char Margo.Normal1,ArmR7,ArmL3,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open
+@printDebate "美しい<link=\"Objection_01_01_03_01\">自死</link>。<br>そう考えれば<br>すべての辻褄が合うわ。"
+
+@char Margo.Default,ArmR7,ArmL3,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open
+@printDebate "あの<link=\"Objection_01_01_03_02\">部屋の状況</link>も、<br>全てノアちゃんが作り上げた<br>芸術作品だったのよ。"
+
+@char Sherry.Normal1,,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Surprised_Open01,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@printDebate ……ちょっと待ってください。<br>ノアさんの死体の近くには、<br>凶器と思われる<br>【矢】が落ちていました。
+
+@char Sherry.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Surprised_Open02,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@printDebate 普通に考えるなら、<br>自分で刺したというよりも<br>【撃たれた】と考えるのが<br>自然じゃありませんか？
+
+@char Margo.Normal1,,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@printDebate あら、そうとも限らないんじゃない？
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@printDebate "<link=\"Objection_01_01_03_03\">自らの手で突き刺す</link>事ぐらい<br>できるでしょう。<br>それとも<br>何かそうではない<link=\"Objection_01_01_03_04\">証拠</link>でも<br>あるのかしら？"
+
+@char Leia.Pensive1,ArmR5,ArmL7,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@printDebate ……たしかに<br>このような監獄生活では、<br>多少おかしくなっても<br>仕方ないとは思うけどね。
+
+@char Hanna.Pensive1,ArmR1,ArmL1,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Open
+@gosubModifyCamera 0
+@printDebate 心の調子を<br>崩してしまっていたなら……<br>ありえないとも<br>言い切れませんわ……。
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Closed02
+@gosubModifyCamera 0
+@Wait 0.2
+
+@print （ノアちゃんがどうやって死んだのか……。<br>　ノアちゃんの事については<br>　わからない事も多いかもしれない……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@gosubSplitStageScreen 1
+
+@char Meruru.Normal1,ArmR8_1,ArmL8,Eyes1_Pensive_Open1,Mouth1_Angry_Open2
+@print ……エマさん。<br>私たちにわかることは、限られています。<br>当たり前ですが、わからないことはわからないんです。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal1,ArmR8_1,ArmL8,Eyes1_Pensive_Open1,Mouth1_Smile_Closed1
+@print なら……議論すべきなのは、<br>【今わかっている事】だと思います。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3,ArmL1
+
+@print "うん……！ そうだね！" { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideStageScreen 1
+@char Ema.Normal1,ArmR1,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02
+
+@print （……もう一度、魔女図鑑の情報と<br>　マーゴちゃんが言った事に違いがないか<br>　確認してみよう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-3-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_01_01_03_01
+
+@Skip false
+@pauseTrial true
+
+@choice ノアには自殺の動機がない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge1-3-3
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_01_01_03_02
+
+@Skip false
+@pauseTrial true
+
+@choice 部屋の状況がおかしい
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge1-3-2
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_01_01_03_03
+
+@Skip false
+@pauseTrial true
+
+@choice ノアが刺す事は不可能
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge1-3-4
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論4
+# ------------------------------------------------------------------------------
+
+# Objection_01_01_03_04
+
+@Skip false
+@pauseTrial true
+
+@choice ノアが刺していない証拠がある
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge1-3-5
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: ❌ 1-3-3 ノアには自殺の動機がない
+# ==============================================================================
+
+# Judge1-3-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Pensive1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print ……本当にそうなのかな。<br>だって、ノアちゃんは昨日も絵を描いてたんだよ……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Angry1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@print 絶望して自殺したなんて信じられないよ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1,ArmR1,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print 他人の内心なんて知りようがないわ？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1,ArmR1,ArmL1,Angle01/Facial/Eyes>Eyes_Pensive_Open01
+@gosubModifyCamera 0
+@print そうそう。<br>芸術家なんて何考えてんのかわかんないって。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1,Arms,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open01
+@gosubModifyCamera 0
+@print 彼女は絶対に絶望しない……か。<br>そう思うのは自由だよ。<br>この場にふさわしい意見でなかったとしてもね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# ＠備考◆哀れみ
+@char Leia.Smile1,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open03
+@print ……ノアくんが死んで悲しかったんだよね。<br>キミの感情は、私が受け止めてあげるよ。<br>だからそんな悲しげな顔をしないで、エマくん。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+# ＠備考◆照れ
+@char Ema.Flushed1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print （はわわわ……！<br>　慰められちゃった……！？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR3,ArmL1
+
+@print （もう一度マーゴちゃんの話をしっかり聞いてみよう……！<br>　何かの証拠品と矛盾している事が<br>　あるかもしれないし……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-3-1
+
+# ==============================================================================
+# MARK: ❌ 1-3-4 ノアが刺す事は不可能
+# ==============================================================================
+
+# Judge1-3-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ……ちょっと待って！<br>ノアちゃんが自分の胸を刺すなんて、<br>難しいんじゃないかな。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hanna.Normal1,ArmR3,ArmL2
+@gosubModifyCamera 0
+@print それはどうしてですの？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print だって痛いし……<br>それに手の角度とか……力の入れ方とか……<br>難しいんじゃない？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Pensive1,ArmR2,ArmL1,Option-ArmL-Off
+@gosubModifyCamera 0
+@print 意見がふわふわしすぎだろ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char AnAn.Angry1,Arms2,Angle01/Option_Arms>Option_Arms01_03,Angle01/Option_ArmR/Option_ArmR01_01-
+@gosubModifyCamera 0
+@print 『ちゃんと考えてから喋れ』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （お、怒られちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@Damage 
+@char Sherry.Pensive1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print たしかに心臓に届くほど深く刺したなら、<br>矢がひとりでに抜けるのかは疑問ですけど……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR2,ArmL2
+@print でも実際、血液で絵が描かれている以上、<br>【血が噴出して矢が抜けた】……ぐらいの事は<br>起こっていてもおかしくなさそうです。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive1,ArmR3,ArmL8,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 血を操ったのはたしかなんだろうしね……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR4,ArmL5
+@gosubModifyCamera 0
+@print （そう考えると、自殺でも不自然な状況じゃないのかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@print （もう一度調べた事を思い出してみよう……！<br>　何かおかしい所があるかもしれない……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-3-1
+
+# ==============================================================================
+# MARK: ❌ 1-3-5 ノアが刺していない証拠がある
+# ==============================================================================
+
+# Judge1-3-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Pensive1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print ……ねえ、本当にノアちゃんが<br>自分の胸を刺したのかな？<br>ボクには信じられないよ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 凶器を使っていない証拠とかがあれば<br>否定できるんじゃ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1,ArmR1,ArmL1,Angle01/Facial/Eyes>Eyes_Pensive_Open01
+@gosubModifyCamera 0
+@print それで？<br>その証拠ってどこにあんの？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1,ArmR4,ArmL5,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print そ、それは……指紋とか……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR3,ArmL2
+@gosubModifyCamera 0
+@print ……この屋敷に指紋検出キットのようなものは<br>あるのかい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR1,ArmL1
+@gosubModifyCamera 0
+@print 仮にあったとしても、<br>【使った証拠】にはなっても<br>【使ってない証拠】にはなりませんよね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR1,ArmL4
+@gosubModifyCamera 0
+@print 悪魔の証明というやつね♡ { author:Margo speed:1 waitInput:true Wait:true }
+
+@Damage 
+@char Ema.Pensive1,ArmR3,ArmL2,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （うぐ……。<br>　やっぱりボクの考えが間違ってたのかも……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （もう一度考えてみよう……！<br>　ノアちゃんの身にいったい何が起こったのか……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-3-1
+
+# ==============================================================================
+# MARK: ⭕ 1-3-2 部屋の状況がおかしい
+# ==============================================================================
+
+# Judge1-3-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+@StopBgm 
+@gosubCutIn Ema
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Determined2,ArmR3,ArmL2
+@gosubModifyCamera 0
+@print ……マーゴちゃん。<br>でも１つ、部屋にはおかしな点があるんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1,ArmR2,ArmL1
+@gosubModifyCamera 0
+@print おかしな点？<br>それは何かしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR8,ArmL1,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print これを見て欲しいんだけど……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_5_1
+@spawn Clue
+
+@char Margo.Default,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print その写真は……床の傷……？<br>それがどうかしたのかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR8,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print マーゴちゃんは<br>【部屋を白いキャンバスに見立てた】って<br>言ってたけど……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print じゃあこの傷って何だと思う？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1,ArmR2,ArmL1,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print 絵の一部ではなさそうだし……<br>予定外の傷をつけてしまったんじゃないかしら。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@print ノアちゃんが自殺した後、<br>矢が地面に抜け落ちた……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@print それで矢が床に傷を作ったのよ。<br>それなら何も問題ないでしょう？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@despawn Clue
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （矢が傷を作った……そのマーゴちゃんの説明に問題は……） { author:Ema speed:1 waitInput:true Wait:true }
+
+# ==============================================================================
+# MARK: 💬 1-3-8 マーゴの説明の問題
+# ==============================================================================
+
+# Judge1-3-8
+
+@choice 問題ある
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge1-3-10
+
+@choice 問題ない
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge1-3-9
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: ❌ 1-3-9 問題ない
+# ==============================================================================
+
+# Judge1-3-9
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print たしかにそれなら、筋は通るのかも……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@char Meruru.Normal1,ArmR1_1,ArmL8,Eyes1_Pensive_Open1,Mouth1_Normal_Open2
+@print ……あ、あの……<br>本当にそうでしょうか？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@gosubModifyCamera 0
+@print え……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@gosubModifyCamera 0
+@char Meruru.Normal1,ArmR1_1,ArmL8,Eyes1_Pensive_Open1,Mouth1_Normal_Open2
+@print 死体の横に落ちていた矢についてなんですけど……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal1,ArmR1_1,ArmL4,Eyes1_Pensive_Open1,Mouth1_Angry_Open2
+@print あの先端には【血がついて】ました。<br>逆に言えば……<br>【他に何もついていない】という事です。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal2,ArmR1_2,ArmL3,Eyes2_Normal_Open1,Mouth2_Angry_Open2
+@print でも思い出してください。<br>死体のあった床は……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR1,ArmL1
+@gosubModifyCamera 0
+@print （そうか……！<br>　メルルちゃんの言う通りだ……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@gosubModifyCamera 0
+@print （この矢が、床に傷を作ったっていう説は……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-3-8
+
+# ==============================================================================
+# MARK: ⭕ 1-3-10 問題ある
+# ==============================================================================
+
+# Judge1-3-10
+
+@char Ema.Determined2,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print ……問題あるよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@spawn Clue
+
+@char Ema.Normal1,ArmR8,ArmL1,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print この矢を見て欲しいんだけど……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1,ArmR1,ArmL1,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print ……凶器の矢ね？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR6,ArmL12,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print これには、床に塗られていた白い塗料が<br>どこにもついてないんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# 素直に驚く
+@char Margo.Surprised1,ArmR1,ArmL1
+@gosubModifyCamera 0
+@print あら……！<br>本当ね……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR6,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print この矢がもし床に傷をつけたなら、<br>こんなことありえないよね？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@print だって、床から剥がれた分の塗料が<br>こっちにもつくはずだもん……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@despawn Clue
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Margo.Normal1,ArmR2,ArmL1,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print ……そういえば矢の落ちていた位置も、<br>少し傷から離れていた気がするわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1,Angle01/Facial/Mouth>Mouth_Normal_Open
+@print ならたしかに、エマちゃんの言う通り<br>あの傷はこの矢で付いたわけでは<br>ないかもしれないのね……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1,ArmR2,ArmL1
+@gosubModifyCamera 0
+@print ……けどさ～。<br>たしかにちょっと不自然かもだけど……<br>そんな細かい事、なんか事件に関係あんの？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print あっ、えーと……それは……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+@char Margo.Normal1,ArmR2,ArmL1,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print ふふ、関係あるわよ。<br>……事件にとても大きな関係がね？ { author:Margo speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆驚き
+@char Ema.Surprised1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print （マーゴちゃん……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR1,ArmL3
+@gosubModifyCamera 0
+@print だって、矢に塗料が付いていないということは……<br>他に【床を傷付けた物】がある<br>ということでしょう？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1,ArmR1,ArmL3,Angle01/Facial/Mouth>Mouth_Smile_Open
+@print でも現場ではそれが見つかっていない。<br>……それはどういうことだと思う？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1,ArmR1,ArmL2
+@gosubModifyCamera 0
+@print ……どういうことだよ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print ……誰かが床に傷をつけた物を、<br>持ち去ったということでしょうか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL1
+@gosubModifyCamera 0
+@print そういうこと♪<br>シェリーちゃんは賢いわね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print つまりノアちゃんではない<br>【何者かがそこにいた】……<br>この傷はそういう事を表しているの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1,ArmR2,ArmL1
+@print それは明確に【殺人者がいた】ということを<br>示しているわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR9,ArmL4
+@gosubModifyCamera 0
+@print たしかに少なくとも、<br>死体を見た後に立ち去っている人物は<br>いるはずですもんね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL1
+@gosubModifyCamera 0
+@print ええ。<br>……あなたもそう言いたかったのよね？<br>エマちゃん。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print えっ！？<br>えっと……た、たぶん……！<br>そうかも……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# BGM変更：Sar-gedy-動-
+@bgm Bgm_4_1
+
+# SE・ネガティブ音
+@sfx Sfx_Common_7
+
+@char Coco.Surprised1,ArmR1,ArmL1
+@gosubModifyCamera 0
+@print ……じゃあやっぱ、<br>あてぃしらの中の誰かが殺したってこと！？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1,ArmR1,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Closed,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print そう……つまり。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR7,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open
+@print この中に、ノアちゃんを殺した<br>【殺人鬼】が紛れ込んでいるという事よ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+@char Hanna.Surprised1,ArmR3,ArmL2
+@gosubModifyCamera 0
+@print そ、そんな……！<br>嘘ですわっ！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+# ＠備考◆怯え
+@char Miria.Fearful1,ArmR8,ArmL7
+@gosubModifyCamera 0
+@print そ、そそ、それが本当なら……！<br>ど、どうしよう……！？ { author:Miria speed:1 waitInput:true Wait:true }
+
+# ＠備考◆不安
+@char Ema.Pensive1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print （マーゴちゃん……！<br>　それはたしかにそうかもしれないけど……！<br>　そんな言い方……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1,ArmR2,ArmL1,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print 危うくそんな大事な情報を見落とす所だったわ♡<br>ありがとう、エマちゃん。<br>おかげで議論が進んだわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print う、うん……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# ＠備考◆笑顔
+@char Margo.Smile1,ArmR2,ArmL1
+@gosubModifyCamera 0
+@print ……ふふ。そう……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+# ＠備考◆冷たい笑い
+@char Margo.Smile1,ArmR1,ArmL3
+@print 【誰かを処刑しなくてはいけない議論】が。 { author:Margo speed:1 waitInput:true Wait:true }
+
+# ＠備考◆満面の笑み
+@char Margo.Smile1,ArmR1,ArmL3,Angle01/Facial/Eyes>Eyes_Smile_Closed
+@print ……ね？ { author:Margo speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+@char Ema.Pensive1,ArmR3,ArmL7,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print う……！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@print （マーゴちゃんの言う通り、ボクが指摘したのは<br>　【この中に犯人がいる】ということなのかも……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@print （マーゴちゃんはこんな状況なのに何か楽しげだ。<br>　それに――） { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print …………。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （――ナノカちゃんはさっきから<br>　一言も口をひらいてない） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,Angle01/Head01/Facial01/Eyes01>Eyes01_Thinking_Closed01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@print （みんなが何を考えてるのか……<br>　全然わかんないよ……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@print （こんな状況で犯人を探し出すなんて……<br>　本当にできるのかな……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR8,ArmL8
+@gosubModifyCamera 0
+@print ……さあ！<br>議論も盛り上がってきましたし、<br>次は死因についての話をしてみましょうか！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL1
+@gosubModifyCamera 0
+@print そうね。<br>話し合いましょう？<br>みんなが頭の中で考えていることを……♡ { author:Margo speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+@goto Act01_Chapter01/Act01_Chapter01_Trial04

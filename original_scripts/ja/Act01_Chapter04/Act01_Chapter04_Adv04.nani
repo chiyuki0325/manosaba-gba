@@ -1,0 +1,210 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-4-4
+
+# ========================================
+# ●シーン1‐4-4
+# ========================================
+
+@back 6_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+
+@bgm Bgm_9_1
+
+@print アリサに殺されかけたその足で、<br>エマは食堂へとやってきた。 { speed:1 waitInput:true Wait:true }
+
+@print "食欲なんてあるはずもないのに、<br>規則が<ruby=\"し\">沁</ruby>みついてしまっているのかもしれない。" { speed:1 waitInput:true Wait:true }
+
+@print 食堂には珍しく、<br>ココとマーゴの姿があった。 { speed:1 waitInput:true Wait:true }
+
+@print 意識して時間帯をずらしているのだろうが、<br>エマが遅れてやってきたことで、<br>どうやら一緒になってしまった。 { speed:1 waitInput:true Wait:true }
+
+@print 気まずい気持ちでテーブルにつくと、<br>少し遅れてメルルもやってきた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+@char Meruru.Default
+
+@print 先ほど、アリサさんの姿を見かけました。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print あ、う、うん、ボクも……見かけたよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマは異形化しかけたアリサの姿を思い出し、<br>辛そうに顔を<ruby=\"うつむ\">俯</ruby>かせる。" { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Pensive
+
+@print アリサさん、すごく、すごく辛そうで……<br>日に日に、ひどく消耗しています。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+
+@print 何も……してあげられないのかな……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default
+
+@print 少しお話しましたが、<br>ずいぶん落ち着いたみたいでした。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 魔女になんかならないって、約束してくれました。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR1
+
+@print ほ、本当！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+# ＠備考◆鼻で笑う
+
+@print ――ハッ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 遠くの席に座っていたものの、<br>聞き耳を立てていたようだ。<br>ココが水を差すかのように鼻で笑う。 { speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1
+
+@print バッカじゃねえ？<br>そんな口約束信じちゃってんの？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 無理無理。あいつ絶対魔女になりそうじゃん。<br>そろそろ寝首かかれちゃうかもよ～？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+
+@print アリサちゃんは、そんな子じゃないよ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Angry1,ArmL3
+
+@print うえ～、まーだ友情ごっこ信じてる感じぃ？<br>キモ！！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1,ArmL2
+
+@print 自分だけは死にたくない、<br>生き残るためには先に殺さなきゃって、<br>どうせいつか殺し合いになる。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print そうしたら優しい優しいエマっちは、<br>大人しく殺されてくれちゃうワケ？<br>友だちのためなら～って。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Smile1,ArmR6,ArmL2
+
+@print "そんならあてぃしも、エマっちと<br>友だちになりたいな～！ おねが～い！" { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "ニコッと愛想よく言ってから、<br>ココは机を思い切り<ruby=\"たた\">叩</ruby>いた。" { speed:1 waitInput:true Wait:true }
+
+# テーブルを叩く音
+@sfx Sfx_32
+
+@print エマ、メルルは悪意の塊のような大きな音に、<br>びくりと体を震えさせる。 { speed:1 waitInput:true Wait:true }
+
+@char Coco.Angry1,ArmR2,ArmL3
+
+@print "きっしょくわる！！<br>みんな敵なんだよ！！ いい加減気付けよ！！" { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+
+@print ……っ、違うよ、敵なんかじゃ、ない。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 仲良くした方がいいに決まってる。<br>そうしたらきっと活路が……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Angry1,ArmR2,ArmL2
+
+@print 活路ってなんだよ？<br>もう死ぬか魔女になるかしかねーだろ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Angry1,ArmR10,ArmL8
+
+@print "あてぃしは死にたくない！<br>死にたくない！ 死にたくない！" { author:Coco speed:1 waitInput:true Wait:true }
+
+@print もうお前らが死ねよ！！<br>あてぃし以外みんな消えろよ！！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Margo.Pensive1
+
+@print ココちゃん、落ち着いて。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "マーゴが立ち上がり、<br><ruby=\"かんしゃく\">癇癪</ruby>を起こしているココへと歩み寄っていく。" { speed:1 waitInput:true Wait:true }
+
+@print ココは頭を抱えて震えていた。 { speed:1 waitInput:true Wait:true }
+
+@char Coco.Fearful1,ArmR10,ArmL8
+@char Margo.Pensive1
+
+@print あいつが殺しにくるかもしれない……<br>あてぃし、いっぱいあいつの悪口言ったし、<br>怒らせたし……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print あてぃしのこと恨んで、殺しにくるかも……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print "怖い……！ 怖い、怖いよぉ、誰か助けてよぉ！！" { author:Coco speed:1 waitInput:true Wait:true }
+
+@print ええ、自衛手段は考えた方が良さそうね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print （マーゴちゃんまで……ううん、マーゴちゃんは、<br>　最初から誰のことも信じてないんだ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "マーゴは、<ruby=\"おび\">怯</ruby>え切ってパニックになっている<br>ココの背中を<ruby=\"な\">撫</ruby>でながら、立ち上がらせてやる。" { speed:1 waitInput:true Wait:true }
+
+@print 出ましょう。今はひとりでいた方がいいわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+@char Meruru.Default
+
+@print マーゴの流し目が、<br>エマとメルルの方向へと注がれる。 { speed:1 waitInput:true Wait:true }
+
+@print アリサちゃんだけじゃなくて、<br>誰がいつ殺人を犯すのかわからないもの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print マーゴとココが食堂を出ていく。 { speed:1 waitInput:true Wait:true }
+
+@print （マーゴちゃんとココちゃんとは、<br>　もうわかり合えないのかな……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print マーゴとココに対し、エマは決定的な溝を感じていた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+@char Meruru.Default
+
+@print ……エマさん！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print ここは……私に任せてくれませんか。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR1
+
+@print えっ……？<br>メ、メルルちゃん……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print メルルの瞳には涙が浮かんでいた。 { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Pensive
+
+@print こんなの……よくないです！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print だから……マーゴさんとココさんと、<br>それにアリサさんやナノカさん……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print みんなの気持ちを少しでも<br>繋ぎ止められるようにしてみます。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print な、何をするつもりなの？<br>メルルちゃん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default
+
+@print あの２人は心がすり減っているんだと思います。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print だからまずはマーゴさんとココさんの<br>心を落ち着かせないと……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Smile
+
+@print そうと決まれば、早く準備しないと……！<br>詳しいことはあとでお話しますね！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hide Meruru
+
+@print そう言うとココとマーゴの後を追うように、<br>メルルは走っていった。 { speed:1 waitInput:true Wait:true }
+
+@print ……メルルちゃんは自分がやれることを<br>やってるんだ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ボクにできることは……なんだろう……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print その言葉に答える者はいなかった。 { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter04/Act01_Chapter04_Adv05

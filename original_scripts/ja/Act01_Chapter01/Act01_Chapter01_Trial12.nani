@@ -1,0 +1,800 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act01_Chapter01/Act01_Chapter01_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 1200
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# ==============================================================================
+# MARK: 12: 💬 嘘が成立する条件
+# ==============================================================================
+# ＠ト書き▼議論シーン1-12 嘘が成立する条件
+# BGM変更：AccUhEarts(Vocal有)
+@bgm Bgm_15_1
+
+# Judge1-12-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Margo.Normal1,ArmR5,ArmL5
+@gosubModifyCamera 0
+@printDebate レイアちゃんが犯人で、<br>これまでの疑問を<br>魔法で解決しているのだと<br>したら……。
+
+@char Margo.Normal1
+@gosubModifyCamera 0
+@printDebate レイアちゃんの魔法は、<br>次の【３つの条件】を<br>満たす必要があると思うわ。
+
+@char Margo.Smile1,ArmR5
+@gosubModifyCamera 0
+@printDebate １つは当然、<br>【普段から魅了が嘘だと<br>バレないこと】ね。
+
+@char Hanna.Pensive1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Open
+@gosubModifyCamera 0
+@printDebate あまりにも<br>遠い効果の魔法だと、<br>取り繕うのが<br>大変そうですわ……。
+
+@char Margo.Smile1,ArmR5
+@gosubModifyCamera 0
+@printDebate そして２つ目に<br>満たさなくてはいけない条件……。<br>それは<br>【目の前で殺害準備をしていても<br>抵抗できなくする】<br>こと……。
+
+@char Nanoka.Default
+@gosubModifyCamera 0
+@printDebate 城ケ崎ノアが<br>目の前で準備していた相手に<br>何も抵抗しなかったとは、<br>少し考えにくいわね。<br>……部屋の外から、<br>正面を刺されているのだし。
+
+@char Margo.Smile1,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate 最後の３つ目の条件。<br>それは<br>【殺害現場の前を通った時、<br>中の死体に気付かれない】<br>ようにすること……。
+
+@char Meruru.Normal1,ArmR8_1,ArmL8,Eyes1_Pensive_Open2,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@printDebate ココさんやミリアさんは<br>死体現場の前を通ったのに<br>中を見ていません。
+
+@char Meruru.Normal1,ArmR8_1,ArmL8,Eyes1_Pensive_Open2,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@printDebate もしかすると<br>それも偶然で<br>済ませられてしまうのかも<br>しれませんが……。
+
+@char Alisa.Normal1,Option-ArmL-Off,ArmR2,ArmL2
+@gosubModifyCamera 0
+@printDebate ……逆にいえば、<br>偶然じゃないって言えるなら<br>蓮見が犯人という意見にも<br>納得できるな。
+
+@char Margo.Smile1,ArmR3,ArmL3,Angle01/Facial/Eyes>Eyes_Smile_Closed,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@printDebate さあエマちゃん。<br>この３つの条件が<br>成立する魔法……<br>あるのかしら？
+
+@char Leia.Pensive1,ArmR1,ArmL3,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@printDebate 私の魔法は<br>間違いなく【魅了】だよ。<br>私に少しだけ<br>恋心を抱いてもらう……<br>そんな、役に立たない魔法さ。
+
+@char Hanna.Surprised1
+@gosubModifyCamera 0
+@printDebate "た、たしかに<br><link=\"Objection_01_01_12_01\">目を離せなくなったり</link>、<br><link=\"Objection_01_01_12_02\">ドキドキしてしまう</link>ことが<br>ありますわ……！<br>見つめていると<br><link=\"Objection_01_01_12_03\">顔も熱く</link>なって……。"
+
+@char Hanna.Angry1
+@gosubModifyCamera 0
+@printDebate これは魅了の魔法に<br>違いありませんわ～！！
+
+@char Miria.Smile1,ArmR3,ArmL8,Angle01/Facial/Eyes>Eyes_Glare_Open03,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@printDebate うんうん。<br>本当に綺麗だよねぇ、<br>レイアちゃんは……。
+
+@char Miria.Surprised1,ArmR3,ArmL5,Angle01/Facial/Eyes>Eyes_Surprised_Lifeless01,Angle01/Facial/Mouth>Mouth_Confused_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@printDebate ……あ、いやこれは<br>変な意味じゃないからね？<br>一般論としてね？
+
+@char Coco.Smile1,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@printDebate あてぃしはべつに<br>そうは思わんけど～？<br>本当に魅了なんか～？<br>怪しい！
+
+@char Leia.Pensive1,ArmR5,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Closed,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@printDebate 効きやすい相手と<br>効きにくい相手が<br>いるだけだよ。
+
+@char Leia.Smile1,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@printDebate たとえば……<br>既に恋をしている人とかは<br>効きにくいのかもね。<br>ココくんは何か<br>心当たりはないかい？
+
+@char Coco.Surprised1,ArmR8,ArmL7,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Gross_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@printDebate "は、はぁ！？<br>べ、べつにあてぃしは<br>推しがいるけど<br>恋とかそういうんじゃ<br>ねーし……！！<br>な、なんか<br><link=\"Objection_01_01_12_04\">根拠</link>でもあって<br>言ってんのかぁ！？"
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Ema.Determined2,ArmR4,ArmL5 { time:0 }
+@gosubModifyCamera 0
+@Wait 0.2
+
+# ==============================================================================
+# ADVシーン
+# ==============================================================================
+
+@print （レイアちゃんの魔法が嘘だったとき……<br>　本物の魔法はマーゴちゃんが言った３つの条件を<br>　満たすはず……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@char Meruru.Normal2,ArmR9_2,ArmL9,Eyes2_Normal_Open1,Mouth2_Smile_Closed1
+@gosubSplitStageScreen 1
+@Wait 0.2
+
+@print エマさん。皆さんの言葉が、私たちの力になります……！<br>よく聞いてみましょう……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Closed
+
+@print うん……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideStageScreen 1
+
+@goto .Judge1-12-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_01_01_12_01
+
+@Skip false
+@pauseTrial true
+
+@choice 目が離せなくなる魔法
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge1-12-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_01_01_12_02
+
+@Skip false
+@pauseTrial true
+
+@choice 動悸が激しくなる魔法
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge1-12-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_01_01_12_03
+
+@Skip false
+@pauseTrial true
+
+@choice 熱が出る魔法
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge1-12-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論4
+# ------------------------------------------------------------------------------
+
+# Objection_01_01_12_04
+
+@Skip false
+@pauseTrial true
+
+@choice 恋心を知る魔法
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge1-12-5
+
+@choice 嘘を見抜く魔法
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge1-12-6
+
+@choice 体温を読み取る魔法
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge1-12-7
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# ミス選択肢
+# ==============================================================================
+# ==============================================================================
+# MARK: 12-3: ❌ 動悸が激しくなる魔法
+# ==============================================================================
+
+# Judge1-12-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Surprised1,ArmR4,ArmL5
+@gosubModifyCamera 0
+@print 【ドキドキ】……？<br>……そうか！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print もしかして、それがレイアちゃんの<br>本当の魔法なんじゃないかな……！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print レイアちゃんの魔法は、<br>【動悸を激しくする魔法】だったんだよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hanna.Flushed1
+@gosubModifyCamera 0
+@print たしかにそれなら、このドキドキも納得できますわー！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,Option-ArmL-Off
+@gosubModifyCamera 0
+@print ああ、納得いくな。<br>……その他の点に目をつぶれば、な。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print 全然不自然な点の説明になっていないわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Pensive1,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （すっぱり切り捨てられちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR3,ArmL3
+@gosubModifyCamera 0
+@print それに心臓の鼓動を制御できるなら、<br>動きを止めて【病死】してもらった方が<br>完全犯罪としては簡単そうですよね～！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Alisa.Surprised1,Option-ArmL-Off
+@gosubModifyCamera 0
+@print ……発想が怖ぇよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR6,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （見当違いのことを言っちゃったみたいだ……！<br>　もう一度考え直さないと！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （でも、ならレイアちゃんの本当の魔法ってどんなのだろう？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （マーゴちゃんの言った３つの条件……<br>　それに当てはまる魔法って……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-12-1
+
+# ==============================================================================
+# MARK: 12-4: ❌ 熱が出る魔法
+# ==============================================================================
+
+# Judge1-12-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Surprised1,ArmR4,ArmL5
+@gosubModifyCamera 0
+@print 【熱】……？<br>……それだ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR8,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print レイアちゃんの魔法は熱を操って<br>自分が恋してるって<br>勘違いさせる魔法なんじゃないかな！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hanna.Flushed1
+@gosubModifyCamera 0
+@print たしかに！<br>そうでも考えないと、<br>このドキドキは納得できませんわー！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,Option-ArmL-Off
+@gosubModifyCamera 0
+@print ……で、それがどうやって<br>殺害現場を他のヤツの目からごまかせるのに<br>使えるんだ？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print えっと……それは……。<br>高熱を出させて、フラフラさせてたとか……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print あてぃしらが高熱出してたっての？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive1,ArmR3,ArmL4
+@gosubModifyCamera 0
+@print 少なくとも、判断力が低下するぐらいにフラフラじゃ<br>なかったと思うけどなぁ……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmR2,ArmL1,Eyes1_Pensive_Open1,Mouth1_Fearful_Open1
+@gosubModifyCamera 0
+@print ……無理がある理屈ね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Pensive1,ArmR6,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （呆れられちゃったみたい……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 同一文章
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （でも、ならレイアちゃんの本当の魔法ってどんなのだろう？） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 同一文章
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （マーゴちゃんの言った３つの条件……<br>　それに当てはまる魔法って……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-12-1
+
+# ==============================================================================
+# MARK: 12-5: ❌ 恋を見抜く魔法
+# ==============================================================================
+
+# Judge1-12-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Surprised1,ArmR4,ArmL5
+@gosubModifyCamera 0
+@print 【恋】……？<br>そうか、レイアちゃん！<br>キミの魔法は相手が恋してるか見抜く魔法なんだね！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR8,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print 他の人の恋愛感情を見分けることで、<br>まるで恋心自体を操っているように<br>見せかけてたんだ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,Arms
+@gosubModifyCamera 0
+@print ロマンチックな魔法だね。<br>恋をしているかどうかがわかるなんて。<br>……自分ですらわからない事があるものなのに。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR3,ArmL2,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print ……それで？<br>それがノアくんの殺人事件にどう関わってくるんだい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ええっと……それは……その……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char AnAn.Normal1,Angle01/Option_Arms-,ArmR-Option-Off,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_03,Angle01/Head/Facial/Eyes>Eyes_Uncomfortable_Open01
+@gosubModifyCamera 0
+@print 『妄想は日記帳にでも書いておくのがオススメ』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Pensive1,ArmR6,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （辛辣なコメント……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （でも、ならレイアちゃんの本当の魔法ってどんなのだろう？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （マーゴちゃんの言った３つの条件……<br>　それに当てはまる魔法って……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-12-1
+
+# ==============================================================================
+# MARK: 12-6: ❌ 嘘を見抜く魔法
+# ==============================================================================
+
+# Judge1-12-6
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Surprised1,ArmR4,ArmL5
+@gosubModifyCamera 0
+@print ……【動揺】……。<br>そうか、レイアちゃんの魔法は<br>【嘘を見抜く魔法】だったんだよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR8,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print これなら、相手の気持ちを見抜いて<br>自分の魔法を魅了だと思わせられるんじゃないかな！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,Arms
+@gosubModifyCamera 0
+@print なるほど、面白い発想だね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR3,ArmL2,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print ……それで？<br>私が嘘を見抜けると、この事件の何が変わるんだい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ……えっと……そ、それは……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print エマっち、適当な嘘ついて話をごちゃごちゃにしようと<br>してんじゃないのー？<br>迷惑なんですけどー。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Surprised1,ArmR3,ArmL6,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ご、誤解だよ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR6,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （迂闊な発言で怪しまれちゃったみたい……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （でも、ならレイアちゃんの本当の魔法ってどんなのだろう？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （マーゴちゃんの言った３つの条件……<br>　それに当てはまる魔法って……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-12-1
+
+# ==============================================================================
+# MARK: 12-7: ❌ 体温を読み取る魔法
+# ==============================================================================
+
+# Judge1-12-7
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Surprised1,ArmR4,ArmL5
+@gosubModifyCamera 0
+@print （ココちゃんの動揺……<br>　そうか、もしかして……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR8,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print ……レイアちゃんの魔法って、<br>体温を読み取る魔法なんじゃないかな？<br>それで相手の感情を読み取るんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal2,ArmR9_2,ArmL9,Eyes2_Smile_Closed1,Mouth2_Smile_Closed1
+@gosubModifyCamera 0
+@print 素敵な魔法です……！<br>見ただけで相手の体調を知ることができそうで……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Hanna.Pensive1
+@gosubModifyCamera 0
+@print それはそうですけど……<br>それって事件になにか関係あるんですの？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print えっと……それは……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,Arms
+@gosubModifyCamera 0
+@print エマくんは私のことを蛇か何かだと思ってるのかな。<br>想像力が豊かだね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print ……できればそんな妄想は<br>心の中に秘めておいて欲しいところだけど。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Surprised1,ArmR3,ArmL6,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （ピット器官……！！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR6,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （根拠のない発言のせいで、呆れられちゃったみたい……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （でも、ならレイアちゃんの本当の魔法ってどんなのだろう？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （マーゴちゃんの言った３つの条件……<br>　それに当てはまる魔法って……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-12-1
+
+# ==============================================================================
+# MARK: 12-2: ⭕ 目が離せなくなる魔法
+# ==============================================================================
+@StopBgm 
+
+# Judge1-12-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@gosubCutIn Ema
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+@char Ema.Surprised1,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print 【目が離せなくなる】……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR8,ArmL7
+@gosubModifyCamera 0
+@print ……そうか！<br>それがレイアちゃんの魔法だったんだよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1
+@gosubModifyCamera 0
+@print じゃ、じゃあ……<br>レイアさんを見てるとドキドキするから<br>目が離せなくなるんじゃなくて……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ……逆だったんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# BGM変更：AccUhEarts(Vocal有)
+@bgm Bgm_15_1
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char Ema.Determined2,ArmR8,ArmL7,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print 【目が離せなくなるから、<br>ドキドキさせられてしまう】んだよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Angry1
+@gosubModifyCamera 0
+@print くっ……！？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmR3,ArmL1,Eyes1_Surprised_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print なら……<br>城ケ崎ノアが、工作する犯人を前にして<br>何も抵抗しなかったのは……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR8,ArmL7,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print ……当然だよ。<br>別の方向に注目させて、<br>工作自体が視界に入らないようにしていたんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Miria.Surprised1,ArmR3,ArmL4
+@gosubModifyCamera 0
+@print ……なら、おじさんたちが<br>死体があった部屋の前を通ったときに<br>見逃したのは……？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print そのとき、部屋ではない方向に<br>視線を固定されていたからじゃないかな。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print それにココちゃんたちが配信をする前にも、<br>ボクたちは地下で<br>レイアちゃんと会ってる……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL12,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Open
+@gosubModifyCamera 0
+@print きっとあのときレイアちゃんは<br>魔法を使ってノアちゃんの部屋を<br>誰も見れないようにしてたんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR8,ArmL7,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print この魔法なら、<br>マーゴちゃんが言った３つの条件全てを<br>満たせるよ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+@char Margo.Surprised1,ArmR5,ArmL5
+@gosubModifyCamera 0
+@print なるほど。<br>……【ミスディレクション】ね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Alisa.Pensive1
+@gosubModifyCamera 0
+@print なんだそれ？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1,ArmR6,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Closed,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 手品で、トリックを隠す手法のことを言うわ。<br>右手に種を仕掛ける時、<br>左手は観客の注意を引くように動かす……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR5,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print わかりやすく言うなら……<br>【視線誘導】と言ったらいいのかしら。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1,ArmR5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print その概念を体現したかのような魔法であれば、<br>たしかに全てを説明できてしまうわね？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print ……ええ、エマちゃん。素晴らしいわ。<br>あなたの意見に、私は賛成よ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open
+@gosubModifyCamera 0
+@print そう、これなら全部の謎が説明できるんだ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR8,ArmL7,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print レイアちゃん……それがキミの魔法だよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@StopBgm { fade:2 }
+
+@char Leia.Normal1,ArmR7,ArmL1,Angle01/Facial/Eyes-,Angle01/Facial/Mouth>Mouth_Normal_Closed,Angle01/Facial/Pale>Pale01
+@gosubModifyCamera 0
+@print ………。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Leia.Angry1,ArmR7,ArmL1,Angle01/Facial/Eyes-,Angle01/Facial/Mouth>Mouth_Surprised_Open,Angle01/Facial/Pale>Pale01
+@gosubModifyCamera 0
+@print ……やれやれ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print （レイアちゃんの落ち着き払っていた仮面が……<br>　剥がれた……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# BGM変更：Sar-gedy-動-
+@bgm Bgm_4_1
+
+@char Leia.Smile1,ArmR2,ArmL3,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print 【私の魔法が魅了じゃないかもしれない】？<br>……そんな論でいいなら私だっていくらでも言えるよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR10,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open01
+@gosubModifyCamera 0
+@print たとえばエマくん。キミの魔法はサイコキネシス……<br>念動力なんじゃないかい？<br>それで矢を操れば殺害は可能だ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR9,ArmL8,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open01
+@gosubModifyCamera 0
+@print 周りの状況も全てその魔法によって起こされた偽装工作だ……<br>そう考えることもできるんじゃないかな？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ボ、ボクは魔法は使えないから……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print それを証明することは？<br>……できないのだろう？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Yell_Open01
+@gosubModifyCamera 0
+@print ここにいる魔女候補の少女たち……<br>私たちは何かしらの魔法を持っているはず。<br>だがその内容は誰も証明できない……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3,ArmL11,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print で、でもそれじゃあ、これまで議論してきた<br>不自然な点が――！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_4_1 { Volume:0.1 }
+@Wait 0.2
+
+# レイアカットイン
+
+@sfx Sfx_Common_5
+
+@ResetText 
+@voice CommonTrial_Leia00425
+@char Leia.Angry1,ArmR10,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open02
+@gosubSplitStageScreen 1
+@Wait 1.5
+
+@hideStageScreen 1
+@Wait 0.3
+
+@bgm Bgm_4_1
+@gosubModifyCamera 0
+@print ――キミが言う事はすべて状況証拠だ！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR3,ArmL3,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print ……私が疑わしいのは認めるけどね。<br>でも、確たる証拠はないはずだよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3,ArmL11,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print それはそうかもしれないけど……でも……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# 胡散臭く
+@char Leia.Smile1,ArmR3,ArmL3,Angle01/Facial/Eyes>Eyes_Normal_Closed03,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print ……私はみんなを信じているよ。<br>私に投票するなんて愚かな事はしないで欲しい。<br>……私が犯人だという証拠はないのだからね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR3,ArmL3,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print ……これはきっと何者かが私を陥れようとしている陰謀だね。<br>私たちは仲間だろう？<br>お互いを信じる心を忘れてしまっては黒幕の思うツボだよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hanna.Pensive1,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print そ、それは……！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （うう……！<br>　たしかにレイアちゃんの言う事も、もっともかも……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL7,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （……ボクが勘違いして、レイアちゃんを犯人と決めつけている<br>　だけかもしれない。<br>　もしも冤罪だったとしたら……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR6,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （こんなとき、どうしたらいいんだろう。<br>　このままじゃみんなの意見もまとまらないし……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL6
+@gosubModifyCamera 0
+@print （……ボクは本当に、【正しい】のかな……？<br>　こんな時、ヒロちゃんなら――） { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@StopBgm 
+@Wait 0.5
+@char Ema.Surprised1,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+
+@char Meruru.Normal2,ArmR4_2,ArmL4,Eyes2_Cry_Closed3,Mouth2_Pensive_Closed1
+@print ――な、なら……！<br>話し合いを、しましょう……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_Common_1
+@gosubModifyCamera 0
+@print ……え？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal2,ArmR4_2,ArmL4,Eyes2_Normal_Open2,Mouth2_Normal_Open1
+@gosubModifyCamera 0
+@print 時間は……まだあります。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal2,ArmR4_2,ArmL4,Eyes2_Normal_Open2,Mouth2_Normal_Open1
+@gosubModifyCamera 0
+@print レイアさんが犯人である証拠があるかどうか……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal2,ArmR5_2,ArmL4,Eyes2_Cry_Closed3,Mouth2_Angry_Closed1
+@gosubModifyCamera 0
+@print ……話し合うんです。<br>ノアさんの無念を晴らすためにも……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+# BGM変更：AccUhEarts(Vocal有)
+@bgm Bgm_15_1
+
+@char Nanoka.Normal1,ArmR3,ArmL1,Eyes1_Normal_Closed1,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print ……そうね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmR3,ArmL1,Eyes1_Normal_Open2,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print 彼女が殺人を犯したなら……<br>必ずその罪の痕跡は残ってるはず。<br>私たちがそれにまだ気付いていないだけ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR3,ArmL4
+@gosubModifyCamera 0
+@print ですね！<br>エマさんの推理はここまで筋が通っていると思いますし、<br>検討の余地はまだあります！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print ――徹底的に議論してやりますわ～！！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Closed
+@gosubModifyCamera 0
+@print みんな……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR1,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Closed01,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print ……ああ、いいとも。<br>どうやったって証拠なんて出てくるはずはない。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Angry1,ArmR5,ArmL3,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print 私が犯人ではないと、証明してみせるよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@goto Act01_Chapter01/Act01_Chapter01_Trial13

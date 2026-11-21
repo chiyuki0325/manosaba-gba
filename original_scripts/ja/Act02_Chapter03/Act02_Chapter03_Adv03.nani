@@ -1,0 +1,74 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-3-3
+
+# ========================================
+# ●シーン2‐3‐3
+# ========================================
+
+@back 9_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_11_1
+
+@print 翌日の昼食の後。<br>食堂を出たところで、私はレイアを呼び止めた。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Default
+
+@print 自由時間だが、劇の制作を進めるんだろう？<br>私にも何か手伝わせてほしい。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 昼食時も、少女たちはレイアを<br>中心に劇の話題で持ち切りだった。 { speed:1 waitInput:true Wait:true }
+
+@print "今や劇の制作が、<br>私たちを<ruby=\"つな\">繋</ruby>ぐ<ruby=\"きずな\">絆</ruby>となっているようにも思える。" { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Default
+@char Leia.Smile
+
+@print 早速ありがとう。<br>そうだな……ヒロくんは何か得意なことはあるかい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@print ある意味難しい質問だな。<br>基本的にどんな作業でもこなす自信がある。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print そうか、エマくんに聞いたとおりなんだね。<br>学業もスポーツもあらゆる面で完璧。<br>持っているトロフィーの数ははかりしれない。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print ……エマに？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ああ。ヒロくんがいかにすごい子なのか、<br>色々と話してくれたよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry
+
+@print ……なるほど。あまり良い気分はしないな。<br>自分のいないところで、<br>ベラベラと自分のことを喋られるのは。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive
+
+@print すまない。私からエマくんに尋ねたんだよ。<br>だから、彼女を責めないでほしい。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print "申し訳なさそうに、レイアが目を<ruby=\"ふ\">伏</ruby>せる。" { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Default
+
+@print ……別に、責めるつもりはないよ。<br>それで結局、私は何をすればいい？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default
+
+@print ああ……それじゃあ、ヒロくんにはまず、<br>みんながやっている作業を<br>見てもらうのがいいかもしれないね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile
+
+@print その中から自分にできそうなこと、<br>やりたいことを選んでもらうというのはどうかな。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 異論はない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 私はレイアの提案に乗り、<br>劇制作の作業を見て回ることにした。 { speed:1 waitInput:true Wait:true }
+
+@set "chosenAreaFlag = 0"
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter03/Act02_Chapter03_Adv04

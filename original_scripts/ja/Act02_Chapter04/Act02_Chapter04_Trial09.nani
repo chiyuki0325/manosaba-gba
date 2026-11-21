@@ -1,0 +1,641 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter04/Act02_Chapter04_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+@badId 7
+
+# ==============================================================================
+# MARK: 9-9: 💬 ハンナの反論
+# ==============================================================================
+# ＠ト書き▼議論シーン9-9 ハンナの反論
+# 議論開始エフェクト
+# BGM変更：Guil-me N'o sinruits-Vocal無-
+@bgm Bgm_37_1_Loop
+
+# Judge9-9-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+@char Hanna.Angry1,ArmR2,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@printDebate わ、わたくしが<br>髪を編み込んだドレスで<br>エマさんに<br>魔法を使ったなんて……<br>そんな証拠、<br>どこにもありませんわ！
+
+@char Hanna.Angry1,ArmR2,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Closed,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open
+@gosubModifyCamera 0
+@printDebate それにわたくしには、<br>そんなことする時間なんて<br>ありませんもの！
+
+@char Hanna.Angry1,ArmR2,ArmL2,Angle01/Head01/Facial01/Sweat01>Sweat01_01,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Open02
+@gosubModifyCamera 0
+@printDebate "わたくしがエレベーターで<br>上に昇ったあと<link=\"Objection_02_04_09_01\">すぐ</link>、<br>シェリーさんが来たんです！<br>わたくしには無理ですわ！"
+
+# ＠備考◆心情補足・ハンナ犯人と思い始め、徐々にテンションダウン。
+
+@char Sherry.Pensive1,ArmR4,ArmL14
+@gosubModifyCamera 0
+@printDebate ……たしかに<br>そうかもしれません。
+
+# ＠備考◆心情補足・犯人でない可能性を探しつつ、茶化せなくなる
+
+@char Sherry.Pensive1,ArmR4,ArmL14
+@gosubModifyCamera 0
+@printDebate "ほら、<br>ハンナさんって魔法を使う時に<br>いつも<link=\"Objection_02_04_09_02\">力んでた</link>じゃ<br>ないですかー。"
+
+@char Sherry.Pensive1,ArmR4,ArmL14
+@gosubModifyCamera 0
+@printDebate 上にいたときにそんな様子、<br>なかったですけどね～。
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@printDebate ……エマとレイアが<br>いつ殺されたのか<br>正確な時間までは<br>わからない。
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@printDebate ずっと前に殺されていて、<br>あらかじめ<br>死体を浮かばせる<br>準備をしていたなら<br>一瞬でできるよ。
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Closed1,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@printDebate それにハンナの<br>魔女化が進んでいるなら、<br>ナノカのように<br>魔法が強化されている<br>可能性もある……。
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@printDebate 普段より自由に<br>浮かせられるように<br>なっていても、<br>おかしくはない……！
+
+@char Hanna.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@printDebate そんなの<br>ただのいちゃもんですわっ！
+
+@char Hanna.Angry1,ArmR2,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Closed,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@printDebate わたくしに<br>そんな準備なんてしている時間<br>ありません……！<br>わたくしは<br>犯人じゃありませんわ！
+
+@char Hanna.Angry1,ArmR2,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Flushed_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Open02,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@printDebate わ、わたくし<br>地下にいましたわよねっ！<br>ねえみなさん！
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@printDebate ……で、でも、<br>地下の倉庫を調べてた時<br>あんまり周りのみんなを<br>見てる余裕なんて<br>なかったし……。
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@printDebate ハンナちゃんが<br>ずっといたかどうかは……<br>正直わからないよ。
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@printDebate エマちゃんやレイアちゃんが<br>いなくなったのだって、<br>気付かなかったぐらいだし……。
+
+# ＠備考◆心情補足・冷静（心が冷えていく感じ）で、やや冷たく聞こえる。
+
+@char Sherry.Pensive1,ArmR4,ArmL14
+@gosubModifyCamera 0
+@printDebate ……そうですね。
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@printDebate でもたしかにあのとき、<br>集合時間の１０分ほど前には<br>ハンナさんを見た気がします。
+
+# ＠備考◆焦り／懇願
+
+@char Hanna.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Closed,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@printDebate わ、わたくしはいました……<br>いたんです！
+
+# ＠備考◆閃き
+
+@char Hanna.Angry1,ArmR2,ArmL2,Angle01/Head01/Facial01/Sweat01>Sweat01_01,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open
+@gosubModifyCamera 0
+@printDebate ……そ、そうだ！<br>そうです！<br>ドレスですわ！
+
+@char Hanna.Angry1,ArmR2,ArmL2,Angle01/Head01/Facial01/Sweat01>Sweat01_01,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Open
+@gosubModifyCamera 0
+@printDebate アリサさんが<br>死体発見の１５分前に<br>アトリエにドレスがあったのを<br>見ているんでしょう……！？
+
+@char Hanna.Angry1,ArmR2,ArmL2,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@printDebate "わたくしには、<br>５分足らずで<br>ドレスを取ってきて、<br>エマさんを着替えさせる<br><link=\"Objection_02_04_09_03\">時間</link>なんてありません……！"
+
+@char Hanna.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Closed,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@printDebate わたくしには無理ですわ！<br>信じてください！
+
+
+# ==============================================================================
+# MARK: 9-9: ❌ 議論後独白
+# ==============================================================================
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@Wait 0.2
+
+@print （……ハンナの言葉に確たるものはない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@print （だがだからこそ、明確に攻めにくくはある） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@print （彼女が犯行可能だったかどうか……<br>　その根拠を示すんだ……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge9-9-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_04_09_01
+
+@Skip false
+@pauseTrial true
+
+@choice 一瞬で着替えさせた
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge9-9-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_02_04_09_02
+
+@Skip false
+@pauseTrial true
+
+@choice 演技だった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge9-9-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_02_04_09_03
+
+@Skip false
+@pauseTrial true
+
+@choice 取りに行く必要はない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge9-9-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 9-9: ❌ 議論ミス選択肢
+# ==============================================================================
+# MARK: 9-9-3: ❌ 反論・一瞬で着替えさせた
+
+# Judge9-9-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print いいや、無理なんかじゃない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 君はあの時、<br>一番にエレベーターへ乗り――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 上に昇ったところでエマを殺し――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print エマの死体を一瞬で着替えさせ――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print エレベーターの天井裏から浮遊させ――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 何食わぬ顔で後の２人を迎えた……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print ――簡単だろう！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR8,ArmL7,Angle01/Facial/Eyes>Eyes_Surprised_Lifeless01,Angle01/Facial/Mouth>Mouth_Pensive_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print やることが……<br>やることが多い……！！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print それに……死体を着替えさせるのは<br>簡単なことじゃないと思いますよ？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print 一瞬で着替えさせるのはきっと無理ですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （……さすがに限られた時間では難しいか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （……ハンナは、<br>　自分には犯行をする【時間がない】と言っている） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （だが、本当にそうか？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （刺繍以外にも、細工が出来た可能性は……ある） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge9-9-1
+
+# MARK: 9-9-4: ❌ 反論・演技だった
+
+# Judge9-9-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print ……他のみんなは魔法を使う時に<br>力んだりはしないよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print ハンナはこういう事態に備えて<br>最初から演技をしていた可能性がある。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 本当は……力まずとも魔法が使えたんじゃないか？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print そんなことしてませんわ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print そんな証拠もないことで<br>人を疑わないでください！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print ……まあ、力む必要があるかないかは<br>当人にしか判断できませんよね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Serious_Open
+@gosubModifyCamera 0
+@print そこを言い合ってもラチあかねーだろ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+# ダメージなし
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （ハンナが魔法を使ったタイミングについては<br>　わからずじまいだが……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （アリサの言う通り、<br>　証拠もないことを議論しても無駄か……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （……ハンナは、<br>　自分には犯行をする【時間がない】と言っている） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （だが、本当にそうか？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （刺繍以外にも、細工が出来た可能性は……ある） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge9-9-1
+
+# ==============================================================================
+# MARK: 9-9-2: ⭕ 反論・取りに行く必要はない
+# ==============================================================================
+
+# Judge9-9-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+# @stopBgm
+# @gosubCutIn Ema index:1
+@Gosub System/System_Subroutine.EndDebate-Last
+
+# カットイン
+# BGM変更：HirO（Voなし）
+# @bgm Bgm_37_2_Loop intro:Bgm_37_2_Intro
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print べつに君が取りに行く必要はなかったんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Hanna.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Surprised_Open
+@gosubModifyCamera 0
+@print ど、ど、どういうこと……ですの……？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print あらかじめドレスを持ってきていれば、<br>わざわざアトリエに取りに行くような時間は<br>かからない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print ……ちょっと待てよ、二階堂。<br>それならウチが見た衣装はなんだってんだよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print あのとき、アトリエにはあの衣装が飾ってあった……！<br>ウチは見てんだぞ……！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+# Judge9-9-5
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print 死体発見の直前、<br>アリサがアトリエで見たドレス……それは。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@choice 偽物
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge9-9-7
+
+@choice ２着目
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge9-9-6
+
+@choice 見た時間が違った
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge9-9-8
+
+@StopForChoice 
+
+# MARK: 9-9-7: ❌ 選択・偽物
+
+# Judge9-9-7
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 偽物だよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print かかっていたシーツか何かを<br>ドレスと見間違えたんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR9,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Closed
+@gosubModifyCamera 0
+@print いや近くで見たっての。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （見間違えではなかったか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （……思い出すんだ。<br>　ハンナがアトリエで作業をしていた時――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （【布は大量に余っている】と言っていた） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （ドレスが完成したにもかかわらず、<br>　裁縫を続けていたということは、もしかしたら――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge9-9-5
+
+# MARK: 9-9-8: ❌ 選択・見た時間が違った
+
+# Judge9-9-8
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 見た時間が違った可能性がある。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print アリサがドレスを見たのは死体発見時刻より<br>もっと前なんじゃないか？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Serious_Open
+@gosubModifyCamera 0
+@print いや時間は確認してた……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Serious_Open
+@gosubModifyCamera 0
+@print ドレス見て……そういやおめえら、<br>ずいぶん長い時間出かけてんなと思ってさ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Serious_Open
+@gosubModifyCamera 0
+@print だから時間のズレはねーはずだ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （アリサは証言に自信があるようだな……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （……思い出すんだ。<br>　ハンナがアトリエで作業をしていた時――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （【布は大量に余っている】と言っていた） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （ドレスが完成したにもかかわらず、<br>　裁縫を続けていたということは、もしかしたら――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge9-9-5
+
+# ==============================================================================
+# MARK: 9-9-6: ⭕ 選択・2着目
+# ==============================================================================
+
+# Judge9-9-6
+# カットイン
+@StopBgm 
+@gosubCutIn Hiro
+@Gosub System/System_Subroutine.EndDebate-Last
+@bgm Bgm_37_1_Loop
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@print ……簡単な話だよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print 衣装は……【２着】あったんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Hanna.Fearful1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print う……ぐ……！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 予備か何か知らないが、<br>ハンナはあらかじめ衣装を２着作っていた。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print そして今回の事件のあと、<br>アトリエにあった衣装の方を処分したんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print それならわざわざ持ち込む必要はないよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hanna.Fearful1,ArmR3,ArmL1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print そんな……そんな……そんなこと……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char Hiro.Normal1,ArmR12,ArmL5,Eyes1_Normal_Closed1,Mouth1_Angry_Open1,Sweat1-1
+@gosubModifyCamera 0
+@print ハンナ、君が２人を――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# シェリーカットイン
+@Wait 0.5
+
+@sfx Sfx_Common_5
+
+@ResetText 
+@voice CommonTrial_Sherry01973
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubSplitStageScreen 1
+@Wait 1.5
+
+@hideStageScreen 1
+@Wait 0.3
+
+
+@sfx Sfx_Common_1
+@char Sherry.Pensive1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print ……たしかに、状況からハンナさんが怪しいかもしれません。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ＠備考◆感情補足・感情を抑えぎみ。抑揚を強くつけたりしなくなる。
+
+@char Sherry.Pensive1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print ですがもし証拠が処分されてしまったのだとしたら、<br>【証拠はもう存在しない】ということでしょうか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print それは……<br>まだどこかに残っているかもしれないが……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆震えながら睨んでいるイメージ
+
+@char Hanna.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print ……そ、そうですわ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1,ArmR2,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Closed,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Open02
+@gosubModifyCamera 0
+@print 仮にわたくしが犯人だとしても<br>証拠はありません……！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Hanna.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print ……だってそんなのは当然です！<br>わたくしは犯人ではないんですから！！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+# ＠備考◆叫び
+@char Hanna.Angry1,ArmR2,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print 証拠なんてないの！<br>どこにも！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Hanna.Angry1,ArmR2,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Closed,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print それでも犯人だと言うのなら、<br>やっぱりヒロさんが犯人なんだわ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Hanna.Fearful1,ArmR2,ArmL2,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open
+@gosubModifyCamera 0
+@print あなたが……<br>わたくしを犯人にしようとしているのっ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Hanna.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Closed,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Open02,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print あなたが……悪いの……！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char Hanna.Fearful1,ArmR3,ArmL2,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print あなたさえ――いなければっ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@goto Act02_Chapter04/Act02_Chapter04_Trial10

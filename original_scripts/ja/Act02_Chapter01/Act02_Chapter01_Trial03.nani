@@ -1,0 +1,809 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter01/Act02_Chapter01_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+@char Warden { Position:,{hiddenCharacterPositionY} time:0 }
+# ==============================================================================
+# MARK: 6-3: 💬 メルルの反撃が行われた状況
+# ==============================================================================
+# ＠ト書き▼議論6-3 メルルの反撃が行われた状況
+
+# Judge6-3-1
+
+# BGM変更：rAwTell Owk...
+@bgm Bgm_7_1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Sherry.Default,ArmR15,ArmL4,Angle01/Facial/Eyes>Eyes_Wink_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate 【黒幕】で【魔女】だった<br>メルルさんは<br>殺してもしばらく<br>死ななかった可能性が<br>ありますね～！
+
+# ＠備考◆「うーん黒幕ねぇ…」みたいな気持ち
+
+@char Nanoka.ArmR2,ArmL9,Eyes1_Normal_Open3,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@printDebate 黒幕……ね。
+
+@char Nanoka.ArmR2,ArmL9,Eyes1_Normal_Open3,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@printDebate 私たちを集めたのに<br>勝手に殺されて……<br>いったい何が<br>したかったのかしらね。
+
+@char Sherry.Default,ArmR15,ArmL4,Angle01/Facial/Eyes>Eyes_Wink_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate "なんにせよ、<br>魔女だったメルルさんは<br>ヒロさんに刺された後も<br><link=\"Objection_02_01_03_01\">まだ生きていた</link>んです！"
+
+@char Sherry.Default,ArmR6,ArmL8,Angle01/Facial/Eyes>Eyes_Surprised_Open03,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@printDebate "そして最後の力を<br>振り絞って<br><link=\"Objection_02_01_03_02\">立ち上がった</link>……！"
+
+@char Sherry.Default,ArmR6,ArmL8,Angle01/Facial/Eyes>Eyes_Surprised_Open03,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@printDebate そこで起き上がった<br>メルルさんに、<br>隙を突かれたヒロさんは<br>殴られたんですよ！
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@printDebate "ヒロちゃんは殴られて<br><link=\"Objection_02_01_03_03\">気絶した</link>ってことだよね？<br>ばたんきゅ～。"
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@printDebate それがヒロちゃんが<br>２０分以上も<br>現場にとどまっていた<br>理由……。
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@printDebate たしかに成立は<br>しそうだけど……。
+
+@char Hanna.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Surprised_Open
+@gosubModifyCamera 0
+@printDebate じゃあやっぱり……<br>ヒロさんが犯人ですの～！？
+
+@char AnAn.Default,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_03,Angle01/Head/Facial/Eyes>Eyes_Uncomfortable_Open02,Angle01/Head/Facial/Mouth>Mouth_Angry_Closed01
+@gosubModifyCamera 0
+@printDebate 『もう処刑してしまっても<br>構わないだろうか？』
+
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Hiro.Normal1,ArmR11,ArmL11,Eyes1_Serious_Open1,Mouth1_Determined_Open1,Sweat1-1
+@gosubModifyCamera 0
+@Wait 0.2
+
+# ==============================================================================
+# 6-3議論後独白
+# ==============================================================================
+
+@print （……他人の命だと思って、<br>　好き勝手言うな……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@print （けれどたしかに、その論なら状況は成立してしまう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@print （このまま自由に喋らせていれば、<br>　私が犯人にされかねない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@print （……たとえ【その場しのぎの嘘】であっても、<br>　一旦議論の矛先を変える必要があるか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge6-3-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_01_03_01
+
+@Skip false
+@pauseTrial true
+
+@choice 即死だった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge6-3-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_02_01_03_02
+
+@Skip false
+@pauseTrial true
+
+@choice 倒れていない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge6-3-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_02_01_03_03
+
+@Skip false
+@pauseTrial true
+
+@choice 眠っていた
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge6-3-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 6-3: ❌ 議論選択肢
+# ==============================================================================
+# MARK: 6-3-3: ❌ 反論・即死だった
+
+# Judge6-3-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print いいや、メルルは即死だったに決まっている。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print 凶器には魔女の不死性を失わせる薬が塗ってあり、<br>それで首や胸を何度も刺されたんだ――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,Arms3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 魔女とはいえ、<br>生きていると考えるほうがおかしい。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,Arms,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print ……そう、たしかに即死の可能性は<br>高いように思えるね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,Arms,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print けど【魔女】や【魔女を殺す薬】といった<br>常識の通用しないモノが多すぎて<br>はたして断定してもいいものなのか……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR9,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print そういえばゴクチョーも<br>【刺したあとに薬が効いた】って言ってたよね……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR9,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print メルルちゃんが刺されてから死ぬまでに<br>タイムラグがあったとも考えられるんじゃないかな……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print 滅多刺しにしたってことは、<br>なかなか死ななかったのかもしれないわ？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print ということは……<br>やっぱり即死とは言い切れないってことですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （即死と断定できるまでの証拠はないか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （……まずは、前提を崩さないといけないな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （事実を偽ってでも、<br>　議論の方向性を変えよう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （私が気絶した当時の状況について、<br>　【嘘】を差し挟む余地はないだろうか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （【私がメルルの反撃を受けて気絶した】<br>　……そんな疑惑を否定できるような嘘を――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge6-3-1
+# MARK: 6-3-4: ❌ 反論・倒れていない
+
+# Judge6-3-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print ……刺されたメルルが<br>【立ち上がった】というのはおかしいな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 立ち上がるためには<br>一度倒れなければならない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,Arms3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print だが現場には、<br>メルルが倒れたような痕跡はなかった。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,Arms3,Eyes1_Angry_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print これはどう説明するのかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print それなら、一度倒れた場所に<br>再度死体として倒れたなら<br>跡が残らないんじゃないかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Angry_Open01,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print そもそも【立ち上がった】は慣用句的な表現ですよ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print メルルさんは物理的に倒れてなくても大丈夫です！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 何度も刺されたのに、<br>不屈の精神で犯人に食らいついたと<br>言いたかったわけです！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_03,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Angry_Closed01
+@gosubModifyCamera 0
+@print 『現場の状況から、どちらでも成立はする』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Smile1,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_03,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Uncomfortable_Open
+@gosubModifyCamera 0
+@print ……まるでクレーマーだな。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+# [damage]
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （……いちゃもん扱いされてしまった） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal1,ArmR12,ArmL5,Eyes1_Normal_Closed1,Mouth1_Angry_Open1,Sweat1-1
+@gosubModifyCamera 0
+@print （……まずは、前提を崩さないといけないな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR12,ArmL5,Eyes1_Normal_Closed1,Mouth1_Angry_Open1,Sweat1-1
+@gosubModifyCamera 0
+@print （事実を偽ってでも、<br>　議論の方向性を変えよう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （私が気絶した当時の状況について、<br>　【嘘】を差し挟む余地はないだろうか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （【私がメルルの反撃を受けて気絶した】<br>　……そんな疑惑を否定できるような嘘を――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge6-3-1
+
+# ==============================================================================
+# MARK: 6-3-2: ⭕ 偽証・眠っていた
+# ==============================================================================
+
+# Judge6-3-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+@StopBgm 
+@gosubCutIn Hiro
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print ……ああ、どうやらその通りみたいだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print "あら？ じゃあヒロちゃんは認めるのかしら。<br>自分の犯行を。" { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print もちろん、違うとも。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print なぜなら私は……<br>【眠っていただけ】なんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print ど、どういうことそれ……？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR4,ArmL6,Angle01/Facial/Eyes>Eyes_Angry_Open03
+@gosubModifyCamera 0
+@print まさか死体を目の前にしてのんきに昼寝してたとでも<br>言うんじゃねーだろうな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+# ＠備考◆わざとらしく謝る
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print ご期待に添えないようで申し訳ないけれど、<br>そのまさかだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print 私はその時ぐっすりと眠っていたんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# BGM変更：rAwTell Owk...
+@bgm Bgm_7_1
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char Hiro.Normal1,ArmR6,Arms3,Eyes1_Angry_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print ……【睡眠薬】によってね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR10,ArmL1,Angle01/Facial/Eyes>Eyes_Surprised_Open01,Angle01/Facial/Mouth>Mouth_Confused_Open,Angle01/Facial/Sweat>Sweat02
+@gosubModifyCamera 0
+@print ……えっ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print 私はラウンジに置かれていた睡眠薬を飲んでしまってね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print 廊下を歩いているときに意識が朦朧としてしまって……<br>気がつけばあの状況だったというわけさ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR9,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print あんな色のもん、拾い飲みしたってのか……？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print その通りだ。<br>だって、どんなものか気になるだろう？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,Arms3,Eyes1_Angry_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print ……現に、そこにいる２人も飲んでいるんだしね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Sherry.Default,ArmR2,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print ヒロさんの気持ちわかります！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print だよねー。 { author:Noah speed:1 waitInput:true Wait:true }
+
+# SE・ネガティブ音
+@sfx Sfx_Common_7
+
+# ＠備考◆半信半疑
+
+@char Alisa.Default,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open01
+@gosubModifyCamera 0
+@print ……それもそう……なのか？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （これでこの場にいる１２人の中の３人……<br>　実に２５％の人間が【試しに睡眠薬を口にした】と<br>　主張していることになる） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （普通はそんなことありえないが……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Painful_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print （とはいえ、私だけが特殊とは言えないはずだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,Arms,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print ……にわかには信じがたいが、<br>ヒロくんが睡眠薬を飲んで眠っていた可能性はある。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Middle,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print でも、それが何か事件に関係あるのかい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Middle,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ヒロくんが気絶していようと眠っていようと……<br>何も変わらないじゃないか。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print ……まったく、君も少しは考えたらどうだ？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Angry_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print 探偵役としては二流だね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Leia.Surprised1,ArmR1,ArmL1
+@gosubModifyCamera 0
+@print な、なんだって……！？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Painful_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print ……私が眠っていたという事実は<br>あることを示すんだ。<br>それは私が――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# Judge6-3-5
+
+@choice １人だった
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge6-3-7
+
+@choice 起きれない
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge6-3-8
+
+@choice 睡眠薬のビンを持っていた
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge6-3-6
+
+@StopForChoice 
+
+# MARK: 6-3-7: ❌ 1人だった
+
+# Judge6-3-7
+
+@char Hiro.Normal1,ArmR6,Arms3,Eyes1_Angry_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print そのとき１人だったということだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print 仮に私がメルルと一緒だったなら、<br>これから殺そうとする相手の前で<br>そんな薬飲むはずがない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Middle
+@gosubModifyCamera 0
+@print んなこと言われても、偽装工作ならありえんだろ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Smile_Closed
+@gosubModifyCamera 0
+@print のあなら飲むかも！ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR5,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open
+@gosubModifyCamera 0
+@print それに、そんな即効性がある薬じゃねーだろ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1
+@gosubModifyCamera 0
+@print そうですね！<br>私が飲んだ時も、<br>ボーっとしたのは少し時間が経ってからでしたし！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print なら、それはヒロくんが１人だったっていう証明には<br>ならないんじゃないかな？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_01,Angle01/Head/Facial/Eyes>Eyes_Pensive_Open,Angle01/Head/Facial/Mouth>Mouth_Normal_Closed
+@gosubModifyCamera 0
+@print 『無理がある』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （説得力のない主張だったか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print "（しかし詭弁を<ruby=\"ろう\">弄</ruby>してでも、<br>　レイアたちの思い込みを覆さなければならない）" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （……現状私は<br>　【メルルからビンによる殴打を受けた】<br>　と思われている） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （だが、私がもし<br>　睡眠薬を手にしていたとするならば<br>　あることが示される……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print （それは私が――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge6-3-5
+# MARK: 6-3-8: ❌ 起きれない
+
+# Judge6-3-8
+
+@char Hiro.Normal2,ArmR6,Arms3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 私が起きれない、ということだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Surprised1,ArmR1,ArmL1
+@gosubModifyCamera 0
+@print そ、それはつまり……どういうことだい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 私はラウンジで睡眠薬を飲んだすぐあと、<br>ノアの部屋で眠りに落ちてしまった。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print その後メルルがやって来たとしても<br>私は起きることができない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,Arms3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print なぜなら睡眠薬で昏睡していたのだからね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,Arms3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print そんな私が犯行に及ぶなど不可能<br>……ということだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@print ……じゃあヒロちゃんが寝てるところに、<br>別の犯人が来て、メルルちゃんを殺したってこと？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL7,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print そんなん口ではどうとでも言えんだろ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR12,ArmL5,Eyes1_Normal_Closed1,Mouth1_Angry_Open1,Sweat1-1
+@gosubModifyCamera 0
+@print ……しかし実際起きれなかったのだから仕方ない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char AnAn.Smile1,Angle01/Head/Facial/Eyes>Eyes_Pensive_Open,Angle01/Head/Facial/Mouth>Mouth_Uncomfortable_Open,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL6,Angle01/Head/Facial/Eyes>Eyes_Normal_Closed,Angle01/Head/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print 低血圧か？ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （説得力のある反論とはならなかったようだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print "（しかし詭弁を<ruby=\"ろう\">弄</ruby>してでも、<br>　レイアたちの思い込みを覆さなければならない）" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （……現状私は<br>　【メルルからビンによる殴打を受けた】<br>　と思われている） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （だが、私がもし<br>　睡眠薬を手にしていたとするならば<br>　あることが示される……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print （それは私が――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge6-3-5
+
+# ==============================================================================
+# MARK: 6-3-6: ⭕ 睡眠薬のビンを持っていた
+# ==============================================================================
+
+# Judge6-3-6
+
+@char Hiro.Normal2,ArmR6,Arms3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print ……私【が】睡眠薬のビンを持っていたということだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,Arms3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print つまり現場で割れていたビンは、<br>元々私が持っていたものなんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,Arms,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print そ、そうだったのか……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,Arms,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print でもそれがどうしたというんだい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+# ＠備考◆わざとらしく驚いてみせ、バカにしてる
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print まだわからないのか。<br>……君にはがっかりだな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+# ＠備考◆うろたえる
+
+@char Leia.Surprised1,ArmR1,ArmL1
+@gosubModifyCamera 0
+@print くっ……！？ { author:Leia speed:1 waitInput:true Wait:true }
+
+# ＠備考◆都合良く回答できそうな人物を探す
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Angry_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print さて、では……そうだな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+# ＠備考◆授業中先生が当てるようにシェリーに呼びかけ
+
+@char Hiro.Normal1,ArmR6,ArmL8,Eyes1_Normal_Open3,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print ……シェリー。<br>君なら答えられるかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print はいはい。<br>えー、そうですねー……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print ヒロさんが睡眠薬のビンを持っていたとすると……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print メルルさんの反撃が<br>ちょっと不自然になりますね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print メルルさんはヒロさんに刺された状態のまま、<br>ヒロさんの持っていた睡眠薬のビンを奪って<br>しかも反撃してることになります！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print でもわざわざ襲ってくる相手の持ち物を奪い取るなんて、<br>明らかに不自然な状況ですよ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print 仮に奪うとしても、<br>手に持っている武器を奪おうとするんじゃ<br>ないでしょうか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print その通り。<br>メルルがわざわざそんなこと、本当にするのかな？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・ガーン
+@sfx Sfx_Common_6
+
+@char Hanna.Surprised1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print たしかに……考えにくいですわー！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print そうなると私としてはやはり、<br>他の人が殺した可能性も視野にいれるべきだと主張するよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print 今は私が殺した前提で進みすぎている。<br>アリバイも、周囲の状況も議論もされていない……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,Arms3,Eyes1_Angry_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print これは……【正しい議論進行ではない】んじゃないかな？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# モノローグ演出
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （……私の話はあくまでも間違った前提の上に<br>　積み上げられた虚構の推理だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （ビンを私が持っていたなんて証拠はない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Painful_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print （しかし……ほんの少し迷わせることができれば、それでいい） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Painful_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print （どうせこの集団は強制的に集められただけの寄せ集めだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Painful_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print （まとまりも協調性も、統制や規律すらない議論で、<br>　正しい結論に向かうことなんて到底できやしない……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （……だからこそ、<br>　私が議論の流れを正しい方向に先導しなくては） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆自嘲気味
+
+@char Hiro.Normal1,Arms3,Eyes1_Painful_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print （……いや、【扇動】かな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Painful_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print （なんにせよ、真実にたどり着けるなら……<br>　辿る道筋はどうあれそれが正しい推理だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print （――だって、私は殺していないのだから） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print （私にメルル殺しの罪をなすりつけた犯人……<br>　絶対に見つけ出して、処刑台に送ってやろう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print ……でもさ。<br>もう１つヒロちゃんが疑わしい状況はあるんだよね。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print ……なるほど、ミリア。<br>君も私を疑うわけか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・ガーン
+@sfx Sfx_Common_6
+
+@char Miria.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Confused_Open
+@gosubModifyCamera 0
+@print そ、そういうのじゃないんだよ！？<br>でも……そう。 { author:Miria speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+@StopBgm 
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print おじさんは……現場を調べたから。 { author:Miria speed:1 waitInput:true Wait:true }
+
+# ＠備考◆やや悲しげ
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print 敵とか味方とか関係なく、<br>その事実をそのままみんなに話すだけだよ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+# ＠備考◆自嘲気味に
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （……事実、か） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （命を守るために嘘をついた今の私とは、<br>　対極だな……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print （けれど私だって、<br>　みすみす無実の罪で処刑されるわけにはいかない……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print （抗わせてもらおうか……。<br>　正しい結論を目指すために！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto Act02_Chapter01/Act02_Chapter01_Trial04

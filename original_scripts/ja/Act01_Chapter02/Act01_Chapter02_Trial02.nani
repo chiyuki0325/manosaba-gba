@@ -1,0 +1,844 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act01_Chapter02/Act01_Chapter02_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# 冒頭非表示処理
+@char Warden.1 { Position:,{hiddenCharacterPositionY} time:0 }
+@char Jailer.1 { Position:,{hiddenCharacterPositionY} time:0 }
+# ==============================================================================
+# MARK: 2: 💬 死体状況について
+# ==============================================================================
+# ＠ト書き▼議論2-2 死体状況について
+# BGM変更：rAwTell Owk...
+@bgm Bgm_7_1
+
+# Judge2-2-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Sherry.Normal1,ArmR3,ArmL12
+@gosubModifyCamera 0
+@printDebate あらためて、<br>被害者は佐伯ミリアさんです。<br>鍵のかかった懲罰房の中、<br>磔にされた状態で<br>発見されましたね。
+
+@char Meruru.Default,ArmR8_1,ArmL8,Eyes1_Downcast_Open1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@printDebate ミリアさんの遺体には、<br>複数の刺し傷が<br>ありました……。
+
+# ＠備考◆後半、詰まるような震え声で
+@char Meruru.Cry,ArmR8_1,ArmL8,Eyes1_Cry_Closed1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@printDebate 少し調べてみましたが……<br>何度刺されたか<br>わからないぐらい<br>ぐちゃぐちゃで……。
+
+@char Sherry.Smile1,ArmR3,ArmL12,Angle01/Facial/Eyes>Eyes_Smile_Closed02,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate メルルさんには<br>検死を手伝ってもらいました！<br>ご協力、感謝ですね！
+
+@char Alisa.Fearful1,Option-ArmL-Off,ArmR7,ArmL6,Angle01/Facial/Eyes>Eyes_Fearful_Open,Angle01/Facial/Sweat>Sweat02
+@gosubModifyCamera 0
+@printDebate ……笑って言う事じゃ<br>ねーだろ。
+
+@char Sherry.Normal1,ArmR3,ArmL12,ArmR2,ArmL5,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate "とにかく犯人は<br><link=\"Objection_01_02_02_01\">懲罰房</link>で拘束された<br><link=\"Objection_01_02_02_02\">ミリアさん</link>の<br><link=\"Objection_01_02_02_03\">お腹を滅多刺しにして殺害した</link><br>ということですね～！"
+
+@char Margo.Normal1,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open
+@gosubModifyCamera 0
+@printDebate ではその凶器は<br>なんだったのかしら？
+
+@char Sherry.Normal1,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03
+@gosubModifyCamera 0
+@printDebate "<link=\"Objection_01_02_02_04\">胸に刺さっていたナイフ</link><br>ですね。<br>おそらく<br><link=\"Objection_01_02_02_05\">懲罰房の備品</link>でしょう！"
+
+@char Margo.Normal1,ArmR2,ArmL5,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@printDebate ……切れ味の鋭い刃物は、<br>切られた事にも<br>気付かないと言うわ。
+
+@char Margo.Normal1,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@printDebate 逆に言えば、<br>今回みたいな<br>ボロボロの刃物を<br>使えば……。
+
+@char Sherry.Smile1,ArmR3,ArmL12,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate 痛みを与えられて、<br>効率的に拷問ができる……<br>というわけですね！
+
+@char Margo.Smile1,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@printDebate そういうこと♡
+
+@char Alisa.Angry1,ArmR4,ArmL6,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@printDebate んな悪趣味な考察は<br>どうでもいいんだよ……！
+
+# ==============================================================================
+# ADVシーン
+# ==============================================================================
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Ema.Pensive1,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@Wait 0.2
+
+@print （死体の状況に大きな間違いはなさそうかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@char Meruru.Default,ArmR1_1,ArmL8,Eyes1_Pensive_Open2,Mouth1_Normal_Open2
+@gosubSplitStageScreen 1
+
+@print ……エマさん。<br>少しだけ今の証言、違和感がありませんでしたか？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open
+
+@print そ、そうかな……？<br>ちょっと確認してみるね……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideStageScreen 1
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+
+@print （メルルちゃんはミリアちゃんの死体を詳しく見てるはず……。<br>　ならその違和感は、もしかして……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge2-2-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_01_02_02_01
+
+@Skip false
+@pauseTrial true
+
+@choice 事件現場は懲罰房ではない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge2-2-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_01_02_02_02
+
+@Skip false
+@pauseTrial true
+
+@choice 被害者は佐伯ミリアではない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge2-2-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_01_02_02_03
+
+@Skip false
+@pauseTrial true
+
+@choice 死因は腹部の刺し傷ではない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge2-2-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論4
+# ------------------------------------------------------------------------------
+
+# Objection_01_02_02_04
+
+@Skip false
+@pauseTrial true
+
+@choice ナイフは凶器ではない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge2-2-5
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論5
+# ------------------------------------------------------------------------------
+
+# Objection_01_02_02_05
+
+@Skip false
+@pauseTrial true
+
+@choice 懲罰房の物ではない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge2-2-6
+
+@choice 別の凶器がある
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge2-2-7
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# ミス選択肢
+# ==============================================================================
+
+# MARK: 2-2-3: ❌ 事件現場は懲罰房ではない
+
+# Judge2-2-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print シェリーちゃん、待って！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ミリアちゃんが殺害された現場は、<br>懲罰房ではない……ってことは考えられないかな？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR9,ArmL4,Angle01/Facial/Eyes>Eyes_Surprised_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print おおっ？<br>エマさん、それは良い視点ですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR9,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print ミステリーによくある展開です！<br>【被害者は別の場所で殺されてから移動させられた】……<br>たしかに検討の余地があるかもしれませんね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print でもミリアさんは元々懲罰房に監禁されていましたし、<br>いったいどこから運ばれてきた事になるんでしょう？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print それはその……ひとつの可能性として……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1
+@gosubModifyCamera 0
+@print ……その可能性が高くなってから話せばいいんじゃねぇか？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char AnAn.Normal1,Angle01/Option_Arms-,ArmR-Option-Off,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_01,Angle01/Head/Facial/Eyes>Eyes_Normal_Open01
+@gosubModifyCamera 0
+@print 『愚か』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Cry1,ArmR6,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （呆れられた……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （でも根拠のない反論をしたボクが悪い……。<br>　ひっこもう……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （もう一度考えるんだ……！<br>　シェリーちゃんの証言にはどこか<br>　【証拠品と矛盾する】点がある……気がする！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge2-2-1
+
+# MARK: 2-2-4: ❌ 被害者は佐伯ミリアではない
+
+# Judge2-2-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print もしかして……<br>殺されたのはミリアちゃんじゃない<br>可能性もあるんじゃないかな？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1
+@gosubModifyCamera 0
+@print ミリアさんじゃ、ない……？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char AnAn.Normal1,Angle01/Option_Arms-,ArmR-Option-Off,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_01,Angle01/Head/Facial/Eyes>Eyes_Normal_Open02
+@gosubModifyCamera 0
+@print 『くわしく』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print あのザコの中身が入れ替わってたって話？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print ……あ、うん！<br>そうかも！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3,ArmL12,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print この中の誰かと入れ替わってるとか……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print でも誰かと入れ替わってるような雰囲気は<br>ありませんけど……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print ……どっちにしろ、アイツが殺したなら<br>入れ替わった体のやつがいるってことだろ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1,ArmR2,ArmL1
+@gosubModifyCamera 0
+@print 仮に直前で中身が入れ替わったにしろ、<br>やったのは間違いなくその体だ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1,ArmR2,ArmL1
+@gosubModifyCamera 0
+@print そいつを処刑すりゃ、犯人はいなくなる。<br>中身について考えるのは犯人を見つけてからでも<br>遅くねーんじゃねーか。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print （たしかにその通りかも……。<br>　いったん、どうやって殺人が行われたのかに<br>　焦点を絞って考えた方が良さそうだ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （だとしたら……今明らかにするべきは<br>　死体の状況に不自然なことがないかだ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （もう一度考えるんだ……！<br>　シェリーちゃんの証言にはどこか<br>　【証拠品と矛盾する】点がある……気がする！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge2-2-1
+
+# MARK: 2-2-5: ❌ ナイフは凶器ではない
+
+# Judge2-2-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print わかったよ、みんな……！<br>ナイフが凶器っていう前提がおかしいんだ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print 死体にはしっかりナイフが刺さっていたけど？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default,ArmR1_1,ArmL8,Eyes1_Pensive_Open2,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print ……そ、それにミリアさんの傷口は、<br>ナイフの形と一致しています……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default,ArmR1_1,ArmL8,Eyes1_Pensive_Open2,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print 現場に残った出血量からして、<br>刺殺以外の可能性はあまり考えられませんし……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default,ArmR1_1,ArmL8,Eyes1_Cry_Closed2,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print ナイフ以外が凶器とは、<br>考えにくいかもしれません……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-
+@gosubModifyCamera 0
+@print "オイ！ 思い付きで前提をひっくり返そうとすんな！<br>ややこしくなるだろーがッ！！" { author:Alisa speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Surprised1,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print 言葉のナイフで突き刺されちゃった……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1
+@gosubModifyCamera 0
+@print "おぉい！ 聞こえてんぞ！！<br>うまいこと言おうとすんじゃねぇ！" { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （証拠もナシに反論してもダメだよね……） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （もう一度考えるんだ……！<br>　シェリーちゃんの証言にはどこか<br>　【証拠品と矛盾する】点がある……気がする！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge2-2-1
+
+# MARK: 2-2-6: ❌ 懲罰房の物ではない
+
+# Judge2-2-6
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Pensive1,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print そのナイフ……本当に懲罰房の備品なのかな？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1,ArmR2,ArmL5,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 現場には拷問器具が揃ってたわ。<br>ナイフぐらいあってもおかしくないわね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print 古臭さも他の器具と同じぐらいな気がします！<br>外から持ち込まれた可能性は低いんじゃないでしょうか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print でも、もしあのナイフが外部から持ち込まれたものだとして、<br>なにか問題はあるのかしら？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print ……そこまでは考えてなかったけど。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmR5,ArmL1,Eyes1_Angry_Closed1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print 時間がないの。寄り道をしてるヒマはないわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Pensive1,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （議論を止めちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （もう一度考えるんだ……！<br>　シェリーちゃんの証言にはどこか<br>　【証拠品と矛盾する】点がある……気がする！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge2-2-1
+
+# MARK: 2-2-7: ❌ 別の凶器がある
+
+# Judge2-2-7
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ねえ、現場は懲罰房でしょ……？<br>他にも凶器になりうる物があったんじゃないかな。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR3,ArmL2
+@gosubModifyCamera 0
+@print イタそうな器具は盛りだくさんね……♪<br>ゾクゾクしちゃう……♡ { author:Margo speed:1 waitInput:true Wait:true }
+
+# ＠備考◆ドン引き
+@char Alisa.Angry1,ArmR4,ArmL6
+@gosubModifyCamera 0
+@print 裁判中に興奮してんじゃねぇ……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print しかしエマさん、別の凶器に心当たりはあるんですか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print そ、それは……今のところないけど。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print それは……ダメですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1,ArmR1,ArmL5
+@gosubModifyCamera 0
+@print エマっち……やる気ある？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Surprised1,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （やる気を疑われちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.ArmR5_2,ArmL2,Eyes2_Normal_Open3,Mouth2_Normal_Open1
+@gosubModifyCamera 0
+@print え、エマさん……！<br>落ち着いてください……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.ArmR5_2,ArmL2,Eyes2_Normal_Open3,Mouth2_Angry_Open2
+@gosubModifyCamera 0
+@print まずは、<br>【証拠品の中で、証言と矛盾する部分を】<br>探してみましょう……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ご……ごめん、メルルちゃん……！<br>そうしてみる……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （もう一度考えるんだ……！<br>　シェリーちゃんの証言にはどこか<br>　【証拠品と矛盾する】点がある……気がする！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge2-2-1
+
+# ==============================================================================
+# MARK: 2-2-2: ⭕ 死因は腹部の刺し傷ではない
+# ==============================================================================
+
+# Judge2-2-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+@StopBgm 
+@gosubCutIn Ema
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ……待って！<br>【死因は腹部の刺し傷】……<br>本当にそうなのかな？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Pensive1
+@gosubModifyCamera 0
+@print そりゃあんなに刺されたら当然死ぬだろ……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print でも、死体の状況を見て欲しいんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# 現場写真
+@spawn Clue
+
+# 気任せの蝶［チェロ無し］
+@bgm Bgm_45_1
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print これ……<br>ミリアちゃんの【胸】からも、血が出てるよね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@despawn Clue
+
+@char Meruru.Default,ArmR5_1,ArmL2,Eyes1_Normal_Open3,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print はい。それは……心臓を狙った刺し傷のようですね。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1
+@gosubModifyCamera 0
+@print 心臓……。<br>じゃあ死因は……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print うん。死因は胸の傷だったんじゃないかな？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print だってお腹を何度も刺したなら、<br>その後にわざわざ心臓を刺す必要なんてないと思うんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print だからミリアちゃんは、<br>胸を刺されて殺された【後で】お腹を刺された……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print そう考える事もできるんじゃないかな？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1,ArmR5,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open
+@gosubModifyCamera 0
+@print ……ちょっと待てよ。<br>だからって、死んだ後で<br>腹を刺す理由なんてあるのか？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open
+@gosubModifyCamera 0
+@print え、ええとそれは……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1,ArmR7,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print ……ではこう考えるのはどうかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1,ArmR7,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print 【お腹を刺してもなかなか死ななかったから心臓を刺した】<br>……ってね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print ……そう、それはまるで<br>吸血鬼の心臓に杭を打つように。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,Angle01/Facial/Eyes>Eyes_Normal_Open
+@gosubModifyCamera 0
+@print 相手が死ななかったから、<br>トドメを刺したのよ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default,ArmR1_1,ArmL8,Eyes1_Pensive_Open2,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print そういえば、ゴクチョーさんが【魔女は簡単に死なない】って<br>言ってたような……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1
+@gosubModifyCamera 0
+@print もしかしたらマーゴさんの言っていたように<br>最初はお腹を刺しても<br>死ななかったのかもしれませんわ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR4,ArmL5
+@gosubModifyCamera 0
+@print なるほど！<br>そういう考えもありそうです。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR3,ArmL3
+@gosubModifyCamera 0
+@print おそらくどちらの場合であっても、<br>最終的な死因としては<br>【胸の刺し傷】になりそうですね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR3,ArmL3,Angle01/Facial/Eyes>Eyes_Smile_Closed02
+@gosubModifyCamera 0
+@print つまり死因は【胸の刺し傷】で<br>良さそうですね！<br>……発言を訂正しておきますね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ★証拠データ更新
+# 【死体状況まとめ】
+# 死体発見時、拘束され、腹部が滅多刺しにされていた。
+# 刺し傷は胸と腹部にある。
+# 死因は胸の刺し傷。
+@ResetText 
+@spawn Clue
+@update 2-9
+@toast "魔女図鑑 更新…"
+@Wait i1.2
+@despawn Clue
+
+@char Alisa.Normal1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print ……でもよ、それが何か事件に関係あんのか？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1,ArmR2,ArmL1
+@gosubModifyCamera 0
+@print 胸の傷が先だろうが、腹の傷が先だろうが、<br>大して変わんねーだろ……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmR1,ArmL10,Eyes1_Angry_Open1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print ……たしかに死因は変わらないけど、<br>死因をはっきりさせることに意味はあると思うわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1,ArmR3,ArmL2,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print "本当～？ 具体的に何がわかんのさ。" { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print ……少なくとも<br>【非常に強い殺意】<br>があったことがわかるわね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR2,ArmL3
+@gosubModifyCamera 0
+@print たしかに！<br>どう考えても犯人は殺すつもりで<br>攻撃したという事ですもんね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1,ArmR1,ArmL2,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print 【非常に強い殺意】ねぇ……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char Coco.Angry1,ArmR1,ArmL2,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print ならさあ、疑わしい人物なんて<br>ひとりしかいないんじゃねーの？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open
+@gosubModifyCamera 0
+@print それって……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Normal_Open5,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print ……私のことかしら。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （ナノカちゃん……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmR2,ArmL9,Eyes1_Normal_Open3,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print ……たしかに私が疑わしいのは<br>否定しないわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print "え～？ それって自白～？" { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmR2,ArmL9,Eyes1_Normal_Open3,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print 客観的な事実だもの。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmR1,ArmL10,Eyes1_Angry_Open1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print ……でも私は別の人物が疑わしいと思うわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print そんなやついんの？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_10_1
+
+@char Nanoka.Normal1,ArmR2,ArmL9,Eyes1_Angry_Open1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print ……ゴクチョーよ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Alisa.Pensive1,ArmR2,ArmL1
+@gosubModifyCamera 0
+@print ゴクチョーって……<br>あのフクロウがナイフで<br>ザクザク刺したって思ってんのか？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print 正確には、あれを操る人物……<br>つまり黒幕、もしくはそれに準ずる<br>この牢屋敷の運営組織のことよ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print ……私が前に言ったことは覚えているかしら？<br>【佐伯ミリアが黒幕の可能性がある】と。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Angry_Closed1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print 残念だけど……<br>調べた結果、その証拠は見つからなかったわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Coco.Angry1,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print "は？ 勘違いだったってこと？" { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Uncomfortable_Open1,Mouth1_Flushed_Closed1
+@gosubModifyCamera 0
+@print …………ええ。<br>私のミスよ。ごめんなさい。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Alisa.Pensive1,ArmR2,ArmL7
+@gosubModifyCamera 0
+@print お前、銃撃までしておいて……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print 私が言っても意味はないけれど……<br>でもだからこそ、私は運営の関与を疑っているわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmR3,ArmL1,Eyes1_Normal_Open2,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print 私が疑っていた事で、スケープゴートにされたのか……<br>それとも何か黒幕に繋がる秘密を握ってしまったのか……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmR3,ArmL1,Eyes1_Normal_Open2,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print もしかすると、あの気球の事件……<br>あれ自体が佐伯ミリアを脅して起こさせた<br>運営の差し金なのかもしれないわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Alisa.Surprised1
+@gosubModifyCamera 0
+@print そんなこと<br>……ありえんのか？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Normal_Closed2,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print それについて説明する前に、教えて欲しいことがあるの。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Nanoka.Eyes1_Flushed_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print ……遠野ハンナ。<br>あなたが佐伯ミリアの死体を発見した状況を<br>もう一度詳しく教えてちょうだい。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Hanna.Pensive1,ArmR1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Open
+@gosubModifyCamera 0
+@print "え？ ええっとあのときは……。" { author:Hanna speed:1 waitInput:true Wait:true }
+
+# □マップ演出
+@spawn Map_A01C02_01
+@spawn Map_A01C02_01
+
+@print 最初にアンアンさんと一緒にミリアさんの悲鳴を聞いたのが<br>【２０時】でしたわ。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@spawn Map_A01C02_01
+
+@print その後、医務室にアンアンさんを置いて、<br>【２１時】にもう一度行ったんですの。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+# 実装されてない
+# @spawn Map_A01C02_01 params:3 wait!
+
+@despawn Map_A01C02_01
+
+@char Hanna.Default,ArmR1,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Open
+@print その時、偶然食堂側から出て来た<br>ココさんと一緒になったんです。<br>そして懲罰房に行って２人で覗き窓を覗いたら……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1,ArmR1,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open
+@print ミリアさんが死んでたんですのよ～！<br>だから開けようとしたんですけど、<br>鍵がかかっていて……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print それで、そこの怪力ゴリラを連れてきて<br>鍵を壊させたの。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Middle
+@gosubModifyCamera 0
+@print ……もしかしたらまだ生きてるかもしんないし。<br>暗くてよく見えなかったからさ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print たしかにその時、扉は開きませんでしたね～。<br>だから壊したんですけど……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ＠備考◆泣き
+@char Sherry.Surprised1,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Angry_Open01,Angle01/Facial/Mouth>Mouth_Confused_Open
+@gosubModifyCamera 0
+@print ……いや、ですから私はゴリラじゃないですってば～。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Normal_Open2,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print ともかく……<br>これでひとつの事実がわかったわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open
+@gosubModifyCamera 0
+@print 事実……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,Eyes1_Normal_Closed1
+@gosubModifyCamera 0
+@print ええ。<br>それは【私たちの中に犯人はいない】<br>ということよ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# ＠備考◆シリアス・声低め
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open
+@gosubModifyCamera 0
+@print ……どういうこと？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Normal_Open5,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print ……私から話をさせてもらうわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@Wait 0.3
+
+
+@goto Act01_Chapter02/Act01_Chapter02_Trial03

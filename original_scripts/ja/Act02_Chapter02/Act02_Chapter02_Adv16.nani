@@ -1,0 +1,129 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-2-16
+
+# ========================================
+# ●シーン2‐2‐16
+# ========================================
+
+@back 5_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# フクロウの羽ばたき音
+@sfx Sfx_8
+
+@bgm Bgm_35_1
+
+@print ラウンジに集められた少女たちの前に、<br>ゴクチョーが姿を現す。 { speed:1 waitInput:true Wait:true }
+
+@char Warden.1
+
+@print さて、皆さんお揃いですね。<br>すでにお報せしましたが、<br>また殺人事件が起こってしまいました。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 前回と同じく、事前投票を行います。<br>怪しい方に証拠隠滅などされては困りますからね。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 事前投票……いや、裁判すら開くまでもない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia.Surprised1
+
+@print ヒロくん、それはどういう意味だい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 犯人は明確だ。<br>銃を持って立っていたエマ以外にない！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Angry1,ArmR3
+
+@print ……怪しいのは、ヒロちゃんだよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "黙っていたエマが、ぽつりと<ruby=\"つぶや\">呟</ruby>いた。" { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1
+
+@print 何が言いたい？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ボクをあの時間に呼び出したのはヒロちゃんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 最初から、<br>ボクを陥れるつもりだったんじゃないかな。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 少女たちの視線が私に集まった。 { speed:1 waitInput:true Wait:true }
+
+@print 先ほどのエマとのやり取りから、<br>想定できていたことだ。 { speed:1 waitInput:true Wait:true }
+
+@print "私は<ruby=\"きぜん\">毅然</ruby>とした態度で、それを受け止める。" { speed:1 waitInput:true Wait:true }
+
+@print "それで？ 私がココを殺し、<br>君に罪をなすりつけるつもりだと？" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print …………。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "私とエマの、<ruby=\"にら\">睨</ruby>み合う視線が<ruby=\"こうさく\">交錯</ruby>した。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Warden.1
+
+@print あー、そういうのは裁判の時にやってもらえます？<br>とりあえず今は、ささっと投票しちゃってください。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "ゴクチョーに<ruby=\"うなが\">促</ruby>されて、<br>少女たちはスマホを操作して投票していく。" { speed:1 waitInput:true Wait:true }
+
+@print "何が起きたのかさっぱり<ruby=\"はあく\">把握</ruby>できない、<br>というのが正直なところだろう。" { speed:1 waitInput:true Wait:true }
+
+@print ただ、私とエマが言い合いをしたことで、<br>少女たちが自然に投票先として選ぶのは―― { speed:1 waitInput:true Wait:true }
+
+@back 5_1
+
+# モニター音
+@sfx Sfx_3
+
+@printer Normal.Stream
+@Wait 0.5
+
+# パンパカパーン的な音
+@sfx Sfx_34
+
+@print ラウンジのモニターがついたかと思うと、<br>直後に間抜けなファンファーレ音が鳴り響いた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Angry1
+@char Hiro.Angry1
+
+@print そして、画面に映し出されていたのは……<br>私とエマの２人だった。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@Wait 0.3
+@printer Normal.Default
+@back 5_1
+@Wait 0.3
+@char Warden.1
+@Wait 0.3
+
+@print おや、困りましたね。<br>ヒロさんとエマさん、同数トップですか。<br>では、とりあえず２人とも拘束ということで。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hiro.Angry1
+
+@print ２人とも拘束……？<br>納得いかないな。私は犯人ではない！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Warden.1
+
+@print と、言われましても……ルールですので。<br>納得いかないのなら、裁判で証明してください。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Jailer.1
+
+@print …………。 { author:Jailer speed:1 waitInput:true Wait:true }
+
+@print 看守の手が有無を言わさず、<br>私とエマを拘束する。 { speed:1 waitInput:true Wait:true }
+
+@print "その<ruby=\"すさ\">凄</ruby>まじい力に<ruby=\"あらが\">抗</ruby>えず、口を<ruby=\"ふさ\">塞</ruby>がれ、<br>私はただただエマを<ruby=\"にら\">睨</ruby>んでいた。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマも、また私を。 { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter02/Act02_Chapter02_Adv17

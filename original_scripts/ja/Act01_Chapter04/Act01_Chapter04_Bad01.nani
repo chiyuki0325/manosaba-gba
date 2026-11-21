@@ -1,0 +1,147 @@
+@if isDebugDirectJump
+	@Gosub System/System_Subroutine.BeginAdv
+
+# ========================================
+# ＞『身を任せた』を選択→1‐4‐b1へ
+# ========================================
+
+# Scene1-4-b1
+
+# ========================================
+# ●シーン1-4-b1
+# ========================================
+
+@back 17_2 { time:0 }
+@blur MainBackground
+@char Alisa.Angry,Option-ArmL-Off
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_24_1
+
+@print （ああ、でもこのまま身を任せれば……<br>　ひとりぼっちにならなくてすむんだ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマの身体から力が抜けて、<br>大人しくアリサにされるがままになる。 { speed:1 waitInput:true Wait:true }
+
+@print 抵抗しないのは、自分が死なないってわかってるからか？<br>なぁ、そうなんだろ！？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print アリサの腕の力が強まって、<br>エマが苦しそうにはくはくと口を動かす。 { speed:1 waitInput:true Wait:true }
+
+@print それでも、決して暴れることはない。<br>それどころか―― { speed:1 waitInput:true Wait:true }
+
+@print ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Pensive
+
+@print お前……なんで、笑ってるんだ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print "わずかに<ruby=\"おび\">怯</ruby>えた様子を見せるアリサの手に、<br>そっとエマが触れる。" { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆首絞め状態
+
+@print ア、リサ……ちゃ、の……<br>せい、じゃ……な……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ……は？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+# ＠備考◆首絞め状態
+
+@print ぼ、く……が、選、んだ……<br>あり……が、と……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char Alisa.Pensive
+
+@print なん、だよ……それ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_12_1_Loop
+
+# ========================================
+# 立ち絵：アリサ半クリーチャーでお願いします。
+# ========================================
+
+@hideChars { time:0.3 }
+@char CreatureAlisa.1-4 { time:0.3 }
+
+@print なんで……<br>なんでなんでなんでなんでなんでなんで！！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print 一層力が強まったのか、<br>エマの首の骨がメキメキと音を立てる。 { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆首絞め状態
+
+@print っ……ぐ、が……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# 首の骨が折れる音
+@sfx Sfx_108
+
+@print ついに骨が折れるような音がして、<br>エマはぐったりとしたまま少しも動かなくなった。 { speed:1 waitInput:true Wait:true }
+
+@char CreatureAlisa.1-5
+
+@print 死ん、だ……？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+# 倒れる音
+@sfx Sfx_19
+
+@char CreatureAlisa.0-5
+
+@print アリサが手を離せば、<br>エマはそのままその場に崩れ落ちる。 { speed:1 waitInput:true Wait:true }
+
+@char CreatureAlisa.0-3
+
+@print はは、あははっ……<br>あははははははっ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+# 炎をぼっと点す音
+@sfx Sfx_30
+
+@print 狂ったように笑いながら、<br>アリサはその手の内に火を点す。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 次第に大きさを増したその火を、<br>アリサはエマに近付けた。 { speed:1 waitInput:true Wait:true }
+
+@back SolidColor
+
+@print 途端に、エマの服に火が燃え移り、<br>それは勢いを増しながらエマの亡骸を完全に飲み込んでいく。 { speed:1 waitInput:true Wait:true }
+
+@print 燃えさかる炎を見ながら、アリサは虚ろな瞳で笑った。 { speed:1 waitInput:true Wait:true }
+
+@print "燃えろ、燃えろ燃えろ！<br>もっと！ 全部燃やし尽くすくらいに！！" { author:Alisa speed:1 waitInput:true Wait:true }
+
+# 炎をぼっと点す音
+@sfx Sfx_30
+
+@print アリサの叫びに応えるように、<br>周囲の木々にも火が点る。 { speed:1 waitInput:true Wait:true }
+
+@print その勢いは凄まじく、<br>先ほどまで積もっていた雪は全て溶け、<br>周囲はあっという間に火の海になった。 { speed:1 waitInput:true Wait:true }
+
+@print ふふ、はははっ……<br>これで、叱ってもらえる。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print 叱って、愛してもらえるんだ！<br>あはは、あははははははっ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print 狂ったように笑っていたアリサだったけれど、<br>その笑い声は突然ピタリと止まる。 { speed:1 waitInput:true Wait:true }
+
+@print でも、叱ってもらえなかったら……？<br>これでも、許されたら……？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print ダメだ、そんなの……<br>なら……もっと、もっと悪い子にならないと。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print もっと、たくさん……殺さないと。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print "そう<ruby=\"つぶや\">呟</ruby>くアリサの瞳は、牢屋敷へと向けられ――" { speed:1 waitInput:true Wait:true }
+
+@print ああ、そっか……そうだよなぁ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print 全部なくなれば……<br>誰もウチを許すこともできなくなるじゃん。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print 最初からそうすればよかったんだ……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print ぜーんぶ、燃やしちゃえば……ふふっ、<br>ふははははっ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print "周囲に炎の<ruby=\"じゅうたん\">絨毯</ruby>を敷きながら、<br>アリサは楽しげに、牢屋敷へと向かっていった。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 『END～本当の愛～』
+# ========================================
+
+@badEnd 13

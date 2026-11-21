@@ -1,0 +1,1116 @@
+[
+  {
+    "id": "Bgm001",
+    "title": "燦色の檻",
+    "uncertain": false,
+    "candidates": [
+      "1-05"
+    ],
+    "asset": "bgm001",
+    "title_source": "original_scripts/ja/Debug/Debug_SoundTest.nani",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "燦色の檻",
+        "resource": "Bgm_1_1"
+      }
+    ],
+    "volume": 768,
+    "loop": true,
+    "description": "钢琴／合唱，半拍唱半拍空"
+  },
+  {
+    "id": "Bgm002",
+    "title": "eXi' N'o FooKah",
+    "uncertain": false,
+    "candidates": [
+      "1-02"
+    ],
+    "asset": "bgm002_001",
+    "title_source": "original_scripts/ja/Debug/Debug_SoundTest.nani",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "eXi' N'o FooKah",
+        "resource": "Bgm_2_1_Loop"
+      }
+    ],
+    "note": "新版原时序；末段缺器乐谱",
+    "source_variant": 1,
+    "description": "Voice Oohs；vocal后移705ms",
+    "volume": 768,
+    "loop": true
+  },
+  {
+    "id": "Bgm003",
+    "title": "Sar-gedy-流-",
+    "uncertain": false,
+    "candidates": [
+      "1-03"
+    ],
+    "asset": "bgm004",
+    "title_source": "original_scripts/ja/Debug/Debug_SoundTest.nani",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "Sar-gedy-流-",
+        "resource": "Bgm_3_1_Loop"
+      }
+    ],
+    "volume": 768,
+    "loop": true,
+    "start_order": 0,
+    "description": "原声前奏→004／共享循环",
+    "note": "003使用上传Intro，结束直接进入004；之后只循环004"
+  },
+  {
+    "id": "Bgm004",
+    "title": "Sar-gedy-動-",
+    "uncertain": false,
+    "candidates": [
+      "1-03",
+      "2-14"
+    ],
+    "asset": "bgm004",
+    "title_source": "original_scripts/ja/Debug/Debug_SoundTest.nani",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "Sar-gedy-動-",
+        "resource": "Bgm_4_1"
+      }
+    ],
+    "volume": 768,
+    "loop": true,
+    "start_order": 3,
+    "description": "弦乐／圆号；削中层、修F4",
+    "note": "已批准修正版；尾部空白与孤立末击去掉；与003共用循环体"
+  },
+  {
+    "id": "Bgm005",
+    "title": "Sar-gedy-静-",
+    "uncertain": false,
+    "candidates": [
+      "3-08"
+    ],
+    "asset": "bgm005",
+    "title_source": "original_scripts/ja/Debug/Debug_SoundTest.nani",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "Sar-gedy-静-",
+        "resource": "Bgm_5_1"
+      }
+    ],
+    "loop": true,
+    "volume": 512,
+    "description": "新版三段拼接／原配器",
+    "start_order": 0
+  },
+  {
+    "id": "Bgm006",
+    "title": "その牢",
+    "uncertain": false,
+    "candidates": [
+      "3-09"
+    ],
+    "asset": "bgm006",
+    "title_source": "original_scripts/ja/Debug/Debug_SoundTest.nani",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "その牢",
+        "resource": "Bgm_6_1"
+      }
+    ],
+    "volume": 512,
+    "loop": true,
+    "description": "双纹理长环境音效"
+  },
+  {
+    "id": "Bgm007",
+    "title": "rAwTell Owk...",
+    "uncertain": false,
+    "candidates": [
+      "3-10"
+    ],
+    "asset": "bgm007",
+    "description": "102BPM含鼓轨草案",
+    "volume": 512,
+    "loop": true,
+    "title_source": "original_scripts/ja/Debug/Debug_SoundTest.nani",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "rAwTell Owk...",
+        "resource": "Bgm_7_1"
+      }
+    ]
+  },
+  {
+    "id": "Bgm008",
+    "title": "Guil-me N'o sinruits (1) / Guil-me N'o sinruits (2)",
+    "uncertain": false,
+    "candidates": [
+      "3-01",
+      "2-02"
+    ],
+    "asset": "bgm008_001",
+    "description": "水版(1)五轨；(2)未制作",
+    "unmade_versions": "(2)",
+    "volume": 640,
+    "loop": true,
+    "source_variant": 1,
+    "title_source": "original_scripts/ja/Debug/Debug_SoundTest.nani",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "Guil-me N'o sinruits (1)",
+        "resource": "Bgm_8_1"
+      },
+      {
+        "variant": 2,
+        "title": "Guil-me N'o sinruits (2)",
+        "resource": "Bgm_8_2"
+      }
+    ]
+  },
+  {
+    "id": "Bgm009",
+    "title": "深層の畝",
+    "uncertain": false,
+    "candidates": [
+      "1-17"
+    ],
+    "asset": "bgm009",
+    "title_source": "original_scripts/ja/Debug/Debug_SoundTest.nani",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "深層の畝",
+        "resource": "Bgm_9_1"
+      }
+    ],
+    "loop": true,
+    "volume": 768,
+    "description": "原谱纯钢琴"
+  },
+  {
+    "id": "Bgm010",
+    "title": "看るモノ達",
+    "uncertain": false,
+    "candidates": [
+      "1-16"
+    ],
+    "asset": "bgm010",
+    "title_source": "original_scripts/ja/Debug/Debug_SoundTest.nani",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "看るモノ達",
+        "resource": "Bgm_10_1"
+      }
+    ],
+    "loop": true,
+    "volume": 512,
+    "description": "原谱弦乐合奏／钢琴"
+  },
+  {
+    "id": "Bgm011",
+    "title": "迷宮の徒",
+    "uncertain": false,
+    "candidates": [
+      "1-08"
+    ],
+    "asset": "bgm011",
+    "description": "颤音琴主旋律版",
+    "volume": 688,
+    "loop": true,
+    "title_source": "original_scripts/ja/Debug/Debug_SoundTest.nani",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "迷宮の徒",
+        "resource": "Bgm_11_1"
+      }
+    ]
+  },
+  {
+    "id": "Bgm012",
+    "title": "EmA-虚-",
+    "uncertain": false,
+    "candidates": [
+      "2-15"
+    ],
+    "asset": "bgm013_001",
+    "title_source": "original_scripts/ja/Debug/Debug_SoundTest.nani",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "EmA-虚-",
+        "resource": "Bgm_12_1_Loop"
+      }
+    ],
+    "volume": 512,
+    "loop": true,
+    "start_order": 4,
+    "description": "含016／短前奏／共用013循环",
+    "aliases": [
+      "Bgm016"
+    ],
+    "usage_note": "EmA-虚- / EmA-危-",
+    "note": "Bgm016 与012使用同一首，按用户要求合并，不再单列"
+  },
+  {
+    "id": "Bgm013",
+    "title": "EmA-常-",
+    "uncertain": false,
+    "candidates": [
+      "3-07",
+      "2-16"
+    ],
+    "asset": "bgm013_001",
+    "title_source": "original_scripts/ja/Debug/Debug_SoundTest.nani",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "EmA-常-",
+        "resource": "Bgm_13_1_Loop"
+      }
+    ],
+    "description": "含014／前奏一次／四轨交响",
+    "volume": 512,
+    "loop": true,
+    "usage_note": "EmA-常- / EmA-狂-",
+    "aliases": [
+      "Bgm014"
+    ],
+    "note": "Bgm014 按用户要求并入本曲，不单列"
+  },
+  {
+    "id": "Bgm015",
+    "title": "AccUhEarts (1) / AccUhEarts (2)",
+    "uncertain": false,
+    "candidates": [
+      "2-03",
+      "3-04"
+    ],
+    "asset": "bgm015_002",
+    "description": "(2)配器草案；(1)未制作",
+    "volume": 640,
+    "unmade_versions": "(1)",
+    "loop": true,
+    "source_variant": 2,
+    "title_source": "original_scripts/ja/Debug/Debug_SoundTest.nani",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "AccUhEarts (1)",
+        "resource": "Bgm_15_1"
+      },
+      {
+        "variant": 2,
+        "title": "AccUhEarts (2)",
+        "resource": "Bgm_15_2"
+      }
+    ]
+  },
+  {
+    "id": "Bgm017",
+    "title": "pAciKa' ConWa",
+    "uncertain": false,
+    "candidates": [
+      "2-10"
+    ],
+    "asset": "bgm017",
+    "title_source": "original_scripts/ja/Debug/Debug_SoundTest.nani",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "pAciKa' ConWa",
+        "resource": "Bgm_17_1"
+      }
+    ],
+    "note": "32处误长音半时值；两份MIDI同起点",
+    "volume": 512,
+    "loop": true,
+    "description": "吉他／轻钢琴／高音笛子升八度"
+  },
+  {
+    "id": "Bgm018",
+    "title": "小鳥達の閑話休題",
+    "uncertain": false,
+    "candidates": [
+      "1-09"
+    ],
+    "asset": "bgm018",
+    "title_source": "original_scripts/ja/Debug/Debug_SoundTest.nani",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "小鳥達の閑話休題",
+        "resource": "Bgm_18_1_Loop"
+      }
+    ],
+    "volume": 768,
+    "loop": true,
+    "start_order": 0,
+    "description": "钢琴／钟琴／铜管／长笛／马林巴"
+  },
+  {
+    "id": "Bgm019",
+    "title": "ボクとワタシの",
+    "uncertain": false,
+    "candidates": [
+      "1-10"
+    ],
+    "asset": "bgm019",
+    "volume": 512,
+    "loop": true,
+    "title_source": "original_scripts/ja/Debug/Debug_SoundTest.nani",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "ボクとワタシの",
+        "resource": "Bgm_19_1"
+      }
+    ]
+  },
+  {
+    "id": "Bgm020",
+    "title": "蠢きの寝屋",
+    "uncertain": false,
+    "candidates": [
+      "1-15"
+    ],
+    "asset": "bgm020",
+    "title_source": "original_scripts/ja/Debug/Debug_SoundTest.nani",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "蠢きの寝屋",
+        "resource": "Bgm_20_1"
+      }
+    ],
+    "note": "8秒持续PCM循环；按用户要求省略变化段",
+    "volume": 1024,
+    "loop": true,
+    "description": "单声道底噪"
+  },
+  {
+    "id": "Bgm021",
+    "title": "鉛の腱",
+    "uncertain": false,
+    "candidates": [
+      "1-07"
+    ],
+    "asset": "bgm021",
+    "title_source": "original_scripts/ja/Debug/Debug_SoundTest.nani",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "鉛の腱",
+        "resource": "Bgm_21_1"
+      }
+    ],
+    "note": "中段8秒短循环；用户选定；持续一路音乐PCM",
+    "volume": 1024,
+    "loop": true,
+    "description": "单声道8秒环境循环"
+  },
+  {
+    "id": "Bgm022",
+    "title": "靴の裏",
+    "uncertain": false,
+    "candidates": [
+      "2-06"
+    ],
+    "asset": "bgm022",
+    "title_source": "original_scripts/ja/Debug/Debug_SoundTest.nani",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "靴の裏",
+        "resource": "Bgm_22_1"
+      }
+    ],
+    "volume": 1024,
+    "loop": true,
+    "description": "单声道四脉冲短循环",
+    "note": "用户批准；约8.01秒PCM循环；持续一路音乐声道"
+  },
+  {
+    "id": "Bgm023",
+    "title": "迫るその足音",
+    "uncertain": false,
+    "candidates": [
+      "2-09"
+    ],
+    "asset": "bgm023",
+    "title_source": "original_scripts/ja/Debug/Debug_SoundTest.nani",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "迫るその足音",
+        "resource": "Bgm_23_1"
+      }
+    ],
+    "volume": 1024,
+    "loop": true,
+    "start_order": 0,
+    "description": "单声道8秒脉动循环"
+  },
+  {
+    "id": "Bgm024",
+    "title": "海の森",
+    "uncertain": false,
+    "candidates": [
+      "2-13"
+    ],
+    "asset": "bgm024",
+    "description": "原MIDI三轨配器",
+    "volume": 724,
+    "loop": true,
+    "title_source": "original_scripts/ja/Debug/Debug_SoundTest.nani",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "海の森",
+        "resource": "Bgm_24_1"
+      }
+    ]
+  },
+  {
+    "id": "Bgm025",
+    "title": "Kei-Plne Co-Jundic",
+    "uncertain": false,
+    "candidates": [
+      "3-11"
+    ],
+    "asset": "bgm025",
+    "description": "原谱吉他／鼓组／定音鼓，96小节",
+    "volume": 1024,
+    "loop": true,
+    "title_source": "original_scripts/ja/Debug/Debug_SoundTest.nani",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "Kei-Plne Co-Jundic",
+        "resource": "Bgm_25_1"
+      }
+    ]
+  },
+  {
+    "id": "Bgm026",
+    "title": "交々のいと (1) / 交々のいと (2)",
+    "uncertain": false,
+    "candidates": [
+      "1-12",
+      "1-13"
+    ],
+    "asset": "bgm026_001",
+    "title_source": "original_scripts/ja/Debug/Debug_SoundTest.nani",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "交々のいと (1)",
+        "resource": "Bgm_26_1"
+      },
+      {
+        "variant": 2,
+        "title": "交々のいと (2)",
+        "resource": "Bgm_26_2"
+      }
+    ],
+    "description": "(1)吉他／钢琴／轻弦乐",
+    "volume": 362,
+    "loop": true,
+    "unmade_versions": "(2)"
+  },
+  {
+    "id": "Bgm027",
+    "title": "慄き鳴き (1)",
+    "uncertain": false,
+    "candidates": [
+      "1-14"
+    ],
+    "asset": "bgm027_001",
+    "title_source": "original_scripts/ja/Debug/Debug_SoundTest.nani",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "慄き鳴き (1)",
+        "resource": "Bgm_27_1"
+      },
+      {
+        "variant": 2,
+        "title": "慄き鳴き (2)",
+        "resource": "Bgm_27_2"
+      },
+      {
+        "variant": 3,
+        "title": "慄き鳴き (3)",
+        "resource": "Bgm_27_3"
+      }
+    ],
+    "display_variants": [
+      1
+    ],
+    "source_variant": 1,
+    "description": "原声短循环／(1)",
+    "volume": 768,
+    "loop": true
+  },
+  {
+    "id": "Bgm027_002",
+    "title": "慄き鳴き (2) / 慄き鳴き (3)",
+    "uncertain": false,
+    "candidates": [
+      "1-14"
+    ],
+    "asset": "bgm027_002",
+    "title_source": "original_scripts/ja/Debug/Debug_SoundTest.nani",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "慄き鳴き (1)",
+        "resource": "Bgm_27_1"
+      },
+      {
+        "variant": 2,
+        "title": "慄き鳴き (2)",
+        "resource": "Bgm_27_2"
+      },
+      {
+        "variant": 3,
+        "title": "慄き鳴き (3)",
+        "resource": "Bgm_27_3"
+      }
+    ],
+    "display_variants": [
+      2,
+      3
+    ],
+    "source_variant": 2,
+    "description": "原声短循环／(2)(3)共用",
+    "volume": 768,
+    "loop": true,
+    "logical_id": "Bgm027",
+    "label_id": "Bgm027",
+    "demo_title": "慄き鳴き (2/3)"
+  },
+  {
+    "id": "Bgm028",
+    "title": "望むのは日常",
+    "uncertain": false,
+    "candidates": [
+      "2-11"
+    ],
+    "asset": "bgm028",
+    "title_source": "original_scripts/ja/Debug/Debug_SoundTest.nani",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "望むのは日常",
+        "resource": "Bgm_28_1"
+      }
+    ],
+    "volume": 768,
+    "loop": true,
+    "description": "竖琴／钢琴；结尾渐慢"
+  },
+  {
+    "id": "Bgm029",
+    "title": "DArime",
+    "uncertain": false,
+    "candidates": [
+      "1-04"
+    ],
+    "asset": "bgm029",
+    "description": "全声部合唱，原谱留白保留",
+    "volume": 768,
+    "loop": true,
+    "title_source": "original_scripts/ja/Debug/Debug_SoundTest.nani",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "DArime",
+        "resource": "Bgm_29_1"
+      }
+    ]
+  },
+  {
+    "id": "Bgm030",
+    "title": "bloom (piano version)",
+    "uncertain": false,
+    "candidates": [
+      "3-17"
+    ],
+    "asset": "bgm030",
+    "title_source": "用户核对 Bgm030；OST DISC3-17",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "yUki (1)",
+        "resource": "Bgm_30_1"
+      },
+      {
+        "variant": 2,
+        "title": "yUki (2)",
+        "resource": "Bgm_30_2_Loop"
+      }
+    ],
+    "loop": true,
+    "volume": 768,
+    "description": "bloom钢琴版／原谱踏板",
+    "title_override": "bloom (piano version)",
+    "title_override_source": "用户核对 Bgm030；OST DISC3-17",
+    "note": "用户确认资源对应 bloom 钢琴版；SoundTest 原标 yUki",
+    "script_title": "yUki (1) / yUki (2)"
+  },
+  {
+    "id": "Bgm031",
+    "title": "飛者の迎え-序-",
+    "uncertain": false,
+    "candidates": [
+      "2-05"
+    ],
+    "asset": "bgm031",
+    "description": "管风琴MIDI版",
+    "volume": 384,
+    "loop": true,
+    "title_source": "original_scripts/ja/Debug/Debug_SoundTest.nani",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "飛者の迎え-序-",
+        "resource": "Bgm_31_1"
+      }
+    ]
+  },
+  {
+    "id": "Bgm032",
+    "title": "あなたたちの聲で",
+    "uncertain": false,
+    "candidates": [
+      "3-16"
+    ],
+    "asset": "bgm032",
+    "title_source": "original_scripts/ja/Debug/Debug_SoundTest.nani",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "あなたたちの聲で",
+        "resource": "Bgm_32_1"
+      }
+    ],
+    "loop": true,
+    "volume": 512,
+    "description": "原配弦乐三重奏／分轨响度"
+  },
+  {
+    "id": "Bgm033",
+    "title": "Reka N'o Ro-Coh",
+    "uncertain": false,
+    "candidates": [
+      "3-02"
+    ],
+    "asset": "bgm033",
+    "title_source": "original_scripts/ja/Debug/Debug_SoundTest.nani",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "Reka N'o Ro-Coh",
+        "resource": "Bgm_33_1_Loop"
+      }
+    ],
+    "description": "原谱三轨，前奏后循环",
+    "volume": 768,
+    "loop": true
+  },
+  {
+    "id": "Bgm034",
+    "title": "人形さんの詰込袋-正- / 人形さんの詰込袋-負-",
+    "uncertain": false,
+    "candidates": [
+      "2-07",
+      "2-08"
+    ],
+    "asset": "bgm034",
+    "title_source": "original_scripts/ja/Debug/Debug_SoundTest.nani",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "人形さんの詰込袋-正-",
+        "resource": "Bgm_34_1"
+      },
+      {
+        "variant": 2,
+        "title": "人形さんの詰込袋-負-",
+        "resource": "Bgm_34_2"
+      }
+    ],
+    "volume": 512,
+    "loop": true,
+    "start_order": 0,
+    "description": "原样钢琴MIDI"
+  },
+  {
+    "id": "Bgm035",
+    "title": "吸われた祈り",
+    "uncertain": false,
+    "candidates": [
+      "1-06"
+    ],
+    "asset": "bgm035",
+    "title_source": "original_scripts/ja/Debug/Debug_SoundTest.nani",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "吸われた祈り",
+        "resource": "Bgm_35_1"
+      }
+    ],
+    "volume": 610,
+    "loop": true,
+    "start_order": 0,
+    "description": "钢琴-3dB／弦乐-6dB",
+    "note": "上传谱575音全保留，复用现有采样；全曲循环"
+  },
+  {
+    "id": "Bgm036",
+    "title": "gDie Divil JIO",
+    "uncertain": false,
+    "candidates": [
+      "1-21"
+    ],
+    "asset": "bgm036",
+    "description": "十六声道MIDI版",
+    "volume": 768,
+    "title_source": "original_scripts/ja/Debug/Debug_SoundTest.nani",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "gDie Divil JIO",
+        "resource": "Bgm_36_1"
+      }
+    ]
+  },
+  {
+    "id": "Bgm037",
+    "title": "HirO (1) / HirO (2)",
+    "uncertain": false,
+    "candidates": [
+      "3-03",
+      "1-20"
+    ],
+    "asset": "bgm037_002",
+    "description": "線版(2)；(1)未制作",
+    "unmade_versions": "(1)",
+    "volume": 960,
+    "loop": true,
+    "source_variant": 2,
+    "title_source": "original_scripts/ja/Debug/Debug_SoundTest.nani",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "HirO (1)",
+        "resource": "Bgm_37_1_Loop"
+      },
+      {
+        "variant": 2,
+        "title": "HirO (2)",
+        "resource": "Bgm_37_2_Loop"
+      }
+    ]
+  },
+  {
+    "id": "Bgm038",
+    "title": "Sen-Choose N'o SurC (1) / Sen-Choose N'o SurC (2)",
+    "uncertain": false,
+    "candidates": [
+      "3-05",
+      "2-04"
+    ],
+    "asset": "bgm038_001",
+    "title_source": "original_scripts/ja/Debug/Debug_SoundTest.nani",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "Sen-Choose N'o SurC (1)",
+        "resource": "Bgm_38_1_Loop"
+      },
+      {
+        "variant": 2,
+        "title": "Sen-Choose N'o SurC (2)",
+        "resource": "Bgm_38_2_Loop"
+      }
+    ],
+    "loop": true,
+    "volume": 768,
+    "description": "触版108小节配器草案",
+    "unmade_versions": "(2)"
+  },
+  {
+    "id": "Bgm039",
+    "title": "鐘楼の鐘 (1) / 鐘楼の鐘 (2)",
+    "uncertain": false,
+    "candidates": [
+      "3-13",
+      "3-14"
+    ],
+    "asset": "bgm039_002",
+    "title_source": "original_scripts/ja/Debug/Debug_SoundTest.nani",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "鐘楼の鐘 (1)",
+        "resource": "Bgm_39_1"
+      },
+      {
+        "variant": 2,
+        "title": "鐘楼の鐘 (2)",
+        "resource": "Bgm_39_2"
+      }
+    ],
+    "loop": true,
+    "volume": 362,
+    "description": "(2)修鼓／保留沙槌",
+    "unmade_versions": "(1)"
+  },
+  {
+    "id": "Bgm040",
+    "title": "救いを求めるヒトの音",
+    "uncertain": false,
+    "candidates": [
+      "1-18"
+    ],
+    "asset": "bgm040",
+    "title_source": "original_scripts/ja/Debug/Debug_SoundTest.nani",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "救いを求めるヒトの音",
+        "resource": "Bgm_40_1_Loop"
+      }
+    ],
+    "description": "颤音琴／前奏一次",
+    "volume": 768,
+    "loop": true
+  },
+  {
+    "id": "Bgm041",
+    "title": "身罷りの香り",
+    "uncertain": false,
+    "candidates": [
+      "3-12"
+    ],
+    "asset": "bgm041",
+    "title_source": "original_scripts/ja/Debug/Debug_SoundTest.nani",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "身罷りの香り",
+        "resource": "Bgm_41_1"
+      }
+    ],
+    "volume": 640,
+    "loop": true,
+    "start_order": 0,
+    "description": "小提琴／轻弦乐；覆盖音去重"
+  },
+  {
+    "id": "Bgm042",
+    "title": "野花 (1) / 野花 (2)",
+    "uncertain": false,
+    "candidates": [
+      "1-11"
+    ],
+    "asset": "bgm042",
+    "description": "钢琴草案，版本待确认",
+    "volume": 768,
+    "loop": true,
+    "title_source": "original_scripts/ja/Debug/Debug_SoundTest.nani",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "野花 (1)",
+        "resource": "Bgm_42_1"
+      },
+      {
+        "variant": 2,
+        "title": "野花 (2)",
+        "resource": "Bgm_42_2"
+      }
+    ]
+  },
+  {
+    "id": "Bgm043",
+    "title": "weRer N'o Hir (1) / weRer N'o Hir (2)",
+    "uncertain": false,
+    "candidates": [
+      "3-06",
+      "2-17"
+    ],
+    "asset": "bgm043_001",
+    "title_source": "original_scripts/ja/Debug/Debug_SoundTest.nani",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "weRer N'o Hir (1)",
+        "resource": "Bgm_43_1"
+      },
+      {
+        "variant": 2,
+        "title": "weRer N'o Hir (2)",
+        "resource": "Bgm_43_2"
+      }
+    ],
+    "source_variant": 1,
+    "description": "(1)原MIDI配器／重复双音预混",
+    "unmade_versions": "(2)",
+    "loop": true,
+    "volume": 768
+  },
+  {
+    "id": "Bgm044",
+    "title": "飛者の迎え-終-",
+    "uncertain": false,
+    "candidates": [
+      "3-15"
+    ],
+    "asset": "bgm044",
+    "description": "钢琴MIDI版",
+    "volume": 512,
+    "loop": true,
+    "title_source": "original_scripts/ja/Debug/Debug_SoundTest.nani",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "飛者の迎え-終-",
+        "resource": "Bgm_44_1"
+      }
+    ]
+  },
+  {
+    "id": "Bgm045",
+    "title": "気任せの蝶 (1) / 気任せの蝶 (2)",
+    "uncertain": false,
+    "candidates": [
+      "2-12"
+    ],
+    "asset": "bgm045_002",
+    "title_source": "original_scripts/ja/Debug/Debug_SoundTest.nani",
+    "variants": [
+      {
+        "variant": 1,
+        "title": "気任せの蝶 (1)",
+        "resource": "Bgm_45_1"
+      },
+      {
+        "variant": 2,
+        "title": "気任せの蝶 (2)",
+        "resource": "Bgm_45_2"
+      }
+    ],
+    "description": "(2)马林巴／弦乐／轻鼓；(1)未制作",
+    "volume": 768,
+    "loop": true,
+    "source_variant": 2,
+    "unmade_versions": "(1)"
+  },
+  {
+    "id": "Bgm046",
+    "title": "yUki",
+    "uncertain": false,
+    "candidates": [
+      "2-18"
+    ],
+    "asset": "bgm046",
+    "title_source": "original_music/BGM_OST对照.md (audio match; absent from SoundTest)",
+    "volume": 512,
+    "loop": true,
+    "start_order": 0,
+    "description": "马林巴／钢琴，8小节"
+  },
+  {
+    "id": "Bgm047",
+    "title": "yUki",
+    "uncertain": false,
+    "candidates": [
+      "2-18"
+    ],
+    "asset": "bgm047",
+    "title_source": "original_music/BGM_OST对照.md (audio match; absent from SoundTest)",
+    "volume": 247,
+    "loop": false,
+    "start_order": 0,
+    "description": "1.30秒原声前奏／单次播放"
+  },
+  {
+    "id": "Bgm048",
+    "title": "yUki",
+    "uncertain": false,
+    "candidates": [
+      "2-18"
+    ],
+    "asset": "bgm047_048_wrap",
+    "title_source": "original_music/BGM_OST对照.md (audio match; absent from SoundTest)",
+    "volume": 768,
+    "loop": true,
+    "start_order": 1,
+    "description": "弦乐／铜管／鼓，第一版"
+  },
+  {
+    "id": "Bgm049",
+    "title": "愛の残滓（前奏）",
+    "uncertain": false,
+    "candidates": [
+      "2-19"
+    ],
+    "asset": "bgm049",
+    "title_source": "用户确认（2026-11-20）",
+    "title_override": "愛の残滓（前奏）",
+    "title_override_source": "用户确认（2026-11-20）",
+    "note": "希罗第二章第五幕 Bad End",
+    "script_title": "愛の残滓（前奏）",
+    "volume": 848,
+    "loop": true,
+    "start_order": 0,
+    "description": "8秒单声道纹理／恒定音量"
+  },
+  {
+    "id": "Song001",
+    "title": "愛の残滓",
+    "uncertain": false,
+    "candidates": [
+      "2-19"
+    ],
+    "asset": "song001",
+    "volume": 768,
+    "loop": false,
+    "description": "长笛／键盘／低音／鼓",
+    "note": "用户微调MIDI；保留现有音色"
+  },
+  {
+    "id": "Song004",
+    "title": "bloom - (绽放)",
+    "uncertain": false,
+    "candidates": [
+      "1-22"
+    ],
+    "asset": "song004",
+    "description": "长笛／钢琴声部修订",
+    "loop": true
+  },
+  {
+    "id": "Ambi003",
+    "title": "Chakumero 手机铃声",
+    "asset": "ring_chakumero",
+    "source_variant": 1,
+    "volume": 768,
+    "loop": true,
+    "start_order": 0,
+    "description": "用户MIDI全部声部；停铃后重播原BGM"
+  }
+]

@@ -1,0 +1,90 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-4-9
+
+# ========================================
+# ●シーン2‐4‐9
+# ========================================
+
+@back 9_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_28_1
+
+@print 自由時間がそろそろ終わる。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print 結局ゴクチョーは見つけられなかったね……。<br>振り回してすまない、ヒロくん。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print "レイアはがっくりと肩を落とし、<br><ruby=\"しお\">萎</ruby>れてしまっている。" { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+
+@print また時間がある時探せばいい。<br>良い気分転換になった。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1
+
+@print ヒロくんがいてくれて良かった。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 顔を上げたレイアが笑顔で言ってくる。 { speed:1 waitInput:true Wait:true }
+
+@print キミの強さが私の支えになっているんだと思う。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Normal1
+
+@print ここまで折れずにやってこれたのは、<br>きっとヒロくんが傍にいてくれたおかげだよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1
+
+@print 少し中断してしまっていたけれど、<br>劇の発表も進めないと。<br>よーし、頑張ろう！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print いちいち歯の浮くようなセリフばかりだな君は……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print しかもまだ劇をやる気なんだな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Angry1
+
+@print 当然だよ！<br>私のモチベはそこにあるのだからね！<br>ヒロくんも協力してくれると嬉しい。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+
+@print まあ、できる範囲なら……<br>皆もやることがある方が元気になるだろうし。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "<ruby=\"あき\">呆</ruby>れて息を吐きながら、<br>私もどこかほっとしていた。" { speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1
+
+@print "レイアには魔女化の<ruby=\"へんりん\">片鱗</ruby>が見えない。" { speed:1 waitInput:true Wait:true }
+
+@print "それは私の存在が彼女にとって、<br>うまく精神の<ruby=\"きんこう\">均衡</ruby>を保てるように<br>作用しているからかもしれない。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （かといって油断は禁物だ。<br>　いつ誰がどんなキッカケで魔女の殺意を芽生えさせても<br>　おかしくない……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro
+@char Leia.Smile1
+
+@print そろそろ部屋に戻ろう。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print ああ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 内心では油断しないように言い聞かせながらも、<br>私はレイアと共に歩くことに安心感を得ている。 { speed:1 waitInput:true Wait:true }
+
+@print レイアがいてくれて良かった。 { speed:1 waitInput:true Wait:true }
+
+@print 私からはそんな恥ずかしい言葉は口にはできないが、<br>きっと同じ気持ちだ。 { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter04/Act02_Chapter04_Adv10

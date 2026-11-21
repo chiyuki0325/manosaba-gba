@@ -1,0 +1,178 @@
+@Gosub System/System_Subroutine.BeginAdv
+
+@back Transparent { time:0 }
+
+# @gosub .Options
+# @gosub .Log
+@Gosub .SaveLoad
+# @gosub .Gallery
+# @gosub .Toast
+# @gosub .Loading
+# @gosub .BlockInteraction
+# @gosub .ExecutionButton
+
+@Stop 
+
+# ==============================================================================
+# 設定画面
+# ==============================================================================
+
+# Options
+
+@print "Debug_Ui # Options" { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@ShowUI OptionsUI
+@i 
+
+@Return 
+
+# ==============================================================================
+# ログ画面
+# ==============================================================================
+
+# Log
+
+@print "Debug_Ui # Log" { speed:1 waitInput:true Wait:true }
+
+@Skip true
+@print エマたち一行は、<br>何より証拠を得られそうな殺害現場へと向かった。
+@print 足取りは重たい。<br>ノアの死体を直視したくない、という気持ちが大きい。
+@print そんな中、シェリーはスキップしている。
+@print 「ちょっとあなた、神経どうにかしてるんじゃありません？<br>　よくスキップなんかできますわね」
+@print 「ええっ、私気遣いの子ですよぉ？<br>　学校でも、みんなが避けてるの察知して距離あけてましたもん」
+@print 「ナチュラルにハブられてません？」
+@print 「そんなことないですって！<br>　みんな【妖精さん】って親しみを込めて呼んでくれてました！」
+@print 「それ絶対良い意味じゃないですわ」
+@print （こんな時だけど……<br>　ハンナちゃんが少し元気を取り戻してくれて良かった）
+@print ２人のやり取りを横に、エマはホッとする。<br>とはいえ、ノアの房が近づけば近づくほど気が重くなる。
+@HidePrinter 
+@Skip false
+@ShowUI LogUI
+@i 
+
+@Return 
+
+# ==============================================================================
+# セーブロード画面
+# ==============================================================================
+
+# SaveLoad
+
+@print "Debug_Ui # SaveLoad" { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@ShowUI SaveLoadUI
+@i 
+
+@Return 
+
+# ==============================================================================
+# ギャラリー画面
+# ==============================================================================
+
+# Gallery
+
+@print "Debug_Ui # Gallery" { speed:1 waitInput:true Wait:true }
+
+@ShowUI GalleryUI
+
+@print ギャラリー画面表示 { speed:1 waitInput:true Wait:true }
+
+@print "Debug_Ui # Gallery ends." { speed:1 waitInput:true Wait:true }
+
+@Return 
+
+# ==============================================================================
+# トースト通知
+# ==============================================================================
+
+# Toast
+
+@print "Debug_Ui # Toast" { speed:1 waitInput:true Wait:true }
+
+@toast "魔女図鑑 更新…"
+
+@print トースト表示 { speed:1 waitInput:true Wait:true }
+
+@print "Debug_Ui # Toast ends." { speed:1 waitInput:true Wait:true }
+
+@Return 
+
+# ==============================================================================
+# ローディング UI
+# ==============================================================================
+
+# Loading
+
+@print "Debug_Ui # Loading" { speed:1 waitInput:true Wait:true }
+
+@showLoading Long { time:5 }
+
+@print "Now loading . (Long)" { speed:1 waitInput:true Wait:true }
+
+@print "Now loading .. (Long)" { speed:1 waitInput:true Wait:true }
+
+@print "Now loading ... (Long)" { speed:1 waitInput:true Wait:true }
+
+@showLoading Short { time:5 }
+
+@print "Now loading . (Short)" { speed:1 waitInput:true Wait:true }
+
+@print "Now loading .. (Short)" { speed:1 waitInput:true Wait:true }
+
+@print "Now loading ... (Short)" { speed:1 waitInput:true Wait:true }
+
+@showLoading Subtle { time:5 }
+
+@print "Now loading . (Subtle)" { speed:1 waitInput:true Wait:true }
+
+@print "Now loading .. (Subtle)" { speed:1 waitInput:true Wait:true }
+
+@print "Now loading ... (Subtle)" { speed:1 waitInput:true Wait:true }
+
+@print "Debug_Ui # Loading ends." { speed:1 waitInput:true Wait:true }
+
+@Return 
+
+# ==============================================================================
+# インタラクションブロック
+# ==============================================================================
+
+# BlockInteraction
+
+@print "Debug_Ui # BlockInteraction" { speed:1 waitInput:true Wait:true }
+
+# @delay 0.1
+# @quickSave 1 wait!
+# Quick save ends.
+
+# Quick save starts.
+
+@BlockInteraction { time:2 }
+
+@print "Interaction blocked." { speed:1 waitInput:true Wait:true }
+
+@BlockInteraction { time:2 }
+
+@print "Interaction blocked 2." { speed:1 waitInput:true Wait:true }
+
+@print "Debug_Ui # BlockInteraction ends." { speed:1 waitInput:true Wait:true }
+
+@Return 
+
+# ==============================================================================
+# 処刑ボタン
+# ==============================================================================
+
+# ExecutionButton
+
+@print "Debug_Ui # ExecutionButton" { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@ShowUI ExecutionButton
+@i 
+
+@print "Debug_Ui # ExecutionButton ends." { speed:1 waitInput:true Wait:true }
+
+@Return

@@ -1,0 +1,377 @@
+@Gosub System/System_Subroutine.BeginAdv
+
+@back Transparent { time:0 }
+
+# @gosub .Emoticon
+# @gosub .Matte
+# @gosub .Text
+# @gosub .BadEnd
+# @gosub .VFX
+# @gosub .Front
+# @gosub .Cancellation
+# @gosub .Multipliable
+# @gosub .MatchScreenWidth
+# @gosub .Map
+# @gosub .Clue
+# @gosub .CutIn
+
+@Stop 
+
+# ==============================================================================
+# 絵文字
+# ==============================================================================
+
+# Emoticon
+
+@print "Debug_Spawn # Emoticon" { speed:1 waitInput:true Wait:true }
+
+@spawn Question
+@i 
+
+@spawn Exclamation
+@i 
+
+@spawn Happy
+@i 
+
+@spawn Joyful
+@i 
+
+@spawn Notice
+@i 
+
+@spawn Shy
+@i 
+
+@spawn Sigh
+@i 
+
+@spawn Sweat
+@i 
+
+@spawn Troubled
+@i 
+
+@Return 
+
+# ==============================================================================
+# マット
+# ==============================================================================
+
+# Matte
+
+@print "Debug_Spawn # Matte" { speed:1 waitInput:true Wait:true }
+
+@ShowMattes 
+@ShowMattes 
+@i 
+
+@HideMattes 
+@i 
+
+@HideMattes 
+@i 
+
+@ShowMattes 
+@i 
+
+@HideMattes 
+@i 
+
+@Return 
+
+# ==============================================================================
+# テキスト
+# ==============================================================================
+
+# Text
+
+@back SolidColor { time:0 }
+@char Ema { time:0 }
+
+@print "Debug_Spawn # Text" { speed:1 waitInput:true Wait:true }
+
+@spawn SpawnableText
+@i 
+
+@despawn SpawnableText
+@i 
+
+@spawn TitleCutIn
+@i 
+
+@despawn TitleCutIn
+@i 
+
+@Return 
+
+# ==============================================================================
+# バッドエンド演出
+# ==============================================================================
+
+# BadEnd
+
+@back SolidColor { time:0 }
+@char Ema { time:0 }
+
+@print "Debug_Spawn # BadEnd" { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.BadEnd
+
+@print "Debug_Spawn # BadEnd Ends." { speed:1 waitInput:true Wait:true }
+
+@Return 
+
+# ==============================================================================
+# VFX
+# ==============================================================================
+
+# VFX
+
+@print "Debug_Spawn # VFX" { speed:1 waitInput:true Wait:true }
+
+@back 2_1
+@char Hanna.Default
+
+@print エフェクトオフ { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@blur MainBackground
+@spawn VfxSample_1
+
+@print エフェクトオン { speed:1 waitInput:true Wait:true }
+
+@print 「ちょっとあなた、神経どうにかしてるんじゃありません？<br>　よくスキップなんかできますわね」 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@i 
+
+@hideChars 
+@blur MainBackground
+@despawn VfxSample_1
+@back 3_1
+@char Ema.Fearful
+@char Sherry.Default
+
+@print エフェクトオフ { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@blur MainBackground
+@spawn VfxSample_2
+
+@print エフェクトオン { speed:1 waitInput:true Wait:true }
+
+@print 「ここが獄長の言ってた懲罰房でしょうね。<br>　規則を破った囚人はここに入れられる、と」 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@i 
+
+@Return 
+
+# ==============================================================================
+# 手前
+# ==============================================================================
+
+# Front
+
+@back SolidColor
+@char Ema
+
+@print "Debug_Spawn # Front" { speed:1 waitInput:true Wait:true }
+
+@ShowMattes 
+
+@print showMattes_Front { speed:1 waitInput:true Wait:true }
+
+# @spawn Joyful params:60,50,20,2
+# @i
+
+# @spawn Notice params:60,50,20,2
+# @i
+
+@HideMattes 
+
+@print hideMattes_Front { speed:1 waitInput:true Wait:true }
+
+@ShowMattes 
+
+@print showMattes_Forefront { speed:1 waitInput:true Wait:true }
+
+@HideMattes 
+
+@print hideMattes_Forefront { speed:1 waitInput:true Wait:true }
+
+@hide MainBackground-Front,Sorako-Front
+
+@Return 
+
+# ==============================================================================
+# キャンセル
+# ==============================================================================
+
+# Cancellation
+
+@print "Debug_Spawn # Cancellation" { speed:1 waitInput:true Wait:true }
+
+@spawn Troubled
+@Wait 0.1
+@spawn Troubled
+@Wait 0.1
+@spawn Troubled
+@Wait 0.1
+@spawn Troubled
+@Wait 0.1
+@spawn Troubled
+@Wait 0.1
+@spawn Troubled
+@Wait 0.1
+@spawn Troubled
+@Wait 0.1
+@spawn Troubled
+@i 
+
+@Return 
+
+# ==============================================================================
+# Multipliable
+# ==============================================================================
+
+# Multipliable
+
+@print "Debug_Spawn # Multipliable" { speed:1 waitInput:true Wait:true }
+
+@spawn Sweat
+@Wait 0.1
+@spawn Sweat
+@Wait 0.1
+@spawn Sweat
+
+@print a { speed:1 waitInput:true Wait:true }
+
+@spawn Sweat
+@spawn Sweat
+@spawn Sweat
+@spawn Sweat
+@spawn Sweat
+@spawn Sweat
+@spawn Sweat
+@spawn Sweat
+@spawn Sweat
+@spawn Sweat
+@spawn Sweat
+@spawn Sweat
+@spawn Sweat
+@spawn Sweat
+@spawn Sweat
+@spawn Sweat
+@spawn Sweat
+@spawn Sweat
+@spawn Sweat
+@spawn Sweat
+@i 
+
+@print b { speed:1 waitInput:true Wait:true }
+
+@print c { speed:1 waitInput:true Wait:true }
+
+@print d { speed:1 waitInput:true Wait:true }
+
+@print e { speed:1 waitInput:true Wait:true }
+
+@Return 
+
+# ==============================================================================
+# MatchScreenWidth
+# ==============================================================================
+
+# MatchScreenWidth
+
+@print "Debug_Spawn # MatchScreenWidth" { speed:1 waitInput:true Wait:true }
+
+@spawn MaskingBubble
+@spawn MaskingBubble
+@i 
+
+@Return 
+
+# ==============================================================================
+# 証拠品
+# ==============================================================================
+
+# Clue
+
+@print "Debug_Spawn # Clue" { speed:1 waitInput:true Wait:true }
+
+@spawn Clue
+@Wait 0.2
+
+@print 1-13 { speed:1 waitInput:true Wait:true }
+
+@spawn Clue
+@Wait 0.2
+
+@print 1-14 { speed:1 waitInput:true Wait:true }
+
+@despawn Clue
+@Wait 0.2
+
+@print "Debug_Spawn # Clue end." { speed:1 waitInput:true Wait:true }
+
+@Return 
+
+# ==============================================================================
+# CutIn
+# ==============================================================================
+
+# CutIn
+
+@print "Debug_Spawn # CutIn" { speed:1 waitInput:true Wait:true }
+
+@print ObjectionCutIn_Ema<br>index:0 { speed:1 waitInput:true Wait:true }
+
+@spawn ObjectionCutIn_Ema
+@despawn ObjectionCutIn_Ema
+
+@print ObjectionCutIn_Ema<br>index:1 { speed:1 waitInput:true Wait:true }
+
+@spawn ObjectionCutIn_Ema
+@despawn ObjectionCutIn_Ema
+
+@print ObjectionCutIn_Ema<br>index:2 { speed:1 waitInput:true Wait:true }
+
+@spawn ObjectionCutIn_Ema
+@despawn ObjectionCutIn_Ema
+
+@print ObjectionCutIn_Hiro<br>index:0 { speed:1 waitInput:true Wait:true }
+
+@spawn ObjectionCutIn_Hiro
+@despawn ObjectionCutIn_Hiro
+
+@print ObjectionCutIn_Hiro<br>index:1 { speed:1 waitInput:true Wait:true }
+
+@spawn ObjectionCutIn_Hiro
+@despawn ObjectionCutIn_Hiro
+
+@print ObjectionCutIn_Hiro<br>index:2 { speed:1 waitInput:true Wait:true }
+
+@spawn ObjectionCutIn_Hiro
+@despawn ObjectionCutIn_Hiro
+
+@print ObjectionCutIn_CreatureHiro<br>index:0 { speed:1 waitInput:true Wait:true }
+
+@spawn ObjectionCutIn_CreatureHiro
+@despawn ObjectionCutIn_CreatureHiro
+
+@print ObjectionCutIn_CreatureHiro<br>index:1 { speed:1 waitInput:true Wait:true }
+
+@spawn ObjectionCutIn_CreatureHiro
+@despawn ObjectionCutIn_CreatureHiro
+
+@print ObjectionCutIn_CreatureHiro<br>index:2 { speed:1 waitInput:true Wait:true }
+
+@spawn ObjectionCutIn_CreatureHiro
+@despawn ObjectionCutIn_CreatureHiro
+
+@print "Debug_Spawn # CutIn end." { speed:1 waitInput:true Wait:true }
+
+@Return

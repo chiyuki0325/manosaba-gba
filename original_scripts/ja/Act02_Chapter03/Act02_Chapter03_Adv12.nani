@@ -1,0 +1,145 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-3-12
+
+# ========================================
+# ●シーン2‐3‐12
+# ========================================
+
+@back 5_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_35_1
+
+@print ラウンジに集った少女たちは、<br>誰も口を開かない。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Fearful1,ArmR3
+
+@print "エマはぎゅっと唇を<ruby=\"か\">噛</ruby>み、<br>何かを<ruby=\"こら\">堪</ruby>えている様子だった。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia.Fearful1,ArmR8
+
+@print レイアは打ちひしがれた様子で、<br>頭を抱え込んでいた。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "アンアンの死を知らされた他の面々も、<br>ショックのあまり顔を<ruby=\"ふ\">伏</ruby>せている。" { speed:1 waitInput:true Wait:true }
+
+@print 私は、私は未だ現実感を取り戻せず――<br>口の中が乾き、足元がぐらついていた。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+# フクロウの羽ばたき音
+@sfx Sfx_8
+
+@Wait 1
+@char Warden.1
+
+@print そこに、ゴクチョーが姿を現す。 { speed:1 waitInput:true Wait:true }
+
+@print やれやれ……<br>起きちゃいましたね、殺人事件。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print ここしばらくは平和だったのに……<br>やっぱり、抗えないんですかねえ。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print さて……それでは今回も、<br>事前投票をしていただきましょうか。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 私が殺した……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 無意識だった。<br>私は気付けば、そう口にしていた。 { speed:1 waitInput:true Wait:true }
+
+@print その告白に、<br>ラウンジの空気が一変した。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Fearful1,ArmR3
+
+@print ヒロちゃん！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised
+
+@print どういうことですの！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hide Ema
+@char Sherry.Normal1
+
+@print どうもこうも、言葉通りなのでは……<br>ヒロさんが、アンアンさんを殺した犯人。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hide Hanna
+@char Noah.Pensive
+
+@print ヒロちゃんが……アンアンちゃんを……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@hide Sherry
+@char Miria.Pensive1
+
+@print そんな……でも、どうして……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hide Noah
+@char Alisa.Angry1,Option-ArmL-Off
+
+@print やっぱ、無駄だったんじゃねーか。<br>どんなに仲良しごっこなんかしたって、<br>ウチらはもう……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hide Miria
+@char Leia.Fearful1,ArmR1
+
+@print ヒロくん、キミは……！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "誰の目も見ることができなかった。<br>私はただ<ruby=\"うなだ\">項垂</ruby>れ、投票結果を待った。" { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@back 21_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@blur MainBackground
+
+@update AnAn
+
+@print 事前投票の結果は当然私となり―― { speed:1 waitInput:true Wait:true }
+
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print 私は懲罰房で拘束されることになった。 { speed:1 waitInput:true Wait:true }
+
+@print "目の前の景色は<ruby=\"かす\">霞</ruby>んでぼやけている。<br>全てが遠くに感じられる。" { speed:1 waitInput:true Wait:true }
+
+@print （あの時、エマは……工作していたのか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ふと思い至る。<br>けれどそれすらも遠く、<br>体中の力が根こそぎ奪われた感覚だ。 { speed:1 waitInput:true Wait:true }
+
+@print （それでも、黙っていられなかった） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 昨夜、黙っていられず告白した<br>アンアンと同じように。 { speed:1 waitInput:true Wait:true }
+
+@print 結果的にアンアンを突き飛ばし、<br>落下させたのは、間違いなく私で。 { speed:1 waitInput:true Wait:true }
+
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@print そしてアンアンは死んでしまった。 { speed:1 waitInput:true Wait:true }
+
+@print ……っ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 息をするたびに痛みが増すようだった。<br>どこにも光が見えず、<br>私はただ力なく拘束されている。 { speed:1 waitInput:true Wait:true }
+
+@StopBgm { fade:3 }
+
+@print 誰も私のところへは、現れなかった。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+# 荘厳な鐘の音
+@sfx Sfx_33
+@Wait 4
+
+@print そして――裁判の時間がやってくる。 { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter03/Act02_Chapter03_Adv13

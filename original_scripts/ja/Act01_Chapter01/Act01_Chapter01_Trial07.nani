@@ -1,0 +1,1418 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act01_Chapter01/Act01_Chapter01_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# ==============================================================================
+# MARK: 7: 💬 ノアはいつ死んだ？
+# ==============================================================================
+# ＠ト書き▼議論シーン1-7 ノアはいつ死んだ？
+# BGM変更：rAwTell Owk...
+@bgm Bgm_7_1
+
+# Judge1-7-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Coco.Normal1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@printDebate あてぃしたちは寝る前に<br>ノアの部屋の前を通ってるわけ。<br>そこに死体があったら、<br>気付かないわけないじゃん？
+
+@char Coco.Normal1,ArmR3,ArmL2
+@gosubModifyCamera 0
+@printDebate だからあの時さぁ、<br>ノアは<br>【生きてた】んじゃねーの？
+
+@char Coco.Normal1,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Closed
+@gosubModifyCamera 0
+@printDebate "<link=\"Objection_01_01_07_01\">絵でも描いてた</link>とかさ。<br>そういや<link=\"Objection_01_01_07_02\">足音も聞こえた</link><br>気がするし！<br><link=\"Objection_01_01_07_03\">ピンピンしてた</link>はずだって！"
+
+@char Miria.Normal1,ArmR3,ArmL4
+@gosubModifyCamera 0
+@printDebate そ、そうだったっけ……？<br>うーん……<br>言われてみれば、<br>そうかもしれないけど……。
+
+@char Coco.Normal1,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Middle
+@gosubModifyCamera 0
+@printDebate だからノアが殺されたのは<br>その後！<br>【就寝時間から朝まで】の間<br>しかねーの！
+
+@char Leia.Smile1,Arms
+@gosubModifyCamera 0
+@printDebate ……しかし就寝時間は<br>鍵がかけられるはずだよ。<br>外に出る事ができても、<br>入る事は<br>できないんじゃないかな？
+
+@char Margo.Smile1,ArmR1,ArmL3
+@gosubModifyCamera 0
+@printDebate あら、<br>それなら就寝時間前に<br>ノアちゃんの部屋に<br>忍び込んでおけば<br>問題ないんじゃないかしら。
+
+@char Coco.Smile1,ArmR1,ArmL1
+@gosubModifyCamera 0
+@printDebate それだ！<br>そしてそれができるのは、<br>就寝時間にルームメイトと<br>一緒にいなかったヤツだけ……！
+
+@char Coco.Normal1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@printDebate メルちゃんが<br>隣の部屋にいたのは<br>あてぃし見てるし……。
+
+@char Coco.Smile1,ArmR2,ArmL4
+@gosubModifyCamera 0
+@printDebate "つまりノアを殺せるのは<br>就寝時間に<link=\"Objection_01_01_07_04\">アリバイがない</link>……<br><link=\"Objection_01_01_07_05\">医務室のアンアン</link>か、<br><link=\"Objection_01_01_07_06\">１人部屋のエマっち</link>の<br>どっちかなんだよ！"
+
+@char Coco.Angry1,ArmR2,ArmL3,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@printDebate 違うってんなら……<br>証拠見せてよ、<br>証拠！！
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Ema.Surprised1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01 { time:0 }
+@gosubModifyCamera 0
+@Wait 0.2
+
+# ==============================================================================
+# ADVシーン
+# ==============================================================================
+
+@print （ココちゃんの言ってることが本当なら、<br>　たしかにボクかアンアンちゃんのどっちかが<br>　犯人になっちゃうかも……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@char Meruru.Normal1,ArmR1_1,ArmL8,Eyes1_Normal_Open2,Mouth1_Normal_Open2
+@gosubSplitStageScreen 1
+@Wait 0.2
+
+@print ……なんだかミリアさん、<br>少し自信なさげのように見えますね……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal1,ArmR1_1,ArmL8,Eyes1_Normal_Open2,Mouth1_Normal_Open2
+
+@print もしかしたら……<br>そこに何か、ココさんの推理の穴があるのかも……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideStageScreen 1
+@Wait 0.3
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+
+@print （ココちゃんの推理が間違ってる事を証明する<br>　証拠品……何かなかったかな？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-7-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_01_01_07_01
+
+@Skip false
+@pauseTrial true
+
+@choice ノアは絵を描いてない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge1-7-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_01_01_07_02
+
+@Skip false
+@pauseTrial true
+
+@choice ノアは足音を立てていない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge1-7-7
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_01_01_07_03
+
+@Skip false
+@pauseTrial true
+
+@choice ノアは元気ではなかった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge1-7-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論4
+# ------------------------------------------------------------------------------
+
+# Objection_01_01_07_04
+
+@Skip false
+@pauseTrial true
+
+@choice 就寝時間は全員アリバイがない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge1-7-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論5
+# ------------------------------------------------------------------------------
+
+# Objection_01_01_07_05
+
+@Skip false
+@pauseTrial true
+
+@choice アンアンのアリバイを証明する
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge1-7-5
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論6
+# ------------------------------------------------------------------------------
+
+# Objection_01_01_07_06
+
+@Skip false
+@pauseTrial true
+
+@choice エマのアリバイを証明する
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge1-7-6
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# ミス選択肢
+# ==============================================================================
+
+# ==============================================================================
+# MARK: 7-2: ❌ ノアは絵を描いてない
+# ==============================================================================
+
+# Judge1-7-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR5,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ……ちょっと待って。それはおかしいよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR5,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ノアちゃんはその時、絵を描いてないはずだよ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print ああん！？<br>まだ言い訳するってーの！？<br>ならそれを証明する証拠品でも出してみろよ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print それはきっと、この【証拠品】で証明できると思うよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# ==============================================================================
+# 証拠品提示：正解なし
+# ==============================================================================
+@evidence Clue
+
+@char Coco.Angry1,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print それのどこが<br>絵を描いてないって証拠になるんだっての！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Angry1,ArmR2,ArmL2,Angle01/Facial/Mouth>Mouth_Gross_Open,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print そんなわけわかんない反論するなんて……<br>怪しすぎんだろ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Pensive1,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （ダメだ……！<br>　証明できなかったみたい……！<br>　もう一度考え直してみよう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （ココちゃんの言葉とは<br>　明らかに矛盾した証拠があるはずだ……！<br>　それを突きつけてみよう！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-7-1
+
+# ==============================================================================
+# MARK: 7-3: ❌ ノアは元気ではなかった
+# ==============================================================================
+
+# Judge1-7-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+# 共通
+@char Ema.Default,ArmR5,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ……ちょっと待って。それはおかしいよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ノアちゃんはその時、元気がなかったはず……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# 共通
+@char Coco.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print ああん！？<br>まだ言い訳するってーの！？<br>ならそれを証明する証拠品でも出してみろよ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+# 共通
+@char Ema.Default,ArmR8,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print それはきっと、この【証拠品】で証明できると思うよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@evidence Clue
+
+@char Coco.Angry1,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print それのどこが元気がないって証拠になるんだっての！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal1,ArmR1_1,ArmL8,Eyes1_Pensive_Open1,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print 体調が悪そうな様子はありませんでしたし……<br>それを証明するのは難しいかもしれませんね……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+# 共通
+@char Coco.Angry1,ArmR2,ArmL2,Angle01/Facial/Mouth>Mouth_Gross_Open,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print そんなわけわかんない反論するなんて……<br>怪しすぎんだろ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+# 共通
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （ダメだ……！<br>　証明できなかったみたい……！<br>　もう一度考え直してみよう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 選択肢分岐同じ
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （ココちゃんの言葉とは<br>　明らかに矛盾した証拠があるはずだ……！<br>　それを突きつけてみよう！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-7-1
+
+# ==============================================================================
+# MARK: 7-4: ❌ 就寝時間は全員アリバイがない
+# ==============================================================================
+
+# Judge1-7-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Surprised1,ArmR5,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ……ちょっと待って。<br>就寝時間のアリバイって成立するのかな？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL12,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print だって全員が全員、監視しあってたわけじゃないでしょ？<br>もしかしたら誰かが抜け出した可能性だって……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Angry1,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print だから夜は鍵がかけられるって言ってんだろ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,Arms
+@gosubModifyCamera 0
+@print それにさすがに同室の者が一晩中いなかったら<br>気付くだろうしね。<br>誰か怪しい人はいるのかい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR7,ArmL4
+@gosubModifyCamera 0
+@print 私たちは大丈夫だったけど……<br>特に他にも怪しい人はいなそうね？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Coco.Angry1,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print だからそれがアリバイになるんだっての！<br>……頭ちゃんとついてんのか！？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Pensive1,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （ダメだ……！<br>　たしかにそこに隙はないみたい……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 選択肢分岐同じ
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （ココちゃんの言葉とは明らかに矛盾した証拠があるはずだ……！<br>　それを突きつけてみよう！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-7-1
+
+# ==============================================================================
+# MARK: 7-5: ❌ アンアンのアリバイを証明する
+# ==============================================================================
+
+# Judge1-7-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR5,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ……ちょっと待って。それはおかしいよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print 少なくともアンアンちゃんはその時間、<br>間違いなく医務室にいたはず……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# 共通
+@char Coco.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print ああん！？<br>まだ言い訳するってーの！？<br>ならそれを証明する証拠品でも出してみろよ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+# 共通
+@char Ema.Default,ArmR8,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print それはきっと、この【証拠品】で証明できると思うよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@evidence Clue
+
+@char Coco.Angry1,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print それのどこがアリバイを証明する証拠になるんだっての！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char AnAn.Pensive1,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_04
+@gosubModifyCamera 0
+@print 『少なくともわがはい自身、アリバイは証明できない』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3,ArmL3
+@gosubModifyCamera 0
+@print あ、あれ……！？<br>そうだっけ……！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Angry1,ArmR2,ArmL2,Angle01/Facial/Mouth>Mouth_Gross_Open,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print もしかしてかばってるとか！？<br>なんにせよエマっち……<br>ドチャクソ怪しいじゃん！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Pensive1,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （ダメだ……！<br>　ボクの勘違いだったみたい……！<br>　もう一度考え直してみよう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 選択肢分岐同じ
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （ココちゃんの言葉とは明らかに矛盾した証拠があるはずだ……！<br>　それを突きつけてみよう！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-7-1
+
+# ==============================================================================
+# MARK: 7-6: ❌ エマのアリバイを証明する
+# ==============================================================================
+
+# Judge1-7-6
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+# 共通
+@char Ema.Default,ArmR5,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ……ちょっと待って。それはおかしいよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR5,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ボクが自分の部屋にいたことは、証明できるはず……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# 共通
+@char Coco.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print ああん！？<br>まだ言い訳するってーの！？<br>ならそれを証明する証拠品でも出してみろよ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+# 共通
+@char Ema.Default,ArmR8,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print それはきっと、この【証拠品】で証明できると思うよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@evidence Clue
+
+# 共通
+@char Coco.Angry1,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print それのどこがアリバイを証明する証拠になるんだっての！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print あ、あれ……！？<br>できない……かな……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+# 共通
+@char Coco.Angry1,ArmR2,ArmL2,Angle01/Facial/Mouth>Mouth_Gross_Open,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print そんなわけわかんない反論するなんて……<br>怪しすぎんだろ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Pensive1,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （ダメだ……！<br>　怪しまれちゃったみたい……！<br>　もう一度考え直してみよう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 選択肢分岐同じ
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （ココちゃんの言葉とは明らかに矛盾した証拠があるはずだ……！<br>　それを突きつけてみよう！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-7-1
+
+# ==============================================================================
+# MARK: 7-7: ⭕ ノアは足音を立てていない
+# ==============================================================================
+
+# Judge1-7-7
+
+@Gosub System/System_Subroutine.EndDebate-First
+# @gosubCutIn Ema index:1
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+# 共通
+@char Ema.Default,ArmR5,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ……ちょっと待って。それはおかしいよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ノアちゃんはその時、足音を立てていないはず……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# 共通
+@char Coco.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print ああん！？<br>まだ言い訳するってーの！？<br>ならそれを証明する証拠品でも出してみろよ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+# 共通
+@char Ema.Default,ArmR8,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print それはきっと、この【証拠品】で証明できると思うよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# Judge1-7-8
+
+# ==============================================================================
+# 証拠品提示
+# ==============================================================================
+
+@evidence Clue
+
+# 正解・現場写真
+@if "chosenEvidenceId==\"1-8\""
+	@goto .Judge1-7-11
+
+# カラースプレー
+@if "chosenEvidenceId==\"1-5\""
+	@goto .Judge1-7-10
+
+# 提示失敗
+@goto .Judge1-7-9
+
+# ==============================================================================
+# MARK: 7-9: ❌ 提示失敗
+# ==============================================================================
+
+# Judge1-7-9
+@char Coco.Angry1,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print それのどこが足音がしてない証拠になるんだっての！ { author:Coco speed:1 waitInput:true Wait:true }
+
+# 共通
+@char Coco.Angry1,ArmR2,ArmL2,Angle01/Facial/Mouth>Mouth_Gross_Open,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print そんなわけわかんない反論するなんて……<br>怪しすぎんだろ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+# 共通
+@char Ema.Pensive1,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （ダメだ……！<br>　証明できなかったみたい……！<br>　もう一度考え直してみよう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （でも……ココちゃんの言葉は何か部屋の状況と比べて、<br>　違和感があるような……） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 選択肢分岐同じ
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （ココちゃんの言葉とは明らかに矛盾した証拠があるはずだ……！<br>　それを突きつけてみよう！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-7-8
+# ここで戻れなくなる（全部戻れると総当たりできなくなって難しくなるので）
+
+# ==============================================================================
+# MARK: 7-10: ❌ 【カラースプレー】
+# ==============================================================================
+
+# Judge1-7-10
+
+@spawn Clue
+@char Coco.Pensive1,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print ……んん？<br>それのどこが足音がしてない証拠になんの？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （ダメだ……！<br>　この証拠品じゃあちゃんとわからないみたい……！<br>　もっと直接、足音がしなかった証拠をつきつけないと……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@despawn Clue
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （ノアちゃんの部屋から足音がしなかった証拠<br>　……それを示す証拠品は、これだ！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-7-8
+
+# ==============================================================================
+# MARK: 7-11: ⭕ 【現場写真】
+# ==============================================================================
+
+# Judge1-7-11
+
+# ==============================================================================
+@StopBgm 
+
+# [spawn カットインエフェクトのID]
+
+@gosubCutIn Ema
+@Gosub System/System_Subroutine.EndDebate-Last
+
+# 城ケ崎ノアの死体写真
+@spawn Clue
+@Wait 0.5
+@sfx Sfx_Common_1
+@char Coco.Pensive1
+@gosubModifyCamera 0
+@print それって……現場の写真……？ { author:Coco speed:1 waitInput:true Wait:true }
+@despawn Clue
+
+@char Ema.Determined2,ArmR8,ArmL2,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print そう……もし足音がしたなら、<br>当然あるはずのものが現場にないんだよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@spawn Clue
+
+# ＠備考◆いぶかしげ
+@char Coco.Pensive1
+@gosubModifyCamera 0
+@print あ～ん……？ { author:Coco speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆気づく
+@char Coco.Surprised1
+@gosubModifyCamera 0
+@print ……あっ！<br>ま、まさか……！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@despawn Clue
+
+@char Ema.Determined2,ArmR8,ArmL2,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print そう……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# BGM変更：Sen-Choose N'o SurC
+@bgm Bgm_38_1_Loop
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Ema.Determined2,ArmR8,ArmL2,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print 【足跡】がないんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+# ＠備考◆オーバーに
+@char Coco.Surprised1
+@gosubModifyCamera 0
+@print ぎゃあっ！？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Miria.Smile1,ArmR3,ArmL4,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print ……あ～、そっか～！<br>そうだよね～！<br>なんかおかしいと思ってたんだ～。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive1,ArmR3,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print やっぱり足音なんてしてなかったんだよ、ココちゃん。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Coco.Surprised1
+@gosubModifyCamera 0
+@print ……あ、あああ、あれ！？<br>そ、そんな！？<br>た、たしかに聞こえた……よう……な……？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive1,ArmR3,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print いやあ……聞いてないと思うけどなぁ～……。<br>配信終わりの帰り道、けっこう盛り上がって<br>おしゃべりしてたと思うし……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+@char Coco.Surprised1
+@gosubModifyCamera 0
+@print あうっ！？<br>……そ、そういえば……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Angry1,ArmR1,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print で、でもさぁ！<br>さすがにあんだけ血流してたら、<br>においとかで気付くっしょ！？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Angry1,ArmR1,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print それで見逃してたら……<br>あてぃしらバカみたいじゃん！<br>そんなの……信じられないって！！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3,ArmL1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print （たぶんココちゃんは、部屋の中まで見てないんだ……！<br>　ミリアちゃんの話を信じるなら、音も聞いてない……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （なら、においは？<br>　当時においがしたかどうかがわかる物は……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# Judge1-7-12
+
+# ==============================================================================
+# 証拠品提示
+# ==============================================================================
+
+@evidence Clue
+
+# 正解・カラースプレー
+@if "chosenEvidenceId==\"1-5\""
+	@goto .Judge1-7-14
+
+# 失敗
+@goto .Judge1-7-13
+
+# ==============================================================================
+# MARK: 7-13: ❌ 失敗
+# ==============================================================================
+
+# Judge1-7-13
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （……いや、これはにおいがしたかどうか<br>　わかる証拠にはならないんじゃないかな……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （もう一度考えなおそう……！<br>　当時においがしたかわかる証拠品は……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-7-12
+
+# ==============================================================================
+# MARK: 7-14: ⭕ 【カラースプレー】
+# ==============================================================================
+
+# Judge1-7-14
+
+# ==============================================================================
+# アイテム表示：カラースプレー
+# ==============================================================================
+
+@gosubCutIn Ema
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@spawn Clue
+
+@char Ema.Determined2,ArmR8,ArmL2,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print ……この塗料は、部屋に塗られてたものだよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print そしてこの塗料……<br>すごく、においが強いんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@despawn Clue
+
+@char Coco.Surprised1,ArmR6,ArmL4
+@gosubModifyCamera 0
+@print "そ、そうじゃん！<br>そうだよ、覚えてる！ そのにおいだ！" { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1
+@gosubModifyCamera 0
+@print 夜に通った時、そのキツイにおいがしてたんだ！<br>鼻を塞ぎたくなるぐらいに強烈でさ！<br>ほら、あてぃしちゃんと覚えて――。 { author:Coco speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+# ＠備考◆自分で気付いた
+
+@char Coco.Surprised1,ArmR6,ArmL4,Angle01/Facial/Eyes>Eyes_Comical_Closed,Angle01/Facial/Mouth>Mouth_Angry_Open01
+@gosubModifyCamera 0
+@print ――うぐぅっ！？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR3,ArmL2
+@gosubModifyCamera 0
+@print ……どうやら指摘するまでもなく<br>キミも気付いたようだね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Coco.Surprised1
+@gosubModifyCamera 0
+@print う、ううう……！<br>そ、そうじゃん……！<br>【キツイにおいがしてた】ってことは――！ { author:Coco speed:1 waitInput:true Wait:true }
+
+# SE・ガーン
+@sfx Sfx_Common_6
+@char Coco.Surprised1
+@gosubModifyCamera 0
+@print ――そのときもう死んでたとしても、<br>【血のにおいに気付けなかった】ってことじゃん……！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR3,ArmL5
+@gosubModifyCamera 0
+@print ……そうだね。<br>私たちは、部屋の中を確認せずに素通りした。<br>中も見ていないし、音も聞いていない――。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR5,ArmL5
+@gosubModifyCamera 0
+@print ――そしてたとえ<br>部屋の中で血を流して倒れている者がいても、<br>その匂いは塗料の匂いにかき消され、何もわからなかった……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1,ArmR5,ArmL3,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open01
+@gosubModifyCamera 0
+@print つまり……<br>私たちは見逃していた可能性があるという事だね。<br>彼女の死体を。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Coco.Surprised1
+@gosubModifyCamera 0
+@print うぐっ！？<br>……ぐ、ぐぐ……！ { author:Coco speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char AnAn.Normal1,Angle01/Option_Arms-,ArmR-Option-Off,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_03
+@gosubModifyCamera 0
+@print 『そもそも、今の推理には穴があるだろう』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@char AnAn.Normal1,Angle01/Option_Arms-,ArmR-Option-Off,ArmR3,ArmL4,Angle01/Head/Facial/Eyes>Eyes_Downcast_Open,Angle01/Head/Facial/Mouth>Mouth_Normal_Closed
+@Wait 1
+
+@char AnAn.Normal1,Angle01/Option_Arms-,ArmR-Option-Off,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_04
+@gosubModifyCamera 0
+@print 『今朝のわがはいは、扉のロックが開いてすぐに<br>　自分の部屋へと向かった』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@char AnAn.Normal1,Angle01/Option_Arms-,ArmR-Option-Off,ArmR3,ArmL4,Angle01/Head/Facial/Eyes>Eyes_Downcast_Open,Angle01/Head/Facial/Mouth>Mouth_Normal_Closed
+@Wait 1
+
+@char AnAn.Normal1,Angle01/Option_Arms-,ArmR-Option-Off,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_03,Angle01/Head/Facial/Eyes>Eyes_Normal_Open02
+@gosubModifyCamera 0
+@print 『そしてそこに、ちょうどエマが現れて同時に死体を発見した』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3,ArmL1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print あっ……そういえばそうだったね。<br>ということは……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3,ArmL1,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ボクから、アンアンちゃんが隣の部屋に<br>潜んでなかったって証言できるかも……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# セリフミス・ナノカとマーゴの部屋は隣ではない。テキスト/音声修正済
+@char Nanoka.ArmR2,ArmL9,Eyes1_Normal_Open2,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print ……それを言うなら私も証言できるわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print 朝は静かだものね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR6,ArmL5
+@print 今日は朝から私たち２人とも起きていたし、<br>音でわかると思うわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR1,ArmL3,Angle01/Facial/Eyes>Eyes_Smile_Closed,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@print ……まあ、死んでたのには気付かなかったんだけどね？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Angry_Closed1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print …………そうね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char AnAn.Normal1,Angle01/Option_Arms-,ArmR-Option-Off,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_06,Angle01/Head/Facial/Eyes>Eyes_Angry_Open01,Angle01/Head/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print 『２人の証言と、わがはいとエマ双方の目撃証言を組み合わせれば<br>　わがはいたちが部屋から出ていない事を証明できるのでは？』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print そう……かもしれない。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# Judge1-7-15
+
+@char Ema.Determined2,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print ボクとアンアンちゃん、<br>それにナノカちゃんとマーゴちゃんの<br>４人の証言を合わせて証明できるのは……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# ==============================================================================
+# 通常選択肢
+# ==============================================================================
+@choice 朝まで誰でも犯行可能だった
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge1-7-16
+
+@choice ノアは早朝に殺された
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge1-7-17
+
+@choice 深夜にノアの部屋に入れた者はいない
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge1-7-18
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 7-16: ❌ 朝まで誰でも犯行可能だった
+# ==============================================================================
+
+# Judge1-7-16
+
+@char Ema.Normal1,ArmR3,ArmL11,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print それってつまり、朝まで誰でも犯行可能だった……<br>ってことだよね？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print いいえ、全然違うわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Closed
+@gosubModifyCamera 0
+@print 夜間の扉には鍵がかかっているのよ、エマちゃん。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char AnAn.Pensive1,Angle01/Option_Arms-,ArmR-Option-Off,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_03
+@gosubModifyCamera 0
+@print "『いちからか？ いちから説明しないとダメか？』" { author:AnAn speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print "（まずい……！ 呆れられてるみたい……！）" { author:Ema speed:1 waitInput:true Wait:true }
+
+# 失敗選択肢共通
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （もう一度考えてみよう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （朝にノアちゃんの部屋から誰も出て来てないってことは、<br>　【誰もそこに潜むことができなかった】って事だから……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-7-15
+
+# ==============================================================================
+# MARK: 7-17: ❌ ノアは早朝に殺された
+# ==============================================================================
+
+# Judge1-7-17
+
+@char Ema.Normal1,ArmR3,ArmL11,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ノアちゃんが殺されたのって……<br>もしかして早朝だったんじゃないかな……！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print ……どうしてそう思ったの。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Closed
+@gosubModifyCamera 0
+@print そんな話、誰かしてたかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char AnAn.Pensive1,Angle01/Option_Arms-,ArmR-Option-Off,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_03
+@gosubModifyCamera 0
+@print 『わがはいには理解できない』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Surprised1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （呆れられちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 失敗選択肢共通
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （もう一度考えてみよう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 失敗選択肢共通
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （朝にノアちゃんの部屋から誰も出て来てないってことは、<br>　【誰もそこに潜むことができなかった】って事だから……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-7-15
+
+# ==============================================================================
+# MARK: 7-18: ⭕  深夜にノアの部屋に入れた者はいない
+# ==============================================================================
+
+# Judge1-7-18
+
+@char Ema.Normal1,ArmR8,ArmL2,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print 夜時間の間は、<br>【誰もノアちゃんの部屋に入れなかった】って事だよね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR8,ArmL2,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print もし夜時間の間に誰かがいたのだとしたら、<br>朝まで閉じ込められていたはずだし……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR1,ArmL3
+@gosubModifyCamera 0
+@print あらあら、それじゃあ結局<br>就寝時間の間に殺すことは<br>最初からできなかったのね？ { author:Margo speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Hanna.Normal1,ArmR3,ArmL2,Angle01/Head01/Facial01/Mouth01>Mouth01_Smile_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print えーと……ということはつまり、<br>どういうことなんですの？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open01,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print ノアさんの部屋には朝まで誰も侵入できず、<br>死体は朝に発見された……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char Sherry.Smile1,ArmR3,ArmL3
+@gosubModifyCamera 0
+@print つまりノアさんは、<br>【昨夜の時点で死んでいた】という<br>ことですね～！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmR3,ArmL2,Eyes1_Flushed_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print ……昨晩、配信していた３人が部屋の前を通ったときは、<br>やはり彼女の部屋に死体があったみたいね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Coco.Fearful1
+@gosubModifyCamera 0
+@print ……マジぃ？<br>じゃああてぃし、死体あったの見逃してたってこと……？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1,Arms
+@gosubModifyCamera 0
+@print ……どうやらそのようだね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive1,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print 本当にノアちゃんのご遺体……<br>スルーしちゃってたんだね……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+# SE・ガーン！
+@sfx Sfx_Common_6
+@char Coco.Surprised1,ArmR7,ArmL5
+@gosubModifyCamera 0
+@print うええ……そんなことある……？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Miria.Smile1,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print ……ま、まあまあ。<br>３人ともが見逃してたんだし…！<br>ココちゃんが責任を感じることないよ……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+@char Coco.Angry1
+@gosubModifyCamera 0
+@print ……んなこと当たり前だろ！<br>あてぃしだけの責任にしたら<br>許さねーぞザコスケ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Miria.Surprised1,ArmR4,ArmL5,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Confused_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print はう……！？<br>足音がしたとか勘違いしてたのは<br>ココちゃんなのに……！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR3,ArmL4
+@gosubModifyCamera 0
+@print しかしそうなると、死亡推定時刻がだいぶ絞られて<br>来るんじゃないですか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# Trick1-1-7-18
+
+# イラスト表示trick1-1
+@back 1_7_1 { Scale:{g_backgroundDefaultScale} }
+@char Sherry.Normal1,ArmR3,ArmL3
+@char AnAn.Normal1,Angle01/Option_Arms-,ArmR-Option-Off,ArmR6,ArmL7,Angle01/Head/Facial/Eyes>Eyes_Normal_Closed,Angle01/Head/Facial/Mouth>Mouth_Flushed_Closed,ArmR-Option-Off
+
+@print みなさんの夕飯の終了時間はだいたい２０時。<br>そして就寝時間は２２時ですね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile
+
+@print なので、この２時間の間に犯行が行われたことになります。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hide Sherry-trickChar,AnAn-trickChar
+@hide Tricks
+# イラスト消去
+
+@char Miria.Normal1,ArmR3,ArmL8
+@gosubModifyCamera 0
+@print ……あっ。でもそれなら、配信してた３人は<br>２１時から２２時までのほとんどの時間<br>【アリバイがある】って言えるかな……？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Hanna.Normal1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print わたくしとメルルさんも、部屋で配信を見ていましたわー！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1,Option-ArmL-Off
+@gosubModifyCamera 0
+@print ……ウチは配信なんて見てねーけど。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+@gosubModifyCamera 0
+@print でもアリサさんがその時間部屋にいたのは<br>私が証言できますね～！<br>私も部屋で配信を見ていたので！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR1,ArmL1
+@gosubModifyCamera 0
+@print あら、それを言うなら私も配信を見ながらだけど、<br>部屋にナノカちゃんがいるのを見てるわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Normal_Closed1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print ……そうね。<br>その間あなたは、トイレにすら立たなかった。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print ボクはそのとき……えっと。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char AnAn.Normal1,Angle01/Option_Arms-,ArmR-Option-Off,ArmR3,ArmL4,Angle01/Head/Facial/Eyes>Eyes_Downcast_Open,Angle01/Head/Facial/Mouth>Mouth_Normal_Closed
+@gosubModifyCamera 0
+@print …………。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Normal1,Angle01/Option_Arms-,ArmR-Option-Off,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_04,Angle01/Head/Facial/Eyes>Eyes_Neutral_Open,Angle01/Head/Facial/Mouth>Mouth_Normal_Closed
+@gosubModifyCamera 0
+@print 『配信の間、医務室にエマがいた事はわがはいが証明できる』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print ……うん。<br>ボクらあのとき、医務室で一緒に配信を見てたんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Smile1
+@gosubModifyCamera 0
+@print じゃあほとんど全員見てたってこと！？<br>いや～、やっぱあてぃしの配信人気過ぎるな～！<br>超人気コンテンツじゃん！ { author:Coco speed:1 waitInput:true Wait:true }
+
+# SE・ネガティブ音
+@sfx Sfx_Common_7
+@char Ema.Pensive1,ArmR1,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Smile_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ……はは。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+@char Coco.Angry1
+@gosubModifyCamera 0
+@print 鼻で笑うなし！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR5,ArmL3,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Middle
+@gosubModifyCamera 0
+@print そ、そんなつもりじゃ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# イラスト表示trick1-2
+@back 1_7_2 { Scale:{g_backgroundDefaultScale} }
+@char Sherry.Smile1,ArmR3,ArmL3
+@char AnAn.Normal1,Angle01/Option_Arms-,ArmR-Option-Off,ArmR6,ArmL7,Angle01/Head/Facial/Eyes>Eyes_Normal_Closed,Angle01/Head/Facial/Mouth>Mouth_Flushed_Closed,ArmR-Option-Off
+
+@print まとめると、<br>ノアさんが生きているのが確認された１９時以降、<br>２０時～２１時以外は全員にアリバイがあるという事ですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hide Sherry-trickChar,AnAn-trickChar
+@hide Tricks
+# イラスト消去
+
+# [map]
+
+@char Coco.Normal1,ArmR3,ArmL2
+@gosubModifyCamera 0
+@print ……あ！<br>っていうかあてぃし、２０時から２１時だったら<br>そこのザコと配信準備してたけど？ { author:Coco speed:1 waitInput:true Wait:true }
+
+# @spawn Map_A01C01_02 params:0 wait!
+# @spawn Map_A01C01_02 params:1 wait!
+
+@ResetText 
+
+@char Miria.Normal1,ArmR1,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubSplitStageScreen 1
+@print ああ、そうだね。<br>夕飯の後はずっとココちゃんに手伝わされ<br>てたから、お互いにアリバイを証明できると思うよ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Closed,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print "だからあてぃしたちが共犯でもない限り、<br>ここの２人は 絶対犯人じゃねーってこと！<br>犯人はご愁傷さま～♪" { author:Coco speed:1 waitInput:true Wait:true }
+
+# マップ表示一旦終了
+# @despawn Map_A01C01_02
+@hideStageScreen 1
+
+@char Sherry.Normal1,ArmR3,ArmL12
+@gosubModifyCamera 0
+@print では他のみなさんのその時間帯は……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print 夕飯直後から配信にかけて……？<br>たしかその時って……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1,ArmR2,ArmL3,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print そのときは娯楽室にいたわね。<br>エマちゃんとも会ってるわ。<br>時計を見ていたから時間も間違いないと思うけど。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print マーゴちゃんと……？<br>あっ、それってあの時の……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# ◎回想：ナノカのリボン騒ぎ
+@bgm Bgm_38_1_Loop { Volume:0.2 }
+@Wait 0.2
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+@back 11_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@char Nanoka.Default { time:0 }
+@hideStageScreen 1
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+
+@Wait 1
+
+@ResetText 
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+@hide MainBackground-Flashback,Nanoka-Flashback { time:0 }
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+@bgm Bgm_38_1_Loop
+
+@char Nanoka.Normal1,ArmR2,ArmL9,Eyes1_Normal_Open2,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print ……リボンを探していたときね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print そうだ……。<br>ナノカちゃんが無くしたリボンを探してて、<br>娯楽室でアリサちゃんと……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR17,ArmL1
+@gosubModifyCamera 0
+@print 当時の時間については私も確認していますね～！<br>２０時から２１時頃までかかったと思いますよ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna.Normal1,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Smile_Open
+@gosubModifyCamera 0
+@print ……あのとき、ひとりになった人はいなかったと思いますわ。<br>わたくし、なんとか止めたくて皆さんの様子を見ていましたし。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+# [map]
+@ResetText 
+
+@spawn Map_A01C01_03
+
+@spawn Map_A01C01_03
+
+@char Sherry.Normal1,ArmR17,ArmL4
+@gosubModifyCamera 0
+@print あのとき見たのは、エマさんと、ハンナさんと<br>メルルさんと……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+@spawn Map_A01C01_03
+
+@char Margo.Normal1,ArmR6,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 私と、アリサちゃんは娯楽室にいて、<br>そこにナノカちゃんが来たわね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+@despawn Map_A01C01_03
+
+@char Hanna.Surprised1
+@gosubModifyCamera 0
+@print "……あ、あら？ ならそのときも、<br>大半の人にアリバイがあるということですわね……？<br>なら誰が……。" { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,ArmR2,ArmL2,Option-ArmL-Off
+@gosubModifyCamera 0
+@print ……おいおい、ふざけてんのか？<br>長い時間アリバイがない奴、<br>そこにひとりいるじゃねーか。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+# Judge1-7-19
+
+@char Ema.Pensive1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print 長い時間アリバイのない人……それって。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@choice 桜羽エマ
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge1-7-20
+
+@choice 蓮見レイア
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge1-7-22
+
+@choice 夏目アンアン
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge1-7-21
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 7-20: ❌ 【桜羽エマ】
+# ==============================================================================
+
+# Judge1-7-20
+
+@char Ema.Pensive1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print "……ボクのこと？ でもボクは……。" { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,ArmR2,ArmL2,Option-ArmL-Off
+@gosubModifyCamera 0
+@print ちげぇよ。<br>……お前、人の話を整理するの苦手なのか？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Pensive1,ArmR12,ArmL16,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （あう……。怒らせちゃったみたい……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （もう一度……考えてみよう……！<br>　時系列を整理するんだ……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-7-19
+
+# ==============================================================================
+# MARK: 7-21: ❌ 【夏目アンアン】
+# ==============================================================================
+
+# Judge1-7-21
+
+@char Ema.Pensive1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print ……それって、アンアンちゃんのこと？<br>でもアンアンちゃんはボクが医務室で……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,ArmR2,ArmL2,Option-ArmL-Off
+@gosubModifyCamera 0
+@print べつに病人を疑ってるわけじゃねーよ。<br>もう１人いるだろ。<br>アリバイのないヤツが。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ……それって……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-7-19
+
+# Judge1-7-22
+
+# ==============================================================================
+# MARK: 7-22: ⭕ 【蓮見レイア】
+# ==============================================================================
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print レイアちゃんのこと……だよね？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Normal1,Arms
+@gosubModifyCamera 0
+@print …………。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# セリフミス・テキスト＆音声修正済
+@char Meruru.Normal1,ArmR8_1,ArmL8,Eyes1_Pensive_Open1,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print ……そういえば、あの出来事があったあと、<br>レイアさんとお会いしましたね……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print ……レイアちゃん。<br>あのときキミは……<br>いったいどこで、何をしていたの……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char Leia.Normal1
+@gosubModifyCamera 0
+@print …………。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Leia.Smile1,ArmR3,ArmL2
+@gosubModifyCamera 0
+@print ……さて、なんだったかな。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR6,ArmL6,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print え……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR3,ArmL2
+@gosubModifyCamera 0
+@print 申し訳ないけれど、あまり覚えていないよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,Option-ArmL-Off
+@gosubModifyCamera 0
+@print ……んな言い訳、通ると思ってんのか？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1,ArmR8,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print そんなことを言われても……困ったな。<br>本当に覚えていないんだし……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1,ArmR3,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print 人の記憶は信用できないものだ。<br>さっきのココくんの話を思い返してみなよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Normal1,ArmR3,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print 私たちが部屋を通ったとき、<br>ココくんはノアくんが<br>【まだ生きていた】と言っていた……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print けど、実際は勘違いだった。<br>……このように人の記憶というものは<br>なかなか信用できないものなのさ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Coco.Angry1,ArmR13,ArmL10,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Angry_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print うぐ……！<br>たしかにさっきは……そうだったけど……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Leia.Normal1,ArmR5,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Closed03,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print ……まあ、疑われたままでも気持ちが悪いし、<br>少しだけ自己弁護をさせてもらおうかな。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR5,ArmL3,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print その時私が何をしていたか……をね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+
+@goto Act01_Chapter01/Act01_Chapter01_Trial08

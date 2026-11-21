@@ -1,0 +1,55 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# TODO: メニューボタンを手前に表示する
+# TODO: 魔女図鑑ボタンを非表示にする
+
+# Scene1-1-7
+
+# ========================================
+# ●シーン1‐1-7
+# ========================================
+
+# ========================================
+# マップイベント用分岐
+# ========================================
+
+# ========================================
+# 【ＭＡＰイベント】牢屋敷マップ
+#
+# 娯楽室＞シーン1‐1‐8
+# 図書室＞シーン1‐1‐9
+# 医務室＞シーン1‐1‐10
+# 懲罰房前＞シーン1‐1‐11
+# ※全てのＭＡＰイベントを選択したら終了。
+# 選択済みの場所は消していってください。
+# ========================================
+
+@if "chosenAreaFlag == 15"
+	@set "chosenAreaFlag = 0"
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter01/Act01_Chapter01_Adv16
+
+@map RecreationRoom,Library,Infirmary,SolitaryConfinement RecreationRoom,Library,Infirmary,SolitaryConfinement
+
+@if "chosenAreaId==\"RecreationRoom\""
+	@setFlag 0
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter01/Act01_Chapter01_Adv12
+
+@if "chosenAreaId==\"Library\""
+	@setFlag 1
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter01/Act01_Chapter01_Adv13
+
+@if "chosenAreaId==\"Infirmary\""
+	@setFlag 2
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter01/Act01_Chapter01_Adv14
+
+@if "chosenAreaId==\"SolitaryConfinement\""
+	@setFlag 3
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter01/Act01_Chapter01_Adv15
+
+@Stop

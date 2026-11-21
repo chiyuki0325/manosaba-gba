@@ -1,0 +1,9 @@
+{
+  "ascii_width": 6,
+  "wide_width": 12,
+  "line_height": 16,
+  "profiles": {
+    "story": {"left": 12, "top": 90, "right": 228, "bottom": 134},
+    "graphical": {"left": 26, "top": 123, "right": 224, "bottom": 155}
+  }
+}

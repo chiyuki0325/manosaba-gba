@@ -1,0 +1,40 @@
+{
+  "format": "manosaba.story",
+  "version": 1,
+  "language": "zh-Hans",
+  "path": "Debug/Debug_Mask",
+  "events": [
+    {"op": "Gosub", "line": 1, "indent": 0, "params": {"Path": "System/System_Subroutine.BeginAdv"}},
+    {"op": "ModifyBackgroundExtended", "line": 3, "indent": 0, "params": {"TintColor": "#000000", "Duration": 0.0, "Lazy": 0, "AppearanceAndTransition": "Transparent", "SubId": "Overlay"}},
+    {"op": "Gosub", "line": 5, "indent": 0, "params": {"Path": ".Rectangle"}},
+    {"op": "Stop", "line": 7, "indent": 0, "params": {}},
+    {"op": "label", "name": "Rectangle", "line": 13, "indent": 0},
+    {"op": "ModifyBackgroundExtended", "line": 15, "indent": 0, "params": {"Scale": [1.0499999523162842], "Lazy": 0, "ScenePosition": [50.0, 50.0], "AppearanceAndTransition": "14_1"}},
+    {"op": "ModifyCharacterExtended", "line": 16, "indent": 0, "params": {"Lazy": 0, "ScenePosition": [33.0, 50.0], "IdAndAppearance": "Ema"}},
+    {"op": "PrintTextModified", "line": 18, "indent": 0, "params": {"Text": "", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["~943cc7"]}},
+    {"op": "SpawnExtended", "line": 20, "indent": 0, "params": {"Path": "MaskingRectangle", "Params": ["150", "200", "true", "0.5", "white"], "ScenePosition": [110.0, 50.0], "Rotation": [0.0, 0.0, -10.0], "Wait": 0}},
+    {"op": "ModifyBackgroundExtended", "line": 21, "indent": 0, "params": {"Scale": [2.0], "Duration": 0.5, "Lazy": 0, "ScenePosition": [100.0, 50.0], "AppearanceAndTransition": "14_1", "SubId": "Middle"}},
+    {"op": "ModifyCharacterExtended", "line": 22, "indent": 0, "params": {"Scale": [1.5], "Duration": 0.5, "Lazy": 0, "ScenePosition": [75.0, 25.0], "IdAndAppearance": "Hiro", "SubId": "Middle"}},
+    {"op": "ChangeActorMaskability", "line": 23, "indent": 0, "params": {"ActorIds": ["MainBackground-Middle", "Hiro-Middle"], "Enable": 1}},
+    {"op": "Wait", "line": 24, "indent": 0, "params": {"WaitMode": "0.5"}},
+    {"op": "PrintTextModified", "line": 26, "indent": 0, "params": {"Text": "", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["~9b3e44b1"]}},
+    {"op": "ModifyCharacterExtended", "line": 28, "indent": 0, "params": {"Lazy": 0, "ScenePosition": [50.0, 40.0], "IdAndAppearance": "Ema"}},
+    {"op": "SpawnExtended", "line": 29, "indent": 0, "params": {"Path": "MaskingRectangle", "Params": ["150", "200", "true", "0.5", "white"], "ScenePosition": [-10.0, 50.0], "Rotation": [0.0, 0.0, 10.0], "Wait": 0, "SubId": "Front"}},
+    {"op": "ModifyBackgroundExtended", "line": 30, "indent": 0, "params": {"Scale": [1.5], "Duration": 0.5, "Lazy": 0, "ScenePosition": [-100.0, 50.0], "AppearanceAndTransition": "14_1", "SubId": "Front"}},
+    {"op": "ModifyCharacterExtended", "line": 31, "indent": 0, "params": {"Scale": [1.25], "Duration": 0.5, "Lazy": 0, "ScenePosition": [15.0, 40.0], "IdAndAppearance": "Nanoka", "SubId": "Front"}},
+    {"op": "ChangeActorMaskability", "line": 32, "indent": 0, "params": {"ActorIds": ["MainBackground-Front", "Nanoka-Front"], "Enable": 1}},
+    {"op": "Wait", "line": 33, "indent": 0, "params": {"WaitMode": "0.5"}},
+    {"op": "PrintTextModified", "line": 35, "indent": 0, "params": {"Text": "", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["~c3d4ca71"]}},
+    {"op": "DestroySpawnedExtended", "line": 37, "indent": 0, "params": {"Path": "MaskingRectangle", "Params": ["0.5"], "LogWarning": 1}},
+    {"op": "HideActors", "line": 38, "indent": 0, "params": {"ActorIds": ["MainBackground-Middle", "Hiro-Middle"], "Duration": 0.5, "Lazy": 0}},
+    {"op": "PrintTextModified", "line": 40, "indent": 0, "params": {"Text": "", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["~1d50e2c2"]}},
+    {"op": "ChangeActorMaskability", "line": 42, "indent": 0, "params": {"ActorIds": ["MainBackground-Middle", "Hiro-Middle"], "Enable": 0}},
+    {"op": "Return", "line": 44, "indent": 0, "params": {}}
+  ],
+  "translations": {
+  "~943cc7": "",
+  "~9b3e44b1": "",
+  "~c3d4ca71": "",
+  "~1d50e2c2": ""
+}
+}

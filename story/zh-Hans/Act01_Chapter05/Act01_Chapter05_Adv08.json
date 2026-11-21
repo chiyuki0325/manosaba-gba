@@ -1,0 +1,40 @@
+{
+  "format": "manosaba.story",
+  "version": 1,
+  "language": "zh-Hans",
+  "path": "Act01_Chapter05/Act01_Chapter05_Adv08",
+  "events": [
+    {"op": "GosubResetWitchBook", "line": 1, "indent": 0, "params": {"Path": "System/System_ResetWitchBook", "IsDebugDirectJump": {"expression": "{isDebugDirectJump}"}}},
+    {"op": "Gosub", "line": 2, "indent": 0, "params": {"Path": "System/System_Subroutine.BeginAdv"}},
+    {"op": "label", "name": "Scene1-5-8", "line": 4, "indent": 0},
+    {"op": "ModifyBackgroundExtended", "line": 10, "indent": 0, "params": {"Scale": {"expression": "{g_backgroundDefaultScale}"}, "Duration": 0.0, "Lazy": 0, "AppearanceAndTransition": "19_2"}},
+    {"op": "ModifyBackgroundExtended", "line": 11, "indent": 0, "params": {"TintColor": "#000000", "Duration": 1.2000000476837158, "Lazy": 0, "AppearanceAndTransition": "Transparent", "SubId": "Overlay"}},
+    {"op": "Wait", "line": 12, "indent": 0, "params": {"WaitMode": "1.8"}},
+    {"op": "PlayBgm", "line": 14, "indent": 0, "params": {"BgmPath": "Bgm_24_1", "Volume": 1.0, "Loop": 1, "FadeInDuration": 0.0}},
+    {"op": "PrintTextModified", "line": 16, "indent": 0, "params": {"Text": "不知跑了多远。", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0105Adv08_Narrative001"]}},
+    {"op": "PrintTextModified", "line": 18, "indent": 0, "params": {"Text": "可可和玛格的身影都不见了。<br>\n看守、典狱长和梅露露的气息也消失了。", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0105Adv08_Narrative002"]}},
+    {"op": "PrintTextModified", "line": 20, "indent": 0, "params": {"Text": "艾玛成了孤身一人<br>\n——回到了监牢前。", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0105Adv08_Narrative003"]}},
+    {"op": "PrintTextModified", "line": 22, "indent": 0, "params": {"Text": "她无力地跪倒在地，蜷缩成一团。", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0105Adv08_Narrative004"]}},
+    {"op": "PrintTextModified", "line": 24, "indent": 0, "params": {"Text": "（已经没有人在了。也无处可逃了）", "AuthorId": "Ema", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0105Adv08_Ema001"]}},
+    {"op": "PrintTextModified", "line": 26, "indent": 0, "params": {"Text": "（我什么都没做到）", "AuthorId": "Ema", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0105Adv08_Ema002"]}},
+    {"op": "SpawnBlur", "line": 28, "indent": 0, "params": {"ActorId": "MainBackground", "Intensity": 0.5, "FadeDuration": 0.0}},
+    {"op": "PrintTextModified", "line": 32, "indent": 0, "params": {"Text": "啊啊——啊啊啊啊啊啊——！！", "AuthorId": "Ema", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0105Adv08_Ema003"]}},
+    {"op": "PrintTextModified", "line": 34, "indent": 0, "params": {"Text": "呜啊啊啊啊啊啊——啊啊啊啊啊！！", "AuthorId": "Ema", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0105Adv08_Ema004"]}},
+    {"op": "PrintTextModified", "line": 36, "indent": 0, "params": {"Text": "啊、啊啊、啊啊呜——啊啊啊啊啊啊！！", "AuthorId": "Ema", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0105Adv08_Ema005"]}},
+    {"op": "PrintTextModified", "line": 38, "indent": 0, "params": {"Text": "艾玛再也无法忍受，<br>\n她浑身颤抖，不断发出悲痛欲绝的哭喊。", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0105Adv08_Narrative005"]}},
+    {"op": "Gosub", "line": 40, "indent": 0, "params": {"Path": "System/System_Subroutine.EndAdv"}},
+    {"op": "GotoModified", "line": 42, "indent": 0, "params": {"Path": "Act01_Chapter05/Act01_Chapter05_Adv09", "SoftReset": 1}}
+  ],
+  "translations": {
+  "0105Adv08_Narrative001": "不知跑了多远。",
+  "0105Adv08_Narrative002": "可可和玛格的身影都不见了。<br>\n看守、典狱长和梅露露的气息也消失了。",
+  "0105Adv08_Narrative003": "艾玛成了孤身一人<br>\n——回到了监牢前。",
+  "0105Adv08_Narrative004": "她无力地跪倒在地，蜷缩成一团。",
+  "0105Adv08_Ema001": "（已经没有人在了。也无处可逃了）",
+  "0105Adv08_Ema002": "（我什么都没做到）",
+  "0105Adv08_Ema003": "啊啊——啊啊啊啊啊啊——！！",
+  "0105Adv08_Ema004": "呜啊啊啊啊啊啊——啊啊啊啊啊！！",
+  "0105Adv08_Ema005": "啊、啊啊、啊啊呜——啊啊啊啊啊啊！！",
+  "0105Adv08_Narrative005": "艾玛再也无法忍受，<br>\n她浑身颤抖，不断发出悲痛欲绝的哭喊。"
+}
+}

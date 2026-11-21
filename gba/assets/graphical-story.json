@@ -1,0 +1,16 @@
+{
+  "script": "Act01_Chapter01/Act01_Chapter01_Adv04",
+  "demo": "Act01_Chapter01/Act01_Chapter01_Adv04",
+  "import": "all",
+  "rom_scripts": "all",
+  "budgets": {
+    "rom_bytes": 33554432,
+    "graphics_bytes": 17825792,
+    "audio_reserve_bytes": 8388608,
+    "other_reserve_bytes": 2097152
+  },
+  "effects": {
+    "blur_levels": 2,
+    "mask_steps": 32
+  }
+}

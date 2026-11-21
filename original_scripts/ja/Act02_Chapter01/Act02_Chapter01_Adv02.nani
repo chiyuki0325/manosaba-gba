@@ -1,0 +1,55 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-0-1
+
+# ========================================
+# ●シーン2-0‐1
+# ========================================
+
+@bgm Bgm_35_1
+
+@print ――大切な友だちが自殺をした。 { speed:1 waitInput:true Wait:true }
+
+@print "友だちの名前は、<ruby=\"つきしろ\">月代</ruby>ユキ。" { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back 150_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@print "私が部屋に入った時、<br>まだその場には<ruby=\"くびつ\">首吊</ruby>り<ruby=\"わ\">輪</ruby>が残されていた。" { speed:1 waitInput:true Wait:true }
+
+@print "私は用意された<ruby=\"くびつ\">首吊</ruby>り<ruby=\"わ\">輪</ruby>を<ruby=\"にら\">睨</ruby>みあげた。" { speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"りん\">凛</ruby>と姿勢よく、<br>首を<ruby=\"くく\">縊</ruby>るための輪の先を見据え――<br>あまりの<ruby=\"いまいま\">忌々</ruby>しさに<ruby=\"はが\">歯噛</ruby>みした。" { speed:1 waitInput:true Wait:true }
+
+@print 許せなかった。<br>こんなものがユキの命を奪ったことが。 { speed:1 waitInput:true Wait:true }
+
+@print 私にとって許されない行為だった。<br>私にとって正しくない行為だった。 { speed:1 waitInput:true Wait:true }
+
+@print 私は【正しさ】を何より好んでいた。 { speed:1 waitInput:true Wait:true }
+
+@print 世界には、<br>ひとつの間違いもあってはならない。 { speed:1 waitInput:true Wait:true }
+
+@print 清らかな湖にひとつの毒を混ぜれば、<br>生き物は死滅する。 { speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"せいち\">精緻</ruby>な絵画にひとつの傷を加えれば、<br>芸術の価値は失われる。" { speed:1 waitInput:true Wait:true }
+
+@print "完璧なハーモニーにひとつの間違った音が<ruby=\"あ\">在</ruby>れば、<br>不協和音になる。" { speed:1 waitInput:true Wait:true }
+
+@print "正しいを願う脳に<br>１匹の害虫が<ruby=\"す\">棲</ruby>みついていたならば――" { speed:1 waitInput:true Wait:true }
+
+@print 世界が崩壊する。 { speed:1 waitInput:true Wait:true }
+
+@back 150_2 { Scale:{g_backgroundDefaultScale} time:0.5 }
+
+@print "――<ruby=\"くびつ\">首吊</ruby>り<ruby=\"わ\">輪</ruby>の先に見えたのは、<br>私にとって正しくない世界を作った存在。" { speed:1 waitInput:true Wait:true }
+
+@print 桜羽エマ。 { speed:1 waitInput:true Wait:true }
+
+@print この時から、<br>私にとって自殺は何よりも大きな【禁忌】となった。 { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter01/Act02_Chapter01_Adv03

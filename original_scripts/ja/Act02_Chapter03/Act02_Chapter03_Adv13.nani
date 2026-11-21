@@ -1,0 +1,48 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-3-13
+
+# ========================================
+# ●シーン2‐3‐13
+# ========================================
+
+@bgm Bgm_2_1_Loop
+
+@back 13_1 { time:0 }
+@Wait 0.9
+
+@back Transparent { time:1.8 }
+@WaitForNextFrame 
+
+@animate MainBackground
+@Wait 1.5
+
+@print これまでと同様、<br>私は看守に裁判所まで連行された。 { speed:1 waitInput:true Wait:true }
+
+@print "生き残っている他の少女たちも、<br>すでに<ruby=\"そろ\">揃</ruby>っている。" { speed:1 waitInput:true Wait:true }
+
+@print エマ、シェリー、ハンナ。<br>レイア、ノア、ミリア、アリサ。 { speed:1 waitInput:true Wait:true }
+
+@print 全員が証言台に立ち、<br>私にそれぞれ複雑な視線を投げかけている。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back 13_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@char Warden.1
+
+@print さて、もう始めちゃっていいですかね？<br>今回はサクッと終わるといいんですけど。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print …………。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Warden.1
+
+@print それでは、魔女裁判開廷です！ { author:Warden speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ＞議論パートへ
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter03/Act02_Chapter03_Trial00

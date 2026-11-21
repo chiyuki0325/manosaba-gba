@@ -1,0 +1,137 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-3-24
+
+# ========================================
+# ●シーン１‐3-24
+# ========================================
+
+@back 24_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# ========================================
+# ＞『倉庫』を選択
+# ========================================
+
+@bgm Bgm_5_1
+
+@print 牢屋敷裏手にある倉庫にエマが行ってみると、<br>日中にも関わらず、中に入ることができた。 { speed:1 waitInput:true Wait:true }
+
+@print ――鍵が壊されていたのだ。 { speed:1 waitInput:true Wait:true }
+
+@print エマは薄暗い倉庫内へと立ち入り、<br>室内を調べはじめる。 { speed:1 waitInput:true Wait:true }
+
+@print （こんなところに来ても、<br>　何もないかもしれないけど） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （でも、少しでも手がかりを見つけないと――） { author:Ema speed:1 waitInput:true Wait:true }
+
+# ガタッという物音
+@sfx Sfx_64
+
+@print 倉庫内にはエマしかいないと思っていたが、<br>物陰から音が聞こえ、<br>エマは弾かれたようにそちらを見る。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+
+@print 誰！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Nanoka.Default
+
+@print ……私よ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "現れたのは、ナノカだった。<br>少し苦しげに表情を<ruby=\"ゆが\">歪</ruby>めている。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+
+@print ナノカちゃん！？<br>ずっと探してたんだよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Nanoka.Default
+
+@print ――近寄らないで。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+
+@print ……ッ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ナノカが銃を向けてきたことで、<br>エマはびくりと体を強張らせる。 { speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Default
+
+@print 私はこの牢屋敷の誰も信じていない。<br>誰ひとりとしてよ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 前にも増して、<br>ナノカの瞳はほの暗さを帯びていた。 { speed:1 waitInput:true Wait:true }
+
+@print （ナノカちゃん、これまできっと、<br>　ここに隠れてたんだ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ナノカが牢屋敷から姿を消して、<br>ずいぶん日数が経過している。 { speed:1 waitInput:true Wait:true }
+
+@print それまで身を隠して生活するには、<br>食糧もあるこの広い倉庫はうってつけだった。 { speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Default
+
+@print 真相を明らかにするため、裁判には出る。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "ナノカは<ruby=\"きびす\">踵</ruby>を返し、<br>倉庫から出ていった。" { speed:1 waitInput:true Wait:true }
+
+@print エマは詰めていた息を吐き出し、<br>それから倉庫の捜査に戻ることにした。 { speed:1 waitInput:true Wait:true }
+
+@print しばらく歩き回ってみると、<br>床に気になる痕跡を見つけた。 { speed:1 waitInput:true Wait:true }
+
+# 写真撮影音
+@sfx Sfx_28
+
+# ========================================
+# ☆証拠品：『弾痕』入手
+# ========================================
+@spawn Clue
+@update 3-5
+@despawn Clue
+
+@print （これって、弾痕……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマは、先ほどナノカに向けられた銃を思い出す。<br>その際ナノカは発砲していない。 { speed:1 waitInput:true Wait:true }
+
+@print （いつこれを撃ったんだろう……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 首を傾げつつ、他にも何かないか探してみるエマ。 { speed:1 waitInput:true Wait:true }
+
+@print すると、棚の中に開けられた箱を見つけた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print これって……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ☆証拠品：『着火物』入手
+# ========================================
+@spawn Clue
+@update 3-1
+@despawn Clue
+
+@print ロウソクにマッチに爆竹……。<br>これがあれば、火をつけることができるかも……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 燃えたゲストハウスの光景を思い出す。 { speed:1 waitInput:true Wait:true }
+
+@print エマはハンナの死体がぶら下がる光景を思い出し、<br>首を振った。 { speed:1 waitInput:true Wait:true }
+
+@print その光景を忘れようとするように歩き、<br>エマは倉庫の中の探索を続ける。 { speed:1 waitInput:true Wait:true }
+
+@print しかしそこから特に手がかりらしいものは見つけられず、<br>エマは諦めて倉庫を出た。 { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter03/Act01_Chapter03_Adv19

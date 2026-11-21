@@ -1,0 +1,194 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-1-17
+
+# ========================================
+# ●シーン1-1‐17
+# [back 2]
+# ========================================
+
+# ========================================
+# [bgm Bgm_011_001_Loop]
+# ========================================
+
+@print しばらく険悪な空気に付き合わされ、<br>時間を食ってしまった。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back 30_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_11_1
+
+@print ようやく落ち着いてから、<br>エマらのグループはシャワーを浴びにいった。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+@back 2_1 { Scale:{g_backgroundDefaultScale} }
+@back Transparent.Custom { time:0.9 }
+@Wait 0.9
+
+@print "先ほどのトラブルと今日の走り回った疲れもあってか、<br>地下に戻ってきた頃には、全員足元が<ruby=\"おぼつか\">覚束</ruby>ない。" { speed:1 waitInput:true Wait:true }
+
+@print 一番手前の房であるシェリーは、<br>早々に中へと入っていった。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+@char Hanna.Pensive1,ArmR4
+
+@print うう……明日、筋肉痛になりそう……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print シャワーだけでなく、お風呂に浸かりてえですわ。<br>ふわあ～。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 盛大にあくびをしているハンナは、<br>既にうつらうつらしている。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR13,ArmL1
+
+@print エマもつられてあくびし、<br>ぼんやりと通路を歩いていく。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 自分の房の前までやってきて、<br>エマもさっさと中へ入ろうとした。 { speed:1 waitInput:true Wait:true }
+
+@print そこで―― { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [sfx 27：どんっと人がぶつかる音]
+# ========================================
+
+@sfx Sfx_27
+@spawn ShakeBackground
+
+@print わぁっ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "誰かが勢いよくぶつかってきて、<br>エマは<ruby=\"はじ\">弾</ruby>かれ、尻もちをついてしまう。" { speed:1 waitInput:true Wait:true }
+
+@print 目を白黒させたエマが見上げると、<br>立っていたのはアリサだった。 { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,Option-ArmL-Off
+
+@print チッ……またてめえか。<br>ボサッとしてんじゃねーぞ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@print ご、ごめん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマが謝るとアリサはもう一度舌打ちし、<br>行ってしまった。 { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1
+@char Meruru.Pensive
+
+@print 自分からぶつかっておいて、失礼なヤツですわね！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print だっ、大丈夫ですか、エマさん。怪我はないですか？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print "うん、へーきへーき！ よいしょっと！" { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Normal1,ArmR1,ArmL1
+
+@print "エマは勢いをつけて立ち上がり、<br><ruby=\"つちぼこり\">土埃</ruby>をぱんぱんと払う。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia.Normal1
+
+@print ――キミたち、大丈夫かい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@print いつの間にか、近くにレイアが立っていた。<br>全員の視線がレイアに集う。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Angry1
+
+@print べ、別にあなたに気を遣ってもらわなくても<br>けっこうですわ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia.Pensive1,ArmR1,ArmL3
+
+@print ……私はキミに嫌われるようなことをしただろうか？<br>仲良くやっていきたいんだけど、困ったね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Normal1,ArmR1,ArmL2
+
+@print そうだ、これから配信もしようと思っているんだ。<br>良かったら、見てほしい。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Normal1,ArmR4
+
+@print ふん、毎日毎日みんなに気を配ってご苦労なことね。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia.Smile1,ArmR8,ArmL5
+
+@print 気苦労がないわけじゃないけれど、はは、性格かな。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Flushed1
+
+@print "困ったように<ruby=\"ほほえ\">微笑</ruby>むレイアを前に、<br>ハンナはぽっと<ruby=\"ほお\">頬</ruby>を染めている。" { speed:1 waitInput:true Wait:true }
+
+@print （レイアちゃんってやっぱり、<br>　魅了の魔法使いじゃ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia.Normal1,ArmR1,ArmL2
+
+@print 今日の配信は、ココくんやミリアくんに誘われているんだ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print きっとにぎやかで楽しいものを見せられると思う。<br>こんなところだが、少しでも娯楽を提供できれば。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Flushed1
+
+@print ふ、ふーん。まあ、見てあげなくもないですわよ？<br>い、行きましょうメルルさん！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Meruru.Default
+
+@print は、はぁい……っ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "ハンナはメルルの手首を<ruby=\"つか\">掴</ruby>み、<br>逃げるようにずんずんと自分の房へと走っていってしまった。" { speed:1 waitInput:true Wait:true }
+
+@print 残されたエマは、<br>レイアと目が合う。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Normal1,ArmR1,ArmL3
+
+@print ああ、そうだ。今日医務室に行った時、<br>間違ってアンアンくんのスマホを持ってきてしまったらしい。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print レイアはポケットから、ごそごそとスマホを取り出した。 { speed:1 waitInput:true Wait:true }
+
+@print 届けてくれると助かる。<br>私はこれから、配信の予定があって……申し訳ないんだが。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Normal1
+
+@print うん、それくらいぜんぜんいいよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR3,ArmL1
+
+@print あの、あのさ、<br>レイアちゃんのやってること、すごく偉いと思う！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print ボクら、グループは別になっちゃったけど……でも、<br>助け合えたらいいなって思うんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia.Surprised1,ArmR1,ArmL1
+
+@print "レイアは少し驚いた風に目を丸くした。<br>しかしすぐ、柔らかい<ruby=\"びしょう\">微笑</ruby>を浮かべる。" { speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1
+
+@print ありがとう。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマはレイアからスマホを受け取り、<br>急ぎ、医務室へと向かった。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [transition Out,Fade,1,Black]
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter01/Act01_Chapter01_Adv22

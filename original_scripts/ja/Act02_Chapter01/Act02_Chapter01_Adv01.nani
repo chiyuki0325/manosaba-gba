@@ -1,0 +1,41 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# ========================================
+# 魔女裁判 Re,序章
+# ========================================
+
+# 1-5から引き続き、魔女図鑑データ（update）は全部0（非表示）になっている想定です。
+# Scene2-0-0
+
+# ========================================
+# ●シーン2-0‐0
+# ========================================
+
+@back 34_1 { time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_6_1 { Volume:0.25 fade:7 }
+
+# ＠備考◆泣いている/長め
+# ＠島の大魔女
+
+@print うぅ……うぅう……！ { author:Unknown speed:1 waitInput:true Wait:true }
+
+# ＠島の大魔女
+
+@print お願い……誰か……<br>誰か、助けて……。 { author:Unknown speed:1 waitInput:true Wait:true }
+
+# ＠島の大魔女
+
+@StopBgm { fade:3 }
+
+@print あの子を、助けてあげて――！ { author:Unknown speed:1 waitInput:true Wait:true }
+
+# UI消去して白フェードアウトしたい
+# エフェクト・光に包まれるイメージ
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter01/Act02_Chapter01_Adv02

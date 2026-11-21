@@ -1,0 +1,267 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-4-3
+
+# ========================================
+# ●シーン1‐4-3
+# ========================================
+
+@back 17_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_41_1
+
+@char Alisa.Pensive1,Option-ArmL-Off,ArmR7,ArmL6
+
+@print うう、うぅぅ……っ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "その場に残ったアリサは、<br>うずくまって<ruby=\"うめ\">呻</ruby>き声を上げ続けていた。" { speed:1 waitInput:true Wait:true }
+
+@print エマを殺しかけた。<br>その事実でアリサは極限まで追い詰められている。 { speed:1 waitInput:true Wait:true }
+
+@print 自身を焼き尽くしてしまいたいとすら感じるほどに。 { speed:1 waitInput:true Wait:true }
+
+@print "しかしアリサの生み出す不思議な炎は、<br>自分自身を焼くことが<ruby=\"かな\">叶</ruby>わない。" { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,Option-ArmL-Off,ArmR7,ArmL6
+
+@print どうして、どうして自分は焼けないんだよ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# 地面を殴る音・強
+@sfx Sfx_65
+
+@print 何度も何度も拳を地面に打ち付け、<br>ただ自身を痛めつけることしかできなかった。 { speed:1 waitInput:true Wait:true }
+
+@print "憎悪を込めて思い切り<ruby=\"たた\">叩</ruby>きつけた左拳は割れ、<br>血が<ruby=\"にじ\">滲</ruby>みだす。" { speed:1 waitInput:true Wait:true }
+
+@print "地面にぱたりと落ちた血は<ruby=\"ちょう\">蝶</ruby>の絵に成り代わり、<br>降り積もる雪と混じっていく。" { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,ArmR4,ArmL6
+
+@print くそ、くそっ、くそおおおぉ！！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Meruru.Default
+
+@print ――アリサさんっ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print その時、背後から届いた声に、<br>アリサはハッと振り返る。 { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Pensive
+
+@print 氷上……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Meruru.Pensive
+
+@print "そこにはメルルが立っていた。<br>辛そうに目の端に涙を<ruby=\"にじ\">滲</ruby>ませている。" { speed:1 waitInput:true Wait:true }
+
+@print アリサさん、自分を傷つけるのはやめてください……っ<br>もう、見てられません……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa.Angry,ArmR1,ArmL8
+
+@print "来るな！ もうウチに構うなよぉ！" { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 衝動を堪えきれず、<br>アリサはメルルめがけて炎を放ってしまった。 { speed:1 waitInput:true Wait:true }
+
+# 放たれた炎の音
+@sfx Sfx_46
+
+@print 以前エマに向けて放った時とは段違いの<br>炎と熱の塊だった。 { speed:1 waitInput:true Wait:true }
+
+@print 魔女化が進行しているアリサの魔法は強力なものとなり、<br>メルルの全身が炎に包まれる。 { speed:1 waitInput:true Wait:true }
+
+@print あぁぁぁぁっ！！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print メルルはその場に倒れた。 { speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"しゃくねつ\">灼熱</ruby>の炎で燃え上がったメルルを目にし、<br>アリサは少し理性を取り戻す。" { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Fearful1,Option-ArmL-Off,ArmR1,ArmL3
+
+@print あ、あ、氷上、そんな……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print 瞬間でメルルを焼き尽くしてしまったかのように見え、<br>アリサは絶望で目の前が真っ暗に染まった。 { speed:1 waitInput:true Wait:true }
+
+@print ウチが、殺した……？<br>魔女になったウチが、ウチが、あぁぁあぁ！！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print アリサもその場に膝をつく。 { speed:1 waitInput:true Wait:true }
+
+@print しばらくすると炎が消え、<br>焼死体となったメルルが出てくるはずだった。 { speed:1 waitInput:true Wait:true }
+
+@print しかしメルルは起き上がり――生きていた。<br>火傷ひとつ負っていない。 { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Surprised1,Option-ArmL-Off,ArmR1,ArmL3
+
+@print 氷上……？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Meruru.Pensive
+
+@print 大丈夫です。治癒魔法でなんとかなりました……。<br>アリサさんは殺人を犯していません。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa.Pensive1,Option-ArmL-Off,ArmR1,ArmL3
+
+@print そ、そうか、治癒魔法……助かった……。<br>氷上、悪かった。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print でももう、誰でも関係ねーんだ。<br>誰が傍に来たって、ウチはきっと殺したくなる……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Meruru.Default
+
+@print 私に向けてください。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa.Surprised1,Option-ArmL-Off,ArmR1,ArmL3
+
+@print え……？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Meruru.Default
+
+@print 衝動が堪えられなくなったら、私に向けてください。<br>私なら、魔法でなんとかできますから……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Pensive
+
+@print アリサさんが辛そうなの、見てられません……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 立ち上がったメルルは足を踏み出し、<br>アリサへと近付いてきた。 { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Smile
+@char Alisa.Pensive1,Option-ArmL-Off,ArmR1,ArmL3
+
+@print アリサさんは強がっていますが、<br>本当は心優しくて……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 誰かを傷つけてしまうのを、<br>とても、とても怖がっています。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default
+
+@print 私も同じなんです。<br>きっと私たちは、似ています。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Alisa.Pensive1,Option-ArmL-Off,ArmR1,ArmL3
+
+@print 氷上――。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@back 30_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print "メルルはアリサの手を取り、<br>自身の<ruby=\"ほほ\">頬</ruby>へと当てる。" { speed:1 waitInput:true Wait:true }
+
+@print そのまま、泣きそうに笑った。 { speed:1 waitInput:true Wait:true }
+
+@print 私もとても怖がりで、<br>誰かを傷つけてしまうのが怖くて……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 臆病で、こんなことしかできなくて、ごめんなさい。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print ……なんで氷上が謝るんだよ。<br>おめえはいつも誰かのために一生懸命だろうが。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print まあ、おめえはいつも、謝ってばっかりだな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print "メルルの<ruby=\"ほほ\">頬</ruby>を包むアリサの手は<br>もはや人間のソレではない。" { speed:1 waitInput:true Wait:true }
+
+@print その姿もまた、<br>なれはてへと近付いていた。 { speed:1 waitInput:true Wait:true }
+
+@print もう自分を傷つけないでください……<br>みんなアリサさんを必要としているんです。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 置いていかないで……どうか傍にいてください。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print メルルの声音は優しく、<br>アリサは不思議と心が落ち着いていくのを感じた。 { speed:1 waitInput:true Wait:true }
+
+@hide Stills { time:0.9 }
+@Wait 0.9
+
+@char Alisa.Pensive1,Option-ArmL-Off,ArmR1,ArmL3
+
+@print あ……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 異形化した自身の手を見下ろせば、<br>怪我が治っている。 { speed:1 waitInput:true Wait:true }
+
+@print あれだけ衝動に襲われていたのに、<br>今はもう冷静だった。 { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1,Option-ArmL-Off,ArmR1,ArmL3
+
+@print おめえの治癒魔法は、<br>魔女化にも効力があんのか？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print メルルは驚いた表情で、自身の前で手を振る。 { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Surprised
+
+@print い、いえ、そんなことないと思いますけど……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 気持ちが少し落ち着いたからではないでしょうか。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa.Normal1,Option-ArmL-Off,ArmR1,ArmL3
+
+@print ……そうかもな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 夜闇を仰ぐと、<br>雪はまだ降り続けていた。<br>冷静さを欠いた身を冷やしてくれるかのように。 { speed:1 waitInput:true Wait:true }
+
+@print 熱に呪われたアリサにとって、<br>救いとすら感じる冷たさで。 { speed:1 waitInput:true Wait:true }
+
+@print "アリサは深く息を吐き出した。<br>ずいぶんと心が<ruby=\"な\">凪</ruby>いでいた。" { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default
+@char Alisa.Pensive1,Option-ArmL-Off,ArmR1,ArmL3
+
+@print ありがとな、氷上。<br>でもお前を傷つけるようなマネはもうしねえよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print ウチは魔女にならない。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Meruru.Surprised
+
+@print ほ、本当ですか……っ？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1,Option-ArmL-Off,ArmR1,ArmL3
+
+@print ああ。ウチは誰も殺したくないし、傷つけたくない。<br>ウチは決して魔女にならない。約束する。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default
+
+@print アリサさん……良かったです。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Alisa.Smile1,Option-ArmL-Off,ArmR1,ArmL3
+
+@print いや……ウチの方こそ、ありがとな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print なんか……吹っ切れたよ。<br>おめえらのことはウチが守る。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print ……絶対にだ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Meruru.Smile
+
+@print ……はい！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print ようやくアリサの顔に笑みが戻ってきていた。<br>メルルも笑顔になった。 { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter04/Act01_Chapter04_Adv04

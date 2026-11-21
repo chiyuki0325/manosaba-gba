@@ -1,0 +1,254 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-1-19
+
+# ========================================
+# ●シーン2‐1-19
+# ========================================
+
+@sfx Sfx_121
+@Wait 1.25
+@StopSfx 
+@sfx Sfx_121
+@Wait 1.25
+@StopSfx 
+@sfx Sfx_121
+@Wait 1
+
+@back 21_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_23_1
+
+@print 看守に連れられやってきたのは、<br>地下の懲罰房だった。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+
+# 水滴の音
+@sfx Sfx_121
+@Wait 1.25
+@StopSfx 
+@sfx Sfx_121
+@Wait 1
+
+@print "<ruby=\"たいまつ\">松明</ruby>の火が揺らめき続ける。<br>どこからか、１秒刻みで水の<ruby=\"したた\">滴</ruby>る音がする。" { speed:1 waitInput:true Wait:true }
+
+@print （３６００回。おおよそ、１時間か） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print …………。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "どれだけ時間が経っても、私の怒りは<ruby=\"しず\">鎮</ruby>まらない。" { speed:1 waitInput:true Wait:true }
+
+# 鉄製の扉を開く音
+@sfx Sfx_62
+
+@print "その時、古い金属の<ruby=\"きし\">軋</ruby>む音がした。<br>重い扉が、おそるおそると開かれたのだ。" { speed:1 waitInput:true Wait:true }
+
+@print ２人の人影が見えた。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1
+
+@print ……中に入っていいらしい。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 塗料で服が汚れているだろうと思って<br>着替えとタオルを持ってきたんだ<br>出るときに使ってくれ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+
+@print ヒロちゃん、あの、大丈夫……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ……ありがとう。<br>礼は正しく伝えるべきだろうな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print だが、大丈夫に見えるか？<br>このままいけば処刑を待つだけの身だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR1
+
+@print "エマもタオルを持参してきており、<br>私の<ruby=\"そば\">傍</ruby>に立って汚れを<ruby=\"ふ\">拭</ruby>いてくれる。" { speed:1 waitInput:true Wait:true }
+
+@print このままじゃあんまりにひどいよ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ……よりにもよって、桜羽エマ。 { speed:1 waitInput:true Wait:true }
+
+@print だが、もし誰かが来るなら、<br>彼女だろうと想像がつくあたり、やるせない。 { speed:1 waitInput:true Wait:true }
+
+@print "エマは唇を<ruby=\"か\">噛</ruby>み、<br>辛そうに<ruby=\"うつむ\">俯</ruby>きながらも私の汚れを<ruby=\"ぬぐ\">拭</ruby>っていく。" { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆呟き
+
+@print ヒロちゃん、どうして……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "どうして、とは？<br>どうしてメルルを殺したの？ とでも聞きたいのか？" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print ちがっ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 疑っているようにしか聞こえなかったが？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ……そんなこと……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3 { time:1 }
+@char Leia.Pensive1
+@Wait 1
+
+@print ヒロくん……こんな思いをさせてしまって<br>すまない。キミは私が守りたかった……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print ……守る必要はない。<br>君たちからしたら私が犯人かもしれないんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "私は２人を順番に<ruby=\"にら\">睨</ruby>んだ。" { speed:1 waitInput:true Wait:true }
+
+@print ――当然、私からしたら<br>君たちが犯人かもしれない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Surprised1
+
+@print そ、そんなことはありえない！<br>私は――。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print あくまで可能性の話だ。<br>私は私の無罪を裁判で証明するだけ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print この事前投票とやらは残酷だな。<br>少女たちの心に分断を招く。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print だが、おかげでハッキリ覚悟ができた。<br>私は誰にも頼らず生き抜いてみせる。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1
+
+@print 私の瞳は、さぞ暗い輝きを放っているだろう。 { speed:1 waitInput:true Wait:true }
+
+@print もちろん協力する道もある。 { speed:1 waitInput:true Wait:true }
+
+@print 事件前後の状況を説明すれば、<br>何かしらの手がかりが得られるかもしれない。 { speed:1 waitInput:true Wait:true }
+
+@print だが、誰が真犯人かわからない状態では、<br>逆に犯人に情報を与える結果になりかねない。 { speed:1 waitInput:true Wait:true }
+
+@print （犯人は間違いなく私を陥れようとしている） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （なら、私に接触を図ってきた<br>　この２人が犯人という可能性も十分ある） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （優しさは敵だ。絆は毒だ。<br>　もう私は、ほだされることはない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ひ、ヒロちゃん。ひとりにならないで！<br>みんなで協力すればきっと――。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 協力？<br>その結果がこれだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print めまいがした。<br>エマの口からでるきれいごとが受け付けられない。 { speed:1 waitInput:true Wait:true }
+
+@print エマ、特に君のことは信じられない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ヒロちゃん……どうして？<br>お願いだからボクの話を聞いて――。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 黙れ！！<br>君の顔も見たくないし声も聞きたくない！！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 少しでも私を想う気持ちがあるなら、<br>ここから出て行け！！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Angry1
+@camera { time:0.1 }
+@Wait 0.1
+
+@print ――そこまでだ！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 私の怒鳴りにかぶせる形で<br>レイアが声を張りあげた。 { speed:1 waitInput:true Wait:true }
+
+@print なっ……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 不可解な現象に、思わず息が詰まった。 { speed:1 waitInput:true Wait:true }
+
+@print 声につられてレイアを視野に入れたが最後、<br>彼女の顔から目を逸らすことができない。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1
+
+@print ……驚かせたね。これが私の魔法さ。<br>【視線の誘導】を行うことができる。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Normal1
+
+@print 人々はよく言うんだ。<br>舞台上の私から不思議と目を離せない、とね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1
+
+@print 少しでも信じてもらいたいからね。<br>ヒロくんになら、<br>明かしても構わないと思ったんだよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print レイアは優しげに笑う。 { speed:1 waitInput:true Wait:true }
+
+@print ……解除してくれないか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@camera { time:0.4 }
+@char Leia.Normal1
+
+@print "要望した瞬間、視線に自由が<ruby=\"き\">利</ruby>くようになった。" { speed:1 waitInput:true Wait:true }
+
+@update Leia
+
+@char Leia.Smile1
+
+@print どうやら、キミたちの間には<br>昔何かあったようだね。<br>詳しく聞けないかい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@print ……断る。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Normal1
+
+@print ……わかった。<br>今は、そっとしておいた方が良さそうだ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print レイアはそれきり、エマに行こう、と諭す。 { speed:1 waitInput:true Wait:true }
+
+@print "エマは私の剣幕にショックを受けていたようで、<br>レイアに<ruby=\"うなが\">促</ruby>されるまま重い足取りで立ち去って行った。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print ヒロちゃん……またあとで……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# 鉄製の扉を開く音
+@sfx Sfx_62
+
+@print 扉が閉められ、再び静寂が訪れる。 { speed:1 waitInput:true Wait:true }
+
+@print （……最悪な状況だ……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （しかし、本当に私がやっていない、<br>　と言えるのか……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@back 10_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print "<ruby=\"のうり\">脳裏</ruby>に<ruby=\"よぎ\">過</ruby>ったのは、<br>自身の暴走した姿――" { speed:1 waitInput:true Wait:true }
+
+@print （正気を失って、私はもしかしてメルルを……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （このまま処刑されるくらいなら、<br>　死んでやり直すのも……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.3 }
+@Wait 0.3
+
+@hide Stills { time:0 }
+
+@back Transparent { time:0.3 }
+@Wait 0.3
+
+@print だが、次の瞬間、ハッと我に返る。 { speed:1 waitInput:true Wait:true }
+
+@print "（自殺……？ 私が……？）" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "身の毛がよだつような<br><ruby=\"きひかん\">忌避感</ruby>が全身を駆け巡る。" { speed:1 waitInput:true Wait:true }
+
+@print （何を考えている。<br>　【自殺】だけはありえない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （友だちの命を奪った、<br>　忌まわしい方法など取らない！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （私はメルルを殺していない。<br>　決して――！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter01/Act02_Chapter01_Adv25

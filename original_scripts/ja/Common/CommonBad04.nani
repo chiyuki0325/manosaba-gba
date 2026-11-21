@@ -1,0 +1,278 @@
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-ex4
+
+@bgm Bgm_23_1
+@back 13_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.2
+
+@print ――犯人を突き止められないまま、<br>議論の時間は終わりを迎えた。 { speed:1 waitInput:true Wait:true }
+
+@char Warden.3
+@print 議論はここまでということで、<br>投票に移ってもらっていいですかね？ { author:Warden speed:1 waitInput:true Wait:true }
+@hideChars 
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Lifeless04,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@print （犯人がはっきりしてないのに、投票なんて……<br>　でも、やるしかないんだよね） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 殺人犯を特定しなければ、全員処刑されてしまうのだ。<br>たとえその人物が真犯人でなかったとしても―― { speed:1 waitInput:true Wait:true }
+
+@print 誰が【魔女】として処刑されるのかを決めなければならない。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Closed02,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+@print （でもやっぱり、辛すぎるよ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@print エマだけじゃない。<br>その場にいる誰もが震え、青ざめていた。 { speed:1 waitInput:true Wait:true }
+
+@print だが、容赦なく投票の時間はやってくる。 { speed:1 waitInput:true Wait:true }
+
+@print 少女たちは自身のスマホを操作し、<br>投票をしていく。 { speed:1 waitInput:true Wait:true }
+
+@print そして。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+@StopBgm 
+# ========================================
+
+# ========================================
+# パンパカパーン
+@sfx Sfx_34
+# ========================================
+
+@print スマホの画面に映し出されたのは―― { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 心臓のドキドキ音
+@sfx Sfx_35
+# ========================================
+
+@print ココの画像だった。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+@bgm Bgm_29_1
+# ========================================
+
+@char Coco.Default,ArmR6,ArmL10,Angle01/Facial/Eyes>Eyes_Fearful_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open,Angle01/Facial/Sweat>Sweat01,Angle01/Facial/Pale>Pale01
+@print "は？ ちょ……ざっけんなよ……！？<br>マジで意味わかんねえし！<br>おい誰だよ、あてぃしに入れたやつ……！！" { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR1,ArmL3,Angle01/Facial/Eyes>Eyes_Cry_Open,Angle01/Facial/Mouth>Mouth_Angry_Closed,Angle01/Facial/Sweat>Sweat01
+@print ちゃんとよく考えろって！<br>あてぃしが殺したワケないじゃんよぉ！！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Cry_Closed,Angle01/Facial/Mouth>Mouth_Surprised_Open,Angle01/Facial/Sweat>Sweat01
+@print こんなん無効だろ！<br>投票やり直しでいいじゃん……！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Warden.4
+@print えー、やり直しはなしでお願いします。<br>というわけで全員がボタンを押したら、<br>処刑執行スタートです。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Fearful_Open,Angle01/Facial/Mouth>Mouth_Pensive_Middle,Angle01/Facial/Pale>Pale01
+@print お、おい、やめろって……<br>ホント、頼むから押さないでください……<br>なあ、やめてくれって……！！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@print ココの訴えもむなしく、<br>少女たちは手元のボタンを押していく。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ボタンを押す音
+@sfx Sfx_86
+# ========================================
+
+# シーン1‐1‐31から引用
+@char Warden.8
+@print "はい！ ではこれより、<br>魔女の処刑を執行します～。" { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+# ========================================
+# 歯車がまわる音
+@sfx Sfx_36
+# ========================================
+
+@print ゴクチョーの宣言と共に、<br>仕掛けが作動しはじめた。 { speed:1 waitInput:true Wait:true }
+
+@print どこからか歯車の回転音が聞こえ、<br>中央の台座がわずかに揺れた。 { speed:1 waitInput:true Wait:true }
+
+@print 床が開き、台座がゆっくりと下降していく。 { speed:1 waitInput:true Wait:true }
+
+@print もともとあった台座と入れ替わる形で<br>現れたのは―― { speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR13,ArmL16,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open,Angle01/Head01/Facial01/Pale01>Pale01_01
+@print な……何これ……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+# ========================================
+# 振り子刃が揺れる音
+@sfx Sfx_94
+# ========================================
+
+@print 装置の天井部分から複数の鋭い刃が垂れ下がり、<br>振り子のように揺れている。 { speed:1 waitInput:true Wait:true }
+
+@print 刃の真下――<br>装置の中央には、人を拘束するための台が見えた。 { speed:1 waitInput:true Wait:true }
+@char Coco.Default,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Fearful_Open,Angle01/Facial/Mouth>Mouth_Pensive_Middle,Angle01/Facial/Pale>Pale01
+@print んだよ、あれ……<br>まさか、あの下に……？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 鈍い光を放ちながら揺れる刃を目に、<br>ココはガクガクと身を震わせる。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Jailer.5
+@print "ゴクチョーの合図で看守が動き、ココの腕を<ruby=\"つか\">掴</ruby>んだ。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Default,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Fearful_Open,Angle01/Facial/Mouth>Mouth_Angry_Open01,Angle01/Facial/Sweat>Sweat01,Angle01/Facial/Pale>Pale01
+@print "やめろって！ 触んなキモいから！<br>離せ離せ離せ！ やだ！ 行きたくないっ！！" { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@print じたばたと抵抗するココを、<br>看守がステージに引きずっていく。<br>そして、装置の台に彼女を拘束した。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ベルトで拘束する音
+@sfx Sfx_95
+# ========================================
+
+# ========================================
+@back 560_1 { Scale:{g_backgroundDefaultScale} time:0.6 }
+# ========================================
+
+# ========================================
+# 振り子刃が揺れる音
+@sfx Sfx_94
+# ========================================
+
+@print "ひっ、ひぃぃぃぃっ！？<br>こんなんやばいって……！ 死んじゃう死んじゃう……！<br>マジで死んじゃうからっ……！！" { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 互い違いに揺れる刃が、だんだんと下がってくる。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 振り子刃が揺れる音
+@sfx Sfx_94
+# ========================================
+
+@print "やだやだやだ！ 死にたくないっ！<br>止めろって！<br>お願いします！ 止めてくださいっ！！" { author:Coco speed:1 waitInput:true Wait:true }
+
+@print "迫りくる恐怖に表情を<ruby=\"ゆが\">歪</ruby>め、<br>ココは懇願するように叫んだ。" { speed:1 waitInput:true Wait:true }
+
+@print "そう言われましても、投票で決まったことなので。<br>ああ、そうだ。この様子を配信でもしたらどうです？<br>人生最後の生配信、処刑の瞬間！ とか。" { author:Warden speed:1 waitInput:true Wait:true }
+
+@print まあ、許可が出るかわかりませんけど……<br>バズるんじゃないですか？<br>あ、ＢＡＮされちゃいますかね？ { author:Warden speed:1 waitInput:true Wait:true }
+
+@print うっせえ、ふざけんなよ……！<br>おい、おめえら見てないで助けろってぇ！！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print ……ごめん、ココちゃん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 処刑の邪魔をすれば、その者まで処罰されてしまう。<br>エマだけでなく、他の誰もが恐怖に縛られていた。 { speed:1 waitInput:true Wait:true }
+
+@print "キモキモキモキモキモキモキモっ！<br>おめえら恨んでやるからなっ！<br>全員死ね！ 死ね死ね死ね死ねえ！" { author:Coco speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"じゅそ\">呪詛</ruby>の言葉を吐きながら頭を振り乱すココに、<br>鋭い刃は容赦なく迫っていく。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 振り子刃が揺れる音
+@sfx Sfx_94
+# ========================================
+
+@print もう無理だって……！<br>ああああっ……なんで、あてぃしが……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 振り子刃が揺れる音
+@sfx Sfx_94
+# ========================================
+
+@print 死にたくない、死にたくない、死にたくな――。 { author:Coco speed:1 waitInput:true Wait:true }
+
+# ========================================
+@back SolidColor
+# ========================================
+@StopBgm 
+# ========================================
+@hide Stills
+# ========================================
+
+
+# ========================================
+# ざんっと肉が切れる音
+@sfx Sfx_12
+# ========================================
+
+# ========================================
+# 切り裂く音
+@sfx Sfx_53
+# ========================================
+
+# ========================================
+@back 1_1 { Scale:{g_backgroundDefaultScale} time:0.6 }
+# ========================================
+
+@Wait 1.5
+
+# ========================================
+@bgm Bgm_20_1
+# ========================================
+
+@print "ココの処刑が執行された後。<br>エマは１人、監房で物思いに<ruby=\"ふけ\">耽</ruby>っていた。" { speed:1 waitInput:true Wait:true }
+
+# 処刑END3から流用
+@char Ema.Default,ArmR6,ArmL16,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open
+@print （また、殺人事件が起こるのかな……） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 処刑END3から流用
+@char Ema.Default,ArmR3,ArmL16,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Closed02,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Closed02
+@print （そのたびに誰かが殺されて……<br>　誰かが魔女として処刑されて……） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 処刑END3から流用
+@char Ema.Default,ArmR13,ArmL16,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open
+@print もしかしたら次はボクが……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 身震いして、エマは辺りを見回す。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Lifeless02,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@print なんだか、誰かに見られてるような気もするし……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@print "ココの処刑が終わった直後から、<br>エマは謎の視線を感じるようだと<ruby=\"おび\">怯</ruby>えていた。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ガタッという物音
+@sfx Sfx_64
+# ========================================
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Lifeless03,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@print なんの音だろ……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 不意に響いてきた音の正体を確かめようと、<br>エマは格子から通路の様子をうかがって―― { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+# ========================================
+# ぶんっと武器が振り下ろされる音
+@sfx Sfx_9
+# ========================================
+
+# ========================================
+# 桜羽エマ ＯＵＴ
+# ========================================
+
+# ========================================
+# ざんっと肉が切れる音
+@sfx Sfx_12
+# ========================================
+
+# ========================================
+@back SolidColor
+# ========================================
+
+@print 何者かによってエマの命が奪われた。<br>次の犠牲者となったエマを殺した犯人は誰なのか。 { speed:1 waitInput:true Wait:true }
+
+@print 新たな殺人者か。<br>あるいは今回の事件には真犯人が他にいたのか―― { speed:1 waitInput:true Wait:true }
+
+@print また、魔女裁判が開かれる。 { speed:1 waitInput:true Wait:true }
+
+@print 真実が明らかになる保証はどこにもない―― { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 『END～揺れる刃～』
+# ========================================
+
+# @end
+
+@Gosub System/System_Subroutine.EndAdv
+
+@ClearBacklog 
+@ReturnToTitle { time:1.2000000476837158 delay:0.6000000238418579 }

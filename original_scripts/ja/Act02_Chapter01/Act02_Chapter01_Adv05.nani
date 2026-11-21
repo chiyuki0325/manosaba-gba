@@ -1,0 +1,122 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-0-4
+
+# ========================================
+# ●シーン2‐0‐4
+# ========================================
+
+@back 1_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_22_1
+
+@print "――ある<ruby=\"かんぼう\">監房</ruby>にて。" { speed:1 waitInput:true Wait:true }
+
+# 配信フレームIN
+
+@ResetText 
+
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@back 1_1
+@blur MainBackground-Middle
+@camera { time:0 }
+@char Coco.Smile1
+@printer Normal.Stream { time:2 }
+@back SolidColor.Custom { time:1.5 }
+@Wait 1.8
+
+@print やっほ～沢渡ココだよ～！<br>あてぃしのこと、見えてる～？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print ちょっと、何をしていますのあなた……？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Coco.Angry1
+
+@print 勝手に入んなって！<br>今あてぃし、配信してるんだから！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print "配信……？ そんな機能もあるんですの？" { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Coco.Smile1,ArmR4,ArmL2
+
+@print へえっ、ふぅ～ん、ほぉ～～。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print "な～るほどね～！ こりゃひで～！<br>ふんふん、黒幕がいて、あてぃしが化け物になって……<br>サイテー！！" { author:Coco speed:1 waitInput:true Wait:true }
+
+@print あなた、誰と話してますの……？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Coco.Angry1,ArmR2,ArmL3
+
+@print "は？ あてぃしとだよ。" { author:Coco speed:1 waitInput:true Wait:true }
+
+@print "あてぃし？ 自分で自分に話しかけているってこと？<br>あなたまさかやべーやつなんですの？" { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1,ArmR4,ArmL2
+
+@print だからお嬢は入んなって！<br>今重要なとこなんだから！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print あてぃしを配信に映すことで、<br>あっちのあてぃしとアンテナが繋がったの。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print つっても、魔女化が進んだあてぃししか<br>使えねー能力みたいだから。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 今のあてぃしはあっちのあてぃしから<br>限定的な情報を得るくらいしかできんけど。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print ？？？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1,ArmR4,ArmL2
+
+@print ……あてぃしが死ぬとこまでだけど、<br>大体わかっちゃった。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 許せないよねえ。あてぃしが死ぬなんて。<br>あてぃしは、推しに会うまで死ぬわけにはいかないんだし。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.5 }
+@Wait 0.6
+@camera { time:0 }
+
+@StopBgm { fade:1 }
+@printer Normal.Simple { time:0.5 }
+
+@back 80_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1
+
+@print なあ、あてぃしの配信見てるやつさあ……<br>いるんだろ？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print そっちのことも見えてっから。 { author:Coco speed:1 waitInput:true Wait:true }
+
+# @back SolidColor.Custom subId:Overlay tint:#000000FF time:0.2
+# @wait 0.2
+@back 80_1 { time:0 }
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+
+# ＠備考◆ねっとりと
+
+@print 全部ひっくりかえしちゃおーっと。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@back SolidColor
+
+@print "絶望的なまでに暗い<ruby=\"つぶや\">呟</ruby>きと共に。" { speed:1 waitInput:true Wait:true }
+
+@print 新たな牢屋敷の日々が、スタートする。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 演出：画面がぷつんと切れる演出を入れたいです。
+# ========================================
+
+# ========================================
+# ＞2章OPムービー
+# ========================================
+
+# ========================================
+# 魔女裁判 第2章1話
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter01/Act02_Chapter01_Adv06

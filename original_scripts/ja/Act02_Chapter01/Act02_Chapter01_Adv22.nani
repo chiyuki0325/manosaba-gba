@@ -1,0 +1,134 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-1-17
+
+# ========================================
+# ●シーン2‐1-17
+# ========================================
+
+@back 140_3 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_32_1
+
+@print 月代ユキ――<br>【彼女】は、他の人とは違った。 { speed:1 waitInput:true Wait:true }
+
+@print まるで世界に実在できる居場所がないかのような<br>空気が形をもったような存在だった。 { speed:1 waitInput:true Wait:true }
+
+@print "触れた<ruby=\"かしょ\">箇所</ruby>から消えていってしまいそうな<ruby=\"はかな\">儚</ruby>さ。" { speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"しさ\">示唆</ruby>に<ruby=\"と\">富</ruby>んだ眼差し。<br>哀しみも喜びも感じさせない<ruby=\"たたず\">佇</ruby>まい。" { speed:1 waitInput:true Wait:true }
+
+@print そして――世界から嫌われていた。 { speed:1 waitInput:true Wait:true }
+
+@print 人と違うというのは、ある意味正しくない存在だ。<br>だから私は引き寄せられたのかもしれない。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@back 400_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print "人目に<ruby=\"さら\">晒</ruby>されれば迫害される。" { speed:1 waitInput:true Wait:true }
+
+@print だから自然と、私たちの集合場所は<br>誰の目にもつかない学校の屋上だった。 { speed:1 waitInput:true Wait:true }
+
+@print そして私は告げたんだ。 { speed:1 waitInput:true Wait:true }
+
+@print 君のことは私が守る。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "私が声をかけても、<br>ユキの眼はどこか遠くを見ているか、<br>もう１人の友人に<ruby=\"そそ\">注</ruby>がれていた。" { speed:1 waitInput:true Wait:true }
+
+@print "だから<ruby=\"たく\">託</ruby>した。" { speed:1 waitInput:true Wait:true }
+
+@print "もう１人の友人に、<ruby=\"たく\">託</ruby>したのに――……" { speed:1 waitInput:true Wait:true }
+
+@back SolidColor { time:2 }
+
+@ResetText 
+
+@StopBgm { fade:1 }
+@Wait 3
+
+# ガラス瓶の割れる音
+@sfx Sfx_120
+@Wait 3
+@bgm Bgm_20_1
+
+@print キャアァァァーッ！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@print いやあぁぁぁあ！！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print ぎゃっ、ぐぎゃあああああぁ！！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print なんてこと……！ { author:Margo speed:1 waitInput:true Wait:true }
+
+@print "何かの割れる音と、少女たちの<ruby=\"あびきょうかん\">阿鼻叫喚</ruby>によって、<br>唐突に古い夢が途切れた。" { speed:1 waitInput:true Wait:true }
+
+@print ――どれくらい気を失っていたのか、<br>急速に私の意識が浮上する。 { speed:1 waitInput:true Wait:true }
+
+@print （一体、何が……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "うずく頭部をおさえながら、<br>私は地面に<ruby=\"ひじ\">肘</ruby>をたてるが、すぐ立ち上がれない。" { speed:1 waitInput:true Wait:true }
+
+@print しっかりして、ヒロちゃん。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print マーゴが支えてくれて、<br>視界がはっきりしないまま部屋から出た。 { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@print ぼやけた視界が少しずつハッキリとしてくる。 { speed:1 waitInput:true Wait:true }
+
+@print 今一度、状況確認のために<br>部屋の様子を振り返った。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+
+# ========================================
+# 演出：ゆっくりと目を開く画面演出
+# ========================================
+
+@bgm Bgm_16_1_Loop
+
+@back 320_1 { time:0 }
+@animate Stills
+@back Transparent { time:1.2 }
+@Wait 2.4
+
+@animate Stills
+@back 320_1 { time:0.6 }
+@animate Stills-Middle
+@Wait 2.4
+
+@animate Stills-Middle
+@back 320_1 { time:0 }
+@blur Stills
+@animate Stills
+@blur Stills
+@hide Stills-Middle { time:0.6 }
+@Wait 3
+
+# ＠備考◆息を呑む
+
+@print ――！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私は、目を見開いた。 { speed:1 waitInput:true Wait:true }
+
+@print 純白の部屋に<br>血だまりができている。 { speed:1 waitInput:true Wait:true }
+
+@print その血だまりの赤は、<br>鮮やかな蝶の絵になっていた。 { speed:1 waitInput:true Wait:true }
+
+@print 倒れ伏す白い少女を中心に。 { speed:1 waitInput:true Wait:true }
+
+@print "白い少女の体には、<br>たくさんの赤い蝶が<ruby=\"むら\">群</ruby>がっている。" { speed:1 waitInput:true Wait:true }
+
+@print "白を<ruby=\"けが\">穢</ruby>す赤の群れは、<br>確実に命の終わりを告げる冷たさを<ruby=\"はら\">孕</ruby>んでいた。" { speed:1 waitInput:true Wait:true }
+
+@print 絶命していた。<br>私を襲ったはずの氷上メルル本人が――。 { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter01/Act02_Chapter01_Adv23

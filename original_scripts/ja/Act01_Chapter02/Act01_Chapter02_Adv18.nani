@@ -1,0 +1,231 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-2-18
+
+# ========================================
+# ●シーン1‐2-18
+# ========================================
+
+@back 5_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_35_1
+
+@print 少女たちは、ラウンジに集った。<br>集まらないと規則違反になるからだ。 { speed:1 waitInput:true Wait:true }
+
+@print 皆の瞳は一様にほの暗い。 { speed:1 waitInput:true Wait:true }
+
+@print ミリアが殺されたと報せが入り、<br>現場を見ていないマーゴとアリサも<br>その現実を拒否しているかのような顔だった。 { speed:1 waitInput:true Wait:true }
+
+@char Margo.Pensive1,ArmR2
+
+@print ミリアちゃんが殺されたなんて、<br>それは本当なの……？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Hanna.Normal1
+
+@print 本当ですわ。わたくしたちは、見てきましたの。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 明らかに殺されていたの？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default
+
+@print それは、そう、かもしれません……。<br>拘束されていましたし、誰かに刺されなければ、<br>あんな風には……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print マーゴは憂いげにため息をつく。 { speed:1 waitInput:true Wait:true }
+
+@char Margo.Pensive1,ArmR2
+
+@print そう……ということは、魔女裁判をやる、<br>ということよね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Pensive1
+
+@print 裁判とかマジだるいんだけど。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print "別にさ、あのおっさんが殺されたって<br>どうでもよくね？ だってあいつ、裏切り者じゃんよ。" { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,Option-ArmL-Off,ArmL7
+
+@print 黙れよクソ女。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1,ArmR3,ArmL2
+
+@print んなこと言ってさあ、ヤンキーがやったんじゃないの～？<br>気球壊されてめっっちゃキレてたよね？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print マジで燃やすぞ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Normal1
+@char Margo.Normal1,ArmR2
+
+@print 気球を壊された恨みはみんな持っていそうよね。<br>あら、ミリアちゃんを殺した動機って、<br>みんなが持っているということかしら。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print わたくしはそんなことで人殺しなんてしませんわ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 魔女になりかけてる子は、殺意にとらわれるんですもの。<br>わからないわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+
+@print （みんなの雰囲気が、険悪になってる……<br>　当然だ。誰かがミリアちゃんを殺した） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （その犯人を探さないと、<br>　ボクらも処刑されてしまう） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （みんな、疑い合ってるんだ。<br>　誰が殺したんだって） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "エマを中心にせっかく築き上げてきた仲間の絆は、<br><ruby=\"もろ\">脆</ruby>くも崩れ去りそうだった。" { speed:1 waitInput:true Wait:true }
+
+# フクロウの羽ばたき音
+@sfx Sfx_8
+
+@print そこで、天井近くからの羽ばたき音とともに、<br>ゴクチョーが現れる。 { speed:1 waitInput:true Wait:true }
+
+@char Warden.1
+
+@print はぁ……殺人事件……<br>起きちゃいましたね……しかも夜に……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 捜査は迅速にしたほうがいいでしょうし、<br>特例措置となりますが、今夜の０時に<br>【魔女裁判】を開廷します。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Surprised1,ArmR2,ArmL2
+
+@print "はっ！？ あと１時間半しかないじゃん！<br>バカなの！？" { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Warden.1
+
+@print そう言われましても……<br>私も時間外労働ですから。<br>これが待てる限界ですよ……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 今いる囚人の中から必ず殺人犯を特定してください。<br>その者は、【魔女】として処刑……<br>特定できなかったら全員処刑も変わりませんので。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 外出禁止時間ですが、捜査の間は出入り自由とします。<br>では、がんばって犯人を特定してくださいね。 { author:Warden speed:1 waitInput:true Wait:true }
+
+# フクロウの羽ばたき音
+@sfx Sfx_8
+
+@hideChars 
+@char Ema.Surprised1,ArmR3
+
+@print あ、ちょっ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 一方的な話を終え、<br>ゴクチョーは飛び去っていった。 { speed:1 waitInput:true Wait:true }
+
+@print "残された少女たちは<ruby=\"ぼうぜん\">呆然</ruby>と立ち尽くしてしまう。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print （１時間でミリアちゃんを殺した犯人を特定……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （そんなの、無理だよ！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Pensive1
+
+@print ……いっこ判明したことは、<br>ミリアさんは黒幕じゃなかったんですね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 脱獄の邪魔したから、<br>やっぱり黒幕だったのかなぁとも思ったんですが。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+
+@print う、うん……。そうなると、ますますミリアちゃんの<br>行動理由はわからないけど……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print と、とにかく急ごう。<br>捜査して、ミリアちゃんを殺した犯人を見つけなきゃ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマが入口に向けて走り出そうとした矢先だった。 { speed:1 waitInput:true Wait:true }
+
+@print 立ちはだかるように、マーゴがエマの前に立つ。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+@char Margo.Normal1,ArmR6
+
+@print マーゴちゃん、一体どう……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 提案があるのだけれど、いいかしら。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print エマの声を遮ったマーゴの声は、いつになく強い。 { speed:1 waitInput:true Wait:true }
+
+@print エマちゃんは、<br>シェリーちゃんたちと一緒に捜査をするつもりよね？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+
+@print う、うん、そのつもりだったけど。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマはシェリー、ハンナ、メルルを順番に見てしまう。<br>３人はしっかりと<ruby=\"うなず\">頷</ruby>いている。" { speed:1 waitInput:true Wait:true }
+
+@char Margo.Angry1,ArmR5
+
+@print それはやめにしない？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+
+@print えっ、それってどういう……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print あなたたちに結託されてしまうと、<br>あなたたちのグループ以外の人にとって、<br>とても不利なのよ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print シェリーがぽんと手を打つ。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR4,ArmL5
+
+@print "なるほど、票操作！ 私たちがあらかじめ決めておいたら、<br>誰かを犯人にできちゃいますね！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Margo.Normal1,ArmR5
+
+@print シェリーちゃん、理解が早くて助かるわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Normal1
+
+@print わたくしたちがそんな卑怯なことをするとでも！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Margo.Normal1,ArmR5
+
+@print しないとは思いたいけれど……<br>でも、あなたたち以外のグループにとっては、<br>やっぱり怖いでしょう？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@print だから、一緒に捜査はしないで、<br>単独で捜査するルールにしたいの。公平にするために。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print これ以上協力なんてしないでほしいのよ。<br>ね、エマちゃん。わかるでしょう？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print マーゴの圧のある物言いに、<br>エマは悲しげに眉を下げた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print （間違ったことは言ってないけど……<br>　マーゴちゃん……やっぱり誰のことも信じてなかったんだ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3
+
+@print わかった……みんな、単独で捜査しよう。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ただ、得た情報の共有はしていってもいいでしょう？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Margo.Smile1,ArmR1
+
+@print それはもちろん。犯人を特定するのが一番ですもの。<br>頑張りましょうね、エマちゃん。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print にっこりと笑うマーゴの顔を、<br>エマはまともに見れなかった。 { speed:1 waitInput:true Wait:true }
+
+@print エマたちはラウンジを出て、<br>それぞれに捜査を開始した。 { speed:1 waitInput:true Wait:true }
+
+@set "chosenAreaFlag = 0"
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter02/Act01_Chapter02_Adv19

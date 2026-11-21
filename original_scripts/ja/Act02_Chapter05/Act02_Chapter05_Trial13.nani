@@ -1,0 +1,512 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter05/Act02_Chapter05_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# クリーチャー化初期化
+@hide Hiro
+@char CreatureHiro.2 { Position:{hiroPositionX},{characterPositionY},{hiroPositionZ} Rotation:,{hiroRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Meruru
+@char CreatureMeruru.3-5 { Position:{meruruPositionX},{characterPositionY},{meruruPositionZ} Rotation:,{meruruRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Leia
+@char CreatureLeia.0-8 { Position:{leiaPositionX},{characterPositionY},{leiaPositionZ} Rotation:,{leiaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Noah
+@char CreatureNoah.0-3 { Position:{noahPositionX},{characterPositionY},{noahPositionZ} Rotation:,{noahRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Margo
+@char CreatureMargo.0-4 { Position:{margoPositionX},{characterPositionY},{margoPositionZ} Rotation:,{margoRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Nanoka
+@char CreatureNanoka.0-1 { Position:{nanokaPositionX},{characterPositionY},{nanokaPositionZ} Rotation:,{nanokaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+# ==============================================================================
+# MARK: 10-13: 💬 逃避行動
+# ==============================================================================
+# ＠ト書き▼議論10-13逃避行動
+# 議論開始カットイン
+# BGM変更：rAwTell Owk...
+@bgm Bgm_7_1
+
+# Judge10-13-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Closed,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@printDebate 魔女だとか魔法とか……<br>もういいって！
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@printDebate あてぃし帰るから！<br>こんなとこ<br>いられないっての！
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@printDebate そもそも<br>出る手段もないと思うが……。
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@printDebate "んなわけないっての！<br>絶対<link=\"Objection_02_05_13_01\">なんかある</link>に<br>決まってるし！"
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Angry_Open01
+@gosubModifyCamera 0
+@printDebate あてぃしは<br>帰らなきゃダメなの！<br>お前らなんかと<br>遊んでる暇ないんだよ！
+
+@char Coco.Default,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@printDebate ドッキリかなんか<br>知らないけどふざけんなよ！
+
+@char Coco.Default,ArmR4,ArmL4,Angle01/Facial/Eyes>Eyes_Gross_Open,Angle01/Facial/Mouth>Mouth_Angry_Open02,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@printDebate "マジお前らキモいから！<br>こっち<link=\"Objection_02_05_13_02\">見る</link>んじゃねー！！"
+
+# ＠備考◆泣きそう
+
+@char Coco.Default,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Cry_Open,Angle01/Facial/Mouth>Mouth_Gross_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@printDebate "……あてぃしのこと……<br><link=\"Objection_02_05_13_03\">うちに帰して</link>よぉ……！"
+
+
+# ==============================================================================
+# 10-13議論後独白
+# ==============================================================================
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@Wait 0.2
+
+@print （すでに十分、ココの精神は摩耗している……<br>　魔女化は近いか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@print （だが防衛機制は心を守るための働きだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@print （無理やりにでも<br>　逃避行動をやめさせれば<br>　ココの魔女化は近付くだろう……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@print （何か……そんな方法はなかったかな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-13-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_13_01
+
+@Skip false
+@pauseTrial true
+
+@choice ないものはない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-13-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_13_02
+
+@Skip false
+@pauseTrial true
+
+@choice 現実を見るんだ
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-13-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_13_03
+
+@Skip false
+@pauseTrial true
+
+@choice 泣いても解決しない！
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-13-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 10-13: ❌ 議論ミス選択肢
+# ==============================================================================
+# MARK: 10-13-3: ❌ 反論・ないものはない
+
+# Judge10-13-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print 諦めるんだココ……！<br>ないものはないんだ……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print 私は別の流れの世界を経験して<br>痛いほどわかっている。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR13,ArmL3,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Angry_Open01
+@gosubModifyCamera 0
+@print 知ったような口きいてんじゃねーよ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR13,ArmL4,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Angry_Closed
+@gosubModifyCamera 0
+@print そんなん、あんたがどんくさくて<br>見逃してただけでしょ！？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open02,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print だったら、【完全にない】なんて言い切れないじゃん！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Closed,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print なんと言われても、あてぃしは絶対見つけるから……！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL4,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Angry_Open01
+@gosubModifyCamera 0
+@print 邪魔すんじゃねー！！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print "（ココは<ruby=\"かたく\">頑</ruby>なに逃げようと考えている……）" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （彼女が真実から目をそらし続ける限り、状況は進展しない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （かといって、単純に否定をしたところで<br>　今のココは耳を貸さないか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （具体的な方向性を示せたら、あるいは……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-13-1
+
+# MARK: 10-13-4: ❌ 反論・泣いても解決しない
+
+# Judge10-13-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print 泣いたって状況は変わらないし、<br>誰も助けてくれたりなんかしない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print 自分でなんとかするしかないんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print ……なんでさっきからそんなに冷静なわけ？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print こんなわけわからない所に連れてこられてさ、<br>動揺しない方がおかしいっての……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL4,Angle01/Facial/Eyes>Eyes_Angry_Open,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print "――そっか！ あんたが黒幕なんだろ！" { author:Coco speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print 何を言って……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print やり直してるとか魔女だとか、<br>それも全部あてぃしらを騙すための嘘なんでしょ！？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR13,ArmL10,Angle01/Facial/Eyes>Eyes_Cry_Closed,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print もうやめてよ……！<br>あてぃしが何したって言うんだよ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （このまま話を続けても、<br>　素直に聞いてもらえる状態にはないな……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （彼女が真実から目をそらし続ける限り、状況は進展しない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （かといって、単純に否定をしたところで<br>　今のココは耳を貸さないか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （具体的な方向性を示せたら、あるいは……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge10-13-1
+
+# ==============================================================================
+# MARK: 10-13-2: ⭕ 反論：現実を見るんだ
+# ==============================================================================
+
+# Judge10-13-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@gosubCutIn CreatureHiro
+@Gosub System/System_Subroutine.EndDebate-Last
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+# カットイン
+
+@char CreatureHiro.4
+@gosubModifyCamera 0
+@print 現実を見るんだ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR8,ArmL9,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Comical_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print うっせー！<br>あてぃしが何を見ようが勝手だろ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR7,ArmL6,Angle01/Facial/Eyes>Eyes_Comical_Open,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print 見たいもんみて何が悪いのさ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.7
+@gosubModifyCamera 0
+@print それでも……真実から目を背けちゃダメなんだ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR13,ArmL10,Angle01/Facial/Eyes>Eyes_Comical_Open,Angle01/Facial/Mouth>Mouth_Angry_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……やだってのっ！！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.14
+@gosubModifyCamera 0
+@print （くっ……！<br>　やはり説得だけでは無理か……！？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char CreatureLeia.5-4
+@gosubModifyCamera 0
+@print ……なら、私が見せてあげようか。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.15
+@gosubModifyCamera 0
+@print ……レイア……？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureLeia.1-9
+@gosubModifyCamera 0
+@print さあココくん……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char CreatureLeia.1-1
+@gosubModifyCamera 0
+@Wait 0.2
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.15 }
+@Wait 0.15
+@back SolidColor.Custom { time:0.15 }
+@Wait 0.15
+
+@print 【こっちを見るんだ】。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Coco.Default,ArmR10,ArmL8,Angle01/Facial/Eyes>Eyes_Fearful_Open,Angle01/Facial/Mouth>Mouth_Angry_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……っ！？ { author:Coco speed:1 waitInput:true Wait:true }
+
+# BGM変更：Sen-Choose N'o SurC
+@bgm Bgm_38_1_Loop
+
+@char Coco.Default,ArmR10,ArmL8,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@shake Coco
+@print な……なんだよ……これ……！ { author:Coco speed:1 waitInput:true Wait:true }
+
+# SE・明るい音
+@sfx Sfx_Common_2
+
+@char CreatureLeia.2-1
+@gosubModifyCamera 0
+@print 【視線誘導】……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char CreatureLeia.2-1
+@gosubModifyCamera 0
+@print 私が使える魔法さ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR13,ArmL10,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Angry_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print は、はぁ……！？ { author:Coco speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char CreatureHiro.24
+@gosubModifyCamera 0
+@print （……強制的に、前を向かせている……！？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR8,ArmL7,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Angry_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ちょ……！<br>な、なんだよお前！<br>キモ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR8,ArmL9,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Angry_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print あてぃしに指図すんなよ……！ { author:Coco speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char CreatureLeia.2-1
+@gosubModifyCamera 0
+@print 指図じゃないよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char CreatureLeia.2-1
+@gosubModifyCamera 0
+@print ……私ができることは、<br>君を導くことだけだ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char CreatureLeia.3-1
+@gosubModifyCamera 0
+@print 顔を上げ、前を向いて、<br>そして未来を目指す……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char CreatureLeia.3-1
+@gosubModifyCamera 0
+@print それが正しい人生への向き合い方だ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char CreatureLeia.3-1
+@gosubModifyCamera 0
+@print "君の眼前の視界は、<br>すでに<ruby=\"ひら\">開</ruby>けている……。" { author:Leia speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char CreatureLeia.1-4
+@gosubModifyCamera 0
+@print いつまでも後ろを向いていてはいけないんだ！ { author:Leia speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Coco.Default,ArmR8,ArmL9,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Angry_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ぐっ……！？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char CreatureLeia.1-4
+@gosubModifyCamera 0
+@print さあ現実を見ようじゃないか、ココくん！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Cry_Open,Angle01/Facial/Mouth>Mouth_Angry_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print う、うぅ……！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Cry_Open,Angle01/Facial/Mouth>Mouth_Gross_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print あてぃしだって……わかってるよ……！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Cry_Open,Angle01/Facial/Mouth>Mouth_Pensive_Middle,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print お前らの言うこと……きっと、正しいんだと思う……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR13,ArmL10,Angle01/Facial/Eyes>Eyes_Cry_Open,Angle01/Facial/Mouth>Mouth_Pensive_Middle
+@gosubModifyCamera 0
+@print でもじゃあ……<br>あてぃしはどうしたらいいってんだよ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR13,ArmL10,Angle01/Facial/Eyes>Eyes_Cry_Open,Angle01/Facial/Mouth>Mouth_Cry_Open
+@gosubModifyCamera 0
+@print "どうすりゃいいのさ！ なあ！<br>教えてよ！" { author:Coco speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.25
+@gosubModifyCamera 0
+@print （……話を聞く気になってくれたか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.25
+@gosubModifyCamera 0
+@print （ココは目の前の現実に【視点】を移した……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print （物理的な【視線】だけでなく、<br>　概念的な【視野】まで広げてしまうとは） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print （レイアの魔法もまた、<br>　魔女化によって強化されているのか……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@update Leia
+@toast "魔女図鑑 更新…"
+
+@StopBgm 
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （ともかく……<br>　これで話ができる状態になった） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （話の流れを途切れさせないようにしながら……<br>　彼女の心の弱点を探るんだ……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto Act02_Chapter05/Act02_Chapter05_Trial14

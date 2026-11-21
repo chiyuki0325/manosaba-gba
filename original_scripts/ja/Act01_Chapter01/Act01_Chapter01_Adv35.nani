@@ -1,0 +1,830 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-1-31
+
+# ========================================
+# ●シーン1-1‐31
+# [back 13]
+# ========================================
+
+# ========================================
+# [bgm Bgm_042_001_Loop]
+# ========================================
+
+@bgm Bgm_42_1
+
+@ShowUI ControlPanel
+@back 13_1 { time:0 }
+@Wait 0.9
+
+@back Transparent { time:1.8 }
+@WaitForNextFrame 
+
+@animate MainBackground
+@Wait 1.5
+
+@print 蓮見レイアが<br>城ケ崎ノアを殺した犯人だった――。 { speed:1 waitInput:true Wait:true }
+
+@print "その事実を突き止めた<ruby=\"すがすが\">清々</ruby>しさはなく、<br>やるせない思いがエマの胸を<ruby=\"つ\">衝</ruby>く。" { speed:1 waitInput:true Wait:true }
+
+@print 当然、少女たちによる魔女を選出する投票は、<br>全員一致でレイアとなった。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@back 14_1
+@blur MainBackground-Middle
+@char Ema.Pensive1,ArmR3
+@Wait 0.3
+
+@print なんで……？<br>なんでノアちゃんを殺したの？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Angry1
+
+@print "わかんないよ……ノアちゃんは何も悪いことなんて<br>していなかったじゃないか……！ なんで！？" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "悲痛な声でエマが問うと、<br>レイアは<ruby=\"かす\">微</ruby>かに笑みを浮かべた。" { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@animate MainBackground
+@spawn MaskingRectangle
+@back 14_1
+@blur MainBackground-Front
+@char Leia.Smile1,ArmR3
+@mask MainBackground-Front,Leia-Front
+@Wait 0.3
+
+@print ノアくんの同室であるアンアンくんが倒れただろう？<br>それで私は、彼女を守らないとと思ってしまった。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+
+@print あ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print カラースプレーの刺激臭で、<br>アンアンはずいぶん参ってしまっていた。 { speed:1 waitInput:true Wait:true }
+
+@print 医務室で青ざめて眠るアンアンの姿は、<br>エマも何度か見かけた。 { speed:1 waitInput:true Wait:true }
+
+@print 私はか弱きものを守らなくてはという思いに、<br>突き動かされてしまったようだ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print （でも、ノアちゃんだって同じように<br>　この牢屋敷に捕まった同士なのに……<br>　なんだか、もやもやする……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"しゃくぜん\">釈然</ruby>としない思いから、<br>エマは胸元をぎゅっと押さえる。" { speed:1 waitInput:true Wait:true }
+
+@print "レイアは犯人だと言い当てられて観念したのか、<br>諦めたような<ruby=\"ほほえ\">微笑</ruby>みは、<ruby=\"すがすが\">清々</ruby>しさすらあった。" { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@back 14_1 { time:0 }
+@blur MainBackground
+@char AnAn.Fearful1,Angle01/Option_Arms- { time:0 }
+@animate MainBackground
+@animate AnAn
+@hide MainBackground-Middle,MainBackground-Front,Ema-Middle,Leia-Front
+@despawn MaskingRectangle
+@Wait 0.3
+
+@print ――……ちが……っ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@back 14_1
+@char AnAn.Fearful1,Angle01/Option_Arms-
+@Wait 0.3
+
+@print "そこで声を上げたのは、アンアンだった。<br>青ざめ、<ruby=\"ぼうぜん\">茫然</ruby>とレイアを見ている。" { speed:1 waitInput:true Wait:true }
+
+@print アンアンちゃん……？<br>一体何を……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ――もういいよ。<br>やめるんだ、アンアンくん。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print レイアは静かに言い放った。 { speed:1 waitInput:true Wait:true }
+
+# @char Leia.Normal1 subId:Front
+
+@print 私のことを庇ってくれなくてもいいんだ。<br>もう覚悟は決めたよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char AnAn.Pensive1,Angle01/Option_Arms-
+
+# ＠備考◆悲しそうに息を呑む
+
+@print ……っ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Cry1,Angle01/Option_Arms-
+
+@print "アンアンの片目から、<br>ひとしずくの涙が<ruby=\"ほお\">頬</ruby>を伝い落ちていく。" { speed:1 waitInput:true Wait:true }
+
+@print でも、これだけはわかってほしいんだ。<br>私はただ、アンアンくんを守りたい一心で……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [bgm Bgm_042_002_Loop]
+# ========================================
+
+@StopBgm 
+@bgm Bgm_42_2
+
+@HidePrinter 
+@back 14_1
+@char AnAn.Fearful1,Angle01/Option_Arms-
+@Wait 0.3
+
+@print アンアンは首をふるふると横に振った。 { speed:1 waitInput:true Wait:true }
+
+@print ちが……ちがう。レイア、貴様は間違っている。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print え……？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char AnAn.Fearful1,Angle01/Option_Arms-
+
+@print わがはいは、弱くない……。<br>ノアが、わがはいに絵をくれた……。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print お守り、だと……。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print （あ――） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "アンアンのスケッチブックには、<br><ruby=\"ちょう\">蝶</ruby>の絵が描いてあった。" { speed:1 waitInput:true Wait:true }
+
+@print "それは、ノアが描いたものだ。<br>エマの<ruby=\"のうり\">脳裏</ruby>に、過去の出来事が呼び起こされる。" { speed:1 waitInput:true Wait:true }
+
+@hideAll 
+
+# ========================================
+# シーン1-1‐5の回想（流用）
+# ========================================
+
+@HidePrinter 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@hide MainBackground-Middle,AnAn-Middle { time:0 }
+@back 2_1 { time:0 }
+@char Ema.Pensive1,ArmR3 { time:0 }
+@char Noah.Normal1,ArmL4 { time:0 }
+@WaitForNextFrame 
+
+@blur MainBackground
+@blur Ema
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@print ……びっくりさせちゃったのかな？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@blur Noah
+@blur Ema
+@Wait 0.3
+
+@print う、うん。そうみたい。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@char Noah.Smile1
+@blur Ema
+@blur Noah
+@Wait 0.3
+
+@print じゃあ、今度はアンアンちゃんが喜んでくれる<br>絵を描くね！ { author:Noah speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 回想ここまで
+# ========================================
+
+@HidePrinter 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@blur Ema
+@hide MainBackground,Noah { time:0 }
+@back 14_1 { time:0 }
+@char Ema.Pensive1,ArmR3 { time:0 }
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@print （何度か具合が悪くなっていたけど、<br>　アンアンちゃんとノアちゃんが<br>　同じ部屋で過ごした時間もあるはず） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （きっとその時、ノアちゃんは<br>　アンアンちゃんに喜んでもらおうと――） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （スケッチブックに、絵を描いたんだ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char AnAn.Normal1,Angle01/Option_Arms-
+@mask MainBackground-Middle,AnAn-Middle
+@Wait 0.3
+
+@print ノアは、蝶の絵だけは<br>魔法をコントロールさせて自由に描けると言っていた。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Pensive1
+
+@print だから、おまじない、だと――。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 回想シーン（新規）
+# ========================================
+
+@HidePrinter 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@mask MainBackground-Middle,AnAn-Middle { Enable:false }
+@despawn MaskingRectangle
+@hide MainBackground-Middle,Ema { time:0 }
+@back 9_1 { time:0 }
+@char Noah.Normal1,ArmL1 { time:0 }
+@blur Noah
+@char AnAn.Normal1 { time:0 }
+@blur AnAn-Middle
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@print 『ノア！<br>　わがはいのスケッチブックに勝手にラクガキしたな！』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@blur AnAn-Middle
+@blur Noah
+@Wait 0.2
+
+@char Noah.Smile1
+@Wait 0.1
+
+@print あ、うん。<br>えへへえ、のあね、蝶の絵は得意なんだよ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print これだけは、のあの魔法、コントロールできるみたい。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Normal1
+
+@print 蝶になぁれって念じると、<br>ちゃーんと全部蝶の絵になってくれるんだぁ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print 赤いのが怖かったんだよね？<br>だからね、のあが魔法をかけたよ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print 赤色はみーんな、みーんな<br>蝶の絵になあれって。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Smile1
+
+@print これでもう、怖くないよね。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print …………。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 回想ここまで
+# ========================================
+
+@HidePrinter 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@blur AnAn-Middle
+@hide Noah,AnAn-Middle { time:0 }
+@back 14_1 { time:0 }
+@char AnAn.Pensive1,Angle01/Option_Arms- { time:0 }
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@print お守りに、スケッチブックにも、描いてくれたんだ。<br>わがはいが怖い目に遭わないようにって。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Cry1
+
+@print 流れる血まで、みんなが怖がらないようにって……<br>蝶になったんだ……！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print アンアンはぽろぽろと涙をこぼす。<br>久々に声を発したのか、<br>その声はたどたどしく枯れている。 { speed:1 waitInput:true Wait:true }
+
+@print それでも、なんとか伝えようと<br>必死で訴えかけてきている。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Margo
+@mask MainBackground-Middle,Margo-Middle
+@animate MainBackground-Middle
+@animate Margo-Middle
+@Wait 0.3
+
+@print 蝶の意味は、不死、不滅――。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print ノアちゃんのダイイングメッセージは、<br>私たちに当てていたのかもしれないわね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print みんなどうか、死なないでって。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@animate MainBackground-Middle
+@animate Margo-Middle
+@hide MainBackground-Middle,Margo-Middle
+@despawn MaskingRectangle
+@Wait 0.3
+
+@print "マーゴがぽつりと<ruby=\"つぶや\">呟</ruby>いた言葉は、<br>少女たちの胸に<ruby=\"おもおも\">重々</ruby>しく刺さったのだろう。<br>全員が、<ruby=\"かな\">哀</ruby>しげに<ruby=\"うつむ\">俯</ruby>いた。" { speed:1 waitInput:true Wait:true }
+
+@char AnAn.Pensive1
+
+@print ……ノアが最期に見たのは、<br>おそらくレイアの姿、だろう。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print ノアは、刺されてもなお、<br>レイアを怖がらせないように<br>血を、蝶の絵に変えたんじゃないのか。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Middle,Margo-Middle
+@mask MainBackground-Middle,Margo-Middle { Enable:false }
+@char AnAn.Cry1,Angle01/Option_Arms-
+
+@print 本当にみんなのことを守ろうとしていたのは、<br>ノアの方、じゃないのか……！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@hideAll 
+
+@HidePrinter 
+@back 14_1 { time:0.2 }
+@char Leia.Fearful1,ArmR8,ArmL4 { time:0.2 }
+@WaitForNextFrame 
+
+@animate MainBackground-Middle
+@animate Leia-Middle
+@Wait 0.2
+
+@shake Camera
+@Wait 0.2
+
+# ＠備考◆衝撃で息を呑む
+
+@print ――！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@print レイアが衝撃によろめき、<br>その場に膝をついた。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@animate MainBackground-Middle,Leia-Middle
+@back 14_1 { time:0 }
+@char Leia.Surprised1,ArmR8,ArmL4 { time:0 }
+@hide AnAn { time:0 }
+@hide MainBackground-Middle,Leia-Middle
+@Wait 0.3
+
+@print みんなが怖がらないように。<br>どうか、死なないように。 { speed:1 waitInput:true Wait:true }
+
+@print それは、囚人の少女たち全員に当てられた<br>ノアからの心からの願いと、魔法。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@back 14_1
+@char Leia.Fearful1
+@Wait 0.3
+
+@print そんな、そんな、私は――。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print レイアは目を見開き、力なく膝を折る。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@animate MainBackground-Middle,Leia-Middle
+@back 14_1 { time:0 }
+@char Warden.1 { time:0 }
+@hide Leia { time:0 }
+@hide MainBackground-Middle,Leia-Middle
+@animate MainBackground
+@animate Warden
+@Wait 0.5
+
+@StopBgm 
+
+@print あっ、お話終わりました？<br>時間も押してますし、<br>そろそろ進行したいんですが……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@animate MainBackground,Warden
+@back 580_1 { Scale:{g_backgroundDefaultScale} time:0.6 }
+@Wait 0.6
+
+@print 各自のスマホにボタンが表示されていると思うので、<br>全員がそれを押したら処刑執行スタートします。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print えっ、ボ、ボクらが押すの……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ええ。そのように決まっていますので<br>お願いします～。<br>ぐーっと長く押していただけますと……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print （そ、そんな、ボクらが<br>　レイアちゃんを処刑する<br>　ボタンを押すなんて……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 少女たちは青ざめながら、<br>次々に手元のボタンを押していく。 { speed:1 waitInput:true Wait:true }
+
+@print "激しい<ruby=\"どうき\">動悸</ruby>に襲われながら、<br>エマもまたボタンの上に手を添えた。" { speed:1 waitInput:true Wait:true }
+
+# TODO: ループ再生化する
+@sfx Sfx_35
+
+@ProcessInput false
+@HidePrinter 
+@HideUI ControlPanel,AutoToggle,WitchBookButtonUI
+@ShowUI ExecutionButton
+
+@if !enableDebugSkip
+	@Skip false
+	@Stop 
+
+# ExecutionConfirmed
+
+@bgm Bgm_31_1
+@HideUI ExecutionButton
+@hide Stills-Middle { time:0.6 }
+@Wait 0.9
+
+@ProcessInput true
+@ShowUI ControlPanel,AutoToggle,WitchBookButtonUI
+@EmoteJump Warden
+@print "はい！ ではこれより、<br>魔女の処刑を執行します～。" { author:Warden speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [sfx 36：歯車がまわる音]
+# ========================================
+
+@sfx Sfx_36
+@HidePrinter 
+@animate Warden
+@WaitForNextFrame 
+
+@animate MainBackground
+@animate Warden
+@back SolidColor { time:0.9 }
+@Wait 1.1
+
+@print ゴクチョーの宣言と共に、<br>何かの仕掛けが作動しはじめた。 { speed:1 waitInput:true Wait:true }
+
+@print どこからか歯車の回転音が聞こえ、<br>中央の台座がわずかに揺れた。 { speed:1 waitInput:true Wait:true }
+
+@print 少女たちの注目が集まる中、床が開き、<br>台座がゆっくりと下降していく。 { speed:1 waitInput:true Wait:true }
+
+@print そして、もともとあった台座と入れ替わる形で<br>新たな台座が現れた。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [still illust 41‐3]
+# ========================================
+
+@HidePrinter 
+@animate MainBackground,Warden
+@hide MainBackground,Warden { time:0 }
+@Wait 0.9
+
+@back 410_3 { time:0 }
+@animate Stills
+@back Transparent { time:1.2 }
+@Wait 2.4
+
+@animate Stills
+@back 410_3 { time:0.6 }
+@animate Stills-Middle
+@Wait 2.4
+
+@animate Stills-Middle
+@back 410_3 { time:0 }
+@blur Stills
+@animate Stills
+@blur Stills
+@hide Stills-Middle { time:0.6 }
+@Wait 3
+
+@print "大がかりな仕掛けと共に現れた台座に、<br>エマたちは一様に<ruby=\"あぜん\">唖然</ruby>とし、言葉を失っていた。" { speed:1 waitInput:true Wait:true }
+
+@print （これが……処刑台……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 台座の中央には、西洋風の天使像が現れていた。 { speed:1 waitInput:true Wait:true }
+
+@print 細部まで精巧に彫られた天使像は、<br>柔らかな表情を浮かべている。 { speed:1 waitInput:true Wait:true }
+
+@print "翼を広げ、空を見上げる様は<br>見る者に神聖さと安らぎをもたらす、<br>まるで<ruby=\"じあい\">慈愛</ruby>と平和の象徴――" { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@animate Stills
+@back 410_3
+@animate Stills-Middle
+@Wait 0.6
+
+@print 蓮見レイアさんには、<br>この中に入ってもらいます。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print "ハッ、天使の中に？ 綺麗になあれってか。嫌味かよ。" { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print なんだか悪趣味ね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [hideStill]
+# ========================================
+
+@print 天使像を見てもどういった処刑がなされるのか、<br>エマたちには想像もつかない。 { speed:1 waitInput:true Wait:true }
+
+@print ただ、レイアは先ほどよりももっと、<br>ひどく青ざめていた。ガクガクと震えてすらいる。 { speed:1 waitInput:true Wait:true }
+
+@print （レイアちゃん……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print あ、他の人たちは動かないでくださいね。<br>邪魔や介入をすれば、看守がその者も同様に断罪します。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@back 14_1 { time:0 }
+@char Jailer.1 { time:0 }
+@animate MainBackground
+@animate Jailer
+@hide Stills { time:0 }
+@hide Stills-Middle
+@Wait 0.5
+
+@print ゴクチョーが翼でばさりと合図し、<br>入口付近に立っていた看守が動きはじめる。 { speed:1 waitInput:true Wait:true }
+
+@print 看守がレイアの席へと近寄り、<br>彼女をがっちりと捕まえてステージ上へと引きずっていく。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@animate Jailer
+@WaitForNextFrame 
+
+@back 14_1 { time:0.6 }
+@char Jailer.1 { time:0.6 }
+
+@WaitForNextFrame 
+@animate Jailer
+@animate Jailer-Middle
+@char Leia.Fearful1,ArmR4,ArmL4
+@Wait 0.5
+
+@EmoteShake Leia-Middle
+@Wait 0.2
+
+@print "ま、待ってくれ……！<br>い、いやだ！ 【あれ】の中には入りたくない！" { author:Leia speed:1 waitInput:true Wait:true }
+
+@print レイアは遅すぎる抵抗をはじめた。<br>看守に捕まって、じたばたともがく。 { speed:1 waitInput:true Wait:true }
+
+@print "少女たちは席に座ったまま、<br><ruby=\"ちんつう\">鎮痛</ruby>な<ruby=\"おもも\">面持</ruby>ちで一連の流れをただ見守ることしかできない。" { speed:1 waitInput:true Wait:true }
+
+@char Leia.Surprised1,ArmR4,ArmL4
+
+@print "や、やめてくれ！ 本当に嫌なんだ！！<br>裁判のやり直しを要求する！" { author:Leia speed:1 waitInput:true Wait:true }
+
+@print バカじゃねーの。<br>何度やってもお前は魔女だよ。人を殺したんだから。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print "だって知らなかったんだ！ ノアくんとアンアンくんが同室で、<br>うまくやっていけそうだったなんて。" { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Fearful1,ArmR1
+
+@print 知っていたらノアくんを殺さなかった！<br>私はただみんなを守りたかっただけなんだ！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@animate Jailer,Jailer-Middle,Leia-Middle
+@WaitForNextFrame 
+
+@animate Jailer-Middle
+@Wait 0.04
+
+@char Leia.Surprised1
+@animate Leia-Middle
+@Wait 0.9
+
+@animate Jailer-Middle
+@Wait 0.04
+
+@char Leia.Fearful1
+@animate Leia-Middle
+@back SolidColor { time:0.7 }
+@Wait 0.9
+
+@print "どんなに全力であがいても敵わず、<br>看守は<ruby=\"ようしゃ\">容赦</ruby>なくレイアを引きずる。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [sfx 37：像が開く音]
+# ========================================
+
+@sfx Sfx_37
+
+@print そして――天使像が中央から割れて、開いていく。<br>そこであちこちから悲鳴が漏れた。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@animate Jailer-Middle,Leia-Middle
+@hide MainBackground,Jailer,MainBackground-Middle,Jailer-Middle,Leia-Middle { time:0 }
+@back 410_1 { time:0 }
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@print ひっ……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print これはまた、痛そうですね……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print "少女たちの多くがあまりの光景に目を<ruby=\"そ\">逸</ruby>らした。<br>エマも同様だった。" { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@back 410_1
+@Wait 0.3
+
+@print 天使像の内部には大量の細長く鋭い針がついていて――<br>これを閉じられたら、<br>中にいる人間は全身串刺しになる。 { speed:1 waitInput:true Wait:true }
+
+@print （こ、これに入れって言うの……！？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 拘束されたレイアが、その中に入れられる。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [bgm Bgm_045_001_Loop]
+# ========================================
+
+# ========================================
+# [still illust 41‐1]
+# ========================================
+
+@HidePrinter 
+@back 410_1 { time:0 }
+@WaitForNextFrame 
+
+@animate Stills
+@hide Stills-Middle
+@Wait 0.3
+
+@print "針数はえげつないが、<br><ruby=\"ひつぎ\">棺</ruby>の中は美しく青い<ruby=\"ばら\">薔薇</ruby>が、ぎっしりと敷き詰められていた。" { speed:1 waitInput:true Wait:true }
+
+@print "天使像の内部に入れられたレイアは、青い<ruby=\"ばら\">薔薇</ruby>に囲まれ、<br>恐怖で顔を引き<ruby=\"つ\">攣</ruby>らせていながらも、<br><ruby=\"せいさん\">凄惨</ruby>な美しさがあった。" { speed:1 waitInput:true Wait:true }
+
+@print 外見は天使像だけど、<br>処刑方法はアイアンメイデンということよね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print やっぱり悪趣味だわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print どこかうっとりしたようにマーゴが漏らす。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@back 410_1
+@WaitForNextFrame 
+
+@animate Stills-Middle
+@Wait 0.5
+
+@print "いやだ！ お願い！ お願いします！<br>これを閉めないで！！ やだあぁぁぁ！！" { author:Leia speed:1 waitInput:true Wait:true }
+
+@print "レイアが<ruby=\"いのち\">命</ruby><ruby=\"ご\">乞</ruby>いのようなものを始めたのも、<br>無理がないと感じた。" { speed:1 waitInput:true Wait:true }
+
+@print （あの像が閉じたら、レイアちゃんは……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "想像しただけで<ruby=\"せんりつ\">戦慄</ruby>し、吐き気が込み上げてくる。" { speed:1 waitInput:true Wait:true }
+
+@shake Camera
+
+@print お願いだから他の処刑方法にして！！<br>閉めないでください！！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@print "他の処刑方法にしよう！！<br>これはダメだ！！ だってみんなに見えないじゃないか！！" { author:Leia speed:1 waitInput:true Wait:true }
+
+@print （みんなに、見えない……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print その悲痛な叫びに、エマはほんの少し違和感を抱いた。<br>それは他の少女たちも同様だったらしい。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@animate Stills
+@spawn MaskingRectangle
+@back 14_1
+@char Coco.Normal1,ArmR6,ArmL4
+@mask MainBackground-Front,Coco-Front
+@animate MainBackground-Front
+@animate Coco-Front
+@Wait 0.4
+
+@bgm Bgm_43_1
+
+@print ――やっぱね。みんなを守りたかったなんて、嘘ばーっか。<br>ノアを殺した動機、わかっちゃった。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print ココは、邪悪な笑みを浮かべて<br>処刑台に立たされるレイアを見据えた。 { speed:1 waitInput:true Wait:true }
+
+@char Coco.Smile1
+
+@print あんたがノアを殺したのは、<br>自分が一番目立たない状況が許せなかったからでしょ？ { author:Coco speed:1 waitInput:true Wait:true }
+
+# ＠備考◆ぎくりと肩が揺れる
+
+@print ！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@animate MainBackground-Front,Coco-Front
+@WaitForNextFrame 
+
+@animate MainBackground-Front
+@animate Coco-Front
+@hide MainBackground-Front,Coco-Front
+@despawn MaskingRectangle
+@spawn MaskingRectangle
+@back 14_1
+@blur MainBackground-ForeFront
+@char Sherry.Normal1,ArmR4,,ArmL5
+@mask MainBackground-ForeFront,Sherry-ForeFront
+@animate MainBackground-ForeFront
+@animate Sherry-ForeFront
+@Wait 0.4
+
+@print "ああ、なるほど！ 【バルーン】の方が動機でしたか！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ぽん、とシェリーが手を打った。 { speed:1 waitInput:true Wait:true }
+
+@print 知名度的には、芸能人のレイアさんより、<br>圧倒的に上ですもんね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1
+
+@print 何せノアさんは、世界で有名なアーティストです。<br>ああ、やっと殺害動機がしっくり来ました！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-ForeFront,Sherry-ForeFront
+@WaitForNextFrame 
+
+@animate MainBackground-ForeFront
+@animate Sherry-ForeFront
+@hide MainBackground-ForeFront,Sherry-ForeFront
+@despawn MaskingRectangle
+
+@print ちが、ちが……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print レイアは涙目になって、<br>がくがくと震えている。 { speed:1 waitInput:true Wait:true }
+
+@print "王子様の仮面を<ruby=\"ようしゃ\">容赦</ruby>なく<ruby=\"は\">剥</ruby>がされていき――" { speed:1 waitInput:true Wait:true }
+
+@print 彼女は今までに見たことないほど、<br>情けない表情になっていた。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@animate MainBackground-ForeFront,Sherry-ForeFront
+@back 410_1 { time:0 }
+@pivot Stills-Front
+@WaitForNextFrame 
+
+@blur Stills-Front
+@animate Stills-Front
+@hide Stills-Front { time:1.2 }
+@Wait 1.1
+
+@print "その顔に<ruby=\"きれつ\">亀裂</ruby>が入り、<br>手の爪がありえないスピードで伸びていく。" { speed:1 waitInput:true Wait:true }
+
+@print （レイアちゃん、魔女化してる…！？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマたちは、蓮見レイアの深層に踏み込んでしまった。 { speed:1 waitInput:true Wait:true }
+
+@print "――彼女の<ruby=\"きんき\">禁忌</ruby>に、触れてしまったのだ。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [still illust 41‐2]
+# ========================================
+
+@HidePrinter 
+@animate Stills-Middle
+@Wait 0.3
+
+@print あ、ああ、あ――。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print ああそうだ、認めるよ！<br>私は目立ちたかった！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 一番目立たないといけなかった！<br>だから、許せなかった！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 城ケ崎ノアに、舞台の主役を奪われて、<br>あいつを殺さないといけないと思ったんだよ！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@print あいつが邪魔だったんだよ！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@print （ああ、そうか――レイアちゃんは<br>　串刺しになるのが嫌なんじゃなくて……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@back 410_2
+@Wait 0.3
+
+@print これを閉めたら、みんなが私のこと、<br>見れなくなっちゃうじゃないか！！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 見られないことが、嫌だった。 { speed:1 waitInput:true Wait:true }
+
+@back 410_2 { time:0 }
+@WaitForNextFrame 
+
+@animate Stills
+@hide Stills-Middle
+
+@print "もっと私を見てくれよ！<br>私だけを見てよ！ やだぁぁぁ！！" { author:Leia speed:1 waitInput:true Wait:true }
+
+@print その悲痛な叫びは、今までのものとまるで違う。 { speed:1 waitInput:true Wait:true }
+
+@print レイアの、本当の声に聞こえた。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@animate Stills-Middle
+@WaitForNextFrame 
+
+@back 410_2
+@WaitForNextFrame 
+
+@animate Stills-Middle
+@Wait 1.5
+
+@animate Stills,Stills-Middle
+@WaitForNextFrame 
+
+@back 410_3 { time:0 }
+@pivot Stills-Front
+@back 410_3 { time:0 }
+@blur Stills-Front
+@hide Stills-Middle
+@WaitForNextFrame 
+
+@animate Stills-Front
+@hide Stills-Front { time:1.2 }
+@Wait 2.1
+
+@animate Stills-Front
+
+@print あぁぁぁぁぁ！！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 悲鳴を閉じ込めるように、<br>天使像が閉じられた。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@Wait 0.6
+
+@back SolidColor { time:1.8 }
+@Wait 3.6
+
+# ========================================
+# [sfx 37：像が開く音]
+# ========================================
+
+@sfx Sfx_37
+
+# ========================================
+# [back 黒]
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter01/Act01_Chapter01_Adv36

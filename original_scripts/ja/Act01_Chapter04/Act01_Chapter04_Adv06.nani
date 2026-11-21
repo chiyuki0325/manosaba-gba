@@ -1,0 +1,298 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-4-6
+
+# ========================================
+# ●シーン1‐4-6
+# ========================================
+
+@back 22_4 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_5_1
+
+@print 翌朝、エマは再びゲストハウスの前に来ていた。 { speed:1 waitInput:true Wait:true }
+
+@print （よおし……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "もう一度地下施設を調べてみようと、<br>【<ruby=\"ウンディーネ\">水精</ruby>の間】へとずんずん向かっていく。" { speed:1 waitInput:true Wait:true }
+
+@print そのエマの前に。 { speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Default
+
+@print 待って。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 遮るようにナノカが立った。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+@char Nanoka.Default
+
+@print ナノカちゃん！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 一体どこへ行くつもり？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 静かに問うナノカの表情はなく、<br>何を考えているのか読めない。 { speed:1 waitInput:true Wait:true }
+
+@print "瞬間エマは動揺したが、<ruby=\"とっさ\">咄嗟</ruby>に表情を繕う。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print "えっ、と……【<ruby=\"ウンディーネ\">水精</ruby>の間】に行こうかなと。" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print なんのために？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 少し中を調べてみようかなって。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "あなたは昨夜も長時間【<ruby=\"ウンディーネ\">水精</ruby>の間】の中にいた。<br>あの部屋はさほど広くないのに、<br>何をそんなに調べる必要があるの？" { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print 昨日も見てたんだ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print あんなに慌てて中に入っていったんだもの。<br>注視する必要があるでしょう。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print "【<ruby=\"ウンディーネ\">水精</ruby>の間】に何があるの？" { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマは答えを<ruby=\"しゅんじゅん\">逡巡</ruby>した。<br>昨夜見た囚人ファイルが一瞬頭をよぎる。" { speed:1 waitInput:true Wait:true }
+
+@print （ナノカちゃんは一体何者なの……信用していい相手……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print けれど、迷いはすぐに吹っ切れる。 { speed:1 waitInput:true Wait:true }
+
+@print 何度も疑心暗鬼に陥って、<br>相手を信じ切れず、良い結果にはならなかった。 { speed:1 waitInput:true Wait:true }
+
+@print （ナノカちゃんは味方だ。ボクは信じる） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3
+
+@print ……中で隠し部屋を見つけたんだ。<br>それが、地下にある謎の施設と繋がってて……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "！ 本当なの？" { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print う、うん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 私も調べさせてほしい。<br>……ただ、隠されていたのなら<br>牢屋敷にとって都合の悪い場所ではありそうね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print ２人そろって行くのは危険かもしれない。<br>いつ監視に見つかってもおかしくない。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3
+
+@print そうかも……。<br>なら、ボクが外を見張っておくよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 隠し部屋の行き方は教えるから。<br>あっ、施設の中は冷凍庫みたいな寒さだったから<br>気をつけて。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 少し不意を突かれたような表情で、<br>ナノカがエマのことをじっと見つめていた。 { speed:1 waitInput:true Wait:true }
+
+@print ……そこまで私を信用していいの。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Ema.Smile1,ArmR3
+
+@print ナノカちゃんはボクらの仲間だよ。<br>同じ境遇なんだから、助け合っていこうよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマが笑顔で言ってみせると、<br>ナノカの表情がふっと緩む。 { speed:1 waitInput:true Wait:true }
+
+@print ……桜羽エマ。あなたはお人好しね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print わかった。あなたに背中を預けるわ。<br>ただ勘違いしないでほしい。これは取引。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print 取引……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 私はあなたを利用する。<br>だから何かあったらあなたも私を利用して。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print そんな、利用なんて……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ナノカはエマの返事を待たず、さっさと歩き出す。<br>エマはその背中を追った。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3
+
+@print ……ボク、約束するよ。<br>絶対ナノカちゃんのこと信じるって。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ナノカちゃんがボクのことを信じて背中を預けてくれるなら……<br>ボクだってキミのことを信じる。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 取引って……そういうことだよね！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ……ふ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print かすかに、ナノカの口から吐息が漏れた。 { speed:1 waitInput:true Wait:true }
+
+@print あなたたちとなら……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print "背中を向けたまま、ナノカがぽつりと<ruby=\"つぶや\">呟</ruby>く。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print え？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Nanoka.Default
+
+@print ……なんでもない。さっさと行きましょう。<br>このあたりは瘴気が濃い。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 大昔に、魔女がこの周辺で人間から酷い目に遭わされたから。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+
+@print 魔女、って……この牢屋敷に<br>昔から住んでたっていう魔女たちのこと……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Nanoka.Default
+
+@print ええ。想いや思念が強い物に触れてしまって、<br>ほんの少しだけ視えてしまったの……<br>この牢屋敷に大昔に住んでいた、魔女たちの暮らしが。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@print その悲惨な歴史が……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ――ナノカは幻視の魔法で得た情報を、<br>エマに語って聞かせてくれた。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@bgm Bgm_36_1
+
+@print この島は大魔女を中心に、<br>魔女たちが仲良く暮らしていたところよ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print けれどある時、違う種族である……<br>私たち【人間】に島が見つかってしまった。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 魔女たちは人間と仲良くしようとしたけれど<br>……人間はそうではなかった。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 自分たちとは違う異種族を警戒し、<br>排除しようとしたの。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print そして――大魔女の抵抗虚しく、<br>この島は侵略され、人間の手に落ちた。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print きっと、仲良くしようとした<br>魔女の心をうまく利用されたんでしょうね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print とても、とても酷いことが魔女たちに対し<br>行われていた……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 同情はしないわ。私たちには関係ないことだもの。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@back 22_4 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@print 言いながらも、ナノカは少し辛そうな表情だった。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 【魔女図鑑】『エマのメモ４』入手
+# ========================================
+@update 12
+
+# ========================================
+# 時間経過
+# ========================================
+
+@print ――ナノカに隠し施設の行き方をざっくりと説明し、<br>エマはひとり、元の場所へと戻ってきていた。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ◎回想シーン（新規）
+# ========================================
+# 入る直前
+
+@bgm Bgm_21_1
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@back 22_4 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+
+@char Nanoka.Default
+
+@print 今が８時ね……。<br>２時間ぐらい待って戻って来なかったら、<br>私のことは忘れてちょうだい。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+
+@print えっ……！？<br>そんな……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Nanoka.Default
+
+@print ……大丈夫。<br>私は必ず、黒幕の証拠を見つけて<br>帰ってくるから。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# ========================================
+# 回想ここまで
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@back 22_4 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@print 見張りに立ちはじめ、<br>かなりの時間が経過している。 { speed:1 waitInput:true Wait:true }
+
+@print 今のところゴクチョーや看守、監視フクロウは<br>見かけていない。 { speed:1 waitInput:true Wait:true }
+
+@print （もう１０時か……。<br>　そろそろ時間だけど、<br>　ナノカちゃん、大丈夫かな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （やっぱりボクも<br>　一度様子を見に行ったほうがいいのかも） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 気持ちが落ち着かず、周辺をウロウロと歩き回り、<br>スマホを取り出す。 { speed:1 waitInput:true Wait:true }
+
+@print （またやらかした……<br>　ナノカちゃんと連絡先交換しとけば良かった） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print スマホを見てようやくそのことに思い当たり、<br>エマは軽く息をつく。 { speed:1 waitInput:true Wait:true }
+
+# フクロウの通知音
+@sfx Sfx_14
+
+@print その瞬間、スマホの通知音が鳴って、<br>驚いたエマはスマホを落としそうになった。 { speed:1 waitInput:true Wait:true }
+
+@print なんとか持ちこたえ、メッセージを確認する。<br>ゴクチョーからだった。 { speed:1 waitInput:true Wait:true }
+
+@print 『はぁ……もう何度目でしたっけ。<br>　痛ましい殺人事件が発生しました』 { speed:1 waitInput:true Wait:true }
+
+@print 『皆さん今すぐ裁判所に集合してください』 { speed:1 waitInput:true Wait:true }
+
+@print 『一度見てもらったほうが早いと思うので……』 { speed:1 waitInput:true Wait:true }
+
+@print "エマは全身の血の気が引く思いで、<br><ruby=\"ぼうぜん\">呆然</ruby>とスマホを見下ろしていた。" { speed:1 waitInput:true Wait:true }
+
+@print 殺人事件、そ、んな……一体誰、が……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 頭の中で生き残っている少女たちの姿が、<br>ぐるぐると巡る。 { speed:1 waitInput:true Wait:true }
+
+@print "それから【<ruby=\"ウンディーネ\">水精</ruby>の間】を振り返る。<br>ナノカが出てくる気配はない。" { speed:1 waitInput:true Wait:true }
+
+@print 少しの間、エマはその場で迷った。<br>ナノカが出てくるのを待つべきか、<br>裁判所へと行くべきか。 { speed:1 waitInput:true Wait:true }
+
+@print けれど誰かが殺されたのなら、<br>エマたちはそれを知る必要がある。 { speed:1 waitInput:true Wait:true }
+
+@print 結局、牢屋敷へと急いだ。 { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter04/Act01_Chapter04_Adv07

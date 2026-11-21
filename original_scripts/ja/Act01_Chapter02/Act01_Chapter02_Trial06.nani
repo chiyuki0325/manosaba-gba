@@ -1,0 +1,757 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act01_Chapter02/Act01_Chapter02_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# 冒頭非表示処理
+@char Warden.1 { Position:,{hiddenCharacterPositionY} time:0 }
+@char Jailer.1 { Position:,{hiddenCharacterPositionY} time:0 }
+# ==============================================================================
+# MARK: 6: 💬 マーゴの容疑
+# ==============================================================================
+# ＠ト書き▼議論2-6 マーゴの容疑3
+# BGM変更：rAwTell Owk...
+@bgm Bgm_7_1
+
+# Judge2-6-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Sherry.Default,ArmR13,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@printDebate ハンナさんたちが<br>聞いた声は勘違い……<br>つまり犯人は、<br>宝生マーゴさん！<br>あなたなんです！
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@printDebate なるほど、<br>それで？<br>どうして私<br>なのかしら？
+
+@char Sherry.Default,ArmR17,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@printDebate あなたは<br>佐伯ミリアさんを殺した後、<br>そのまま部屋に<br>残っていたんです。
+
+@char Sherry.Default,ArmR17,ArmL4,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@printDebate しかしまずいことに、<br>犯行直後に<br>ハンナさんとアンアンさんが<br>懲罰房に<br>やってきてしまった……。
+
+@char Sherry.Default,ArmR13,ArmL4,Angle01/Facial/Eyes>Eyes_Angry_Open01
+@gosubModifyCamera 0
+@printDebate 慌てたあなたは、<br>【魔法】を使ったんです！<br>あなたの魔法は――。
+
+@char Margo.Default,ArmR6,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate ――【モノマネ】。<br>人の声色を<br>真似る事しかできない、<br>ロクな使い道のない<br>取るに足らない魔法よ。
+
+# ＠備考◆マーゴが声真似をしている
+# ＠佐伯ミリア
+@char Margo.Default,ArmR6,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate それでおじさんの声を<br>真似したってわけだね！<br>『きゃああああ！』<br>……ってさ！
+
+@char Alisa.Default,ArmR4,ArmL7,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@printDebate こいつ……！<br>死んだヤツ相手だからって<br>好き勝手しやがって……！
+
+@char Margo.Default,ArmR6,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate あら、死んでいるからこそ<br>意味があるとも言えるわ？<br>……もう二度と<br>聞けない声なんだから。
+
+@char Sherry.Default,ArmR3,ArmL4
+@gosubModifyCamera 0
+@printDebate とにかく……<br>他者の声色を扱えるの<br>はマーゴさんだけです。
+
+@char Sherry.Default,ArmR13,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate "他の人は、<br><link=\"Objection_01_02_06_01\">声真似</link>なんて<br>できません！<br>つまり<link=\"Objection_01_02_06_02\">マーゴ</link>さんが<br>犯人なんです！"
+
+@char Margo.Default,ArmR6,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate あら。<br>それなら<br>反論するけれど……。
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate 犯行現場には、<br>犯人が隠れる場所は<br>なかったんじゃ<br>ないかしら？
+
+@char Sherry.Default,ArmR3,ArmL4
+@gosubModifyCamera 0
+@printDebate それはもちろん、<br>私たちがまだ<br>見つけていない方法が<br>あるんですよ！
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate "それはどんな方法かしら？<br><link=\"Objection_01_02_06_03\">隠れられる場所</link>？<br>それとも<br><link=\"Objection_01_02_06_04\">テレポート</link>や、<br><link=\"Objection_01_02_06_05\">何かのトリック</link>を<br>使ったのかしら？"
+
+@char Sherry.Default,ArmR3,ArmL3,Angle01/Facial/Eyes>Eyes_Flushed_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate それは今<br>考え中です！
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@printDebate ふふ、<br>面白い発想ね。
+
+@char Margo.Smile1,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open
+@gosubModifyCamera 0
+@printDebate じゃあ反論してあげて？<br>エマちゃん。
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@printDebate …………。
+
+@char Ema.Default,ArmR4,ArmL3,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@printDebate えっ！？<br>ボク！？
+
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Ema.Surprised1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@Wait 0.2
+
+# ==============================================================================
+# ADVシーン
+# ==============================================================================
+
+@print （突然反論なんて振られても、困っちゃうけど……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@char Meruru.ArmR1_2,ArmL5,Eyes2_Normal_Open1,Mouth2_Surprised_Open2
+@gosubSplitStageScreen 1
+@Wait 0.2
+
+@print お、落ち着いてくださいエマさん……。<br>大丈夫です、議論の争点は複雑じゃありません……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default,ArmR1_1,ArmL8,Eyes1_Pensive_Open2,Mouth1_Normal_Open2
+
+@print そもそも……マーゴさんは、<br>物理的にそこにいることができたんでしょうか？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideStageScreen 1
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@print （メルルちゃんの言う通り、難しい気がする……。<br>　なら可能性は……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge2-6-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_01_02_06_01
+
+@Skip false
+@pauseTrial true
+
+@choice 他に声真似ができる人がいる
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge2-6-3
+
+@choice 他に声を偽装する方法がある
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge2-6-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_01_02_06_02
+
+@Skip false
+@pauseTrial true
+
+@choice マーゴはアリバイがある
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge2-6-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_01_02_06_03
+
+@Skip false
+@pauseTrial true
+
+@choice 拷問器具の中に隠れた
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge2-6-5
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論4
+# ------------------------------------------------------------------------------
+
+# Objection_01_02_06_04
+
+@Skip false
+@pauseTrial true
+
+@choice 瞬間移動した
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge2-6-6
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論5
+# ------------------------------------------------------------------------------
+
+# Objection_01_02_06_05
+
+@Skip false
+@pauseTrial true
+
+@choice トリックを用いて隠れた
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge2-6-7
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# ミス選択肢
+# ==============================================================================
+
+# MARK: 2-6-3: ❌ 他に声真似ができる人がいる
+
+# Judge2-6-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL4,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ちょっと待って、シェリーちゃん！<br>声真似はマーゴちゃんだけの専売特許じゃないよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL11,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print 他にも声真似できる人がいるんだよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR10,ArmL1,Angle01/Facial/Eyes>Eyes_Surprised_Open01,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print "ええっ！？ 誰ですか！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL12,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print ……み、みんなの中で……<br>１人ぐらいはモノマネが得意な人が……<br>いるんじゃ……ない、かな……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print 確信ないまま発言するなし！！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print 最初の勢いどーしたんだよ！！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （モノマネ名人はいないみたい……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （そもそも犯人が犯行現場に留まって、<br>　声真似をするメリットなんてあるのかな……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （もう一度、シェリーちゃんの主張を検証してみよう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge2-6-1
+
+# MARK: 2-6-4: ❌ マーゴはアリバイがある
+
+# Judge2-6-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL4,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print 違うよ、シェリーちゃん！<br>マーゴちゃんにはアリバイがある！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR6,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Closed
+@gosubModifyCamera 0
+@print あら。ないわよ、私。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print えっ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR6,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Closed
+@gosubModifyCamera 0
+@print メルルちゃんとアンアンちゃん以外、<br>アリバイはない……<br>みんなの証言は確認したはずよ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_01,Angle01/Head/Facial/Eyes>Eyes_Uncomfortable_Open01
+@gosubModifyCamera 0
+@print 『ちゃんと話を聞け』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR6,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle
+@gosubModifyCamera 0
+@print （はい……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default,ArmR1_1,ArmL8,Eyes1_Pensive_Open2,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print え、エマさん……れ、冷静になってください……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （そもそも犯人が犯行現場に留まって、<br>　声真似をするメリットなんてあるのかな……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （もう一度、シェリーちゃんの主張を検証してみよう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge2-6-1
+
+# MARK: 2-6-5: ❌ 拷問器具の中に隠れた
+
+# Judge2-6-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL11,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print そうか、マーゴちゃんは……<br>拷問器具の中に隠れた可能性があるよ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR3,ArmL2
+@gosubModifyCamera 0
+@print あらあら、ノッてきてくれて嬉しいわ♡<br>でもそれはちょっと難しいかもしれないわね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Surprised_Open01
+@gosubModifyCamera 0
+@print なんでだ？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR6,ArmL1
+@gosubModifyCamera 0
+@print だってあなたたちがミリアちゃんの死体を見つけた後、<br>みんなすぐにラウンジに集合させられたでしょう？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR6,ArmL1,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 仮に私が拷問器具の中に隠れていたとしたら、<br>中から出てきたことになるんじゃないかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print たしかにそうですね～。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print 仮にずっとその場にいたなら、<br>ミリアさんを殺した後の返り血なんかが<br>ついてないとおかしいはずです！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print "どう？ エマちゃん。<br>私……あの時、血で汚れたりしてた？" { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR6,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle
+@gosubModifyCamera 0
+@print ……キレイでした。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR3,ArmL2
+@gosubModifyCamera 0
+@print ふふ、ありがと♡ { author:Margo speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （褒めさせられちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （そもそも犯人が犯行現場に留まって、<br>　声真似をするメリットなんてあるのかな……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （もう一度、シェリーちゃんの主張を検証してみよう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge2-6-1
+
+# MARK: 2-6-6: ❌ 瞬間移動した
+
+# Judge2-6-6
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL11,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print そう！<br>マーゴちゃんの魔法は【テレポート】だったんだよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL7,Angle01/Facial/Eyes>Eyes_Disappointed_Open
+@gosubModifyCamera 0
+@print 【モノマネ】だっつってんだろーが！！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （すごいスピード感で突っ込まれちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （そもそも犯人が犯行現場に留まって、<br>　声真似をするメリットなんてあるのかな……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （もう一度、シェリーちゃんの主張を検証してみよう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge2-6-1
+
+# MARK: 2-6-7: ❌ トリックを用いて隠れた
+
+# Judge2-6-7
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print なるほど……！<br>マーゴちゃんはトリックを使って<br>懲罰房内に隠れた可能性が――！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print それで、どんなトリックなの？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Closed
+@gosubModifyCamera 0
+@print こ・た・え・て♡<br>エマちゃん。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ……わかるかな、シェリーちゃん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print わかりません！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （他の人に頼っちゃダメだ……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （そもそも犯人が犯行現場に留まって、<br>　声真似をするメリットなんてあるのかな……） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （もう一度、シェリーちゃんの主張を検証してみよう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge2-6-1
+
+# ==============================================================================
+# MARK: 2-6-2: ⭕ 他に声を偽装する方法がある
+# ==============================================================================
+
+# Judge2-6-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+@StopBgm 
+@gosubCutIn Ema
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL4,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open
+@gosubModifyCamera 0
+@print 待ってシェリーちゃん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# BGM変更：Sen-Choose N'o SurC
+@bgm Bgm_38_1_Loop
+
+@char Ema.Default,ArmR3,ArmL3,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print 確かにマーゴちゃんは<br>声真似ができるかもしれないけど……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL11,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print でもなにも声真似じゃなくたって<br>ミリアちゃんの声を偽装することは<br>可能なはずだよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・話の転換音
+@sfx Sfx_Common_5
+
+@char Sherry.Default,ArmR1,ArmL8,Angle01/Facial/Eyes>Eyes_Sparkle_Open01,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print "えっ！？ それじゃあ私も<br>声真似マスターに！？" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR10,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Closed02,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print どんな方法ですか！？<br>教えてくださいよ～！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# Judge2-6-8
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print それは……これだよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@evidence Clue
+
+@if "chosenEvidenceId==\"2-6\""
+	@goto .Judge2-6-9
+
+@if "chosenEvidenceId==\"2-8\""
+	@goto .Judge2-6-10
+
+@if "chosenEvidenceId==\"2-7\""
+	@goto .Judge2-6-10
+
+@goto .Judge2-6-11
+
+# ==============================================================================
+# 証拠選択ミス
+# ==============================================================================
+# MARK: 2-6-10: ❌ 佐伯ミリアのスマホ or エマのスマホ
+
+# Judge2-6-10
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （こ、これよりももっと直接的に示すものがあるはず……！<br>　実際にわかるものを示すんだ！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （【ミリアちゃんの声を偽装する方法】……<br>　それを示すことが出来る証拠品は……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge2-6-8
+
+# MARK: 2-6-11: ❌ 証拠ミス
+
+# Judge2-6-11
+
+@char Sherry.Default,ArmR3,ArmL1,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print その証拠品で、<br>どうやって声真似マスターになるんですか！？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ……いや、む、むしろ声真似をマスターするためには、<br>モノに頼るべきじゃないと思うんだよね……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR8,ArmL8,Angle01/Facial/Eyes>Eyes_Surprised_Open02,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print 必要なのは努力と根性！？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR4,ArmL6,Angle01/Facial/Eyes>Eyes_Disappointed_Open
+@gosubModifyCamera 0
+@print こちとら声真似マスターになりてーわけじゃねーんだよ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （たしかにそんな話じゃないよね……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print （【声真似以外で声を偽装する方法がある】んだ……！<br>　それを示すことが出来る証拠品は……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge2-6-8
+
+# ==============================================================================
+# MARK: 2-6-9: ⭕ 【ハンナの録音データ】
+# ==============================================================================
+
+# Judge2-6-9
+
+@StopBgm 
+@gosubCutIn Ema
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Sherry.Default,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print 録音データがどうかしました？<br>ミリアさんの声は確かに<br>録音されているようですが……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print じゃあ、そこに録音されている<br>ミリアちゃんの声も同じく……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Ema.Default,ArmR3,ArmL11,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print 【録音された音声】だったとしたら……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR4,ArmL5,Angle01/Facial/Eyes>Eyes_Surprised_Open01,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print ……あっ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# BGM変更：Sen-Choose N'o SurC
+@bgm Bgm_38_1_Loop
+
+@char Ema.Default,ArmR3,ArmL11,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print 犯人はハンナちゃんと同じく、<br>録音していた音声を<br>再生しただけだったんだよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR4,ArmL5,Angle01/Facial/Eyes>Eyes_Surprised_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print それならたしかに、あのタイミングで<br>ミリアさんの声を聞く事は可能ですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL11,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print それならナノカちゃんの証言通り、<br>ミリアちゃんが【悲鳴】の時に<br>すでに死んでいたとしてもおかしくないよね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR4,ArmL5,Angle01/Facial/Eyes>Eyes_Surprised_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print たしかにそうですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL3,Angle01/Facial/Eyes>Eyes_Flushed_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print 録音された音声もまた録音されていた……<br>それは盲点でした！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default
+@gosubModifyCamera 0
+@print ……たしかにわたくしとアンアンさんが聞いた声は<br>扉越しのもので<br>はっきりと聞こえたわけではありませんわ……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default
+@gosubModifyCamera 0
+@print なので、録音されたものだったとしても<br>すぐには気付けないかもしれません……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR7,ArmL3,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open01
+@gosubModifyCamera 0
+@print ならそもそも……<br>佐伯はもっと前から死んでた可能性があるって事か。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL11,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print 犯人は、ミリアちゃんの死んだ時刻を誤認させる為に<br>わざと悲鳴を聞かせたのかも……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmR2,ArmL9,Eyes1_Normal_Open2,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print ……私としてもそれなら納得がいくわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open04
+@gosubModifyCamera 0
+@print うーん……でも本当にそんなこと、<br>できるんでしょうか？<br>まだちょっと納得できてないです。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmR1,ArmL10,Eyes1_Normal_Open1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print 可能かどうかでいえば、可能でしょう。<br>現にさっき声を再生していたのだし。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Closed02
+@gosubModifyCamera 0
+@print もちろん保存や再生ができるのはわかってます。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open04
+@gosubModifyCamera 0
+@print でも重要なのは……<br>【タイミング】<br>だと思うんです。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Nanoka.Normal1,ArmR3,ArmL1,Eyes1_Normal_Open2,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print タイミング……？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print はい。<br>だって少しでもズレたら、録音した音声だと<br>バレちゃうと思うんですよ。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL3,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print それどころか、タイミングが大きくズレたら、<br>聞こえなかったかもしれません。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print なのに偶然悲鳴を聞くなんて……<br>そんなこと、ありえるんでしょうか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Eyes1_Neutral_Open1
+@gosubModifyCamera 0
+@print ……たしかに、頭ごなしに否定はできない意見ね。<br>実際、私の位置から声は聞こえなかったわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print かなりシビアなタイミングじゃないと<br>扉越しにミリアさんの悲鳴は聞こえなかったという<br>ことですよね？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-
+@gosubModifyCamera 0
+@print ……それがどうしたんだよ？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,
+@gosubModifyCamera 0
+@print 偶然でもなんでも、聞こえた事に何が問題あるんだ？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char Sherry.Default,ArmR3,ArmL3,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print うーん……<br>ではこの点、もうちょっと詳しく整理しましょうか！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@goto Act01_Chapter02/Act01_Chapter02_Trial07

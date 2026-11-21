@@ -1,0 +1,89 @@
+@gosubResetBook System/System_ResetWitchBook
+@Gosub System/System_Subroutine.BeginAdv
+
+# ========================================
+# 魔法少女ノ魔女裁判 第2章5話
+# ========================================
+
+# Scene2-5-0
+
+# ========================================
+# ●シーン2-5‐0
+# ========================================
+
+@bgm Bgm_1_1 { fade:5 }
+
+
+# ＠島の大魔女
+@print 誰か……この声が聞こえる誰か。 { author:Unknown speed:1 waitInput:true Wait:true }
+
+@back 34_1 { time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# ＠島の大魔女
+@print これまで少女たちの起こす悲劇を見てきた、<br>この世界に干渉できる力を持ったあなた。 { author:Unknown speed:1 waitInput:true Wait:true }
+
+# ＠島の大魔女
+@print お願い……<br>あの子のことを、助けてあげて。 { author:Unknown speed:1 waitInput:true Wait:true }
+
+# ＠島の大魔女
+@print もう私の声は、あの子にも……<br>屋敷に招かれた少女たちにも届かないから。 { author:Unknown speed:1 waitInput:true Wait:true }
+
+# ＠島の大魔女
+@print 私たちのことなんて……<br>もうどうでもいいんだって、<br>あの子に教えてあげて欲しいの。 { author:Unknown speed:1 waitInput:true Wait:true }
+
+# ＠島の大魔女
+@print どうせ私たちの存在は、<br>限界に近付いていたのだから……。 { author:Unknown speed:1 waitInput:true Wait:true }
+
+# ＠島の大魔女
+@print この閉じた島は、発展の終着点。<br>魔法によって得た繁栄と文化は、<br>停滞し、滞留していた……。 { author:Unknown speed:1 waitInput:true Wait:true }
+
+# ＠島の大魔女
+@print このままだと、<br>よくない淀みが起こることは<br>予言でわかっていたの。 { author:Unknown speed:1 waitInput:true Wait:true }
+
+# ＠島の大魔女
+@print 私たち島の大魔女たちの間でも<br>どんな道で破滅を回避するか議論してたけど、<br>結局結論は出なかった……。 { author:Unknown speed:1 waitInput:true Wait:true }
+
+@back SolidColor.Custom { time:5 }
+
+@print そんな中の出来事だったから……。 { author:BigWitch speed:1 waitInput:true Wait:true }
+
+@print 私たちの滅亡は運命だったんだって、<br>受け入れてるんだ。 { author:BigWitch speed:1 waitInput:true Wait:true }
+
+@print だから、私たちは復讐なんて望んでいないんだよ。 { author:BigWitch speed:1 waitInput:true Wait:true }
+
+@print あの子には……<br>人と共存する中で、<br>自分の幸せを見つけて欲しいの。 { author:BigWitch speed:1 waitInput:true Wait:true }
+
+@print ……魔女の中でも一番若かったのに、<br>私たちは最後の大魔女であるあの子に<br>全てを背負わせてしまった……。 { author:BigWitch speed:1 waitInput:true Wait:true }
+
+@print でも私はあの子に……幸せになって欲しい。 { author:BigWitch speed:1 waitInput:true Wait:true }
+
+@print だから……<br>この声を聞いている、あなた。 { author:BigWitch speed:1 waitInput:true Wait:true }
+
+@print 魔女としての運命なんて背負わなくてもいいんだよって……<br>あの子に伝えて。 { author:BigWitch speed:1 waitInput:true Wait:true }
+
+@print そしてどうか――<br>あの子を助けてあげて……！ { author:BigWitch speed:1 waitInput:true Wait:true }
+
+# エフェクト・光フラッシュ.
+@ResetText 
+@back SolidColor.Custom { time:2.8 }
+@Wait 3
+
+@ResetText 
+@back SolidColor.Custom { time:2 }
+@Wait 3
+
+# ☆アイテム追加
+# 【声】
+# 私たちは、復讐を望んでないの。
+# あの子に、幸せになって欲しいだけ。
+# あの子を助けてあげて。
+@update 10-7
+
+# ここから、メニューのスマホを開いたときに出るドット絵のヒント魔女（ユキだった白魔女）が色違いの魔女に変わる
+# 以後、セリフは島の大魔女っぽく、幼げになる
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter05/Act02_Chapter05_Adv02

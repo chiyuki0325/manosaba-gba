@@ -1,0 +1,40 @@
+{
+  "format": "manosaba.story",
+  "version": 1,
+  "language": "zh-Hans",
+  "path": "Act01_Chapter02/Act01_Chapter02_Adv07",
+  "events": [
+    {"op": "GosubResetWitchBook", "line": 1, "indent": 0, "params": {"Path": "System/System_ResetWitchBook", "IsDebugDirectJump": {"expression": "{isDebugDirectJump}"}}},
+    {"op": "Gosub", "line": 2, "indent": 0, "params": {"Path": "System/System_Subroutine.BeginAdv"}},
+    {"op": "label", "name": "Scene1-2-7", "line": 4, "indent": 0},
+    {"op": "ModifyBackgroundExtended", "line": 10, "indent": 0, "params": {"Scale": {"expression": "{g_backgroundDefaultScale}"}, "Duration": 0.0, "Lazy": 0, "AppearanceAndTransition": "1_1"}},
+    {"op": "ModifyBackgroundExtended", "line": 11, "indent": 0, "params": {"TintColor": "#000000", "Duration": 1.2000000476837158, "Lazy": 0, "AppearanceAndTransition": "Transparent", "SubId": "Overlay"}},
+    {"op": "Wait", "line": 12, "indent": 0, "params": {"WaitMode": "1.8"}},
+    {"op": "PlayBgm", "line": 14, "indent": 0, "params": {"BgmPath": "Bgm_19_1", "Volume": 1.0, "Loop": 1, "FadeInDuration": 0.0}},
+    {"op": "PrintTextModified", "line": 16, "indent": 0, "params": {"Text": "又过了几天。<br>\n艾玛等人的越狱计划正在顺利推进。", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0102Adv07_Narrative001"]}},
+    {"op": "PrintTextModified", "line": 18, "indent": 0, "params": {"Text": "（接下来，只要能说服亚里沙……）", "AuthorId": "Ema", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0102Adv07_Ema001"]}},
+    {"op": "PlaySfxModified", "line": 20, "indent": 0, "params": {"SfxPath": "Sfx_1", "Volume": 1.0, "Loop": 0, "FadeInDuration": 0.0}},
+    {"op": "PrintTextModified", "line": 22, "indent": 0, "params": {"Text": "艾玛起床后，<br>\n决定今天继续寻找亚里沙。", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0102Adv07_Narrative002"]}},
+    {"op": "ModifyCharacterExtended", "line": 24, "indent": 0, "params": {"Lazy": 0, "ScenePosition": [50.0], "IdAndAppearance": "Ema.Pensive1,ArmR3"}},
+    {"op": "PrintTextModified", "line": 26, "indent": 0, "params": {"Text": "（我已经连续劝说她好几天了……<br>\n　可是怎么都说不动）", "AuthorId": "Ema", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0102Adv07_Ema002"]}},
+    {"op": "HideAllCharacters", "line": 28, "indent": 0, "params": {"Lazy": 0}},
+    {"op": "PrintTextModified", "line": 30, "indent": 0, "params": {"Text": "亚里沙对越狱的态度并不消极，<br>\n而且看上去也不是特别抵触去帮我们。", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0102Adv07_Narrative003"]}},
+    {"op": "PrintTextModified", "line": 32, "indent": 0, "params": {"Text": "（难道说——<br>\n　她是害怕被委以重任……？）", "AuthorId": "Ema", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0102Adv07_Ema003"]}},
+    {"op": "ModifyCharacterExtended", "line": 34, "indent": 0, "params": {"Lazy": 0, "ScenePosition": [50.0], "IdAndAppearance": "Ema.Determined2,ArmR1"}},
+    {"op": "PrintTextModified", "line": 36, "indent": 0, "params": {"Text": "（不过，我今天一定要说服亚里沙！<br>\n　有可能的话，我还想找到奈叶香！）", "AuthorId": "Ema", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0102Adv07_Ema004"]}},
+    {"op": "PrintTextModified", "line": 38, "indent": 0, "params": {"Text": "在有限的放风时间里，<br>\n艾玛四处奔走。", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0102Adv07_Narrative004"]}},
+    {"op": "SetCustomVariable", "line": 40, "indent": 0, "params": {"Expression": "chosenAreaFlag = 0"}},
+    {"op": "Gosub", "line": 41, "indent": 0, "params": {"Path": "System/System_Subroutine.EndAdv"}},
+    {"op": "GotoModified", "line": 43, "indent": 0, "params": {"Path": "Act01_Chapter02/Act01_Chapter02_Adv08", "SoftReset": 1}}
+  ],
+  "translations": {
+  "0102Adv07_Narrative001": "又过了几天。<br>\n艾玛等人的越狱计划正在顺利推进。",
+  "0102Adv07_Ema001": "（接下来，只要能说服亚里沙……）",
+  "0102Adv07_Narrative002": "艾玛起床后，<br>\n决定今天继续寻找亚里沙。",
+  "0102Adv07_Ema002": "（我已经连续劝说她好几天了……<br>\n　可是怎么都说不动）",
+  "0102Adv07_Narrative003": "亚里沙对越狱的态度并不消极，<br>\n而且看上去也不是特别抵触去帮我们。",
+  "0102Adv07_Ema003": "（难道说——<br>\n　她是害怕被委以重任……？）",
+  "0102Adv07_Ema004": "（不过，我今天一定要说服亚里沙！<br>\n　有可能的话，我还想找到奈叶香！）",
+  "0102Adv07_Narrative004": "在有限的放风时间里，<br>\n艾玛四处奔走。"
+}
+}

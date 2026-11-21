@@ -1,0 +1,122 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-2-17
+
+# ========================================
+# ●シーン2‐2‐17
+# ========================================
+
+@back 21_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_23_1
+
+@print 私とエマは看守によって、<br>懲罰房に拘束された。 { speed:1 waitInput:true Wait:true }
+
+@print 心配だったのか、<br>レイアがすぐに私たちのところにやってきた。 { speed:1 waitInput:true Wait:true }
+
+@print （くそ……またか。<br>　どうして私まで、疑われなければいけない！？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （間違っているのはエマだ。<br>　私は正しい、正しいはずなのに……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1
+
+@print ２人とも、すまない。<br>裁判まで、辛抱してほしい。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 私とエマを気の毒に思っているのか、<br>レイアは申し訳なさげに眉尻を下げている。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （本当に腹立たしさでいっぱいだ。<br>　……だが、怒りだけでこの事態は解決できない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （冷静になれ。考えろ。<br>　どうすれば、裁判を切り抜けられるか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （……ひとまず、なんらかの証拠は掴んでおくべきだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@hideChars 
+@Wait 0.5
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+@char Leia
+@Wait 0.3
+
+@print ……レイア、少しいいかな。<br>今、何時か教えてくれないか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1
+
+@print ああ。お安い御用だよ。<br>今は……１４時４５分だ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print レイアは自分のスマホで時間を見て答える。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+
+@print よかった、まだ間に合うな。<br>もうひとつ、頼み事がある。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1
+
+@print 私にできることなら、<br>喜んで協力させてほしい。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "私はすぐ近くにいるエマを<ruby=\"いちべつ\">一瞥</ruby>してから、<br>レイアにもっと自分のそばに寄るよう合図する。" { speed:1 waitInput:true Wait:true }
+
+@char Leia.Surprised1
+
+@print 意図を察して近付いたレイアの耳に、<br>私は口を寄せた。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Flushed1
+
+@print ええと、ヒロくん……？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Surprised1
+
+# ＠備考◆コソコソ話
+
+@print 地下の焼却炉を調べてきてくれ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私はレイアに、そっと耳打ちで伝える。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Angry1
+
+# ＠備考◆コソコソ話
+
+@print １５時には焼却炉が作動してしまう。<br>だから、急ぐんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ……わかった、任せてくれ！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "力強く<ruby=\"うなず\">頷</ruby>いてから、<br>レイアは懲罰房を出ていった。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+@char Hiro.Normal1
+
+@print レイアちゃんと、何を話してたの？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print 君に答える義理はない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ヒロの返事に、エマは目を伏せる。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print ……今朝のヒロちゃんは、嘘だったのかな。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ボクに挨拶してくれて、穏やかで……<br>また前みたいに仲良くできるかもって、<br>嬉しかったのに……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1
+
+@print ……何を勘違いしたのか知らないが。<br>私は、君が、嫌いだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ――殺そうとしたほどに。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print それきり、私とエマはひと言も口をきかなかった。 { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter02/Act02_Chapter02_Adv18

@@ -1,0 +1,144 @@
+{
+  "font": "gba/assets/unifont-17.0.03.hex.gz",
+  "body_font": "gba/assets/fusion-pixel-12px-monospaced-zh_hans.bdf",
+  "color_source": "manosaba-web/src/components/game/NormalPrinter.vue:CHARACTER_INITIAL_COLORS",
+  "color_note": "蕾雅首字按用户要求使用金黄色。",
+  "characters": [
+    {
+      "speaker": "艾玛",
+      "name": "樱羽艾玛",
+      "color": [
+        252,
+        145,
+        172
+      ]
+    },
+    {
+      "speaker": "希罗",
+      "name": "二阶堂希罗",
+      "color": [
+        235,
+        78,
+        85
+      ]
+    },
+    {
+      "speaker": "可可",
+      "name": "泽渡可可",
+      "color": [
+        252,
+        114,
+        80
+      ]
+    },
+    {
+      "speaker": "汉娜",
+      "name": "远野汉娜",
+      "color": [
+        171,
+        198,
+        31
+      ]
+    },
+    {
+      "speaker": "米莉亚",
+      "name": "佐伯米莉亚",
+      "color": [
+        233,
+        208,
+        141
+      ]
+    },
+    {
+      "speaker": "亚里沙",
+      "name": "紫藤亚里沙",
+      "color": [
+        235,
+        77,
+        61
+      ]
+    },
+    {
+      "speaker": "安安",
+      "name": "夏目安安",
+      "color": [
+        158,
+        146,
+        250
+      ]
+    },
+    {
+      "speaker": "蕾雅",
+      "name": "莲见蕾雅",
+      "color": [
+        250,
+        210,
+        91
+      ]
+    },
+    {
+      "speaker": "玛格",
+      "name": "宝生玛格",
+      "color": [
+        183,
+        125,
+        234
+      ]
+    },
+    {
+      "speaker": "梅露露",
+      "name": "冰上梅露露",
+      "color": [
+        226,
+        185,
+        176
+      ]
+    },
+    {
+      "speaker": "奈叶香",
+      "name": "黑部奈叶香",
+      "color": [
+        132,
+        142,
+        147
+      ]
+    },
+    {
+      "speaker": "诺亚",
+      "name": "城崎诺亚",
+      "color": [
+        102,
+        222,
+        228
+      ]
+    },
+    {
+      "speaker": "雪莉",
+      "name": "橘雪莉",
+      "color": [
+        133,
+        177,
+        255
+      ]
+    },
+    {
+      "speaker": "典狱长",
+      "name": "典狱长",
+      "color": [
+        178,
+        174,
+        191
+      ]
+    },
+    {
+      "speaker": "小雪",
+      "name": "月代雪",
+      "color": [
+        176,
+        184,
+        208
+      ]
+    }
+  ],
+  "layout_source": "gba/assets/source-metadata/trial.json:AuthorData zh-Hans size>=100 uses 16px; other text uses 12px"
+}

@@ -1,0 +1,572 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter05/Act02_Chapter05_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# クリーチャー化初期化
+@hide Hiro
+@char CreatureHiro.2 { Position:{hiroPositionX},{characterPositionY},{hiroPositionZ} Rotation:,{hiroRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Meruru
+@char CreatureMeruru.3-5 { Position:{meruruPositionX},{characterPositionY},{meruruPositionZ} Rotation:,{meruruRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Leia
+@char CreatureLeia.0-8 { Position:{leiaPositionX},{characterPositionY},{leiaPositionZ} Rotation:,{leiaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Noah
+@char CreatureNoah.0-3 { Position:{noahPositionX},{characterPositionY},{noahPositionZ} Rotation:,{noahRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Margo
+@char CreatureMargo.0-4 { Position:{margoPositionX},{characterPositionY},{margoPositionZ} Rotation:,{margoRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Nanoka
+@char CreatureNanoka.0-1 { Position:{nanokaPositionX},{characterPositionY},{nanokaPositionZ} Rotation:,{nanokaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Coco
+@char CreatureCoco.2-3 { Position:{cocoPositionX},{characterPositionY},{cocoPositionZ} Rotation:,{cocoRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide AnAn
+@char CreatureAnAn.0-3 { Position:{ananPositionX},{characterPositionY},{ananPositionZ} Rotation:,{ananRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+# ==============================================================================
+# MARK: 10-18: 💬 ミリアのスタンス
+# ==============================================================================
+# ＠ト書き▼議論10-18ミリアのスタンス
+@set Skip10_18_3flag1=false
+# 議論開始カットイン
+# BGM変更：rAwTell Owk...
+@bgm Bgm_7_1
+
+# Judge10-18-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Miria.Default,ArmR9,ArmL6,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open02,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@printDebate ど、どっちの味方とか……<br>そういうことじゃないと<br>思うんだけどな……！
+
+@char Alisa.Default,ArmR4,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@printDebate なら、<br>おめえはバケモンの方に<br>つくってのか？
+
+@char Miria.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Determined_Close,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@printDebate "そ、<link=\"Objection_02_05_18_01\">そういう話</link>じゃ<br>なくて……。"
+
+@char Miria.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Angry_Closed02,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@printDebate "……おじさんは<br><link=\"Objection_02_05_18_02\">みんなの味方</link>で<br>いたいんだ。"
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@printDebate ……八方美人とも<br>言える態度だな。
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@printDebate 私は<br>君の意思を確認したい。
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Flushed_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@printDebate えっと……<br>そんなこと<br>言われても……。
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Smile_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Open02,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@printDebate じゃ、じゃあさ！<br>おじさんのことは<br>ひとまず<br>置いておこうよ……！
+
+@char Miria.Default,ArmR3,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Open02,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@printDebate おじさん……<br>みんなで決めたことに<br>従うからさ……。
+
+@char CreatureHiro.18
+@gosubModifyCamera 0
+@printDebate ……仮にその結果、<br>自分が犠牲になっても<br>いいのかな？
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Pensive_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@printDebate えっ！？<br>そ、それは……<br>その……。
+
+# ここの選択肢は、10-18-3追求を通過済みで表示される
+@if Skip10_18_3flag1=false
+	@goto .Judge10-18-1Skip
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Normal_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@printDebate "ま、まあ……そうだね。<br>おじさんもべつに<br>外の世界に<link=\"Objection_02_05_18_03\">未練</link>が<br>あるわけじゃないし……。"
+
+# Judge10-18-1Skip
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Cry_Open02,Angle01/Facial/Mouth>Mouth_Determined_Close,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@printDebate "……その結果でここに<br><link=\"Objection_02_05_18_04\">閉じ込められる</link>なら……<br>そういう運命<br>だったのかも……。"
+
+# ==============================================================================
+# 10-18議論後独白
+# ==============================================================================
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@gosubModifyCamera 0
+@Wait 0.2
+
+@char CreatureHiro.17
+@print （【付和雷同】……<br>　ミリアは周囲との協調性を重んじる） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@print （彼女の過剰なまでの消極性と寛容さは、<br>　まるで何かに怯えているかのようだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@print （彼女を魔女化させるには、<br>　その心の深部に触れなければ……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-18-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_18_01
+
+@Skip false
+@pauseTrial true
+
+@choice ミリアの真意はヒロ側
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-18-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_18_02
+
+@Skip false
+@pauseTrial true
+
+@choice なぜ庇う？
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-18-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_18_03
+
+@Skip false
+@pauseTrial true
+
+# ここの選択肢は、10-18-3追求を通過済みで表示される
+@choice 残してきたものがある
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-18-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論4
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_18_04
+
+@Skip false
+@pauseTrial true
+
+@choice 殺される可能性がある
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-18-5
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 10-18-3: ❌ 追求・なぜ庇う？
+# ==============================================================================
+
+# Judge10-18-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.18
+@gosubModifyCamera 0
+@print "その<ruby=\"こころざし\">志</ruby>は……立派だ。" { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print えっ……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.18
+@gosubModifyCamera 0
+@print 私の知っているミリアも、<br>疑われた者を庇ったりしていた。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.19
+@gosubModifyCamera 0
+@print ……私も、庇われた中にいたよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Pensive_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print そ、そうなんだ……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.16
+@gosubModifyCamera 0
+@print けれど、どうして君は<br>そんな聖人のような振る舞いをするのかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.16
+@gosubModifyCamera 0
+@print 私たちは出会ったばかりで、<br>信じられるかどうかもわからない相手なのに……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR6,ArmL4,Angle01/Facial/Eyes>Eyes_Cry_Open02,Angle01/Facial/Mouth>Mouth_Determined_Close
+@gosubModifyCamera 0
+@print それは……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR6,ArmL4,Angle01/Facial/Eyes>Eyes_Cry_Open02,Angle01/Facial/Mouth>Mouth_Determined_Close
+@gosubModifyCamera 0
+@print ……ヒロちゃんの経験した世界の中で、<br>おじさんがどんなことを考えていたのかは<br>わからないけど……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Miria.Default,ArmR6,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Closed
+@gosubModifyCamera 0
+@print きっと……【先生】のことを見習ったんだと思う。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print 【先生】？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Closed
+@gosubModifyCamera 0
+@print ……うん。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Closed02,Angle01/Facial/Mouth>Mouth_Determined_Close
+@gosubModifyCamera 0
+@print おじさんが……<br>昔、困ってたときがあってお世話になった人なんだ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR9,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print おじさんもその先生みたくなりたくて、<br>真似してるだけだよ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （……ミリアの【先生】か） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （覚えておこう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@if Skip10_18_3flag1=true
+	@goto .Judge10-18-3Skip
+
+@update Miria
+@toast "魔女図鑑 更新…"
+@Wait i1.2
+@toast 議論発展…
+@set Skip10_18_3flag1=true
+
+# Judge10-18-3Skip
+
+@goto .Judge10-18-1
+
+# ==============================================================================
+# MARK: 10-18: ❌ 議論ミス選択肢
+# ==============================================================================
+# MARK: 10-18-4: ❌ 反論・ミリアの真意はヒロ側
+
+# Judge10-18-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print ミリア。<br>君はさっき、私をアリサから庇おうと<br>話に割り込んできた……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print なら、本心は私と同意見なんじゃないか？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR5,ArmL4,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Surprised_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print えぇ……！？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print アリサが圧を掛けるから<br>怖くて言い出せなかったんだろう？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.21
+@gosubModifyCamera 0
+@print ならどっちつかずの反応になるのも、無理はない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Angry_Open04
+@gosubModifyCamera 0
+@print "あぁ！？ ウチが悪いってのかよ！" { author:Alisa speed:1 waitInput:true Wait:true }
+
+# ＠備考◆焦り
+
+@char Miria.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Confused_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print "あぁ……！<br>待って待って！ そうじゃないって！" { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ただおじさんは、ヒロちゃんの言った事も<br>一理あるのかもって思っただけで……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print "べつにどっちが正しいかとかいう話じゃないよ！<br>みんなでもう少し話そ……！ ね？" { author:Miria speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （ミリアは立ち場を決めかねている……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （この協調を重んじる精神は<br>　いったいどこから来るのか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （ミリアのことをもう少し知る必要があるな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge10-18-1
+
+# MARK: 10-18-5: ❌ 反論・殺される可能性がある
+
+# Judge10-18-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print 【閉じ込められるだけ】なら、<br>いいのかもしれないが……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print 殺される可能性だってある。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆息を呑む
+
+@char Miria.Default,ArmR4,ArmL4,Angle01/Facial/Eyes>Eyes_Surprised_Lifeless01,Angle01/Facial/Mouth>Mouth_Angry_Closed01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ………っ！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print それでも君は、<br>そんな死の運命であっても受け入れるのかな？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print そ、それは怖いけど……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Cry_Open02,Angle01/Facial/Mouth>Mouth_Determined_Close,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print でもそのときは、しょうがないよ……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+# ＠備考◆諦めの境地・無理して笑み作ってる感
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Cry_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open02,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print みんなで納得して決めた結果ならさ……。<br>おじさんは受け入れられると思う。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （脅しではミリアの心は動かせないか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （……死も覚悟出来てしまうとは） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （この協調を重んじる精神は<br>　いったいどこから来るのか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （ミリアのことをもう少し知る必要があるな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-18-1
+
+# ==============================================================================
+# MARK: 10-18-2: ⭕ 反論・残してきたものがある
+# ==============================================================================
+
+# Judge10-18-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+# カットイン
+@StopBgm 
+@gosubCutIn CreatureHiro
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print 君はどうして嘘をつくんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Angry_Closed02,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print えっ……。<br>嘘……？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print そうだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 気任せの蝶［チェロ無し］
+@bgm Bgm_45_2
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print 君は未練がないと言ったが……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print さっきの【先生】の話はどうなんだい。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Angry_Closed02,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print そ、それは、その……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Smile_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Open02,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print 先生は立派な人だから、<br>おじさんなんて必要ないよ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print 仮にそうだとして……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print 君の行動を【先生】は喜ぶのかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Pensive_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……え？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print 君の先生は立派な人で、<br>君の未来のために尽力してくれた……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print なら、先生が守りたかったのは……<br>君の将来なんじゃないかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Surprised_Lifeless01,Angle01/Facial/Mouth>Mouth_Determined_Close,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print うぐっ……！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR10,ArmL4,Angle01/Facial/Eyes>Eyes_Surprised_Lifeless01,Angle01/Facial/Mouth>Mouth_Normal_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print そ、それは……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.16
+@gosubModifyCamera 0
+@print 君自身の手で、<br>先生の守りたかったものを壊していいのか？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR10,ArmL4,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open,Angle01/Facial/Mouth>Mouth_Determined_Close,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……そ、そんなの……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# ＠備考◆やや震え声
+
+@char Miria.Default,ArmR10,ArmL4,Angle01/Facial/Eyes>Eyes_Cry_Open01,Angle01/Facial/Mouth>Mouth_Surprised_Open02,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print そんなの……わかんないよっ！ { author:Miria speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆（変化があった…！）
+
+@char CreatureHiro.15
+@gosubModifyCamera 0
+@print ………！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR10,ArmL4,Angle01/Facial/Eyes>Eyes_Cry_Open01,Angle01/Facial/Mouth>Mouth_Angry_Closed01
+@gosubModifyCamera 0
+@print おじさんは……おじさんは……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR10,ArmL4,Angle01/Facial/Eyes>Eyes_Cry_Open01,Angle01/Facial/Mouth>Mouth_Determined_Close
+@gosubModifyCamera 0
+@print ……ヒロちゃんや【先生】みたく……<br>強くないんだ！！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@goto Act02_Chapter05/Act02_Chapter05_Trial19

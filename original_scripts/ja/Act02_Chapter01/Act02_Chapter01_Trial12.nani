@@ -1,0 +1,1149 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter01/Act02_Chapter01_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 2100
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+@char Warden { Position:,{hiddenCharacterPositionY} time:0 }
+# ==============================================================================
+# MARK: 6-12: 💬 ヒロの説得
+# ==============================================================================
+# ＠ト書き▼議論6-12 ヒロの説得
+@set Skip6_12_3flag1=false
+@set Skip6_12_4flag1=false
+@set Skip6_12_5flag1=false
+
+# BGM変更：Guil-me N'o sinruits-Vocal無-
+@bgm Bgm_8_1
+
+# ボス演出
+@ResetText 
+@char Hiro.Angry2,ArmR8,ArmL3,Eyes2_Angry_Open1,Mouth2_Smile_Open1 { time:0 }
+@stageCamera 1 { Rotation:0,{ (8 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+
+@stageCamera 1 { Rotation:0,{ (8.1 / courtStandCount * 360) },0 time:1 }
+@showStageScreen 1
+@Wait 1.5
+
+@ResetText 
+@char Margo.Default,ArmR6,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open { time:0 }
+@stageCamera 0 { Rotation:0,{ (9 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+
+@stageCamera 0 { Rotation:0,{ (8.9 / courtStandCount * 360) },0 time:1 }
+@hideStageScreen 1
+@Wait 1.5
+
+
+# Judge6-12-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@printDebate マーゴは私に<br>罪をなすりつけるため、<br>多数の偽装工作を行った……<br>それは君たちにだってもう<br>十分にわかっているはずだ。
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@printDebate エマにかかってきた電話も、<br>私を陥れるための<br>陰謀だったんだ！
+
+# IF 6-12-3未通過
+@if Skip6_12_3flag1=true
+	@goto .Judge_6-12-3_skip1
+
+# @備考◆ルートA
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@printDebate "で、でも……本当に<br><link=\"Objection_02_01_12_01\">ボクと話した</link><br>メルルちゃんって<br>偽物のメルルちゃん<br>だったのかな……。<br>あの声……やっぱり<br>本物だったような……。"
+
+@goto .Judge_6-12-3_skip2
+
+# ELSE条件・6-7-3通過済み
+
+# Judge_6-12-3_skip1
+# ELSE 6-12-3通過済
+# @備考◆ルートB
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@printDebate たしかにボクが話したのが<br>メルルちゃんだったっていう<br>証拠はない……！
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@printDebate ナノカちゃんや<br>レイアちゃんの証言とも<br>矛盾するし、<br>あれは偽物のメルルちゃんで<br>間違いないはずだよ！
+
+# Judge_6-12-3_skip2
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@printDebate 疑いのきっかけはレイアの聞いた<br>ガラスの割れた音だ。<br>死体発見の４０分前に<br>現場でした音……<br>それはメルルの<br>真の死亡時刻を<br>示していたんだよ。
+
+# IF 6-12-4未通過
+# @備考◆ルートA
+@if Skip6_12_4flag1=true
+	@goto .Judge_6-12-4_skip1
+
+@char Leia.Default,ArmR5,ArmL7,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@printDebate "……しかし、あれは本当に<br>聞こえた音だったんだろうか。<br>私にしか聞こえなかった<br>かすかな音なんて……。<br>改めて考えると、<br>私の<link=\"Objection_02_01_12_02\">幻聴</link><br>だったんじゃ……。"
+
+@goto .Judge_6-12-4_skip2
+
+# ELSE 6-12-4通過済
+# Judge_6-12-4_skip1
+# @備考◆ルートB
+
+@char Leia.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@printDebate ヒロくんの言う通りさ。<br>そのとき、<br>マーゴくんがメルルくんを<br>殺していた……<br>そうでなければ、<br>辻褄が合わない！
+
+# ENDIF 分岐終了
+
+# Judge_6-12-4_skip2
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Angry_Open1,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@printDebate マーゴはさらに、<br>魔法でガラスの音を真似した。<br>……立体音響として<br>周囲に響かせ、<br>ナノカが音を聞いた方向を<br>誤認させるために。
+
+# IF 6-12-5未通過
+@if Skip6_12_5flag1=true
+	@goto .Judge_6-12-5_skip1
+
+# @備考◆ルートA
+@char Nanoka.ArmR3,ArmL1,Eyes1_Uncomfortable_Open1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@printDebate "……その可能性は<br>否定できないけれど、<br>でもわざわざ<br><link=\"Objection_02_01_12_03\">そんなことする意味</link>は<br>あるのかしら。"
+
+@goto .Judge_6-12-5_skip2
+
+# ELSE 6-12-5通過済
+# Judge_6-12-5_skip1
+# @備考◆ルートB
+
+@char Nanoka.ArmR3,ArmL1,Eyes1_Uncomfortable_Open1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@printDebate アリバイ作りのために<br>私を利用せざるを<br>得なかった……。<br>そういうことね。
+
+# ENDIF 分岐終了
+
+# Judge_6-12-5_skip2
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Angry_Open1,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@printDebate ……こうして君は<br>メルルを殺したあと、<br>私に罪を<br>なすりつけようと<br>したんだ。
+
+@char Hiro.Normal2,ArmR6,ArmL3,Eyes2_Angry_Open1,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@printDebate 君が犯人だ……<br>宝生マーゴ！
+
+@char Margo.Default,ArmR6,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate ……ヒロちゃんの<br>言ってること、<br>本当かしらね？<br>ただの<br>言いがかりだと思うわ。
+
+@char Margo.Default,ArmR6,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@printDebate ヒロちゃんは<br>私を犯人だと決めつけて、<br>こんなに<br>糾弾しているけれど……。
+
+@char Margo.Default,ArmR6,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@printDebate これは、<br>魔女を見つけるための<br>魔女裁判なの。
+
+# IF 6-12-3～5全通過
+@if Skip6_12_3flag1=True&&Skip6_12_4flag1=True&&Skip6_12_5flag1=True
+	@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+	@gosubModifyCamera 0
+	@printDebate "はたして本当に……<br>あなたの言葉は<br><link=\"Objection_02_01_12_04\">みんなに信じて</link><br>もらえているのかしら？"
+	@goto .Judge_6-12-1_skip
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate はたして本当に……<br>あなたの言葉は<br>みんなに信じて<br>もらえているのかしら？
+
+# Judge_6-12-1_skip
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Open3,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@Wait 0.2
+
+# ==============================================================================
+# 6-12議論後独白
+# ==============================================================================
+
+@print （マーゴの言う通り、これは多数決だ……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1,Sweat1-1
+@print （いくら証拠品を揃えたところで、<br>　みんなを納得させられなければ意味がない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Normal_Closed1,Sweat1-1
+@print （けれど……マーゴ。<br>　君こそ本当にその【意味】を理解しているのかな？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Normal_Closed1,Sweat1-1
+@print （１人１人の持つ票は、<br>　私の命を狙う刃でもあると同時に――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Normal_Closed1,Sweat1-1
+@print （――君の命を狙う刃でもある！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,ArmL6,Eyes2_Normal_Closed1,Mouth1_Determined_Closed1,Sweat1-1
+@print （片っ端から……説得するんだ！<br>　その姿を見て、投票先を変える者もいるはず……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,ArmL6,Eyes1_Angry_Open1,Mouth1_Determined_Closed1,Sweat1-1
+@print （集めるのは……信頼！<br>　折るのは……相手の心だ！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge6-12-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_01_12_01
+
+@Skip false
+@pauseTrial true
+
+@choice メルルと似てなかった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge6-12-6
+
+@choice ナノカの証言と矛盾する
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge6-12-3
+
+@choice エマ１人に電話すること自体おかしい
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge6-12-7
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_02_01_12_02
+
+@Skip false
+@pauseTrial true
+
+@choice 他に聞いていた人がいる
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge6-12-9
+
+@choice 音を抑えた
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge6-12-4
+
+@choice 自信を持て！
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge6-12-8
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_02_01_12_03
+
+@Skip false
+@pauseTrial true
+
+@choice 早く死体を発見させたかった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge6-12-5
+
+@choice 誤った証言をさせたかった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge6-12-10
+
+@choice 戯れ
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge6-12-11
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論4
+# ------------------------------------------------------------------------------
+
+# Objection_02_01_12_04
+
+@Skip false
+@pauseTrial true
+
+@choice 私はみんなを信じている
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge6-12-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 6-12: ❌ 議論選択肢
+# ==============================================================================
+# MARK: 6-12-6: ❌ 反論・メルルと似てなかった
+
+# Judge6-12-6
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Angry_Open2,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 思い出すんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Angry_Open2,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print エマ、君が聞いた声は偽物だ……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print マーゴが魔法を使って、メルルのフリをしていたんだ。<br>声は似ていたとしても口調に差が出るはずだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR10,ArmL14,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open
+@gosubModifyCamera 0
+@print ………も。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR10,ArmL14,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open
+@gosubModifyCamera 0
+@print あのとき違和感は持たなかったよ……？<br>ほ、本物じゃないかな……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print ……故人の最期の言葉を偽物呼ばわりなんて、<br>ひどいんじゃないかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Angry_Closed1
+@gosubModifyCamera 0
+@print （納得させきれなかったか……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,ArmL6,Eyes1_Normal_Closed1,Mouth1_Determined_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （……みんなの疑念を晴らし、<br>　信頼を勝ち取るんだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,ArmL6,Eyes1_Normal_Closed1,Mouth1_Determined_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （答えは、これまでの議論の中にある……！！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge6-12-1
+
+# MARK: 6-12-7: ❌ 反論・エマ1人に電話すること自体おかしい
+
+# Judge6-12-7
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print エマ１人相手に電話すること自体が<br>おかしいとは思わないか……！？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print 今にも殺されそうな状況なら――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Angry_Open1,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print 人の集まっている場所に向かうなり、<br>大きな声で助けを求めるなりするほうが<br>正しいはずだ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR10,ArmL14,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open
+@gosubModifyCamera 0
+@print き、きっとメルルちゃんは<br>パニックだったんじゃないかな……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print そうね……<br>世の中、正しい行動が取れる人間ばかりじゃないわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print むしろメルルちゃんの必死の行いを否定するヒロちゃんこそ<br>悪者に見えるわよ……？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Angry_Closed1
+@gosubModifyCamera 0
+@print （納得させきれなかったか……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,ArmL6,Eyes1_Normal_Closed1,Mouth1_Determined_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （……みんなの疑念を晴らし、<br>　信頼を勝ち取るんだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,ArmL6,Eyes1_Normal_Closed1,Mouth1_Determined_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （答えは、これまでの議論の中にある……！！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge6-12-1
+
+# MARK: 6-12-8: ❌ 反論・自信を持て！
+
+# Judge6-12-8
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR6,ArmL3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 自信を持て、リーダー！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print リーダーなら、<br>自分の発言に責任を持つべきじゃないか……！？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR8,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print …………自分の発言に責任を――<br>そうだね、そのとおりだ！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR6,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print 今私が発言した通り、やっぱり幻聴だったんだよ！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Angry_Closed1
+@gosubModifyCamera 0
+@print （し、しまった……！！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Angry_Closed1
+@gosubModifyCamera 0
+@print （納得させ切れなかったか……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,ArmL6,Eyes1_Normal_Closed1,Mouth1_Determined_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （……みんなの疑念を晴らし、<br>　信頼を勝ち取るんだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,ArmL6,Eyes1_Normal_Closed1,Mouth1_Determined_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （答えは、これまでの議論の中にある……！！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge6-12-1
+
+# MARK: 6-12-9: ❌ 反論・他に聞いていた人がいる
+
+# Judge6-12-9
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print その音を聞いていた人は他にもいる……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Surprised_Open01,Angle01/Facial/Mouth>Mouth_Angry_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print そ、そうなのかい……！？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print あのとき、レイアの他に３人も同じ部屋にいたんだ。<br>１人くらい音を聞いていてもおかしくない！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print いや誰も聞いてなかったって言ったじゃん。<br>何度も同じこと言わせんなし。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR8,ArmL5,Angle01/Facial/Eyes>Eyes_Pensive_Closed,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print やっぱり私の幻聴か……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Angry_Closed1
+@gosubModifyCamera 0
+@print （納得させきれなかったか……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,ArmL6,Eyes1_Normal_Closed1,Mouth1_Determined_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （……みんなの疑念を晴らし、<br>　信頼を勝ち取るんだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,ArmL6,Eyes1_Normal_Closed1,Mouth1_Determined_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （答えは、これまでの議論の中にある……！！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge6-12-1
+
+# MARK: 6-12-10: ❌ 反論・誤った証言をさせたかった
+
+# Judge6-12-10
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print それはナノカに誤った証言をさせるために<br>必要なことだったんだ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print 【死体発見直前、現場から音が聞こえた】<br>【メルルが殺害されたのは、きっとそのときだ】と、<br>君から言わせるためにね……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Normal_Open2,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print ……私の隣で音を偽装するなんて<br>リスクが高すぎる。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR1,ArmL10,Eyes1_Normal_Open1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print そんな証言をさせるためだけに<br>宝生マーゴがリスクを負うとは考えづらいわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR1,ArmL10,Eyes1_Normal_Open1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print 放っておけば誰かが死体を発見するでしょうし、<br>現場を見れば、誰もがあなたを犯人だと疑うでしょうしね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR2,ArmL9,Eyes1_Normal_Open3,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print …………それにあなたは今、<br>【宝生マーゴが犯人】という前提で<br>話をしているようだけれど――。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Normal_Open5,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print もしあなたが犯人だとしても、<br>あなたが今提示したそれら２つの証言は成立するわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Normal_Open5,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print ……あなたから言われても、説得力がないわね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Angry_Closed1
+@gosubModifyCamera 0
+@print （納得させきれなかったか……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,ArmL6,Eyes1_Normal_Closed1,Mouth1_Determined_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （……みんなの疑念を晴らし、<br>　信頼を勝ち取るんだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,ArmL6,Eyes1_Normal_Closed1,Mouth1_Determined_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （答えは、これまでの議論の中にある……！！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge6-12-1
+
+# MARK: 6-12-11: ❌ 反論・戯れ
+
+# Judge6-12-11
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print マーゴの戯れだよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print 自分の魔法を使って、<br>どこまで人を騙せるか試していたんだ……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Normal_Open2,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print ……もし、宝生マーゴが戯れでやっていたのだとしたら――。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR2,ArmL9,Eyes1_Normal_Open3,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print 仮に音を偽装していたとしても、<br>事件に関係ない可能性もあるんじゃないかしら？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR2,ArmL9,Eyes1_Normal_Open3,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print 偶然、遠目から現場を目にしてしまい<br>そのあと戯れに音を出して、みんなを現場に向かわせた……<br>とも考えられなくはないわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print 悪趣味すぎね……？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR2,ArmL9,Eyes1_Normal_Open3,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print 仮に戯れでやっていたのだとしても……だけれどね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print もちろん私はそんなことやってないわ？<br>……疑うなんて酷いわ、２人とも♡ { author:Margo speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Angry_Closed1
+@gosubModifyCamera 0
+@print （納得させきれなかったか……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,ArmL6,Eyes1_Normal_Closed1,Mouth1_Determined_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （……みんなの疑念を晴らし、<br>　信頼を勝ち取るんだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,ArmL6,Eyes1_Normal_Closed1,Mouth1_Determined_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （答えは、これまでの議論の中にある……！！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge6-12-1
+
+# ==============================================================================
+# MARK: 6-12-3: ⭕ 反論・ナノカの証言と矛盾する
+# 通過必須選択肢
+# ==============================================================================
+
+# Judge6-12-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2,Sweat1-1
+@gosubModifyCamera 0
+@print 思い出すんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print どんなに電話口のメルルが本物のようだったとしても、<br>その時間にメルルは医務室にいることはできない！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Hiro.Normal2,ArmR6,ArmL3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print それはナノカが証明している！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print そ、そっか……！<br>そのとき、医務室にはナノカちゃんがいたから……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Hiro.Normal1,Arms3,Eyes1_Painful_Open1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print ……エマ。<br>メルルは君に嘘をつくような子だったのかな？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print そんなことない……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print 【黒幕】だっていう話だけど……<br>それだってきっと何か理由があったんだ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print あれは……メルルちゃんじゃなかった！<br>偽物だったんだよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Open4,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （……まったく、世話の焼ける……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Open4,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （これぐらい考えれば、すぐにわかることだろう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Open3,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （……まあいい。<br>　これで周りも、マーゴが犯人であると疑いを深めたはずだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@set Skip6_12_3flag1=true
+@toast 議論発展…
+
+@goto .Judge6-12-1
+
+# ==============================================================================
+# MARK: 6-12-4: ⭕ 反論・音を抑えた
+# 通過必須選択肢
+# ==============================================================================
+
+# Judge6-12-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print マーゴなら、音を抑えることぐらいできるさ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print 立体音響だって声真似で再現したんだ。<br>音を打ち消すぐらい、できると思わないかい？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・明るい音
+@sfx Sfx_Common_2
+
+@char Leia.Default,ArmR6,ArmL5,Angle01/Facial/Eyes>Eyes_Surprised_Open01,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print ……そうか！<br>ノイズキャンセリングか！ { author:Leia speed:1 waitInput:true Wait:true }
+
+# ＠備考◆「ノイキャンってなんだ…？」
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print …………それは？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed01,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print ヘッドホンなどに使われている技術だよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR3,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print 逆位相の音を出力することで、<br>騒音なんかを打ち消す技術だ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,Arms,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print ……機械のような精度が必要になるだろうけど、<br>不可能とは言えない。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,Arms,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print それならマーゴくんがガラスの割れる音を<br>打ち消したのだとしても、納得できるよ！ { author:Leia speed:1 waitInput:true Wait:true }
+
+# ＠備考◆「知らなかった…」
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Open1,Mouth1_Fearful_Open1
+@gosubModifyCamera 0
+@print （…………なるほど） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Open1,Mouth1_Fearful_Open1
+@gosubModifyCamera 0
+@print （……レイアのこと、少しだけ見直しておこうか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Open3,Mouth1_Normal_Closed1
+@gosubModifyCamera 0
+@print （ともかく、納得してもらえたようだな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@set Skip6_12_4flag1=true
+@toast 議論発展…
+
+@goto .Judge6-12-1
+
+# ==============================================================================
+# MARK: 6-12-5: ⭕ 反論・早く死体を発見させたかった
+# 通過必須選択肢
+# ==============================================================================
+
+# Judge6-12-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open3,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print 早く死体を発見させたかった……<br>そう考えれば、辻褄が合うよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR3,ArmL1,Eyes1_Normal_Open2,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print 死体を……？<br>それはどうしてかしら。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 犯人の置かれた状況を考えてみればいい。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 私は４０分以上も前に、死体と一緒に<br>現場に転がされていた。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Closed1,Mouth2_Fearful_Open1
+@gosubModifyCamera 0
+@print しかし奥の部屋にいるはずの連中は１人も気付きやしない……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Closed1,Mouth2_Fearful_Open1
+@gosubModifyCamera 0
+@print せっかく疑われないようにエマに電話をして<br>死亡時刻の偽装までしていたのにね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR3,ArmL4,Eyes1_Angry_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print このままだと私が目を覚ましてしまう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR3,ArmL4,Eyes1_Angry_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print そうなれば、せっかくの偽装工作の意味が<br>なくなってしまうんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print だからマーゴは動いたんだよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,ArmL8,Eyes1_Normal_Open3,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print 君に、自身のアリバイを証言してもらうためにね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Nanoka.ArmR3,ArmL1,Eyes1_Neutral_Open1,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print ………そうね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR3,ArmL1,Eyes1_Angry_Open1,Mouth1_Smile_Closed1
+@gosubModifyCamera 0
+@print その推理なら、納得できるわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Normal_Closed1
+@gosubModifyCamera 0
+@print （……説得が通じたようだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@set Skip6_12_5flag1=true
+@toast 議論発展…
+
+@goto .Judge6-12-1
+
+# ==============================================================================
+# MARK: 6-12-2: ⭕ 偽証・私はみんなを信じている
+# 6-12-3～5通過後選択肢
+# ==============================================================================
+
+# Judge6-12-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+@StopBgm 
+@gosubCutIn Hiro
+@Gosub System/System_Subroutine.EndDebate-Last
+# カットイン
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Closed1,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print ……もちろんさ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Closed1,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print だって私は……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_Common_1
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open1,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print ……みんなを、信じているんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# BGM変更：EmA-狂-
+@bgm Bgm_14_1_Loop
+
+# ＠備考◆狂気を伴う、大げさな演技。演説するように
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print ここにいるみんななら、<br>きっと私の話を聞いてくれる！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR8,ArmL4,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 私を犯人と決めつけず、<br>公正に公平な裁判を開いてくれるに違いない！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR12,ArmL5,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 私は、そうみんなのことを信じているんだ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Painful_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print "そうだろう！？ みんな！" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Angry_Open1,Mouth2_Flushed_Closed1
+@gosubModifyCamera 0
+@print （……信じる？<br>　我ながら歯の浮くようなセリフだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,Eyes2_Angry_Open1,Mouth2_Normal_Closed1
+@gosubModifyCamera 0
+@print （しかし……信じたいはずだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,Eyes2_Angry_Open1,Mouth2_Normal_Closed1
+@gosubModifyCamera 0
+@print （私が言っていることが、正しいと……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,Eyes2_Angry_Open1,Mouth2_Normal_Closed1
+@gosubModifyCamera 0
+@print （自分たちは正しい道を進んでいるのだと……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,Eyes2_Normal_Closed1
+@gosubModifyCamera 0
+@print （そうでなければ……<br>　こんな誰かを処刑するという狂った裁決、<br>　できるわけがない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,Mouth2_Normal_Closed1
+@gosubModifyCamera 0
+@print （ならば……私が偽りの星となろう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,Eyes2_Normal_Closed1,Mouth2_Normal_Closed1
+@gosubModifyCamera 0
+@print （君たちの道筋を照らす、光に） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,Eyes2_Normal_Closed1
+@gosubModifyCamera 0
+@print （それがたとえ嘘であれ……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,Eyes2_Angry_Open2,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print （最後まで突き通せば――それは真実だっ！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Ema.Determined2,ArmR7,ArmL7,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print ……そ、そうだよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR7,ArmL7,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print ボクだって、ヒロちゃんの言う事……<br>信じてる……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆忌々しげ
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Angry_Open2,Mouth2_Angry_Open1
+@gosubModifyCamera 0
+@print （……エマか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Closed1,Mouth2_Angry_Open1
+@gosubModifyCamera 0
+@print （……まあ、今はいい） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Closed1,Mouth2_Determined_Closed1
+@gosubModifyCamera 0
+@print （今のエマの言葉で――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆悲しげな吐息
+
+@char Hanna.Pensive1,Angle01/Head01/Facial01/Mouth01>Mouth01_Neutral_Closed
+@gosubModifyCamera 0
+@print ………。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆納得
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL6,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Yell_Open
+@gosubModifyCamera 0
+@print ……ふむ。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Angry_Open1,Mouth2_Normal_Closed1
+@gosubModifyCamera 0
+@print "（――<ruby=\"たいせい\">大勢</ruby>は決した！）" { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Middle
+@gosubModifyCamera 0
+@print ……で、でも。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Middle
+@gosubModifyCamera 0
+@print べつに、ヒロちゃんを信じてるってだけじゃない……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL10,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print マーゴちゃんのことだって、信じてるんだ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# ＠備考◆願い・すがるように
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open
+@gosubModifyCamera 0
+@print マーゴちゃんがやったなんて、<br>嘘だよね……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Ema.Default,ArmR3,ArmL3,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ……そ、そうだ……！<br>いっそ、指紋を調べてみたらどうかな……！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL3,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print そしたら、潔白が証明されるかも……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# ＠備考◆ため息
+
+@char Margo.Default,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed,Angle01/Facial/Mouth>Mouth_Neutral_Closed
+@gosubModifyCamera 0
+@print …………。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Margo.Default,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print ……【嘘】、ね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+# ＠備考◆息を呑む
+
+@char Hiro.Normal2,ArmR12,ArmL5,Eyes2_Serious_Open1,Mouth2_Determined_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （………っ！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆ここからゆっくり情緒を込めて・悲しげ
+
+@char Margo.Default,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print ……嘘よ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print 私を信じているなんて……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print そんなのは……【嘘】。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print 口ではそんなことを言っても……<br>人は、必ず裏切るの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Pensive_Middle,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print 私はいつだって……裏切られてきた。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,Angle01/Facial/Eyes>Eyes_Pensive_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print だからね、騙すのよ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,Angle01/Facial/Eyes>Eyes_Pensive_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print 騙される前に……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print ねえ……みんな。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,Angle01/Facial/Eyes>Eyes_Pensive_Middle,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print 今日は……騙されてくれた？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR5,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Closed,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print うふ……ふふ……ふふふ……！ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,Angle01/Facial/Eyes>Eyes_Fearful_Open,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print あはははははははは！！ { author:Margo speed:1 waitInput:true Wait:true }
+
+# ＠備考◆ドン引き
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Middle,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……う。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Lifeless01,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open
+@gosubModifyCamera 0
+@print マ……マーゴ……ちゃん……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR4,ArmL5,Angle01/Facial/Eyes>Eyes_Pensive_Middle,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print ……そうね、もういいわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print 嘘には賞味期限があるの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print 私の嘘は……<br>もう誰の口にも合わないみたい。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print そうよ……私がやったの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print これ以上、<br>あなたたちの生ぬるい<br>お友だちごっこに付き合うより……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+# @備考◆嬉しそうに
+
+@char Margo.Default,Angle01/Facial/Eyes>Eyes_Pensive_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print このまま処刑された方が、少しだけマシだわ……♡ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR11,ArmL11,Eyes2_Pensive_Open1,Mouth2_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print ……マーゴ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR6,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Neutral_Closed
+@gosubModifyCamera 0
+@print 同情はいらないわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,Angle01/Facial/Eyes>Eyes_Normal_Closed,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print 私の負け……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,Angle01/Facial/Eyes>Eyes_Smile_Closed,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print あなたの勝ちよ、ヒロちゃん♡ { author:Margo speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndTrial
+
+@goto Act02_Chapter01/Act02_Chapter01_Trial13

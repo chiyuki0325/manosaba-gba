@@ -1,0 +1,208 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-2-6
+
+# ========================================
+# ●シーン1‐2-6
+# ========================================
+
+@back 7_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_17_1
+
+@char Meruru.Default
+@char Miria.Pensive1,ArmR8
+
+@print どこにも怪我は、ないみたいです……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print うぅ……大騒ぎして、面目ない……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 死ぬ死ぬと騒ぎ立てるミリアを、<br>エマたちは医務室へと連れてきた。 { speed:1 waitInput:true Wait:true }
+
+@print もはや見慣れた光景となっている、<br>メルルとアンアンがそこにはいて。 { speed:1 waitInput:true Wait:true }
+
+@print "半泣きのミリアを、<br>メルルが懸命に<ruby=\"なだ\">宥</ruby>めた。" { speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive1,ArmR8
+@char Ema.Normal1
+@char Sherry.Normal1
+
+@print 足を引っ張ってばかりで、情けない……。<br>おじさんのせいでアリサちゃんもいなくなったし。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print おじさんのせいじゃありませんよ！<br>あ、おじさんって言っちゃいました。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print おじさんでいいよもう……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print なんだかミリアさんといると、<br>脱力してしまいますね。ある意味癒し系ですよ。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print う、うん、逃げてる時大騒ぎするから、<br>ちょっと笑っちゃったよね…。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3
+
+@print いや、大変な状況ではあるんだけど！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print うう……迷惑かけてごめんね……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマは苦笑しながらも、<br>先ほどの出来事を思い返す。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print （ナノカちゃんがミリアちゃんを狙撃した。<br>　もう後戻りはできないのかな……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ナノカは明確な殺意をミリアに向けている。<br>そこから和解して協力していくビジョンが<br>エマには見えない。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3
+
+@print （……ううん、ナノカちゃんと話し合おう。<br>　それにアリサちゃんとだって。<br>　みんなきっとわかり合える。まだ間に合う） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Meruru.Default
+
+@print アリサさんの方はどうでしたか……？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "ハーブティーを<ruby=\"い\">淹</ruby>れてくれたメルルが、<br>タイミングよく尋ねてくる。" { speed:1 waitInput:true Wait:true }
+
+@char Miria.Normal1
+@char Ema.Normal1,ArmR3
+@char Sherry.Normal1
+
+@print 自分にはできないって言ってたけど、<br>話し合ったらなんとかなると思う。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ここから出たい気持ちはみんな一緒なんだし……。<br>アリサちゃんがこの計画の鍵なんだから、<br>絶対に説得してみせるよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print そこに関しては<br>エマさんにお願いするしかありませんね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive1,ArmR1
+
+@print おじさんたちには心を開いてくれなそうだしね……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@HidePrinter 
+@animate MainBackground
+@spawn MaskingRectangle
+@back 7_1
+@blur MainBackground-Front
+@char AnAn.Pensive1 { time:0 }
+@mask MainBackground-Front,AnAn-Front
+@animate MainBackground-Front
+@animate AnAn-Front
+@Wait 0.3
+
+@print エマはふと視線を感じ、<br>ベッドに座っているアンアンの方へと目を向けた。 { speed:1 waitInput:true Wait:true }
+
+@hide AnAn-Front,MainBackground-Front
+@blur MainBackground-Front
+@despawn MaskingRectangle
+@Wait 0.3
+
+@print （アンアンちゃん、今ボクのこと見てた……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3
+
+@print アンアンちゃん、具合はどう？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマが声をかけると、<br>アンアンはぷいっとそっぽを向く。 { speed:1 waitInput:true Wait:true }
+
+@print すると、ミリアがアンアンに近付いていった。 { speed:1 waitInput:true Wait:true }
+
+@char AnAn.Normal1,Angle01/Option_Arms-
+@char Miria.Normal1
+
+@print アンアンちゃん、寝てばかりで暇だろう？<br>おじさんと映画を見にいかないかい？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@print …………いく。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print （えっ……！？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print アンアンは素直にベッドから降り、<br>ミリアの後をのろのろとついていく。 { speed:1 waitInput:true Wait:true }
+
+@print ２人は娯楽室に向かったようだった。 { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default
+@char Ema.Normal1,ArmR3
+@char Sherry.Surprised1
+
+@print ……はええ、ミリアさん、<br>どうやってアンアンさんを手なずけたんでしょう？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print う、うん、意外な組み合わせ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 一緒に医務室に行った時から、<br>意気投合したみたい、です……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print ミリアさんは大人なので<br>安心できるのかもしれませんね。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+
+@print ああ、保護者みたいな感じでしょうか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR1
+
+@print ミリアちゃん、優しいしね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （やっぱりミリアちゃんは黒幕じゃないと思う） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ミリアとアンアンが、仲良く歩いていった。<br>ただそれだけのことだが、エマは笑顔になる。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Smile1
+
+@print "よし！ 休憩はおしまい！<br>ボクはアリサちゃんを探してみるね。" { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Meruru.Pensive
+@char Sherry.Normal1
+
+@print む、無理はしないでくださいね……？<br>疲れたらいつでも休んでください。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print では、私とメルルさんは<br>マーゴさんの部屋に行きます？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 気球を作っているのは、<br>マーゴの監房内だ。 { speed:1 waitInput:true Wait:true }
+
+@print 今はきっと、せっせとハンナが<br>裁縫を頑張っていることだろう。 { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Smile
+
+@print そうですね。お手伝いしたいです……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1
+
+@print ああ、でも私は来んなって言われてるんでしたぁ。<br>邪魔にしかならないって、ひどいです！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1
+
+@print あはは……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマは苦笑を漏らした。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print （うまくいかないこともあるけど、<br>　初めて脱獄が実現しそうな感触はある） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （気球は確実に完成に近付いている……<br>　もう少しで、きっとボクらは――） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 医務室を出て、<br>エマは軽やかに地を蹴った。 { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter02/Act01_Chapter02_Adv07

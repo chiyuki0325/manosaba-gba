@@ -1,0 +1,114 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-4-13
+
+# ========================================
+# ●シーン2‐4‐13
+# ========================================
+
+@back 21_1 { time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_35_1
+
+@back Transparent { time:1.8 }
+@WaitForNextFrame 
+
+@animate MainBackground
+@Wait 1.5
+
+@print それからの流れは、<br>ほとんど覚えていない。 { speed:1 waitInput:true Wait:true }
+
+@print きっと殺人事件が起きたと判明し、<br>ラウンジに集合させられ…… { speed:1 waitInput:true Wait:true }
+
+@print きっとゴクチョーから、<br>魔女裁判の話があって…… { speed:1 waitInput:true Wait:true }
+
+@print 事前投票で私がまた最多票を獲得し、<br>裁判まで懲罰房で拘束されることになったのだろう。 { speed:1 waitInput:true Wait:true }
+
+@print 何も考えられなかった。 { speed:1 waitInput:true Wait:true }
+
+@print 頭の中では、<br>エマの死体と、レイアの死体が<br>ずっとぐるぐるしていた。 { speed:1 waitInput:true Wait:true }
+
+@print （エマが死んだ……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （レイアが死んだ……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私が私自身の目で見た光景が、<br>どうしても現実だと受け入れられない。 { speed:1 waitInput:true Wait:true }
+
+@print （私は、エマに謝らないといけないのに） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （レイアに伝えたいことが、<br>　あったのに……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@ResetText 
+@back SolidColor { time:1 }
+@Wait 1.2
+
+@back 13_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@back SolidColor.Custom { time:1.5 }
+@Wait 1.8
+
+@print いつの間にか私は、裁判所にいた。 { speed:1 waitInput:true Wait:true }
+
+@print "裁判所には、すでに少女たちが<ruby=\"そろ\">揃</ruby>っていた。" { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+@char Hanna.Pensive1
+
+@print 橘シェリー。<br>遠野ハンナ。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria.Pensive1
+@char Alisa.Angry1,Option-ArmL-Off
+
+@print 佐伯ミリア。<br>紫藤アリサ。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hiro.Fearful1
+
+@print そして私の……５人。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print その時になってようやく、<br>エマがいない、レイアがいない事実にたどりつく。 { speed:1 waitInput:true Wait:true }
+
+@print ――彼女たちは、殺されていた。 { speed:1 waitInput:true Wait:true }
+
+@print もうこの世界のどこにも存在しない。 { speed:1 waitInput:true Wait:true }
+
+@print 私は４人の少女たちを見回す。 { speed:1 waitInput:true Wait:true }
+
+@print （殺されていた、殺されていた、<br>　殺されていた――！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "未だ思考はうまく機能せず、<br>その事実だけが私の胸を<ruby=\"お\">圧</ruby>し<ruby=\"つぶ\">潰</ruby>す。" { speed:1 waitInput:true Wait:true }
+
+@print （どんなに辛くとも、<br>　現実を受け入れないといけない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 息苦しさで胸を押さえながらも、<br>私は無理やりにでも顔を上げた。 { speed:1 waitInput:true Wait:true }
+
+@print "感情に流されず、<br>思考を<ruby=\"さ\">冴</ruby>えわたらせなければいけない。" { speed:1 waitInput:true Wait:true }
+
+@StopBgm { fade:3 }
+
+@print そうしなければ、真実にはたどりつけない。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@Wait 0.4
+@char Warden.1 { time:0.5 }
+@Wait 0.6
+
+@print それでは、魔女裁判開廷です！ { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# ========================================
+# ＞議論パートへ
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter04/Act02_Chapter04_Trial00

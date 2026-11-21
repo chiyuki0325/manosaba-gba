@@ -1,0 +1,181 @@
+@Gosub System/System_Subroutine.BeginAdv
+
+@back Transparent { time:0 }
+
+@Gosub .Screen
+# @gosub .Update
+# @gosub .Evidence
+
+@Stop 
+
+# ==============================================================================
+# 魔女図鑑画面
+# ==============================================================================
+
+# Screen
+
+@update 1-1
+@update 1-2
+@update 1-3
+@update 1-4
+@update 1-5
+@update 1-6
+@update 1-8
+@update 1-9
+@update 1-10
+@update 1-11
+@update 10-1
+@update Alisa
+@update AnAn
+@update Coco
+@update Ema
+@update Hanna
+@update Hiro
+@update Jailer
+@update Leia
+@update Margo
+@update Meruru
+@update Miria
+@update Nanoka
+@update Noah
+@update Sherry
+@update Warden
+@update F1
+@update F2
+@update B1
+@update Blueprint
+@update 1
+@update 2
+@update 3
+@update 4
+@update 5
+@update 1
+@update 2
+@update 3
+@update 4
+@update 5
+@update 6
+@update 7
+@update 8
+@update 9
+@update 10
+@update 11
+@update 12
+@update 13
+@update 14
+@update 15
+@update 16
+@update 17
+@update 18
+
+@print "Debug_WitchBook # Screen" { speed:1 waitInput:true Wait:true }
+
+@book 
+
+@print "Screen presented." { speed:1 waitInput:true Wait:true }
+
+@update 1-7
+
+@print 2 { speed:1 waitInput:true Wait:true }
+
+@print "Debug_WitchBook # Screen ends." { speed:1 waitInput:true Wait:true }
+
+@Return 
+
+# ==============================================================================
+# 更新
+# ==============================================================================
+
+# Update
+
+@print "Debug_WitchBook # Update" { speed:1 waitInput:true Wait:true }
+
+@update 1-1
+
+@print "証拠品 更新<br>ID：1-1<br>Version：1" { speed:1 waitInput:true Wait:true }
+
+@update 1-2
+
+@print "証拠品 更新<br>ID：1-2<br>Version：1" { speed:1 waitInput:true Wait:true }
+
+@update 1-1
+
+@print "証拠品 更新<br>ID：1-1<br>Version：0（消失）" { speed:1 waitInput:true Wait:true }
+
+@update 1-11
+
+@print "証拠品 更新<br>ID：1-11<br>Version：1" { speed:1 waitInput:true Wait:true }
+
+@update 1-10
+
+@print "証拠品 更新<br>ID：1-10<br>Version：1" { speed:1 waitInput:true Wait:true }
+
+@update Noah
+
+@print "人物 更新<br>ID：Noah<br>Version：1" { speed:1 waitInput:true Wait:true }
+
+@update Ema
+
+@print "人物 更新<br>ID：Ema<br>Version：1" { speed:1 waitInput:true Wait:true }
+
+@update AnAn
+
+@print "人物 更新<br>ID：AnAn<br>Version：1" { speed:1 waitInput:true Wait:true }
+
+@print "Debug_WitchBook # Update ends." { speed:1 waitInput:true Wait:true }
+
+@Return 
+
+# ==============================================================================
+# 更新
+# ==============================================================================
+
+# Evidence
+
+@update 1-1
+@update 1-10
+@update 10-1
+@update Ema
+@update Hiro
+@update Meruru
+
+@print "Debug_WitchBook # Evidence" { speed:1 waitInput:true Wait:true }
+
+# Evidence-Choice-Clue
+
+@print 魔女図鑑画面/証拠品を開きます。 { speed:1 waitInput:true Wait:true }
+
+@evidence Clue
+
+@if "chosenEvidenceId==\"1-10\""
+	@goto .Evidence-Correct-Clue
+
+@print 不正解（証拠品） { speed:1 waitInput:true Wait:true }
+
+@goto .Evidence-Choice-Clue
+
+# Evidence-Correct-Clue
+
+@print 正解（証拠品） { speed:1 waitInput:true Wait:true }
+
+# Evidence-Choice-Profile
+
+@print 魔女図鑑画面/人物を開きます。 { speed:1 waitInput:true Wait:true }
+
+@evidence Profile
+
+@if "chosenEvidenceId==\"Hiro\""
+	@goto .Evidence-Correct-Profile
+
+@print 不正解（人物） { speed:1 waitInput:true Wait:true }
+
+@goto .Evidence-Choice-Profile
+
+# Evidence-Correct-Profile
+
+@print 正解（人物） { speed:1 waitInput:true Wait:true }
+
+
+@print "Debug_WitchBook # Evidence ends." { speed:1 waitInput:true Wait:true }
+
+@Return

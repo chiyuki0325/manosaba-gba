@@ -1,0 +1,36 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-1-5
+
+# ========================================
+# ●シーン2‐1‐5
+# ========================================
+
+@back 1_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# さらさらと紙にペンを走らせる書き音
+@sfx Sfx_111
+@Wait 3
+
+@bgm Bgm_6_1
+
+@print ――監獄生活２周目、２日目。<br>マーゴが看守に重傷を負わされた。 { speed:1 waitInput:true Wait:true }
+
+@print ――脱獄を計画し、看守に逆らった<br>エマ、シェリー、ハンナの行動に<br>巻き込まれた形だ。 { speed:1 waitInput:true Wait:true }
+
+@print ――私とレイア、メルルは医務室で<br>マーゴの治療に当たった。 { speed:1 waitInput:true Wait:true }
+
+@print ――他の囚人たちも入れ替わり立ち替わり、<br>様子を見にやってきた。 { speed:1 waitInput:true Wait:true }
+
+@print ――マーゴは高熱が出て一時危険だったけれど、<br>メルルの魔法によって持ち直し、容体も安定した。<br>もう心配はない。 { speed:1 waitInput:true Wait:true }
+
+@print "――望まない方向だったが、<br>看守が危険な存在であることは、周知された。<br>すっかり少女たちは<ruby=\"いしゅく\">萎縮</ruby>している。" { speed:1 waitInput:true Wait:true }
+
+@print ――二度と脱獄など計画させないよう、<br>毎日時間を決めて囚人の各部屋の点検をすることに決めた。 { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter01/Act02_Chapter01_Adv11

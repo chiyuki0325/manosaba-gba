@@ -1,0 +1,214 @@
+@Gosub Act01_Chapter01/Act01_Chapter01_TrialInit
+@gosubResetBook System/System_ResetWitchBook
+
+# ==============================================================================
+# 必要アイテム（魔女図鑑証拠品）
+#
+# 【城ケ崎ノアの死体写真】
+# ノアは仰向けに倒れ、血を流して死んでいた。
+# 死因は失血による死亡と見られる。
+# 胸に刺し傷がある。
+# 床には白い塗料が塗られている。
+#
+# 【ボウガンの矢】
+# 死体の近くに落ちていた矢。
+# 先端の形状は死体の傷と一致しており、
+# 全面に血が付着している。
+#
+# 【床の傷】
+# 死体の近くに尖った物で
+# 傷つけられたような痕跡が残っており、
+# その部分のみ白い塗料が剥げている。
+#
+# 【アンアンのスケッチブック】
+# 夏目アンアンに見せてもらったスケッチブック。
+# 蝶の絵が描かれている。
+# ノアに描いてもらった物らしく、
+# 蝶はアンアンへのメッセージらしい。
+#
+# 【カラースプレー】
+# 白の塗料。
+# 乾くには数時間かかり、強い匂いがする。
+# 木工用で、木材に着くと落ちないと注意書きがされている。
+#
+# 【ナノカのリボン】
+# アリサが湖で発見したリボン。
+# 血と塗料と思わしき物がついている。
+#
+# 【配信アーカイブ】
+# ココの配信。
+# ミリアとレイアが出演している。
+#
+# 【ホウキ】
+# 組み立て式の木製ホウキ。
+# 現場近くの掃除用具入れに入っていた。
+#
+# 【分解されたパーツ】
+# バケツに入っていた機械の部品。
+# メルルと一緒に発見した。
+#
+# 【フルーツの写真】
+# シェリーがお試しで撮影した写真。
+# フルーツの盛り合わせが飾られている。
+# 下の方は腐っているようだ
+#
+# バッドエンド分岐案
+# シーン1~4
+# 「なんとなくエマに投票された」END
+#
+# シーン5～9
+# 「ハンナが怪しまれて処刑された」END
+# 裁判のあとにエマがレイアに「知りすぎた」とあっさり殺されたりする？
+#
+# シーン10～
+# 「レイアと競ってなんとなくエマになった」END
+# （１～４と一緒でもいい）
+# ==============================================================================
+
+# ==============================================================================
+# MARK: 1-1-0: 冒頭
+# ==============================================================================
+
+# Judge1-1-0
+
+@char Alisa.Angry1,Option-ArmL-Off
+@char AnAn.Default,ArmR-Option-Off,Angle01/Option_Arms-
+
+@bgm Bgm_25_1
+@stageCamera 0 { time:0 }
+@stageCamera 1 { Rotation:-2,{ (2.2 / courtStandCount * 360) },-2 time:0 }
+@WaitForNextFrame 
+
+@stageCamera 1 { Rotation:-1,{ (5.8 / courtStandCount * 360) } time:25 }
+@back Transparent { time:0.9 }
+@Wait 0.6
+
+@badId 1
+
+@ProcessInput true
+
+@print さて、まずは何から話すべきかな。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print それはもちろん、犯人を示す明確な証拠からですよ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print んなもんあったら苦労してねぇよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile
+
+@print ふっふっふー。それがあるって言ったらどうします？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,Option-ArmL-Off
+
+@print ……死体に犯人の名前でも書いてあるってのか？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Coco.Angry
+
+@print ていうかそんなのあったらみんな見つけてるし！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Miria.Surprised1,ArmR2,ArmL2
+
+@print まあまあ。<br>とにかくシェリーちゃんの話を<br>聞いてみようよ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print どうせ何から話していいのか<br>わからないんだし……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@stageCamera 0 { Rotation:0,{ (2.98 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+
+@stageCamera 0 { Rotation:0,{ (2.92 / courtStandCount * 360) },0 time:0.6 }
+@hideStageScreen 1
+@Wait 0.2
+
+@char Leia.Normal1,ArmR3
+
+@print ああ、それじゃあ聞かせてくれシェリーくん。<br>キミの見つけた証拠について。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@char Sherry.Default,ArmR12 { time:0 }
+@stageCamera 1 { Rotation:0,{ (2.02 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+
+@stageCamera 1 { Rotation:0,{ (2.08 / courtStandCount * 360) },0 time:0.6 }
+@showStageScreen 1
+@Wait 0.2
+
+@print "ええ！ お任せください！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@char Ema.Pensive1,ArmR3 { time:0 }
+@stageCamera 0 { time:0 }
+@WaitForNextFrame 
+
+@stageCamera 0 { time:4 }
+@hideStageScreen 1
+@Wait 0.2
+
+@print （これから議論が本格的に始まるんだ……。<br>　みんなの話をちゃんと聞かないと……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （でもいったい、何を話したらいいんだろう……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@ResetText 
+@gosubSplitStageScreen 1
+@Wait 0.2
+
+@char Meruru.Normal1,ArmR7_1,ArmL5,Eyes1_Normal_Open2,Mouth1_Normal_Open2
+@print ……あっ、あの、エマさん。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+
+@print あっ……何？<br>メルルちゃん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@stageCamera 0 { Rotation:2,{ (12.5 / courtStandCount * 360) },0 time:8 }
+@hideStageScreen 1
+@Wait 0.2
+
+@char Meruru.Normal1,ArmR8_1,ArmL8,Eyes1_Normal_Open2,Mouth1_Normal_Open2
+@print たぶん、ここからみんなで【議論】を<br>することになると思うんですが……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal1,ArmR8_1,ArmL8,Eyes1_Normal_Open2,Mouth1_Normal_Open2
+@print みんなが話す内容で……<br>【気になるところ】が<br>出てくると思うんです。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal1,ArmR1_1,Eyes1_Normal_Open3,Mouth1_Smile_Closed1
+@print そんなところがあったら……<br>【指摘】できるかどうか<br>考えてみてください。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal1,ArmR1_1,Eyes1_Normal_Open3,Mouth1_Smile_Closed1
+@print 間違っている意見には<br>反論することができるはずです。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal1,ArmR5_1,ArmL2,Eyes1_Pensive_Open2,Mouth1_Normal_Open1
+@print 私も何か変なことを<br>言ってしまうかもしれませんし……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal1,ArmR5_1,ArmL2,Eyes1_Pensive_Open2,Mouth1_Normal_Open1
+@print 皆さんも、何か勘違いしていることが<br>あるかもしれません。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal2,ArmR9_2,ArmL9,Eyes2_Smile_Closed1,Mouth2_Smile_Closed1
+@print エマさんならきっと、<br>みんなの議論を正しい方向に<br>導けると思うんです……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆笑顔
+@char Meruru.Smile
+@print ……なんとなく、ですけど。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print メルルちゃん……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@stageCamera 1 { time:0 }
+@WaitForNextFrame 
+
+@char Ema.Determined2,ArmR3,ArmL7
+@stageCamera 1 { time:2 }
+@showStageScreen 1
+@Wait 0.2
+
+@print （メルルちゃんの言う通り、何か気になる事があったら<br>　勇気を出して指摘してみよう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@goto Act01_Chapter01/Act01_Chapter01_Trial01

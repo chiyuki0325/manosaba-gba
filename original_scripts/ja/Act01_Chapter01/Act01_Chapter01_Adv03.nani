@@ -1,0 +1,138 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-0-3
+
+# ========================================
+# ●シーン1-0-3
+# [back 2]
+# ========================================
+
+@back 1_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# ========================================
+# [sfx 119：牢の扉が開く音]
+# ========================================
+
+@sfx Sfx_119
+
+@print "先ほどエマが<ruby=\"てつごうし\">鉄格子</ruby>に<ruby=\"すが\">縋</ruby>りついた時に<br>かたく閉ざされていた扉は、あっさり開いた。" { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+@back 2_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent.Custom { time:0.9 }
+@Wait 0.9
+
+@bgm Bgm_21_1
+
+@print エマはすぐにヒロの後を追って通路へと出る。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3
+
+@print ま、待ってよヒロちゃん！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 通路には、ヒロのほかにも<br>たくさんの少女たちが現れていた。 { speed:1 waitInput:true Wait:true }
+
+@print 声をあげたエマの方へと視線が注がれる。<br>エマにとって、ヒロ以外は全員見たこともない少女たち。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3
+
+@print （良かった……全員中学の頃の同級生だったら<br>　どうしようかと……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ただ、年の頃は全員同年代に見える。<br>エマやヒロ同様、不思議な服装に身を包んでいた。 { speed:1 waitInput:true Wait:true }
+
+@print そして、通路の先には黒衣の異形が歩いている。 { speed:1 waitInput:true Wait:true }
+
+@print （あの異形が看守ってことなのかな） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 他の少女たちも青ざめ戸惑いながらも、<br>看守の後について歩き始めている。 { speed:1 waitInput:true Wait:true }
+
+@print ヒロも、エマよりずいぶん先を歩いていた。<br>エマは小走りに追いつく。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR1
+
+@print ヒロちゃん！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hiro.Pensive1
+@char Ema.Normal1,ArmR3
+
+@print ……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print あの、あのね。色々あったけど、<br>ヒロちゃんにまた会えてよかった。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ボク、変わったんだよ。<br>もう前のボクじゃない。<br>ヒロちゃんと友だちになりたいんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ヒロはエマを存在ごと無視することに決めたのか、<br>歩みを止めない。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3
+
+@print ボ、ボク諦めないから！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# ＠備考◆忌々しそうに息を詰める
+
+@char Hiro.Angry1
+
+@print っ……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ぎりっと強く奥歯を噛みしめる音が響き、<br>ヒロはエマへと振り向く。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1
+
+@print そして、思い切りエマを突き飛ばした。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3
+
+@print あうっ { author:Ema speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [sfx 6：転ぶ音]
+# ========================================
+
+@sfx Sfx_6
+@hide Ema
+
+@print エマはその場に転がる。<br>硬い石の床で、膝をすりむいた。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1
+
+@print 怪我をさせた当人のヒロは、<br>憎々しげにエマを見下ろしている。 { speed:1 waitInput:true Wait:true }
+
+@print 君が変わったとして、<br>そのことが、私になんの意味が？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私が君を嫌いなことは変わらない。<br>この先永遠に。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "威圧的に言って、<br>ヒロは<ruby=\"きびす\">踵</ruby>を返して去っていく。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3
+
+@print ま、待ってよ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@char Sherry.Pensive1,ArmL4,ArmR2
+
+# ＠橘シェリー
+
+@print ふむ……。 { author:Unknown speed:1 waitInput:true Wait:true }
+
+@print 水色髪の少女が、興味深げに２人を見ていた。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [sfx 7：階段を上がる音]
+# ========================================
+
+@sfx Sfx_7
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter01/Act01_Chapter01_Adv04

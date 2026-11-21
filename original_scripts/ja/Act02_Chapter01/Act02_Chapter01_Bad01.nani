@@ -1,0 +1,892 @@
+@if isDebugDirectJump
+	@Gosub System/System_Subroutine.BeginAdv
+
+# ========================================
+# ＞『火かき棒を手に取った』を選択→2‐1‐b1へ
+# ========================================
+
+# Scene2-1-b1
+
+# ========================================
+# ●シーン2-1-b1
+# ========================================
+
+@back 5_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_27_1
+
+@print 暖炉脇に立てかけられていた、<br>火かき棒を手に取った。 { speed:1 waitInput:true Wait:true }
+
+@print ここで暴れたら、私は殺される。 { speed:1 waitInput:true Wait:true }
+
+@print そうなれば、前回と同じことの繰り返し。<br>避けるべき愚かな行動だ。 { speed:1 waitInput:true Wait:true }
+
+@print 頭では理解している。<br>それでも―― { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1
+
+@print 間違っている。私は悪じゃない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 耐えられない。 { speed:1 waitInput:true Wait:true }
+
+@print 魔女が絶対的な悪だというなら、<br>排除しなければ。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+# @shake 5_1
+
+@print 私は地を蹴り、駆け出す―― { speed:1 waitInput:true Wait:true }
+
+@print だが。 { speed:1 waitInput:true Wait:true }
+
+@StopBgm { fade:3 }
+
+# ＠備考◆ハッと息を呑む
+
+@print ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print すぐに足を止めた。 { speed:1 waitInput:true Wait:true }
+
+# TODO: インタラクティブ遷移
+@bgm Bgm_27_2
+
+@print ひとりの少女が、<br>私の行く手を阻むように立ち塞がったからだ。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Angry1,ArmR1 { time:0.5 }
+@Wait 0.5
+
+@print 何をするつもりだい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia
+@char Hiro.Angry1
+
+@print ……間違ったものを消す。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私は短くそう返した。 { speed:1 waitInput:true Wait:true }
+
+@print 君の視線や敵意はエマくん……<br>いいや、この場にいる全員に向けられていた。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print キミの目は明らかに普通じゃない。<br>もし彼女たちに危害を加えるつもりなら、<br>見過ごすわけにはいかないな。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"りん\">凛</ruby>と告げて、レイアは腰の武器に手を伸ばす。<br>ここで彼女が割って入ってくるとは。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 【前回との違い】に、私はわずかに驚いていた。<br>同時に、ふつふつと怒りが湧いてくる。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Angry1
+
+@print レイアの口振り。<br>まるで私が間違った存在であるかのようだ。 { speed:1 waitInput:true Wait:true }
+
+@print 邪魔をしないでほしい。<br>私が狙っていたのは……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@camera 
+
+@print 言いかけて、私は息を詰まらせる。 { speed:1 waitInput:true Wait:true }
+
+@print 攻撃を仕掛けようとしていた相手……<br>看守に目を向けようとしたのだが、できなかった。 { speed:1 waitInput:true Wait:true }
+
+@print 視線を動かそうとしても、<br>何故かレイアから目を逸らせない。 { speed:1 waitInput:true Wait:true }
+
+@print ……これは君の魔法か？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1
+
+@print 私の問いに、レイアはただ薄く微笑む。<br>答えるつもりはないらしい。 { speed:1 waitInput:true Wait:true }
+
+@print 相手の自由を奪う魔法だろうか。<br>……いや、体は普通に動かせる。 { speed:1 waitInput:true Wait:true }
+
+@print 私の【視線】だけが、<br>レイアに【誘導】されてしまうような…… { speed:1 waitInput:true Wait:true }
+
+@print この魔法、解除してくれないか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Normal1
+
+@print キミが矛を収めてくれるなら、<br>すぐにでも解除するよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1
+
+@print ……その顔を見る限り、<br>そんなつもりはなさそうだけれどね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print レイアが苦笑を浮かべる。 { speed:1 waitInput:true Wait:true }
+
+@print 君は誤解している。<br>私は君たちに手を出すつもりはない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Normal1
+
+@print ……なるほど。<br>キミの狙いは、化け物の方か。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Angry1
+@StopBgm { fade:3 }
+
+@print そうだとしても、私はキミを止める。<br>あまりにも無謀……自殺に等しい行為だ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print ――！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 心臓が大きく脈打つ。 { speed:1 waitInput:true Wait:true }
+
+@print "自殺。<br>その言葉が、私の感情を<ruby=\"さかな\">逆撫</ruby>でした。" { speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1
+
+@print 私はここにいるみんなを守るつもりだ。<br>キミが暴れたら、周囲にも危害が――。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# TODO: インタラクティブ遷移
+@bgm Bgm_27_3
+
+# ＠備考◆息を呑む
+
+@print "レイアが何か<ruby=\"しゃべ\">喋</ruby>っているが、耳に入ってこない。" { speed:1 waitInput:true Wait:true }
+
+@print 自殺は間違っている。<br>何より許されない行為だ。 { speed:1 waitInput:true Wait:true }
+
+@print それを、私が犯すわけがない。 { speed:1 waitInput:true Wait:true }
+
+@print だがレイアは言った。<br>私の行動は自殺行為だと。 { speed:1 waitInput:true Wait:true }
+
+@print 心が、自分の世界が、<br>大きく揺らいでいるような感覚に襲われる。 { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@print ……いいや、違う。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私は魔女を排除する。<br>決して自殺行為なんかじゃない。 { speed:1 waitInput:true Wait:true }
+
+@print それを否定するというなら。<br>邪魔をするのなら。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Surprised1
+
+@print レイア、君には少し痛い目を見てもらう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print これまで以上に強烈な衝動に、<br>身が焦がれそうだった。 { speed:1 waitInput:true Wait:true }
+
+@print 抑えきれない感情に衝き動かされる。<br>再び地を蹴り、私はレイアに火かき棒を振り下ろす。 { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_33_1_Loop
+
+# ぶんっと武器が振り下ろされる音
+@sfx Sfx_9
+
+@char Leia.Surprised1
+@camera { time:0.2 }
+@Wait 0.2
+
+# 金属同士が衝突する音
+@sfx Sfx_159
+
+@char Leia.Angry1
+@Wait 0.2
+@camera { time:0.2 }
+@Wait 0.2
+
+@print レイアが剣を抜き、私の一撃を受け止めた。 { speed:1 waitInput:true Wait:true }
+
+@print ……そのレイピアは飾りじゃないらしい。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1
+
+@print キミこそ、心得があるみたいだね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 不敵に微笑むレイアと、私は武器をぶつけ合う。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@char Leia.Angry1
+# 金属同士が衝突する音
+@sfx Sfx_159
+@camera { time:0.1 }
+@Wait 0.1
+@camera { time:0.2 }
+@Wait 0.1
+@StopSfx 
+# 金属同士が衝突する音
+@sfx Sfx_159
+@camera { time:0.1 }
+@Wait 0.1
+@camera { time:0.2 }
+@Wait 0.2
+@StopSfx 
+# 金属同士が衝突する音
+@sfx Sfx_159
+@camera { time:0.1 }
+@Wait 0.1
+@camera { time:0.2 }
+@Wait 0.2
+
+@print 何度か打ち合いを繰り返し―― { speed:1 waitInput:true Wait:true }
+
+@camera { time:0.1 }
+@Wait 0.1
+
+# 剣が弾かれる音
+@sfx Sfx_160
+
+@print 私は力を込めた一振りで、<br>レイアの手から剣を弾き飛ばした。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Surprised1
+
+@print くっ……！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@camera { time:0.2 }
+@Wait 0.2
+
+@hideChars 
+
+@print そのまま彼女の顔に、<br>火かき棒の先を突き付ける。 { speed:1 waitInput:true Wait:true }
+
+@print そのまま腕を振り上げて―― { speed:1 waitInput:true Wait:true }
+
+# ＠夏目アンアン
+
+@print 【やっ……やめろ！】。 { author:Unknown speed:1 waitInput:true Wait:true }
+
+@shake 
+
+# ＠備考◆動揺で息を呑む
+
+@print ！？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 振り下ろす寸前、背後で誰かの声が響いた。<br>同時に、私の腕は意に反して動きを止める。 { speed:1 waitInput:true Wait:true }
+
+@print 私は声の主を確かめようと、背後に視線を巡らせた。 { speed:1 waitInput:true Wait:true }
+
+@char AnAn.Fearful1,Angle01/Option_Arms-,ArmR-Option-Off
+
+@print ひっ……！？ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print こちらと目の合ったアンアンが、身をこわばらせる。<br>彼女が声の主か。 { speed:1 waitInput:true Wait:true }
+
+@char AnAn.Angry1
+
+@print 【そのまま動くな……！】。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print 命令口調で、アンアンは私に告げた。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （体の動きが鈍い……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print だが、微動だにできないわけではなかった。<br>全身に鉛でも仕込まれたかのように重いが、<br>なんとか少しずつ手足を動かすことは可能だ。 { speed:1 waitInput:true Wait:true }
+
+@print （軽度ではあるが、相手を操る魔法か） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 厄介だが、抵抗できないほどじゃない。 { speed:1 waitInput:true Wait:true }
+
+@char AnAn.Fearful1
+@camera { time:0.2 }
+
+@print 重い一歩を踏み出し、<br>私はアンアンに近付いていく。 { speed:1 waitInput:true Wait:true }
+
+@char AnAn
+@camera { time:0.2 }
+
+@print ひっ……くっ、くるな！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn
+@camera { time:0.2 }
+
+@print いっ、今のうち……誰か、止めろ！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@camera { time:0.3 }
+@char Alisa.Angry1,Option-ArmL-Off
+@char AnAn
+@Wait 0.2
+@hide AnAn
+
+@print チッ、しょうがねえな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print アンアンの言葉に操作されたのか、自らの意思か。<br>判断はつかないが、アリサが一歩前に出る。 { speed:1 waitInput:true Wait:true }
+
+@print 左手には、薪が握られていた。<br>この部屋にある暖炉で使うための物だろう。 { speed:1 waitInput:true Wait:true }
+
+# 炎をぼっと点す音
+@sfx Sfx_30
+
+@char Alisa.Normal1,ArmL11,Angle01/Option_ArmL>Option_ArmL11
+
+# 注：ここは立ち絵と左右逆転してます。
+
+@print アリサの右手。その指先に、ぽっと炎が点る。 { speed:1 waitInput:true Wait:true }
+
+@print ウチの魔法は【発火】だ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print こういう使い方もできる。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print アリサは指先の炎で、薪を燃やす。<br>そして。 { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1
+
+@print くらいやがれ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 私に向かって、燃える薪を投げつけた。 { speed:1 waitInput:true Wait:true }
+
+@print ！！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@sfx Sfx_9
+@camera { time:0.2 }
+@Wait 0.2
+@camera { time:0.2 }
+
+@print アンアンの魔法もレイアの魔法も、<br>効果はすでに切れているらしい。<br>私は身を翻し、飛んできた薪を避ける。 { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1
+
+@print チッ、ちょこまか逃げんなよ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@hideChars 
+@sfx Sfx_9
+@camera { time:0.1 }
+@Wait 0.1
+@camera { time:0.2 }
+@Wait 0.2
+@StopSfx 
+@sfx Sfx_9
+@camera { time:0.1 }
+@Wait 0.1
+@camera { time:0.2 }
+@Wait 0.2
+@camera { time:0.2 }
+@sfx Sfx_159
+@Wait 0.1
+@camera { time:0.2 }
+
+@print アリサが私を目がけて、燃える薪を投げ続ける。<br>避けきれない薪を、私は火かき棒で打ち払う。 { speed:1 waitInput:true Wait:true }
+
+@print なんて無茶なことを……<br>このままじゃ部屋に引火するぞ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "すでに遅かった。<br>炎がラウンジの調度品や<ruby=\"じゅうたん\">絨毯</ruby>に燃え移る。" { speed:1 waitInput:true Wait:true }
+
+@print それでもアリサは攻撃の手を緩めない。<br>私の忠告に耳を貸す気はないようだ。 { speed:1 waitInput:true Wait:true }
+
+@print 混乱する少女たちは、<br>なんとか部屋から逃げようと動き出す。 { speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Default
+
+@print あっ……！？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# 転ぶ音
+@sfx Sfx_6
+
+@hideChars 
+
+@print 足がもつれたのか、ナノカが転ぶ。<br>そこに火の手が迫り―― { speed:1 waitInput:true Wait:true }
+
+@char Leia.Surprised1
+
+@print 危ない！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@print "レイアが<ruby=\"かば\">庇</ruby>うようにナノカの前に立ち、<br>彼女を引っぱり起こした。" { speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1
+
+@print ナノカくん、平気……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@StopBgm { fade:0.1 }
+@ResetText 
+
+# 銃声
+@sfx Sfx_38
+
+@char Leia.Surprised1
+@Wait 2
+@char Leia { time:0.4 }
+@Wait 0.4
+@sfx Sfx_19
+@char Leia
+@hideChars { time:0.2 }
+@Wait 0.2
+
+@print 銃声が響き、レイアの体が傾く。 { speed:1 waitInput:true Wait:true }
+
+@print どさりと崩れ落ちた彼女の眉間は、<br>銃弾によって貫かれていた。 { speed:1 waitInput:true Wait:true }
+
+@print 少女たちの悲鳴が上がる。 { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_33_1_Loop { fade:1 }
+# intro:Bgm_33_1_Intro
+
+@char Nanoka.Fearful1,Arms3
+
+@print ああ……あああああっ……！！ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Fearful1,Arms4
+
+@print レイアを撃ったのは、ナノカだ。<br>銃を構え、震えた声を上げる。 { speed:1 waitInput:true Wait:true }
+
+@print ……ど、どうして……！ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+# 銃声
+@sfx Sfx_38
+@Wait 0.4
+@StopSfx 
+
+# 銃声
+@sfx Sfx_38
+@Wait 0.4
+
+@print 正気を失った様子で、ナノカは銃を乱射する。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 銃撃を止めようと、<br>何人かの少女がナノカに向かっていく。 { speed:1 waitInput:true Wait:true }
+
+@print 炎に包まれ、銃弾が舞い、悲鳴と怒号が飛び交う。<br>ラウンジは、まるで地獄のような有様と化していた。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1
+
+@print くっ……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 銃声
+@sfx Sfx_38
+@Wait 0.5
+
+@print "銃弾が私の腕を<ruby=\"かす\">掠</ruby>める。<br>ナノカはさらに引き金を引こうとするが――" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Nanoka.Fearful1,Arms4
+
+# 銃の弾切れの音
+@sfx Sfx_161
+@Wait 0.3
+@StopSfx 
+@sfx Sfx_161
+@Wait 0.2
+
+@print どうやら銃の弾が切れたらしい。 { speed:1 waitInput:true Wait:true }
+
+@print 今ならナノカを止められる。<br>これ以上の犠牲が出る前に、彼女を無力化するべきだ。<br>私はナノカへと駆け出す。 { speed:1 waitInput:true Wait:true }
+
+@camera { time:0.2 }
+
+@print 来ないで……私に近付かないで……！ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Fearful1,Arms3
+
+@print 叫びながら、ナノカが両手で銃を振り回す。 { speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_9
+@Wait 0.2
+
+@print ……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@camera { time:0.2 }
+
+@print 間合いに入り込むと同時、<br>私はナノカの銃を打ち払おうと火かき棒を振るった。 { speed:1 waitInput:true Wait:true }
+
+@camera { time:0.2 }
+
+# 金属同士が衝突する音
+@sfx Sfx_159
+
+@shake Camera
+@Wait 0.4
+@camera { time:0.2 }
+
+@print ぶつかり合う瞬間、私は衝撃と浮遊感を覚える。 { speed:1 waitInput:true Wait:true }
+
+@print 押し負けた結果、<br>体ごと吹き飛ばされたのだと理解するのに<br>時間は掛からなかった。 { speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_19
+@hideChars 
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@back { time:0 }
+@camera { time:0 }
+@Wait 0.8
+
+@print "そのまま部屋の壁に<ruby=\"たた\">叩</ruby>きつけられる。" { speed:1 waitInput:true Wait:true }
+
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print ――――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 痛みに一瞬、息が詰まる。<br>そのまま、ずるずると床に尻もちを突いた。 { speed:1 waitInput:true Wait:true }
+
+@print げほっ、ごほっ……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "痛みを堪えながら、<br>火かき棒を<ruby=\"つえ\">杖</ruby>代わりにして立ち上がる。" { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1,ArmL1,Option-ArmL-Off
+
+@print おい、怪我人はもう引っ込んでろよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 隣に立ったアリサが、私に告げる。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1
+@char Alisa.Angry1
+
+@print 嫌だね。私はナノカを止める。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print この状況を作り出した原因は私だ。<br>責任がある。だから、私がナノカを止める。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1
+
+@print 君こそ引っ込んでいろ。<br>余計な口を挟まないでほしい。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1
+
+@print なんだと？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1
+@Wait 0.2
+@char Hiro.Surprised1
+@char Alisa.Surprised1
+
+@print すとーっぷです！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"にら\">睨</ruby>み合う私とアリサの間に、<br>シェリーが割って入る。" { speed:1 waitInput:true Wait:true }
+
+@print 今は揉めたりしてる場合じゃないと思うんですよねー。<br>ナノカさん、明らかに普通じゃないですし。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Nanoka.Fearful1,Arms3
+
+@print たしかにナノカは常軌を逸している。 { speed:1 waitInput:true Wait:true }
+
+@print 突然のレイア殺害。<br>次は見境なく銃を乱射。 { speed:1 waitInput:true Wait:true }
+
+@print 何かをきっかけに、<br>ナノカが狂ってしまったとしか思えない。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa.Angry1
+
+@print だからなんだってんだ？<br>とにかく大人しくさせるしかねえだろうが！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print 不本意だが同感だった。 { speed:1 waitInput:true Wait:true }
+
+@print 銃の弾こそ切れたようだが、<br>ナノカが脅威であることに変わりはない。 { speed:1 waitInput:true Wait:true }
+
+@print "こうしている今も、<br><ruby=\"おび\">怯</ruby>える少女たちに殺意を宿した視線を投げている。" { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1
+
+@print "ですね！ 何があるかわかりませんし、<br>ここは力を合わせた方が……。" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1
+
+@print 知るか！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Sherry.Surprised1
+@hide Alisa
+
+@print シェリーの言葉には耳を貸さず、<br>アリサはナノカに向かって走り出していた。 { speed:1 waitInput:true Wait:true }
+
+@print あらら、フラれちゃいました。<br>まあ、しょうがないですねー。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 特に気にした様子もなく、<br>シェリーはアリサの後に続く。 { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1
+
+@print おらああああっ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Nanoka
+
+@print くっ！！ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@hideChars 
+@sfx Sfx_9
+@camera { time:0.2 }
+@Wait 0.1
+@char Nanoka
+@Wait 0.2
+@camera { time:0.2 }
+@Wait 0.2
+
+@print ぐっと固めた拳で、<br>アリサがナノカに殴りかかった。 { speed:1 waitInput:true Wait:true }
+
+@print "ナノカが素早く身を<ruby=\"かわ\">躱</ruby>す。<br>だが。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@char Sherry.Smile1,ArmR8
+@char Sherry
+
+@print 私もいますよー！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Nanoka.Angry1,Arms3
+@char Sherry
+
+# ＠備考◆驚愕
+
+@print ！？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 避けた先にはシェリーが待ち構えていた。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry
+
+@print とりゃー！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry { time:0.2 }
+@Wait 0.2
+
+# 人を殴打する音
+@sfx Sfx_85
+
+@print "シェリーの繰り出したパンチが、<br>ナノカの<ruby=\"ほほ\">頬</ruby>を捉える。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ぐっ……！？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print まるでさっきの私みたいに……<br>いや。より派手に吹き飛び、<br>ナノカは部屋の壁に激突した。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1
+
+@print こう見えて、腕っぷしには自信があるんです。<br>名探偵ですから！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print シェリーが得意そうに胸を張る。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print 腕っぷしと名探偵に、<br>なんの因果関係があるんだ？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 思わず聞いてしまった私に、<br>シェリーはニヤッと笑ってみせる。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1
+
+@print 知らないんですか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry
+
+@print 優れた探偵は、<br>フィジカルも強いと相場が決まってるんですよ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hide Hiro
+@char Alisa.Surprised1
+
+@print なんだあれ、壁にめり込んでんぞ……<br>おめえ化け物かよ……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"あき\">呆</ruby>れたように<ruby=\"つぶや\">呟</ruby>くアリサに、<br>シェリーは唇を<ruby=\"とが\">尖</ruby>らせる。" { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1
+
+@print 化け物は酷いですよー。<br>せめて妖精さんと言ってくださいー。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1
+
+@print どこに妖精の要素があるんだよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hide Alisa
+@char Hiro
+
+@print 化け物というなら……<br>それはあちらも同じだな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Nanoka
+
+@print 壁にめり込んだナノカが、体を動かす。<br>おもむろに腕を上げて、手にした銃を構える。 { speed:1 waitInput:true Wait:true }
+
+@print （なんのつもりだ？<br>　もう弾は切れて――） { author:Hiro speed:1 waitInput:true Wait:true }
+@hideChars 
+@Wait 0.2
+
+# 銃声
+@sfx Sfx_38
+
+# ＠備考◆撃たれて
+@Wait 1
+@ResetText 
+@char Sherry.Surprised1 { time:0.3 }
+@Wait 0.3
+@back SolidColor.Custom { time:0.1 }
+@Wait 0.1
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+@char Sherry.Fearful1 { time:0.4 }
+@Wait 0.4
+
+@print がっ、は……！！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 銃声が響き、シェリーの胸を銃弾が貫いた。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1
+
+@print あ……え……どうして……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_19
+@char Sherry
+@hideChars { time:0.2 }
+@Wait 0.2
+
+@print シェリーが目を見開いたまま、床に崩れ落ちた。<br>再び少女たちの悲鳴が上がる。 { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1
+
+@print どうなってんだよ！<br>弾は切れたんじゃねえのかよ！？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print 弾を込めたような様子はなかった。<br>なら、実際は弾切れじゃなかったのか？ { speed:1 waitInput:true Wait:true }
+
+@print 弾詰まりを起こしていただけ……<br>あるいは弾を隠し持っていたか。 { speed:1 waitInput:true Wait:true }
+
+@print ……いいや、問題はそこじゃない。<br>黒部ナノカという脅威に、どう立ち向かうかだ。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 立ち絵：ナノカ半クリーチャーでお願いします。
+# ========================================
+
+@ResetText 
+@hideChars 
+@char CreatureNanoka.0-1 { time:1 }
+@Wait 1
+@hideChars { time:0.5 }
+@Wait 0.5
+@char CreatureNanoka.0-1 { time:1 }
+@Wait 1
+
+@print ゆっくり、ナノカがこちらへと近付いてくる。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa.Fearful1
+
+@print なんだよ、あれ……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print "ナノカの姿を目にしたアリサが、<ruby=\"ぼうぜん\">呆然</ruby>と口にする。" { speed:1 waitInput:true Wait:true }
+
+@print マジで化け物になっちまったのか……？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char CreatureNanoka.0-4
+
+@print ナノカは変貌を遂げていた。 { speed:1 waitInput:true Wait:true }
+
+@print 血の気がない、青白い肌。<br>手は人とは異なる形状にも見える。 { speed:1 waitInput:true Wait:true }
+
+@print "恐怖か絶望か悲しみか。<br>はっきりとはしないが、表情は<ruby=\"くら\">昏</ruby>く<ruby=\"ゆが\">歪</ruby>んでいた。" { speed:1 waitInput:true Wait:true }
+
+@print "まるで黒い涙を流しているかのような<ruby=\"そうぼう\">双眸</ruby>が、<br>私たちを射抜く。" { speed:1 waitInput:true Wait:true }
+
+@print ごめんなさい……<br>ごめんなさい……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char CreatureNanoka.0-4 { time:0.1 }
+@hideChars { time:0.1 }
+
+@print ふと、眼前からナノカの姿が消える。 { speed:1 waitInput:true Wait:true }
+
+@print ！？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print そう思った刹那。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+# ぐちゃっ、めきなど体を害する音
+@sfx Sfx_10
+
+@Wait 1
+
+@print すぐ横で嫌な音がした。 { speed:1 waitInput:true Wait:true }
+
+@char CreatureNanoka.0-4
+@Wait 0.2
+
+@print あ……が……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print "ナノカがアリサの頭部を<ruby=\"わしづか\">鷲掴</ruby>み、<br>握り潰したのだ。" { speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_9
+@Wait 0.2
+@char CreatureNanoka.0-4
+
+@print ごめんなさい……<br>ごめんなさい……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print うわごとのように、ナノカは繰り返す。 { speed:1 waitInput:true Wait:true }
+
+@print ――次は私だ。 { speed:1 waitInput:true Wait:true }
+
+@print だが、簡単にやられてやるつもりはない。<br>最後まで抗うつもりで、<br>火かき棒をぐっと強く握った。 { speed:1 waitInput:true Wait:true }
+
+@print ああああ……<br>みんな死んでいく……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print いや……いやあああああっ！ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 自身の頭を両手で押さえて、ナノカが叫んだ。 { speed:1 waitInput:true Wait:true }
+
+@print ナノカの姿が、さらに変化する。<br>今度はもう、完全に人ではなくなっていた。 { speed:1 waitInput:true Wait:true }
+
+@print 私は理解する。<br>ナノカは魔女に堕ちたのだと。 { speed:1 waitInput:true Wait:true }
+
+# @char Jailer.1 pos:50,20 scale:1.5 look:right tint:#222222
+# @blur Jailer
+
+@print …………。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print ナノカが、私を見る。 { speed:1 waitInput:true Wait:true }
+
+# @hideChars
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@StopBgm { fade:10 }
+
+# 心臓のドキドキ音
+@sfx Sfx_35
+
+@Wait 0.5
+
+@print はっきりと感じた。 { speed:1 waitInput:true Wait:true }
+
+@print 恐怖だ。私は恐れている。 { speed:1 waitInput:true Wait:true }
+
+@print 同時に憎悪も湧き上がってくる。<br>魔女という悪に、怒りを覚える。 { speed:1 waitInput:true Wait:true }
+
+@print 私は許せない。<br>魔女は、排除しなければならない。 { speed:1 waitInput:true Wait:true }
+
+@print 間違っている存在を、この世界から消す。 { speed:1 waitInput:true Wait:true }
+
+@print どういうことか、<br>死んだと思われた少女たちも次々と起き上がり、<br>襲いかかってきた。 { speed:1 waitInput:true Wait:true }
+
+@print どこで歯車が狂ってしまったのか。 { speed:1 waitInput:true Wait:true }
+
+@print "私たちの殺し合いの<ruby=\"きょうえん\">饗宴</ruby>は、<br>もう誰にも止められない。" { speed:1 waitInput:true Wait:true }
+
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+# @char Jailer.1 look:right
+
+@print うああああああああああッ！！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "私は火かき棒を振り上げ、<ruby=\"ほ\">吼</ruby>えた。" { speed:1 waitInput:true Wait:true }
+
+@camera { time:0.25 }
+@Wait 0.1
+
+# ぐちゃっ、めきなど体を害する音
+@sfx Sfx_10
+
+@back SolidColor.Custom { time:0.2 }
+
+@Wait 1
+@ResetText 
+@back SolidColor.Custom { time:2 }
+@Wait 2
+
+# ========================================
+# 『END～紅の咆哮～』
+# ========================================
+
+@badEnd 16

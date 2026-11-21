@@ -1,0 +1,124 @@
+{
+  "names": [
+    "Map_A01C01_01",
+    "Map_A01C01_03",
+    "Map_A01C02_01"
+  ],
+  "contexts": [
+    {
+      "path": "Act01_Chapter01/Act01_Chapter01_Trial06",
+      "line": 758,
+      "segment": 0,
+      "wait": true,
+      "name": "Map_A01C01_01",
+      "clip": 0
+    },
+    {
+      "path": "Act01_Chapter01/Act01_Chapter01_Trial06",
+      "line": 760,
+      "segment": 1,
+      "wait": true,
+      "name": "Map_A01C01_01",
+      "clip": 1
+    },
+    {
+      "path": "Act01_Chapter01/Act01_Chapter01_Trial06",
+      "line": 765,
+      "segment": 2,
+      "wait": true,
+      "name": "Map_A01C01_01",
+      "clip": 2
+    },
+    {
+      "path": "Act01_Chapter01/Act01_Chapter01_Trial06",
+      "line": 772,
+      "segment": 3,
+      "wait": true,
+      "name": "Map_A01C01_01",
+      "clip": 3
+    },
+    {
+      "path": "Act01_Chapter01/Act01_Chapter01_Trial06",
+      "line": 779,
+      "segment": 4,
+      "wait": true,
+      "name": "Map_A01C01_01",
+      "clip": 2
+    },
+    {
+      "path": "Act01_Chapter01/Act01_Chapter01_Trial07",
+      "line": 1247,
+      "segment": 5,
+      "wait": true,
+      "name": "Map_A01C01_03",
+      "clip": 0
+    },
+    {
+      "path": "Act01_Chapter01/Act01_Chapter01_Trial07",
+      "line": 1249,
+      "segment": 6,
+      "wait": true,
+      "name": "Map_A01C01_03",
+      "clip": 1
+    },
+    {
+      "path": "Act01_Chapter01/Act01_Chapter01_Trial07",
+      "line": 1257,
+      "segment": 7,
+      "wait": true,
+      "name": "Map_A01C01_03",
+      "clip": 2
+    },
+    {
+      "path": "Act01_Chapter02/Act01_Chapter02_Trial02",
+      "line": 776,
+      "segment": 8,
+      "wait": true,
+      "name": "Map_A01C02_01",
+      "clip": 0
+    },
+    {
+      "path": "Act01_Chapter02/Act01_Chapter02_Trial02",
+      "line": 777,
+      "segment": 9,
+      "wait": true,
+      "name": "Map_A01C02_01",
+      "clip": 1
+    },
+    {
+      "path": "Act01_Chapter02/Act01_Chapter02_Trial02",
+      "line": 781,
+      "segment": 10,
+      "wait": true,
+      "name": "Map_A01C02_01",
+      "clip": 2
+    }
+  ],
+  "destroy": [
+    {
+      "path": "Act01_Chapter01/Act01_Chapter01_Trial06",
+      "line": 784,
+      "frames": 30,
+      "wait": false
+    },
+    {
+      "path": "Act01_Chapter01/Act01_Chapter01_Trial07",
+      "line": 1265,
+      "frames": 30,
+      "wait": false
+    },
+    {
+      "path": "Act01_Chapter02/Act01_Chapter02_Trial02",
+      "line": 788,
+      "frames": 30,
+      "wait": true
+    }
+  ],
+  "segments": 11,
+  "frames": 301,
+  "pins": 12,
+  "rom_bytes": 17374,
+  "background": "shared map_pictures/book_map_bytes",
+  "interpolation_fps": 60,
+  "keys_fps": 10
+}

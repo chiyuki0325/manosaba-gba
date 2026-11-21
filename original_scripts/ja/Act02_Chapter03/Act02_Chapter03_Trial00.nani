@@ -1,0 +1,375 @@
+@gosubResetBook System/System_ResetWitchBook
+@Gosub Act02_Chapter03/Act02_Chapter03_TrialInit
+
+# 議論パート2章3話（議論8）
+
+# Judge8-1-0
+
+@char Alisa.Angry1,Option-ArmL-Off
+@char Leia.Default,ArmR5,ArmL7,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open01,Angle01/Facial/Mouth>Mouth_Cry_Closed01,Angle01/Facial/Sweat>Sweat01 { time:0 }
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Angry_Closed01,Angle01/Facial/Sweat>Sweat01 { time:0 }
+
+@hideStageScreen 1
+@stageCamera 0 { time:0 }
+@stageCamera 0 { Rotation:0,{ (8 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1 { time:0 }
+@stageCamera 0 { time:30 }
+@back Transparent { time:0.9 }
+@Wait 0.6
+
+@ProcessInput true
+
+# ==============================================================================
+# 議論スタート
+# ==============================================================================
+# BGM変更：Kei-Plne Co-Jundic
+@bgm Bgm_25_1
+
+@hideStageScreen 1
+# ＠備考◆絶望
+
+@print …………。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# @備考◆困惑
+
+@gosubSplitStageScreen 1
+
+@print …………。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideStageScreen 1
+@Wait 0.3
+# @備考◆困惑
+
+@gosubSplitStageScreen 1
+
+@print …………。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideStageScreen 1
+@Wait 0.3
+
+@char Hiro.Normal2,ArmR13,ArmL13,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@print （……私の、裁判だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR13,ArmL13,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@print （裁判なんて名ばかりの、<br>　処刑を言い渡す場） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR13,ArmL5,Eyes2_Flushed_Open1,Mouth2_Determined_Closed1
+@print （……ナノカが裁判に挑んだときも、<br>　こんな気持ちだったのかな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR15,ArmL4,Angle01/Facial/Eyes>Eyes_Wink_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print では張り切って裁判といきましょうか！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE：気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆呆れ
+@char Alisa.Default,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open01
+@gosubModifyCamera 0
+@print ……おめえはいつも変わんねぇな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+# ＠備考◆真顔/無感情
+@char Sherry.Default,ArmR10,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Closed03,Angle01/Facial/Mouth>Mouth_Neutral_Closed
+@gosubModifyCamera 0
+@print ……落ち込んでも、意味はありませんしね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ＠備考◆（こいつも気にしてないわけじゃないんだな）
+@char Alisa.Default,ArmR9,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Closed
+@gosubModifyCamera 0
+@print ……チッ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open01
+@gosubModifyCamera 0
+@print けど……犯人は自供してただろ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open01
+@gosubModifyCamera 0
+@print 議論する意味なんてあんのかよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print …………。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# エマカットイン
+@Wait 0.5
+
+@sfx Sfx_Common_5
+
+@ResetText 
+@voice CommonTrial_Ema06191
+@char Hiro.Surprised1
+@char Ema.Determined2,ArmR7,ArmL7,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubSplitStageScreen 1
+@Wait 1.5
+
+@hideStageScreen 1
+@Wait 0.3
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print ……議論する意味は、あるよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆息を呑む
+@char Hiro.Angry1,Arms3,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print ……っ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR7,ArmL7,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print 検証しよう……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# BGM変更：AccUhEarts(Vocal無)
+@bgm Bgm_7_1
+
+@char Ema.Determined2,ArmR2-2,ArmL2,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print ……誰が犯人なのかを！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1,Arms3,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （エマ……。<br>　どうして……私を……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print ……そうですね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE・明るい音
+@sfx Sfx_Common_2
+
+@char Sherry.Default,ArmR15,ArmL4,Angle01/Facial/Eyes>Eyes_Wink_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 議論することには賛成です！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR6,ArmL8,Angle01/Facial/Eyes>Eyes_Surprised_Open03,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print せっかくの事件ですし、<br>議論しないのはもったいないですよ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR9,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Closed
+@gosubModifyCamera 0
+@print どんな感情だそりゃ……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL7,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print ……しかし、そうだね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print 私もその意見に賛成だ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Closed01,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print これまでだって<br>事件の全容は覆ってきた……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Closed,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print 何も早急に結論を出す必要はない。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Normal_Closed
+@gosubModifyCamera 0
+@print チッ……。<br>まあなんでもいいけどよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print じゃあまずは死体の状況から確認しましょう！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print そうだね。<br>それについては私から話した方が早いだろう。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR13,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print それじゃあ<br>お願いしますっ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Closed,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print ああ、任せたまえ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL5,Eyes1_Normal_Open3,Mouth1_Fearful_Open1
+@gosubModifyCamera 0
+@print （エマの一言で……雰囲気が変わった） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL5,Eyes1_Angry_Open3,Mouth1_Flushed_Closed1
+@gosubModifyCamera 0
+@print （生暖かい、気持ち悪い雰囲気だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL5,Eyes1_Normal_Closed1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （だが……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・明るい音
+@sfx Sfx_Common_2
+
+# ＠備考◆心に火をつけるイメージ
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （ここまでされて、<br>　傍観者ではいられないか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@StopBgm { fade:3 }
+
+@char Hiro.Normal1,Arms3,Eyes2_Angry_Open2,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （私は……私の責任を取る） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_45_2
+
+# アイテム表示
+
+@char Leia.Default,Arms,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Normal_Closed
+@gosubModifyCamera 0
+@Wait 0.5
+@spawn Clue
+
+@print まず……<br>殺されたのはアンアンくんだね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print 彼女の死体は中庭で見つかった。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Closed02,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print ……鉄柵に背中から心臓を貫かれ、即死。<br>死因はそれで間違いないだろう。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@despawn Clue
+
+@char Leia.Default,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Fearful_Open
+@gosubModifyCamera 0
+@print また死体の状況から、<br>発見時は死後３０分から１時間以内ほど。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print 死体が見つかったのは中庭なんですよね？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL3,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open01,Angle01/Facial/Mouth>Mouth_Normal_Closed
+@gosubModifyCamera 0
+@print そうだね。発見したのは私だ。<br>死体の周囲には大量の血痕が残されていた。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# ☆アイテム追加
+# 【アンアンの検死結果】
+# レイアが発見した。
+# 背中から鉄柵が貫通し、即死。
+# 付近には大量の血痕。
+# 死亡推定時刻は、死体発見の30分前から1時間以内。
+
+@ResetText 
+@spawn Clue
+@toast "魔女図鑑 更新…"
+@update 8-1
+@Wait i1.2
+@despawn Clue
+
+@char Leia.Default,ArmR5,ArmL3,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Yell_Open01
+@gosubModifyCamera 0
+@print おそらくアンアンくんは<br>中庭の鉄柵の上に落下したものと思われる。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR3,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Yell_Open01
+@gosubModifyCamera 0
+@print どうやら落下の衝撃で、<br>鉄柵は根本からいくつか折れてしまっているようだね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# ☆アイテム追加
+# 【鉄柵】
+# 中庭にあった鉄の柵。先端が尖っている。
+# 長らく整備されていないようだ。
+# アンアンに刺さった鉄柵も含め、周囲の鉄柵のいくつかは折れている。
+
+@ResetText 
+@spawn Clue
+@toast "魔女図鑑 更新…"
+@update 8-2
+@Wait i1.2
+@despawn Clue
+
+@char Leia.Default,ArmR3,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Yell_Open01
+@gosubModifyCamera 0
+@print あとは近くに<br>ちぎれたハンモックの残骸があったようだけど……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Serious_Open
+@gosubModifyCamera 0
+@print ……チッ。<br>それはウチが作ったもんだ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open01
+@gosubModifyCamera 0
+@print 適当に作っただけだし、<br>雨や風で自然に壊れたんだろ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,Arms,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Fearful_Open
+@gosubModifyCamera 0
+@print なるほどね。<br>たしかに現場には雨が降った形跡もあった。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,Arms,Angle01/Facial/Eyes>Eyes_Normal_Closed03,Angle01/Facial/Mouth>Mouth_Fearful_Open
+@gosubModifyCamera 0
+@print そして、辺りの地面はぬかるんでいた。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Closed03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print 昨夜の雨の影響だろうね。<br>だが足跡などは残されていなかったよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Closed
+@gosubModifyCamera 0
+@print あとは……枯れた噴水が中央にあるぐらいかな。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print 中庭の情報は、<br>ざっとこんなところだよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# ☆アイテム追加
+# 【中庭】
+# 死体が発見された現場。中央に枯れた噴水がある。
+# 発見の直前に雨が降っており、地面がぬかるんでいる。
+# ちぎれたハンモックの残骸が残されていた。
+@ResetText 
+@spawn Clue
+@toast "魔女図鑑 更新…"
+@update 8-3
+@Wait i1.2
+@despawn Clue
+
+@char Leia.Default,ArmR5,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print これらの状況から、アンアンくんは<br>２階にあるノアくんのアトリエのベランダから<br>落下したとみるのが妥当だろうね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# ☆アイテム追加
+# 【ノアのアトリエ】
+# 中は荒れ果てており、絵札やキャンバスが置かれている。
+# アンアンの死亡後、エマが赤いペンキをこぼして片付けた。
+# ベランダから階下の中庭が見下ろせる。
+
+@ResetText 
+@spawn Clue
+@toast "魔女図鑑 更新…"
+@update 8-4
+@Wait i1.2
+@despawn Clue
+@Wait 0.5
+
+@char Sherry.Default,ArmR2,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print なるほどなるほど！<br>なら事件はとってもわかりやすいですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print ……そうだね。<br>まずは死体の第一発見者でもあり、<br>現場を調べた私の見解を示そうか。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char Leia.Default,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print ……これは現場を見た所感といったところだけど。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Closed,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print アンアンくんは【事故死】だった。<br>そう考えるのが妥当だろうね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+
+@goto Act02_Chapter03/Act02_Chapter03_Trial01

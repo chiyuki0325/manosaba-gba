@@ -1,0 +1,40 @@
+{
+  "format": "manosaba.story",
+  "version": 1,
+  "language": "zh-Hans",
+  "path": "Act02_Chapter03/Act02_Chapter03_Adv13",
+  "events": [
+    {"op": "GosubResetWitchBook", "line": 1, "indent": 0, "params": {"Path": "System/System_ResetWitchBook", "IsDebugDirectJump": {"expression": "{isDebugDirectJump}"}}},
+    {"op": "Gosub", "line": 2, "indent": 0, "params": {"Path": "System/System_Subroutine.BeginAdv"}},
+    {"op": "label", "name": "Scene2-3-13", "line": 4, "indent": 0},
+    {"op": "PlayBgm", "line": 10, "indent": 0, "params": {"BgmPath": "Bgm_2_1_Loop", "IntroBgmPath": "Bgm_2_1_Intro", "Volume": 1.0, "Loop": 1, "FadeInDuration": 0.0}},
+    {"op": "ModifyBackgroundExtended", "line": 12, "indent": 0, "params": {"Scale": [2.0], "Duration": 0.0, "Lazy": 0, "ScenePosition": [75.0, 60.0], "AppearanceAndTransition": "13_1"}},
+    {"op": "Wait", "line": 13, "indent": 0, "params": {"WaitMode": "0.9"}},
+    {"op": "ModifyBackgroundExtended", "line": 15, "indent": 0, "params": {"TintColor": "#000000", "Duration": 1.7999999523162842, "Lazy": 0, "ScenePosition": [50.0, 50.0], "AppearanceAndTransition": "Transparent", "SubId": "Overlay"}},
+    {"op": "WaitForNextFrame", "line": 16, "indent": 0, "params": {}},
+    {"op": "AnimateActorExtended", "line": 18, "indent": 0, "params": {"ActorIds": ["MainBackground"], "Loop": 0, "ScenePositionX": "25", "Duration": "20"}},
+    {"op": "Wait", "line": 19, "indent": 0, "params": {"WaitMode": "1.5"}},
+    {"op": "PrintTextModified", "line": 21, "indent": 0, "params": {"Text": "跟往常一样，<br>\n由看守把我带到审判庭。", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0203Adv13_Narrative001"]}},
+    {"op": "PrintTextModified", "line": 23, "indent": 0, "params": {"Text": "幸存的少女们早已聚集在此。<br>", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0203Adv13_Narrative002"]}},
+    {"op": "PrintTextModified", "line": 25, "indent": 0, "params": {"Text": "艾玛、雪莉、汉娜。<br>\n蕾雅、诺亚、米莉亚、亚里沙。", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0203Adv13_Narrative003"]}},
+    {"op": "PrintTextModified", "line": 27, "indent": 0, "params": {"Text": "站上证人席的每个人都向我投来难以言喻的目光。<br>", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0203Adv13_Narrative004"]}},
+    {"op": "ResetText", "line": 29, "indent": 0, "params": {}},
+    {"op": "ModifyBackgroundExtended", "line": 30, "indent": 0, "params": {"Scale": {"expression": "{g_backgroundDefaultScale}"}, "Duration": 0.0, "Lazy": 0, "AppearanceAndTransition": "13_1", "SubId": "Middle"}},
+    {"op": "ModifyCharacterExtended", "line": 32, "indent": 0, "params": {"Lazy": 0, "ScenePosition": [50.0], "IdAndAppearance": "Warden.1", "SubId": "Middle"}},
+    {"op": "PrintTextModified", "line": 34, "indent": 0, "params": {"Text": "那么，审判可以开始了吧？<br>\n最好这次能干脆利落地结束。", "AuthorId": "Warden", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0203Adv13_Warden001"]}},
+    {"op": "PrintTextModified", "line": 36, "indent": 0, "params": {"Text": "…………", "AuthorId": "Hiro", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0203Adv13_Hiro001"]}},
+    {"op": "ModifyCharacterExtended", "line": 38, "indent": 0, "params": {"Lazy": 0, "ScenePosition": [50.0], "IdAndAppearance": "Warden.1", "SubId": "Middle"}},
+    {"op": "PrintTextModified", "line": 40, "indent": 0, "params": {"Text": "那么，魔女审判现在开庭！", "AuthorId": "Warden", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0203Adv13_Warden002"]}},
+    {"op": "Gosub", "line": 46, "indent": 0, "params": {"Path": "System/System_Subroutine.EndAdv"}},
+    {"op": "GotoModified", "line": 48, "indent": 0, "params": {"Path": "Act02_Chapter03/Act02_Chapter03_Trial00", "SoftReset": 1}}
+  ],
+  "translations": {
+  "0203Adv13_Narrative001": "跟往常一样，<br>\n由看守把我带到审判庭。",
+  "0203Adv13_Narrative002": "幸存的少女们早已聚集在此。<br>",
+  "0203Adv13_Narrative003": "艾玛、雪莉、汉娜。<br>\n蕾雅、诺亚、米莉亚、亚里沙。",
+  "0203Adv13_Narrative004": "站上证人席的每个人都向我投来难以言喻的目光。<br>",
+  "0203Adv13_Warden001": "那么，审判可以开始了吧？<br>\n最好这次能干脆利落地结束。",
+  "0203Adv13_Hiro001": "…………",
+  "0203Adv13_Warden002": "那么，魔女审判现在开庭！"
+}
+}

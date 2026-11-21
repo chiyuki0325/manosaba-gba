@@ -1,0 +1,312 @@
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-ex5
+
+@bgm Bgm_23_1
+@back 13_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.2
+
+@char Warden.9
+@print あの皆さん、そろそろ投票に移っていただけると。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@print 明確な答えが出ないまま、<br>ゴクチョーによって議論の終わりが告げられた。 { speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@print 異議なーし。<br>あてぃしは誰に入れるか決まってるし～。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print ココが含みのある視線をアリサに向ける。 { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR7,ArmL3,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Sweat>Sweat02,Option-ArmL-Off
+@print …………。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@print 今回は誰が【魔女】として処刑されるのか――<br>全員がスマホを操作し、投票していく。 { speed:1 waitInput:true Wait:true }
+
+@print そして。 { speed:1 waitInput:true Wait:true }
+
+# パンパカパーン
+@sfx Sfx_34
+
+@StopBgm 
+
+@print 間抜けなファンファーレ音と共に、<br>アリサの画像がスマホに映し出された。 { speed:1 waitInput:true Wait:true }
+
+@char Warden.8
+@print えー、というわけで……<br>得票数のもっとも多い、紫藤アリサの処刑が決定！ { author:Warden speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_29_1
+@hideChars 
+@char Alisa.Default,ArmR7,ArmL3,Angle01/Facial/Eyes>Eyes_Fearful_Open,Angle01/Facial/Sweat>Sweat02,Angle01/Facial/Pale>Pale01
+@print くそっ、くそっ……ふざけんなよ！<br>なんでウチなんだよ……！！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+# スマホを床に叩きつける音
+@sfx Sfx_96
+
+@hideChars 
+@print "吐き捨てながら、アリサが<br>自分のスマホを床に<ruby=\"たた\">叩</ruby>きつける。" { speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL4,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Gross_Open
+@print なんでも何も妥当でしょ。<br>放火とか状況的にも犯人に決まってるじゃん。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR4,ArmL6,Angle01/Facial/Eyes>Eyes_Angry_Open01,Angle01/Facial/Sweat>Sweat02,Angle01/Facial/Pale>Pale01
+@print ざけんなよ……ウチはやってねえ！<br>あいつを殺す動機なんかねえだろうが！！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Closed,Angle01/Facial/Mouth>Mouth_Pensive_Middle
+@print 動機とか知らんって。<br>魔女の殺人衝動ってやつなんじゃねーの。<br>普段から『ぶっ殺す』とかイキってたし。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR1,ArmL3,Angle01/Facial/Eyes>Eyes_Surprised_Open02,Angle01/Facial/Sweat>Sweat02,Angle01/Facial/Pale>Pale01
+@print ち、違う……ウチは、ウチは……！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL4,Angle01/Facial/Eyes>Eyes_Angry_Open,Angle01/Facial/Mouth>Mouth_Angry_Open01
+@print "諦めろって！ みんなが怪しいと思って、<br>おめぇに票入れてんだよ！<br>だから選ばれてんだろーが！！" { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@print "アリサが他の少女たちに目を向ける。<br>怒りと絶望に<ruby=\"ゆが\">歪</ruby>んだ瞳が、<br>やがて諦観したように伏せられた。" { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR1,ArmL3,Angle01/Facial/Eyes>Eyes_Cry_Open,Angle01/Facial/Pale>Pale01
+@print そうかよ……わかったよ。<br>ウチが死ねば、それで満足なんだろ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR9,ArmL3,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open01,Angle01/Facial/Pale>Pale01
+@print はっ……遅いか早いかだけだしな。<br>おめえら全員、どうせ同じように死ぬんだし。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Warden.10
+@print あのー、なんか納得もされたみたいですし、<br>とりあえず進行してもいいですかね？<br>まあ、納得されなくても進めるんですけど……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR9,ArmL3,Angle01/Facial/Eyes>Eyes_Angry_Closed,Angle01/Facial/Pale>Pale01
+@print 勝手にしろよ……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Warden.3
+@print では皆さん、処刑執行のボタンを押してください。 { author:Warden speed:1 waitInput:true Wait:true }
+
+# ボタンを押す音
+@sfx Sfx_86
+
+@hideChars 
+
+# シーン1‐1‐31から引用
+@char Warden.8
+@print "はい！ ではこれより、<br>魔女の処刑を執行します～。" { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# 歯車がまわる音
+@sfx Sfx_36
+
+@print 仕掛けが作動し、装置が姿を現す。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR13,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01,Angle01/Head01/Facial01/Pale01>Pale01_01
+@print "椅子……？ あれって……。" { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Fearful_Open,Angle01/Facial/Mouth>Mouth_Pensive_Closed,Angle01/Facial/Sweat>Sweat01
+@print 電気椅子、かしら。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@print 高電圧で囚人を感電死させるための<br>処刑執行装置―― { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR1,ArmL3,Angle01/Facial/Eyes>Eyes_Angry_Closed,Angle01/Facial/Pale>Pale01
+@print …………。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR5,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@print アリサちゃん……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 装置を目にして身を震わせるアリサに、<br>エマが声をかける。 { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR7,ArmL6,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open01
+@print うるせえな……もうウチに構うなよ。<br>どうせお前も、ウチに投票したんだろ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR5,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@print ボ、ボクは……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 返ってきた拒絶に、エマはたじろぐ。 { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR7,ArmL6,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open01
+@print ……もういいって。ウチだけじゃない。<br>どうせおめえら全員、助からねえんだよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print 投げやりな口調で、<br>アリサは自ら装置の方へと歩いていく。 { speed:1 waitInput:true Wait:true }
+
+# ゆっくりと歩く足音
+@sfx Sfx_97
+
+@ResetText 
+@back SolidColor { time:1 }
+@Wait 1
+
+@print どこか禍々しい雰囲気が漂う椅子に、<br>アリサが腰を下ろす。 { speed:1 waitInput:true Wait:true }
+
+# ベルトで拘束する音
+@sfx Sfx_95
+
+@print 看守がアリサの体を椅子に拘束した。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@hideChars { time:0 }
+@back 550_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.4 }
+@Wait 0.4
+
+@print はは……一足先におさらばできて、<br>むしろいいのかもな……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print 震える声で、アリサは言葉を紡ぐ。 { speed:1 waitInput:true Wait:true }
+
+@print ウチも、おめえらも、どうせこのまま全員、<br>魔女になって果てるだけ……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print ここに集められた時点で、あがいても無駄なんだよ。<br>だったら……さっさと抜けた方が楽だろ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print 探偵ごっこに裁判ごっこ……全部くだらねえ。<br>続けたいやつは、続ければいいさ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print な、何ごちゃごちゃ言ってんだし！<br>悟った顔して、きっしょく悪いな！<br>ちょっとさあ、早く処刑しちまってよ！！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print はいはい、言われなくても……<br>では、お願いします～。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print ゴクチョーの合図と共に、看守が位置につく。<br>装置を起動するためであろうレバーに手をかけた。 { speed:1 waitInput:true Wait:true }
+
+@print 諦観しきった様子のアリサだったが、<br>迫りくる死への恐怖は抑えられないらしい。 { speed:1 waitInput:true Wait:true }
+
+@print "体を震わせながら、<br>引き<ruby=\"つ\">攣</ruby>るような呼吸を漏らしている。" { speed:1 waitInput:true Wait:true }
+
+# レバーの音
+@sfx Sfx_98
+
+@print ゴクチョーが看守に翼を広げる。<br>すると、看守がゆっくりとレバーを下げた。 { speed:1 waitInput:true Wait:true }
+
+@back 550_2 { Scale:{g_backgroundDefaultScale} time:0.6 }
+
+# 電気が流れる音／スパークする音
+@sfx Sfx_99
+@sfx Sfx_100
+
+@print 装置が作動して、電気が流れる。<br>椅子に拘束されたアリサの全身がガクガクと震えた。 { speed:1 waitInput:true Wait:true }
+
+# 電気が流れる音／スパークする音
+@sfx Sfx_99
+@sfx Sfx_100
+
+# @char Sherry.Default,ArmR4,ArmL14,Angle01/Facial/Eyes>Eyes_Fearful_Open03,Angle01/Facial/Mouth>Mouth_Neutral_Closed,Angle01/Facial/Sweat>Sweat02 pos:30
+@print えげつないですね。<br>そのまま電気を流すなんて……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# @char Ema.Default,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01 pos:70
+@print え、どういうこと？ { author:Ema speed:1 waitInput:true Wait:true }
+
+# @char Sherry.Default,ArmR4,ArmL4,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Middle pos:30
+@print "本で読んだんですけど……電気椅子での処刑って、<br>囚人の体を水で<ruby=\"ぬ\">濡</ruby>らすんだそうです。" { author:Sherry speed:1 waitInput:true Wait:true }
+
+# @char Sherry.Default,ArmR4,ArmL4,Angle01/Facial/Eyes>Eyes_Surprised_Open02,Angle01/Facial/Mouth>Mouth_Neutral_Closed,Angle01/Facial/Sweat>Sweat02 pos:30
+@print 水は電気を通しやすいですから、<br>そのほうが楽に感電死させられるとかで。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print つまり、その手順を踏んでいないアリサは―― { speed:1 waitInput:true Wait:true }
+
+# 電気が流れる音／スパークする音
+@sfx Sfx_99
+@sfx Sfx_100
+
+@print 苦しげにもがくアリサの体から、<br>煙と青白い火花が上がる。 { speed:1 waitInput:true Wait:true }
+
+# 燃え上がる音
+@bgm Ambi_6_1
+
+@print やがて全身が炎に包まれ、<br>紫藤アリサは異形と化した―― { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+@ResetText 
+@back SolidColor { time:1 }
+@Wait 1.6
+
+@back 1_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@hide Stills { time:0 }
+@hideChars { time:0 }
+@back Transparent { time:0.6 }
+@Wait 0.6
+
+@bgm Bgm_20_1
+
+@print アリサの処刑が執行された後。<br>エマはひとり、監房で膝を抱えて泣いていた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Closed03,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle
+@print うううう……ハンナちゃん……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Closed03,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Closed02
+@print （また、殺人事件が起こるのかな……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （そのたびに誰かが殺されて……<br>　誰かが魔女として処刑されて……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Lifeless02,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open
+@print アリサちゃんの言う通りなのかも……<br>ボクたちは、もう……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open
+@print ……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@print ふと、異臭がするような気がしてエマは鼻を鳴らした。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR13,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open
+@print なんだろ……焦げ臭いような……？<br>それに、なんだか暑い気もする……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR10,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open
+@print うーん……何か燃えてたりはしてない、よね？<br>……もしかして、さっきの匂いがまだ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@print アリサの体が焦げる匂いを思い出して、<br>エマは顔を青くする。 { speed:1 waitInput:true Wait:true }
+
+# ガタッという物音
+@sfx Sfx_64
+
+@char Ema.Default,ArmR10,ArmL16,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Pale01>Pale01_01
+@print なんの音だろ……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 不意に響いてきた音の正体を確かめようと、<br>エマは格子から通路の様子をうかがって―― { speed:1 waitInput:true Wait:true }
+
+# ぶんっと武器が振り下ろされる音
+@sfx Sfx_9
+
+@StopBgm 
+@ResetText 
+@hideChars 
+@Wait 1.2
+
+# ぐちゃっ、めきなど体を害する音
+@sfx Sfx_10
+
+@back SolidColor { time:0.2 }
+@Wait 0.2
+
+@back Transparent { time:0.4 }
+@Wait 0.4
+
+@print 何者かによって致命傷を負わされたエマが、<br>床に倒れ伏す。 { speed:1 waitInput:true Wait:true }
+
+@print 格子の向こうに見えた人影に、エマは目を見開いた。 { speed:1 waitInput:true Wait:true }
+
+@print （そんな……どうして……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print …………。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 問いかけようとした言葉は声にならず――<br>エマは息絶えた。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back Transparent { time:0 }
+@WaitForNextFrame 
+
+@back SolidColor { time:1 }
+@Wait 1.2
+
+@back 13_1 { Scale:{g_backgroundDefaultScale} }
+@back Transparent { time:1 }
+@Wait 1.2
+
+@print エマの命が奪われた。<br>次の犠牲者となった彼女を殺した犯人は誰なのか。 { speed:1 waitInput:true Wait:true }
+
+@print 新たな殺人者か。<br>あるいは、ハンナを殺した真犯人は他にいたのか―― { speed:1 waitInput:true Wait:true }
+
+@print また、魔女裁判が開かれる。 { speed:1 waitInput:true Wait:true }
+
+@print 真実が明らかになる保証はどこにもない―― { speed:1 waitInput:true Wait:true }
+
+# 『END～諦観～』
+# @end
+
+@Gosub System/System_Subroutine.EndAdv
+
+@ClearBacklog 
+@ReturnToTitle { time:1.2000000476837158 delay:0.6000000238418579 }

@@ -1,0 +1,221 @@
+@if isDebugDirectJump
+	@Gosub System/System_Subroutine.BeginAdv
+
+# ========================================
+# ＞『もっとくっついた』を選択→1‐3‐b2へ
+# ========================================
+
+# Scene1-3-b2
+
+# ========================================
+# ●シーン1-3-b2
+# ========================================
+
+@back 40_1 { Scale:{g_backgroundDefaultScale} }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_18_1_Loop
+
+@print "嫌です～！ 離れませ～ん！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print シェリーはよりハンナにくっつくように、<br>ぎゅっと抱きつく。 { speed:1 waitInput:true Wait:true }
+
+@print "ちょっ、そんなに抱きついたらっ……<br>苦しいですわ！ 馬鹿力！" { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "わわっ！ そんな揺らさないでくださぁい。<br>怖いですよ～。" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print これは、揺らしてるんじゃなくて……<br>あなたが重くて……っ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 自力でシェリーを支えているハンナの腕は、<br>ぶるぶると震えていた。 { speed:1 waitInput:true Wait:true }
+
+@print 引き返そうにも、いつの間にか<br>エマとメルルのいる場所からは大分離れてしまっていた。 { speed:1 waitInput:true Wait:true }
+
+@print このまま、どこか丁度良さそうな場所に<br>降りましょう！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print もう無理……っ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "へ？ うわっ……！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@back SolidColor { time:0.2 }
+
+# どすんと落ちる音
+@sfx Sfx_23
+
+@print 突然、ハンナの魔法が解け、<br>２人は下の茂みに落ちてしまった。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+@hide Stills-Middle
+@back 16_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_19_1
+
+@print 幸い、低空飛行だったこともあって<br>大きな怪我はしていないらしい。 { speed:1 waitInput:true Wait:true }
+
+@print シェリーの楽しげな笑い声が、青い空に響いた。 { speed:1 waitInput:true Wait:true }
+
+@print "あははっ！ 楽しい～！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 楽しいのは……ぜえ、ぜえ……<br>あなただけ……ぜえ、ぜえ……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "寝転んだまま荒い呼吸を繰り返しながら、<br>ハンナは恨めしそうにシェリーを<ruby=\"にら\">睨</ruby>む。" { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default
+@char Hanna.Default
+
+@print ハンナさん、すぐには起き上がれなそうですね～。<br>少しここで休んでいきましょうか。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print あなたは……先に戻っても、いいんですのよ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print そんなことできませんよ～。<br>ほうきに乗りたいって言ったのは私ですから。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 寝転んでいる為非表示が好ましいが画面が寂しい為検討
+# ========================================
+
+@hideChars 
+
+@print シェリーはハンナの隣に寝転がると、<br>１度大きく深呼吸をした。 { speed:1 waitInput:true Wait:true }
+
+@print はぁ～……ここ気持ち良い場所ですね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print まあ……悪くはないですわね。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print ハンナさんのおかげで、<br>良い場所を見つけちゃいました。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print べ、別に……わたくしは来たくて来たわけじゃ……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print まあまあ、細かいことはいいじゃないですか！<br>こんなに良い気分なんですから！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ……たしかに、悪い気分ではないですけど。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 牢屋敷とは思えない穏やかな時間が、<br>シェリーとハンナを包む。 { speed:1 waitInput:true Wait:true }
+
+@print その時ふと、シェリーが何かを思いついたように<br>口を開いた。 { speed:1 waitInput:true Wait:true }
+
+@print このまま２人で、行けるところまで<br>行っちゃいましょうか。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 何を言ってるんですの？<br>そんなの無理に決まってますわ。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print どうして無理なんですか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print どうしてって……逃げても、<br>すぐに看守に捕まってしまうでしょう。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print なら、捕まらないところまで逃げれば良いんですよ。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 捕まらない、ところまで……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 世界はとーっても広いんです。<br>そんな場所も、あるかもしれないでしょう？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print シェリーの言葉に、ハンナは大きく目を見張った。<br>驚きと、少しの期待に瞳は揺れる。 { speed:1 waitInput:true Wait:true }
+
+@print ハンナさんと私なら、行けるかもしれない。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print シェリーは、そっとハンナの手に触れた。 { speed:1 waitInput:true Wait:true }
+
+@print ……本当に、そう思ってますの？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 何事も、やってみないとわからないじゃないですか。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 柔らかく微笑むシェリーに、<br>ハンナはさらに瞳を揺らす。 { speed:1 waitInput:true Wait:true }
+
+@print もしかしたら、誰も知らないだけで<br>ここを抜け出す方法だってあるかも知れませんし。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 魔女にだって、ならなくて済むかもしれない。<br>……そんな未来を、探したいんです。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print そう、ですわね。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 今にも泣き出しそうな顔で、<br>ハンナは微笑んだ。 { speed:1 waitInput:true Wait:true }
+
+@print あなただけでは心配ですし……<br>わたくしも、ついて行って差し上げます。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print はい！<br>一緒に自由になりましょう！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print それが、どんなに絶望的な希望でも、<br>縋らずにはいられない。 { speed:1 waitInput:true Wait:true }
+
+@print それくらい、この環境は２人を追い詰め、<br>疲弊させていた。 { speed:1 waitInput:true Wait:true }
+
+@print あ、でも……あの２人は……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print エマとメルルのことを言っているとわかったのか、<br>シェリーはさらに優しく微笑んだ。 { speed:1 waitInput:true Wait:true }
+
+@print 私たちが自由になって、<br>ちゃんと居場所ができたら、迎えにきましょう。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print エマさんとメルルさんだけじゃなく、<br>生き残ってるみんなを！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print それで、今度は全員でピクニックをするんです。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print それぞれの好きな物がたくさん入ったお弁当を持って、<br>あったかくて天気の良い場所で。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ……いい考えですわね。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print それじゃあ、行きますわよ<br>一緒に……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 夢物語が現実になることを信じて、<br>シェリーとハンナは立ち上がり、手を取り合う。 { speed:1 waitInput:true Wait:true }
+
+@print "その時、ハンナの<ruby=\"ほほ\">頬</ruby>を伝った一筋の涙が<br>柔らかな風に<ruby=\"さら\">攫</ruby>われていった。" { speed:1 waitInput:true Wait:true }
+
+@back SolidColor { time:0.2 }
+
+@print しばらくして―― { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+@back 17_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@char Ema.Pensive { time:0 }
+
+@print "シェリーちゃーん！ ハンナちゃーん！<br>どこにいるのー？" { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Meruru.Default
+
+@print 心配してますー。返事してくださーい。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマとメルルが、シェリーとハンナを<br>探しにやって来た。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive
+@char Meruru.Default
+
+@print 全然見つかりません……<br>私が空を飛べれば、こんなことには……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print メルルちゃんのせいじゃないよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print きっと、ほうきから降りて２人でどこかに<br>隠れてるんじゃないかな？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ほら、シェリーちゃんとか<br>そういうの好きそうだし。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Pensive
+
+@print 隠れて……？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Default
+
+@print そう、だからもう少し探してみよう。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default
+
+@print はい！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@back SolidColor
+
+@print しかし、いくら探してもシェリーとハンナが<br>見つかることはなく―― { speed:1 waitInput:true Wait:true }
+
+@print このあと、エマたちが再び２人に会うことは<br>二度となかった。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 『END～自由な世界～』
+# ========================================
+
+@badEnd 12

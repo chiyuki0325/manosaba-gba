@@ -1,0 +1,701 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act01_Chapter04/Act01_Chapter04_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+@char Warden.1 { Position:,{hiddenCharacterPositionY} time:0 }
+# ==============================================================================
+# MARK: 4-7: 💬 アルミのフタ
+# ==============================================================================
+# ＠ト書き▼議論4-7 アルミのフタ
+# 議論開始カットイン
+# BGM変更：AccUhEarts(Vocal無)
+@bgm Bgm_15_1
+
+# Judge4-7-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@printDebate このフタは、<br>私が現場で<br>死体を発見した時に<br>見つけたものよ。<br>私、第一発見者だもの。
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@printDebate その時、<br>アリサちゃんの死体は<br>今と同じ体勢で<br>電気椅子に座っていたわ。<br>その顔には<br>蝶のような模様が<br>刻まれていてね。
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@printDebate そして床に<br>落ちていたフタを<br>見つけた時……<br>ふと、ノアちゃんの事件が<br>頭を過ったの。
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@printDebate 【このままじゃ、<br>自分が疑われるかも】<br>……ってね。
+
+@char Meruru.Normal1,ArmR1_1,ArmL8,Eyes1_Pensive_Open1,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@printDebate もしかして……<br>【ダイイングメッセージ】<br>でしょうか？
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@printDebate そうね。<br>あの時と同じく、<br>【アリサちゃんが<br>犯人を告発する為に残した】<br>……なんて言われたら<br>たまらないでしょう？
+
+@char Margo.Default,ArmR6,ArmL1,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@printDebate "だって、明らかに<br><link=\"Objection_01_04_07_01\">蝶の模様</link><br>なんだもの。<br><link=\"Objection_01_04_07_02\">私の衣装と同じ</link>……ね。"
+
+@char Margo.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Closed,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@printDebate だから隠しておいたの♡<br>何か問題あるかしら？
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@printDebate 問題大有りじゃん！<br>証拠品隠すなんて<br>怪しすぎるだろ！
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Middle
+@gosubModifyCamera 0
+@printDebate "火傷は<br>【<link=\"Objection_01_04_07_03\">マーゴが殺した</link>】<br>っていう<br>アリサの<br><link=\"Objection_01_04_07_04\">ダイイングメッセージ</link><br>だった……。"
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@printDebate そう思われても<br>仕方なくない！？
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@printDebate そう？<br>ごめんなさいね♡
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate でも……<br>エマちゃんは私のこと、<br>信じてくれるわよね？
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate だってエマちゃんは……<br>さっき<br>【アリサちゃんの自殺】<br>だって<br>断言してくれたんだもの。
+
+# ＠備考◆静かに凄む
+
+@char Margo.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@printDebate 今更意見を覆して<br>私を裏切ったりなんて……<br>しないわよね。
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@printDebate そ、それは……！
+
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Ema.Surprised1 { time:0 }
+@gosubModifyCamera 0
+@Wait 0.2
+
+# ==============================================================================
+# 4-7議論後独白
+# ==============================================================================
+
+@print （マーゴちゃんが証拠を隠してたなんて……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed { time:0 }
+@print （……でも、提出された証拠で<br>　事件の大筋が変わるわけじゃないはず……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@print （なら……信じるんだ……！<br>　みんなのことを！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge4-7-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_01_04_07_01
+
+@Skip false
+@pauseTrial true
+
+@choice 模様は蝶ではない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge4-7-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_01_04_07_02
+
+@Skip false
+@pauseTrial true
+
+@choice マーゴにはアリバイがある
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge4-7-5
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_01_04_07_03
+
+@Skip false
+@pauseTrial true
+
+@choice 犯人は蝶だった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge4-7-6
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論4
+# ------------------------------------------------------------------------------
+
+# Objection_01_04_07_04
+
+@Skip false
+@pauseTrial true
+
+@choice 犯人を示していた
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge4-7-7
+
+@choice 火傷は事故だった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge4-7-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 4-7: ❌ 議論ミス選択肢
+# ==============================================================================
+
+# MARK: 4-7-4: ❌ 模様は蝶ではない
+
+# Judge4-7-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print そのフタの模様は……<br>蝶じゃないんじゃないかな？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1
+@gosubModifyCamera 0
+@print じゃあ何に見えんの？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL12,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print えーと……たとえば、犬とか……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal1,ArmR1_1,ArmL8,Eyes1_Pensive_Open1,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print あるいは……森、とかでしょうか……？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print あら、ロールシャッハテストかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1,ArmR2,ArmL1
+@gosubModifyCamera 0
+@print ロールシャッハって……なに？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print ふふ、知らないのね。かわいい♡ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR13,ArmL10,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print なんかバカにされたんですけど！<br>エマっちのせいだろこれ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （ボクのせいにされちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （……マーゴちゃんが証拠を隠していた理由はわかったけど……。<br>　でもマーゴちゃんも犯人じゃないはず……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （なら……それを証明しよう。<br>　昨晩ここで何が起こったのか、明らかにするんだ！） { author:Ema speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge4-7-1
+
+# MARK: 4-7-5: ❌ マーゴにはアリバイがある
+
+# Judge4-7-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print でもマーゴちゃんにはアリバイがあるよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print んなこと、あてぃしらが一番わかってんの！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print でもこんなダイイングメッセージ残されたら、<br>ぜってーマーゴが怪しいじゃん！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print 証拠もいんぺーしてたわけだし！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print でも私は犯人じゃないの。<br>だからエマちゃんに相談してるのよ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 【アリサちゃんは自殺したはず】なのに、<br>なぜこんなフタが残されていたのか。 { author:Margo speed:1 waitInput:true Wait:true }
+
+# ＠備考◆少し真剣に
+
+@char Margo.Default,ArmR1,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print ……お願い、エマちゃん。<br>一緒に考えてくれる？ { author:Margo speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （……マーゴちゃんが証拠を隠していた理由はわかったけど……。<br>　でもマーゴちゃんも犯人じゃないはず……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （なら……それを証明しよう。<br>　昨晩ここで何が起こったのか、明らかにするんだ！） { author:Ema speed:1 waitInput:true Wait:true }
+
+
+# ダメージなし
+
+@goto .Judge4-7-1
+
+# MARK: 4-7-6: ❌ 犯人は蝶
+
+# Judge4-7-6
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ……犯人が蝶だったってことじゃないかな。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# ＠備考◆呆れ
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Middle
+@gosubModifyCamera 0
+@print 一応聞くけど、どうやって蝶が殺したのさ……。<br>睡眠薬飲ませたって話っしょ？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print そ、それはその……<br>誰かが操って……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 残念だけど、<br>虫を操れるような魔法を使う子は<br>いなそうだけどね？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal1,ArmR1_1,ArmL8,Eyes1_Pensive_Open1,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print 残念ですけど、<br>蝶に睡眠薬を飲ませるような命令は<br>させられないと思います……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print そもそも自殺じゃなかったのかよ！<br>真面目にやれ！！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （怒鳴られちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （……マーゴちゃんが証拠を隠していた理由はわかったけど……。<br>　でもマーゴちゃんも犯人じゃないはず……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （なら……それを証明しよう。<br>　昨晩ここで何が起こったのか、明らかにするんだ！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge4-7-1
+
+# MARK: 4-7-7: ❌ 犯人を示していた
+
+# Judge4-7-7
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print そうだね、ココちゃん……！<br>そのダイイングメッセージは犯人を示してた……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print つまり、犯人はマーゴちゃんだ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print ……本当にそれが結論でいいのね？<br>エマちゃん。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print "え？ だってココちゃんが――。" { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal1,ArmR5_1,ArmL4,Eyes1_Normal_Open2,Mouth1_Angry_Open2
+@gosubModifyCamera 0
+@print あの……エマさんが、先ほど言ったんですよ……？<br>【アリサさんは自殺だった】と……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+# ＠備考◆本当に残念そう
+
+@char Margo.Pensive1,ArmR4,ArmL1
+@gosubModifyCamera 0
+@print ……悲しいわ、エマちゃん。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （マーゴちゃんを裏切っちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （……マーゴちゃんが証拠を隠していた理由はわかったけど……。<br>　でもマーゴちゃんも犯人じゃないはず……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （なら……それを証明しよう。<br>　昨晩ここで何が起こったのか、明らかにするんだ！） { author:Ema speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge4-7-1
+
+# ==============================================================================
+# MARK: 4-7-2: ⭕ 火傷は事故だった
+# ==============================================================================
+
+# Judge4-7-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@gosubCutIn Ema
+@Gosub System/System_Subroutine.EndDebate-Last
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+@StopBgm 
+
+# カットイン
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print アリサちゃんの火傷は……<br>事故だったんじゃないかな。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print は？<br>んな都合いいことある？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print でも実際、それは起こったんだ。<br>事故で火傷がついた……<br>そんな現象が。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print 現象？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print うん。<br>それは、マーゴちゃんが提出してくれた<br>【アルミのフタ】と……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print そして、もう１つの【証拠品】が示していると思うよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# Judge4-7-8
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open
+@gosubModifyCamera 0
+@print アリサちゃんの火傷が事故だった証拠……<br>それは、これだ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@evidence Clue
+
+@if "chosenEvidenceId==\"4-5\""
+	@goto .Judge4-7-9
+
+@if "chosenEvidenceId==\"4-4\""
+	@goto .Judge4-7-10
+
+@if "chosenEvidenceId==\"4-3\""
+	@goto .Judge4-7-11
+
+@goto .Judge4-7-12
+
+# ==============================================================================
+# ミス選択肢
+# ==============================================================================
+# MARK: 4-7-10: ❌ アルミのフタ
+
+# Judge4-7-10
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print それは……アルミのフタだよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print いやアルミのフタはわかったから！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print アルミのフタしか証拠がねーなら、<br>やっぱりマーゴが怪しいってことになるけど！？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （間違えちゃったみたい……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （……あらためて見てみると<br>　このアルミのフタ、【ひしゃげて歪んでる】……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （これと対になるような証拠品……！<br>　そんなものがあったはずだ……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge4-7-8
+
+# MARK: 4-7-11: ❌ 睡眠薬
+
+# Judge4-7-11
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print アリサちゃんは睡眠薬をたくさん飲んでた……<br>だからボーっとしてたんだよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print つまり？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ボーっとして、フタを床に落としちゃったんだ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print ……それでなんで火傷するんだよ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （むしろ、火傷したあとに落としたんだよね……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （……あらためて見てみると<br>　このアルミのフタ、【ひしゃげて歪んでる】……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （これと対になるような証拠品……！<br>　そんなものがあったはずだ……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge4-7-8
+
+# MARK: 4-7-12: ❌ 汎用選択ミス
+
+# Judge4-7-12
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print アルミのフタとその証拠品で<br>何を証明できるのかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print エマっちの推理の方が事故ってんじゃね？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （事故らないよう気をつけないと……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （……あらためて見てみると<br>　このアルミのフタ、【ひしゃげて歪んでる】……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （これと対になるような証拠品……！<br>　そんなものがあったはずだ……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge4-7-8
+
+# ==============================================================================
+# MARK: 4-7-9: ⭕ 【ガラスの破片】
+# ==============================================================================
+
+# Judge4-7-9
+
+# カットイン
+@gosubCutIn Ema
+@Gosub System/System_Subroutine.EndDebate-Last
+
+# BGM変更：Sen-Choose N'o SurC
+@bgm Bgm_38_1_Loop
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print このガラスの破片を見てほしいんだけど……<br>すごく遠くまで飛び散ってるんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print 普通に地面に落として割れたなら、<br>こうはならないよね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1
+@gosubModifyCamera 0
+@print た、たしかにそうかも……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print 【アルミのフタ】が融けかけていることからも、<br>【睡眠薬のビン】が熱せられたのは<br>間違いないと思うんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print でもその時、ビンは割れてしまった……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print 現場の状況から考えると……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR7,ArmL7,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print 【爆発】、したんじゃないかな。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal2,ArmR12_2,ArmL13,Eyes2_Surprised_Open1,Mouth2_Normal_Open1
+@gosubModifyCamera 0
+@print 爆発……！？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR7,ArmL7,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print ……そう考えると、<br>ガラスの破片の状態も、アルミのフタの状態も<br>辻褄が合うんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR7,ArmL7,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print アリサちゃんの炎は強力だからね。<br>素早く熱せられたビンの中の空気が膨張したんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print 熱せられていたフタも、<br>強い圧力がかかって飛び出した。<br>……そして、アリサちゃんの顔に貼り付いたんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print そう考えれば、アリサちゃんの顔に<br>火傷の痕が残った理由も説明できるよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# ココカットイン
+
+@Wait 0.2
+
+@sfx Sfx_Common_5
+
+@ResetText 
+@voice CommonTrial_Coco00921
+@char Ema.Surprised1
+@char Coco.Default,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubSplitStageScreen 1
+@Wait 1.5
+
+@hideStageScreen 1
+@Wait 0.3
+
+@char Coco.Default,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print ……そ、そんな都合いい推理……<br>そもそも問題があるんじゃねーの！？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print えっ……！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print 納得できる説明ができないなら……<br>やっぱエマっち、<br>あてぃしのこと……騙そうとしてんだろ！！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print 違うっていうなら……証明してみろ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+
+
+@goto Act01_Chapter04/Act01_Chapter04_Trial08

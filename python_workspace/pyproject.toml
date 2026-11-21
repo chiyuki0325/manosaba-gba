@@ -1,0 +1,9 @@
+[project]
+name = "python-workspace"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+    "numpy>=2.5.5",
+    "scipy>=1.18.1",
+    "unitypy==1.25.4",
+]

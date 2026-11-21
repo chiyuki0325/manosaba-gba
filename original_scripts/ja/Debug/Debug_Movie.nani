@@ -1,0 +1,21 @@
+@Gosub System/System_Subroutine.BeginAdv
+
+@back Transparent { time:0 }
+
+@Gosub .Main
+
+@Stop 
+
+# ==============================================================================
+# Main
+# ==============================================================================
+
+# Main
+
+@print "Debug_Movie # Main" { speed:1 waitInput:true Wait:true }
+
+@movie Act01_Opening
+
+@print "Movie ends." { speed:1 waitInput:true Wait:true }
+
+@Return

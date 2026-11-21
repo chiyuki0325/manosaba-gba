@@ -1,0 +1,128 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-4-7
+
+# ========================================
+# ●シーン1‐4-7
+# ========================================
+
+@back 13_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@print ――たどりついた裁判所で。 { speed:1 waitInput:true Wait:true }
+
+@char Margo.Pensive1
+
+@print ああ、エマちゃんも来たわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Pensive1,ArmL2
+
+@print まためんどいことになった……<br>マジ勘弁してほしいんですけど。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@bgm Bgm_3_1_Loop
+
+@print それはすぐにエマの目に飛び込んできた。 { speed:1 waitInput:true Wait:true }
+
+@print 裁判所中央、<br>一番目につく処刑台の上に死体があったからだ。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+
+@animate Stills
+@back 300_1 { time:0.6 }
+@animate Stills
+@Wait 2.4
+
+@back 300_1 { time:0 }
+@animate Stills-Middle
+@back Transparent { time:1.2 }
+@Wait 2.4
+
+@animate Stills-Middle
+@back 300_1 { time:0 }
+@blur Stills
+@animate Stills
+@blur Stills
+@hide Stills-Middle { time:0.6 }
+@Wait 3
+
+@print 処刑台に用意された電気椅子に力なく座り、<br>明らかに生命活動を終えている少女。 { speed:1 waitInput:true Wait:true }
+
+@print ――紫藤アリサだった。 { speed:1 waitInput:true Wait:true }
+
+@print なんで、アリサちゃんが……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 少し遅れて裁判所に入ってきたメルルも、<br>アリサの死亡を確認し、力なく崩れ落ちる。 { speed:1 waitInput:true Wait:true }
+
+@print アリサさん……うぅ、なんで、なんでっ……<br>あぁぁあっ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print メルルの泣き声が、<br>裁判所内に響き渡る。 { speed:1 waitInput:true Wait:true }
+
+@hide Stills
+
+@print どこにいたのか、<br>呼び出したゴクチョーは後からやってきた。 { speed:1 waitInput:true Wait:true }
+
+# フクロウの羽ばたき音
+@sfx Sfx_8
+
+@char Warden.1
+
+@print 皆さんおそろいですかね。<br>黒部ナノカさんは相変わらずいないようですが。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print というわけで、見てのとおり<br>殺人事件が発生しているので<br>魔女裁判を執り行います。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 残りの人数も少ないですし、<br>そんなに悩む必要もないですよね。<br>裁判は正午からにしましょう。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Angry1,ArmL2
+
+@print 捜査させる気ねーだろおまえ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Warden.1
+
+@print いやまあ、嫌な時間は早く終わらせたいですよね。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 今いる囚人の中から必ず殺人犯を特定してください。<br>その者は、【魔女】として処刑……<br>特定できなかったら全員処刑も変わりませんので。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 本来は外出禁止時間ですが、<br>捜査の間は出入り自由とします。<br>では、がんばって犯人を特定してくださいね。 { author:Warden speed:1 waitInput:true Wait:true }
+
+# フクロウの羽ばたき音
+@sfx Sfx_8
+
+@hideChars 
+
+@print いつものように一方的な話を終え、<br>ゴクチョーは飛び去った。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print ……アリサちゃんを殺した犯人の、捜査……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマの視線は残された少女たちに移ろう。 { speed:1 waitInput:true Wait:true }
+
+@print （マーゴちゃん、ココちゃん、メルルちゃん、<br>　それにこの場に来てないナノカちゃん……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （あまりにも人数が少なすぎるよ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 未だメルルは泣き崩れ、身動きが取れそうにない。 { speed:1 waitInput:true Wait:true }
+
+@print マーゴとココは話し合うことなどないと言わんばかりに、<br>早々に裁判所を出ていった。 { speed:1 waitInput:true Wait:true }
+
+@print 牢屋敷の秘密に迫る手がかりを得られ、<br>活力を取り戻した矢先での凶行。 { speed:1 waitInput:true Wait:true }
+
+@print "エマは力が入らなくなり、<br>何もかもから目を<ruby=\"つむ\">瞑</ruby>り、耳を塞いでしまいたくなっていた。" { speed:1 waitInput:true Wait:true }
+
+@print （でも……でも、アリサちゃんが殺されたのなら……<br>　ボクは真実を見つけないと……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@update Alisa
+
+@set "chosenAreaFlag = 0"
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter04/Act01_Chapter04_Adv08

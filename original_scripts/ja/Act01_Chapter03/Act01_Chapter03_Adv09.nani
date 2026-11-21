@@ -1,0 +1,107 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-3-9
+
+# ========================================
+# ●シーン1‐3‐9
+# ========================================
+
+@back 2_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# ========================================
+# ＞『地下通路』を選択
+# ========================================
+
+@bgm Bgm_28_1
+
+@print （ここには誰もいないかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "囚人の監房が並ぶ地下通路を、<br>エマは念のためひとつひとつ<ruby=\"のぞ\">覗</ruby>いていく。" { speed:1 waitInput:true Wait:true }
+
+@print すると――ハンナとココの監房に、<br>まだハンナが残っていた。 { speed:1 waitInput:true Wait:true }
+
+@print …………。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print ハンナは床にぺたりと座り込み、背中を向けて、<br>何やら集中して作業をしている。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print ハンナちゃん……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print そっと声をかけてみると、<br>ハンナの肩が大げさにびくんと揺れた。 { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆棒読み気味に
+
+@print あ、あらエマさん！<br>びっくりしましたわ～！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print ハンナは手元にあったものを、<br>急いで毛布の下へ隠した。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print （なんだろう……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print なんでもねーですわ！<br>きっ、気にしないでくださいまし！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Normal1
+
+@print "エマの<ruby=\"いぶか\">訝</ruby>しむ視線に気付いたのか、<br>ハンナが慌てて監房から出てくる。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print うん……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 隠しごとをされたことで、<br>エマは少ししょんぼりした顔になる。<br>するとハンナが慌てだした。 { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1
+
+@print べ、別に大したことじゃありませんのよ本当に！<br>危ないことをしているわけでもありません！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Normal1
+
+@print その……エマさんが少しでも<br>元気になるように、プレゼントを作っていますの。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print エマさん、最近寝込んでいましたし、<br>お見舞いにもなるかなと……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 視線を逸らし、気まずそうにしながら<br>ハンナが言ってくる。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR1
+
+@print プレゼント……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1
+
+@print 騒がなくってもよろしくてよ！？<br>ぜんぜん大したものじゃありませんから！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL7
+
+@print ハンナちゃん……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマは感極まった様子で、涙を<ruby=\"にじ\">滲</ruby>ませる。" { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Flushed1
+
+@print 大したものじゃないんですから、<br>大げさにとらえないでくださいまし！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print わたくし先に行ってますね！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3,ArmL7
+
+@print う、うん。じゃあまた後で。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hide Hanna
+
+@print 照れ隠しなのか、怒ったような足取りで、<br>ハンナは立ち去った。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン1‐3‐6
+# 全てのイベントを消化している＞シーン1‐3‐12
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter03/Act01_Chapter03_Adv06

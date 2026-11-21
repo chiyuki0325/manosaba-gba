@@ -1,0 +1,370 @@
+@if isDebugDirectJump
+	@Gosub System/System_Subroutine.BeginAdv
+
+# ========================================
+# ＞『その影を追った』を選択
+# ========================================
+
+# ========================================
+# ＞シーン2-4-b2へ
+# ========================================
+
+# Scene2-4-b2
+
+@StopBgm 
+
+# ========================================
+# ●シーン2-4-b2
+# ========================================
+
+@back 17_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_21_1
+
+@char Leia.Surprised1
+
+@print "ヒロくん！？ 一体どこへ……。" { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print 向こうにも何かいるみたいだ。<br>少し確認してくる。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print すぐに追いつくから、<br>君はゴクチョーを追ってくれ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Normal1
+
+@print ああ、わかった。<br>くれぐれも気をつけて。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 君も。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print こうしてレイアと別れ、<br>私は影が向かった方――湖の奥へと進んだ。 { speed:1 waitInput:true Wait:true }
+
+@back 17_1 { time:1 }
+
+# ＠備考◆泳いだ息切れ
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print はぁ、はぁ、はぁ……どこへ行ったんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print しん、と静まり帰った湖は<br>なんだか少し気味が悪い。 { speed:1 waitInput:true Wait:true }
+
+@print （見間違いだったのか……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print だとすれば、ここにいる理由はない。 { speed:1 waitInput:true Wait:true }
+
+@print （レイアを追いかけないと） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@StopBgm { fade:3 }
+
+@print そう思って、振り返ったその時。 { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# 軽く水が跳ねる音
+@sfx Sfx_156
+
+@Wait 0.5
+
+@print ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_27_1
+
+@char Hiro.Surprised1
+
+@print （いつの間に……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 水の音に驚いて振り返れば、<br>そこには少女の姿があった。 { speed:1 waitInput:true Wait:true }
+
+@print それも、見知らぬ少女だ。 { speed:1 waitInput:true Wait:true }
+
+@print 君は……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 声をかけると、少女は途端に<br>煙に巻かれたように消えてしまう。 { speed:1 waitInput:true Wait:true }
+
+@print （どういうことだ……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 訳がわからない。 { speed:1 waitInput:true Wait:true }
+
+@print とにかく、見知らぬ少女がいたことを<br>他の者たちにも知らせたほうがいいだろう。 { speed:1 waitInput:true Wait:true }
+
+@print 今度こそレイアを追いかけようと、<br>体の向きを変えたその時だった。 { speed:1 waitInput:true Wait:true }
+
+# 倒れるSE
+@shake Camera
+@char Hiro.Angry1
+@Wait 0.2
+
+# ＠備考◆息を呑む
+
+@print っ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_27_2
+
+# 水が泡立つ音
+@sfx Sfx_142
+
+@char Hiro.Fearful1
+@Wait 0.2
+
+@ResetText 
+@char Hiro.Fearful1 { time:0.2 }
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.6
+
+@print 急に足を引っ張られ、浮かぶことができない。 { speed:1 waitInput:true Wait:true }
+
+@print （一体何が……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "焦りながら暗い水中を見渡せば、<br>先ほどの少女が、私の足を<ruby=\"つか\">掴</ruby>んで微笑んでいた。" { speed:1 waitInput:true Wait:true }
+
+@print やっと……やっと、次を捕まえた。 { author:Girl speed:1 waitInput:true Wait:true }
+
+@print （次……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"うれ\">嬉</ruby>しそうな言葉に思考を取られている間にも、<br>身体はどんどん深い場所へ連れて行かれる。" { speed:1 waitInput:true Wait:true }
+
+@print （苦しい……このままでは……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 遠ざかる水面に手を伸ばす。<br>けれど、届くことはない。 { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_27_3
+
+@print （あぁ……これもう、死ぬ……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ふふ、いいのよ……そのまま身を任せて。 { author:Girl speed:1 waitInput:true Wait:true }
+
+@print まるで幼子をあやすような優しい声に促され、<br>私は今回の生を終えた。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+@StopBgm { fade:1.5 }
+
+@hideChars { time:0 }
+@Wait 3
+
+@back 17_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@back SolidColor.Custom { time:0.8 }
+@Wait 1
+
+@char Hiro.Surprised1 { time:1 }
+@Wait 1
+
+@bgm Bgm_22_1
+
+@print "っ！ はぁ……はぁ……。" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "目を覚ましたのは、湖の<ruby=\"ほとり\">畔</ruby>だった。" { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print （どうして……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print いつもなら、<br>最後に眠った場所から始まるはずだ。 { speed:1 waitInput:true Wait:true }
+
+@print （とにかく、牢屋敷に戻らないと） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 奇妙な違和感を覚えつつ、<br>私は牢屋敷へと足を向けた。 { speed:1 waitInput:true Wait:true }
+
+@back 4_1 { Scale:{g_backgroundDefaultScale} time:1 }
+
+@print 牢屋敷へ戻った途端、<br>陰鬱な雰囲気を感じ取って<br>私は顔をしかめた。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro
+
+@print （なんだ……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print どう考えても、状況がおかしい。<br>ひとまず誰かに話を聞こうと歩き出すと、<br>レイアとミリアが連れ立ってくるのが見えた。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1
+@char Miria.Pensive1,ArmR10
+
+@print （ああ、ちょうどよかった……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print レイア、ミリア……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Angry1
+
+@print ミリアくん、気をしっかり持つんだ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# ＠備考◆泣いている
+
+@char Miria.Cry1
+
+@print ごめん……ごめんね。<br>しっかりしないとって、わかってるんだけど……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1
+
+@print "ボロボロと涙を流すミリアの隣で、<br>レイアも沈痛な面持ちで<ruby=\"うつむ\">俯</ruby>く。" { speed:1 waitInput:true Wait:true }
+
+@print ２人とも、一体何があったんだ？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print ……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print どうして何も答えないんだ。<br>聞こえてるんだろう？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 重ねて声をかけるのに、<br>２人はチラリともこちらを見ない。 { speed:1 waitInput:true Wait:true }
+
+@print まるで、本当にこちらの声が<br>届いていないかのように。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1
+
+@print （そんなはずない……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print そろそろ戻ろう。<br>きっとみんなも不安がっているはずだ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive1
+
+@print ……そう、だね。<br>でも、本当に信じられない……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print ヒロちゃんが……死んだなんて。 { author:Miria speed:1 waitInput:true Wait:true }
+
+# ＠備考◆驚愕
+
+@char Hiro.Surprised1
+
+@print ……っ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （私が、死んだ……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print そんなのあり得ない。 { speed:1 waitInput:true Wait:true }
+
+@hide Miria
+@hide Leia
+
+@print 去って行く２人を追いかけて問いただしたいのに、<br>足が地面に縫い止められてしまったかのように動かない。 { speed:1 waitInput:true Wait:true }
+
+@print （違う、違う……今のは何かの間違いだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私が、死んだなんて……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ふふっ、間違いじゃないわよ。 { author:Girl speed:1 waitInput:true Wait:true }
+
+# ＠備考◆驚いて振り返る
+
+@hideChars 
+@char Hiro.Surprised1
+
+@print ！？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 突然聞こえてきた声に振り返れば、<br>そこには１人の少女がいた。 { speed:1 waitInput:true Wait:true }
+
+@print 湖で見かけた、あの少女。<br>私を湖の底に引きずり込んだ、あの少女だ。 { speed:1 waitInput:true Wait:true }
+
+@print ……どうしてここに。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 消える前に、<br>あなたに教えておいてあげようと思って。 { author:Girl speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive1
+
+@print 消える……？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "ただ<ruby=\"ぼうぜん\">呆然</ruby>とする私に、<br>彼女は至極<ruby=\"うれ\">嬉</ruby>しそうな笑みを浮かべた。" { speed:1 waitInput:true Wait:true }
+
+@print "あなたはあの湖で死んだの。<br>私の代わりの<ruby=\"い\">生</ruby>け<ruby=\"にえ\">贄</ruby>として。" { author:Girl speed:1 waitInput:true Wait:true }
+
+@print おかげで私は、<br>ようやくここから解放される。 { author:Girl speed:1 waitInput:true Wait:true }
+
+@char Hiro.Fearful1
+
+@print "（<ruby=\"い\">生</ruby>け<ruby=\"にえ\">贄</ruby>……）" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 嫌な予感に、身体が自然と震え出す。 { speed:1 waitInput:true Wait:true }
+
+@print "今度はあなたの番。<br>次の<ruby=\"い\">生</ruby>け<ruby=\"にえ\">贄</ruby>を捧げるまで、<br>ずーっとこの牢屋敷に囚われ続けるの。" { author:Girl speed:1 waitInput:true Wait:true }
+
+@print 言い終えると同時に、<br>少女の姿は薄まり始める。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Surprised1
+
+@print ま、待ってくれ！<br>まだ聞きたいことが……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print あとは自分で調べて。 { author:Girl speed:1 waitInput:true Wait:true }
+
+@print 大丈夫。<br>時間はそれこそ死ぬほどあるんだから。 { author:Girl speed:1 waitInput:true Wait:true }
+
+@print クスリと小さな笑いを残して、<br>少女は完全に消えた。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Fearful1
+
+@print （なんで……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ――あの時、影を追ったりしなければ。<br>――そもそも、湖になんて行かなければ。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive1
+
+@print （……いや、あの少女の言った事が<br>　本当だとは限らない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"いちる\">一縷</ruby>の望みに<ruby=\"すが\">縋</ruby>りたくて、<br>私はみんながいるであろうラウンジに向かった。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@back 5_1 { Scale:{g_backgroundDefaultScale} time:1 }
+
+@print みんな！！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print これまでになく大きな声で呼びかけながら、<br>ラウンジに入る。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print そこにはミリアやレイアの他に、<br>生き残っているメンバーが全員<br>集まっていた。 { speed:1 waitInput:true Wait:true }
+
+@print 一様に沈痛な面持ちで、<br>誰ひとりこちらを見ることはない。 { speed:1 waitInput:true Wait:true }
+
+@print 私の声が聞こえないのか！<br>なぁ、本当は聞こえているんだろう？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive1
+@char Leia.Pensive1
+@char Ema.Pensive1,ArmR3
+
+@print ……あの時、ヒロちゃんについて行っていれば。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print それを言えば私も同じだ……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print ヒロちゃんが、死んじゃうなんて……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマ！ 私はここだ！<br>死んでなんかいない！！" { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆泣いている
+
+@char Ema.Cry1
+
+@print うぅっ、ヒロちゃん……こんなの、<br>やだ……やだよぉ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマちゃん……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print ボロボロと涙を流しながら、<br>エマがその場にへたり込む。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "エマ！ 違う！ 私は生きてる！！<br>こんなの、何かのいたずらで――！" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （こんなの、おかしい……<br>　おかしいおかしいおかしい！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "私はここだ！ ここにいるんだ！<br>死んでなんかいない！<br>だから……誰か、気付いてくれ……。" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@print どんなに喚いても叫んでも、<br>誰にも声は届くことはなく――。 { speed:1 waitInput:true Wait:true }
+
+@print 死ぬことすら許されない絶望の中、<br>私は牢屋敷に囚われ続けるのだった。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 『END～溺れる～』
+# ========================================
+
+@badEnd 22

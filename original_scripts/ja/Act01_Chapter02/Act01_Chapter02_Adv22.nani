@@ -1,0 +1,104 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-2-22
+
+# ========================================
+# ●シーン1‐2-22
+# ========================================
+
+@back 11_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# ========================================
+# ＞『娯楽室』を選択
+# ========================================
+
+@bgm Bgm_5_1
+
+@char AnAn.Normal1,Angle01/Option_Arms-
+
+@print エマが２階の娯楽室に行ってみると、<br>アンアンがそこにいた。 { speed:1 waitInput:true Wait:true }
+
+@print 何も映らないスクリーンを眺めている横顔は、<br>とても寂しそうだった。 { speed:1 waitInput:true Wait:true }
+
+@print ミリアとアンアンはここでよく、<br>古い映画を鑑賞していた。 { speed:1 waitInput:true Wait:true }
+
+@print （もう、その光景は二度と見られないんだ――） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print アンアンちゃん……何か、手がかり見つけた？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print アンアンは力なく首を振って、<br>スケッチブックを掲げる。 { speed:1 waitInput:true Wait:true }
+
+@char AnAn.Normal1,Arms2,Angle01/Option_Arms>Option_Arms01_01,Angle01/Option_ArmR/Option_ArmR01_01-
+
+@print 『まだ何も』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR1
+
+@print ボクも少し探してみる。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （ミリアちゃんは自由時間の多くを、<br>　この娯楽室で過ごしていた） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （何か手がかりになるものが残っているかもしれない） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマとアンアンは手分けして、<br>娯楽室を捜索していく。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@camera { time:0.9 }
+@Wait 0.9
+
+@print すると、キャビネットに鍵がかかっていて、<br>開かないことに気付く。 { speed:1 waitInput:true Wait:true }
+
+@print （あれ……ここ開かないな） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 気にはなったものの、<br>開かないなら一旦諦めるほかない。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@camera { time:0.9 }
+@Wait 0.9
+
+@print ひととおり捜索したが、<br>それ以外には特に何も見つけられなかった。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print うーん、ここには何もなさそうだね。<br>ボクは他の場所へ――。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマが扉の方へ向かっていくと、<br>裾をぐい、と引っ張られた。 { speed:1 waitInput:true Wait:true }
+
+@print 振り向くと、アンアンが泣きそうな顔で、<br>エマを見上げている。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+@char AnAn.Pensive1,Angle01/Option_Arms-,ArmR1,ArmL1,ArmR1-Option-All
+
+@print アンアンちゃん……どうしたの……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print …………。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 何か言いたげに口を開きかけ、<br>ただ辛そうに首を振る。<br>その心情を察してか、エマまで泣きそうな顔になる。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print 犯人見つけようね、必ず。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "アンアンは、こくりと<ruby=\"うなず\">頷</ruby>いてくれた。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン1‐2‐19
+# 全てのイベントを消化している＞シーン1‐2‐26
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter02/Act01_Chapter02_Adv19

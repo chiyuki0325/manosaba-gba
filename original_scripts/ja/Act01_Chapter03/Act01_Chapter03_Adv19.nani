@@ -1,0 +1,65 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+@back Transparent { time:1.2 }
+
+# Scene1-3-19
+
+# ========================================
+# ●シーン1‐3-19
+# ========================================
+
+# ========================================
+# マップイベント用分岐
+# ========================================
+
+# ========================================
+# 【ＭＡＰイベント】牢屋敷マップ
+# 殺人現場＞シーン1‐3‐20
+# 水精の間＞シーン1‐3‐21
+# 地精の間＞シーン1‐3‐22
+# ゲストハウス＞シーン1‐3‐23
+# 倉庫＞シーン1-3-24
+# 医務室＞シーン1‐3‐25
+# ※全てのＭＡＰイベントを選択したら終了。
+# 選択済みの場所は消していってください。
+# ========================================
+
+@if "chosenAreaFlag == 63"
+	@set "chosenAreaFlag = 0"
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter03/Act01_Chapter03_Adv26
+
+@map ChamberSalamander,ChamberUndine,ChamberGnome,FrontGuesthouse,Warehouse,Infirmary ChamberSalamander,ChamberUndine,ChamberGnome,FrontGuesthouse,Warehouse,Infirmary
+
+@if "chosenAreaId==\"ChamberSalamander\""
+	@setFlag 0
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter03/Act01_Chapter03_Adv20
+
+@if "chosenAreaId==\"ChamberUndine\""
+	@setFlag 1
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter03/Act01_Chapter03_Adv21
+
+@if "chosenAreaId==\"ChamberGnome\""
+	@setFlag 2
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter03/Act01_Chapter03_Adv22
+
+@if "chosenAreaId==\"FrontGuesthouse\""
+	@setFlag 3
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter03/Act01_Chapter03_Adv23
+
+@if "chosenAreaId==\"Warehouse\""
+	@setFlag 4
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter03/Act01_Chapter03_Adv24
+
+@if "chosenAreaId==\"Infirmary\""
+	@setFlag 5
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter03/Act01_Chapter03_Adv25
+
+@Stop

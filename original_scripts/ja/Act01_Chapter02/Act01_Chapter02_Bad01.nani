@@ -1,0 +1,338 @@
+@if isDebugDirectJump
+	@Gosub System/System_Subroutine.BeginAdv
+
+# ========================================
+# ＞『受けてみることにした』を選択→1‐2‐b1へ
+# ========================================
+
+# Scene1-2-b1
+
+# ●シーン1‐2-b1
+@back 100_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@print 受けてみることにした。 { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_26_1
+
+@print せっかくだし、占ってもらおうかな……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ウフフ、そうこなくちゃ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print "艶やかに笑うマーゴに、ハンナが<ruby=\"うろん\">胡乱</ruby>な目を向ける。" { speed:1 waitInput:true Wait:true }
+
+@print なんだか、うさんくさい雰囲気が満載ですわね……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print あら、心外ね。大丈夫よ。<br>さっきも言ったけど、本当に当たるって評判なんだから。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print でも、お高いんでしょう？<br>私たち、お金なんて持ってませんが……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print そうね……それじゃ、特別に初回サービスで<br>貸しにしておきましょうか。<br>……体で支払ってもらっても構わないけれど♡ { author:Margo speed:1 waitInput:true Wait:true }
+
+@print マーゴが目を細め、エマたちを見つめる。 { speed:1 waitInput:true Wait:true }
+
+@print か、体でって、どういうこと……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print フフ、意味はご想像にお任せするわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print ちょっ、ちょっとエマさん！<br>やっぱりやめといた方がいいんじゃありません！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "ハンナは<ruby=\"おび\">怯</ruby>えたような様子で自分の体を抱きしめた。" { speed:1 waitInput:true Wait:true }
+
+@print そ、そうだね……。<br>ごめんマーゴちゃん、占いはなしで……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print あら、もうキャンセルは不可よ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print え？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print だって、もう占っちゃったもの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print マーゴはくすくすと笑いながら、<br>３枚のタロットカードを卓の上に並べた。 { speed:1 waitInput:true Wait:true }
+
+@print ３枚のカードが過去、現在、未来を示しているの。<br>まずは１枚目。過去は……【塔】の正位置ね。<br>これは、前と同じ結果かしら。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print エマとシェリーが顔を見合わせる。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# シーン1‐1‐9の回想（流用）
+# ========================================
+
+@print 殺人事件なんて、起こるはずないよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "マーゴは１枚のカードを、<br>エマとシェリーに<ruby=\"かざ\">翳</ruby>してみせた。" { speed:1 waitInput:true Wait:true }
+
+@print 【塔】の正位置。<br>……近い未来、誰か死ぬわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 回想ここまで
+# ========================================
+
+@print 確かに以前と同じカードだった。 { speed:1 waitInput:true Wait:true }
+
+@print （あの後、本当に事件が起きてノアちゃんが……<br>　信じたくないけど、当たってる気がしちゃうかも） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ２枚目は現在のカード……【月】の正位置。<br>予期せぬ危険や、先の見えない状況に不安を抱く……<br>といった意味合いのあるカードね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 今の私たちにはぴったりだと思わない？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@print （そう、かもしれない……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print また事件が起こるのではないか。<br>誰かが誰かを殺したり、処刑されたり。<br>そんな不安に包まれているのは間違いないだろう。 { speed:1 waitInput:true Wait:true }
+
+@print 最後のカードが示すのは未来。<br>……【悪魔】の正位置ね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 嫌な内容しか想像できませんわね。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "顔をしかめるハンナに、マーゴが<ruby=\"うなず\">頷</ruby>く。" { speed:1 waitInput:true Wait:true }
+
+@print 残念だけれど、そうね。<br>友人を失う、裏切り、憎悪、嫉妬心、破滅……<br>正位置だと悪い意味が多いわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 破滅……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "深刻な表情で<ruby=\"つぶや\">呟</ruby>くエマに、マーゴは肩をすくめる。" { speed:1 waitInput:true Wait:true }
+
+@print 不安にさせてしまったなら、ごめんなさいね。<br>でも、本当にそういう未来が訪れるとは限らない。<br>未来のカードは警告という考え方もできるわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print これからの行動次第では、<br>未来はいくらでも変えられる……かもしれない。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print "マーゴちゃん……うん、そうだよね！<br>ありがとう！ ボクたち、頑張るよ！" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print フフ、そうね……頑張って。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@hide Stills
+@back 2_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print マーゴの占いを終えて、エマたちは部屋を後にした。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive
+
+@print （頑張るとは言ったけど、<br>　やっぱり気になっちゃうよね……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （裏切りって……<br>　ボクたちの誰かがってことなのかな） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Default
+@char Hanna.Default
+
+@print エマはシェリーとハンナにちらりと目を向ける。 { speed:1 waitInput:true Wait:true }
+
+@print （もし、この２人が……<br>　嫌だな、そんなの考えたくもない） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Default
+
+@print エマさん、どうかしたんですか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 視線に気付いたシェリーが、エマに声をかける。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Default
+
+@print エマさんも、占いを気にしてますの？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive
+
+@print ……じゃあ、ハンナちゃんも？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Default
+
+@print 過去や現在の占いが当たっているように<br>感じてしまうと、やっぱり……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive
+
+@print うん、だよね。<br>なんか無視できないっていうか……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print もしかしたら――と。<br>マーゴの言葉には、そう思わせる不思議な説得力がある。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default
+
+@print うーん……そんなに気にしても<br>しょうがないんじゃないでしょうか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Default
+
+@print えっ、シェリーちゃんは不安にならないの？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Default
+
+@print 正直マーゴさんの占いは、<br>バーナム効果みたいなものだと思うんですよね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Pensive
+
+@print ばーな……なんですの……？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Pensive
+
+@print つまり、今この状況に当てはまりそうな内容を<br>言い並べているだけといいますか……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print たとえば【近い未来に誰か死ぬ】っていう占いですけど……<br>あの状況なら、みんなが不安に<br>感じていたことだと思いませんか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print いきなり収監され、二階堂ヒロが死に、<br>殺人事件や魔女裁判の話をされた。<br>きっと、誰もが不安を抱いていただろう。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive
+
+@print そう言われてみると、確かに……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Default
+
+@print さっきの占いも同じです。<br>先行きが不透明なのは、単なる明白な事実！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 未来に関しても、現在の状況からすれば、<br>不安を煽るような内容を<br>信じてしまうのは無理ないですもんね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Smile
+
+@print すごいシェリーちゃん！<br>さすが名探偵だよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Smile
+
+@print "えっへん！ というわけで、<br>あまり気にしない方がいいんじゃないでしょうか。" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Default
+
+@print はぁ～、お気楽女ですわねぇ……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "シェリーの言葉に<ruby=\"うなず\">頷</ruby>くエマとは対照的に、<br>ハンナは<ruby=\"あき\">呆</ruby>れたように息を吐いた。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Default
+@char Sherry.Default
+@char Hanna.Default
+
+@print 占いがあいつの魔法って可能性もあるでしょう？<br>あのカードで占った内容は、必ず現実になるとか！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print うーん、それはちょっと飛躍しすぎでは？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print それにカードを使った魔法っていうのは、<br>本人が否定していたような……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print シェリーから質問されたとき、<br>マーゴは明確に否定していた。 { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised
+
+@print まさかそれ、すんなり信じてるんですの！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print ハンナはありえないといった表情を浮かべる。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive
+
+@print う、うん、特に疑問には思わなかったけど……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hanna.Pensive
+
+@print とんだお人よしですわね……<br>いえ、もしかして、嘘を信じさせる魔法……？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive
+
+@print なんでも魔法って言い出したら、<br>もうキリがないですよね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default
+
+@print だけど可能性はありますでしょう！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "（あ、あれ……？ なんかちょっと<br>　言い合いみたいな空気になってる？）" { author:Ema speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@back SolidColor { time:0.2 }
+
+@print 少し気まずい空気のまま脱獄計画についても話し合えず、<br>そのまま自由時間が終わってしまった。 { speed:1 waitInput:true Wait:true }
+
+@print ――このとき生じた微かな不和は、<br>徐々に、確実に大きくなっていく。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@back 1_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@bgm Bgm_26_2
+
+@print マーゴの占いを気にするあまり、<br>ハンナはやたらと周囲を疑うようになってしまった。 { speed:1 waitInput:true Wait:true }
+
+@print あいつが裏切りものなのではないか。<br>いつ殺すか機会をうかがっているに違いない。<br>もしかしたら、食事に毒を盛られるかも。 { speed:1 waitInput:true Wait:true }
+
+@print 最初はエマもシェリーも、ハンナ本人ですら、<br>軽い被害妄想のように感じていた。 { speed:1 waitInput:true Wait:true }
+
+@print 実際にハンナが食べようとした料理に針が紛れ込んでいる<br>という事件があってから、事態は急変した。 { speed:1 waitInput:true Wait:true }
+
+@print ハンナは誰かと目が合っただけで、自分は憎まれている。<br>次に殺されるのは自分なのだと喚くようになり―― { speed:1 waitInput:true Wait:true }
+
+@print やがて、再び殺人事件が起きた。 { speed:1 waitInput:true Wait:true }
+
+@back 13_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@print 魔女裁判が開かれ、少女たちが議論を交わし、<br>犯人を導き出す。 { speed:1 waitInput:true Wait:true }
+
+@print 心の底から辛そうに、エマは犯人の名を告げた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive
+
+@print ナノカちゃんを殺した犯人は――<br>ハンナちゃん、キミだよね？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Surprised
+
+@print だって、銃を持っていたじゃありませんか！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Pensive
+
+@print きっと、こちらを殺そうと狙っていたに違いないですわ！<br>だから、わたくしが先に……！！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Pensive
+
+@print ハンナさん、そんな……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@ResetText 
+
+@back SolidColor { time:0.2 }
+
+# パンパカパーン
+@sfx Sfx_34
+
+@print 投票によりハンナの処刑が決まり、執行される。 { speed:1 waitInput:true Wait:true }
+
+# ぐちゃっ、めきなど体を害する音
+@sfx Sfx_10
+
+@back 13_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@Wait 1.2
+@back Transparent { time:1.2 }
+
+@print "悲しみにくれるエマとシェリーの姿を目に、<br>ひっそりと<ruby=\"しぎゃく\">嗜虐</ruby>的に微笑む少女がいた。" { speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile
+
+@print （……やっぱりいいわね。<br>　可愛い子たちが破滅していく様って……） { author:Margo speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 『END～悪魔～』
+# ========================================
+
+@badEnd 9

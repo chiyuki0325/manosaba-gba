@@ -1,0 +1,867 @@
+@set "stageName=\"Court\""
+@set "courtStandCount = 13"
+
+@set "emaIdx = 11"
+@set "hiroIdx = 1"
+@set "meruruIdx = 2"
+@set "hannaIdx = 3"
+@set "sherryIdx = 4"
+@set "ananIdx = 5"
+@set "leiaIdx = 6"
+@set "cocoIdx = 7"
+@set "miriaIdx = 8"
+@set "margoIdx = 9"
+@set "noahIdx = -1"
+@set "nanokaIdx = -1"
+@set "alisaIdx = -1"
+@set "yukiIdx = 10"
+@set "wardenIdx = 0"
+@set "jailerIdx = 12"
+
+@Gosub System/System_Subroutine.BeginTrial
+
+@back Transparent { time:0 }
+@ProcessInput true
+
+@Gosub .PerspectiveStage
+# @gosub .PresentEvidence
+# @gosub .Map
+# @gosub .Reenact
+# @gosub .DebateText
+# @gosub .Timer
+
+@Stop 
+
+# ==============================================================================
+# ステージ
+# ==============================================================================
+
+# PerspectiveStage
+
+@Skip true
+
+@hideStageScreen 1 { time:0 }
+@print "Debug_Trial # PerspectiveStage" { speed:1 waitInput:true Wait:true }
+
+@stageCamera 0 { time:0 }
+@print "Camera modified." { speed:1 waitInput:true Wait:true }
+
+@Skip false
+@hide Warden
+@print "Hide warden." { speed:1 waitInput:true Wait:true }
+
+@char Warden.2
+@print "Re-show Warden." { speed:1 waitInput:true Wait:true }
+
+@hide Warden
+@print "Hide warden." { speed:1 waitInput:true Wait:true }
+
+@char Warden.3
+@print "Re-show Warden." { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@stageCamera 0 { time:1 }
+@i 
+
+@stageCamera 0 { time:1 }
+@i 
+
+@stageCamera 0 { time:1 }
+@i 
+
+@stageCamera 0 { time:1 }
+@i 
+
+@stageCamera 0 { time:1 }
+@i 
+
+@stageCamera 0 { time:1 }
+@i 
+
+@stageCamera 0 { Rotation:,{ (4 / courtStandCount * 360) } time:2 }
+@i 
+
+@char Ema.Angry { time:0 }
+@stageCamera 1 { Rotation:-2,{ (0.16 / courtStandCount * 360) },5 time:0 }
+@showStageScreen 1
+@print "Another camera enabled." { speed:1 waitInput:true Wait:true }
+
+@hideStageScreen 1
+@print "Another camera disabled." { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@stageCamera 0 { Rotation:,{ (2.9 / courtStandCount * 360) } time:1.5 }
+@i 
+
+@splitStageScreen 1
+@showStageScreen 1
+@print "Another screen split and shown." { speed:1 waitInput:true Wait:true }
+
+@hideStageScreen 1
+@print "Hide another screen." { speed:1 waitInput:true Wait:true }
+
+# --------------------------------------
+# @back Transparent subId:Overlay tint:#ff6633 time:0
+# @waitForNextFrame
+
+# @back SolidColor subId:Overlay time:0.2 wait!
+
+# @bgm Ambi_102_1 volume:0.2
+# @shakeStageCamera 0 force:0.4,-0.2,0 frequency:50 damp:1 time:3
+# @courtFire
+# @back Transparent subId:Overlay time:1.2 wait!
+# Enable fire vfx.
+
+# @stopBgm Ambi_102_1
+# @resetText
+# @back SolidColor subId:Overlay time:0.2 wait!
+
+# @courtFire false
+# @back Transparent subId:Overlay time:0.6
+# Disable fire vfx.
+
+# @shakeStageCamera 0 force:0.5,0,0 frequency:5 damp:2 !random time:0.5
+# Punch camera X.
+
+# @shakeStageCamera 0 force:0,1,0 frequency:12 damp:1.5 !random time:1
+# Punch camera Y.
+
+# @shakeStageCamera 0 force:2,-1.5,0 frequency:70 damp:1 !random time:5
+# Punch camera XY.
+
+# @shakeStageCamera 0 force:0.5,0,0 frequency:5 damp:2 random! time:0.5
+# Shake camera X.
+
+# @shakeStageCamera 0 force:0,1,0 frequency:12 damp:1.5 random! time:1
+# Shake camera Y.
+
+# @shakeStageCamera 0 force:2,-1.5,0 frequency:70 damp:1 random! time:5
+# Shake camera XY.
+# --------------------------------------
+
+@hideChars 
+
+@print "Ccharacters hidden." { speed:1 waitInput:true Wait:true }
+
+@unloadStage 
+
+@print "Stage unloaded." { speed:1 waitInput:true Wait:true }
+
+@print "Debug_Trial # PerspectiveStage ends." { speed:1 waitInput:true Wait:true }
+
+@Return 
+
+# ==============================================================================
+# 証拠提示
+# ==============================================================================
+
+# PresentEvidence
+
+@print "Debug_Trial # PresentEvidence" { speed:1 waitInput:true Wait:true }
+
+@set "currentHp = maxHp"
+@timer 4
+@debate true
+
+@print "Debug_Trial # PresentEvidence ends." { speed:1 waitInput:true Wait:true }
+
+@Return 
+
+# ==============================================================================
+# マップ演出
+# ==============================================================================
+
+# Map
+
+@set "timelineIdx = 0"
+
+@print "Debug_Trial # Map" { speed:1 waitInput:true Wait:true }
+
+# Map_A01C01_01
+
+@set "map=\"Map_A01C01_01\""
+@set "message=\"マップ表示：地下1F監獄エリア\""
+@Gosub .MapSpawn
+
+@set "message=\"アイコン配置：沢渡ココ、佐伯ミリア、蓮見レイア<br>——牢獄入口側\""
+@Gosub .MapSpawn
+
+@set "message=\"アイコン点滅：沢渡ココ、佐伯ミリア、蓮見レイア<br>——３回／２秒程度\""
+@Gosub .MapSpawn
+
+@set "message=\"アイコン移動：沢渡ココ、佐伯ミリア、蓮見レイア<br>——城ケ崎ノアの部屋前\""
+@Gosub .MapSpawn
+
+@Gosub .MapDespawn
+
+# Map_A01C01_02
+
+@set "map=\"Map_A01C01_02\""
+@set "message=\"マップ表示：1F\""
+@Gosub .MapSpawn
+
+@set "message=\"アイコン配置：沢渡ココ、佐伯ミリア、蓮見レイア<br>——ラウンジ\""
+@Gosub .MapSpawn
+
+@Gosub .MapDespawn
+
+# Map_A01C01_03
+
+@set "map=\"Map_A01C01_03\""
+@set "message=\"マップ表示：2F\""
+@Gosub .MapSpawn
+
+@set "message=\"アイコン配置：桜羽エマ、橘シェリー、遠野ハンナ、氷上メルル<br>——娯楽室\""
+@Gosub .MapSpawn
+
+@set "message=\"アイコン配置：宝生マーゴ、紫藤アリサ、黒部ナノカ<br>——娯楽室\""
+@Gosub .MapSpawn
+
+@Gosub .MapDespawn
+
+# Map_A01C02_01
+
+@set "map=\"Map_A01C02_01\""
+@set "message=\"マップ表示：B1F<br>アイコン表示：遠野ハンナ、夏目アンアン\""
+@Gosub .MapSpawn
+
+@set "message=\"アイコン表示：遠野ハンナ、夏目アンアン\""
+@Gosub .MapSpawn
+
+@set "message=\"アイコン移動：遠野ハンナ、夏目アンアン<br>マップ表示切り替え：1F<br>アイコン移動：遠野ハンナ、夏目アンアン<br>——医務室\""
+@Gosub .MapSpawn
+
+@Gosub .MapDespawn
+
+# Map_A01C02_02
+
+@set "map=\"Map_A01C02_02\""
+@set "message=\"アイコン移動：遠野ハンナ 医務室——地下への階段 アイコン表示：沢渡ココ 食堂側廊下 アイコン移動：遠野ハンナ、沢渡ココ 階段 マップ表示切り替え：B1F アイコン移動：遠野ハンナ、沢渡ココ 階段——懲罰房\""
+@Gosub .MapSpawn
+
+@Gosub .MapDespawn
+
+# Map_A01C03_01
+
+@set "map=\"Map_A01C03_01\""
+@set "message=\"屋敷の見取り図表示\""
+@Gosub .MapSpawn
+
+@Gosub .MapDespawn
+
+@print "Debug_Trial # Map ends." { speed:1 waitInput:true Wait:true }
+
+@Return 
+
+#
+# マップ演出開始
+# ------------------------------------------------------------------------------
+
+# MapSpawn
+
+@print "@spawn {map} params:{timelineIdx}<br>{message}"
+@spawn "{map}" { Params:{timelineIdx} }
+@set timelineIdx++
+@i 
+
+@Return 
+
+#
+# マップ演出終了
+# ------------------------------------------------------------------------------
+
+# MapDespawn
+
+@print "@despawn {map}"
+@despawn "{map}"
+@set "timelineIdx = 0"
+@i 
+
+@Return 
+
+# ==============================================================================
+# 事件再現演出 01_01
+# ==============================================================================
+
+# Reenact101
+
+@print "Debug_Trial # Reenact101" { speed:1 waitInput:true Wait:true }
+
+@spawn Reenact_Ch01_E01_S01
+@print Reenact_Ch01_E01_S01 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch01_E01_S01
+@Wait 1.5
+
+@spawn Reenact_Ch01_E01_S02
+@print Reenact_Ch01_E01_S02 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch01_E01_S02
+@Wait 1.5
+
+@spawn Reenact_Ch01_E01_S03
+@print Reenact_Ch01_E01_S03 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch01_E01_S03
+@Wait 1.5
+
+@spawn Reenact_Ch01_E01_S04
+@print Reenact_Ch01_E01_S04 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch01_E01_S04
+@Wait 1.5
+
+@spawn Reenact_Ch01_E01_S05
+@print Reenact_Ch01_E01_S05 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch01_E01_S05
+@Wait 1.5
+
+@spawn Reenact_Ch01_E01_S06
+@print Reenact_Ch01_E01_S06 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch01_E01_S06
+@Wait 1.5
+
+@print "Debug_Trial # Reenact101 ends." { speed:1 waitInput:true Wait:true }
+
+# @return
+
+# ==============================================================================
+# 事件再現演出 01_02
+# ==============================================================================
+
+# Reenact102
+
+@print "Debug_Trial # Reenact102" { speed:1 waitInput:true Wait:true }
+
+@spawn Reenact_Ch01_E02_S01
+@print Reenact_Ch01_E02_S01 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch01_E02_S01
+@Wait 1.5
+
+@spawn Reenact_Ch01_E02_S02
+@print Reenact_Ch01_E02_S02 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch01_E02_S02
+@Wait 1.5
+
+@spawn Reenact_Ch01_E02_S03
+@print Reenact_Ch01_E02_S03 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch01_E02_S03
+@Wait 1.5
+
+@spawn Reenact_Ch01_E02_S04
+@print Reenact_Ch01_E02_S04 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch01_E02_S04
+@Wait 1.5
+
+@spawn Reenact_Ch01_E02_S05
+@print Reenact_Ch01_E02_S05 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch01_E02_S05
+@Wait 1.5
+
+@print "Debug_Trial # Reenact102 ends." { speed:1 waitInput:true Wait:true }
+
+# @return
+
+# ==============================================================================
+# 事件再現演出 01_03
+# ==============================================================================
+
+# Reenact103
+
+@print "Debug_Trial # Reenact103" { speed:1 waitInput:true Wait:true }
+
+@spawn Reenact_Ch01_E03_S01
+@print Reenact_Ch01_E03_S01 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch01_E03_S01
+@Wait 1.5
+
+@spawn Reenact_Ch01_E03_S02
+@print Reenact_Ch01_E03_S02 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch01_E03_S02
+@Wait 1.5
+
+@spawn Reenact_Ch01_E03_S03
+@print Reenact_Ch01_E03_S03 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch01_E03_S03
+@Wait 1.5
+
+@spawn Reenact_Ch01_E03_S04
+@print Reenact_Ch01_E03_S04 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch01_E03_S04
+@Wait 1.5
+
+@spawn Reenact_Ch01_E03_S05
+@print Reenact_Ch01_E03_S05 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch01_E03_S05
+@Wait 1.5
+
+@spawn Reenact_Ch01_E03_S06
+@print Reenact_Ch01_E03_S06 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch01_E03_S06
+@Wait 1.5
+
+@print "Debug_Trial # Reenact103 ends." { speed:1 waitInput:true Wait:true }
+
+# @return
+
+# ==============================================================================
+# 事件再現演出 01_04
+# ==============================================================================
+
+# Reenact104
+
+@print "Debug_Trial # Reenact104" { speed:1 waitInput:true Wait:true }
+
+@spawn Reenact_Ch01_E04_S01
+@print Reenact_Ch01_E04_S01 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch01_E04_S01
+@Wait 1.5
+
+@spawn Reenact_Ch01_E04_S02
+@print Reenact_Ch01_E04_S02 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch01_E04_S02
+@Wait 1.5
+
+@spawn Reenact_Ch01_E04_S03
+@print Reenact_Ch01_E04_S03 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch01_E04_S03
+@Wait 1.5
+
+@spawn Reenact_Ch01_E04_S04
+@print Reenact_Ch01_E04_S04 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch01_E04_S04
+@Wait 1.5
+
+@print "Debug_Trial # Reenact104 ends." { speed:1 waitInput:true Wait:true }
+
+# @return
+
+# ==============================================================================
+# 事件再現演出 01_05
+# ==============================================================================
+
+# Reenact105
+
+@print "Debug_Trial # Reenact105" { speed:1 waitInput:true Wait:true }
+
+@spawn Reenact_Ch01_E05_S01
+@print Reenact_Ch01_E05_S01 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch01_E05_S01
+@Wait 1.5
+
+@spawn Reenact_Ch01_E05_S02
+@print Reenact_Ch01_E05_S02 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch01_E05_S02
+@Wait 1.5
+
+@spawn Reenact_Ch01_E05_S03
+@print Reenact_Ch01_E05_S03 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch01_E05_S03
+@Wait 1.5
+
+@spawn Reenact_Ch01_E05_S04
+@print Reenact_Ch01_E05_S04 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch01_E05_S04
+@Wait 1.5
+
+@spawn Reenact_Ch01_E05_S05
+@print Reenact_Ch01_E05_S05 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch01_E05_S05
+@Wait 1.5
+
+@spawn Reenact_Ch01_E05_S06
+@print Reenact_Ch01_E05_S06 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch01_E05_S06
+@Wait 1.5
+
+@spawn Reenact_Ch01_E05_S07
+@print Reenact_Ch01_E05_S07 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch01_E05_S07
+@Wait 1.5
+
+@spawn Reenact_Ch01_E05_S08
+@print Reenact_Ch01_E05_S08 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch01_E05_S08
+@Wait 1.5
+
+@print "Debug_Trial # Reenact105 ends." { speed:1 waitInput:true Wait:true }
+
+# @return
+
+# ==============================================================================
+# 事件再現演出 02_01
+# ==============================================================================
+
+# Reenact201
+
+@print "Debug_Trial # Reenact201" { speed:1 waitInput:true Wait:true }
+
+@spawn Reenact_Ch02_E01_S01
+@print Reenact_Ch02_E01_S01 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch02_E01_S01
+@Wait 1.5
+
+@spawn Reenact_Ch02_E01_S02
+@print Reenact_Ch02_E01_S02 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch02_E01_S02
+@Wait 1.5
+
+@spawn Reenact_Ch02_E01_S03
+@print Reenact_Ch02_E01_S03 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch02_E01_S03
+@Wait 1.5
+
+@spawn Reenact_Ch02_E01_S04
+@print Reenact_Ch02_E01_S04 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch02_E01_S04
+@Wait 1.5
+
+@spawn Reenact_Ch02_E01_S05
+@print Reenact_Ch02_E01_S05 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch02_E01_S05
+@Wait 1.5
+
+@print "Debug_Trial # Reenact201 ends." { speed:1 waitInput:true Wait:true }
+
+# @return
+
+# ==============================================================================
+# 事件再現演出 02_02
+# ==============================================================================
+
+# Reenact202
+
+@print "Debug_Trial # Reenact202" { speed:1 waitInput:true Wait:true }
+
+@spawn Reenact_Ch02_E02_S01
+@print Reenact_Ch02_E02_S01 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch02_E02_S01
+@Wait 1.5
+
+@spawn Reenact_Ch02_E02_S02
+@print Reenact_Ch02_E02_S02 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch02_E02_S02
+@Wait 1.5
+
+@spawn Reenact_Ch02_E02_S03
+@print Reenact_Ch02_E02_S03 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch02_E02_S03
+@Wait 1.5
+
+@spawn Reenact_Ch02_E02_S04
+@print Reenact_Ch02_E02_S04 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch02_E02_S04
+@Wait 1.5
+
+@spawn Reenact_Ch02_E02_S05
+@print Reenact_Ch02_E02_S05 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch02_E02_S05
+@Wait 1.5
+
+@spawn Reenact_Ch02_E02_S06
+@print Reenact_Ch02_E02_S06 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch02_E02_S06
+@Wait 1.5
+
+@print "Debug_Trial # Reenact202 ends." { speed:1 waitInput:true Wait:true }
+
+# @return
+
+# ==============================================================================
+# 事件再現演出 02_03
+# ==============================================================================
+
+# Reenact203
+
+@print "Debug_Trial # Reenact203" { speed:1 waitInput:true Wait:true }
+
+@spawn Reenact_Ch02_E03_S01
+@print Reenact_Ch02_E03_S01 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch02_E03_S01
+@Wait 1.5
+
+@spawn Reenact_Ch02_E03_S02
+@print Reenact_Ch02_E03_S02 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch02_E03_S02
+@Wait 1.5
+
+@spawn Reenact_Ch02_E03_S03
+@print Reenact_Ch02_E03_S03 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch02_E03_S03
+@Wait 1.5
+
+@spawn Reenact_Ch02_E03_S04
+@print Reenact_Ch02_E03_S04 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch02_E03_S04
+@Wait 1.5
+
+@spawn Reenact_Ch02_E03_S05
+@print Reenact_Ch02_E03_S05 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch02_E03_S05
+@Wait 1.5
+
+@spawn Reenact_Ch02_E03_S06
+@print Reenact_Ch02_E03_S06 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch02_E03_S06
+@Wait 1.5
+
+@print "Debug_Trial # Reenact203 ends." { speed:1 waitInput:true Wait:true }
+
+# @return
+
+# ==============================================================================
+# 事件再現演出 02_04
+# ==============================================================================
+
+# Reenact204
+
+@print "Debug_Trial # Reenact204" { speed:1 waitInput:true Wait:true }
+
+@spawn Reenact_Ch02_E04_S01
+@print Reenact_Ch02_E04_S01 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch02_E04_S01
+@Wait 1.5
+
+@spawn Reenact_Ch02_E04_S02
+@print Reenact_Ch02_E04_S02 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch02_E04_S02
+@Wait 1.5
+
+@spawn Reenact_Ch02_E04_S03
+@print Reenact_Ch02_E04_S03 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch02_E04_S03
+@Wait 1.5
+
+@spawn Reenact_Ch02_E04_S04
+@print Reenact_Ch02_E04_S04 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch02_E04_S04
+@Wait 1.5
+
+@spawn Reenact_Ch02_E04_S05
+@print Reenact_Ch02_E04_S05 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch02_E04_S05
+@Wait 1.5
+
+@print "Debug_Trial # Reenact204 ends." { speed:1 waitInput:true Wait:true }
+
+# @return
+
+# ==============================================================================
+# 事件再現演出 02_06
+# ==============================================================================
+
+# Reenact206
+
+@print "Debug_Trial # Reenact206" { speed:1 waitInput:true Wait:true }
+
+@spawn Reenact_Ch02_E06_S01
+@print Reenact_Ch02_E06_S01 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch02_E06_S01
+@Wait 1.5
+
+@spawn Reenact_Ch02_E06_S02
+@print Reenact_Ch02_E06_S02 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch02_E06_S02
+@Wait 1.5
+
+@spawn Reenact_Ch02_E06_S03
+@print Reenact_Ch02_E06_S03 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch02_E06_S03
+@Wait 1.5
+
+@spawn Reenact_Ch02_E06_S04
+@print Reenact_Ch02_E06_S04 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch02_E06_S04
+@Wait 1.5
+
+@spawn Reenact_Ch02_E06_S05
+@print Reenact_Ch02_E06_S05 { speed:1 waitInput:true Wait:true }
+@Wait 2
+@despawn Reenact_Ch02_E06_S05
+@Wait 1.5
+
+@print "Debug_Trial # Reenact206 ends." { speed:1 waitInput:true Wait:true }
+
+@Return 
+
+# ==============================================================================
+# 議論テキスト
+# ==============================================================================
+
+# DebateText
+
+# @back Grid_1 time:0
+
+@print "Debug_Trial # DebateText" { speed:1 waitInput:true Wait:true }
+
+#
+# 議論開始
+# ------------------------------------------------------------------------------
+
+# JudgeDebug1-1
+
+@timer 600
+@Gosub System/System_Subroutine.BeginDebate
+
+@printDebate "死体の後ろ、そして周囲……<br>そこに<link=\"Objection_90_01_01_01\">血で描かれた</link>蝶の絵が<br>描かれているんです！"
+
+# @printDebate もう一度現場に残された絵を<br>思い出してみてください。<br>立派な蝶の模様が描かれていますよね？|#Trial1001_Sherry0017| pos:40,40 roll:5
+
+# @printDebate そしてマーゴさんの衣装には……<br>蝶があしらわれています|#Trial1001_Sherry0018| pos:60,60 roll:-5
+
+# @printDebate たしかに用意された私の衣装には、<br>蝶をモチーフにした飾りがついているわね|#Trial1001_Margo0008| pos:50,50 roll:0
+
+@printDebate "そう……つまりあの絵は<br><link=\"Objection_90_01_01_02\">ノアさん</link>が<link=\"Objection_90_01_01_02\">死に際</link>、<br><link=\"Objection_90_01_01_02\">犯人</link>であるマーゴさんを告発した<br>メッセージだったんですよ！"
+
+@printDebate 犯人は宝生マーゴさん！<br>あなたで決まりです！
+
+@printDebate あら、そうだったのね。<br>知らなかったわ♪
+
+@Gosub System/System_Subroutine.EndDebate
+
+@print "Debug_Trial # DebateText ends." { speed:1 waitInput:true Wait:true }
+
+@goto .JudgeDebug1-1
+
+# Objection_90_01_01_01
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# Objection_90_01_01_02
+
+@choice 絵はノアの描いたものではない
+	@StopVoice 
+	@CancelGosub 
+	@goto .JudgeDebug1-2
+
+@choice 絵が描かれたのは死に際ではない
+	@StopVoice 
+	@CancelGosub 
+	@goto .JudgeDebug1-3
+
+@choice 絵は犯人を示した物ではない
+	@StopVoice 
+	@CancelGosub 
+	@goto .JudgeDebug1-4
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 選択肢1
+# ------------------------------------------------------------------------------
+
+# JudgeDebug1-2
+
+@pauseTrial false
+
+@print 不正解：JudgeDebug1-2 { speed:1 waitInput:true Wait:true }
+
+@Stop 
+
+#
+# 選択肢2
+# ------------------------------------------------------------------------------
+
+# JudgeDebug1-3
+
+@pauseTrial false
+
+@print 不正解：JudgeDebug1-3 { speed:1 waitInput:true Wait:true }
+
+@Stop 
+
+#
+# 選択肢3
+# ------------------------------------------------------------------------------
+
+# JudgeDebug1-4
+
+@pauseTrial false
+
+@print 正解：JudgeDebug1-4 { speed:1 waitInput:true Wait:true }
+
+@Stop 
+
+# ==============================================================================
+# タイマー
+# ==============================================================================
+
+# Timer
+
+@print "Debug_Trial # Timer" { speed:1 waitInput:true Wait:true }
+
+# @badId 9
+@timer 1
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@Wait 2
+
+@print "Debug_Trial # Timer ends." { speed:1 waitInput:true Wait:true }
+
+@Return

@@ -1,0 +1,633 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter02/Act02_Chapter02_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 1500
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# ==============================================================================
+# MARK: 7-5: 💬 犯人の可能性
+# ==============================================================================
+# ＠ト書き▼議論シーン7-5
+# 議論開始エフェクト
+# BGM変更：rAwTell Owk...
+@bgm Bgm_7_1
+
+# Judge7-5-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@printDebate でもそもそも<br>今回の事件には<br>ボクとヒロちゃんしか<br>関われないんだ。
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@printDebate ……エマの言葉は正しい。
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@printDebate 死体は<br>私が中庭を通ったあとに<br>発見された。
+
+@char Hiro.Normal2,ArmR6,ArmL3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@printDebate だからエマが<br>犯人だと言っているんだ。<br>……私が死体を<br>見逃したのでもなければね。
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01
+@gosubModifyCamera 0
+@printDebate あれ？<br>ならヒロちゃんが<br>見逃した可能性は<br>あるってこと？
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@printDebate ヒロちゃんって、<br>配信でココちゃんが<br>死んだのを見て<br>ココちゃんを<br>探してたんだよね。
+
+@char Noah.Pensive1,ArmR1,ArmL2,
+@gosubModifyCamera 0
+@printDebate だったら急いで<br>探してたって<br>ことだし……。
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@printDebate "中庭にあった死体を<br>見逃して通り過ぎても、<br><link=\"Objection_02_02_05_01\">おかしくない</link>んじゃ<br>ないかなー？"
+
+@char Leia.Default,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@printDebate とはいえ、<br>ヒロくんの視認を疑う前に<br>他にも疑問は<br>残っていると思うよ。
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@printDebate 疑問って？
+
+@char Leia.Default,ArmR6,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@printDebate たとえば……。
+
+@char Leia.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@printDebate ヒロくんはさっき、<br>ココくんが死んだ場所は<br>地下の焼却炉室の<br>可能性が高いと<br>示していたよね。
+
+@char Leia.Default,ArmR8,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@printDebate "けれど、<br>死体は中庭で見つかっている。<br>この<link=\"Objection_02_02_05_02\">矛盾の説明</link>が<br>できていないよ。"
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01
+@gosubModifyCamera 0
+@printDebate たしかにそうかも……！
+
+@char Miria.Default,ArmR3,ArmL8,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate もし誰かが<br>地下から<br>中庭に運んだなら……。
+
+@char Miria.Default,ArmR8,ArmL7,Angle01/Facial/Eyes>Eyes_Surprised_Lifeless01,Angle01/Facial/Mouth>Mouth_Pensive_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@printDebate それって、<br>ヒロちゃんと<br>エマちゃんの間に<br>タイミング良く<br>滑り込んだって<br>ことだよね。
+
+@char AnAn.Normal1,Angle01/Option_Arms-,ArmR-Option-Off,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_02
+@gosubModifyCamera 0
+@printDebate 『それはそもそも<br>不可能だ』
+
+@char Leia.Default,Arms,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@printDebate "ラウンジには<br><link=\"Objection_02_02_05_03\">私とアンアンくん</link>が<br>いた……。"
+
+@char Miria.Default,ArmR3,ArmL8,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate 地下の焼却炉室から<br>中庭に行くには、<br>ラウンジを<br>通らなきゃだよね。
+
+@char Alisa.Default,ArmR5,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open
+@gosubModifyCamera 0
+@printDebate "たしかに<br>ラウンジを通らねーと<br>死体を中庭に<br>運ぶことは<br><link=\"Objection_02_02_05_04\">不可能</link>だ。"
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@printDebate 遠回りしても、<br>誰かしらに<br>会っちゃいそうだよね。
+
+@char Sherry.Default,ArmR13,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate ということはやっぱり、<br>エマさんとヒロさんの<br>どちらかが犯人って<br>ことですね！
+
+@char AnAn.Normal1,Angle01/Option_Arms-,ArmR-Option-Off,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_01
+@gosubModifyCamera 0
+@printDebate 『そういうことになる』
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL6,Angle01/Head/Facial/Eyes>Eyes_Normal_Closed,Angle01/Head/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@printDebate ……何か反論はあるか？
+
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@Wait 0.2
+
+# ==============================================================================
+# 7-5議論後独白
+# ==============================================================================
+
+@print （第三者の可能性……か） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （仮にエマが犯人なら、<br>　第三者の可能性がないことを<br>　証明してやればいい） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （逆に、そうでないのなら……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Open1
+@print （【第三者が介入した可能性】を指摘する必要がある） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@print （もしも本当にエマが犯人でないなら……だが） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-5-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_02_05_01
+
+@Skip false
+@pauseTrial true
+
+@choice 私が見逃すはずがない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge7-5-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_02_02_05_02
+
+@Skip false
+@pauseTrial true
+
+@choice 殺害現場は中庭だった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge7-5-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_02_02_05_03
+
+@Skip false
+@pauseTrial true
+
+@choice レイアたちが見落とした
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge7-5-5
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論4
+# ------------------------------------------------------------------------------
+
+# Objection_02_02_05_04
+
+@Skip false
+@pauseTrial true
+
+@choice 中庭に入る方法があった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge7-5-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 7-5: ❌ 議論選択肢分岐
+# ==============================================================================
+# MARK: 7-5-3: ❌ 反論・私が見逃すはずがない
+
+# Judge7-5-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 私が見逃すはずはない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 中庭だってちゃんと見ていた。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1
+@gosubModifyCamera 0
+@print ウソおっしゃいませですわーッ！！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print な、なにを根拠に――！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1
+@gosubModifyCamera 0
+@print 死体発見直前……２階に上がる階段で<br>ヒロさんはわたくしに激突してきましたの！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Closed,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open
+@gosubModifyCamera 0
+@print 前方不注意！！<br>ヒロさんが周囲をちゃんと見ていたとは言い切れませんわー！！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （……そういえばそうだった） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （……ぶつかったという事実がある以上、説得力がないか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （ひとまずは何が真実で、何が錯覚なのかを見極めよう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth2_Determined_Closed1
+@gosubModifyCamera 0
+@print （可能性を潰した先に、真実はある……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth2_Determined_Closed1
+@gosubModifyCamera 0
+@print （……殺害現場が焼却炉室だと仮定したら、<br>　【中庭に死体がある状況】は成立するのか……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-5-1
+
+# MARK: 7-5-4: ❌ 反論・殺害現場は中庭だった
+
+# Judge7-5-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print ……とすると、<br>ココはやはり中庭で殺されたんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Normal1
+@gosubModifyCamera 0
+@print "え？ なんで？" { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR1,ArmL10,Eyes1_Normal_Open1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print じゃあ地下の血痕はなんだったのかしら。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char AnAn.Normal1,Angle01/Option_Arms-,ArmR-Option-Off,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_01
+@gosubModifyCamera 0
+@print 『話をひっくり返すな』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （……矛盾が説明できないか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （ひとまずは何が真実で、何が錯覚なのかを見極めよう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth2_Determined_Closed1
+@gosubModifyCamera 0
+@print （可能性を潰した先に、真実はある……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth2_Determined_Closed1
+@gosubModifyCamera 0
+@print （……殺害現場が焼却炉室だと仮定したら、<br>　【中庭に死体がある状況】は成立するのか……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-5-1
+
+# MARK: 7-5-5: ❌ 反論・レイアたちが見落とした
+
+# Judge7-5-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR6,Arms3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print なら、可能性は１つ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,Arms3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print レイアたちは雑談に夢中で<br>犯人を見落としたに違いない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Surprised1,ArmR4,ArmL6
+@gosubModifyCamera 0
+@print ちょ、ちょっと待ってくれたまえ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Surprised1,ArmR4,ArmL6
+@gosubModifyCamera 0
+@print 死体を担いだ犯人がラウンジを横切ったら、<br>さすがに私たちだって気付くはずさ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print 何か理由があったっていうなら別だけど……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char AnAn.Angry1,Angle01/Option_Arms-,ArmR-Option-Off,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_03
+@gosubModifyCamera 0
+@print 『透明にでもなっていない限り<br>　気付くだろうな』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR10,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open02
+@gosubModifyCamera 0
+@print 私たちの視認に文句をつけるなら、<br>その根拠を示してもらおう！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （……たしかに根拠になるものは何もないか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （ひとまずは何が真実で、何が錯覚なのかを見極めよう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth2_Determined_Closed1
+@gosubModifyCamera 0
+@print （可能性を潰した先に、真実はある……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth2_Determined_Closed1
+@gosubModifyCamera 0
+@print （……殺害現場が焼却炉室だと仮定したら、<br>　【中庭に死体がある状況】は成立するのか……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-5-1
+
+# ==============================================================================
+# MARK: 7-5-2: ⭕ 反論・中庭に入る方法があった
+# ==============================================================================
+
+# Judge7-5-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@gosubCutIn Hiro
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print 【中庭に入れない】……？<br>いや、そんなことはないよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print 中庭に入る方法は他にもある。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print んだと？<br>じゃあどっから入ったんだ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,Arms,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print 中庭は三方が壁に囲まれていて、<br>正面の廊下からしか入ることはできない……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL7,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@print にも関わらず、ヒロくんは【入れた】と言うんだね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print やれやれ。<br>ここまで説明してもわからないのか？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# Judge7-5-6
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print 犯人はある場所から中庭に侵入したんだ。<br>その場所とは……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@choice 壁
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge7-5-8
+
+@choice 土
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge7-5-9
+
+@choice 空
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge7-5-7
+
+@StopForChoice 
+
+# MARK: 7-5-8: ❌ 選択・壁
+
+# Judge7-5-8
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print ……壁だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print 中庭の壁に隠し扉があったんだよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR2,ArmL9,Eyes1_Normal_Open2,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print ……何を根拠にそんなことを？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_03,Angle01/Head/Facial/Eyes>Eyes_Uncomfortable_Open02,Angle01/Head/Facial/Mouth>Mouth_Angry_Closed01
+@gosubModifyCamera 0
+@print 『わがはいたちも現場検証を徹底したがなかったぞ』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print もしかして……<br>ヒロちゃん、隠し通路の証拠とか見つけた？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print いや……特に証拠はないが。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print なんとなくで推理してんじゃねーぞ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （……そんな便利な抜け道はないか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （だが中庭は完全な密室ではない……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （行き来ができる場所があるとしたら――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-5-6
+
+# MARK: 7-5-9: ❌ 選択・土
+
+# Judge7-5-9
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print 土の中だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print 犯人はあらかじめ外から地面を掘って<br>中庭に通じる抜け穴を作っていたんだよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR9,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print ……で、でも死体を持って<br>中庭に入らなきゃならないんだよね……？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print ふたりも人間が通り抜けられるような穴なんてあったら<br>すぐにわかりそうなものだけど……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print そんな穴なかったよー？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print ……死体に土がついていたわけでもないのだしね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR1,ArmL10,Eyes1_Normal_Open1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print その可能性は、検討する必要があるのかしら。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （……地中からの侵入を示す痕跡はないか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （だが中庭は完全な密室ではない……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （行き来ができる場所があるとしたら――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-5-6
+
+# ==============================================================================
+# MARK: 7-5-7: ⭕ 選択・空
+# ==============================================================================
+
+# Judge7-5-7
+
+# カットイン
+
+@StopBgm 
+
+@gosubCutIn Hiro
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print それはもちろん、【空】だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print 庭園に植物はつきもの。<br>そしてそれは【日光】を必要とする。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print 当然、中庭は吹き抜け……<br>直接空と繋がっているんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print 屋根がない空間は、密室とは言えないんだよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Surprised1
+@gosubModifyCamera 0
+@print なるほど……！<br>ココくんは空を飛んで中庭に……！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print つまり犯人は空中を浮いて<br>ココさんの死体を運んだということですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print そんなことができたのは――。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Sherry.Default,ArmR13,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print ――空を飛ぶ魔法が使えるハンナさん！<br>あなたが犯人だったんですねー！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char Hanna.Surprised1
+@gosubModifyCamera 0
+@print なっ……！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+# SE・ガーン
+@sfx Sfx_Common_6
+
+# ＠備考◆イントネーションおかしくてもいいかも
+
+@char Hanna.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Closed,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print なんですってのーー！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+
+@goto Act02_Chapter02/Act02_Chapter02_Trial06

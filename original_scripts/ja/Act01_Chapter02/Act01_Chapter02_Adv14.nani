@@ -1,0 +1,288 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-2-14
+
+# ========================================
+# ●シーン1‐2-14
+# ========================================
+
+@back 5_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_5_1
+
+@print 幾日か経過した夕食後、<br>エマの招集によって、<br>少女たちはラウンジに集合していた。 { speed:1 waitInput:true Wait:true }
+
+@print アリサの姿はない。 { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆あくび混じり
+
+@char Coco.Pensive1,ArmR9
+
+@print ふあ～、ねむ……だる……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ラウンジに入ってくるなりソファーに倒れこむココに、<br>メルルが近寄っていく。 { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Pensive
+@char Coco.Pensive1
+
+@print コ、ココさん、最近昼夜逆転してませんか？<br>少し顔色が悪いように見えます……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 夜によく眠れる<br>ハーブティーを淹れましょうか……？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1,ArmR2
+
+@print "あ？ メルちゃんあてぃしのこと見張ってるワケ？<br>別に関係なくね？" { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 別にいつ寝ていつ起きたっていいじゃん。<br>誰に迷惑かけるわけでもないんだし。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print う、うぅ……でも、心配なんです……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print メルルの心配攻撃をすげなくあしらうココに、<br>ミリアも介入していく。 { speed:1 waitInput:true Wait:true }
+
+@char Miria.Normal1
+
+@print ココちゃん、朝起きたほうが気持ちいいよ。<br>このスマホ、目覚まし機能もあるんだよ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ミリアはスマホを取り出して、<br>ぽちぽちと操作をはじめる。 { speed:1 waitInput:true Wait:true }
+
+# スマホの着信音
+@bgm Ambi_3_1
+
+@char Miria.Normal1
+@char Coco.Normal1
+
+@print ほらっ、着信音も音楽に変えられるんだよ！<br>好きな音楽なら気持ちよく起きられるかも。<br>どうだい！？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1,ArmR6,ArmL8
+
+@print おっさんさあ……やっぱおっさんだわ。<br>そんなん誰でも知ってるっつーの。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 大体スマホの着信を音楽にする発想がもうおっさん。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@StopBgm Ambi_3_1
+@hideChars 
+
+@print 言いながらも、ココはミリアに対しては当たりが柔らかい。<br>２人でスマホを弄りながら、楽しそうに会話をしている。 { speed:1 waitInput:true Wait:true }
+
+@print 平和なやり取りを眺めながら、<br>エマはラウンジの中央に立った。 { speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"せきばら\">咳払</ruby>いをひとつ、緊張の面持ちで口を開く。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3
+
+@print みんなの協力のおかげで<br>明日とうとう計画が実行に移せるよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 本当にみんな、ありがとう……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 脱獄への希望の光が見えてきたのだろう。<br>集う少女たちも、晴れやかな表情だ。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+@char Margo.Normal1
+@char Miria.Normal1
+
+@print 決行は明日、塀の前で１７時ですね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ええ。夕食時は看守が歩き回っていないし、<br>やるならこの時間しかないわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 完成したアレの方はもう隠してあるよ。<br>絶対見つからない自信あるからね。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Normal1,ArmR10
+
+@print おじさん、はりきっちゃったよ～！<br>ばっちり任せて！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char AnAn.Normal1,Arms2,Angle01/Option_Arms>Option_Arms01_01,Angle01/Option_ArmR/Option_ArmR01_01-
+@char Meruru.Pensive
+
+@print 『不安』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print し、し、心配です……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria.Surprised1,ArmR2,ArmL2
+
+@print そんな目で見ないで！？<br>信用問題に関わってるから、ちゃんと仕事したってば。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print 何かあったらおじさんの責任だからね！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （完成した気球の隠し場所は<br>　ミリアちゃんに任せてある） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （今はまだ、<br>　隠し場所を知ってるのはミリアちゃんだけ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （黒幕かもしれない、何か企んでいるかもしれない<br>　ミリアちゃんを信用するか迷ったけど……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 脱獄計画を進めるうちに、<br>少女たちとミリアの距離は縮んでいた。 { speed:1 waitInput:true Wait:true }
+
+@print 今ではむしろ、みんなの愛されキャラのように<br>慕われている。 { speed:1 waitInput:true Wait:true }
+
+@print （ミリアちゃんは味方だ。絶対大丈夫） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hanna.Normal1
+
+@print あの、ひとついいかしら？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "そこまで大きなものは作れなかったから<br>全員は乗れませんわよ？ そこはどうしますの？" { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+
+@print うん、そのことなんだけど<br>既にマーゴちゃんから相談受けてて……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Margo.Normal1
+
+@print 明日の出発は、エマちゃんとアリサちゃんのみで<br>行ってもらおうと思うの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print と言っても、アリサちゃんはここにも来てくれていないから、<br>明日出発できるかも怪しいのだけれどね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print マーゴの発言で慌てたのはココだ。 { speed:1 waitInput:true Wait:true }
+
+@char Coco.Surprised1,ArmR2,ArmL1
+
+@print "はっ！？ ちょっと待って。<br>なんでエマっちとヤンキーだけなの！？" { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 納得いかない。あてぃしも行くから！<br>さっさとこんなところ出て……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Normal1,ArmR1
+
+@print 先にボクらだけで行くのは、<br>少人数の方が見つかりにくいからだよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print それに、塀の外の様子がわからないから……<br>出られることを確かめられたら、戻ってくるつもり。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Pensive1,ArmR2,ArmL2
+
+@print ……なんだそういうことねぇ。ふうん。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print "ココは一度は納得した風だったが、<br><ruby=\"けんのん\">剣呑</ruby>とした雰囲気は消えない。" { speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1,ArmR2,ArmL2
+
+@print でもさぁ、そのまま自分だけで<br>逃げるつもりじゃないのぉ？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 塀の外に出られたら、<br>あてぃしらを助ける義理もないわけだしぃ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1,ArmR2,ArmL1
+
+@print "あてぃしも一緒に乗せてってば。<br>１人くらいいいでしょ？ ねぇねぇ？" { author:Coco speed:1 waitInput:true Wait:true }
+
+@print エマっちが必ず戻ってくるって言っても、<br>やっぱ信じらんなーい。 { author:Coco speed:1 waitInput:true Wait:true }
+
+# ＠備考◆カッとして言葉に詰まる
+
+@hideChars 
+@char Ema.Angry1,ArmR1
+
+@print ……っ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Pensive1,ArmR2,ArmL1
+
+@print それにあのヤンキーは<br>絶対そのまま逃げるでしょ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa.Normal1,Option-ArmL-Off
+
+@print ――逃げねえよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Surprised1,ArmR1
+
+@print アリサちゃん！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print いつの間にか、アリサがラウンジに登場していた。<br>皆の注目がアリサに集う。 { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1,Option-ArmL-Off
+
+@print 協力してやる。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print 一度やるって決めたことは、<br>必ずなし遂げる。筋は通す。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print これで文句ねーだろ、おい。<br>あんまりウダウダ言ってっと燃やすぞ？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Pensive1,ArmR2,ArmL2
+
+@print ……ふん。<br>それなら文句ありませんけどー？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print アリサにすごまれ、さすがにココは引き下がった。<br>近くにいたミリアをげしげしと殴っている。 { speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1,ArmR7,ArmL6
+@char Miria.Pensive1,ArmR1,ArmL3
+
+@print あーもーなんなんアイツ。怖いっつの。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print いだっ、いだっ……おじさんに当たらないで……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマは感極まった様子で、<br>アリサに駆け寄っていた。 { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1,Option-ArmL-Off
+@char Ema.Smile1,ArmR3
+
+@print アリサちゃん、来てくれてありがとう……。<br>本当に、嬉しい。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ったく、しつけーんだよおめえはよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print 全員ここから出してやる。<br>それでいいんだな？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print うん、うんっ…。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "エマは<ruby=\"うれ\">嬉</ruby>しさのあまり、涙を<ruby=\"にじ\">滲</ruby>ませる。<br>マーゴが拍手を送った。" { speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1
+@char Sherry.Normal1
+@char Alisa.Normal1,Option-ArmL-Off
+
+@print エマちゃんのおかげね。<br>エマちゃんが中心にいてくれたから、<br>みんながひとつになれたのよ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print "ですね！ いやぁ～明日が楽しみです！<br>エマさんとアリサさんに幸あれ～。" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print おめえは黙っとけ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1
+
+@print なんで私にはそんな厳しいんですか～<br>仲良くしたいのになぁ。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1,Option-ArmL-Off
+
+@print 橘、おめえは嘘くせえんだよ。<br>桜羽には嘘がなかった。その違いだ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 生き残った少女たちが全員集い、<br>寄り添いあって、笑顔になっていた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR3
+
+@print （魔女なんかじゃない。みんな、いい子たちなんだ。<br>　絶対出してあげるから…！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマは胸に手を置き、決意を新たにしていた。 { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter02/Act01_Chapter02_Adv15

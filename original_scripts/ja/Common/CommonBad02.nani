@@ -1,0 +1,152 @@
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-ex2
+
+@bgm Bgm_23_1
+@back 13_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.2
+
+@print ――確たる結論が出ないまま、時間は流れた。 { speed:1 waitInput:true Wait:true }
+
+# 処刑END1から引用
+@char Warden.3
+@print 議論はここまでということで、<br>投票に移ってもらっていいですかね？ { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@print もしかしたら、自分に投票されるのではないか―― { speed:1 waitInput:true Wait:true }
+
+@print 少女たちの間に漂う恐れや緊張といった空気が、<br>濃度を増していく。 { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR4,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01/Pale01>Pale01_01
+@print …………。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@print "レイアに真正面から疑われたハンナは、<br>真っ青な顔で爪を<ruby=\"か\">噛</ruby>んでいる。" { speed:1 waitInput:true Wait:true }
+
+@print ハンナだけじゃない。<br>その場にいる誰もが震え、青ざめていた。 { speed:1 waitInput:true Wait:true }
+
+@print だが、容赦なく投票の時間はやってくる。 { speed:1 waitInput:true Wait:true }
+
+@print 少女たちは自身のスマホを操作し、<br>投票をしていく。 { speed:1 waitInput:true Wait:true }
+
+@print そして。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# パンパカパーン
+@sfx Sfx_34
+# ========================================
+
+@print まるでそぐわない間抜けなファンファーレ音と共に、<br>スマホに映し出されたのは―― { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 心臓のドキドキ音
+@sfx Sfx_35
+# ========================================
+
+@StopBgm 
+@print ハンナの画像だった。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Warden.8
+@print はい、遠野ハンナの処刑が決定～！ { author:Warden speed:1 waitInput:true Wait:true }
+
+# ========================================
+@bgm Bgm_20_1
+# ========================================
+
+@char Hanna.Default,ArmR4,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Pale01>Pale01_01
+@print じょ、冗談じゃねーですわ！<br>わたくしの他にも怪しい人はいたでしょう……！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Warden.4
+@print まあ、投票で決まったことですので。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR4,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Closed,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Pale01>Pale01_01
+@print "違う！ わたくしはやってない！<br>無実ですわ！！ やり直しを求めます！" { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+# ========================================
+@back SolidColor
+# ========================================
+
+@print ハンナの訴えが聞き入れられることはなく、<br>処刑が執行された―― { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+# ========================================
+# ぐちゃっ、めきなど体を害する音
+@sfx Sfx_10
+# ========================================
+
+
+# ========================================
+@back SolidColor
+# ========================================
+
+@Wait 1.5
+
+# ========================================
+@back 2_1 { Scale:{g_backgroundDefaultScale} time:0 }
+# ========================================
+
+@print 魔女裁判の後。<br>エマは１人、ノアの殺害現場に立っていた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+@print （本当に、ハンナちゃんが犯人だったのかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open
+@print （……やっぱり、納得いかない。<br>　他に犯人がいる気がする） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@print （もう遅いけど……でもボクは、<br>　今度こそハンナちゃんの無実を証明したい……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+# ========================================
+# どんっと人がぶつかる音
+@sfx Sfx_27
+# ========================================
+
+@hideChars 
+# ========================================
+# 桜羽エマ ＯＵＴ
+# ========================================
+
+# ========================================
+# 倒れる音
+@sfx Sfx_19
+# ========================================
+
+@print 不意に背後から衝撃を感じて、<br>エマはそのままうつ伏せに倒れ込んだ。 { speed:1 waitInput:true Wait:true }
+
+@print "（あ、あれ……？ なに、が……？）" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 倒れ伏したエマの背には、<br>刃物が深々と刺さっていた。 { speed:1 waitInput:true Wait:true }
+
+@print 事態の把握と共にやってきた痛みを堪えながら、<br>エマはなんとか背後を振り返る。 { speed:1 waitInput:true Wait:true }
+
+@print 視線の先に立っていたのは―― { speed:1 waitInput:true Wait:true }
+
+@print ！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （なんで、この子が……<br>　もしかしてノアちゃんを殺したのも……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 問いただす暇もなく、<br>【彼女】は凶器を手にエマを―― { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 切り裂く音
+@sfx Sfx_87
+# ========================================
+
+# ========================================
+@back SolidColor
+# ========================================
+
+# ========================================
+# 『END～冤罪～』
+# ========================================
+
+# @end
+
+@Gosub System/System_Subroutine.EndAdv
+
+@ClearBacklog 
+@ReturnToTitle { time:1.2000000476837158 delay:0.6000000238418579 }

@@ -1,0 +1,816 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter04/Act02_Chapter04_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+@badId 8
+
+# ==============================================================================
+# MARK: 9-7: 💬 死体はどこにあったのか
+# ==============================================================================
+# ＠ト書き▼議論シーン9-7 死体はどこにあったのか
+# 議論開始エフェクト
+# BGM変更：HirO（Voなし）
+@bgm Bgm_37_1_Loop
+
+# Judge9-7-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@printDebate 犯人は２人を殺したあと、<br>エレベーターの天井裏に<br>レイアの死体を置いた。
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@printDebate そしてエマの死体は<br>エレベーターに体重が<br>かからないようにして<br>同じく天井裏の空間に<br>設置しておいたんだ。
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@printDebate 先に上に昇った３人が<br>エレベーターから降りた後、<br>犯人はその仕掛けを作動させて<br>エマを落下させたとしたら……。
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@printDebate それなら<br>私の見たことと<br>全てが一致するよ。
+
+@char Miria.Default,ArmR3,ArmL8,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate で、でも<br>天井裏の空間を調べたけど、<br>エマちゃんを<br>吊るせるものなんて<br>なかったよ……！？
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@printDebate "それにヒロさんの推理には、<br>【<link=\"Objection_02_04_07_01\">自動で落とせる仕掛け</link>】<br>も必要になりますよね。"
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@printDebate "ハンナさんが浮遊の魔法で<br>エマさんの死体を<br><link=\"Objection_02_04_07_02\">持ち上げていた</link>り<br>しない限り、<br>無理なんじゃないでしょうか？"
+
+@char Hanna.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Surprised_Open
+@gosubModifyCamera 0
+@printDebate わ、わたくし<br>エレベーターの上になんて<br>いませんでしたわ！？<br>ちゃんと上の階で<br>待ってましたもの！
+
+@char Hanna.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@printDebate "誰かが何かしたとしたら……<br>えーと……<br>きっとそこの怪力女が<br>何かしたんですわ！<br><link=\"Objection_02_04_07_03\">規格外の力</link>で！！"
+
+@char Sherry.Smile1,ArmR7,ArmL4
+@gosubModifyCamera 0
+@printDebate 面白い発想ですね！<br>主張の意味は<br>よくわかりませんけど！
+
+# ＠備考◆皮肉げ/呆れ
+
+@char Alisa.Default,ArmR9,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Closed
+@gosubModifyCamera 0
+@printDebate "橘が死体で<br><link=\"Objection_02_04_07_04\">お手玉</link>でもしてたってのか？<br>そりゃすげーな。"
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate そんなことしても、<br>すぐ落ちてきて<br>意味がないと思いますけどね。
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate けどもしも<br>本当に死体が<br>そこにあったと言うなら、<br>アリサさんだって<br>容疑者の１人に<br>なりますからね？
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@printDebate ああ？<br>んだと？
+
+@char Sherry.Default,ArmR2,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate "たとえば<br>炎を使って<br><link=\"Objection_02_04_07_05\">浮かび上がるもの</link><br>なんかを作ったのかも<br>しれません！"
+
+@char Sherry.Default,ArmR2,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate それなら<br>時間差で落ちてくるのも<br>納得ですよね！
+
+@char Alisa.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Angry_Open04
+@gosubModifyCamera 0
+@printDebate いい加減なこと<br>言ってんじゃねーぞ……！<br>ウチを疑うってなら<br>証拠でも見せてみな！
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@printDebate と、特にそんな痕跡は<br>なかったと思うけどな……。
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Serious_Open
+@gosubModifyCamera 0
+@printDebate ……はっ。<br>そもそも<br>【死体がエレベーターに<br>入る方法】が<br>問題だったんだろ？
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Serious_Open
+@gosubModifyCamera 0
+@printDebate "なら、<br><link=\"Objection_02_04_07_06\">死体でも操った</link>んじゃ<br>ねーか？"
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Serious_Open
+@gosubModifyCamera 0
+@printDebate おめえたしか、<br>【入れ替わり】が<br>できるんだろ。<br>佐伯よう……。
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01
+@gosubModifyCamera 0
+@printDebate えっ！？
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Serious_Open
+@gosubModifyCamera 0
+@printDebate "<link=\"Objection_02_04_07_07\">体を交換</link>して動かす……<br>その可能性は<br>否定できねーだろ。"
+
+@char Miria.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Confused_Open
+@gosubModifyCamera 0
+@printDebate そっ、<br>そんなことしてないよ……！
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Serious_Open
+@gosubModifyCamera 0
+@printDebate はっ……<br>どーだかな。
+
+
+# ==============================================================================
+# 9-7議論後独白
+# ==============================================================================
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Hiro.Pensive1,Arms3
+@gosubModifyCamera 0
+@Wait 0.2
+
+@print （……疑心暗鬼を広めてしまったか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+@print （しかし混乱した状況は、<br>　議論を進める絶好のチャンスでもある） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@print （【死体は最初からあった】……<br>　しかも【天井裏に、エレベーターから独立した状態で】だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@print （その条件を満たす方法さえ明らかにできれば……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge9-7-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_04_07_01
+
+@Skip false
+@pauseTrial true
+
+@choice 氷を利用した
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge9-7-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_02_04_07_02
+
+@Skip false
+@pauseTrial true
+
+@choice 天井裏に潜んでいた
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge9-7-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_02_04_07_03
+
+@Skip false
+@pauseTrial true
+
+@choice 重力が歪んだ
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge9-7-5
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論4
+# ------------------------------------------------------------------------------
+
+# Objection_02_04_07_04
+
+@Skip false
+@pauseTrial true
+
+@choice 死体は浮いていた
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge9-7-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論5
+# ------------------------------------------------------------------------------
+
+# Objection_02_04_07_05
+
+@Skip false
+@pauseTrial true
+
+@choice 気球を作った
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge9-7-6
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論6
+# ------------------------------------------------------------------------------
+
+# Objection_02_04_07_06
+
+@Skip false
+@pauseTrial true
+
+@choice エマは操られていた
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge9-7-7
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論7
+# ------------------------------------------------------------------------------
+
+# Objection_02_04_07_07
+
+@Skip false
+@pauseTrial true
+
+@choice 人格が入れ替わっていた
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge9-7-8
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 9-7: ❌ 議論ミス選択肢
+# ==============================================================================
+# MARK: 9-7-3: ❌ 同意・氷を利用した
+
+# Judge9-7-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 【自動で落とせる仕掛け】……<br>犯人はそれを使ったんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 現場にあった、【氷】を利用して！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print そ、そんなこと可能ですの！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 死体をロープで括り――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print そのロープを天井裏の空間に<br>【氷で】繋いでおいたんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print それが溶けたことによって、<br>死体が落下したんだよ……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL8,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print でも……天井裏の空間に<br>ロープを結べるような場所なんてなかったよね？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print ……氷で張り付いていたという可能性がある。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print ゴクチョーさんの話では、<br>あそこはいつも暑いらしいので<br>氷はすぐに溶けちゃうでしょうね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print なら無理じゃねーか。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （あの空間で氷の状態変化を利用するトリックは不可能か……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （……こう考えると、<br>　どんなトリックも実行不可能に思える） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （だが、たしかなのは<br>　【エレベーターに重量のかからない状態で<br>　１人分の死体が天井裏に存在していた】ということ……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （多少荒唐無稽だったとしても、<br>　その状況を成立させられるトリック・魔法が必ずある……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge9-7-1
+
+# MARK: 9-7-4: ❌ 同意・天井裏に潜んでいた
+
+# Judge9-7-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print そうか……<br>シェリーの推理の通り、<br>あの時ハンナは天井裏に潜んでいたんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 浮遊しながらエマの死体を持ってね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print ですからっ！<br>わたくしはその時、上の階にいましたわー！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR10,ArmL1,Angle01/Facial/Eyes>Eyes_Surprised_Open01,Angle01/Facial/Mouth>Mouth_Confused_Open,Angle01/Facial/Sweat>Sweat02
+@gosubModifyCamera 0
+@print つまり私が上の階で話していたハンナさんは<br>ニセモノだったということですね！？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR10,ArmL1,Angle01/Facial/Eyes>Eyes_Surprised_Open01,Angle01/Facial/Mouth>Mouth_Confused_Open,Angle01/Facial/Sweat>Sweat02
+@gosubModifyCamera 0
+@print 実はハンナさん、双子だったりします！？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Closed,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print 双子だったりしませんわー！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Closed,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print いいがかりをつけるのもいい加減にしてくださいましー！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （……ハンナに限らず、当時誰もそこにはいられたはずがないか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （……こう考えると、<br>　どんなトリックも実行不可能に思える） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （だが、たしかなのは<br>　【エレベーターに重量のかからない状態で<br>　１人分の死体が天井裏に存在していた】ということ……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （多少荒唐無稽だったとしても、<br>　その状況を成立させられるトリック・魔法が必ずある……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge9-7-1
+
+# MARK: 9-7-5: ❌ 同意・重力が歪んだ
+
+# Judge9-7-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 【規格外の力で何かをした】……<br>たしかにそれなら考えられる可能性はある。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 極限まで圧縮された質量は重力を歪ませる……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print シェリーの規格外の怪力を使い、<br>重力の物理法則を歪ませることで<br>エレベーターのセンサーを狂わせたんだ……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01
+@gosubModifyCamera 0
+@print ど、どういうこと……！？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR1,ArmL3,Angle01/Facial/Eyes>Eyes_Surprised_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print 超新星爆発で圧縮された天体が<br>ブラックホールになって時空を歪ませる……<br>みてーなことか。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Serious_Open
+@gosubModifyCamera 0
+@print だが二階堂……<br>重力が変わるまで圧縮するって<br>何億トンの質量が必要だと思ってんだ……？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Serious_Open
+@gosubModifyCamera 0
+@print 山１つぐらいじゃ足りねーぞ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Closed,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print 何を言ってるのかさっぱりわかりませんわー！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR9,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Closed
+@gosubModifyCamera 0
+@print つまり……重力が歪むようなことはありえねーってことだ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Closed,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print そんなことわかってますわー！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （話が大き過ぎたか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （……こう考えると、<br>　どんなトリックも実行不可能に思える） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （だが、たしかなのは<br>　【エレベーターに重量のかからない状態で<br>　１人分の死体が天井裏に存在していた】ということ……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （多少荒唐無稽だったとしても、<br>　その状況を成立させられるトリック・魔法が必ずある……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge9-7-1
+
+# MARK: 9-7-6: ❌ 同意・気球を作った
+
+# Judge9-7-6
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print ……そうだ。<br>【炎を使って浮かび上がるもの】――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print アリサが気球を作って<br>死体を浮かせていたんだ……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL8,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print うーん……<br>でも現場にはそれらしい痕跡はなかったけど……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print エマさんの服とかは残されていましたけど、<br>気球の材料に使われたような跡はありませんでしたね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print ……んな簡単に作れるもんじゃねーよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print 証拠もねーのに人を疑ってんじゃねー。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （材料がなければ無理か……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （……こう考えると、<br>　どんなトリックも実行不可能に思える） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （だが、たしかなのは<br>　【エレベーターに重量のかからない状態で<br>　１人分の死体が天井裏に存在していた】ということ……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （多少荒唐無稽だったとしても、<br>　その状況を成立させられるトリック・魔法が必ずある……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge9-7-1
+
+# MARK: 9-7-7: ❌ 同意・エマは操られていた
+
+# Judge9-7-7
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print ……エマの死体が<br>操られていた可能性はある。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01
+@gosubModifyCamera 0
+@print 【操る】って、どうやって……！？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print アンアンの【洗脳】の魔法が残っていたとしたらどうだろうか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 何かしらのキッカケでエマの体が動くように<br>洗脳が施されていたとしたら――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print そうやって乗り込んだあと、<br>エマは死んだんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Serious_Open
+@gosubModifyCamera 0
+@print ……具体的にどう操られたら<br>エレベーターに入り込むことが出来んだよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Serious_Open
+@gosubModifyCamera 0
+@print 上の階にも下の階にも人がいたんだろ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print それを証明しねーと意味がねー……。<br>違うか、二階堂。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （たしかに、重要なのは【どうやって入ったのか】か……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （……こう考えると、<br>　どんなトリックも実行不可能に思える） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （だが、たしかなのは<br>　【エレベーターに重量のかからない状態で<br>　１人分の死体が天井裏に存在していた】ということ……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （多少荒唐無稽だったとしても、<br>　その状況を成立させられるトリック・魔法が必ずある……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge9-7-1
+
+# MARK: 9-7-8: ❌ 同意・人格が入れ替わっていた
+
+# Judge9-7-8
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print たしかにそれならありえるかもしれない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print ミリアとエマの人格が入れ替わっていた……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 人格が入れ替わっていたとしたら、<br>エマの体を自由に操ることができたはずだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print ミリアはそのあとで元に戻ることで、<br>不可能な殺人を可能にしたんだ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Confused_Open
+@gosubModifyCamera 0
+@print う、嘘うそうそうそっ！<br>そんなことしてないよ！？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print そもそも、エマさんの体を操ったところで<br>エレベーターに自由に出入りすることはできませんし……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print どうやって乗ったのかを証明しないと<br>意味がありませんね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Confused_Open
+@gosubModifyCamera 0
+@print そ、そうだよ！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Confused_Open
+@gosubModifyCamera 0
+@print おじさん相手だからって冗談言うのはやめてよヒロちゃん！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （冗談ではなかったが……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （とはいえ、重要なのは【どうやって入ったのか】か） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （……こう考えると、<br>　どんなトリックも実行不可能に思える） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （だが、たしかなのは<br>　【エレベーターに重量のかからない状態で<br>　１人分の死体が天井裏に存在していた】ということ……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （多少荒唐無稽だったとしても、<br>　その状況を成立させられるトリック・魔法が必ずある……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge9-7-1
+
+# ==============================================================================
+# MARK: 9-7-2: ⭕ 同意・死体は浮いていた
+# ==============================================================================
+
+# Judge9-7-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+# カットイン
+@StopBgm 
+@gosubCutIn Hiro
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print ……そう。<br>現場に証拠となるような痕跡は残されていなかった。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# BGM変更：Sen-Choose N'o SurC
+@bgm Bgm_38_1_Loop
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print なら死体はそこに【浮いていた】としか考えられない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print 痕跡もなく【浮いていた】……ですか。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print 動力も浮力も無しに、ですよね？<br>そんなことは普通ありえません。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# モノローグ
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （……そうだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （トリックの痕跡も残さずに<br>　人を浮かばせる方法……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （それは……１つしかない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# モノローグ終わり
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print そう、犯人は……普通ありえない方法を使ったんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print それは……【魔法】。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ハンナカットイン
+@Wait 0.5
+
+@sfx Sfx_Common_5
+
+@ResetText 
+@voice CommonTrial_Hanna01139
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@char Hanna.Angry1,ArmR3,ArmL1
+@gosubSplitStageScreen 1
+@Wait 1.5
+
+@hideStageScreen 1
+@Wait 0.3
+
+@char Hanna.Surprised1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print ちょ……ちょっと待ちやがりなさい！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print それって……<br>わたくしがやったって言うんですの！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print わたくしそんなことしていません……<br>いや……！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char Hanna.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print できないんですわっ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+
+@goto Act02_Chapter04/Act02_Chapter04_Trial08

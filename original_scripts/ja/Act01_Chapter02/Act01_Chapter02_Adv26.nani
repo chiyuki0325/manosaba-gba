@@ -1,0 +1,112 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-2-26
+
+# ========================================
+# ●シーン1‐2-26
+# ========================================
+
+@back 9_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# 荘厳な鐘の音
+@sfx Sfx_33
+
+@print エマが走り回るうちに<br>予告されていた０時となり――<br>荘厳な鐘の音が牢屋敷に響きわたる。 { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_2_1_Loop
+
+@print （そんな、もう時間が来ちゃった……） { author:Ema speed:1 waitInput:true Wait:true }
+
+# フクロウの通知音
+@sfx Sfx_14
+
+@print 通知音が聞こえて、<br>エマは自身のスマホを確認する。 { speed:1 waitInput:true Wait:true }
+
+@print 『魔女裁判の時間となりました』 { speed:1 waitInput:true Wait:true }
+
+@print 『皆さん、必ず自身のスマホを持って、<br>　速やかに裁判所に集合してください』 { speed:1 waitInput:true Wait:true }
+
+@print 『従わない者は看守によって<br>　強制連行します』 { speed:1 waitInput:true Wait:true }
+
+@print ゴクチョーからのメッセージは、<br>定型のものなのだろう。 { speed:1 waitInput:true Wait:true }
+
+@print （行かなきゃ……やれる限りのことはやった） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマは裁判所へと急ぐ。<br>すると、その扉の前に―― { speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Default
+
+@print ……桜羽エマ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print ナノカが立っていた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3
+
+@print "ナノカちゃん！？ 今までどこに！？" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ここで立ち話している猶予はないわ。<br>裁判には出るべきだと思ったから来たの。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 後のことは、裁判で明らかにしましょう。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ナノカは感情を見せずに言って、中へと入っていく。<br>エマもその後に続いた。 { speed:1 waitInput:true Wait:true }
+
+# ゆっくりと大扉を開く音
+@sfx Sfx_165
+
+@back 13_1 { time:0 }
+@back Transparent.Custom { time:0.9 }
+@Wait 0.9
+
+@back Transparent { time:1.8 }
+@WaitForNextFrame 
+
+@animate MainBackground
+@Wait 1.5
+
+@print 広いホールの中央には台座。<br>そして各囚人の立つ証言台。 { speed:1 waitInput:true Wait:true }
+
+@print 再び足を踏み込んだそこはやはり厳かな雰囲気で、<br>エマの足は震えている。 { speed:1 waitInput:true Wait:true }
+
+@print 出入口の大扉の前には看守。<br>高い位置にゴクチョーの構図も変わらない。 { speed:1 waitInput:true Wait:true }
+
+@print "囚人の少女たちは既に勢ぞろいしていた。<br>皆、ナノカの出現に驚き、息を<ruby=\"の\">呑</ruby>んでいる。" { speed:1 waitInput:true Wait:true }
+
+@back 13_1
+
+@char Warden.1
+
+@print 黒部ナノカさん、今までどこにいたんですか。<br>ずいぶん探したんですよ。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print まあ、今は魔女裁判が優先ですから、<br>黒部ナノカさんの処分については後で……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 魔女裁判のルールについては、<br>皆さんもう理解されていますよね？ { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Margo.Normal1
+
+@print ええ。始めて構わないわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマ、シェリー、ハンナ、メルル、<br>マーゴ、アンアン、アリサ、ココ、ナノカ。 { speed:1 waitInput:true Wait:true }
+
+@print ９名の少女たちは証言台に立ち、<br>互いの瞳の奥の真意を、読み取ろうとしている。 { speed:1 waitInput:true Wait:true }
+
+@char Warden.1
+
+@print それでは、魔女裁判開廷です！ { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# ========================================
+# ＞議論パートへ
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter02/Act01_Chapter02_Trial00

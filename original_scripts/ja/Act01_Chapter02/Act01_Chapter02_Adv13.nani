@@ -1,0 +1,166 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-2-13
+
+# ========================================
+# ●シーン1‐2-13
+# ========================================
+
+@back 30_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# ========================================
+# ＞『シャワールーム』を選択
+# ========================================
+
+@bgm Bgm_17_1
+
+@print 何気なく入ったシャワールームで<br>エマとアリサは遭遇した。 { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Pensive1,Option-ArmL-Off
+@char Ema.Normal1
+
+@print げっっ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print （嫌そうな顔されるのにも慣れちゃった） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print アリサちゃん、ボクと話を……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,Option-ArmL-Off
+
+@print 話すことなんてねーよ！<br>ウチには無理だっつってんだろ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print アリサちゃんはここを出たくないの！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 出たいに決まってんだろ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1,Option-ArmL-Off,ArmR2,ArmL2
+
+@print メシはマズイ、暗くてじめじめしてやがる、<br>常に監視されてる、下手すりゃ殺される。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print ウチはウチなりに出る方法を探してんだよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print 何か方法を見つけたの？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Pensive1,Option-ArmL-Off,ArmR2,ArmL2
+
+@print うっ……<br>それはまあ、アレだ。おいおいな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@animate Alisa
+
+@print アリサはじりじりと移動し、<br>入口方面から逃げようとしている。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print どうしてダメなのかな。<br>アリサちゃんの魔法はすごいのに。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3
+
+@print 炎を起こせるなんて奇跡だよ。<br>その魔法ならきっと――！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,Option-ArmL-Off,ArmR2,ArmL7
+@char Ema.Pensive1
+
+@print ッ……<br>ウチの魔法の何を知ってんだ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print おめえは知らないから勝手なこと言えんだよ！<br>こんな魔法、いらねえんだよ！！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print 怒鳴るアリサに、<br>エマは臆してしまいそうになる。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3
+
+@print ボクは羨ましいよ！<br>だってボクは、何も持ってない！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,Angle01/Option_ArmL+,ArmL11,ArmR1
+
+@print そんなに欲しいならくれてやるよ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,Option-ArmL-Off,ArmL8,ArmR1
+
+# 放たれた炎の音
+@sfx Sfx_46
+
+@char Ema.Surprised1,ArmR3
+
+@print あっ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 脅すためだろう。<br>アリサはエマに向けて掌から炎を放った。 { speed:1 waitInput:true Wait:true }
+
+@print その炎は想定以上に大きく、<br>エマに襲い掛かり、衣服を焦がした。 { speed:1 waitInput:true Wait:true }
+
+@print "エマは慌てたが、<br>それ以上に<ruby=\"そうはく\">蒼白</ruby>になったのはアリサだった。" { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Surprised1,Option-ArmL-Off,ArmL4,ArmR1
+
+@print おい大丈夫か！？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+@hideChars 
+
+@print 慌てて駆け寄ってきて、<br>シャワーの栓をひねって水を出す。 { speed:1 waitInput:true Wait:true }
+
+# シャワー音
+@bgm Ambi_2_1
+
+@back 130_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@print エマの衣服に点った炎は、<br>シャワーですぐにかき消された。 { speed:1 waitInput:true Wait:true }
+
+@print "エマもアリサも、<br>すっかりずぶ<ruby=\"ぬ\">濡</ruby>れになってしまったが。" { speed:1 waitInput:true Wait:true }
+
+@StopBgm Ambi_2_1
+
+@print アリサは息苦しくなったのか、マスクを外していた。<br>眉を下げ、心配そうにエマを見つめる。 { speed:1 waitInput:true Wait:true }
+
+@print 悪かった。怪我、ないか……？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print う、うん。ぜんぜん平気……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （それよりも、アリサちゃんの素顔を見たことが<br>　初めてで……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@back 130_1 { time:0 }
+
+@print エマはまじまじと、<br>アリサの顔を見つめてしまう。 { speed:1 waitInput:true Wait:true }
+
+@print ……ウチに近寄ったらこうなるんだよ。<br>もうつきまとうのやめろよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print ……やめない。<br>アリサちゃんが必要なんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print おめえなあ。今怖い目に遭ったとこだろ。<br>この魔法は危険なんだよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print 怖くなんてなかったよ。ちょっと驚いたけど。<br>それに、アリサちゃんが助けてくれて嬉しかった。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 危ない目に遭っても、<br>アリサちゃんはきっと助けてくれるよね？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print それなら大丈夫！<br>アリサちゃんの魔法、怖くないよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ――！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hide Stills-Middle
+
+@print もうすぐ気球が完成する。<br>おそらく明日、あさってには。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 決行の日、アリサちゃんのこと待ってるから。<br>アリサちゃんにしか、できないから。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ……勝手に言ってろ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print これまでで一番、弱々しいはねつけだった。 { speed:1 waitInput:true Wait:true }
+
+@print （後はもう、アリサちゃんを信じるしかない） { author:Ema speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン1‐2‐8
+# 全てのイベントを消化している＞シーン1‐2‐14
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter02/Act01_Chapter02_Adv08

@@ -1,0 +1,145 @@
+@gosubResetBook System/System_ResetWitchBook
+@set "isReenact = true"
+@printer Normal.Simple { time:0 }
+@Gosub System/System_Subroutine.BeginAdv
+
+# ==============================================================================
+# 橘シェリーの物語
+# ==============================================================================
+# ＠ト書き▼議論3 絵本パート
+
+# Judge3-14-1
+
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# 絵本パート
+# BGM変更：ボクとワタシの
+@bgm Bgm_19_1
+
+# 【1P目イラスト】
+# シェリーと首吊り状態のハンナを表示
+@spawn Reenact_Ch01_E03_S01
+@Wait 1.5
+
+# ＠備考◆独白／物語を朗読するように（他人事のように）
+
+@print それは、昨日の夜のことです。<br>シェリーちゃんは、ハンナちゃんを殺してしまいました。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print "それは用意周到な殺人計画の始まり。<br>なんと！ すべて予定されていたことなのです。" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print シェリーちゃんは以前に牢屋敷の設計図を見たとき、<br>ゲストハウスの入れ替えトリックを思いつきました。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print そしてシェリーちゃんはマーゴちゃんが<br>魔法の実験をする話を聞いて、<br>この計画を決行する事にしたのです。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch01_E03_S01
+@Wait 1.5
+
+# 【2P目イラスト】
+# シェリーがいる場所にハンナがやってくる
+# （1P目とほぼ同じ構図で、
+# ハンナは地上に立っている）
+@spawn Reenact_Ch01_E03_S02
+@Wait 1.5
+
+@print まずシェリーちゃんはゲストハウスに<br>ハンナちゃんを呼び出して、<br>ロープで首を絞めて殺しました。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print そのあとシェリーちゃんはハンナちゃんを<br>自殺に偽装して吊るしておきます。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch01_E03_S02
+@Wait 1.5
+
+# 1P目の構図に戻る
+@spawn Reenact_Ch01_E03_S01
+@Wait 1.5
+
+@print 魔法の実験になぞらえて、<br>周囲には同じく首吊り人形を用意しておきました。<br>いいミスリードでしたよね？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print そしてマーゴちゃんたちの実験が始まったら、<br>シェリーちゃんはこっそりと外に抜け出したのです。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch01_E03_S01
+@Wait 1.5
+
+# 【3P目イラスト】
+# シェリーを撃つナノカ（弾丸は外れている）
+@spawn Reenact_Ch01_E03_S03
+@Wait 1.5
+
+@print その後、シェリーちゃんはナノカちゃんのもとへ向かいました。<br>疑われた時の保険を作っておく為です。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print シェリーちゃんは暗闇の中、ナノカちゃんを襲いました。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ナノカちゃんはそれに反撃してきましたが、<br>銃弾は予想通り大きくそれました。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print シェリーちゃんは知っていました。<br>ナノカちゃんが優しくて、仲間を撃ったりなんて<br>できないって事を。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch01_E03_S03
+@Wait 1.5
+
+# 【4P目イラスト】
+# シェリーがデフォルメされた家を両手の上に1つずつ持っている
+# 「家」は人間ぐらいのサイズで、あくまでもデフォルメ表現想定
+@spawn Reenact_Ch01_E03_S04
+@Wait 1.5
+
+@print そのあとシェリーちゃんは、<br>２つの部屋の入れ替えを行いました。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ゲストハウスの建物は仮設で、<br>土台もしっかりしていないのは事前に確認済みでした。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print でも暗かったせいで、それを石畳に置いたときに<br>どうやら置かれていた赤い花を<br>潰しちゃったみたいです。あーあ。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 入れ替えたあと、ドアの表札を入れ替えて完成です。<br>そのときの揺れのせいで、部屋の中が<br>少し荒れちゃいましたね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print シェリーちゃんにとっては、<br>魔法の実験に使われたアリサちゃんの<br>人形が残っていた事も誤算だったみたいです。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 使ったあとは綺麗にしておかなきゃダメですよ。<br>じゃないと、密室を作る犯人さんが困っちゃいますからね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch01_E03_S04
+@Wait 1.5
+
+# 【5P目イラスト】
+# ロウソクに火を付けるシェリー
+# ロウソクの下にロープがある
+@spawn Reenact_Ch01_E03_S05
+@Wait 1.5
+
+@print シェリーちゃんはその後、時間差で火がつくよう<br>炎のトリックを仕掛けます。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ロウソクと油を染み込ませたロープを使って、<br>ロウソクが小さくなったら<br>勝手に炎が引火するようにしたんです。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print でもあんまり燃え過ぎると全部燃え尽きちゃうので、<br>ほどほどに燃えるよう調整はしていました。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 燃え尽きる前に見つけてもらわないと、<br>せっかくの密室トリックが台無しですからね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch01_E03_S05
+@Wait 1.5
+
+# 【6P目イラスト】
+# 自分の足に矢を刺すシェリー
+@spawn Reenact_Ch01_E03_S06
+@Wait 1.5
+
+@print そしてしばらく待って明るくなってから、<br>矢で足を刺しました。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print とっても痛かったですけど、<br>シェリーちゃんはためらいません。<br>ちょっと力が強いので、一気に貫けますから！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 弾丸が足を貫通したことにして<br>シェリーちゃんはメルルちゃんに診察してもらいました。<br>これで行動不能のアリバイトリックの完成です！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print そうしてシェリーちゃんは見事、<br>ハンナちゃん殺人事件を劇的に起こしてみせたのでした！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ……めでたし、めでたし。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch01_E03_S06
+@Wait 0.5
+
+@set "isReenact = false"
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter03/Act01_Chapter03_Adv27

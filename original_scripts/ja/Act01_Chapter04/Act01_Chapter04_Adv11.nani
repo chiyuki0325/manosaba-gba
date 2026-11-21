@@ -1,0 +1,74 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-4-11
+
+# ========================================
+# ●シーン1‐4-11
+# ========================================
+
+@back 2_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_5_1
+
+@print エマが地下監房の並ぶ通路を歩いていると、<br>ふらふらと歩くココを見かけた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print あっ、ココちゃん……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Pensive1,ArmR7,ArmL6
+
+@print "なん？ あてぃし夢見が悪くて、<br>テンション最悪なんだけど。" { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 楽しく話す気にはなれねーかなー。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print （アリサちゃんが死んじゃって、<br>　楽しく会話なんてできるわけないよ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ほんと最悪な気分……。<br>寝なおしたいけど、裁判まであんま時間もねーしな。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Normal1
+
+@print ココちゃんのほうで、<br>アリサちゃんの事件に関して何か気付いたこととか、<br>ないかな……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Pensive1,ArmR1,ArmL2
+
+@print んー、ねーかなぁ……どっちかっていうと、<br>ちょっとホッとしたかも。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print アイツ明らかに魔女化進んでて、<br>あてぃし殺されるかもって思ってたから……って。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Surprised1,ArmR1,ArmL1
+
+# ＠備考◆焦って
+
+@print だからってあてぃしが殺したわけじゃねーからな！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+
+@print う、うん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Pensive1,ArmR7,ArmL6
+
+@print あ～ねむ～だる～、<br>もうほんっと毎晩寝れなくてさぁ……<br>メルちゃんがくれた薬、ぜんぜんきかねーんだけど。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ココは疲れ果てた様子で立ち去っていく。 { speed:1 waitInput:true Wait:true }
+
+@print 地下監房に何か手がかりはないかと<br>ひととおり探してみたが、特に何も見つけられなかった。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン1‐4‐8
+# 全てのイベントを消化している＞シーン1‐4‐12
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter04/Act01_Chapter04_Adv08

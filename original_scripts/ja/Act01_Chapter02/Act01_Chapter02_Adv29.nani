@@ -1,0 +1,201 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-2-29
+
+# ========================================
+# ●シーン1‐2‐29
+# ========================================
+
+@back 19_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# ＠備考◆走っている呼吸
+
+@print はぁっ、はぁっ、はぁっ……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print ナノカは閉廷した直後、<br>再び牢屋敷を脱け出していた。 { speed:1 waitInput:true Wait:true }
+
+# 茂みのガサガサ音
+@sfx Sfx_55
+
+@print ……ふぅ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 近くの茂みへと飛び込み、暗闇の中に身を落とし、<br>ようやく息を整える。 { speed:1 waitInput:true Wait:true }
+
+@print とても静かだった。<br>すると、余計な思考が混じってくる。 { speed:1 waitInput:true Wait:true }
+
+@print ふと脳裏に浮かんだのは、<br>ミリアの死体に触れた時に見たビジョンだった。 { speed:1 waitInput:true Wait:true }
+
+@print そのビジョンは以前見たものより長く、<br>鮮明に再生された。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@print くたびれたスーツの男は、<br>個人事務所の弁護士だった。 { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_41_1
+
+@print その日、画像流出の件で思い悩んだミリアが相談にやってきて、<br>夜も遅くなっていたので、男はミリアを家まで送ることにした。 { speed:1 waitInput:true Wait:true }
+
+@print 送り路の道中、<br>『自分は人と入れ替われる魔法を持っている』とミリアは言った。 { speed:1 waitInput:true Wait:true }
+
+@print 幼少期にその魔法に気付いて使用したが、<br>それ以来、怖くて決して使わないようにしていると。 { speed:1 waitInput:true Wait:true }
+
+@print ――あ、信じてない顔してる。 { speed:1 waitInput:true Wait:true }
+
+@print ――でも本当なんだよ。魔法を使えるんだから。 { speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"しょうすい\">憔悴</ruby>しきっているように見えたミリアがほんの少し笑顔を見せ。<br>男もほっと息を吐いた、矢先だった。" { speed:1 waitInput:true Wait:true }
+
+@print 何気なくスマホ画面を見たミリアが、<br>悲痛な叫びをあげた。 { speed:1 waitInput:true Wait:true }
+
+@print スマホの中には闇が詰まっていた。 { speed:1 waitInput:true Wait:true }
+
+@back 220_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.9 }
+@Wait 1
+
+@print もう生きていたくないと、<br>ミリアは口にし―― { speed:1 waitInput:true Wait:true }
+
+# 踏切音
+@sfx Sfx_40
+
+@print 男は遮断機の向こう側へ行こうとするミリアを、<br>必死に止めていた。 { speed:1 waitInput:true Wait:true }
+
+@print ――やめてよぉっ { speed:1 waitInput:true Wait:true }
+
+@print ――お願いだから、死なせてよぉっ！ { speed:1 waitInput:true Wait:true }
+
+@print "手首を<ruby=\"つか\">掴</ruby>まれたミリアが泣きじゃくり、叫ぶ。" { speed:1 waitInput:true Wait:true }
+
+@print 男はミリアの自殺をなんとか止めるために、<br>必死の表情を浮かべていた。 { speed:1 waitInput:true Wait:true }
+
+@print ――おじさんに、その体をくれないか。 { speed:1 waitInput:true Wait:true }
+
+@print やぶれかぶれに入れ替わりを提案し、<br>ミリアはそれに同意し―― { speed:1 waitInput:true Wait:true }
+
+# 電車通過音
+@sfx Sfx_54
+
+@HidePrinter 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@hide Stills
+
+@print ――はは、本当に入れ替わった……！<br>――おじさんは君になったんだ！<br>――すごい、すごいぞ……！ { speed:1 waitInput:true Wait:true }
+
+@print 男はしばらく、ミリアとお互いの境遇を語り合った。 { speed:1 waitInput:true Wait:true }
+
+@print ――入れ替わっている間に、<br>――君の問題はできるだけ解決してみせる。<br>――こう見えても弁護士なんだ、信用してみて。 { speed:1 waitInput:true Wait:true }
+
+@print ――しばらくはおじさんの体を使って、休んでいるといい。<br>――貯金はあるから、安心して。 { speed:1 waitInput:true Wait:true }
+
+@print ――でも、君は思いやりのある子に見えるから。<br>――おじさんの体に避難したままじゃ<br>――きっと幸せになれない。 { speed:1 waitInput:true Wait:true }
+
+@print ――だから約束してくれないか？<br>――現実を生きる勇気が出たら……また２人で会うんだ。 { speed:1 waitInput:true Wait:true }
+
+@print ――――そして元の体に戻ろう。 { speed:1 waitInput:true Wait:true }
+
+@back 19_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.9 }
+@Wait 1
+
+@StopSfx 
+
+@print 半年ほど入れ替わっていた期間があったが、<br>ミリアと男は元に戻っていた。 { speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"めまい\">眩暈</ruby>を覚えたナノカは片膝をつく。" { speed:1 waitInput:true Wait:true }
+
+@print 元に戻っていたなんて……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 言い訳くらい、しなさいよ……<br>私はひどい過ちを――。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 佐伯ミリアは、真実のミリアだった。 { speed:1 waitInput:true Wait:true }
+
+@print きっと彼女は抱えた傷を誰にも話したくなくて、<br>踏み込まれたくなくて、真実を胸に秘めたのだ。 { speed:1 waitInput:true Wait:true }
+
+@print おじさんのように振舞っていたのも、<br>自分が自分だとまだ認めたくなかったからだろう。 { speed:1 waitInput:true Wait:true }
+
+@print 謝りたくても、<br>謝る相手はもうこの世にいない。 { speed:1 waitInput:true Wait:true }
+
+@print "泣いてしまいそうに、ナノカの表情が<ruby=\"ゆが\">歪</ruby>む。" { speed:1 waitInput:true Wait:true }
+
+@print （後悔しても仕方ない。<br>　今はただ、行動しないと――） { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print ナノカは再び歩きだし、<br>隠れ場にしているところを目指した。 { speed:1 waitInput:true Wait:true }
+
+@print こそこそと牢屋敷の裏手にやって来て、<br>その扉に手をかけたところで―― { speed:1 waitInput:true Wait:true }
+
+# 茂みのガサガサ音
+@sfx Sfx_55
+
+@HidePrinter 
+@animate MainBackground
+@spawn MaskingRectangle
+@back 19_2
+@blur MainBackground-Front
+@char Nanoka.Default { time:0 }
+@mask MainBackground-Front,Nanoka-Front
+@animate MainBackground-Front
+@animate Nanoka-Front
+@Wait 0.3
+
+@print 誰っ！？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 茂みから誰かが近付く気配に、<br>ナノカは勢いよく振り返った。 { speed:1 waitInput:true Wait:true }
+
+@hide Nanoka-Front,MainBackground-Front
+@blur MainBackground-Front
+@despawn MaskingRectangle
+@Wait 0.3
+
+@print ここはとても暗い。 { speed:1 waitInput:true Wait:true }
+
+@print 木立の隙間から差し込むわずかな月明かりだけが、<br>ナノカを照らしている。 { speed:1 waitInput:true Wait:true }
+
+@print 少女たちは外出禁止時間だ。<br>ナノカは警戒の色を瞳に宿し、<br>銃を構えた。 { speed:1 waitInput:true Wait:true }
+
+@char Jailer.1
+
+@print しばらく待つと、<br>ナノカの前に現れたのは看守だった。 { speed:1 waitInput:true Wait:true }
+
+@print …………。 { author:Jailer speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 看守はナノカを見ても捕らえようとせず、<br>無言で離れていった。 { speed:1 waitInput:true Wait:true }
+
+@print こうして見逃されるのは、何度目だろうか。<br>ナノカは自嘲気味に笑みをこぼす。 { speed:1 waitInput:true Wait:true }
+
+# 鉄製の扉を開く音
+@sfx Sfx_62
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+@back 24_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent.Custom { time:0.9 }
+@Wait 0.9
+
+@print "隠れ場の中へと入って、<br>扉に頭をつけ、<ruby=\"つぶや\">呟</ruby>きを落とす。" { speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Default
+
+@print 私もいずれそっちに行くから、待ってて。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 次話への引継ぎアイテム：『万年筆』、『牢屋敷設計図』
+# ========================================
+
+# ========================================
+# ＞魔女裁判 第1章3話へ
+# ========================================
+
+@set "g_gameProgress = max(3, g_gameProgress)"
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter03/Act01_Chapter03_Adv01

@@ -1,0 +1,461 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter02/Act02_Chapter02_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# ==============================================================================
+# MARK: 7-10: 💬 誰が犯行可能なのか
+# ==============================================================================
+# ＠ト書き▼議論シーン7-10 誰が犯行可能なのか
+# 議論開始エフェクト
+# BGM変更：HirO
+@bgm Bgm_37_1_Loop
+
+# Judge7-10-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate 事件が起こったのは<br>死体発見の直前……<br>これは動きませんよね？
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@printDebate そうだ。
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Closed1,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@printDebate 私が配信を見てから<br>エマが死体を<br>発見するまでの時間……。
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@printDebate ５分ほどの間に、<br>殺害から死体の廃棄までの<br>全てが完了したことになる。
+
+@char Ema.Pensive1,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed01,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Middle
+@gosubModifyCamera 0
+@printDebate ココちゃんを地下で撃って、<br>そのまま２階へ登って<br>死体を引き上げ、<br>中庭へ落とす……。
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@printDebate スムーズにやれたなら、<br>不可能なことじゃない<br>とは思う。
+
+@char Miria.Default,ArmR3,ArmL8,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate たしかあのとき……<br>騒ぎを聞きつけて、<br>みんなすぐに集合したと<br>思うけど。
+
+@char Hanna.Default,ArmR2,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Open
+@gosubModifyCamera 0
+@printDebate 集まる前はみなさん、<br>何をしてたんですのー！？
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL6,Angle01/Head/Facial/Eyes>Eyes_Normal_Closed,Angle01/Head/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@printDebate ラウンジには<br>わがはいとレイアがいた。
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Normal_Open2,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@printDebate ……確実に２人は<br>ラウンジにいた。<br>それは私も見ているから<br>証言できる。
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@printDebate 私はアリサさんと<br>ずっと自室にいましたね！
+
+@char Alisa.Default,ArmR5,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open
+@gosubModifyCamera 0
+@printDebate ウチは横になってたが……<br>まあ、こいつは部屋にいた。<br>無理だろうな。
+
+@char Miria.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Confused_Open
+@gosubModifyCamera 0
+@printDebate お、おじさんは<br>ノアちゃんと娯楽室にいたよ！
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@printDebate よくわかんない<br>映画見てたー。
+
+@char Hanna.Surprised1
+@gosubModifyCamera 0
+@printDebate ……はわっ！？
+
+@char Hanna.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Closed,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@printDebate "では<link=\"Objection_02_02_10_01\">わたくしだけ</link>が<br>アリバイがない人<br>なんですのー！？"
+
+@char Sherry.Default,ArmR13,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate 犯人が見つかったようですね！
+
+@char Hanna.Angry1,ArmR2,ArmL2,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@printDebate ち、違いますわ～！
+
+@char Hanna.Surprised1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@printDebate そ、そうですわっ！<br>私１階のホールで<br>ヒロさんとすれ違っていますわ！
+
+@char Hanna.Surprised1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Closed
+@gosubModifyCamera 0
+@printDebate 私がそこにいたのは<br>ヒロさんが<br>証明してくれますわ～！
+
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@Wait 0.2
+
+# ==============================================================================
+# 7-10議論後独白
+# ==============================================================================
+
+@print （たしかにハンナとは<br>　シャワールームへと向かうときに<br>　すれ違った記憶がある） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@print （なら、全員の証言が正しければ<br>　誰も犯行できなかったことになるのか……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@print （それともこれまでの推理は全て間違っていて、<br>　やはりエマが犯人……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@print （それぞれの証言を……整理してみよう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-10-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_02_10_01
+
+@Skip false
+@pauseTrial true
+
+@choice 他にアリバイがない人物がいる
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge7-10-2
+
+@choice ハンナ以外全員アリバイがある
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge7-10-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 7-10: ❌ 議論選択肢分岐
+# ==============================================================================
+# MARK: 7-10-3: ❌ ハンナ以外全員アリバイがある
+
+# Judge7-10-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR6,ArmL3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print やはりハンナが犯人だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print ハンナは私とぶつかったあと、<br>焼却炉室に戻り、死体を担いで隠し通路を登って――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print ２階のアトリエから中庭へと<br>死体を落としたんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1
+@gosubModifyCamera 0
+@print 下に行って上に行って……！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Closed,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print そんなの絶対時間が足りませんわ～！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print ゴクチョーさんのアナウンスを聞いて<br>２階からも地下からも<br>階段付近を通った人がいるはずです。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR13,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 私は地下から階段を上った時に、<br>洗濯物を拾い集めているハンナさんを捕まえました。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1
+@gosubModifyCamera 0
+@print 無理やり連れて行かれましたわ～！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,Arms,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print ヒロくんがラウンジを通ったタイミングから言っても、<br>そこでぶつかっているハンナくんが<br>どこかに移動していた時間はなさそうだけどね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hanna.Normal1,ArmR1,ArmL1
+@gosubModifyCamera 0
+@print わたくしアナウンスを聞くまで、<br>ヒロさんにぶちまけられた洗濯物を拾っていましたもの！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print むしろわたくしが無理だって意見が<br>直前に会ってるヒロさんから出てこないのが怪しいですわー！！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （……ハンナが犯人なら移動時間が短すぎるか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （他に犯行可能な者がいるとしたら……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print （……この中に<br>　【アリバイを偽っている者】がいる……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-10-1
+
+# ==============================================================================
+# MARK: 7-10-2: ⭕ 他にアリバイがない人物がいる
+# ==============================================================================
+
+# Judge7-10-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+# @gosubCutIn Ema index:1
+@Gosub System/System_Subroutine.EndDebate-Last
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print ……いいや。<br>ハンナ以外にもアリバイがない人物はいる。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1
+@gosubModifyCamera 0
+@print それは誰ですのー！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char Hiro.Normal2,ArmR6,ArmL3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 他者からの目撃証言がない人物……それは。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# Judge7-10-4
+
+@evidence Profile
+
+@if "chosenEvidenceId==\"Nanoka\""
+	@goto .Judge7-10-5
+
+@if "chosenEvidenceId==\"Hiro\""
+	@goto .Judge7-10-6
+
+@if "chosenEvidenceId==\"Ema\""
+	@goto .Judge7-10-7
+
+@goto .Judge7-10-8
+
+# MARK: 7-10-6: ❌ 二階堂ヒロ
+
+# Judge7-10-6
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print 私だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print ここにきて自白か？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Closed,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print これまでの話はいったいなんだったんですわー！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （信用が落ちてしまった） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR12,ArmL5,Eyes1_Normal_Closed1,Mouth1_Determined_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （……アリバイが疑わしい人物を選び直そう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （アリバイとは、<br>　他者から証言してもらってはじめて成立するものだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （だがこの中には……<br>　事件当時、誰からも目撃されていない人物がいる） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge7-10-4
+
+# MARK: 7-10-7: ❌ 桜羽エマ
+
+# Judge7-10-7
+
+@char Hiro.Normal2,ArmR6,ArmL3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print エマ……<br>やっぱり君がシャワー室から引き上げて殺したんだ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ヒロちゃん、さっきからどうしたの……？<br>やっぱり何かおかしいよ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL1,Angle01/Head/Facial/Eyes>Eyes_Normal_Closed,Angle01/Head/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print 支離滅裂だ。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL6,Angle01/Head/Facial/Eyes>Eyes_Uncomfortable_Open01,Angle01/Head/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print 魔女化が進んでいるのではないか？ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR13,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print だとしたら、暴れ出す前に捕まえちゃいましょう！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print "（くっ……！ 冷静になれ！）" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR12,ArmL5,Eyes1_Normal_Closed1,Mouth1_Determined_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （……アリバイが疑わしい人物を選び直そう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （アリバイとは、<br>　他者から証言してもらってはじめて成立するものだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （だがこの中には……<br>　事件当時、誰からも目撃されていない人物がいる） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-10-4
+
+# MARK: 7-10-8: ❌ 汎用選択ミス
+
+# Judge7-10-8
+
+@char Ema.Pensive1,ArmR4,ArmL5
+@gosubModifyCamera 0
+@print ヒロちゃん……<br>その人のアリバイは証明されてるんじゃないかな……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal1,ArmR12,ArmL5,Eyes1_Normal_Closed1,Mouth1_Determined_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （……アリバイが疑わしい人物を選び直そう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （アリバイとは、<br>　他者から証言してもらってはじめて成立するものだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （だがこの中には……<br>　事件当時、誰からも目撃されていない人物がいる） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-10-4
+
+# ==============================================================================
+# MARK: 7-10-5: ⭕ 人物・黒部ナノカ
+# ==============================================================================
+# Judge7-10-5
+@StopBgm 
+@gosubCutIn Hiro
+@Gosub System/System_Subroutine.EndDebate-Last
+# カットイン
+# BGM変更：HirO
+@bgm Bgm_37_1_Loop
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1
+@gosubModifyCamera 0
+@print ……ナノカ。君だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR6,ArmL8,Eyes1_Uncomfortable_Open1,Mouth1_Flushed_Closed1
+@gosubModifyCamera 0
+@print …………。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR13,ArmL11,Eyes1_Normal_Closed1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 君の証言はあくまでも君からの一方的な目撃証言だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR13,ArmL11,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print ラウンジにいたレイアとアンアンを見ていたという主張は、<br>君のアリバイを証明するものではない……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR13,ArmL11,Eyes1_Normal_Closed1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 他の人物には何かしらのアリバイを証明する人物がいる。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmL5,Eyes1_Angry_Open1
+@gosubModifyCamera 0
+@print ならエマか私が嘘をついているか……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmL3,Eyes1_Angry_Open2,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print ……もしくは、ナノカ。<br>君が嘘をついているか。<br>そのどれかだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR6,ArmL8,Eyes1_Normal_Closed1,Mouth1_Flushed_Closed1
+@gosubModifyCamera 0
+@print …………。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Closed1,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print そもそもの話……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Closed1,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print ノアのアトリエと焼却炉を繋ぐロープがあったとしても、<br>犯人は事前にそれを知っていなければ<br>迅速に動くことはできなかった。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print 時間に猶予なんてなかったんだからね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print そうなれば必然、<br>事前にロープを繋げていた人物が怪しくなるのは当然だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Normal_Closed1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print ……そう。<br>それがあなたの意見なのね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Neutral_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print なら、あらためて証言するわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR2,ArmL9,Eyes1_Flushed_Open1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print ……私が当時、ラウンジにいたということを。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@goto Act02_Chapter02/Act02_Chapter02_Trial11

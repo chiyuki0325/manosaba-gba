@@ -1,0 +1,403 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-1-11
+
+# ========================================
+# ●シーン2‐1-11
+# ========================================
+
+@back 19_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent.Custom { time:0.99 }
+@Wait 0.9
+
+# ========================================
+# ＞『水精の間』を選択
+# ========================================
+
+@bgm Bgm_5_1
+
+@print "私とノアは正面玄関から外に出て、<br><ruby=\"いしだたみ\">石畳</ruby>の道を歩いていた。" { speed:1 waitInput:true Wait:true }
+
+@print 窓から別荘のような建物が見えたのだ。<br>その場所を目指す。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@animate MainBackground
+@spawn MaskingRectangle
+@back 16_1
+@blur MainBackground-Front
+@mask MainBackground-Front
+@animate MainBackground-Front
+@Wait 0.3
+
+@print 屋敷は高台になっており、<br>遠くには見渡す限り高い塀が広がっている。 { speed:1 waitInput:true Wait:true }
+
+@print 塀を見つめる間、<br>ノアの瞳はみるみる輝いていった。 { speed:1 waitInput:true Wait:true }
+
+@print たかーい。<br>たくさんお絵描きできるね～。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print 私もこれまで何度か外に出て、<br>周辺を探索している。 { speed:1 waitInput:true Wait:true }
+
+@print 高い塀でぐるりとどうやら島全体が囲まれており、<br>脱出は難しいだろう。 { speed:1 waitInput:true Wait:true }
+
+@hide MainBackground-Front
+@blur MainBackground-Front
+@despawn MaskingRectangle
+@Wait 0.3
+
+@print （少女たちを１３人も誘拐した大それた犯行だ。<br>　おそらく裏で大きな組織が動いている） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （簡単に逃すわけもないか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ――その時だった。 { speed:1 waitInput:true Wait:true }
+
+# 茂みのガサガサ音
+@sfx Sfx_55
+
+@Wait 0.5
+
+@char Nanoka.Default { time:0.2 }
+
+@print "近くの茂みから、<ruby=\"はず\">葉擦</ruby>れの音がした。<br>次の瞬間には、ナノカが勢いよく飛び出してくる。" { speed:1 waitInput:true Wait:true }
+
+@print ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@blur MainBackground
+@sfx Sfx_9
+@char Nanoka
+
+@print 私に向かって、ナノカの手が<br>突き出されてきて―― { speed:1 waitInput:true Wait:true }
+
+@shake MainBackground
+
+@sfx Sfx_116
+
+@hideChars 
+
+@print "私は<ruby=\"とっさ\">咄嗟</ruby>に身をかわした。" { speed:1 waitInput:true Wait:true }
+
+# 受け身の音
+@sfx Sfx_116
+
+@blur MainBackground
+@back 19_1 { Scale:{g_backgroundDefaultScale} }
+@hideChars 
+@Wait 0.2
+
+@print くっ！ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print バランスを崩したナノカは、<br>その場に転がる。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+
+@print ……運動は得意なんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 急襲なんてどういうつもりだ？<br>場合によっては、君を看守に差し出す。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@Wait 0.2
+@char Nanoka.Default
+@Wait 0.3
+@char Nanoka.Default
+@Wait 1
+
+@print "ナノカは悔しげに起き上がり、<br><ruby=\"かたひざ\">片膝</ruby>をついたまま、低い声で語りだす。" { speed:1 waitInput:true Wait:true }
+
+@print ……あなたに触れようとしただけよ。<br>危害を加えるつもりはなかったわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print "触れる？ それが一体何になる。" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ……私の魔法は【幻視】。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 触れた対象の過去や未来がビジョンとして見えるの。<br>好きに発動させることはできないけれど……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print ……なるほど。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （それにしても、わざわざ敵を作るような<br>　触り方をせずとも……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （雰囲気の割には不器用だ。<br>　立ち回りに慣れていないところがあるのか……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print まあ、おおよそ検討がついてきた。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 突然こんな屋敷に閉じ込められて、<br>落ち着き払った雰囲気でいられる理由がね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ……お察しのとおりね。<br>私は牢屋敷の情報を【幻視】で事前に視たの。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 聞きたいことはいくつかある。<br>その銃はなんだ？<br>教えてくれれば襲われたことはチャラだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print この銃も、かつて牢屋敷に囚われた人が魔法で制作し、<br>隠していたことを視て、ここに捕まってすぐ回収した。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 装填数は６発。<br>１日１発自動で弾が回復する魔法の銃よ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print （なるほど……情報で有利に立てるのは<br>　この屋敷の中では大きな強みだ……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 興味深いな。他に知っていることは？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 質問に答えれば襲ったことはチャラのはずよ。<br>言うつもりはないわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print しかし君が嘘をついている可能性もある。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print そんなことをして<br>私に何のメリットがあると言うの？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive1
+
+@print さてね。だが慎重にもなるさ。<br>私たちは知り合ったばかりだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 数秒無言でのにらみ合いが続いたが、<br>やがてナノカは諦めたように息をついた。 { speed:1 waitInput:true Wait:true }
+
+@print ……わかったわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 私が警戒している人物の魔法を話す。<br>ただ証明はできないから自分でやって。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print その人物の名前は【佐伯ミリア】よ……<br>今のところ、私が一番警戒している相手。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print "ナノカは<ruby=\"みけん\">眉間</ruby>にしわを寄せて語りはじめた。<br>まるで汚いものでも思い出すかのようだ。" { speed:1 waitInput:true Wait:true }
+
+@print 彼女……いえ、奴は少女ですらない。<br>――悪魔よ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 元々あの子は【入れ替わり】の魔法を持っている。<br>今は男性が強制的に彼女の体を奪っているの。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# ＠備考◆ひとりごと風にぼそりと
+
+@print きっとあいつが【黒幕】……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print "あまりに<ruby=\"いまいま\">忌々</ruby>しげに語るナノカの様子を見るに、<br>嘘は一切混じっていないことがわかる。" { speed:1 waitInput:true Wait:true }
+
+@print ……たしかにそれは重要な事実だな。<br>男性の素性はわかっているのか？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 断片的なビジョンだったから、詳しくは何も。<br>視えたのは<br>奴が少女の体を奪った極悪人ということだけ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print （……視たとはいえ、断片的な情報というなら<br>　話半分に聞いておいたほうがいいか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print わかった。信じよう。<br>有益な情報に感謝する。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print それに私を狙ったということは、<br>君にもまだ知らない情報はあるようだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 一応聞いておくが、君は、最初から私のことを<br>怪しんでいたようだな？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ……あなたの最初の行動は得体が知れなかった。<br>正直、黒幕かと疑っていたわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1,Arms3
+
+@print 断じてありえない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print 私から言わせれば、君のほうがずっと<br>怪しい動きをしている。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 銃を回収する迅速な行動や、覚悟の決まったその顔。<br>まるで事前に行動内容を準備していたようだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "腕を組み、見下ろしながら言い放つと、<br>ナノカの暗い瞳と視線が<ruby=\"こうさく\">交錯</ruby>する。" { speed:1 waitInput:true Wait:true }
+
+@print これ以上は探っても無駄よ。組むつもりはない。<br>……どうせみんな、死ぬもの。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print （どうせみんな死ぬ？<br>　幻視でその情報を得たのか……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"にら\">睨</ruby>み合いをどちらも譲る気がなく、<br>張りつめた空気が流れる。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Noah.Pensive1
+
+@print ねえねえヒロちゃん。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print その緊迫感に割って入ってきたのは、<br>ノアだった。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hiro.Angry1,Arms1
+@char Noah.Pensive1
+
+@print "起こった出来事を気付いていないかのように、<br>私の<ruby=\"そで\">袖</ruby>を引っ張る。" { speed:1 waitInput:true Wait:true }
+
+@print もしかして自由時間にしか<br>お絵描きしちゃいけないのかな？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive1
+
+@print ……残念だが。<br>お絵描きは自由時間のみだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Angry1
+
+@print えー。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print "ノアは不満そうに<ruby=\"うなだ\">項垂</ruby>れたが、<br>すぐに顔を上げる。" { speed:1 waitInput:true Wait:true }
+
+@char Noah.Normal1
+
+@print ……ヒロちゃんと約束しなかったら、<br>のあ、ずっとお部屋にこもってお絵描きしてたと思う。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Smile1
+
+@print でもヒロちゃんのおかげで、<br>いっぱい楽しそうな場所見つけちゃった！ { author:Noah speed:1 waitInput:true Wait:true }
+
+@print ありがとうヒロちゃん！<br>約束守ってお絵描きするね！ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+
+@print ……そう。それならいい。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@char Nanoka
+
+@print いつの間にかナノカが立ち上がっていた。<br>ただ、もうこれ以上手出しをしてくる様子はなさそうだ。 { speed:1 waitInput:true Wait:true }
+
+@print ……あなたは悪い人じゃないみたい。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@StopBgm { fade:3 }
+
+@print "ナノカはぽつりと<ruby=\"つぶや\">呟</ruby>きを落として、<br>茂みの向こうへと消えていった。" { speed:1 waitInput:true Wait:true }
+
+@update Nanoka
+@update Miria
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+@back 22_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent.Custom { time:0.9 }
+@Wait 0.9
+
+@Wait 1
+
+@bgm Bgm_11_1
+
+@print ナノカと別れ、<br>私とノアはようやく目的地の前にたどりついた。 { speed:1 waitInput:true Wait:true }
+
+@print ログハウス風の建物が３棟並んでいる。 { speed:1 waitInput:true Wait:true }
+
+@print （おそらく要人などを迎えるための<br>　ゲストハウスか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （屋敷より比較的新しいな。<br>　あまり使用はされていないようだが――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+@char Noah.Smile1
+
+@print "ヒロちゃん！ 中に入ってみようよ。" { author:Noah speed:1 waitInput:true Wait:true }
+@print ……そうだな。開いていれば見ておきたい。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+@hideChars 
+
+# 木の扉を開く音
+@sfx Sfx_22
+
+@back 23_3 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent.Custom { time:0.9 }
+@Wait 0.9
+
+@print "あっさりと扉が開いたので、<br>私たちは【<ruby=\"ウンディーネ\">水精</ruby>の間】のプレートが<ruby=\"さ\">提</ruby>げられた<br>ゲストハウスの中へと入った。" { speed:1 waitInput:true Wait:true }
+
+@char Coco.Surprised1
+
+@print すると中には、沢渡ココがいた。 { speed:1 waitInput:true Wait:true }
+
+@print "私たちの出現に一瞬びくりと体を震わせたが、<br>取り<ruby=\"つくろ\">繕</ruby>うように笑顔になる。" { speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1
+
+# ＠備考◆わざとらしく
+
+@print あ、ヒロっちとノアじゃん。おつかれ～。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print じゃああてぃしはこれで……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@animate Coco
+
+@print ココ。君はここで何を？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+@char Coco.Surprised1
+
+# ＠備考◆動揺
+
+@print べべべ、べっつに～？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print （……何か隠し事をしているな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1,ArmL2
+
+@print あてぃしらまだぜんぜん知り合ったばっかだしさ、<br>詮索とかそーゆーのやめてほしいんですけどー。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print 君に興味がないから詮索するつもりもない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Coco.Angry1,ArmL2
+
+@print うわウッザ。つかさ、ヒロっち<br>あてぃしの配信見てくれてる～？<br>初日からやってんだけど。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 配信……ああ、見たよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 感想そんだけかよ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 特に思うところがなかった。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 初日の配信を思い返してみると、<br>私たちに向けて発信している風ではなく、<br>彼女はおかしな言動を繰り返していた。 { speed:1 waitInput:true Wait:true }
+
+@print 正直気になってはいたが、<br>彼女はあまり関与したいタイプでもない。 { speed:1 waitInput:true Wait:true }
+
+@print くっ……明日は重大発表するからさ、<br>そん時はあてぃしに夢中になるからな！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 絶対見ろよ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 思わせぶりな発言が妙に引っかかり、<br>私はわざと首を横に振った。 { speed:1 waitInput:true Wait:true }
+
+@print 遠慮しておく。<br>何かおかしな術をかけられたらたまらない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 君の魔法を知らないし、<br>配信に関係するものかもしれない。<br>見ただけで洗脳されるとかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Coco.Angry1,ArmL1
+
+@print 洗脳じゃねーし！<br>あてぃしの魔法は【千里眼】！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 千里眼……？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Coco.Surprised1,ArmR9
+
+@print 思わず口にしてしまったのか、<br>ココは気まずそうに視線を逸らす。 { speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1,ArmR1,ArmL2
+
+@print やべ……ま、まあいっか。<br>別に知られて困ることでもないし……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1,ArmR4
+
+@print "配信でも写真でも、とにかく沢渡ココを認知してたら<br>あてぃしも見てるヤツのことを<ruby=\"ふかん\">俯瞰</ruby>できるってワケ。" { author:Coco speed:1 waitInput:true Wait:true }
+
+@print それは、この牢屋敷の外の情報も得られるのか？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "まあね？ あてぃしのこと見てるヤツがどっかにいたらね？" { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Smile1,ArmR4
+
+@print で、その千里眼で、あてぃし<br>すっごい情報を手に入れちゃったんだよねー。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1,ArmR4
+
+@print どう、あてぃしの魔法すごくね？<br>――配信、見ろよ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ココがゲストハウスから出ていく。 { speed:1 waitInput:true Wait:true }
+
+@update Coco
+
+@char Noah.Smile1
+
+@print ノアはというと……ゴクチョーの置物で遊んでいた。<br>私は深くため息をついた。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン2‐1‐7
+# 全てのイベントを消化している＞シーン2‐1‐13
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter01/Act02_Chapter01_Adv12

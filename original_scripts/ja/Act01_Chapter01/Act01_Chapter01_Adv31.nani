@@ -1,0 +1,356 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-1-27
+
+# ========================================
+# ●シーン1-1‐27
+# [back 6]
+# ========================================
+
+# ========================================
+# ＞『食堂』を選択
+# ========================================
+
+# ========================================
+# [bgm Bgm_005_001_Loop]
+# ========================================
+
+@back 6_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+@bgm Bgm_5_1
+
+@print エマたちは食堂の調査にやってきた。 { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Normal1
+@char Ema.Normal1
+@char Sherry.Normal1
+
+@print さすがに食欲はないですわ。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print この料理ってずっと置きっぱなしなんですかね？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print さすがに定期的に入れ替えてるんじゃないかな。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ビュッフェカウンターに並ぶ料理の数々を前に、<br>それぞれが言う。 { speed:1 waitInput:true Wait:true }
+
+@print あの看守が入れ替えてるんですかね。<br>私たちは厨房に入れないですが、やっぱり料理も看守が？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna.Pensive1
+
+@print あの、あまり想像させないでくれませんこと？<br>これから何も喉を通らなくなりそう。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ３人は散り散りになって、<br>食堂をひととおり見てまわることにする。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 6_1
+@char Sherry.Normal1,ArmR2
+@mask MainBackground-Front,Sherry-Front
+@animate MainBackground-Front
+@animate Sherry-Front
+@WaitForNextFrame 
+
+@print 犯人は何故、<br>ノアさんを殺そうって思ったのでしょうか。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print テーブルの下を調査中に、<br>ふとシェリーが投げかけてきた。 { speed:1 waitInput:true Wait:true }
+
+@print ノアさんは、<br>一体どういう人物だったのでしょうね？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Sherry-Front
+@hideChars 
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 6_1
+@char Ema.Pensive1,ArmR3
+@mask MainBackground-Front,Ema-Front
+@animate MainBackground-Front
+@animate Ema-Front
+@WaitForNextFrame 
+
+@print 関わった時間が短すぎて……いい子だったとは思うけど、<br>ほかにはお絵描きが好きだった、ってことくらいしか。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （ボクが接したノアちゃんは、<br>　無邪気で素直ないい子って、印象だった） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （でもたった数回会話を交わしただけだし、<br>　本当のところはわからない……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ただ、殺される理由があるような子には思えないよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Ema-Front
+@hideChars 
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 6_1
+@char Sherry.Normal1,ArmR2
+@mask MainBackground-Front,Sherry-Front
+@animate MainBackground-Front
+@animate Sherry-Front
+@WaitForNextFrame 
+
+@print 有名なストリートアーティストでもありますね。<br>それも何か関係があるのか……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Sherry-Front
+@hideChars 
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 6_1
+@char Hanna.Normal1
+@mask MainBackground-Front,Hanna-Front
+@animate MainBackground-Front
+@animate Hanna-Front
+@WaitForNextFrame 
+
+@print 【バルーン】に恨みを抱いていた人物…？<br>ありえますわね。<br>有名人はどこで恨みを買うかわからないもの。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Hanna-Front
+@hideChars 
+@despawn MaskingRectangle
+
+@print （どんな理由があるにせよ、殺人は許せない。<br>　でも、誰かが殺したんだ。誰がそんなことを……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 6_1
+@char Sherry.Normal1,ArmR2
+@mask MainBackground-Front,Sherry-Front
+@animate MainBackground-Front
+@animate Sherry-Front
+@WaitForNextFrame 
+
+@print ひとつ不思議なのは、<br>おそらく外出禁止時間に殺害が行われたと思われることですね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Sherry-Front
+@hideChars 
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 6_1
+@char Ema.Pensive1,ArmR3
+@mask MainBackground-Front,Ema-Front
+@animate MainBackground-Front
+@animate Ema-Front
+@WaitForNextFrame 
+
+@print ボクもそれは思った。外出禁止時間に殺害が起こったんなら、<br>囚人は全員アリバイがある。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Ema-Front
+@hideChars 
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 6_1
+@char Sherry.Pensive1,ArmR2
+@mask MainBackground-Front,Sherry-Front
+@animate MainBackground-Front
+@animate Sherry-Front
+@WaitForNextFrame 
+
+@print ほぼ全員、ですかね。<br>アンアンさんは医務室にいましたから。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Ema-Front
+@hideChars 
+@despawn MaskingRectangle
+
+@print （あ、そうか……医務室は施錠されるわけじゃない） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマは思い当たることがあったのか、<br>ハッと表情を<ruby=\"こわば\">強張</ruby>らせる。" { speed:1 waitInput:true Wait:true }
+
+@print （ボクもひとりで寝てたから、<br>　自室にいたって証明してくれる人がいない……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （もしかして夜間のアリバイ証明ができないのって<br>　ボクとアンアンちゃんだけ…？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （で、でもノアちゃんがいつ殺害されたのかは、<br>　明確になってない。就寝前と早朝にアンアンちゃんとボクは<br>　顔を合わせてる） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （殺害時間によっては、お互いのアリバイ証明はできる、よね。<br>　アンアンちゃんがボクに協力的だったら、だけど……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "胸にもやもやと不安が満ちていったのか、<br>エマはますます<ruby=\"そうはく\">蒼白</ruby>になっていく。" { speed:1 waitInput:true Wait:true }
+
+@print （もしかして、ボクも犯人だって<br>　投票される可能性が高い……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print そこまで考えて、頭を振った。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 6_1
+@char Ema.Pensive1,ArmR3
+@mask MainBackground-Front,Ema-Front
+@animate MainBackground-Front
+@animate Ema-Front
+@WaitForNextFrame 
+
+@print で、でも、朝になったら鍵は開錠されてる。<br>朝のうちにノアちゃんの部屋に行けば、<br>誰でも可能だよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Ema-Front
+@hideChars 
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 6_1
+@char Sherry.Normal1,ArmR10,ArmL3
+@mask MainBackground-Front,Sherry-Front
+@animate MainBackground-Front
+@animate Sherry-Front
+@WaitForNextFrame 
+
+@print 宙に浮けたら更に簡単ですね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Sherry-Front
+@hideChars 
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 6_1
+@char Hanna.Pensive1,ArmR4
+@mask MainBackground-Front,Hanna-Front
+@animate MainBackground-Front
+@animate Hanna-Front
+@WaitForNextFrame 
+
+@print うぅ……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "ハンナはしばらく<ruby=\"うなだ\">項垂</ruby>れていたが、<br>やがて意を決したように、顔をあげた。" { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Normal1,ArmR3
+
+@print わたくし、実は浮ける時間は<br>１分程度ですの。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "自分の魔法を<ruby=\"ほこ\">誇</ruby>り高く思っているのだろう、<br>ハンナは悔しそうに<ruby=\"うめ\">呻</ruby>いた。" { speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Hanna-Front
+@hideChars 
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 6_1
+@char Sherry.Smile1,ArmR14,ArmL1
+@mask MainBackground-Front,Sherry-Front
+@animate MainBackground-Front
+@animate Sherry-Front
+@WaitForNextFrame 
+
+@print ああそれは、良い情報ですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 短時間しか浮けないのなら、<br>足跡残さず殺すのは無理だって言えるかも！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Sherry-Front
+@hideChars 
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 6_1
+@char Hanna.Angry1
+@mask MainBackground-Front,Hanna-Front
+@animate MainBackground-Front
+@animate Hanna-Front
+@WaitForNextFrame 
+
+@print ぜんぜん良い情報じゃねーですわ……<br>で、できれば言いたくねーですわ。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"じたんだ\">地団太</ruby>を踏みそうな表情のハンナだが、<br>シェリーはキャッキャと嬉しそうだ。" { speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Hanna-Front
+@hideChars 
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 6_1
+@char Sherry.Smile1,ArmR3,ArmL4
+@mask MainBackground-Front,Sherry-Front
+@animate MainBackground-Front
+@animate Sherry-Front
+@WaitForNextFrame 
+
+@print いえいえ、積極的に言いましょうよ！<br>ハンナさんの魔法は大したことないって！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Sherry-Front
+@hideChars 
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 6_1
+@char Hanna.Angry1
+@mask MainBackground-Front,Hanna-Front
+@animate MainBackground-Front
+@animate Hanna-Front
+@WaitForNextFrame 
+
+@print あなたわざと言っているでしょう！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Hanna-Front
+@hideChars 
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 6_1
+@char Ema.Surprised1,ArmR3
+@mask MainBackground-Front,Ema-Front
+@animate MainBackground-Front
+@animate Ema-Front
+@WaitForNextFrame 
+
+@print と、とにかく今は調査を続けようよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Ema-Front
+@hideChars 
+@despawn MaskingRectangle
+
+@print その後も広い食堂内を歩き回ってみたが、<br>結局何も手がかりは得られそうになかった。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@camera { time:0.9 }
+@Wait 0.9
+
+@print "ふと、エマの目にビュッフェカウンターにある、<br>フルーツ盛りが<ruby=\"と\">留</ruby>まった。" { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@camera { time:0.9 }
+@Wait 0.9
+
+@char Ema.Pensive1,ArmR3
+
+@print ここに置いてある料理、少なくとも<br>毎日は入れ替えてはないのかもしれないね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR1,ArmL1
+
+@print どうしてです？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 下の方のリンゴが腐ってる。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hanna.Pensive1,ArmR4
+
+@print げっ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print ハンナが青ざめて後ずさる。 { speed:1 waitInput:true Wait:true }
+
+@print ううううぅ……もう断食するしかありませんわ……<br>でも飢え死には嫌ですわぁぁ～。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print べそをかくハンナを連れて、<br>エマたちは食堂を出た。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン1‐1‐21
+# 全てのイベントを消化している＞シーン1‐1‐30
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter01/Act01_Chapter01_Adv25

@@ -1,0 +1,496 @@
+@gosubResetBook System/System_ResetWitchBook
+@Gosub System/System_Subroutine.BeginAdv
+
+# ========================================
+# 魔法少女ノ魔女裁判 第2章2話
+# ========================================
+
+# Scene2-2-1
+
+# ========================================
+# ●シーン2‐2‐1
+# ========================================
+
+@back 6_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_26_1
+
+@print マーゴの処刑から数日後―― { speed:1 waitInput:true Wait:true }
+
+@print 私は朝食をとるために食堂を訪れた。<br>食堂の中には、他の少女たちも集まっている。 { speed:1 waitInput:true Wait:true }
+
+@print その中にはもちろんエマの姿も―― { speed:1 waitInput:true Wait:true }
+
+@print シェリーちゃん、ハンナちゃん、おはよう。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print おはようございます！<br>あれ、エマさん、それだけしか食べないんですか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+@char Sherry.Normal1
+@char Hanna.Normal1
+
+@print "通りすがりに聞こえてきた会話から<br>テーブルの方へ目を<ruby=\"や\">遣</ruby>れば、<br>エマが手にしているのは、リンゴが１つだけだった。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+
+@print う、うん……あんまり食欲なくて。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 気持ちはわかりますけれど……<br>体力をつけるためには、<br>もう少し食べておいたほうがいいですわよ。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print エマにというよりは自分に言い聞かせるようにして、<br>ハンナはガツガツと料理を食べていた。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 私はビュッフェコーナーの方へと向かいながら<br>他の少女たちもざっと観察していく。 { speed:1 waitInput:true Wait:true }
+
+@print どの少女たちも、<br>食事を楽しんでいるという様子はない。 { speed:1 waitInput:true Wait:true }
+
+@print 見た目も味も最悪な料理だからというのもあるだろうが、<br>理由はそれだけではないだろう。 { speed:1 waitInput:true Wait:true }
+
+@print メルルが殺されて、マーゴが犯人として処刑された。 { speed:1 waitInput:true Wait:true }
+
+@print "恐ろしい事件の<ruby=\"よいん\">余韻</ruby>が、<br>たった数日で薄れるわけもない。" { speed:1 waitInput:true Wait:true }
+
+@print （私も食欲はないが、食べておかないと……<br>　いつ何があるかわからない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ぎこちない空気がまとわりつく中、<br>ビュッフェコーナーの前に立つ。 { speed:1 waitInput:true Wait:true }
+
+@print ずらりと並んだ料理が目に入ったものの、<br>何もかもが変色してくすんだ色合いをしている。 { speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"ゆげ\">湯気</ruby>の立たないスープや<ruby=\"しお\">萎</ruby>れた葉っぱ、<br>真っ黒で硬そうなパン、<br>ビンの周りにこびりついた謎の液体……" { speed:1 waitInput:true Wait:true }
+
+@print "毎度のことながら、<br>何を選べばいいのか<ruby=\"ちゅうちょ\">躊躇</ruby>してしまう。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+@char Sherry.Normal1
+@char Hanna.Normal1
+
+@print 今日はどこを調べようか？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1
+
+@print うーん……どうしましょう。<br>気になる場所は大体、調べちゃいましたしね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print それにしても驚きでしたわ。<br>ゲストハウスから、あんな地下施設に<br>辿り着くだなんて……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "手にしたトングを宙で<ruby=\"さまよ\">彷徨</ruby>わせていると、<br>またもエマたちの会話が聞こえてきた。" { speed:1 waitInput:true Wait:true }
+
+@print （地下施設か……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@back 22_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@print 裁判の後。 { speed:1 waitInput:true Wait:true }
+
+@print "皆でココを問い詰めたところ、<br>彼女は<ruby=\"しぶしぶ\">渋々</ruby>ゲストハウスへと私たちを案内した。" { speed:1 waitInput:true Wait:true }
+
+@print こんなところに何がと思ったが……。 { speed:1 waitInput:true Wait:true }
+
+@back 23_4 { Scale:{g_backgroundDefaultScale} time:0.5 }
+
+@print "【<ruby=\"ウンディーネ\">水精</ruby>の間】に<br>隠し階段があって、私たちをずいぶん驚かせた。" { speed:1 waitInput:true Wait:true }
+
+@back 31_1 { Scale:{g_backgroundDefaultScale} time:0.5 }
+
+@print そして降りた先の半地下には、<br>エレベーターがあり。 { speed:1 waitInput:true Wait:true }
+
+@print 早速向かってみようと３人以上で乗ったら、<br>ブザーが鳴ってしまった。 { speed:1 waitInput:true Wait:true }
+
+@print "ずいぶん古く<ruby=\"ろうきゅうか\">老朽化</ruby>している箱なので、<br>重量負荷に耐えられなかったのだろう。" { speed:1 waitInput:true Wait:true }
+
+@print 私たちは、仕方なく２人ずつで乗り込み移動した。 { speed:1 waitInput:true Wait:true }
+
+@print そうして下りた先には―― { speed:1 waitInput:true Wait:true }
+
+@back 25_1 { Scale:{g_backgroundDefaultScale} time:0.5 }
+
+@print 驚くべき地下施設が広がっていた。 { speed:1 waitInput:true Wait:true }
+
+@print そこで私たちが目にしたのは、<br>謎の操作盤。 { speed:1 waitInput:true Wait:true }
+
+@print "ココ<ruby=\"いわ\">曰</ruby>く、処刑台を入れ替える<ruby=\"ようと\">用途</ruby>があるらしく、<br>下手に触らない方が良いとのことだった。" { speed:1 waitInput:true Wait:true }
+
+@back 26_1 { Scale:{g_backgroundDefaultScale} time:0.5 }
+
+@print "隣には広大な冷凍室もあり。<br>ここが私たちにとってもっとも<ruby=\"きょうがく\">驚愕</ruby>する場所だった。" { speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"ぼうだい\">膨大</ruby>な量の【魔女のなれはて】や<br>犠牲者の少女たちが――<br>氷漬けで保管されていたのだ。" { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@back 6_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@char Ema.Pensive1
+@char Sherry.Normal1
+@char Hanna.Normal1
+
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@print うぅっ、思い出すだけで寒い……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 私同様に冷凍室の光景を思い浮かべたのか、<br>エマが身震いする。 { speed:1 waitInput:true Wait:true }
+
+@print 処刑装置のような大掛かりな仕掛けがあるなら、<br>ああいった施設が地下にあるのは納得ですね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print うん……脱出の糸口になるような物が<br>見つかればよかったんだけど……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print まったくですわ。<br>地下から島の外に出られる海底トンネルとか、<br>あってもよさそうですのに！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1
+
+@print 仮にあったとしても、<br>そう簡単に脱出させてもらえないでしょうねー。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1
+
+@print "くそー！ 腹立たしいですわ！" { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+
+@print ま、まあまあ……<br>もっと色々調べてみようよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print 屋敷の裏手には大きな倉庫もあったんだし、<br>脱獄に使える物が見つかるかもしれないよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （ああ……そういえば倉庫も見つかったな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.6 }
+@Wait 0.6
+@hideChars 
+
+@back 24_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@back SolidColor.Custom { time:0.6 }
+@Wait 0.6
+
+@print ここに捕まった当初、<br>屋敷裏手に鍵のかかった部屋があり気になっていた。 { speed:1 waitInput:true Wait:true }
+
+@print しかしいつの間にか鍵が外され、<br>解放状態になり私たちでも出入りできるようになった。 { speed:1 waitInput:true Wait:true }
+
+@print （地下施設といい、<br>　おそらく牢屋敷の管理者側しか出入りできないはずの<br>　バックヤード） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （黒幕である氷上メルルの死によって、<br>　管理側に混乱が生じているのかもしれないな……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 気持ち、私たちに対する監視の目や<br>規則もザルになっている気がする。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.6 }
+@Wait 0.6
+
+@back 6_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@back SolidColor.Custom { time:0.6 }
+@Wait 0.8
+
+@char Ema.Determined2
+
+@print 諦めないで脱出方法を探っていこう！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 前向きな言葉を口にしたエマに、<br>私は腹の底がカッと熱くなった。 { speed:1 waitInput:true Wait:true }
+
+@print （諦めない？<br>　一体どの口でそんなことを……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 気付けば私は、彼女らの会話に<br>聞き耳を立ててしまっている。 { speed:1 waitInput:true Wait:true }
+
+@print （落ち着け……落ち着け……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 深く息を吐いて、<br>小さくかぶりを振った。 { speed:1 waitInput:true Wait:true }
+
+@print （……今腹を立てたところで、<br>　私のストレスにしかならない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 私は意識を強引にエマから引きはがす。 { speed:1 waitInput:true Wait:true }
+
+@print それから料理を適当に取り<br>ひとりでテーブルについた。 { speed:1 waitInput:true Wait:true }
+
+@print 隠された地下施設のことを知っていた<br>ココのことも気になっている。 { speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1
+@char Miria.Normal1
+
+@print 食べ始めてすぐ、<br>私の視線はココとミリアのテーブルに向かった。 { speed:1 waitInput:true Wait:true }
+
+@print おっさんさぁ、<br>入れ替わりの魔法のこと、<br>みんなに説明したほうがいいんじゃね？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1
+
+@print 何人かおっさんがマジで中身おっさんだと<br>思い込んでるヤツいるっぽいけど。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive1
+
+@print いいんだよ。そう思ってくれても……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Coco.Smile1
+
+@print てか入れ替わりってマジなん？<br>やってみせてよ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Miria.Surprised1
+
+@print いやいやいや、戻れなくなったら困るからやめとこう。<br>昔それで大変な目に遭ったし……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Smile1
+
+@print おじさんは魔法を持っていない<br>ただのおじさんだと思ってくれてていいんだよ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Normal1
+
+@print それよりもココちゃん、<br>地下施設について<br>君の知ってることを聞きたいんだけど……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1
+
+@print "またそれ？ 全部話したじゃーん。<br>千里眼の魔法で、<br>地下施設へ行く方法が見えたってだけだって。" { author:Coco speed:1 waitInput:true Wait:true }
+
+@print （ココは何度問い詰めてものらりくらりで、<br>　魔法で知ったとしか言わない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （何か知っているとしか思えないが……<br>　厄介な相手だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@update Miria
+
+@print 厳しく問い詰めたい気持ちはあるが、<br>最近の私は、少女たちを意識的に避けている。 { speed:1 waitInput:true Wait:true }
+
+@print （今は皆との関わり合いをできるだけ絶ちたい） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print エマを殺すと決めた時から――<br>他の少女とも距離を置くべきだと考えるようになった。 { speed:1 waitInput:true Wait:true }
+
+@print だからひとりで離れたテーブルにつき、<br>食事もとるようにしている。 { speed:1 waitInput:true Wait:true }
+
+@print アリサやナノカ、レイアもひとりで食事を取っているし、<br>私の行動が特に浮いているというわけでもない。 { speed:1 waitInput:true Wait:true }
+
+@char Noah.Smile1
+@char AnAn.Normal1,Angle01/Option_Arms-
+
+@print アンアンちゃん、<br>この真っ黒なブロッコリーみたいの食べる？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char AnAn.Pensive1
+
+@print いらん。食べたくないなら何故取ってきた。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Noah.Pensive1
+
+@print 見た目が面白かったから……うぅ、<br>残しちゃっていいかなぁ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "ノアがちらりと視界に入り、<br>私はすぐに目を<ruby=\"そ\">逸</ruby>らした。" { speed:1 waitInput:true Wait:true }
+
+@print 最近のノアはアンアンと食事をとっている。 { speed:1 waitInput:true Wait:true }
+
+@print "私とノアは何気ない<ruby=\"けんか\">喧嘩</ruby>から<ruby=\"みぞ\">溝</ruby>ができてしまい、<br>その時から少しよそよそしい関係になってしまった。" { speed:1 waitInput:true Wait:true }
+
+@print （……それでいい。<br>　私はもう誰とも親しくなるべきではない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "親しくなれば<ruby=\"ゆだん\">油断</ruby>や<ruby=\"すき\">隙</ruby>が生まれる。<br>明確な目的を抱いた今、ひとりでいるべきだと判断した。" { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@hideChars 
+@back SolidColor.Custom { time:0.5 }
+@Wait 0.5
+
+@print （そうだ……私はエマを殺す。<br>　考えるのはそのことのみだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print スプーンを持つ手に、ぐっと強い力を込める。 { speed:1 waitInput:true Wait:true }
+
+@print （だけど、ただ殺すだけではダメだ。<br>　犯行が明るみになれば、<br>　裁判で処刑されてしまう……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （やるなら、完全犯罪でないといけない。<br>　まずは計画を練らないと） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （誰にも私が犯人だとバレずに、<br>　エマを殺す方法を） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+@back 320_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@back SolidColor.Custom { time:0.5 }
+@Wait 0.5
+
+@print （マーゴがメルルを殺したように、<br>　凶器を使えば殺害自体は簡単だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@back 320_1 { time:0.5 }
+
+@print （マーゴが使ったあの剣……<br>身を守る武器にもなりそうだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print マーゴが凶器に使用した儀礼剣は<br>ゴクチョーが回収し、元あった金庫の中にしまわれた。 { speed:1 waitInput:true Wait:true }
+
+@print （金庫から持ち出せないことはないだろうが、<br>　怪しまれるような行動は避けるべきか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hide Stills
+@ResetText 
+
+# ゆっくり歩く足音・1人
+@sfx Sfx_97
+@Wait 1.5
+
+@print 不意に近付いてきた足音が、私の真横で止まる。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1
+
+@print 私が目を向けた先には、<br>物言いたげな表情のレイアが立っていた。 { speed:1 waitInput:true Wait:true }
+
+@print ……何か私に用でも？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print いや、用というわけではないんだが……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print "明らかに突き放している私に、<br>レイアは<ruby=\"きおく\">気後</ruby>れした様子を見せる。" { speed:1 waitInput:true Wait:true }
+
+@char Leia.Normal1
+
+@print なんだか気分が悪そうに見えたんだ。<br>だから少し、気になってね。<br>もし具合が良くないようなら――。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+@char Leia.Surprised1
+
+# 皿が割れる音
+@sfx Sfx_20
+
+@print ふざけてんのかてめえ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 突然、皿が割れる大きな音と怒声が響いた。 { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_26_2
+
+@char Nanoka
+@char Alisa.Angry1,ArmL6,Option-ArmL-Off,ArmL7
+
+@print "アリサがナノカの<ruby=\"むなぐら\">胸倉</ruby>を<ruby=\"つか\">掴</ruby>み、<br>さらに声を荒げる。" { speed:1 waitInput:true Wait:true }
+
+@print ウチは知らねえって言ってんだろ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print 本当に？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print しつこいんだよ！<br>いきなり人を泥棒呼ばわりしやがって！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print "２人はギリギリと間近で<ruby=\"にら\">睨</ruby>み合っている。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Surprised1,ArmR3
+
+@print ちょ、ちょっと……！<br>２人とも落ち着いて！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+@char Hanna.Angry1
+
+@print 慌てたエマたちが、アリサとナノカの間に立った。 { speed:1 waitInput:true Wait:true }
+
+@print 何をそんなに揉めているんです？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Nanoka
+
+@print リボンよ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print シェリーの疑問に、ナノカが短く淡々と返す。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Nanoka
+@char Hanna.Normal1
+
+@print "……はい？ なんですの？" { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Nanoka
+
+@print 私の髪リボンがなくなったの。<br>思い当たる場所は探したけど、見つからない。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print だから囚人の中に、泥棒がいる。<br>彼女が一番、怪しいと思った。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa.Angry1,ArmL6,Option-ArmL-Off,ArmL7
+
+@print なんだと、てめえ……！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print アリサが拳を振り上げる。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+@Wait 0.2
+@char Ema
+
+@print だっ、ダメだよ、アリサちゃん！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print うるせえな、引っ込んでろ！<br>おめえは関係ねえだろうが！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+@hideChars 
+@char Leia.Angry1
+
+@print ――そこまで！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"いっしょくそくはつ\">一触即発</ruby>の食堂内に、<ruby=\"りん\">凛</ruby>とした声が響いた。<br>全員の視線が集まる中、レイアが口を開く。" { speed:1 waitInput:true Wait:true }
+
+@char Leia
+
+@print アリサくん、ナノカくん。<br>ここは一旦、冷静になってほしい。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa.Angry1
+@char Nanoka
+@Wait 0.1
+@char Alisa
+@char Nanoka
+
+@print ……チッ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print …………。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print "堂々と力強い<ruby=\"こわね\">声音</ruby>に<ruby=\"けお\">気圧</ruby>されたのか、<br>アリサとナノカは無言で距離を置く。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia
+
+@print みんなも、気持ちをしっかり持つんだ。<br>どうか衝動的になるのを抑えてほしい。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print この状況を乗り切るには、<br>私たちが団結する必要がある。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_11_1
+@char Leia.Smile1
+
+@print マーゴくんやメルルくんのためにも……<br>せめて生き残った全員で、<br>ここを脱出しようじゃないか。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@Wait 0.5
+
+@print レイアは一度冷静になってから、ラウンジに集まるよう提案した。<br>全員で話し合いたいことがあるのだという。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Normal1
+
+@print ……ヒロくんも、どうか参加してほしい。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print （レイアは脱出に関して、何か策でも？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （……慣れ合うつもりはないが、<br>囚人たちの動向は把握しておきたい） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hiro
+@char Leia
+
+@print ……わかった。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1
+
+@print よかった……ありがとう！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@print "私の返答に、レイアは<br><ruby=\"あんど\">安堵</ruby>したような笑みを浮かべた。" { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter02/Act02_Chapter02_Adv02

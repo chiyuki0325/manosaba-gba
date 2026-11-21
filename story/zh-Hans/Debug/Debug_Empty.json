@@ -1,0 +1,10 @@
+{
+  "format": "manosaba.story",
+  "version": 1,
+  "language": "zh-Hans",
+  "path": "Debug/Debug_Empty",
+  "events": [
+    {"op": "Stop", "line": 1, "indent": 0, "params": {}}
+  ],
+  "translations": {}
+}

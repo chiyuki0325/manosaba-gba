@@ -1,0 +1,53 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+@back Transparent { time:1.2 }
+
+# Scene2-3-4
+
+# ========================================
+# ●シーン2‐3‐4
+# ========================================
+
+# ========================================
+# □マップイベント用分岐
+# ========================================
+
+# ========================================
+# 【ＭＡＰイベント】牢屋敷マップ
+# 中庭＞シーン2‐3‐5
+# ノアのアトリエ＞シーン2‐3‐6
+# 娯楽室＞シーン2‐3‐7
+# 牢屋敷前＞シーン2‐3‐8
+# ※全てのＭＡＰイベントを選択したら終了。
+# 選択済みの場所は消していってください。
+# ========================================
+
+@if "chosenAreaFlag == 15"
+	@set "chosenAreaFlag = 0"
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act02_Chapter03/Act02_Chapter03_Adv09
+
+@map Courtyard,NoahStudio,RecreationRoom,PrisonEntrance Courtyard,NoahStudio,RecreationRoom,PrisonEntrance
+
+@if "chosenAreaId==\"Courtyard\""
+	@setFlag 0
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act02_Chapter03/Act02_Chapter03_Adv05
+
+@if "chosenAreaId==\"NoahStudio\""
+	@setFlag 1
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act02_Chapter03/Act02_Chapter03_Adv06
+
+@if "chosenAreaId==\"RecreationRoom\""
+	@setFlag 2
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act02_Chapter03/Act02_Chapter03_Adv07
+
+@if "chosenAreaId==\"PrisonEntrance\""
+	@setFlag 3
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act02_Chapter03/Act02_Chapter03_Adv08
+
+@Stop

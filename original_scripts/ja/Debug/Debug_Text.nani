@@ -1,0 +1,188 @@
+@Gosub System/System_Subroutine.BeginAdv
+
+@back SolidColor { Scale:{g_backgroundDefaultScale} time:0 }
+@char Ema.Normal1 { time:0 }
+@back Transparent { time:0 }
+
+@Gosub .Text
+# @gosub .TextPrinter
+# @gosub .Ruby
+# @gosub .Author
+# @gosub .Choice
+
+@Stop 
+
+# ==============================================================================
+# Text
+# ==============================================================================
+
+# Text
+
+@print "Debug_Text # Text" { speed:1 waitInput:true Wait:true }
+
+@print "大したことないよ、大丈夫！<br>ああああああああああ<color=\"orange\">ああああああああああ</color>ああああああああああ<br>隝隯霳霻靃靍靏⾭靑顗顥飯飼餧館馞驎髙髜魵魲鮏鮱鮻鰀鵰鵫鶴鸙黑" { author:Unknown speed:1 waitInput:true Wait:true }
+
+@ifLang ja ja
+	@print 日本語です。 { speed:1 waitInput:true Wait:true }
+@Else 
+	@print 日本語ではありません。 { speed:1 waitInput:true Wait:true }
+
+@ifLang zh-Hans zh-Hans
+	@print 簡体字ではありません。 { speed:1 waitInput:true Wait:true }
+@Else 
+	@print 簡体字です。 { speed:1 waitInput:true Wait:true }
+
+@print "Debug_Text # Text ends." { speed:1 waitInput:true Wait:true }
+
+@Return 
+
+# ==============================================================================
+# Text Printer
+# ==============================================================================
+
+# TextPrinter
+
+@print "Debug_Text # TextPrinter" { speed:1 waitInput:true Wait:true }
+
+@printer Normal.Stream
+
+@print "Stream<br><ruby=\"ルビルビルビルビルビ\">あ</ruby>あああああああああああああああああああああああああああああ<br><ruby=\"ルビルビルビルビルビ\">あ</ruby>あああああああああああああああああああああああああああああ" { speed:1 waitInput:true Wait:true }
+
+@printer Normal.Default
+
+@print "Normal<br><ruby=\"ルビルビルビルビルビ\">あ</ruby>あああああああああああああああああああああああああああああ<br><ruby=\"ルビルビルビルビルビ\">あ</ruby>あああああああああああああああああああああああああああああ" { speed:1 waitInput:true Wait:true }
+
+@printer Normal.Simple
+
+@print "Simple<br><ruby=\"ルビルビルビルビルビ\">あ</ruby>あああああああああああああああああああああああああああああ<br><ruby=\"ルビルビルビルビルビ\">あ</ruby>あああああああああああああああああああああああああああああ" { speed:1 waitInput:true Wait:true }
+
+@print End { speed:1 waitInput:true Wait:true }
+
+@Return 
+
+# ==============================================================================
+# ルビ
+# ==============================================================================
+
+# Ruby
+
+@print "Debug_Text # Ruby" { speed:1 waitInput:true Wait:true }
+
+@print ■■■■■■■■■■ { speed:1 waitInput:true Wait:true }
+
+@print "■■<ruby=\"■■■■■■■■■■\">■</ruby>■■■■■■■" { speed:1 waitInput:true Wait:true }
+
+@print "■■<ruby=\"■■■■■■■■■■\">■</ruby>■■■■■■■<br><ruby=\"■■■■■■■■■■\">■■</ruby>■■■■■■■■<br><ruby=\"■■■■■■■■■■\">■■■</ruby>■■■■■■■" { speed:1 waitInput:true Wait:true }
+
+@print ■■■■■■■■■■<br>■■■■■■■■■■<br>■■■■■■■■■■ { speed:1 waitInput:true Wait:true }
+
+@print "■■<ruby=\"■■■■■■■■■■\">■</ruby>■■■■■■■<br><ruby=\"■■■■■■■■■■\">■■</ruby>■■■■■■■■<br><ruby=\"■■■■■■■■■■\">■■■</ruby>■■■■■■■" { author:Unknown speed:1 waitInput:true Wait:true }
+
+@print "■■<ruby=\"■■■■■■■■■■\">■</ruby>■■■■■■■<br><ruby=\"■■■■■■■■■■\">■■</ruby>■■■■■■■■<br><ruby=\"■■■■■■■■■■\">■■■</ruby>■■■■■■■" { speed:1 waitInput:true Wait:true }
+
+@print "■■<ruby=\"■■■■■■■■■■\">■</ruby>■■■■■■■<br>■■■■■■■■■■<br>■■■■■■■■■■" { speed:1 waitInput:true Wait:true }
+
+@print "■■■■■■■■■■<br><ruby=\"■■■■■■■■■■\">■■</ruby>■■■■■■■■<br>■■■■■■■■■■" { speed:1 waitInput:true Wait:true }
+
+@print "■■■■■■■■■■<br>■■■■■■■■■■<br><ruby=\"■■■■■■■■■■\">■■■</ruby>■■■■■■■" { speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"ルビルビルビルビルビ\">大</ruby>したことないよ、大丈夫！<br>ああああああああああああああああああああああああああああああ<br>ああああああああああああああああああああああああああああああ" { speed:1 waitInput:true Wait:true }
+
+@print "大したことないよ、大丈夫！<br><ruby=\"ルビルビルビルビルビ\">あ</ruby>あああああああああああああああああああああああああああああ<br>ああああああああああああああああああああああああああああああ" { speed:1 waitInput:true Wait:true }
+
+@print "大したことないよ、大丈夫！<br>ああああああああああああああああああああああああああああああ<br><ruby=\"ルビルビルビルビルビ\">あ</ruby>あああああああああああああああああああああああああああああ" { speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"ルビルビルビルビルビ\">大</ruby>したことないよ、大丈夫！<br><ruby=\"ルビルビルビルビルビ\">あ</ruby>あああああああああああああああああああああああああああああ<br><ruby=\"ルビルビルビルビルビ\">あ</ruby>あああああああああああああああああああああああああああああ" { speed:1 waitInput:true Wait:true }
+
+@Return 
+
+# ==============================================================================
+# 話者
+# ==============================================================================
+
+# Author
+
+@print "Debug_Text # Author" { speed:1 waitInput:true Wait:true }
+
+@print Naninovelのメタデータにのみ存在している話者名<br>（CharacterDataに存在しない） { author:EmaFake speed:1 waitInput:true Wait:true }
+
+@print ――ああ、エマ。待っていましたよ。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@print Ema { author:Ema speed:1 waitInput:true Wait:true }
+
+@print Hiro { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print Meruru { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print Hanna { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print Sherry { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print AnAn { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print Leia { author:Leia speed:1 waitInput:true Wait:true }
+
+@print Coco { author:Coco speed:1 waitInput:true Wait:true }
+
+@print Miria { author:Miria speed:1 waitInput:true Wait:true }
+
+@print Margo { author:Margo speed:1 waitInput:true Wait:true }
+
+@print Noah { author:Noah speed:1 waitInput:true Wait:true }
+
+@print Nanoka { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print Alisa { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print Warden { author:Warden speed:1 waitInput:true Wait:true }
+
+@print Jailer { author:Jailer speed:1 waitInput:true Wait:true }
+
+@Return 
+
+# ==============================================================================
+# 選択肢
+# ==============================================================================
+
+# Choice
+
+@ResetText 
+@QuickSave 2
+
+@print "Debug_Text # Choice" { speed:1 waitInput:true Wait:true }
+
+@choice "選択肢 A"
+	@print "選択肢 A が選ばれました。" { speed:1 waitInput:true Wait:true }
+	@goto .Choice1
+
+@choice "選択肢 B"
+	@print "選択肢 B が選ばれました。" { speed:1 waitInput:true Wait:true }
+	@goto .Choice1
+
+@choice "選択肢 C"
+	@print "選択肢 C が選ばれました。" { speed:1 waitInput:true Wait:true }
+	@goto Act01_Chapter01/Act01_Chapter01_Bad01
+
+@Stop 
+
+# Choice1
+
+@choice "選択肢 D"
+	@print "選択肢 D が選ばれました。" { speed:1 waitInput:true Wait:true }
+	@goto .Choice2
+
+@choice "選択肢 E"
+	@print "選択肢 E が選ばれました。" { speed:1 waitInput:true Wait:true }
+	@goto .Choice2
+
+@choice "選択肢 F"
+	@print "選択肢 F が選ばれました。" { speed:1 waitInput:true Wait:true }
+	@goto .Choice2
+
+@Stop 
+
+# Choice2
+
+@print "Choice end." { speed:1 waitInput:true Wait:true }
+
+@Return

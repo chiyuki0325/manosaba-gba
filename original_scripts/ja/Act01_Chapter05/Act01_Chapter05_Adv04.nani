@@ -1,0 +1,611 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-5-4
+
+# ========================================
+# ●シーン1‐5-4
+# ========================================
+
+# ========================================
+# ＞『秘密の地下施設』を選択
+# ========================================
+
+@back 25_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_26_2
+
+@print "ゲストハウス【<ruby=\"ウンディーネ\">水精</ruby>の間】に隠された<br>エレベーターを経由し――" { speed:1 waitInput:true Wait:true }
+
+@print エマがココと共にやってきたのは、<br>秘密の地下施設だった。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+@char Coco.Pensive1,ArmR10,ArmL8
+
+@print な、なんここ、さっっっむ……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 扉、閉まらないようにしておいてココちゃん。<br>……鍵がかかって閉じ込められちゃうから。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Surprised1,ArmR10,ArmL8
+
+@print ひっ……！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマも昨夜見つけたばかりで、<br>ココにとっては初めてくる場所だ。 { speed:1 waitInput:true Wait:true }
+
+@print ココはあたりの冷気と、加えて少しの恐怖を感じてか<br>がくがくと震えながら、<br>物珍しそうに周囲を見回している。 { speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1,ArmR10,ArmL8
+
+@print こんな場所あったんだ……<br>ここでエマっちが処刑台を操作して、<br>アリサを殺したってわけか。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Angry,ArmR3
+
+@print ……ッ、ボクは――。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマは反論しかけて、すぐに押し留める。 { speed:1 waitInput:true Wait:true }
+
+@print （今ボクがアリサちゃんを殺してないって主張しても、<br>　信じてもらえる材料がない……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （残された時間で、有効な手がかりを見つけないと） { author:Ema speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 写真撮影音
+@sfx Sfx_28
+# ========================================
+
+# ========================================
+# ☆証拠品：『操作室』入手
+# ========================================
+@spawn Clue
+@update 5-14
+@despawn Clue
+
+@print 室内をスマホで撮影してから、<br>エマは息をつく。 { speed:1 waitInput:true Wait:true }
+
+@print そんなエマの横で手持ち無沙汰にしていたココは、<br>手近にあった操作盤に目を向けた。 { speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1,ArmR1,ArmL1
+
+@print なにこれ？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Normal1,ArmR1
+
+@print それがゴクチョーが言ってた【操作盤】だよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （昨日の夜はゆっくり観察する余裕がなかったけど、<br>　これで処刑台を入れ替えているんだ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマは操作盤を改めて調べていく。 { speed:1 waitInput:true Wait:true }
+
+@print （ゴクチョーの話では、<br>　昨日の夜これをボクがいじったから処刑台が下がった） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （処刑台のユニットを入れ替える操作や<br>　扉の開閉もできるみたいだけど……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （改めて見ても、詳しい使い方はわからないや……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print はからずも自分がアリサに<br>手を下してしまった可能性を考えて、エマは青ざめる。 { speed:1 waitInput:true Wait:true }
+
+@print （今は考えたらダメだ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 時間も残されていない。<br>すぐに振り切って、なんとか心を平静に保った。 { speed:1 waitInput:true Wait:true }
+
+@print （……あれ？<br>　でも、おかしいな……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマは昨日、この場所に訪れた記憶を<br>思い出す。 { speed:1 waitInput:true Wait:true }
+
+@print （あのときたしか……<br>　操作盤は落として割っちゃったような） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （誰かが来て、<br>　新品と交換したのかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ★証拠品：『操作盤』情報更新
+# ========================================
+@spawn Clue
+@update 5-17
+@despawn Clue
+
+@char Coco.Pensive1,ArmR10,ArmL8
+
+@print なあエマっち、もういい？<br>奥の扉も鍵がかかって開かないみたいだしさ……。<br>さっさと出ないと寒すぎて死ぬ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+
+@print "……ごめん……！ もう少し待って。" { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Angry1,ArmR10,ArmL8
+
+@print だあっ、まさかあてぃしを<br>ここで凍死させる気なん！？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print ……もうあがいても仕方なくね？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ぶつくさ文句を言いつつも、<br>ココはエマの後ろについてくる。 { speed:1 waitInput:true Wait:true }
+
+@print エマは焦っていた。<br>差し迫る時間、<br>それに対して何も有効な手がかりを得られていない。 { speed:1 waitInput:true Wait:true }
+
+@print （どうしよう、どうしようどうしよう……！<br>　このままじゃボクが処刑に――！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （パニックになるな！<br>　冷静に、落ち着いて考えないと！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 寒さも思考力を奪っている。<br>エマはポケットに手を入れて、万年筆に触れた。 { speed:1 waitInput:true Wait:true }
+
+@print すると不思議なことに、<br>エマの体はほんの少しあたたかさを取り戻した。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR1
+
+@print あ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 驚きから万年筆を取り出して眺める。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （ボクのことを守ってくれてるの……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 一度目を閉じて、深呼吸してから目を開く。 { speed:1 waitInput:true Wait:true }
+
+@print それから操作室を見回してみると、<br>昨晩と違う箇所に気付いた。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@camera { time:0.9 }
+@Wait 0.9
+
+@print ――通気口が開いてる。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# 写真撮影音
+@sfx Sfx_28
+
+# ========================================
+# ☆証拠品：『通気口』入手
+# ========================================
+@spawn Clue
+@update 5-12
+@despawn Clue
+
+@print 通気口のフタが外れて、下に落ちている。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@camera { time:0.9 }
+@Wait 0.9
+
+@print 近くで確認すると、<br>フタの留め具が破壊されており、<br>破壊した銃弾が残っていた。 { speed:1 waitInput:true Wait:true }
+
+@print "（銃弾……！？ これ、まさかナノカちゃんが……！？）" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "中を<ruby=\"のぞ\">覗</ruby>くと、人ひとりがぎりぎり通れそうな幅があった。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3
+
+@print ここから中に入れそう！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Pensive1,ArmR10,ArmL8
+
+@print まさかエマっち、行く気じゃないよな……？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Normal1,ArmR3
+
+@print 入ってみよう……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Pensive,ArmR10,ArmL8
+
+@print マジかぁ～。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "エマはごくりと喉を鳴らし、<br>四つん<ruby=\"ば\">這</ruby>いになって通気口の中へと突入した。" { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+@back 26_1 { Scale:{g_backgroundDefaultScale} }
+@back Transparent.Custom { time:0.99 }
+@Wait 0.9
+
+@print ――エマとココがたどりついた先は、<br>広大な冷凍室だった。 { speed:1 waitInput:true Wait:true }
+
+@print 魔女の【なれはて】となった者たちが、<br>氷漬けにされて保管されている。 { speed:1 waitInput:true Wait:true }
+
+@print （ゴクチョーに聞いていたとおりだ。<br>　ここは……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （――魔女たちが眠る場所） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Surprised1,ArmR10,ArmL8
+
+@print "さむ！ 寒すぎ！ 無理！！" { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 冷凍室の中はあまりに寒く、<br>じっとしているだけで凍りついてしまいそうだ。 { speed:1 waitInput:true Wait:true }
+
+@print エマとココは、<br>広い室内を手分けして捜査にあたることにした。 { speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1,ArmR10,ArmL8
+
+@print ……なんかここの部屋、<br>あてぃし見たことある気がすんだけど。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print "いざ捜査をはじめようとした矢先、<br>ココが首を傾げて<ruby=\"つぶや\">呟</ruby>いた。" { speed:1 waitInput:true Wait:true }
+
+@char Coco.Surprised1,ArmR10,ArmL8
+
+@print "あっ、そうだ！ 今朝の夢の中で見たんだ！" { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+
+@print 夢の中……？<br>ココちゃん、それってどういう……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 声をかけた時には、<br>既にココの姿は物陰の向こうに消えていた。 { speed:1 waitInput:true Wait:true }
+
+@print （ボクも急いで調査しないと） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマは切り替えて、<br>目を凝らし、室内を調べていった。 { speed:1 waitInput:true Wait:true }
+
+@print （これって……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 写真撮影音
+@sfx Sfx_28
+
+# ========================================
+# ☆証拠品：『弾痕』入手
+# ========================================
+@spawn Clue
+@update 5-3
+@despawn Clue
+
+@print ――ナノカが発砲したのだろうか、<br>氷塊に弾痕が残っているのを見つけた。 { speed:1 waitInput:true Wait:true }
+
+@print 発砲の衝撃だろうか、<br>周辺には氷が散らばっている。 { speed:1 waitInput:true Wait:true }
+
+@print そしてそのすぐ傍には…… { speed:1 waitInput:true Wait:true }
+
+# 写真撮影音
+@sfx Sfx_28
+
+# ========================================
+# ☆証拠品：『ナノカの銃』入手
+# ========================================
+@spawn Clue
+@update 5-2
+@despawn Clue
+
+@print ナノカがいつも持ち歩いていた銃が、<br>冷凍室に落ちていた。 { speed:1 waitInput:true Wait:true }
+
+@print （ナノカちゃんの銃……。<br>　やっぱりさっきの弾痕は、<br>　ナノカちゃんが撃ったもの……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （わからないけど、<br>　やっぱりここで何かあったんだ……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print おーいエマっちこっち来て！<br>なんかスゲーもん見つけた！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print ココに呼ばれてエマが駆けつけると、<br>そこには巨大な金庫があった。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@back 26_1 { time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@char Ema.Normal1,ArmR1
+@char Coco.Normal1,ArmR1,ArmL1
+
+@print これココちゃんが開けたの？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print いや最初から開いてた。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print そうなんだ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （あ、数字を入力するところ、血がついてる……！<br>　怪我をした人が開けたのかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 写真撮影音
+@sfx Sfx_28
+
+# ========================================
+# ☆証拠品：『金庫』入手
+# ========================================
+@spawn Clue
+@update 5-10
+@despawn Clue
+
+@print 金庫は既に開かれた後で、<br>中には不可解なものがたくさん入っていた。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ☆証拠品：『透明な液体』入手
+# ========================================
+@spawn Clue
+@update 5-5
+@despawn Clue
+
+@print 何かの薬品らしき透明な液体の入ったビンが数本と―― { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ☆証拠品：『儀礼剣』入手
+# ========================================
+@spawn Clue
+@update 5-1
+@despawn Clue
+
+@print 厳かな雰囲気を醸す剣。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ☆証拠品：『拳銃』入手
+# ========================================
+@spawn Clue
+@update 5-6
+@despawn Clue
+
+@print そして、本物の拳銃。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ☆証拠品：『資料』入手
+# ========================================
+@spawn Clue
+@update 5-7
+@despawn Clue
+
+# ========================================
+# ☆【魔女図鑑】『研究員の調査書』入手
+# ========================================
+@update 13
+
+@print 更には、大量のレポートも入っていた。 { speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1
+
+@print 金庫の中に入ってたっつーことは、<br>かなり重要なものっぽいよな。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print あてぃしには何がなんだかわかんねーけど。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1
+
+@print うん……<br>ひとつひとつじっくり検討してる暇はないけど、<br>きっとこの牢屋敷にとって大切なものだと思う。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （……金庫が開いていたのは、<br>　ナノカちゃんが開けた……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （ナノカちゃんは牢屋敷の秘密を覗き見たから、<br>　殺されたのかも……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print とうとう牢屋敷の大きな秘密に迫っている気がして、<br>エマは身を震わせた。 { speed:1 waitInput:true Wait:true }
+
+@print （きっとボクらは真相にたどりつける――） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマがそんなことを考えていると、いつの間にか<br>いなくなっていたココの声が遠くから聞こえた。 { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆遠くから
+
+@print ……ちょっ、エマっち！！<br>こっちきてー！！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+# ＠備考◆遠くに返答するように
+
+@print どうしたのー？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print いいから早くきてよ！<br>これ……ヤバ……！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@hide MainBackground-Middle { time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@print エマが小走りでココの声がする方へと<br>向かう。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@back 26_1 { time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@print エマを出迎えたのは、巨大な門だった。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+@char Coco.Pensive,ArmR7,ArmL6
+
+@print 大きい……。<br>巨人でも通るのかな。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print や、やめてよ……。<br>そんなバケモンいるなんて<br>ありえないんだけど……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ココはその顔に恐怖を見え隠れさせつつ、<br>眼前の巨大な扉へと近付いた。 { speed:1 waitInput:true Wait:true }
+
+@print ……あ、エマっち！<br>こっから中が見える！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print "扉の下部に小さな<ruby=\"のぞ\">覗</ruby>き窓を見つけ、<br>ココがその場にかがんで興奮気味に声をあげた。" { speed:1 waitInput:true Wait:true }
+
+@print "エマも駆け寄って中を<ruby=\"のぞ\">覗</ruby>くと、<br>そこにはものものしい処刑台が見えた。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+@char Coco.Pensive1,ArmR7,ArmL6
+
+@print 処刑台……。<br>地上で処刑された魔女は、<br>地下へ送られてここを通るのかな。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ……こんな悪趣味な施設、<br>誰が作ったんだろ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print ……これまでの処刑を見てても、<br>本当に最低だった。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 少女たちの精神を、<br>極限まで追い詰めるためだけに<br>作られた装置と屋敷。 { speed:1 waitInput:true Wait:true }
+
+@print その処刑台を長く直視できず、<br>エマはすぐに立ち上がった。 { speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1,ArmR7,ArmL6
+
+@print ……うーん、これどうやっても<br>こっからは入れないわ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "ココはしばらく<ruby=\"のぞ\">覗</ruby>き窓から両腕を<br>ねじ込もうとしていたが、諦めて立ち上がる。" { speed:1 waitInput:true Wait:true }
+
+@print それは人がどうあっても出入りできない程度の<br>大きさのようだった。 { speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1,ArmR7,ArmL6
+
+@print 子どもでも通れなさそうだな～……。<br>猫とか小動物ぐらいなら通れっかも？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （ココちゃんの言う通り、<br>　この覗き窓を人が通ることは<br>　難しそうだ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print そもそもこの門、どうやって開けるんだろ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Pensive1,ArmR1,ArmL1
+
+@print さっきみたいな操作盤はなさそうだし、<br>簡単には開かないんじゃね？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （覗き窓のついた、開かない巨大な門……か） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 写真撮影音
+@sfx Sfx_28
+
+# ========================================
+# ☆証拠品：『巨大な門』
+# ========================================
+@spawn Clue
+@update 5-9
+@despawn Clue
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@back 26_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@char Coco.Pensive1,ArmR1,ArmL1
+
+@print あとこの部屋にあるのは……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1,ArmR2,ArmL4
+
+@print "……お！ あれなんかは重要そうな証拠じゃね？" { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# 写真撮影音
+@sfx Sfx_28
+
+# ========================================
+# ☆証拠品：『液体窒素』入手
+# ========================================
+@spawn Clue
+@update 5-4
+@despawn Clue
+
+@print （液体窒素……。<br>　処刑された魔女を凍らせるのに使うのかな……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1,ArmR10,ArmL8
+
+# ＠備考◆震えながら
+
+@print うー、サブッ……！<br>……他にはなんもなさそ？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ココは白い息を吐きつつ、<br>エマに尋ねる。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print そうだね……。<br>他に繋がる通路とかはなさそうだけど……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （この部屋自体は広いけど、<br>　地下にはこれ以上の先はないみたい） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （……だとしたら、ナノカちゃんはどうやって地下から<br>　処刑台側へ抜け出したんだろう……？<br>　あの【門】が開いたのかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ★証拠品：『処刑台』情報更新（地下側から入ることができない事を追記）
+# ========================================
+@spawn Clue
+@update 5-16
+@despawn Clue
+
+@char Coco.Fearful1,ArmR10,ArmL8
+
+@print だあっ、限界……！<br>もう無理あてぃし戻る！！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 寒さで青ざめたココが喚き、<br>通気口の方へと走っていく。 { speed:1 waitInput:true Wait:true }
+
+@print 限界だったのはエマも一緒で、<br>通気口の方へと向かった。 { speed:1 waitInput:true Wait:true }
+
+@print その途中、視界の端に映ったものが気にかかった。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR1
+
+@print ちょっと待ってココちゃん！<br>気になるものが……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Surprised1,ArmR10,ArmL8
+
+@print エマっちしつこすぎてキモいわ！！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 逃げ腰のココを半ば引きずって、<br>エマは壁際まで走った。 { speed:1 waitInput:true Wait:true }
+
+# 写真撮影音
+@sfx Sfx_28
+
+# ========================================
+# ☆証拠品：『レスキューボックス』入手
+# ========================================
+@spawn Clue
+@update 5-11
+@despawn Clue
+
+@print "――その目立つ箱の中には、<br><ruby=\"おの\">斧</ruby>や消火器、救急用具や裁縫道具などが入っていた。" { speed:1 waitInput:true Wait:true }
+
+@print （何かに使えたりするのかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （たくさん証拠品を入手できた） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （あとでしっかり魔女図鑑を確認しておこう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン1‐5‐2
+# 全てのイベントを消化している＞シーン1‐5‐5
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter05/Act01_Chapter05_Adv02

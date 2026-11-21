@@ -1,0 +1,225 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-1-8
+
+# ========================================
+# ●シーン1‐1-8
+# [back11]
+# ========================================
+
+# ========================================
+# ＞『娯楽室』を選択
+# ========================================
+
+# ========================================
+# [bgm Bgm_011_001_Loop]
+# ========================================
+
+@back 11_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+@bgm Bgm_11_1
+
+@print エマたちは囚人が最も利用するであろう、<br>２階にある娯楽室へとやってきた。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+
+@print おお、ここは正に憩いの場ですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 広い室内は、柔らかいカーペットで覆われて<br>くつろげるソファーもいくつかある。 { speed:1 waitInput:true Wait:true }
+
+@print チェスやボードゲーム、ビリヤード台……<br>大型スクリーンやプロジェクターまであった。 { speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive1
+
+@print そして、エマたちより先客がいた。<br>佐伯ミリアがソファに座っていたのだ。 { speed:1 waitInput:true Wait:true }
+
+@print 自然、エマとシェリーの視線は、<br>ミリアへ向けられた。 { speed:1 waitInput:true Wait:true }
+
+@print ミリアは８ミリフィルムで、<br>スクリーンに白黒映画を再生させていた。 { speed:1 waitInput:true Wait:true }
+
+@print ……はあ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print "映画はほぼ見ておらず、<ruby=\"うれ\">憂</ruby>いげなため息をつき。<br>気だるそうに手元のスマホをいじりはじめる。" { speed:1 waitInput:true Wait:true }
+
+@print 彼女の外見に合わせてなのか、<br>ミリアのスマホはキラキラした派手なデコカバーが<br>取り付けられていた。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Normal1
+@char Ema.Normal1
+
+@print なんだか安心しません？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print え？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1
+@print いやぁ、学校によくいる女子の光景だなぁって。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+
+@print （たしかに……派手グループにいそう……。<br>　口もきいたこともないタイプだけど……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ――と。 { speed:1 waitInput:true Wait:true }
+
+@char Miria.Surprised1,ArmR1,ArmL4
+
+@print わぁっ！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 唐突にミリアが肩をびくんと跳ねさせたので、<br>エマとシェリーも驚く。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Surprised1
+@char Ema.Surprised1
+@char Miria.Surprised1
+
+@print どうしましたミリアさん！？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive1
+
+@print あ、えっと……誰だっけ。<br>ごめん、まだ顔と名前一致してなくて。良くないよね。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print 駆け寄ったエマとシェリーを前に、<br>ミリアは戸惑いの表情を浮かべている。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+
+@print 橘シェリーです。この子は、桜羽エマさん。<br>で、何に驚いてたんですか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print そ、そう。スマホを見てたら、<br>いきなり猫耳の子が映って。<br>君らのスマホでも見れるかも。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print （スマホに映った……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマは持ち歩いている自分のスマホを取り出し、<br>起動させた。 { speed:1 waitInput:true Wait:true }
+
+@print すると、囚人一覧の『沢渡ココ』が、<br>配信中であるという表示が出ていた。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@printer Normal.Stream
+@back 1_1
+@blur MainBackground-Middle
+@char Coco.Normal1
+@Wait 0.3
+
+@print 表示させてみると、<br>画面にココの顔がアップで映る。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@printer Normal.Default
+@char Sherry.Normal1 { time:0 }
+@char Ema.Surprised1,ArmR1,ArmL7 { time:0 }
+@char Miria.Normal1 { time:0 }
+@hide MainBackground-Middle,Coco-Middle
+@Wait 0.3
+
+@print わぁっ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （ミリアちゃんと同じ反応しちゃった……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print へえ～このアプリ、配信もできるんですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print "シェリーも感心したように自分のスマホを見ている。<br>画面の中のココは、はしゃいだ様子で<ruby=\"しゃべ\">喋</ruby>りだす。" { speed:1 waitInput:true Wait:true }
+
+# 配信フレームIN
+# ＠備考◆配信中
+@ResetText 
+@printer Normal.Stream
+@back 1_1
+@char Coco.Smile1
+@Wait 0.3
+
+@print "どもども～ココたんだよ～！<br>今日からあてぃしの配信がはじまるよ～！ みんな見ろよ～！" { author:Coco speed:1 waitInput:true Wait:true }
+
+# ＠備考◆配信中
+
+@print "おっ、同接３！<br>良いペースなんじゃね？ 拡散宣伝よろしくぅ！" { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 最高同接でも、１１しかいないですよね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print それ、言っちゃダメなやつ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# ＠備考◆配信中
+
+@char Coco.Pensive1
+
+@print まずは、うーん……あてぃしの趣味について語るか。 { author:Coco speed:1 waitInput:true Wait:true }
+
+# ＠備考◆配信中
+
+@char Coco.Normal1
+
+@print あてぃしは推し活が趣味なのね。 { author:Coco speed:1 waitInput:true Wait:true }
+
+# ＠備考◆配信中
+
+@char Coco.Smile1
+
+@print "推し活こそ我が人生！ 推し以外生きてる価値なし！<br>ほかはみんな死ね！ って感じで――。" { author:Coco speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@printer Normal.Default
+@hide Sherry,Ema,Miria { time:0 }
+@hide MainBackground-Middle,Coco-Middle
+@Wait 0.3
+
+@print ほぼ同時に、<br>その場にいる全員が配信を閉じていた。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR3,ArmL1
+@char Ema.Normal1,ArmR3,ArmL1
+@char Miria.Normal1
+
+@print 時間の無駄でしたね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+
+@print それ、言っちゃダメなやつ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 沢渡ココは配信者としては特に魅力的でもなさそうだ、<br>という共通の認識が出来上がった。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print なんのために配信機能なんてついてるんだろう。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print せめてもの慰みじゃないですか？<br>私たちにとって身近なものですし。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 外との連絡手段になったりとかは……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ないでしょうね。<br>そんなザルだとは思えません。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+
+@print だよね……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマとシェリーは気持ちを切り替え、<br>娯楽室の探索をはじめた。 { speed:1 waitInput:true Wait:true }
+
+@print "エマがキャビネットの中を<ruby=\"のぞ\">覗</ruby>いてみると、<br>古びたフィルムが多数収められていた。" { speed:1 waitInput:true Wait:true }
+
+@print （ミリアちゃん、よくこんな古い映画の再生方法<br>　知ってたな……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "ソファーに座っているミリアは、<br>ぼんやりと白黒映画を眺めたまま<ruby=\"びどう\">微動</ruby>だにしない。" { speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive1,ArmR6,ArmL1
+
+@print はあぁ……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print （なんか……心病んでる……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 他にこれといって何も見つからず、<br>エマとシェリーは室内を後にすることにした。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン1‐1‐7
+# 全てのイベントを消化している＞シーン1‐1‐12
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter01/Act01_Chapter01_Adv11

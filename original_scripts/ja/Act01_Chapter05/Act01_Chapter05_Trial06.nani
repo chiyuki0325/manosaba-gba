@@ -1,0 +1,560 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act01_Chapter05/Act01_Chapter05_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+@char Warden.1 { Position:,{hiddenCharacterPositionY} time:0 }
+# ==============================================================================
+# MARK: 5-6: 💬 メルルができない理由
+# ==============================================================================
+
+# Judge5-6-1
+
+# BGM変更：AccUhEarts(Vocal無)
+@bgm Bgm_15_1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Meruru.Normal2
+@gosubModifyCamera 0
+@printDebate 私はそんな強い力は<br>持ってないので、<br>大きな傷を治すなんて<br>無理です……！
+
+@char Meruru.Normal2,Eyes2_Cry_Closed3
+@gosubModifyCamera 0
+@printDebate それに、<br>死体の傷を治すなんて……！<br>そんなこと、<br>考えたことも<br>ありませんでした……。
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@printDebate ……そういえば<br>前にシェリーちゃんが<br>傷を負った時も<br>メルルちゃんは<br>治しきれてなかったわね。
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@printDebate 本当にメルルちゃんに<br>大きな傷を治す力が<br>あるのかしら？
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@printDebate "つか、ナノカの体を<br>細切れにしたっていうけど……<br>それなら<link=\"Objection_01_05_06_01\">服</link>は<br>どうすんの？"
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@printDebate たしかにそれもそうね。
+
+@char Margo.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@printDebate エマちゃんの推理だと、<br>犯人はナノカちゃんを<br>撃ったことになる<br>みたいだけど……。
+
+@char Margo.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@printDebate "でもナノカちゃんの服に、<br>撃たれたような<link=\"Objection_01_05_06_02\">痕跡</link>は<br>残っていなかったわ？"
+
+@char Coco.Default,ArmR2,ArmL4,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@printDebate "エマっち、<br>それでもメルちゃんが<br><link=\"Objection_01_05_06_03\">ヤった</link>って<br>言ってんの？"
+
+@char Meruru.Normal2,Eyes2_Uncomfortable_Open1
+@gosubModifyCamera 0
+@printDebate エマさんは<br>そう信じたいんで<br>しょうけど……。
+
+@char Meruru.Normal2,Eyes2_Pensive_Open2,Mouth2_Surprised_Open2
+@gosubModifyCamera 0
+@printDebate "でも実際、<br>ナノカさんの傷が<br>治ったなんて<br><link=\"Objection_01_05_06_04\">証拠はありません</link><br>よね？"
+
+@char Meruru.Normal2,Eyes2_Normal_Open2,Mouth2_Smile_Closed1
+@gosubModifyCamera 0
+@printDebate エマさん……。<br>私、あなたのこと……<br>信じてますから……！
+
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed { time:0 }
+@gosubModifyCamera 0
+@Wait 0.2
+
+# ==============================================================================
+# 5-6議論後独白
+# ==============================================================================
+
+@print （……ナノカちゃんの残した【口の中の傷】。<br>　もしメルルちゃんの魔法を伝えようとしたのなら……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@print （ナノカちゃんはその時、すでに傷を負っていたのかも……！<br>　そのことが証明できれば……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge5-6-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_01_05_06_01
+
+@Skip false
+@pauseTrial true
+
+@choice 服もなおした
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge5-6-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_01_05_06_02
+
+@Skip false
+@pauseTrial true
+
+@choice 銃弾が残っている
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge5-6-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_01_05_06_03
+
+@Skip false
+@pauseTrial true
+
+@choice メルルはヤってない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge5-6-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論4
+# ------------------------------------------------------------------------------
+
+# Objection_01_05_06_04
+
+@Skip false
+@pauseTrial true
+
+@choice 証拠は必要ない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge5-6-5
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 5-6: ❌ 議論ミス選択肢
+# ==============================================================================
+
+# MARK: 5-6-3: ❌ 銃弾が残っている
+
+# Judge5-6-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ナノカちゃんの銃の残された１発……<br>それはナノカちゃんの体に撃ち込まれたはずだよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print だからナノカちゃんの体には、<br>まだ銃弾が残っているはずだ！<br>それを探せば……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print どうやって？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print え？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print 仮にナノカちゃんの体に残っているとして……<br>弾丸はどこに入っているのかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print 今から体をぐちゃぐちゃになるまで引き裂いて、<br>どこに弾丸があるのか探してみる？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print そ、それはその……！<br>金属探知機を使うとか……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print じゃあその金属探知機はどこにあんだよ！<br>屏風の中か！？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （たしかに探し出す方法はないかも……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （何かメルルちゃんの力を<br>　説明できるものはないかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （実際に証拠にならなくても……<br>　可能性を積み上げて、マーゴちゃんと<br>　ココちゃんに訴えかけられれば……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge5-6-1
+
+# MARK: 5-6-4: ❌ メルルはヤってない
+
+# Judge5-6-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print そうか……！<br>メルルちゃんはナノカちゃんを殺してないのかも！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print は？<br>じゃあなに？<br>ナノカは勝手に死んだん？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print いやそれは……直接殺してないって意味で……<br>他のことはヤってるというか……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print どっちだよ！！<br>あやふやすぎんだろ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （迷走しちゃったみたい……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （何かメルルちゃんの力を<br>　説明できるものはないかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （実際に証拠にならなくても……<br>　可能性を積み上げて、マーゴちゃんと<br>　ココちゃんに訴えかけられれば……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge5-6-1
+
+# MARK: 5-6-5: ❌ 証拠は必要ない
+
+# Judge5-6-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ナノカちゃんの傷が治った証拠なんて必要ないんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print だってナノカちゃんの死体を<br>地下処刑台の覗き穴に通すためには、<br>いったんバラバラにしてから治す必要があるからね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print でもその必要があるのは、<br>エマちゃんの証言が正しかったら……<br>という条件付きよ？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print エマちゃんがナノカちゃんを殺していれば<br>トリックなんて必要ないものね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print それに……メルちゃんが綺麗に傷を治せるとしても、<br>エマっちの推理じゃ説明できないこと多すぎん？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print ちょっと強引に進め過ぎじゃねーの？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （たしかに根拠を示せてないかも……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （何かメルルちゃんの力を<br>　説明できるものはないかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （実際に証拠にならなくても……<br>　可能性を積み上げて、マーゴちゃんと<br>　ココちゃんに訴えかけられれば……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge5-6-1
+
+# ==============================================================================
+# MARK: 5-6-2: ⭕ 服もなおした
+# ==============================================================================
+
+# Judge5-6-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+# @gosubCutIn Ema index:1
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print きっと……メルルちゃんは<br>服も治したんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print はあ！？<br>ちまちま裁縫したってーの！？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print さすがに無理があるわ、エマちゃん。<br>撃たれた跡も残らないように修繕するなんて、<br>それこそ魔法よ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR2-1,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ……そう、魔法なんだよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print ……え？ { author:Margo speed:1 waitInput:true Wait:true }
+
+# Judge5-6-6
+
+@char Ema.Default,ArmR2-1,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print メルルちゃんが無機物さえも治すことができた<br>強力な魔法の使い手だったという証拠……<br>それは、これだ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# アイテム選択
+@evidence Clue
+
+# 操作盤
+@if "chosenEvidenceId==\"5-17\""
+	@goto .Judge5-6-7
+
+# レスキューボックス
+@if "chosenEvidenceId==\"5-11\""
+	@goto .Judge5-6-8
+
+# 汎用選択ミス
+@goto .Judge5-6-10
+
+# ==============================================================================
+# ミス選択肢
+# ==============================================================================
+# MARK: 5-6-8: ❌ レスキューボックス
+
+# Judge5-6-8
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print レスキューボックスの中には<br>裁縫をする為の道具が入っていた……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print つまりメルルちゃんは、<br>どんな服でも綺麗に直す、<br>【裁縫の魔女】だったんだよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# ＠備考◆笑顔
+
+@char Margo.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Closed,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print 却下。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （一言で否定されちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （さすがに手で直すのは難しいか……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （でもボクはどこかで見た気がする……！<br>　【無機物が治療された可能性】を……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge5-6-6
+
+# MARK: 5-6-10: ❌ 汎用選択ミス
+
+# Judge5-6-10
+
+@char Meruru.Normal1,ArmR1_1,ArmL8,Eyes1_Pensive_Open2,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print ……その証拠では<br>【私が服を直した証明】には、<br>ならないと思います……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal1,ArmR1_1,ArmL8,Eyes1_Pensive_Open1,Mouth1_Fearful_Open1
+@gosubModifyCamera 0
+@print エマさん……<br>どうして、私を疑うんですか……？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （心が痛い……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Ema.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （でもボクはどこかで見た気がする……！<br>　【無機物が治療された可能性】を……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge5-6-6
+
+# ==============================================================================
+# MARK: 5-6-7: ⭕ 【操作盤】
+# ==============================================================================
+
+# Judge5-6-7
+
+# カットイン
+@gosubCutIn Ema
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ボクが最初に地下の操作室に入ったとき……<br>操作盤を落として壊しちゃったんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print は？<br>最悪じゃん。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR5,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print あ、慌ててたんだ……！<br>わざと壊したわけじゃなくて……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR5,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print で、でも、それはおかしいんだよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print だってさっきボクがココちゃんと一緒に<br>もう一度行ったとき……<br>そのパネルは元に戻ってたんだもん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print ……たしかに壊れてたとこはなかったけど。<br>それで何が言いたいワケ？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print たぶんだけど……<br>メルルちゃんの魔法はすごく強力で、<br>生き物以外でも治せるんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print だからメルルちゃんは、<br>地下でボクが壊しちゃった操作盤を<br>魔法で治したんだよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print メルルちゃんの魔法は<br>【機械ですら治療する】……<br>エマちゃんはそう言いたいわけね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print うん。それならナノカちゃんの服に<br>破れたあとや血痕が残っていなくても<br>不思議じゃないよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print ……もしもそれが本当だとしたら、<br>メルルちゃんは自分の魔法が<br>とても弱いものだと偽っていたということかしら。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print うん。きっとそうだと思う。<br>これまでバレないよう、<br>調整してたんだ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print ……だ、そうだけど。<br>どうなのかしら？<br>メルルちゃん。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal2,Eyes2_Angry_Open1
+@gosubModifyCamera 0
+@print そ、そんなこと、ありえません……！<br>エマさんの勝手な想像で……！<br>私は……いつも本気で……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print ……じゃあさ。<br>エマっちの話ってなんか証拠はあんの？<br>メルちゃんが嘘ついてるって証拠。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print あてぃしらはその【落とした操作盤】も<br>見てないんだけど？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print そ、それは……！<br>……今はないけど……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char Meruru.Normal2,ArmR4_2,ArmL4,Eyes2_Angry_Open1,Mouth2_Surprised_Open2
+@gosubModifyCamera 0
+@print ……そうです！<br>エマさんの推理はすべて、<br>エマさんの視点のお話のはずです……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal2,ArmR5_2,ArmL4,Eyes2_Angry_Open1,Mouth2_Surprised_Open2
+@gosubModifyCamera 0
+@print きっとエマさんは何か勘違いしているか……<br>幻覚でも見せられていたりするんじゃ<br>ないでしょうか……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print そ、そんなことないよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal2,ArmR5_2,ArmL4,Eyes2_Angry_Open1,Mouth2_Surprised_Open2
+@gosubModifyCamera 0
+@print エマさん……目を覚ましてください！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+
+
+@goto Act01_Chapter05/Act01_Chapter05_Trial07

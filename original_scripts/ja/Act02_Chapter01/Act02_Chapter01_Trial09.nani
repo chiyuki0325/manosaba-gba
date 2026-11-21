@@ -1,0 +1,695 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter01/Act02_Chapter01_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+@char Warden { Position:,{hiddenCharacterPositionY} time:0 }
+# ==============================================================================
+# MARK: 6-9: 💬 マーゴが犯行不能な理由
+# ==============================================================================
+# ＠ト書き▼議論6-9 マーゴが犯行不能な理由
+
+# Judge6-9-1
+
+# BGM変更：HirO（Voなし）
+@bgm Bgm_37_1_Loop
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@printDebate さっきの話にも<br>あったように、<br>現場の床には白い塗料が<br>塗られていたわ。
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@printDebate これはノアちゃんが<br>塗ったのよね？
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Smile_Closed
+@gosubModifyCamera 0
+@printDebate うん。<br>そうだよー。
+
+@char Leia.Default,ArmR8,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@printDebate 塗料は事件当時、<br>まだ乾いていなかったはずだ。<br>その状況は<br>みんなが確認している。
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate なら……<br>犯人が現場に<br>足を踏み入れたら<br>その痕跡が残るはずよ。
+
+@char Sherry.Default,ArmR2,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate たしかに<br>その通りですね！
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@printDebate "でも、そこにあったのは<br>ヒロちゃんと<br><link=\"Objection_02_01_09_01\">メルルちゃんの足跡</link>だけ。<br>現場に他の足跡はなく、<br><link=\"Objection_02_01_09_02\">足場になるようなもの</link>も<br>なかった……。"
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@printDebate だからね、<br>そもそも私には<br>犯行が不可能なの。
+
+@char Margo.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@printDebate 近くにいたヒロちゃんか……<br>もしくは、<br>空を飛べるハンナちゃんにしか<br>犯行はできないのよ。
+
+
+
+# ==============================================================================
+# 6-9議論後独白
+# ==============================================================================
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@Wait 0.2
+
+@print （エマが嘘をついていなかったとしたら、<br>　マーゴが嘘をついていることになる……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （エマを疑いから外したわけではないけれど、<br>　どちらが犯人であれ<br>　この問題は解決しなければいけない問題だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Open1
+@print （【足跡が存在しない部屋】という名の密室……<br>　これを犯人が突破した方法は必ずある） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （逆に……マーゴが犯人なら、<br>　ハンナのように魔法で突破は不可能ということだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@print （現場に見落としがないか……もう一度確認してみよう！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge6-9-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_01_09_01
+
+@Skip false
+@pauseTrial true
+
+@choice メルルの靴を使った
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge6-9-3
+
+@choice メルルの足跡の上を通った
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge6-9-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_02_01_09_02
+
+@Skip false
+@pauseTrial true
+
+@choice 足場はあった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge6-9-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 6-9: ❌ 議論選択肢
+# ==============================================================================
+# MARK: 6-9-3: ❌ 反論・メルルの靴を使った
+
+# Judge6-9-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print メルルの足跡さえあれば十分なのさ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print マーゴ、君はメルルの靴を使って<br>現場に踏み込んだんだよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR9,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print で、でもそれってどうやったのかな……？<br>死体発見時、メルルちゃんは靴を履いてたんだよね……？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print メルルの靴を履いたあと、<br>あらかじめ気絶させていたメルルを運び<br>現場に置いて殺した……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print その後、靴をメルルに履かせれば<br>現場にはメルルの靴跡しか残らないよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print それはどうかしらね？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print ヒロちゃんは帰りの足跡のことを想定していないわ？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 足跡というのは、行きと帰りどちらも残るものなのよ？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01
+@gosubModifyCamera 0
+@print あ……たしかに。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print 推理にムリがあるわ、ヒロちゃん。<br>いくら処刑されたくないからって……ねえ？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print 無理筋の言い訳も大概にしないとダメよ♡ { author:Margo speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （言い訳扱いされてしまった……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （だが現在最も怪しいのはマーゴだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （彼女が現場に足跡を残さなくて済むように<br>　使えたもの……何かなかっただろうか？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge6-9-1
+
+# MARK: 6-9-4: ❌ 反論・メルルの足跡の上を通った
+
+# Judge6-9-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print ……マーゴは、<br>現場に入ったメルルの足跡の上だけを通ったんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print そしてメルルを殺したあとは、<br>またその足跡だけを注意深く踏んで外に出ればいい。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print ……それは、難しいんじゃないかな。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print 一歩も動かずに<br>相手を滅多刺しにするなんて、難しいと思うのだけれど……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print そうねえ……<br>それに現場の塗料は乾いていなかったのだから――。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print 犯人が足跡の上を歩いたら、<br>【もう一度踏んだような痕跡】が残るんじゃないかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL8,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print そんな痕跡は……なかったかも。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print じゃあやっぱり私に犯行は無理ね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print 現場の足跡から判断するなら、<br>最も怪しいのはヒロちゃん……あなたよ♡ { author:Margo speed:1 waitInput:true Wait:true }
+
+# [damage]
+
+@char Hiro.Normal1,ArmR12,ArmL5,Eyes1_Normal_Closed1,Mouth1_Angry_Open1,Sweat1-1
+@gosubModifyCamera 0
+@print （……かえって私への容疑が深まってしまった） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （だが現在最も怪しいのはマーゴだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （彼女が現場に足跡を残さなくて済むように<br>　使えたもの……何かなかっただろうか？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge6-9-1
+
+# ==============================================================================
+# MARK: 6-9-2: ⭕ 反論・足場はあった
+# ==============================================================================
+
+# Judge6-9-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+# カットイン
+@gosubCutIn Hiro
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,Arms3,Eyes1_Painful_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print 現場に足場がなかったって……？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print やれやれ、そんな言葉で誤魔化されるほど<br>私の目は節穴じゃあない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,Arms3,Eyes1_Angry_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print そうだろう、レイア。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・ネガティブ音
+@sfx Sfx_Common_7
+
+# ＠備考◆わからない／自信なさげ
+
+@char Leia.Surprised1,ArmR8,ArmL1
+@gosubModifyCamera 0
+@print えっ！？<br>あ、あ……ああ……。<br>そうだね……そ、そうかも……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Pensive_Open1,Mouth1_Normal_Closed1
+@gosubModifyCamera 0
+@print ……まったく、頼りないリーダーだな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print 君たちだって死体を発見したとき、<br>そこに足場があったのは見えていただろうに。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR2,ArmL8,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open02,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print なら、キミには提示できるというのかい……！<br>ヒロくん……！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR10,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open02,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print 犯人が塗料に足跡を付けずに、<br>部屋の中へと入った道を！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print もちろんだとも。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,Arms3,Eyes1_Angry_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print ある程度の身のこなしは必要だったかもしれないが……<br>犯人が足場にしたのは……これだ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# Judge6-9-5
+
+@evidence Clue
+
+# 倒れていたヒロ
+@if "chosenEvidenceId==\"6-1\""
+	@goto .Judge6-9-6
+
+# メルルの死体
+@if "chosenEvidenceId==\"6-3\""
+	@goto .Judge6-9-7
+
+# 睡眠薬のビン
+@if "chosenEvidenceId==\"6-4\""
+	@goto .Judge6-9-8
+
+# 汎用選択ミス
+@goto .Judge6-9-9
+
+# MARK: 6-9-7: ❌ 選択・メルルの死体
+
+# Judge6-9-7
+
+@char Hiro.Normal1,ArmR6,Arms3,Eyes1_Angry_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print 犯人は……メルルを踏みにじりながら、<br>滅多刺しにしたんだよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print ふふ、それはおかしいわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print メルルちゃんが倒れたのは刺されたあとでしょう？<br>それを足場にするなんて、順序が真逆よ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR3,ArmL1,Eyes1_Normal_Open2,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print ……それに死体と入口の距離から考えると<br>氷上メルルの体に一息で飛び乗ったことになる……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR1,ArmL10,Eyes1_Angry_Open1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print 少し現実的ではないわね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Closed,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print 推理がアクロバティックすぎですわー！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （発想を飛躍させすぎたようだ……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （……現場の状況をもう１度思い出そう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （現場には【足場】となるものがあったはずだ……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge6-9-5
+
+# MARK: 6-9-8: ❌ 選択・睡眠薬のビン
+
+# Judge6-9-8
+
+@char Hiro.Normal2,ArmR6,Arms3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 睡眠薬のビン……これを足場にしたんだよ！<br>足場にしたせいで割れてしまって――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open02
+@gosubModifyCamera 0
+@print 小さすぎるだろ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open02
+@gosubModifyCamera 0
+@print しかも割れてるし。<br>割れたら足が床につくじゃねーか。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print てか、それに乗ってメルちゃん滅多刺しにしたん？<br>足場グラッグラじゃね？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print 【ある程度の身のこなし】ってレベルじゃねーな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （無理がある推理だったか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （……現場の状況をもう１度思い出そう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （現場には【足場】となるものがあったはずだ……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge6-9-5
+
+# MARK: 6-9-9: ❌ 汎用選択ミス
+
+# Judge6-9-9
+
+@char Leia.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Middle,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ヒロくん……<br>それを足場にするのは無理じゃないかな……？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （足場には相応しくないか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （……現場の状況をもう１度思い出そう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （現場には【足場】となるものがあったはずだ……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge6-9-5
+
+# ==============================================================================
+# MARK: 6-9-6: ⭕ 選択・倒れていたヒロ
+# ==============================================================================
+
+# Judge6-9-6
+
+# カットイン
+@gosubCutIn Hiro
+@Gosub System/System_Subroutine.EndDebate-Last
+@StopBgm 
+
+@char Ema.Surprised1,ArmR3,ArmL1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print それって……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print ……まったく。<br>こんな屈辱的なことを<br>解説させられるとは。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Painful_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print 犯人が足場にしたもの、それは。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# BGM変更：HirO（Voなし）
+@bgm Bgm_37_1_Loop
+
+# SE・明るい音
+@sfx Sfx_Common_2
+
+@char Hiro.Normal1,ArmR6,Arms3,Eyes1_Angry_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print 【現場に倒れていた私の体】だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+# ＠備考◆驚愕
+
+@char Leia.Surprised1,ArmR8,ArmL4
+@gosubModifyCamera 0
+@print ヒロくんを……踏み台にしたっ！？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print 君たちにとって、<br>私は【メルルを殺してから倒れた犯人】だった……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Closed1,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print その先入観があったために、<br>犯人が私を足場にしたなんて気付かなかったんだろう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Painful_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print ……でも、それは時系列が間違っていたんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+# Trick4-6-9-6
+
+# ==============================================================================
+# ■図説を表示する -ピクトグラム
+# ==============================================================================
+
+# ヒロが倒れており、メルルが駆けつける
+
+@back 6_9_1 { Scale:{g_backgroundDefaultScale} }
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Determined_Open1
+
+@print まず現場に倒れていたのは私だ。<br>そして、そのあとにメルルが部屋の中に入った……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@back 6_9_2
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Normal_Closed1
+@print つまりメルルの横には、<br>最初から私という名の足場が存在したんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Angry_Open
+@print じゃあ犯人さんは、<br>どんな風にメルルちゃんを殺したのかな？ { author:Noah speed:1 waitInput:true Wait:true }
+
+# 飛び乗る犯人
+@back 6_9_3
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@print まず犯人は中に入ったメルルに近付くため、<br>私の体に飛び乗った……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 刺す
+@back 6_9_4
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Determined_Open3
+@print そして間髪入れずにメルルを刺し殺す。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 倒れるメルルに飛び乗って刺す
+@back 6_9_5
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Smile_Open1
+@print 犯人は倒れたメルルに追い打ちをかけ、<br>何度か突き刺し……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 倒れたヒロに飛び移る
+@back 6_9_6
+@print もう１度私に飛び乗って、<br>足跡を残さないよう注意しつつ外へ出た。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,Arms3,Eyes1_Angry_Open1,Mouth1_Smile_Open1
+@print 気絶した私を踏み台にして跳躍したなら、<br>現場に足跡を残さずにメルルを殺すことは可能だよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 図説終了
+@hide Hiro-tricker,Noah-tricker
+@hide Tricks
+
+@char Nanoka.ArmR3,ArmL1,Eyes1_Normal_Open2,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print ……立ち幅とびで考えるなら、可能だと思うわ。<br>現実的に飛べる範囲ね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print で、でも……！<br>犯人は本当にそんなことしたのかな……！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print 現場にはそんな証拠、残されてなかったと思うけど……！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print 【やったかどうか】はあまり重要ではないよ。<br>【やれたかどうか】が問題なんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,Arms3,Eyes1_Angry_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print 犯行が可能であるのなら、<br>それは検討に値することだよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR4,ArmL1,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print なるほどね……。<br>怖いわ、ヒロちゃん。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR4,ArmL1
+@gosubModifyCamera 0
+@print あなたにかかれば……<br>無実の罪でも処刑されてしまいそうよ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL8,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print そっくりそのまま返そうか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+# ＠備考◆凄み
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 君の詭弁……<br>私に通じると思わないことだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆睨み
+
+@char Margo.Default,ArmR4,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open,Angle01/Facial/Mouth>Mouth_Angry_Closed
+@gosubModifyCamera 0
+@print …………。 { author:Margo speed:1 waitInput:true Wait:true }
+
+# ＠備考◆睨み
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Angry_Open1,Mouth2_Determined_Closed1
+@gosubModifyCamera 0
+@print …………。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・ネガティブ音
+@sfx Sfx_Common_7
+
+@char Miria.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Confused_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ま、待った待った！<br>冷静に……冷静に話し合おう！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ヒ、ヒロちゃんがマーゴちゃんを疑うのはわかるけど、<br>マーゴちゃんにはアリバイがあるんじゃないかな？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR8,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print いいや。<br>それはとっくの昔に崩れているよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR8,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 君たちが死体発見の直前に聞いた<br>【ガラスの割れる音】……<br>これが偽装だったんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print 本来の殺害時刻は、【死体発見の４０分前】……<br>レイアがガラスの割れる音を聞いた時だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print そのときが犯行時刻だとしたら、<br>マーゴのアリバイなんて存在はしない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print ……たしかに私はそのとき、１人でいたわね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print ナノカちゃんたちとラウンジで合流したのはその後。<br>アリバイを証明できる人物は、誰もいないわ？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print そ、そうなんだ……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Margo.Default,ArmR1,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Open,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print でもね……。<br>ヒロちゃんの推理の通りだと、<br>私が犯人だと成立しないことがあるのよ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print "それはね……【メルルちゃんのスマホ】の<ruby=\"ありか\">在処</ruby>よ。" { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,Arms3,Eyes2_Angry_Open1,Mouth2_Fearful_Open1
+@gosubModifyCamera 0
+@print なに……？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print ……順を追って説明してあげるわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@goto Act02_Chapter01/Act02_Chapter01_Trial10

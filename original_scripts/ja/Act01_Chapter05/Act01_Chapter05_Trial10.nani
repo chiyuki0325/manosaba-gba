@@ -1,0 +1,176 @@
+@gosubResetBook System/System_ResetWitchBook
+@set "isReenact = true"
+@printer Normal.Simple { time:0 }
+@Gosub System/System_Subroutine.BeginAdv
+
+# ==============================================================================
+# 絵本パート 氷上メルルの物語
+# ==============================================================================
+# ＠ト書き▼5話 絵本パート
+
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# BGM変更：ボクとワタシの
+@bgm Bgm_19_1
+
+# Judge5-10-1
+
+# 【1P目イラスト】
+# アリサに薬瓶を渡すメルル
+@spawn Reenact_Ch01_E05_S01
+@Wait 1.5
+
+# ＠備考◆ここから1人独白するように
+
+@print それは……長い長い物語……。<br>その中の、ほんの少しの短い一幕……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print ……さて、どこから話しましょうか。<br>そうですね……まずはアリサさんについて。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print ……アリサさんが死にたがっていたのは、<br>本当なんですよ。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print アリサさんは今ならまだ睡眠薬を飲み過ぎるだけでも<br>死ねると思っていたようでした。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print でも、そのときすでに魔女化は進行しており<br>もう手遅れだったんです。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print なので私は魔女を殺す薬……トレデキムを渡したんです。<br>睡眠薬のビンに入れ替えて、睡眠薬と偽って渡しました。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print アリサさんは最後に……<br>【ありがとう】って感謝してくれたんです……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print あとは……私は何もしていません。<br>彼女は勝手に死んだだけですから。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print ナノカさんについても……殺すつもりなんてなかったんです。<br>でも……彼女は、読み取ってしまったから……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch01_E05_S01
+@Wait 1.5
+
+# 【2P目イラスト】
+# 間に敷居がある2つの部屋に、ナノカとメルルがいる。
+@spawn Reenact_Ch01_E05_S02
+@Wait 1.5
+
+@print 今朝、私が地下に入ると、操作室の操作盤が割れていました。<br>どうして落ちていたのかわかりませんでしたけど……<br>そのときは、魔法で治しておいたんです。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 私の魔法は、時間を戻すようになんでも治してしまう<br>とても強い力をもった魔法なので。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 操作盤のことがあったので、<br>誰かが地下に侵入したんだと思いました。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print だから冷凍室を見て回って……<br>異常がないことを確認していたんです。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print ……そんな時でした。<br>ナノカさんが操作室に入ってきたのは。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch01_E05_S02
+@Wait 1.5
+
+# 【3P目イラスト】
+# 2の差分で、銃を置いてナノカが通気口に入っている
+# このあたりの要点としては、
+# 「メルルが奥の部屋にいる間に通気口に入ったナノカとすれ違った」ということがわかればOK
+# 簡易的な横構図にしているのは、この話は説明することが多いので差分でなんとかできないかな……？という意図
+@spawn Reenact_Ch01_E05_S03
+@Wait 1.5
+
+@print ナノカさんは銃で通気口のフタを破壊し、中に入ったようでした。<br>扉を開けられず、強引に冷凍室に入ろうとしたのでしょうね。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print このときまだ、幻視の魔法は発動していなかったんだと思います。<br>ナノカさんは、自由に使えないようでしたから……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch01_E05_S03
+@Wait 1.5
+
+# 【4P目イラスト】
+# 3の差分で、ナノカが穴の中に消え、メルルが銃を拾う
+@spawn Reenact_Ch01_E05_S04
+@Wait 1.5
+
+@print 私はナノカさんが移動している間に、<br>扉のロックを解除して操作室に入りました。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print すると、ナノカさんがいつも持っていた銃は<br>通気口を通らなかったのか、<br>床に置かれていました。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print ……危険なものですからね。<br>私は用心のために、それを拾っておいたんです――。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch01_E05_S04
+@Wait 1.5
+
+# 【5P目イラスト】
+# 4の差分で、ナノカが左に登場
+@spawn Reenact_Ch01_E05_S05
+@Wait 1.5
+
+@print ナノカさんは冷凍室の中を調べている間、<br>しばらく迷っている様子だったんですが……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 彼女は突然、何かを思いついたかのように<br>メモをしだしたんです。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print おそらくそのあと金庫を開けていたので<br>そのとき幻視の魔法が発動したんでしょうね。<br>きっと暗証番号を読み取ったんだと思います。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print その時、おそらく私のことを……<br>そして、牢屋敷の秘密をすべて幻視してしまったのでしょうね。<br>……少なくとも、私はそう思いました。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print だから……殺すしかなくなったんです。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch01_E05_S05
+@Wait 1.5
+
+# 【6P目イラスト】
+# ナノカを射殺するメルル
+# 上記イラストでは拳銃っぽいが、実際はショットガン・ライフルっぽい大きな銃
+@spawn Reenact_Ch01_E05_S06
+@Wait 1.5
+
+@print 金庫から取り出した資料を見ているナノカさんに<br>背後から近づいて……<br>撃ちました。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print １発撃ったあとでも、ナノカさんはしぶとく生きていて……<br>もう１発撃ったんですが、ナノカさんはそれを避けたんです。<br>とっても執念深い方ですよね。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 即死ではなかったので……<br>その場で少しお話したことを覚えています。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 今思い返せば、それはダイイングメッセージを残すための<br>時間稼ぎだったんでしょうね。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch01_E05_S06
+@Wait 1.5
+
+# 【7P目イラスト】
+# ナノカの死体がバラバラになる（グロ過ぎないよう、四肢が分離される程度）メルルは斧を持っている
+@spawn Reenact_Ch01_E05_S07
+@Wait 1.5
+
+@print しばらくするとナノカさんが動かなくなったので、<br>死体の処理に取り掛かりました。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 操作盤を誰かが壊した痕跡もありましたし……<br>他の人が来たらバレてしまいますからね。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print だから、誰も入れないはずの処刑台のユニットに<br>隠そうと思ったんです。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 斧を使ってナノカさんの体を小さくしました。<br>そうしてなんとか少しずつ覗き窓から通したんです。<br>あの覗き窓、人間の頭ぐらいならギリギリ入るんですよ。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch01_E05_S07
+@Wait 1.5
+
+# 【8P目イラスト】
+# バラバラになったナノカが再び元に戻る。（人形での壁越し表現は難しいので、7P目の差分として手足がくっつくだけでいいかも）
+@spawn Reenact_Ch01_E05_S08
+@Wait 1.5
+
+@print 最後に、壁越しに彼女を組み立てて、<br>魔法を使ったんです。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 私の魔法は大きな傷でも完全に治せますし、<br>体から遠く離れていなければほとんどの血液も戻ります。<br>……まるで時間が巻き戻るように。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print でも、死人を生き返らせることはできないのと……<br>手をかざした限られた範囲しか治すことができない<br>制限はあるんです。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 今回は口の中の傷までは気が付かなかったので、<br>それが残ってしまったみたいですね。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print ……ナノカさんの執念がなかったら、<br>もっと上手く隠し通せていたとは思います。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print これが事件の全容です。<br>黙っていて……本当にごめんなさい。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch01_E05_S08
+@Wait 0.5
+
+@set "isReenact = false"
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter05/Act01_Chapter05_Adv06

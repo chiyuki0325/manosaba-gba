@@ -1,0 +1,419 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-1-2
+
+# ========================================
+# ●シーン2‐1‐2
+# ========================================
+
+@back 1_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_21_1
+
+@print ゴクチョーからのスマホ通知で、<br>食事の時間が知らされた。 { speed:1 waitInput:true Wait:true }
+
+@print "牢が<ruby=\"かいじょう\">開錠</ruby>されてすぐ、<br>私はうたた寝しているエマを振り返ることもなく<br>食堂へと向かいはじめる。" { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+@back 4_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent.Custom { time:0.99 }
+@Wait 0.9
+
+@print タイムスケジュールも、<br>牢屋敷のマップも完璧に頭に入っている。 { speed:1 waitInput:true Wait:true }
+
+@print １秒だって時間を無駄にしたくないと、<br>早足で先へ先へと進んでいくと―― { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆はっと息を呑む
+
+@char Hiro.Surprised1
+
+@print ――ッ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@animate MainBackground
+@spawn MaskingRectangle
+@back 4_1
+@char Alisa.Angry1,Option-ArmL-Off,ArmR3
+@mask MainBackground-Front,Alisa-Front
+@animate MainBackground-Front
+@animate Alisa-Front
+@Wait 0.4
+
+@print 玄関ホールで、<br>玄関の方から看守がぬっと現れた。 { speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"いぎょう\">異形</ruby>の化け物を目の前にすると<br><ruby=\"とっさ\">咄嗟</ruby>に身がすくみ、さすがに立ち止まってしまう。" { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆一章より強気の反抗
+
+@print てめえっ、きもいんだよ離せよ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+# ＠備考◆一章より強気の反抗
+
+@print あんまウチのことなめんなよ！？<br>ぶっ殺すぞおらぁ！！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive1
+
+@print 紫藤アリサが看守に抱えられて、<br>じたばたと暴れている。 { speed:1 waitInput:true Wait:true }
+
+@print そのアリサと、目が合った。 { speed:1 waitInput:true Wait:true }
+
+@print "っ、見てんじゃねえ！ んだよその目はよぉ！<br>覚えてろよテメー！！" { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print …………。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hide Hiro
+
+# さらさらと紙にペンを走らせる書き音
+@sfx Sfx_111
+
+@print 私は無言でノートを取り出し、<br>さらさらとペンを走らせる。 { speed:1 waitInput:true Wait:true }
+
+@print （わかりやすい不良、更生の余地あり、と） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hide Alisa-Front,MainBackground-Front
+@despawn MaskingRectangle
+@Wait 0.3
+
+# 足音
+@sfx Sfx_97
+
+@print 看守はアリサを地下へと連れていった。 { speed:1 waitInput:true Wait:true }
+
+@print （逃亡なんて、バカなことを） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ルールにあったが、<br>決められた時間外に牢屋敷の外に出ていたのなら<br>懲罰房行きになる。 { speed:1 waitInput:true Wait:true }
+
+@print （これだからルールを守らない人間は困る） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@StopBgm { fade:3 }
+
+@print "<ruby=\"あき\">呆</ruby>れてため息が漏れる。<br>それ以上はさして気に留めず、再び食堂へ向かい始めた。" { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+@back 6_1 { Scale:{g_backgroundDefaultScale} }
+@back Transparent.Custom { time:0.99 }
+@Wait 0.9
+
+@print 私は食堂の入口に立ち、<br>ぞろぞろと入ってくる少女たちを指さし確認していく。 { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_5_1
+
+@char Hiro.Normal1
+
+@print ……橘シェリー、遠野ハンナ、ＯＫ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1 { time:0.2 }
+@Wait 0.2
+
+@print 蓮見レイア、佐伯ミリア、宝生マーゴ、ＯＫだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+@Wait 0.4
+
+@print 氷上メルル、桜羽エマ、沢渡ココ、入っていい。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Pensive
+
+@print なあなあ何目線なんそれ？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive
+
+@print ヒロちゃんは点呼をしてるんだと思う……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive
+
+@print なんの点呼だよ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hiro.Normal1
+@Wait 0.3
+
+@print 黒部ナノカ、夏目アンアン……これで最後か？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 入口の方を見ても、<br>これ以上誰かが入ってくる気配はなかった。 { speed:1 waitInput:true Wait:true }
+
+@print 先ほど紫藤アリサが懲罰房行きになったのを目撃したが、<br>そのほかにもひとり足りない。 { speed:1 waitInput:true Wait:true }
+
+@print 城ケ崎ノアはどうした？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Normal1,ArmR3
+
+@print あっ、城ケ崎ノアちゃんなら、ごはんいらないって。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ……そうか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 来ないのなら仕方ない。<br>私は食堂にそろった少女たちを見渡す。 { speed:1 waitInput:true Wait:true }
+
+@print "皆一様に初めて来る食堂に戸惑っている。<br>当然私も初めて来るところだったが、すでに<ruby=\"もろもろ\">諸々</ruby>チェック済みだ。" { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+
+@print このビュッフェカウンターに置いてある食事を、<br>各自取り分けてもらう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 見た目は良くないが、毒見もしておいた。<br>変なものは混じっていない。安心して食べるがいい。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Pensive1
+
+@print "だから何目線なんそれ？ 校長先生かよ。" { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hiro.Normal1
+
+@print あ、あと席は決められていないようだから、<br>好きに座っていい。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 私とエマ以外は、全員が初対面の少女たちだ。 { speed:1 waitInput:true Wait:true }
+
+@print 先ほどのゴクチョーからの話の後も、<br>特に親しく会話も交わせず、<br>各自の囚人番号が振られている部屋に戻った。 { speed:1 waitInput:true Wait:true }
+
+@print ただなんとなく合う合わないは感じ取っているのか、<br>自然とグループらしきものが形成されていく。 { speed:1 waitInput:true Wait:true }
+
+@print 私はさっさと食事を取り分け、ひとりで座った。<br>すると―― { speed:1 waitInput:true Wait:true }
+
+# 机にトレイを置く音
+@sfx Sfx_112
+
+@char Leia.Smile1
+
+@print 隣、いいかい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "レイアが柔らかく<ruby=\"ほほえ\">微笑</ruby>みながら、<br>私の隣にトレーを置いてきた。" { speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1
+@char Hiro.Normal1
+
+@print 別に構わない。君は話が通じそうだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print レイアが私のところにやってきた理由は、<br>なんとなく想像がついた。 { speed:1 waitInput:true Wait:true }
+
+@print "グループの主導者となる<ruby=\"そよう\">素養</ruby>を持ち合わせているレイアは、<br>同じ属性の私を警戒している。" { speed:1 waitInput:true Wait:true }
+
+@print いわゆるリーダーの縄張り争いだ。<br>こういった経験は何度もある。 { speed:1 waitInput:true Wait:true }
+
+@print ただ、もうひとり――意外な人物が、<br>私の隣に座ってきた。 { speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Default
+
+@print 黒部ナノカだった。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hiro.Normal1
+@char Nanoka.Default
+
+@print 私もここで食べさせてもらう。いい？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print ああ、どうぞ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ナノカは食事に手をつける様子もなく、<br>暗い瞳でじっと私のことを見据えている。 { speed:1 waitInput:true Wait:true }
+
+@print （私を怪しんでいるのか……ふうん） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "あえてその視線に反応せず、<br><ruby=\"そそ\">楚々</ruby>と食事を取ることにする。" { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+@char Nanoka.Default
+@char Leia.Fearful1
+
+@print うっ……ずいぶんな味だな、これは。<br>キミ、よく平気で食べられるね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print どんなに酷い味でも顔に出すのは失礼だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1
+
+@print あ、ああ、そうだよね。すまない。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Normal1
+
+@print ところでヒロくん、キミはこの牢屋敷について<br>どう思う？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@print どうにか脱出する方法はないものだろうか。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive1
+
+@print 看守は君が思っているよりずっと危険だ。<br>逆らうべきではない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print もっとこの牢屋敷や魔女のことを、<br>知っていくことを優先したほうがいい。<br>あ、あと。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私は食事中の私語を慎むようにしている。<br>話しかけないでほしい。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@char Leia.Surprised1
+@Wait 1
+@char Leia.Pensive1
+@Wait 0.2
+
+@print …………。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print …………。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 盛り上がりに欠けるテーブルで、<br>私たち３人は黙々と食事を続けた。 { speed:1 waitInput:true Wait:true }
+
+@print 私はどろりとしたものを口に運びながら、<br>横目で素早く各席を観察していく。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@char Coco.Normal1
+@char Miria.Normal1
+@char Margo.Normal1
+
+@print ――ココとミリア、マーゴが同席。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char AnAn.Normal1,Angle01/Option_Arms-
+@char Meruru.Smile
+
+@print ――アンアンとメルルが同席。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Normal1
+@char Ema.Normal1
+@char Hanna.Normal1
+
+@print ――エマとシェリー、ハンナが同席だった。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print お互いがお互いを探り合っている<br>ぎこちない空気の中―― { speed:1 waitInput:true Wait:true }
+
+@print 不意に、<br>ハンナが席を立った。 { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Smile
+
+@print これがわたくしの魔法ですわあぁっ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Smile1
+@animate Hanna
+
+@print 叫んだかと思うと、<br>彼女の体がふわりと宙に浮き上がる。 { speed:1 waitInput:true Wait:true }
+
+@print わずか１０センチ程度ではあるが、<br>明らかに宙に浮いているのを目の当たりにし、<br>急速に【魔法】への説得力が帯びる。 { speed:1 waitInput:true Wait:true }
+
+@print （なるほど。<br>　遠野ハンナは【浮遊】の魔法を持っている、と） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@update Hanna
+
+@print "ざっと全員の顔色を<ruby=\"うかが\">窺</ruby>う。" { speed:1 waitInput:true Wait:true }
+
+@print 一部の少女は驚いているが、<br>ほぼ全員魔法を受け入れていると見て取れた。 { speed:1 waitInput:true Wait:true }
+
+@print もちろん私を含め。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+
+@print 魔法お披露目会ですね！<br>ではでは私ももっとやっちゃいます！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 刺激されたのかシェリーが宣言して立ち上がる。<br>そしてトレーの上にあるリンゴを―― { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3
+
+@print あっ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@ResetText 
+@blur MainBackground
+@char Sherry.Normal1,ArmR8
+
+# リンゴ粉砕音
+@sfx Sfx_16
+
+@print "見事に<ruby=\"ふんさい\">粉砕</ruby>してみせた。" { speed:1 waitInput:true Wait:true }
+
+@blur MainBackground
+@hideChars 
+@char Sherry.Smile1,ArmR8
+
+@print なんとなんと、<br>シェリーちゃんの魔法は【怪力】なのでした！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@update Sherry
+
+@hideChars 
+@char Sherry.Smile1,ArmR8
+@char Ema.Pensive1,ArmR3
+
+# ＠備考◆哀しげ
+
+@print ボクのリンゴ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR1
+
+@print みなさんの魔法もぜひ見せてください～！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 当然ながら、この呼びかけに誰か反応するわけもなく。<br>全員が沈黙している。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+
+@print 私は魔法を使えない。魔女ではないから。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Pensive1
+
+@print あっ、そうですかー……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print すごすごとシェリーが席に戻ったところで、<br>私は立ち上がった。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+
+@print ごちそうさま。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@print その足でビュッフェカウンターへと向かい、<br>お皿に食事を盛り付けていく。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+@char Leia.Normal1
+
+@print ヒロくん、もう食べ終えたんじゃないのかい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@print ああこれは私のじゃない。<br>城ケ崎ノアの分だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ああ……なるほど。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1
+
+@print "レイアがふっと<ruby=\"ほほえ\">微笑</ruby>んだ。" { speed:1 waitInput:true Wait:true }
+
+@print 優しいんだね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "（……優しい？ 私が？）" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 鼻で笑いそうになる。<br>私はただ正しくありたいだけだ。 { speed:1 waitInput:true Wait:true }
+
+@print （城ケ崎ノアは食事を取りに来ていない。<br>　食事は取るべき。それだけだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私は取り分けた食事を載せたトレイを持って、<br>食堂を出た。 { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter01/Act02_Chapter01_Adv08

@@ -1,0 +1,422 @@
+@set "hasWitchBook = false"
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-5-7
+
+# ========================================
+# ●シーン2-5‐7
+# ========================================
+# 【開発宛】 UIエマに切り替え
+
+@back 19_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+
+# エンディング用の　BGM を強制ロードする
+@bgm Song_4 { Volume:0 }
+@Wait 0.1
+
+@StopBgm 
+@Wait 1.7
+
+@print いつの間にか、<br>ヒロちゃんの姿が消えていた。 { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_40_1_Loop
+
+@print （ヒロちゃん……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 騒いでいるみんなは、<br>まだヒロちゃんが<br>この場を離れたことに気付いていない。 { speed:1 waitInput:true Wait:true }
+
+@print （ヒロちゃんらしいな……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print そう思うと同時、<br>胸が締め付けられた。 { speed:1 waitInput:true Wait:true }
+
+@print あんなことがあってから１週間。<br>この屋敷で過ごしている間も、<br>ヒロちゃんはボクを意識的に避けていた。 { speed:1 waitInput:true Wait:true }
+
+@print それは中学生の時<br>ヒロちゃんと関係が悪化した時と、<br>牢屋敷で過ごした記憶の中のヒロちゃんと…… { speed:1 waitInput:true Wait:true }
+
+@print なんら変わりはない。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.8 }
+@Wait 1
+
+@back 2_1 { time:0 }
+@char Hiro.Angry1 { time:0 }
+
+@back SolidColor.Custom { time:0.8 }
+@Wait 1
+
+# ========================================
+# ◎回想シーン（1-0-3からの流用）
+# ========================================
+
+@print 君が変わったとして、<br>そのことが、私になんの意味が？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私が君を嫌いなことは変わらない。<br>この先永遠に。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.8 }
+@Wait 1
+
+@char Hiro { time:0 }
+@back 19_1 { time:0 }
+@hideChars { time:0 }
+@back SolidColor.Custom { time:0.8 }
+@Wait 1
+
+# ========================================
+# 回想ここまで
+# ========================================
+
+@print （ボクたちはもう、戻れない……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ただその現実を、<br>突きつけてくるだけだった。 { speed:1 waitInput:true Wait:true }
+
+@print …………。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "拳を震わせ、<ruby=\"うつむ\">俯</ruby>くボクに。" { speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Smile1
+
+@print ……桜羽エマ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria.Smile1,ArmR10
+
+@print エマちゃん。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia.Smile1
+
+@print エマくん。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Smile1
+
+@print エマっちさぁ～。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Noah.Smile1
+
+@print エマちゃん！ { author:Noah speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char AnAn.Smile1,Angle01/Option_Arms-
+
+@print ……エマ。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Margo.Smile1
+
+@print エーマちゃん♡ { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa.Smile1,Option-ArmL-Off
+
+@print おい桜羽！！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Normal1
+
+@print エマさん。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Smile1
+
+@print これはわたくしたちからの、<br>お友だちとしてのアドバイスです。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1
+
+@print 行ってください、エマさん！！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ボクは顔を上げた。<br>みんなの笑顔があった。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@char Nanoka.Smile1
+@char Miria.Smile1
+@Wait 1.2
+
+@hideChars 
+@char Leia.Smile1
+@char Coco.Smile1
+@Wait 1.2
+
+@hideChars 
+@char Noah.Smile1
+@char AnAn.Smile1
+@Wait 1.2
+
+@hideChars 
+@char Margo.Smile1
+@char Alisa.Smile1
+@Wait 1.2
+
+@hideChars 
+@char Hanna.Smile1
+@char Sherry.Smile1
+@Wait 1.2
+
+@hideChars 
+
+# ＠備考◆息を吸い込む
+
+@print ――ッ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@StopBgm { fade:3 }
+
+@print ボクは、駆けだした。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+# 野外を走る音・1人
+@sfx Sfx_173
+
+@bgm Bgm_2_1_Intro
+
+@back 32_1
+@back Transparent.Custom { time:0.99 }
+@Wait 0.9
+
+# ＠備考◆走っている
+
+@print はぁっ、はぁっ、はぁっ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （背中を押してもらって、<br>　ようやく動けるなんて） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （相変わらずボクは情けない） { author:Ema speed:1 waitInput:true Wait:true }
+
+# ＠備考◆走っていて転ぶ
+
+@print はぁ、はぁ……っ、あっ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@shake Camera
+
+# 転ぶ音
+@sfx Sfx_6
+
+@print "足がもつれて転んでしまう。<br>痛みで泣きそうに顔が<ruby=\"ゆが\">歪</ruby>んだ。" { speed:1 waitInput:true Wait:true }
+
+@print う、うぅ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （ボクはいつもヒロちゃんに甘えてた……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （だからもうヒロちゃんに甘えちゃダメだって、<br>　離れなきゃいけないって……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print よろよろと立ち上がる。<br>瞳の端に浮かんだ涙を拭う。 { speed:1 waitInput:true Wait:true }
+
+@print （でも……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （それでもボクは……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@StopBgm { fade:3 }
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+# 野外を走る音・1人
+@sfx Sfx_173
+
+@back 16_1
+@back Transparent.Custom { time:0.99 }
+@Wait 0.9
+
+@print ――待ってよ、ヒロちゃん！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR3,ArmL7
+@char Hiro.Pensive1
+@blur Hiro-Middle
+
+@print ヒロちゃんの背中が視界に入って、<br>ボクは叫んでいた。 { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_2_1_Loop { fade:2 }
+
+@print …………。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ヒロちゃんは振り向かない。 { speed:1 waitInput:true Wait:true }
+
+@print このままお別れなんて、<br>嫌だよ！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ……君にはすまないことをした。<br>一生かけて償うつもりだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 背中を向けたままで、<br>ヒロちゃんが言ってくる。 { speed:1 waitInput:true Wait:true }
+
+@print 本当に心から申し訳ないと……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Angry1,ArmR3,ArmL7
+
+@print そんなことが聞きたいんじゃない！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print そんな言葉いらないよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print …………。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ヒロちゃんの背中は、震えていた。 { speed:1 waitInput:true Wait:true }
+
+@print 謝っても許されないし、<br>許されることも望んでいない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私は正しくなかった、だからもう……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print どうでもいいよそんなこと！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@char Hiro.Angry1 { time:0.5 }
+@blur Hiro-Middle
+@blur Ema
+@Wait 0.5
+
+@print どうでもいいわけないだろう！？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私は、中学の時に君の心を壊したんだ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 勝手な嫉妬で、思い違いで、<br>君を追い詰めて……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ユキの計画の一部だったとしても、<br>そんなのは言い訳でしかない！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私たちはもう戻れないんだ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@char Hiro.Pensive1 { time:0.4 }
+@blur Hiro-Middle
+@blur Ema
+@Wait 0.4
+
+@char Ema.Pensive1
+
+@print "<ruby=\"かたく\">頑</ruby>なに振り向かないヒロちゃんを前に……<br>ボクは、息を吸い込んだ。" { speed:1 waitInput:true Wait:true }
+
+@print "知ってた？ ボクね。" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 昔からヒロちゃんの気を引きたくて、<br>わざと失敗ばっかりしてた。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ヒロちゃんに迷惑をかけたり、<br>心配をかけたり、<br>そういう気の引き方ばっかりして……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 先にヒロちゃんの心を縛ったのは、<br>ボクの方だよ？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Smile1,ArmR3,ArmL7
+
+@print だから――おあいこ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# ＠備考◆息を呑む
+
+@print ――ッ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL7
+
+@print 腹が立つこととか、<br>許せないこととか、<br>ボクだってたくさんあるよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Smile1,ArmR3,ArmL7
+
+@print でも、悔しいけど、<br>ボクはヒロちゃんが大好きなんだ！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# ＠備考◆涙を呑む
+
+@print ……ッ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@blur Hiro-Middle
+@hideChars { time:1 }
+@Wait 1
+
+@StopBgm { fade:2 }
+@char Hiro.Cry1 { time:1 }
+@Wait 1
+
+@print ヒロちゃんが振り返る。 { speed:1 waitInput:true Wait:true }
+
+@print わかっていたことだけど、<br>お互いくしゃくしゃに泣いていて―― { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "ボクは地面を<ruby=\"け\">蹴</ruby>った。" { speed:1 waitInput:true Wait:true }
+
+@if !enableDebugSkip
+	@Skip false
+
+@ProcessInput false
+@bgm Song_4 { Volume:0.5 Loop:false }
+@ResetText 
+@HidePrinter 
+@HideUI ControlPanel,AutoToggle,WitchBookButtonUI
+@back Transparent { time:0 }
+@Wait 1
+
+@back 380_1 { time:2 }
+@animate Stills
+@Wait 2
+
+# ========================================
+# ここからのセリフUIなしでボイスのみにしたいです。
+# ========================================
+
+@ifLang ja ja
+	@voice Act02_Chapter05/Act02_Chapter05_Adv08/0205Adv08_Ema027
+@Else 
+	@printer Normal.Simple
+	@print ヒロちゃん、ボクらまた会えるよね？
+
+@Wait "{3.745 + 1}"
+
+@ifLang ja ja
+	@voice Act02_Chapter05/Act02_Chapter05_Adv08/0205Adv08_Hiro016
+@Else 
+	@print 君がわんわん泣くからな。<br>仕方ないから傍にいてやる。
+
+@Wait "{6.424 + 1}"
+
+@ifLang ja ja
+	@voice Act02_Chapter05/Act02_Chapter05_Adv08/0205Adv08_Ema028
+@Else 
+	@print ヒロちゃんも泣いてるくせに。
+
+@Wait "{2.419 + 1}"
+
+@ifLang ja ja
+	@voice Act02_Chapter05/Act02_Chapter05_Adv08/0205Adv08_Hiro017
+@Else 
+	@print ……うるさい。
+
+@Wait "{1.564 + 1}"
+
+@ifLang ja ja
+	@voice Act02_Chapter05/Act02_Chapter05_Adv08/0205Adv08_Ema029
+@Else 
+	@print たくさんたくさん話そうね。<br>ボクらの時間はまだこれからだから。
+
+@Wait 1
+
+@back 380_1 { Scale:{g_backgroundDefaultScale * 1.1} time:2 }
+@animate Stills-Middle { Scale:{g_backgroundDefaultScale} }
+@Wait "{7.385 - 1}"
+
+@ifLang ja ja
+	@ResetText 
+	@HidePrinter 
+
+@bgm { Loop:false time:2 }
+
+@back SolidColor { time:3 }
+@Wait 6
+
+@credit 2
+@update Miria
+@hide Stills,Stills-Middle { time:0 }
+@back SolidColor { time:0 }
+@back Transparent { time:0 }
+@Stop 
+
+# EndCredits2
+
+@hideCredit 
+@ProcessInput true
+@StopBgm { fade:2 }
+@back SolidColor { time:{g_fadeDurationAtScenarioTransition} }
+@Wait "{g_fadeDurationAtScenarioTransition}"
+
+@goto Act02_Chapter05/Act02_Chapter05_Adv09

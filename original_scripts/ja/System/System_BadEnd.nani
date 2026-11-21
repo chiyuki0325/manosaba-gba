@@ -1,0 +1,27 @@
+@Skip false
+@ProcessInput true
+@StopBgm { fade:1 }
+@ResetText 
+@HideUI ControlPanel,AutoToggle,WitchBookButtonUI
+@back SolidColor { time:1.6 }
+@Wait 0.6
+
+@HidePrinter 
+@Wait 1.8
+
+@spawn BadEnd
+
+@Wait i1.8
+
+@despawn BadEnd
+
+@Wait i1.2
+
+@choice 直前の選択肢へ戻る
+	@QuickLoad "{currentBadEndId}"
+
+@choice タイトル画面へ戻る
+	@ClearBacklog 
+	@ReturnToTitle 
+
+@Stop

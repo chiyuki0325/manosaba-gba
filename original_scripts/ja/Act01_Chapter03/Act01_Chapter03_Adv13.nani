@@ -1,0 +1,281 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-3-13
+
+# ========================================
+# ●シーン1‐3‐13
+# ========================================
+
+@back 16_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_28_1
+
+@char Sherry.Smile1,ArmR3,ArmL9
+@char Hanna.Pensive1
+
+@print はぁ～最高でした～。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ぜぇ、ぜぇ、ぜぇ……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+
+@print 遠くまで飛んでいってしまったハンナとシェリーだったが、<br>帰りは歩いて戻ってきた。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Normal1
+@char Meruru.Default
+
+@print ハンナちゃん、おつかれさま……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print い、今、お茶をいれますね。<br>冷たくなってしまいましたけど……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Normal1
+
+@print 冷たいのでいいですわ……<br>いい運動になりましたわ、まったく。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ４人は再び敷布の上に腰掛け、<br>まったりとした空気になる。 { speed:1 waitInput:true Wait:true }
+
+@print （ずっとこの時間が続けば、いいのにな……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR1,ArmL1
+
+@print ところで、エマさん。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print シェリーが切り出してきて、<br>エマはのんびりと顔を向ける。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print なに？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Normal1
+
+@print 二階堂ヒロさんとは<br>どういったご関係だったのでしょうか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print いかにもワケありって感じでしたよね？<br>どんな確執があったのでしょう？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+
+@print え……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 途端、エマの表情が、硬く強張る。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@char Sherry.Pensive1
+@char Hanna.Surprised1
+
+@print ちょっと、シェリーさん！<br>そんな聞き方……！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 私たちはお互いのこと、まだほとんど知りません。<br>特にここに捕まる前のことは。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 友だちなら、<br>もっと知りたいと思うのが当然じゃないですか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna.Normal1
+
+@print それは……そうかもしれないですけど……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （ここに捕まる前のこと……。<br>　たしかにみんなのこと、まだ全然知らない） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （ボクもみんなのこと知りたいし、<br>　知ってほしいって、思う） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print ――ヒロちゃんは、幼なじみだったんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Pensive
+
+@print ええ、それは聞いています。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+
+@print 友だちだった時期もあるんだけど、<br>なんでかボク、嫌われちゃって……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ボクが悪いんだけど、でもボク、その時期のこと<br>よく覚えていないんだ。<br>だから原因はよくわからない。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 気付いたらボクは学校の中心人物だった<br>ヒロちゃんを怒らせて、それで、<br>みんなから無視されるようになって。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ……いじめ、みたいな<br>空気になっちゃったんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Pensive1,ArmR10,ArmL11
+@char Hanna.Angry1
+@char Meruru.Pensive
+
+@print なんなんですのそれ！？<br>許しがたいですわね……！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print エマさん……そんな大変な目に……うぅ……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print んーそれってつまり、<br>ヒロさんが扇動したってことですよね？<br>いじめっこといじめられっこ、みたいな関係だった……？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+
+@print そうかもしれないけど、こじれちゃっただけで……<br>ボクはヒロちゃんのこと今でも特別な存在だと思ってる。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print こんなところで再会して、<br>あんなことになるなんて思わなかったけど……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 今でもエマのポケットには、<br>ヒロの落とした万年筆が入っている。 { speed:1 waitInput:true Wait:true }
+
+@print エマはその万年筆をそっと握りしめる。 { speed:1 waitInput:true Wait:true }
+
+@print （今はシェリーちゃん、ハンナちゃん、<br>　メルルちゃんがボクの傍にいてくれる） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR1
+
+@print みんな、聞いてくれてありがとう。<br>ちょっとスッキリした。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Pensive1,ArmR10,ArmL1
+@char Hanna.Normal1
+
+@print 人間関係は色々ありますよねぇ……。<br>私もみんなに無視された経験あります。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print あなたはありそうですわ。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print エマさんと対応が違いすぎません？<br>さすがに泣きますよ？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR1
+
+@print ハンナさんはどうなんです？<br>ここに捕まる前は<br>一体どんな生活をしていたのでしょう？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1
+
+@print えっ、わ、わたくし……？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 聞かれると思っていなかったのか、<br>ハンナの挙動に落ち着きがなくなった。 { speed:1 waitInput:true Wait:true }
+
+@print わたくしは、その……見りゃわかるでしょう！？<br>お、お金持ちの令嬢ですわ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "蝶よ花よとちやほや育てられましたの！<br>毎日贅沢三昧！ あの頃が懐かしいですわ！" { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1
+
+@print ん～怪しいなぁ……<br>食べ方も振る舞いも庶民ぽい気が……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna.Pensive1
+
+@print わたくしの話はもういいでしょう！？<br>シェリーさんはどうなんですの！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR7
+
+@print 私ですか？<br>あらら、ハンナさん私のこと知りたいんですかぁ？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 興味津々でまいっちゃいますね～<br>そんなに知りたいなら話してあげてもいいですよ～？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna.Normal1
+
+@print あなたが聞いたからでしょう！<br>いちいち煽らないでくださいまし！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR12
+
+@print いいですよ、話してあげましょう！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR10
+
+@print 私は……んん……小学校も中学校も<br>わりと普通の子でしたね……！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print しいていうなら、ミステリー小説にはまって<br>ミステリーオタクになったくらいで……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna.Pensive1
+
+@print そんなの見てりゃわかりますわ……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 思ったより面白くなくてごめんなさい～！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Normal1
+
+@print 面白くなくても大丈夫だよ、<br>シェリーちゃん……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Normal1,ArmR10
+
+@print あ、でもいっこありました。<br>私みなしごで施設育ちなんです。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print なので義父母とは血の繋がりがありません。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print さらりと言ってのけたシェリーに、<br>エマたちは絶句した。 { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1
+@char Sherry.Normal1,ArmR10
+
+@print い、いきなり爆弾を落としますわね……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 仲良しってわけでもなかったですし、<br>私の場合家族も心配していないと思います。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Meruru.Pensive
+
+@print ……っ、そ、そんなこと、ありません！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 珍しく、メルルが声を荒げた。<br>ふるふると肩を震わせ、今にも泣きそうになっている。 { speed:1 waitInput:true Wait:true }
+
+@print （メルルちゃん……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 血の繋がりがなくたって、<br>家族は大切な存在です……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print きっとシェリーさんのご家族は、<br>シェリーさんを心配しています……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 胸が張り裂けそうなくらい、<br>毎日シェリーさんを、想っているはずです。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 堪えきれなくなったのか、<br>メルルはぽろぽろと涙をこぼした。 { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Cry
+
+@print 私は……家族に会いたい。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+# ＠備考◆泣いてしゃくりあげながら
+
+@print こんなところは、もう嫌です……<br>会いたい、会いたいよぉ……うぅぅぅ～。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Pensive1
+
+@print メルルさん、泣かないでちょうだい……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+
+@print メルルちゃん……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print メルルは臆病だが、<br>一方で自身の内面の弱さを<br>他人に見せることがなかった。 { speed:1 waitInput:true Wait:true }
+
+@print そんなメルルがしゃくりあげながら、<br>切々と心情を吐露した。 { speed:1 waitInput:true Wait:true }
+
+@print "胸が<ruby=\"えぐ\">抉</ruby>られる。<br>少女たち全員が、同じ気持ちを抱いていた。" { speed:1 waitInput:true Wait:true }
+
+@print ――家族に会いたい。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1,ArmR10
+
+@print ……そろそろ自由時間が終わります。<br>戻りましょう。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print すっかり湿っぽい空気になってしまい、<br>エマたちは牢屋敷へ帰る準備をはじめる。 { speed:1 waitInput:true Wait:true }
+
+@update Sherry
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter03/Act01_Chapter03_Adv14

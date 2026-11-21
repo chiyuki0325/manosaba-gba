@@ -1,0 +1,870 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act01_Chapter03/Act01_Chapter03_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+@char Warden.1 { Position:,{hiddenCharacterPositionY} time:0 }
+@char Jailer.1 { Position:,{hiddenCharacterPositionY} time:0 }
+# ==============================================================================
+# MARK: 3-5: 💬 アリサの聞いた音
+# ==============================================================================
+# BGM変更：rAwTell Owk...
+@bgm Bgm_7_1
+
+# Judge3-5-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Alisa.Default,ArmR5,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open
+@gosubModifyCamera 0
+@printDebate 最初の音は<br>夜の【１時】だったな。<br>ちょうどスマホで<br>時間を確認した時だったから<br>間違いないと思う。
+
+@char Alisa.Default,ArmR5,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open
+@gosubModifyCamera 0
+@printDebate 【１時】に<br>何かの【破裂音】、<br>もしくは【爆発音】<br>みたいな……。
+
+@char Alisa.Default,ArmR5,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open
+@gosubModifyCamera 0
+@printDebate "<link=\"Objection_01_03_05_01\">爆竹</link>とか<br>そういうのに近い音が<br>【１回】した。"
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@printDebate どこからした音とかは<br>わからないんですか？
+
+@char Alisa.Default,ArmR5,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open
+@gosubModifyCamera 0
+@printDebate "たしか<link=\"Objection_01_03_05_02\">倉庫</link>の方<br>だった気がするな……。<br>確証はねーけど。"
+
+@char Alisa.Default,ArmR5,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open
+@gosubModifyCamera 0
+@printDebate "もう１つの音は……<br>夜の【<link=\"Objection_01_03_05_03\">２時</link>】ぐらい<br>だったと思う。"
+
+@char Alisa.Default,ArmR5,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open
+@gosubModifyCamera 0
+@printDebate こっちは……<br>説明するのが<br>難しい音だったな。<br>爆発って感じじゃ<br>なかったが……<br>あまり間を置かず<br>２、３回……<br>何度かしたと思う。
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate "【<link=\"Objection_01_03_05_04\">直下型の地震</link>】でも<br>起こったのかしらね？<br>現場では<br>部屋の中の家具が<br>倒れてたりしたし。"
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Serious_Open
+@gosubModifyCamera 0
+@printDebate ああ。<br>そんな感じが近いかな。<br>……ただ、<br>揺れた感じは<br>しなかったけどな。
+
+@char Coco.Normal1,ArmR3,ArmL2
+@gosubModifyCamera 0
+@printDebate 地震なんてあったら<br>もっとみんな気付いてると<br>思うけど。<br>勘違いだったんじゃね？
+
+@char Alisa.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@printDebate "ああ……！？<br>んなわけねぇだろ……！<br>ウチの<br><link=\"Objection_01_03_05_05\">勘違いだった証拠</link>でも<br>あんのか！？"
+
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@Wait 0.2
+
+# ==============================================================================
+# 3-5議論後整理
+# ==============================================================================
+
+@print （アリサちゃんの聞いた【音】……<br>　どっちの音も、その正体はわからないみたい……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@print （でも【音】に限って言うなら……<br>　片方の音だけでも、これまでの議論で<br>　何か特定できるような情報はなかったかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge3-5-1
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_01_03_05_01
+
+@Skip false
+@pauseTrial true
+
+@choice 爆竹ではないのかも
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge3-5-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_01_03_05_02
+
+@Skip false
+@pauseTrial true
+
+@choice 倉庫の音は聞こえなかった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge3-5-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_01_03_05_03
+
+@Skip false
+@pauseTrial true
+
+@choice ２時に聞いていない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge3-5-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論4
+# ------------------------------------------------------------------------------
+
+# Objection_01_03_05_04
+
+@Skip false
+@pauseTrial true
+
+@choice 地震は処刑後の揺れだった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge3-5-15
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論5
+# ------------------------------------------------------------------------------
+
+# Objection_01_03_05_05
+
+@Skip false
+@pauseTrial true
+
+@choice アリサの勘違いだった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge3-5-5
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 3-5: ❌ 議論ミス選択肢
+# ==============================================================================
+# MARK: 3-5-3: ❌ 倉庫の音は聞こえなかった
+
+# Judge3-5-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ちょっと待って！<br>ほんとにそんな音聞こえたの？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print "は？ ウチの言葉が信用ならねぇってのかよ。" { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print だって音のした倉庫は外にあるんだよ？<br>屋敷の中にいて聞こえるわけ――。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR4,ArmL6,Angle01/Facial/Eyes>Eyes_Angry_Open03
+@gosubModifyCamera 0
+@print 【外歩いてた】って言っただろ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print 人の話はちゃんと聞きましょうねエマちゃん。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （怒らせちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （……アリサちゃんがルール破ってたのに） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL7,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print なんか文句あんのか！？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Ema.Smile1,ArmR3,ArmL1,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ないでーす！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （それにしても、アリサちゃんが聞いた音か……。<br>　いったいなんだったんだろう。<br>　その正体がわかればいいんだけど……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge3-5-1
+# MARK: 3-5-4: ❌ 2時に聞いていない
+
+# Judge3-5-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Angry1,ArmR7,ArmL7
+@gosubModifyCamera 0
+@print ２時って……<br>そんな夜遅くに起きてるなんておかしいよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1,Angle01/Facial/Eyes>Eyes_Angry_Closed,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print だから、寝つきが悪かったんだって。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+@gosubModifyCamera 0
+@print ほんとにそうだったの？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print なんでそんな疑うんだよ……。<br>寝られねえぐらい、<br>不思議でもなんでもねえだろうが。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print あてぃしなんて、<br>ゲームして夜更かしとかザラだったんですけど。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 夜更かしじゃないにしても、<br>牢屋に閉じ込められてる状況だもの。<br>ストレスで寝付けないってこともあるわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print ……想像力を働かせなさい。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （怒られちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （それにしても、アリサちゃんが聞いた音か……。<br>　いったいなんだったんだろう。<br>　その正体がわかればいいんだけど……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge3-5-1
+
+# MARK: 3-5-15: ❌ 地震は処刑後の揺れだった
+
+# Judge3-5-15
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print 待って！<br>その音って処刑後の揺れだったんじゃないかな？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print 前にゴクチョーが言ってたよね……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+
+# ==============================================================================
+# 回想シーン（流用）ADVシーン1-2‐1
+# ==============================================================================
+@bgm Bgm_7_1 { Volume:0.2 }
+@Wait 0.2
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+
+@hideStageScreen 1
+@back 14_1 { time:0 }
+@char Warden.1 { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+
+@print ああ、ちなみにこの揺れですが、<br>処刑を執行した後は屋敷が揺れるんですよ。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+@hide MainBackground-Flashback,Warden-Flashback { time:0 }
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+@bgm Bgm_7_1
+
+# ==============================================================================
+# 回想ここまで
+# ==============================================================================
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print その揺れが、昨日の夜にも起こったんだとしたら……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print ゴクチョーに聞いてみたらいいんじゃない？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1
+@gosubModifyCamera 0
+@print おーい、鳥～！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Warden.1 { Position:,{characterPositionY} time:0 }
+@gosubModifyCamera 0
+@print はいはい……。<br>ええと、当然ですが昨晩処刑は実施されていません……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Warden.3
+@gosubModifyCamera 0
+@print あれは処刑台ユニットの格納時に起こる揺れなんですが……<br>処刑台は動いてませんし、無関係でしょうね。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Warden.11
+@gosubModifyCamera 0
+@print それとも……誰か処刑しました？<br>処刑台を使って……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Meruru.ArmR1_1,ArmL8,Eyes1_Pensive_Open2,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print さすがにハンナさんは<br>処刑台を使われていないと思います……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+# ゴクチョー撤退
+@char Warden.1 { Position:,{hiddenCharacterPositionY} time:0 }
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Serious_Open
+@gosubModifyCamera 0
+@print ……首締めるだけなら、<br>ロープ１本でできるからな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （なら、処刑後の揺れは関係ないのかも……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （それにしても、アリサちゃんが聞いた音か……。<br>　いったいなんだったんだろう。<br>　その正体がわかればいいんだけど……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge3-5-1
+# MARK: 3-5-5: ❌ アリサの勘違いだった
+
+# Judge3-5-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print でもココちゃんの言う通り、<br>勘違いだったって可能性もあるよね？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print まあ、可能性はありますね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print 私は、アリサちゃんの証言は信用に値すると思うわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print 発言の内容には具体性があるし、矛盾点もない。<br>……それに、嘘を吐いてるようにも見えないもの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Normal_Closed
+@gosubModifyCamera 0
+@print ウチは嘘なんかついてねーからな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Meruru.Head2,ArmR1_2,ArmL3,Eyes2_Normal_Open1,Mouth2_Angry_Open2
+@gosubModifyCamera 0
+@print エ、エマさんの言ってることは、<br>間違いではないと思います……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Head1,ArmR1_1,ArmL8,Eyes1_Pensive_Open2,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print けど、否定する証拠でもない限りは、<br>みんなを納得させられそうにはありませんね……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print そ、そうだよね……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （それにしても、アリサちゃんが聞いた音か……。<br>　いったいなんだったんだろう。<br>　その正体がわかればいいんだけど……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge3-5-1
+
+# ==============================================================================
+# MARK: 3-5-2: ⭕ 爆竹ではない
+# ==============================================================================
+
+# Judge3-5-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+@StopBgm 
+@gosubCutIn Ema
+@Gosub System/System_Subroutine.EndDebate-Last
+@char Ema.Determined2,ArmR7,ArmL7,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print ……待って、アリサちゃん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Ema.Determined2,ArmR7,ArmL7,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print その音って……爆竹の音じゃないと思うんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR9,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Closed
+@gosubModifyCamera 0
+@print あ？<br>そりゃウチも夜中に爆竹の音なんて<br>聞こえるわけねーと思ってるけど……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print エマちゃん、<br>何かそれを証明できるものはあるのかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+# Judge3-5-6
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print １時に倉庫の方からした【破裂音】が<br>爆竹の音じゃないという証拠、<br>それは……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# アイテム選択
+@evidence Clue
+
+# 弾痕
+@if "chosenEvidenceId==\"3-5\""
+	@goto .Judge3-5-7
+
+# 燃えた痕跡
+@if "chosenEvidenceId==\"3-2\""
+	@goto .Judge3-5-8
+
+# 着火物
+@if "chosenEvidenceId==\"3-1\""
+	@goto .Judge3-5-16
+
+# 汎用
+@goto .Judge3-5-9
+
+# MARK: 3-5-8: ❌ 【燃えた痕跡】
+
+# Judge3-5-8
+
+# アイテム表示：燃えた痕跡
+@spawn Clue
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print この燃えた痕だよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@despawn Clue
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Normal_Open2,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print でもそれは、ゲストハウスにあったものよね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 音は倉庫の方からって話ですよエマさん！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Normal_Open2,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print ……自分でも言っていたと思うけど。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR4,ArmL1,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print 難しいこといっぱい考えてたから、<br>知恵熱でも出ちゃった～？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （まだ平熱だよ……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （音は倉庫の方からしたんだよね……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （見つけた証拠品の中に、何かなかったかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge3-5-6
+# MARK: 3-5-16: ❌ 【着火物】
+
+# Judge3-5-16
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print それは……倉庫にあったマッチとか爆竹とかだよ！<br>ここにこんなにあるってことは、<br>爆竹は使われてないはず……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR9,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Closed
+@gosubModifyCamera 0
+@print いやべつにそれ新品ってわけじゃねーだろ。<br>ウチもロウソク持ってるし……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR9,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Closed
+@gosubModifyCamera 0
+@print 何個か減ってたとしてもおかしくねー。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR4,ArmL1,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print エマっちなんか知ってんの？<br>怪しい～。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （怪しまれちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （倉庫で見つけたものは、他にもあったはずだ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （見つけた証拠品の中に、何かなかったかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge3-5-6
+
+# MARK: 3-5-9: ❌ 汎用ミス選択肢
+
+# Judge3-5-9
+
+@char Alisa.Default,ArmR9,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Closed
+@gosubModifyCamera 0
+@print べつにそれで証明はできねーだろ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Closed,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print ……つまり、何も証明できるものはない。<br>ということでいいのかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print エマっちも使えねー。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （使えない子認定されちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （見つけた証拠品の中に、何かなかったかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge3-5-6
+
+# ==============================================================================
+# MARK: 3-5-7: ⭕ 【弾痕】
+# ==============================================================================
+
+# Judge3-5-7
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print 夜中に鳴った【破裂音】……<br>それってつまり<br>【銃声】だったんじゃないかな。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# BGM変更：
+@bgm Bgm_38_1_Loop
+
+@char Alisa.Default,ArmR5,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open
+@gosubModifyCamera 0
+@print 銃声……。<br>たしかに銃の音なら<br>違和感はない音だったな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 破裂音なんて<br>そうそうあるものでも<br>ないですしね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print そして音がした方向……<br>倉庫には、銃が発砲された痕跡があったんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print この銃を撃ったのは、もちろん……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# キャラクター選択
+
+# Judge3-5-12
+
+@evidence Profile
+
+# 黒部ナノカ
+@if "chosenEvidenceId==\"Nanoka\""
+	@goto .Judge3-5-13
+
+# 紫藤アリサ
+@if "chosenEvidenceId==\"Alisa\""
+	@goto .Judge3-5-11
+
+# 桜羽エマ
+@if "chosenEvidenceId==\"Ema\""
+	@goto .Judge3-5-14
+
+@goto .Judge3-5-10
+
+# ==============================================================================
+# ミス選択肢
+# ==============================================================================
+# MARK: 3-5-10: ❌ 汎用ミス選択肢
+# Judge3-5-10
+
+@char Alisa.Default,ArmR9,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Closed
+@gosubModifyCamera 0
+@print ……そいつじゃないってことは、<br>流石にみんなもわかってると思うぞ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print ……まさか、当てずっぽうってわけじゃねぇだろうな？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （間違えちゃったみたい……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （銃を撃った人物……。<br>　それは、あの人しかいないよ！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge3-5-12
+# MARK: 3-5-11: ❌ 紫藤アリサ
+# Judge3-5-11
+
+@char Ema.Determined2,ArmR2-2,ArmL2,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print アリサちゃん、キミだよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL7,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print なんでそうなるんだよ！<br>ウチは音を聞いた張本人だぞ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print つまりエマっちはこう言いたいんっしょ？<br>ヤンキーの自作自演だって。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR4,ArmL6,Angle01/Facial/Eyes>Eyes_Angry_Open03
+@gosubModifyCamera 0
+@print ふざけんじゃねぇ！<br>なんでウチがそんなことしなきゃなんねーんだよ！<br>そもそも銃なんて持ってねー。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR4,ArmL6,Angle01/Facial/Eyes>Eyes_Angry_Open03
+@gosubModifyCamera 0
+@print 桜羽……少しは考えてものを喋りやがれ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ごめん、アリサちゃん……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （銃を撃った人物……。<br>　それは、あの人しかいないよ！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge3-5-12
+# MARK: 3-5-14: ❌ 桜羽エマ
+# Judge3-5-14
+
+@char Ema.Angry1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print ボクだったんだ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Surprised2
+@gosubModifyCamera 0
+@print えっ、えぇ……！？<br>エマさんそうなんですか……？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR4,ArmL1,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Middle
+@gosubModifyCamera 0
+@print あーそういやエマっち、<br>ここ最近コソコソしてるっぽくなかった？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print なんで自白したのかはわからないけれど……<br>きちんと説明してくれるのかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3,ArmL1,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open
+@gosubModifyCamera 0
+@print えっ、あ、いや。<br>やっぱりボクじゃなかったかも……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1
+@gosubModifyCamera 0
+@print 前言撤回するなら……<br>その分おめえを疑うだけだ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （信用を失っちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （みんなからの疑いの目を晴らすためにも、<br>　ちゃんと正しい人を選ばなきゃ！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （銃を撃った人物……。<br>　それは、あの人しかいないよ！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge3-5-12
+
+# ==============================================================================
+# MARK: 3-5-13: ⭕ 【黒部ナノカ】
+# ==============================================================================
+
+# Judge3-5-13
+
+@char Ema.Determined2,ArmR7,ArmL7,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print ナノカちゃん。……キミだよね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Normal_Closed1,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print ……ええ。そうね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Alisa.Surprised1
+@gosubModifyCamera 0
+@print じゅ、銃を……！？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Surprised1
+@gosubModifyCamera 0
+@print 夜中になんで撃ったんだよ……！<br>お前まさか、また誰かを……！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Normal_Closed1,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print べつに隠すつもりはなかったの。<br>ただ――。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Normal_Open2,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print ――誰が襲ってきたのか、<br>見極めたくてね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Alisa.Surprised1
+@gosubModifyCamera 0
+@print ……【襲ってきた】？<br>黒部、お前が襲われたってのか？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Normal_Open2,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print ええ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Normal_Open2,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print ……何者かが闇に紛れて、<br>倉庫を漁ってたの。<br>私はそれに気付いて起きたんだけど……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Normal_Open2,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print 向こうに気付かれてしまってね。<br>……そして相手はこちらに<br>襲いかかってきた。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Normal_Closed1,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print だから反撃をしたの。<br>それだけよ。<br>この事件には何も関係ない。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR4,ArmL1,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print 本当～？<br>なんかやましー事でも<br>隠してんじゃねーの？ { author:Coco speed:1 waitInput:true Wait:true }
+
+# SE・話の転換音
+@sfx Sfx_Common_5
+
+@StopBgm 
+
+@char Sherry.Normal1,ArmR3,ArmL4
+@gosubModifyCamera 0
+@print そんなことありません！<br>ナノカさんは本当のことを<br>言ってますよ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print あら、シェリーちゃん。<br>何か知ってるのかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR3,ArmL4
+@gosubModifyCamera 0
+@print "はい！ もちろんです！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char Sherry.Smile1,ArmR3,ArmL4
+@gosubModifyCamera 0
+@print 襲ったの、私ですから！！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Alisa.Surprised1,ArmL2,ArmR2
+@gosubModifyCamera 0
+@print ……は？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+
+@goto Act01_Chapter03/Act01_Chapter03_Trial06

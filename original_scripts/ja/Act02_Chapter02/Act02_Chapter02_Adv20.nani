@@ -1,0 +1,169 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-2-20
+
+# ========================================
+# ●シーン2‐2‐20
+# ========================================
+
+@back 1_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# 牢の施錠音
+@sfx Sfx_4
+
+@bgm Bgm_24_1
+
+@print 裁判の後。<br>ノアとアンアンは監房に戻ってきた。 { speed:1 waitInput:true Wait:true }
+
+@char Noah.Smile1
+@char AnAn.Normal1,Angle01/Option_Arms-
+
+@print あ、そうだ！ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char AnAn.Surprised1
+
+@print ひゃうっ！？ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Surprised1,Arms2,Angle01/Option_Arms>Option_Arms01_01,Angle01/Option_ArmR/Option_ArmR01_01-
+
+@print 『急に大声を上げるな。<br>　驚くだろう』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Surprised1,ArmR1,ArmL1,ArmR1-Option-All,Angle01/Option_Arms-,ArmR1-Option-All
+
+@char Noah.Pensive1
+
+@print ごめんね？<br>でも、大事なこと思い出して。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@spawn Clue
+
+@print ノアはポケットから万年筆を取り出す。 { speed:1 waitInput:true Wait:true }
+
+@char AnAn.Normal1,Arms2,Angle01/Option_Arms>Option_Arms01_01,Angle01/Option_ArmR/Option_ArmR01_01-
+
+@print 『なんだそれは？』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Normal1,ArmR1,ArmL1,ArmR1-Option-All,Angle01/Option_Arms-,ArmR1-Option-All
+
+@despawn Clue
+@char Noah.Normal1
+
+@print さっき裁判所出る時に、<br>ヒロちゃんが落としたんだぁ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print 届けようと思ったんだけど、忘れちゃった。<br>早く渡さなくちゃ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char AnAn.Smile1,Arms2,Angle01/Option_Arms>Option_Arms01_01,Angle01/Option_ArmR/Option_ArmR01_01-
+
+@print 『別に急ぐ必要はないのでは？』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Smile1,ArmR1,ArmL1,ArmR1-Option-All,Angle01/Option_Arms-,ArmR1-Option-All
+
+@print "ノアはどこか寂しそうに<ruby=\"ほほえ\">微笑</ruby>む。" { speed:1 waitInput:true Wait:true }
+
+@char Noah.Pensive1
+
+@print ううん、早くしないと。<br>だって、みんないつ死んじゃうか、<br>わからないもん。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char AnAn.Surprised1
+
+@print ！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Noah.Cry1
+
+@print ノアの目に、涙が浮かぶ。 { speed:1 waitInput:true Wait:true }
+
+@print ココちゃんも、死んじゃった。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print のあの絵、たくさん褒めてくれたんだよ？<br>嬉しそうに見てくれて……<br>配信でも使ってくれたのに……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print いなくなっちゃって、寂しいよ。<br>ねえ、みんな死んじゃうのかな……<br>そんなの、嫌だなぁ……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char AnAn.Surprised1
+
+@print ……！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Pensive1
+
+@print "すすり泣くノアに、<br>アンアンは困った様子で<ruby=\"うおうさおう\">右往左往</ruby>する。" { speed:1 waitInput:true Wait:true }
+
+@char AnAn.Pensive1,Arms2,Angle01/Option_Arms>Option_Arms01_03,Angle01/Option_ArmR/Option_ArmR01_01-
+
+@print 『落ち着け。<br>　みんな死ぬわけじゃない、きっと』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Noah.Cry1
+
+@print うん……でも。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print 泣きやまないノアに慌てたアンアンは、<br>１枚の絵を取り出した。 { speed:1 waitInput:true Wait:true }
+
+@char Noah.Cry1
+@char AnAn.Smile1,ArmR1,ArmL1,ArmR1-Option-All,Angle01/Option_Arms-,ArmR1-Option-All
+
+@print ……それ、どうしたの？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char AnAn.Smile1,Arms2,Angle01/Option_Arms>Option_Arms01_03,Angle01/Option_ArmR/Option_ArmR01_01-
+
+@print 『焼却炉で拾った』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print 『１枚だけ他の絵と違って輝いて見えた』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print 『この絵は、ノアが描いたのか？』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Pensive1,ArmR1,ArmL1,ArmR1-Option-All,Angle01/Option_Arms-,ArmR1-Option-All
+
+@print ……うん。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print ……どうして。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Pensive1,Arms2,Angle01/Option_Arms>Option_Arms01_01,Angle01/Option_ArmR/Option_ArmR01_01-
+
+@print 『どうして捨てたんだ？』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Noah.Flushed1
+
+@print ……だってヘタクソだもん。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char AnAn.Pensive1,ArmR1,ArmL1,ArmR1-Option-All,Angle01/Option_Arms-,ArmR1-Option-All
+
+@print "照れたように、ノアが<ruby=\"ほお\">頬</ruby>をかく。" { speed:1 waitInput:true Wait:true }
+
+@char AnAn.Pensive1
+
+@print 下手なんかじゃ、ない……！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Smile
+
+@print ……わがはいは、この絵、好きだ。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Noah.Surprised1
+
+@print ほんと？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Smile1
+
+@print ……アンアンちゃん、ありがとー！ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char AnAn.Smile1
+@char Noah.Smile1
+
+@print ノアがアンアンに抱きつく。 { speed:1 waitInput:true Wait:true }
+
+@print なんとか、ノアは泣きやんでくれた。<br>アンアンは安心したように笑んだ。 { speed:1 waitInput:true Wait:true }
+
+@char AnAn.Smile1
+
+@print ……笑っているノアの方がいい。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print わがはいと、楽しいことをたくさんしよう。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print わがはいが、ノアをたくさん笑わせてやる。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Noah.Smile1
+
+@print うんっ { author:Noah speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter02/Act02_Chapter02_Adv21

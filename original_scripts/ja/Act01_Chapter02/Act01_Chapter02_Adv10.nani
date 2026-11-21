@@ -1,0 +1,137 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-2-10
+
+# ========================================
+# ●シーン1‐2-10
+# ========================================
+
+@back 23_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# ========================================
+# ＞『ゲストハウス』を選択
+# ========================================
+
+@bgm Bgm_11_1
+
+@print 牢屋敷のすぐ傍に立地しているゲストハウスへと、<br>エマは入ってみた。 { speed:1 waitInput:true Wait:true }
+
+@print すると、ココとマーゴに遭遇した。 { speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1
+
+@print あら、エマちゃんおつかれさま。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Normal1
+
+@print うん、おつかれさま！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （マーゴちゃんは気球の設計してくれたり、<br>　材料を調達してくれたり、働き者で本当にすごい） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print それからエマの眼差しは、<br>ココの方へと移る。 { speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1
+
+@print （ココちゃんはいつも<br>　気まぐれに冷やかしにくるだけで……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （配信は続けてるみたいだけど、<br>　誰も見なくなっちゃったし、孤立しがちだ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （ココちゃんの相手をしてくれる<br>　ミリアちゃんがいなかったら、<br>　どうなってたことか……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 本日のココは、マーゴにつきまとって、<br>はしゃいでいた。 { speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1
+@char Coco.Normal1
+
+@print マーゴさぁ、コラボ配信しようって。<br>モノマネ芸、絶対バズるから。<br>アニメの声マネとかやってよ～。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print ごめんなさい。<br>聞いたことのある声しかマネできないのよ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 私テレビはほとんど見たことないから。<br>有名人の声マネはできないわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1
+
+@print あ、でもレイアちゃんとノアちゃんは有名人なのよね。<br>彼女たちの声は聞いたことがあるから、<br>それならできるわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1
+
+@print そういうんじゃないんだって～！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print マーゴは笑顔であしらい、<br>エマの方へと向き直る。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+@char Margo.Normal1
+
+@print エマちゃんは今日もアリサちゃん探しよね。<br>ここには来ていないわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print マーゴちゃんありがとう。<br>ここで何を？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 塀を越えられたとしても、どれくらいの距離を<br>移動しなければいけないのかわからないでしょう？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@print だから非常食や必要そうなものを、<br>一旦ここに隠しておこうと思って。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 人里が近くにあれば良いんだけど……<br>孤島なら、海を渡らないといけないし。<br>万全の準備が必要でしょう？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print そう、そうだよね……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print あら、あんまり暗い顔しないで？<br>今は塀を越えるのを目標にしましょう。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print その先のことは、その時に考えればいいの。<br>きっとなんとかなるわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3
+
+@print （マーゴちゃんが協力してくれて、<br>　本当に良かった……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print マーゴに対して憧れの眼差しを向けるエマに、<br>ココがケッと腐っている。 { speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1
+
+@print あーあ、なんかつまんなーい。<br>おっさんのとこ行こーっと。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print わざとらしく大きな声を上げて、<br>ココが出ていってしまった。 { speed:1 waitInput:true Wait:true }
+
+@print エマとマーゴは顔を見合わせる。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+@char Margo.Normal1,ArmR4
+
+@print なんかボク、邪魔しちゃったのかな……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ココちゃん、遊び相手がほしいのでしょうね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR1
+
+@print 最近よくミリアちゃんが遊んでくれてるみたい。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ええ。ミリアちゃんに苦労をかけてしまうけれど、<br>彼女が一番の適任者ね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print （そうかも……最近ミリアちゃんを<br>　精神的な支えにしている子が多くなった気がする） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマは軽くマーゴの作業を手伝ってから、<br>ゲストハウスを後にした。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン1‐2‐8
+# 全てのイベントを消化している＞シーン1‐2‐14
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter02/Act01_Chapter02_Adv08

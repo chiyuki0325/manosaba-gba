@@ -1,0 +1,687 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act01_Chapter01/Act01_Chapter01_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# ==============================================================================
+# MARK: 4: 💬 凶器について
+# 3選択肢+証拠品突きつけチュートリアル
+# ==============================================================================
+# ＠ト書き▼議論シーン1-4 凶器について
+# BGM変更：rAwTell Owk...
+@bgm Bgm_7_1
+
+# Judge1-4-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Sherry.Normal1,ArmR15,ArmL1
+@gosubModifyCamera 0
+@printDebate ノアさんを殺した凶器について<br>もう一度詳しく<br>考えてみましょうか！
+
+@char Alisa.Angry1,Option-ArmL-Off,ArmR2,ArmL2
+@gosubModifyCamera 0
+@printDebate ……なんか話し合う<br>必要あるのか？<br>さっき桜羽と宝生が<br>話してただろ……。<br>あの矢が城ケ崎を<br>殺した凶器だってな。
+
+@char Hanna.Normal1
+@gosubModifyCamera 0
+@printDebate 部屋に転がってた矢……<br>ですわね？<br>これを胸に刺されて<br>ノアさんは<br>死んだんですわよね……？
+
+@char Meruru.Normal1,ArmR1_1,ArmL14,Eyes1_Pensive_Open1,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@printDebate だ、だとしたら<br>犯人はその矢を<br>どうやって<br>刺したんでしょうか……？
+
+@char Meruru.Normal1,ArmR1_1,ArmL14,Eyes1_Pensive_Open1,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@printDebate 部屋の中は<br>白一色で塗られていて、<br>そこには足跡も<br>ありませんでした。
+
+@char Alisa.Angry1,Option-ArmL-Off,ArmR2,ArmL1
+@gosubModifyCamera 0
+@printDebate "そりゃ<br><link=\"Objection_01_01_04_01\">遠くから投げつけた</link>んじゃ<br>ねーのか。<br>犯人は<link=\"Objection_01_01_04_02\">ダーツの経験</link>でも<br>あったんだろ。"
+
+@char Alisa.Angry1,Option-ArmL-Off,ArmR2,ArmL1
+@gosubModifyCamera 0
+@printDebate "矢を部屋の<br><link=\"Objection_01_01_04_03\">外から投げ込んだ</link>だけ……<br>単純でシンプルな答えだ。"
+
+@char Coco.Pensive1
+@gosubModifyCamera 0
+@printDebate ……ダーツで人殺しとか、<br>それ本気で言ってる？<br>頭ヤンキー過ぎん？
+
+@char Alisa.Angry1,Option-ArmL-Off,ArmR2,ArmL2
+@gosubModifyCamera 0
+@printDebate 仮の話だっての……！<br>とりあえず仮定として<br>進めてんだよ！<br>文句があるならお前が仕切れ！
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Ema.Pensive1,ArmR4,ArmL5,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed { time:0 }
+@gosubModifyCamera 0
+@Wait 0.2
+
+# ==============================================================================
+# ADVシーン
+# ==============================================================================
+
+@print （矢を投げて人を殺すことが可能かはわからないけど……<br>　それはそれとして、何か違和感があるような） { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@gosubSplitStageScreen 1
+
+@char Meruru.Normal1,ArmR5_1,ArmL8,Eyes1_Pensive_Open2,Mouth1_Fearful_Open1
+@print エマさん……。<br>やっぱり、皆さんが知っている事には<br>人によって差があるみたいですね。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@char Ema.Determined2 { time:0.2 }
+@Wait 0.2
+
+@print うん……！<br>アリサちゃんに説明して<br>話を聞いてもらおう……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@char Ema.Pensive1,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed { time:0.2 }
+@Wait 0.2
+
+@print （……ちょっとだけ怖いけど） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideStageScreen 1
+
+@goto .Judge1-4-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_01_01_04_01
+
+@Skip false
+@pauseTrial true
+
+@choice 矢は刺さらなかった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge1-4-4
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_01_01_04_02
+
+@Skip false
+@pauseTrial true
+
+@choice 犯人はダーツの経験者ではない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge1-4-3
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_01_01_04_03
+
+@Skip false
+@pauseTrial true
+
+@choice 道具を使った
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge1-4-2
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# ミス選択肢
+# ==============================================================================
+
+# Judge1-4-3
+
+# ==============================================================================
+# MARK: 4-3: ❌ 犯人はダーツの経験者ではない
+# ==============================================================================
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Surprised1,ArmR1,ArmL1
+@gosubModifyCamera 0
+@print ちょっと待って！<br>そんな都合よくダーツの経験者が<br>いたりするのかな……！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1,ArmR2,ArmL1,Option-ArmL-Off
+@gosubModifyCamera 0
+@print ……そんなん<br>たまたまいた可能性だってあるだろ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Hanna.Normal1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print 別に今それを追求する場面では<br>ないと思いますわ……？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1,ArmR3,ArmL2
+@gosubModifyCamera 0
+@print なんかダーツに思い入れでもあるん？<br>お気持ち表明は後にしてもろて。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Surprised1,ArmR6,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （み、みんな呆れてる……！<br>　空気悪くしちゃったかも……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR6,ArmL7,Angle01/Head02/Facial02/Sweat02>Sweat02_01
+@gosubModifyCamera 0
+@print （もう一度考えてみよう……！<br>　アリサちゃんの発言の違和感を……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-4-1
+
+# ==============================================================================
+# MARK: 4-4: ❌ 矢は刺さっていない可能性がある
+# ==============================================================================
+
+# Judge1-4-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Pensive1,ArmR4,ArmL5
+@gosubModifyCamera 0
+@print 思うんだけど、矢って本当に刺さったのかな？<br>もしかして刺さらなかった可能性もあるんじゃ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1
+@gosubModifyCamera 0
+@print えっと……<br>でも、たしか矢じりに血痕がありましたよね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+@print 私にはノアさんの傷は、<br>あの矢の形状と同じ傷に見えましたよ？<br>メルルさんはどうですか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal1,ArmR1_1,ArmL8,Eyes1_Pensive_Open1,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print え、ええと……<br>私も検死の経験があるわけじゃないですから、<br>詳しく断定することはできませんけど……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal1,ArmR1_1,ArmL8,Eyes1_Normal_Open1,Mouth1_Normal_Open2
+@print でも、シェリーさんがそう言うなら<br>そうなのかも……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1,Option-ArmL-Off
+@gosubModifyCamera 0
+@print 実際死体は刺されてて、<br>矢に血もついてただろ。<br>他の凶器が出てきたわけでもあるまいし……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+@gosubModifyCamera 0
+@print 逆にエマさんはどうして矢が刺さってないと<br>思ったんですか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR6,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print えっと……それは……なんとなく……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,Option-ArmL-Off
+@gosubModifyCamera 0
+@print ……真面目にやってくれ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Surprised1,ArmR6,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Thinking_Closed01,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print "（うぐっ！ アリサちゃんの言う通りだよね……！<br>　ちゃんと考えて話さないと……！）" { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,Angle01/Head02/Facial02/Sweat02>Sweat02_01
+@gosubModifyCamera 0
+@print （可能性を根拠なく否定しても邪魔をするだけかも……。<br>　新しい可能性を提示するか、<br>　根拠を示さないと……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-4-1
+
+# ==============================================================================
+# MARK: 4-2: ⭕ 道具を使った可能性がある
+# ==============================================================================
+
+# Judge1-4-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+@char Ema.Pensive1,ArmR5,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01
+@gosubModifyCamera 0
+
+@print ちょっと待って！<br>……犯人が矢を投げたとは<br>限らないんじゃないかな。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,Option-ArmL-Off
+@gosubModifyCamera 0
+@print ……あ？<br>投げ矢だろうと吹き矢だろうと変わんねーだろ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+# ＠備考◆煽るように
+@char Hanna.Normal1,ArmR3,ArmL2,Angle01/Head01/Facial01/Mouth01>Mouth01_Smile_Open
+@gosubModifyCamera 0
+@print 吹き矢って……<br>その発想、あなた秘境の先住民か何かですの～？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,Option-ArmL-Off
+@gosubModifyCamera 0
+@print ああ！？<br>なんだ文句あんのかてめぇ……！？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+# 怯え（ひっ！？みたいな感じでひよこっぽい小動物イメージ）
+@char Hanna.Fearful1
+@gosubModifyCamera 0
+@print ぴっ……！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR5,ArmL3
+@gosubModifyCamera 0
+@print ア、アリサちゃん落ち着いて……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal2,ArmR1_2,ArmL3,Eyes2_Normal_Open1,Mouth2_Normal_Open1
+@gosubModifyCamera 0
+@print ……エ、エマさん。<br>アリサさんはまだ知らないだけです……！<br>【証拠】を見てもらえば、きっとわかってくれます！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR1,ArmL1
+@gosubModifyCamera 0
+@print ……うん。わかった。<br>やってみよう……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# Judge1-4-5
+
+@char Ema.Determined2,ArmR1,ArmL1
+@gosubModifyCamera 0
+@print （凶器が【投げた】以外でどう使われたのか……<br>　手がかりになる情報をみんなと共有するんだ！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# ==============================================================================
+# MARK: 4-5: 💬 証拠提示分岐
+# ==============================================================================
+
+@evidence Clue
+
+# 正解：ボウガンの矢
+@if "chosenEvidenceId==\"1-10\""
+	@goto .Judge1-4-6
+
+# 証拠品ミス
+@goto .Judge1-4-7
+
+# Judge1-4-7
+
+@char Alisa.Angry1,Option-ArmL-Off
+@gosubModifyCamera 0
+@print はぁ……！？<br>【矢を投げつけた】ってことにそれが<br>どう関係すんだよ……！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,Option-ArmL-Off
+@gosubModifyCamera 0
+@print 今は【凶器】の話をしてんだ！<br>真面目にやれ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Pensive1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （怒られちゃった……！<br>　もう一度考え直してみよう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-4-5
+
+# ==============================================================================
+# MARK: 4-6: ⭕ 【ボウガンの矢】
+# ==============================================================================
+
+# Judge1-4-6
+
+# ==============================================================================
+# 成功カットイン
+# ==============================================================================
+# [spawn カットインエフェクトのID]
+
+@StopBgm 
+@gosubCutIn Ema
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Determined2,ArmR8,ArmL1,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print ……ねぇ、これを見てアリサちゃん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# アイテム表示・ボウガンの矢
+@spawn Clue
+
+@Wait 1
+@despawn Clue
+@Wait 0.5
+
+# ＠備考◆脅すように低くがなりを入れる/頭に血が昇ってる
+@char Alisa.Angry1,Option-ArmL-Off
+@gosubModifyCamera 0
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+@print ……だからその矢がどうしたってんだ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR8,ArmL1,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print これって……<br>ボウガンの矢なんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,Option-ArmL-Off
+@gosubModifyCamera 0
+@print 投げ矢だろうがボウガンの矢だろうが――。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆冷静になる
+@char Alisa.Surprised1,Option-ArmL-Off
+@gosubModifyCamera 0
+@print ――ってボウガン？<br>そういやそんなもん、どっかで……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+# BGM変更：Sar-gedy-静-
+@bgm Bgm_5_1
+
+@char Ema.Pensive1,ArmR8,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03
+@gosubModifyCamera 0
+@print ……ナノカちゃん。<br>昨日ラウンジにあったボウガンが<br>無くなったって言ってたよね？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-
+@gosubModifyCamera 0
+@print …………。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR8,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open03,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ……ナ、ナノカちゃん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Normal_Closed1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print ……ええ、そうよ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# ＠備考◆驚き
+@char Ema.Normal1,ArmR3,ArmL1,Angle01/Head01/Facial01/Mouth01>Mouth01_Smile_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （よかった……！<br>　答えてくれた……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,Option-ArmL-Off
+@gosubModifyCamera 0
+@print なんだと……？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR8,ArmL1,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print 昨日の夜、ナノカちゃんがラウンジのボウガンが<br>なくなってた事に気付いて<br>教えてくれたんだよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print きっと、そのボウガンの矢が<br>これなんだと思う。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Sherry.Normal1,ArmR1,ArmL1
+@gosubModifyCamera 0
+@print "ええ、間違いありません！<br>矢羽も少ないですし、<br>これは<ruby=\"ようきゅうじゅう\">洋弓銃</ruby>の矢ですよ！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1,Angle01/Facial/Eyes>Eyes_Smile_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print "よーきゅーじゅー……？<br>って何？ ボウガンのこと……？" { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR1,ArmL1
+@gosubModifyCamera 0
+@print "はい！ 正式にはクロスボウと言うらしいんですが……<br>それはともかく。" { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+@char Sherry.Smile1,ArmR1,ArmL1
+@gosubModifyCamera 0
+@print きっとラウンジにあったボウガンの矢ですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+@char Alisa.Normal1,Option-ArmL-Off
+@gosubModifyCamera 0
+@print ……そうか。<br>それなら……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+@char Alisa.Angry1,Option-ArmL-Off
+@gosubModifyCamera 0
+@print その矢は【投げた】んじゃなくて<br>【撃った】かもしれねーって事か……！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print う、うん……！<br>細かい事だけど……。<br>道具を使ったかどうかって、大きな違いかと思って。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,Option-ArmL-Off
+@gosubModifyCamera 0
+@print …………。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Pensive1,Option-ArmL-Off
+@gosubModifyCamera 0
+@print ……ああ、たしかに桜羽の言う通りだな。<br>ウチが見落としてたみたいだ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3,ArmL1,Angle01/Head01/Facial01/Mouth01>Mouth01_Smile_Closed
+@gosubModifyCamera 0
+@print （良かった……！<br>　アリサちゃん、納得してくれた……！<br>　やっぱり話せばわかってくれるんだ！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Pensive1,Option-ArmL-Off
+@gosubModifyCamera 0
+@print ……たしかに矢を投げたってよりも、<br>ボウガンで撃たれたって方が筋が通るな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1,Option-ArmL-Off,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-
+@gosubModifyCamera 0
+@print けどそうなると……<br>誰がそのボウガンを使えたんだ？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Leia.Normal1,Angle01/Facial/Mouth>Mouth_Yell_Open01
+@gosubModifyCamera 0
+@print ボウガンを使えた人物がノアくんを殺した犯人……<br>ということだね？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ボウガンを盗んだ人は誰なんですの！？<br>さっさと出てきやがりなさいませ～！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+# ＠備考◆呆れ
+@char Coco.Pensive1,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print いやそんなん<br>名乗り出てくるわけないじゃん……。<br>十中八九そいつが犯人なんだし……。 { author:Coco speed:1 waitInput:true Wait:true }
+@StopBgm 
+
+# SE・話の転換音
+@sfx Sfx_Common_5
+
+@char Sherry.Normal1
+@gosubModifyCamera 0
+@print あ、それ私です。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Coco.Surprised1
+@gosubModifyCamera 0
+@print ……………は？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1
+@gosubModifyCamera 0
+@print ですからぁ……<br>ラウンジからボウガンを持ち出したのは<br>私ですよ？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+@char Coco.Angry1,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Comical_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……はああぁぁ！？ { author:Coco speed:1 waitInput:true Wait:true }
+
+# BGM変更：看るモノ達
+@bgm Bgm_10_1
+@char Ema.Surprised1
+@gosubModifyCamera 0
+@print な、なんでシェリーちゃん、<br>そんなことを……！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1
+@gosubModifyCamera 0
+@print えー？<br>だって危ないじゃないですか。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Angry1,ArmR3,ArmL4
+@gosubModifyCamera 0
+@print 人を殺せるような道具が<br>誰でも使えるラウンジに<br>飾ってあるんですよ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1
+@gosubModifyCamera 0
+@print 当然、気になりますよね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ＠備考◆気圧されている
+@char Leia.Surprised1,ArmR4,ArmL5,Angle01/Facial/Mouth>Mouth_Angry_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print え、ええと……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Surprised1,ArmR4,ArmL5,Angle01/Facial/Mouth>Mouth_Yell_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print それじゃあキミが、<br>盗んだボウガンでノアくんを撃ち殺した……<br>という事でいいのかい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1
+@gosubModifyCamera 0
+@print まさかまさか〜！<br>そんなバレバレな事しませんよ～！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+@gosubModifyCamera 0
+@print ボウガンが犯行に使われたときのことを考えて<br>分解して構造を知っておいたんです。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1,ArmR7,ArmL1,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print ……でもなんか<br>戻せなくなっちゃいましたけど。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Coco.Surprised1
+@gosubModifyCamera 0
+@print ダメじゃん！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1,ArmR3,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Open01
+@gosubModifyCamera 0
+@print で、でも、どっちにしろボウガンを盗んだなら<br>怪しいに決まってますわ！<br>こいつが犯人ですわ～～！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR7,ArmL1,Angle01/Facial/Eyes>Eyes_Flushed_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print いえいえ〜！<br>違いますって～！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+@char Sherry.Normal1
+@gosubModifyCamera 0
+@print ……それに私が盗んだボウガンには、<br>その時すでに【矢がなかった】んですよ。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+@char Ema.Surprised1,ArmR13,ArmL1
+@gosubModifyCamera 0
+@print 矢が……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print ええ、おそらく何者かが、私が借りる前にもう<br>矢を盗んでいたんでしょうね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR1,ArmL4
+@gosubModifyCamera 0
+@print 矢がないなら当然、<br>撃てませんよね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ＠備考◆笑顔
+@char Coco.Smile1
+@gosubModifyCamera 0
+@print なるほど～！ { author:Coco speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+# ＠備考◆時差ツッコミ
+@char Coco.Angry1
+@gosubModifyCamera 0
+@print ……ってそんな言い訳が通るかっての！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Sherry.Surprised1
+@gosubModifyCamera 0
+@print ええ～！？<br>でも本当なんですよぉ～！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Eyes1_Normal_Closed1,Mouth1_Normal_Closed1
+@gosubModifyCamera 0
+@print …………。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+@char Nanoka.Eyes1_Neutral_Open1,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print ……そうね。<br>彼女が言っていることはきっと本当よ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3,ArmL1,Angle01/Head01/Facial01/Mouth01>Mouth01_Smile_Closed
+@gosubModifyCamera 0
+@print （ナノカちゃんが……<br>　自分から喋ってくれた！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print ナノカちゃん……<br>それってどういうこと？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Eyes1_Normal_Open1,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print ……私はあのボウガンが<br>殺人に使われる可能性を見越して、<br>注意して見ていたの。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Eyes1_Normal_Open1,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print ……彼女の言う通り、<br>一昨日の時点ですでに【矢はなかった】わ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Eyes1_Neutral_Open1,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print その前には<br>一緒に矢も飾られていたことは確認している……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Eyes1_Normal_Open2,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print ……だから、【矢だけが盗まれていた】という<br>彼女の証言は本当のことよ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+@gosubModifyCamera 0
+@print "ほらほら！ ナノカさんも言っている通り、<br>私がお借りした時に<br>すでに矢はなかったんですって！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Eyes1_Normal_Closed2,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print ……まあ、あなたが事前に矢だけを盗んで、<br>そのあとに本体も追加で盗んだ可能性は<br>否定できないけどね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Sherry.Surprised1
+@gosubModifyCamera 0
+@print "ええー！？ だとしたらわざわざ<br>ボウガンを盗んだなんて言い出しませんよ〜。<br>疑われるだけじゃないですかー。" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Leia.Normal1,ArmR5,ArmL7,Angle01/Facial/Mouth>Mouth_Yell_Open01
+@gosubModifyCamera 0
+@print ……何にせよ、【犯人は事件の２日前には<br>凶器を盗んで手にしていた】……<br>ということでいいのかな？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR14
+@gosubModifyCamera 0
+@print そうですよ～！<br>それであってます！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR4,ArmL5
+@gosubModifyCamera 0
+@print （シェリーちゃんがボウガンを盗んで分解した……？<br>　でも殺した犯人とは限らない……よね……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1
+@gosubModifyCamera 0
+@print ……では改めて、<br>今の話の流れを整理しましょうか！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+
+@goto Act01_Chapter01/Act01_Chapter01_Trial05

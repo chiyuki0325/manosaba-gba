@@ -1,0 +1,424 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-1-32
+
+# ========================================
+# トラウマシーン
+# ========================================
+
+# ========================================
+# [bgm Bgm_001_001_Loop]
+# ========================================
+
+# ========================================
+# [still illust 20‐2]
+# ========================================
+
+@bgm Bgm_1_1
+
+@pivot Stills-Front
+@back 200_1 { time:0 }
+@back Transparent { time:0.9 }
+@Wait 1
+
+@printer Normal.Simple
+
+@print ――私を見て、と心が叫んだ。 { speed:1 waitInput:true Wait:true }
+
+@print 蓮見レイアは、誰より目立たないといけなかった。 { speed:1 waitInput:true Wait:true }
+
+@print 幼少期に母が病に伏せ、心を閉ざしてしまった。<br>その時から。 { speed:1 waitInput:true Wait:true }
+
+@print 誰のことも見ない――話さない――<br>娘の存在すら、気付かない―― { speed:1 waitInput:true Wait:true }
+
+@print 幼いレイアは母の病室に通い、<br>声をかけ続けた。 { speed:1 waitInput:true Wait:true }
+
+@print ――だいじょうぶだよ、こわくないよ！ { speed:1 waitInput:true Wait:true }
+
+@print ――レイアが、おかあさんをまもってあげる！ { speed:1 waitInput:true Wait:true }
+
+@print ――わたしがおかあさんの病気、きっとなおしてあげる！ { speed:1 waitInput:true Wait:true }
+
+@print ――だから、だから……ねえ、レイアを見て！ { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@Wait 0.3
+
+@back 200_2 { time:0.15 }
+@Wait 0.15
+
+@hide Stills-Middle { time:0.3 }
+@Wait 0.5
+
+@back 200_2 { time:0.8 }
+@Wait 1
+
+@print 一度だけ、母が病室でテレビを見ていたことがある。<br>それは偶然テレビで放映されていた、舞台の演劇だった。 { speed:1 waitInput:true Wait:true }
+
+@print 母はただ、流れているテレビの方に<br>視線を向けていただけかもしれない。 { speed:1 waitInput:true Wait:true }
+
+@print それでも、母の瞳の中に流れていた映像は、<br>レイアにとって希望になった。 { speed:1 waitInput:true Wait:true }
+
+@print あの場所で、<br>一番目立つところに立てば、きっと私を見てもらえる。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@back SolidColor { time:0 }
+@WaitForNextFrame 
+
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@print その想いは、魔法になった。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@hide Stills-Middle { time:0 }
+@back 200_3 { time:0.6 }
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@print レイアは、人の注目を集めることができる<br>不思議な力を手に入れていた。 { speed:1 waitInput:true Wait:true }
+
+@print その力を使えば、<br>いつだって自分が一番目立つところに立てた。 { speed:1 waitInput:true Wait:true }
+
+@print レイアは舞台の主役でい続けなければいけなかった。<br>そうしなければ、意味がないと思った。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@Wait 0.6
+
+@shake Camera
+@Wait 0.05
+
+@back 200_4 { time:0.1 }
+@Wait 0.9
+
+@print それでも、どんな魔法を使っても<br>――母は、レイアを見なかった。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@back 200_5 { time:0.6 }
+@Wait 0.8
+
+@print まだ足らないのだ。<br>もっと、目立たないといけないのだ。<br>誰より、一番目立たないと。 { speed:1 waitInput:true Wait:true }
+
+@print 自分より目立っている人間は<br>排除していかなければ。 { speed:1 waitInput:true Wait:true }
+
+@print そのためには、なんだってする。<br>どんなに辛かろうと、どんなに汚れようと。 { speed:1 waitInput:true Wait:true }
+
+@print そしてまた、レイアの前に、自分より目立っている<br>人間が現れてしまった。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@back 200_1 { time:0.6 }
+@Wait 1.5
+
+@spawn MaskingRectangle
+@char Noah.Normal1 { time:0 }
+@mask Noah
+@WaitForNextFrame 
+
+@char Noah.Normal1 { time:2.1 }
+@Wait 2.4
+
+@StopBgm 
+
+@print 城ケ崎ノア。 { speed:1 waitInput:true Wait:true }
+
+@print ――誰かが、レイアにささやいた。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@back SolidColor { time:0 }
+@char Noah.Normal1 { time:0.9 }
+@WaitForNextFrame 
+
+@back SolidColor { time:0.6 }
+@animate Noah-Middle
+@Wait 0.8
+
+@print 目立っている彼女を殺さないと、一番になれないよ？<br>かわいそうに。 { speed:1 waitInput:true Wait:true }
+
+@print レイアはその時、城ケ崎ノアを殺そうと決めた。 { speed:1 waitInput:true Wait:true }
+
+@print これで自分だけを見てもらえるはずだった。<br>それなのに、やっぱり。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@mask Noah { Enable:false }
+@despawn MaskingRectangle
+@back SolidColor { time:0 }
+@hide Stills,Noah { time:0 }
+@hide MainBackground-Middle,Noah-Middle { time:0.9 }
+@Wait 1.2
+
+@print 誰も自分を見てくれない。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [hideStill]
+# ========================================
+
+# ========================================
+# [bgm Bgm_044_001_Loop]
+# ========================================
+
+# ========================================
+# [still illust 41‐3]
+# ========================================
+
+@animate Noah-Middle
+@HidePrinter 
+@Wait 1.8
+
+@printer Normal.Default
+@back 410_4 { time:0.9 }
+@blur Stills-Middle
+@WaitForNextFrame 
+
+@blur Stills-Middle
+@animate Stills-Middle
+@Wait 3
+
+@bgm Bgm_44_1
+
+@print "閉じられた天使像の中で、<br>レイアは<ruby=\"ぜっきょう\">絶叫</ruby>していた。" { speed:1 waitInput:true Wait:true }
+
+@print しかしレイアの姿を見ることはできない。<br>天使像が閉じているから。 { speed:1 waitInput:true Wait:true }
+
+@print "天使像の下から、レイアから流れ出たであろう血液が<ruby=\"したた\">滴</ruby>り、<br>台座へとひろがっていった。" { speed:1 waitInput:true Wait:true }
+
+@print "その生々しい赤は、<br>皮肉なことに全てが美しい<ruby=\"ちょう\">蝶</ruby>になっていく。" { speed:1 waitInput:true Wait:true }
+
+@print どれだけ血が流れ続けても、<br>レイアが死ぬ様子はなかった。 { speed:1 waitInput:true Wait:true }
+
+@print ずっとガタガタと天使像が揺れ続け、<br>血が流れ続けている。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [hideStill]
+# ========================================
+
+@print （レイアちゃんは魔女になっちゃったから、<br>　死なないんだ……それなら、処刑はいつ終わるの……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "なぁ、もうやめろよ！ コイツは十分苦しんだろ！！" { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print 耐え切れずにアリサが叫ぶ。<br>その時だった。 { speed:1 waitInput:true Wait:true }
+
+@print "ずっと<ruby=\"ぜっきょう\">絶叫</ruby>していたレイアの声が、<br>やがておぞましい<ruby=\"うな\">唸</ruby>り声に変わっていった。" { speed:1 waitInput:true Wait:true }
+
+@print "完全に異形と化したそれの<ruby=\"うな\">唸</ruby>りは、<br>もはやレイアの声ではない。獣のような<ruby=\"ほうこう\">咆哮</ruby>だった。" { speed:1 waitInput:true Wait:true }
+
+@print 無事に魔女のなれはてとなりましたので、<br>彼女は永遠の牢獄へと閉じ込めます。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print ゴクチョーが再び宣言した直後、<br>機械の作動音が聞こえてきた。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [sfx 36：歯車がまわる音]
+# ========================================
+
+@sfx Sfx_36
+@HidePrinter 
+@animate Stills-Middle
+@back Transparent { time:0 }
+@WaitForNextFrame 
+
+@animate Stills-Middle
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@print 仕掛けが作動し、<br>処刑台が地下へと片付けられていく。 { speed:1 waitInput:true Wait:true }
+
+@print "異形の<ruby=\"ほうこう\">咆哮</ruby>がしばらく後を引いていたが、<br>床が閉じられたことで、完全に無音となった。" { speed:1 waitInput:true Wait:true }
+
+@print 中央は、もともとの台座に戻っている。 { speed:1 waitInput:true Wait:true }
+
+@print まるでそこには、<br>最初から何もなかったかのように。 { speed:1 waitInput:true Wait:true }
+
+@print "エマは詰めていた息を吐き出し、<br><ruby=\"もも\">腿</ruby>に置いた拳を固く握りしめた。" { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@animate Stills-Middle
+@hide Stills-Middle { time:0 }
+@back SolidColor { time:0 }
+@char Ema.Cry1,ArmR3 { time:0 }
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@print （さようなら、レイアちゃん……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "ぱたり、ぱたりと<br>エマの<ruby=\"もも\">腿</ruby>の上に涙の<ruby=\"しずく\">滴</ruby>が落ちる。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 演出：BGM切る・黒画面・UIも消す・ささやきのみ
+# ========================================
+
+@StopBgm 
+
+@HidePrinter 
+@printer Normal.Simple
+@Wait 1.2
+
+# 立ち絵・話者名の表示なし
+# ユキ
+
+@print ――よくできましたね。 { speed:0.05 }
+
+@HidePrinter 
+@char Ema.Pensive1,ArmR3 { time:0.6 }
+@printer Normal.Default
+@Wait 1.5
+
+@print （ああ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@Wait 0.6
+
+@char Ema.Normal1,ArmR3 { time:1.2 }
+@Wait 1.5
+
+@print "エマは<ruby=\"うつむ\">俯</ruby>き、涙を流し、<br>その<ruby=\"こうかく\">口角</ruby>は、ほんの少し――満足げに上がっていた。" { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@back SolidColor { time:1.8 }
+@Wait 3
+
+@hide Ema { time:0 }
+@back 13_1 { time:0 }
+@back Transparent { time:1.8 }
+@WaitForNextFrame 
+
+@animate MainBackground
+@Wait 1.5
+
+@print "<ruby=\"せいじゃく\">静寂</ruby>が裁判所内を支配している。<br>しばらく、誰も何も言わない。" { speed:1 waitInput:true Wait:true }
+
+@print 痛いほどの沈黙を破ったのは、<br>ゴクチョーだった。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1 { time:0 }
+@char Warden.1
+@mask MainBackground-Middle,Warden-Middle
+@WaitForNextFrame 
+
+@back 14_1
+@WaitForNextFrame 
+
+@animate MainBackground-Middle
+@animate Warden-Middle
+@Wait 0.3
+
+@print 無事に終わって良かったですね。<br>また殺人事件が起きたら<br>魔女裁判を開きます。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print それまでは、今までどおりに<br>囚人として慎ましく生活をしてください。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print これにて、閉廷とします。<br>やれやれ、おつかれさまでした……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@animate MainBackground-Middle,Warden-Middle
+@WaitForNextFrame 
+
+@animate MainBackground-Middle
+@animate Warden-Middle
+@hide MainBackground-Middle,Warden-Middle
+@despawn MaskingRectangle
+@Wait 0.3
+
+@print 裁判は終わったのだ。 { speed:1 waitInput:true Wait:true }
+
+@print "少女たちはお互いの顔を<ruby=\"うかが\">窺</ruby>い、はかりあいつつ、<br>のろのろと動きだす。" { speed:1 waitInput:true Wait:true }
+
+@print ひどく疲れていた。<br>今夜はもう眠って、全て忘れてしまいたかった。 { speed:1 waitInput:true Wait:true }
+
+@print しかしその中で――<br>１人の少女が異質な動きを見せた。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [sfx 38：銃声]
+# ========================================
+
+@sfx Sfx_38
+@HidePrinter 
+@mask MainBackground-Middle,Warden-Middle { Enable:false }
+@shake Camera
+@Wait 0.6
+
+@print 銃声が、裁判所に鳴り響いた。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@char AnAn.Fearful1 { time:0 }
+@WaitForNextFrame 
+
+@back 14_1
+@char AnAn.Fearful1,Angle01/Option_Arms-
+@char Miria.Fearful1,ArmR10,ArmL4
+@WaitForNextFrame 
+
+@blur AnAn-Middle
+@Wait 0.3
+
+@bgm Bgm_22_1
+
+@print 少女たちは唐突にまた恐慌状態に陥り、<br>緊張で体を強張らせる。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@char Warden.1 { time:0 }
+
+@blur Warden-Front
+@WaitForNextFrame 
+
+@animate Warden-Front
+@Wait 1.2
+
+@shake Camera
+@Wait 0.6
+
+@print 撃ち抜かれたのは――<br>今にも飛び去ろうとしていたゴクチョーだった。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [sfx 39：鳥が地面に落ちる音]
+# ========================================
+
+@sfx Sfx_39
+
+@print 一発で完全に仕留められたのか、<br>床に落ちたゴクチョーは沈黙し、ぴくりとも動かない。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@animate Warden-Middle,Warden-Front
+@back 14_1 { time:0 }
+@char Ema.Surprised1,ArmR3 { time:0 }
+@hide MainBackground-Middle,AnAn-Middle,Miria-Middle,Warden-Front
+@Wait 0.5
+
+@print （い、一体誰が！？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマは室内にざっと視線を巡らせる。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [still illust 12]
+# ========================================
+
+@HidePrinter 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.8
+
+@hide MainBackground,Ema { time:0 }
+@back 120_1 { time:0 }
+
+@back Transparent { time:1.5 }
+@Wait 2.1
+
+@print 銃を構えていた少女は、<br>静かに口を開いた。 { speed:1 waitInput:true Wait:true }
+
+@print この茶番をいつまで続けるつもり？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 私たちの中に、いるんでしょう？<br>このデスゲームの黒幕が。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 次話への引継ぎアイテム：『万年筆』
+# ========================================
+
+@update Leia
+@update Noah
+
+# ========================================
+# ＞魔女裁判 第1章2話へ
+# ========================================
+
+@set "g_gameProgress = max(2, g_gameProgress)"
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter02/Act01_Chapter02_Adv01

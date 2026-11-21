@@ -1,0 +1,233 @@
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-ex1
+
+@bgm Bgm_23_1
+@back 13_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.2
+
+@print ――そうしてエマが犯人を突き止めることが<br>できないまま、時間は流れた。 { speed:1 waitInput:true Wait:true }
+
+@char Warden.3
+@print 議論はここまでということで、<br>投票に移ってもらっていいですかね？ { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@print （犯人がはっきりしてないのに、投票なんて……<br>　でも、やるしかないんだよね） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 殺人犯を特定しなければ、全員処刑されてしまうのだ。<br>たとえその人物が真犯人でなかったとしても―― { speed:1 waitInput:true Wait:true }
+
+@print 誰が【魔女】として処刑されるのかを決めなければならない。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Closed02,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+@print （でもやっぱり、辛すぎるよ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマだけじゃない。<br>その場にいる誰もが震え、青ざめていた。 { speed:1 waitInput:true Wait:true }
+
+@print だが、容赦なく投票の時間はやってくる。 { speed:1 waitInput:true Wait:true }
+
+@print 少女たちは自身のスマホを操作し、<br>投票をしていく。 { speed:1 waitInput:true Wait:true }
+
+@print そして。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# パンパカパーン
+@sfx Sfx_34
+# ========================================
+
+@print まるでそぐわない間抜けなファンファーレ音と共に、<br>スマホに映し出されたのは―― { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 心臓のドキドキ音
+@sfx Sfx_35
+# ========================================
+
+@print エマの画像だった。 { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+# ========================================
+@bgm Bgm_29_1
+# ========================================
+
+@char Ema.Default,ArmR13,ArmL16,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Lifeless01,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open
+@print "――え？ ま、待ってよ……！<br>何かの間違いなんじゃ……！？" { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Warden.8
+@print えー、間違いではありません。<br>というわけで……<br>得票数のもっとも多い、桜羽エマの処刑が決定！ { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Lifeless01,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open
+@print な、なんで！？<br>ねえ、なんでボクなの！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマはメルルに<ruby=\"すが\">縋</ruby>るような目を向ける。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@print メルルも信じられないといった面持ちで、<br>言葉を失っているようだった。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Default,ArmR3,ArmL3,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Lifeless01,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open
+@print ねえ……なんでボクに投票したの！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@print エマは他の少女たちに疑問を投げかけるが、<br>誰もが何も答えはしなかった。 { speed:1 waitInput:true Wait:true }
+
+@print "ある者は気まずそうに顔を伏せ、<br>ある者は<ruby=\"あわ\">憐</ruby>れむようにエマを見つめる。" { speed:1 waitInput:true Wait:true }
+
+@print そして真犯人は、もしかしたら<br>心の中でほくそえんでいるのかもしれない。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Warden.7
+@print 理由なんて、どうでもいいんじゃないんですか？<br>なんとなく怪しいと思ったからとか……<br>ぶっちゃけ、嫌われてるとか……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Default,ArmR12,ArmL16,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@print そ、そんなの、めちゃくちゃだよ！<br>ボクは人殺しなんかしてない！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Warden.7
+@print まあ、決定は決定なんで。<br>残念ですけど、諦めてもらうしかないかと。<br>さっさと閉廷したいですし……進行しちゃっていいですかね？ { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 涙を浮かべて無実を訴えるエマだが、<br>ゴクチョーには取り付く島もなかった。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Default,ArmR1,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Lifeless01,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@print "おかしいよ！<br>みんなも何か言ってよ！ ねえってば！！" { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Warden.9
+@print あ、念のため言っておきますが……<br>邪魔や介入をすれば、<br>看守がその者も同様に断罪しますんで。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Warden.8
+@print 全員がスマホの処刑ボタンを押したら、<br>処刑執行スタートです。 { author:Warden speed:1 waitInput:true Wait:true }
+@hideChars 
+
+@print 定型文を読み上げるように、<br>ゴクチョーは淡々と告げた。 { speed:1 waitInput:true Wait:true }
+
+@print 少女たちは青ざめながら、<br>次々にボタンを押していく。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 処刑ボタンを押す音
+@sfx Sfx_86
+# ========================================
+
+# シーン1‐1‐31から引用
+
+@char Warden.8
+@print "はい！ ではこれより、<br>魔女の処刑を執行します～。" { author:Warden speed:1 waitInput:true Wait:true }
+@hideChars 
+
+# ========================================
+# 歯車がまわる音
+@sfx Sfx_36
+# ========================================
+
+@print ゴクチョーの宣言と共に、<br>仕掛けが作動しはじめた。 { speed:1 waitInput:true Wait:true }
+
+@print どこからか歯車の回転音が聞こえ、<br>中央の台座がわずかに揺れた。 { speed:1 waitInput:true Wait:true }
+
+@print 床が開き、台座がゆっくりと下降していく。 { speed:1 waitInput:true Wait:true }
+
+@print もともとあった台座と入れ替わる形で<br>現れたのは―― { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Lifeless01,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01,Angle01/Head01/Facial01/Pale01>Pale01_01
+@print ひ……ギ、ギロチン……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@print 骨を断って、首を切り落とす、<br>処刑の執行装置―― { speed:1 waitInput:true Wait:true }
+
+@print ギラリと鋭い刃が、囚人の首を<br>待ち構えているかのように鈍く光っていた。 { speed:1 waitInput:true Wait:true }
+
+@print エマは青白い顔で、ガクガクと身を震わせる。 { speed:1 waitInput:true Wait:true }
+
+@print ゴクチョーの合図で看守が動き、<br>エマを拘束した。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Lifeless02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open,Angle01/Head01/Facial01/Pale01>Pale01_01
+@print "やっ、やだ！ やだぁぁっ！<br>助けて！ 離してよ！" { author:Ema speed:1 waitInput:true Wait:true }
+@hideChars 
+
+@print じたばたするエマを、<br>看守がステージに引きずっていく。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR11,ArmL15,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Closed02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open,Angle01/Head01/Facial01/Pale01>Pale01_01
+@print "ま、待ってよ！ ボク、ほんとに殺してない！<br>こんなのおかしいよ！ お願いだから、やめてよ！" { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@ResetText 
+@Wait 1.0
+# ========================================
+@back 520_1 { Scale:{g_backgroundDefaultScale} time:0.6 }
+# ========================================
+
+@print むなしい抵抗をするエマの頭を押さえ、<br>看守は彼女の首を装置に固定した。 { speed:1 waitInput:true Wait:true }
+
+@print 恐怖に震えるエマの表情が絶望に染まる。 { speed:1 waitInput:true Wait:true }
+
+@print 刃を固定しているロープの傍に看守が立ち、<br>おもむろに鎌を振り上げた。 { speed:1 waitInput:true Wait:true }
+
+@print "確実に迫る処刑執行。<br>エマは<ruby=\"おび\">怯</ruby>え、呼吸を乱している。" { speed:1 waitInput:true Wait:true }
+
+@print 【アホ】【キモイ】【死ね】―― { speed:1 waitInput:true Wait:true }
+
+@print ギロチンに踊る心ない落書きが、<br>エマに浴びせられる罵声のように思えた。 { speed:1 waitInput:true Wait:true }
+
+@print やだ……やだやだ……たすけてよぉっ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"うめ\">呻</ruby>くように繰り返されるエマの言葉が、<br>裁判所内に響く。" { speed:1 waitInput:true Wait:true }
+
+@print では、やっちゃってください。<br>スパっとお願いします～。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print そんなものはお構いなしといった様子で、<br>ゴクチョーが看守に指示を出す。 { speed:1 waitInput:true Wait:true }
+
+@print 看守はロープに鎌を振り下ろした。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ぶんっと武器が振り下ろされる音
+@sfx Sfx_9
+# ========================================
+
+# ========================================
+@hide Stills
+# ========================================
+
+# ========================================
+@back SolidColor
+# ========================================
+
+@StopBgm 
+# ========================================
+# ざんっと肉が切れる音
+@sfx Sfx_12
+# ========================================
+
+@print "勢いよく落下した刃が、<br>エマの首を<ruby=\"は\">刎</ruby>ね飛ばす――" { speed:1 waitInput:true Wait:true }
+
+@print "最後に刻まれた表情は、絶望に<ruby=\"ゆが\">歪</ruby>んでいた。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+@back SolidColor
+# ========================================
+
+@print エマは魔女として処刑された。 { speed:1 waitInput:true Wait:true }
+
+@print だが、それで何かが解決した訳じゃない。<br>結局、真犯人はわからないままだ。 { speed:1 waitInput:true Wait:true }
+
+@print きっとまた、殺人事件が起きる。 { speed:1 waitInput:true Wait:true }
+
+@print そして、魔女裁判は続く―― { speed:1 waitInput:true Wait:true }
+
+
+# ========================================
+# 『END～処刑～』
+# ========================================
+
+# @end
+
+@Gosub System/System_Subroutine.EndAdv
+
+@ClearBacklog 
+@ReturnToTitle { time:1.2000000476837158 delay:0.6000000238418579 }

@@ -1,0 +1,640 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter05/Act02_Chapter05_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# クリーチャー化初期化
+@hide Hiro
+@char CreatureHiro.2 { Position:{hiroPositionX},{characterPositionY},{hiroPositionZ} Rotation:,{hiroRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Meruru
+@char CreatureMeruru.3-5 { Position:{meruruPositionX},{characterPositionY},{meruruPositionZ} Rotation:,{meruruRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Leia
+@char CreatureLeia.0-8 { Position:{leiaPositionX},{characterPositionY},{leiaPositionZ} Rotation:,{leiaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Noah
+@char CreatureNoah.0-3 { Position:{noahPositionX},{characterPositionY},{noahPositionZ} Rotation:,{noahRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Margo
+@char CreatureMargo.0-4 { Position:{margoPositionX},{characterPositionY},{margoPositionZ} Rotation:,{margoRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Nanoka
+@char CreatureNanoka.0-1 { Position:{nanokaPositionX},{characterPositionY},{nanokaPositionZ} Rotation:,{nanokaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Coco
+@char CreatureCoco.2-3 { Position:{cocoPositionX},{characterPositionY},{cocoPositionZ} Rotation:,{cocoRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide AnAn
+@char CreatureAnAn.0-3 { Position:{ananPositionX},{characterPositionY},{ananPositionZ} Rotation:,{ananRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Miria
+
+@hide Alisa { time:0 }
+@char CreatureAlisa.0-7 { Position:{alisaPositionX},{characterPositionY},{alisaPositionZ} Rotation:,{alisaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Hanna { time:0 }
+
+@hide Sherry
+@char CreatureSherry.1-6 { Position:{sherryPositionX},{characterPositionY},{sherryPositionZ} Rotation:,{sherryRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+# ==============================================================================
+# MARK: 10-28: 💬 【桜羽エマ】
+# ==============================================================================
+# ＠ト書き▼議論10-28【桜羽エマ】
+# 議論開始カットイン
+# BGM変更なし：HirO
+@bgm Bgm_37_2_Loop
+@ResetText 
+@char CreatureHiro.2 { time:0 }
+@stageCamera 1 { Rotation:0,{ (8 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+
+@stageCamera 1 { Rotation:0,{ (8.1 / courtStandCount * 360) },0 time:1 }
+@showStageScreen 1
+@Wait 1.5
+
+@ResetText 
+@char Ema.Fearful1,ArmR3,ArmL15,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Lifeless01,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open { time:0 }
+@stageCamera 0 { Rotation:0,{ (0 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+
+@stageCamera 0 { Rotation:0,{ (-0.1 / courtStandCount * 360) },0 time:1 }
+@hideStageScreen 1
+@Wait 1.5
+
+# Judge10-28-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Lifeless01,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open
+@gosubModifyCamera 0
+@printDebate ボクは……<br>ヒロちゃんが留学するまで、<br>ずっと一緒だった……！
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@printDebate ……正確には。
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@printDebate 私と君は<br>しばらく疎遠になっていた。
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@printDebate 私が……<br>【３人目】なんだ。
+
+@char Ema.Default,ArmR3,ArmL15,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle
+@gosubModifyCamera 0
+@printDebate ……そんな。<br>じゃあ、ボクは……！
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@printDebate ……帰国した私を<br>待っていたのは、<br>いじめを苦にして<br>首を吊った彼女の姿だった。
+
+# ＠備考◆震えて怯えるようなイメージ
+
+@char Ema.Default,ArmR11,ArmL15,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open
+@gosubModifyCamera 0
+@printDebate ……いじめ……自殺……。
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@printDebate エマ……。
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@printDebate 思い出すんだ、<br>彼女の姿を。
+
+@char Ema.Default,ArmR11,ArmL15,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@printDebate "……でも、<br><link=\"Objection_02_05_28_01\">いじめられてた</link>のは……<br>ボクだ……。"
+
+@char Ema.Default,ArmR11,ArmL15,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@printDebate "<link=\"Objection_02_05_28_02\">どうして</link>……<br>自殺を……？"
+
+@char Ema.Default,ArmR11,ArmL15,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Closed01,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@printDebate "ヒロちゃんが<br>何を言ってるのか……<br><link=\"Objection_02_05_28_03\">わからない</link>よ……！"
+
+
+# ==============================================================================
+# 10-28議論後独白
+# ==============================================================================
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@gosubModifyCamera 0
+@Wait 0.2
+
+# 目を閉じている
+
+@char CreatureHiro.2
+@print （私はもう……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@print （……迷わない！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-28-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_28_01
+
+@Skip false
+@pauseTrial true
+
+@choice 偽りの記憶だ
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-28-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_28_02
+
+@Skip false
+@pauseTrial true
+
+@choice 目を背けるな
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-28-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_28_03
+
+@Skip false
+@pauseTrial true
+
+@choice 落ち着くんだ
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-28-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 10-28: ❌ ミス選択肢
+# ==============================================================================
+# MARK: 10-28-3: ❌ 反論・目を背けるな
+
+# Judge10-28-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print エマ……事実から目を背けるな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.7
+@gosubModifyCamera 0
+@print 君は目撃したんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Fearful1,ArmR11,ArmL15,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print そんなの……知らない……ボクは……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （……直接、突きつけるしかないか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （彼女の記憶を……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-28-1
+
+# MARK: 10-28-4: ❌ 反論・落ち着くんだ
+
+# Judge10-28-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print 落ち着くんだエマ。<br>私が言っていることは、難しいことじゃない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Fearful1,ArmR11,ArmL15,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print だって……そんなこと……ありえないよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Fearful1,ArmR11,ArmL15,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ボクは……１人でずっといじめられてて……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （……直接、突きつけるしかないか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （彼女の記憶を……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-28-1
+# ==============================================================================
+# MARK: 10-28-2: ⭕ 反論・偽りの記憶だ
+# ==============================================================================
+
+# Judge10-28-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print ……エマ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print 君の記憶……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.7
+@gosubModifyCamera 0
+@print それは……偽りの記憶だ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# Judge10-28-5
+
+# 証拠品提示
+@evidence Clue
+
+# 忌み嫌われし者
+@if "chosenEvidenceId==\"10-25\""
+	@goto .Judge10-28-6
+
+@goto .Judge10-28-7
+
+# MARK: 10-28-7: ❌ 汎用ミス
+
+# Judge10-28-7
+
+@char CreatureHiro.24
+@gosubModifyCamera 0
+@print （……違う。これじゃあない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （【エマの過去】を……突きつけるんだ！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-28-5
+
+# ==============================================================================
+# MARK: 10-28-6: ⭕ アイテム選択・忌み嫌われし者
+# ==============================================================================
+
+# Judge10-28-6
+
+@gosubCutIn CreatureHiro
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print 君が記憶している、過去にいじめられていた姿。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print それは君が無意識に改変した記憶であって、<br>真実ではない！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.7
+@gosubModifyCamera 0
+@print "思い出せ！ そこにいた、本当の人物の名を！" { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char Ema.Fearful1,ArmR11,ArmL15,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print あ、ああっ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# スチル表示
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.2
+@back 140_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.2
+
+@char Ema.Fearful1,ArmR11,ArmL15,Angle01/Head01/Facial01/Eyes01>Eyes01_Scream_Closed01,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@print あああ……あああああっ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# スチル点滅
+# スチル切り替わり
+# ユキのいじめスチルに
+@Wait 1
+@back 140_1 { Scale:{g_backgroundDefaultScale} }
+@Wait 1
+@back 140_3 { Scale:{g_backgroundDefaultScale} time:3 }
+@Wait 1
+
+@char Ema.Fearful1,ArmR11,ArmL15,Angle01/Head01/Facial01/Eyes01>Eyes01_Scream_Closed01,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@print …………ユキ……ちゃん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@back 140_4 { Scale:{g_backgroundDefaultScale} }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char CreatureHiro.2
+@print ……月代ユキ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@print 私たちの同級生。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@print そして……もう１人の親友の名前だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+@gosubModifyCamera 0
+@hide Stills { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print ……エマ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print 君はいじめの被害者ではなかった――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Fearful1,ArmR11,ArmL15,Angle01/Head01/Facial01/Eyes01>Eyes01_Scream_Closed01,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print うっ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# ==============================================================================
+# ◎回想シーン（流用）1-1
+# ==============================================================================
+
+@ResetText 
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.2
+@back 140_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.2
+@back 140_3 { Scale:{g_backgroundDefaultScale} time:5 }
+
+@print "日を追うごとにいじめの空気は過熱し、<br>心臓は<ruby=\"なまり\">鉛</ruby>のように重くなっていった。" { speed:1 waitInput:true Wait:true }
+
+@print やめてよ。<br>やめて、やめて、やめてやめてやめて。 { speed:1 waitInput:true Wait:true }
+
+@print もう虐めないで！！ { speed:1 waitInput:true Wait:true }
+
+@print どうしてもその一言が発せない。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+@hide Stills { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+
+# ==============================================================================
+# 回想ここまで
+# ==============================================================================
+
+@char Ema.Fearful1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Lifeless01,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ――ボクは。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# ==============================================================================
+# ◎回想シーン（流用）1-1
+# ==============================================================================
+
+@ResetText 
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.2
+@back 140_3 { Scale:{g_backgroundDefaultScale} time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.2
+
+@print "<ruby=\"さげす\">蔑</ruby>まれ、 貶められ、嘲笑される毎日に、<br>終わりは見えなかった。<br>その残酷な行為は、あまりにも徹底的に、長期に及んだ。" { speed:1 waitInput:true Wait:true }
+
+@print 誰よりも臆病な自分を責めて、<br>自分を嫌って、<br>消えていなくなってしまいたくなる。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+@hide Stills { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+# ==============================================================================
+# 回想ここまで
+# ==============================================================================
+
+@char Ema.Fearful1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Lifeless01,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ――見ていた、だけだった。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# ＠備考◆泣く
+
+@char Ema.Fearful1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Lifeless01,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print あの子を助けることも、<br>声をあげることもできずに。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Fearful1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Lifeless01,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ただ見ていただけの――傍観者だった……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01-,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01,Angle01/Head01/Facial01/Pale01>Pale01_03
+@gosubModifyCamera 0
+@print いじめの被害者じゃなくて……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,Angle01/Head02/Facial02/Eyes02-,Angle01/Head02/Facial02/Mouth02>Mouth02_Neutral_Closed,Angle01/Head02/Facial02/Pale02>Pale02_03
+@gosubModifyCamera 0
+@print いじめの……傍観者……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,Angle01/Head02/Facial02/Eyes02-,Angle01/Head02/Facial02/Mouth02>Mouth02_Neutral_Closed,Angle01/Head02/Facial02/Pale02>Pale02_03
+@gosubModifyCamera 0
+@print それが……ボクの罪だったんだ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# エマ魔女化 エフェクト
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.8
+
+@hide Ema
+@char CreatureEma.0-7 { Position:{emaPositionX},{characterPositionY},{emaPositionZ} Rotation:,{emaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@back SolidColor.Custom { time:0.8 }
+@Wait 0.8
+@back SolidColor.Custom { time:2 }
+@Wait 1
+
+@char CreatureEma.0-7
+@gosubModifyCamera 0
+@print ……ボクは……ボクは……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print ……エマ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print 話の続きは、まだある。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureEma.0-5
+@gosubModifyCamera 0
+@print ……え……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print 彼女は……<br>私たちをずっと監視していた。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print 君を魔女にするため……<br>ずっとそばにいたんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureEma.0-5
+@gosubModifyCamera 0
+@print ……どういう……こと……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print 彼女が宿っていた呪物……それは。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# Judge10-28-8
+
+# 証拠品提示
+@evidence Clue
+
+# 万年筆
+@if "chosenEvidenceId==\"10-1\""
+	@goto .Judge10-28-9
+
+@goto .Judge10-28-10
+
+# MARK: 10-28-10: ❌ 汎用ミス
+
+# Judge10-28-10
+
+@char CreatureHiro.23
+@gosubModifyCamera 0
+@print （……これではない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@spawn Clue
+@Wait i1.2
+@despawn Clue
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （エマと私のそばにずっとあって、<br>　彼女が宿っていたものがあったはずだ……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （……それは） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-28-8
+
+# ==============================================================================
+# MARK: 10-28-9: ⭕ 万年筆
+# ==============================================================================
+
+# Judge10-28-9
+
+# スチル的に表示してもいいかも
+@spawn Clue
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print これが【月代ユキ】……<br>いや、彼女こそがこの事件の元凶である黒幕――！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@despawn Clue
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print ――【大魔女】が宿った依代だ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 万年筆が割れる音★エコーとか付けたVerにしてもいいかも
+@sfx Sfx_151
+@spawn Clue
+
+# 万年筆破壊
+
+# 背景解除
+@despawn Clue
+@StopBgm 
+
+@char CreatureHiro.19
+@gosubModifyCamera 0
+@print ……さあ、用意したぞ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print １３人の魔女と……儀礼の剣！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ADVへ
+
+@char CreatureHiro.4
+@gosubModifyCamera 0
+@print 姿を見せてもらうぞ……大魔女っ！！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@set "g_gameProgress = max(11, g_gameProgress)"
+@Gosub System/System_Subroutine.EndTrial
+
+@goto Act02_Chapter05/Act02_Chapter05_Adv05

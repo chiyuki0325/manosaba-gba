@@ -1,0 +1,165 @@
+@gosubResetBook System/System_ResetWitchBook
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-5-4
+
+# ========================================
+# ●シーン2-5‐4
+# ========================================
+
+@back 700_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# ========================================
+# 演出：全員立ち絵なしで進行したいです
+# ========================================
+
+@bgm Bgm_36_1
+
+@print "私の心は<ruby=\"な\">凪</ruby>いでいた。<br><ruby=\"かか\">掲</ruby>げていた儀礼剣の<ruby=\"きっさき\">切先</ruby>を、裁判所中央に向ける。" { speed:1 waitInput:true Wait:true }
+
+@print （大魔女を召喚し、彼女を断罪する） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （そして、私たちを呪いから解放してもらう……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （君はずっと私たちの近くにいた。<br>　来るだろう、ユキ……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "張り詰めた空気の中で、数秒の<ruby=\"とき\">刻</ruby>が経過した。" { speed:1 waitInput:true Wait:true }
+
+@print ……ちょっと待て。<br>なんか……見られてる。<br>なんかヤベぇのキテる。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@shake Camera
+
+# 建物が揺れる地震の音
+@bgm Ambi_7_1
+
+@print 地鳴りのように深く、<br>鈍い音が微かにあたりに鳴り続けた。 { speed:1 waitInput:true Wait:true }
+
+@back 700_2 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@animate Stills
+
+@print ――じわり、と裁判所の中央、<br>処刑台に赤黒い液体がにじむ。 { speed:1 waitInput:true Wait:true }
+
+@print むむ。<br>あれ……血じゃありませんか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print シェリーが虫眼鏡越しに遠くの液体を見つめた。 { speed:1 waitInput:true Wait:true }
+
+@print その瞬間。 { speed:1 waitInput:true Wait:true }
+
+# ごぽごぽと血が溢れ出てくる音
+@sfx Sfx_170
+
+@back 700_3 { time:0 }
+
+@print 裁判所の中央に大穴が空いたかのように<br>とめどなく赤黒い液体があふれ出す。 { speed:1 waitInput:true Wait:true }
+
+@animate Stills-Middle
+
+@print おいおいおい……！<br>なんだこれ聞いてねえぞ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+# 血がシャワーのように噴き出す音
+@sfx Sfx_171
+
+@print 血の柱が噴き上がった。 { speed:1 waitInput:true Wait:true }
+
+@print "やがて液体は、<br><ruby=\"こうずい\">洪水</ruby>のように裁判所を満たし始めた。" { speed:1 waitInput:true Wait:true }
+
+@print ちょちょちょっとこれ<br>ヤバいんじゃありませんこと！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print だ、大丈夫。みんなのことは私が守る……！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@print "少女たちが<ruby=\"せんりつ\">戦慄</ruby>する中、<br>やがて血色の<ruby=\"ふんすい\">噴水</ruby>は勢いを弱める。" { speed:1 waitInput:true Wait:true }
+
+@print ……中に、誰かいる。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print "少しずつ弱まっていく血柱の隙間に、<br>何かの【<ruby=\"りんかく\">輪郭</ruby>】が<ruby=\"かいまみ\">垣間見</ruby>えた。" { speed:1 waitInput:true Wait:true }
+
+@print "てらてらとぬめり輝く、<br>人ひとり分の大きさをした肉の<ruby=\"かたまり\">塊</ruby>だ。" { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆恍惚
+@print ああ……大魔女様。<br>やっと……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print ――やっと、お会いできました。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print その瞬間。 { speed:1 waitInput:true Wait:true }
+
+# 銃声
+@sfx Sfx_38
+@Wait 1
+
+@print 銃声が鳴り響いた。 { speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"にくかい\">肉塊</ruby>に弾丸が迫り<br>しかし空中で火花となって消える。" { speed:1 waitInput:true Wait:true }
+
+@print ……！<br>弾が、空中で燃えた？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print ちょ、ちょっとやめなよ！<br>何されるかわからないから！<br>お、おじさん怖くてもう無理！！ { author:Miria speed:1 waitInput:true Wait:true }
+
+# ＠月代ユキ
+@print これは、魔女たちが流した血。 { author:Unknown speed:1 waitInput:true Wait:true }
+
+@print これからも蒔き続ける<br>私たちの種子……魔女の因子です。 { author:Unknown speed:1 waitInput:true Wait:true }
+
+@print なにか、しゃべってる？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@print ノアが尋ねるとともに……。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@back SolidColor { time:0 }
+@Wait 1
+
+@hide Stills,Stills-Middle
+
+@animate Stills
+@back 700_4 { time:0.6 }
+@animate Stills
+@back Transparent { time:1.2 }
+@Wait 2.4
+
+@back 700_4 { time:0 }
+@animate Stills-Middle
+@Wait 2.4
+
+@animate Stills-Middle
+@back 700_4 { time:0 }
+@blur Stills
+@animate Stills
+@blur Stills
+@hide Stills-Middle { time:0.6 }
+@Wait 3
+
+@print 肉塊がまとう血液が、<br>おびただしい量の紅い蝶となり剝がれていく。 { speed:1 waitInput:true Wait:true }
+
+@print あれが大魔女……。<br>ずいぶん、かわいらしいのね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 私は横目でエマの顔を見る。 { speed:1 waitInput:true Wait:true }
+
+@print ……ユキ……ちゃん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "再会できた……けれど信じたくない。<br>そんな<ruby=\"かっとう\">葛藤</ruby>の表情を顔に浮かべつつ、<br>エマは微かに旧友の名前を呼んでいた。" { speed:1 waitInput:true Wait:true }
+
+@print 私の復活はすなわち絶望……<br>何を期待していたのですか？ { author:Yuki speed:1 waitInput:true Wait:true }
+
+@print 良い結末などありえません。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@back 700_6 { Scale:{g_backgroundDefaultScale} time:3 }
+@Wait 3
+
+@print 大魔女――ユキが笑う。 { speed:1 waitInput:true Wait:true }
+
+@back 700_6 { time:2 }
+@Wait 2
+
+@print さあ、共犯者になりましょう。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@Wait 1
+
+# ========================================
+# ＞議論パート2-6へ
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter06/Act02_Chapter06_Trial00

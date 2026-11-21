@@ -1,0 +1,119 @@
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-ex6
+
+@bgm Bgm_23_1
+@back 13_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.2
+
+@print ――結論が出ないまま、時間は流れた。 { speed:1 waitInput:true Wait:true }
+
+@print 少女たちは自身のスマホを操作し、<br>投票をしていく。 { speed:1 waitInput:true Wait:true }
+
+@print そして。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# パンパカパーン
+@sfx Sfx_34
+# ========================================
+
+@print まるでそぐわない間抜けなファンファーレ音と共に、<br>スマホに映し出されたのは―― { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 心臓のドキドキ音
+@sfx Sfx_35
+# ========================================
+
+@print エマの画像だった。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Fearful1,ArmR13,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Middle
+@print そん、な……。 { author:Ema speed:1 waitInput:true Wait:true }
+@hideChars 
+
+@print 画面に映った自分自身を目にして、<br>エマは声を震わせる。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Fearful1,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Lifeless02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open
+@print どうして……ねえ！？<br>なんでボクに投票したの！？ { author:Ema speed:1 waitInput:true Wait:true }
+@hideChars 
+
+@char Margo.Default,ArmR4,ArmL5,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open01,Angle01/Facial/Mouth>Mouth_Neutral_Closed
+@print …………。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR10,ArmL8,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open01,Angle01/Facial/Mouth>Mouth_Neutral_Closed
+@print …………。 { author:Coco speed:1 waitInput:true Wait:true }
+@hideChars 
+
+@char Ema.Fearful1,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Lifeless01,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open
+@print なんとか言ってよ！<br>ボクはアリサちゃんを殺してない！！ { author:Ema speed:1 waitInput:true Wait:true }
+@hideChars 
+
+@char Meruru.Normal1,ArmR13_1,ArmL13,Eyes1_Pensive_Open2,Mouth1_Pensive_Closed1
+@print エマさん、私は……。 { author:Meruru speed:1 waitInput:true Wait:true }
+@hideChars 
+
+@char Warden.9
+@print まあ、決定は決定なんで。<br>残念ですけど、諦めてもらうしかないかと。<br>さっさと閉廷したいですし……進行しちゃっていいですかね？ { author:Warden speed:1 waitInput:true Wait:true }
+@hideChars 
+
+@print 涙を浮かべて無実を訴えるエマだが、<br>ゴクチョーには取り付く島もなかった。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Closed02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@print うううう……ボクは……ボクは……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Warden.9
+@print さてと、それでは処刑装置を入れ替えて……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Ema.Fearful1,ArmR11,ArmL15,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open
+@print わあああああああ！！ { author:Ema speed:1 waitInput:true Wait:true }
+@hideChars 
+
+# ========================================
+# 廊下を走る音
+@sfx Sfx_58
+# ========================================
+
+@print 突然エマが声を荒げ、駆け出した。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Scream_Closed02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open
+@print "違う！ ボクじゃない！<br>ボクは殺してない！！" { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR11,ArmL15,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Closed02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open
+@print "こんなのおかしい！<br>助けて！ お父さん……お母さん……！<br>誰か助けてよ！！" { author:Ema speed:1 waitInput:true Wait:true }
+@hideChars 
+
+@char Warden.11
+@print やれやれ……駄目ですよ、逃げたりしたら。<br>まあ、無駄なんですけどね。 { author:Warden speed:1 waitInput:true Wait:true }
+@hideChars 
+
+@char Jailer.5
+@print 泣き叫ぶエマの前に看守が立ち塞がり―― { speed:1 waitInput:true Wait:true }
+@hideChars 
+
+# ========================================
+# ぶんっと武器が振り下ろされる音
+@sfx Sfx_9
+# ========================================
+
+# ========================================
+# ざんっと肉が切れる音
+@sfx Sfx_12
+# ========================================
+
+# ========================================
+@back SolidColor
+# ========================================
+
+# @char Warden.9 pos:50
+@print あちゃ～……床と壁、掃除しないと……<br>余計な手間を増やさないでいただけると<br>ありがたいんですけどねぇ……。 { author:Warden speed:1 waitInput:true Wait:true }
+@hideChars 
+# ========================================
+# 『END～逃亡は許されない～』
+# ========================================
+
+# @end
+
+@Gosub System/System_Subroutine.EndAdv
+
+@ClearBacklog 
+@ReturnToTitle { time:1.2000000476837158 delay:0.6000000238418579 }

@@ -1,0 +1,169 @@
+@gosubResetBook System/System_ResetWitchBook
+@set "isReenact = true"
+@printer Normal.Simple { time:0 }
+@Gosub System/System_Subroutine.BeginAdv
+
+# ==============================================================================
+# 城ケ崎ノアの物語
+# ==============================================================================
+
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# ＠ト書き▼議論8 絵本パート
+# BGM変更：ボクとワタシの
+@bgm Bgm_19_1
+
+# Judge8-14-1
+
+# 【1P目イラスト】
+# ノアが目の前の絵画の枠を見つめている。
+# 後ろ姿で後頭部が映ってるイメージだが、
+# 1章2話アンアンの物語5とかぶる可能性はあり。
+# リフレインとして構図全く同じに被せるのもあり
+@spawn Reenact_Ch02_E03_S01
+@Wait 1.5
+
+@print ――そこにあったのは一枚の絵。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print アンアンちゃんが、<br>のあにその絵の完成図を教えてくれたんだよ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print その絵にはアンアンちゃんがいて、<br>エマちゃんがいて。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print のあ、すごいなって感心しちゃった。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print ……でもね。<br>のあはそれに、描き足しちゃったんだ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print アンアンちゃんの絵の上から、<br>その絵を塗りつぶしたの。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print だって……<br>アンアンちゃんの絵の示す結末を書き換えれば、<br>のあは疑われないって思ったから。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch02_E03_S01
+@Wait 1.5
+
+# 【2P目イラスト】
+# ベランダでヒロと揉めるアンアン
+@spawn Reenact_Ch02_E03_S02
+@Wait 1.5
+
+@print まずアンアンちゃんがしたのは、<br>死んだふりをする準備から。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print 最初から事故に見せかけて<br>ベランダから飛び降りる予定だったんだ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print でもヒロちゃんがいたのは<br>予定外だったみたいだけどね。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print けれどアンアンちゃんは、計画をやめずに実行したの。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print べつに失敗してもいい計画だったからね。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch02_E03_S02
+@Wait 1.5
+
+# 【3P目】死体のフリをするアンアン
+# ハンモックの上に仰向けで寝て、
+# 胸の前で空側に向けた鉄柵の先端を持っているアンアン。
+# 胸からは血糊が出ている。
+@spawn Reenact_Ch02_E03_S03
+@Wait 1.5
+
+@print アンアンちゃんは<br>ハンモックの網で作ったクッション目掛けて<br>ベランダから落ちたんだ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print 中庭につけっぱなしにしたスマホを置いて、<br>目印にしたんだって。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print アンアンちゃんは落ちてすぐに<br>胸に仕込んだ赤い絵の具が入った袋を割って、<br>あらかじめ折って隠し持ってた鉄柵を胸の前で握りしめたの。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print それをベランダから見たエマちゃんたちは<br>アンアンちゃんが死んだって<br>勘違いしちゃったんだ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print ……すごいよね、アンアンちゃん。<br>これ全部１人で考えたんだよ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print のあには絶対思いつかないな～。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch02_E03_S03
+@Wait 1.5
+
+# 【4P目】ノアとアンアン
+# 起き上がったアンアンに、背中から鉄柵を突き立てるノア
+@spawn Reenact_Ch02_E03_S04
+@Wait 1.5
+
+@print エマちゃんたちが中に入ったのを見て、<br>アンアンちゃんは笑いながら起き上がったの。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print 計画通りにいって、<br>とっても嬉しそうだったよ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print アンアンちゃん上手くいってホッとしてたみたい。<br>だからね……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print 油断しているうちに、<br>アンアンちゃんの背中を本当に刺したんだ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+# SE刺す音
+@sfx Sfx_12
+
+# 暗転
+@ResetText 
+@despawn Reenact_Ch02_E03_S04
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1.5
+
+@print アンアンちゃんは驚いた顔をしたまま、<br>死んじゃった。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print のあはそのままそこから帰るだけで良かったんだけど……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print お昼に少しだけ雨が降ってたからかなぁ？<br>のあの足跡、地面に残っちゃってたんだ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@back Transparent { time:1.2 }
+@Wait 0.6
+
+# 【5P目】雨を降らせるノア
+# イメージとして、水を操って雨を降らせているイメージです。
+# 大きな水の球がノアの頭上にあり、
+# そこから雨が降り注いでいる光景。
+@ResetText 
+@spawn Reenact_Ch02_E03_S05
+@Wait 1.5
+
+@print だから噴水の水で地面を洗い流したの。<br>魔法を使って。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print 雨のように……中庭に模様を描くイメージで。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print きっと今までで一番上手く魔法を使えたんじゃないかな？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@print のあの魔法、前はあんまり言うこと聞いてくれなかったし……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch02_E03_S05
+@Wait 1.5
+
+# 【1P目流用】
+# 1P目でなかった絵が描いてあるとかもいいかも
+# アンアンの絵とかもいいかも
+# 3P目流用して、アンアンの死体が描かれているとかもありかも
+@spawn Reenact_Ch02_E03_S06
+@Wait 1.5
+
+@print のあはね、<br>アンアンちゃんを手伝っただけなんだよ？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@print アンアンちゃんが死んだふりしてたのを<br>本当のことにしてあげたの。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print "アンアンちゃんの思い<ruby=\"えが\">描</ruby>いた光景……<br>本当はそこにヒロちゃんものあもいなかった……。" { author:Noah speed:1 waitInput:true Wait:true }
+
+@print そのままだったら、もっと綺麗な絵になって<br>きっともっと楽しい結末になったんだろうね。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print でも……書き換えちゃったんだ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print のあのしたこと……きっと許してくれないよね。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print みんな……ごめんね？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@print こんな酷くて醜い絵……<br>見せられても、困っちゃうよね……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch02_E03_S06
+@Wait 0.5
+
+@set "isReenact = false"
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter03/Act02_Chapter03_Adv14

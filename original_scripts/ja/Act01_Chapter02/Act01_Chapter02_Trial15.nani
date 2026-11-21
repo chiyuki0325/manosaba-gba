@@ -1,0 +1,138 @@
+@gosubResetBook System/System_ResetWitchBook
+@set "isReenact = true"
+@printer Normal.Simple { time:0 }
+@Gosub System/System_Subroutine.BeginAdv
+
+# ==============================================================================
+# 夏目アンアンの物語
+# ==============================================================================
+# ＠ト書き▼議論2 絵本パート
+
+# Judge2-15-1
+
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# 絵本パート
+# BGM変更：ボクとワタシの
+@bgm Bgm_19_1
+
+# 【1P目イラスト】
+# 鍵を受け取るアンアン
+# 看守は描かない（ぐりしゃれさんVerのデザイン必要な為）
+# アンアンが正面を見ていて、手のひらに鍵が乗っているイメージ
+@spawn Reenact_Ch01_E02_S01
+@Wait 1.5
+
+# ＠備考◆ここから独白のように
+
+@print それは偶然だった。<br>最初は……偶然だったんだ。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print 看守が鍵を持っていたのを見た。<br>その中に、懲罰房の鍵もあるはずだと思った。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print だから……試しに魔法を使って頼んでみたんだ。<br>ゴクチョーに、鍵を持ってくるよう頼まれたと。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print わがはいの魔法は、相手が言葉に納得しないと<br>かかりはしない。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print だが看守はわがはいの嘘に納得したのか、<br>鍵を渡してくれた。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print だからそれを持って……<br>わがはいは懲罰房へ向かった。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch01_E02_S01
+@Wait 1.5
+
+# 【2P目イラスト】
+# 磔になったミリアにナイフを突き立てるアンアン
+# 要点としては、「ミリアにナイフを刺している」事がわかればOK
+@spawn Reenact_Ch01_E02_S02
+@Wait 1.5
+
+@print 殺すつもりはなかった……。<br>けれど……結果は、こうなってしまった。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print 磔になった彼女を、そばにあったナイフで刺し殺した。<br>何度も、何度も刺した。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print 衝動的なものだった。<br>殺したあとで、疑われない方法を考える必要があった。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print ミリアのスマホに、彼女の声を<br>録音したデータがあったのを思い出した。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print わがはいはそれを使ってアリバイを作ることにした。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch01_E02_S02
+@Wait 1.5
+
+# 【3P目イラスト】
+# スマホを操作するアンアン
+@spawn Reenact_Ch01_E02_S03
+@Wait 1.5
+
+@print ミリアのスマホの着信音を、<br>録音していた声が鳴るように設定した。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print わがはいは運営やゴクチョー……<br>【黒幕】に罪をなすりつけようと思った。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print だから鍵をその場に残して部屋を出たんだ。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print その後は誰かと一緒に、アリバイを作る必要があった。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch01_E02_S03
+@Wait 1.5
+
+# 【4P目イラスト】
+# ハンナとアンアンが張り紙を見ている
+@spawn Reenact_Ch01_E02_S04
+@Wait 1.5
+
+@print ラウンジに拷問ショーのメモを書いて張り出しておいた。<br>待っていたらハンナが来た。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print だから偶然を装って、一緒にミリアの様子を<br>見に行く事にしたんだ。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print タイミングを合わせて、こっそりミリアのスマホに電話をかけた。<br>そしてミリアの悲鳴の音声を流したんだ。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print ハンナはすっかりミリアが生きていると信じてくれたようだった。<br>……人を疑うことを知らない、いいやつだな。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print そうしてわがはいはアリバイを作り、<br>医務室へと向かった。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print その後、タイミングを見計らって誰かと死体を見つけて、<br>スマホを入れ替えれば……計画は無事に終わるはずだった。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print その為に、医務室でこっそりスマホのデータを消しておいた。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print ……だがまさか、先にナノカが死体を見つけていたとはな。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch01_E02_S04
+@Wait 1.5
+
+# 【5P目】イラスト
+# 映画を見ているアンアン
+# （2P目の再利用もあり）
+@spawn Reenact_Ch01_E02_S05
+@Wait 1.5
+
+@print 部屋には鍵がかかっていて、そのせいで死体を見つける人数が<br>多くなってしまった。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print 死体発見のドサクサに紛れて、<br>みなが死体に注目している間にスマホをすり替えた。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print ……さすがに、不自然だったようだがな。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print ……わがはいがしたことは、なんのことはない。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print ただアイツを刺し殺し……<br>そして、録音していた音声を流しただけ。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print B級のホラー映画にすら劣る、<br>ぐちゃぐちゃで行き当たりばったりな……<br>そんな愚かな物語。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+# ＠備考◆独白ここまで
+
+@print スクリーンにはもう何も映らない。<br>わがはいの話は、ここまでだ――。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch01_E02_S05
+@Wait 0.5
+
+# 2章議論パート後へ
+
+@set "isReenact = false"
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter02/Act01_Chapter02_Adv27

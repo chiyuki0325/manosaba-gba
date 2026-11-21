@@ -1,0 +1,246 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-2-20
+
+# ========================================
+# ●シーン1‐2-20
+# ========================================
+
+@back 3_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# ========================================
+# ＞『死体現場』を選択
+# ========================================
+
+@bgm Bgm_26_1
+
+@print エマが懲罰房の並ぶ通路の方へ行ってみると、<br>シェリーとメルルに遭遇した。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+@char Meruru.Default
+@char Sherry.Normal1
+
+@print あっ、エマさん！<br>やっぱりここを調べに来ますよねえ。<br>捜査の基本ですしね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print う、うん……。<br>さっきはパニックを起こしてたし、<br>ちゃんと調べたほうがいいと思って……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （でも、あれをまた見るのは……正直キツイ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3
+
+@print シェリーちゃん、メルルちゃんは<br>何か見つけられた？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Pensive
+
+@print ……いえ、まだ特には……。<br>懲罰房の通路は暗い、ことくらいしか。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1
+
+@print あとは強いていえばこれくらいでしょうか。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print シェリーが差し出してきたのは、<br>先ほどシェリーが壊した錠前だった。 { speed:1 waitInput:true Wait:true }
+
+# ==============================================================================
+# ☆証拠品：『壊れた錠前』入手
+# ==============================================================================
+@spawn Clue
+@update 2-2
+@despawn Clue
+
+@char Meruru.Default
+
+@print 壊しちゃったんですが、<br>あとで怒られたりしませんよね……？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print たぶん……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3
+
+@print （懲罰房のドアは、錠前がかかっていて、<br>　閉じられている） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （ボクらが駆けつけた時には鍵がかかっていて、<br>　扉は開けられなかった） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print （それなら、誰がどうやって、<br>　ミリアちゃんを刺したんだろう……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+
+@print "これってあれですよね～！ 定番の、あれ！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR1
+
+@print ああ、えっと……密室殺人？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1
+
+@print ですです～！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print （シェリーちゃんはテンション上がると思った……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Pensive
+
+@print 念のため、ほかの懲罰房の扉も開かないか<br>調べてみましたけれど……ダメでした。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 全て鍵がかかっていて、<br>入れるのは、ミリアさんのいる懲罰房だけ、です。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1
+
+@print あまり気乗りはしませんが、<br>ミリアさんの死体を調べるしかないですよね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+
+@print 今回ゴクチョーさんに、<br>中に入っちゃダメって言われてませんし、<br>時間もありません、行きましょう！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print う、うん……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@StopBgm 
+
+@print エマたちは青ざめ、震えながら、<br>ミリアの死体がある懲罰房の中に入った。 { speed:1 waitInput:true Wait:true }
+
+@back 21_1 { time:0 }
+@Wait 0.9
+
+@back Transparent { time:1.8 }
+@WaitForNextFrame 
+
+@animate MainBackground
+@Wait 1.5
+
+@print 懲罰房内部を改めて観察すると、<br>凶器になりうるものはたくさん置いてある。 { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_26_2
+
+@print （中にさえ入れたら、<br>　殺人自体は簡単にできちゃうのかも） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （でも、だからって<br>　拘束されているミリアちゃんを刺すなんて……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマは表情を<ruby=\"ゆが\">歪</ruby>ませ、<br>ミリアの方へとおそるおそる視線を移した。" { speed:1 waitInput:true Wait:true }
+
+@back 280_1 { Scale:{g_backgroundDefaultScale} }
+
+@print "<ruby=\"たっけいだい\">磔刑台</ruby>に拘束されたミリアの死体は、<br>先ほどの状態のままだった。" { speed:1 waitInput:true Wait:true }
+
+@print どうやら腹部を何度も刺されてますね……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 早速シェリーがスマホを取り出し、<br>房内の撮影をはじめる。 { speed:1 waitInput:true Wait:true }
+
+# 写真撮影音
+@sfx Sfx_28
+
+# ========================================
+# ☆証拠品：『殺害現場の写真』入手
+# ========================================
+@spawn Clue
+@update 2-9
+@despawn Clue
+
+@print （改めてみると……本当にひどい） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （なんでこんなに何度も刺す必要があったの？<br>　ミリアちゃんが一体何をしたっていうの？<br>　それともこれが、【魔女の殺意】なの……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマの目の端にじわりと涙が<ruby=\"にじ\">滲</ruby>み、<br>慌てて拭う。" { speed:1 waitInput:true Wait:true }
+
+@print （泣いてる場合じゃない……時間がないんだ、<br>　犯人の手がかりを見つけないと！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ミリアさんを下ろしてあげられないでしょうか……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print かわいそうですけど……でも、<br>捜査中はこのままにしておいたほうが良さそうです。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ……凶器は明らかにこれですよね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@camera { time:0.9 }
+@Wait 0.9
+
+# ========================================
+# 証拠品：『刃こぼれしたナイフ』入手
+# ========================================
+@spawn Clue
+@update 2-5
+@despawn Clue
+
+@print シェリーが指差したのは、<br>ミリアの胸に突きたっているナイフだった。 { speed:1 waitInput:true Wait:true }
+
+@print うん……懲罰房の中には、<br>凶器になりそうな刃物がたくさん転がってる。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 犯人はその場で適当な刃物を拾って、<br>ミリアちゃんを刺したんだろうね……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 衝動的な殺人だったのですかね……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@camera { time:0.9 }
+@Wait 0.9
+
+@print あ、あの、私……<br>ミリアさんの死体を調べてみます……っ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print メルルは涙目になりながらも、<br>覚悟を決めた顔で言った。 { speed:1 waitInput:true Wait:true }
+
+@print そ、そんな、メルルちゃん、無理しないで……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print いえ、だ、大丈夫です……！<br>死体を調べてみたら、何か<br>わかるかもしれませんから……っ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print メルルはミリアの死体に手を伸ばし、<br>あちこちを調べはじめた。 { speed:1 waitInput:true Wait:true }
+
+@print その手が光っているのは、<br>治癒を施そうとしているようにも見えた。 { speed:1 waitInput:true Wait:true }
+
+@print （メルルちゃん……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 傷を塞いであげたいんです……それなのに、<br>私の魔法、役立たずですね……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print メルルははらはらと涙をこぼしながら、<br>ミリアの死体を労わるように調べていく。<br>その手が、ハッと止まった。 { speed:1 waitInput:true Wait:true }
+
+@print これは……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 何か見つけたのでしょうか！？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print は、はい。ミリアさんの口の中に……<br>鍵が入っていました。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ☆証拠品：『小さな鍵』入手
+# ========================================
+@spawn Clue
+@update 2-3
+@despawn Clue
+
+@print 鍵がなんで、口の中に……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print わかりません……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hide Stills
+
+@back 3_2 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@print 精神の限界で、<br>通路へと戻って３人は詰めた息を吐き出す。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+@char Meruru.Pensive
+@char Sherry.Pensive1
+
+@print ……調べてみたところ、<br>腹部をめった刺しにされた後、<br>心臓を一突きされていました……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 出血多量で、亡くなったのだと思います。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print うん……ありがとうメルルちゃん……<br>ボクは他のところを調べてくるね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマの声は震えている。<br>立っているのもやっとの様子だった。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン1‐2‐19
+# 全てのイベントを消化している＞シーン1‐2‐26
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter02/Act01_Chapter02_Adv19

@@ -1,0 +1,163 @@
+@gosubResetBook System/System_ResetWitchBook
+@set "isReenact = true"
+@printer Normal.Simple { time:0 }
+@Gosub System/System_Subroutine.BeginAdv
+
+# ==============================================================================
+# 蓮見レイアの物語
+# ==============================================================================
+
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# ＠ト書き◆議論1絵本パート・蓮見レイアの物語
+# BGM変更：ボクとワタシの
+@bgm Bgm_19_1
+
+# Judge1-15-1
+
+# 絵本パートOP
+# 1-1
+
+# 1P【ノアを槍で刺すレイア】
+@spawn Reenact_Ch01_E01_S01
+@Wait 1.5
+
+# 凶器は棒と矢を組み合わせた物。
+# レイア側から、ホウキの柄・レイピアの鞘・レイピア・ボウガンの矢
+# ただし、絵本では正確に再現される必要はなし。
+# 「3つの棒と矢を組み合わせて長い武器を作った」事を可視化したい
+
+# ＠備考◆ここから回想・独白の雰囲気で
+
+@print それは昨日の夕食後の事だった。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 蓮見レイアは、城ケ崎ノアを殺した。<br>端的に事実を言えば、それだけだ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print ……私はみんなを守りたかったんだ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch01_E01_S01
+@Wait 1.5
+
+# 2P【矢とリボンを持つレイア】
+@spawn Reenact_Ch01_E01_S02
+@Wait 1.5
+
+@print ……全て偶然だった。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 偶然、ボウガンの矢を持っていた。<br>それはみんなを凶器から守るために<br>隠していた物のはずだった。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 偶然、拾ったナノカくんのリボンをポケットに入れていた。<br>そのうち持ち主を探して、<br>返そうと思っていたはずだった。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 偶然、私が通りかかったとき<br>その部屋には乾いていない塗料が一面に塗られていた。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print ……そしてその中心に、彼女がいたんだ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch01_E01_S02
+@Wait 1.5
+
+# 3P【上を見るノア・顔アップ】
+@spawn Reenact_Ch01_E01_S03
+@Wait 1.5
+
+@print 私の魔法は視線を固定する魔法だ。<br>相手の興味を固定すると言ってもいいのかな。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print たまたま天井を見ていたノアくんの視線を、<br>そのまま固定したんだ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print ……芸術家というやつは、何を考えているのかわからない。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 彼女は最後まで……何もない天井を見つめていた。<br>その胸を矢が貫き、倒れるまで。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print ……誰に殺されたのかも、わからなかったかもしれないね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch01_E01_S03
+@Wait 1.5
+
+# 4P【武器材料】
+@spawn Reenact_Ch01_E01_S04
+@Wait 1.5
+
+@print 彼女の視線を固定した私は、塗料に足跡がつかないよう<br>長い武器を組み立てた。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print そばにあったホウキを分解して、<br>持っていた剣を組み合わせたんだ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print そしてその先端に、矢をくくりつけた。<br>ナノカくんのリボンを使ってね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print あとはエマくんの言った通りだ。<br>先端の矢で、動かないノアくんの心臓を貫いた。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch01_E01_S04
+@Wait 1.5
+
+# 5P【分解される槍】
+@spawn Reenact_Ch01_E01_S05
+@Wait 1.5
+
+@print けれど、そこでアクシデントがおきた。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print リボンの固定ぐらいじゃあ、耐えられなかったみたいだね。<br>即席の武器が分解しかけて、バランスを崩したんだ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print なんとか剣とリボンは回収できたけど……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print そのとき剣先が地面を削って、<br>塗料がついてしまったようだね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 気付かなかったよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch01_E01_S05
+@Wait 1.5
+
+# 6P【レイア、ココ、ミリア】
+@spawn Reenact_Ch01_E01_S06
+@Wait 1.5
+
+@print そうしてノアくんを殺した私は、<br>素知らぬ顔でココくんの配信に顔を出したんだ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 殺人なんてした直後だから、気が昂っていたのかな。<br>慣れない曲芸なんてして、証拠を残すなんてね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print そしてその帰り道……ノアくんの部屋の前を通る前。<br>死体は、できるだけ遅く見つかった方がいいと思ったんだ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print だからココくんとミリアくんにさりげなく話を振りつつ……<br>歩きながら、２人の視線を私に固定した。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 一瞬のことだから、不自然に思うことはなかったろうね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print そうしてすぐ横で倒れているノアくんを素通りして、<br>私たちは部屋に戻ったんだ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print リボンは翌朝、みんなが手がかりを探している時、湖に捨てたよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print ……すぐにアリサくんに見つけられてしまったようだけどね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 剣の先についた塗料にも気付いて、慌てて拭いたけど……<br>まさかあのリンゴに塗料が移っていたなんてね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch01_E01_S06
+@Wait 1.5
+
+# 1P（※再利用）
+
+@spawn Reenact_Ch01_E01_S01
+@Wait 1.5
+
+@print これが……蓮見レイアによる城ケ崎ノア殺人事件の全容だ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print ……さあ、この辺でカーテンコールだ。<br>以上でこの演目は閉幕だよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# ＠備考◆ここまで回想独白の雰囲気
+
+@print ――最後のステージ、見てくれてありがとう。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch01_E01_S01
+@Wait 0.5
+
+# ==============================================================================
+# 裁判パート終了
+# ==============================================================================
+
+@set "isReenact = false"
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter01/Act01_Chapter01_Adv35

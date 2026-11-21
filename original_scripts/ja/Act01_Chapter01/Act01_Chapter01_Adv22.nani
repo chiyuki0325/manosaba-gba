@@ -1,0 +1,295 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-1-18
+
+# ========================================
+# ●シーン1-1‐18
+# [back 7・夜]
+# ========================================
+
+# ========================================
+# [bgm Bgm_028_001_Loop]
+# ========================================
+
+@back 7_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+@bgm Bgm_28_1
+
+@print 失礼しまーす……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 夜の医務室はひっそりとしており、<br>エマも自然に声を潜め、入室していく。 { speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_1
+
+@print アンアンのベッドにエマが近付くと、<br>のそりと起き上がる気配がした。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+@char AnAn.Normal1,Angle01/Option_Arms-
+
+@print あ、アンアンちゃん、起こしちゃった？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char AnAn.Normal1,Arms2,Angle01/Option_Arms>Option_Arms01_01,Angle01/Option_ArmR/Option_ArmR01_01-
+@print 『なんのようだ』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print ええと、レイアちゃんが日中お見舞いに来たでしょ？<br>その時、スマホを間違えて持っていっちゃったらしくって。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 届けてほしいって。<br>――はい、これ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマがスマホを差し出すと、アンアンはバッと奪い取る。<br>エマは苦笑を漏らした。 { speed:1 waitInput:true Wait:true }
+
+@print （ボクが嫌われてるのか、みんなにこういう態度なのか<br>　どっちなんだろ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print じゃあボクは戻ろうかな。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 用事は済ませたので、<br>入口の方へと目を向ける。 { speed:1 waitInput:true Wait:true }
+
+@print そこで、アンアンの手元のスマホが<br>けたたましい音を立てはじめた。 { speed:1 waitInput:true Wait:true }
+
+@print 聞こえてくるのは、どうやらココの声だ。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+
+@print ああ、配信がはじまったんだ。<br>ボクも見なきゃ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "エマが少し焦った<ruby=\"そぶ\">素振</ruby>りを見せたことに気付いたのか、<br>アンアンは自身のスマホを差し出してきた。" { speed:1 waitInput:true Wait:true }
+
+@print （これは、一緒に見ていけってこと、かな？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （部屋に戻って見ようと思ったけど……<br>　アンアンちゃんが好意を見せてくれるなんて、<br>　滅多にないチャンスだ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+@char Ema.Normal1
+
+@print ありがとう。じゃあ、ここで見せてもらうね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "エマは遠慮がちにベッドに腰掛け、<br>アンアンのスマホを<ruby=\"のぞ\">覗</ruby>き込んだ。" { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@printer Normal.Stream
+@back 5_2
+@blur MainBackground-Middle
+@char Leia.Normal1,ArmR1,ArmL5
+@char Miria.Pensive1,ArmR9,ArmL1
+@char Coco.Normal1
+@Wait 0.3
+
+@print 画面には、<br>３人の少女たちが映っている。 { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆配信中
+@bgm Bgm_18_1_Loop
+
+@char Coco.Smile1
+
+@print やっほぉ～ココたんだよ～！ { author:Coco speed:1 waitInput:true Wait:true }
+
+# ＠備考◆配信中
+
+@print "今日はなんと！ あの！<br>芸能人、蓮見レイアとのコラボ実現回だよ～！" { author:Coco speed:1 waitInput:true Wait:true }
+
+# ＠備考◆配信中
+
+@char Leia.Smile1
+
+@print はは、ずいぶんテンションが高いんだね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# ＠備考◆配信中
+
+@print あの……おじさんはなんで呼ばれてるのか……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+# ＠備考◆配信中
+
+@char Coco.Angry1
+
+@print "アンタはただの賑やかし！ ザコだし！" { author:Coco speed:1 waitInput:true Wait:true }
+
+# ＠備考◆配信中
+
+@print ザコ……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+# ＠備考◆配信中
+
+@print てかおじさんってなんだよ！<br>どう見てもギャルじゃねーかよ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+# ＠備考◆配信中
+
+@char Miria.Flushed1
+
+@print いや、その、おじさんはおじさんだから……<br>こういうの慣れてなくて、あんま喋りかけないで……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+# ＠備考◆配信中
+
+@print なんのために出てんだよ！！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print エマはくすりと笑ってしまう。<br>彼女たちはどうやら、ラウンジで配信しているらしい。 { speed:1 waitInput:true Wait:true }
+
+@print 同接数はたった６。 { speed:1 waitInput:true Wait:true }
+
+@print （ココちゃん、この同接数でよくテンションもつなあ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print はしゃいでいるココは、<br>レイアに芸までやらせようとする始末だった。 { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆配信中
+
+@char Coco.Smile1
+
+@print このリンゴを投げて、<br>レイアにレイピアで受け止めてもらいま～す！ { author:Coco speed:1 waitInput:true Wait:true }
+
+# ＠備考◆配信中
+
+@char Leia.Surprised1,ArmR4,ArmL6
+
+@print "え？ ちょっと、そんなの聞いてないよ？" { author:Leia speed:1 waitInput:true Wait:true }
+
+# ＠備考◆配信中
+
+@print "いいじゃんいいじゃん！ 絶対盛り上がるから！" { author:Coco speed:1 waitInput:true Wait:true }
+
+# ＠備考◆配信中
+
+@char Miria.Pensive1
+
+@print 盛り上がるって……見てる人がこれだけじゃ……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+# ＠備考◆配信中
+
+@char Coco.Angry1
+
+@print ザコは黙ってろ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "ココの<ruby=\"こんがん\">懇願</ruby>に負けて、結局レイアは<br>投げたリンゴをレイピアで受け止める芸をやらされていた。" { speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR1,ArmL8
+
+@print あっさり成功させてしまうところは、<br>さすがレイアだ。 { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+@ResetText 
+@printer Normal.Default
+@char Ema.Normal1 { time:0 }
+@char AnAn.Normal1,ArmR1,ArmL1,ArmR1-Option-All,Angle01/Option_Arms-,ArmR1-Option-All { time:0 }
+@hide MainBackground-Middle,Leia-Middle,Coco-Middle,Miria-Middle { time:0.6 }
+@Wait 0.6
+
+@print エマもアンアンも、<br>すっかり夢中になって配信を見ていた。 { speed:1 waitInput:true Wait:true }
+
+@char AnAn.Flushed1,Angle01/Option_Arms-
+
+@print ふと、エマの顔が近いことに気付いたのか、<br>アンアンはぷいっとそっぽを向いてしまう。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ――と。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [sfx 14：フクロウの通知音]
+# ========================================
+
+@sfx Sfx_14
+
+@print 『皆さん、間もなく就寝時間です』 { speed:1 waitInput:true Wait:true }
+
+@print 『外出禁止時間となりますので、<br>　速やかに房へお戻りください』 { speed:1 waitInput:true Wait:true }
+
+@print 配信の途中で、<br>ゴクチョーの通知が入ってしまった。 { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_28_1
+@ResetText 
+@printer Normal.Stream
+@back 5_2
+@blur MainBackground-Middle
+@char Leia.Normal1,ArmR3,ArmL2
+@char Miria.Pensive1
+@char Coco.Normal1
+@Wait 0.3
+
+@print スマホに映るレイアは肩をすくめる。 { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆配信中
+
+@print 今日はこれで時間切れのようだ。<br>みんなおやすみ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# ＠備考◆配信中
+
+@char Coco.Smile1
+
+@print "また見てね～！ 拡散宣伝よろしくぅ！" { author:Coco speed:1 waitInput:true Wait:true }
+
+# ＠備考◆配信中
+
+@print このリンゴは、スタッフが美味しく食べるので、<br>ちゃんとしまっておきますね～……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@printer Normal.Default
+@hide MainBackground-Middle,Leia-Middle,Coco-Middle,Miria-Middle
+@Wait 0.3
+
+@print ３人が手を振って、ぷつりと配信が終了し、<br>画面は暗くなった。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print ……っと、ボクも部屋に戻らなきゃ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print アンアンちゃん、見せてくれてありがとね！<br>おやすみ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 時間内に房内に入っていないと、<br>規則違反になってしまう。 { speed:1 waitInput:true Wait:true }
+
+@print エマは慌ただしく医務室を後にした。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [back 1]
+# ========================================
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+@back 1_1 { Scale:{g_backgroundDefaultScale} }
+@back Transparent.Custom { time:0.9 }
+@Wait 0.9
+
+@sfx Sfx_51
+
+@print "エマは滑り込むように自分の房に入り、<br>数分後には各監房の<ruby=\"せじょうおん\">施錠音</ruby>が響いた。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [sfx 4：牢の施錠音]
+# ========================================
+
+@sfx Sfx_4
+@char Ema.Normal1,ArmR3,ArmL1
+
+@print ギリギリセーフ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_179
+@hideChars 
+@back 1_1
+
+@print ドサリとベッドに倒れこむ。 { speed:1 waitInput:true Wait:true }
+
+@print （レイアちゃんたちも、<br>　走って自分の部屋に駆けこんだだろうな） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 今日はずいぶん疲れてしまった。<br>エマはすぐに目を閉じ、深い眠りの世界へと<br>落ちていった。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [transition Out,Fade,1,Black]
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter01/Act01_Chapter01_Adv23

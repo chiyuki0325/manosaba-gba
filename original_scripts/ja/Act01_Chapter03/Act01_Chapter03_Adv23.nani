@@ -1,0 +1,130 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-3-23
+
+# ========================================
+# ●シーン１‐3-23
+# ========================================
+
+@back 22_4 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# ========================================
+# ＞『ゲストハウス』を選択
+# ========================================
+
+@bgm Bgm_5_1
+
+@print 牢屋敷のすぐ傍にある、<br>ゲストハウスの並ぶ一角――。 { speed:1 waitInput:true Wait:true }
+
+@print "一番手前にある【<ruby=\"サラマンダー\">火精</ruby>の間】から、<br>もう火の手は上がっていない。" { speed:1 waitInput:true Wait:true }
+
+@print 建物自体を崩壊させることなく、<br>被害は最小限で無事に鎮火されたようだった。 { speed:1 waitInput:true Wait:true }
+
+# 写真撮影音
+@sfx Sfx_28
+
+# ========================================
+# ☆証拠品：『ゲストハウス』入手
+# ========================================
+@spawn Clue
+@update 3-9
+@despawn Clue
+
+@print エマは自身のスマホを使って、<br>建物外観の写真を撮影した。 { speed:1 waitInput:true Wait:true }
+
+@print "（なんで、【<ruby=\"サラマンダー\">火精</ruby>の間】で、<br>　火事が起こったんだろう……？）" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （誰かが火をつけた……？<br>　それとも、なんらかの魔法が発動した……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマが深く考え込んでいると、<br>近付いてくる足音があった。 { speed:1 waitInput:true Wait:true }
+
+@print ハッと顔を上げると、<br>アリサがエマの前に立っていた。 { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Pensive1,Option-ArmL-Off,ArmL2
+@char Ema.Pensive1,ArmR3
+
+@print 桜羽、大丈夫か……？<br>その、手、火傷してただろ……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print ……ああ、すっかり忘れてた。<br>こんなの、ぜんぜん……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （ハンナちゃんの苦しみに比べたら……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマは頭を振って深く考えないようにし、<br>捜査をしているアリサの方を見る。 { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1,ArmL1
+
+@print このあたりに燃えた痕跡がある。<br>おそらく火元はここだ。<br>外側から誰かが火をつけたのかもな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3
+
+@print 本当だ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# 写真撮影音
+@sfx Sfx_28
+
+# ========================================
+# ☆証拠品：『燃えた痕跡』入手
+# ========================================
+@spawn Clue
+@update 3-2
+@despawn Clue
+
+@print "【<ruby=\"サラマンダー\">火精</ruby>の間】の建物のすぐ傍――<br>アリサの指さしたところには、<br>なんらかの可燃物が燃やされた跡が残っていた。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print ……やっぱり誰かが火をつけたのかな。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Pensive1,ArmL2
+
+@print さあな。ただ、中で遠野が<br>吊られた状態で火をつけたってんなら、<br>犯人は最悪だな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print 遠野の死体ごと燃やそうとしたってことだろ。<br>人間のすることじゃねえよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print （それでも、誰かがやったのかもしれない） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （それこそ【魔女】だ――） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hide Alisa
+
+@print 吐き捨てたアリサは、<br>他の場所へ捜査に行くためか、立ち去っていった。 { speed:1 waitInput:true Wait:true }
+
+@hide Ema
+
+@print エマはもう少しこの辺りを調べてみようと、<br>周囲を見回す。 { speed:1 waitInput:true Wait:true }
+
+@print （これ、なんだろう……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@camera { time:0.9 }
+@Wait 0.9
+
+# 写真撮影音
+@sfx Sfx_28
+
+# ========================================
+# ☆証拠品：『石畳の塗料』入手
+# ========================================
+@spawn Clue
+@update 3-11
+@despawn Clue
+
+@print 石畳に舗装された道に、<br>不自然な塗料が付着していた。 { speed:1 waitInput:true Wait:true }
+
+@print 前にゲストハウス付近に来た時には、<br>なかったはずだ。 { speed:1 waitInput:true Wait:true }
+
+@camera { time:0.9 }
+
+@print エマは念のためその塗料を撮影し、<br>ここでの捜査を終えた。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン1‐3‐19
+# 全てのイベントを消化している＞シーン1‐3‐26
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter03/Act01_Chapter03_Adv19

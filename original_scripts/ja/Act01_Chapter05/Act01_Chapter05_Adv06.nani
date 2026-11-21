@@ -1,0 +1,701 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-5-6
+
+# ========================================
+# ●シーン1‐5-6
+# ========================================
+
+@ShowUI ControlPanel
+
+@bgm Bgm_2_1_Loop
+
+@update Meruru
+@update Alisa
+@update Nanoka
+
+@print 議論の末に出た結論に、<br>エマは目の前が真っ暗になっていた。 { speed:1 waitInput:true Wait:true }
+
+@print 氷上メルルが、<br>紫藤アリサを、<br>そして黒部ナノカを殺していた――。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@back 14_1
+@back Transparent { time:1.2 }
+@char Meruru.Pensive
+@Wait 0.3
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Margo.Pensive1
+@mask MainBackground-Middle,Margo-Middle
+@animate MainBackground-Middle
+@animate Margo-Middle
+@Wait 0.4
+
+@print ……全ての黒幕はあなただったのね、メルルちゃん。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Middle,Margo-Middle
+@hide Margo-Middle
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Coco.Angry1,ArmL3
+@mask MainBackground-Middle,Coco-Middle
+@animate MainBackground-Middle
+@animate Coco-Middle
+@Wait 0.4
+
+@print "クッッッッッッソじゃん！！！！！！<br>キッモ！ キモキモキモ！！" { author:Coco speed:1 waitInput:true Wait:true }
+
+@print "ココは怒りからか、証言台を<ruby=\"たた\">叩</ruby>く。" { speed:1 waitInput:true Wait:true }
+
+@print "一番タチ悪くね！？ 聖女ぶった偽善者がよ！" { author:Coco speed:1 waitInput:true Wait:true }
+
+@print （こんな結末を望んでたわけじゃないのに） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "ココの罵声を遠くに聞きながら、<br>エマは<ruby=\"すが\">縋</ruby>るようにメルルを見つめる。" { speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Middle,Coco-Middle
+@hide Coco-Middle
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Ema.Cry1,ArmR3,ArmL7
+@mask MainBackground-Middle,Ema-Middle
+@animate MainBackground-Middle
+@animate Ema-Middle
+@Wait 0.4
+
+# ＠備考◆泣きながら
+
+@print 計画通りってどういう意味なの？<br>どうしてこんなことしなきゃならなかったの？ { author:Ema speed:1 waitInput:true Wait:true }
+
+# ＠備考◆泣きながら
+
+@print 何か理由があるんだよね？ { author:Ema speed:1 waitInput:true Wait:true }
+
+# ＠備考◆泣きながら
+
+@print ねぇ、ねぇ……何か言ってよ、メルルちゃん！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Middle,Ema-Middle
+@hide Ema-Middle
+@despawn MaskingRectangle
+
+@print あ、あうあうあう……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print "メルルは少女たちに詰められ、<br>涙目で<ruby=\"おび\">怯</ruby>えきっている。" { speed:1 waitInput:true Wait:true }
+
+@print 仕方なかった、んです……<br>大魔女様を見つけるためには、こうするしか……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Margo.Pensive1
+@mask MainBackground-Middle,Margo-Middle
+@animate MainBackground-Middle
+@animate Margo-Middle
+@Wait 0.4
+
+@print 大魔女……あの本に記されていたわね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ◎シーン1‐2-4の回想（流用）
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@hideChars 
+
+@animate MainBackground-Middle,Margo-Middle
+@hide Margo-Middle
+@despawn MaskingRectangle
+
+@back 510_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@print "すると、たくさんの魔女が手を<ruby=\"つな\">繋</ruby>いで囲み、<br>いかにも偉そうな魔女が降臨している風の図解があった。" { speed:1 waitInput:true Wait:true }
+
+@print この人は、魔女のリーダーみたいな存在なのかな……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print おそらくそうでしょうね。<br>一般的な伝承でも、魔女にはリーダーがいる。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 全ての魔女を統治する――【大魔女】。 { author:Margo speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 回想ここまで
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@hide Stills
+@back 14_1
+@char Meruru.Pensive
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Margo.Pensive1
+@mask MainBackground-Middle,Margo-Middle
+@animate MainBackground-Middle
+@animate Margo-Middle
+@Wait 0.4
+
+@print ずっと気になっていたの。<br>ねぇ、エマちゃん、ゴクチョーが初めに私たちを<br>ラウンジに呼び出した時のこと覚えてるかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Middle,Margo-Middle
+@hide Margo-Middle
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Ema.Pensive1,ArmR3,ArmL1
+@mask MainBackground-Middle,Ema-Middle
+@animate MainBackground-Middle
+@animate Ema-Middle
+@Wait 0.4
+
+@print え……それは、覚えてるけど。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （悪夢がはじまった日のことだ……忘れるわけない） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （ボクらは囚人として捕まって……<br>　ヒロちゃんがいきなり殺された……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Middle,Ema-Middle
+@hide Ema-Middle
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Margo.Normal1
+@mask MainBackground-Middle,Margo-Middle
+@animate MainBackground-Middle
+@animate Margo-Middle
+@Wait 0.4
+
+@print あの時、ゴクチョーの口からも<br>大魔女っていう単語が出てきたのよ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+# ========================================
+# ◎シーン1‐0-4の回想（流用）
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@hideChars 
+
+@animate MainBackground-Middle,Margo-Middle
+@hide Margo-Middle
+@despawn MaskingRectangle
+
+@back 500_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@print 皆さんにはこの春から<br>囚人として生活してもらいます。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 救済がなくもないのですが……<br>大魔女さえ見つかれば皆さんの呪いを……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print あ、でも、期待とか持たせても良くないですよね……。<br>忘れてください。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@hide Stills
+@back 14_1
+@char Meruru.Pensive
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# ========================================
+# 回想ここまで
+# ========================================
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Ema.Pensive1,ArmR3,ArmL1
+@mask MainBackground-Middle,Ema-Middle
+@animate MainBackground-Middle
+@animate Ema-Middle
+@Wait 0.4
+
+@print そういえば……言ってた。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Middle,Ema-Middle
+@hide Ema-Middle
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Margo.Normal1
+@mask MainBackground-Middle,Margo-Middle
+@animate MainBackground-Middle
+@animate Margo-Middle
+@Wait 0.4
+
+@print 【大魔女の呪い】。<br>これが、私たちの魔女化に関係しているんじゃないかと<br>思うのだけど。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print ねぇ、メルルちゃん。違うかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Middle,Margo-Middle
+@hide Margo-Middle
+@despawn MaskingRectangle
+
+@char Meruru.Default
+
+@print そ、そのとおりです。合っています。<br>私は、姿を消してしまった大魔女様を探していて……<br>おそらく人間の中に隠れているんじゃないか、と。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print それで、魔女因子の高い子たちを集めて、<br>魔女にしてみて、ひとりひとり確かめているんです……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Pensive
+
+@print みなさん、なかなか魔女になってくれなくて、<br>その……申し訳ないのですが、<br>たくさんストレスを与えなくちゃいけなくて……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print メルルは心底辛そうに眉を下げ、<br>瞳からはらはらと涙をこぼす。 { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Cry
+
+# ＠備考◆泣きながら
+
+@print とても、辛い作業でした……<br>みなさんを嫌な目に遭わせるたびに、心が痛んで……<br>もうやめたいと何度も心が折れかけて……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+# ＠備考◆泣きながら
+
+@print ちゃんとやらないといけないのに……<br>怖がりで、泣き虫で、こんな自分が大嫌いです……。<br>本当にごめんなさい……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Coco.Angry1,ArmL3
+@mask MainBackground-Middle,Coco-Middle
+@animate MainBackground-Middle
+@animate Coco-Middle
+@Wait 0.4
+
+@print "はぁぁぁ！？ いい加減理解できる思考回路で喋れよ！！<br>その大魔女ってやつのために、<br>あてぃしらは酷い目に遭わされまくってるわけ！？" { author:Coco speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Middle,Coco-Middle
+@hide Coco-Middle
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Margo.Pensive1
+@mask MainBackground-Middle,Margo-Middle
+@animate MainBackground-Middle
+@animate Margo-Middle
+@Wait 0.4
+
+@print そこまでして、なんのために大魔女を探しているの？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Middle,Margo-Middle
+@hide Margo-Middle
+@despawn MaskingRectangle
+
+@char Meruru.Cry
+
+@print それ……は……<br>私たち【魔女】にとって、<br>大魔女様は、大切な存在、だからです。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 聞き捨てならない爆弾発言に、<br>空気が一層凍りつく。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Coco.Angry1,ArmL3
+@mask MainBackground-Middle,Coco-Middle
+@animate MainBackground-Middle
+@animate Coco-Middle
+@Wait 0.4
+
+@print ――おめえやっぱ魔女なんじゃねえかよ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Middle,Coco-Middle
+@hide Coco-Middle
+@despawn MaskingRectangle
+
+@char Meruru.Pensive
+
+@print "は、はい！ ごめんなさい……っ、<br>わた、わたわた私は、魔女です……っ" { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print で、でも、みなさん囚人とは、ちょっとだけ違います。<br>本物の魔女です。みなさんより、その、上の存在……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print …………。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （メルルちゃんは、【魔女】……<br>　最初からずっと――この子が【魔女】だったんだ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default
+
+@print わ、私は、人間が魔女因子によって魔女化している、<br>いわば【人間魔女】とは違う、【真の魔女】……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print なので、私たちはみなさんのように、<br>【なれはて】にはなりません。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Margo.Pensive1
+@mask MainBackground-Middle,Margo-Middle
+@animate MainBackground-Middle
+@animate Margo-Middle
+@Wait 0.4
+
+@print 大魔女の呪いによって<br>魔女にされた人間は、殺人衝動が高まり、<br>理性を失った化け物になる。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 私たちはその犠牲者ということなのね。<br>そして本物の魔女であるあなたは違う、と。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default
+
+@print は、はい。そういうことです……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print しかも私は大魔女様のお気に入りなので、<br>魔女を封印する【魔女殺し】という特別な魔法も授かりました。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print "【魔女殺し】……？ トレデキムと同じようなもの？" { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default
+
+@print はい……。で、でもあの薬よりももっと強力で、<br>全ての魔女が畏れている魔法なんです。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print な、なので実をいうと、私、<br>みなさんが魔女になったら簡単に殺すことができるんです……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Pensive
+
+@print も、もちろんそんなことしませんけど……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Middle,Margo-Middle
+@hide Margo-Middle
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Coco.Pensive1,ArmL1
+@mask MainBackground-Middle,Coco-Middle
+@animate MainBackground-Middle
+@animate Coco-Middle
+@Wait 0.4
+
+@print マジ……？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Middle,Coco-Middle
+@hide Coco-Middle
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Ema.Cry1,ArmR3,ArmL7
+@mask MainBackground-Middle,Ema-Middle
+@animate MainBackground-Middle
+@animate Ema-Middle
+@Wait 0.4
+
+# ＠備考◆悲痛な叫び
+
+@print ――なんで！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマは思わず、喉が切れそうなほどの絶叫をしていた。 { speed:1 waitInput:true Wait:true }
+
+@print なんでそんな、普通に話していられるの！？<br>メルルちゃん、ずっとボクらを騙してたんでしょう！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 友だちだって優しくしてくれて、<br>たくさん心配してくれて、<br>それって全部嘘だったの！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Middle,Ema-Middle
+@hide Ema-Middle
+@despawn MaskingRectangle
+
+@char Meruru.Default
+
+@print う、嘘なんかじゃありません……っ！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 大魔女様が必要だったんです。<br>大魔女様さえ見つけられたら、<br>みなさんにとっても、きっと救済になるはず、です……っ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print だから私、辛かったけれど、<br>いっぱい、いっぱい頑張りました……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Pensive
+
+@print 看守さんに指示してひどいお料理を出したり、<br>娯楽室にホラー映画をたくさん置いたり……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 嫌な気持ちになってもらわなきゃって、<br>とにかく必死で……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 一緒に生活しなきゃ、みなさんが嫌がること、<br>わからないって思って。だから一緒に囚人になって、<br>みなさんと親しくなろうって……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Margo.Pensive1
+@mask MainBackground-Middle,Margo-Middle
+@animate MainBackground-Middle
+@animate Margo-Middle
+@Wait 0.4
+
+@print それで囚人に混ざっていたわけね。<br>毎度そうやって参加していたのかしら。<br>ずいぶん熱心なことね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Middle,Margo-Middle
+@hide Margo-Middle
+@despawn MaskingRectangle
+
+@char Meruru.Pensive
+
+@print は、はい。大魔女様を見つけるためならって、<br>私、一生懸命頑張っているんです……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 今回も、みなさんが<br>どうしたら嫌な気持ちになってくれるかって、<br>必死に探ってきました。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default
+
+@print 最初はレイアさんが目立てないことを<br>悔しがっている様子に気付きました。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 目立っている彼女を殺さないと、一番になれないよ？<br>かわいそうに……って言ってみました。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Coco.Pensive1,ArmL1
+@mask MainBackground-Middle,Coco-Middle
+@animate MainBackground-Middle
+@animate Coco-Middle
+@Wait 0.4
+
+@print は……？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Middle,Coco-Middle
+@hide Coco-Middle
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Margo.Pensive1
+@mask MainBackground-Middle,Margo-Middle
+@animate MainBackground-Middle
+@animate Margo-Middle
+@Wait 0.4
+
+@print "もしかして、メルルちゃん……<br>殺人をそそのかしていたの……？ そこまで……？" { author:Margo speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Middle,Margo-Middle
+@hide Margo-Middle
+@despawn MaskingRectangle
+
+@char Meruru.Default
+
+@print アンアンさんは、<br>とてもエマさんに怒っていらしたので……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 出たくないのに、なんで邪魔をするんだろうね？<br>彼女の方が、邪魔者なのに……って言ってみました。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print ――。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Pensive
+
+@print シェリーさんには……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Ema.Cry1,ArmR3,ArmL7
+@mask MainBackground-Middle,Ema-Middle
+@animate MainBackground-Middle
+@animate Ema-Middle
+@Wait 0.4
+
+@print "もういい！ もう聞きたくない！ やめてよ！！" { author:Ema speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Middle,Ema-Middle
+@hide Ema-Middle
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Coco.Angry1,ArmL4
+@mask MainBackground-Middle,Coco-Middle
+@animate MainBackground-Middle
+@animate Coco-Middle
+@Wait 0.4
+
+@print "ゴクチョー！！ さっさとコイツ処刑にしろよ！！<br>コイツが一番のドクズだろ！！" { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 自分で魔女だって言ってんじゃん！！<br>魔女は処刑なんだろ！！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Middle,Coco-Middle
+@hide Coco-Middle
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Warden.1
+@mask MainBackground-Middle,Warden-Middle
+@animate MainBackground-Middle
+@animate Warden-Middle
+@Wait 0.4
+
+@print いや、そのぉ……確かに裁判で魔女と認定されましたが、<br>私はメルル様の使い魔でして。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print "さすがに<ruby=\"あるじ\">主</ruby>を処刑するのは躊躇するというか……<br>主催者権限で勘弁してもらえませんか？ すみません……。" { author:Warden speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Middle,Warden-Middle
+@hide Warden-Middle
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Coco.Angry1,ArmL3
+@mask MainBackground-Middle,Coco-Middle
+@animate MainBackground-Middle
+@animate Coco-Middle
+@Wait 0.4
+
+@print はぁぁぁ！？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Middle,Coco-Middle
+@hide Coco-Middle
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Warden.1
+@mask MainBackground-Middle,Warden-Middle
+@animate MainBackground-Middle
+@animate Warden-Middle
+@Wait 0.4
+
+@print まぁ、みなさんが納得できないなら、<br>処刑してもいいんですけど、<br>時間の無駄っていいますか……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Middle,Warden-Middle
+@hide Warden-Middle
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Margo.Pensive1
+@mask MainBackground-Middle,Margo-Middle
+@animate MainBackground-Middle
+@animate Margo-Middle
+@Wait 0.4
+
+@print メルルちゃんは【なれはて】にならないということよね。<br>死なないし、化け物にもならない。<br>それならたしかに時間の無駄ね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Middle,Margo-Middle
+@hide Margo-Middle
+@despawn MaskingRectangle
+
+@StopBgm 
+
+@print めそめそしていたメルルが、ぐすっ、と鼻を鳴らす。 { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Pensive
+
+@print これまで、囚人として魔女裁判に参加して……<br>魔女として処刑されたことは、何度かあります……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 痛いし、辛いし、今回はもういいです……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_23_1
+
+@char Meruru.Default
+
+@print 全部ばれちゃいましたし、<br>結局大魔女様は見つかりませんでしたし……<br>もう、今回はここで終わらせます……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Coco.Angry1,ArmL3
+@mask MainBackground-Middle,Coco-Middle
+@animate MainBackground-Middle
+@animate Coco-Middle
+@Wait 0.4
+
+@print はぁぁぁ！？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Meruru.Smile
+
+@print みなさんのこと、大好きでした。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print はぁぁぁ！？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@animate MainBackground-Middle,Coco-Middle
+@hide Coco-Middle
+@despawn MaskingRectangle
+@hideChars 
+
+@back 13_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@char Margo.Angry1
+
+@print ――エマちゃん、ココちゃん！ { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 気付けば、マーゴがエマの近くに立っていた。<br>エマの手首をぎゅっと握ってくる。 { speed:1 waitInput:true Wait:true }
+
+@print マーゴちゃん……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@QuickSave 14
+
+@print 逃げましょう……！<br>私たちは、もう、殺される結末しか用意されていない！ { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "緊迫したマーゴの声で、<ruby=\"ぼうぜん\">茫然</ruby>自失状態だったエマは<br>ハッと我に返る。" { speed:1 waitInput:true Wait:true }
+
+@print 近くに控えていた看守が動きだしている。<br>鎌を掲げて、エマたちの方向に近付いてきていた。 { speed:1 waitInput:true Wait:true }
+
+@print 幸い、出入口から看守が離れたので、<br>走り抜けることは可能だった。 { speed:1 waitInput:true Wait:true }
+
+@print エマは―― { speed:1 waitInput:true Wait:true }
+
+@choice メルルと話し合う
+	@goto Act01_Chapter05/Act01_Chapter05_Bad01
+
+@choice 逃げる
+	@goto .Choice1-5-1
+
+@StopForChoice 
+
+# Choice1-5-1
+
+@correctChoice 14
+
+@print ……っ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマはマーゴに手を引かれ、<br>足をもつれさせながら駆けだす。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@print マーゴの判断が早かったおかげで、<br>看守は対応が遅れた様子だった。 { speed:1 waitInput:true Wait:true }
+
+@print エマとココ、マーゴは裁判所から逃げ出した。 { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter05/Act01_Chapter05_Adv07

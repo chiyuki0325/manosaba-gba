@@ -1,0 +1,99 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-3-22
+
+# ========================================
+# ●シーン１‐3-22
+# ========================================
+
+@back 23_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# ========================================
+# ＞『地精の間』を選択
+# ========================================
+
+@bgm Bgm_5_1
+
+@print "エマは火事の起こったゲストハウスの並ぶ棟、<br>一番奥手にある【<ruby=\"ノーム\">地精</ruby>の間】へ入った。" { speed:1 waitInput:true Wait:true }
+
+@print 火事が起こった建物ではないので、<br>中は元のままだった。 { speed:1 waitInput:true Wait:true }
+
+@print そして中で、<br>エマはベッドで寝ているココに遭遇した。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+
+@print ココちゃん、ここで何を……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Pensive1,ArmR7,ArmL6
+
+@print んあ……あー、エマっち……。<br>いやあ、あてぃし寝不足でさぁ……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 裁判の時間まで、<br>ちょっと仮眠取っておこうかなーって。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print （てっきり捜査に出たと思ってたのに……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1,ArmR7,ArmL6
+
+@print いやあてぃしも調べようって気はあったよ。<br>でも現場はやっぱあんま見たくないし。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print でまあ、他の棟を調べようかなーって思ったら、<br>気持ちよさそうなベッドが目に入って。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+
+@print そっか……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Angry1,ArmR1,ArmL1
+
+@print あ、なにその目、ウザッ。<br>別にいーだろ、ほっとけよ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ココはふてくされた様子で、<br>エマに背を向けて寝に入ってしまった。 { speed:1 waitInput:true Wait:true }
+
+@print （ココちゃんはもう仕方ない……。<br>　ボクはボクでやれることをやろう） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマは室内を<ruby=\"くま\">隈</ruby>なく調べはじめる。" { speed:1 waitInput:true Wait:true }
+
+@print （ここは殺害現場じゃないし、<br>　意味がないのかもしれないけど……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （この部屋、荒らされてる……？<br>　ココちゃんがやったんじゃないだろうけど……<br>　いったいどうして……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print そこで、床に落ちている物を見つけた。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ☆証拠品：『アリサの人形』入手
+# ========================================
+@spawn Clue
+@update 3-8
+@despawn Clue
+
+@char Ema.Surprised1
+
+@print （アリサちゃんの人形……！<br>　ハンナちゃんが作ったものかな？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 他にも何かないかと探してみたが、<br>それ以外は何も見つからなかった。 { speed:1 waitInput:true Wait:true }
+
+@print （時間もないし、他のところを探そう） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 部屋を出る際に、<br>エマはココの方を一度振り返る。 { speed:1 waitInput:true Wait:true }
+
+@print ……毎晩、あいつうなされてうるさかったし、<br>最近めっちゃヒステリックに騒いでたし……<br>いなくなってせいせいするっつーの。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 眠ったフリをするココの背中が、<br>少し震えているように見えた。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン1‐3‐19
+# 全てのイベントを消化している＞シーン1‐3‐26
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter03/Act01_Chapter03_Adv19

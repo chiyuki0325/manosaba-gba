@@ -1,0 +1,729 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-0-3
+
+# ========================================
+# ●シーン2‐0‐3
+# ========================================
+
+@back 5_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent.Custom { time:0.99 }
+@Wait 0.9
+
+@bgm Bgm_26_1
+
+@print ラウンジに入り、<br>ぞろぞろと入ってくる少女たちを観察する。 { speed:1 waitInput:true Wait:true }
+
+@print （この子たちは【魔女】……？<br>　私を含めて全員存在が間違っているもの？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （いずれあの看守のように、化け物になる？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （いや、私は間違った存在じゃない。<br>　間違っているのは彼女の方だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+@char Sherry.Smile1
+@Wait 0.4
+@EmoteJumpDouble Sherry
+
+@print エマを横目で見ると、<br>探偵風の少女、橘シェリーに話しかけられていた。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Jailer.1
+@StopBgm { fade:3 }
+
+@print "入口を<ruby=\"ふさ\">塞</ruby>ぐように看守が立つ。<br>全員がラウンジに入ったようだ。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 私を含め、少女たちは１３名もいた。<br>多くの少女が動揺して、困惑した表情だった。 { speed:1 waitInput:true Wait:true }
+
+@print おそらく私以外、状況が把握できていないのだろう。<br>ならばと、私は室内中央に立った。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+
+@print みんな初対面だし、<br>自己紹介をしていこう！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 大きめな声で提案すると、<br>ざわめいていた少女たちが私に注目した。 { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_5_1
+
+@char Hiro.Smile1
+
+@print 私の名前は二階堂ヒロ。<br>以後よろしく。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 演出：『囚人番号659 二階堂ヒロ』の立ち絵と、キャッチコピー
+# 『正義の執行者』を入れる。
+# ========================================
+
+@hideChars 
+
+@print "<ruby=\"ほほえ\">微笑</ruby>んで自己紹介してみせると、<br>すぐさま近寄ってきたのは蓮見レイアだった。" { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Smile1
+@char Leia.Smile1
+
+@print キミ、ずいぶん落ち着いているんだね……<br>ひょっとして、ここのことに詳しいのかい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+
+@print いいや、まったく。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Smile1
+@char Leia.Normal1
+
+@print "<ruby=\"いぶか\">訝</ruby>しげに見つめてくる視線と<ruby=\"こうさく\">交錯</ruby>する。<br>私は動じず、笑みを深める。" { speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1
+
+@print ふうん……まあ、いいか。<br>私の名前は蓮見レイアだよ。よろしく。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 演出：『囚人番号662 蓮見レイア』の立ち絵と、キャッチコピー
+# 『舞台上の偶像《アイドル》』を入れる。
+# ========================================
+
+@hideChars 
+@char Coco.Normal1
+
+@print あのさぁ、レイアっち。<br>あてぃし、あんたのこと<br>テレビとかで見たことある気がすんだよねー。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 彼女は芸能人だ。舞台やテレビで活躍している。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "猫耳の少女、沢渡ココが近付いてきたので<br>私は<ruby=\"さえぎ\">遮</ruby>るように早々に伝える。" { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+@char Coco.Pensive1
+
+@print はぁん？<br>あてぃしはそっちの王子系に話しかけてんだけどー？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print どうでもいい情報に時間を割きたくない。<br>ちなみにサインやコラボは受け付けていない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Coco.Angry1
+
+@print なんなんコイツ……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1
+
+@print さっさと自己紹介をしてくれないか？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Coco.Surprised1
+
+@print "威圧的に言い放つと、<br>ココは<ruby=\"おび\">怯</ruby>えた瞳になった。" { speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1
+
+@print あ、あてぃしの名前は沢渡ココ、です。 { author:Coco speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 演出：『囚人番号669 沢渡ココ』の立ち絵と、キャッチコピー
+# 『孤独な配信者《ソロ・ストリーマー》』を入れる。
+# ========================================
+
+@char Hiro.Normal1
+
+@print 紹介ありがとう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hide Coco
+
+@print もはや場の支配権は私にあると感じ、<br>戸惑っている他の少女たちを見渡した。 { speed:1 waitInput:true Wait:true }
+
+@print 自己紹介がまだな子！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR16
+@EmoteJumpDouble Sherry
+
+@print "はいはーい！ 私は橘シェリーっていいますっ。<br>事件があるところに私あり！<br>この名探偵にお任せください！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 演出：『囚人番号667 橘シェリー』の立ち絵とキャッチコピー
+# 『破壊探偵《クラッシャー》』を入れる。
+# ========================================
+
+@print そう。じゃあ次の子！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1,ArmR10,ArmL11
+
+@print あれ～、いじってくれないんですか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 君に興味がない。<br>で、他に紹介していない子は誰だ？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Angry1
+
+@print ちょっとあなた、なんでそんなに偉そうなんですの！？<br>一体何様――。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 黙ってくれないか。<br>ああでも、自己紹介はしてもらわないと困る。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 名前を教え合う流れは押さえておかないと、<br>私と君たちで認識の齟齬が生まれてしまう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 正しくない歪みが生まれるのはよくない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+
+@print ヒロちゃん、変わってないんだね……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia.Normal1
+
+@print キミはヒロくんと知り合いかい？<br>見た感じ、他には<br>元々知り合い同士だった子はいないようだけど。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Normal1
+
+@print あ、う、うん。ボクの名前は桜羽エマ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 演出：『囚人番号658 桜羽エマ』の立ち絵と、キャッチコピー
+# 『忌み嫌われるもの』を入れる。
+# ========================================
+
+@char Ema.Pensive1
+
+@print ヒロちゃんとは幼なじみで……<br>中学では別のクラスだったんだけど。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 昔からヒロちゃんは、<br>学級委員長だったり、生徒会長だったりしたから。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia.Smile1
+
+@print ああ、そんな感じがするね。<br>この場を仕切るのは、<br>彼女に任せたほうが良さそうだ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia.Smile1
+@char Hanna.Normal1
+
+@print 気分を害したのならすまないが、<br>キミも名前を教えてもらってもいいかな？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hanna.Flushed
+
+@print ……ふんっ、遠野ハンナですわ。<br>お見知りおきあそばっ……お見知りおきあそばせせ？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 演出：『囚人番号668 遠野ハンナ』の立ち絵と、キャッチコピー
+# 『空想令嬢』を入れる。
+# ========================================
+
+@print "レイアに柔らかく声をかけられ、<ruby=\"ほお\">頬</ruby>を染めたハンナが<br>そっぽを向きながら言い放つ。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hiro.Normal1
+
+@print 次！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1,ArmR6
+
+@print "<ruby=\"ようえん\">妖艶</ruby>な雰囲気の少女が前に出てくる。" { speed:1 waitInput:true Wait:true }
+
+@print あらあら、ずいぶん急かすのね？<br>私の名前は宝生マーゴよ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 演出：『囚人番号664 宝生マーゴ』の立ち絵と、キャッチコピー
+# 『愛を知る人』を入れる。
+# ========================================
+
+@char Margo.Pensive1,ArmR1
+
+@print "無駄話は許されない空気なのかしら？ 残念。" { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 名前だけ教え合えたらいい。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print もうすぐこの監獄について説明がなされるし、<br>時間をあまり無駄にしたくない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Nanoka.Default
+
+@print ――どうして。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print あなた、どうしてそんなことを知っているの……？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 暗い瞳をした少女、黒部ナノカが<br>少し驚いたように目を見開いている。 { speed:1 waitInput:true Wait:true }
+
+@print 私の名前は黒部ナノカ。あなたは何者……？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 演出：『囚人番号665 黒部ナノカ』の立ち絵と、キャッチコピー
+# 『過去からの狙撃手《スナイパー》』を入れる。
+# ========================================
+
+@hideChars 
+@char Hiro.Normal1
+
+@print 先ほど名乗ったとおりだ。別に何者でもない。<br>はい、次、そこの！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Meruru.Default
+
+@print ひぃっ！<br>ひ、氷上メルル、です……っ { author:Meruru speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 演出：『囚人番号670 氷上メルル』の立ち絵と、キャッチコピー
+# 『怯える天使』を入れる。
+# ========================================
+
+@hideChars 
+@char Hiro.Normal1
+
+@print 次ぃ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria.Surprised1
+
+@print "怖い！ お、おじさん、もう心が折れそうなんだけど……。" { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive1
+
+@print "おじさん？ いいから君の名前を名乗ってくれないか。" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive1
+
+@print 佐伯ミリア、です……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 演出：『囚人番号663 佐伯ミリア』の立ち絵と、キャッチコピー
+# 『高校デビューギャル』を入れる。
+# ========================================
+
+@hideChars 
+@char AnAn.Normal1,Angle01/Option_Arms-
+
+@print 壁隅でうずくまっている少女が<br>スケッチブックに何やら書き込んでいる。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1
+
+@print （いちいち面倒くさいことしているな……。<br>　のろのろと……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+
+@print 彼女の名前は夏目アンアンだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char AnAn.Surprised1,Angle01/Option_Arms-
+
+@print ！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 演出：『囚人番号660 夏目アンアン』の立ち絵と、キャッチコピー
+# 『虚言《ソラゴト》の眠り姫』を入れる。
+# ========================================
+
+@print 私が先に教えてしまったことで、<br>アンアンは衝撃を受けている。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa.Normal1,Option-ArmL-Off
+@char Noah.Normal1
+
+@print まだ名乗っていない少女たちがいる。 { speed:1 waitInput:true Wait:true }
+
+@print 反抗的な眼差しを私に向ける少女、紫藤アリサと、<br>自由気ままな少女、城ケ崎ノア。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hiro.Normal1
+
+@print そこの君、紹介がまだのようだが？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa.Angry1,Option-ArmL-Off
+
+@print "アリサが私にぎらりと<ruby=\"するど\">鋭</ruby>い瞳を向けた。" { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1,Option-ArmL-Off
+
+@print 名乗りたくねえな。ウチ、おめえみたいなの、<br>嫌いなんだよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print いかにも仕切り方が委員長って感じで、<br>寒気がする。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hiro.Normal1
+
+@print 紫藤アリサ。<br>君は私が委員長だったことを聞いていたようだ。<br>私に興味津々なのかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa.Surprised1,Option-ArmL-Off
+
+@print は……！？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 演出：『囚人番号666 紫藤アリサ』の立ち絵と、キャッチコピー
+# 『自罰中毒』を入れる。
+# ========================================
+
+@hideChars 
+@char Hiro.Normal1
+
+@print それで、あっちで勝手な行動をしている子が、<br>城ケ崎ノアだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Noah.Normal1
+
+@print ん？ { author:Noah speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 演出：『囚人番号661 城ケ崎ノア』の立ち絵と、キャッチコピー
+# 『偽りの芸術家《アーティスト》』を入れる。
+# ========================================
+
+@hideChars 
+
+@print 私はぱちんと両手を合わせる。 { speed:1 waitInput:true Wait:true }
+
+@print 以上！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 他の少女たちが私を見る視線は、<br>いかにも不審げになっていた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print あの、ヒロちゃん……なんでみんなの名前、<br>知ってるの……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR6,ArmL1
+
+@print とっても気になりますよね～！<br>ここは名探偵の出番でしょうか！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ……正直、冷静さを欠いた自覚があった。<br>こっそりとため息をつく。 { speed:1 waitInput:true Wait:true }
+
+@print （少し、ことを焦りすぎたか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （……あるいは情が移るのを、<br>　避けたかったのかもしれない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR6,ArmL1
+
+@print "二階堂ヒロさんがみんなの名前を知っていた理由、<br>それはですねえ……ずばり！ 超能力ですね！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 彼女はみんなの心が読めてしまうんですよ、きっと！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR1
+
+@print そうだったの、ヒロちゃん！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Angry1
+
+@print んなわけねーだろ。こいつらあほ？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia.Normal1,ArmR1,ArmL7
+
+@print "レイアがこほんと<ruby=\"せきばら\">咳払</ruby>いし、手を挙げた。" { speed:1 waitInput:true Wait:true }
+
+@char Leia.Normal1,ArmR3,ArmL1
+
+@print 私からいいかな？<br>みんな、よくわからない服を着せられているよね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 各自、服のポケットを見てほしい。<br>スマホを配給されているようなんだ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print それは私の知らない情報だった。<br>内心で驚きながら、自身の服のポケットに手を入れる。 { speed:1 waitInput:true Wait:true }
+
+@print すると、レイアの言ったとおり、<br>スマホが入っていた。 { speed:1 waitInput:true Wait:true }
+
+@print そしてポケットの中には、<br>もうひとつ入っていたものがあった。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ☆証拠品：『ヒロの万年筆』入手
+# ========================================
+@spawn Clue
+@Wait 0.5
+
+@print （これは……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "心臓が<ruby=\"はやがね\">早鐘</ruby>を打ったが、<br>なんとか無表情を保つ。" { speed:1 waitInput:true Wait:true }
+
+@despawn Clue
+
+@hideChars 
+@char Ema.Surprised1,ArmR1
+
+@print 本当だ、これがあれば、外と連絡できるかも！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1,ArmR5
+
+@print いや、残念ながら圏外で、<br>外との連絡手段にはならないみたいだ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Normal1,ArmR3,ArmL1
+
+@print このスマホの中に【魔女図鑑】という<br>アプリが入っていてね。<br>私たち全員の名前が記されていたんだよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Normal1,ArmR4,ArmL5
+
+@print シェリーがぽんっと拳をうった。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR6,ArmL1
+
+@print 謎は全て解けました！！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ふっふっふ、二階堂ヒロさん……<br>あなたはこの【魔女図鑑】を……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Normal1
+
+@print 最後まで言う必要ねーですわ。<br>もうみんなわかってますし。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 私はスマホを操作してみながら、<br>レイアをちらりと観察した。 { speed:1 waitInput:true Wait:true }
+
+@print （私は早々にこの監獄の日々を終えたから、<br>　知らないことがあまりに多い） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （情報は多ければ多いほどいい。<br>　しばらくは情報を得た方が賢明だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@StopBgm { fade:3 }
+
+@print （……そろそろ時間だな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "私は天井付近を<ruby=\"あお\">仰</ruby>いだ。" { speed:1 waitInput:true Wait:true }
+
+# フクロウの羽ばたき音
+@sfx Sfx_8
+
+@print "定刻どおり、小さな<ruby=\"つうきこう\">通気口</ruby>から、<br>化け物フクロウが飛んできた。" { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@back 500_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@bgm Bgm_10_1
+
+@print あっ……人がいっぱい……。<br>えっと、改めまして……この屋敷で管理を任されている<br>かわいいフクロウ、ゴクチョーと申します……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print ……定時とかもあるので……<br>さっさと説明をしていきますね……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print あっと……すごく申し上げにくいんですが……<br>皆さんは【魔女】になる因子を持っています。 { author:Warden speed:1 waitInput:true Wait:true }
+
+# 魔女化の鼓動
+@sfx Sfx_162
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.3
+
+@print ――魔女。 { speed:1 waitInput:true Wait:true }
+
+@print "この世界に害をなす、絶対的な<ruby=\"あく\">悪</ruby>。<br>同じ話を聞いて尚、私は動揺してしまっていた。" { speed:1 waitInput:true Wait:true }
+
+@print （私は悪者じゃない！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 魔女化の鼓動
+@sfx Sfx_162
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.3
+
+@ResetText 
+@QuickSave 16
+
+@print どくどくと心臓が脈打ち、視界がぐらつく。<br>自我が崩壊しそうだった。 { speed:1 waitInput:true Wait:true }
+
+@print 全てを否定したくて、<br>衝動的に暴れてしまいそうだった。 { speed:1 waitInput:true Wait:true }
+
+@print （なんだこの気持ちは……何故……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私は―― { speed:1 waitInput:true Wait:true }
+
+@StopBgm { fade:3 }
+
+@choice 火かき棒を手に取った
+	@goto Act02_Chapter01/Act02_Chapter01_Bad01
+
+@choice 必死で耐えた
+	@goto .Choice2-1-1
+
+@StopForChoice 
+
+# Choice2-1-1
+
+@correctChoice 16
+
+@print （耐えるんだ……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "口の中を強く<ruby=\"か\">噛</ruby>みすぎて、血の味がした。" { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_10_1
+
+@print 皆さんにはこの春から<br>囚人として生活してもらいます。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 救済がなくもないのですが……<br>【大魔女】さえ見つかれば皆さんの呪いを……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print あ、でも、期待とか持たせても良くないですよね……。<br>忘れてください。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print （大魔女……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "大魔女や救済の響きが引っかかったものの、<br>ここでも発言は<ruby=\"ひか\">控</ruby>える。" { speed:1 waitInput:true Wait:true }
+
+@print そしてゴクチョーは看守――<br>魔女の【なれはて】の紹介に入る。 { speed:1 waitInput:true Wait:true }
+
+@print あっ、ちなみに看守はかつてここに収容された者が<br>魔女になってしまった姿です。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 【なれはて】と呼ばれています。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 多くの魔女になった者は処刑されますが、<br>与しやすい者を、マインドコントロールしてます。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 逆らったら殺すように洗脳してしまったので……<br>ほんとすみません、逆らったら死んでください。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@hide Stills
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print …………。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Jailer.1
+
+@print 私はどんよりと暗い眼を、<br>看守へと差し向けていた。 { speed:1 waitInput:true Wait:true }
+
+@print 声を上げなければ、逆らわなければ、<br>看守は私に鎌を振るわない。 { speed:1 waitInput:true Wait:true }
+
+@print "記憶には鮮明に<ruby=\"や\">灼</ruby>きついている。<br>その時の殺された衝撃、精神的な苦痛が胸を襲う。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （……っ、忘れるんだ。私は死を回避した） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （もう二度と暴走なんてしない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+# ＠備考◆コソッと
+
+@print あの、ヒロちゃん、<br>すごく顔色が悪いけど、大丈夫……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+# 魔女化の鼓動
+@sfx Sfx_162
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.3 }
+@Wait 0.3
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.3
+
+@print "<ruby=\"かたわ\">傍</ruby>らに立っていたエマに声をかけられ、<br>より<ruby=\"どうき\">動悸</ruby>が速くなる。" { speed:1 waitInput:true Wait:true }
+
+@print 放っておいてほしい。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ピシャリと言い放つと、<br>エマはしゅんとした顔になって離れていく。 { speed:1 waitInput:true Wait:true }
+
+@print エマと距離をあけたことで、<br>少し気持ちに余裕ができた。 { speed:1 waitInput:true Wait:true }
+
+@print （やはりエマの存在を認知すると、<br>　感情の抑制がきかなくなる） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （しかし私はそこまで感情的な性格ではないはず） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （一体私に何が起こっている……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Warden.1
+
+@print ――あっ、あと何個もすみません。<br>最後に。みなさんに、<br>もっとも大切なことを伝えておきます。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 魔女になりつつある者は、<br>抑えきれない殺意や妄想に衝かれてしまいます。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 私は弾かれたように顔を上げ、ゴクチョーを見ていた。 { speed:1 waitInput:true Wait:true }
+
+@print 面倒なことに、いずれ囚人間で<br>殺人事件が起こるんですよ。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Smile1,ArmR8,ArmL8
+
+@print 殺人事件っ！？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Warden.1
+
+@print そうなんですよー……毎度のことなんですよねぇ……<br>さすがにそんな危険人物とは一緒に生活できませんよねぇ。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print というわけで殺人事件が起こり次第、<br>【魔女裁判】を開廷します。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 【魔女】になった囚人は……あのー……<br>……処刑しますので……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@StopBgm { fade:3 }
+
+@print 詳しくは【魔女図鑑】をご覧ください。<br>では私はこれにて……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+# フクロウの羽ばたき音
+@sfx Sfx_8
+
+@hideChars 
+
+@print "話を終えたゴクチョーが羽ばたき、<br><ruby=\"つうきこう\">通気口</ruby>の中へと姿を消していく。" { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_26_2
+
+@print 私はすぐにスマホを取り出し、<br>魔女図鑑のアプリを開いた。 { speed:1 waitInput:true Wait:true }
+
+@print 『囚人は強いストレスを受けると<br>　魔女因子が高まり、魔女化が進む』 { speed:1 waitInput:true Wait:true }
+
+@print 『魔女になった者は堪えきれない殺人衝動で、<br>　殺人を犯すおそれがある』 { speed:1 waitInput:true Wait:true }
+
+@print "魔女図鑑にある文面を確認し、<ruby=\"ふ\">腑</ruby>に落ちる。" { speed:1 waitInput:true Wait:true }
+
+@print （魔女化による殺人衝動……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@back 10_1 { Scale:{g_backgroundDefaultScale} }
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print あの時の私は感情をコントロールできないどころか、<br>完全におかしくなっていた。 { speed:1 waitInput:true Wait:true }
+
+@print （あれが【魔女化】によるものだとしたら――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （つまり私は……すでに【魔女化】がはじまっている……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （心当たりは【エマとの再会】……。<br>　私にとって彼女との再会は<br>　それほど大きなストレスだったのか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@hide Stills
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print 背筋がゾッとし、首を強く振った。 { speed:1 waitInput:true Wait:true }
+
+@print （落ち着け……気を確かに持て……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 自身の暴走の理由はわかった。<br>納得もした。 { speed:1 waitInput:true Wait:true }
+
+@print しかし前回の死を乗り越えたことで、<br>闇を抑え込むことに成功したのだ。 { speed:1 waitInput:true Wait:true }
+
+@print （もう大丈夫だ。私は私のままでいられる） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （私は魔女になど決してならない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （この世界に秩序をもたらす正しき者として、<br>　魔女を裁く存在となってみせる――！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私はすうっと、大きく息を吸い込み、<br>真っすぐ前を見据えた。 { speed:1 waitInput:true Wait:true }
+
+@print 得体の知れない何かが、じわりじわりと<br>胸に染み込んでいくのを感じながら。 { speed:1 waitInput:true Wait:true }
+
+# 魔女図鑑初期更新
+@gosubResetBook System/System_ResetWitchBook
+@set "hasWitchBook = true"
+
+@Gosub System/System_Subroutine.EndAdv
+
+@if !enableDebugSkip
+	@ProcessInput true { set:Continue.false,Pause.false,Skip.false,ToggleSkip.false,AutoPlay.false,ToggleUI.false,ShowBacklog.false,Rollback.false,SkipMovie.{g_moviePlayed >= 2} }
+	@movie Act02_Opening
+
+@set "g_moviePlayed = max(2, g_moviePlayed)"
+@goto Act02_Chapter01/Act02_Chapter01_Adv05

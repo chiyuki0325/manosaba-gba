@@ -1,0 +1,98 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-1-20
+
+# ========================================
+# ●シーン2‐1-20
+# ========================================
+
+@back 21_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# 荘厳な鐘の音
+@sfx Sfx_33
+
+@print "牢屋敷の<ruby=\"すみずみ\">隅々</ruby>まで届くような、<br>深く響く鐘の音を何度も聞いた。" { speed:1 waitInput:true Wait:true }
+
+@print （この音は……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 長時間の拘束により消耗しきった私は、<br>重い頭をゆっくりと持ち上げた。 { speed:1 waitInput:true Wait:true }
+
+@print "魔女裁判の<ruby=\"かいてい\">開廷</ruby>を<ruby=\"しら\">報</ruby>せるものだと、<br>直感した。" { speed:1 waitInput:true Wait:true }
+
+@char Jailer.1
+
+@print そしてすぐに懲罰房に看守が現れ―― { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 私は何ひとつ自由も情報も与えられないまま、<br>再び連行されていった。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+# ゆっくりと大扉を開く音
+@sfx Sfx_165
+
+@back 13_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent.Custom { time:0.99 }
+@Wait 0.9
+
+@bgm Bgm_2_1_Loop
+
+@print 裁判所に連れられていき、<br>私は証言台のようなところに立たされて、<br>ようやく拘束が解かれた。 { speed:1 waitInput:true Wait:true }
+
+@print "ぐるりと並ぶ証言台には、<br>すでに１１名の少女たちが<ruby=\"そろ\">揃</ruby>っている。" { speed:1 waitInput:true Wait:true }
+
+@print （ここが、裁判所か……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 出入口の大扉の前に看守が立つ。 { speed:1 waitInput:true Wait:true }
+
+@print "やがて、手すりの上に留まっている<br>ゴクチョーが<ruby=\"しゃべ\">喋</ruby>りはじめた。" { speed:1 waitInput:true Wait:true }
+
+@char Warden.1
+
+@print あのー……まずは魔女裁判のルールについて<br>説明しますね。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print １時間の議論の後、<br>犯人と思われる人物に各自の端末で投票してもらいます。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 投票で魔女に決められた人物は<br>中央の台座へと連行、処刑執行になる……て感じです。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back 13_1 { time:0 }
+@animate MainBackground-Middle
+@hideChars 
+@Wait 1.5
+
+@print 少女たちの私を見る目は変わらず、<br>疑惑と恐怖に満ちている。 { speed:1 waitInput:true Wait:true }
+
+@print （状況が圧倒的不利なのは変わらず、か） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print そして私もまた、<br>変わらず憎悪を抱えていた。 { speed:1 waitInput:true Wait:true }
+
+@print "少女たちを、<br>順に<ruby=\"にら\">睨</ruby>みつけていく。" { speed:1 waitInput:true Wait:true }
+
+@print （この中に、忌まわしき【魔女】がいる） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （絶対に特定してやる） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "（私を<ruby=\"おとし\">貶</ruby>めたこと、後悔するがいい……！！）" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@hide MainBackground-Middle
+@Wait 1
+
+@char Warden.1
+
+@print それでは、魔女裁判開廷です！ { author:Warden speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ＞議論パートへ
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter01/Act02_Chapter01_Trial00

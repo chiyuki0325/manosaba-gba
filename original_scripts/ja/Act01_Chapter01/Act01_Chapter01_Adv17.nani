@@ -1,0 +1,232 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-1-13
+
+# ========================================
+# ●シーン1-1‐13
+# [back 8]
+# ========================================
+
+# ========================================
+# [bgm Bgm_011_001_Loop]
+# ========================================
+
+@back 30_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+@bgm Bgm_11_1
+
+@print 夕食後、エマたちはシャワールームを利用した。 { speed:1 waitInput:true Wait:true }
+
+@print 昨日も利用したが、<br>シャワールームには各囚人番号が振られたロッカーがある。<br>その中には、下着や衣服の替えがきっちりと収められていた。 { speed:1 waitInput:true Wait:true }
+
+@print 規則によれば着ていた服は、<br>シャワールームに設置されている<br>ダストシュートに捨てなければいけない。 { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1
+@char Sherry.Normal1
+@char Ema.Normal1
+
+@print 服を捨てるなんて……ぐぬぬ、もったいないですわ……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print このダストシュート、地下の焼却炉に通じているんですよね。<br>焼却炉室を地下で見かけました。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ああ、そういえば……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 回想シーン（新規）
+# ========================================
+
+# ========================================
+# [back 27]
+# ========================================
+
+@hideChars 
+@Wait 0.2
+@back 27_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@print （地下を探索した時、焼却炉室があるのは見かけた） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （魔女図鑑の規則には【毎週月曜の１５時に稼働】<br>　とあったっけ） { author:Ema speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 回想ここまで
+# ========================================
+
+@Wait 0.2
+@back 30_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@char Hanna.Normal1
+@char Sherry.Normal1
+@char Ema.Pensive1
+
+@print まだ全然着られますのに！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 私たちが魔女候補だからかもしれませんねー。<br>着てたものを全て焼却処分って、偏見のようなものを感じます。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print うん……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 単純に洗濯が面倒なのかもしれませんが！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print でもそこまでチェックもされていない感じしますし、<br>嫌なら捨てなくても良いのでは。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna.Pensive1
+
+@print うっ……嫌ですが、<br>規則違反がバレたら何をされるかわかりませんし……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 仕方ないですわ、くそ～～！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [back 9]
+# ========================================
+
+@ResetText 
+@hideChars 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+@back 9_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent.Custom { time:0.9 }
+@Wait 0.9
+
+@char Hanna.Normal1
+@char Sherry.Normal1
+@char Ema.Normal1
+
+@print ――しかも毎日同じ服着なきゃならないなんて！<br>せめて寝間着は用意してほしかったですわ。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "シャワーを浴びた後も、ハンナの<ruby=\"ぐち\">愚痴</ruby>は続いていた。<br>エマは苦笑を浮かべる。" { speed:1 waitInput:true Wait:true }
+
+@print ま、まあまあ。<br>同じ服でも替えがあるのはありがたいよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1
+
+@print ゴクチョーさんの趣味かもしれませんねぇ。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"ほて\">火照</ruby>った体から<ruby=\"ゆげ\">湯気</ruby>を立てながら、<br>エマ、シェリー、ハンナの３人で通路を歩く。" { speed:1 waitInput:true Wait:true }
+
+@print ふん、趣味は悪くないんじゃないかしら？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+
+@print 気に入ってるんですね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna.Flushed1
+
+@print "べ、べべべべっつにぃ？ 気に入っていませんけどぉ？" { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print （なんか……こういうのいいなって思ったり） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 歩くエマの口元は緩んでいる。 { speed:1 waitInput:true Wait:true }
+
+@print （こうやって友だち同士でおしゃべりしながら歩くのって<br>　憧れだった） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （もちろん、ボクらは囚人で、ここは牢獄なんだけど……<br>　なんか、忘れちゃいそうになるな） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print あ、エマさん、ハンナさん、スマホ見てください。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 唐突にシェリーが切り出したことで、<br>エマとハンナはスマホを取り出す。 { speed:1 waitInput:true Wait:true }
+
+@print すると、【蓮見レイア】の配信中ランプが点灯しており、<br>レイアの顔が画面に映った。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@printer Normal.Stream
+@back 5_1
+@blur MainBackground-Middle
+@char Leia.Normal1
+@Wait 0.3
+
+@print ――団結するためにも<br>私も定期的に配信をしようと思う。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# ＠備考◆配信中
+
+@print みんな、気持ちをしっかり持ってほしいんだ。<br>どうか衝動的にならないでほしい。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# ＠備考◆配信中
+
+@char Leia.Angry1
+
+@print 今は従うしか方法はない。<br>だが、私たちは決して屈しない。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# ＠備考◆配信中
+
+@char Leia.Smile1
+
+@print 全員で生き残って、必ずここを出るんだ。<br>大丈夫。私が必ず、なんとかしてみせる。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@printer Normal.Default
+@hide Hanna,Sherry,Ema { time:0 }
+@hide MainBackground-Middle,Leia-Middle
+@Wait 0.5
+
+@print "力強いレイアの言葉はエマの胸を打ち、<br>瞳が<ruby=\"うる\">潤</ruby>む。" { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Normal1
+@char Sherry.Normal1
+@char Ema.Pensive1,ArmR3,ArmL1
+
+@print （さっき食堂でひりついて、みんなが怖がってたから<br>　安心させるために……レイアちゃんは偉いな……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （ボクは自分のことしか考えられていない……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1
+@print ふんっ、こんなもの見る価値ありませんわね。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "捨て<ruby=\"ぜりふ\">台詞</ruby>を吐きながら、ハンナは食い入るように<br>スマホを見ている。" { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1,ArmR2,ArmL1
+
+@print ふむ。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print その様子が興味深かったのか、<br>シェリーがさっとハンナのスマホを取り上げた。 { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1
+
+@print ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print ハンナが慌てたように、<br>スマホに映ったレイアの姿を追い求める。 { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1
+
+@print "何しますの！？ お返しなさい！" { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Smile1,ArmR17,ArmL4
+
+@print "ハンナさん、本当はレイアさんのこと<br>好きなんじゃないですか～？ そんな一生懸命になって。" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "ぶんぶんスマホを振り回され、<br>ハンナが<ruby=\"ま\">真</ruby>っ<ruby=\"か\">赤</ruby>になって、<ruby=\"せわ\">忙</ruby>しなく視線を動かしている。" { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1
+@char Hanna.Angry1
+@animate Hanna
+
+@print "このゴリラ女！ 返せ！！" { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1
+@animate Sherry
+
+@print ふふふ、捕まえてごらんなさいな～。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "追いかけっこを始めた２人に、<br>エマは<ruby=\"あき\">呆</ruby>れた表情になって、ため息を漏らした。" { speed:1 waitInput:true Wait:true }
+
+@print その間、エマ自身も<br>レイアの映った画面から目が離せずにいる。 { speed:1 waitInput:true Wait:true }
+
+@print （レイアちゃんって、<br>　女の子を惚れさせる魔法を使えるのかな） { author:Ema speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [transition Out,Fade,1,Black]
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter01/Act01_Chapter01_Adv18

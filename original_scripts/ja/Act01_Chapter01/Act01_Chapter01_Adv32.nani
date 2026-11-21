@@ -1,0 +1,178 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-1-28
+
+# ========================================
+# ●シーン1-1‐28
+# [back 11]
+# ========================================
+
+# ========================================
+# ＞『娯楽室』を選択
+# ========================================
+
+# ========================================
+# [bgm Bgm_005_001_Loop]
+# ========================================
+
+@back 11_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+@bgm Bgm_5_1
+
+@print エマたちが娯楽室に行ってみると、<br>ソファーでくつろいでいるココがいた。 { speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1,ArmR9
+
+@print ココはあくびをしながら、スマホを眺めている。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Angry1
+
+@print ちょっとあなた、<br>みんなが必死に調査してる時に何を遊んでいますの？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Angry1,ArmR2
+
+@print "はぁ？ ウッザ。<br>あてぃし今忙しいんだけど。ほっとけよ。" { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print その言いぐさに<br>エマも少しカチンとした。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Angry1
+@char Coco.Angry1,ArmR2
+
+@print 人が死んでるんだよ？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 知らないヤツ死んで、メソメソしてろって？<br>あームリ。そういうのキモイから。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print あてぃしと推し以外、<br>この世界の奴らは全部死ねばいいと思ってんの。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 勝手に調査でもなんでもやってろっつーの。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （なんかちょっと……嫌な子だな……。<br>　話が合いそうにない） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1
+@char Coco.Angry1
+
+@print 忙しいって、ココさんは何をしているんです？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print シェリーは特にココの態度に動じる様子もなく、<br>にこにこと問いかけた。 { speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1,ArmR2,ArmL1
+
+@print 昨日の配信アーカイブの確認。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print （そういえば、昨夜はココちゃんたち配信してたっけ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Surprised1
+
+@print "へえ！ アーカイブが残せるんですね。<br>やたらと凝ってるんですねぇ。" { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 証拠品：『配信アーカイブ』入手
+# ========================================
+
+@ResetText 
+@spawn Clue
+@toast "魔女図鑑 更新…"
+@update 1-7
+@Wait i1.2
+
+@char Sherry.Normal1
+
+@print 配信しても我々しか見れないのに、<br>その機能に意味なんてあるんですかね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print あてぃしには意味があんの。<br>いいからこれからも配信見てって。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Clue
+@Wait 0.6
+
+@print （ココちゃんの魔法って、<br>　配信することと関係あるのかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print シェリーも同じことを思ったらしい。 { speed:1 waitInput:true Wait:true }
+
+@print ココさんの魔法は、<br>配信に関係しているんですか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Coco.Angry1,ArmR2,ArmL1
+
+@print キモ。なんであんたらに<br>あてぃしの魔法教えなきゃいけないワケ？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1
+
+@print 配信で自分語りはするのに……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Angry1,ArmR2,ArmL2
+
+@print それとこれとは別なんだって。<br>あーもーうっさいなああ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [sfx 32：テーブルを叩く音]
+# ========================================
+
+@sfx Sfx_32
+
+@print "バンッと、<br>ココはテーブルを叩いて<ruby=\"いらだ\">苛立</ruby>ちを<ruby=\"あら\">露</ruby>わにしてくる。" { speed:1 waitInput:true Wait:true }
+
+@print あてぃし１人で配信しても、<br>同接ほぼゼロとか終わってねえ？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print レイアとコラボしたらみんな見たくせにさぁ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print あてぃしってレイア以下？<br>なんなのあいつウゼエ。死んでくんないかな。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Angry1
+@char Hanna.Angry1
+
+@print コラボしてもらっておいて<br>それはないんじゃないかしら！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "あてぃし頼んでねーし！ あっちが誘ったんだし！" { author:Coco speed:1 waitInput:true Wait:true }
+
+@print "あなたお話になりませんわ！ きいぃ！" { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR18,ArmL13
+
+@print まあまあ。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print "真っ<ruby=\"か\">赤</ruby>になって怒り出したハンナを、<br>シェリーが引きずる。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "これ以上娯楽室にいたら、<br><ruby=\"けんか\">喧嘩</ruby>がヒートアップするのは目に見えた。" { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR1,ArmL1
+
+@print ここには何も手がかりはなさそうですし、<br>出ましょうか。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+
+@print そうだね……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Normal1
+
+@print わかったのは、ココさんが<br>邪悪ってことくらいですかね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1
+
+@print うん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマも思わずといった風に<ruby=\"うなず\">頷</ruby>いた。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン1‐1‐21
+# 全てのイベントを消化している＞シーン1‐1‐30
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter01/Act01_Chapter01_Adv25

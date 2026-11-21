@@ -1,0 +1,606 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter02/Act02_Chapter02_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# ==============================================================================
+# MARK: 7-12: 💬 ミリアの弁護
+# ==============================================================================
+# ＠ト書き▼議論シーン7-12 ミリアの弁護
+# 議論開始エフェクト
+# BGM変更：HirO
+@bgm Bgm_8_1
+# ボス演出
+@ResetText 
+@char Nanoka.Default,ArmR4,ArmL2,Eyes1_Pensive_Open1,Mouth1_Flushed_Closed1 { time:0 }
+@stageCamera 1 { Rotation:0,{ (10 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+
+@stageCamera 1 { Rotation:0,{ (10 / courtStandCount * 360) },0 time:1 }
+@showStageScreen 1
+@Wait 1
+
+@ResetText 
+@char Hiro.Normal2,ArmR6,ArmL3,Eyes2_Angry_Open2,Mouth2_Determined_Open2 { time:0 }
+@stageCamera 0 { Rotation:0,{ (8 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+
+@stageCamera 0 { Rotation:0,{ (7.9 / courtStandCount * 360) },0 time:1 }
+@hideStageScreen 1
+@Wait 1
+
+@ResetText 
+@char Miria.Fearful1,ArmR5,ArmL5,Angle01/Facial/Mouth>Mouth_Angry_Closed01 { time:0 }
+@stageCamera 1 { Rotation:0,{ (6 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+
+@stageCamera 1 { Rotation:0,{ (6.1 / courtStandCount * 360) },0 time:1 }
+@showStageScreen 1
+@Wait 1
+@hideStageScreen 1
+
+# Judge7-12-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open,Angle01/Facial/Mouth>Mouth_Normal_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@printDebate ヒロちゃんは<br>シャワールームが<br>防音だって<br>言ってたけど……。
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Angry_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@printDebate そんなことないんじゃ<br>ないかな……！？
+
+@char Miria.Default,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Surprised_Open02
+@gosubModifyCamera 0
+@printDebate "だってエマちゃんは<br>シャワールームの中で<br><link=\"Objection_02_02_12_01\">銃声</link>を聞いたんだよね？"
+
+@char Miria.Default,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Surprised_Open02
+@gosubModifyCamera 0
+@printDebate "それじゃ、<br><link=\"Objection_02_02_12_02\">全然防音じゃない</link>よ……！"
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@printDebate ……銃が撃たれた場所を<br>考えれば<br>その答えは明白だ。
+
+@char Hiro.Normal2,ArmR3,ArmL4,Eyes2_Normal_Closed1,Mouth2_Angry_Open1
+@gosubModifyCamera 0
+@printDebate ココは焼却炉で殺された……。
+
+@char Hiro.Normal2,Eyes2_Angry_Open2,Mouth2_Determined_Open2,ArmL3,ArmR6
+@gosubModifyCamera 0
+@printDebate つまり、<br>ダストシュートを通じて<br>音はシャワールームまで<br>反響していたんだ。
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Angry_Closed01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@printDebate そ、そんな……！
+
+@char Miria.Default,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Surprised_Open02,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@printDebate で、でも……<br>ナノカちゃんは<br>レイアちゃんや<br>アンアンちゃんの言葉も<br>言い当ててたよね！？
+
+@char Miria.Default,ArmR4,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open02,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@printDebate "<link=\"Objection_02_02_12_03\">実際に聞いてる</link>んだから、<br>事件が起こったとき<br>ナノカちゃんは<br>ラウンジにいたんじゃ<br>ないかな！？"
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Cry_Open02,Angle01/Facial/Mouth>Mouth_Determined_Close,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@printDebate 正直ナノカちゃんが<br>犯人なのかどうかは<br>おじさんには<br>わからないけど……。
+
+@char Miria.Default,ArmR10,ArmL4,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Surprised_Open02,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@printDebate でもやっぱり……<br>明確な証拠もないのに<br>疑うのは良くないよ！
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Determined_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@Wait 0.2
+
+# ==============================================================================
+# 7-12議論後独白
+# ==============================================================================
+
+@print （たしかに証拠はない……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Angry_Open1,Mouth2_Determined_Closed1,Sweat2-1
+@print （けれど……だからといって<br>　ロープの存在を隠していたナノカが<br>　疑わしくないわけではない……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 目が光るとか演出もあり
+# ＠備考◆アンアンの魔法によって真実探求への意思が強化されてる
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Angry_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@print （【殺人を犯した人物を見つける】……！<br>　それこそが正しい道だ……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-12-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_02_12_01
+
+@Skip false
+@pauseTrial true
+
+@choice 雷鳴の音だった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge7-12-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_02_02_12_02
+
+@Skip false
+@pauseTrial true
+
+@choice 小さな声なら外には漏れない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge7-12-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_02_02_12_03
+
+@Skip false
+@pauseTrial true
+
+@choice 予想できた
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge7-12-5
+
+@choice 盗聴していた
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge7-12-6
+
+@choice 魔法を使った
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge7-12-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 7-12: ❌ 議論選択肢分岐
+# ==============================================================================
+
+# MARK: 7-12-3: ❌ 反論・雷鳴の音だった
+
+# Judge7-12-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print エマが聞いたという音が<br>銃声とは限らない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 銃声よりも大きな音――<br>当時鳴り響いていた【雷鳴の音】が<br>シャワールームにも届いたんだよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open02,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print そ、それってどちらにせよ<br>防音は完全じゃないってことじゃないかな……！？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Surprised_Open02,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print そのあたりを検証しないまま<br>ナノカちゃんを疑うのは可哀想だよ……！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Angry_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open02,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print 十分な証拠もないのに疑うなんて、<br>良くないよ！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Determined_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （……ミリアの意見も、<br>　正しく犯人を暴くために必要なことだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Angry_Open1,Mouth2_Determined_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （だが、シャワールームの防音状況よりも<br>　解かなければならない謎がある――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Angry_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （ナノカがどのようにして<br>　ラウンジの状況を知ったのかということだ……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Angry_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （これまでの積み重ねた情報がきっと答えを教えてくれる。<br>　……魔女図鑑を確認してみよう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-12-1
+
+# MARK: 7-12-4: ❌ 反論・小さな声なら外には漏れない
+
+# Judge7-12-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print 銃声よりも小さな音――<br>会話の声なら外には漏れなくても不思議ではない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open02,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print そ、それだって単なる憶測だよね……？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open02,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print 地下の銃声に……<br>ラウンジの子たちは気付いてなかった。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Surprised_Open02,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print シャワールームの会話だって<br>少しぐらい漏れてる可能性はあるよね……？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Angry_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open02,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print 決めつけるのはよくないんじゃないかな！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Determined_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （……ミリアの意見も、<br>　正しく犯人を暴くために必要なことだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Angry_Open1,Mouth2_Determined_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （だが、シャワールームの防音状況よりも<br>　解かなければならない謎がある――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Angry_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （ナノカがどのようにして<br>　ラウンジの状況を知ったのかということだ……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Angry_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （これまでの積み重ねた情報がきっと答えを教えてくれる……<br>　魔女図鑑を確認してみよう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-12-1
+
+# MARK: 7-12-5: ❌ 反論・予想できた
+
+# Judge7-12-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print ナノカはラウンジにいなくとも<br>レイアとアンアンがどんなことを話すか、<br>予想できたに違いない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open3,Mouth2_Angry_Closed1
+@gosubModifyCamera 0
+@print 事前に２人の会話を盗み聞きしておいて――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Angry_Open1,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print ２人がそのあとラウンジで何を話すか……<br>続きを予想すればいいんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print んなことできるわけねーですわ！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print もし大体の内容を予想できたとしても<br>一言一句間違えずに<br>会話内容を再現することは不可能なんじゃないでしょうか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_03,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Angry_Closed01
+@gosubModifyCamera 0
+@print 『事件のことも事前に予言して欲しいものだ』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （……さすがに一言一句同じ会話を予想するのは無理か） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Closed1,Mouth1_Determined_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （ナノカはどのようにして<br>　ラウンジの状況を知ったのか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Angry_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （これまでの積み重ねた情報がきっと答えを教えてくれる……<br>　魔女図鑑を確認してみよう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-12-1
+
+# MARK: 7-12-6: ❌ 反論・盗聴していた
+
+# Judge7-12-6
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print ……ナノカはラウンジの会話を盗聴していたんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR1,ArmL7,Angle01/Facial/Eyes>Eyes_Surprised_Open02,Angle01/Facial/Mouth>Mouth_Fearful_Open
+@gosubModifyCamera 0
+@print 盗聴！？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Closed,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print 犯罪ですわー！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_03,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Angry_Closed01
+@gosubModifyCamera 0
+@print 『だが盗聴器など<br>　ここでは調達できないのではないか』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print 自分の物の他に、<br>もう１台スマホがあれば可能だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print ラウンジにもう１台スマホを置いて、<br>自分のスマホと通話状態にしておいた……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open3,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print それなら盗み聞きは可能だよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR3,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print けれどもう１台のスマホなんて<br>どうやって調達するのかな……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR3,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print ココくんのスマホは現場にあったし、<br>ここにいる誰もスマホをなくしてはいない……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 処刑されたり死んだ人の分は<br>ゴクチョーさんに回収されていたはずですしね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print ヒロちゃんの推理、無理があるかも～。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （……盗聴する機材を調達できないか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Closed1,Mouth1_Determined_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （ナノカはどのようにして<br>　ラウンジの状況を知ったのか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Angry_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （これまでの積み重ねた情報がきっと答えを教えてくれる……<br>　魔女図鑑を確認してみよう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-12-1
+
+# ==============================================================================
+# MARK: 7-12-2: ⭕ 魔法を使った
+# ==============================================================================
+
+# Judge7-12-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+# カットイン
+@StopBgm 
+@gosubCutIn Hiro
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR1,ArmL1,Eyes2_Normal_Closed1,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print ……ナノカはその時その場にいなくても、<br>情報を得る方法を持っていた。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL1,Eyes2_Normal_Closed1,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print ナノカに限っていえば、<br>後からその場にいたかのように<br>演じることはいくらでも可能なんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+# BGM変更：HirO
+@bgm Bgm_37_1_Loop
+
+@char Hiro.Normal2,ArmR1,ArmL3,Eyes2_Angry_Open2,Mouth2_Determined_Open3
+@gosubModifyCamera 0
+@print 過去の情報を覗き見る、<br>【幻視の魔法】を使ったのであれば！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR2,ArmL9,Eyes1_Flushed_Open1,Mouth1_Angry_Closed2,Sweat1_1
+@gosubModifyCamera 0
+@print くっ……！ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR10,ArmL4,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Smile_Open02,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print で、でも……！<br>ナノカちゃんがやったっていう証拠はないんじゃないかな……！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR10,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open02,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print それに、ナノカちゃんの【幻視】って<br>好きなときに発動できない魔法なんだよね！？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR2,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Open02,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print だったら偶然自分に都合よく読み取れたなんて――！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,Arms3,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print 【魔女化】による魔法の強化……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL1,Eyes2_Normal_Closed1,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print ナノカがすでに魔女化していて、<br>その魔法がいつでも読み取れる状態になっていたなら……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL8,Eyes2_Normal_Open3,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print あとで現場に行きさえすれば、<br>情報を読み取ることは可能だったはずだよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR10,ArmL4,Angle01/Facial/Eyes>Eyes_Cry_Open01,Angle01/Facial/Mouth>Mouth_Angry_Closed01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print そ、それでも……そんな証拠は……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# カットインナノカ
+@Wait 0.5
+
+@sfx Sfx_Common_5
+
+@ResetText 
+@voice CommonTrial_Nanoka01115
+@char Miria.Default,ArmR10,ArmL4,Angle01/Facial/Eyes>Eyes_Flushed_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open02,Angle01/Facial/Sweat>Sweat01
+@char Nanoka.Normal1,Eyes1_Angry_Closed1,Mouth1_Surprised_Open1,ArmR4,ArmL2
+@gosubSplitStageScreen 1
+@Wait 1.5
+
+@hideStageScreen 1
+@Wait 0.3
+
+@char Nanoka.Normal1,Eyes1_Angry_Closed1,Mouth1_Surprised_Open1,ArmR4,ArmL2
+@gosubModifyCamera 0
+@print ――いいわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR10,ArmL4,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……ナノカちゃん？ { author:Miria speed:1 waitInput:true Wait:true }
+
+# ＠備考◆悲しげ
+
+@char Nanoka.Eyes1_Uncomfortable_Open1
+@gosubModifyCamera 0
+@print もう……いいの。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR2,ArmL1,Eyes1_Pensive_Open1,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print いいのよ……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR2,ArmL1,Eyes1_Angry_Closed1,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print 最初から……肯定していたでしょう。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR2,ArmL1,Eyes1_Pensive_Open1,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print 私がやったと……。<br>反論なんて【ない】と。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# 7-1-1より引用
+# ==============================================================================
+# ◎回想シーン（流用）
+# ==============================================================================
+
+@ResetText 
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+@char Alisa.Angry1 { time:0 }
+@gosubModifyCamera 0
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+
+@char Alisa.Angry1
+@gosubModifyCamera 0
+@print なら、犯人は銃を持ってる黒部しかいねー。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1
+@print 何か反論あるかよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+@char Nanoka.Default { time:0 }
+@gosubModifyCamera 0
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+
+# ==============================================================================
+# 回想ここまで
+# ==============================================================================
+
+@char Nanoka.ArmR4,ArmL2,Eyes1_Angry_Closed1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print ……ないわね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR4,ArmL6,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Sweat>Sweat02
+@gosubModifyCamera 0
+@print おめえ……あのとき……！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR2,ArmL3,Eyes1_Normal_Closed1,Mouth1_Flushed_Closed1
+@gosubModifyCamera 0
+@print ……沢渡ココを殺したのは、私。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR10,ArmL4,Angle01/Facial/Eyes>Eyes_Cry_Open01,Angle01/Facial/Mouth>Mouth_Angry_Closed01
+@gosubModifyCamera 0
+@print ナ……ナノカちゃん……！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR2,ArmL3,Eyes1_Uncomfortable_Open1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print 人を殺すなんて……<br>やっぱり私には向いてなかったみたいね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR2,ArmL3,Eyes1_Uncomfortable_Open1,Mouth1_Angry_Closed2
+@gosubModifyCamera 0
+@print みんな……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# ＠備考◆悪いと思っているが、まだ感情的にはなっていない
+
+@char Nanoka.ArmR2,ArmL3,Eyes1_Angry_Closed1,Mouth1_Angry_Closed2
+@gosubModifyCamera 0
+@print 迷惑をかけて……<br>ごめんなさい……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndTrial
+
+@goto Act02_Chapter02/Act02_Chapter02_Trial13

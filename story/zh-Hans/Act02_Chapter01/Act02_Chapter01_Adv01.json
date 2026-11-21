@@ -1,0 +1,26 @@
+{
+  "format": "manosaba.story",
+  "version": 1,
+  "language": "zh-Hans",
+  "path": "Act02_Chapter01/Act02_Chapter01_Adv01",
+  "events": [
+    {"op": "GosubResetWitchBook", "line": 1, "indent": 0, "params": {"Path": "System/System_ResetWitchBook", "IsDebugDirectJump": {"expression": "{isDebugDirectJump}"}}},
+    {"op": "Gosub", "line": 2, "indent": 0, "params": {"Path": "System/System_Subroutine.BeginAdv"}},
+    {"op": "label", "name": "Scene2-0-0", "line": 9, "indent": 0},
+    {"op": "ModifyBackgroundExtended", "line": 15, "indent": 0, "params": {"Scale": [2.0], "Duration": 0.0, "Lazy": 0, "AppearanceAndTransition": "34_1"}},
+    {"op": "ModifyBackgroundExtended", "line": 16, "indent": 0, "params": {"TintColor": "#000000", "Duration": 1.2000000476837158, "Lazy": 0, "AppearanceAndTransition": "Transparent", "SubId": "Overlay"}},
+    {"op": "Wait", "line": 17, "indent": 0, "params": {"WaitMode": "1.8"}},
+    {"op": "PlayBgm", "line": 19, "indent": 0, "params": {"BgmPath": "Bgm_6_1", "Volume": 0.25, "Loop": 1, "FadeInDuration": 7.0}},
+    {"op": "PrintTextModified", "line": 24, "indent": 0, "params": {"Text": "呜呜……呜呜呜……！", "AuthorId": "Unknown", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0201Adv01_Unknown001"]}},
+    {"op": "PrintTextModified", "line": 28, "indent": 0, "params": {"Text": "拜托了……有没有人……<br>\n有人可以帮帮忙吗……", "AuthorId": "Unknown", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0201Adv01_Unknown002"]}},
+    {"op": "StopBgm", "line": 32, "indent": 0, "params": {"FadeOutDuration": 3.0}},
+    {"op": "PrintTextModified", "line": 34, "indent": 0, "params": {"Text": "救救她吧——！", "AuthorId": "Unknown", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0201Adv01_Unknown003"]}},
+    {"op": "Gosub", "line": 39, "indent": 0, "params": {"Path": "System/System_Subroutine.EndAdv"}},
+    {"op": "GotoModified", "line": 41, "indent": 0, "params": {"Path": "Act02_Chapter01/Act02_Chapter01_Adv02", "SoftReset": 1}}
+  ],
+  "translations": {
+  "0201Adv01_Unknown001": "呜呜……呜呜呜……！",
+  "0201Adv01_Unknown002": "拜托了……有没有人……<br>\n有人可以帮帮忙吗……",
+  "0201Adv01_Unknown003": "救救她吧——！"
+}
+}

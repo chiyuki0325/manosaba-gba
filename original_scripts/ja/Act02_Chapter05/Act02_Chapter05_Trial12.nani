@@ -1,0 +1,994 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter05/Act02_Chapter05_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# クリーチャー化初期化
+@hide Hiro
+@char CreatureHiro.2 { Position:{hiroPositionX},{characterPositionY},{hiroPositionZ} Rotation:,{hiroRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Meruru
+@char CreatureMeruru.3-5 { Position:{meruruPositionX},{characterPositionY},{meruruPositionZ} Rotation:,{meruruRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Leia
+@char CreatureLeia.0-8 { Position:{leiaPositionX},{characterPositionY},{leiaPositionZ} Rotation:,{leiaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Noah
+@char CreatureNoah.0-3 { Position:{noahPositionX},{characterPositionY},{noahPositionZ} Rotation:,{noahRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Margo
+@char CreatureMargo.0-4 { Position:{margoPositionX},{characterPositionY},{margoPositionZ} Rotation:,{margoRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+# ==============================================================================
+# MARK: 10-12: 💬 【黒部ナノカ】
+# ==============================================================================
+# ＠ト書き▼議論10-12【黒部ナノカ】
+# 議論開始カットイン
+# BGM変更：HirO（Voなし）
+@bgm Bgm_37_1_Loop
+
+# ボス演出
+@ResetText 
+@char CreatureHiro.2 { time:0 }
+@stageCamera 1 { Rotation:0,{ (8 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+
+@stageCamera 1 { Rotation:0,{ (8.1 / courtStandCount * 360) },0 time:1 }
+@showStageScreen 1
+@Wait 1.5
+
+@ResetText 
+@char Nanoka.ArmR1,ArmL9,Eyes1_Flushed_Open1,Mouth1_Angry_Closed2,Sweat1_1 { time:0 }
+@stageCamera 0 { Rotation:0,{ (10 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+
+@stageCamera 0 { Rotation:0,{ (9.9 / courtStandCount * 360) },0 time:1 }
+@hideStageScreen 1
+@Wait 1.5
+
+# Judge10-12-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Nanoka.ArmR1,ArmL1,Eyes1_Normal_Open2,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@printDebate 私はここに来てから、<br>この島の過去の光景を<br>少しだけ幻視した……。
+
+@char Nanoka.ArmR1,ArmL1,Eyes1_Normal_Open2,Mouth1_Normal_Closed1
+@gosubModifyCamera 0
+@printDebate そこで見えた光景の<br>意味がなんなのか、<br>正確にはわかって<br>いなかったけれど……。
+
+@char Nanoka.ArmR3,ArmL1,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@printDebate あなたの話を踏まえれば、<br>それが大魔女の力だった<br>ということがわかるわ。
+
+@char Nanoka.ArmR3,ArmL1,Eyes1_Normal_Closed1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@printDebate "大魔女の力は強力で、<br>あなたでは<br>到底<link=\"Objection_02_05_12_01\">敵わない</link>……。"
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Normal_Closed1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@printDebate ……当然よね。<br>私たちの魔法は<br>彼女によって<br>与えられたものだもの。
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Pensive_Open1,Mouth1_Smile_Closed1
+@gosubModifyCamera 0
+@printDebate "コピーがオリジナルに<br><link=\"Objection_02_05_12_02\">勝てない</link>のは、<br>当たり前の事実よ。"
+
+@char Nanoka.ArmR6,ArmL8,Eyes1_Flushed_Open1,Mouth1_Normal_Open1,Sweat1_1
+@gosubModifyCamera 0
+@printDebate それをどうにかするのが、<br>私の役目だ。
+
+@char Nanoka.ArmR6,ArmL8,Eyes1_Flushed_Open1,Mouth1_Normal_Open1,Sweat1_1
+@gosubModifyCamera 0
+@printDebate ……いい加減にして。
+
+@char Nanoka.ArmR6,ArmL8,Eyes1_Flushed_Open1,Mouth1_Normal_Open1,Sweat1_1
+@gosubModifyCamera 0
+@printDebate 大した戦力にも<br>ならないあなたが、<br>大魔女と戦って<br>勝てるわけないでしょう。
+
+@char Nanoka.ArmR6,ArmL8,Eyes1_Angry_Closed1,Mouth1_Normal_Open1,Sweat1_1
+@gosubModifyCamera 0
+@printDebate "戦いにもなりはしない。<br>ただ<link=\"Objection_02_05_12_03\">無駄に殺される</link>だけ。"
+
+@char Nanoka.ArmR6,ArmL3,Eyes1_Uncomfortable_Open1,Mouth1_Normal_Closed1,Sweat1_1
+@gosubModifyCamera 0
+@printDebate 私は大魔女に勝つため、<br>十分な準備を整える……。
+
+@char Nanoka.ArmR6,ArmL3,Eyes1_Normal_Open3,Mouth1_Normal_Open1,Sweat1_1
+@gosubModifyCamera 0
+@printDebate "……あなたの<link=\"Objection_02_05_12_04\">博打</link>に<br>私を巻き込まないで<br>ちょうだい。"
+
+
+# ==============================================================================
+# 10-12議論後独白
+# ==============================================================================
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@Wait 0.2
+
+@print （魔女化してしまった私にはもう<br>　そんな時間はない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （それにこの機会を逃せば、<br>　１３人の魔女を集めることも<br>　難しくなるだろう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （……たとえナノカを傷付けたとしても、<br>　私は……前へと進む！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-12-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_12_01
+
+@Skip false
+@pauseTrial true
+
+@choice 外に協力を仰ぐ
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-12-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_12_02
+
+@Skip false
+@pauseTrial true
+
+@choice 数で勝る
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-12-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_12_03
+
+@Skip false
+@pauseTrial true
+
+@choice 私が身代わりになる
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-12-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論4
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_12_04
+
+@Skip false
+@pauseTrial true
+
+@choice 賭ける価値はある
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-12-5
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 10-12: ❌ 議論ミス選択肢
+# ==============================================================================
+# MARK: 10-12-3: ❌ 反論・外に協力を仰ぐ
+
+# Judge10-12-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.25
+@gosubModifyCamera 0
+@print 私たちだけでダメなら、<br>外の世界に協力を仰ごう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print 軍隊でも近代兵器でも、なんでもいい……<br>使えるものは全て使って大魔女を打倒するんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print この国の人間は、<br>私たちをこんなところに集めた連中よ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print 力を貸してくれるとは思えないわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR2,ArmL9,Eyes1_Normal_Open3,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print もしも国の人間が<br>そんな人格者ばかりなら……<br>お姉ちゃんは犠牲になんかなってないの。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char CreatureHiro.1
+@gosubModifyCamera 0
+@print （楽観的な解決策では響かないか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （……それに、ナノカを魔女化させるには<br>　彼女のトラウマを刺激する必要がある） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （ナノカが最も【望まないこと】を<br>　考えてみよう……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （彼女が死の間際、何を拒んでいたか……<br>　私は覚えているはずだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-12-1
+
+# MARK: 10-12-4: ❌ 反論・数で勝る
+
+# Judge10-12-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.25
+@gosubModifyCamera 0
+@print コピーがオリジナルに勝つ方法ぐらい、あるさ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print 数で勝ればいいんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print 大魔女はたった１人……<br>それに対して私たちは１３人もいる……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.7
+@gosubModifyCamera 0
+@print 勝ち目はあるよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print ……私たちが束になったところで<br>戦いに役立つ魔法の持ち主なんて<br>限られてるじゃない。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print それに対して、大魔女の力は強大よ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR2,ArmL9,Eyes1_Normal_Open3,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print あなたの言葉には説得力が全くないわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+# ＠備考◆別選択肢共通
+
+@char CreatureHiro.1
+@gosubModifyCamera 0
+@print （楽観的な解決策では響かないか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （……それに、ナノカを魔女化させるには<br>　彼女のトラウマを刺激する必要がある） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （ナノカが最も【望まないこと】を<br>　考えてみよう……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （彼女が死の間際、何を拒んでいたか……<br>　私は覚えているはずだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-12-1
+
+# MARK: 10-12-5: ❌ 反論・賭ける価値はある
+
+# Judge10-12-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print 博打だとしても<br>賭けなければ何も変わらない……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.7
+@gosubModifyCamera 0
+@print どうせ君も大魔女に挑むつもりなんだろう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.7
+@gosubModifyCamera 0
+@print なら私と一緒に戦おう……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print あなたの計画には<br>具体性がないわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print 大魔女は……いつか私が倒す。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR2,ArmL9,Eyes1_Normal_Open3,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print あなたたちと馴れ合うつもりはないの。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+# ＠備考◆別選択肢共通
+
+@char CreatureHiro.1
+@gosubModifyCamera 0
+@print （楽観的な解決策では響かないか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （……それに、ナノカを魔女化させるには<br>　彼女のトラウマを刺激する必要がある） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （ナノカが最も【望まないこと】を<br>　考えてみよう……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （彼女が死の間際、何を拒んでいたか……<br>　私は覚えているはずだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge10-12-1
+
+# ==============================================================================
+# MARK: 10-12-2: ⭕ 反論・私が身代わりになる
+# ==============================================================================
+
+# Judge10-12-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+# カットイン
+@StopBgm 
+@gosubCutIn CreatureHiro
+@Gosub System/System_Subroutine.EndDebate-Last
+
+# モノローグ
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （……ナノカが処刑されたときのことだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ==============================================================================
+# ◎回想シーン（流用） ●シーン2‐2‐19
+# ==============================================================================
+
+@ResetText 
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+# ========================================
+@back 451_7 { time:0 }
+# ========================================
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+
+@print もう私を庇ったりしないでよぉ……！！ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+# ========================================
+@hide Stills { time:0 }
+# ========================================
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+
+# ==============================================================================
+# 回想ここまで
+# ==============================================================================
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （彼女が魔女化したとき……<br>　そのきっかけとなった出来事） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （あのとき、起こった事は――！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print ……何かあったとき。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・明るい音
+@sfx Sfx_Common_2
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print その時は、私がみんなの身代わりになる。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Nanoka.ArmR6,ArmL8,Eyes1_Tearful_Open1,Mouth1_Angry_Closed2,Sweat1_1
+@gosubModifyCamera 0
+@print ………っ！ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_37_1_Loop
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print 君の姉がしたように……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char Nanoka.ArmR6,ArmL7,Eyes1_Tearful_Open1,Mouth1_Angry_Open1,Sweat1_1
+@gosubModifyCamera 0
+@print ――やめて！！ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR6,ArmL4,Eyes1_Confused_Open1,Mouth1_Normal_Open2,Sweat1_1
+@gosubModifyCamera 0
+@print どうして……<br>どうしてあなたたちはそうなの！？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR6,ArmL4,Eyes1_Confused_Open1,Mouth1_Normal_Open2,Sweat1_1
+@gosubModifyCamera 0
+@print 誰が助けて欲しいなんて言ったの！？<br>私がいつ頼んだのよ！？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR6,ArmL4,Eyes1_Flushed_Open1,Mouth1_Normal_Open2,Sweat1_1
+@gosubModifyCamera 0
+@print 勝手に守って、<br>勝手に助けて、<br>勝手に犠牲になって……！ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR6,ArmL3,Eyes1_Confused_Open1,Mouth1_Normal_Open2,Sweat1_1
+@gosubModifyCamera 0
+@print そんなに私が頼りないの！？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char Nanoka.ArmR6,ArmL3,Eyes1_Fearful_Open2,Mouth1_Normal_Open2,Sweat1_1
+@gosubModifyCamera 0
+@print 私じゃあ、役に立たないの！？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （今の彼女は私に姉を重ねている） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （今なら彼女を魔女化させられるかもしれない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （……ナノカのトラウマとなった、<br>　彼女の姉がした事……。<br>　それを再現するには――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# Judge10-12-6
+
+@choice 愛を囁く
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge10-12-8
+
+@choice 抱きしめる
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge10-12-9
+
+@choice 自身を犠牲にする
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge10-12-7
+
+@StopForChoice 
+
+# MARK: 10-12-8: ❌ 愛を囁く
+
+# Judge10-12-8
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print そんなことはない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print 前の世界で私は……<br>君に遺言を託されたから、ここまで来れたんだ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print 君の力のおかげだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.8
+@gosubModifyCamera 0
+@print ……………愛しているよ、ナノカ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆冷めた目
+
+@char Nanoka.ArmR6,ArmL3,Eyes1_Confused_Open1,Mouth1_Cry_Closed1,Sweat1_1
+@gosubModifyCamera 0
+@print ……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# ＠備考◆悲しげ
+
+@char Nanoka.ArmR6,ArmL3,Eyes1_Confused_Open1,Mouth1_Cry_Closed1,Sweat1_1
+@gosubModifyCamera 0
+@print 冗談は、やめて……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char CreatureHiro.13
+@gosubModifyCamera 0
+@print （……これはマーゴのトラウマだったな……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.13
+@gosubModifyCamera 0
+@print （魔女化が遠のいてしまったかもしれない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （……ナノカを魔女化させるためには、<br>　彼女が最も【望まないこと】をする必要がある） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print （ナノカは、私への遺言で<br>　【もう誰も犠牲になってほしくない】と言っていた） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print （……その願いを無下にするのは心が痛むが、<br>　ナノカのトラウマを刺激するためには――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-12-6
+
+# MARK: 10-12-9: ❌ 抱きしめる
+
+# Judge10-12-9
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （……ナノカの処刑終了後のことだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （異形と化した彼女は<br>　姉と２人で抱き合うように重なっていた） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （つまり……私がすべきことは――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.8
+@gosubModifyCamera 0
+@print ナノカ、大丈夫だ。<br>私に任せておけば――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Arms4,Eyes1_Flushed_Open1,Mouth1_Flushed_Closed1,Sweat1_1,OptionB_Off
+@gosubModifyCamera 0
+@print ――それ以上近付かないで。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Arms4,Eyes1_Flushed_Open1,Mouth1_Flushed_Closed1,Sweat1_1,OptionB_Off
+@gosubModifyCamera 0
+@print 撃たれたくなければ、離れなさい。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char CreatureHiro.13
+@gosubModifyCamera 0
+@print （警戒させてしまったか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （……ナノカを魔女化させるためには、<br>　彼女が最も【望まないこと】をする必要がある） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print （ナノカは、私への遺言で<br>　【もう誰も犠牲になってほしくない】と言っていた） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print （……その願いを無下にするのは心が痛むが、<br>　ナノカのトラウマを刺激するためには――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-12-6
+
+# ==============================================================================
+# MARK: 10-12-7: ⭕ 自身を犠牲にする
+# ==============================================================================
+
+# Judge10-12-7
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print （他者による【自己犠牲】……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print （おそらくそれがナノカのトラウマだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print （なら……私がすべきことは） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print ……わかった。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print 君の説得は失敗してしまったようだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR2,ArmL1,Eyes1_Confused_Open1,Mouth1_Pensive_Closed1,Sweat1_1,OptionB_Body1
+@gosubModifyCamera 0
+@print …………？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print 悪いが、もう私は手段を選んでいられない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print 君を守るためには――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 儀礼剣アイテムイラストを表示
+@spawn Clue
+
+# BGM変更：HirO（Voなし）
+@bgm Bgm_37_1_Loop
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print ――【死に戻る】しかない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@despawn Clue
+
+@char Nanoka.ArmR2,ArmL3,Eyes1_Fearful_Open2,Mouth1_Cry_Closed1,Sweat1_1
+@gosubModifyCamera 0
+@print ……！ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （……今の私は魔女。<br>　ちょっとやそっとの傷では死にようがない……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （とはいえ【自殺】を想起してしまうのは、辛いな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （だがこれはあくまでも【自傷】……。<br>　死ぬ気はない……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （他に手段がない以上……<br>　覚悟を決めろ！<br>　二階堂ヒロ！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@gosubModifyCamera 0
+@Wait 1
+
+# 出血エフェクト＋SE
+# SE・刃物が刺さる音
+@sfx Sfx_89
+# ※出血だとわかればなんでもOK。赤フラッシュなど
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+
+@char CreatureHiro.13
+@gosubModifyCamera 0
+@print ぐぅっ……！？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR6,ArmL7,Eyes1_Rage_Open1,Mouth1_Normal_Open2,Sweat1_1,Pale1_1
+@gosubModifyCamera 0
+@print ――やめなさい！！ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char CreatureMeruru.3-8
+@gosubModifyCamera 0
+@print ヒ、ヒロさんっ……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR5,ArmL7,Eyes1_Tearful_Open1,Mouth1_Angry_Open1,Sweat1_1,Pale1_1
+@gosubModifyCamera 0
+@print どうして……どうして……！ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+# ＠備考◆泣く
+# 魔女化するナノカ／エフェクト
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.8
+
+@hide Nanoka
+@char CreatureNanoka.1-4 { Position:{nanokaPositionX},{characterPositionY},{nanokaPositionZ} Rotation:,{nanokaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@back SolidColor.Custom { time:0.8 }
+@Wait 0.8
+@back SolidColor.Custom { time:2 }
+@Wait 1
+
+@print 遺された人の気持ちも――<br>考えてよぉっ！ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.22
+@gosubModifyCamera 0
+@print （……ナノカが、魔女に……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+# ＠備考◆泣く
+
+@char CreatureNanoka.1-4
+@gosubModifyCamera 0
+@print う、うう……！ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.14
+@gosubModifyCamera 0
+@print 私は魔女だ。<br>……これぐらいじゃあ、死なない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.14
+@gosubModifyCamera 0
+@print 君を魔女化させるため……<br>わざと君のために犠牲になる者の姿を見せた。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureNanoka.1-6
+@gosubModifyCamera 0
+@print ……卑怯だわ、あなた。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print ……すまない。<br>だがさきほど言った通り、手段を選ぶつもりはない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print 必ず……みんなを救ってみせる。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆迷い
+@char CreatureNanoka.2-4
+@gosubModifyCamera 0
+@print …………。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@update Nanoka
+@toast "魔女図鑑 更新…"
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print ……すまない、メルル。<br>治療を頼む。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureMeruru.2-8
+@gosubModifyCamera 0
+@print は、はい！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+# エフェクト／治療魔法
+@char CreatureMeruru.1-8
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （……メルルが治すまでもなく、<br>　腹を刺したのに大した出血もない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print （すっかり化け物の体だな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@print （だが心まではまだ魔女となっていない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@print （今のうちに……大魔女への道を整える……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureMeruru.1-8
+@gosubModifyCamera 0
+@print ……ヒロさん、これでどうでしょう……？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.25
+@gosubModifyCamera 0
+@print ……ありがとう。<br>もう痛みもない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.25
+@print （傷はすっかり塞がったか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆恐怖と不安を現実逃避で周囲に八つ当たりしてるイメージ
+
+@char Coco.Default,ArmR13,ArmL10,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Gross_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+
+@print ……つーかさぁ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+# BGM変更：rAwTell Owk...
+@bgm Bgm_7_1
+
+@char Coco.Default,ArmR13,ArmL10,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Gross_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print なんなんその……大魔女とか！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR13,ArmL9,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Angry_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print あてぃし全然聞いてないんですけどっ！？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR4,ArmL1,Angle01/Facial/Eyes>Eyes_Gross_Open,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print なんかあれじゃん……<br>【魔王を倒す勇者】みたいなそういう話？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL3,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Angry_Open02
+@gosubModifyCamera 0
+@print そういうサムいのはあんたらで勝手にやってよ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Comical_Open,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print つかそういうのって警察とかの仕事っしょ！？<br>あてぃしら関係なくない！？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR10,ArmL8,Angle01/Facial/Eyes>Eyes_Normal_Closed,Angle01/Facial/Mouth>Mouth_Angry_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……うちに帰してよっ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.23
+@gosubModifyCamera 0
+@print （……うるさいのが騒ぎ出したな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char CreatureMargo.0-4
+@gosubModifyCamera 0
+@print ……【逃避】ね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.23
+@gosubModifyCamera 0
+@print ……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureMargo.0-3
+@gosubModifyCamera 0
+@print わかる？<br>ヒロちゃん。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char CreatureMargo.0-3
+@gosubModifyCamera 0
+@print 彼女は逃避行動を取っている……。<br>恐怖や不安から逃れるための、<br>心の防衛機制よ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char CreatureMargo.1-3
+@gosubModifyCamera 0
+@print ……ココちゃんだってわかっているの。<br>今のこの状況が異常な状況だっていうことは。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char CreatureMargo.1-3
+@gosubModifyCamera 0
+@print でもそれを理解しようとしていない。<br>頭ではわかっていても、<br>認識できない【フリ】をしてしまう……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char CreatureMargo.1-3
+@gosubModifyCamera 0
+@print 現実から、目を背け続けて破滅に向かっているの。<br>それが今のあの子。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char CreatureMargo.2-3
+@gosubModifyCamera 0
+@print ……なら、無理矢理にでも瞼をこじ開けて、<br>前を見せてあげなきゃね♡ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.25
+@gosubModifyCamera 0
+@print ……助言かな。<br>礼を言っておこうか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureMargo.2-5
+@gosubModifyCamera 0
+@print あら、そんなつもりはないわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+# SE・明るい音
+@sfx Sfx_Common_2
+
+@char CreatureMargo.2-4
+@gosubModifyCamera 0
+@print ただココちゃんがあなたに泣かされてる姿が<br>見てみたいだけ♡ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.25
+@gosubModifyCamera 0
+@print （相変わらず悪趣味な……) { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆シリアスに
+
+@char CreatureMargo.0-8
+@gosubModifyCamera 0
+@print それに……<br>ヒロちゃんの計画に乗るにしろ、乗らないにしろ、<br>逃げたら【負け】しか残っていないもの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char CreatureMargo.0-8
+@gosubModifyCamera 0
+@print ヒロちゃんはポーカーを知ってるかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print ……ルールぐらいは。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureMargo.0-5
+@gosubModifyCamera 0
+@print なら、わかってくれると思うけれど。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char CreatureMargo.0-4
+@gosubModifyCamera 0
+@print "私たちに許されるのは、<br>ヒロちゃんの計画に<ruby=\"ベット\">賭</ruby>するか……<br>もしくは他の道を考えること。" { author:Margo speed:1 waitInput:true Wait:true }
+
+@char CreatureMargo.0-4
+@gosubModifyCamera 0
+@print "でも、この局面での<ruby=\"ドロップ\">降り</ruby>は許されないわ。<br>……絶対にね。" { author:Margo speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.25
+@gosubModifyCamera 0
+@print "……なら、私への<ruby=\"チップ\">賭け金</ruby>は<br><ruby=\"レイズ\">上乗せ</ruby>しておくんだ。" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.25
+@gosubModifyCamera 0
+@print 後悔はさせない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureMargo.0-3
+@gosubModifyCamera 0
+@print ……ふふ、考えておくわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Gross_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print なにバケモン同士、<br>２人してごちゃごちゃ言ってんのさ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char Coco.Default,ArmR2,ArmL3,Angle01/Facial/Eyes>Eyes_Comical_Open,Angle01/Facial/Mouth>Mouth_Gross_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print とにかくあてぃしはあんたらなんかの話……<br>絶対聞かないからっ！！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@goto Act02_Chapter05/Act02_Chapter05_Trial13

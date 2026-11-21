@@ -1,0 +1,898 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter04/Act02_Chapter04_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# ==============================================================================
+# MARK: 9-8: 💬 死体を浮かせた方法
+# ==============================================================================
+# ＠ト書き▼議論シーン9-8 死体を浮かせた方法
+# 議論開始エフェクト
+# BGM変更：HirO（Voなし）
+@bgm Bgm_37_1_Loop
+
+# Judge9-8-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Hanna.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@printDebate わたっ、わたくしは<br>シェリーさんが<br>エレベーターで<br>昇ってきたあと、<br>一緒に扉の前で<br>待っていましたわ！
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@printDebate たしかにその通りですね！<br>ハンナさんが<br>乗り込むことはできません！
+
+@char Miria.Default,ArmR3,ArmL8,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate おじさんが<br>着いた時にもいたし、<br>ハンナちゃんが<br>魔法を使ったっていうのは<br>無理があると思うな……。
+
+@char Hanna.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@printDebate "そうですわ！<br>わたくし、<br>浮かせられるのは<br><link=\"Objection_02_04_08_01\">自分の体</link>だけですもの！<br>エマさんを浮かせるなんて、<br>無理ですわー！"
+
+# ＠備考◆心情補足・表に出さない程度に庇おうとしている
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@printDebate ……仮に<br>ヒロさんの言うように<br>【魔法で浮いていた】が<br>正しかったとして……。
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@printDebate ハンナさん以外が<br>死体を浮かばせることが<br>できた可能性も<br>あるんじゃないでしょうか？
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@printDebate アリサさんが<br>気球のようなものを<br>作ったというのも<br>その１つですよね。
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@printDebate ウチがやったとしたら、<br>その【気球のようなもの】<br>とやらはどこにあんだよ。
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@printDebate "それは回収する仕組みが<br>あったんですよ。<br>もしかしたら<br><link=\"Objection_02_04_08_02\">隠し通路</link>なんかがあって、<br>アリサさんがそこにいた<br>可能性もあります。"
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@printDebate アリサさんには<br>アリバイがありませんしね？
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@printDebate ……チッ。<br>そんなどうとでも<br>言える話でいいなら、<br>ウチだってできんぞ。
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@printDebate "【手で仰いで空を飛んだ】とか、<br>【実は魔法が嘘で、<link=\"Objection_02_04_08_03\">念力</link>だった】<br>とかな。"
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate "またまた～！<br>どんなに力が強くても、<br><link=\"Objection_02_04_08_04\">人が飛べるわけない</link><br>じゃないですか～！"
+
+@char Sherry.Default,ArmR13,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate アリサさん、<br>ちゃんと考えて<br>喋らないとダメですよっ！<br>めっ！
+
+# ＠備考◆ピキピキ…と怒り
+
+@char Alisa.Default,ArmR2,ArmL7,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@printDebate ……コイツ……！！
+
+
+# ==============================================================================
+# 9-8議論後独白
+# ==============================================================================
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@Wait 0.2
+
+@print （……アリサの言う事はもっともだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@print （犯人を追い詰めるには、明確な証拠が必要……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@print （現場に残された証拠……<br>　そこから犯人を示す手がかりを探すんだ！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge9-8-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_04_08_01
+
+@Skip false
+@pauseTrial true
+
+@choice 自分の体を浮かせた
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge9-8-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_02_04_08_02
+
+@Skip false
+@pauseTrial true
+
+@choice 通れる通路があった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge9-8-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_02_04_08_03
+
+@Skip false
+@pauseTrial true
+
+@choice サイコキネシスを使えた
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge9-8-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論4
+# ------------------------------------------------------------------------------
+
+# Objection_02_04_08_04
+
+@Skip false
+@pauseTrial true
+
+@choice 人力で飛ぶ方法があった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge9-8-5
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 9-8: ❌ 議論ミス選択肢
+# ==============================================================================
+# MARK: 9-8-3: ❌ 同意・通れる通路があった
+
+# Judge9-8-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print ……そうか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print シェリーの言うように<br>エレベーター上部に隠し通路があったとしたら……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print エレベーターのメンテナンスをするための通用口……<br>とかですかね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print ああ。<br>それなら気球を回収することも可能だよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Serious_Open
+@gosubModifyCamera 0
+@print ……けどよ、１人分の体重を支える気球ってなると<br>数メートルの大きさが必要になるはずだ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL8,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print そんなのを回収できるような場所ってことだよね。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL8,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print あったらさすがに誰かが気付くんじゃないかな……？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print ウチが気球を持ち込んだなんて話は、<br>現実的じゃねーだろ……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Angry_Open04
+@gosubModifyCamera 0
+@print なのにお前らはウチがやったって言うのかよ！<br>ああん！？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （気球も隠し通路も存在を証明できないか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （……だがこれまでの議論を考えると<br>　やはり【死体が浮いていた】可能性が高い） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （問題は、浮かせ方だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （何か気になる証拠はないか……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （これまで触れられていなかった……<br>　どうして存在するのかわからない証拠） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （それがトリックに必要だったものだとしたら……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge9-8-1
+
+# MARK: 9-8-4: ❌ 同意・サイコキネシスを使えた
+
+# Judge9-8-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print たしかに……誰かが【念動力】の魔法でも使えたなら説明はつく。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Normal1,ArmR4,ArmL3
+@gosubModifyCamera 0
+@print サイコキネシス……<br>遠隔で物を動かす魔法だね。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print それで遠隔で死体を動かし、浮かせた……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print それなら問題はない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR9,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Closed
+@gosubModifyCamera 0
+@print ……じゃあその魔法の持ち主ってヤツはどいつだよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR9,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Closed
+@gosubModifyCamera 0
+@print "ウチか？ おめえか？<br>そもそもこの中にいるのか？" { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR9,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Closed
+@gosubModifyCamera 0
+@print そんな魔法を持ってるやつがいるって証拠はあんのか？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print ……それは。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print 【可能性の話ならいくらでも言える】……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print ウチが言ってんのはそういうことだ。<br>……話が理解できねーなら口挟むんじゃねーよ、二階堂！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （……返す言葉もないな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （……だがこれまでの議論を考えると<br>　やはり【死体が浮いていた】可能性が高い） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （問題は、浮かせ方だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （何か気になる証拠はないか……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （これまで触れられていなかった……<br>　どうして存在するのかわからない証拠） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （それがトリックに必要だったものだとしたら……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge9-8-1
+
+# MARK: 9-8-5: ❌ 同意・人力で飛ぶ方法があった
+
+# Judge9-8-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print いや、人力で飛ぶ方法はあった。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print ハングライダーの要領で<br>浮力を維持する翼を用意して――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 怪力を使って羽ばたくように両手で高速で扇げば、<br>浮くことぐらいはできるのでは……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL7,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print ブッ飛ばすぞ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print ……あっ！<br>アリサさんにぶっ飛ばしてもらえば高く飛べるかもしれませんよ！<br>実演してみてください、ヒロさん！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （……それは遠慮しておこう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （……だがこれまでの議論を考えると<br>　やはり【死体が浮いていた】可能性が高い） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （問題は、浮かせ方だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （何か気になる証拠はないか……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （これまで触れられていなかった……<br>　どうして存在するのかわからない証拠） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （それがトリックに必要だったものだとしたら……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge9-8-1
+
+# ==============================================================================
+# MARK: 9-8-2: ⭕ 同意・自分の体を浮かせた
+# ==============================================================================
+
+# Judge9-8-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+# @gosubCutIn Hiro index:3
+@Gosub System/System_Subroutine.EndDebate-Last
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print いいや、違うよ。<br>自分の体を浮かせたんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print それを示す証拠は――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# Judge9-8-6
+
+@evidence Clue
+
+# 【ドレス】
+@if "chosenEvidenceId==\"9-3\""
+	@goto .Judge9-8-7
+
+# 【エマの死体写真】
+@if "chosenEvidenceId==\"9-1\""
+	@goto .Judge9-8-8
+
+# 【エマの人形】
+@if "chosenEvidenceId==\"9-11\""
+	@goto .Judge9-8-9
+
+# 汎用選択ミス
+@goto .Judge9-8-10
+
+# MARK: 9-8-8: ❌ 【エマの死体写真】
+
+# Judge9-8-8
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print ……証拠は、エマの死体写真の中にある。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print なぜ、エマが着替えさせられているのか……<br>ここに何かヒントがあるに違いない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print た、たしかにずっと気になってはいたけど……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print 具体的にあの写真の中の、何が証拠になるのかな……？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print それは――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ダメージなし
+
+@goto .Judge9-8-6
+
+# MARK: 9-8-9: ❌ 【エマの人形】
+
+# Judge9-8-9
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print 証拠は、このエマの人形にある。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print この人形には、ハンナの魔力がこもっているんだ。<br>その魔力でエマを浮かせたんだよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Serious_Open
+@gosubModifyCamera 0
+@print 【魔力をこめる】ってなんだよ。<br>具体的にどうすりゃ魔力がこめられんだ？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR9,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print いや～、魔法もあるんだし魔力ぐらいあるのかもしれないけどね。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR9,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print でもおじさんたちは少なくとも、<br>やり方はよくわかんないかな……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR9,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print ……でもかっこいいよね！<br>魔力とか気配とか感じられたらさ……！<br>わかるよ、ヒロちゃん！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （フォローされてしまった） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （……【ハンナは自分の体しか浮かせられない】。<br>　だが当時、【エマの死体は浮いていた】） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （この２つの事実を<br>　結びつける証拠がある） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print （それは――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge9-8-6
+
+# MARK: 9-8-10: ❌ 汎用選択ミス
+
+# Judge9-8-10
+
+@char Sherry.Default,ArmR10,ArmL11,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print んー……<br>ハンナさんが【自分の体を浮かせられること】と<br>その証拠品がどう繋がるんでしょうか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR10,ArmL11,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print 私には全然わかりませんね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （……関係ないものだったか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （……【ハンナは自分の体しか浮かせられない】。<br>　だが当時、【エマの死体は浮いていた】） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （この２つの事実を<br>　結びつける証拠がある） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print （それは――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge9-8-6
+
+# ==============================================================================
+# MARK: 9-8-7: ⭕ 【ドレス】
+# ==============================================================================
+
+# Judge9-8-7
+
+@bgm Bgm_37_1_Loop { Volume:0.2 }
+@gosubCutIn Hiro
+@Gosub System/System_Subroutine.EndDebate-Last
+
+# モノローグ演出
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （思えば……<br>　最初からこのドレスは引っかかっていた） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （なぜエマがこれを着ていたのか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （犯人が着せたとしたら、<br>　それにどんな意味があるのか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （ここに来て、それが全て繋がる――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_37_1_Loop
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 犯人は、<br>エマにこのドレスを着せていた。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print その理由は、<br>このドレスが犯行のトリックに<br>密接に関わっているためだ……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 犯人はエレベーターの天井裏に<br>エマを浮かせるため、<br>このドレスを着せたんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print たしかに犯人は、<br>エマを浮かせたわけじゃない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 犯人が浮かせたのは――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# Judge9-8-11
+
+@choice 自分の手
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge9-8-13
+
+@choice 自分の髪
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge9-8-12
+
+@choice 自分の血
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge9-8-14
+
+@StopForChoice 
+
+# MARK: 9-8-13: ❌ 選択・自分の手
+
+# Judge9-8-13
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 自分の手だ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR1,ArmL3,Angle01/Facial/Eyes>Eyes_Surprised_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print 手……！？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 実は犯人は<br>魔女化がずいぶん進んでいたんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print そして体を切断しても、<br>その一部は生き続けることが出来たんだよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print だから犯人は自身の一部を切断し、<br>遠隔で浮かせることにした……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 人体において最も物を掴みやすい構造をした箇所……<br>つまり手を、ね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print そうしてエマのドレスを<br>掴むことによって浮かせたんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ロケットパンチかな……？<br>さすがに無理があると思うけど……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print ヒロさん！<br>ハンナさんの手はありますし、<br>他にない人もいませんよ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Serious_Open
+@gosubModifyCamera 0
+@print べつに繋ぎ合わせたような跡もねーしな。<br>……ふざけてんじゃねーぞ二階堂。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （……ふざけてはいないが） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （……だが、犯人がエマにドレスを着せたのには<br>　必ず理由がある） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （【エマを浮かせるためにドレスを使った】<br>　……とすれば、犯人が浮かせたのは――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge9-8-11
+# MARK: 9-8-14: ❌ 選択・自分の血
+
+# Judge9-8-14
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 人体の７％を占めると言われる人体の組織……<br>つまり血液だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR1,ArmL3,Angle01/Facial/Eyes>Eyes_Surprised_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print 血を浮かせた……？<br>そんなんありえんのかよ……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01
+@gosubModifyCamera 0
+@print ドレスに血を染み込ませて、浮かせたってこと……！？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Serious_Open
+@gosubModifyCamera 0
+@print けど別にドレスが血まみれだったわけでもねーしな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Serious_Open
+@gosubModifyCamera 0
+@print 桜羽の腹についてた血は、<br>桜羽のもんじゃねーのか？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print それに大量の血を流してるような人もいませんし……。<br>どうやって血液を採ったんでしょう？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print あんまりしっくりこないかも……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （血を使ったなら、もっとドレスが赤く染まっているか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （……だが、犯人がエマにドレスを着せたのには<br>　必ず理由がある） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （【エマを浮かせるためにドレスを使った】<br>　……とすれば、犯人が浮かせたのは――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge9-8-11
+
+# ==============================================================================
+# MARK: 9-8-12: ⭕ 選択・自分の髪
+# ==============================================================================
+
+# Judge9-8-12
+@gosubCutIn Hiro
+@Gosub System/System_Subroutine.EndDebate-Last
+
+# ヒロカットイン
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print ……ドレスには【金色の刺繍】がされていた。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print 果たしてそれを構成する【糸】は……<br>いったい何でできていたのかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01
+@gosubModifyCamera 0
+@print ……そ、それって……！ { author:Miria speed:1 waitInput:true Wait:true }
+
+# BGM変更：HirO
+@bgm Bgm_37_1_Loop
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 君はさっきこう言ったね。<br>【自分の体しか浮かせることはできない】と。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 【魔法は髪を、自分の体として認識するのか】……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print それはわからないが、<br>【髪には魔力が宿る】なんて伝承もあるぐらいだ。<br>……できたとしても不思議はない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 君は自身の髪の毛を、<br>製作した衣装に編み込んでいた……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print そしてそれをエマに着せ、<br>エレベーターの天井裏の空間に浮かせていたんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print ――自身の持つ、<br>【浮遊】の魔法を使って！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print 犯人は君だ――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print ――遠野ハンナ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆青ざめ／絶句
+
+@char Hanna.Fearful1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print ……あ……う……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print ……君は以前、腕相撲をしたときに<br>エマへ【おまじない】をかけていたね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+# ==============================================================================
+# 回想シーン（2-4ADVから流用）
+# ==============================================================================
+
+@bgm Bgm_37_1_Loop { Volume:0.2 }
+@Wait 0.2
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+@back 11_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@char Ema.Pensive1 { time:0 }
+@char Hanna.Angry1 { time:0 }
+@hideStageScreen 1
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.8
+
+@char Hanna
+@char Ema.Surprised1
+
+@print 絶対、絶対勝ってくださいまし、エマさん！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print が、頑張るよ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマさんが勝てるようにおまじないですわ。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+@hide MainBackground-Flashback,Ema-Flashback,Hanna-Flashback { time:0 }
+@back SolidColor.Custom { time:0.4 }
+# ========================================
+# 回想ここまで
+# ========================================
+@bgm Bgm_37_1_Loop
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print そのあと、シェリーは腕相撲でエマに負けていた。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print あのときエマの指に結びつけていた【髪】……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print あれは魔法による【浮力】をエマの手に<br>与えていたんじゃないかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆悲しげ
+
+@char Sherry.Pensive1,ArmR4,ArmL14
+@gosubModifyCamera 0
+@print …………。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print ハンナ……<br>君はその方法を応用して私の前に<br>エマの死体を出現させてみせたんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print ……私に罪をなすりつけるために！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hanna.Fearful1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print あ……ち、違……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+# ＠備考◆ここからどんどん取り乱す。可愛げなくなり、余裕ゼロなイメージ
+
+@char Hanna.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print ………違いますわっ！！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print わたくし……わたくしそんなことしておりません……。<br>するわけが……ありませんもの！！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@goto Act02_Chapter04/Act02_Chapter04_Trial09

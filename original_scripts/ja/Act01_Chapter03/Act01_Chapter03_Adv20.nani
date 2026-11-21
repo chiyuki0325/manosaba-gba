@@ -1,0 +1,177 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-3-20
+
+# ========================================
+# ●シーン１‐3-20
+# ========================================
+
+@back 23_5 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# ========================================
+# ＞『殺人現場』を選択
+# ========================================
+
+@bgm Bgm_26_1
+
+@print "エマは火事の起こったゲストハウスの並ぶ棟、<br>一番手前にある【<ruby=\"サラマンダー\">火精</ruby>の間】の中へ<br>立ち入った。" { speed:1 waitInput:true Wait:true }
+
+@print するとマーゴが先に来ていた。 { speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1
+
+@print ああ、エマちゃんも来たのね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "消火された後の室内は、<br>焦げ臭いにおいが<ruby=\"ざんし\">残滓</ruby>のように漂っていた。" { speed:1 waitInput:true Wait:true }
+
+@print 内部はさほど被害を受けずに済んだらしい。 { speed:1 waitInput:true Wait:true }
+
+@print "黒い<ruby=\"すす\">煤</ruby>が薄くかぶった家具等は、<br>ほぼそのままの形で残っている。" { speed:1 waitInput:true Wait:true }
+
+@print 見たくない光景だったが、<br>狭い室内では嫌でもエマの視界に入ってくる。 { speed:1 waitInput:true Wait:true }
+
+@back 290_2 { Scale:{g_backgroundDefaultScale} }
+
+@print "ハンナは先ほど見たまま、<br>天井の<ruby=\"はり\">梁</ruby>からロープで<ruby=\"つ\">吊</ruby>り下げられていた。" { speed:1 waitInput:true Wait:true }
+
+@print ハンナちゃん……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマは歯を食いしばり、<br>スマホで現場の撮影をはじめる。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@sfx Sfx_28
+
+@Wait 1.2
+@sfx Sfx_28
+
+# ==============================================================================
+# ☆証拠品：『殺人現場の写真』入手
+# ==============================================================================
+@spawn Clue
+@update 3-10
+@despawn Clue
+
+# ==============================================================================
+# ☆証拠品：『ハンナの死体写真』入手
+# ==============================================================================
+@spawn Clue
+@update 3-4
+@despawn Clue
+
+@Wait 0.6
+
+@print 煙が排出されたことで、<br>ハンナの状況は見やすくなっている。 { speed:1 waitInput:true Wait:true }
+
+@print "ハンナの首<ruby=\"つ\">吊</ruby>り死体。" { speed:1 waitInput:true Wait:true }
+
+@print "そして、ハンナを取り囲むように<br>天井の<ruby=\"はり\">梁</ruby>から<ruby=\"つ\">吊</ruby>り下げられているのは、<br>囚人の少女たちを模した人形だった。" { speed:1 waitInput:true Wait:true }
+
+@print これって、ひょっとして<br>ハンナちゃんが手作りしてたっていうお人形……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ええ。みんなの分を作ってくれていたの。<br>素直じゃなかったけれど、<br>とっても仲間想いの子だったのね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print "唇を<ruby=\"か\">噛</ruby>んでも、<br>エマの瞳からは涙がこぼれ落ちそうになる。" { speed:1 waitInput:true Wait:true }
+
+@print "（泣くな！ ボクはハンナちゃんの<br>　死の真相を突き止めるって決めたんだ！）" { author:Ema speed:1 waitInput:true Wait:true }
+
+@hide Stills
+
+@print エマは心を無理に押し殺し、<br>室内を見回す。 { speed:1 waitInput:true Wait:true }
+
+@print （部屋が荒れている……<br>　ここで何が起こったんだろう……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 写真撮影音
+@sfx Sfx_28
+
+# ========================================
+# ☆証拠品：『ロープ』入手
+# ========================================
+@spawn Clue
+@update 3-14
+@despawn Clue
+
+@print 撮影をしていると、<br>マーゴがエマの傍らへ近寄ってきた。 { speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1
+
+@print エマちゃん、炎で焼けてこれだけ<br>落ちたんでしょうけど、渡しておくわね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print マーゴが差し出したのは、<br>エマを模した人形だった。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ☆証拠品：『焦げた人形』入手
+# ========================================
+@spawn Clue
+@update 3-7
+@despawn Clue
+
+@char Ema.Pensive1,ArmR3
+
+@print （ハンナちゃん、<br>　プレゼントを用意してるって言ってた） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （きっとそれが、この――） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 手作りで縫い合わせた、<br>エマの姿を模した人形はあたたかかった。<br>受け取ったエマの手が震える。 { speed:1 waitInput:true Wait:true }
+
+@char Margo.Pensive1,ArmR2
+
+@print おかしいわね……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "<ruby=\"つぶや\">呟</ruby>きが耳に届き、<br>エマはそちらへと目を遣る。<br>マーゴが首を傾げていた。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+@char Margo.Pensive1,ArmR2
+
+@print "……どうしたの？ 何かおかしいところがあった？" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print いえ、この現場を調べても<br>まだ何もわからないのだけど、<br>……私は昨晩、ここにいたのよ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR1
+
+@print えっ！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print なんだか怪しまれてしまいそうだから、<br>あまり言いたくないのだけど……<br>魔法の儀式をここで行っていたの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR1
+
+@print 儀式って、この前話してた、<br>魔女の本に書かれていたっていう……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1,ArmR2
+
+@print ええ。そしてこの部屋は、<br>就寝時間前に看守の手で施錠されたはず。<br>そして私たちが火事で駆けつけた時には……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print ……鍵がかかってた。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （まただ。また、密室殺人……！<br>　なんでこんなことばっかり……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Pensive1,ArmR2
+
+@print ハンナちゃんの死体の状況や、<br>吊り下げられたお人形、<br>火事、密室……不可解なことだらけね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print そうだね……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ひととおりの捜査を終え、<br>他には何も見つからず、エマは現場を後にした。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン1‐3‐19
+# 全てのイベントを消化している＞シーン1‐3‐26
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter03/Act01_Chapter03_Adv19

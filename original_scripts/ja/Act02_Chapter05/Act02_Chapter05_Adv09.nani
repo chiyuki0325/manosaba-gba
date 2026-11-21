@@ -1,0 +1,65 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-5-8
+
+# ========================================
+# ●シーン2-5‐8
+# ========================================
+
+# フクロウの羽ばたき音
+@sfx Sfx_8
+
+@Wait 3
+
+@back 25_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.8 }
+@Wait 2
+
+# モニター音
+@sfx Sfx_3
+
+# 配信フレームIN
+@printer Normal.Stream
+@back SolidColor
+@char Warden.1
+@Wait 0.3
+
+@print あー、そちらのゴクチョーさん、<br>ご機嫌はいかがでしょうか？ { author:Warden speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_23_1 { fade:20 }
+
+@print なんとか元気です。<br>本当鳥使い荒くて長期休暇ほしいですよまったく。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print こちらはなんと、<br>呪いから解放されてほとんど帰っちゃいましてね……<br>ずいぶん暇になってしまいました。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print へえ、そんなパターンあるんですね。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 滅多にないと思いますよ。<br>ほとんど皆さん殺し合いばっかりですからね。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 最近他の監獄島から聞いた話では、<br>初日からマックスで殺し合いだったそうですよ……。<br>そちらは【次の魔女候補】を探すんです？ { author:Warden speed:1 waitInput:true Wait:true }
+
+@print そうしないといけませんよねぇ……。<br>何せ魔女因子はまだまだ世界中に<br>広がり続けているわけですから。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 健闘を祈ります。お互い頑張りましょう。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print ええ。魔女の駆逐を目指して。<br>それが私たちの役目ですからね。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@hide MainBackground-Middle,Warden-Middle { time:0 }
+@StopBgm { fade:3 }
+
+# モニター音
+@sfx Sfx_3
+
+@Wait 3
+
+# ========================================
+# ＞END
+# ========================================
+
+@set "g_gameProgress = max(12, g_gameProgress)"
+@Gosub System/System_Subroutine.EndAdv
+
+@ClearBacklog 
+@ReturnToTitle { time:1.8 delay:0.9 }

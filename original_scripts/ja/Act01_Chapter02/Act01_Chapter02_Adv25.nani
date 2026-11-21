@@ -1,0 +1,95 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-2-25
+
+# ========================================
+# ●シーン1‐2-25
+# ========================================
+
+@back 4_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# ========================================
+# ＞『玄関ホール』を選択
+# ========================================
+
+@bgm Bgm_5_1
+
+@char Hanna.Normal1
+
+@print 玄関ホールには、ハンナがいた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print ハンナちゃん、ここで何を？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print あ、ああエマさん。<br>外に出られないかどうか確かめていたんですの。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 外に……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hanna.Pensive1
+
+@print もしかして外から殺人犯が侵入したかもしれない、<br>と思って……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 言いづらそうにしているが、<br>ハンナの頭に浮かんでいる人物は、<br>エマには容易に想像がついた。 { speed:1 waitInput:true Wait:true }
+
+@print （ナノカちゃんが外から侵入して、ミリアちゃんを……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （そもそもボクらは、<br>　ナノカちゃんがどこに隠れているかも知らない） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （ずっと牢屋敷の中にいたのかもしれない。<br>　それで機を見て――） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマは強く頭を振った。 { speed:1 waitInput:true Wait:true }
+
+@print （決めつけるのは良くない！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hanna.Normal1
+
+@print 正面玄関は鍵がかかってましたわ。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3
+
+@print ハンナの言葉に、<br>エマはどことなくほっとした顔になる。 { speed:1 waitInput:true Wait:true }
+
+@print そうそう、後はこれを見つけましたの。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ☆証拠品：『スコップ』入手
+# ========================================
+
+@print スコップ……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 掃除ロッカーに入っていましたの。<br>定期的に入れ替えられるみたいですわね。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 犯人はこれで穴を掘って、<br>ミリアさんの懲罰房に侵入したのかもしれませんわ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+
+@print うーん……懲罰房に穴みたいなものは<br>なかった、かな。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 得意げだったハンナは、<br>がっくりと肩を落とす。 { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Pensive1
+
+@print そうでしたわね……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print と、とりあえず他にも何かないか探してみるね！<br>ありがとうハンナちゃん！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 捜査の時間はあまりに短い。<br>落ち込むハンナを気にかけつつ、<br>エマは振り切って駆け出した。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン1‐2‐19
+# 全てのイベントを消化している＞シーン1‐2‐26
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter02/Act01_Chapter02_Adv19

@@ -1,0 +1,261 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-3-11
+
+# ========================================
+# ●シーン1‐3‐11
+# ========================================
+
+@back 12_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# ========================================
+# ＞『図書室』を選択
+# ========================================
+
+@bgm Bgm_28_1
+
+@char Margo.Pensive1
+
+@print エマが図書室の中をくまなく探してみると、<br>予感はあったが、マーゴがいた。 { speed:1 waitInput:true Wait:true }
+
+@print マーゴは、人目につかないように<br>暗く奥まったところで、<br>ひっそりと読書をしていた。 { speed:1 waitInput:true Wait:true }
+
+@print ……あら、エマちゃん。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print マーゴちゃん、その本って……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# ========================================
+# アイテムスチル：『魔女の本』表示
+# ========================================
+
+@char Margo.Normal1
+
+@print 前に見せたでしょう？<br>魔女や魔法について図解された本よ。<br>最近ずいぶん読めるようになってきたの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+
+@print "え！？ 本当に！？" { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1
+
+@print ええ、法則さえ見つけてしまえば、<br>そんなに難しくないわ。エマちゃんも読んでみる？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print う……ボク、勉強とか、<br>あんまり得意じゃなくって……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1
+
+@print ふふ、そんな感じがするわ。<br>でもエマちゃん、本当はとっても冴えてると思うの。<br>わざとできないフリをしているようにも見えるわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print そんな……買いかぶりだよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3
+
+@print ね、ねえそれより、その本って<br>何か重要なこと書いてあったりしたのかな？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Pensive1,ArmR2
+
+@print そうねぇ……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print "マーゴはどこか愛おしそうに<br>本の背表紙を<ruby=\"な\">撫</ruby>でる。" { speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR4
+
+@print 私たちにとって救済になるかはわからないけど、<br>ある儀式の方法を見つけたの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3
+
+@print 儀式……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1,ArmR6
+
+@print ええ。でもまだ読み解いている途中だから、<br>もう少しわかってから<br>エマちゃんにも教えてあげるわね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print ……あとはそう、この屋敷のどこかに<br>【魔女を殺す薬】があるらしいの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print えっ、魔女を殺す薬……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1,ArmR5
+
+@print ええ。薬の名称は【トレデキム】。<br>ラテン語で【１３】を表す言葉みたいね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print その薬は、体に入ると副作用で<br>死後に身体的な反応が現れるらしいわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print ただこの情報もまだ読み解いている途中。<br>また詳しいことがわかったら教えてあげるわね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print "マーゴを改めてじっくり観察すれば、<br>目の下に<ruby=\"くま\">隈</ruby>ができている。" { speed:1 waitInput:true Wait:true }
+
+@print （さすがにマーゴちゃんも参ってるのかな……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Pensive1,ArmR7
+
+@print ねぇ、エマちゃん見てちょうだい。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print "唐突にマーゴが手袋を外し、<br>すっと手を差し出してきた。<br>細い指の<ruby=\"きれい\">綺麗</ruby>な手だ。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR1
+@char Margo.Normal1,ArmR7
+
+@print "……？ 手がどうかしたの？" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 爪が長いでしょう？<br>これで昨日切ったのよ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3
+
+@print えっ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print マーゴの指先を見て、絶句してしまう。<br>たしかに、昨日切ったとは思えない長さだった。 { speed:1 waitInput:true Wait:true }
+
+@char Margo.Pensive1,ArmR5
+
+@print 看守……なれはてがどんな姿をしているか、<br>よく知っているでしょう？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 魔女化が進むと、どうやら爪が伸びるのも<br>早くなるみたいね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print マーゴちゃん、魔女化が進んでるってわかるの？<br>殺人衝動とか……あるの？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマが思わずといった風に後ずさると、<br>マーゴは微笑みながら首を振る。 { speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR1,ArmL4
+
+@print ふふ、怖がらないで。何もしやしないわ。<br>私はまだそこまで進んでいない。<br>殺人衝動はないもの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3
+
+@print そっか……良かった。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1,ArmR1,ArmL1
+
+@print ただ、魔女化がはじまっていることは確かなの。<br>メリットがあることも判明したわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR1
+
+@print メリット？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1
+
+@print 持っている魔法の効力が強くなっているの。<br>きっと魔女化が進めば進むほど、<br>強力な魔法が使えるようになっていくのね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print この本の図解にあるとおりにね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3
+
+@print （魔法が強くなったらいいことはあるかもしれない。<br>　でも……なれはてになったら自我を失っておしまいだ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Pensive1
+
+@print ねぇ、レイアちゃんやアンアンちゃんの処刑、<br>覚えている？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print ……忘れられるわけないよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ２人とも殺意に駆られて殺人を犯し、<br>魔女として断罪された。 { speed:1 waitInput:true Wait:true }
+
+@print ――そして、【なれはて】となった。 { speed:1 waitInput:true Wait:true }
+
+@print （時々悪夢になって出てくる……<br>　それもまたボクらを追い詰めてる……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1,ArmR2,ArmL1
+
+@print どの段階で私たちの体は完全に魔女化し、<br>死なない体になるのかしら。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 彼女たちは処刑によって死ななかった。<br>もう魔女になっていたってことよね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print けれど外見には影響が出ていなかった。<br>個人差なのかしら。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Pensive1,ArmR2
+
+@print 外見が少し異形化する子もいれば、<br>そのままで魔女になってしまう子もいる……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 外見で判断できたら、<br>簡単に魔女を隔離もできるのに。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print 隔離ってそんなひどいこと……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1,ArmR1
+
+@print あら、合理的だと思うけれど？<br>たとえば私はもうこの段階で隔離すべきね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 魔女になる可能性が高い子を閉じ込めれば、<br>殺人事件は起きない。<br>最初からそうすべきだったのよ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print エマは眉を下げ、首を振る。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print できないよ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1
+
+@print エマちゃんは優しいものね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print でもその優しさは時に残酷。<br>いずれ後悔するわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR3
+
+@print 後悔なんてしないよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ボクはみんなと一緒に、<br>この牢屋敷から脱出してみせる。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print もう誰も死なせたりしない。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Pensive1
+
+@print …………。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print マーゴは虚ろな瞳で、<br>ただ無表情にエマを見つめていた。 { speed:1 waitInput:true Wait:true }
+
+@print "エマの<ruby=\"きれい\">綺麗</ruby>ごとは、<br>マーゴの心に微かにも触れられないのだろう。" { speed:1 waitInput:true Wait:true }
+
+@print （それでも……それでもボクは、<br>　マーゴちゃんだって助けたいんだよ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR1
+
+@print ……マーゴちゃん、<br>今日みんなでピクニックに行くんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 良かったら、マーゴちゃんにも来てほしい。<br>みんなで楽しく過ごせたらいいなって思う。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Pensive1
+
+@print ……そう。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print "マーゴはぽつりと<ruby=\"つぶや\">呟</ruby>き、<br>興味なさげに本へと目を落とす。" { speed:1 waitInput:true Wait:true }
+
+@print 私は行かない方がいいと思うの。<br>誰かに殺意を抱いてしまうかもしれないし。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print ……でも、でも、待ってるから。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマはマーゴに背を向けて歩きだす。 { speed:1 waitInput:true Wait:true }
+
+@print （ボクたちに絆はある。<br>　絆があれば、殺人事件は起こらない） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （――ボクは、そう信じたいんだ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマは強く前を見据えながら、<br>拳をぐっと握った。 { speed:1 waitInput:true Wait:true }
+
+# 「魔女化」項目TIPSアップデート
+@update 6
+
+# ========================================
+# 消化していないイベントがある＞シーン1‐3‐6
+# 全てのイベントを消化している＞シーン1‐3‐12
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter03/Act01_Chapter03_Adv06

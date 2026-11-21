@@ -1,0 +1,377 @@
+@if isDebugDirectJump
+	@Gosub System/System_Subroutine.BeginAdv
+	@back Transparent { time:0 }
+
+# ========================================
+# ＞『ゲストハウスと答えた』を選択→1‐1‐b4へ
+# ========================================
+
+# Scene1-1-b4
+
+# ========================================
+# ●シーン1‐1-b4
+# ========================================
+
+@back 18_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@bgm Bgm_23_1
+
+@char Ema.Fearful1
+
+@print さっき見たゲストハウスの方に逃げよう！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Normal1,ArmR1
+
+@print "なるほど！ あそこなら建物の中に隠れて、<br>やり過ごせるかもしれませんね！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@back SolidColor { time:0 }
+@back 22_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@char Jailer.1
+
+@print エマたちの考えは甘かった。 { speed:1 waitInput:true Wait:true }
+
+@Wait 1.2
+@back Transparent { time:1.2 }
+
+@print 逃げた先にも、看守が待ち構えていたのだ。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Surprised1
+
+@print そんなっ！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@back SolidColor { time:0.2 }
+
+@print ３人はあっさりと看守に捕まってしまった。<br>そして―― { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@StopBgm 
+
+@back 3_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@Wait 1.2
+@back Transparent { time:1.2 }
+
+# 牢の施錠音
+@sfx Sfx_4
+
+@bgm Bgm_22_1
+
+@print ハンナだけが、懲罰房行きになった。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL7
+@char Sherry.Pensive1,ArmR4
+
+@print "なんで！？ どうしてハンナちゃんだけが……！" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print そうですよ！<br>壁を壊そうとしたのは私なのに……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print （磔刑台とか拷問器具みたいなの、あったよね……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマはアリサが捕まっていたときの様子を<br>思い出して、身を震わせた。 { speed:1 waitInput:true Wait:true }
+
+@print やっぱり何か、されるのかな……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "扉には、<ruby=\"のぞ\">覗</ruby>き窓がある。<br>そこから室内の様子を確かめることはできた。" { speed:1 waitInput:true Wait:true }
+
+@print （どうしよう……見るのが怖い。<br>　もし、ハンナちゃんが酷い目にあっていたら……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print …………。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print "エマもシェリーも決心がつかないのか、<br>ただ扉の前に<ruby=\"たたず\">佇</ruby>むことしかできないでいる。" { speed:1 waitInput:true Wait:true }
+
+# 鞭で叩くような音
+@sfx Sfx_183
+
+@char Ema.Pensive1
+@char Sherry.Surprised1,ArmR4
+
+@print "ひっ……！ な、何……！？" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 扉の向こうから聞こえた不穏な音に、<br>エマは思わずシェリーに身を寄せる。 { speed:1 waitInput:true Wait:true }
+
+# 鞭で叩くような音
+@sfx Sfx_183
+
+# ボイス加工：ドア越しの声
+@print "あうっ！ な、何するんですの！？" { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "何かを<ruby=\"たた\">叩</ruby>きつけるような音と<br>ハンナの声が、中から聞こえてくる。" { speed:1 waitInput:true Wait:true }
+
+# 鞭で叩くような音
+@sfx Sfx_183
+
+# ボイス加工：ドア越しの声
+@print "痛いっ！ やめてくださいまし！？" { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+
+@print ハンナちゃん、大丈夫！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "エマとシェリーは、<ruby=\"のぞ\">覗</ruby>き窓から中の様子を<ruby=\"うかが\">窺</ruby>う。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 演出：のぞき窓から中を見ている
+# ========================================
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 21_1
+@char Hanna.Pensive1,ArmR2,ArmL2
+@mask MainBackground-Front,Hanna-Front
+@animate MainBackground-Front
+@animate Hanna-Front
+@Wait 0.4
+
+@print ……！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_184
+
+@print "ひうっ！ もう<ruby=\"たた\">叩</ruby>かないでくださいまし！？" { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 室内で繰り広げられている光景は、<br>エマが想像していたであろうものとは少し違っていた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+
+@print 看守が持ってるの……あれって、定規？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "ハンナは<ruby=\"たっけいだい\">磔刑台</ruby>に拘束されている。<br>だが恐ろしい拷問器具ではなく、定規で<ruby=\"たた\">叩</ruby>かれていた。<br>まるで教師か親が子供を<ruby=\"せっかん\">折檻</ruby>しているかのように。" { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@animate MainBackground-Front,Hanna-Front
+@WaitForNextFrame 
+@animate MainBackground-Front
+@animate Hanna-Front
+@hide MainBackground-Front,Hanna-Front
+@despawn MaskingRectangle
+
+@hideChars 
+
+@print 看守が定規を振り上げて、ハンナの頬を打つ。 { speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_184
+@StopBgm 
+@Wait 1.2
+
+@char Ema.Pensive1,ArmR3,ArmL7
+@char Sherry.Normal1,ArmR4
+
+@print エマさん、ハンナさんを助けましょう。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print で、でも、助けるって一体どうやって……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR8
+
+@print こうやってです！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@back SolidColor { time:0.2 }
+
+@bgm Bgm_12_1_Loop
+
+@print え、ちょっとシェリーちゃん！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+# ==============================================================================
+# 鉄扉を破壊する音
+@sfx Sfx_185
+# ==============================================================================
+
+@print シェリーは拳を握り、<br>懲罰房の扉を勢いよく殴りつけた。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back 21_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@back Transparent { time:1.2 }
+
+# 暴れて破壊する音
+@sfx Sfx_61
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 21_1
+@char Hanna.Surprised1,ArmR2,ArmL2
+@mask MainBackground-Front,Hanna-Front
+@animate MainBackground-Front
+@animate Hanna-Front
+@Wait 0.4
+
+@print な、なんなんですの！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR8
+
+@print ハンナさん、助けに来ました！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print "扉を破壊して室内に現れたシェリーに、<br>ハンナは<ruby=\"あぜん\">唖然</ruby>とする。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+
+@print ちょ、ちょっと待ってシェリーちゃん！<br>ダメだよ、看守に抵抗したら……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ――ヒロのように、殺されてしまう。 { speed:1 waitInput:true Wait:true }
+
+@print "そうですわ！ わたくしなら大丈夫ですから、<br>バカな真似はおよしなさい！" { author:Hanna speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@animate MainBackground-Front,Hanna-Front
+@WaitForNextFrame 
+@animate MainBackground-Front
+@animate Hanna-Front
+@hide MainBackground-Front,Hanna-Front
+@despawn MaskingRectangle
+
+@hideChars 
+@Wait 0.6
+@char Sherry.Normal1,ArmR8
+
+@print いえ、やってみないとわからないじゃないですか。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print シェリーは一歩前に踏み出して、<br>看守に近付いていく。 { speed:1 waitInput:true Wait:true }
+
+@print 本気の本気でやれば、<br>案外ぶっ殺せるかもしれませんよ？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR8
+
+@print ここには武器もたくさんありますし！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print シェリーは近くにあった金属の棒を手に取る。 { speed:1 waitInput:true Wait:true }
+
+@char Jailer
+@animate Jailer
+
+@print 抵抗の意思を察知したのか、<br>看守がシェリーに対して鎌を振り下ろした。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Surprised1,ArmR8
+
+@print ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Jailer.1
+
+@print "シェリーは鎌による一撃を<ruby=\"か\">搔</ruby>い潜り、<br>看守に鉄の棒を<ruby=\"たた\">叩</ruby>きつけた。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Angry1,ArmR8
+
+@print うああああああっ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ぐちゃっ、めきなど体を害する音
+@sfx Sfx_10
+
+@hideChars 
+
+@print のけぞるような体勢になった看守に、<br>シェリーは容赦なく追い打ちをかけていく。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR8
+
+@print "エマさん！ 今のうちに、<br>ハンナさんを下ろして逃げてください！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Surprised1
+
+@print え、えええっ！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Normal1,ArmR8
+
+@print 早くしてくださいー！<br>いつまでもつかわかりませんので！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1
+
+@print わ、わかった……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "エマが<ruby=\"たっけいだい\">磔刑台</ruby>に駆け寄り、<br>ハンナの拘束を解きにかかる。" { speed:1 waitInput:true Wait:true }
+
+@char Jailer.1
+
+@print どれだけシェリーの怪力で殴られても、<br>看守が死ぬ気配はない。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# ぶんっと武器が振り下ろされる音
+@sfx Sfx_9
+
+@char Sherry.Surprised1,ArmR8
+
+@print わわっと！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 死なないどころか、<br>恐るべきスピードで鎌による反撃を繰り出してきた。 { speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"とっさ\">咄嗟</ruby>に受け止めた鉄の棒が、<br>真っ二つに切断される。" { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR8
+
+@print それなら、これで……！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print "武器は、まだまだある。<br>シェリーは処刑用と思しき剣を<ruby=\"つか\">掴</ruby>んだ。" { speed:1 waitInput:true Wait:true }
+
+@print やああああっ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 剣を手に、体ごと看守に突っ込む。 { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# ぐちゃっ、めきなど体を害する音
+@sfx Sfx_10
+
+@back SolidColor
+
+# 立ち絵なし
+
+@print ぐっ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# 立ち絵なし
+
+@print あっ……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print ……あれ？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print シェリーの剣が貫いたのは、看守ではなかった。 { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_20_1
+
+@back 21_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.2
+
+@print エマと、ハンナだ。 { speed:1 waitInput:true Wait:true }
+
+@print "看守の背後で、<br>エマは<ruby=\"たっけいだい\">磔刑台</ruby>からハンナを下ろそうとしていた。" { speed:1 waitInput:true Wait:true }
+
+@print シェリーの突進を看守が避けたことで、<br>２人を刺し貫いてしまったのだ。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1,ArmR19,ArmL14
+
+@print ……あちゃー、失敗ですね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 助けられると思ったんです。<br>でも……やっぱり壊しちゃいましたね。<br>エマさん、ハンナさん、ごめんなさい。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Jailer.1
+
+@print "<ruby=\"ぼうぜん\">呆然</ruby>と口にするシェリーの背後で、<br>看守が鎌を掲げて――" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# ざんっと肉が切れる音
+@sfx Sfx_12
+
+@back SolidColor
+@Wait 1.2
+
+# ========================================
+# 『END～誤殺～』
+# ========================================
+
+@badEnd 4

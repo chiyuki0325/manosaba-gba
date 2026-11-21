@@ -1,0 +1,1081 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act01_Chapter05/Act01_Chapter05_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+@char Warden.1 { Position:,{hiddenCharacterPositionY} time:0 }
+# ==============================================================================
+# MARK: 5-3: 💬 エマは嘘つきなのか
+# ==============================================================================
+# BGM変更：AccUhEarts(Vocal無)
+@bgm Bgm_15_1
+
+# Judge5-3-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@printDebate "エマちゃんの証言は<br>成立しないわ。<br>処刑台には<br>侵入できる経路がない……<br>ある意味、<br>【<link=\"Objection_01_05_03_01\">密室</link>】だったの。"
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@printDebate "だから、<br>エマちゃんの<br>言ってることは<br>全部<link=\"Objection_01_05_03_02\">嘘</link>になるわね。"
+
+@char Coco.Default,ArmR3,ArmL5,Angle01/Facial/Eyes>Eyes_Gross_Open,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@printDebate そもそもさっきから<br>エマっちが言ってる<br>違和感とかさぁ……。<br>死体にあった口の傷なんて<br>大した問題じゃ<br>ないっしょ？
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@printDebate ナノカも、<br>エマっちがアリサみたく<br>処刑台から地下に送って<br>凍死させたんじゃねーの。
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Closed,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate "他に<link=\"Objection_01_05_03_03\">ツジツマ</link>が<br>あわないようなことも<br>ないんだし<br>やっぱエマっちが<br>犯人確定でよくない？"
+
+@char Ema.Default,ArmR3,ArmL13,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@printDebate で、でも！<br>地下には<br>ナノカちゃんの銃が<br>あったし……！<br>ナノカちゃんは<br>あそこにいたはずだよ！
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate "銃なんて<br><link=\"Objection_01_05_03_04\">殺したあとに置く</link><br>ことだって<br>できるじゃん？"
+
+@char Coco.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Closed,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate "……エマっちが<br><link=\"Objection_01_05_03_05\">見間違い</link>でもしてたなら<br>別だけどさ。"
+
+@char Meruru.Normal2,ArmR1_2,ArmL3,Eyes2_Normal_Open1,Mouth2_Normal_Open1
+@gosubModifyCamera 0
+@printDebate エマさんが<br>嘘をつくなんて……<br>そんなこと……。
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@printDebate どうかしらね？<br>罪を認めたくなくて<br>必死にも見えるわ。
+
+@char Margo.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@printDebate ……ねぇ、エマちゃん。<br>この議論……<br>これ以上続ける必要は<br>あるのかしら。
+
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Ema.Surprised1,ArmR13,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed { time:0 }
+@gosubModifyCamera 0
+@Wait 0.2
+
+# ==============================================================================
+# 5-3議論後独白
+# ==============================================================================
+
+@print （たしかにボクの証言は証拠と矛盾してる……！<br>　このままじゃ誰も話を聞いてくれなくなって<br>　ボクが投票されちゃうかも……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@print （でもナノカちゃんは地下にいたはずだ……！<br>　地下では何か事件が起こったはず……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@print （この際、小さなほころびでも傷でも……<br>　なんでもいい！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR2-1,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@print （議論を続けるために……<br>　矛盾を指摘するんだ！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge5-3-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_01_05_03_01
+
+@Skip false
+@pauseTrial true
+
+@choice 本当に誰も入れないの？
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge5-3-17
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_01_05_03_02
+
+@Skip false
+@pauseTrial true
+
+@choice 嘘じゃない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge5-3-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_01_05_03_03
+
+@Skip false
+@pauseTrial true
+
+@choice 時間が合わない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge5-3-4
+
+@choice 弾丸の数が合わない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge5-3-2
+
+@choice 入った人数が合わない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge5-3-5
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論4
+# ------------------------------------------------------------------------------
+
+# Objection_01_05_03_04
+
+@Skip false
+@pauseTrial true
+
+@choice 銃はあとから置かれていない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge5-3-6
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論5
+# ------------------------------------------------------------------------------
+
+# Objection_01_05_03_05
+
+@Skip false
+@pauseTrial true
+
+@choice ナノカを見落とした
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge5-3-7
+
+@choice 犯人を見落とした
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge5-3-8
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 5-3: ❌ 議論ミス選択肢
+# ==============================================================================
+
+# MARK: 5-3-17: ❌ 疑問・本当に入れないの？
+
+# Judge5-3-17
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print 本当に地下から処刑台には入れないのかな……？<br>ゴクチョーとか管理者とか、<br>誰か入れるんじゃ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+
+@sfx Sfx_Common_1
+
+@char Warden.1 { Position:,{characterPositionY} time:0 }
+@gosubModifyCamera 0
+@print ではそれについては私から説明しましょうか。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3,ArmL2,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ゴクチョー……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Warden.1
+@gosubModifyCamera 0
+@print 処刑台ユニットは安全の為、<br>処刑された魔女が出られないよう<br>地下に隔離するためにあるのです。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Warden.1
+@gosubModifyCamera 0
+@print 処刑台と地下を行き来するには<br>地下の門を開ける必要があります。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Warden.1
+@gosubModifyCamera 0
+@print ですが【裁判を経た処刑】時以外、<br>あの門を開くにはさまざまな承認が必要でして……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Warden.1
+@gosubModifyCamera 0
+@print 私はもちろん、この島にいる者だけでは<br>自由に開けられないようになっているのですよ。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Warden.1
+@gosubModifyCamera 0
+@print 仮に承認を経て開けられたとしても、<br>その時には【大きな震動】が<br>この牢屋敷全体を襲います。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Warden.1
+@gosubModifyCamera 0
+@print どうにかして開けたとしても、<br>誰かしらが震動に気付くでしょうし……<br>そもそも開けられた【記録】も残っていません。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Warden.1
+@gosubModifyCamera 0
+@print 地下の門が最後に開いたのは、<br>橘シェリーさんの処刑時が最後……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Warden.1
+@gosubModifyCamera 0
+@print それ以後、一度も開いていないのは<br>私が保証しますよ。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （あの【門】は開いていない……。<br>　ならナノカちゃんはやっぱり地下を通っていない……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print ……記録が残ってないって言ってたけどさ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print 他の扉は？<br>途中にあった扉は、開いた記録って残ってないの？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Warden.1
+@gosubModifyCamera 0
+@print ええ。記録が残っているのは、<br>【地下の門】と【処刑台の上下記録】だけです。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Closed,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print は～、つっかえな～。 { author:Coco speed:1 waitInput:true Wait:true }
+
+# 出番ここだけ
+@char Warden.1 { Position:,{characterPositionY} time:0 }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （ゴクチョーが嘘をついている可能性はあるけど……<br>　だとしても、それを否定する根拠もないかな……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print "どう？ エマちゃん。<br>……わかってくれた？" { author:Margo speed:1 waitInput:true Wait:true }
+
+@goto .Judge5-3-1
+
+# MARK: 5-3-3: ❌ 嘘じゃない
+
+# Judge5-3-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Surprised_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print う、嘘じゃない……！<br>信じてよ、マーゴちゃん！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print でもね、エマちゃん。<br>地下の【冷凍室】から【処刑台】へは<br>進入不可能なの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print つまりエマちゃんが言うように、<br>ナノカちゃんが【今朝から冷凍室にいた】としたら――。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print 彼女の死体は【入れない場所にあった】ことになるのよ。<br>これって、とてもおかしいでしょう？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print ……エマっちが嘘ついてる以外の可能性、なんかある？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR13,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （たしかに、何かがおかしい……！<br>　だけどボクはナノカちゃんを殺してない……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# ボイス収録ミス
+# @char Ema.Default
+# Ema: （感情に訴える前に、<br>　やるべきことはまだあるはずだ……！）|#0105Trial03_Ema012|
+
+@char Ema.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （みんなにボクの話を信じてもらうためにも……<br>　事件の中で起きた不自然な点を考えるんだ……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge5-3-1
+
+# MARK: 5-3-4: ❌ 時間が合わない
+
+# Judge5-3-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print いや、ナノカちゃんは今日の朝<br>死んだはずだよ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print どうやったって時間が合わないよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print エマちゃん、それはもう聞いたわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print 反論したいなら……<br>新たな視点を提案してくれないと。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Middle
+@gosubModifyCamera 0
+@print 同じこと繰り返すだけなら、<br>オウムでもできるっての！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （そんな……！<br>　オウムよりは喋れると思うけど……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Flushed_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （でもマーゴちゃんの言う通り、<br>　新しい側面からアプローチしないと<br>　話は聞いてもらえないかも……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （みんなにボクの話を信じてもらうためにも……<br>　事件の中で起きた不自然な点を考えるんだ……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge5-3-1
+
+# MARK: 5-3-5: ❌ 入った人数が合わない
+
+# Judge5-3-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ナノカちゃんはひとりで地下に入ったのに<br>誰かに殺されて出てきたんだ……！<br>全然辻褄が合わないよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Middle
+@gosubModifyCamera 0
+@print けどそれはエマっちの意見っしょ？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Middle
+@gosubModifyCamera 0
+@print そんなん信じたくても信じられないっての！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print 信じて欲しいなら……<br>客観的な事実を提示してね、エマちゃん。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （たしかに……２人の言う通りかも……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （できるだけ客観的な事実を提示しよう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge5-3-1
+
+# MARK: 5-3-6: ❌ 銃はあとから置かれていない
+
+# Judge5-3-6
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print いや……ナノカちゃんは<br>銃を持って入ったんだ。<br>あとから置かれたようなことはないよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Middle
+@gosubModifyCamera 0
+@print で、それは誰が保証すんの？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print そ、それは……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print 意見言うだけでいいなら、<br>あてぃしがいくらでも言ってやんよ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL4,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print ……エマっち、あやしい！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （ストレートに怪しまれちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Flushed_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （でもココちゃんの言う通り、<br>　疑われてるのに自分視点の話をしても<br>　意味ないよね……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （できるだけ客観的な事実を提示しよう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge5-3-1
+
+# MARK: 5-3-7: ❌ ナノカを見落とした
+
+# Judge5-3-7
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print そっか……わかったよ！<br>ボク、ナノカちゃんが出ていくのを<br>見逃してたんだよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print はぁ？<br>エマっちが【見張ってた】って言ったんじゃん！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print そ、それはそうなんだけど……！<br>ナノカちゃんが出てきた可能性もあるかもって話で……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print ……仮に出てきたとしても、<br>ナノカちゃんが処刑台から入るルートはないのよ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print エマっちの目をかいくぐってこっそり出てくるとか、<br>ナノカは忍者かっての！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （ナノカちゃんならありえるかも……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Flushed_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （でもたしかにボクは入口を見張ってたはず……。<br>　そこからナノカちゃんは出てきていない……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （だとしたら、やっぱり何かおかしなことが<br>　起こってるんだ……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （みんなにボクの話を信じてもらうためにも……<br>　事件の中で起きた不自然な点を考えるんだ……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge5-3-1
+
+# MARK: 5-3-8: ❌ 犯人を見落とした
+
+# Judge5-3-8
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print もしかしてボク……<br>犯人を見落としてたのかもしれない……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Pensive_Middle
+@gosubModifyCamera 0
+@print へ？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print きっと犯人はボクの横を通り抜けて地下へ入って<br>ナノカちゃんを殺したんだ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print きっとそうに違いないよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print じゃあ犯人は<br>透明人間ってことで。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print もしかしたら幽霊かもしれないわね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR13,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print ２人とも信じてくれるの！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR13,ArmL10,Angle01/Facial/Eyes>Eyes_Comical_Open,Angle01/Facial/Mouth>Mouth_Angry_Open01
+@gosubModifyCamera 0
+@print "……信じるわけねーだろ！ おバカ！" { author:Coco speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （無理がある話だったみたい……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Flushed_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （そもそも、たとえすり抜けて地下に行けたとしても<br>　ナノカちゃんが処刑台に移動できた理由には<br>　ならないかも……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （みんなにボクの話を信じてもらうためにも……<br>　事件の中で起きた不自然な点を考えるんだ……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge5-3-1
+
+# ==============================================================================
+# MARK: 5-3-2: ⭕ 弾丸の数が合わない
+# ==============================================================================
+
+# Judge5-3-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@gosubCutIn Ema
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+@char Ema.Default,ArmR3,ArmL3,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ……ちょっと待ってみんな。<br>地下にはまだ検証すべき問題が残っていると思うよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print あら、それは何かしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL11,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print それは……弾丸の数だよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# ◎1-2-1の回想（流用）
+@bgm Bgm_15_1 { Volume:0.2 }
+@Wait 0.2
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+@back 14_1 { time:0 }
+@char Nanoka.Normal1,Arms3,Eyes1_Normal_Open2,Mouth1_Normal_Open1,OptionB_Off { time:0 }
+@hideStageScreen 1
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+
+@print この銃も、かつて牢屋敷に囚われた人が魔法で制作し、<br>隠していたことを視て、ここに捕まってすぐ回収した。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Arms3,Eyes1_Normal_Open2,Mouth1_Normal_Open1,OptionB_Off
+
+@print 装填数は６発。<br>１日１発自動で弾が回復する魔法の銃よ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+@hide MainBackground-Flashback,Nanoka-Flashback { time:0 }
+@hideStageScreen 1
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+@bgm Bgm_15_1
+# 回想ここまで
+
+@char Ema.Default,ArmR3,ArmL11,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print 地下で見つかったナノカちゃんの銃には<br>３発使用された形跡があった……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL12,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print でも撃たれた弾は、<br>２発しか見つかってないんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL12,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print 通気口のフタに１発、<br>冷凍室の氷に残された弾痕に１発……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL12,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print なら、残り１発はどこにいったのかな。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print で、でもどっか他のとこで<br>撃ってきたのかもしれないじゃん？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print ……それに、地下で見つかった２発の弾丸だって<br>ナノカちゃんの銃から撃たれたものかどうかは<br>わからないわ？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print もしかすると、<br>ずっと昔に撃たれていた弾が<br>残ってただけかもしれないしね？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （……ナノカちゃんが地下に入るとき<br>　銃を持っていたのをボクは見ている） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （６発の弾のうち、３発がなくなっていて<br>　うち２発が見つかった） { author:Ema speed:1 waitInput:true Wait:true }
+
+# Judge5-3-9
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （なら、残り１発も撃たれた可能性が高いはずだ……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （残り１発の銃弾を撃った人……<br>　それは） { author:Ema speed:1 waitInput:true Wait:true }
+
+
+@choice 最初から１発少なかった
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge5-3-11
+
+@choice ナノカ
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge5-3-12
+
+@choice 別の人物
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge5-3-10
+
+@StopForChoice 
+
+# ==============================================================================
+# ミス選択肢
+# ==============================================================================
+
+# MARK: 5-3-11: ❌ 最初から1発少なかった
+
+# Judge5-3-11
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （いや、やっぱり弾は最初から<br>　１発少なかったんじゃないかな？<br>　それなら辻褄は合うはず……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+@gosubModifyCamera 0
+@print （……けど、それだとおかしいかな……？<br>　たしかナノカちゃんの銃は魔法の銃で、<br>　弾は毎日自動で補充されるはずだもんね……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+@gosubModifyCamera 0
+@print （だとしたら、あの朝の段階で<br>　撃ってるなんて考えにくいかも……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （考えられる可能性は……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge5-3-9
+
+# MARK: 5-3-12: ❌ ナノカ
+
+# Judge5-3-12
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+@gosubModifyCamera 0
+@print （最後の１発は、ナノカちゃんが犯人に対して<br>　反撃した１発なのかも……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+@gosubModifyCamera 0
+@print （……あれ？<br>　でもあの通気口……<br>　あの銃を持ったまま通るのは無理じゃないかな） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+@gosubModifyCamera 0
+@print （通気口を通らなかったら、<br>　フタを撃って壊す必要がないし……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+@gosubModifyCamera 0
+@print （……ってことは、通気口を通ったナノカちゃんは<br>　その先で銃を持っていなかったはず……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default
+@gosubModifyCamera 0
+@print （最後の１発を<br>　ナノカちゃんが撃ったとは考えにくいかも……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （考えられる可能性は……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge5-3-9
+
+# MARK: 5-3-10: ⭕ 別の人物
+
+# Judge5-3-10
+
+@char Ema.Default,ArmR8,ArmL3,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ……あの部屋の通気口のフタには、<br>銃弾の跡があったんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL3,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print たぶんあれはナノカちゃんが、<br>奥の冷凍室に入るために<br>撃って壊した跡なんだと思う。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print あてぃしたちも同じルート通ったしな。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL3,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ……でもたぶんナノカちゃんは<br>銃をそこに置いていったんだと思うよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL3,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print だって、通気口は人ひとり通るぐらいで<br>精一杯な狭さだったから。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print た、たしかにそうだったけど……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print でも冷凍室には、<br>もう１発撃った跡がなかったっけ？<br>ナノカの銃も落ちてたし……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Coco.Default,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print あれは誰が撃った跡だってのさ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open
+@gosubModifyCamera 0
+@print うん。<br>だからあれは……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Ema.Default,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ちゃんと操作室の扉を開けて、<br>冷凍室の中にナノカちゃんの銃を持ち込んだ<br>【もうひとりの人物】が撃ったんじゃないかな。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+# ＠備考◆驚愕
+
+@char Coco.Default,ArmR8,ArmL7,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print もうひとり……<br>あそこに誰かいたっての！？ { author:Coco speed:1 waitInput:true Wait:true }
+
+# SE・明るい音
+@sfx Sfx_Common_2
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print ……ちょっと待って、エマちゃん。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default
+@gosubModifyCamera 0
+@print 仮にそこに別の人物がいたとして……<br>地下の扉を開けることなんてできるのかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,Angle01/Facial/Eyes>Eyes_Angry_Middle
+@gosubModifyCamera 0
+@print エマちゃんもココちゃんも……<br>そしてナノカちゃんも開けられなかった<br>扉なのよね？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ……いや、開けられると思うよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR6,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Middle,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print そんなやついるん？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print うん……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# Judge5-3-13
+
+@char Ema.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print そこにいたのはきっと、この人だよ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+
+@choice 黒幕
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge5-3-14
+
+@choice ゴクチョー
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge5-3-15
+
+@choice ナノカ
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge5-3-16
+
+@StopForChoice 
+
+# MARK: 5-3-15: ❌ ゴクチョー
+
+# Judge5-3-15
+
+@char Ema.Default,ArmR3,ArmL11,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print ゴクチョーなら、入れたはずだよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL5,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print いやでも銃は撃てないっしょ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal1,ArmR1_1,ArmL8,Eyes1_Pensive_Open2,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print あの体格で撃てるんでしょうか……？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL5,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 仮に銃を使ったとしても<br>ナノカの銃じゃなくね？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal1,ArmR1_1,ArmL8,Eyes1_Angry_Open1,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print もっと小さい銃だと思います……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print ……どちらにせよ、大した話じゃなかったみたいね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （話がそれちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （もう一度考えてみよう……！<br>　あの扉を正規の手順で開けられるのは<br>　あの人しかいないはず……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge5-3-13
+
+# MARK: 5-3-16: ❌ ナノカ
+
+# Judge5-3-16
+
+@char Ema.Default,ArmR3,ArmL11,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print ナノカちゃんなら、<br>魔法で読み取って中に入れたんじゃないかな？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL5,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print "おい！ じゃあ誰が通気口の扉を撃ち壊して<br>通ったんだよ！" { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print それは……ナノカちゃんで……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print じゃあ扉を正規の手順で開けて、<br>銃を持って中に入ったのは？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print それも……ナノカちゃん……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print ……ナノカちゃんはふたりいたのね。<br>知らなかったわ。双子だったなんて。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print 双子だとしても、この島にいるわけねーだろ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （怒られちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （もう一度考えてみよう……！<br>　あの扉を正規の手順で開けられるのは<br>　あの人しかいないはず……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge5-3-13
+
+# MARK: 5-3-14: ⭕ 黒幕
+
+# Judge5-3-14
+
+@gosubCutIn Ema
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR2-1,ArmL11,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print そこにいたのがこの牢屋敷を用意した黒幕なら……<br>地下の扉だって自由に出入りできるはずだよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# Trick3-5-3-14
+
+# トリック図説表示
+@back 5_3_2 { Scale:{g_backgroundDefaultScale} }
+
+@char Ema.Default,ArmR2-1,ArmL11,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@print 少なくとも、地下室には<br>【通気口を通った人物】と<br>【銃を持って扉を通った人物】の２人がいたはずなんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# 通気口側のナノカ点滅
+@back 5_3_2 { time:0.5 }
+@Wait 0.5
+@back 5_3_3 { time:0.5 }
+@Wait 0.5
+@back 5_3_2 { time:0.5 }
+@Wait 0.5
+@back 5_3_3 { time:0.5 }
+@Wait 0.5
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@print そしておそらく、<br>銃でフタを壊して通気口を通ったのが<br>ナノカちゃんの方だと思う。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@print （ナノカちゃんが魔法で入り方を事前に知ってたなら、<br>　そんな強引な方法はとらないだろうしね……） { author:Ema speed:1 waitInput:true Wait:true }
+
+# メルル側点滅
+@back 5_3_2 { time:0.5 }
+@Wait 1
+
+@char Ema.Default,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@print だから冷凍室にナノカちゃんの銃を運んだのは<br>【黒幕】の方……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print たぶん、その人が冷凍室の氷に残された弾丸と、<br>どこかに撃たれた３発目の弾丸……<br>その２発を撃ったんだよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# トリック図説表示
+@hide Ema-tricker
+@hide Tricks { time:0.5 }
+# ここまで
+
+@char Ema.Default,ArmR2-1,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （……だとしたら、最後の１発が<br>　撃ちこまれた場所は……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# カットイン マーゴ
+@Wait 0.5
+
+@sfx Sfx_Common_5
+
+@ResetText 
+@voice CommonTrial_Margo01682
+@char Ema.Surprised1
+@char Margo.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open,Angle01/Facial/Mouth>Mouth_Neutral_Closed
+@gosubSplitStageScreen 1
+@Wait 1.5
+
+@hideStageScreen 1
+@Wait 0.3
+
+@char Margo.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Neutral_Closed
+@gosubModifyCamera 0
+@print ……あなたの言いたいことはわかったわ。<br>エマちゃん。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Closed
+@gosubModifyCamera 0
+@print えっ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print たしかにエマちゃんの言う通り、<br>ナノカちゃんが地下で死んだのだとしたら<br>別の誰かが関わっている可能性が高いと思うわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print ……けど。<br>それがありえないのは、さっき説明したわよね？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,Angle01/Facial/Eyes>Eyes_Angry_Middle
+@gosubModifyCamera 0
+@print エマちゃんには、その【壁】が壊せるのかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open
+@gosubModifyCamera 0
+@print （マーゴちゃん……<br>　少しだけボクの言葉を<br>　信じてくれたのかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （もしかしたらマーゴちゃんも、<br>　弾丸の数が合わないことが気になっていたのかも……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02
+@gosubModifyCamera 0
+@print （とにかく……ひとりでも真剣に話を聞いてくれる<br>　今がチャンスだ！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed03
+@gosubModifyCamera 0
+@print （それになんとなくだけど……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Closed
+@gosubModifyCamera 0
+@print （今なら、マーゴちゃんの言う【壁】……<br>　打ち壊せる気がする……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+
+
+@goto Act01_Chapter05/Act01_Chapter05_Trial04

@@ -1,0 +1,322 @@
+@gosubResetBook System/System_ResetWitchBook
+@Gosub System/System_Subroutine.BeginAdv
+
+# ========================================
+# 魔法少女ノ魔女裁判 第1章4話
+# ========================================
+
+# Scene1-4-1
+
+# ========================================
+# ●シーン1‐4-1
+# ========================================
+
+@back 5_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_9_1
+
+@print あれから、何日が経過したのだろうか……。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@back 6_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@print 食事をし、シャワーを浴び、毛布にくるまって眠る。 { speed:1 waitInput:true Wait:true }
+
+@print 少女たちは機械のようにただ規則に従って、<br>日々を漫然とこなしていた。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@back 10_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@char Ema.Pensive1
+
+@print あ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Pensive1,ArmR7,ArmL6
+
+@print ああ、まだ生きてたんだ。<br>しぶといねエマっち。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print って死んでたら魔女裁判になってるか。<br>せいぜい頑張って生き延びてよ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+
+@print う、うん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Pensive1,ArmR7,ArmL6
+
+@print じゃ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 少女は目を逸らす。<br>疲弊から、恐怖から。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@back 12_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@char Margo.Pensive1
+
+@print 私たちはなんのために生かされてるんでしょうね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 永遠に出す気がないのなら、<br>いっそさっさと殺してしまえばいいのに。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print まるでゆるやかな拷問のようだわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+
+@print …………。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "少女はうわ言のように<ruby=\"つぶや\">呟</ruby>く。<br>生きている感覚なんてとっくの昔に失われていると感じながら。" { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@back 7_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@char Meruru.Pensive
+
+@print 静かですね……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 少し前まで賑やかだったから、<br>やっぱり……寂しいです。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+
+@print うん……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 少女は涙を流す。<br>取り戻せない時間を慰みにしながら。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 時間経過
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@back 7_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@char Meruru.Default { time:0 }
+
+@print ……エマさん、少しお散歩しませんか？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print ふと思い立ったのか、<br>メルルが立ち上がって口を開いた。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Normal1,ArmR1
+
+@print "お散歩？ どこに行くの？" { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Meruru.Default
+
+@print えっと……どこでもいいんです。<br>ただ、ずっとメソメソしていたら<br>シェリーさんやハンナさんに叱られちゃうような気がして。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Smile
+
+@print 負けていられません、元気にならなくちゃ。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print "メルルは<ruby=\"まぶた\">瞼</ruby>を腫らしながらも、<br>健気に微笑む。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Normal1
+
+@print そう、そうだよね……負けたくない。<br>ボクらはまだ生きてる。頑張れる。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Meruru.Smile
+
+@print はい……っ、行きましょう、エマさん！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+@back 10_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent.Custom { time:0.9 }
+@Wait 0.9
+
+@print ……とはいっても、<br>牢屋敷内で行ける場所など限られていて。 { speed:1 waitInput:true Wait:true }
+
+@print "エマとメルルは手を<ruby=\"つな\">繋</ruby>いで、<br>娯楽室に向かって階段を上がっていた。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+@char Meruru.Default
+
+@print たくさん遊んで、<br>たくさん笑って、そしたらきっと元気になれます。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 私はもっと、皆さんに元気でいてほしいんです。<br>笑って、健やかでいてほしいんです。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+
+@print ……何して遊べばいいんだろ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Smile
+
+@print "え、えっと……私もあんまり遊んだことがなくて。<br>で、でもはしゃぐんです！ とりあえず！" { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 妙な気合が入っているメルルを見て、<br>エマは思わず笑みをこぼした。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print はしゃぐことだけ先に決めておくの？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default
+
+@print は、はい……ダメでしょうか？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Smile1
+
+@print ううん。そうしよう、<br>今日は絶対はしゃぐって決めて何かで遊ぶ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "笑顔で<ruby=\"うなず\">頷</ruby>いてくれたメルルが、<br>一歩先の段を行く。" { speed:1 waitInput:true Wait:true }
+
+@print その背中に、エマは声をかけた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3
+
+@print メルルちゃんがいてくれて良かった。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ずっと一緒にいてね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （ボクをひとりにしないで） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Meruru.Smile
+
+@print もちろんです……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print たったひとつの確かなもの。 { speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"つな\">繋</ruby>ぐ手のぬくもりが、<br>エマの救いになった。" { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@back 9_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@print ――数日後。<br>その日もエマは、<br>目的なくふらふらと歩いていた。 { speed:1 waitInput:true Wait:true }
+
+@print 変わり映えのない日々がずいぶん長く続いて、<br>それはどこか平穏な日常とさえも言えた。 { speed:1 waitInput:true Wait:true }
+
+# フクロウの羽ばたき音
+@sfx Sfx_8
+
+@bgm Bgm_9_1
+
+@print 不意に羽ばたき音が耳に届き、<br>エマはハッと身構えた。 { speed:1 waitInput:true Wait:true }
+
+@print ゴクチョーが飛んできて、<br>エマの姿を見つけてその場に留まる。 { speed:1 waitInput:true Wait:true }
+
+@char Warden.1
+
+@print おや、桜羽エマさんですね。<br>最近は平和で何よりですね。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print …………。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 牢屋敷や野外を歩き回っていると、<br>こうして時折ゴクチョーに遭遇することはある。 { speed:1 waitInput:true Wait:true }
+
+@print "しかし<ruby=\"のんき\">呑気</ruby>に雑談をしたい相手でもなく、<br>憎悪を向けるべき相手かどうかもわからない。" { speed:1 waitInput:true Wait:true }
+
+@print あくまでゴクチョーは働かされている、<br>牢屋敷の運営側である、というだけだ。 { speed:1 waitInput:true Wait:true }
+
+@char Warden.1
+
+@print ただ、前回の処刑の時もですが、<br>どうやら処刑台の調子が悪いようで……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 一度明日の午後、<br>本格的にメンテナンスをする予定です。やれやれ……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print エマの視線は、自然と通路の先にある裁判所の方へと向く。<br>いつもは固く閉じられた扉が開いていた。 { speed:1 waitInput:true Wait:true }
+
+@print ゴクチョーが飛び回っているのは、<br>裁判所を出入りしていたためらしい。 { speed:1 waitInput:true Wait:true }
+
+@char Warden.1
+
+@print この牢屋敷もずいぶんガタが来ていますし、<br>働くスタッフを増やしてほしいですよ……。<br>まったく鳥使いの荒い……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# フクロウの羽ばたき音
+@sfx Sfx_8
+
+@print 愚痴だけこぼして、<br>ゴクチョーはさっさと飛び去ってしまった。 { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆詰めていた息を吐き出す
+
+@char Ema.Pensive1,ArmR3
+
+@print ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマは軽く息をつき、窓辺に立つ。<br>気分転換に、ステンドグラスの向こうの景色を見つめた。 { speed:1 waitInput:true Wait:true }
+
+@print まだ夕食前なのに、<br>空がずいぶん暗かった。 { speed:1 waitInput:true Wait:true }
+
+@print （ボクらをここに閉じ込めて、<br>　牢屋敷はどうしたいんだろう……。<br>　聞いても答えてもらえないだろうけど） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （やっぱり、みんなが魔女になるのを待ってるのかな） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （それなら時間の問題だよね……。<br>　こんなの、いずれみんな魔女に……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ただ、エマは違和感をずっと抱いている。 { speed:1 waitInput:true Wait:true }
+
+@print （ボクは本当に魔女なのかな？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （なんでボクだけ、魔法が使えないのかな） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （もしボクが魔女じゃなかったら、<br>　いずれボクだけひとりで取り残される……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマはポケットに手を入れ、<br>お守りのように万年筆を握る。 { speed:1 waitInput:true Wait:true }
+
+@print （ひとりぼっちは嫌だよ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 泣きそうな気分で外を見ているうち、<br>視界にちらちらと白いものが映った。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3
+
+@print え……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 方角的に、湖のある辺りだろうか。<br>薄暗い夜空から静かに舞い落ちるもの。 { speed:1 waitInput:true Wait:true }
+
+@print エマの認識では、今は春のはずだった。<br>幻想的でありえない光景に見入ってしまう。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print ユキ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter04/Act01_Chapter04_Adv02

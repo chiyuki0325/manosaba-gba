@@ -1,0 +1,505 @@
+@if isDebugDirectJump
+	@Gosub System/System_Subroutine.BeginAdv
+	@back Transparent { time:0 }
+
+# ========================================
+# ＞『とにかく逃げようと答えた』を選択→1‐1‐b5へ
+# ========================================
+
+# Scene1-1-b5
+
+# ========================================
+# ●シーン1-1-b5
+# ========================================
+
+@back 18_1 { Scale:{g_backgroundDefaultScale} }
+@bgm Bgm_23_1
+
+@char Ema.Fearful1
+
+@print わからないけど、とにかく逃げよう！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Normal1,ArmR8
+
+@print そうですね、そのうち諦めてくれるかもしれませんし！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Surprised1
+
+@print 無謀ですわ……！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@back SolidColor { time:0 }
+@back 16_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@char Jailer.1
+
+@print ハンナの言う通りだった。 { speed:1 waitInput:true Wait:true }
+
+@Wait 1
+@back Transparent { time:0.8 }
+
+@print 逃げた先にも、看守が待ち構えていたのだ。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Surprised1
+
+@print どうするんですのっ！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Angry1
+
+@print "止まらないで！ あっち！" { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 背後からも看守が迫る中、<br>エマたちは急いで方向転換して脇道に逸れる。 { speed:1 waitInput:true Wait:true }
+
+@back SolidColor { time:0 }
+@back 17_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@Wait 0.6
+@back Transparent { time:0.8 }
+
+@char Ema.Pensive1
+@char Sherry.Normal1,ArmR10
+@char Hanna.Normal1
+
+@print そうして３人が森の中を駆けずり回っていると―― { speed:1 waitInput:true Wait:true }
+
+# 茂みのガサガサ音
+@sfx Sfx_55
+
+@animate Ema
+
+@print わっ……！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@animate Sherry
+
+@print えっ……！？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@animate Hanna
+
+@print きゃああああっ！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 演出：落下するような演出
+# ========================================
+
+@hideChars 
+
+@ResetText 
+@back SolidColor { time:0.2 }
+
+# どすんと落ちる音
+@sfx Sfx_23
+
+@print いたた……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print うぅ……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+# ＠備考◆痛そうに息を呑む
+
+@print ……っ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+
+@print どこかに落ちちゃったみたいだけど……<br>２人とも、怪我はない？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Normal1,ArmR3,ArmL4
+
+@print ……私は大丈夫です！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Normal1
+
+@print わたくしも、とりあえず平気ですわ。<br>それより、ここは一体なんなんですの？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR6,ArmL5
+
+@print うーん……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Normal1,ArmR2,ArmL4
+
+@print おそらく、枯れ井戸じゃないでしょうか。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print そう口にして、シェリーは上を向く。<br>エマとハンナも、頭上を振り仰いだ。<br>かなり高い位置に空が見える。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR6,ArmL16
+@char Sherry.Normal1,ArmR6,ArmL4
+@char Hanna.Normal1
+
+@print この高さから落ちて、<br>よく無事で済んだよね……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print クッションが効いていたおかげだと思いますよ。<br>柔らかい土と、葉っぱが積もってますから。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1
+
+@print なるほど……って、納得してる場合じゃないですわ！<br>どうやってここから出るんですの！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1,ArmR17,ArmL4
+
+@print 壁をのぼるしかないんじゃないでしょうか。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print やっぱり、そうなるよね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "エマは<ruby=\"こけ\">苔</ruby>むした壁に手を触れる。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR5,ArmL3
+
+@print でも、のぼりきれるかな……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 自信なさげな声をもらす。<br>さっきもエマは塀をのぼろうとして、すぐに力尽きてしまった。 { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Normal1
+
+@print こうなったら、わたくしの魔法で<br>脱出してみせますわあああっ……！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@animate Hanna
+
+@print ハンナがちょっとだけ浮かぶ。 { speed:1 waitInput:true Wait:true }
+
+@animate Hanna
+
+@print ふらふらと揺れながら上昇しようと試みたようだが、<br>すぐ地面に足がついた。 { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1
+
+@print "くそー！ 高すぎて無理ですわ！！" { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Normal1,ArmR2,ArmL4
+
+@print ふむ……。<br>私がお２人を上に投げるというのはどうでしょう？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@char Ema.Surprised1,ArmR3,ArmL7
+@char Hanna.Pensive1
+
+@print シェリーの提案に、エマとハンナは目を丸くする。 { speed:1 waitInput:true Wait:true }
+
+@print 投げるって……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 発想がゴリラ過ぎですわ……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Pensive1,ArmR7,ArmL4
+
+@print とはいえ、外まで投げるというのは<br>さすがに無理だと思いますけどね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR8,ArmL4
+
+@print 私が壁の途中まで投げて、<br>そこからは自力でのぼってもらう……という感じで。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマとハンナは顔を見合わせる。<br>確かにシェリーの怪力なら、可能かもしれない。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3,ArmL7
+@char Sherry.Normal1,ArmR8,ArmL4
+@char Hanna.Normal1
+
+@print "でも、その後は？ シェリーちゃんはどうするの？" { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR8,ArmL4
+
+@print そこはご安心を！<br>このくらいの高さなら、自力でのぼれそうですから。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna.Pensive1
+
+@print ちょっとお待ちなさい。<br>だったらあなたが先に出て、<br>助けを呼んでくることもできるんじゃ……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR7,ArmL4
+
+@print ……あちゃー、そこ気付いちゃいました？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR11,ArmL10
+
+@print 笑みを浮かべながら、シェリーはハンナに手を伸ばして―― { speed:1 waitInput:true Wait:true }
+
+@hide Hanna
+
+# ぶんっと武器が振り下ろされる音
+@sfx Sfx_9
+
+@print 上方に投げ飛ばした。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR3,ArmL9
+@char Ema.Surprised1,ArmR3,ArmL7
+
+@print イヤアアアッ！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print ちょ、ちょっとシェリーちゃん！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "いきなり何するんですの！？ このゴリラ女～！" { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "壁面の中間あたりに<ruby=\"つか\">掴</ruby>まったハンナが、<br>シェリーに向かって叫ぶ。" { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR11,ArmL10
+
+@print あはは～。はい、次はエマさんの番ですよ。<br>しっかり壁に掴まってくださいね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3,ArmL7
+
+@print え、待って、まだ心の準備が……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hide Ema
+
+# ぶんっと武器が振り下ろされる音
+@sfx Sfx_9
+
+@char Sherry.Smile1,ArmR3,ArmL9
+
+@print わああああっ！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "シェリーに放り投げられたエマが、<br>なんとか壁に<ruby=\"つか\">掴</ruby>みかかる。" { speed:1 waitInput:true Wait:true }
+
+@print はぁ、はぁ……怖かった……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR3,ArmL4
+
+@print さあ、のぼっちゃってください！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print う、うん……シェリーちゃんも早く！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマの言葉に、シェリーは首を横に振った。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1,ArmR19,ArmL14
+
+@print 私のことは、お構いなく。<br>やっぱり、のぼれそうにないんで。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print "はぁっ！？ 何を言ってるんです！？<br>あなたさっき、自力でのぼれると言ったじゃありませんか！" { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+
+@print あははー。すみません、あれは嘘です。<br>実は……こんな状態でして。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print シェリーが自らの脇腹を見せる。<br>そこには、太い木の枝が深々と突き刺さっていた。 { speed:1 waitInput:true Wait:true }
+
+@print "息を<ruby=\"の\">呑</ruby>むエマとハンナに、シェリーは微笑む。" { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR19,ArmL14
+
+@print 落ちたときに刺さっちゃったみたいで。<br>内臓まで届いちゃってる感じなんですよね。<br>なので、私のことは置いていってください！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ふ……ふざけるんじゃねえですわよ！<br>そんなこと、できるわけないでしょう！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "そうだよ！ せめてボクかハンナちゃん、<br>どっちか１人が助けを呼びに行くとか……！" { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1,ArmR18,ArmL14
+
+@print いえ、いいんです。<br>なんか、もう間に合わなそうな感じなんで……<br>お２人で、行ってください……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print シェリーはふらふらと壁に寄りかかる。 { speed:1 waitInput:true Wait:true }
+
+@print ……勝手に諦めるんじゃねえですわよ！<br>殺しても死ななそうな顔してるくせに！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 声を荒げたハンナは、腕を伸ばして壁をのぼり始める。 { speed:1 waitInput:true Wait:true }
+
+@print ハンナちゃん……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 急いでここを出ますわよ！<br>すぐに助けを呼んで戻ってきて……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print ヒーロー気取りのあいつを笑い飛ばしてやりますわ！<br>格好つけたくせに、助かってるじゃないって！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print そうだね……絶対にシェリーちゃんを助けよう！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@StopBgm 
+
+@back SolidColor { time:1 }
+@Wait 1.2
+@back 19_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+
+@print エマとハンナは枯れ井戸から抜け出し、牢屋敷に戻った。 { speed:1 waitInput:true Wait:true }
+
+@print しかし自由時間が終了しており、<br>２人は規則を破ったとして懲罰房に入れられてしまい―― { speed:1 waitInput:true Wait:true }
+
+@back SolidColor { time:1 }
+@Wait 1.2
+@back 5_1 { Scale:{g_backgroundDefaultScale} }
+@back Transparent { time:1.2 }
+
+@print ２日後。<br>懲罰房を出たエマとハンナに、レイアは沈痛な面持ちで告げる。 { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_20_1
+
+@char Leia.Pensive1
+
+@print すまない、我々が見つけたときにはもう……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Cry1
+
+@print う、嘘だよね……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia.Pensive1
+
+@print 残念ながら、事実だ……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 懲罰房に連れて行かれる直前、<br>エマとハンナは他の少女たちにシェリーのことを伝えていた。 { speed:1 waitInput:true Wait:true }
+
+@print （でも、間に合わなかったんだ……<br>　シェリーちゃんは、あのまま……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 枯れ井戸の底で、息絶えた。 { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Fearful1,ArmR4
+
+@print そん、な……いや……いや……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "青ざめた顔で、ハンナが爪を<ruby=\"か\">噛</ruby>む。<br>いや、ぶちぶちと<ruby=\"か\">噛</ruby>みちぎるような勢いだ。" { speed:1 waitInput:true Wait:true }
+
+@print 置き去りに、したから……<br>わたくしに、もっと力があれば……！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1
+
+@print "ハンナちゃん！？ 落ち着いて……！" { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Fearful1
+
+@print だってそうでしょう！？<br>わたくしがもっと自由に空を飛べたら！<br>シェリーさんを助けられたかもしれないのに！！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print あのときだってそう！！<br>わたくしがもっとしっかりしていれば、<br>置き去りにされたあの子だって死なせずにすんだ！！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print （あのときって、ハンナちゃん一体……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "爪を<ruby=\"か\">噛</ruby>みちぎりながら、ハンナはうわごとのように繰り返す。" { speed:1 waitInput:true Wait:true }
+
+@print もっともっと、ちゃんとできれば……<br>わたくしが、わたくしのせいで……<br>力が……そう、力があれば……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia.Pensive1
+
+@print ハンナくん、あまり自分を責めるのは……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 声をかけながら、レイアがハンナの肩にそっと手を置く。 { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+@hideChars 
+
+# ぐちゃっ、めきなど体を害する音
+@sfx Sfx_10
+
+# 倒れる音
+@sfx Sfx_19
+
+@print レイアの頭部が不自然な方向に折れ曲がり、<br>そのまま倒れ伏した。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Fearful1
+
+@print え……なんで……何が……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_12_1_Loop
+
+# ========================================
+# 立ち絵：ハンナ半クリーチャーでお願いします。
+# ========================================
+
+@hideChars 
+@char CreatureHanna.0_6
+
+@print うるせえですわ。<br>今は安っぽい慰めなんて聞きたくない。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char CreatureHanna.0_1
+
+@print "まったく、ぶっ殺しますわよ。<br>……って、あら？ もう<ruby=\"や\">殺</ruby>っちゃってますわね。" { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char CreatureHanna.0_2
+
+@print あははははははっ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "レイアの死体を見下ろして、ハンナが<ruby=\"こうしょう\">哄笑</ruby>を上げる。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Fearful1
+
+@print ハンナ、ちゃん……どうして。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "<ruby=\"ぼうぜん\">呆然</ruby>とするエマに、ハンナが目を向ける。<br>その<ruby=\"そうぼう\">双眸</ruby>には、殺意が<ruby=\"にじ\">滲</ruby>んでいた。" { speed:1 waitInput:true Wait:true }
+
+@char CreatureHanna.1_2
+
+@print エマさん……なんででしょうね？<br>なんだか、わたくし……<br>殺したくて殺したくて、しかたがないんです。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print （これって、まさか……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 『囚人は強いストレスを受けると<br>　魔女因子が高まり、魔女化が進む』 { speed:1 waitInput:true Wait:true }
+
+@print 『魔女になった者は堪えきれない殺人衝動で、<br>　殺人を犯すおそれがある』 { speed:1 waitInput:true Wait:true }
+
+@print エマは、にじり寄ってくるハンナから距離を取ろうとした。<br>だが恐怖で足がもつれて、尻もちをついてしまう。 { speed:1 waitInput:true Wait:true }
+
+@char CreatureHanna.0_9
+
+@print ねえ、エマさん。空を飛んでみたくはありません？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@HidePrinter 
+@back SolidColor { time:0 }
+@back 32_1 { time:0 }
+@back Transparent { time:1.2 }
+
+@print "ハンナはエマの頭を<ruby=\"わしづか\">鷲掴</ruby>み、牢屋敷の外に連れ出す。<br>そして、魔法で空高く飛んだ。" { speed:1 waitInput:true Wait:true }
+
+@char CreatureHanna.2_2
+
+@print "あははは！ いい眺めですわ。<br>この高さから落としたら、人間ってどうなるんでしょう。<br>潰れたトマトみてえになるのかしら？" { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "やめて！ ハンナちゃん、お願いだよ！<br>離さないで！ やだやだやだ！！" { author:Ema speed:1 waitInput:true Wait:true }
+
+@char CreatureHanna.2_3
+
+@print うーん……どうしようかしら。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "助けて！ お願いだから許してください！！" { author:Ema speed:1 waitInput:true Wait:true }
+
+@char CreatureHanna.2_6
+
+@print ……なんだか必死で惨めだから、嫌ですわ。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+@hideChars 
+
+@print "エマの懇願するような声が、悲鳴に変わる。<br>けどそれもすぐに<ruby=\"か\">掻</ruby>き消えて――" { speed:1 waitInput:true Wait:true }
+
+# 空から人が落ちる音
+@sfx Sfx_81
+@Wait 2
+@back SolidColor { time:1 }
+@Wait 2
+
+@back SolidColor { time:1 }
+
+# ぐちゃっ、めきなど体を害する音
+@sfx Sfx_10
+@Wait 1.8
+
+# ========================================
+# 『END～置き去り～』
+# ========================================
+
+@badEnd 5

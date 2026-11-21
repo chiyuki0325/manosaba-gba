@@ -1,0 +1,350 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-0-2
+
+# ========================================
+# ●シーン2-0-2
+# ========================================
+
+@HidePrinter 
+
+@bgm Bgm_21_1
+
+@back 370_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@back 370_1
+@Wait 0.2
+@back 370_2
+@Wait 0.4
+@back 370_1
+@Wait 0.2
+@back 370_2
+@Wait 1.6
+
+@print "――私は瞳を<ruby=\"またた\">瞬</ruby>かせ、天井を見上げていた。" { speed:1 waitInput:true Wait:true }
+
+@print 直前まで見ていた夢で瞬間混乱したが、<br>すぐに状況を理解する。 { speed:1 waitInput:true Wait:true }
+
+@back 370_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@Wait 1.2
+
+@print ――【戻った】、ということか……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print それなら、はじめから、やり直さないと。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "見覚えのある天井に向けて、<br>ぽつりと<ruby=\"つぶや\">呟</ruby>きがこぼれた。" { speed:1 waitInput:true Wait:true }
+
+@print 私は薄暗い牢獄の中、<br>二段ベッドの上で寝かされている。 { speed:1 waitInput:true Wait:true }
+
+@print そして。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+# がばりと起き上がる音
+@sfx Sfx_1
+
+@Wait 0.5
+@back 370_2 { Scale:{g_backgroundDefaultScale} }
+@Wait 1.2
+
+@print え、な、なに、ここ……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 下段のベッドで寝ているのは、<br>桜羽エマ。 { speed:1 waitInput:true Wait:true }
+
+@print "ろ、牢屋……！？ なんで！？" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ねえ、ここどこなのかな！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマが<ruby=\"てつごうし\">鉄格子</ruby>に<ruby=\"すが\">縋</ruby>って叫ぶと、<br><ruby=\"かくしょ\">各所</ruby>からも悲鳴混じりの少女の声が聞こえてくる。" { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back 370_1 { Scale:{g_backgroundDefaultScale} }
+@Wait 1.2
+
+@print （うるさい） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 騒がしさに感情がささくれ立つ。<br>一度心を落ち着かせるため、深く呼吸をしてみた。 { speed:1 waitInput:true Wait:true }
+
+@print この部屋にエマがいるのを、<br>私は知っている。 { speed:1 waitInput:true Wait:true }
+
+@print もっとも会いたくなかった相手と再会するのを、<br>私は知っている。 { speed:1 waitInput:true Wait:true }
+
+@print 二度目なのだから、動揺もしていない。 { speed:1 waitInput:true Wait:true }
+
+@print （大丈夫だ、私は正しく振舞える） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （――彼女の顔を見ても、平気だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@back 1_1 { Scale:{g_backgroundDefaultScale} }
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@sfx Sfx_178
+
+@print 私は起き上がって、<br>ベッドからひらりと軽やかに降りた。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+
+@print ああ、エマ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 背中に声をかけると、<br>エマはびくりと肩を震わせ、振り返ってきた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+
+@print ――！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマは<ruby=\"きょうがく\">驚愕</ruby>の表情で、私を見つめた。<br>私はそんな彼女に向けて<ruby=\"ほほえ\">微笑</ruby>んですらみせる。" { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+
+@print 驚くことでもない。<br>私と君はルームメイトになった。<br>ただそれだけの話だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+
+@print "え？ え……？" { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "平気なはずだった。<br>けれど、どうしても心に<ruby=\"なみかぜ\">波風</ruby>が立つ。" { speed:1 waitInput:true Wait:true }
+
+@print （どうしてまた私の前に現れたんだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "胸がざわざわとし、<br>耐えられない息苦しさでエマから目を<ruby=\"そ\">逸</ruby>らす。" { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print ああほら、そろそろはじまる。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ぽかんと口を開けたままのエマを横目に、<br>私は室内にあるモニターを指さした。 { speed:1 waitInput:true Wait:true }
+
+# モニター音
+@sfx Sfx_3
+
+# 配信フレームIN
+@ResetText 
+@back SolidColor { time:0.9 }
+@printer Normal.Stream
+@back 25_1
+@char Warden.1
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+# ＠備考◆配信中
+
+@print あ……もしもし……映像って見えてます……？<br>何せ古くて故障が多いので……やれやれ。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 私、ゴクチョーと申します。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 詳しい説明がしたいので、<br>ラウンジに集合してください。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 監房の鍵を開けますので、<br>看守の後についてきてください。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 抵抗とかは自由なんですが……<br>命とかなくなっちゃうので……はい……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_3
+@ResetText 
+@back SolidColor { time:0.9 }
+@printer Normal.Default
+@char Hiro.Normal1
+@char Ema.Surprised1,ArmR3
+@hide MainBackground-Middle,Warden-Middle { time:0 }
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@print "流れる映像を眺めながら、<br>私は考えを<ruby=\"めぐ\">巡</ruby>らせていた。" { speed:1 waitInput:true Wait:true }
+
+@print この世にいるはずもない化け物。<br>そして何よりも、エマとの再会。 { speed:1 waitInput:true Wait:true }
+
+@print 前回の私はこの時、<br>目の前に突き付けられた現実に激しく動揺していた。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "だが冷静にならなければいけない。<br>胸のざわつきを少しでも<ruby=\"おさ\">抑</ruby>えようと深呼吸をする。" { speed:1 waitInput:true Wait:true }
+
+@print （動揺していたとはいえ、<br>　私の行動はどうかしていた） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （何故あれほどまでに<br>　衝動的になってしまったのか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 自分の浅はかな暴走は記憶にしっかり刻まれているが、<br>あんなのはまるで私らしくない。 { speed:1 waitInput:true Wait:true }
+
+@print （理性を保たないといけない。<br>　そろそろ――【アレ】が来る） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# 牢の施錠音
+@sfx Sfx_4
+
+@char Ema.Pensive1
+
+@print "ゴクチョー……？ 看守……？" { author:Ema speed:1 waitInput:true Wait:true }
+
+# ずるずる引きずる音
+@sfx Sfx_5
+
+@ResetText 
+@back 1_1 { Scale:{g_backgroundDefaultScale * 2} time:0.6 }
+@Wait 1.2
+
+@hideChars { time:0 }
+@back 1_2 { Scale:{g_backgroundDefaultScale * 2} time:0 }
+@animate MainBackground
+@animate MainBackground-Middle
+@hide MainBackground-Middle { time:0.5 }
+@Wait 0.6
+
+@bgm Bgm_23_1
+
+@print ひっ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （この牢屋敷の看守<br>　……私を殺した化け物） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ヒ、ヒロちゃ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 青ざめたエマが腕にしがみついてくる。 { speed:1 waitInput:true Wait:true }
+
+@print "振り払いたい衝動に<ruby=\"か\">駆</ruby>られるも、<br>今は大人しくしていようと<ruby=\"こら\">堪</ruby>える。" { speed:1 waitInput:true Wait:true }
+
+@print 私は目を細め、看守をつぶさに観察する。<br>やはり、明らかに人間ではない何かだ。 { speed:1 waitInput:true Wait:true }
+
+@print ……今は受け入れるしかない。<br>あの化け物に逆らうのは間違いだった。 { speed:1 waitInput:true Wait:true }
+
+@back 1_1 { Scale:{g_backgroundDefaultScale} time:0.6 }
+@sfx Sfx_5
+
+@print 看守をやり過ごし、<br>私はさりげなくエマの手を離した。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+@hide MainBackground-Middle
+
+# 牢の扉が開く音
+@sfx Sfx_119
+
+@back 2_1 { Scale:{g_backgroundDefaultScale} }
+@back Transparent.Custom { time:0.99 }
+@Wait 0.9
+
+@print そしてひとり、通路の方へと出る。 { speed:1 waitInput:true Wait:true }
+
+@char Coco.Surprised1
+
+@print "ぎゃああぁ！ 触んな化け物ぉ！ キモいから！<br>わかった、わかりました、行くから！！" { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 沢渡ココが、<br>看守から逃げまどっている姿を見かけた。 { speed:1 waitInput:true Wait:true }
+
+@print 他にもぞろぞろと、<br>囚人として捕まった少女たちが通路の方へと出てきている。 { speed:1 waitInput:true Wait:true }
+
+@print 全員の名前は、すでに私の頭の中に入っている。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+
+@print ま、待ってよヒロちゃん！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 予定どおり、エマが追いかけてきた。<br>私は振り返り、じっとエマの顔を見つめる。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+@char Ema.Normal1
+
+@print こんなところで会うなんて、<br>すごくびっくりしちゃった……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 私はまったく驚いていない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 色々あったけど、<br>ボクら、また前みたいに友だちに……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1
+
+@print 悪いが、そのつもりはない。<br>私は君を許せないし、その事実は変わらない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Cry1
+
+@print ――ッ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマのひどく傷ついた顔が、私を<ruby=\"あお\">煽</ruby>る。" { speed:1 waitInput:true Wait:true }
+
+@print "話はそれだけか？ じゃあ。" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 心情的には二度目だろうと、<br>突き飛ばしてやりたかった。 { speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"きびす\">踵</ruby>を返して通路を急ぐ――と。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+
+# ＠備考◆言葉の途中で転倒
+
+@print ボク、諦めな――あっ { author:Ema speed:1 waitInput:true Wait:true }
+
+# 転ぶ音
+@sfx Sfx_6
+
+@hideChars 
+
+@print その音に振り向くと、<br>エマが転んでいた。 { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆痛がっている
+
+@print つ、ぅ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "硬い石の床で<ruby=\"ひざ\">膝</ruby>をすりむき、<br>痛みに顔を<ruby=\"ゆが\">歪</ruby>めている。" { speed:1 waitInput:true Wait:true }
+
+@print （これがエマの本性だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 前回私が突き飛ばした時も、<br>押した力よりもずっと派手にエマは転んでみせた。 { speed:1 waitInput:true Wait:true }
+
+@print 今回は突き飛ばしてすらいないのに、<br>結局転んで気を引こうとしている。 { speed:1 waitInput:true Wait:true }
+
+@print （もうその手には乗らない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 震える手でぎゅっと拳をつくって、<br>エマを無視して歩きだす。 { speed:1 waitInput:true Wait:true }
+
+@print 湧き上がる憎悪と共に、<br>胸が締めつけられるように痛んでいた。 { speed:1 waitInput:true Wait:true }
+
+@print （……二度と会いたくなかった） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 地下から１階へと向かう階段を見上げる。 { speed:1 waitInput:true Wait:true }
+
+@print （私はこの後、看守に殺される） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私は不思議な力を持っていた。 { speed:1 waitInput:true Wait:true }
+
+@print "この牢屋敷で聞いた話に<ruby=\"のっと\">則</ruby>れば<br>【魔法】とでもいうものか。" { speed:1 waitInput:true Wait:true }
+
+@print そして――私の【魔法】は【死に戻り】だ。 { speed:1 waitInput:true Wait:true }
+
+@print 死んでしまったら、<br>その日目覚めた時間に戻される。 { speed:1 waitInput:true Wait:true }
+
+@print その魔法を自覚したのは、<br>幼少期に水難事故で死んだ時だった。 { speed:1 waitInput:true Wait:true }
+
+@print 何度か同じ目に遭って死に、<br>ようやくその魔法を自覚した。 { speed:1 waitInput:true Wait:true }
+
+@print "他の人にはそんなことができないのも悟り、<br>私は自覚した瞬間この魔法を<ruby=\"いまいま\">忌々</ruby>しく感じた。" { speed:1 waitInput:true Wait:true }
+
+@print 正しくないからだ。 { speed:1 waitInput:true Wait:true }
+
+@print "ただ、看守に首を<ruby=\"は\">刎</ruby>ねられ殺さるのは想定外だったし、<br>戻ってしまったのだから仕方ない。" { speed:1 waitInput:true Wait:true }
+
+@print （まずは暴走して看守に殺されるのは避けないと） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 心の中で固く誓い、私は階段をのぼっていく。 { speed:1 waitInput:true Wait:true }
+
+# 階段を上がる音
+@sfx Sfx_7
+@Wait 2
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter01/Act02_Chapter01_Adv04

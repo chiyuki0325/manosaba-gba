@@ -1,0 +1,161 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-5-3
+
+# ========================================
+# ●シーン1‐5-3
+# ========================================
+
+# ========================================
+# ＞『殺人現場』を選択
+# ========================================
+
+@back 310_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_26_2
+
+@print エマは殺人現場である裁判所へと戻り、<br>ナノカの死体を調べることにした。 { speed:1 waitInput:true Wait:true }
+
+@print （ここを調べないとはじまらないよね……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 先ほどエマが処刑されるはずだった場所には、<br>ナノカの死体が横たわっている。 { speed:1 waitInput:true Wait:true }
+
+@print ナノカちゃんは殺されたのかしら……。<br>パッと見じゃわからないわね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print うぅ……ナノカさんまでなんで……。<br>こんなことがいつまで続くんでしょうか……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print ……全員が死ぬまでじゃねえの。<br>あてぃしは死ぬ気ねえけど。<br>絶対最後まで、生き残ってやるんだから……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 少し遠巻きに話し合っている少女たちを横目に、<br>エマはナノカの死体へと近付いていく。 { speed:1 waitInput:true Wait:true }
+
+# 写真撮影音
+@sfx Sfx_28
+
+# ========================================
+# ☆証拠品：『ナノカの死体写真』入手
+# ========================================
+@spawn Clue
+@update 5-13
+@despawn Clue
+
+@print （マーゴちゃんの言ったとおり、<br>　目立った外傷もないし、死因がわからない……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "（少し表面が凍っている……<br>　凍死……？ ううん、ありえない）" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （まだ何も確証が持てない。<br>　もっとちゃんと調べてみよう） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 何度目だとしても慣れるはずもなく、<br>エマは抵抗感で手を震わせながら、<br>ナノカの死体をつぶさに調べていく。 { speed:1 waitInput:true Wait:true }
+
+@print ほか３人の少女たちは寄り合って、<br>ただエマの行動を見守っていた。 { speed:1 waitInput:true Wait:true }
+
+@print エマを手伝うべきなのか、<br>疑うべきなのか、揺れている表情だった。 { speed:1 waitInput:true Wait:true }
+
+@print そんな中、意を決した表情のメルルが一歩踏み出し、<br>エマの傍らに立った。 { speed:1 waitInput:true Wait:true }
+
+@print エマさん、私も手伝います……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print メルルちゃん……ありがとう。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマがお礼を口にすると、<br>メルルが泣きそうな表情になる。 { speed:1 waitInput:true Wait:true }
+
+@print お礼なんて言わないでください……。<br>私は臆病で、泣き虫で、だから……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 自分のことが大嫌いです……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print メルルの手が、そっとエマの膝にあてられた。 { speed:1 waitInput:true Wait:true }
+
+@print 先ほど処刑されそうになって看守に拘束された時、<br>暴れて怪我をしていたらしい。 { speed:1 waitInput:true Wait:true }
+
+@print （怪我してたんだ、気付かなかった……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 膝がじんわりとあたたかくなって、<br>すり傷が消えていく。 { speed:1 waitInput:true Wait:true }
+
+@print エマは光を放つメルルの手をぎゅっと握りしめ、<br>微笑んだ。 { speed:1 waitInput:true Wait:true }
+
+@print メルルちゃんは、<br>初めて会った時もこうやって怪我を治してくれた。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 裁判でもずっとサポートしてくれて、<br>いつもボクはメルルちゃんに救われてたよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 自分を責めないで。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "メルルは唇を<ruby=\"か\">噛</ruby>み、<br>今にも泣きだしそうなのを堪えている。" { speed:1 waitInput:true Wait:true }
+
+@print メルルの手のぬくもりが、<br>エマの心を強くしてくれる気がした。 { speed:1 waitInput:true Wait:true }
+
+@print ……私が調べたところ、<br>ナノカさんの死因はやっぱりわかりません……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 口の中を怪我しているようですが、<br>これで死んだようには見えませんし。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print そうだね……不可解なところは多いけど、<br>どうして死んだのかはわからない……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print そうしてナノカの死体を調べるうちに、<br>ポケットの中に小さく畳んだ紙切れを見つけた。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ☆証拠品：『メモ』入手
+# ========================================
+@spawn Clue
+@update 5-8
+@despawn Clue
+
+@print （これは……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print メモには【１６９２３１】という<br>数字の羅列が走り書きしてあった。 { speed:1 waitInput:true Wait:true }
+
+@print "（暗号？ もしかして犯人を示すもの？）" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 考えてもわからなかったが、<br>とりあえず手がかりになりそうだったので<br>拾っておく。 { speed:1 waitInput:true Wait:true }
+
+@print （……これは……。<br>　ちょっとだけ、指先に血がついてる） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ナノカの指先に傷はなかったが、<br>かすかな血痕が付着していた。 { speed:1 waitInput:true Wait:true }
+
+@print （……なんだろう、これ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ……その後もしばらく調べてみたが、<br>ほかには何も見つけられなかった。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@back 13_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@hide Stills
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@char Ema.Pensive1,ArmR3
+
+@print ちょっと気になるところがあって、<br>ほかの場所を調べに行くよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマが声をかけると、<br>ココが嫌そうに歩み寄ってきた。 { speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1
+
+@print んじゃあ、<br>あてぃしがエマっちに同行するってことで……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Margo.Pensive1
+
+@print ええ。私たちはここに残るわ。<br>――エマちゃん。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print ふとマーゴに呼びかけられ、<br>エマはハッと彼女の顔を見つめる。 { speed:1 waitInput:true Wait:true }
+
+@char Margo.Angry1,ArmR5
+
+@print あなたにとって、<br>きっとこれが最後の裁判になるわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 誰も死なせない、みんなで牢屋敷を脱出する、<br>あなたはそう言ったわね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print お手並み拝見させてちょうだい。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print "まるで<ruby=\"あお\">煽</ruby>るかのように挑戦的な眼差しで、<br>マーゴは悠然と微笑んだ。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン1‐5‐2
+# 全てのイベントを消化している＞シーン1‐5‐5
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter05/Act01_Chapter05_Adv02

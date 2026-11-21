@@ -1,0 +1,30 @@
+{
+  "format": "manosaba.story",
+  "version": 1,
+  "language": "zh-Hans",
+  "path": "Act01_Chapter01/Act01_Chapter01_TrialInit",
+  "events": [
+    {"op": "SetCustomVariable", "line": 1, "indent": 0, "params": {"Expression": "stageName=\"Court\""}},
+    {"op": "SetCustomVariable", "line": 2, "indent": 0, "params": {"Expression": "courtStandCount = 13"}},
+    {"op": "SetCustomVariable", "line": 4, "indent": 0, "params": {"Expression": "emaIdx = 0"}},
+    {"op": "SetCustomVariable", "line": 5, "indent": 0, "params": {"Expression": "hiroIdx = -1"}},
+    {"op": "SetCustomVariable", "line": 6, "indent": 0, "params": {"Expression": "meruruIdx = 12"}},
+    {"op": "SetCustomVariable", "line": 7, "indent": 0, "params": {"Expression": "hannaIdx = 1"}},
+    {"op": "SetCustomVariable", "line": 8, "indent": 0, "params": {"Expression": "sherryIdx = 2"}},
+    {"op": "SetCustomVariable", "line": 9, "indent": 0, "params": {"Expression": "ananIdx = 11"}},
+    {"op": "SetCustomVariable", "line": 10, "indent": 0, "params": {"Expression": "leiaIdx = 3"}},
+    {"op": "SetCustomVariable", "line": 11, "indent": 0, "params": {"Expression": "cocoIdx = 5"}},
+    {"op": "SetCustomVariable", "line": 12, "indent": 0, "params": {"Expression": "miriaIdx = 6"}},
+    {"op": "SetCustomVariable", "line": 13, "indent": 0, "params": {"Expression": "margoIdx = 9"}},
+    {"op": "SetCustomVariable", "line": 14, "indent": 0, "params": {"Expression": "noahIdx = -1"}},
+    {"op": "SetCustomVariable", "line": 15, "indent": 0, "params": {"Expression": "nanokaIdx = 10"}},
+    {"op": "SetCustomVariable", "line": 16, "indent": 0, "params": {"Expression": "alisaIdx = 4"}},
+    {"op": "SetCustomVariable", "line": 17, "indent": 0, "params": {"Expression": "yukiIdx = -1"}},
+    {"op": "SetCustomVariable", "line": 18, "indent": 0, "params": {"Expression": "wardenIdx = -1"}},
+    {"op": "SetCustomVariable", "line": 19, "indent": 0, "params": {"Expression": "jailerIdx = -1"}},
+    {"op": "Gosub", "line": 21, "indent": 0, "params": {"Path": "System/System_Subroutine.BeginTrial"}},
+    {"op": "Return", "line": 24, "indent": 0, "params": {}},
+    {"op": "GotoModified", "line": 27, "indent": 0, "params": {"Path": "Act01_Chapter01/Act01_Chapter01_Trial00", "ResetState": ["-"]}}
+  ],
+  "translations": {}
+}

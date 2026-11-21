@@ -1,0 +1,31 @@
+{
+  "format": "manosaba.story",
+  "version": 1,
+  "language": "zh-Hans",
+  "path": "Act01_Chapter04/Act01_Chapter04_Adv08",
+  "events": [
+    {"op": "GosubResetWitchBook", "line": 1, "indent": 0, "params": {"Path": "System/System_ResetWitchBook", "IsDebugDirectJump": {"expression": "{isDebugDirectJump}"}}},
+    {"op": "Gosub", "line": 2, "indent": 0, "params": {"Path": "System/System_Subroutine.BeginAdv"}},
+    {"op": "ModifyBackgroundExtended", "line": 4, "indent": 0, "params": {"TintColor": "#000000", "Duration": 1.2000000476837158, "Lazy": 0, "AppearanceAndTransition": "Transparent", "SubId": "Overlay"}},
+    {"op": "label", "name": "Scene1-4-8", "line": 6, "indent": 0},
+    {"op": "BeginIf", "line": 26, "indent": 0, "params": {"Expression": "chosenAreaFlag == 7"}},
+    {"op": "SetCustomVariable", "line": 27, "indent": 1, "params": {"Expression": "chosenAreaFlag = 0"}},
+    {"op": "Gosub", "line": 28, "indent": 1, "params": {"Path": "System/System_Subroutine.EndAdv"}},
+    {"op": "GotoModified", "line": 29, "indent": 1, "params": {"Path": "Act01_Chapter04/Act01_Chapter04_Adv12", "SoftReset": 1}},
+    {"op": "ChoiceMapArea", "line": 31, "indent": 0, "params": {"CategoryNames": ["Courtroom", "CourtroomHallway", "BasementHallway"], "Back": 0, "Global": 0, "MapAreaNames": ["Courtroom", "CourtroomHallway", "BasementHallway"], "FlagVariableName": "chosenAreaFlag"}},
+    {"op": "BeginIf", "line": 33, "indent": 0, "params": {"Expression": "chosenAreaId==\"Courtroom\""}},
+    {"op": "SetCustomVariableAsFlag", "line": 34, "indent": 1, "params": {"Number": 0, "VariableName": "chosenAreaFlag"}},
+    {"op": "Gosub", "line": 35, "indent": 1, "params": {"Path": "System/System_Subroutine.EndAdv"}},
+    {"op": "GotoModified", "line": 36, "indent": 1, "params": {"Path": "Act01_Chapter04/Act01_Chapter04_Adv09", "SoftReset": 1}},
+    {"op": "BeginIf", "line": 38, "indent": 0, "params": {"Expression": "chosenAreaId==\"CourtroomHallway\""}},
+    {"op": "SetCustomVariableAsFlag", "line": 39, "indent": 1, "params": {"Number": 1, "VariableName": "chosenAreaFlag"}},
+    {"op": "Gosub", "line": 40, "indent": 1, "params": {"Path": "System/System_Subroutine.EndAdv"}},
+    {"op": "GotoModified", "line": 41, "indent": 1, "params": {"Path": "Act01_Chapter04/Act01_Chapter04_Adv10", "SoftReset": 1}},
+    {"op": "BeginIf", "line": 43, "indent": 0, "params": {"Expression": "chosenAreaId==\"BasementHallway\""}},
+    {"op": "SetCustomVariableAsFlag", "line": 44, "indent": 1, "params": {"Number": 2, "VariableName": "chosenAreaFlag"}},
+    {"op": "Gosub", "line": 45, "indent": 1, "params": {"Path": "System/System_Subroutine.EndAdv"}},
+    {"op": "GotoModified", "line": 46, "indent": 1, "params": {"Path": "Act01_Chapter04/Act01_Chapter04_Adv11", "SoftReset": 1}},
+    {"op": "Stop", "line": 48, "indent": 0, "params": {}}
+  ],
+  "translations": {}
+}

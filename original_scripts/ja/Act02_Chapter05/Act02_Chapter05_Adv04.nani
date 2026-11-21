@@ -1,0 +1,200 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-5-3
+
+# ========================================
+# ●シーン2-5‐3
+# ========================================
+
+@back 9_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@print 私たちはぞろぞろと、<br>裁判所へ向かっていた。 { speed:1 waitInput:true Wait:true }
+
+@print メルルは用事に出したのでここにおらず、<br>裁判所までの道を知っているのは私しかいない。 { speed:1 waitInput:true Wait:true }
+
+@print 私は少女たちを案内するため先頭を行く。 { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_2_1_Loop
+
+@char Hanna.Angry1
+
+@print 裁判ってどういうことですの？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,Option-ArmL-Off
+
+@print "今から何がはじまるんだよ……。<br>オイおめえ！ 裁判所についたら説明すんだろうな！？" { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Smile1
+
+@print 裁判の響き、ときめきますよね～！<br>なんだか楽しそうなことが起こりそうでわくわくします！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive1
+
+@print ど、どうかなぁ……？<br>裁判なんて嫌な予感しかないけど……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Margo.Smile1
+
+@print 誰が裁かれるのかしら？<br>ああん、なんだかゾクゾクしちゃうわぁ♡ { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "後ろからついてくる少女たちは、<br>どこか<ruby=\"のんき\">呑気</ruby>な雰囲気だった。" { speed:1 waitInput:true Wait:true }
+
+@print 当然だろう。<br>まだ悲劇は起きておらず、<br>彼女らは何ひとつ知らない。 { speed:1 waitInput:true Wait:true }
+
+@print "ただ、エマだけは私のすぐ<ruby=\"そば\">傍</ruby>にいて、<br>荒い息を吐き出す私を心配そうに見つめていた。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print ヒロちゃん、あの、無理しないで……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ボクのこと怒っているのは知ってる、けど、<br>ボクはヒロちゃんの助けになりたいよ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print …………。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （全てが明らかになった時……エマは私に<br>　同じ目を向けることができるのだろうか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （……今は自分のことなどどうでもいい！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （ただ、【サバトの儀式】を行うことだけに<br>　集中するんだ……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print サバトの儀式に必要なのは、<br>１３名の魔女の魔力。 { speed:1 waitInput:true Wait:true }
+
+@print "それを儀礼剣に集中させることで、<br>大魔女が<ruby=\"じゅにく\">受肉</ruby>し、<ruby=\"こうりん\">降臨</ruby>する。" { speed:1 waitInput:true Wait:true }
+
+@print 私たちがこの牢屋敷に囚われる前から、<br>このことはすでにメルルも周知だったはずだ。 { speed:1 waitInput:true Wait:true }
+
+@print "あえて１３名で<ruby=\"そろ\">揃</ruby>えているのも、<br>そのためかもしれない。" { speed:1 waitInput:true Wait:true }
+
+@print （しかし【今】の彼女たちではダメだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （必要なのは、１３名全員が、<br>　魔女と同等の魔力を手に入れていること） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （つまり……私は彼女たちを<br>　全員魔女へと堕とす必要がある……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "心の奥底に閉じ込めたものを<ruby=\"あば\">暴</ruby>き、<br>無理やりにこじ開け、<ruby=\"じゅうりん\">蹂躙</ruby>する。" { speed:1 waitInput:true Wait:true }
+
+@print "それがどれだけひどい<ruby=\"しょぎょう\">所業</ruby>であるかは、<br>不可能なことであるかは、重々承知していた。" { speed:1 waitInput:true Wait:true }
+
+@print やがて裁判所の前にたどりつき、<br>私は足を止めた。 { speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.10
+
+@print ここが裁判所だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "いつも<ruby=\"せじょう\">施錠</ruby>され、<br>固く閉ざされていた巨大な両扉は開くことができた。" { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+# ゆっくりと大扉を開く音
+@sfx Sfx_165
+
+@back 13_1 { Scale:{g_backgroundDefaultScale} }
+@back Transparent.Custom { time:0.99 }
+@Wait 0.9
+
+@char Noah.Smile1,ArmL2
+
+@print "わあ、すごーい！ ひろーい！" { author:Noah speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Margo.Normal1
+
+@print とても神聖な空間ね……。<br>素敵だわ……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1
+
+@print なんかよくわからんけど、<br>さっさと済まして帰ろ帰ろ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia.Normal1
+
+@print 私たちに振られている<br>囚人番号の席につけばいいのかな……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char AnAn.Pensive1,Angle01/Option_Arms-
+
+@print わがはいはもうへとへとだ……。<br>眠りたい……。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 私たちは裁判所の中に入っていき、<br>従順に各自の証言台へと立った。 { speed:1 waitInput:true Wait:true }
+
+@print 少しの間そのまま待っていると……。 { speed:1 waitInput:true Wait:true }
+
+# 荘厳な鐘の音
+@sfx Sfx_33
+@Wait 3
+
+@print 鐘の音が裁判所内に大きく響いた。 { speed:1 waitInput:true Wait:true }
+
+# フクロウの羽ばたき音
+@sfx Sfx_8
+@Wait 1
+
+@print "それと同時に、どこからか一羽のフクロウが飛んできて<br>高所にある手すりに<ruby=\"と\">留</ruby>まる。" { speed:1 waitInput:true Wait:true }
+
+@char Warden.1
+
+@print 一応決まりですから、<br>鐘も鳴らしましたよ。まったく……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 裁判所の扉は開いたままで、<br>少し遅れて、最後に入ってきたのはメルルだった。 { speed:1 waitInput:true Wait:true }
+
+@print それを確認し、<br>出入口の両扉の前にいた看守が扉を閉める。 { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆息切れ
+
+@char Meruru.Normal1
+
+@print あ、あの、ヒロさん、持ってきました……。<br>これを……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ☆証拠品：『儀礼剣』入手
+# ========================================
+@spawn Clue
+@update 6-2
+@despawn Clue
+
+@print ご苦労。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@char Coco.Smile1
+
+@print なあなあ、なんでヒロっちそんなに偉そうなん？<br>魔王かなにか？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "<ruby=\"やじ\">野次</ruby>のようなココの声はスルーし、<br>深く息を吸い込む。" { speed:1 waitInput:true Wait:true }
+
+@print "それから私は剣を持ち、天高く<ruby=\"かか\">掲</ruby>げた。" { speed:1 waitInput:true Wait:true }
+
+@print これより魔女裁判を開廷する！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print これが私にとって、最後の魔女裁判になる。 { speed:1 waitInput:true Wait:true }
+
+@print どんな結果になろうとも、<br>私は正しくあり続けることを心に誓った。 { speed:1 waitInput:true Wait:true }
+
+@char Warden.1
+
+@print 私のセリフを取らないでほしいですね……。<br>とりあえず、定時で帰るために<br>ちゃっちゃと済ませてしまいましょ！ { author:Warden speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ＞議論パート2-5へ
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter05/Act02_Chapter05_Trial00

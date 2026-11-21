@@ -1,0 +1,878 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act01_Chapter03/Act01_Chapter03_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+@char Warden.1 { Position:,{hiddenCharacterPositionY} time:0 }
+@char Jailer.1 { Position:,{hiddenCharacterPositionY} time:0 }
+# ==============================================================================
+# MARK: 3-3: 💬 放火魔
+# ==============================================================================
+# ＠ト書き▼議論3-3 放火魔
+# カットイン
+# BGM変更：rAwTell Owk...
+@bgm Bgm_7_1
+
+@badId 5
+
+# Judge3-3-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Coco.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Gross_Open,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@printDebate 放火って言ったら<br>簡単にできるヤツが<br>いるじゃん？<br>そいつなら火なんて<br>付け放題っしょ？
+
+@char Alisa.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@printDebate てめぇ……<br>ウチがやったって<br>言ってんのか？
+
+@char Coco.Default,ArmR4,ArmL1,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@printDebate だって一番<br>怪しいんだから、<br>疑うのは当然じゃん。
+
+@char Coco.Default,ArmR4,ArmL1,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@printDebate ……あんだったら<br>好きなタイミングで<br>火を<br>燃え上がらせる事だって<br>できるわけだし？
+
+@char Coco.Default,ArmR2,ArmL4,Angle01/Facial/Eyes>Eyes_Angry_Open,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@printDebate "<link=\"Objection_01_03_03_01\">燃やして証拠隠滅</link><br>しようと思った<br>って、<br>簡単にできんのは<br>あんたしかいねーんだよ！"
+
+@char Coco.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Gross_Open,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@printDebate "それとも<br><link=\"Objection_01_03_03_02\">勝手に燃え上がった</link><br>とか言うわけ！？<br>んなことあるわけ<br>ないじゃん！"
+
+@char Alisa.Default,ArmR9,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Closed
+@gosubModifyCamera 0
+@printDebate "……燃える時間を<br>自由に<link=\"Objection_01_03_03_03\">調整</link><br>できるほど<br>器用じゃねーよ。"
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@printDebate しかし、<br>現場には<br>燃やしたくなるほどの<br>重要な証拠があった……<br>……ということ<br>なんでしょうか？
+
+@char Nanoka.ArmR3,ArmL1,Eyes1_Normal_Open2,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@printDebate "……でもそんな<link=\"Objection_01_03_03_04\">証拠</link>、<br>本当に残されて<br>いたのかしら。"
+
+@char Meruru.Head1,ArmR1_1,ArmL8,Eyes1_Pensive_Open2,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@printDebate なんにせよ……<br>部屋が燃え尽きなくて<br>良かったです。
+
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed { time:0 }
+@gosubModifyCamera 0
+@Wait 0.2
+
+# ==============================================================================
+# 3-3議論後独白
+# ==============================================================================
+
+@print （メルルちゃんの言う通り、<br>　証拠が燃えなくて良かった……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@char Meruru.Head2,ArmR1_2,ArmL5,Eyes2_Normal_Open1,Mouth2_Surprised_Open2
+@gosubSplitStageScreen 1
+@Wait 0.2
+
+@print ……あ、あの……エマさん。<br>【死体の状況】を考えると、<br>さっきの話に違和感がありませんか……？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+@print （違和感……？<br>　それって……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideStageScreen 1
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@print （もしハンナちゃんが他殺なら、<br>　みんなの話と食い違う部分があるのかも……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge3-3-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_01_03_03_01
+
+@Skip false
+@pauseTrial true
+
+@choice 証拠隠滅が目的ではない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge3-3-2
+
+@choice 犯人は火をつけるつもりはなかった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge3-3-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_01_03_03_02
+
+@Skip false
+@pauseTrial true
+
+@choice 自動で発火した
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge3-3-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_01_03_03_03
+
+@Skip false
+@pauseTrial true
+
+@choice アリサは自由に調整できる
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge3-3-5
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論4
+# ------------------------------------------------------------------------------
+
+# Objection_01_03_03_04
+
+@Skip false
+@pauseTrial true
+
+@choice 重大な証拠があった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge3-3-6
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 3-3: ❌ 議論ミス選択肢
+# ==============================================================================
+# MARK: 3-3-3: ❌ 犯人は火をつけるつもりはなかった
+
+# Judge3-3-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print ちょっと待ってココちゃん。<br>犯人は火をつけるつもりまでは<br>なかったんじゃないかな。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print "はぁ？ なんでだよ。" { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 火災は犯人が意図してなかったのだとして、<br>それならどうして火事は起こったのかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+@gosubModifyCamera 0
+@print えっと……それはわからないけど……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print わかんないならこれ以上話しても無駄じゃん。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR4,ArmL1,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print あてぃしは、このヤンキーが悪意マシマシで<br>火を付けたに１票～。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR4,ArmL6,Angle01/Facial/Eyes>Eyes_Angry_Open03
+@gosubModifyCamera 0
+@print ふざけんな……！<br>ウチはやってねえ……！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR4,ArmL1,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print 口ではなんとでも言えるっての。<br>てか見た目も犯人ぽいし、決まりでしょ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL10,Angle01/Facial/Eyes>Eyes_Angry_Open03
+@gosubModifyCamera 0
+@print 喧嘩売ってんのかっ……！<br>おめえがその気なら買ってやるよ……！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Meruru.Pensive2
+@gosubModifyCamera 0
+@print ふ、２人とも……喧嘩はやめてください……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print 不用意に場をかき乱さないでちょうだい、桜羽エマ。<br>迷惑よ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （怒られちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （ゲストハウスの火事が<br>　ハンナちゃんによるものじゃないのは<br>　たしかなはず……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （それが犯人の意図的なものなのかそうじゃないのか、<br>　可能性をあげたらキリがないけど） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （他殺って観点で考えてみると、<br>　あの人のさっきの発言は少しおかしい気がする……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge3-3-1
+
+# MARK: 3-3-4: ❌ 自動で発火した
+
+# Judge3-3-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print いや、本当に勝手に燃え上がっただけなのかも<br>しれないよ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print 周りに火元なんてなかったのに、<br>なんで火が勝手につくんだよ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL12,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print それはほら、太陽の光がレンズを通って……とか。<br>理科の実験でやるやつ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR5,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open
+@gosubModifyCamera 0
+@print 【収れん火災】ってやつか。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR1,ArmL10,Eyes1_Normal_Open1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print 仮にそうだとして、<br>現場にそんな痕跡でも残ってたのかしら？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR6,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print 虫眼鏡やレンズみたいなものでも<br>見つけたんですか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+@gosubModifyCamera 0
+@print それは……なかったけど……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print ならなんで口挟んできたんだよ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print もしかしてエマちゃん、<br>アリサちゃんを庇いたかったのかしら♡ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print なんでそうなるんだよ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print 桜羽も、反論するなら<br>もっとマシな反論しやがれ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ごっ、ごめん……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （流石に無理があったみたい……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （今の段階じゃどうやって<br>　火事が起きたのかわからないよね……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （なら、発火の手段や原因以外の<br>　視点を考えてみるのもいいかもしれない……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge3-3-1
+# MARK: 3-3-5: ❌ アリサは自由に調整できる
+
+# Judge3-3-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print でもアリサちゃん。<br>火がゲストハウスに回るまでの時間は、<br>ロウソクとかロープを使えばある程度は調整出来るよね？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open02
+@gosubModifyCamera 0
+@print ……そりゃたしかにその通りだけどよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open02
+@gosubModifyCamera 0
+@print でもそれを言うなら、他のやつだってできんだろ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+@gosubModifyCamera 0
+@print たしかに、そうだよね……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Normal_Closed
+@gosubModifyCamera 0
+@print 現場にはなにかが燃えた痕跡はあったから、<br>そういう仕掛けが使われた可能性は<br>否定できねーけどな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal1
+@gosubModifyCamera 0
+@print なら、アリサさん以外も<br>調整できたということですね……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Normal_Open2,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print ……それを踏まえて<br>別の角度から議論を進めてみましょう。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （別の角度か……） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （なら、発火の手段や原因以外の<br>　視点を考えてみるのもいいかもしれない……） { author:Ema speed:1 waitInput:true Wait:true }
+
+# ダメージなし
+@goto .Judge3-3-1
+# MARK: 3-3-6: ❌ 重大な証拠があった
+
+# Judge3-3-6
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print 証拠はあったんだよ！<br>ボクたちが見たら、犯人がすぐわかっちゃうようなものが！<br>犯人はその証拠を隠滅しようとしたんだ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Normal_Open2,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print "で？ それは一体何なの？" { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print え。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print 【え】じゃねえし。<br>具体的になんなのか聞いてんの。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR6,ArmL8,Angle01/Facial/Eyes>Eyes_Surprised_Open03,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print 燃えてないなら、今も現場に残ってるはずですよね！<br>ずばりエマさん、その証拠とは！？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ……えっと……その……死体とか……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 死体に犯人がわかる痕跡が残っていたかしら？<br>少なくとも、名前は書いてなかったみたいだけど。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Middle
+@gosubModifyCamera 0
+@print エマっち、何も考えてねーだろ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print 桜羽エマ、体調が優れないなら休んでていいわ。<br>……あなたがいなくても議論はちゃんとできるから。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （戦力外通告……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Pensive1
+@gosubModifyCamera 0
+@print エマさん、体調悪いんですか……？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ううん、大丈夫。ありがとう。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Head2,ArmR1_2,ArmL5,Eyes2_Normal_Open1,Mouth2_Surprised_Open2
+@gosubModifyCamera 0
+@print ……あ、あの……エマさん。<br>【死体の状況】を考えると、<br>さっきの話に違和感がありませんか……？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+@gosubModifyCamera 0
+@print （違和感……？<br>　それって……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Head2,ArmR5_2,ArmL2,Eyes2_Normal_Open3,Mouth2_Angry_Open2
+@gosubModifyCamera 0
+@print 現場を直接見てるエマさんなら……<br>きっとわかります……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print "うん……！ やってみるよ！" { author:Ema speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge3-3-1
+
+# ==============================================================================
+# MARK: 3-3-2: ⭕ 証拠隠滅が目的ではない
+# ==============================================================================
+
+# Judge3-3-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+@StopBgm 
+@gosubCutIn Ema
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print 待ってココちゃん。<br>犯人は本当に証拠隠滅が目的だったのかな……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Middle
+@gosubModifyCamera 0
+@print どゆこと？<br>証拠隠滅が目的じゃないって……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1,ArmR3,ArmL2
+@gosubModifyCamera 0
+@print 首絞めた後で、あらためて念入りに<br>炎でトドメ刺そうとしたとか？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle
+@gosubModifyCamera 0
+@print いや、そういう意味じゃなくて……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print もし証拠隠滅の為に放火したとしたら、<br>それは自殺とかじゃなくて<br>ハンナちゃんを殺した犯人が存在したってことだよね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print だとしたら……<br>犯人は、どうして死体を首吊り死体に<br>偽装なんてしたんだろう？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Surprised1,ArmR8
+@gosubModifyCamera 0
+@print あっ……！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_45_1
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print 犯人は、ハンナちゃんを自殺に見せかけるため<br>首吊りに見える状況を作った……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print でも証拠隠滅のために放火するなら、<br>そもそもあんな工作する<br>必要ないんじゃないかな？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Surprised1
+@gosubModifyCamera 0
+@print 言われてみれば、たしかにそうかも……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_Common_1
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print でもだとすると、どうして火をつけたんでしょうね？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1,ArmR3,ArmL2
+@gosubModifyCamera 0
+@print うーん……<br>中は燃やしたくないけど、<br>外は燃やしたかった……とか？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR5,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open
+@gosubModifyCamera 0
+@print ……たしかにあの火の回り方、<br>最初から全焼させようとしたなら<br>ちょっと違和感はあるんだよな……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print そのほかの可能性としては、<br>放火と殺人は別々の犯人によるもの<br>だったとかですかね？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print その可能性もありそうね。<br>殺人犯と放火犯の２人による、<br>別々の意図があったのかもしれないわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print ２つの出来事に関連はあるんでしょうか？<br>そもそもハンナさんが死んだ時間もわからないですし、<br>殺人と放火を結びつけちゃっていいんですかね？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_Common_2
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print ああそれなら……<br>ハンナちゃんが死んだ時間ね？<br>それならだいたいの見当はついてるわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_Common_4
+
+@char Sherry.Smile1,ArmR10,ArmL1
+@gosubModifyCamera 0
+@print 本当ですか！？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print ええ。<br>まず間違いなく【深夜】でしょうね。<br>私たちの外出が禁止されている時間の……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print そうなんですか？<br>その理由、詳しく聞きたいです！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print いいわよ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print "昨日あの部屋……<br><ruby=\"サラマンダー\">火精</ruby>の間では、<br>私たちが魔法の実験を行っていたの。" { author:Margo speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_Common_1
+
+@char Meruru.Surprised1
+@gosubModifyCamera 0
+@print 魔法……ですか？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print ええ。ここにはいろいろな本があるでしょう？<br>少しずつだけれど、文字を解読して<br>読めるようになってきたの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print だからアリサちゃんとココちゃんに協力してもらって<br>魔法の実験をしていたの。<br>１人じゃできない事だったからね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_Common_7
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print マジでめーわく。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Normal_Closed
+@gosubModifyCamera 0
+@print ……つっても、放っておいて何か<br>やべーことになっても困るからな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Normal_Closed
+@gosubModifyCamera 0
+@print ウチは見張りとして、宝生についてったんだ。<br>……ただの与太話だとは思ってたけどな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print "あら？ 魔法が存在するのよ？<br>本の内容が本物でも、<br>不思議じゃないでしょう？" { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1,ArmR3,ArmL2
+@gosubModifyCamera 0
+@print まあ実際はなーんも起こんなかったけどね～。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print あら、どうかしら？<br>もしかするとそれがハンナちゃんの<br>命を奪ったのかもしれないわよ？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print 知らないうちに、未知の効果を発動していたとか……。<br>良くないものを呼び寄せてしまったとかね？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_Common_7
+
+@char Alisa.Fearful1
+@gosubModifyCamera 0
+@print んな呪いみたいな事……あるわけ……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print "ふふ♡ それはともかく……。" { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 昨日の夜、私たちはあの部屋で<br>魔法の実験をしていたのよ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print だからハンナちゃんはその時点で<br>あの部屋にはいなかった……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print そしてその後も、<br>あの部屋には入れなかったのよ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_Common_1
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open
+@gosubModifyCamera 0
+@print 入れなかった………？<br>何があったの？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 昨日の晩……<br>実験を終えて部屋に戻ろうとした時、<br>偶然看守と鉢合わせたの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+# ==============================================================================
+# 回想シーン（新規）
+# ==============================================================================
+# 背景：23-7ゲストハウス内観・サラマンダーの間・夜
+# ＠ト書き▼回想
+# ◎回想
+@StopBgm 
+@Wait 0.2
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+@back 23_7 { time:0 }
+@char Margo.Normal1,ArmR6,ArmL1 { time:0 }
+@char Alisa.Default,ArmR9,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Closed { time:0 }
+@hideStageScreen 1
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+@bgm Bgm_23_1
+
+@print さて……そろそろ戻りましょうか。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print ……ったく。<br>くだらねーことに付き合わせやがって……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+# SE・ドア開く音[DOOR_Indoor_Wood_Open_stereo]
+@sfx Sfx_22
+
+@hide Alisa-Flashback,Margo-Flashback
+@Wait 0.25
+@char Jailer.4
+
+@print ………。 { author:Jailer speed:1 waitInput:true Wait:true }
+
+@hide Jailer-Flashback
+@Wait 0.25
+@char Coco.Default,ArmR8,ArmL7,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open { time:0 }
+
+@print ギャッ！？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+@ResetText 
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+@hide MainBackground-Flashback,Coco-Flashback { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+
+# ＠ト書き▼回想ここまで
+# ==============================================================================
+# 回想ここまで
+# ==============================================================================
+
+@bgm Bgm_45_1
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 私たちがドアを開けて出たときに、<br>ちょうど看守がゲストハウスの鍵をかけに来たみたい。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print もう少し出るのが遅れていたら、<br>あやうく閉じ込められる<br>ところだったかもしれないわね？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print 看守さんの鍵ですか……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1,ArmR3,ArmL2
+@gosubModifyCamera 0
+@print 鍵ねぇ……。<br>……なあ、それってさぁ……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1,ArmR3,ArmL2
+@gosubModifyCamera 0
+@print 前みたく、看守が関わってんじゃね……？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_Common_1
+
+@char Warden.3 { Position:,{characterPositionY} time:0 }
+@gosubModifyCamera 0
+@print あのー……もしかして、まだ疑ってます？<br>私たちのこと……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print ……疑惑を向けられていると思ったなら<br>弁明したらいいんじゃないかしら。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_Common_2
+
+@char Warden.1
+@gosubModifyCamera 0
+@print はあ……。<br>まあそう言われると思って<br>対策はしておいたんですよ。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_Common_1
+
+@char Ema.Surprised1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print 対策……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Warden.2
+@gosubModifyCamera 0
+@print 看守の顔をよく見てください。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Jailer.4 { Position:,{characterPositionY} time:0 }
+@gosubModifyCamera 0
+@print …………。 { author:Jailer speed:1 waitInput:true Wait:true }
+
+# これ以後看守は表示されない
+@char Jailer.1 { Position:,{hiddenCharacterPositionY} time:0 }
+
+# アイテム画像表示
+@spawn Clue
+
+@char Warden.8
+@gosubModifyCamera 0
+@print あの目の部分……<br>監視カメラになってるんですよ。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@despawn Clue
+
+@sfx Sfx_Common_4
+
+@char Coco.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Gross_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print ……はあ！？<br>ずっとあてぃしらのこと見張ってるってこと！？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Warden.2
+@gosubModifyCamera 0
+@print いえいえ。<br>あくまでも録画してデータを残しているだけです。<br>常に見ているわけではありませんよ……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Warden.3
+@gosubModifyCamera 0
+@print ただそこには看守視点での映像が記録されています。<br>なのでこうして何かあった時、振り返る事ができる……。<br>つまり……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Warden.8
+@gosubModifyCamera 0
+@print 昨夜、消灯前に殺害現場の鍵はたしかにかけられました。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Warden.3
+@gosubModifyCamera 0
+@print そして朝に火災が発生するまで<br>【鍵は開けられていなかった】……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Warden.1
+@gosubModifyCamera 0
+@print それを映像で証明できるということです。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR1,ArmL10,Eyes1_Normal_Open2,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print "……なるほどね。<br>昨晩、<ruby=\"サラマンダー\">火精</ruby>の間の鍵は<br>確実にかけられたというわけね？" { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Warden.3
+@gosubModifyCamera 0
+@print ええ。<br>しっかり鍵をかけていましたよ。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+# ☆証拠品追加
+# 【看守カメラ】
+# 看守の首元につけられたカメラ。
+# 24時間分の看守視点での映像が録画されている。
+# 昨夜は鍵をかけてから開けた形跡はなく、鍵もずっと看守が持っていた。
+# 昨夜は火精の間に鍵をかけようとした瞬間、
+# 中からマーゴたち3人が出てきた。
+# その後、他の扉に外から鍵をかける様子が映っている。
+@spawn Clue
+@toast "魔女図鑑 更新…"
+@update 3-12
+@Wait i1.2
+@despawn Clue
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print ……あら？<br>そうなるとおかしいわね……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+# ゴクチョーは議論に参加しているわけではないので消去
+@char Warden.1 { Position:,{hiddenCharacterPositionY} time:0 }
+
+@char Alisa.Default,ArmR5,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open
+@gosubModifyCamera 0
+@print ……昨日の晩、ウチらがいたときは<br>誰もいなかった。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Meruru.ArmR1_1,ArmL8,Eyes1_Pensive_Open2,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print ということは……<br>その後も、【誰も入れなかった】という<br>ことでしょうか……？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print つまり～……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_Common_2
+
+@char Sherry.Default,ArmR13,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 密室殺人！<br>ですね～！！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Normal_Open2,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print ……密室なんて、実際は存在しないわ。<br>だって現に遠野ハンナは中で殺されているのだから。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR15,ArmL4,Angle01/Facial/Eyes>Eyes_Wink_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print それを解き明かすのがミステリーの醍醐味なんです！<br>密室というのは、<br>謎を暴いてこその密室なんですよ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+@sfx Sfx_Common_1
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Angry_Closed1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print ……なら、話し合いましょう。<br>昨夜、いったい何が起きていたのか――。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@char Nanoka.ArmL6,ArmR3,Eyes1_Flushed_Open1,Mouth1_Surprised_Open1 { time:0.8 }
+@stageCamera 0 { Rotation:0,{ ((nanokaIdx - 0.1) / courtStandCount * 360) },0 time:0.8 }
+@print ――その机上の密室を解体するために。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@goto Act01_Chapter03/Act01_Chapter03_Trial04

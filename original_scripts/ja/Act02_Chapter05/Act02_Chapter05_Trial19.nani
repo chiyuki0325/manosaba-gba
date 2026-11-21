@@ -1,0 +1,981 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter05/Act02_Chapter05_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# クリーチャー化初期化
+@hide Hiro
+@char CreatureHiro.2 { Position:{hiroPositionX},{characterPositionY},{hiroPositionZ} Rotation:,{hiroRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Meruru
+@char CreatureMeruru.3-5 { Position:{meruruPositionX},{characterPositionY},{meruruPositionZ} Rotation:,{meruruRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Leia
+@char CreatureLeia.0-8 { Position:{leiaPositionX},{characterPositionY},{leiaPositionZ} Rotation:,{leiaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Noah
+@char CreatureNoah.0-3 { Position:{noahPositionX},{characterPositionY},{noahPositionZ} Rotation:,{noahRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Margo
+@char CreatureMargo.0-4 { Position:{margoPositionX},{characterPositionY},{margoPositionZ} Rotation:,{margoRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Nanoka
+@char CreatureNanoka.0-1 { Position:{nanokaPositionX},{characterPositionY},{nanokaPositionZ} Rotation:,{nanokaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Coco
+@char CreatureCoco.2-3 { Position:{cocoPositionX},{characterPositionY},{cocoPositionZ} Rotation:,{cocoRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide AnAn
+@char CreatureAnAn.0-3 { Position:{ananPositionX},{characterPositionY},{ananPositionZ} Rotation:,{ananRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+# ==============================================================================
+# MARK: 10-19: 💬 【佐伯ミリア】
+# ==============================================================================
+# ＠ト書き▼議論10-19【佐伯ミリア】
+# 議論開始カットイン
+# BGM変更：HirO（Voなし）
+@bgm Bgm_37_1_Loop
+# ボス演出
+@ResetText 
+@char CreatureHiro.2 { time:0 }
+@stageCamera 1 { Rotation:0,{ (8 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+
+@stageCamera 1 { Rotation:0,{ (8.1 / courtStandCount * 360) },0 time:1 }
+@showStageScreen 1
+@Wait 1.5
+
+@ResetText 
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Cry_Open02,Angle01/Facial/Mouth>Mouth_Angry_Closed01 { time:0 }
+@stageCamera 0 { Rotation:0,{ (6 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+
+@stageCamera 0 { Rotation:0,{ (5.9 / courtStandCount * 360) },0 time:1 }
+@hideStageScreen 1
+@Wait 1.5
+
+# Judge10-19-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+# ＠備考◆年相応の少女っぽい演技に若干寄せたい
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Cry_Open02,Angle01/Facial/Mouth>Mouth_Angry_Closed01
+@gosubModifyCamera 0
+@printDebate ちょっとだけ法律のこと<br>勉強したのも、<br>自分のこと<br>おじさんって呼ぶのも……。
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Cry_Open02,Angle01/Facial/Mouth>Mouth_Angry_Closed01
+@gosubModifyCamera 0
+@printDebate 全部【先生】を<br>真似してるだけなんだ……！
+
+# ＠備考◆やや錯乱ぎみに
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open,Angle01/Facial/Mouth>Mouth_Determined_Close
+@gosubModifyCamera 0
+@printDebate "元々の【私】には<br><link=\"Objection_02_05_19_01\">何もなく</link>て……！<br>いつも周りに合わせて<br>へらへら笑って、<br>やり過ごしているだけで……！"
+
+@char Miria.Default,ArmR10,ArmL4,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open,Angle01/Facial/Mouth>Mouth_Angry_Closed01
+@gosubModifyCamera 0
+@printDebate だからおじさんに<br>そんな難しいこと<br>聞かれたって……<br>わかんないよ！
+
+@char Miria.Default,ArmR10,ArmL4,Angle01/Facial/Eyes>Eyes_Cry_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@printDebate なのにみんな、<br>みんな、<br>みんな……！
+
+# ＠備考◆SNSイジメを思い出してる
+
+@char Miria.Default,ArmR10,ArmL4,Angle01/Facial/Eyes>Eyes_Cry_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@printDebate 勝手に派閥とか<br>敵味方とか作って、<br>陰険で陰惨で陰湿で……！
+
+@char Miria.Default,ArmR10,ArmL4,Angle01/Facial/Eyes>Eyes_Cry_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@printDebate "そんな<link=\"Objection_02_05_19_02\">悪趣味なこと</link>に<br>巻きこまないでよ！"
+
+@char Miria.Default,ArmR10,ArmL4,Angle01/Facial/Eyes>Eyes_Cry_Open01,Angle01/Facial/Mouth>Mouth_Angry_Closed01
+@gosubModifyCamera 0
+@printDebate おじさんは……<br>どこにでもいる<br>ただの学生なんだよ……！？
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Determined_Close
+@gosubModifyCamera 0
+@printDebate "おじさんのことなんて、<br><link=\"Objection_02_05_19_03\">無視</link>してくれれば<br>いいのに……！"
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Cry_Open02,Angle01/Facial/Mouth>Mouth_Angry_Closed01
+@gosubModifyCamera 0
+@printDebate "なんで……<br><link=\"Objection_02_05_19_04\">放っといてくれない</link><br>のさ……！"
+
+
+# ==============================================================================
+# 10-19議論後独白
+# ==============================================================================
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@Wait 0.2
+
+@print （ミリアは……私と話しているわけじゃない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@print （過去に起きた事件と戦っている。<br>　トラウマの扉が開きかけている状態だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@print （……魔女化は、近いか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-19-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_19_01
+
+@Skip false
+@pauseTrial true
+
+@choice 何もないわけない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-19-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_19_02
+
+@Skip false
+@pauseTrial true
+
+@choice 【幻視】
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-19-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_19_03
+
+@Skip false
+@pauseTrial true
+
+@choice みんな注目する
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-19-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論4
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_19_04
+
+@Skip false
+@pauseTrial true
+
+@choice みんな信頼していた
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-19-5
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 10-19: ❌ 議論ミス選択肢
+# ==============================================================================
+
+# MARK: 10-19-4: ❌ 反論・何もないわけない
+
+# Judge10-19-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print 何もないなんて、そんなことはないだろう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print 君には君自身の魅力があるはずだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Cry_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print そんなの嘘だよ！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Cry_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print おじさんは何もできないんだ……！<br>だから誰かに合わせて、<br>後ろをついていくようなことしかできなくて……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Pensive_Closed,Angle01/Facial/Mouth>Mouth_Angry_Closed01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print そんなんじゃダメだって……<br>自分が一番わかってるんだ！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Pensive_Closed,Angle01/Facial/Mouth>Mouth_Angry_Closed01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print おじさんには誰かを助ける力なんて……<br>これっぽっちもないんだよ！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char CreatureHiro.14
+@gosubModifyCamera 0
+@print （励ましたところで魔女化は進まないか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （ミリアの様子からして、<br>　彼女の問題は相当根が深そうだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （だがそれを上手く使えば、<br>　魔女化させることは可能かもしれない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （ならトラウマを刺激するような言葉を、<br>　彼女に直接ぶつけるしかない……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge10-19-1
+
+# MARK: 10-19-5: ❌ 反論・特別な存在だからだ
+
+# Judge10-19-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print みんな君を信頼していたんだよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print だからみんなが君を頼っていたんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR10,ArmL4,Angle01/Facial/Eyes>Eyes_Cry_Open02,Angle01/Facial/Mouth>Mouth_Determined_Close,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print 違うよ……みんなはただ、<br>オモチャを探していただけ……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR10,ArmL4,Angle01/Facial/Eyes>Eyes_Cry_Open02,Angle01/Facial/Mouth>Mouth_Determined_Close,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print もう……おじさんに構わないでよ……！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char CreatureHiro.14
+@gosubModifyCamera 0
+@print （拒絶されるだけで、<br>　これ以上踏み込むことは難しいな……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （ミリアの様子からして、<br>　彼女の問題は相当根が深そうだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （だがそれを上手く使えば、<br>　魔女化させることは可能かもしれない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （ならトラウマを刺激するような言葉を、<br>　彼女に直接ぶつけるしかない……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-19-1
+
+# ==============================================================================
+# MARK: 10-19-3: ❌ 魔法・幻視
+# ==============================================================================
+
+# Judge10-19-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print ……ナノカ。<br>ミリアの過去に何があったか確認してくれないか？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char CreatureNanoka.0-1
+@gosubModifyCamera 0
+@print ……断るわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# ＠備考◆息を呑む
+
+@char CreatureHiro.15
+@gosubModifyCamera 0
+@print ………！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureNanoka.0-5
+@gosubModifyCamera 0
+@print ……私の口からは言いたくない。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.15
+@gosubModifyCamera 0
+@print （……すでに見ているということか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char CreatureNanoka.0-5
+@gosubModifyCamera 0
+@print ……ただ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char CreatureNanoka.2-5
+@gosubModifyCamera 0
+@print 彼女は現代社会と繋がるのが怖いのよ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char CreatureNanoka.2-5
+@gosubModifyCamera 0
+@print 現代……社会。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char CreatureNanoka.2-1
+@gosubModifyCamera 0
+@print そう。<br>発達したソーシャルネットワークは、<br>現実に影響を及ぼすほどの力を持ってしまった……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char CreatureNanoka.2-1
+@gosubModifyCamera 0
+@print 彼女はその被害者ね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char CreatureHiro.15
+@gosubModifyCamera 0
+@print ……………。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （ミリアは社会を恐れている……<br>　ということだろうか……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@update Miria
+
+@goto .Judge10-19-1
+
+# ==============================================================================
+# MARK: 10-19-2: ⭕ 反論・みんな注目する
+# ==============================================================================
+
+# Judge10-19-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@gosubCutIn CreatureHiro
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+# カットイン
+
+@char CreatureHiro.11
+@gosubModifyCamera 0
+@print ミリア、君には酷かもしれないが……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.11
+@gosubModifyCamera 0
+@print 君のことを世間は注目していると思うよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Miria.Default,ArmR10,ArmL4,Angle01/Facial/Eyes>Eyes_Fearful_Open,Angle01/Facial/Mouth>Mouth_Angry_Closed01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ………っ！<br>ど、どうして……！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.11
+@gosubModifyCamera 0
+@print ……私は以前、ある記事を見たことがある。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.11
+@gosubModifyCamera 0
+@print それによれば、私たちのようにここに拉致された少女を<br>両親が探している……という内容だった。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆息を呑む
+
+@char Miria.Default,ArmR10,ArmL4,Angle01/Facial/Eyes>Eyes_Fearful_Open,Angle01/Facial/Mouth>Mouth_Angry_Closed01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.11
+@gosubModifyCamera 0
+@print 君がいなくなったことは、<br>ニュースとして広がることだろう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.11
+@gosubModifyCamera 0
+@print ここにいればいるほど、<br>その可能性は高くなる。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.11
+@gosubModifyCamera 0
+@print 新聞、テレビ、インターネット……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.11
+@gosubModifyCamera 0
+@print 君の顔は……どんどん世間に広がるだろうな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR10,ArmL4,Angle01/Facial/Eyes>Eyes_Fearful_Open,Angle01/Facial/Mouth>Mouth_Flushed_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……やだ……やだ、やだ……！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL4,Angle01/Facial/Eyes>Eyes_Cry_Open01,Angle01/Facial/Mouth>Mouth_Fearful_Closed
+@gosubModifyCamera 0
+@print どうして……！！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL4,Angle01/Facial/Eyes>Eyes_Cry_Open01,Angle01/Facial/Mouth>Mouth_Fearful_Closed
+@gosubModifyCamera 0
+@print おじさんのことなんて……<br>放っておいてよ！！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR6,ArmL6,Angle01/Facial/Eyes-,Angle01/Facial/Mouth>Mouth_Normal_Open,Angle01/Facial/Pale>Pale01
+@gosubModifyCamera 0
+@print こんな人間……<br>探す価値なんてないんだからっ！！ { author:Miria speed:1 waitInput:true Wait:true }
+
+# ミリア魔女化、エフェクト
+@StopBgm 
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.8
+
+@hide Miria
+@char CreatureMiria.2-2 { Position:{miriaPositionX},{characterPositionY},{miriaPositionZ} Rotation:,{miriaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@back SolidColor.Custom { time:0.8 }
+@Wait 0.8
+@back SolidColor.Custom { time:2 }
+@Wait 1
+
+@gosubModifyCamera 0
+@print もう……やだよ……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.11
+@gosubModifyCamera 0
+@print ミリア、君は――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureMiria.2-2
+@gosubModifyCamera 0
+@print みんな、消えちゃえばいいんだ……！ { author:Miria speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@StopBgm 
+
+# ＠備考◆息を呑む
+
+@char CreatureHiro.15
+@gosubModifyCamera 0
+@print ………！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.22
+@gosubModifyCamera 0
+@print メルル、急いでミリアに――！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureMiria.2-2
+@gosubModifyCamera 0
+@print 全部、ぜんぶ――！ { author:Miria speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char CreatureMiria.2-4
+@gosubModifyCamera 0
+@print ――なくなっちゃえー！！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:1 }
+
+@char CreatureHiro.22
+@gosubModifyCamera 0
+@print くっ――！？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# エフェクト・フラッシュ
+@ResetText 
+@back SolidColor.Custom { time:3 }
+@Wait 3
+@bgm Bgm_43_1
+@Wait 1
+# ========================================
+@back 10_1 { Scale:{g_backgroundDefaultScale} time:0 }
+# ========================================
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.1
+@back 30_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@Wait 0.1
+@back 80_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@Wait 0.1
+@back 110_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@Wait 0.1
+@back 120_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@Wait 0.1
+@back SolidColor.Custom { time:4 }
+@back 220_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@Wait 0.1
+@back 260_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@Wait 0.1
+@back 270_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@Wait 0.1
+@back 280_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@Wait 0.1
+@back 290_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@Wait 0.1
+@back 300_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@Wait 0.1
+@back 310_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@Wait 0.1
+@back 320_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@Wait 0.1
+@back 330_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@Wait 0.1
+@back 350_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@Wait 0.1
+@back 690_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@Wait 0.1
+@back 410_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@Wait 0.1
+@back 420_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@Wait 0.1
+@back 50_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@Wait 0.1
+@back 430_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@Wait 0.1
+@back 440_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@Wait 0.1
+@back 421_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@Wait 0.1
+@back 430_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@Wait 0.1
+@back 440_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@Wait 0.1
+@back 451_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@Wait 0.1
+@back 460_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@Wait 0.1
+@back 470_3 { Scale:{g_backgroundDefaultScale} time:0 }
+@Wait 0.1
+@back 150_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@Wait 0.1
+@Wait 2
+@hide Stills
+
+# エフェクト・1章2章のスチルが連続で浮かぶ
+# 特に、トラウマスチルは印象的に表示したいかも。
+# （出来事だけではなく、過去の内面まで共有された演出）
+# 0.2秒とかでバババーっと表示する形
+# スチル足りなかったらスクショでもいいかも
+# ヒロに記憶が溢れてくる演出
+# 怖い系のスチルあれば最後に一瞬表示してもいいかも。ユキとか
+
+# 徐々に白フラッシュ＋ウェイト
+
+# ＠備考◆「…ぅはぁっ」みたく強く息を吸って目覚めるような演技
+
+@char CreatureHiro.22
+@gosubModifyCamera 0
+@back SolidColor.Custom { time:0.4 }
+@print ………っ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆荒い呼吸（はあ、はあ、はあ……）
+
+@char CreatureHiro.22
+@gosubModifyCamera 0
+@print ……ぁ……く……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.15
+@gosubModifyCamera 0
+@print なんだ……今のは……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.13
+@gosubModifyCamera 0
+@print 頭に……情報を無理やり注入されたような不快感……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# スチル＋セピア
+# 1章処刑シーン。レイア、シェリーなど
+
+@char CreatureHiro.13
+@gosubModifyCamera 0
+@print これは……私の記憶ではない……！<br>私が体験していない……<br>――【存在しない記憶】……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+# ☆アイテム追加
+# 【城ケ崎ノア殺人事件】
+# 蓮見レイアは注目を集める為に殺害した。
+@ResetText 
+@spawn Clue
+@update 10-20
+@toast "魔女図鑑 更新…"
+@Wait i1.2
+@despawn Clue
+
+
+# ☆アイテム追加
+# 【佐伯ミリア殺人事件】
+# 夏目アンアンは平穏を求めて殺害した。
+@spawn Clue
+@update 10-21
+@Wait i1.2
+@despawn Clue
+
+# ☆アイテム追加
+# ☆【遠野ハンナ殺人事件】
+# 橘シェリーは願いを叶える為に殺害した。
+@spawn Clue
+@update 10-22
+@Wait i1.2
+@despawn Clue
+
+# ☆アイテム追加
+# 【紫藤アリサ殺人事件】
+# 氷上メルルは幸福を願い殺害した。
+@spawn Clue
+@update 10-23
+@Wait i1.2
+@despawn Clue
+
+# ☆アイテム追加
+# 【黒部ナノカ殺人事件】
+# 氷上メルルは崇拝の為に殺害した。
+@spawn Clue
+@update 10-24
+@Wait i1.2
+@despawn Clue
+
+# ☆アイテム追加
+# 【原罪：自罰中毒】
+# 彼女は許されてしまった。
+# 罰を求め、自らに終わることなき鞭を振るう。
+
+# 【原罪：空想令嬢】
+# 彼女は現実を見捨て、空想に逃げ込んだ。
+# 二度と置き去りにすることはできない。
+
+# 【原罪：破壊探偵】
+# 彼女は破壊した。
+# 幼少期に受けた虐待は、彼女の心を破壊した。
+
+# 【原罪：忌み嫌われるもの】
+# 彼女は嫌悪された。
+# 傍観者の末路には相応しい結末だった。
+
+# ※+他9枚トラウマスチル。
+# アイテムにするかシステムにするか相談。仮にアイテム
+@update 10-25
+@update 10-26
+@update 10-27
+@update 10-28
+@update 10-29
+@update 10-30
+@update 10-31
+@update 10-32
+@update 10-33
+@update 10-34
+@update 10-35
+@update 10-36
+@update 10-37
+
+# 各キャラクタープロフィール更新
+@update Ema
+@update Hiro
+@update AnAn
+@update Noah
+@update Leia
+@update Miria
+@update Margo
+@update Nanoka
+@update Alisa
+@update Sherry
+@update Hanna
+@update Coco
+@update Meruru
+
+# エマの見つけたTIPSも復活
+@update 8
+@update 9
+@update 10
+@update 11
+@update 12
+@update 13
+
+
+@char CreatureHiro.15
+@gosubModifyCamera 0
+@print 最初に私が死んだ世界……<br>私の死後の記憶……か……？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.15
+@gosubModifyCamera 0
+@print どうして……こんな記憶が……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Ema.Fearful1,ArmR3,ArmL7
+@gosubModifyCamera 0
+@print ……そ、そんな……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Fearful1,ArmR3,ArmL7
+@gosubModifyCamera 0
+@print ボクが……殺した……？<br>人を……たくさん……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.15
+@gosubModifyCamera 0
+@print （……エマの記憶） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.15
+@gosubModifyCamera 0
+@print （私が看守に殺されたあと、<br>　エマが体験した世界では<br>　彼女が世界を滅ぼした……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆処刑時の記憶を引き継いだので一瞬「わたし」に
+
+@char Hanna.Fearful1,ArmR1,ArmL1,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print "<ruby=\"わたし\">私</ruby>が……<br>レイアさんと……エマさんを……。" { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Fearful1,ArmR1,ArmL1,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print そんな……そんなのって……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char CreatureAnAn.1-7
+@gosubModifyCamera 0
+@print う……嘘だ……。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char CreatureAnAn.1-7
+@gosubModifyCamera 0
+@print わがはいがミリアを殺すはずなんてない……！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char CreatureAnAn.1-7
+@gosubModifyCamera 0
+@print そ、それにどうして……<br>レイア……ノア……！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char CreatureLeia.2-3
+@gosubModifyCamera 0
+@print お、落ち着くんだ……みんな……！ { author:Leia speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char CreatureLeia.2-3
+@gosubModifyCamera 0
+@print こ、こんなのは……まやかしだ！<br>幻覚だ！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char CreatureLeia.0-3
+@gosubModifyCamera 0
+@print 私たちが殺し合いをしてきたなんて……！<br>そんなこと……！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.15
+@gosubModifyCamera 0
+@print （……みんな別の世界の記憶を持っている……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.15
+@gosubModifyCamera 0
+@print （これは……まさか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# 虚ろな目・放心状態
+
+@char CreatureMiria.0-6 { time:0 }
+@gosubModifyCamera 0
+@print …………。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （直前に魔女化したのはミリア……。<br>　ミリアの魔法は……【入れ替わり】だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （だが私は、実際に彼女が魔法を使う姿を見ていない……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （……もしかすると、彼女の魔法は<br>　精神の共有などに近い類の魔法だったのだろうか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （もしそんな魔法が魔女化によって強化され、<br>　暴走したのだとしたら……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.15
+@gosubModifyCamera 0
+@print （さまざまなものが【入れ替わって】共有されたのか……？<br>　魂、時間、魔法、世界……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.15
+@gosubModifyCamera 0
+@print （さらにそこにココの【千里眼】や<br>　私の【死に戻り】の魔法が<br>　干渉した可能性もある……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （……ともあれ、今考えたところで結論は出ないな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （今優先すべきことは……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print ……メルル。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char CreatureMeruru.3-8
+@gosubModifyCamera 0
+@print は、はい……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print ミリアを頼む。<br>……次に暴走したら何が起こるか予想できない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureMeruru.3-8
+@gosubModifyCamera 0
+@print ……わかりました。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （……大丈夫、みんなの魔女化は進んでいる） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （今ので精神的にショックを受けている者もいるし、<br>　魔女化はむしろやりやすくなったと考えることも――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 炎エフェクト
+@ResetText 
+@back SolidColor.Custom { time:0.12 }
+@Wait 0.12
+@sfx Sfx_46
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.7
+
+@back Transparent { time:0 }
+@WaitForNextFrame 
+
+@back SolidColor { time:0.2 }
+
+@bgm Ambi_102_1 { Volume:0.2 }
+@shakeStageCamera 0 { Force:0.4,-0.2,0 Frequency:50 time:3 }
+@courtFire true
+@back Transparent { time:1.2 }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char CreatureHiro.22
+@gosubModifyCamera 0
+@print これは……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 裁判所が燃えるエフェクト
+# 派手にしたいところ
+
+# 既に魔女化しているアリサ
+
+@hide Alisa { time:0 }
+@char CreatureAlisa.3-11 { Position:{alisaPositionX},{characterPositionY},{alisaPositionZ} Rotation:,{alisaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@gosubModifyCamera 0
+@print ――おい。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+# ＠備考◆怒気を含む
+
+@char CreatureHiro.22
+@gosubModifyCamera 0
+@print アリサ……なんのつもりだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureAlisa.3-11
+@gosubModifyCamera 0
+@print それはこっちのセリフだ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+# BGM変更：Guil-me N'o sinruits-Vocal無-
+@bgm Bgm_8_1
+
+@char CreatureAlisa.0-7
+@gosubModifyCamera 0
+@print てめーらは……<br>ひとり残らず、ここで死ね。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.22
+@gosubModifyCamera 0
+@print くっ……！？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureAlisa.0-4
+@gosubModifyCamera 0
+@print ……ウチも地獄まで付き合ってやる。<br>それなら文句ねーだろ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.22
+@gosubModifyCamera 0
+@print ……大アリだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureAlisa.1-3
+@gosubModifyCamera 0
+@print なら……ウチを殺して止めてみな！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@update Alisa
+
+@goto Act02_Chapter05/Act02_Chapter05_Trial20

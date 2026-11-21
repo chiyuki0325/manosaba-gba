@@ -1,0 +1,784 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter03/Act02_Chapter03_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+@badId 8
+
+# ==============================================================================
+# MARK: 8-4: 💬 シェリーの見つけた証拠
+# ==============================================================================
+# ＠ト書き▼議論シーン8-4 シェリーの見つけた証拠
+# 議論開始エフェクト
+# BGM変更：rAwTell Owk...
+@bgm Bgm_7_1
+
+# Judge8-4-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Sherry.Default,ArmR3,ArmL11,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@printDebate そもそも、<br>たまたま落ちた先に<br>たまたま鉄柵があるなんて<br>不自然に<br>感じませんでしたか？
+
+@char Sherry.Default,ArmR15,ArmL4,Angle01/Facial/Eyes>Eyes_Wink_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate そこで調べたところ……<br>あったんです！<br>鉄柵を動かした形跡が！
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open1,Mouth1_Fearful_Open1
+@gosubModifyCamera 0
+@printDebate 鉄柵を動かした形跡……。
+
+@char Sherry.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate そうです！
+
+@char Sherry.Default,ArmR3,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Normal_Closed
+@gosubModifyCamera 0
+@printDebate アンアンさんが<br>亡くなっていた<br>現場写真を見れば<br>わかりますが、<br>鉄柵が曲げられているのが<br>見えますよね！
+
+@char Sherry.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate "あの鉄柵は<br>元はきちんと<br><link=\"Objection_02_03_04_01\">整列していた</link><br>ようでした。"
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate "ですが……<br>あの鉄柵、<br>最近<br>動かされたような<link=\"Objection_02_03_04_02\">跡</link>が<br>残ってたんですよ！"
+
+@char Sherry.Default,ArmR15,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate これは間違いなく、<br>犯人が仕組んだ<br>トリックですよ！
+
+@char Sherry.Default,ArmR13,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate 犯人は、<br>アンアンさんを<br>突き落とす前に<br>鉄柵を<br>歪ませていたんです。
+
+@char Sherry.Default,ArmR15,ArmL8,Angle01/Facial/Eyes>Eyes_Wink_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate "そして<link=\"Objection_02_03_04_03\">鉄柵の上に向け</link>て、<br>ドーンッ！"
+
+@char Sherry.Default,ArmR15,ArmL4,Angle01/Facial/Eyes>Eyes_Wink_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate 突き落とされた<br>アンアンさんは<br>背中からグサーッ！<br>……っと<br>亡くなってしまったんです！
+
+@char Sherry.Default,ArmR6,ArmL8,Angle01/Facial/Eyes>Eyes_Surprised_Open03,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@printDebate "つまりこれは他殺……！<br><link=\"Objection_02_03_04_04\">事故ではなく</link>て、<br>殺人事件だったんですよ！"
+
+
+# ==============================================================================
+# 8-4議論後独白
+# ==============================================================================
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open2,Mouth1_Fearful_Open1
+@gosubModifyCamera 0
+@Wait 0.2
+
+@print （鉄柵が移動させられていた……？<br>　偶然か？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Closed1,Mouth1_Angry_Open1
+@print （なんにせよ、そのせいで客観的に見て<br>　事故の線は薄くなってしまう……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@print （しかし他殺と思われてはマズい） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR13,ArmL13,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@print （なら……シェリーの推理を否定するしかない……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge8-4-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_03_04_01
+
+@Skip false
+@pauseTrial true
+
+@choice 元々不揃いに並んでいた
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge8-4-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_02_03_04_02
+
+@Skip false
+@pauseTrial true
+
+@choice 鉄柵を動かした跡ではない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge8-4-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_02_03_04_03
+
+@Skip false
+@pauseTrial true
+
+@choice 鉄柵を狙って落とすのは難しい
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge8-4-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論4
+# ------------------------------------------------------------------------------
+
+# Objection_02_03_04_04
+
+@Skip false
+@pauseTrial true
+
+@choice 事故の証拠がある
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge8-4-5
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 8-4: ❌ 議論ミス選択肢
+# ==============================================================================
+# MARK: 8-4-3: ❌ 偽証・元々不揃いに並んでいた
+
+# Judge8-4-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print きちんと整列していたというが、<br>本当にそうだったのかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print シェリーが勘違いしていただけで、<br>元々不揃いに並んでいた可能性はある。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,Arms,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print いや、たしかにシェリーくんの言う通り、<br>鉄柵は綺麗に整列していた……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR5,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open
+@gosubModifyCamera 0
+@print ……ああ、べつにごちゃついてたとかはなかったな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print ……そうか。<br>そういえばアリサくんは最近よく中庭にいたね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open01
+@gosubModifyCamera 0
+@print まあな……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open01
+@gosubModifyCamera 0
+@print ハンモック付けた時にも鉄柵の位置はちゃんと見てたよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print こんなに見てるんだし、本当のことなのかも。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR6,ArmL8,Angle01/Facial/Eyes>Eyes_Surprised_Open03,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print というわけで、<br>【鉄柵は整列してた】んですよ！<br>間違いありません！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （……少し強引過ぎる反論だったか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （シェリーの推理は一見辻褄があってるように見える――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （しかし、本当に可能なんだろうか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （現場の環境、位置関係、時間……<br>　何か周囲の環境と食い違う部分はないかな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge8-4-1
+
+# MARK: 8-4-4: ❌ 反論・鉄柵を動かした跡ではない
+
+# Judge8-4-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open5,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 【動かした跡】か……。<br>本当にそうなのかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Closed1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print もしかすると……<br>鉄柵が勝手に【動いた跡】なんじゃないかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print 勝手にって、どうやって動いたんですの！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Surprised_Open
+@gosubModifyCamera 0
+@print まさか、夜な夜なひとりでに歩き始めたとか<br>言うわけではありませんわよね……！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print もちろん私もそんな突飛なことを言うつもりはない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print だが完全にありえないとは言えないだろう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print たとえば【地震】とかね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Closed1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 地面の揺れによって地盤ごと動いたとすれば、説明はつく。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR5,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open
+@gosubModifyCamera 0
+@print でもよ、そんな地震あったか？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print 最近じゃなくても、<br>私たちがここに来る前にあったのかもしれないよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print "いえ！ それはないと思います！<br>だって一昨日までは鉄柵は綺麗に並んでましたから！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open01
+@gosubModifyCamera 0
+@print ……昨日今日で地震みてーのは無かったと思うけどな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print たしかに、記憶にはないかも……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL7,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@print ……となると、地震で勝手に動いたとは考えにくいみたいだね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （地殻変動は起こっていなかったか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （シェリーの推理は一見辻褄があってるように見える――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （しかし、本当に可能なんだろうか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （現場の環境、位置関係、時間……<br>　何か周囲の環境と食い違う部分はないかな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge8-4-1
+# MARK: 8-4-5: ❌ 反論・事故の証拠がある
+
+# Judge8-4-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print いいやシェリー。<br>事故だという証拠があるよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR10,ArmL1,Angle01/Facial/Eyes>Eyes_Surprised_Open01,Angle01/Facial/Mouth>Mouth_Confused_Open,Angle01/Facial/Sweat>Sweat02
+@gosubModifyCamera 0
+@print "えっ！ そうなんですか！？" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print ああ。<br>それはこれだよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@evidence Clue
+
+@char Leia.Default,ArmR8,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print ……えっと、ヒロくん<br>これは、証拠にはならないんじゃないかな。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （これでは証明できないようだ……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （シェリーの推理は一見辻褄があってるように見える――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （しかし、本当に可能なんだろうか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （現場の環境、位置関係、時間……<br>　何か周囲の環境と食い違う部分はないかな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge8-4-1
+
+# ==============================================================================
+# MARK: 8-4-2: ⭕ 反論・鉄柵を狙って落とすのは難しい
+# ==============================================================================
+# Judge8-4-2
+# カットイン
+
+@Gosub System/System_Subroutine.EndDebate-First
+@Gosub System/System_Subroutine.EndDebate-Last
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 鉄柵に向かって落とす……か。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 残念だけどその推理は……<br>成立しない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Sherry.Default,ArmR10,ArmL1,Angle01/Facial/Eyes>Eyes_Surprised_Open01,Angle01/Facial/Mouth>Mouth_Confused_Open,Angle01/Facial/Sweat>Sweat02
+@gosubModifyCamera 0
+@print "ええっ！？ どうしてですか！？" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print それは現場の状況を考えれば一目瞭然だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print シェリーの推理が正しければ、<br>アンアンはアトリエのベランダから<br>中庭の鉄柵に向かって突き落とされたことになる。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Closed1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print しかしそこにはそれが不可能となる状況があった。<br>その状況とは……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# Judge8-4-6
+
+@choice 暗い
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge8-4-7
+
+@choice 汚い
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge8-4-8
+
+@choice 高い
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge8-4-9
+
+@StopForChoice 
+
+# MARK: 8-4-8: ❌ 汚い
+
+# Judge8-4-8
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print あの中庭には草木が生い茂っている。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 鉄柵はそれらに隠れていたから、<br>狙って落ちることは不可能だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR9,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print でも、ジャングルっていうならまだしも、<br>中庭って鉄柵が隠れるほど生い茂ってたかな？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 別に物理的に隠れていなくとも泥なんかで汚れているだけで<br>高いところからの視認はしにくくなる。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print でも現場の鉄柵は、そこまで汚れてなかったと思いますよ？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print ……そうだね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Closed,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print 綺麗とまでは言えないが<br>見えなくなるほど汚れてはいなかったかな。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print じゃあやっぱりちゃんと見えていたということですわね～！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （……汚かったわけではないか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open5,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （シェリー曰く、<br>　犯人はベランダ下にあった鉄柵めがけて<br>　アンアンを落として串刺しにした……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Closed1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （たしかにわかりやすい推理だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （――だが、当時の現場の環境ではそれが成立しなかった……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print （ベランダから中庭を見下ろしたとき、<br>　特定の場所に狙って飛べない、その理由は――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge8-4-6
+
+# MARK: 8-4-9: ❌ 高い
+
+# Judge8-4-9
+
+@char Hiro.Normal2,ArmR6,Arms3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print アンアンが落ちたベランダは２階の高さだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,Arms3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print この高さから中庭を見下ろしても<br>鉄柵は小さくて見えない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print 狙って突き落とすなんて不可能だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR5,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open
+@gosubModifyCamera 0
+@print ……そうか？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR5,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open
+@gosubModifyCamera 0
+@print たかだか２階だろ？<br>大体の位置ぐらいわかりそうだけどな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print そうですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print しかも整列していた中で一部だけがズレていた訳ですから、<br>余計見つけやすそうです！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR13,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print やっぱり、犯行は可能だったんですよ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （距離の問題ではないか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open5,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （シェリー曰く、<br>　犯人はベランダ下にあった鉄柵めがけて<br>　アンアンを落として串刺しにした……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Closed1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （たしかにわかりやすい推理だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （――だが、当時の現場の環境ではそれが成立しなかった……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （ベランダから中庭を見下ろしたとき、<br>　特定の場所に狙って飛べない、その理由は――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge8-4-6
+
+# ==============================================================================
+# MARK: 8-4-7: ⭕ 暗い
+# ==============================================================================
+
+# Judge8-4-7
+@StopBgm 
+@gosubCutIn Hiro
+@Gosub System/System_Subroutine.EndDebate-Last
+# カットイン
+
+# 気任せの蝶［チェロ有り］
+@bgm Bgm_45_2
+
+@char Hiro.Normal2,ArmR6,Arms3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 死亡推定時刻からして、<br>すでに日も沈み、中庭には照明１つもない状態だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,Arms3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 仮にランプでも持ってきて<br>お茶会でも開いていたならまだしも……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print 明かりのない中庭の中、<br>鉄柵に向かって突き落とすなんて不可能だよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL8,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print た、たしかに現場は当時真っ暗だったかも……？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Smile_Closed
+@gosubModifyCamera 0
+@print そういえばそれで思い出したけど、<br>おじさんが空の写真を撮った時も、<br>それで中庭の方を全然気にしてなかったんだよね……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Closed
+@gosubModifyCamera 0
+@print 暗くて見えなかったからさ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print ……だそうだよ、シェリー。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print つまり君の論は破綻しているんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,Arms3,Eyes2_Normal_Open2,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print それとも……反論でもあるかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Sherry.Default,ArmR5,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print ……はいっ！<br>ありますよ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+# ＠備考◆苛立ち
+
+@char Hiro.Default,Arms3,Eyes1_Serious_Open1,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print ………っ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# BGM変更：rAwTell Owk...
+@bgm Bgm_7_1
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print だってあの柵は……細工されていたと思うんです。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Flushed_Open
+@gosubModifyCamera 0
+@print 実際、何本か折れてましたしね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL3,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Closed
+@gosubModifyCamera 0
+@print 移動させられていたのも合わせて、<br>何者かの思惑があったと考えるのが自然です。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@stageCamera 0 { Rotation:0,{(sherryIdx - 0.1) / 13 * 360},0 time:0.6 }
+@Wait 0.6
+
+# ★アイテム更新
+# 【鉄柵】
+# 中庭にあった鉄の柵。先端が尖っている。
+# 長らく整備されていないようだ。
+# いくつか折れていたり、壊れているものがあった。
+# 不自然に歪み、移動させられた痕跡が残っている。
+
+@ResetText 
+@spawn Clue
+@toast "魔女図鑑 更新…"
+@update 8-2
+@Wait i1.2
+@despawn Clue
+
+@char Sherry.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Closed04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@print ……とはいえ、ヒロさんの言うこともわかります。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@print 何もなければ鉄柵に向かって突き落とすのは<br>難しいかもしれません。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Sherry.Default,ArmR3,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open01,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@print ですが……それは【何もなかったら】の話です。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR3,ArmL4,Eyes1_Serious_Open1,Mouth1_Determined_Open1,Sweat1-1
+@gosubModifyCamera 0
+@print 何かがあった……そう言いたいのか？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Closed02,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print その通りです。<br>そしてそれは現場からも見つかっていますよ。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR13,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open01,Angle01/Facial/Mouth>Mouth_Normal_Closed
+@gosubModifyCamera 0
+@print それはずばり……<br>【アンアンさんのスマホ】です！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL12,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print そうですよね？<br>レイアさん。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR8,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print あ、ああ。<br>アンアンくんが持っていて当然のものだから、<br>わざわざ言ってはいなかったが……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR3,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Neutral_Closed
+@gosubModifyCamera 0
+@print 現場にはスマホがあったんだ。<br>……それはアンアンくんの死体の下に残されていた。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open3,Mouth1_Determined_Closed1,Sweat1-1
+@gosubModifyCamera 0
+
+# ☆アイテム追加
+# 【アンアンのスマホ】
+# 被害者の死体の下敷きになっていた。
+@ResetText 
+@Wait 0.2
+@spawn Clue
+@toast "魔女図鑑 更新…"
+@update 8-5
+@Wait i1.2
+@despawn Clue
+
+@print （死体の下……？<br>　たしかにそれなら無関係とは切り捨てられないか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL7,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print 中身も確認したけど、<br>特に不自然なものは記録されていなかったよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL7,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open01,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@print ……そういえば、アンアンくんのスマホには<br>ココくんの遺体の写真が保存されていた。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL7,Angle01/Facial/Eyes>Eyes_Downcast_Open,Angle01/Facial/Mouth>Mouth_Normal_Closed
+@gosubModifyCamera 0
+@print "<ruby=\"く\">奇</ruby>しくも、アンアンくんが落下した場所は<br>ココくんの死体が発見された場所に近かった……。" { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,Arms,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print もしかすると、何か関係があるんだろうか。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@stageCamera 0 { Rotation:0,{(leiaIdx - 0.1) / 13 * 360},0 time:0.6 }
+@Wait 0.6
+
+# ☆アイテム追加
+# 【ココの死体写真】
+# 死因は銃殺。
+# 額には正面から弾丸が撃ち込まれた痕跡。
+# 即死。
+# 周囲には血の蝶が舞っていた。
+@ResetText 
+@spawn Clue
+@toast "魔女図鑑 更新…"
+@update 8-8
+@Wait i1.2
+@despawn Clue
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print ……それはともかく。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print スマホを使って現場にひと工夫することで、<br>アンアンさんを目当ての場所に落とすことが可能なんです！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE・ガーン
+@sfx Sfx_Common_6
+
+@char Hanna.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print そんな料理番組の煽り文句みたいなことがあるんですの！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char Sherry.Default,ArmR13,ArmL4,Angle01/Facial/Eyes>Eyes_Wink_Open01,Angle01/Facial/Mouth>Mouth_Yum_Closed
+@gosubModifyCamera 0
+@print はい！<br>チャンネルはそのままですよ～！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@goto Act02_Chapter03/Act02_Chapter03_Trial05

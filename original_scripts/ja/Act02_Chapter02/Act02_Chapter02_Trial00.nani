@@ -1,0 +1,233 @@
+@gosubResetBook System/System_ResetWitchBook
+@Gosub Act02_Chapter02/Act02_Chapter02_TrialInit
+
+# 議論パート2章2話（議論7）
+
+# Judge7-1-0
+
+# ==============================================================================
+# 議論スタート
+# ==============================================================================
+
+@char Alisa.Angry1,Option-ArmL-Off
+
+# 回転背景の立ち絵
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1 { time:0 }
+@char Ema.Pensive1,ArmR4,ArmL5 { time:0 }
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Pensive_Closed1
+@char AnAn.Default,ArmR2,ArmL6,Angle01/Head/Facial/Eyes>Eyes_Normal_Closed,Angle01/Head/Facial/Mouth>Mouth_Surprised_Open,Angle01/Option_Arms-,ArmR-Option-Off { time:0 }
+
+@stageCamera 0 { time:0 }
+@stageCamera 1 { Rotation:-2,{ (7.7 / courtStandCount * 360) },-2 time:0 }
+@WaitForNextFrame 
+
+@stageCamera 1 { Rotation:-1,{ (13.2 / courtStandCount * 360) } time:40 }
+@back Transparent { time:0.9 }
+@Wait 0.6
+
+@ProcessInput true
+
+# BGM変更：Kei-Plne Co-Jundic
+@bgm Bgm_25_1
+
+@print （２回目の魔女裁判……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （容疑者は私とエマのふたり） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （私が犯人でない以上、<br>　エマを処刑するためにその犯行を立証しなくてはいけない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （しかし……私の手元にはまだ証拠がない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （議論に積極的に参加して、話を引き出さないとな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@char Leia.Default,ArmR5,ArmL7,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@stageCamera 0 { Rotation:0,{ (3 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+@hideStageScreen 1
+@stageCamera 0 { Rotation:0,{ (3.1 / courtStandCount * 360) },0 time:0.6 }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@Wait 0.2
+
+@print やれやれ。<br>再びこのような場が開かれることになって残念だよ……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print まさか再び殺人事件が発生するなんてね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@char Alisa.Angry1
+@stageCamera 1 { Rotation:0,{ (4 / courtStandCount * 360) },0 time:0 }
+@showStageScreen 1
+@WaitForNextFrame 
+@stageCamera 1 { Rotation:0,{ (3.9 / courtStandCount * 360) },0 time:0.6 }
+@Wait 0.2
+
+@print ……言うほど悲しんでるようには<br>見えねーけどな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideStageScreen 1
+# ＠備考◆余裕そうに。露悪的・口だけ感
+
+@char Leia.Default,ArmR4,ArmL6,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@print そんなことはないさ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 仲間を殺されたんだ、<br>当然心を痛めているとも。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@showStageScreen 1
+@print ……どーだか。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+# SE・明るい音
+@sfx Sfx_Common_2
+
+@char Sherry.Normal1
+@gosubModifyCamera 0
+@hideStageScreen 1
+
+@print "ええ！ レイアさんのその気持ち、<br>わかりますよ！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Sherry.Default,ArmR15,ArmL4,Angle01/Facial/Eyes>Eyes_Wink_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print ――新たな被害者！<br>新たな謎！<br>新たな容疑者！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@gosubModifyCamera 0
+@char Sherry.Default,ArmR6,ArmL8,Angle01/Facial/Eyes>Eyes_Surprised_Open03,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@print ワクワクしますよね！<br>ミステリーって！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE・ネガティブ音
+@sfx Sfx_Common_7
+
+# ＠備考◆露悪的に振る舞ってたら本当にやばいヤツいた・たじたじ
+
+@char Leia.Pensive1
+@gosubModifyCamera 0
+@Wait 0.5
+@print ……うん、キミは人の話を<br>聞かないみたいだね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Angry1
+@gosubModifyCamera 0
+@print ともかく、まずは私からだ。<br>ざっくりとした検死の結果を報告しよう。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@spawn Clue
+@char Leia.Angry1
+@gosubModifyCamera 0
+@print 殺されたのは沢渡ココくん。<br>死体は雨の降る中庭で発見された……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Angry1,ArmR6,ArmL5
+@gosubModifyCamera 0
+@print 死因は銃殺。<br>額に撃ち込まれた弾丸だ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Angry1,ArmR6,ArmL5
+@gosubModifyCamera 0
+@print 当然だが、即死。<br>発見当時、死後そんなに時間は<br>経過していなかったようだ。 { author:Leia speed:1 waitInput:true Wait:true }
+@despawn Clue
+
+@char Leia.Default,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open02
+@gosubModifyCamera 0
+@print そして死体の第一発見者はエマくんだった――。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open02
+@gosubModifyCamera 0
+@print ――それで間違いないね？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+@gosubModifyCamera 0
+@print ……うん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Normal1
+@gosubModifyCamera 0
+
+# ☆アイテム追加
+# 【ココの検死結果】
+# レイアによる検死結果。
+# 死因は銃殺。
+# 額には正面から弾丸が撃ち込まれた痕跡。
+# 即死。
+# 死亡時刻は発見前のごく直近。
+# エマが第一発見者で、凶器の拳銃とともに雨の降る中庭で発見したと主張。
+# 周囲には血の蝶が舞っている。
+
+@ResetText 
+@spawn Clue
+@toast "魔女図鑑 更新…"
+@update 7-1
+@Wait i1.2
+@despawn Clue
+
+@spawn Clue
+
+@char Leia.Default,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print また、ココくんが持っていたスマホも<br>一緒に見つかっているよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# ☆アイテム追加
+# 【ココのスマホ】
+# ココが持っていたスマホ。
+# 中身はココのもので間違いないようだ。
+# 彼女が能力で見たことについての音声メモの記録がある。
+# また、シャワールームを撮影した写真が残されている。
+
+@ResetText 
+@toast "魔女図鑑 更新…"
+@update 7-2
+@Wait i1.2
+@despawn Clue
+
+@char Leia.Default,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print これらが現場から見つかったもので――。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# カットイン
+
+@Wait 0.5
+
+@sfx Sfx_Common_5
+
+@ResetText 
+@voice CommonTrial_Alisa01178
+@char Leia.Surprised1
+@char Alisa.Angry1
+@gosubSplitStageScreen 1
+@Wait 1.5
+
+@hideStageScreen 1
+@Wait 0.3
+
+@char Alisa.Angry1
+@gosubModifyCamera 0
+@print ――まどろっこしいことはいいんだよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1
+@gosubModifyCamera 0
+@print ……どういうことだい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1
+@gosubModifyCamera 0
+@print 結論から話そうぜ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1
+@gosubModifyCamera 0
+@print 二階堂や桜羽がうだうだ言ってるようだが……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1
+@gosubModifyCamera 0
+@print 一番怪しいのは１人しかいねーだろ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL7,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print ……なるほど。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR9,ArmL8,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print それでは聞かせてもらおうか、アリサくん。<br>……キミの意見を！ { author:Leia speed:1 waitInput:true Wait:true }
+
+
+@goto Act02_Chapter02/Act02_Chapter02_Trial01

@@ -1,0 +1,989 @@
+@Stop 
+
+# ==============================================================================
+# MARK: 📖 1-1
+# ==============================================================================
+
+# Reset1-1-Adv
+
+@clearBook 
+@update 10-1
+@update Alisa
+@update AnAn
+@update Coco
+@update Ema
+@update Hanna
+@update Hiro
+@update Jailer
+@update Leia
+@update Margo
+@update Meruru
+@update Miria
+@update Nanoka
+@update Noah
+@update Sherry
+@update Warden
+@update F1
+@update F2
+@update B1
+@update 1
+@update 2
+@update 3
+@update 4
+@update 5
+@update 1
+@update 2
+@update 3
+@update 4
+@update 5
+@update 6
+@update 7
+@Return 
+
+# Reset1-1-Trial1
+
+@Gosub .Reset1-1-Adv
+@update 1-1
+@update 1-2
+@update 1-3
+@update 1-4
+@update 1-5
+@update 1-6
+@update 1-7
+@update 1-8
+@update 1-9
+@update 1-10
+@update 1-11
+@update Alisa
+@update AnAn
+@update Ema
+@update Hanna
+@update Meruru
+@update Noah
+@update Sherry
+@update 1
+@update 8
+@Return 
+
+# Reset1-1-Trial2
+
+@Gosub .Reset1-1-Trial1
+@update 1-1
+@Return 
+
+# ==============================================================================
+# MARK: 📖 1-2
+# ==============================================================================
+
+# Reset1-2-Adv
+
+@clearBook 
+@update 10-1
+@update Alisa
+@update AnAn
+@update Coco
+@update Ema
+@update Hanna
+@update Hiro
+@update Jailer
+@update Leia
+@update Margo
+@update Meruru
+@update Miria
+@update Nanoka
+@update Noah
+@update Sherry
+@update Warden
+@update F1
+@update F2
+@update B1
+@update 1
+@update 2
+@update 3
+@update 4
+@update 5
+@update 1
+@update 2
+@update 3
+@update 4
+@update 5
+@update 6
+@update 7
+@update 8
+@Return 
+
+# Reset1-2-Trial1
+
+@Gosub .Reset1-2-Adv
+@update 2-1
+@update 2-2
+@update 2-3
+@update 2-5
+@update 2-7
+@update 2-8
+@update 2-9
+@update Coco
+@update Margo
+@update Miria
+@update Nanoka
+@update 9
+@Return 
+
+# Reset1-2-Trial2
+
+@Gosub .Reset1-2-Trial1
+@update 2-6
+@Return 
+
+# Reset1-2-Trial3
+
+@Gosub .Reset1-2-Trial2
+@update 2-9
+@Return 
+
+# Reset1-2-Trial4
+
+@Gosub .Reset1-2-Trial3
+@update 2-4
+@Return 
+
+# Reset1-2-Trial5
+
+@Gosub .Reset1-2-Trial4
+@update 2-1
+@update 2-3
+@update 2-4
+@update 2-8
+@Return 
+
+# ==============================================================================
+# MARK: 📖 1-3
+# ==============================================================================
+
+# Reset1-3-Adv
+
+@clearBook 
+@update 3-3
+@update 10-1
+@update Alisa
+@update AnAn
+@update Coco
+@update Ema
+@update Hanna
+@update Hiro
+@update Jailer
+@update Leia
+@update Margo
+@update Meruru
+@update Miria
+@update Nanoka
+@update Noah
+@update Sherry
+@update Warden
+@update F1
+@update F2
+@update B1
+@update 1
+@update 2
+@update 3
+@update 4
+@update 5
+@update 1
+@update 2
+@update 3
+@update 4
+@update 5
+@update 6
+@update 7
+@update 8
+@update 9
+@Return 
+
+# Reset1-3-Trial1
+
+@Gosub .Reset1-3-Adv
+@update 3-1
+@update 3-2
+@update 3-4
+@update 3-5
+@update 3-6
+@update 3-7
+@update 3-8
+@update 3-9
+@update 3-10
+@update 3-11
+@update 3-14
+@update Hanna
+@update Sherry
+@update Blueprint
+@update 6
+@update 10
+@update 11
+@Return 
+
+# Reset1-3-Trial2
+
+@Gosub .Reset1-3-Trial1
+@update 3-12
+@Return 
+
+# Reset1-3-Trial3
+
+@Gosub .Reset1-3-Trial2
+@update 3-13
+@Return 
+
+# Reset1-3-Trial4
+
+@Gosub .Reset1-3-Trial3
+@update 3-8
+@update 3-11
+@Return 
+
+# ==============================================================================
+# MARK: 📖 1-4
+# ==============================================================================
+
+# Reset1-4-Adv
+
+@clearBook 
+@update 3-3
+@update 10-1
+@update Alisa
+@update AnAn
+@update Coco
+@update Ema
+@update Hanna
+@update Hiro
+@update Jailer
+@update Leia
+@update Margo
+@update Meruru
+@update Miria
+@update Nanoka
+@update Noah
+@update Sherry
+@update Warden
+@update F1
+@update F2
+@update B1
+@update Blueprint
+@update 1
+@update 2
+@update 3
+@update 4
+@update 5
+@update 1
+@update 2
+@update 3
+@update 4
+@update 5
+@update 6
+@update 7
+@update 8
+@update 9
+@update 10
+@update 11
+@Return 
+
+# Reset1-4-Trial1
+
+@Gosub .Reset1-4-Adv
+@update 4-1
+@update 4-2
+@update 4-5
+@update 4-6
+@update 4-7
+@update 4-8
+@update 4-9
+@update Alisa
+@update 12
+@Return 
+
+# Reset1-4-Trial2
+
+@Gosub .Reset1-4-Trial1
+@update 4-3
+@Return 
+
+# Reset1-4-Trial3
+
+@Gosub .Reset1-4-Trial2
+@update 4-4
+@Return 
+
+# ==============================================================================
+# MARK: 📖 1-5
+# ==============================================================================
+
+# Reset1-5-Adv
+
+@clearBook 
+@update 3-3
+@update 10-1
+@update Alisa
+@update AnAn
+@update Coco
+@update Ema
+@update Hanna
+@update Hiro
+@update Jailer
+@update Leia
+@update Margo
+@update Meruru
+@update Miria
+@update Nanoka
+@update Noah
+@update Sherry
+@update Warden
+@update F1
+@update F2
+@update B1
+@update Blueprint
+@update 1
+@update 2
+@update 3
+@update 4
+@update 5
+@update 1
+@update 2
+@update 3
+@update 4
+@update 5
+@update 6
+@update 7
+@update 8
+@update 9
+@update 10
+@update 11
+@update 12
+@Return 
+
+# Reset1-5-Trial1
+
+@Gosub .Reset1-5-Adv
+@update 5-1
+@update 5-2
+@update 5-3
+@update 5-4
+@update 5-5
+@update 5-6
+@update 5-7
+@update 5-8
+@update 5-9
+@update 5-10
+@update 5-11
+@update 5-12
+@update 5-13
+@update 5-14
+@update 5-15
+@update 5-16
+@update 5-17
+@update 5-18
+@update 13
+@Return 
+
+# Reset1-5-Trial2
+
+@Gosub .Reset1-5-Trial1
+@update 5-9
+@Return 
+
+# ==============================================================================
+# MARK: 📖 2-1
+# ==============================================================================
+
+# Reset2-1-Adv
+
+@clearBook 
+@update 10-1
+@update Alisa
+@update AnAn
+@update Coco
+@update Ema
+@update Hanna
+@update Hiro
+@update Jailer
+@update Leia
+@update Margo
+@update Meruru
+@update Miria
+@update Nanoka
+@update Noah
+@update Sherry
+@update Warden
+@update F1
+@update F2
+@update B1
+@update 1
+@update 2
+@update 3
+@update 4
+@update 5
+@update 1
+@update 2
+@update 3
+@update 4
+@update 5
+@update 6
+@update 7
+@Return 
+
+# Reset2-1-Trial1
+
+@Gosub .Reset2-1-Adv
+@update Alisa
+@update AnAn
+@update Coco
+@update Hanna
+@update Leia
+@update Margo
+@update Meruru
+@update Miria
+@update Nanoka
+@update Noah
+@update Sherry
+@update F2
+@update 14
+@update 15
+@Return 
+
+# Reset2-1-Trial2
+
+@Gosub .Reset2-1-Trial1
+@update 6-1
+@update 6-2
+@update 6-3
+@Return 
+
+# Reset2-1-Trial3
+
+@Gosub .Reset2-1-Trial2
+@update 6-4
+@Return 
+
+# Reset2-1-Trial4
+
+@Gosub .Reset2-1-Trial3
+@update 6-5
+@Return 
+
+# Reset2-1-Trial5
+
+@Gosub .Reset2-1-Trial4
+@update 6-6
+@update 6-7
+@update 6-8
+@update 6-9
+@Return 
+
+# Reset2-1-Trial6
+
+@Gosub .Reset2-1-Trial5
+@update 6-8
+@Return 
+
+# ==============================================================================
+# MARK: 📖 2-2
+# ==============================================================================
+
+# Reset2-2-Adv
+
+@clearBook 
+@update 10-1
+@update Alisa
+@update AnAn
+@update Coco
+@update Ema
+@update Hanna
+@update Hiro
+@update Jailer
+@update Leia
+@update Margo
+@update Meruru
+@update Miria
+@update Nanoka
+@update Noah
+@update Sherry
+@update Warden
+@update F1
+@update F2
+@update B1
+@update 1
+@update 2
+@update 3
+@update 4
+@update 5
+@update 1
+@update 2
+@update 3
+@update 4
+@update 5
+@update 6
+@update 7
+@update 14
+@update 15
+@Return 
+
+# Reset2-2-Trial1
+
+@Gosub .Reset2-2-Adv
+@update Coco
+@update Miria
+@update Noah
+@update 16
+@Return 
+
+# Reset2-2-Trial2
+
+@Gosub .Reset2-2-Trial1
+@update 7-1
+@update 7-2
+@Return 
+
+# Reset2-2-Trial3
+
+@Gosub .Reset2-2-Trial2
+@update 7-3
+@update 7-4
+@Return 
+
+# Reset2-2-Trial4
+
+@Gosub .Reset2-2-Trial3
+@update 7-5
+@update 7-6
+@update 7-8
+@update 7-9
+@update 7-10
+@update 7-11
+@Return 
+
+# Reset2-2-Trial5
+
+@Gosub .Reset2-2-Trial4
+@update 7-9
+@Return 
+
+# ==============================================================================
+# MARK: 📖 2-3
+# ==============================================================================
+
+# Reset2-3-Adv
+
+@clearBook 
+@update 10-1
+@update Alisa
+@update AnAn
+@update Coco
+@update Ema
+@update Hanna
+@update Hiro
+@update Jailer
+@update Leia
+@update Margo
+@update Meruru
+@update Miria
+@update Nanoka
+@update Noah
+@update Sherry
+@update Warden
+@update F1
+@update F2
+@update B1
+@update 1
+@update 2
+@update 3
+@update 4
+@update 5
+@update 1
+@update 2
+@update 3
+@update 4
+@update 5
+@update 6
+@update 7
+@update 14
+@update 15
+@update 16
+@Return 
+
+# Reset2-3-Trial1
+
+@Gosub .Reset2-3-Adv
+@update AnAn
+@update 17
+@Return 
+
+# Reset2-3-Trial2
+
+@Gosub .Reset2-3-Trial1
+@update 8-1
+@update 8-2
+@update 8-3
+@update 8-4
+@Return 
+
+# Reset2-3-Trial3
+
+@Gosub .Reset2-3-Trial2
+@update 8-6
+@Return 
+
+# Reset2-3-Trial4
+
+@Gosub .Reset2-3-Trial3
+@update 8-7
+@Return 
+
+# Reset2-3-Trial5
+
+@Gosub .Reset2-3-Trial4
+@update 8-2
+@update 8-5
+@update 8-8
+@Return 
+
+# ==============================================================================
+# MARK: 📖 2-4
+# ==============================================================================
+
+# Reset2-4-Adv
+
+@clearBook 
+@update 10-1
+@update Alisa
+@update AnAn
+@update Coco
+@update Ema
+@update Hanna
+@update Hiro
+@update Jailer
+@update Leia
+@update Margo
+@update Meruru
+@update Miria
+@update Nanoka
+@update Noah
+@update Sherry
+@update Warden
+@update F1
+@update F2
+@update B1
+@update 1
+@update 2
+@update 3
+@update 4
+@update 5
+@update 1
+@update 2
+@update 3
+@update 4
+@update 5
+@update 6
+@update 7
+@update 14
+@update 15
+@update 16
+@update 17
+@Return 
+
+# Reset2-4-Trial1
+
+@Gosub .Reset2-4-Adv
+@update Alisa
+@update Ema
+@update Hiro
+@update Leia
+@update 18
+@Return 
+
+# Reset2-4-Trial2
+
+@Gosub .Reset2-4-Trial1
+@update 9-1
+@update 9-2
+@update 9-3
+@update 9-4
+@update 9-5
+@update 9-6
+@update 9-7
+@Return 
+
+# Reset2-4-Trial3
+
+@Gosub .Reset2-4-Trial2
+@update 9-8
+@update 9-9
+@update 9-10
+@update 9-11
+@Return 
+
+# Reset2-4-Trial4
+
+@Gosub .Reset2-4-Trial3
+@update 9-7
+@update 9-12
+@Return 
+
+# ==============================================================================
+# MARK: 📖 2-5
+# ==============================================================================
+
+# Reset2-5-Adv
+
+@clearBook 
+@update 10-1
+@update Alisa
+@update AnAn
+@update Coco
+@update Ema
+@update Hanna
+@update Hiro
+@update Jailer
+@update Leia
+@update Margo
+@update Meruru
+@update Miria
+@update Nanoka
+@update Noah
+@update Sherry
+@update Warden
+@update F1
+@update F2
+@update B1
+@update 1
+@update 2
+@update 3
+@update 4
+@update 5
+@update 1
+@update 2
+@update 3
+@update 4
+@update 5
+@update 6
+@update 7
+@update 14
+@update 15
+@update 16
+@update 17
+@update 18
+@Return 
+
+# Reset2-5-Trial1
+
+@Gosub .Reset2-5-Adv
+@update 6-2
+@update 10-1
+@update 10-7
+@Return 
+
+# Reset2-5-Trial2
+
+@Gosub .Reset2-5-Trial1
+@update Meruru
+@update 1
+@update 2
+@Return 
+
+# Reset2-5-Trial3
+
+@Gosub .Reset2-5-Trial2
+@update 10-16
+@update 10-17
+@update 10-18
+@update 10-19
+@update Leia
+@Return 
+
+# Reset2-5-Trial4
+
+@Gosub .Reset2-5-Trial3
+@update Noah
+@Return 
+
+# Reset2-5-Trial5
+
+@Gosub .Reset2-5-Trial4
+@update Margo
+@Return 
+
+# Reset2-5-Trial6
+
+@Gosub .Reset2-5-Trial5
+@update Nanoka
+@Return 
+
+# Reset2-5-Trial7
+
+@Gosub .Reset2-5-Trial6
+@update Leia
+@Return 
+
+# Reset2-5-Trial8
+
+@Gosub .Reset2-5-Trial7
+@update Coco
+@update Nanoka
+@Return 
+
+# Reset2-5-Trial9
+
+@Gosub .Reset2-5-Trial8
+@update AnAn
+@Return 
+
+# Reset2-5-Trial10
+
+@Gosub .Reset2-5-Trial9
+@update AnAn
+@Return 
+
+# Reset2-5-Trial11
+
+@Gosub .Reset2-5-Trial10
+@update Miria
+@Return 
+
+# Reset2-5-Trial12
+
+@Gosub .Reset2-5-Trial11
+@update 10-20
+@update 10-21
+@update 10-22
+@update 10-23
+@update 10-24
+@update 10-25
+@update 10-26
+@update 10-27
+@update 10-28
+@update 10-29
+@update 10-30
+@update 10-31
+@update 10-32
+@update 10-33
+@update 10-34
+@update 10-35
+@update 10-36
+@update 10-37
+@update Alisa
+@update AnAn
+@update Coco
+@update Ema
+@update Hanna
+@update Hiro
+@update Leia
+@update Margo
+@update Meruru
+@update Miria
+@update Nanoka
+@update Noah
+@update Sherry
+@update 8
+@update 9
+@update 10
+@update 11
+@update 12
+@update 13
+@Return 
+
+# Reset2-5-Trial13
+
+@Gosub .Reset2-5-Trial12
+@update Alisa
+@update Hanna
+@update Nanoka
+@Return 
+
+# Reset2-5-Trial14
+
+@Gosub .Reset2-5-Trial13
+@update Hanna
+@Return 
+
+# Reset2-5-Trial15
+
+@Gosub .Reset2-5-Trial14
+@update Sherry
+@Return 
+
+# ==============================================================================
+# MARK: 📖 2-6
+# ==============================================================================
+
+# Reset2-6-Adv
+
+@clearBook 
+@update 6-2
+@update 10-1
+@update 10-7
+@update 10-16
+@update 10-17
+@update 10-18
+@update 10-19
+@update 10-20
+@update 10-21
+@update 10-22
+@update 10-23
+@update 10-24
+@update 10-25
+@update 10-26
+@update 10-27
+@update 10-28
+@update 10-29
+@update 10-30
+@update 10-31
+@update 10-32
+@update 10-33
+@update 10-34
+@update 10-35
+@update 10-36
+@update 10-37
+@update Alisa
+@update AnAn
+@update Coco
+@update Ema
+@update Hanna
+@update Hiro
+@update Jailer
+@update Leia
+@update Margo
+@update Meruru
+@update Miria
+@update Nanoka
+@update Noah
+@update Sherry
+@update Warden
+@update F1
+@update F2
+@update B1
+@update 1
+@update 2
+@update 3
+@update 4
+@update 5
+@update 1
+@update 2
+@update 3
+@update 4
+@update 5
+@update 6
+@update 7
+@update 8
+@update 9
+@update 10
+@update 11
+@update 12
+@update 13
+@update 14
+@update 15
+@update 16
+@update 17
+@update 18
+@Return 
+
+# Reset2-6-Trial1
+
+@Gosub .Reset2-6-Adv
+@Return

@@ -1,0 +1,1019 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act01_Chapter02/Act01_Chapter02_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# ==============================================================================
+# MARK: 14: 💬 データの行方
+# ==============================================================================
+# ＠ト書き▼議論2-14 データの行方
+# BGM変更：Guil-me N'o sinruits-Vocal無-
+@bgm Bgm_8_1
+# ボス演出
+@ResetText 
+@char Ema.Determined2,ArmR1 { time:0 }
+@stageCamera 1 { Rotation:0,{ (0 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+
+@stageCamera 1 { Rotation:0,{ (0.1 / courtStandCount * 360) },0 time:1 }
+@showStageScreen 1
+@Wait 1.5
+
+@ResetText 
+@char AnAn.Angry1,Angle01/Option_Arms-,ArmR-Option-Off,ArmR6,ArmL11,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Angry_Closed02 { time:0 }
+@stageCamera 0 { Rotation:0,{ (11 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+
+@stageCamera 0 { Rotation:0,{ (10.9 / courtStandCount * 360) },0 time:1 }
+@hideStageScreen 1
+@Wait 1.5
+
+# Judge2-14-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@printDebate 時系列を<br>整理するよ。
+
+@char Ema.Default,ArmR7,ArmL12,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@printDebate ナノカちゃんが<br>死体を見つけて<br>部屋を出てから、<br>シェリーちゃんが<br>扉を開けるまでの間<br>懲罰房は密室だった……。
+
+@char Ema.Default,ArmR7,ArmL12,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@printDebate そしてその間に、<br>ミリアちゃんの【悲鳴】が<br>部屋の中から聞こえたんだ。
+
+@char Ema.Default,ArmR7,ArmL12,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@printDebate すでに死んでたという<br>ナノカちゃんの証言が本当なら、<br>その悲鳴は<br>録音したデータだったって<br>事になるし……。
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@printDebate そのデータは<br>誰かが消した事になる……。
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@printDebate 部屋に入って、<br>最初にミリアちゃんの<br>スマホを見つけたのは<br>アンアンちゃんだけど――。
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Angry_Open01,Angle01/Head/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@printDebate "――しかしあの時<br>わがはいには<br><link=\"Objection_01_02_14_01\">データを消す時間</link>は<br>なかった！<br>つまりあの<link=\"Objection_01_02_14_02\">悲鳴は本物</link><br>だったのだ！<br>ミリアはあの時、<br><link=\"Objection_01_02_14_03\">生きていた</link>に違いない！"
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL11,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Uncomfortable_Open
+@gosubModifyCamera 0
+@printDebate 全てはナノカの嘘……<br>ナノカがミリアを<br>殺したのだ！！
+
+# ＠備考◆焦り
+@char Nanoka.Normal1,ArmR2,ArmL1,Eyes1_Normal_Open3,Mouth1_Normal_Open2,Sweat1_1,Pale1_1
+@gosubModifyCamera 0
+@printDebate 違う！<br>私は殺してない！
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate でも実際、<br>ナノカ以外<br>できねーじゃん？
+
+@char Nanoka.Normal1,ArmR2,ArmL1,Eyes1_Angry_Open1,Mouth1_Normal_Open2,Sweat1_1,Pale1_1
+@gosubModifyCamera 0
+@printDebate それは……！<br>何かトリックが……<br>前提の間違いが<br>あるはず……！
+
+# ＠備考◆焦って混乱して独り言を言っている
+
+@char Nanoka.Normal1,ArmR3,ArmL4,Eyes1_Fearful_Open2,Mouth1_Angry_Closed2,Sweat1_1,Pale1_1
+@gosubModifyCamera 0
+@printDebate "本当は<link=\"Objection_01_02_14_04\">犯人は共犯</link>だった……？<br>それとも何か<br><link=\"Objection_01_02_14_05\">スマホに仕掛け</link>が<br>されていた……？<br>もしかして<br><link=\"Objection_01_02_14_06\">私が見た死体</link>は、<br>見間違いだったの……？"
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Angry_Open01,Angle01/Head/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@printDebate もういい……！<br>議論は<br>十分され尽くした……！
+
+@char AnAn.Angry1,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL11,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Yell_Open
+@gosubModifyCamera 0
+@printDebate <size=200><color=#9c8eff>【投票しろ】</color>！</size>
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Ema.Fearful,ArmR6,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Lifeless04,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Middle
+@gosubModifyCamera 0
+@Wait 0.2
+
+# ==============================================================================
+# ADVシーン
+# ==============================================================================
+# ＠備考◆ぐるぐる目のようなイメージ
+
+@print （……投票、しなきゃ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@char Meruru.Default,ArmR5_1,ArmL4,Eyes1_Normal_Open2,Mouth1_Angry_Open2
+@gosubSplitStageScreen 1
+@Wait 0.2
+
+@print エマさん、気を確かに……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@print う、うん……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideStageScreen 1
+
+@char Ema.Default,ArmR7,ArmL10,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+
+@print （今の話の中で気になった部分……！<br>　それを……指摘するんだ！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge2-14-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_01_02_14_01
+
+@Skip false
+@pauseTrial true
+
+@choice すぐ消せた
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge2-14-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_01_02_14_02
+
+@Skip false
+@pauseTrial true
+
+@choice 悲鳴は偽物だという証拠がある
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge2-14-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_01_02_14_03
+
+@Skip false
+@pauseTrial true
+
+@choice ミリアが生きていた証拠がある
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge2-14-5
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論4
+# ------------------------------------------------------------------------------
+
+# Objection_01_02_14_04
+
+@Skip false
+@pauseTrial true
+
+@choice ミリアがアンアンに協力した
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge2-14-6
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論5
+# ------------------------------------------------------------------------------
+
+# Objection_01_02_14_05
+
+@Skip false
+@pauseTrial true
+
+@choice スマホはすり替えられていた
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge2-14-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論6
+# ------------------------------------------------------------------------------
+
+# Objection_01_02_14_06
+
+@Skip false
+@pauseTrial true
+
+@choice 死体は別人だった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge2-14-7
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論7
+# ------------------------------------------------------------------------------
+
+# Objection_01_02_14_07
+
+# ==============================================================================
+# ミス選択肢
+# ==============================================================================
+
+# MARK: 2-14-3: ❌ データをすぐ消せた
+
+# Judge2-14-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL13,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open
+@gosubModifyCamera 0
+@print ……アンアンちゃんが<br>データを消すことはできたはずだよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Neutral_Open,Angle01/Head/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print どうやって消すというのだ？ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,Angle01/Head/Facial/Eyes>Eyes_Angry_Open01,Angle01/Head/Facial/Mouth>Mouth_Uncomfortable_Open
+@gosubModifyCamera 0
+@print データを消すには<br>【３０分】かかるというではないか！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,Angle01/Head/Facial/Eyes>Eyes_Angry_Open01,Angle01/Head/Facial/Mouth>Mouth_Uncomfortable_Open
+@gosubModifyCamera 0
+@print だがわがはいがあのスマホを見つけたのは<br>懲罰房に入ってから【５分】ほどの間……！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR5,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print わがはいには不可能だ！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print でも何か裏技があったのかも……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Angry_Open01,Angle01/Head/Facial/Mouth>Mouth_Pensive_Open,Angle01/Head/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ならばそれを示すがいい！<br>それができないなら……。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL11,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Yell_Open,Angle01/Head/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print <color=#9c8eff><b>【もう無駄な問答は不要である】</b></color>！<br><color=#9c8eff><b>【早急に裁判を終わらせるべきだ】</b></color>！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （半端な指摘じゃ、<br>　アンアンちゃんに押し切られちゃいそうだ……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL10,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （何か決定打を見つけないと！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （アンアンちゃんが焦っている理由は何だろう……？<br>　スマホの初期化に関連することなのかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge2-14-1
+
+# MARK: 2-14-4: ❌ 悲鳴は偽物だという証拠がある
+
+# Judge2-14-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL13,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open
+@gosubModifyCamera 0
+@print ミリアちゃんの悲鳴は偽物だよ！<br>その証拠もある！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Uncomfortable_Open
+@gosubModifyCamera 0
+@print あるものか！！<br>虚言を吐くな！！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Angry_Open01,Angle01/Head/Facial/Mouth>Mouth_Pensive_Open,Angle01/Head/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print あのスマホは初期化されている】！<br>スマホから悲鳴を流したという証拠はない！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL11,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Yell_Open,Angle01/Head/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print エマは<color=#9c8eff><b>【口をとざせ】</b></color>！！<br><color=#9c8eff><b>【議論は終わりだ】</b></color>！！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+# 別選択肢共通
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （半端な指摘じゃ、<br>　アンアンちゃんに押し切られちゃいそうだ……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Ema.Default,ArmR7,ArmL10,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （何か決定打を見つけないと！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （アンアンちゃんが焦っている理由は何だろう……？<br>　スマホの初期化に関連することなのかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge2-14-1
+
+# MARK: 2-14-5: ❌ ミリアが生きていた証拠がある
+
+# Judge2-14-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL13,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open
+@gosubModifyCamera 0
+@print そうだよ！<br>アンアンちゃんが言う通り、<br>その時ミリアちゃんは生きてたんだ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print 桜羽エマ、佐伯ミリアの死体は<br>私が確認しているわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print 夏目アンアンの苦し紛れの言い訳に、<br>騙されないで……！ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Uncomfortable_Open
+@gosubModifyCamera 0
+@print わがはいとハンナが懲罰房に行った時、<br>まだミリアは生きていたのだ！<br>悲鳴を上げ、苦しんでいた！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Angry_Open01,Angle01/Head/Facial/Mouth>Mouth_Pensive_Open,Angle01/Head/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print そしてわがはいたちが去った後、<br>ナノカが懲罰房に入り、ミリアを殺した！<br><color=#9c8eff><b>【そうとしか考えられまい】</b></color>！？ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL11,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Yell_Open,Angle01/Head/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print これですべて筋が通る！<br><color=#9c8eff><b>【早急に投票を終え、閉廷せよ】</b></color>！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （アンアンちゃんの言葉……<br>　やっぱり何かがおかしい気がする……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL10,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （……アンアンちゃんの嘘を……<br>　指摘するんだ……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （アンアンちゃんが焦っている理由は何だろう……？<br>　スマホの初期化に関連することなのかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge2-14-1
+
+# MARK: 2-14-6: ❌ ミリアがアンアンに協力した
+
+# Judge2-14-6
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL13,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open
+@gosubModifyCamera 0
+@print そ、そうか、そうだよナノカちゃん……！<br>ミリアちゃんとアンアンちゃんは共犯だったんだ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL12,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open
+@gosubModifyCamera 0
+@print ミリアちゃんは事前に初期化した自分のスマホを<br>アンアンちゃんに渡しておいたんだよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR13,ArmL10,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print なにそれどゆこと！？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default,ArmR1_1,ArmL8,Eyes1_Pensive_Open2,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print で、でもどのタイミングで初期化したんでしょうか……？<br>懲罰房に連れていかれたあと<br>ミリアさんは拘束されていましたし……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print それに、スマホが初期化されて<br>アンアンちゃんの手元にあるのなら<br>悲鳴の偽装は不可能になるけれど……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,Angle01/Facial/Eyes>Eyes_Pensive_Middle
+@gosubModifyCamera 0
+@print 悲鳴の偽装がないとなると、<br>スマホを初期化する必要性もなくなるわね？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1,ArmR2,ArmL2,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ぜ、前提がガラガラと崩れていきますわ～～！？<br>混乱させるようなことを言わねーでくださいまし！！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （み、みんなを混乱させちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （……【スマホが初期化されていた】ことは事実……！<br>　【初期化に３０分】かかることも説明された……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （……もし、もし仮にだけど、<br>　アンアンちゃんが初期化をしたのだとしたら、<br>　いつ、どうやって……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge2-14-1
+
+# MARK: 2-14-7: ❌ 死体は別人だった
+
+# Judge2-14-7
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL13,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open
+@gosubModifyCamera 0
+@print そっか、ナノカちゃんが見た死体は<br>別人のものだったんだ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR4,ArmL5
+@gosubModifyCamera 0
+@print なるほどー！？<br>しかし別人だとすると、誰です！？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print 私が確認した死体は佐伯ミリアのものだったわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print それを疑うなら桜羽エマ……<br>あなたもまた怪しいわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （ナノカちゃんに疑われちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL10,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （冷静に考えるんだ……！<br>　……【見つかった死体もミリアちゃん本人だった】。<br>　それは間違いない……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （ならアンアンちゃんがスマホを初期化する方法は……<br>　何かあったはず！<br>　それを考えるんだ！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge2-14-1
+
+# ==============================================================================
+# MARK: 2-14-2: ⭕ スマホはすり替えられていた
+# ==============================================================================
+
+# Judge2-14-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@gosubCutIn Ema
+@Gosub System/System_Subroutine.EndDebate-Last
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+@char Ema.Determined2,ArmR7,ArmL10,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print 違うよ。ナノカちゃん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmR2,ArmL9,Eyes1_Confused_Open1,Mouth1_Surprised_Open1,Sweat1_1
+@gosubModifyCamera 0
+@print ち、違う……？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# ミリアのスマホ
+@spawn Clue
+
+@char Ema.Determined2,ArmR7,ArmL10,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print ミリアちゃんのスマホ自体に<br>仕掛けがされてたわけじゃない……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@despawn Clue
+
+@char Ema.Determined2,ArmR7,ArmL11,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print ミリアちゃんのスマホは……<br>すり替えられてたんだ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Nanoka.Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print すり替え……！ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Surprised_Open01,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print ええ？<br>でもこのスマホって、ミリアさんの物じゃないですか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmL2,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Open
+@gosubModifyCamera 0
+@print とっても特徴的ですわー！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Pensive_Middle
+@gosubModifyCamera 0
+@print ……いいえ。そうとも限らないわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print たしかにミリアちゃんのスマホは<br>デコられてたけど……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print でもそれはあくまでもケースの話だもの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR5,ArmL4
+@gosubModifyCamera 0
+@print スマホ本体を入れ替える事は<br>そんなに難しくないんじゃないかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+# ＠備考◆動揺
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR1,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Uncomfortable_Open02,Angle01/Head/Facial/Mouth>Mouth_Uncomfortable_Open,Angle01/Head/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print な、何を……。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print 中身を取り替えるだけなら<br>一瞬で交換できるし……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Middle
+@gosubModifyCamera 0
+@print 入れ替える方のスマホのデータは<br>あらかじめ消しておけばいいものね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR5,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print そういうことね？<br>エマちゃん。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char AnAn.Fearful1
+@gosubModifyCamera 0
+@print ……違う。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Fearful_Open
+@gosubModifyCamera 0
+@print 違う、違う……違う違う違う！！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Fearful_Open
+@gosubModifyCamera 0
+@print そのスマホはミリアのものだ！<br>わがはいはすり替えてなんていない……！！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+# ＠備考◆憐れみ
+
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Normal_Open2,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print ……でも――。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL11,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Yell_Open
+@gosubModifyCamera 0
+@print ――言いがかりだ！！<br>すり替えた証拠なんて……どこにもない！！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+# Judge2-14-16
+
+@char Ema.Determined2,ArmR7,ArmL10,Angle01/Head02/Facial02/Mouth02>Mouth02_Surprised_Open
+@gosubModifyCamera 0
+@print ……スマホが入れ替えられた証拠は。 { author:Ema speed:1 waitInput:true Wait:true }
+
+
+@choice もう存在しない
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge2-14-9
+
+@choice 現場にいけば見つかる
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge2-14-10
+
+@choice 電話をかければ見つかる
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge2-14-8
+
+@StopForChoice 
+
+# ==============================================================================
+# ミス選択肢
+# ==============================================================================
+# MARK: 2-14-9: ❌ もう存在しない
+
+# Judge2-14-9
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open
+@gosubModifyCamera 0
+@print その証拠は……もう存在しないよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Uncomfortable_Open,Angle01/Head/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print "ああ！！ そうだろうとも！！" { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR5,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Angry_Open01,Angle01/Head/Facial/Mouth>Mouth_Yell_Open
+@gosubModifyCamera 0
+@print スマホは初期化されているんだぞ！？<br>証拠など出せるわけがない！！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR5,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Yell_Open
+@gosubModifyCamera 0
+@print "すべてはただの難癖！ エマの謀略である！<br>ヤツはわがはいを犯人に仕立てようとしている！" { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR5,ArmL11,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Yell_Open
+@gosubModifyCamera 0
+@print そう、<color=#9c8eff><b>【エマこそ魔女だ】</b></color>！！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （みんなの疑いの目が刺さる……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL10,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （こ、これ以上アンアンちゃんに魔法を使わせちゃダメだ、<br>　みんなを納得させられる証拠を出さないと……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge2-14-16
+
+# MARK: 2-14-10: ❌ 現場にいけば見つかる
+
+# Judge2-14-10
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print その証拠は……現場にいけば見つかるはずだよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Angry_Open01,Angle01/Head/Facial/Mouth>Mouth_Uncomfortable_Open
+@gosubModifyCamera 0
+@print 全員が現場を調べたはずだ。<br>どこにどんな証拠があるというのだ？ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print そ、それは……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Angry_Open01,Angle01/Head/Facial/Mouth>Mouth_Uncomfortable_Open
+@gosubModifyCamera 0
+@print エマ、貴様は証拠もなく<br>わがはいを疑い続けているな？ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Uncomfortable_Open
+@gosubModifyCamera 0
+@print わがはいはミリアの仇討ちを成し遂げるべく<br>尽力しているというのに！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR5,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Yell_Open
+@gosubModifyCamera 0
+@print わがはいとエマ、どちらの言い分が正しいか……<br>誰の目にも明らかだと思わないか！？ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR5,ArmL11,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Yell_Open
+@gosubModifyCamera 0
+@print 今すぐに<color=#9c8eff><b>【エマに投票すべきだ】</b></color>！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （ううう、投票が始まっちゃう！？） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （こ、これ以上アンアンちゃんに魔法を使わせちゃダメだ、<br>　みんなを納得させられる証拠を出さないと……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge2-14-16
+
+# ==============================================================================
+# MARK: 2-14-8: ⭕ 電話をかければ見つかる
+# ==============================================================================
+
+# Judge2-14-8
+
+@char Ema.Determined2,ArmR7,ArmL10,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print この人に、電話をかければわかるよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@evidence Profile
+
+@if "chosenEvidenceId==\"Miria\""
+	@goto .Judge2-14-11
+
+@if "chosenEvidenceId==\"AnAn\""
+	@goto .Judge2-14-12
+
+@if "chosenEvidenceId==\"Ema\""
+	@goto .Judge2-14-13
+
+@if "chosenEvidenceId==\"Nanoka\""
+	@goto .Judge2-14-14
+
+@goto .Judge2-14-15
+
+# ==============================================================================
+# ミス選択肢
+# ==============================================================================
+# MARK: 2-14-12: ❌ 夏目アンアン
+
+# Judge2-14-12
+@char Ema.Determined2,ArmR7,ArmL10
+@gosubModifyCamera 0
+@print （アンアンちゃんに電話をかければ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print "（……ってダメだ！ アンアンちゃんとは<br>　連絡先を交換してないからかけられない……！）" { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （もう一度考え直そう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge2-14-8
+
+# MARK: 2-14-13: ❌ 桜羽エマ
+
+# Judge2-14-13
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print そう、ボクに電話をかければ、<br>その答えを教えるよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default
+@gosubModifyCamera 0
+@print "オイざけんなッ！！ 今教えろッ！！" { author:Alisa speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR2,ArmL7,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print （ちゃんと答えないと……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR6,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （これで犯人がわかるはずなんだ！<br>　慎重に考えよう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge2-14-8
+
+# MARK: 2-14-14: ❌ 黒部ナノカ
+
+# Judge2-14-14
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print …………ナノカちゃん、いいよね？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmR2,ArmL1,Eyes1_Confused_Open1,Mouth1_Surprised_Open1,Sweat1_1
+@gosubModifyCamera 0
+@print え……？<br>ええ……？<br>いい、けれど……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Normal_Open2,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print 証拠なんて……持っていないわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print なんで電話かけようとしてんだよ！<br>ここで話せ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （怒られた……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （これで犯人がわかるはずなんだ！<br>　慎重に考えよう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge2-14-8
+
+# MARK: 2-14-15: ❌ 汎用選択ミス
+
+# Judge2-14-15
+
+@char Nanoka.Normal1,ArmR1,ArmL10,Eyes1_Angry_Open1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print 桜羽エマ……わかっているはずでしょう。<br>……本当は誰に電話をかければいいのかを。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmR1,ArmL10,Eyes1_Angry_Open1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print 誰と誰のスマホが入れ替わったのか、考えるの。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR5,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Uncomfortable_Open02,Angle01/Head/Facial/Mouth>Mouth_Uncomfortable_Open,Angle01/Head/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print な、何をごちゃごちゃと<br>さえずっているのだ！！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR5,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Uncomfortable_Open02,Angle01/Head/Facial/Mouth>Mouth_Yell_Open,Angle01/Head/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print すぐに証拠が示せないのなら、裁判は終わりだ！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （間違えちゃったみたい……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （これで犯人がわかるはずなんだ！<br>　慎重に考えよう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge2-14-8
+
+# ==============================================================================
+# MARK: 2-14-11: ⭕ 佐伯ミリア
+# ==============================================================================
+
+# Judge2-14-11
+
+@StopBgm 
+@gosubCutIn Ema
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@ResetText 
+@char AnAn.Fearful
+@gosubModifyCamera 0
+
+# 電子音のSEで表現
+# ピピピ、と電話をかけるエマ
+# 音声が再生される
+# 電子音（ピポパ）
+@Wait 2
+@sfx Sfx_103
+@Wait 3
+
+# アンアンの青ざめた立ち絵
+# 録音された音声と全く同じ物（こもった加工はされていない）で、録音音声の加工がされている
+
+@char AnAn.Fearful
+@gosubModifyCamera 0
+@print ……きゃあああーーー！！ { author:Miria speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Coco.Default,ArmR6,ArmL1,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Pensive_Middle,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print この声……！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmR2,ArmL9,Eyes1_Fearful_Open2,Mouth1_Angry_Closed2,Sweat1_1
+@gosubModifyCamera 0
+@print 佐伯ミリアの……悲鳴。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL12
+@gosubModifyCamera 0
+@print ハンナさんが録音した物と、<br>同じ声でしたね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ＠備考◆信じたくない/青ざめている
+
+@char Hanna.Surprised1
+@gosubModifyCamera 0
+@print どうして……<br>アンアンさんから……！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+# ＠備考◆青ざめ
+
+@char AnAn.Fearful1,Angle01/Option_Arms-,ArmR-Option-Off,ArmR5,ArmL9,Angle01/Head/Facial/Eyes>Eyes_Fearful_Open,Angle01/Head/Facial/Mouth>Mouth_Cry_Closed,Angle01/Head/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……あ……これ……は……。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+# ＠備考◆続きが再生される
+@gosubModifyCamera 0
+@print ……あ～、もう～……。<br>こういうビックリ系のホラー、<br>おじさん苦手なんだよね～。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print ……って録音してない！？<br>も～、恥ずかしいなぁ。<br>そんなのわざわざ送らなくてもいいって、アンアンちゃ――。 { author:Miria speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR7,ArmL10,Angle01/Head/Facial/Eyes>Eyes_Cry_Open02,Angle01/Head/Facial/Mouth>Mouth_Yell_Open
+@gosubModifyCamera 0
+@print ――もう……やめて……！！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+# 電話を切る音
+@sfx Sfx_103
+@Wait 0.1
+
+@StopSfx 
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ……今のは、ミリアちゃんのスマホのＩＤに<br>電話をかけたんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print つまり……今アンアンちゃんが持ってるのは<br>ミリアちゃんのスマホっていう事だよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR2-2,ArmL1,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print ……佐伯ミリアちゃんを殺した犯人は、キミだ――。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char Ema.Determined2,ArmR2-2,ArmL1,Angle01/Head02/Facial02/Mouth02>Mouth02_Surprised_Open
+@gosubModifyCamera 0
+@print ――夏目アンアンちゃん！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL9,Angle01/Head/Facial/Eyes>Eyes_Fearful_Open,Angle01/Head/Facial/Mouth>Mouth_Uncomfortable_Open
+@gosubModifyCamera 0
+@print う……あ…………。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Pensive_Middle
+@gosubModifyCamera 0
+@print ……あらあら。<br>意外と詰めが甘いのね？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Closed
+@gosubModifyCamera 0
+@print 自分のスマホとすり替えた後、<br>設定をそのままにしてたなんて……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL9,Angle01/Head/Facial/Eyes>Eyes_Downcast_Open,Angle01/Head/Facial/Mouth>Mouth_Pensive_Open,Angle01/Head/Facial/Pale>Pale01
+@gosubModifyCamera 0
+@print ……データを消しても<br>スマホのＩＤは変わらない……。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL9,Angle01/Head/Facial/Eyes>Eyes_Downcast_Open,Angle01/Head/Facial/Mouth>Mouth_Pensive_Open,Angle01/Head/Facial/Pale>Pale01
+@gosubModifyCamera 0
+@print 入れ替えに気付かれ、<br>ミリアのスマホが鳴らされた時点で……。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL9,Angle01/Head/Facial/Eyes>Eyes_Cry_Open01,Angle01/Head/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print わがはいの、負けだ。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print それでも……データを消しておけば、<br>言いわけぐらいはできたと思うけどね？ { author:Margo speed:1 waitInput:true Wait:true }
+
+# ＠備考◆意気消沈
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL9,Angle01/Head/Facial/Eyes>Eyes_Cry_Open01,Angle01/Head/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print ……バカを、言うな……。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL9,Angle01/Head/Facial/Eyes>Eyes_Cry_Open01,Angle01/Head/Facial/Mouth>Mouth_Uncomfortable_Open
+@gosubModifyCamera 0
+@print わがはいの、大事な友人との……<br>最後の思い出を……。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+# 泣く
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL9,Angle01/Head/Facial/Eyes>Eyes_Cry_Open02,Angle01/Head/Facial/Mouth>Mouth_Uncomfortable_Open
+@gosubModifyCamera 0
+@print 消せるわけ……ないだろう……。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndTrial
+
+@goto Act01_Chapter02/Act01_Chapter02_Trial15

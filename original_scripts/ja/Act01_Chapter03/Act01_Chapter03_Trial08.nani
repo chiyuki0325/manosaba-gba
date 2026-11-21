@@ -1,0 +1,841 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act01_Chapter03/Act01_Chapter03_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+@char Warden.1 { Position:,{hiddenCharacterPositionY} time:0 }
+@char Jailer.1 { Position:,{hiddenCharacterPositionY} time:0 }
+# ==============================================================================
+# MARK: 3-8: 💬 シェリーの推理
+# ==============================================================================
+# ＠ト書き▼議論3-8シェリーの推理
+# カットイン
+# BGM変更：rAwTell Owk...
+@bgm Bgm_7_1
+
+# Judge3-8-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate きっとハンナさんは<br>火精の間に<br>最初からいたんです。<br>……すでに殺され、<br>死体となっていたのかも<br>しれませんが。
+
+@char Alisa.Surprised1
+@gosubModifyCamera 0
+@printDebate ウチらがいた時、<br>あそこに死体が<br>あったってのか！？
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate そうです！<br>きっと天井付近に<br>いたはずですよ。<br>棚の上とか！
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@printDebate けれど、<br>昨日撮られた<br>看守のカメラには<br>何も映ってない<br>みたいだけどね？
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate おそらくはトリックを<br>使ったはずです。<br>ミステリでよくあるものと<br>いったら、<br>【鏡】とかですかね！
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate "きっとカメラに映らないよう、<br><link=\"Objection_01_03_08_01\">細工</link>がされていたんです。<br>それに画像なんて<br>いくらでも<link=\"Objection_01_03_08_02\">修正</link>できますし！<br>他にも、みなさんが<br>別の部屋と<link=\"Objection_01_03_08_03\">勘違い</link>してた<br>可能性もあります。"
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@printDebate んなわけねーだろ……！<br>３人して<br>部屋を間違えるなんて……！
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@printDebate そうでしょうか？<br>あの３つの部屋は<br>中の様子がすべて同じでした。<br>十分ありえる話だと<br>思いますけどね～。
+
+@char Sherry.Normal1
+@gosubModifyCamera 0
+@printDebate ともかく、<br>そうして密室状態が<br>完成した夜のこと……。
+
+@char Sherry.Default,ArmR6,ArmL8,Angle01/Facial/Eyes>Eyes_Surprised_Open03,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@printDebate "<link=\"Objection_01_03_08_04\">地震</link>が起こったんですよ！<br>それで天井に隠されていた<br><link=\"Objection_01_03_08_05\">死体が落ちて</link>きて……<br>くくりつけられたロープで、<br><link=\"Objection_01_03_08_06\">首吊り死体が完成</link><br>したんです！"
+
+@char Alisa.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@printDebate そんな都合良く<br>地震が起きるわけ<br>ねーだろ……！
+
+@char Sherry.Default,ArmR15,ArmL4,Angle01/Facial/Eyes>Eyes_Wink_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate "もしかしたら<br>起こせたかもしれませんよ？<br>地下水が流れていて<br><link=\"Objection_01_03_08_07\">地殻変動</link>が起きたとか……。<br>そもそもただの偶然<br>だったかもですし！"
+
+@char Meruru.Normal1,ArmR8_1,ArmL8,Eyes1_Pensive_Open1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@printDebate そんな大きな地震……<br>他の人が<br>気付かないなんて事、<br>あるんでしょうか……。
+
+@char Sherry.Smile1
+@gosubModifyCamera 0
+@printDebate 局所的な直下型地震なら<br>一瞬ですし、<br>ありえないとは<br>言い切れないと思いますよ！
+
+@char Nanoka.ArmR1,ArmL10,Eyes1_Normal_Open1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@printDebate ……仮にそんな地震が<br>起こせるとしたら、<br>あなたぐらい<br>じゃないかしら？<br>持ち前の怪力の魔法でね。
+
+@char Sherry.Normal1
+@gosubModifyCamera 0
+@printDebate ……ええっ！？<br>そんな疑い方されるなんて、<br>思ってもみませんでした！
+
+@char Sherry.Smile1
+@gosubModifyCamera 0
+@printDebate じゃあ<br>やっぱり推理撤回しますね！
+
+@char Alisa.Default,ArmR4,ArmL6,Angle01/Facial/Eyes>Eyes_Angry_Open03
+@gosubModifyCamera 0
+@printDebate んな話通るか！
+
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Ema.Pensive1,ArmR4,ArmL5 { time:0 }
+@gosubModifyCamera 0
+@Wait 0.2
+
+# ==============================================================================
+# 3-8議論後独白
+# ==============================================================================
+
+@print （シェリーちゃんの言ってること、<br>　一見筋が通っているように見える……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR4,ArmL5
+
+@print （でもそれじゃあアリサちゃんの人形の<br>　説明にもなってないような……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@char Meruru.Normal1,ArmR1_1,ArmL8,Eyes1_Pensive_Open1,Mouth1_Normal_Open2
+@gosubSplitStageScreen 1
+@Wait 0.2
+
+@print エマさん……！<br>落ち着いて、事実を確認してみましょう……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideStageScreen 1
+@Wait 0.3
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@print （メルルちゃんの言う通り、<br>　記録したデータを確認してみよう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge3-8-1
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_01_03_08_01
+
+@Skip false
+@pauseTrial true
+
+@choice ハンナは隠されていた
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge3-8-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_01_03_08_02
+
+@Skip false
+@pauseTrial true
+
+@choice 画像が書き換えられた
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge3-8-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_01_03_08_03
+
+@Skip false
+@pauseTrial true
+
+@choice ３人は部屋を勘違いした
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge3-8-5
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論4
+# ------------------------------------------------------------------------------
+
+# Objection_01_03_08_04
+
+@Skip false
+@pauseTrial true
+
+@choice 地震は起きていない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge3-8-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論5
+# ------------------------------------------------------------------------------
+
+# Objection_01_03_08_05
+
+@Skip false
+@pauseTrial true
+
+@choice 揺れでは落ちない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge3-8-6
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論6
+# ------------------------------------------------------------------------------
+
+# Objection_01_03_08_06
+
+@Skip false
+@pauseTrial true
+
+@choice 綺麗にあの状態にはならない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge3-8-7
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論7
+# ------------------------------------------------------------------------------
+
+# Objection_01_03_08_07
+
+@Skip false
+@pauseTrial true
+
+@choice 地殻変動があった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge3-8-8
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 3-8: ❌ 議論他選択肢
+# ==============================================================================
+# MARK: 3-8-3: ❌ 同意・ハンナは隠されていた
+
+# Judge3-8-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print シェリーちゃんの言う通り、<br>鏡を使えば死体を隠しておけるんじゃないかな……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Normal_Closed
+@gosubModifyCamera 0
+@print 部屋にそれらしいもんはなかった。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Normal_Closed
+@gosubModifyCamera 0
+@print 仮にカメラで撮られた時に<br>鏡があったとしたら……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open01
+@gosubModifyCamera 0
+@print 朝の段階まで、それは残ってたはずだ。<br>なにせあの部屋は、密室……だったんだろ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print た、たしかにそうかも……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print 死体を隠せるほどの鏡なんてでけーもん、<br>そう簡単に用意することも、<br>現場から持ち去ることもできねー。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL7,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print ……ちったぁまともに頭働かせろ、桜羽。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （叱られちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （でもシェリーちゃんの推理……<br>　何かおかしいような） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （現場の状況から考えると、<br>　シェリーちゃんの推理には矛盾がある気がする……。<br>　もう一度話をよく聞いてみよう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge3-8-1
+# MARK: 3-8-4: ❌ 同意・画像が書き換えられた
+
+# Judge3-8-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print 画像を加工すれば、<br>ハンナちゃんの死体ごと隠したり<br>出来るかもしれないよ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR3,ArmL1,Eyes1_Normal_Open2,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print たしかに、可能かもしれないわね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL12,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print ココちゃんとか、そういうの……<br>得意だったりしない？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Angry1
+@gosubModifyCamera 0
+@print "はぁ！？ あてぃし疑ってんの！？<br>言いがかりにもほどがあんだろ！！" { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print それに少なくとも<br>看守のカメラの映像書き換える方法なんて<br>知らないって！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Serious_Open
+@gosubModifyCamera 0
+@print ……不正アクセスとかハッキングとかいうやつか。<br>けどそういうのって、<br>スマホだけでやるのは難しいんじゃねーか？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR4,ArmL1,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print そうそう！<br>そこのヤンキーの言う通りだって！<br>ほーら、やっぱり言いがかりじゃん！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR4,ArmL1,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print 根拠なしに疑うなんて、<br>エマっちが犯人なんじゃねーの！？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （疑われちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （根拠もなく疑わないようにしないと……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （でもシェリーちゃんの推理……<br>　何かおかしいような） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （現場の状況から考えると、<br>　シェリーちゃんの推理には矛盾がある気がする……。<br>　もう一度話をよく聞いてみよう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge3-8-1
+# MARK: 3-8-5: ❌ 同意・3人は別の部屋にいた
+
+# Judge3-8-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL12,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print マーゴちゃんたちが、<br>部屋を勘違いしていたって可能性はあるよね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print でも、私たちは３人一緒にいたのよ？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print １人だけならまだしも、３人同時で記憶違いなんて<br>ありえないんじゃないかしら。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print きっと集団幻覚を見ていたんですよ！<br>魔法の実験では赤い花を使ったんですよね？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print あれは幻覚作用がある花だったのでは？<br>赤いケシの花ってありますよね？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print あら、あれは花からではなくて、<br>果実から精製するのよ？<br>花を摘んだところで……ねえ？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print （ボクに同意を求められても……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print まあ、何か幻覚を見たならまだしも<br>私たちは何も見ていないの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print それに、看守のカメラの映像を見れば<br>私たちが部屋を間違えていないとわかるはずよ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print どうかしらエマちゃん？<br>それでもまだ私たちを疑うの？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print え、ええっと……その……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print ……人を勝手にトんでたことにすんじゃねぇよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （そ、そんなつもりないのに……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （でもシェリーちゃんの推理……<br>　何かおかしいような） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （現場の状況から考えると、<br>　シェリーちゃんの推理には矛盾がある気がする……。<br>　もう一度話をよく聞いてみよう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge3-8-1
+# MARK: 3-8-6: ❌ 反論・揺れでは落ちない
+
+# Judge3-8-6
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR7,ArmL13,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open
+@gosubModifyCamera 0
+@print ちょっと待って、シェリーちゃん！<br>そう簡単に死体が落ちてくるとは思えないよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR6,ArmL8,Angle01/Facial/Eyes>Eyes_Surprised_Open03,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print たまたま上手くいったんですよ、きっと！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print 肝心なトコふわふわしすぎだろ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print 仮にシェリーちゃんの推理を前提とすると、<br>犯人は用意周到な性格に見えるわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print だから、あらかじめ落ちるように計算して、<br>ハンナちゃんの死体を設置していたのかもしれないわね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Normal_Open2,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print ……なら特段、否定するほどの意見でもなさそうね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Pensive1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print （指摘するには、<br>　説得力が足りなかったみたい……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （でもシェリーちゃんの推理……<br>　何かおかしいような） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （現場の状況から考えると、<br>　シェリーちゃんの推理には矛盾がある気がする……。<br>　もう一度話をよく聞いてみよう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge3-8-1
+# MARK: 3-8-7: ❌ 反論・綺麗にあの状態にはならない
+
+# Judge3-8-7
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print 死体が隠されていて、揺れもあったんだとして……<br>それでも、あんな綺麗な首吊りの状態になるかな。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open01
+@gosubModifyCamera 0
+@print なんでだよ、ならねぇのか？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print ぐるぐる巻きになっちゃったり、<br>勢いでロープがちぎれちゃったりとか<br>しそうだと思って……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print ハンナさん軽そうですし、<br>そんな簡単にちぎれないと思いますけどねー。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print それか、犯人は別の状態を狙っていたのかもしれないわね。<br>たまたまああいう形になってしまっただけで、<br>本当は全然違う発見状況を目論んでいたとか……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print まあ、犯人の本当の気持ちなんて、<br>検証することはできないでしょうけどね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR1,ArmL10,Eyes1_Normal_Open1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print 桜羽エマ。<br>……あなたの反論、根拠が薄いようね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （そうみたい……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （でもシェリーちゃんの推理……<br>　何かおかしいような） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （現場の状況から考えると、<br>　シェリーちゃんの推理には矛盾がある気がする……。<br>　もう一度話をよく聞いてみよう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge3-8-1
+# MARK: 3-8-8: ❌ 同意・地殻変動があった
+
+# Judge3-8-8
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Surprised1,ArmR4,ArmL5
+@gosubModifyCamera 0
+@print もしかしたら、地殻変動はあったのかも……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 地殻変動があったとして、<br>それをどう証明するのかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3,ArmL1,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open
+@gosubModifyCamera 0
+@print えっと……地形に変化があるとか……<br>土が盛り上がってるとか、地割れとか……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open02
+@gosubModifyCamera 0
+@print そんなもん、特になかったと思うけどな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print そもそも震源が深かったら<br>地上に影響が出ないことの方が多いわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print "仮に地殻変動があったとしても……<br>それを証明できないのなら、<br>何も言っていないのと同じよ？ エマちゃん。" { author:Margo speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （何も言ってないことにされちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （でもシェリーちゃんの推理……<br>　何かおかしいような） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （現場の状況から考えると、<br>　シェリーちゃんの推理には矛盾がある気がする……。<br>　もう一度話をよく聞いてみよう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge3-8-1
+
+# ==============================================================================
+# MARK: 3-8-2: ⭕ 地震は起きていない
+# ==============================================================================
+
+# Judge3-8-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+@StopBgm 
+@gosubCutIn Ema
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print シェリーちゃん、その推理は<br>現場の状況と矛盾していると思うんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR10,ArmL11,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print "ええ！？ どこがですか！？" { author:Sherry speed:1 waitInput:true Wait:true }
+
+# Judge3-8-10
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （昨日、現場では地震が起きていなかった……<br>　それを証明する証拠があるはずだ！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print それは……この証拠だよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# 証拠品提示
+@evidence Clue
+
+# ゴクチョーの像
+@if "chosenEvidenceId==\"3-6\""
+	@goto .Judge3-8-11
+
+# 現場写真
+@if "chosenEvidenceId==\"3-10\""
+	@goto .Judge3-8-13
+
+# 汎用
+@goto .Judge3-8-12
+
+# MARK: 3-8-12: ❌ 汎用証拠品ミス
+
+# Judge3-8-12
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print それがどうして地震が起きていない証拠になるんですか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Surprised1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print もしかしてエマさん……<br>地震をご存知ない！？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （知ってるよ……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （シェリーちゃんは地震が起きた前提で話を進めてる……。<br>　でもそれを否定する証拠品があるはずだ！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge3-8-10
+
+# MARK: 3-8-13: ❌ 【現場写真】
+
+# Judge3-8-13
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （これは直接的な証拠にはならないかも……<br>　もっと具体的な証拠を示さないと……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （シェリーちゃんは地震が起きた前提で話を進めてる……。<br>　でもそれを否定する証拠品があるはずだ！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# ダメージ無し
+@goto .Judge3-8-10
+
+# ==============================================================================
+# MARK: 3-8-11: ⭕ 【ゴクチョーの像】
+# ==============================================================================
+
+# Judge3-8-11
+
+
+# アイテム表示：ゴクチョーの像
+@spawn Clue
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print シェリーちゃん、この像を見て欲しいんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@despawn Clue
+
+@char Sherry.Smile1
+@gosubModifyCamera 0
+@print 素敵な出来栄えですね！<br>見ていると不安になりそうです！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE・ネガティブ音
+@sfx Sfx_Common_7
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print いや、像の完成度について<br>見て欲しいわけじゃなくて……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# BGM変更：Sen-Choose N'o SurC
+@bgm Bgm_38_1_Loop
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print この像はそれぞれのゲストハウスの中にあった像だよ。<br>……でも、今のシェリーちゃんの説明と矛盾するんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print 矛盾？<br>何がですか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print "……<ruby=\"ウンディーネ\">水精</ruby>の間の像だけ、<br>倒れてなかったんだよ。" { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print 仮に地震が起こったとしたら<br>ゲストハウスの像<br>全部が倒れてないとおかしいよね？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print そうですかねー？<br>たまたま倒れなかっただけかもしれませんよ？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ……いや、それはないと思う。<br>このゴクチョーの像、<br>重心が不安定だし……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print それに、他の家具の状態も<br>綺麗だったしね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print "そして<ruby=\"ウンディーネ\">水精</ruby>の間は<br>他２つの部屋に挟まれているんだ。" { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print 両隣の部屋の中では<br>家具がぐちゃぐちゃなのに、<br>真ん中の部屋だけが綺麗なまま……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print もし地震が起こったんだとしたら、<br>それは不自然だよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR4,ArmL5
+@gosubModifyCamera 0
+@print なるほど～！<br>さすがエマさん！<br>たしかにそうかもですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open02
+@gosubModifyCamera 0
+@print ……おい。でもよ、桜羽。<br>それって結局どういうことなんだ？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Alisa.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open02
+@gosubModifyCamera 0
+@print 昨日の夜……いったい<br>何が起こったってんだよ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （ハンナちゃんの身に起こったこと……<br>　これまでの議論でわかったこと……<br>　牢屋敷の謎……決定的な矛盾……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （もう少しでわかる気がする……！<br>　昨晩、あの部屋で何が起こっていたのか……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・明るい音
+@sfx Sfx_Common_2
+
+@StopBgm 
+
+@char Meruru.Normal2,ArmR5_2,ArmL2,Eyes2_Normal_Open3,Mouth2_Angry_Open2
+@gosubModifyCamera 0
+@print ……エマさん、<br>一度これまでのお話をまとめてみませんか？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal2,ArmR5_2,ArmL2,Eyes2_Normal_Open3,Mouth2_Angry_Open2
+@gosubModifyCamera 0
+@print まだ皆さんから聞けていない<br>情報もあるかもしれませんし……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print うん……！<br>そうだねメルルちゃん！<br>やってみよう！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto Act01_Chapter03/Act01_Chapter03_Trial09

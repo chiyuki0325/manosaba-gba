@@ -1,0 +1,1245 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act01_Chapter01/Act01_Chapter01_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 1800
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# ==============================================================================
+# MARK: 14: 💬 事件後の行動
+# ==============================================================================
+# ＠ト書き▼議論シーン1-14 事件後の行動
+# BGM変更：Guil-me N'o sinruits-Vocal有-
+@bgm Bgm_8_1
+@set already_flag1=false
+
+# ボス演出
+@ResetText 
+@char Ema.Determined2,ArmR1,ArmL16,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open { time:0 }
+@stageCamera 1 { Rotation:0,{ (-0.03 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+
+@stageCamera 1 { Rotation:0,{ (0.03 / courtStandCount * 360) },0 time:0.6 }
+@showStageScreen 1
+@Wait 1.5
+
+@ResetText 
+@char Leia.Smile1,ArmR8,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01 { time:0 }
+@stageCamera 0 { Rotation:0,{ (2.98 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+
+@stageCamera 0 { Rotation:0,{ (2.92 / courtStandCount * 360) },0 time:0.6 }
+@hideStageScreen 1
+@Wait 1.5
+
+# Judge1-14-1
+
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Leia.Smile1,ArmR3,ArmL3,Angle01/Facial/Eyes>Eyes_Normal_Closed01,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@printDebate 夕食後、<br>私は適当にブラついてたよ。<br>詳細は覚えていない。<br>いろいろ歩き回ってたんだ。<br>怪しいのはわかるけど、<br>信じて欲しいとしか言えない。
+
+@char Alisa.Angry1,Option-ArmL-Off,ArmR2,ArmL2
+@gosubModifyCamera 0
+@printDebate ……それはわかったから、<br>先を話せ。
+
+@char Leia.Smile1,Arms,Angle01/Facial/Eyes>Eyes_Smile_Closed,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@printDebate ああ、いいとも。
+
+@char Leia.Smile1,ArmR3,ArmL3,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@printDebate ……その後、<br>私はココくんの待つ<br>ラウンジへと向かった。<br>配信をするためだね。
+
+@char Coco.Normal1,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@printDebate そいや時間ギリギリに<br>来たっけ？<br>……息切らして<br>走ってきたよな～。<br>配信も案外<br>ノリノリだったし……。
+
+@char Coco.Surprised1,ArmR6,ArmL2
+@gosubModifyCamera 0
+@printDebate あれ！？<br>もしかしてこいつ<br>ヤッパいいやつ<br>なんじゃ……！？
+
+@char Leia.Pensive1,ArmR8,ArmL8,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@printDebate ……心外だね。<br>キミよりは<br>協調性があると<br>思うんだけど。
+
+@char Coco.Angry1,ArmR2,ArmL2,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@printDebate あん！？<br>人を<br>コミュしょー扱い<br>すんなし！
+
+@char Miria.Smile1,ArmR9,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@printDebate あはは……<br>そういえばあの時は<br>無理を言って<br>曲芸みたいな事も<br>してもらったっけ？<br>配信のアーカイブに<br>残ってるよね。
+
+@char Leia.Smile1,ArmR3,ArmL3,Angle01/Facial/Eyes>Eyes_Normal_Closed01,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@printDebate そうして私たちは<br>配信を終えたあと、<br>それぞれの部屋へと戻った。<br>その前に少しだけ、<br>３人で話したりしたかな？
+
+@char Coco.Pensive1,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate そーそー。<br>時間ないから片付けは<br>そこのザコにまかせて、<br>ちょっちね～。<br>配信終わりの反省会？<br>みたいな？
+
+@char Miria.Normal1,ArmR9,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Open02,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@printDebate 雑用とか、得意だからね。<br>片付けは全部やっておいたよ。<br>そういえばあの時<br>ちょっと仲良く<br>なってたよね、<br>２人とも。
+
+@char Leia.Smile1,ArmR3,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed01,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@printDebate そしてそのあとは……<br>３人でノアくんの部屋の前を<br>通ったんだね。<br>さっきも言ったように、<br>何も見ていないし<br>聞いていないよ。
+
+@char Leia.Smile1,ArmR3,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@printDebate そして朝までは、<br>同室のミリアくんと<br>一緒だった。<br>……ところでミリアくん、<br>私はそのとき何か<br>不審な行動をしていたり<br>したかな？
+
+@char Miria.Pensive1,ArmR3,ArmL8,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate いやぁ……特には？<br>すぐにベッドに入って<br>寝てたと思うよ。<br>静かだったし、<br>何かしてたら気付くと<br>思うけどなぁ……。
+
+@char Leia.Pensive1,ArmR3,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@printDebate そうして朝になって、<br>死体を発見した<br>アンアンくんの悲鳴を聞いて<br>目が覚めたんだ。<br>私はすぐに起きて、<br>それに駆けつけたよ。
+
+@char Leia.Smile1,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@printDebate ……どうかな？<br>以上だけど……。
+
+@char Leia.Smile1,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Closed,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@printDebate "私が犯人だという<link=\"Objection_01_01_14_01\">証拠</link>でも<br>見つかったのかい？<br>もしもあるなら、<br>見せておくれ。"
+
+@char Leia.Angry1,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@printDebate ……本当にそんなものが<br>存在するなら、<br>だけどね。
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01 { time:0 }
+@gosubModifyCamera 0
+@Wait 0.2
+
+@print （もしレイアちゃんが犯人なら証拠隠滅を行った……。<br>　今朝に死体が発見された後なら、<br>　それをする十分な時間があったはずだ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Thinking_Closed01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+
+@print （……もしも証拠隠滅をしていないなら<br>　【あのタイミング】なら証拠が残っている<br>　可能性があるかも……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-14-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_01_01_14_01
+
+@Skip false
+@pauseTrial true
+
+@choice 証拠を提出する
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge1-14-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# MARK: 14-2: ⭕ 証拠を提出する
+
+# Judge1-14-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+# @gosubCutIn Ema index:1
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+# @hideUI DebateUI
+# @showUI ControlPanel
+
+@char Ema.Determined2,ArmR7,ArmL10
+@gosubModifyCamera 0
+@print レイアちゃんが犯人だという証拠は……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@evidence Clue
+
+# 配信アーカイブ
+@if "chosenEvidenceId==\"1-7\""
+	@goto .Judge1-14-4
+
+@if "chosenEvidenceId==\"1-6\""
+	@goto .Judge1-14-32
+
+# ミス
+@goto .Judge1-14-3
+
+# ==============================================================================
+# 選択ミス
+# ==============================================================================
+# Judge1-14-3
+
+@char Leia.Smile1,ArmR9,ArmL8,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print それのどこが、私が犯人だという証拠になるんだい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Angry1,ArmR9,ArmL8,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open01
+@gosubModifyCamera 0
+@print ……適当な言いがかりをつけるのは、やめてくれないかな？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （怒られちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Thinking_Closed01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （もう一度考えよう……！<br>　レイアちゃんが犯人だったとき……<br>　それを示す証拠が残っている可能性を……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-14-1
+
+# ==============================================================================
+# MARK: 14-32: ❌ フルーツの写真
+# ==============================================================================
+
+# Judge1-14-32
+
+@char Leia.Normal1,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print "写真……？ その写真には特に重要なものは<br>何も映ってないようだね。" { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open01
+@gosubModifyCamera 0
+@print 明確な【証拠】を見せてくれたまえ！ { author:Leia speed:1 waitInput:true Wait:true }
+
+# ペナルティなし
+@goto .Judge1-14-2
+
+# Judge1-14-4
+
+# ==============================================================================
+# MARK: 14-4: ⭕ 【配信アーカイブ】
+# ==============================================================================
+# ニ回目の場合、このくだりをカットして次に
+@if already_flag1
+	@goto .Judge1-14-5
+
+@set already_flag1=true
+
+@char Leia.Surprised1,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Surprised_Open01,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print ……それは……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Coco.Surprised1,ArmR6,ArmL2
+@gosubModifyCamera 0
+@print あてぃしの配信の……アーカイブ！？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@spawn Clue
+@char Ema.Default,ArmR7,ArmL12,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ココちゃんの話では、<br>レイアちゃんは配信に間に合うよう<br>急いで来たんだったよね？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@despawn Clue
+
+@char Ema.Default,ArmR7,ArmL12,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print もしノアちゃんを殺した直後で<br>剣の先端に塗料が付着していたことに<br>気付いていなかったとしたら……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL12,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print その時にまだ、剣の先端には<br>塗料が付着していた可能性があるよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Fearful1,ArmR7,ArmL1,Angle01/Facial/Eyes>Eyes_Surprised_Open02,Angle01/Facial/Mouth>Mouth_Angry_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……うぐっ……！？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print そういえば……配信ではレイアさん、<br>剣を使った曲芸をさせられていましたね？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR7,ArmL7,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print うん！<br>そのときレイアちゃんは剣を使っている……！<br>だからもし塗料が付着しているなら……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Miria.Smile1,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Glare_Open03,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print アーカイブを見れば、<br>確認できるってことだね……！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print ――あら、残念だけどそれは不可能だと思うわ？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ……え？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print 私、アーカイブを何度か確認したもの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR1,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open
+@gosubModifyCamera 0
+@print けど……【剣の先端は映っていなかった】わ？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print そ、そんな……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print ふふ。<br>疑うようならみんなで確認してみる？<br>画角から見ても、きっとコマ送りにしたって映ってないわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Closed
+@gosubModifyCamera 0
+@print ……素人の固定カメラだもの。<br>あんまりココちゃんを責めないであげてね？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Coco.Angry1
+@gosubModifyCamera 0
+@print あてぃしのせいにすんなし！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open
+@gosubModifyCamera 0
+@print （そんな……！<br>　証拠隠滅前の状態を確認できる、<br>　最後の可能性だったのに……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Closed,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print ……どうやら、またしてもエマくんの勘違いだったみたいだね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-14-6
+
+# 二回目以後
+# Judge1-14-5
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （アーカイブに剣の先端は映っていない……。<br>　ならレイアちゃんが犯人だという証拠は……） { author:Ema speed:1 waitInput:true Wait:true }
+
+# Judge1-14-6
+
+@char Leia.Smile1,ArmR3,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print それで？<br>私の犯行を示す証拠とやらはあるのかい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print そ、それは……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@choice 証拠を提示する
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge1-14-8
+
+@choice 今は持っていない
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge1-14-7
+
+@choice もう一度話を聞く
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge1-14-9
+
+@StopForChoice 
+
+# ==============================================================================
+# ミス選択肢
+# ==============================================================================
+# ==============================================================================
+# MARK: 14-8: ❌ 証拠を提示する
+# ==============================================================================
+
+# Judge1-14-8
+
+@char Ema.Determined2,ArmR7,ArmL7
+@gosubModifyCamera 0
+@print レイアちゃんを犯人と示す証拠……それは……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# ==============================================================================
+# 証拠選択（正解なし）
+# ==============================================================================
+
+@evidence Clue
+
+# フルーツの写真
+@if "chosenEvidenceId==\"1-6\""
+	@goto .Judge1-14-10
+
+@Wait 0.1
+
+@char Leia.Pensive1,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Closed,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print ……それが【私を犯人と指し示す証拠】なのかい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print どうやら私にも……他のみんなにもそうは見えない<br>ようだけどね！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （どうやら間違っちゃったみたいだ……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Thinking_Closed01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （今【持っているもの】の中で、レイアちゃんを犯人だと<br>　示せる証拠が残っているものって本当にあるのかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （今まで証拠品は散々議論してきた気がする……。<br>　だとすると、【視点を変える】必要があるかも……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-14-5
+
+# ==============================================================================
+# MARK: 14-10: ❌ フルーツの写真
+# ==============================================================================
+
+# Judge1-14-10
+
+@char Leia.Pensive1,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print "写真……？ その写真には特に重要なものは<br>何も映ってないようだね。" { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Angry1,ArmR3,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open01
+@gosubModifyCamera 0
+@print 明確な【証拠】を見せてくれたまえ！ { author:Leia speed:1 waitInput:true Wait:true }
+
+# ペナルティなし
+
+@goto .Judge1-14-6
+
+# ==============================================================================
+# 選択肢1-14-9：もう一度話を聞く
+# ==============================================================================
+
+# Judge1-14-9
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （……もう一度みんなの話を最初から聞いてみよう！<br>　もしかしたら、何かヒントがあるかも……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-14-1
+
+# MARK: 14-7: ⭕ 今は持っていない
+
+# Judge1-14-7
+
+@char Ema.Pensive1,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print それは……今ここには、ないよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print つまり、私が犯行を起こした証拠はないということだ。<br>……それに間違いはないね？ { author:Leia speed:1 waitInput:true Wait:true }
+
+# Judge1-14-11
+
+@char Ema.Pensive1,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print それは……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@choice 証拠はどこにも存在しない
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge1-14-12
+
+@choice 証拠がある場所を提示する
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge1-14-13
+
+@choice 知っている人物を提示する
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge1-14-14
+
+@StopForChoice 
+
+# MARK: 13-12: ❌ 証拠はどこにも存在しない
+
+# Judge1-14-12
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print ……きっと、証拠はもうどこにも存在しないと思う。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Angry1,ArmR3,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Angry_Closed
+@gosubModifyCamera 0
+@print わかった。つまりキミは証拠もないのに散々私のことを<br>犯人扱いしたということだね？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1,ArmR9,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open01
+@gosubModifyCamera 0
+@print ……キミの意見を聞く必要は、もうない。<br>みんなそう思っていると思うよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Pensive1,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print "（うう……！ 発言の信用を失っちゃった……）" { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal1,ArmR5_1,ArmL4,Eyes1_Normal_Open2,Mouth1_Angry_Open2,Sweat1_1
+@gosubModifyCamera 0
+@print ……待ってください。<br>もう一度だけ……話を聞かせてください……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed02,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print ……まったく、しょうがないね。それじゃあメルルくんに免じて<br>もう一度話をしようか……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-14-6
+
+# ==============================================================================
+# MARK: 14-13: ❌ 証拠がある場所を提示する
+# ==============================================================================
+
+# Judge1-14-13
+
+@char Ema.Determined2,ArmR7,ArmL7
+@gosubModifyCamera 0
+@print 証拠は今持っていないけれど……<br>ここになら、証拠があるはずだよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （証拠がある場所を指定しよう！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# ==============================================================================
+# （マップ指定選択）マップが無かった場合、選択肢にする
+# ==============================================================================
+# （正解なし）
+# 開発へ→マップを表示して3択にしてもOKです（マップ選択のシステム次第）
+
+@map Lounge,RecreationRoom,BasementHallway Lounge,RecreationRoom,BasementHallway
+
+@char Leia.Pensive1,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Closed01,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print そこに何がどうやってあるっていうんだい？<br>……どうやら私だけじゃなく、<br>みんな同じことを思ってるみたいだけど。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle
+@gosubModifyCamera 0
+@print そ、それは……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle
+@gosubModifyCamera 0
+@print （みんなの視線が痛い……！<br>　やっぱり推測で指摘しても<br>　納得してもらえないみたいだ……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （証拠が残っているかはわからない……。<br>　けど、もしもまだ残っているならそれを知る手がかりは……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （……みんなの話をもう一度聞いてみよう！<br>　そこにヒントがあるかもしれない……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-14-6
+
+# ==============================================================================
+# MARK: 14-14: ⭕ 知っている人物を提示する
+# ==============================================================================
+
+# Judge1-14-14
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print 証拠がどこにあるのか、ボクにはわからない。<br>……けどどこにあるか知っている人は……この人だよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# Judge1-14-15
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （証拠がある場所を知っている人物を指定しよう！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# ゴクチョー・看守などは選択できないように
+@update Warden
+@update Jailer
+
+@evidence Profile
+
+# 正解／佐伯ミリア
+@if "chosenEvidenceId==\"Miria\""
+	@goto .Judge1-14-28
+
+# 桜羽エマ
+@if "chosenEvidenceId==\"Ema\""
+	@goto .Judge1-14-16
+
+# 二階堂ヒロ
+@if "chosenEvidenceId==\"Hiro\""
+	@goto .Judge1-14-17
+
+# 城ケ崎ノア
+@if "chosenEvidenceId==\"Noah\""
+	@goto .Judge1-14-18
+
+# 蓮見レイア
+@if "chosenEvidenceId==\"Leia\""
+	@goto .Judge1-14-19
+
+# 氷上メルル
+@if "chosenEvidenceId==\"Meruru\""
+	@goto .Judge1-14-20
+
+# 遠野ハンナ
+@if "chosenEvidenceId==\"Hanna\""
+	@goto .Judge1-14-21
+
+# 橘シェリー
+@if "chosenEvidenceId==\"Sherry\""
+	@goto .Judge1-14-22
+
+# 夏目アンアン
+@if "chosenEvidenceId==\"AnAn\""
+	@goto .Judge1-14-23
+
+# 沢渡ココ
+@if "chosenEvidenceId==\"Coco\""
+	@goto .Judge1-14-24
+
+# 宝生マーゴ
+@if "chosenEvidenceId==\"Margo\""
+	@goto .Judge1-14-25
+
+# 黒部ナノカ
+@if "chosenEvidenceId==\"Nanoka\""
+	@goto .Judge1-14-26
+
+# 紫藤アリサ
+@if "chosenEvidenceId==\"Alisa\""
+	@goto .Judge1-14-27
+
+# 一応例外用に
+@goto .Judge1-14-15
+
+# ==============================================================================
+# MARK: 14-16: ❌ 桜羽エマ
+# ==============================================================================
+
+# Judge1-14-16
+
+@char Ema.Default,ArmR3,ArmL3,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ボクがそれを知っているはずだよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1,Arms,Arms,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print ……ええっとそれはどういうことだい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Coco.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print なら言えよ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print そ、それは……今は言えないっていうか……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char AnAn.Angry1,Angle01/Option_Arms-,ArmR-Option-Off,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_03,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print 『みんな真面目に話をしているのに遊ぶな』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Pensive1,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （怒られちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （……みんなの話をもう一度聞いてみよう！<br>　そこにヒントがあるかもしれない……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-14-6
+
+# Judge1-14-17
+# Judge1-14-18
+
+# ==============================================================================
+# MARK: 14-17: ❌ &18：城ケ崎ノアor二階堂ヒロ
+# ==============================================================================
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print ……知っている子は、たぶん<br>すでに死んでしまっていたんだ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,Option-ArmL-Off,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print つまり誰も知らねーってことだろ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print 苦し紛れの言い訳はやめてくれるかい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Pensive1,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （怒られちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （……みんなの話をもう一度聞いてみよう！<br>　そこにヒントがあるかもしれない……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-14-6
+
+# ==============================================================================
+# MARK: 14-19: ❌ 蓮見レイア
+# ==============================================================================
+
+# Judge1-14-19
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print それはもちろん、レイアちゃんが知ってるよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Closed01,Angle01/Facial/Mouth>Mouth_Yell_Open01
+@gosubModifyCamera 0
+@print 何を言うかと思えば……私は犯人ではないからわからないね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print ……犯人だとしても、教えてくれるわけありませんわ！！<br>エマさん、そんなこと子供でもわかりますわよ！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Pensive1,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （怒られちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （……みんなの話をもう一度聞いてみよう！<br>　そこにヒントがあるかもしれない……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-14-6
+
+# ==============================================================================
+# MARK: 14-20: ❌ 氷上メルル
+# ==============================================================================
+
+# Judge1-14-20
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print それはもちろん、メルルちゃんが知ってるよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal1,ArmR3_1,ArmL13,Eyes1_Surprised_Open1,Mouth1_Surprised_Open2,Sweat1_1
+@gosubModifyCamera 0
+@print エマさん……！？<br>どうして私が……！？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print それはその……なんとなく……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal1,ArmR3_1,ArmL3,Eyes1_Flushed_Closed1,Mouth1_Normal_Open1,Sweat1_1
+@gosubModifyCamera 0
+@print もう、しょうがない人ですね……！<br>ちゃんと考えてくださいね……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Pensive1,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （困らせちゃったみたい……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （……みんなの話をもう一度聞いてみよう！<br>　そこにヒントがあるかもしれない……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-14-6
+
+# ==============================================================================
+# MARK: 14-21: ❌ 遠野ハンナ
+# ==============================================================================
+
+# Judge1-14-21
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print それはもちろん、ハンナちゃんが知ってるよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print ……わたくしぃ！？<br>なんでですのー！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print それはその……なんとなく……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1
+@gosubModifyCamera 0
+@print エマさんまでわたくしで遊ばないでくださいましー！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Pensive1,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （怒られちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （……みんなの話をもう一度聞いてみよう！<br>　そこにヒントがあるかもしれない……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-14-6
+
+# ==============================================================================
+# MARK: 14-22: ❌ 橘シェリー
+# ==============================================================================
+
+# Judge1-14-22
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print それはもちろん、シェリーちゃんが知ってるよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR5,ArmL6
+@gosubModifyCamera 0
+@print "ええっ！？ 衝撃の事実です！<br>どうしてそう思うんですか！？<br>教えてくださーい！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print それはその……なんとなく……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1,ArmR10,ArmL14,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print ……なぁんだ。ワクワクして損しました。<br>エマさんにはがっかりですね～。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Pensive1,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （失望されちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （……みんなの話をもう一度聞いてみよう！<br>　そこにヒントがあるかもしれない……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-14-6
+
+# ==============================================================================
+# MARK: 14-23: ❌ 夏目アンアン
+# ==============================================================================
+
+# Judge1-14-23
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print それはもちろん、アンアンちゃんが知ってるよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char AnAn.Normal1,Angle01/Option_Arms-,ArmR-Option-Off,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_02,Angle01/Head/Facial/Eyes>Eyes_Uncomfortable_Open02
+@gosubModifyCamera 0
+@print 『わがはいは何も知らない』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print ……だよね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char AnAn.Angry1,Angle01/Option_Arms-,ArmR-Option-Off,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_04,Angle01/Head/Facial/Eyes>Eyes_Uncomfortable_Open02,Angle01/Head/Facial/Mouth>Mouth_Angry_Closed02
+@gosubModifyCamera 0
+@print 『当てずっぽうで言う前に、頭を働かせろ。<br>　脳みそ入ってないのか？』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Angry1,Angle01/Option_Arms-,ArmR-Option-Off,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_04,Angle01/Head/Facial/Eyes>Eyes_Uncomfortable_Open02,Angle01/Head/Facial/Mouth>Mouth_Uncomfortable_Open
+@gosubModifyCamera 0
+@print ばかもの。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Pensive1,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （怒られちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （……みんなの話をもう一度聞いてみよう！<br>　そこにヒントがあるかもしれない……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-14-6
+
+# ==============================================================================
+# MARK: 14-24: ❌ 沢渡ココ
+# ==============================================================================
+
+# Judge1-14-24
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print それはもちろん、ココちゃんが知ってるよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Angry1,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print "……はぁ！？ 知らんが！？<br>あてぃしの魔法でもわかんねーよ！" { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Angry1,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Angry_Closed
+@gosubModifyCamera 0
+@print 適当なこと言ってんじゃねーし！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Pensive1,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （怒られちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （……みんなの話をもう一度聞いてみよう！<br>　そこにヒントがあるかもしれない……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-14-6
+
+# ==============================================================================
+# MARK: 14-25: ❌ 宝生マーゴ
+# ==============================================================================
+
+# Judge1-14-25
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print それはもちろん、マーゴちゃんが知ってるよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Surprised1,ArmR5,ArmL1
+@gosubModifyCamera 0
+@print "あら？ そうなの？ なんのことか心当たりがないけど？<br>エマちゃん、どうしてそう思ったの？" { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print えっと……それはその……なんとなく……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR5,ArmL3
+@gosubModifyCamera 0
+@print ふふ……♪<br>いくら私のことが好きだからって、<br>そんなアプローチはしちゃダメよ？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Flushed1,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （ボクがマーゴちゃんを好きなことにされちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （……みんなの話をもう一度聞いてみよう！<br>　そこにヒントがあるかもしれない……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-14-6
+
+# ==============================================================================
+# MARK: 14-26: ❌ 黒部ナノカ
+# ==============================================================================
+
+# Judge1-14-26
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print それはもちろん、ナノカちゃんが知ってるよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print 知らないわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print "……本当に？ ちょっとも？" { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Eyes1_Angry_Closed1
+@gosubModifyCamera 0
+@print バカなことを言わないで。<br>……あなたがバカでないならね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Pensive1,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （バカにされちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （……みんなの話をもう一度聞いてみよう！<br>　そこにヒントがあるかもしれない……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-14-6
+
+# ==============================================================================
+# MARK: 14-27: ❌ 紫藤アリサ
+# ==============================================================================
+
+# Judge1-14-27
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print それはもちろん、アリサちゃんが知ってるよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1,Option-ArmL-Off,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print "……なんの話だ？ 知らねーよ。" { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print そ、そっか……そうだよね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,Option-ArmL-Off,ArmR2,ArmL7,Angle01/Facial/Eyes>Eyes_Angry_Open03
+@gosubModifyCamera 0
+@print うちならバカにしてもいいと思ったのか？<br>……舐めてんのか、お前……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Pensive1,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （誤解されちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （……みんなの話をもう一度聞いてみよう！<br>　そこにヒントがあるかもしれない……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-14-6
+
+# ==============================================================================
+# MARK: 14-28: ⭕ 佐伯ミリア
+# ==============================================================================
+# Judge1-14-28
+
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+@update Warden
+@update Jailer
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print それはもちろん、ミリアちゃんが知ってるよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Miria.Surprised1,ArmR2,ArmL4,Angle01/Facial/Mouth>Mouth_Confused_Open
+@gosubModifyCamera 0
+@print "……えええええ！？<br>なんで！？ 何も知らないけど！？" { author:Miria speed:1 waitInput:true Wait:true }
+
+# Judge1-14-29
+
+@char Ema.Default,ArmR7,ArmL10,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Open
+@gosubModifyCamera 0
+@print ……思い出して！<br>証拠は残っているはずだよ……ここに！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@evidence Clue
+
+# フルーツの写真
+@if "chosenEvidenceId==\"1-6\""
+	@goto .Judge1-14-31
+
+# ミス
+@goto .Judge1-14-30
+
+# ==============================================================================
+# アイテム指定：失敗
+# ==============================================================================
+
+# Judge1-14-30
+
+@char Ema.Pensive1,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （違う、これじゃない……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （レイアちゃんの犯人を指し示す証拠……！<br>　それは【アーカイブの中で映らなかった】もの……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL10,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Open
+@gosubModifyCamera 0
+@print （けれどミリアちゃんなら、今それがどこにあるか<br>　わかっているはずだ……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL10,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Open
+@gosubModifyCamera 0
+@print （ボクはそれを一度見ている……！<br>　今は手元にないけれど……<br>　この証拠品でそれを指し示せるはず……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-14-29
+
+# ==============================================================================
+# MARK: 14-31: ⭕ 【フルーツの写真】
+# ==============================================================================
+
+# Judge1-14-31
+
+@StopBgm 
+@gosubCutIn Ema
+@Gosub System/System_Subroutine.EndDebate-Last
+@Wait 1
+
+@spawn Clue
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Miria.Surprised1,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print それって……<br>食堂にあったフルーツ……？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@despawn Clue
+
+@char Ema.Default,ArmR8,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print うん……この中に、配信で使われてた物があるよね？ { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Miria.Surprised1,ArmR3,ArmL4,Angle01/Facial/Mouth>Mouth_Surprised_Open02
+@gosubModifyCamera 0
+@print ……リンゴだ！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print そう。<br>配信のとき、レイアちゃんが使った<br>レイピアの先端には白い塗料が付着していた……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print そしてさっきの話によれば、<br>【配信の後片付けをしたのはミリアちゃん】<br>だったよね？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print なら……ミリアちゃんがリンゴを片付けた場所……。<br>そこに犯人を示す決定的な証拠――。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char Ema.Determined2,ArmR7,ArmL12,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print ――【白い塗料が付いたリンゴ】があるはずだよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# 驚愕
+@char Leia.Fearful1,ArmR1,ArmL4
+@gosubModifyCamera 0
+@print ……な……にぃ……！？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Coco.Surprised1,ArmR8,ArmL4
+@gosubModifyCamera 0
+@print ……おいザコ！<br>あのリンゴ、どこに片付けたんだよ！<br>まさかもう食ったとか……！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Miria.Surprised1,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Confused_Open
+@gosubModifyCamera 0
+@print い、いや……！<br>アレは、無駄にしないよう、<br>あとで食べようと思って……！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Surprised1,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Confused_Open
+@gosubModifyCamera 0
+@print ずっと……ポケットの中に……！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,Option-ArmL-Off,ArmR2,ArmL1
+@gosubModifyCamera 0
+@print ……おい！<br>それ見せろ！！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@char Miria.Surprised1
+@gosubModifyCamera 0
+
+# アイテム画像表示：リンゴ
+@spawn Clue
+@Wait i1.2
+@despawn Clue
+# 裏側になって、刺し痕に白い塗料がついている
+@spawn Clue
+@Wait i1.5
+@despawn Clue
+
+@char Hanna.Surprised1
+@gosubModifyCamera 0
+@print 白い……！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+@char Meruru.Normal2,Arms1_2,Eyes2_Surprised_Open1,Mouth2_Angry_Open2,Sweat2_1
+@gosubModifyCamera 0
+@print 塗料……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Miria.Fearful1,ArmR10,ArmL5,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Pensive_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+
+@spawn Clue
+
+@print こ、これ……よく見てなくて……<br>気付いてなくて……！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Surprised1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Surprised_Open01
+@gosubModifyCamera 0
+@print それじゃあ……本当に……！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@despawn Clue
+
+@bgm Bgm_8_1
+@char Ema.Default,ArmR2-1,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Surprised_Open
+@gosubModifyCamera 0
+@print ……これが証拠だよ。<br>君が……この事件の犯人だ――！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@char Leia.Fearful1,ArmR3,ArmL5,Angle01/Facial/Mouth>Mouth_Cry_Closed02,Angle01/Facial/Sweat>Sweat01
+@spawn MaskingRectangle
+@gosubSplitStageScreen 1
+@Wait 0.5
+
+# SE・決め音
+@sfx Sfx_Common_3
+@char Ema.Default,ArmR2-1,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Surprised_Open
+@gosubModifyCamera 0
+@print ――蓮見レイアちゃん！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+@hideStageScreen 1
+@despawn MaskingRectangle
+@Wait 1
+
+@char Leia.Default,ArmR7,ArmL1,Angle01/Facial/Eyes>Eyes_Downcast_Open,Angle01/Facial/Mouth>Mouth_Normal_Closed,Angle01/Facial/Pale>Pale01,Angle01/Facial/Eyes-
+@gosubModifyCamera 0
+@print …………。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR7,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Fearful_Open,Angle01/Facial/Pale>Pale01,Angle01/Facial/Eyes-
+@gosubModifyCamera 0
+@print ……ふ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR7,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Closed,Angle01/Facial/Mouth>Mouth_Smile_Open01 { time:1 }
+@gosubModifyCamera 0
+@print ……ふふ……はははは……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR7,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Closed,Angle01/Facial/Mouth>Mouth_Smile_Open01 { time:1 }
+@gosubModifyCamera 0
+@print はははははは！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,Arms,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print ……あーあ、バレちゃった。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Ema.Fearful1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print レ、レイアちゃん……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1
+@gosubModifyCamera 0
+@print そ、それじゃあ……<br>本当に……あなたが……！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,Arms,Angle01/Facial/Eyes>Eyes_Smile_Closed,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print ……さすがに、証拠が出たなら大人しくするしかないね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal2,ArmR8_2,ArmL8,Eyes2_Downcast_Open1,Mouth2_Angry_Closed1
+@gosubModifyCamera 0
+@print 認めるんですね……？<br>ご自身の、犯行を……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR7,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print ……そうだね。<br>私が殺した。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR7,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print ……ノアくんを、この手で。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char AnAn.Fearful1,ArmR7,ArmL7
+@gosubModifyCamera 0
+@print ……レイ……ア……。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:3 }
+@Wait 4
+
+@Gosub System/System_Subroutine.EndTrial
+
+@goto Act01_Chapter01/Act01_Chapter01_Trial15

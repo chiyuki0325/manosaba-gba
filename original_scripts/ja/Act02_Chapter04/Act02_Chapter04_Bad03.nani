@@ -1,0 +1,380 @@
+@if isDebugDirectJump
+	@Gosub System/System_Subroutine.BeginAdv
+
+# ========================================
+# ＞『シェリーを止めなかった』を選択
+# ========================================
+
+# ========================================
+# ＞シーン2-4-b3へ
+# ========================================
+
+# Scene2-4-b3
+
+# ========================================
+# ●シーン2-4-b3
+# ========================================
+
+@back 31_2
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_5_1
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print 止めてもどうせやるんだろう……。<br>なら勝手にすればいい。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1
+
+@print ヒロさん、わかってますねー！<br>ではでは、一旦地上に戻りますね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print シェリーは途中でエレベーターを止めると、<br>すぐに上階のボタンを押す。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.5
+@hideChars 
+
+# エレベーターの稼働音
+@bgm Ambi_5_1
+@Wait 1
+# エレベーターの到着音
+@sfx Sfx_68
+@StopBgm Ambi_5_1
+@Wait 1
+
+# エレベーターの開閉音
+@sfx Sfx_157
+@Wait 1
+
+@back 31_2 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@back SolidColor.Custom { time:0.4 }
+@Wait 1.6
+
+@char Leia.Surprised1 { time:1 }
+@Wait 1
+
+@print エレベーターの扉が開くと、<br>驚いたようなレイアの姿があった。 { speed:1 waitInput:true Wait:true }
+
+@print "……おや？ もう地下探索は終わったのかい？" { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Smile1
+
+@print "いえ！ その前にちょっと試したいことがありまして！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.5
+@hideChars 
+
+@back 31_2 { time:0 }
+
+@char Sherry.Normal1
+@char Hiro
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.6
+
+@print シェリーはすぐにエレベーターを閉めると、<br>何度もボタンを押す。 { speed:1 waitInput:true Wait:true }
+
+# エレベーターの稼働音
+@bgm Ambi_5_1
+
+@print ……適当に押してるだけじゃないのか？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Angry1
+
+@print "違いますよ！ ちゃんと順番通りです！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print エレベーターは何度も昇ったり降りたりを繰り返す。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Fearful1
+
+@print （なんだか、少し気持ち悪くなってきた……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# エレベーターの到着音
+@sfx Sfx_68
+@StopBgm Ambi_5_1
+
+@print そろそろ止めるように言おうか考えていると、<br>エレベーターが止まった。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print （終わったのか？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@StopBgm { fade:3 }
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.6
+
+# エレベーターの開閉音
+@sfx Sfx_157
+
+@hideChars 
+@back 31_2 { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.6
+
+@print エレベーターの扉は開くけれど、<br>誰も乗り込んでくる様子はない。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print もう十分だ。<br>そろそろ地下探索に戻ろう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ここからシェリーの立ち絵無し
+
+@print ……下に、下に行かないと。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 聞いてるのか？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆「地下に……異世界に……」含み笑い感ありでぶつぶつ呟いている、かすれて聞こえない
+
+@print 地……に……異……に……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# エレベーターの開閉音
+@sfx Sfx_157
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.6
+@hideChars 
+
+@print "何かをブツブツ<ruby=\"つぶや\">呟</ruby>きながらも、<br>シェリーは地下へ向かうボタンを押す。" { speed:1 waitInput:true Wait:true }
+
+# エレベーターの稼働音
+@bgm Ambi_5_1
+
+@back 31_2 { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.6
+
+# ＠備考◆「つれて、いく」含み笑い感ありでぶつぶつ呟いている、かすれて聞こえない
+
+@print ……れて、……く。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print ？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （一体なんなんだ？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ほんの少し前まで、異世界だなんだと大騒ぎしていたのに、<br>今は不自然なほど大人しい。 { speed:1 waitInput:true Wait:true }
+
+@print （そんなに異世界に行きたかったのか？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print あのシェリーに限って、<br>それしきのことで落ち込むとは思えないが、<br>実際様子がおかしい。 { speed:1 waitInput:true Wait:true }
+
+@print そんなことを考えていると、<br>エレベーターが止まった。 { speed:1 waitInput:true Wait:true }
+
+# エレベーターの到着音
+@sfx Sfx_68
+@Wait 1
+
+@StopBgm Ambi_5_1
+
+# エレベーターの開閉音
+@sfx Sfx_157
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.6
+@back SolidColor { time:0 }
+@hideChars 
+@char Hiro
+@back SolidColor.Custom { time:0.8 }
+@Wait 1.5
+
+@print ……暗いな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ドアの向こうは、一筋の光も差さない<br>真っ暗闇。 { speed:1 waitInput:true Wait:true }
+
+@print "さすがの私も、<br>思わず降りるのを<ruby=\"ためら\">躊躇</ruby>ってしまう。" { speed:1 waitInput:true Wait:true }
+
+@print だというのに、シェリーは構うことなく<br>暗闇の中へと進み出した。 { speed:1 waitInput:true Wait:true }
+
+@print ……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_27_1
+
+@char Hiro.Surprised1
+
+@print なっ……おい、待て！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print まるで道が見えているみたいに、<br>シェリーはどんどん進んでいく。 { speed:1 waitInput:true Wait:true }
+
+@print あっという間にその背は闇に飲まれて<br>見えなくなる。 { speed:1 waitInput:true Wait:true }
+
+@print 私は慌ててシェリーを追いかけた。 { speed:1 waitInput:true Wait:true }
+
+@print 全く、勝手に――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@animate MainBackground
+@spawn MaskingRectangle
+@back 31_2
+@char Sherry.Surprised1
+@mask MainBackground-Front,Sherry-Front
+@animate MainBackground-Front
+@animate Sherry-Front
+@Wait 0.4
+
+# @hideChars
+
+# @char Sherry.Surprised1 pos:50
+
+@print ……ヒロさん！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hiro.Surprised1
+
+@print ……えっ？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hide Sherry-Front
+@hide MainBackground-Front
+
+@print 唐突に聞こえたシェリーの声。 { speed:1 waitInput:true Wait:true }
+
+@print それは何故か、背後――<br>エレベーターの中から聞こえてきた。 { speed:1 waitInput:true Wait:true }
+
+@print シェリーはさっき、先に降りたはずなのに。 { speed:1 waitInput:true Wait:true }
+
+@show Sherry-Front
+@show MainBackground-Front
+
+@print "ヒロさん！ 早く、早く戻って……！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print どういうことだ。<br>どうして、シェリーがそこにいる。 { speed:1 waitInput:true Wait:true }
+
+@print よくわからない。<br>けれど１つだけ確かなことは、<br>エレベーターへ戻った方がいいということ。 { speed:1 waitInput:true Wait:true }
+
+@hide Sherry-Front
+@hide MainBackground-Front
+
+# ＠橘シェリー
+
+@print ダメ……帰さない。 { author:Girl speed:1 waitInput:true Wait:true }
+
+@print "聞こえた声は、シェリーと同じもの。<br>けれどあまりの<ruby=\"ほのぐら\">仄暗</ruby>さに、ぞわりと<br>肌が<ruby=\"あわだ\">粟立</ruby>った。" { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Fearful1
+
+@print （振り向いてはいけない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆息を呑む
+
+@print っ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@show Sherry-Front
+@show MainBackground-Front
+
+@print "ヒロさん！ 急いで！！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print "すぐさま<ruby=\"きびす\">踵</ruby>を返した私の目の前で、<br>エレベーターが上昇し始めた。" { speed:1 waitInput:true Wait:true }
+
+@char Hiro
+
+@print （そんな……っ！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 待ってくれ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ヒロさん、早くっ！！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 必死に手を伸ばす。 { speed:1 waitInput:true Wait:true }
+
+@print あと少し。<br>あと少しで―― { speed:1 waitInput:true Wait:true }
+@StopBgm 
+@ResetText 
+@hide Sherry-Front
+@hide MainBackground-Front
+
+@Wait 1
+
+@bgm Bgm_27_2
+
+# ＠橘シェリー
+
+@print ふフ……ダメだよ。<br>帰さない、帰さナイ、カエさない、カエサナイ。 { author:Girl speed:1 waitInput:true Wait:true }
+
+@shake Camera
+
+@char Hiro.Fearful1
+
+@print ひっ！？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 暗闇から伸びた手が、<br>身体にまとわりついてくる。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro { time:3 }
+
+@print "嫌だ！ やめろ、離せっ！" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@show Sherry-Front
+@show MainBackground-Front
+
+@print "ヒロさん！ ヒロさん！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hide Sherry-Front
+@hide MainBackground-Front
+
+@char Hiro { time:3 }
+
+@print がむしゃらに暴れれば暴れるほど、<br>絡みつく手の本数が増え、<br>私を闇に引きずり込もうとする。 { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+@Wait 0.5
+
+@bgm Bgm_27_3
+
+@print ――ここで、一緒に過ごしましょう。<br>――一緒に闇に溶けましょう。<br>――永遠に、闇の中で。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro { time:3 }
+
+@print 嫌だ嫌だ嫌だ嫌だ嫌だ嫌だ嫌だ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 頭に響く声を振り払おうにも、<br>身体が、視界が、思考が、<br>どんどん闇に覆われていく。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro { time:3 }
+
+@print あ、ああ……あぁっ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro { time:3 }
+
+@print （ダメだ、このままじゃ……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro { time:3 }
+
+@print 助け……っ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@show Sherry-Front
+@show MainBackground-Front
+
+@print ヒロさん――！！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hide Sherry-Front
+@hide MainBackground-Front
+
+@Wait 0.4
+
+@char Hiro { time:3 }
+
+@StopBgm 
+
+@Wait 1
+
+# エレベーターの開閉音
+@sfx Sfx_157
+
+@Wait 3
+
+@print 悲痛な声で名を呼ぶシェリーの声が途切れるのを最後に、<br>私は二度と光を目にすることはなかった。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 『END～異世界エレベーター～』
+# ========================================
+
+@badEnd 23

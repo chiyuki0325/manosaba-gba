@@ -1,0 +1,250 @@
+@gosubResetBook System/System_ResetWitchBook
+@set "isReenact = true"
+@printer Normal.Simple { time:0 }
+@Gosub System/System_Subroutine.BeginAdv
+
+# ==============================================================================
+# 黒部ナノカの物語
+# ==============================================================================
+# ＠ト書き▼議論7 絵本パート
+
+# Judge7-13-1
+
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# BGM変更：ボクとワタシの
+@bgm Bgm_19_1
+
+# 【1P目】（最終ページ流用）絞首台の前にいるナノカ
+# 最後の方に詳細記載。
+# 別の内容でも可。ただ明確なイメージないので、ラストの流用でも……ぐらいの温度感。
+@spawn Reenact_Ch02_E02_S01
+@Wait 1.5
+
+@print どんな言い訳をしたとしても<br>事実は何も変わらない。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 私が、沢渡ココを殺した。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 全ては私の仕業で……<br>全ては私がやったこと。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 誰が悪いかと言われたら……<br>それは他のだれでもない。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 私が、悪いの。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch02_E02_S01
+@Wait 1.5
+
+# 【2P目】シャワー室にいるナノカとココ
+# 背景なしでもOK
+@spawn Reenact_Ch02_E02_S02
+@Wait 1.5
+
+@print ……私は沢渡ココの考えていた計画を止めるために、<br>彼女をシャワールームに呼び出したの。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print でも彼女は聞く耳をもってくれなかったわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 彼女にも譲れないものがあるから……<br>話は平行線だった。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print しびれを切らした彼女は、その場を立ち去ろうとしたの。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# 【2P目差分】ココに近付くナノカ
+# スライドして位置を動かすようなアニメ想定（キャラを動かすイメージ）
+
+@print だから……止めようと思って、<br>私はその肩を掴んだ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print そしたら彼女は激昂して……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 私を、突き飛ばした。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# 突き飛ばされるナノカ
+
+@ResetText 
+@despawn Reenact_Ch02_E02_S02
+@Wait 1.5
+
+# 【3P目】ナノカ正面、後ろの闇に落ちていく
+# ココ視点で、ナノカの背中の扉が壊れてそのまま落ちていくような光景
+# ナノカが正面（カメラ・視点者）側に向かって手を延ばしているようなイメージ
+@spawn Reenact_Ch02_E02_S03
+@Wait 1.5
+
+@print そして……その後ろには、<br>ダストシュートがあったの。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print ダストシュートはフタが壊れかけていたみたいで……<br>突き飛ばされた衝撃で、そのフタが外れてしまったの。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print そして、私は自分の体を支えきれずに<br>頭から落下していった……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print そのとき、私は意識を失ってしまったわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# 真っ暗/暗転/暗闇
+@ResetText 
+@despawn Reenact_Ch02_E02_S03
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1.5
+
+@print どのくらい気を失っていたのかは<br>わからなかった。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print けれど私が目を覚ましたとき、<br>そこは焼却炉の中だったの。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 明かりはなく、真っ暗な闇の中……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 私は……突然のことに混乱していた。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 突き落とされたという記憶だけがあって、<br>このままここにいては、殺されると思ったわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print そんな時……。<br>声が聞こえたの。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print それは、沢渡ココの声だった。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print そして焼却炉のフタを内側からそっと開けると、<br>外から光が差し込んだわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@back Transparent { time:1.2 }
+@Wait 0.6
+
+# 【4P目】
+# ぺたん座り（女の子座り）のナノカの足元に、
+# 拳銃が落ちているイメージ。
+# 拳銃は特に指定ないが、古めの銃の想定
+# ナノカの顔を映さないイメージ・人形で座るの難しそうなら別でも全然OK
+@spawn Reenact_Ch02_E02_S04
+@Wait 1.5
+
+@print その差し込んだ光は……<br>焼却炉に広がるゴミの中で、<br>私の手元にある物体を照らした。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print そこにはね。<br>……拳銃があったの。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 酷い、偶然だった。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print いつも持っていた銃は、<br>沢渡ココを警戒させないよう置いてきていたのに。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print でも、私はそれを見て運命だと思ったの。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print ……これがあれば、自分の身を守れる。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print これがあれば……沢渡ココの計画を防げる。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print ……そして。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 私は { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print その拳銃を { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 拾って { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch02_E02_S04
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1.5
+
+# SE：銃声
+@sfx Sfx_38
+
+# フラッシュ
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.5 }
+@Wait 0.5
+
+# 暗転+ウェイト
+@Wait 2
+
+@print ……そして、沢渡ココは死んだ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 彼女の亡骸の前で<br>私はあらためて<br>人を殺してしまったのだと認識した。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print ……取り返しのつかないことをしてしまった。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print そのとき――<br>私は、魔女に変わってしまったのだと思う。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print もう後戻りはできないのだと感じた。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 私の幻視の魔法は暴走し、<br>周囲の物の過去を読み取った。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 足元を伝い、壁を伝い、<br>ここにいるみんなの……そしてこの牢屋敷の歴史まで。<br>全ての情報が、私の脳に押し寄せた { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 幻視という名の情報は……<br>私の頭を埋め尽くした。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@back Transparent { time:1.2 }
+@Wait 0.6
+
+# 【5P目】煙突の中で、上から伸びるロープの先にココの死体を繋ぐ。
+# 複雑なので全部を表現する必要はなし。
+# 下記の実際の事件の情景から、一部を切り出して表現してもらえればいいかも？
+# 例・ナノカがロープを伝っているシーン
+# 例・ココの担架を用意して死体を乗せているシーン
+@ResetText 
+@spawn Reenact_Ch02_E02_S05
+@Wait 1.5
+
+@print ……気がつけば、私は焼却炉の中のロープを握っていた。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print それは以前、ゴクチョーから逃げるルートとして<br>私が用意していたものよ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print そこに、<br>周囲にあった捨てられた衣服を結びつけたわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print そしてさらに衣服をつなぎ合わせて、<br>沢渡ココの死体を運べるよう即席の担架を作ったの。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print ――【幻視】の結果、ここに死体を放置していたら<br>焼却炉が稼働する前に発見されるのが想定できたから。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print ……私はロープを伝って、<br>急いで２階のノアのアトリエへと登った。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print そして沢渡ココを引き上げて、<br>銃と一緒にアトリエから投げ捨てたの。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print とにかく生存するために……<br>私の体は半ば自動で動いていた。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 何も考えられなかった。<br>――いや、考えたくなかった。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 自分の中の絶望が、<br>抑えきれなくなると思ったから。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 私はそのあと、誰にも会わないようにして<br>遅れて死体発見現場へと到着して……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print そして、黙って成り行きを見つめていたわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 私がしたことは、それだけ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 沢渡ココを撃って、２階へ運び、中庭へと投下した。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print そして――魔女になったの。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch02_E02_S05
+@Wait 1.5
+
+# 【1P目流用】絞首台の前にいるナノカ
+# 作中で実際の処刑は銃殺なのですが、
+# 「執行を待つ死刑囚」というメタファーで
+# 絞首台（上から首吊用のロープが下がっている階段上）の前を想定しています。
+@spawn Reenact_Ch02_E02_S06
+@Wait 1.5
+
+@print ……思えば、私はきっと処刑されたくて<br>この場に来たのね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print ここが私の絞首台で……<br>罪を告白するための懺悔室。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print だって……沢渡ココは……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# ＠備考◆ここから感情を乗せる。泣きそうな感じ
+
+@print あの子は……<br>撃たれる直前まで私の安否を気にかけていた……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 落ちてしまった私の様子を心配して見に来て……<br>そして撃たれたの。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 【幻視】は……私にそう教えてくれた。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 本当に……バカな子。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print だから……私を許して欲しいなんて言わない。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 私は……裁かれるべき人間なの。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch02_E02_S06
+@Wait 0.5
+
+@set "isReenact = false"
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter02/Act02_Chapter02_Adv19

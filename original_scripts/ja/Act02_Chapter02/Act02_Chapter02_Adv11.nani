@@ -1,0 +1,146 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-2-11
+
+# ========================================
+# ●シーン2‐2‐11
+# ========================================
+
+@back 1_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_22_1
+
+@print ――月曜の朝。<br>計画を実行する日がやってきた。 { speed:1 waitInput:true Wait:true }
+
+@print 目を覚ました私は、<br>ベッドから降り、エマに声をかける。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+
+@print ……おはよう、エマ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+
+@print "えっ！？ あ、えっと……？" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマは驚き戸惑っている。<br>無理もない。 { speed:1 waitInput:true Wait:true }
+
+@print 同室で同じ時間を過ごしていても、<br>私はできるだけエマに関わらないようにしていた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Smile1
+
+@print お、おはよう、ヒロちゃん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "少し面食らってはいるものの、<br>エマは<ruby=\"うれ\">嬉</ruby>しそうに<ruby=\"あいさつ\">挨拶</ruby>を返した。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+
+@print "どうしたの？ その……ヒロちゃんから、<br>声をかけてくれるなんて……。" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 予想通り、エマは驚きつつも私の言葉を受け入れた。<br>私は冷静に、頭の中で描いた通りに進行する。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+
+@print 悪かった。頑なになりすぎだったと思う。<br>でも、このままじゃ良くないと考えを改めたんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 君と昔のことを話し合いたい。<br>もしよかったら……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Smile1
+
+@print もちろん大丈夫だよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 私が言い終わる前に、エマは前のめりで答えてきた。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Smile1
+
+@print ……ありがとう。じゃあ昼食の後、<br>一緒にシャワーでも浴びに行かないか？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+
+@print う、うん、いいけど……<br>どうしてシャワーなの？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+
+@print 昼間なら、あまり人が来ないかと思って。<br>君とふたりきりで、ゆっくり話したいから。<br>これじゃ理由にならないかな？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Smile1
+
+@print ……ううん。<br>えへへ、なんだか嬉しいな。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （いつもエマはそうだ。<br>　無邪気な笑顔を見せて油断させ、<br>　腹の中は黒い人間――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （いいや、魔女だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 思いに反し、<br>私はエマに努めて柔らかく笑いかける。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Smile1
+@char Ema.Normal1
+
+@print では、１４時にシャワールームで<br>待ち合わせよう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print それから、このことは<br>私と君だけの秘密にしてほしい。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+
+@print え、どうしてかな？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive1
+
+@print 私はあまり、自分のことや過去のことを<br>他人に詮索されたくないんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 本音であり、同時に建前でもある。<br>エマが姿を消す直前に、私と約束していたという事実を、<br>他の少女たちに知られてはまずい。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Smile1
+
+@print そっか……うん、わかった！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@ResetText 
+
+# 牢の施錠音
+@sfx Sfx_4
+
+@print "時間になり、牢が<ruby=\"かいじょう\">開錠</ruby>される。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print ……ねえ、ヒロちゃん。<br>朝ご飯、一緒に食べに行かないかな？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print …………。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （少しこちらから歩みよってみせただけで、<br>　この態度） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （何度も見てきた。<br>　エマは本当に傷ついてなどいない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （わざと失敗したり弱そうなフリをして気を引き、<br>　自分の立場がまずくなると手のひらを返す） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （そうやって君は、<br>　ユキのことも見捨てたんだろう……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print エマの態度に心が波立ち、強く拳を握る。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@char Ema.Pensive1,ArmR3
+
+@print ……ヒロちゃん、どうかした？<br>もしかしてボク、気に障るようなこと言った？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hiro.Normal1
+
+@print ……いや、なんでもない。行こう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （この苛立ちも、後少しで元を断てる） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "上機嫌に部屋を出ていくエマの背後で、<br>私は<ruby=\"くら\">昏</ruby>い感情を<ruby=\"くす\">燻</ruby>ぶらせていた。" { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter02/Act02_Chapter02_Adv12

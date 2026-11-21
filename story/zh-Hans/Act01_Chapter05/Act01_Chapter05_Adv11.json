@@ -1,0 +1,25 @@
+{
+  "format": "manosaba.story",
+  "version": 1,
+  "language": "zh-Hans",
+  "path": "Act01_Chapter05/Act01_Chapter05_Adv11",
+  "events": [
+    {"op": "GosubResetWitchBook", "line": 1, "indent": 0, "params": {"Path": "System/System_ResetWitchBook", "IsDebugDirectJump": {"expression": "{isDebugDirectJump}"}}},
+    {"op": "Gosub", "line": 2, "indent": 0, "params": {"Path": "System/System_Subroutine.BeginAdv"}},
+    {"op": "label", "name": "Scene1-5-11", "line": 4, "indent": 0},
+    {"op": "ModifyBackgroundExtended", "line": 10, "indent": 0, "params": {"Id": "Stills", "Rotation": [0.0, 0.0, 0.0], "Scale": {"expression": "{g_backgroundDefaultScale}"}, "Duration": 0.0, "Lazy": 0, "ScenePosition": [50.0, 50.0], "AppearanceAndTransition": "370_1"}},
+    {"op": "ModifyBackgroundExtended", "line": 11, "indent": 0, "params": {"TintColor": "#000000", "Duration": 1.2000000476837158, "Lazy": 0, "AppearanceAndTransition": "Transparent", "SubId": "Overlay"}},
+    {"op": "Wait", "line": 12, "indent": 0, "params": {"WaitMode": "3.2"}},
+    {"op": "ModifyBackgroundExtended", "line": 14, "indent": 0, "params": {"Id": "Stills", "Scale": {"expression": "{g_backgroundDefaultScale}"}, "Duration": 0.20000000298023224, "Lazy": 0, "AppearanceAndTransition": "370_2"}},
+    {"op": "Wait", "line": 15, "indent": 0, "params": {"WaitMode": "1.8"}},
+    {"op": "PrintTextModified", "line": 17, "indent": 0, "params": {"Text": "——这是【回溯了】吗……", "AuthorId": "Hiro", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0105Adv11_Hiro001"]}},
+    {"op": "PrintTextModified", "line": 19, "indent": 0, "params": {"Text": "那就得从头开始了。", "AuthorId": "Hiro", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0105Adv11_Hiro002"]}},
+    {"op": "SetCustomVariable", "line": 25, "indent": 0, "params": {"Expression": "g_gameProgress = max(6, g_gameProgress)"}},
+    {"op": "Gosub", "line": 26, "indent": 0, "params": {"Path": "System/System_Subroutine.EndAdv"}},
+    {"op": "GotoModified", "line": 28, "indent": 0, "params": {"Path": "Act02_Chapter01/Act02_Chapter01_Adv01"}}
+  ],
+  "translations": {
+  "0105Adv11_Hiro001": "——这是【回溯了】吗……",
+  "0105Adv11_Hiro002": "那就得从头开始了。"
+}
+}

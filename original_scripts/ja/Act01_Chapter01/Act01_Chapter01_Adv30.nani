@@ -1,0 +1,230 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-1-26
+
+# ========================================
+# ●シーン1-1‐26
+# [back 7]
+# ========================================
+
+# ========================================
+# ＞『医務室』を選択
+# ========================================
+
+# ========================================
+# [bgm Bgm_005_001_Loop]
+# ========================================
+
+@back 7_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+@bgm Bgm_5_1
+
+@print 医務室では、<br>ベッドで横になっているアンアンと、メルルがいた。 { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Pensive
+@char Sherry.Pensive1,ArmR3,ArmL4
+
+@print シェ、シェリーさん、<br>顔色がすぐれないように見えますが……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print メルルはいちはやく青ざめているシェリーに気付き、<br>心配そうに近寄ってくる。 { speed:1 waitInput:true Wait:true }
+
+@print 健康と元気が取り柄なんですけどねー。<br>さすがに疲れが出たのか、うーん……そんなはずないのになあ。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print や、休んでください！<br>疲れが取れるハーブティーを淹れます……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR10,ArmL1
+
+@print "わあい！ ありがとうございます！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ポットでお湯を沸かし始めた<br>メルルの方へとエマは歩み寄った。 { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default
+@char Ema.Normal1
+
+@print メルルちゃん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Surprised
+
+@print はいぃぃぃ……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print "ハーブティーを<ruby=\"い\">淹</ruby>れるのに集中していたのか、<br>メルルはびくんっと大きく肩を跳ねさせた。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+
+@print わ、驚かせちゃってごめん！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Pensive
+
+@print いえいえいえいえ！<br>私の方こそびっくりしちゃって申し訳ないです……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print し、し、深呼吸しますので、<br>少々お待ちください……すーはーすーはー……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print しばしメルルの気分が落ち着くのを待って、<br>エマは口を開いた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print アンアンちゃんの具合はどう？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default
+
+@print 今は落ち着いています……ショックですよね、<br>自分のお部屋に戻ったらノアさんがあんなことに……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Pensive
+
+@print "メルルの瞳が泣きそうに<ruby=\"うる\">潤</ruby>む。" { speed:1 waitInput:true Wait:true }
+
+@print 私、ノアさんに、何もしてあげられなかった。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print こんなことになるなんて、<br>誰も予測できないよ……あ、あのさ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print "<ruby=\"うなだ\">項垂</ruby>れるメルルが見ていられなかったのか、<br>エマは大きな声を上げた。" { speed:1 waitInput:true Wait:true }
+
+@print それってなんのハーブ？<br>すごいよね、ハーブを摘んでお茶淹れられるなんて。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Smile
+
+@print ローズマリーです。<br>疲労回復に良いんですよ。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print "気を<ruby=\"そ\">逸</ruby>らすことに成功したらしく、<br>メルルがほんわかとした笑顔になる。" { speed:1 waitInput:true Wait:true }
+
+@print 良かったらエマさんも飲んでいってくださいね。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print うん、ありがとう。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# ========================================
+# [sfx 31：お茶を淹れる音]
+# ========================================
+
+@sfx Sfx_31
+
+@print エマたちは<br>メルルからハーブティーを受け取った。 { speed:1 waitInput:true Wait:true }
+
+@print （すっきりした爽やかな香り……。<br>　ちょっと気分が良くなったかも） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 一息ついてから、<br>エマはアンアンのベッドに目を向けた。 { speed:1 waitInput:true Wait:true }
+
+@print （アンアンちゃんはノアちゃんと同室……<br>　話を聞いておきたい） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （コミュニケーションが取れるか、<br>　不安だけど……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマは覚悟を決めた表情となって、<br>アンアンへと近付いていった。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR3
+@char AnAn.Pensive1,Angle01/Option_Arms-
+
+@print アンアンちゃん、その、大丈夫……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print …………。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print エマがベッド脇に立ってみれば、<br>アンアンはぼんやりと天井を見上げていた。 { speed:1 waitInput:true Wait:true }
+
+@print そのさ、アンアンちゃんとノアちゃんは、<br>同室だったよね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 一緒に過ごした時間は長くないとは<br>思うけど……何か気付いたことはないかな？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print アンアンは盛大なため息をついた後、<br>気だるそうにスケッチブックを手に取った。 { speed:1 waitInput:true Wait:true }
+
+@print すらすらと何かを書いて、<br>エマの方へと見せてくる。 { speed:1 waitInput:true Wait:true }
+
+@char AnAn.Pensive1,Arms2,Angle01/Option_Arms>Option_Arms02_01,Angle01/Option_ArmR/Option_ArmR01_01-
+
+@print 『同室はとてもとても嫌だった』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print スケッチブックに走り書きされた文面は、<br>力強く本音を物語っていた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print そ、そうだよね……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （あれ――？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "スケッチブックの端が一部折れていて、<br>ちらと見えたものにエマの目が<ruby=\"と\">留</ruby>まる。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3
+
+@print アンアンちゃん、あの、<br>そのページに描かれてるのって――。 { author:Ema speed:1 waitInput:true Wait:true }
+
+
+@char AnAn.Pensive1,ArmR1,ArmL1,ArmR1-Option-All,Angle01/Option_Arms-,ArmR1-Option-All
+@print "エマが指を差すと、<br>アンアンは気まずそうに視線を<ruby=\"そ\">逸</ruby>らした。" { speed:1 waitInput:true Wait:true }
+
+@print やがて諦め、<br>スケッチブックを１枚破って、エマに渡してきた。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 証拠品：『ノアの絵』入手
+# ========================================
+
+@ResetText 
+@spawn Clue
+@toast "魔女図鑑 更新…"
+@update 1-2
+@Wait i1.2
+
+@despawn Clue
+@Wait 0.6
+
+@char Ema.Surprised1,ArmR3
+
+@print （蝶の絵！？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマは思わず身を乗り出し、<br>ぐっとアンアンに顔を寄せてしまう。 { speed:1 waitInput:true Wait:true }
+
+@print こ、これってもしかして、<br>ノアちゃんが描いたんじゃ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print どうしてノアちゃんは蝶の絵を！？<br>アンアンちゃんのスケッチブックに描いたのは、<br>なんで！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print アンアンはとても嫌そうな顔で、<br>ゆっくりと口を開いた。 { speed:1 waitInput:true Wait:true }
+
+@char AnAn.Angry1,Angle01/Option_Arms-
+
+@print わがはいは具合が悪い。<br>大声を出されるとわがはいの具合がもっと悪くなる。<br>だから――【出て行け】。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print 低くその言葉が、紡がれた途端だった。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+@animate Ema
+
+@print エマの体は意思に反して、<br>アンアンから後ずさりをはじめてしまう。 { speed:1 waitInput:true Wait:true }
+
+@print え、あれ、なんで……！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print アンアンはスケッチブックにさらさらと文字を書いてから、<br>見せてくる。 { speed:1 waitInput:true Wait:true }
+
+@char AnAn.Pensive1,Arms2,Angle01/Option_Arms>Option_Arms01_03,Angle01/Option_ArmR/Option_ArmR01_01-
+
+@print 『わがはいの魔法は、相手を納得させられたら<br>　命令に従わせることができるものだ』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print 『いわば、軽度の【洗脳】』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@update AnAn
+
+@print え、えー……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （それでアンアンちゃん、<br>　喋らないんだ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print どんどん距離が離れていき。 { speed:1 waitInput:true Wait:true }
+
+@print "エマは思う。<br>アンアンはエマを……他人を<ruby=\"きょぜつ\">拒絶</ruby>しているのだろうと。" { speed:1 waitInput:true Wait:true }
+
+@print エマは盛大なため息を漏らしながら、<br>医務室を追い出される形となった。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン1‐1‐21
+# 全てのイベントを消化している＞シーン1‐1‐30
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter01/Act01_Chapter01_Adv25

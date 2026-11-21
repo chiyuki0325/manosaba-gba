@@ -1,0 +1,894 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-2-19
+
+# ========================================
+# ●シーン2‐2‐19
+# ========================================
+
+@ShowUI ControlPanel
+@back 13_1 { time:0 }
+@Wait 0.9
+
+@bgm Bgm_42_1
+@back Transparent { time:1.8 }
+@WaitForNextFrame 
+
+@animate MainBackground
+@Wait 1.5
+
+@print ……沢渡ココの額を撃ち抜いたのは、<br>黒部ナノカだった。 { speed:1 waitInput:true Wait:true }
+
+@print そしてナノカは投票で【魔女】に選ばれた。 { speed:1 waitInput:true Wait:true }
+
+@print しおらしく罪を受け入れているナノカに、<br>私たちはかける言葉をなかなか見つけられない。 { speed:1 waitInput:true Wait:true }
+
+@print （ナノカは正しくないことをした） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （でもそれを私は責められるのか？<br>　エマを殺すつもりだった私が） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ナノカの起こした殺人事件によって、<br>私は冷や水を浴びた気分だった。 { speed:1 waitInput:true Wait:true }
+
+@print "気付けばあんなにも増幅していた殺意が、<br>すっかり<ruby=\"しぼ\">萎</ruby>んでいる。" { speed:1 waitInput:true Wait:true }
+
+@print （ナノカのおかげで冷静になれた、<br>　というのが正しいか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （私はどうかしていた。<br>　そして、ナノカもまた――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 誰かに対して苛立ったり、<br>憎しみを抱くことなんて誰にでもある。<br>何も特別じゃない。 { speed:1 waitInput:true Wait:true }
+
+@print その時、自身の手に人を殺める道具があったら。<br>その時、魔女の殺意が不意に増幅したら。 { speed:1 waitInput:true Wait:true }
+
+@print ――トリガーを引いてしまうのではないか。 { speed:1 waitInput:true Wait:true }
+
+@print （【魔女】に選ばれるのは、<br>　私だったかもしれない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@back 14_1
+@char Nanoka.Normal1,ArmR2
+
+@print その場を支配しているのは、<br>どこかナノカに共感し、同情を寄せる空気。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Alisa.Pensive1,Option-ArmL-Off
+@mask MainBackground-Front,Alisa-Front
+@animate MainBackground-Front
+@animate Alisa-Front
+@Wait 0.4
+
+@print ……わかんねえな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print 低く、ぽつりと口にしたのはアリサだった。 { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,Option-ArmL-Off
+
+@print ウチは毎日おめえら全員にムカついてるし、<br>なんなら殺してやりてえって思ってるよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Pensive1,Option-ArmL-Off
+
+@print でもそれは思うだけで、<br>絶対に実行したりしない。自分をぶっ殺してでも止める。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1,Option-ArmL-Off
+
+@print "だからわかんねえんだよ。<br>おめえを<ruby=\"つ\">衝</ruby>き動かしたものはなんなんだよ。<br>どうして沢渡だったんだよ。" { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,Option-ArmL-Off
+
+@print ちゃんと説明しろよ。<br>おめえのこと、ちゃんと話せよ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Alisa-Front
+@hide Alisa-Front
+@despawn MaskingRectangle
+
+@print ……さっき話したことが全てよ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 私は沢渡ココの計画を止めたかった。<br>聞く耳をもたない彼女に殺意が芽生えた。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 本当にそれだけよ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Sherry.Pensive1
+@mask MainBackground-Front,Sherry-Front
+@animate MainBackground-Front
+@animate Sherry-Front
+@Wait 0.4
+
+@print うーん。なんとなくわかるんですが、<br>でもココさんの計画の部分がわかりませんね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+
+@print ココさんは何を企んでたというのでしょう？<br>そこがとっても気になりますね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Sherry-Front
+@hide Sherry-Front
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+@mask MainBackground-Front,Hiro-Front
+@animate MainBackground-Front
+@animate Hiro-Front
+@Wait 0.4
+
+@print ……【魔女を殺す薬】か。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Hiro-Front
+@hide Hiro-Front
+@despawn MaskingRectangle
+
+@char Nanoka.Surprised1
+
+@print "私が口にしたことで、<br>ナノカはハッと表情を<ruby=\"こわば\">強張</ruby>らせた。" { speed:1 waitInput:true Wait:true }
+
+@print あなた、何故……いいえ、そうよね、二階堂ヒロ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1
+
+@print あなたはいつも人をよく見ている。<br>冷静に物事をとらえ、対処することができる人。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+@mask MainBackground-Front,Hiro-Front
+@animate MainBackground-Front
+@animate Hiro-Front
+@Wait 0.4
+
+@print ココが何か計画を立てるとしたら、<br>おそらく【魔女を殺す薬】を用いたものになる。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私たちはおそらく全員、<br>彼女がそれを所持しているのを見ているはずだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Hiro-Front
+@hide Hiro-Front
+@despawn MaskingRectangle
+
+# ========================================
+# ◎回想シーン（2-1-14からの流用）
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@hideChars 
+@hide MainBackground-Middle
+@Wait 0.3
+@back 13_1 { time:0 }
+@char Coco.Smile1
+@Wait 1.5
+@camera { time:0 }
+@printer Normal.Stream
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+# ＠備考◆配信中
+
+@print ふっふっふ～、<br>今日のあてぃしは重大発表しちゃいまーす。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print "じゃじゃーん！ これ見て見て！" { author:Coco speed:1 waitInput:true Wait:true }
+
+# ========================================
+# アイテムスチル：『トレデキム』表示
+# ========================================
+
+@char Coco.Normal1
+
+@print 実はこれな、【魔女を殺す薬】なんだよね～。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Smile1
+
+@print その名も【トレデキム】。<br>効果のほどはあてぃしのお墨付き！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1
+
+@print この情報をみんなに明かすの迷ったんだけどさ……<br>だってこれ出しちゃったら<br>あてぃしもヤバい立場になんじゃねーかなーって。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Angry1
+
+@print で、でもあてぃし、もう【魔女を殺す薬】持ってっから！<br>こんなもんにもう二度と殺されねーから！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1
+
+@print 信じるか信じないかは任せる！<br>とにかく【魔女を殺す薬】を使用しなきゃ<br>確実に魔女は殺せないってコト！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@HidePrinter 
+@hideChars 
+@Wait 0.3
+@camera { time:0 }
+@printer Normal.Default
+@back 14_1
+@back 13_1 { Scale:{g_backgroundDefaultScale} time:1 }
+@char Nanoka.Normal1
+@back Transparent { time:0.8 }
+@Wait 0.9
+@Wait 1.5
+
+# ========================================
+# 回想シーンここまで
+# ========================================
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Hiro.Angry
+@mask MainBackground-Front,Hiro-Front
+@animate MainBackground-Front
+@animate Hiro-Front
+@Wait 0.4
+
+@print 君はそれを誰かに使われるのを恐れて、<br>事前に止めようとしたんじゃないか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Hiro-Front
+@hide Hiro-Front
+@despawn MaskingRectangle
+
+@char Nanoka.Normal1
+
+@print そうよ……。<br>【魔女を殺す薬】の危険性は、<br>宝生マーゴの事件の時に証明されている。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 沢渡ココがその薬を持っていて<br>誰かに使用するつもりなら、<br>止めないといけない。そう思ったのよ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print ナノカはその時のことを語り始めた。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 回想シーン（新規）
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@ResetText 
+@hideChars 
+@Wait 0.3
+@back 30_2 { time:0 }
+@hide MainBackground-Middle
+@char Nanoka.Normal1,ArmL6 { time:0 }
+@char Coco.Normal1 { time:0 }
+@camera { time:0 }
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print 薬をよこして。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print あなた、持っているのでしょう。<br>【魔女を殺す薬】を。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1
+
+@print "あーまたそれ？ ほんっとしっつこいなぁ。<br>持ってないって言ってんじゃん。" { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 誤魔化さないで。<br>あなたが隠し持っているのはもうみんなの知るところよ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print そんな危険な物を持っていられるのは困るの。<br>魔女に使用する計画なんでしょう？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Coco.Angry1
+
+@print いやいや、<br>魔女がいたら使った方がいいに決まってんじゃん。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1
+
+@print 魔女になってるヤツがもっとよくわかるなら、<br>ガンガンに使用していけるんだけどさぁ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print そしたら殺人事件も起きないだろうし、<br>あてぃしヒーローになれるんじゃね？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmL8 { time:0 }
+
+@print ……本気で言っているの？<br>あなたは、魔女なら殺していいというの？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1
+
+@print なーにそんな必死になってんのか知らんけど、<br>魔女なら死んでいいでしょ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print …………。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Coco.Angry1
+
+@print あてぃしは自分が安全ならなんでもいい。<br>絶対、絶対あてぃしだけは生き残って帰ってやるんだから。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print そのためなら、あてぃしは使うから。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Smile1
+
+# ＠備考◆面倒になって煽り気味
+
+@print "あ！ そっか！<br>誰が見てもわかりやすい【魔女】もういるじゃん！" { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1
+
+@print いや、正確には同じモンなのかはわかんないけど。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Smile1
+
+@print でも……試してみる価値はあんじゃね？ { author:Coco speed:1 waitInput:true Wait:true }
+
+# ＠備考◆くっと息を呑む
+
+@char Nanoka.Angry1
+
+@print ――！ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1
+
+# ＠備考◆面倒になって煽り気味
+
+@print なんで今まで気付かんかったかなぁ～。<br>そうだよねうんうん。使う相手に気付けたわ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Smile1
+
+@print あいつさえいなければ、ここから出られるかもだし。<br>ありがとねナノカ。じゃあそういうことで。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco { time:1 }
+@Wait 0.8
+@char Nanoka.Pensive1,ArmL4
+
+@print 待って……！ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Coco.Angry1
+
+@print ッ、しつこいんだよ！！ { author:Coco speed:1 waitInput:true Wait:true }
+
+# どんっとぶつかる音
+@sfx Sfx_27
+
+@char Nanoka.Surprised1,ArmL4
+@Wait 0.3
+
+@print あっ……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@sfx Sfx_62
+@shake Nanoka
+@hide Nanoka
+@char Coco.Surprised1
+@Wait 0.3
+@sfx Sfx_147
+@hideChars 
+@camera { time:1 }
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@camera { time:0 }
+@back 14_1
+@char Nanoka.Normal1,ArmL3
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+# ========================================
+# 回想シーン（ここまで）
+# ========================================
+
+@print ……今思えばあの時の沢渡ココは、<br>本気で口にしていなかったのかもしれない。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print なのに私は本気に取って感情的になって……<br>勝手にダストシュートから落ちたのよ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print そうして意識を失った後、<br>焼却炉の中で私の手に銃が触れたの。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmR5,ArmL1
+
+@print 触れた瞬間、【幻視】が発動した。<br>焼却炉の中に銃を捨てたのは、宝生マーゴだった。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmR2,ArmL1
+
+@print 宝生マーゴが氷上メルル殺害のために<br>金庫から持ち出した物の中には、<br>トレデキムや剣だけじゃなく、拳銃もあったの。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print ただ、拳銃は使用をやめたのでしょうね。<br>誰かに使われるのも恐れたのか、<br>彼女は拳銃を焼却炉に捨てた。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print その拳銃が私の手の中にあって、<br>焼却炉のフタを開いた先に<br>沢渡ココの姿が見えて……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print きっと魔が差したのね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+@mask MainBackground-Front,Hiro-Front
+@animate MainBackground-Front
+@animate Hiro-Front
+@Wait 0.4
+
+@print ……たしかに君は間違ったことをした。<br>ただ、１点思うところがある。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ココは本当に君の心配などしていたのか？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive1
+
+@print 焼却炉室の背景をいじって配信を始めたのは、<br>君が死んでしまった時のために<br>アリバイを作ろうとしたんじゃ――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Hiro-Front
+@hide Hiro-Front
+@despawn MaskingRectangle
+
+@char Nanoka.Pensive1
+
+@print それは……そうなのかもしれないわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print でも……<br>あの子が泣きそうな顔で私を心配していたのは<br>たしかなのよ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print ……本当に、何も言い訳できないわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print さっさと処刑を始めてちょうだい。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@hideChars 
+@hide MainBackground-Middle
+
+@back 14_1 { time:0 }
+@char Warden.1 { time:0 }
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print そうですね。<br>あんまり長引くのは困るんですよねえ。<br>皆さん、いつものアレ、よろしくお願いします～。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 遠慮も葛藤も不要よ。<br>……少しでも私に同情しているなら<br>嫌な時間を早く終わらせてくれる方がいいわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@animate MainBackground,Warden
+@back 590_2 { Scale:{g_backgroundDefaultScale} time:0.6 }
+@Wait 0.6
+
+@print どこかやるせない空気の中、<br>私たちはスマホを取り出していく。 { speed:1 waitInput:true Wait:true }
+
+@print わかんねえ、わかんねえんだよ。<br>クソッ……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print アリサのぼやきが聞こえてきた。<br>私も同じ思いだった。 { speed:1 waitInput:true Wait:true }
+
+@print （魔が差した――<br>　でも、最後の一押しになったものがあるはず） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （ナノカはそれを語ろうとしない。<br>　どこか焦っているようにすら見える） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （私たちはこのまま、<br>　ナノカを処刑させてしまっていいのか……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+# TODO: ループ再生化する
+@sfx Sfx_35
+
+@ProcessInput false
+@StopBgm 
+@HidePrinter 
+@HideUI ControlPanel,AutoToggle,WitchBookButtonUI
+@ShowUI ExecutionButton
+
+@if !enableDebugSkip
+	@Skip false
+	@Stop 
+
+# ExecutionConfirmed
+
+@bgm Bgm_31_1
+@HideUI ExecutionButton
+@hide Stills-Middle { time:0.6 }
+@Wait 0.9
+
+@ProcessInput true
+@ShowUI ControlPanel,AutoToggle,WitchBookButtonUI
+@print "はい！ ではこれより、<br>魔女の処刑を執行します～。" { author:Warden speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@animate MainBackground,Warden
+@hideChars 
+
+# 歯車がまわる音
+@sfx Sfx_36
+
+@Wait 1
+
+@print 歯車の回転がはじまり、<br>中央の台座がゆっくりと入れ替えられていく。 { speed:1 waitInput:true Wait:true }
+
+@print "その<ruby=\"ぎょうぎょう\">仰々</ruby>しさはどこか<ruby=\"そうごん\">荘厳</ruby>で神聖さすら感じさせる。" { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+
+@back 450_1 { time:0 }
+@animate Stills
+@back Transparent { time:1.2 }
+@Wait 2.4
+
+@animate Stills
+@back 450_1 { time:0.6 }
+@animate Stills-Middle
+@Wait 2.4
+
+@animate Stills-Middle
+@back 450_1 { time:0 }
+@blur Stills
+@animate Stills { Scale:{g_backgroundDefaultScale} }
+@blur Stills
+@hide Stills-Middle { time:0.6 }
+@Wait 3
+
+@print そして――新たに現れたのは、<br>台座に固定されたガトリング砲だった。 { speed:1 waitInput:true Wait:true }
+
+@print 鈍く光る金属の塊は、<br>人を殺す道具としての凶暴性を放っている。 { speed:1 waitInput:true Wait:true }
+
+@print そして、銃口の先には椅子があった。 { speed:1 waitInput:true Wait:true }
+
+@print 銃……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print あらかじめ決められていたとすら思えるね……。<br>銃を凶器に選んだ彼女のための、彼女の処刑か。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print そうね……私にお似合いだわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# スマホ通知音
+@sfx Sfx_29
+
+@Wait 1
+
+@print ナノカが証言台から離れる前に、<br>不意に私のスマホの通知音が鳴った。 { speed:1 waitInput:true Wait:true }
+
+@print （なんだ……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 差出人が【黒部ナノカ】と表示されていたので、<br>私はナノカの方を見る。 { speed:1 waitInput:true Wait:true }
+
+@print …………。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 目が合う。<br>ナノカは意味ありげに首を横に振った。 { speed:1 waitInput:true Wait:true }
+
+@print （後で確認しろ、ということか？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ヒロさん、どうかしましたの？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print なんでもない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私は首を振り、<br>スマホをポケットにしまった。 { speed:1 waitInput:true Wait:true }
+
+@back 450_2 { Scale:{g_backgroundDefaultScale} }
+
+@print "その間に、ナノカは看守によって座らせられ、<br><ruby=\"じゅうじゅん\">従順</ruby>に拘束されていった。" { speed:1 waitInput:true Wait:true }
+
+@print 準備はいいですか？<br>それでは……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print ……恐れがないわけじゃない。<br>でも、これで私も同じになれる。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# ＠備考◆小さく呟く
+
+@print ……お姉ちゃん。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print "小さな<ruby=\"つぶや\">呟</ruby>きを落として、<br>ナノカはそっと瞳を閉ざした。" { speed:1 waitInput:true Wait:true }
+
+@print "その<ruby=\"つぶや\">呟</ruby>きを、私は聞き漏らさなかった。" { speed:1 waitInput:true Wait:true }
+
+@print そうか…。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 真実に気付いた瞬間、<br>胸の奥に冷たい刃が突き刺さるような痛みが走る。 { speed:1 waitInput:true Wait:true }
+
+@print （ナノカの守りたかったものは――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ……おや、なんのつもりですかね？ { author:Warden speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@print "ゴクチョーが<ruby=\"けげん\">怪訝</ruby>そうな声を上げる。" { speed:1 waitInput:true Wait:true }
+
+@print 少女たちも皆、<br>異様な光景に言葉を失っていた。 { speed:1 waitInput:true Wait:true }
+
+@print ナノカもまた。 { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_43_2
+
+@back 451_1
+
+@print おねえ、ちゃん……？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print ナノカの前に、看守が立っていた。 { speed:1 waitInput:true Wait:true }
+
+@print まるでガトリング砲の銃撃から守る壁になるように。 { speed:1 waitInput:true Wait:true }
+
+@print どうして……？<br>どうして看守がナノカさんを庇っていますの……？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print わからないけど……<br>どうしてかな、なんだか胸が苦しいよ……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print ――誰が見てもわかりやすい【魔女】。 { speed:1 waitInput:true Wait:true }
+
+@print ナノカが守りたかったのは、<br>彼女のかつての家族。 { speed:1 waitInput:true Wait:true }
+
+@print 牢屋敷の看守は、<br>少女が魔女になってしまった【なれはて】だ。 { speed:1 waitInput:true Wait:true }
+
+@print 元々は私たちのように、<br>かつてここに収容された囚人だった。 { speed:1 waitInput:true Wait:true }
+
+@print 友人がいたかもしれない。<br>家族がいたかもしれない。 { speed:1 waitInput:true Wait:true }
+
+@print そんな当たり前の事実に、<br>どうして今まで気付けなかったのか。 { speed:1 waitInput:true Wait:true }
+
+@print 心臓が激しく脈打つ音が、<br>耳の奥でこだまする。 { speed:1 waitInput:true Wait:true }
+
+@print これは困りましたね……？<br>そんな命令はしてないはずですが。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 洗脳がしきれていないというのなら問題ですねぇ……。<br>まあ、いいでしょう。一緒に処分してしまいますか。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@back 451_2
+
+# ＠備考◆息を呑む
+
+@print ……ッ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print "ナノカの表情が、<br><ruby=\"またた\">瞬</ruby>く間に<ruby=\"ゆが\">歪</ruby>んでいく。" { speed:1 waitInput:true Wait:true }
+
+@back 451_3
+
+@print どうして！<br>どうしていつもいつも！ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 私と通じていることがバレたら、<br>処分されちゃうかもしれないのに！ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print だから黙っていたのに！！ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print "なんで私にだけ、こんな時だけ、<br>そんな反応するの！？ お姉ちゃんのバカ！！" { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print もう私はちっちゃいなのちゃんじゃないの！<br>いつもそうやってお姉ちゃんぶって……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@back 451_4
+
+@print 勝手なことばっかりしないでよ！<br>私に最後は恰好つけさせてよ！ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# 銃声・ガトリング砲
+@sfx Sfx_133
+
+@back 451_5
+
+@print "かつてナノカの姉だった看守は<br>弾丸の雨を<ruby=\"あ\">浴</ruby>びる。" { speed:1 waitInput:true Wait:true }
+
+@back 451_6
+
+@print "激しい銃撃にボロ布のようになりながらも、<br>看守は泣き叫ぶナノカを<ruby=\"かば\">庇</ruby>い続けた。" { speed:1 waitInput:true Wait:true }
+
+@print やめてぇぇぇっ……！！ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print "ナノカの悲痛な叫びは、<br><ruby=\"とどろ\">轟</ruby>く銃声にかき消された。" { speed:1 waitInput:true Wait:true }
+
+@back 451_7
+
+@print 子供扱いしないでよ！<br>もうやめてよぉ……っ<br>お願いだから離れてよぉ……っ！ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print もう私を庇ったりしないでよぉ……！！ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print ナノカは幼い子供のように、<br>ぐしゃぐしゃに泣いていた。 { speed:1 waitInput:true Wait:true }
+
+@print "それに合わせてナノカの顔に<ruby=\"きれつ\">亀裂</ruby>が入っていく。" { speed:1 waitInput:true Wait:true }
+
+@print "椅子に拘束された体が<ruby=\"やくどう\">躍動</ruby>するように波打ち、<br>みるみる変形していく。" { speed:1 waitInput:true Wait:true }
+
+@print ――私はお姉ちゃんだから。 { speed:1 waitInput:true Wait:true }
+
+@print そんな声が聞こえた気がした。 { speed:1 waitInput:true Wait:true }
+
+@print 今度は私が守りたかったのに！<br>お姉ちゃんをこんな目に遭わせた悪者を、<br>全部全部私がやっつけてやりたかったのに！ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print そう決めてここに来たのに！ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print どうしてまた犠牲になるの――！ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@print その魔女のなれはては、<br>ナノカを包みこむように優しく―― { speed:1 waitInput:true Wait:true }
+
+@print ナノカが絶対に見つけられないようにと<br>隠した【禁忌】を、<br>当たり前のように探り当ててみせた。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# トラウマシーン
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@bgm Bgm_1_1
+@hide Stills-Middle
+
+@back 250_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@printer Normal.Simple
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print ――なーのちゃん。 { speed:1 waitInput:true Wait:true }
+
+@print お姉ちゃんは、いつも私に優しい。 { speed:1 waitInput:true Wait:true }
+
+@print 私は人とあんまりうまくやっていけなくて<br>いつもひとりぼっち。 { speed:1 waitInput:true Wait:true }
+
+@print "お守りにとおそろいのリボンを結んで、<br>お姉ちゃんはそんな私の<ruby=\"そば\">傍</ruby>にいつもいてくれた。" { speed:1 waitInput:true Wait:true }
+
+@print ――私はお姉ちゃんだからね？ { speed:1 waitInput:true Wait:true }
+
+@print ――なのちゃんが困ってる時は、<br>お姉ちゃんになんでも話してね。 { speed:1 waitInput:true Wait:true }
+
+@print 世界中でお姉ちゃんだけが、<br>私の唯一の味方。 { speed:1 waitInput:true Wait:true }
+
+@print 本当の私を見せられるのはお姉ちゃんだけ。 { speed:1 waitInput:true Wait:true }
+
+@print もちろん秘密の共有もお姉ちゃんとだけ。 { speed:1 waitInput:true Wait:true }
+
+@print お姉ちゃんも私も、<br>不思議な魔法を持っていた。 { speed:1 waitInput:true Wait:true }
+
+@print 私は【幻視】。<br>お姉ちゃんは【変身】。 { speed:1 waitInput:true Wait:true }
+
+@print 私の魔法は変だったし、<br>私の姿に変身できるお姉ちゃんが少し羨ましかった。 { speed:1 waitInput:true Wait:true }
+
+@print まるでテレビで見たことある魔法少女みたいで、<br>キラキラしてて、すごいなって。 { speed:1 waitInput:true Wait:true }
+
+@print "――えっへん！ 私の魔法はすごいんだよ！" { speed:1 waitInput:true Wait:true }
+
+@print ――なのちゃんの代わりにテストだって受けられちゃう。 { speed:1 waitInput:true Wait:true }
+
+@print ――だからほら、悪い点だったからって泣かないの。 { speed:1 waitInput:true Wait:true }
+
+@print ある時私はお姉ちゃんに触れて、<br>怖い未来を視た。 { speed:1 waitInput:true Wait:true }
+
+@print 過去しか視えたことがなかったけど、<br>お姉ちゃんにいつもべったりだったからかもしれない。 { speed:1 waitInput:true Wait:true }
+
+@back 19_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@hide Stills { time:2 }
+
+@print 魔女候補として囚人扱いされ、<br>牢獄に入れられる私―― { speed:1 waitInput:true Wait:true }
+
+@back 1_1 { Scale:{g_backgroundDefaultScale} time:2 }
+
+@print 魔女の殺人衝動によって、<br>殺人事件を犯す私―― { speed:1 waitInput:true Wait:true }
+
+@back 13_1 { Scale:{g_backgroundDefaultScale} time:2 }
+
+@print 殺人を犯した魔女を特定するための裁判―― { speed:1 waitInput:true Wait:true }
+
+@print そして、処刑される私―― { speed:1 waitInput:true Wait:true }
+
+@print お守りにいつもつけていたリボンが、<br>ほどけて落ちるのを視た。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@print "視えたものがあまりに怖くて、<br>私は<ruby=\"おび\">怯</ruby>えて部屋に閉じこもった。" { speed:1 waitInput:true Wait:true }
+
+@print ――なのちゃん、なのちゃんどうしたの？ { speed:1 waitInput:true Wait:true }
+
+@print ――どうして出てこなくなっちゃったの？ { speed:1 waitInput:true Wait:true }
+
+@print 私は部屋に閉じこもって、<br>無我夢中で魔女について調べた。 { speed:1 waitInput:true Wait:true }
+
+@print 魔法を持っている私たちは、<br>魔女として処刑されるかもしれない。 { speed:1 waitInput:true Wait:true }
+
+@print ただ検査に引っかからなければ回避できる。 { speed:1 waitInput:true Wait:true }
+
+@print 私はお姉ちゃんにそのことを打ち明け、<br>お姉ちゃんはうまく【変身】を使って、<br>無事に自身の検査を回避してみせた。 { speed:1 waitInput:true Wait:true }
+
+@back 250_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print ――なのちゃんのことも任せといて！ { speed:1 waitInput:true Wait:true }
+
+@print お姉ちゃんはどこまでも頼もしく言って、<br>私は笑顔でお姉ちゃんにすり寄った。 { speed:1 waitInput:true Wait:true }
+
+@print そして、お姉ちゃんは私の姿に【変身】し―― { speed:1 waitInput:true Wait:true }
+
+@print ――私の代わりに捕まった。 { speed:1 waitInput:true Wait:true }
+
+@print 私が視たのは私の未来じゃなかった。<br>お姉ちゃんの未来だった。 { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@print 全部私のせいだった。 { speed:1 waitInput:true Wait:true }
+
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@print 一緒に過ごした幸せな日々には、<br>もう帰れない。 { speed:1 waitInput:true Wait:true }
+
+@hide Stills { time:0 }
+
+@bgm Bgm_44_1
+
+@back 450_3 { Scale:{g_backgroundDefaultScale} time:0 }
+@printer Normal.Default
+
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print "<ruby=\"や\">止</ruby>まない銃撃は、<br>とても<ruby=\"かば\">庇</ruby>いきれるようなものではない。" { speed:1 waitInput:true Wait:true }
+
+@print "放たれる弾丸は、<br>看守ごとナノカの体をも<ruby=\"つらぬ\">貫</ruby>いた。" { speed:1 waitInput:true Wait:true }
+
+@print "２人から上がる<ruby=\"ちけむり\">血煙</ruby>が、<br>無数の赤い蝶となって漂う。" { speed:1 waitInput:true Wait:true }
+
+@back 450_4 { Scale:{g_backgroundDefaultScale} }
+
+@print どれだけ撃たれようと、<br>看守も、ナノカも、死ぬことはない。 { speed:1 waitInput:true Wait:true }
+
+@back 450_5 { Scale:{g_backgroundDefaultScale} }
+
+@print 銃撃は、延々と続く。 { speed:1 waitInput:true Wait:true }
+
+@print "ナノカの叫びはいつしか、<br>おぞましい<ruby=\"うな\">唸</ruby>り声に変わっていた。" { speed:1 waitInput:true Wait:true }
+
+@print "弾丸を浴びながら、<br>彼女は完全に<ruby=\"いぎょう\">異形</ruby>と化したのだ。" { speed:1 waitInput:true Wait:true }
+
+@print ＯＫです。<br>無事に魔女のなれはてとなったようですし、<br>処刑は完了としましょう。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@hide Stills,Stills-Middle { time:0 }
+
+@print ゴクチョーの指示で、<br>ようやく銃撃が止まった。 { speed:1 waitInput:true Wait:true }
+
+# 歯車の音
+@sfx Sfx_36
+
+@Wait 0.5
+
+@print 仕掛けが作動し、<br>処刑台が下降していく。 { speed:1 waitInput:true Wait:true }
+
+@print まるで抱き合うようにして重なる、<br>２体のなれはてを乗せたまま―― { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@back Transparent { time:0.8 }
+@Wait 0.9
+@char Warden.1
+
+@print では、これにて閉廷します。 { author:Warden speed:1 waitInput:true Wait:true }
+
+# フクロウの羽ばたき音
+@sfx Sfx_8
+
+@hideChars 
+@Wait 0.5
+
+@print ゴクチョーが飛び去っていく。 { speed:1 waitInput:true Wait:true }
+
+@print （ナノカ……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print しばらく誰も何も言わない時間が続き―― { speed:1 waitInput:true Wait:true }
+
+@print "やがて少女たちは、<br><ruby=\"ぼうぜん\">呆然</ruby>とした足取りで退室していく。" { speed:1 waitInput:true Wait:true }
+
+@print そんな中、<br>ひとりの少女が別方向に歩き始めた。<br>処刑台の方へと。 { speed:1 waitInput:true Wait:true }
+
+@print "それはアリサだった。<br>私は<ruby=\"けげん\">怪訝</ruby>に思い、アリサの動向を見守る。" { speed:1 waitInput:true Wait:true }
+
+@print アリサの手の中にはリボンがあった。 { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Pensive1,Option-ArmL-Off
+
+@print ……湖のほとりで見つけて拾ったんだ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print 疑われて、ウチはずっとムカついてて……<br>見つけても返せなかった。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print あいつのことがわかんなくて。<br>あいつの想いがわかんなくて……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print アリサはリボンを握りしめ、<br>肩を震わせていた。 { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Cry1,Option-ArmL-Off
+
+@print そんなに大切なリボンだったなら、言えよ……。<br>ちゃんと自分のこと、話せよ……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print 返してやれば良かった。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print ごめん、本当にごめんな……っ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "その場に<ruby=\"ひざ\">膝</ruby>を折り、<br>アリサは自分を責め続けている。" { speed:1 waitInput:true Wait:true }
+
+@print いつまでもアリサの泣き声が、<br>裁判所に聞こえ続けていた。 { speed:1 waitInput:true Wait:true }
+
+@update Nanoka
+@update Coco
+@update Jailer
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter02/Act02_Chapter02_Adv20

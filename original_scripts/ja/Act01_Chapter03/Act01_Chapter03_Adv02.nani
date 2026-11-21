@@ -1,0 +1,169 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-3-2
+
+# ========================================
+# ●シーン1‐3-2
+# ========================================
+
+@back SolidColor
+
+# 学校のチャイム音
+@sfx Sfx_57
+
+@print （あれ……ここって、どこだっけ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマはひとり、廊下を歩いていた。<br>見覚えのある学校の廊下。 { speed:1 waitInput:true Wait:true }
+
+@print そのことに気付いた瞬間、<br>希望で胸が膨らみ、<br>彼女の表情は晴れやかなものになる。 { speed:1 waitInput:true Wait:true }
+
+@print （魔女とか裁判とか、殺人事件とか、<br>　全部悪夢だったんだ！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （ボクは囚われてなんかなくて、<br>　こうやって学校にいる！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （そうだ、急がないと<br>　授業がはじまっちゃう――） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 廊下を走る音
+@sfx Sfx_58
+
+@ResetText 
+@Wait 1.2
+
+# 少女たちのくすくす笑う声
+@bgm Ambi_11_1
+
+@Wait 0.9
+
+@print 走り出すや否や聞こえてきた嘲笑に、<br>エマの体がびくりと硬直した。 { speed:1 waitInput:true Wait:true }
+
+@print （あ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 嘲笑は教室の方から聞こえてくる。 { speed:1 waitInput:true Wait:true }
+
+@print （教室を見ちゃ、ダメだ。<br>　傍観者になっちゃ、ダメだ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （中にいる子を見ちゃダメだ！<br>　その声を聞いちゃダメだ！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （目を逸らさなきゃ、<br>　耳を塞がなきゃ、） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （ボクの心が、コワれ――） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "心が警鐘を鳴らしているのに、<br>エマは操られているかのように、<br>中を<ruby=\"のぞ\">覗</ruby>いてしまう。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 演出：BGM切る・黒画面・UIも消す・ささやきのみ
+# ========================================
+
+@StopBgm 
+@HidePrinter 
+@printer Normal.Simple
+@Wait 1.2
+
+# 立ち絵・話者名の表示なし
+# 月代ユキ
+
+@print ――ああ、エマ。待っていましたよ。 { speed:1 waitInput:true Wait:true }
+
+@print ――あいつもこいつも、醜いですよね。 { speed:1 waitInput:true Wait:true }
+
+@print ――生きているだけで、汚いですよね。 { speed:1 waitInput:true Wait:true }
+
+@print ――みんな、死ねばいいのに。 { speed:1 waitInput:true Wait:true }
+
+@print "そう言って、わざとらしく、<br>口端を大きく<ruby=\"つ\">吊</ruby>り上げて笑う。" { speed:1 waitInput:true Wait:true }
+
+@print エマの顔が、その瞳が、絶望で染まる。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@Wait 1.2
+@back 1_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.2
+@sfx Sfx_1
+@printer Normal.Default
+
+@char Ema.Fearful1,ArmR3
+
+@print ――ッ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print はぁ、はぁ、はぁ、はぁ……っ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマは体を起こし、荒い息を吐き出した。<br>全身に冷や汗が浮かび、心臓が激しく脈打っている。 { speed:1 waitInput:true Wait:true }
+
+@print ゆ、夢……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_17_1
+
+@hideChars 
+
+@print エマの見た夢の内容は、<br>すぐに曖昧に忘却の彼方へと溶けていった。 { speed:1 waitInput:true Wait:true }
+
+@print "エマは自身が牢屋敷の監房内にいることを確かめ、<br>どこか<ruby=\"あんど\">安堵</ruby>の息を漏らす。" { speed:1 waitInput:true Wait:true }
+
+@print そうして息を整えているうちに、<br>ひどい悪寒に気付いたようだった。 { speed:1 waitInput:true Wait:true }
+
+@print （なんでだろう……すごくだるい……<br>　全身が痛い……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_1
+
+@print 体を起こしていられず、<br>再びエマはベッドに横になった。 { speed:1 waitInput:true Wait:true }
+
+@print （体調崩しちゃったのかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print そばにあったスマホで時間を確認すると、<br>既に朝を迎えていた。 { speed:1 waitInput:true Wait:true }
+
+@print （そうだ、今日はピクニックに……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR5
+
+@print エマさんおっはようございまーす！<br>今日もいい天気ですよ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna.Normal1
+
+@print 朝食を取りにいきましょう……<br>あら、エマさん？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Meruru.Pensive
+
+@print エ、エマさん、具合が悪そうです……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print シェリー、ハンナ、メルルの３人が<br>監房に入ってきて、<br>エマの様子がおかしいことに気がつく。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print メルルが駆け寄ってきて、<br>エマの額に手をあてた。 { speed:1 waitInput:true Wait:true }
+
+@print （ひんやりしてて気持ちいい……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Pensive
+
+@print "熱があります……！ た、た、大変です……！<br>すぐに医務室に……！" { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print ……そんな、大したことないよ。<br>ちょっと寝てれば治ると思う……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print でもごめん、ピクニックは延期にしたほうがいいかも……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Normal1
+
+@print そんなの気にすんなですわ～！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Smile1,ArmR10
+
+@print "ですです！ エマさんが元気になったら<br>また開催しましょう！ 今はゆっくり寝ててください！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Meruru.Default
+
+@print わ、私色々準備してきます……っ<br>お薬とか、水分とか、タオルとか……っ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （せっかく企画したのに……みんな本当にごめん……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 声をかけてくれる３人に申し訳なさを抱きつつ、<br>エマの意識は、まどろみに落ちていった。 { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter03/Act01_Chapter03_Adv03

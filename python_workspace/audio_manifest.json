@@ -1,0 +1,2309 @@
+{
+  "clips": [
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-ambient_001naninovel.bundle",
+      "name": "Ambient_001_001 Natural bird",
+      "output": "original_sfx/ambient/Ambient_001_001 Natural bird.wav",
+      "frames": 2878778,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-ambient_002naninovel.bundle",
+      "name": "Ambient_002_001 Shower",
+      "output": "original_sfx/ambient/Ambient_002_001 Shower.wav",
+      "frames": 1344217,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-ambient_003naninovel.bundle",
+      "name": "Ambient_003_001 Chakumero",
+      "output": "original_sfx/ambient/Ambient_003_001 Chakumero.wav",
+      "frames": 1210911,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-ambient_004naninovel.bundle",
+      "name": "Ambient_004_001 Fire house",
+      "output": "original_sfx/ambient/Ambient_004_001 Fire house.wav",
+      "frames": 4071950,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-ambient_005naninovel.bundle",
+      "name": "Ambient_005_001 Operating elevator",
+      "output": "original_sfx/ambient/Ambient_005_001 Operating elevator.wav",
+      "frames": 288725,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-ambient_006naninovel.bundle",
+      "name": "Ambient_006_001 Flare up",
+      "output": "original_sfx/ambient/Ambient_006_001 Flare up.wav",
+      "frames": 4325001,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-ambient_007naninovel.bundle",
+      "name": "Ambient_007_001 Earthquake",
+      "output": "original_sfx/ambient/Ambient_007_001 Earthquake.wav",
+      "frames": 236327,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-ambient_008naninovel.bundle",
+      "name": "Ambient_008_001 Hard rain",
+      "output": "original_sfx/ambient/Ambient_008_001 Hard rain.wav",
+      "frames": 4023850,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-ambient_010naninovel.bundle",
+      "name": "Ambient_010_001 Chain fall out",
+      "output": "original_sfx/ambient/Ambient_010_001 Chain fall out.wav",
+      "frames": 144237,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-ambient_011naninovel.bundle",
+      "name": "Ambient_011_001 Laughing girls",
+      "output": "original_sfx/ambient/Ambient_011_001 Laughing girls.wav",
+      "frames": 2506002,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-ambient_101naninovel.bundle",
+      "name": "Ambient_101_001 white-noise-48000sr",
+      "output": "original_sfx/ambient/Ambient_101_001 white-noise-48000sr.wav",
+      "frames": 480064,
+      "rate": 48000,
+      "channels": 1
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-ambient_102naninovel.bundle",
+      "name": "Ambient_102_001 SFX_FireBig_L",
+      "output": "original_sfx/ambient/Ambient_102_001 SFX_FireBig_L.wav",
+      "frames": 440284,
+      "rate": 44100,
+      "channels": 1
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_001naninovel.bundle",
+      "name": "Bgm_001_001_Loop",
+      "output": "original_music/bgm/Bgm_001_001_Loop.wav",
+      "frames": 8728587,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_002naninovel.bundle",
+      "name": "Bgm_002_001_Loop",
+      "output": "original_music/bgm/Bgm_002_001_Loop.wav",
+      "frames": 10958050,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_002naninovel.bundle",
+      "name": "Bgm_002_001_Intro",
+      "output": "original_music/bgm/Bgm_002_001_Intro.wav",
+      "frames": 316098,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_003naninovel.bundle",
+      "name": "Bgm_003_001_Intro",
+      "output": "original_music/bgm/Bgm_003_001_Intro.wav",
+      "frames": 363496,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_003naninovel.bundle",
+      "name": "Bgm_003_001_Loop",
+      "output": "original_music/bgm/Bgm_003_001_Loop.wav",
+      "frames": 16441166,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_004naninovel.bundle",
+      "name": "Bgm_004_001_Loop",
+      "output": "original_music/bgm/Bgm_004_001_Loop.wav",
+      "frames": 10904856,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_005naninovel.bundle",
+      "name": "Bgm_005_001_Loop",
+      "output": "original_music/bgm/Bgm_005_001_Loop.wav",
+      "frames": 13924662,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_006naninovel.bundle",
+      "name": "Bgm_006_001_Loop",
+      "output": "original_music/bgm/Bgm_006_001_Loop.wav",
+      "frames": 6254090,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_007naninovel.bundle",
+      "name": "Bgm_007_001_Loop",
+      "output": "original_music/bgm/Bgm_007_001_Loop.wav",
+      "frames": 15134120,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_008naninovel.bundle",
+      "name": "Bgm_008_002_Loop",
+      "output": "original_music/bgm/Bgm_008_002_Loop.wav",
+      "frames": 19415660,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_008naninovel.bundle",
+      "name": "Bgm_008_001_Loop",
+      "output": "original_music/bgm/Bgm_008_001_Loop.wav",
+      "frames": 19415660,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_009naninovel.bundle",
+      "name": "Bgm_009_001_Loop",
+      "output": "original_music/bgm/Bgm_009_001_Loop.wav",
+      "frames": 9932278,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_010naninovel.bundle",
+      "name": "Bgm_010_001_Loop",
+      "output": "original_music/bgm/Bgm_010_001_Loop.wav",
+      "frames": 11605441,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_011naninovel.bundle",
+      "name": "Bgm_011_001_Loop",
+      "output": "original_music/bgm/Bgm_011_001_Loop.wav",
+      "frames": 8550000,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_012naninovel.bundle",
+      "name": "Bgm_012_001_Intro",
+      "output": "original_music/bgm/Bgm_012_001_Intro.wav",
+      "frames": 118532,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_012naninovel.bundle",
+      "name": "Bgm_012_001_Loop",
+      "output": "original_music/bgm/Bgm_012_001_Loop.wav",
+      "frames": 12323071,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_013naninovel.bundle",
+      "name": "Bgm_013_001_Intro",
+      "output": "original_music/bgm/Bgm_013_001_Intro.wav",
+      "frames": 460171,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_013naninovel.bundle",
+      "name": "Bgm_013_001_Loop",
+      "output": "original_music/bgm/Bgm_013_001_Loop.wav",
+      "frames": 12327026,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_014naninovel.bundle",
+      "name": "Bgm_014_001_Loop",
+      "output": "original_music/bgm/Bgm_014_001_Loop.wav",
+      "frames": 12325572,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_014naninovel.bundle",
+      "name": "Bgm_014_001_Intro",
+      "output": "original_music/bgm/Bgm_014_001_Intro.wav",
+      "frames": 461473,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_015naninovel.bundle",
+      "name": "Bgm_015_001_Loop",
+      "output": "original_music/bgm/Bgm_015_001_Loop.wav",
+      "frames": 12480001,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_015naninovel.bundle",
+      "name": "Bgm_015_002_Loop",
+      "output": "original_music/bgm/Bgm_015_002_Loop.wav",
+      "frames": 12480001,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_016naninovel.bundle",
+      "name": "Bgm_016_001_Loop",
+      "output": "original_music/bgm/Bgm_016_001_Loop.wav",
+      "frames": 12323698,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_016naninovel.bundle",
+      "name": "Bgm_016_001_Intro",
+      "output": "original_music/bgm/Bgm_016_001_Intro.wav",
+      "frames": 117905,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_017naninovel.bundle",
+      "name": "Bgm_017_001_Loop",
+      "output": "original_music/bgm/Bgm_017_001_Loop.wav",
+      "frames": 13695319,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_018naninovel.bundle",
+      "name": "Bgm_018_001_Loop",
+      "output": "original_music/bgm/Bgm_018_001_Loop.wav",
+      "frames": 7296001,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_018naninovel.bundle",
+      "name": "Bgm_018_001_Intro",
+      "output": "original_music/bgm/Bgm_018_001_Intro.wav",
+      "frames": 7680001,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_019naninovel.bundle",
+      "name": "Bgm_019_001_Loop",
+      "output": "original_music/bgm/Bgm_019_001_Loop.wav",
+      "frames": 11515058,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_020naninovel.bundle",
+      "name": "Bgm_020_001_Loop",
+      "output": "original_music/bgm/Bgm_020_001_Loop.wav",
+      "frames": 5304811,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_021naninovel.bundle",
+      "name": "Bgm_021_001_Loop",
+      "output": "original_music/bgm/Bgm_021_001_Loop.wav",
+      "frames": 7699702,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_022naninovel.bundle",
+      "name": "Bgm_022_001_Loop",
+      "output": "original_music/bgm/Bgm_022_001_Loop.wav",
+      "frames": 10851349,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_023naninovel.bundle",
+      "name": "Bgm_023_001_Loop",
+      "output": "original_music/bgm/Bgm_023_001_Loop.wav",
+      "frames": 6994286,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_024naninovel.bundle",
+      "name": "Bgm_024_001_Loop",
+      "output": "original_music/bgm/Bgm_024_001_Loop.wav",
+      "frames": 12800052,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_025naninovel.bundle",
+      "name": "Bgm_025_001_Loop",
+      "output": "original_music/bgm/Bgm_025_001_Loop.wav",
+      "frames": 13486726,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_026naninovel.bundle",
+      "name": "Bgm_026_002_Loop",
+      "output": "original_music/bgm/Bgm_026_002_Loop.wav",
+      "frames": 8091429,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_026naninovel.bundle",
+      "name": "Bgm_026_001_Loop",
+      "output": "original_music/bgm/Bgm_026_001_Loop.wav",
+      "frames": 8091429,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_027naninovel.bundle",
+      "name": "Bgm_027_001_Loop",
+      "output": "original_music/bgm/Bgm_027_001_Loop.wav",
+      "frames": 1234286,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_027naninovel.bundle",
+      "name": "Bgm_027_002_Loop",
+      "output": "original_music/bgm/Bgm_027_002_Loop.wav",
+      "frames": 2194286,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_027naninovel.bundle",
+      "name": "Bgm_027_003_Loop",
+      "output": "original_music/bgm/Bgm_027_003_Loop.wav",
+      "frames": 894305,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_028naninovel.bundle",
+      "name": "Bgm_028_001_Loop",
+      "output": "original_music/bgm/Bgm_028_001_Loop.wav",
+      "frames": 9549474,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_029naninovel.bundle",
+      "name": "Bgm_029_001_Loop",
+      "output": "original_music/bgm/Bgm_029_001_Loop.wav",
+      "frames": 11764229,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_030naninovel.bundle",
+      "name": "Bgm_030_001_Loop",
+      "output": "original_music/bgm/Bgm_030_001_Loop.wav",
+      "frames": 7396419,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_031naninovel.bundle",
+      "name": "Bgm_031_001_Loop",
+      "output": "original_music/bgm/Bgm_031_001_Loop.wav",
+      "frames": 11099190,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_032naninovel.bundle",
+      "name": "Bgm_032_001_Loop",
+      "output": "original_music/bgm/Bgm_032_001_Loop.wav",
+      "frames": 17566943,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_033naninovel.bundle",
+      "name": "Bgm_033_001_Intro",
+      "output": "original_music/bgm/Bgm_033_001_Intro.wav",
+      "frames": 1481751,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_033naninovel.bundle",
+      "name": "Bgm_033_001_Loop",
+      "output": "original_music/bgm/Bgm_033_001_Loop.wav",
+      "frames": 7476124,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_034naninovel.bundle",
+      "name": "Bgm_034_001_Loop",
+      "output": "original_music/bgm/Bgm_034_001_Loop.wav",
+      "frames": 5642450,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_034naninovel.bundle",
+      "name": "Bgm_034_002_Loop",
+      "output": "original_music/bgm/Bgm_034_002_Loop.wav",
+      "frames": 5642450,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_035naninovel.bundle",
+      "name": "Bgm_035_001_Loop",
+      "output": "original_music/bgm/Bgm_035_001_Loop.wav",
+      "frames": 11136000,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_036naninovel.bundle",
+      "name": "Bgm_036_001_Loop",
+      "output": "original_music/bgm/Bgm_036_001_Loop.wav",
+      "frames": 11025883,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_037naninovel.bundle",
+      "name": "Bgm_037_001_Intro",
+      "output": "original_music/bgm/Bgm_037_001_Intro.wav",
+      "frames": 977456,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_037naninovel.bundle",
+      "name": "Bgm_037_002_Loop",
+      "output": "original_music/bgm/Bgm_037_002_Loop.wav",
+      "frames": 13165725,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_037naninovel.bundle",
+      "name": "Bgm_037_001_Loop",
+      "output": "original_music/bgm/Bgm_037_001_Loop.wav",
+      "frames": 13165655,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_037naninovel.bundle",
+      "name": "Bgm_037_002_Intro",
+      "output": "original_music/bgm/Bgm_037_002_Intro.wav",
+      "frames": 977387,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_038naninovel.bundle",
+      "name": "Bgm_038_002_Loop",
+      "output": "original_music/bgm/Bgm_038_002_Loop.wav",
+      "frames": 8591188,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_038naninovel.bundle",
+      "name": "Bgm_038_002_Intro",
+      "output": "original_music/bgm/Bgm_038_002_Intro.wav",
+      "frames": 976273,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_038naninovel.bundle",
+      "name": "Bgm_038_001_Intro",
+      "output": "original_music/bgm/Bgm_038_001_Intro.wav",
+      "frames": 976273,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_038naninovel.bundle",
+      "name": "Bgm_038_001_Loop",
+      "output": "original_music/bgm/Bgm_038_001_Loop.wav",
+      "frames": 8591188,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_039naninovel.bundle",
+      "name": "Bgm_039_001_Loop",
+      "output": "original_music/bgm/Bgm_039_001_Loop.wav",
+      "frames": 11170910,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_039naninovel.bundle",
+      "name": "Bgm_039_002_Loop",
+      "output": "original_music/bgm/Bgm_039_002_Loop.wav",
+      "frames": 11170910,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_040naninovel.bundle",
+      "name": "Bgm_040_001_Loop",
+      "output": "original_music/bgm/Bgm_040_001_Loop.wav",
+      "frames": 4063135,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_040naninovel.bundle",
+      "name": "Bgm_040_001_Intro",
+      "output": "original_music/bgm/Bgm_040_001_Intro.wav",
+      "frames": 485121,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_041naninovel.bundle",
+      "name": "Bgm_041_001_Loop",
+      "output": "original_music/bgm/Bgm_041_001_Loop.wav",
+      "frames": 8311049,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_042naninovel.bundle",
+      "name": "Bgm_042_001_Loop",
+      "output": "original_music/bgm/Bgm_042_001_Loop.wav",
+      "frames": 11114336,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_042naninovel.bundle",
+      "name": "Bgm_042_002_Loop",
+      "output": "original_music/bgm/Bgm_042_002_Loop.wav",
+      "frames": 11114336,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_043naninovel.bundle",
+      "name": "Bgm_043_001_Loop",
+      "output": "original_music/bgm/Bgm_043_001_Loop.wav",
+      "frames": 10848712,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_043naninovel.bundle",
+      "name": "Bgm_043_002_Loop",
+      "output": "original_music/bgm/Bgm_043_002_Loop.wav",
+      "frames": 10848712,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_044naninovel.bundle",
+      "name": "Bgm_044_001_Loop",
+      "output": "original_music/bgm/Bgm_044_001_Loop.wav",
+      "frames": 11191384,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_045naninovel.bundle",
+      "name": "Bgm_045_001_Loop",
+      "output": "original_music/bgm/Bgm_045_001_Loop.wav",
+      "frames": 4743531,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_045naninovel.bundle",
+      "name": "Bgm_045_002_Loop",
+      "output": "original_music/bgm/Bgm_045_002_Loop.wav",
+      "frames": 4743531,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_046naninovel.bundle",
+      "name": "Bgm_046_001_Loop",
+      "output": "original_music/bgm/Bgm_046_001_Loop.wav",
+      "frames": 877715,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_047naninovel.bundle",
+      "name": "Bgm_047_001_Intro",
+      "output": "original_music/bgm/Bgm_047_001_Intro.wav",
+      "frames": 62609,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_048naninovel.bundle",
+      "name": "Bgm_048_001_Loop",
+      "output": "original_music/bgm/Bgm_048_001_Loop.wav",
+      "frames": 14406452,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_049naninovel.bundle",
+      "name": "Bgm_049_001_Loop",
+      "output": "original_music/bgm/Bgm_049_001_Loop.wav",
+      "frames": 4237242,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-bgm_049naninovel.bundle",
+      "name": "Bgm_049_002_Loop",
+      "output": "original_music/bgm/Bgm_049_002_Loop.wav",
+      "frames": 9848276,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_114 MAHOU SYOUJO",
+      "output": "original_sfx/sfx/Sfx_Scenario_114 MAHOU SYOUJO.wav",
+      "frames": 131635,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_030 Fire",
+      "output": "original_sfx/sfx/Sfx_Scenario_030 Fire.wav",
+      "frames": 32931,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_System_Cancel_001",
+      "output": "original_sfx/sfx/Sfx_System_Cancel_001.wav",
+      "frames": 12001,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_032 Hits wood table",
+      "output": "original_sfx/sfx/Sfx_Scenario_032 Hits wood table.wav",
+      "frames": 24948,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_086 Push switch",
+      "output": "original_sfx/sfx/Sfx_Scenario_086 Push switch.wav",
+      "frames": 16426,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_System_Choice_001",
+      "output": "original_sfx/sfx/Sfx_System_Choice_001.wav",
+      "frames": 112135,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_083 Cooking stew",
+      "output": "original_sfx/sfx/Sfx_Scenario_083 Cooking stew.wav",
+      "frames": 150001,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_096 Smartphone hit floor",
+      "output": "original_sfx/sfx/Sfx_Scenario_096 Smartphone hit floor.wav",
+      "frames": 25439,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_169 Light off",
+      "output": "original_sfx/sfx/Sfx_Scenario_169 Light off.wav",
+      "frames": 32633,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_164 Broken tree",
+      "output": "original_sfx/sfx/Sfx_Scenario_164 Broken tree.wav",
+      "frames": 29953,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_064 Move noise in the warehouse",
+      "output": "original_sfx/sfx/Sfx_Scenario_064 Move noise in the warehouse.wav",
+      "frames": 30154,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_System_Choice_003b",
+      "output": "original_sfx/sfx/Sfx_System_Choice_003b.wav",
+      "frames": 12083,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Common_003 Decision",
+      "output": "original_sfx/sfx/Sfx_Common_003 Decision.wav",
+      "frames": 47749,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_157 Elevator door open",
+      "output": "original_sfx/sfx/Sfx_Scenario_157 Elevator door open.wav",
+      "frames": 104001,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_135 Kusya kusya paper",
+      "output": "original_sfx/sfx/Sfx_Scenario_135 Kusya kusya paper.wav",
+      "frames": 79668,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_System_Choice_002a",
+      "output": "original_sfx/sfx/Sfx_System_Choice_002a.wav",
+      "frames": 27558,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_System_SaveData_001_2x",
+      "output": "original_sfx/sfx/Sfx_System_SaveData_001_2x.wav",
+      "frames": 54841,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_148 Break ice",
+      "output": "original_sfx/sfx/Sfx_Scenario_148 Break ice.wav",
+      "frames": 72320,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_182 Bubble2",
+      "output": "original_sfx/sfx/Sfx_Scenario_182 Bubble2.wav",
+      "frames": 168000,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_163 coming foot out door",
+      "output": "original_sfx/sfx/Sfx_Scenario_163 coming foot out door.wav",
+      "frames": 158001,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_175 Break ice2",
+      "output": "original_sfx/sfx/Sfx_Scenario_175 Break ice2.wav",
+      "frames": 130750,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_153 Strangling sounds",
+      "output": "original_sfx/sfx/Sfx_Scenario_153 Strangling sounds.wav",
+      "frames": 48895,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_019 body fall down",
+      "output": "original_sfx/sfx/Sfx_Scenario_019 body fall down.wav",
+      "frames": 52224,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_128 Loose screw",
+      "output": "original_sfx/sfx/Sfx_Scenario_128 Loose screw.wav",
+      "frames": 92255,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_047 Shower",
+      "output": "original_sfx/sfx/Sfx_Scenario_047 Shower.wav",
+      "frames": 244000,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_039 Fall bird",
+      "output": "original_sfx/sfx/Sfx_Scenario_039 Fall bird.wav",
+      "frames": 20865,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_025 Hit wall",
+      "output": "original_sfx/sfx/Sfx_Scenario_025 Hit wall.wav",
+      "frames": 114981,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_005 Hikizuru oto",
+      "output": "original_sfx/sfx/Sfx_Scenario_005 Hikizuru oto.wav",
+      "frames": 158029,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_150 Hard falling rock",
+      "output": "original_sfx/sfx/Sfx_Scenario_150 Hard falling rock.wav",
+      "frames": 223299,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_167 Hard hit head",
+      "output": "original_sfx/sfx/Sfx_Scenario_167 Hard hit head.wav",
+      "frames": 39223,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_066 Touch paper",
+      "output": "original_sfx/sfx/Sfx_Scenario_066 Touch paper.wav",
+      "frames": 14316,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_154 Helicopter",
+      "output": "original_sfx/sfx/Sfx_Scenario_154 Helicopter.wav",
+      "frames": 581255,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Common_004 Hit",
+      "output": "original_sfx/sfx/Sfx_Common_004 Hit.wav",
+      "frames": 18768,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_006 Fall down",
+      "output": "original_sfx/sfx/Sfx_Scenario_006 Fall down.wav",
+      "frames": 89282,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_053 Slashing anan",
+      "output": "original_sfx/sfx/Sfx_Scenario_053 Slashing anan.wav",
+      "frames": 267242,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_System_ExecuteButton_002",
+      "output": "original_sfx/sfx/Sfx_System_ExecuteButton_002.wav",
+      "frames": 85973,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_009 Swing down",
+      "output": "original_sfx/sfx/Sfx_Scenario_009 Swing down.wav",
+      "frames": 21121,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_095 Belt",
+      "output": "original_sfx/sfx/Sfx_Scenario_095 Belt.wav",
+      "frames": 101739,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_082 Meet cook",
+      "output": "original_sfx/sfx/Sfx_Scenario_082 Meet cook.wav",
+      "frames": 150001,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_072 One_Footsteps leaving",
+      "output": "original_sfx/sfx/Sfx_Scenario_072 One_Footsteps leaving.wav",
+      "frames": 158001,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_105 Train near",
+      "output": "original_sfx/sfx/Sfx_Scenario_105 Train near.wav",
+      "frames": 513431,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_129 Walking up the house stairs",
+      "output": "original_sfx/sfx/Sfx_Scenario_129 Walking up the house stairs.wav",
+      "frames": 65955,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_061 Push book stand shely",
+      "output": "original_sfx/sfx/Sfx_Scenario_061 Push book stand shely.wav",
+      "frames": 76353,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_060 Drop smart phone",
+      "output": "original_sfx/sfx/Sfx_Scenario_060 Drop smart phone.wav",
+      "frames": 53761,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_System_Open_001",
+      "output": "original_sfx/sfx/Sfx_System_Open_001.wav",
+      "frames": 4003,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_012 Meat cut",
+      "output": "original_sfx/sfx/Sfx_Scenario_012 Meat cut.wav",
+      "frames": 50574,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_178 Landing sound",
+      "output": "original_sfx/sfx/Sfx_Scenario_178 Landing sound.wav",
+      "frames": 46687,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_151 Broken pen",
+      "output": "original_sfx/sfx/Sfx_Scenario_151 Broken pen.wav",
+      "frames": 72320,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_010 Body hit",
+      "output": "original_sfx/sfx/Sfx_Scenario_010 Body hit.wav",
+      "frames": 36036,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_077 Hit door",
+      "output": "original_sfx/sfx/Sfx_Scenario_077 Hit door.wav",
+      "frames": 80558,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_117 Hit face",
+      "output": "original_sfx/sfx/Sfx_Scenario_117 Hit face.wav",
+      "frames": 16000,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_127 Hanging",
+      "output": "original_sfx/sfx/Sfx_Scenario_127 Hanging.wav",
+      "frames": 75719,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_179 Lie down on bed",
+      "output": "original_sfx/sfx/Sfx_Scenario_179 Lie down on bed.wav",
+      "frames": 76255,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_System_Tab_001b",
+      "output": "original_sfx/sfx/Sfx_System_Tab_001b.wav",
+      "frames": 9601,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_147 Elevator move_TENBAN",
+      "output": "original_sfx/sfx/Sfx_Scenario_147 Elevator move_TENBAN.wav",
+      "frames": 178382,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_065 Hard hit punch ground",
+      "output": "original_sfx/sfx/Sfx_Scenario_065 Hard hit punch ground.wav",
+      "frames": 160000,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_029 Notification sound",
+      "output": "original_sfx/sfx/Sfx_Scenario_029 Notification sound.wav",
+      "frames": 34980,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_112 Tray put on desk",
+      "output": "original_sfx/sfx/Sfx_Scenario_112 Tray put on desk.wav",
+      "frames": 25991,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_180 Be stuck GUSA!!delay",
+      "output": "original_sfx/sfx/Sfx_Scenario_180 Be stuck GUSA!!delay.wav",
+      "frames": 199149,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_103 Pipopa",
+      "output": "original_sfx/sfx/Sfx_Scenario_103 Pipopa.wav",
+      "frames": 93120,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_090 Multiple_Be stuck GUSA!!",
+      "output": "original_sfx/sfx/Sfx_Scenario_090 Multiple_Be stuck GUSA!!.wav",
+      "frames": 39329,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_131 Thunder",
+      "output": "original_sfx/sfx/Sfx_Scenario_131 Thunder.wav",
+      "frames": 304138,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_074 Noise",
+      "output": "original_sfx/sfx/Sfx_Scenario_074 Noise.wav",
+      "frames": 240000,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_System_ObtainItem_001a",
+      "output": "original_sfx/sfx/Sfx_System_ObtainItem_001a.wav",
+      "frames": 47423,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_046 Fire bang",
+      "output": "original_sfx/sfx/Sfx_Scenario_046 Fire bang.wav",
+      "frames": 55102,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_037 Open object",
+      "output": "original_sfx/sfx/Sfx_Scenario_037 Open object.wav",
+      "frames": 152424,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_120 Crash glass",
+      "output": "original_sfx/sfx/Sfx_Scenario_120 Crash glass.wav",
+      "frames": 71008,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_098 Lever GACHAKON",
+      "output": "original_sfx/sfx/Sfx_Scenario_098 Lever GACHAKON.wav",
+      "frames": 28850,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_015 Spray",
+      "output": "original_sfx/sfx/Sfx_Scenario_015 Spray.wav",
+      "frames": 41985,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_026 Chess on the floor",
+      "output": "original_sfx/sfx/Sfx_Scenario_026 Chess on the floor.wav",
+      "frames": 77313,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_118 Many books",
+      "output": "original_sfx/sfx/Sfx_Scenario_118 Many books.wav",
+      "frames": 55040,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_054 Train pass",
+      "output": "original_sfx/sfx/Sfx_Scenario_054 Train pass.wav",
+      "frames": 496052,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_079 Hit metal",
+      "output": "original_sfx/sfx/Sfx_Scenario_079 Hit metal.wav",
+      "frames": 90499,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_017 Fall to ground 01",
+      "output": "original_sfx/sfx/Sfx_Scenario_017 Fall to ground 01.wav",
+      "frames": 59904,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_133 Machine gun",
+      "output": "original_sfx/sfx/Sfx_Scenario_133 Machine gun.wav",
+      "frames": 92879,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_146 Elevator buzzer",
+      "output": "original_sfx/sfx/Sfx_Scenario_146 Elevator buzzer.wav",
+      "frames": 53185,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_System_StartGame_001",
+      "output": "original_sfx/sfx/Sfx_System_StartGame_001.wav",
+      "frames": 161517,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_177 abareru shely2",
+      "output": "original_sfx/sfx/Sfx_Scenario_177 abareru shely2.wav",
+      "frames": 125757,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_156 Drowning",
+      "output": "original_sfx/sfx/Sfx_Scenario_156 Drowning.wav",
+      "frames": 73267,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_014 Owl barking sound",
+      "output": "original_sfx/sfx/Sfx_Scenario_014 Owl barking sound.wav",
+      "frames": 156801,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Common_005 Conversion",
+      "output": "original_sfx/sfx/Sfx_Common_005 Conversion.wav",
+      "frames": 61613,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_109 Controller fall",
+      "output": "original_sfx/sfx/Sfx_Scenario_109 Controller fall.wav",
+      "frames": 77314,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_184 Hit whip3",
+      "output": "original_sfx/sfx/Sfx_Scenario_184 Hit whip3.wav",
+      "frames": 111054,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_073 One_approaching footsteps_V2_",
+      "output": "original_sfx/sfx/Sfx_Scenario_073 One_approaching footsteps_V2_.wav",
+      "frames": 158000,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_170 Blood",
+      "output": "original_sfx/sfx/Sfx_Scenario_170 Blood.wav",
+      "frames": 321518,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_101 Pull up",
+      "output": "original_sfx/sfx/Sfx_Scenario_101 Pull up.wav",
+      "frames": 32457,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_System_Move_001",
+      "output": "original_sfx/sfx/Sfx_System_Move_001.wav",
+      "frames": 9602,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_115 Take by force",
+      "output": "original_sfx/sfx/Sfx_Scenario_115 Take by force.wav",
+      "frames": 22541,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_119 Open prison door",
+      "output": "original_sfx/sfx/Sfx_Scenario_119 Open prison door.wav",
+      "frames": 36441,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_181 Laughing girl",
+      "output": "original_sfx/sfx/Sfx_Scenario_181 Laughing girl.wav",
+      "frames": 415438,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Common_006 Be shocked",
+      "output": "original_sfx/sfx/Sfx_Common_006 Be shocked.wav",
+      "frames": 54624,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_113 Reverse spray",
+      "output": "original_sfx/sfx/Sfx_Scenario_113 Reverse spray.wav",
+      "frames": 162001,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_028 Camera shutter",
+      "output": "original_sfx/sfx/Sfx_Scenario_028 Camera shutter.wav",
+      "frames": 22779,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_108 Neck bones",
+      "output": "original_sfx/sfx/Sfx_Scenario_108 Neck bones.wav",
+      "frames": 18120,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_126 One_Run room",
+      "output": "original_sfx/sfx/Sfx_Scenario_126 One_Run room.wav",
+      "frames": 91689,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_System_SaveData_001",
+      "output": "original_sfx/sfx/Sfx_System_SaveData_001.wav",
+      "frames": 109681,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_042 Book on desk",
+      "output": "original_sfx/sfx/Sfx_Scenario_042 Book on desk.wav",
+      "frames": 20530,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_171 Blood shower",
+      "output": "original_sfx/sfx/Sfx_Scenario_171 Blood shower.wav",
+      "frames": 258000,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_036 Gear(Reverb)",
+      "output": "original_sfx/sfx/Sfx_Scenario_036 Gear(Reverb).wav",
+      "frames": 193733,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_045 Brokem cloth",
+      "output": "original_sfx/sfx/Sfx_Scenario_045 Brokem cloth.wav",
+      "frames": 13315,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_159 Hit metal on metal",
+      "output": "original_sfx/sfx/Sfx_Scenario_159 Hit metal on metal.wav",
+      "frames": 33081,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_111 Pen write paper",
+      "output": "original_sfx/sfx/Sfx_Scenario_111 Pen write paper.wav",
+      "frames": 167488,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_040 FUMIKIRI",
+      "output": "original_sfx/sfx/Sfx_Scenario_040 FUMIKIRI.wav",
+      "frames": 327567,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_System_Choice_002b",
+      "output": "original_sfx/sfx/Sfx_System_Choice_002b.wav",
+      "frames": 27558,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_099 Electric",
+      "output": "original_sfx/sfx/Sfx_Scenario_099 Electric.wav",
+      "frames": 105854,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_System_Submit_003a",
+      "output": "original_sfx/sfx/Sfx_System_Submit_003a.wav",
+      "frames": 4558,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_008 Owl flapping sound",
+      "output": "original_sfx/sfx/Sfx_Scenario_008 Owl flapping sound.wav",
+      "frames": 215815,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_001 Wake up",
+      "output": "original_sfx/sfx/Sfx_Scenario_001 Wake up.wav",
+      "frames": 105980,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_057 School chime",
+      "output": "original_sfx/sfx/Sfx_Scenario_057 School chime.wav",
+      "frames": 484863,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_183 Hit whip2",
+      "output": "original_sfx/sfx/Sfx_Scenario_183 Hit whip2.wav",
+      "frames": 111054,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_144 Close wood door",
+      "output": "original_sfx/sfx/Sfx_Scenario_144 Close wood door.wav",
+      "frames": 24465,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_055 Bushes sound",
+      "output": "original_sfx/sfx/Sfx_Scenario_055 Bushes sound.wav",
+      "frames": 62946,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_075 Hard_open door",
+      "output": "original_sfx/sfx/Sfx_Scenario_075 Hard_open door.wav",
+      "frames": 76550,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_068 Arrival elevator",
+      "output": "original_sfx/sfx/Sfx_Scenario_068 Arrival elevator.wav",
+      "frames": 76529,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_051 One_Run underground",
+      "output": "original_sfx/sfx/Sfx_Scenario_051 One_Run underground.wav",
+      "frames": 98730,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_System_ObtainItem_001b",
+      "output": "original_sfx/sfx/Sfx_System_ObtainItem_001b.wav",
+      "frames": 47423,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_041 Pull up the curtains",
+      "output": "original_sfx/sfx/Sfx_Scenario_041 Pull up the curtains.wav",
+      "frames": 164564,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_027 Hit human",
+      "output": "original_sfx/sfx/Sfx_Scenario_027 Hit human.wav",
+      "frames": 21764,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_System_Choice_003c",
+      "output": "original_sfx/sfx/Sfx_System_Choice_003c.wav",
+      "frames": 12083,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_System_ExecuteButton_001",
+      "output": "original_sfx/sfx/Sfx_System_ExecuteButton_001.wav",
+      "frames": 475869,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_052 Broken handcuffs",
+      "output": "original_sfx/sfx/Sfx_Scenario_052 Broken handcuffs.wav",
+      "frames": 47725,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_145 Jumping into water",
+      "output": "original_sfx/sfx/Sfx_Scenario_145 Jumping into water.wav",
+      "frames": 116836,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_122 Sword whip",
+      "output": "original_sfx/sfx/Sfx_Scenario_122 Sword whip.wav",
+      "frames": 11072,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_185 Breaking the iron door",
+      "output": "original_sfx/sfx/Sfx_Scenario_185 Breaking the iron door.wav",
+      "frames": 139317,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_071 Multiple_Run outdoor",
+      "output": "original_sfx/sfx/Sfx_Scenario_071 Multiple_Run outdoor.wav",
+      "frames": 254086,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_162 Hard heartbeat",
+      "output": "original_sfx/sfx/Sfx_Scenario_162 Hard heartbeat.wav",
+      "frames": 46744,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_160 Guard a sword",
+      "output": "original_sfx/sfx/Sfx_Scenario_160 Guard a sword.wav",
+      "frames": 48739,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_104 Hang up",
+      "output": "original_sfx/sfx/Sfx_Scenario_104 Hang up.wav",
+      "frames": 10113,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_081 Fall human",
+      "output": "original_sfx/sfx/Sfx_Scenario_081 Fall human.wav",
+      "frames": 207712,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_016 Crush apple",
+      "output": "original_sfx/sfx/Sfx_Scenario_016 Crush apple.wav",
+      "frames": 71749,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_093 Explosion",
+      "output": "original_sfx/sfx/Sfx_Scenario_093 Explosion.wav",
+      "frames": 143452,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_094 HURIKO YAIBA",
+      "output": "original_sfx/sfx/Sfx_Scenario_094 HURIKO YAIBA.wav",
+      "frames": 108001,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_058 Run corridor",
+      "output": "original_sfx/sfx/Sfx_Scenario_058 Run corridor.wav",
+      "frames": 182695,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_140 Kick bucket&Liquid water",
+      "output": "original_sfx/sfx/Sfx_Scenario_140 Kick bucket&Liquid water.wav",
+      "frames": 81870,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_022 Indoor wood open",
+      "output": "original_sfx/sfx/Sfx_Scenario_022 Indoor wood open.wav",
+      "frames": 58516,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_043 Turn page book",
+      "output": "original_sfx/sfx/Sfx_Scenario_043 Turn page book.wav",
+      "frames": 107173,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_123 Knife stuck in board",
+      "output": "original_sfx/sfx/Sfx_Scenario_123 Knife stuck in board.wav",
+      "frames": 32683,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_116 Save body",
+      "output": "original_sfx/sfx/Sfx_Scenario_116 Save body.wav",
+      "frames": 55040,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_121 Water drop",
+      "output": "original_sfx/sfx/Sfx_Scenario_121 Water drop.wav",
+      "frames": 21284,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_003 Monitor",
+      "output": "original_sfx/sfx/Sfx_Scenario_003 Monitor.wav",
+      "frames": 46145,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_125 One_Clap_",
+      "output": "original_sfx/sfx/Sfx_Scenario_125 One_Clap_.wav",
+      "frames": 139158,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Common_001 Notice1",
+      "output": "original_sfx/sfx/Sfx_Common_001 Notice1.wav",
+      "frames": 52001,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_142 Bubble",
+      "output": "original_sfx/sfx/Sfx_Scenario_142 Bubble.wav",
+      "frames": 180001,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_035 Human heartbeat",
+      "output": "original_sfx/sfx/Sfx_Scenario_035 Human heartbeat.wav",
+      "frames": 265907,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_056 High speed thread",
+      "output": "original_sfx/sfx/Sfx_Scenario_056 High speed thread.wav",
+      "frames": 39000,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_System_Submit_001",
+      "output": "original_sfx/sfx/Sfx_System_Submit_001.wav",
+      "frames": 4558,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_031 Tea",
+      "output": "original_sfx/sfx/Sfx_Scenario_031 Tea.wav",
+      "frames": 76409,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_100 Spark",
+      "output": "original_sfx/sfx/Sfx_Scenario_100 Spark.wav",
+      "frames": 44143,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_080 Hit whip",
+      "output": "original_sfx/sfx/Sfx_Scenario_080 Hit whip.wav",
+      "frames": 12929,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_System_Choice_002c",
+      "output": "original_sfx/sfx/Sfx_System_Choice_002c.wav",
+      "frames": 27558,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_168 fall out deadman",
+      "output": "original_sfx/sfx/Sfx_Scenario_168 fall out deadman.wav",
+      "frames": 111684,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_134 Button key push",
+      "output": "original_sfx/sfx/Sfx_Scenario_134 Button key push.wav",
+      "frames": 50859,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_049 Two_Run underground",
+      "output": "original_sfx/sfx/Sfx_Scenario_049 Two_Run underground.wav",
+      "frames": 98730,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_050 Punch ground",
+      "output": "original_sfx/sfx/Sfx_Scenario_050 Punch ground.wav",
+      "frames": 10924,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_007 Go up the stairs(Reverb)",
+      "output": "original_sfx/sfx/Sfx_Scenario_007 Go up the stairs(Reverb).wav",
+      "frames": 178447,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_System_OpenBook_001",
+      "output": "original_sfx/sfx/Sfx_System_OpenBook_001.wav",
+      "frames": 30608,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_033 Bell sound",
+      "output": "original_sfx/sfx/Sfx_Scenario_033 Bell sound.wav",
+      "frames": 294042,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_107 Open cabnet",
+      "output": "original_sfx/sfx/Sfx_Scenario_107 Open cabnet.wav",
+      "frames": 16671,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_020 Crash dish",
+      "output": "original_sfx/sfx/Sfx_Scenario_020 Crash dish.wav",
+      "frames": 90752,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_System_CloseBook_001",
+      "output": "original_sfx/sfx/Sfx_System_CloseBook_001.wav",
+      "frames": 18826,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_165 Slow open big door",
+      "output": "original_sfx/sfx/Sfx_Scenario_165 Slow open big door.wav",
+      "frames": 221748,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_013 Head drop",
+      "output": "original_sfx/sfx/Sfx_Scenario_013 Head drop.wav",
+      "frames": 15185,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_System_LoadData_001",
+      "output": "original_sfx/sfx/Sfx_System_LoadData_001.wav",
+      "frames": 109681,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_130 Running down the house stairs",
+      "output": "original_sfx/sfx/Sfx_Scenario_130 Running down the house stairs.wav",
+      "frames": 65955,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_084 TONKATSU",
+      "output": "original_sfx/sfx/Sfx_Scenario_084 TONKATSU.wav",
+      "frames": 52164,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_141 Scrub the floor",
+      "output": "original_sfx/sfx/Sfx_Scenario_141 Scrub the floor.wav",
+      "frames": 88000,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_038 Gun fire",
+      "output": "original_sfx/sfx/Sfx_Scenario_038 Gun fire.wav",
+      "frames": 129386,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_143 SYOUKYAKURO ASARU",
+      "output": "original_sfx/sfx/Sfx_Scenario_143 SYOUKYAKURO ASARU.wav",
+      "frames": 134603,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_023 Fall from a height",
+      "output": "original_sfx/sfx/Sfx_Scenario_023 Fall from a height.wav",
+      "frames": 37272,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_024 Silent_waves",
+      "output": "original_sfx/sfx/Sfx_Scenario_024 Silent_waves.wav",
+      "frames": 202306,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_076 Pushing back",
+      "output": "original_sfx/sfx/Sfx_Scenario_076 Pushing back.wav",
+      "frames": 12000,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_018 Reject shake hands",
+      "output": "original_sfx/sfx/Sfx_Scenario_018 Reject shake hands.wav",
+      "frames": 40095,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_137 Hard open wood door",
+      "output": "original_sfx/sfx/Sfx_Scenario_137 Hard open wood door.wav",
+      "frames": 24000,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_034 Panpakapan",
+      "output": "original_sfx/sfx/Sfx_Scenario_034 Panpakapan.wav",
+      "frames": 142001,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_097 Slow foot step",
+      "output": "original_sfx/sfx/Sfx_Scenario_097 Slow foot step.wav",
+      "frames": 214586,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_078 Far foot sound",
+      "output": "original_sfx/sfx/Sfx_Scenario_078 Far foot sound.wav",
+      "frames": 158001,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_011 Body hit2_",
+      "output": "original_sfx/sfx/Sfx_Scenario_011 Body hit2_.wav",
+      "frames": 28816,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Common_007 Negative down",
+      "output": "original_sfx/sfx/Sfx_Common_007 Negative down.wav",
+      "frames": 36202,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_152 Pen fall on floor",
+      "output": "original_sfx/sfx/Sfx_Scenario_152 Pen fall on floor.wav",
+      "frames": 22435,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_System_Close_001",
+      "output": "original_sfx/sfx/Sfx_System_Close_001.wav",
+      "frames": 6001,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_149 Small rock fall",
+      "output": "original_sfx/sfx/Sfx_Scenario_149 Small rock fall.wav",
+      "frames": 114614,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_System_Tab_001a",
+      "output": "original_sfx/sfx/Sfx_System_Tab_001a.wav",
+      "frames": 9601,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_161 Lost Bullet",
+      "output": "original_sfx/sfx/Sfx_Scenario_161 Lost Bullet.wav",
+      "frames": 44154,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_176 Break ice3",
+      "output": "original_sfx/sfx/Sfx_Scenario_176 Break ice3.wav",
+      "frames": 39030,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_004 Lock prison",
+      "output": "original_sfx/sfx/Sfx_Scenario_004 Lock prison.wav",
+      "frames": 92317,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Common_002 Notice2",
+      "output": "original_sfx/sfx/Sfx_Common_002 Notice2.wav",
+      "frames": 56742,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_089 Be stuck GUSA!!",
+      "output": "original_sfx/sfx/Sfx_Scenario_089 Be stuck GUSA!!.wav",
+      "frames": 28817,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_062 Open meatl door",
+      "output": "original_sfx/sfx/Sfx_Scenario_062 Open meatl door.wav",
+      "frames": 36440,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_085 Hit punch human",
+      "output": "original_sfx/sfx/Sfx_Scenario_085 Hit punch human.wav",
+      "frames": 40213,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_059 Digging sound",
+      "output": "original_sfx/sfx/Sfx_Scenario_059 Digging sound.wav",
+      "frames": 236443,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_System_Alert_001",
+      "output": "original_sfx/sfx/Sfx_System_Alert_001.wav",
+      "frames": 3934,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_092 Land mine switch",
+      "output": "original_sfx/sfx/Sfx_Scenario_092 Land mine switch.wav",
+      "frames": 8993,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_173 One_Run outdoor",
+      "output": "original_sfx/sfx/Sfx_Scenario_173 One_Run outdoor.wav",
+      "frames": 269259,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_070 Multiple_Run pathway",
+      "output": "original_sfx/sfx/Sfx_Scenario_070 Multiple_Run pathway.wav",
+      "frames": 80278,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-sfxnaninovel.bundle",
+      "name": "Sfx_Scenario_136 Move chair",
+      "output": "original_sfx/sfx/Sfx_Scenario_136 Move chair.wav",
+      "frames": 50946,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-song_001naninovel.bundle",
+      "name": "Song_001_001",
+      "output": "original_music/song/Song_001_001.wav",
+      "frames": 10419310,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-song_002naninovel.bundle",
+      "name": "Song_002_001",
+      "output": "original_music/song/Song_002_001.wav",
+      "frames": 14738761,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-song_003naninovel.bundle",
+      "name": "Song_003_001",
+      "output": "original_music/song/Song_003_001.wav",
+      "frames": 14324972,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-audio_assets_audio-song_004naninovel.bundle",
+      "name": "Song_004_001",
+      "output": "original_music/song/Song_004_001.wav",
+      "frames": 14408182,
+      "rate": 48000,
+      "channels": 2
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-spawn_assets_all.bundle",
+      "name": "Crack_02",
+      "output": "original_sfx/sfx/Crack_02.wav",
+      "frames": 134784,
+      "rate": 44100,
+      "channels": 1
+    },
+    {
+      "source": "StreamingAssets/aa/StandaloneWindows64/naninovel-spawn_assets_all.bundle",
+      "name": "Crack_01",
+      "output": "original_sfx/sfx/Crack_01.wav",
+      "frames": 39168,
+      "rate": 44100,
+      "channels": 1
+    }
+  ],
+  "errors": []
+}

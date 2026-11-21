@@ -1,0 +1,1226 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter01/Act02_Chapter01_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 1500
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+@char Warden { Position:,{hiddenCharacterPositionY} time:0 }
+# ==============================================================================
+# MARK: 6-11: 💬 マーゴが犯人である証拠
+# ==============================================================================
+# ＠ト書き▼議論6-11 マーゴが犯人である証拠
+
+@bgm Bgm_37_1_Loop
+
+# Judge6-11-1
+
+# BGM変更：HirO（Voあり）
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate ヒロちゃんの言葉は<br>すべて憶測よね。
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate たしかに私がそんな無茶を<br>通したのであれば、<br>メルルちゃんを<br>殺すこと自体は<br>可能かもしれないわ？
+
+@char Margo.Default,ArmR4,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@printDebate "でも……<br><link=\"Objection_02_01_11_01\">証拠もない</link>のに<br>疑うなんて<br>よくないと<br>思わないかしら？"
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@printDebate それを言うなら<br>私も君と同じような立場<br>だけどね。<br>私がメルルを殺したなんて<br>証拠は存在しない。
+
+@char Margo.Default,ArmR4,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@printDebate "でも<br>ヒロちゃんは<link=\"Objection_02_01_11_02\">現場にいた</link><br>じゃない。<br>それは立派な<br>状況証拠だと思うわ。"
+
+@char Margo.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@printDebate それに<br>メルルちゃんのスマホも<br>持っていたしね？<br>これは物的証拠じゃ<br>ないかしら？
+
+@char Hiro.Normal1,ArmR6,Arms3,Eyes1_Angry_Open1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@printDebate それは君が<br>死体発見時の<br>ドサクサにまぎれて、<br>私の服に<br>紛れ込ませたんだろう。
+
+@char Hiro.Normal1,ArmR6,ArmL6,Eyes1_Angry_Open1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@printDebate ……それに状況で言うなら、<br>エマの証言や<br>レイアの証言は<br>検死結果とのズレがある。
+
+@char Hiro.Normal1,ArmR6,ArmL6,Eyes1_Angry_Open1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@printDebate それは誰かが<br>メルルの死亡時刻を<br>偽装しようとしていた<br>証拠だ。
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@printDebate むしろ、<br>メルルが死んだあとで<br>ずっとその場に<br>留まっていた私は<br>逆に犯人には<br>なりえないと言える。
+
+@char Margo.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Angry_Open,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@printDebate 犯人は<br>それを狙っていたのかも<br>しれないわね？
+
+@char Margo.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@printDebate ……【まさか真犯人が<br>現場に留まるはずがない】。<br>そんな心理的トリックを<br>使ったの。
+
+@char Hiro.Normal1,ArmR6,ArmL6,Eyes1_Angry_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@printDebate そこまで私を疑うと言うなら、<br>君の方こそ<br>証拠品の１つでも<br>提示してみせたら<br>どうかな？
+
+@char Hiro.Normal1,ArmR6,ArmL6,Eyes1_Normal_Closed1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@printDebate まあそんなもの、<br>できるはずがないけれど。
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@printDebate なにせ、<br>私は犯人じゃないのだから。
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@printDebate 私が犯人である証拠など、<br>どこにも存在しないと<br>断言するよ。
+
+@char Margo.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@printDebate あら本当に<br>そうなのかしらね？
+
+@char Margo.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@printDebate "現場には<br>痕跡が残ってるかも<br>しれないわよ。<br>……ヒロちゃんの<br>血痕や<link=\"Objection_02_01_11_03\">指紋</link>が、<br>べっとりとね。"
+
+@char Hiro.Normal2,Arms3,Eyes2_Normal_Closed1,Mouth2_Fearful_Open1
+@gosubModifyCamera 0
+@printDebate 私が直接的に<br>メルルを殺した証拠なんて<br>１つも残っていないのに、<br>よく言えたものだ。
+
+@char Hiro.Normal2,ArmR6,Arms3,Eyes2_Normal_Open1,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@printDebate そんな憶測だけで<br>推理を組み立てるなんて……<br>君はとても事件に詳しいな。<br>……まるで犯人のようだ。
+
+@char Margo.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@printDebate あら面白い意見ね。
+
+@char Margo.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@printDebate それとも、<br>【素人探偵による<br>見当違いの言いがかり】<br>……と言ってあげた方が<br>いいかしら？
+
+@char Hiro.Normal1,ArmR3,ArmL4,Eyes1_Normal_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@printDebate さすが<br>プロは言うことが違う。
+
+@char Hiro.Normal1,ArmR3,ArmL4,Eyes1_Angry_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@printDebate そうやってこれまでも、<br>犯罪や詐欺のプロとして<br>大勢の人間を<br>騙して来たのか？
+
+@char Margo.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Closed,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@printDebate あら、<br>お褒めいただき光栄だわ♡
+
+# ＠備考◆睨む/威嚇
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Angry_Open1,Mouth2_Angry_Closed1
+@gosubModifyCamera 0
+@printDebate ………。
+
+# ＠備考◆睨む/冷たくため息
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Cry_Closed
+@gosubModifyCamera 0
+@printDebate ………。
+
+@char Miria.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@printDebate ……あ、あの……<br>その……喧嘩は……！
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_01,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Angry_Closed01
+@gosubModifyCamera 0
+@printDebate 『今は口を出すな』
+
+
+# ==============================================================================
+# 6-11議論後独白
+# ==============================================================================
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@Wait 0.2
+
+@print （マーゴの言う通り、<br>　彼女がやったという証拠は残っていない……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR2,ArmL4,Eyes2_Normal_Closed1,Mouth2_Pensive_Closed1,Sweat2-1
+@print （このまま私が信用だけで打ち勝つのは、難しいか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,Arms3,Eyes2_Angry_Open1,Mouth2_Determined_Closed1
+@print （なら……存在しない証拠を【作り上げる】しかない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,Arms3,Eyes2_Angry_Open1,Mouth2_Determined_Closed1,Sweat2-1
+@print （……ハッタリでもなんでも構わない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,Arms3,Eyes2_Angry_Open1,Mouth2_Determined_Closed1,Sweat2-1
+@print （【マーゴに繋がる証拠】……<br>　その可能性を示すんだ……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge6-11-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_01_11_01
+
+@Skip false
+@pauseTrial true
+
+@choice 証拠がないこと自体が証拠
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge6-11-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_02_01_11_02
+
+@Skip false
+@pauseTrial true
+
+@choice 真犯人に気絶させられていた
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge6-11-4
+
+@choice 日課の見回りを利用された
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge6-11-5
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_02_01_11_03
+
+@Skip false
+@pauseTrial true
+
+@choice マーゴの指紋も残っている
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge6-11-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 6-11: ❌ 議論選択肢
+# ==============================================================================
+# MARK: 6-11-3: ❌ 反論・証拠がないこと自体が証拠
+
+# Judge6-11-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 証拠がなさすぎること自体が証拠なんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 誰かが私を犯人に仕立て上げるべく、<br>意図的に事件を操作したとしか考えられない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Normal_Closed1
+@gosubModifyCamera 0
+@print ……証拠が残らない、<br>【魔法】という手段を使ってね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL7,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print なるほどね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL7,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print 証拠がないからこそ、<br>【魔法でしか説明のつかないトリックを使った】と言える……<br>そういうことだね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print 詭弁を繰り返してもムダよ♡ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print ヒロちゃんが犯人なら<br>全てシンプルに説明がつくんだもの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR6,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Closed,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 最初にみんなが推理したとおり<br>【メルルちゃんが殺されたのは死体発見直前】で――。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR6,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Closed,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print その時、メルルちゃんは最後の力を振り絞って<br>犯人のヒロちゃんに反撃をした……<br>ガラスビンを使ってね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print そこでガラスが割れ、音がみんなの耳に届いた――。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print そうして現場には死亡したメルルちゃんと<br>気絶したヒロちゃんが残ったの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print レイアちゃんの検死結果は、<br>きっと何かの間違い……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Closed,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print むしろそれこそが犯人の行ったトリックだったのよ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Surprised_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print な、なんだって……！？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR1,Arms3,Eyes1_Normal_Open2,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print たしかに……<br>証拠がない以上、そう考えたほうが自然な部分はあるわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL3,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print でしょう？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL3,Angle01/Facial/Eyes>Eyes_Smile_Closed,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print ヒロちゃん……<br>いい加減、言い逃れはやめたら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （……物的証拠がない中での反論は<br>　不利になるだけだな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （だけどマーゴもこれだけ様々な手を尽くしている。<br>　どこかに綻びがあると仮定するしかない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,Arms3,Eyes2_Angry_Open1,Mouth2_Determined_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （ハッタリでもいい……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,Arms3,Eyes2_Angry_Open1,Mouth2_Determined_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （例えばマーゴの痕跡が残っていそうな場所――<br>　もしくはモノを突きつけて、揺さぶりをかけるんだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge6-11-1
+
+# MARK: 6-11-4: ❌ 反論・真犯人に気絶させられていた
+
+# Judge6-11-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Normal_Closed1
+@gosubModifyCamera 0
+@print ……私が現場で倒れていたのは、<br>誰かに殴られて気絶していたからだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01
+@gosubModifyCamera 0
+@print "え……！ そうなの……！？" { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Surprised_Open01
+@gosubModifyCamera 0
+@print で、でもどうして裁判が始まってすぐに<br>話してくれなかったの……？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print 言ったところで<br>信用されないと思ったからだよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Closed1,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print みんな【私が犯人】という前提で<br>話を進めていただろう？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Determined_Closed1
+@gosubModifyCamera 0
+@print だから今……<br>他に明らかな容疑者が出て来たタイミングで<br>明かしたんだよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Angry_Open1,Mouth2_Determined_Closed1
+@gosubModifyCamera 0
+@print （そう……！<br>　私が気絶する直前に聞いたメルルの声は<br>　マーゴの声真似だったんだ……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print ひどい濡れ衣ね、ヒロちゃん。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print それに、あなたはここまでの推理で<br>自分が現場にいた理由について<br>こう結論づけていたはずよ？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print 【睡眠薬を飲んだことで眠ってしまった】と。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Pensive_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print その話はどこへいったの？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Pensive_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print あ……そ、そういえば……！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print よほど私を犯人に仕立て上げたいのかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print 証拠もなく自分の推理を覆しても、<br>信用されるわけがないわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print （推理を覆しては、心証が悪くなってしまうな……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print （……物的証拠がない中での反論は<br>　不利になるだけだな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR4,ArmL2,Eyes2_Normal_Closed1,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （だけどマーゴもこれだけ様々な手を尽くしている。<br>　どこかに綻びがあると仮定するしかない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,Arms3,Eyes2_Angry_Open1,Mouth2_Determined_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （ハッタリでもいい……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,Arms3,Eyes2_Angry_Open1,Mouth2_Determined_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （例えばマーゴの痕跡が残っていそうな場所――<br>　もしくはモノを突きつけて、揺さぶりをかけるんだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge6-11-1
+
+# MARK: 6-11-5: ❌ 反論・日課の見回りを利用された
+
+# Judge6-11-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Normal_Closed1
+@gosubModifyCamera 0
+@print 現場にいたのは<br>犯行をするためじゃない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Normal_Closed1
+@gosubModifyCamera 0
+@print みんなの部屋の見回りを<br>日課にしていたからだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open4,Mouth2_Fearful_Open1
+@gosubModifyCamera 0
+@print 君たちにいい顔はされなかったが――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1
+@gosubModifyCamera 0
+@print ……こんなことが起こらないように<br>やれることをやろうと思っていたのさ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Angry_Open1,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print だが、その日課を<br>真犯人に利用されたんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print へえ……私はてっきり――。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print ヒロちゃんが見回りをする理由は、<br>【みんなの行動パターンを把握するため】<br>だと思っていたわ？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print ど、どういうことですの……！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print みんながいつどこにいるかわかれば<br>犯行をする際に役立つじゃない？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print そんな理由でもなければ、<br>みんなに疎まれながら日課を続けることなんて<br>できないでしょう？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print ま、毎日何度も見回りしていたのには<br>そんな理由が……！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Closed,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print はれんちですわー！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Angry_Closed1
+@gosubModifyCamera 0
+@print （どうしてそうなる……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print （……物的証拠がない中での反論は<br>　不利になるだけだな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR4,ArmL2,Eyes2_Normal_Closed1,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （だけどマーゴもこれだけ様々な手を尽くしている。<br>　どこかに綻びがあると仮定するしかない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,Arms3,Eyes2_Angry_Open1,Mouth2_Determined_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （ハッタリでもいい……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,Arms3,Eyes2_Angry_Open1,Mouth2_Determined_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （例えばマーゴの痕跡が残っていそうな場所――<br>　もしくはモノを突きつけて、揺さぶりをかけるんだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge6-11-1
+
+# ==============================================================================
+# MARK: 6-11-2: ⭕ 偽証・指紋が残っている
+# ==============================================================================
+
+# Judge6-11-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+@gosubCutIn Hiro
+@Gosub System/System_Subroutine.EndDebate-Last
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print やれやれ。油断していたのかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print ……現場には、証拠品が残されていたんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Margo.Default,ArmR1,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Cry_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……なんですって？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 君の主張が正しければ<br>絶対に触れているはずのないものに、<br>君の指紋が残っていた。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 君はそれをどう説明するのかな？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Margo.Default,ArmR1,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Cry_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print し、指紋ですって……！<br>そんなものが、どこに……！ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Closed1,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print メルルの死亡後に置かれて、<br>犯人しか触っていないもの……。<br>マーゴの指紋が残っていてはいけないもの……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,Arms3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print それは……これだよ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+# Judge6-11-6
+
+@evidence Clue
+
+@if "chosenEvidenceId==\"6-6\""
+	@goto .Judge6-11-7
+
+@if "chosenEvidenceId==\"6-2\""
+	@goto .Judge6-11-8
+
+@if "chosenEvidenceId==\"6-4\""
+	@goto .Judge6-11-9
+
+@goto .Judge6-11-10
+
+# MARK: 6-11-8: ❌ 【儀礼剣】
+
+# Judge6-11-8
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print もちろん、あの剣だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print 犯人であるマーゴが握り、メルルを刺した凶器……<br>そこに君の指紋が残っていないはずはない……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Closed,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print ……ふふ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Closed,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print ハッタリね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Closed,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print よく見て、ヒロちゃん。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_Common_1
+
+@char Margo.Default,ArmR5,ArmL3,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print 私……【手袋をしてる】のよ？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print ……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print もし仮に私が犯人だったとしても、<br>指紋なんて残るはずがないわ？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL1,Angle01/Facial/Eyes>Eyes_Pensive_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print その場しのぎのウソはやめて欲しいわね♡ { author:Margo speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Angry_Closed1
+@gosubModifyCamera 0
+@print （ウソが見破られたか……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print （だが指紋の話を出したとき……<br>　マーゴは確実に動揺していた） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print （マーゴが指紋も残さないように<br>　気を付けていたとしても、<br>　絶対に手袋を外していたタイミングがあったはずだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （手袋越しでは【使用できないもの】……！<br>　もし指紋が残っていたとしたら、そこだ……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge6-11-6
+
+# MARK: 6-11-9: ❌ 【睡眠薬のビン】
+
+# Judge6-11-9
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 睡眠薬のビンだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print 現場の床に散らばっていた欠片には<br>指紋が残っていた……ということですか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print マーゴちゃんがそのビンに触れるタイミングなんて<br>あったのかな……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print こう考えれば辻褄が合う――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Closed1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 死体発見の４０分前……<br>ビンを持ったまま現場へやってきたメルルが、<br>犯人に刺された勢いでビンを手放してしまったんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print だから犯人は落下するビンを受け止めようとして、<br>それに触れてしまったんだよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print ビンが床に落ちて音が鳴ったら、<br>周りのみんなに殺人現場を見られてしまうからね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print そしてそのビンは<br>一度犯人に触れられたことで落下の衝撃が減り、<br>床に落ちたときは小さな音しか鳴らなかった――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print あー、だから死体発見４０分前の音は<br>レイアにしか聞こえないくらい小さかったってこと？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print ……何を言い出すかと思えば。 { author:Margo speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@sfx Sfx_Common_1
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print 私……手袋をしているのよ？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print ……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR5,ArmL1
+@gosubModifyCamera 0
+@print もし仮に私が犯人だったとしても、<br>指紋なんて残るはずがないわ？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR5,ArmL1
+@gosubModifyCamera 0
+@print その場しのぎのウソはやめて欲しいわね♡ { author:Margo speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Angry_Closed1
+@gosubModifyCamera 0
+@print （ウソが見破られたか……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print （だが指紋の話を出したとき……<br>　マーゴは確実に動揺していた） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print （マーゴが指紋も残さないように<br>　気を付けていたとしても、<br>　絶対に手袋を外していたタイミングがあったはずだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （手袋越しでは【使用できないもの】……！<br>　もし指紋が残っていたとしたら、そこだ……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge6-11-6
+
+# MARK: 6-11-10: ❌ 汎用選択ミス
+
+# Judge6-11-10
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print ヒロちゃん……<br>その証拠品に私の指紋が残っているとは思えないわね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print 私、それに触れてないもの♡ { author:Margo speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （あの自信……間違ってはいなそうだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print （だが指紋の話を出したとき……<br>　マーゴは確実に動揺していた） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print （マーゴが指紋も残さないように<br>　気を付けていたとしても、<br>　絶対に手袋を外していたタイミングがあったはずだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （手袋越しでは【使用できないもの】……！<br>　もし指紋が残っていたとしたら、そこだ……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge6-11-6
+
+# ==============================================================================
+# MARK: 6-11-7: ⭕ 【メルルのスマホ】
+# ==============================================================================
+
+# Judge6-11-7
+
+@StopBgm 
+# カットイン
+@gosubCutIn Hiro
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR8,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print これは私の服に、<br>何者かによって忍び込ませられていたスマホだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR8,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print これがメルルのスマホであることは<br>エマが電話をかけ直して鳴ったことからも、<br>明らかだろう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print ……マーゴ。<br>君は死体発見の前、<br>【スマホをいじっていた】と言っていたな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 手袋越しでは、スマホの液晶は反応しない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print だから君が死体発見時、<br>ドサクサにまぎれて私の服へスマホを仕込んだとき……<br>手袋はしていなかったはずだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Normal_Closed1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print ……だからそこに残っていたんだよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# BGM変更：HirO
+@bgm Bgm_37_1_Loop
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char Hiro.Normal2,ArmR6,ArmL3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 君の【指紋】がね！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Margo.Surprised1,ArmR1,ArmL4
+@gosubModifyCamera 0
+@print ……！ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print 自分のスマホをずっといじっていたのは<br>ある意味アリバイ作りだったんだろう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print でもそれが裏目に働いたみたいだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Cry_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……そ、そんな……バカなっ！ { author:Margo speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Margo.Default,ArmR1,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Surprised_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……嘘よ！<br>あなたは拘束されていた！ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR6,ArmL1,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print そもそも指紋を調べる時間なんてなかったはず……！ { author:Margo speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Margo.Default,ArmR6,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Surprised_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print こんなの、でっち上げだわ！ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Normal_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （……そう、その通り。<br>　口から出任せ、ただのハッタリだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open1,Mouth1_Determined_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （でもあと一押し……！<br>　何か……何かマーゴの信用を突き崩せるものがあれば……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+# レイアカットイン
+@bgm Bgm_37_1_Loop { Volume:0.2 }
+@Wait 0.5
+
+@sfx Sfx_Common_5
+
+@ResetText 
+@voice CommonTrial_Leia01357
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@char Leia.Default,ArmR6,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubSplitStageScreen 1
+@Wait 1.5
+
+@hideStageScreen 1
+@Wait 0.3
+
+@bgm Bgm_37_1_Loop
+
+# ＠備考◆レイアカットインに驚き息を呑む
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print ……っ！？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Leia.Default,ArmR5,ArmL7,Angle01/Facial/Eyes>Eyes_Normal_Closed01,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print ……ふふ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR9,ArmL8,Angle01/Facial/Eyes>Eyes_Angry_Open01,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print そういうことか、ヒロくん。<br>すべて理解したよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print "（……なんだ？ こいつ）" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR6,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print 【あのとき頼まれた指紋の採取】……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char Leia.Default,ArmR6,ArmL5,Angle01/Facial/Eyes>Eyes_Surprised_Open02,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print そういうことだったんだね！ { author:Leia speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Hiro.Normal2,ArmR12,ArmL5,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （……なに……！？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Fearful_Open,Angle01/Facial/Mouth>Mouth_Neutral_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……なんですって……！ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR8,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print 拘束されているのに指紋を調べて欲しいなんて、<br>いったい何を考えているかと思ったけれど……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR3,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print まさかここまで議論の流れを<br>見据えてのことだったとはねっ！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR3,ArmL3,Angle01/Facial/Eyes>Eyes_Normal_Closed01,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print でも安心したまえ！<br>ちょっとした粉や粘着物があれば、<br>指紋ぐらいは簡単に採れるんだ……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR3,ArmL3,Angle01/Facial/Eyes>Eyes_Angry_Open01,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print もちろん、採取しておいたさ……<br>そのスマホに残っていた、指紋をね！！ { author:Leia speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Fearful_Open,Angle01/Facial/Mouth>Mouth_Neutral_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print くっ……！？<br>こんな孤島で……指紋なんて……！？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Surprised_Open1,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print "（……そうか！<br>　わかったぞ……！ こいつ……！）" { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Leia.Default,ArmR10,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open01
+@gosubModifyCamera 0
+@print さあヒロくん！<br>共に真犯人を追い詰めようじゃないか！ { author:Leia speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_6
+
+@char Hiro.Normal1,ArmR11,ArmL11,Eyes1_Serious_Open1,Mouth1_Determined_Open1,Sweat1-1
+@gosubModifyCamera 0
+@print （……探偵役を諦めて、<br>　【相棒役】になろうとしてる……！！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR11,ArmL11,Eyes1_Serious_Open1,Mouth1_Determined_Open1,Sweat1-1
+@gosubModifyCamera 0
+@print （今はただの逆張りで、<br>　私の味方をして目立とうとしているだけ……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR12,ArmL5,Eyes1_Normal_Closed1,Mouth1_Angry_Open1,Sweat1-1
+@gosubModifyCamera 0
+@print （度し難い……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Hiro.Normal1,ArmR12,ArmL5,Eyes1_Angry_Open1,Mouth1_Angry_Open1,Sweat1-1
+@gosubModifyCamera 0
+@print （……だが） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR12,ArmL5,Eyes1_Angry_Open1,Mouth1_Angry_Open1,Sweat1-1
+@gosubModifyCamera 0
+@print （こんな状況では、こんな味方であろうとありがたいか……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR12,ArmL5,Eyes1_Angry_Open1,Mouth1_Angry_Open1,Sweat1-1
+@gosubModifyCamera 0
+@print （レイアがハッタリに乗ってくれているこのタイミング……！<br>　逃すわけにはいかない！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Closed1,Mouth2_Determined_Closed1
+@gosubModifyCamera 0
+@print （一か八か……賭けに出る！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print ……では。<br>君が犯人でないというなら、マーゴ……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char Hiro.Normal2,ArmR6,ArmL3,Eyes2_Angry_Open1,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print 君の指紋、ここで採らせてもらおう！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Fearful_Open,Angle01/Facial/Mouth>Mouth_Neutral_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print くっ……！ { author:Margo speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆葛藤
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed,Angle01/Facial/Mouth>Mouth_Neutral_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ………………。 { author:Margo speed:1 waitInput:true Wait:true }
+
+# SE・明るい音
+@sfx Sfx_Common_2
+
+# ＠備考◆焦り
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Neutral_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……拒否……<br>するわ……！ { author:Margo speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Hiro.Normal1,Eyes1_Angry_Open1
+@gosubModifyCamera 0
+@print （……勝った……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# カットイン
+@sfx Sfx_Common_1
+
+# レイアカットイン
+@bgm Bgm_37_1_Loop { Volume:0.2 }
+@Wait 0.5
+
+@sfx Sfx_Common_5
+
+@ResetText 
+@voice CommonTrial_Miria00283
+@char Hiro.Surprised1
+@char Miria.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Flushed_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open02,Angle01/Facial/Sweat>Sweat01
+@gosubSplitStageScreen 1
+@Wait 1.5
+
+@hideStageScreen 1
+@Wait 0.3
+
+@bgm Bgm_37_1_Loop
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Surprised_Open02,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……ま、待ってよ！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Confused_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print 無理やり指紋を採るようなことは、<br>おじさんよくないと思うな……！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL8,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print 指紋って強力な個人情報だし、<br>人権侵害っていうか……！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL8,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Normal_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……いや、こんな場所で<br>何言ってるのかって話ではあるけど……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Determined_Close,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print でも……こんなところだからこそで……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print ……いやいや、ミリアの言う通りだよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print 無理やりはよくないね。<br>事件について黙秘することも本人の自由だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmL3,Eyes1_Painful_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print けど……みんながそれをどう思うかな？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Fearful_Open,Angle01/Facial/Mouth>Mouth_Pensive_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print くっ……！ { author:Margo speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆息を呑む
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print …………。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Hanna.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Surprised_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print あ……怪しいですわ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open3,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （仮に本当に指紋を採取できたところで、<br>　それがどれほど信頼できるかわからない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Angry_Open1,Mouth1_Determined_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （だがこの狂った裁判……！<br>　最後に力を持つのは、みんなの心証だ……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （それを失ったマーゴに、勝ち目は――！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed,Angle01/Facial/Mouth>Mouth_Neutral_Closed
+@gosubModifyCamera 0
+@print …………。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆落ち着きを取り戻す
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print ……だって、捏造されるかもしれないじゃない。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1,Arms3
+@gosubModifyCamera 0
+@print ……なに……？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# BGM変更：EmA-常-
+@bgm Bgm_13_1_Loop
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Open,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print ……考えてもみて？<br>ヒロちゃんは容疑者として拘束されていたのよ？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print にも関わらず、<br>レイアちゃんはそんな容疑者の言うことを真に受けて<br>指紋を採取した……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print そもそもレイアちゃん自身が<br>検死結果を改ざんしていたのかもしれないわ？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR4,ArmL4,Angle01/Facial/Eyes>Eyes_Surprised_Open01,Angle01/Facial/Mouth>Mouth_Fearful_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print そ、そんなことは……！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print あなたたちが【共犯関係】ではないなんて<br>証明できないでしょう？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR6,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print むしろ……その可能性は高いんじゃないかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR6,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print ……これまでのやりとりを見たって、<br>みんな納得してくれると思うけど。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1,ArmR12,ArmL5,Sweat1-1
+@gosubModifyCamera 0
+@print （往生際の悪い……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1,ArmR12,ArmL5,Sweat1-1
+@gosubModifyCamera 0
+@print （だが……決して今のマーゴの姿が潔白には<br>　誰の目にも写っていないはずだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （……畳み掛けてやろう。<br>　他者を扇動するそのやり方……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （そのまま自身に返して……<br>　この【裁判ごっこ】を終わらせてやる！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@StopBgm { fade:3 }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print なら……説明してあげようじゃないか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL3,Eyes2_Angry_Open1,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print マーゴ、今の状況がいかに<br>君が犯人であることを指し示しているのかを！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@StopBgm 
+
+
+@goto Act02_Chapter01/Act02_Chapter01_Trial12

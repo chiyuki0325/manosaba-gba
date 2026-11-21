@@ -1,0 +1,296 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-0-2
+
+# ========================================
+# ●シーン1-0-2
+# ========================================
+
+@print ――ちがう！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_1
+@back 490_1 { Scale:{g_backgroundDefaultScale * 3} }
+@animate Stills-Middle
+@back Transparent { time:1.2 }
+@Wait 0.2
+
+@print 桜羽エマは叫び、起き上がった。 { speed:1 waitInput:true Wait:true }
+
+@print 彼女の呼吸はひどく乱れ、全身はじっとりと汗ばんでいた。<br>悪夢を見たせいだろう。 { speed:1 waitInput:true Wait:true }
+
+@print "夢だったのだと<ruby=\"あんど\">安堵</ruby>したのも<ruby=\"つか\">束</ruby>の<ruby=\"ま\">間</ruby>――<br>その眼がみるみる見開かれていく。" { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_21_1
+
+@print え、な、なに、ここ……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@back 490_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@ResetText 
+@hide Stills-Middle { time:0.6 }
+@Wait 0.8
+
+@print エマが起き上がったのは、自分の部屋ではなかった。<br>粗悪な造りの、２段ベッドの下段にいる。 { speed:1 waitInput:true Wait:true }
+
+@print 古びた石壁が真横にあり、<br>それは見る者にぞくりとした冷たさを感じさせた。 { speed:1 waitInput:true Wait:true }
+
+@print "室内は薄暗く、空気が<ruby=\"よど\">澱</ruby> んでいる。<br>そして――<ruby=\"てつごうし\">鉄格子</ruby>に閉ざされていた。" { speed:1 waitInput:true Wait:true }
+
+@EmoteShake Stills
+
+@print "ろ、牢屋……！？ なんで！？" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマはパニックに<ruby=\"おちい\">陥</ruby>りながらも、<br>眠る前の記憶を懸命に<ruby=\"たぐ\">手繰</ruby>り寄せる。" { speed:1 waitInput:true Wait:true }
+
+@print （明日から高校生だって……<br>　ワクワクしながら眠ったはず） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 春休みの最終日。 { speed:1 waitInput:true Wait:true }
+
+@print エマは入浴して、パジャマに着替えて、<br>早めにベッドに入った。 { speed:1 waitInput:true Wait:true }
+
+@print （眠る前に覚えてるのは……壁にかけてあった<br>　ピカピカの高校の制服） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "明日から<ruby=\"そで\">袖</ruby>を通すはずだったそれを眺め、<br>エマは至福の笑みを浮かべていた。" { speed:1 waitInput:true Wait:true }
+
+@print （いちからぜんぶやりなおすんだって、決めて……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print それからふかふかのシーツにくるまれ、目を閉じた。 { speed:1 waitInput:true Wait:true }
+
+@print しかし今は、牢屋に閉じ込められている。<br>服も見たこともないものを着せられている。 { speed:1 waitInput:true Wait:true }
+
+@print （これって悪夢の続き……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print それにしては、触れる空気があまりにも生々しい。 { speed:1 waitInput:true Wait:true }
+
+@print "室内をざっと観察すると、通路側の<ruby=\"てつごうし\">鉄格子</ruby>以外は<br>四方をがっしりとした石壁で囲まれている。" { speed:1 waitInput:true Wait:true }
+
+@print 壁にはテレビモニターが設置されている。 { speed:1 waitInput:true Wait:true }
+
+@print "中世めいた<ruby=\"ころう\">古牢</ruby>の中で、現代でよく見るモニターは<br>妙に浮いて見えた。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [hideStill]
+# ========================================
+
+@back 1_1 { Scale:{g_backgroundDefaultScale} }
+@char Ema.Surprised1
+
+@print ねえ、ここどこなのかな！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマは<ruby=\"てつごうし\">鉄格子</ruby>に<ruby=\"すが\">縋</ruby>りついて叫んだ。" { speed:1 waitInput:true Wait:true }
+
+@print するとすぐに他の場所から、<br>別の少女たちの悲鳴が遠く聞こえてくる。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# ＠遠野ハンナ
+@print 何を考えていますの！？<br>わたくしをこんなところに閉じ込めるなんて！ { author:Unknown speed:1 waitInput:true Wait:true }
+
+# ＠佐伯ミリア
+@print 少女監禁とか、犯罪だよこれ！<br>誰だか知らないけど、人生終わるよ！？ { author:Unknown speed:1 waitInput:true Wait:true }
+
+# ＠紫藤アリサ
+@print "ざけんなぶっ殺すぞおらぁ！ 出せぇ！！" { author:Unknown speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3
+
+@print （……よかった、閉じ込められているのは<br>　ボクだけじゃない） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print にわかに騒がしくなった場に、<br>エマがホッとした表情を見せた、直後。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# ＠二階堂ヒロ
+@print ――静かにしてくれないか？ { author:Unknown speed:1 waitInput:true Wait:true }
+
+@print "不意に、エマの背後から<ruby=\"りん\">凛</ruby>とした声が届いた。" { speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_1
+
+@print その声にエマが振り返ると、<br>２段ベッドの上段で、起き上がった人物がいた。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1
+
+# ＠二階堂ヒロ
+@print 騒がしいのは正しくない。 { author:Unknown speed:1 waitInput:true Wait:true }
+
+# 息を呑む
+@print ――！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマは衝撃で立ち尽くし、息を<ruby=\"の\">呑</ruby>んだ。<br>起き上がって発言したその少女を知っていたからだ。" { speed:1 waitInput:true Wait:true }
+
+@print "（ウソでしょ……<br>　<ruby=\"にかいどう\">二階堂</ruby>ヒロ……ちゃん？）" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマの中学時代を暗黒に<ruby=\"おとし\">貶</ruby>めた、幼なじみ。" { speed:1 waitInput:true Wait:true }
+
+@print "みんなの憧れで、常に中心で<ruby=\"かれん\">可憐</ruby>に<ruby=\"ほほえ\">微笑</ruby>んでいた少女――<br>それが、二階堂ヒロだった。" { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Surprised1
+
+@print 目が合ったヒロの方も、<br>今までエマが見たことないほど大きく目を見開いていた。 { speed:1 waitInput:true Wait:true }
+
+@print 何故、君がここに？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_178
+
+@print ヒロはベッドからひらりと降りて、エマに問いかける。 { speed:1 waitInput:true Wait:true }
+
+@print "かつての幼なじみが目の前に現れたことで、<br>エマはひどく<ruby=\"ろうばい\">狼狽</ruby>し、言葉を失っていた。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hiro.Surprised1
+@char Ema.Fearful1,ArmR3
+
+@print あ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ここはどこだ？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ヒロがきょろきょろと視線を巡らし、<br>うわずった声を出す。 { speed:1 waitInput:true Wait:true }
+
+@print あ、あのね、ヒロちゃ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマはかつて呼んできたように、<br>懐かしい呼称で彼女に声をかけようとする。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print その時―― { speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_3
+
+@print 壁のモニターの方から、音が聞こえた。<br>エマ、ヒロはハッとし、モニターに注目する。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@printer Normal.Stream
+@back 25_1
+@char Warden.1
+@Wait 0.3
+
+@print "（え、何！？ フ、フクロウの化け物……！？）" { author:Ema speed:1 waitInput:true Wait:true }
+
+# ＠備考◆配信中
+@print あ……もしもし……映像って見えてます……？<br>何せ古くて故障が多いので……やれやれ。 { author:Warden speed:1 waitInput:true Wait:true }
+
+# ＠備考◆配信中
+@print 私、ゴクチョーと申します。 { author:Warden speed:1 waitInput:true Wait:true }
+
+# ＠備考◆配信中
+@print 詳しい説明がしたいので、<br>ラウンジに集合してください。 { author:Warden speed:1 waitInput:true Wait:true }
+
+# ＠備考◆配信中
+@print 監房の鍵を開けますので、<br>看守の後についてきてください。 { author:Warden speed:1 waitInput:true Wait:true }
+
+# ＠備考◆配信中
+@print 抵抗とかは自由なんですが……<br>命とかなくなっちゃうので……はい……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_3
+@ResetText 
+@back SolidColor { time:0.5 }
+@Wait 1.8
+
+@sfx Sfx_4
+@printer Normal.Default
+
+@print モニターは再び真っ暗になった。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@hide MainBackground-Middle,Warden-Middle { time:0 }
+@char Hiro.Surprised1
+@char Ema.Surprised1,ArmR3
+@back Transparent { time:0.5 }
+@Wait 0.3
+
+@print "ゴクチョー……？ 看守……？" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマは理解が追いつかないのか、しばらく立ち尽くしていた。<br>ヒロも同様だ。すると、 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@sfx Sfx_5
+
+@print "<ruby=\"てつごうし\">鉄格子</ruby>の向こう、通路の方から。<br>引きずるような重々しい音が近付いてきている。" { speed:1 waitInput:true Wait:true }
+
+@print その音はどこかおぞましく、<br>不穏なものが接近していることをエマたちに感じさせた。 { speed:1 waitInput:true Wait:true }
+
+@print "エマもヒロも身を<ruby=\"こわば\">強張</ruby>らせ、<br>――その視線が、ゆるゆると、通路に向けられる。" { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back 1_1 { Scale:{g_backgroundDefaultScale * 2} time:0.6 }
+@Wait 1.2
+
+@hideChars { time:0 }
+@back 1_2 { Scale:{g_backgroundDefaultScale * 2} time:0 }
+@animate MainBackground
+@animate MainBackground-Middle
+@hide MainBackground-Middle { time:0.5 }
+@Wait 0.6
+
+# ========================================
+# [char 看守.差分なし,Center]
+# ========================================
+
+@print ひっ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "悲鳴をあげかけたエマが、両手で自身の口を<ruby=\"ふさ\">塞</ruby>いだ。" { speed:1 waitInput:true Wait:true }
+
+@print ２、３メートルはあるだろうか。<br>ぼろぼろの黒衣をまとった大きな何かが立っていた。 { speed:1 waitInput:true Wait:true }
+
+@print 仮面をつけていて顔はわからないが、<br>明らかに人間ではない、何か。 { speed:1 waitInput:true Wait:true }
+
+@print ヒ、ヒロちゃ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマは恐怖のあまり、ヒロの腕にしがみつく。<br>ヒロもさすがに、<ruby=\"ぼうぜん\">呆然</ruby>と通路の異形を見ている。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 看守 ＯＵＴ
+# ========================================
+
+@back 1_1 { Scale:{g_backgroundDefaultScale} time:0.6 }
+
+@sfx Sfx_5
+
+@StopBgm 
+@bgm Bgm_23_1
+
+# ＠沢渡ココ
+
+@print "ぎゃああぁ！ 触んな化け物ぉ！ キモいから！<br>わかった、わかりました、行くから！！" { author:Unknown speed:1 waitInput:true Wait:true }
+
+@print 他の牢屋にいた誰かが、<br>化け物に連行されている様子がエマたちの耳に届いた。 { speed:1 waitInput:true Wait:true }
+
+@print ２人はますますゾッとする。 { speed:1 waitInput:true Wait:true }
+
+@back 1_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@hide MainBackground-Middle { time:0 }
+
+@char Hiro.Head1,Pale1-Off,Sweat1-Off,Cheeks1-Normal,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open
+@char Ema.Fearful1,ArmR1
+
+@print 正しい説明がなされるのかな。<br>それなら早く向かわないと……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ヒロは言いかけてから、横にいるエマに目を向けた。 { speed:1 waitInput:true Wait:true }
+
+@print その時になってようやく、<br>エマが腕にしがみついていることに気付き。 { speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_18
+@char Hiro.Angry2
+@char Ema.Fearful1,ArmR3
+
+@print ――バッと、<br>強く、手を振り払った。 { speed:1 waitInput:true Wait:true }
+
+@print っ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 気安く触れないでほしい。<br>忘れてもらっては困る。私は君が嫌いなんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hide Hiro
+
+@print 吐き捨てるヒロの瞳は、<br>根深い嫌悪の色を宿していた。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 二階堂ヒロ ＯＵＴ
+# ========================================
+
+@char Ema.Fearful1
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter01/Act01_Chapter01_Adv03

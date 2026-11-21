@@ -1,0 +1,242 @@
+@gosubResetBook System/System_ResetWitchBook
+@Gosub Act02_Chapter06/Act02_Chapter06_TrialInit
+
+# 議論パート2章6話（最終）
+
+@badId 12
+
+# Judge11-1-0
+@char Alisa.Angry1,Option-ArmL-Off
+
+@hideStageScreen 1
+@char Yuki.6
+@gosubModifyCamera 0
+@back Transparent { time:0.9 }
+@Wait 0.6
+
+@ProcessInput true
+
+# BGM変更：吸われた祈り
+@bgm Bgm_35_1
+
+@print …………。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Hanna.Fearful1,ArmR4
+@gosubModifyCamera 0
+@print こ、これが……大魔女……ですの……？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive1,ArmL3,ArmR4,Angle01/Facial/Mouth>Mouth_Pensive_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print 普通の女の子みたいだけど……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,Angle01/Facial/Eyes>Eyes_Angry_Open03,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-
+@gosubModifyCamera 0
+@print ……つーか、おめえらの姿……<br>戻ってねぇか。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+# SE・ガーン
+@sfx Sfx_Common_6
+
+@char Leia.Fearful1,ArmL4,ArmR8,Angle01/Facial/Eyes>Eyes_Surprised_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open02
+@gosubModifyCamera 0
+@print "なにっ……！ そんな……！？<br>いつの間に……！" { author:Leia speed:1 waitInput:true Wait:true }
+
+# SE・ネガティブ音
+@sfx Sfx_Common_7
+
+@char Alisa.Default,Angle01/Arms-,ArmR1,ArmL3,Angle01/Facial/Eyes>Eyes_Disappointed_Open
+@gosubModifyCamera 0
+@print なんでがっかりしてんだよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR3,ArmL3,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Surprised_Open01
+@gosubModifyCamera 0
+@print あの子が出てきたとき、<br>みんな元に戻っちゃってたよ？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR3,ArmL1,Eyes1_Normal_Open2,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print ……【魔女因子】。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR3,ArmL1,Eyes1_Normal_Open2,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print 私たちの体にあった魔女を構成する要素が、<br>召喚の儀式によって失われたと考えれば……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print ……たしかにそれなら、<br>魔女化が解除されてもおかしくはないわね？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR8,ArmL8,
+@gosubModifyCamera 0
+@print なんかみんな元気になってますし、<br>デトックスされちゃったんでしょうか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE・ネガティブ音
+@sfx Sfx_Common_7
+
+# ＠備考◆呆れ・脱力しつつツッコミ
+@char AnAn.Default,ArmR2,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Uncomfortable_Open02,Angle01/Head/Facial/Mouth>Mouth_Uncomfortable_Open,Angle01/Option_ArmR/Option_ArmR01_02>Option_ArmR01_02_Back,Angle01/Option_ArmR/Option_ArmR01_01-,Angle01/Option_Arms-
+@gosubModifyCamera 0
+@print ……そういう話か？ { author:AnAn speed:1 waitInput:true Wait:true }
+
+# ＠備考◆おそるおそるダメ元で聞いてる
+@char Coco.Default,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Gross_Open,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print ……てか戻ったなら、<br>あてぃしもう帰っていーい……？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,Angle01/Facial/Eyes>Eyes_Disappointed_Open
+@gosubModifyCamera 0
+@print んな流れになるわけねーだろ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR7,ArmL6,Angle01/Facial/Eyes>Eyes_Comical_Closed,Angle01/Facial/Mouth>Mouth_Pensive_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print だぁってぇー……！<br>こういうシリアスは<br>あてぃし向きじゃないっていうかー！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,ArmR5,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print ……なら<color=#9c8eff><b>【黙っていろ】</b></color>。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+# 魔法が消えていない伏線
+# ＠備考◆口が開かない
+@char Coco.Surprised,ArmR9,ArmL7,Angle01/Facial/Mouth>Mouth_Neutral_Closed
+@gosubModifyCamera 0
+@print んん～ん～～！ { author:Coco speed:1 waitInput:true Wait:true }
+
+# SE・明るい音
+@sfx Sfx_Common_2
+
+@char Yuki.3
+@gosubModifyCamera 0
+@print ……にぎやかですね。<br>あなたのお友だちは。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Ema.Normal1,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open03
+@gosubModifyCamera 0
+@print ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Lifeless03,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open
+@gosubModifyCamera 0
+@print ……どうして。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Lifeless02,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Middle
+@gosubModifyCamera 0
+@print どうしてキミなんだ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Lifeless02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Open
+@gosubModifyCamera 0
+@print ……ユキちゃん！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Yuki.3
+@gosubModifyCamera 0
+@print 知りたいですか？ { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print ……聞かせてもらおうか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 私たちには、知る権利がある。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Yuki.3
+@gosubModifyCamera 0
+@print いいですよ。<br>でも……。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+# 舞台が揺れるエフェクト
+
+# SE・建物が揺れる地震の音
+@bgm Ambi_7_1
+@shakeStageCamera 0 { Force:0.2,-0.2,0 Frequency:30 damp:0.8 time:3 }
+@Wait 3.5
+
+@char Alisa.Default,ArmR2,ArmL4,Angle01/Facial/Eyes>Eyes_Angry_Open03,Angle01/Facial/Mouth>Mouth_Fearful_Closed
+@gosubModifyCamera 0
+@print なんだ……こりゃあ……！？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1,ArmR3
+@gosubModifyCamera 0
+@print わたくしじゃありませんわー！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@StopBgm Ambi_7_1
+
+# ＠備考◆口が開かない
+
+@char Coco.Surprised,ArmR9,ArmL7,Angle01/Facial/Mouth>Mouth_Neutral_Closed
+@gosubModifyCamera 0
+@print んん～～！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,ArmR5,Angle01/Head/Facial/Eyes>Eyes_Uncomfortable_Open01,Angle01/Head/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print ……<color=#9c8eff><b>【喋っていい】</b></color>。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR8,ArmL7,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Angry_Open02
+@gosubModifyCamera 0
+@print ……ぷはっ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Coco.Default,ArmR13,ArmL3,Angle01/Facial/Eyes>Eyes_Comical_Open,Angle01/Facial/Mouth>Mouth_Comical_Closed
+@gosubModifyCamera 0
+@print あとで覚えてろヒッキー！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Yuki.12
+@gosubModifyCamera 0
+@print ……魔女の島は再び飛び立ちました。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.8
+@gosubModifyCamera 0
+@print この屋敷もまた、<br>過去のあるべき姿へと戻る……。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+# エフェクト：激しい揺れ
+# SE：鐘の音が乱打・ゴーンゴーンゴーンゴーン
+@bgm Ambi_10_1
+@sfx Sfx_33
+@Wait 1
+@StopSfx 
+@sfx Sfx_33
+@Wait 1
+@StopSfx 
+@sfx Sfx_33
+@Wait 1
+@StopBgm Ambi_10_1
+# ウェイトは入れつつ
+
+# ; SE：歯車の起動音・ガタタタタ…
+# @sfx Sfx_36
+# @wait 2
+# @stopSfx
+# @sfx Sfx_36
+# @wait 2
+
+@char Yuki.14
+@gosubModifyCamera 0
+@print そして今から世界を巡るんです。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.8
+@gosubModifyCamera 0
+@print "すべての人間に死を与える、<br><ruby=\"ふくいん\">福音</ruby>を振りまく天の使いとして……。" { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Hiro.Head2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print なっ……！？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+@char Yuki.5
+@gosubModifyCamera 0
+@print お話……しましょうか。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.6
+@gosubModifyCamera 0
+@print この世界から人間がいなくなるまでの、<br>わずかな時間だけ……ですが。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# @goto .Judge11-1-1
+# ラストバトル仕様案（開発宛）
+# 11-1、11-2だけ、ユキから受けるダメージはHPの9割（2回間違いで確定敗北）受けるような形
+# その代わり、ゲームオーバー～復帰までをできるだけ短くしたい。
+# また、復帰は直前の議論開始ポイント（judge11-1-1、judge11-2-1）から。
+# 目安はセリフスキップすれば約10秒以内に議論喋り始めるぐらい（余韻も無しでOK）
+# この仕様は11-1、11-2だけ（11-3からはダメージ値通常へ＆# Scene2-ex7 BADEND分岐）
+
+
+@goto Act02_Chapter06/Act02_Chapter06_Trial01

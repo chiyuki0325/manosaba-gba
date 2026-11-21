@@ -1,0 +1,206 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-1-19
+
+# ========================================
+# ●シーン1-1‐19
+# [back 2]
+# ========================================
+
+@back 1_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@print ――早朝。<br>エマは昨晩深く眠ったためか、早くに目が覚めていた。 { speed:1 waitInput:true Wait:true }
+
+# waitを入れないと再生されない
+# ========================================
+# [sfx 4：牢の施錠音]
+# ========================================
+
+@sfx Sfx_4
+
+# ========================================
+# [sfx 119：牢の扉が開く音]
+# ========================================
+
+@Wait 0.5
+
+@sfx Sfx_119
+
+@hideChars 
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+# ========================================
+# [bgm Bgm_017_001_Loop]
+# ========================================
+
+@back 2_1 { Scale:{g_backgroundDefaultScale} }
+@back Transparent.Custom { time:0.9 }
+@Wait 0.9
+
+@bgm Bgm_17_1
+
+@print 朝の開錠時間と共に、<br>エマは伸びをしながら通路の方へと出る。 { speed:1 waitInput:true Wait:true }
+
+@print "おそらくまだ他の少女たちは眠っているのだろう。<br>地下はしんと、<ruby=\"せいじゃく\">静寂</ruby>に包まれていた。" { speed:1 waitInput:true Wait:true }
+
+@print （朝散歩でもしようかな） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print すると、通路の先から<br>歩いてきている少女の姿があった。 { speed:1 waitInput:true Wait:true }
+
+@char AnAn.Normal1,Angle01/Option_Arms-
+
+@print 忍び足でエマの方へ向かってくるのは、<br>アンアンだった。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Normal1
+
+@print "アンアンちゃん、おはよう。<br>早いね！ 具合はもういいの？" { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char AnAn.Pensive1,Angle01/Option_Arms-
+
+@print エマの姿を見て、<br>アンアンは嫌そうに眉をひそめる。 { speed:1 waitInput:true Wait:true }
+
+@print …………。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 無視を決め込んだのか、<br>エマの横を素通りして自分の房へと向かっていく。 { speed:1 waitInput:true Wait:true }
+
+@print （少しは親しくなれたと思ったんだけど……<br>　そんな簡単にはいかないか） { author:Ema speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [stopBgm]
+# ========================================
+
+@StopBgm 
+
+@print "アンアンは<ruby=\"うつむ\">俯</ruby>き加減に歩いていた。<br>自分の房の前までやってきてから、顔を上げ、そして――" { speed:1 waitInput:true Wait:true }
+
+@char AnAn.Surprised1,Angle01/Option_Arms-
+
+@print あ、あ、あ……！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Normal1
+
+@print え？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char AnAn.Fearful1,Angle01/Option_Arms-
+
+@print あああああああああぁーっ！！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"きょうがく\">驚愕</ruby>で目を見開くアンアンが、<br>初めて声を発したことに気を取られてしまい。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "エマは、少し遅れて隣の房を<ruby=\"のぞ\">覗</ruby>いた。<br>そして、それを見た。" { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@bgm Bgm_12_1_Loop
+
+@back 270_1 { time:0 }
+@animate Stills
+@back Transparent { time:1.2 }
+@Wait 2.4
+
+@animate Stills
+@back 270_1 { time:0.6 }
+@animate Stills-Middle
+@Wait 2.4
+
+@animate Stills-Middle
+@back 270_1 { time:0 }
+@blur Stills
+@animate Stills
+@blur Stills
+@hide Stills-Middle { time:0.6 }
+@Wait 3
+
+# @back 270_1 id:Stills scale:{g_backgroundDefaultScale}
+
+@print ノア、ちゃん……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print お絵描きが大好きだった少女、<br>城ケ崎ノアは、死んでいた。 { speed:1 waitInput:true Wait:true }
+
+@print "好奇心<ruby=\"おうせい\">旺盛</ruby>に世界を見る愛らしかった瞳は、<br>眠るように閉じられている。もう二度と何かを映すことがない。" { speed:1 waitInput:true Wait:true }
+
+@print 体温や血液を奪われた体は陶器めいていた。<br>それはまるで精巧に造られた人形のようにも見えた。 { speed:1 waitInput:true Wait:true }
+
+@print そして、カラースプレーによって<br>真っ白に塗りつぶされたキャンバスには、絵が描かれていた。 { speed:1 waitInput:true Wait:true }
+
+@print ノア自身から排出された、<br>大量の血によって。 { speed:1 waitInput:true Wait:true }
+
+@print ちょう……ちょ……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "たくさんの、赤い<ruby=\"ちょう\">蝶</ruby>がノアの周囲を舞っている。" { speed:1 waitInput:true Wait:true }
+
+@print 城ケ崎ノアが描いた最後の絵。<br>それはあまりに残酷で、美しく、ありえない光景。 { speed:1 waitInput:true Wait:true }
+
+@print "騒ぎに駆けつけてきた少女たちは壮絶な光景に息を<ruby=\"の\">呑</ruby>み、<br>泣き<ruby=\"わめ\">喚</ruby>き、震え、叫び、パニックに陥った。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [hideStill]
+# ========================================
+
+# ========================================
+# [back 2]
+# ========================================
+
+@hide Stills
+@back 2_1 { Scale:{g_backgroundDefaultScale} }
+
+@char Ema.Cry1,ArmR13,ArmL7
+
+@print なんで、なんでなんでなんでぇ……っ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Fearful1,ArmR1,ArmL3
+
+@print みんな落ち着くんだ！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 口にするレイアも、さすがに青ざめている。 { speed:1 waitInput:true Wait:true }
+
+@print "ノアの房の扉を開き、<br>中を<ruby=\"のぞ\">覗</ruby>いて痛ましそうに首を振る。" { speed:1 waitInput:true Wait:true }
+
+@print ダメだ……死んでる……どうして！！ { author:Leia speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [sfx 14：フクロウの通知音]
+# ========================================
+
+@sfx Sfx_14
+
+@hideChars 
+
+@print "タイミングを<ruby=\"みはか\">見計</ruby>らったように、<br>スマホの通知音が地下通路に鳴り響く。" { speed:1 waitInput:true Wait:true }
+
+@print "『はぁ……<ruby=\"しら\">報</ruby>せが入りました。<br>　痛ましい殺人事件が発生したようですね』" { speed:1 waitInput:true Wait:true }
+
+@print 『あの、皆さん、今すぐラウンジに集合してください。<br>　従わなければ看守が連行しちゃうので……』 { speed:1 waitInput:true Wait:true }
+
+@print ゴクチョーのメッセージどおり、<br>看守が通路に現れている。 { speed:1 waitInput:true Wait:true }
+
+@print "エマは思考がまとまらず、<br>胸が<ruby=\"つ\">詰</ruby>まり、息さえもうまくできないでいた。" { speed:1 waitInput:true Wait:true }
+
+@print しかし看守の出現で、<br>少女たちはのそのそと動き出した。 { speed:1 waitInput:true Wait:true }
+
+@print 誰も何も言わない。<br>誰の顔にも表情がない。 { speed:1 waitInput:true Wait:true }
+
+@print この出来事が、<br>少女たちの全てを変えてしまったようだった。 { speed:1 waitInput:true Wait:true }
+
+@toast "魔女図鑑 更新…"
+@update Noah
+
+# ========================================
+# [transition Out,Fade,1,Black]
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter01/Act01_Chapter01_Adv24

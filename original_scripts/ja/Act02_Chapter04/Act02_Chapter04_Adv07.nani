@@ -1,0 +1,137 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-4-7
+
+# ========================================
+# ●シーン2‐4‐7
+# ========================================
+
+@back 16_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# ========================================
+# ＞『花畑方面』を選択
+# ========================================
+
+@bgm Bgm_17_1
+
+@print 私とレイアは花畑に来ていた。 { speed:1 waitInput:true Wait:true }
+
+@print 見晴らしの良い花畑で、<br>ゴクチョーを探そうと思ったのだ。 { speed:1 waitInput:true Wait:true }
+
+@print 広がる丘一面に、花々が咲き乱れていた。<br>そしてその場には……エマがいた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print あ……レイアちゃん、ヒロちゃん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+@char Leia.Smile1
+
+@print どこか気もそぞろな様子のエマは、<br>花畑に座ってただ空を眺めていた。 { speed:1 waitInput:true Wait:true }
+
+@print 天気もいいし、ここは気持ちが良いね。<br>エマくんはここでお花摘みでもしているのかい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@print ううん……別に何も。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマは表情もなく首を左右に振る。<br>レイアは察するものがあったのか、<br>私の方へと顔を寄せた。 { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆コソリと
+
+@hideChars 
+@Wait 0.4
+@char Hiro
+@char Leia.Normal1
+@Wait 0.4
+@char Leia { time:0.6 }
+@Wait 0.8
+
+@print エマくんの様子、おかしくないかい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive1
+
+@print 最近ずっとこうだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 近頃のエマの様子が、思い出される。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ◎回想シーン（新規）
+# ========================================
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+# セピア色
+@back 1_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print 拘束時間には、<br>私とエマは部屋で２人きりでいなければならない。 { speed:1 waitInput:true Wait:true }
+
+@print 私はエマの存在をなるべく意識しないように<br>過ごすのを習慣づけていたが……。 { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆ぶつぶつ小声
+
+@print ……やめて、いやだよ、やめてよ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 前回の事件から、<br>エマがぼんやりとすることが多くなった。 { speed:1 waitInput:true Wait:true }
+
+@print "ぶつぶつと何かを<br>口の中で<ruby=\"つぶや\">呟</ruby>いていることも多い。" { speed:1 waitInput:true Wait:true }
+
+@print （一体何を呟いている……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ……みんな死ねばいい……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ちがう……そんなのボクの望みじゃ……<br>ちがうのに……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "耳を<ruby=\"す\">澄</ruby>ませば、<br>それはとても不穏な<ruby=\"つぶや\">呟</ruby>きだった。" { speed:1 waitInput:true Wait:true }
+
+@print （ストレスで魔女化が進み、<br>　殺意が芽生えているのか……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 回想ここまで
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@back 16_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@char Leia.Pensive1
+@char Hiro
+
+@print ……いよいよ参っているのかな。<br>何か、元気づけられるといいのだけど……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive1
+
+@print ここにゴクチョーはいないようだ。行こう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 私はあえてエマの話題に触れず、<br>その場から離れた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print …………。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print そもそも私はエマが魔女であると確信し、<br>完全に魔女になる前に殺すべきだと思っていた。 { speed:1 waitInput:true Wait:true }
+
+@print しかしそれが本当に正しいのだろうか。 { speed:1 waitInput:true Wait:true }
+
+@print "心も行動も何もかもが<ruby=\"むじゅん\">矛盾</ruby>に満ちている。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン2‐4‐3
+# 全てのイベントを消化している＞シーン2‐4‐9
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter04/Act02_Chapter04_Adv03

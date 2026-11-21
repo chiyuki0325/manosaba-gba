@@ -1,0 +1,10 @@
+{
+  "source_canvas": [2048, 1024],
+  "world_width": 28.672,
+  "crop": [448, 128, 1600, 896],
+  "output": [240, 160],
+  "bpp": 4,
+  "palette_colors": 16,
+  "transparent_index": 0,
+  "framing": "fixed window shared by scenes and poses; omit outer stage framework"
+}

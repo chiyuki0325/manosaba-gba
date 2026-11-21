@@ -1,0 +1,702 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter04/Act02_Chapter04_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# ==============================================================================
+# MARK: 9-3: 💬 犯人がレイアである理由
+# ==============================================================================
+# ＠ト書き▼議論シーン9-3 犯人がレイアである理由
+# 議論開始エフェクト
+# BGM変更：rAwTell Owk...
+@bgm Bgm_7_1
+
+# Judge9-3-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Miria.Pensive1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@printDebate 犯人が<br>レイアちゃんなら、<br>事件の説明は<br>つくと思うんだ。
+
+@char Miria.Pensive1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@printDebate たとえば、<br>エマちゃんが<br>刺されていたのは<br>レイアちゃんの<br>レイピアだよね？
+
+@char Miria.Pensive1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@printDebate "なら<br>【レイアちゃんが<br><link=\"Objection_02_04_03_01\">エマちゃんを殺した</link>】<br>と考えるのが<br>一番自然だと思うよ。"
+
+@char Alisa.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@printDebate けどよ……。<br>それには避けて通れねぇ<br>でけえ【問題】が<br>あるんじゃねーか？
+
+@char Alisa.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@printDebate 仮に、<br>蓮見のやつが<br>桜羽を殺したとする……。
+
+@char Alisa.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@printDebate "けどよ、<br>じゃあその蓮見は<br>いったい<br><link=\"Objection_02_04_03_02\">誰が殺した</link><br>ってんだよ。"
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@printDebate たしかにその点が<br>一番のネックですね！
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@printDebate やはりそうなると<br>ヒロさんが<br>殺したというのが<br>本線になるかとは<br>思いますが……。
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@printDebate ……私は殺していない。
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@printDebate ヒ、ヒロちゃんのこと……<br>信じてあげたって<br>いいんじゃないかな……！
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@printDebate みんな、<br>仲間じゃないか……！
+
+@char Hanna.Surprised1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@printDebate で、でも仮に<br>レイアさんがエマさんを<br>殺したのだとすると……。
+
+@char Hanna.Surprised1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@printDebate レイアさんとエマさんが<br>【相打ち】になったって<br>ことですの……？
+
+@char Miria.Pensive1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@printDebate "た、たしかに<br>ちょっと考えにくいとは<br>思うけど……<br>でも<link=\"Objection_02_04_03_03\">現場の状況</link><br>からいって、<br>【相打ち】になった可能性が<br>ゼロとは言えないよ！"
+
+@char Miria.Pensive1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@printDebate "エマちゃんが<br><link=\"Objection_02_04_03_04\">レイアちゃんを殺して</link>、<br>そしてレイアちゃんが<br>エマちゃんを殺し返した……。"
+
+@char Miria.Pensive1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@printDebate ２人が同時に<br>殺し合ってしまったせいで<br>起きた事件<br>だったんだよ……！
+
+@char Hanna.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Surprised_Open
+@gosubModifyCamera 0
+@printDebate ……たしかに、<br>それなら成立するのかも<br>しれませんわね……。
+
+
+# ==============================================================================
+# 9-3議論後独白
+# ==============================================================================
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@Wait 0.2
+
+@print （ミリアは犯人を見つけないつもりだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@print （仮に本当に犯人がいなかったのであれば、<br>　何も問題はない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@print （……だがもし別に犯人がいるのであれば、<br>　真犯人を見逃すということでもある） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆寂しげ
+@char Hiro.Pensive1,Arms3
+@print （私が選ぶべき、【正しい】道は……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge9-3-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_04_03_01
+
+@Skip false
+@pauseTrial true
+
+@choice エマが殺した
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge9-3-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_02_04_03_02
+
+@Skip false
+@pauseTrial true
+
+@choice レイアの自殺
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge9-3-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_02_04_03_03
+
+@Skip false
+@pauseTrial true
+
+@choice 死因が否定している
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge9-3-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論4
+# ------------------------------------------------------------------------------
+
+# Objection_02_04_03_04
+
+@Skip false
+@pauseTrial true
+
+@choice エマが人を殺せるとは思えない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge9-3-5
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 9-3: ❌ 議論ミス選択肢
+# ==============================================================================
+# MARK: 9-3-3: ❌ 反論・レイアの自殺
+
+# Judge9-3-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print 誰が殺したわけでもない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print レイアはエマを殺害後、自殺したんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01
+@gosubModifyCamera 0
+@print じ、自殺……！<br>たしかにそれもありえるね……！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print ……そうでしょうか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print レイアさんの死因って<br>【後頭部の殴打】によるものですよね？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Surprised_Open
+@gosubModifyCamera 0
+@print たしかに……<br>【自分で後頭部を殴る】なんて無理っぽいですわ。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print だったらやっぱ<br>誰かが殺したに違いねー……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print 例えば二階堂………おめえとかな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （逆に疑いが深まってしまったか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （……ミリアは【レイアが犯人】という推理で<br>　決着をつけようとしている） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （しかし事を急ぐあまり、証拠は揃っていない……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （情報を確認し、<br>　矛盾があれば指摘していこう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge9-3-1
+
+# MARK: 9-3-4: ❌ 反論・エマが殺した
+
+# Judge9-3-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print いいや、逆に【エマがレイアを殺した】可能性もある。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print エマがレイアの後頭部を殴って殺し、<br>その後レイアの剣を奪って自死したんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR10,ArmL1,Angle01/Facial/Eyes>Eyes_Surprised_Open01,Angle01/Facial/Mouth>Mouth_Confused_Open,Angle01/Facial/Sweat>Sweat02
+@gosubModifyCamera 0
+@print エマさん、随分とアグレッシブなことしましたね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL8,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print でも……エマちゃんって<br>２回刺されてたよね……？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print ……胸と腹に１か所ずつだ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print そして剣は腹に刺さったままだった。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print 最初に貫かれたのは胸だ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print 胸を刺された後に自分に突き立てるなんて、<br>難しい気がします！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print じゃ、じゃあやっぱり、<br>【レイアちゃんが犯人】……なんじゃないかな？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （【エマが犯人】……というのは、<br>　無理があるか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （……ミリアは【レイアが犯人】という推理で<br>　決着をつけようとしている） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （しかし事を急ぐあまり、証拠は揃っていない……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （情報を確認し、<br>　矛盾があれば指摘していこう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge9-3-1
+
+# MARK: 9-3-5: ❌ 反論・エマが人を殺せるとは思えない
+
+# Judge9-3-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print ……それはありえないよ。<br>エマが人を殺せるとは思えない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print でも誰であっても、<br>自分が殺されそうになれば<br>必死になって抵抗ぐらいはするんじゃないでしょうか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Serious_Open
+@gosubModifyCamera 0
+@print ……そうだな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print それに二階堂は今までの裁判で、<br>散々桜羽を疑ってきたじゃねーか……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR4,ArmL6,Angle01/Facial/Eyes>Eyes_Angry_Open03
+@gosubModifyCamera 0
+@print おめえがそんなこと言っても、説得力がねーな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （……言い返すこともできない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （だが……それでもエマが殺したとは思えない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （……ミリアは【レイアが犯人】という推理で<br>　決着をつけようとしている） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （しかし事を急ぐあまり、証拠は揃っていない……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （情報を確認し、<br>　矛盾があれば指摘していこう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge9-3-1
+
+# ==============================================================================
+# MARK: 9-3-2: ⭕ 反論・死因が否定している
+# ==============================================================================
+
+# Judge9-3-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+# カットイン
+@StopBgm 
+@gosubCutIn Hiro
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print ……いいや。<br>現場の状況は、むしろ２人が相打ちであることを否定しているよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01
+@gosubModifyCamera 0
+@print えっ……！？<br>ど、どういうこと……？ { author:Miria speed:1 waitInput:true Wait:true }
+
+# 気任せの蝶［チェロ有り］
+@bgm Bgm_45_2
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print ２人の死因を見比べればわかる。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print エマの死因はレイアのレイピアによるもの……<br>しかも２回刺されていた。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print そしてレイアの死因は後頭部からの一撃だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print 仮に２人が戦って相打ちとなっていた場合、<br>エマは正面から刺してきた相手の後頭部を殴った事になる。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Sherry.Default,ArmR4,ArmL5,Angle01/Facial/Eyes>Eyes_Surprised_Open01,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print ……あっ！<br>たしかに不自然ですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print ……でもよ、桜羽が根性見せた可能性だって<br>あるんじゃねーか？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02
+@gosubModifyCamera 0
+@print 桜羽が刺されたあと、<br>蓮見が後ろ向いて油断したところを殴りかかった……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02
+@gosubModifyCamera 0
+@print 【桜羽が命懸けで相打ちに持ち込んだ】……<br>これならどうだ？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print いいや、それも通らないよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print それはエマの死体の状況を見れば明らかだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print 死体……？<br>２つ傷があることですか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print そうだね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+# Judge9-3-6
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@print この２つの傷は、あることを示している。<br>それは――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@choice 殺意
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge9-3-8
+
+@choice 殺された場所
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge9-3-9
+
+@choice 着替えたタイミング
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge9-3-7
+
+@StopForChoice 
+
+# MARK: 9-3-8: ❌ 反論・死んだタイミング
+
+# Judge9-3-8
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 死んだタイミングだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print エマが２度も刺されているのは事実……<br>つまり犯人は明確な殺意を持ってエマを刺したんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print エマは犯人によって完全に絶命させられた……<br>その後で反撃することなんて不可能だよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open01
+@gosubModifyCamera 0
+@print ……けどよ、こうも考えられんじゃねーか？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open01
+@gosubModifyCamera 0
+@print 桜羽は１度目に刺されたタイミングで<br>蓮見を殴った……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open01
+@gosubModifyCamera 0
+@print けど蓮見は死ぬ直前に根性見せて<br>桜羽に２度目を刺した……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR4,ArmL5,Angle01/Facial/Eyes>Eyes_Surprised_Open01,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print なるほどー！<br>たしかにそう考えれば相打ちは成立しますね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open01
+@gosubModifyCamera 0
+@print 【２人は相打ち】……<br>それの何が不満なんだよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print おめえ、何か裏があるんじゃねーだろうな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （……死んだタイミングは確定しないか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （エマの死体の状況を思い出して<br>　もう一度考えてみよう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （２つの傷がついた時の状況……<br>　それを考えるんだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge9-3-6
+
+# MARK: 9-3-9: ❌ 反論・殺された場所
+
+# Judge9-3-9
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print 殺された場所だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print エマの服装を思い出してみて欲しい。<br>あの舞台衣装はアトリエにあった……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print つまり死体はアトリエで殺されていたんだ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Surprised_Open
+@gosubModifyCamera 0
+@print でも血痕も見つかってますし、<br>エレベーター付近で何かあったのは確実ですわ……？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print 殺して運んで着替えさせて移動させて……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 逆に犯人の考えが何もわからなくなってきましたね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （……推理を混乱させてしまったか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （エマの死体の状況を思い出して<br>　もう一度考えてみよう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （２つの傷がついた時の状況……<br>　それを考えるんだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge9-3-6
+
+# ==============================================================================
+# MARK: 9-3-7: ⭕ 反論・着替えたタイミング
+# ==============================================================================
+
+# Judge9-3-7
+
+# カットイン
+@gosubCutIn Hiro
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 当然、着替えたタイミングだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print ……いや、死体の状況からすると<br>正確には【着替えさせられた】、かな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01
+@gosubModifyCamera 0
+@print 着替えさせ……られた……？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print そうだ。<br>エマは服を着替えているが……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 元の服と劇の衣装には、<br>刺されたときにできた穴が１つずつ空いている。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print つまり、胸の傷と腹の傷は別々のタイミングで……<br>着替える前後で２回発生しているんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print えーっと……それじゃあ……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print 犯人は、普段着のエマさんを１回刺したあと、<br>そのあとわざわざ衣装に着替えさせて、<br>もう１度刺した……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print そういうことですよね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print そうなるな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print つまりその間、<br>エマの服を着替えさせた犯人は<br>元気に生きていたことになる……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print 仮にレイアが相打ちだった場合、<br>後頭部を殴られ死にかけている状況で<br>エマの服を着替えさせている暇なんてあるかな？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print なるほどたしかに<br>ちょっと考えにくいですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print 犯人はエマさんの死後、<br>少なくともしばらくはピンピンしてないとおかしいです！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print で、でも……！<br>エマちゃんが殺してなかったら……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Miria.Pensive1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print レイアちゃんが【一人で死んだ】なら、<br>成立するんじゃないかな……！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print ほほう、興味深い説ですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR15,ArmL4,Angle01/Facial/Eyes>Eyes_Wink_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print ではミリアさんの推理……<br>教えてください！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char Miria.Angry1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print ……任せて。<br>みんなが納得する推理……見せてあげるよ！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@goto Act02_Chapter04/Act02_Chapter04_Trial04

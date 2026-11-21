@@ -1,0 +1,59 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+@back Transparent { time:1.2 }
+
+# Scene2-4-3
+
+# ========================================
+# ●シーン2‐4‐3
+# ========================================
+
+# ========================================
+# 用分岐
+# ========================================
+
+# ========================================
+# 【ＭＡＰイベント】牢屋敷マップ
+# ノアのアトリエ＞シーン2‐4‐4
+# 湖方面＞シーン2‐4‐5
+# 塀の前＞シーン2‐4‐6
+# 花畑方面＞シーン2-4-7
+# 水精の間＞シーン2‐4‐8
+# ※全てのＭＡＰイベントを選択したら終了。
+# 選択済みの場所は消していってください。
+# ========================================
+
+@if "chosenAreaFlag == 31"
+	@set "chosenAreaFlag = 0"
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act02_Chapter04/Act02_Chapter04_Adv09
+
+@map NoahStudio,Lake,Wall,FlowerFields,ChamberUndine NoahStudio,Lake,Wall,FlowerFields,ChamberUndine
+
+@if "chosenAreaId==\"NoahStudio\""
+	@setFlag 0
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act02_Chapter04/Act02_Chapter04_Adv04
+
+@if "chosenAreaId==\"Lake\""
+	@setFlag 1
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act02_Chapter04/Act02_Chapter04_Adv05
+
+@if "chosenAreaId==\"Wall\""
+	@setFlag 2
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act02_Chapter04/Act02_Chapter04_Adv06
+
+@if "chosenAreaId==\"FlowerFields\""
+	@setFlag 3
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act02_Chapter04/Act02_Chapter04_Adv07
+
+@if "chosenAreaId==\"ChamberUndine\""
+	@setFlag 4
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act02_Chapter04/Act02_Chapter04_Adv08
+
+@Stop

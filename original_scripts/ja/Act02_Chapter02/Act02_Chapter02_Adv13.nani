@@ -1,0 +1,135 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-2-13
+
+# ========================================
+# ●シーン2‐2‐13
+# ========================================
+
+@print 昼食後の自由時間。<br>約束の１４時少し前。 { speed:1 waitInput:true Wait:true }
+
+@print （いよいよだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私は足早にシャワールームへと向かう。 { speed:1 waitInput:true Wait:true }
+
+@back 9_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@Wait 0.1
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# ＠備考◆ハッと息を呑む
+
+@print ……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print シャワールームの前に先客がいて、<br>私はぎくりと体を強張らせた。 { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_21_1
+
+@char Noah.Smile1
+
+@print あ、ヒロちゃんだぁ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Noah
+@char Hiro.Surprised1
+
+@print ノア、ここで何を……いや。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print 言いかけてすぐ気付く。 { speed:1 waitInput:true Wait:true }
+
+@print 中に描いた絵か。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Surprised1
+
+@print な、なな、なんのことかな？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Normal1
+
+@print ひゅ、ひゅ～……！ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah
+@Wait 0.5
+@char Hiro
+@Wait 0.5
+
+@print "シャワールームに入ろうとするノアの腕を、<br><ruby=\"とっさ\">咄嗟</ruby>に<ruby=\"つか\">掴</ruby>んでいた。" { speed:1 waitInput:true Wait:true }
+
+@char Noah.Pensive1
+
+@print "ん？ どうしたのかな？" { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1
+
+@ResetText 
+@QuickSave 19
+
+@print "（どうする？ ノアがここにいては、<br>　計画を実行するのは無理だ）" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@StopBgm { fade:1 }
+
+@print 不思議そうに見上げてくるノアを私は…… { speed:1 waitInput:true Wait:true }
+
+@choice アトリエに連れていくことにした
+	@goto .Choice2-2-2
+
+@choice なんとか追い払うことにした
+	@goto Act02_Chapter02/Act02_Chapter02_Bad02
+
+@StopForChoice 
+
+# Choice2-2-2
+
+@correctChoice 19
+
+@print アトリエに連れていくことにした。 { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_11_1
+
+@char Noah.Normal1
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print どうしたのかじゃない。<br>ここで絵を描くのはダメだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Angry1
+
+@print ここもお絵描き禁止なの？<br>けちだなぁ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print "つまらなさそうに、ノアは<ruby=\"ほお\">頬</ruby>をふくらませる。" { speed:1 waitInput:true Wait:true }
+
+@print けちじゃない。<br>お絵描きする場所なら、一緒に見つけただろう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print むー、そうだけどー……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Pensive1
+
+@print あのさ、ヒロちゃん、のあね……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print ノアは何かを言いかけて、途中で言葉を飲み込んだ。<br>やはり私に対して思うところがあるのだろう。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive1
+
+@print （本気でないとはいえ、殴ってしまったからな。<br>　きっと怯えさせている面がある） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （自由にやらせてやりたくはあるが、<br>　今はそうも言ってられない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print とにかく、お絵描きをするなら<br>アトリエを使うように。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Angry1
+
+@print ……はーい。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print （多少、無理にでも連れていくしかないか。<br>　時間のロスは気がかりだが、<br>　すぐに戻れば問題ないだろう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ふくれっ面になったノアの手を引いて、<br>私はアトリエに向かった。 { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter02/Act02_Chapter02_Adv14

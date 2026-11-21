@@ -1,0 +1,384 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-2-4
+
+# ========================================
+# ●シーン1‐2-4
+# ========================================
+
+@back 12_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_28_1
+
+@print 翌日、午後の自由時間。<br>エマたちは再びマーゴに呼ばれ、図書室を訪れた。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 12_1
+@char Coco.Pensive1
+@mask MainBackground-Front,Coco-Front
+@animate MainBackground-Front
+@animate Coco-Front
+@Wait 0.4
+
+@print ミリアとアンアン、メルルは来ていない。<br>しかし昨日のメンバーに加えて、ココが来ていた。 { speed:1 waitInput:true Wait:true }
+
+@print ココは少し離れた場所で椅子に腰掛け、<br>だるそうにスマホをいじっている。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@animate MainBackground-Front,Coco-Front
+@animate MainBackground-Front
+@animate Coco-Front
+@hide MainBackground-Front,Coco-Front
+@despawn MaskingRectangle
+@Wait 0.4
+
+@char Ema.Normal1,ArmR3
+
+@print マーゴちゃん、今日はなんで図書室に……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Margo.Smile1,ArmR1,ArmL4
+
+@print ウフフ、そんなに警戒しないで。<br>今日は営業じゃないわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1,ArmR1,ArmL1
+
+@print 図書室の本を調べてまわったのだけど、<br>興味深いものを見つけたの。<br>みんなにも見てもらおうと思って。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print （マーゴちゃんって悠然としてるように見えるけど……<br>　実はすごく行動力があるのかも……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print この監獄に捕まってから、<br>マーゴが一番精力的かつ<br>有意義な行動をしているように見える。 { speed:1 waitInput:true Wait:true }
+
+@print （ボクよりマーゴちゃんの方がしっかりしてて<br>　リーダー向きなんじゃ………） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマはその考えを追い払うように、<br>頭を振った。 { speed:1 waitInput:true Wait:true }
+
+@print （今はそんなこと気にしててもしょうがない……！<br>　せっかくマーゴちゃんが協力的になってくれたんだ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3
+
+@print 興味深いものってなんだろう？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Margo.Normal1
+
+@print この本よ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# 机に本を置く音
+@sfx Sfx_42
+
+# ========================================
+# アイテムスチル：『魔女の本』表示
+# ========================================
+
+@print マーゴが机の上に置いたのは、<br>豪華な装丁の、とても分厚い本だった。 { speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1
+
+@print 魔女のことが記された本なの。今のところ、<br>この本以外で魔女のことを記したものは見つけられていない。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Normal1
+
+@print ほうほう、どれどれ。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# 本のページをぱらぱらめくる音
+@sfx Sfx_43
+
+@print シェリーが本を開きページをぺらぺらめくると、<br>ハンナは慌てた。 { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1
+
+@print あっ、あなた乱暴に扱わないでくださいまし！？<br>本が破壊されてしまいますわ！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Angry1,ArmR3
+
+@print ……私のことなんだと思ってるんです？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR1
+
+@print それにしてもこの本私には読めないみたいです。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+@hideChars 
+
+@print "エマも興味津々に、本を<ruby=\"のぞ\">覗</ruby>き込んだ。" { speed:1 waitInput:true Wait:true }
+
+@back 510_1 { Scale:{g_backgroundDefaultScale} }
+
+@bgm Bgm_36_1
+
+@print "ふふ。 どう？ 不思議な文字でしょう？" { author:Margo speed:1 waitInput:true Wait:true }
+
+@print マーゴちゃん、まさか解読できるの！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print いいえ、できないわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print マーゴは愉快そうにくすくすと笑う。 { speed:1 waitInput:true Wait:true }
+
+@print ただこの本、図解が多いの。<br>だから魔女について書かれているってわかったのよ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print ほら、これなんかは私たちの魔法について<br>描かれてるんじゃないかしら。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@camera { time:0.9 }
+@Wait 0.9
+
+@print "あ！ 本当です！<br>この絵の女の子、ちょっと浮いてる！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 古びたイラストで図解されている少女が、<br>宙に浮いていた。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@camera { time:0.9 }
+@Wait 0.9
+
+@print そしてその隣の絵では、<br>大空を滑空しているように見える。 { speed:1 waitInput:true Wait:true }
+
+@print "ね？ 興味深いでしょう？<br>私たちの魔法がどう進化するか読み解ける。" { author:Margo speed:1 waitInput:true Wait:true }
+
+@print この本の情報が正しければ……<br>わたくしの魔法は強くなったら<br>もっと上空を飛べますわ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print ハンナちゃんの魔法が強くなったら<br>塀を越えられるかもしれない……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ハンナとエマは希望を見出したのか、<br>合わせた目を輝かせた。 { speed:1 waitInput:true Wait:true }
+
+@print "ん……？ でも、魔法が強くなったら、<br>魔女化が進むってことですよね……？" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ぐ、そ、そうでしたわ……。<br>【なれはて】にはなりたくありませんわ……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 殺人衝動も高まって、私たちに危険が及ぶ。<br>おススメはしないわね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@camera { time:0.9 }
+@Wait 0.9
+
+@print ダメかあ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマはがっくりと肩を落とし、<br>何かヒントが見つけられないかと<br>再度本に目を落とした。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@camera { time:0.9 }
+@Wait 0.9
+
+@print "すると、たくさんの魔女が手を<ruby=\"つな\">繋</ruby>いで囲み、<br>いかにも偉そうな魔女が降臨している風の図解があった。" { speed:1 waitInput:true Wait:true }
+
+@print この人は、魔女のリーダーみたいな存在なのかな……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print おそらくそうでしょうね。<br>一般的な伝承でも、魔女にはリーダーがいる。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 全ての魔女を統治する――【大魔女】。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print この図解は【サバト】かしら？<br>魔女たちが大魔女を呼んでいるように見えるわね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 文字さえ解読できたら、<br>もっと詳細に内容がわかりそうなのだけど。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print （大魔女か……もしかして、黒幕がそれなのかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@camera { time:0.9 }
+@Wait 0.9
+
+@print エマの頭の中に思い浮かんだのは、<br>ミリアの姿だった。<br>それを慌てた様子で振り払う。 { speed:1 waitInput:true Wait:true }
+
+@print （ナノカちゃんが疑ってるだけだし、<br>　ミリアちゃんが黒幕って決まったわけじゃない） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hide Stills
+
+@StopBgm 
+
+@print マーゴは息をついて一度本を閉じ、<br>エマたちの方へ目を向けた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR1
+@char Margo.Normal1
+
+@print ハンナちゃんの魔法は難しいけれど、<br>魔法を使えば脱獄は可能かもしれない。<br>その話し合いがしたかったの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_19_1
+
+@print そうだね……！<br>改めてみんなの魔法を確認してみよう。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print って、ごめん……ボクは、<br>ボク自身の魔法がなんなのかわかってないや……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print はいはーいと元気よく、シェリーが手を挙げた。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR16
+
+@print 私は力が強いです！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR10
+
+@print ただ、誰かの魔法でもかかっているのか<br>あの塀は私の力をもっても壊せません。<br>のぼるのも不可能でした。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print マーゴさんの魔法はなんなんでしょう！？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print マーゴは軽く息を吐き、肩をすくめた。 { speed:1 waitInput:true Wait:true }
+
+@char Margo.Pensive1
+
+@print 私は自分の声を自在に変えられるの。<br>たとえば――。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Pensive1,ArmR6
+# 桜羽エマのボイス
+# ＠桜羽エマ
+
+@print ボクは桜羽エマだよ！ { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print マーゴから発せられた声は、<br>完全にエマの声だった。 { speed:1 waitInput:true Wait:true }
+
+@print その場にいる全員がぎょっとする。<br>ただ、マーゴは憂いげな表情だ。 { speed:1 waitInput:true Wait:true }
+
+@char Margo.Pensive1,ArmR1
+
+@print こんなモノマネみたいな能力でごめんなさい。<br>脱獄にはまったく使えないでしょう？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@update Margo
+@hideChars 
+
+@print マーゴは自分の能力を気に入っていないらしい。<br>エマたちもコメントに困った顔だ。 { speed:1 waitInput:true Wait:true }
+
+@print すると、遠くからけらけらと<br>嘲笑してきたのはココだった。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 12_1
+@char Coco.Smile1,ArmL4
+@mask MainBackground-Front,Coco-Front
+@animate MainBackground-Front
+@animate Coco-Front
+@Wait 0.4
+
+@print "まじー？ 配信ウケしそーじゃん！<br>モノマネ芸人になればあ？" { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Hanna.Normal1
+
+@print ふんっ、人の能力を嘲笑うなんて<br>あなたは相当すごい魔法の持ち主なのかしら？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1,ArmL11
+
+@print "あてぃし？ あてぃしの魔法は――【千里眼】。" { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1,ArmR10,ArmL5
+
+@print ココはいつもと違い、<br>どこか思い詰めた様子で立ち上がる。 { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1
+
+@print せ、千里眼ですって……？<br>わたくしたちのこと常に監視を……？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print ただし、あてぃしが見えるのは、<br>あてぃしのことを見てるヤツに限る。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 配信でも写真でも、とにかく沢渡ココを認知してたら<br>あてぃしも見てるヤツのことを俯瞰できるってワケ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Hanna.Normal1
+
+@print なんだ……良かった～。<br>おっ、驚かさないでくれるかしら。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print （……だからココちゃんは、<br>　よく配信をしているのか……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@update Coco
+@char Coco.Pensive1,ArmL1
+
+@print 配信さえ見てもらえたら、どこの情報だって<br>見放題なんだけどねー……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Angry1
+
+@print "使えねえんだよ！！ このクソ魔法！！<br>配信したって誰も見ないんじゃさあ！！" { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 唐突に激高したココに、<br>エマたちはびくりと肩を揺らした。 { speed:1 waitInput:true Wait:true }
+
+@print 良い方法でも見つかったのかと思って来てみたら、<br>くっだんない話し合いばっか！！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print あてぃしの魔法も、あんたらの魔法も役立たず！！<br>それでどうやって外に出るんだよ！！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 早く方法見つけろよ！！<br>あてぃしはこんなとこから早く出たいんだよ！！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Hanna.Normal1
+
+@print それは、みんな同じ気持ちですわよ……！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print うっせえわ！！<br>あてぃしは本気で出たいんだっつの！！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"かんしゃく\">癇癪</ruby>を起こしているココは地団太を踏み、<br>くしゃりと顔を<ruby=\"ゆが\">歪</ruby>ませる。" { speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1
+
+@print あてぃしは……あてぃしは……<br>早くここを出たい……！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 早く出なきゃ……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@animate MainBackground-Front,Coco-Front
+@animate MainBackground-Front
+@animate Coco-Front
+@hide MainBackground-Front,Coco-Front,Hanna
+@despawn MaskingRectangle
+@Wait 0.4
+
+@print "悲痛な<ruby=\"つぶや\">呟</ruby>きを漏らし、<br>ココは<ruby=\"きびす\">踵</ruby>を返して出ていった。" { speed:1 waitInput:true Wait:true }
+
+@char Margo.Pensive1
+
+@print ココちゃん、心配ね……。<br>ずいぶんストレスが溜まっているみたい。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （みんな、限界なんだ…。<br>　いつ誰が魔女になってもおかしくない） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （でも、マーゴちゃんの【モノマネ】も、<br>　ココちゃんの【千里眼】も脱獄には向いてない） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマはもう一度頭の中で少女たちの魔法を<br>おさらいしていく。 { speed:1 waitInput:true Wait:true }
+
+@print ――マーゴの【モノマネ】、<br>――ココの【千里眼】、<br>――ナノカの【幻視】。 { speed:1 waitInput:true Wait:true }
+
+@print ――シェリーの【怪力】、<br>――ハンナの【浮遊】、<br>――メルルの【治癒】。 { speed:1 waitInput:true Wait:true }
+
+@print ――ミリアの【入れ替わり】、<br>――アンアンの【洗脳】、<br>――アリサの【発火】。 { speed:1 waitInput:true Wait:true }
+
+@print （みんなの魔法は大体把握できたけれど……<br>　脱獄できそうな魔法なんて、<br>　やっぱりハンナちゃんの【浮遊】以外には……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 開かれたままの本のページが、エマの目に飛び込む。<br>そこには大空を自由に飛ぶ魔女の姿が描かれていた。 { speed:1 waitInput:true Wait:true }
+
+@print （……ボクらもこんな風に自由に空を飛べたら、<br>　楽しいんだろうな） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （でも、ボクらはその分科学を発展させて、<br>　空を自由に移動できる……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+
+@print あ！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Normal1
+
+@print どうしました、エマさん？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Normal1
+
+@print 脱獄方法、見つけたかも……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "<ruby=\"ひらめ\">閃</ruby>きを得たエマは、前のめりになって<br>少女たちに向けて、語りだした。" { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter02/Act01_Chapter02_Adv05

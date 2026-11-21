@@ -1,0 +1,655 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-5-7
+
+# ========================================
+# ●シーン1‐5-7
+# ========================================
+
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+@back 9_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent.Custom { time:0.99 }
+@Wait 0.9
+
+# 通路を走る音・複数
+@sfx Sfx_58
+
+@bgm Bgm_4_1
+
+@print 通路に出てからも、全速力だった。<br>駆ける足音が響き、景色は一瞬のうちに流れていく。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+@back 4_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent.Custom { time:0.99 }
+@Wait 0.9
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+@back 19_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent.Custom { time:0.99 }
+@Wait 0.9
+
+@print なんとか牢屋敷から外に出ることができた。<br>空はもうすっかり暗くなっている。 { speed:1 waitInput:true Wait:true }
+
+# 野外を走る音・複数
+@sfx Sfx_71
+
+# ＠備考◆走りながら
+
+@print 立ち止まらないで、急いで！！ { author:Margo speed:1 waitInput:true Wait:true }
+
+# ＠備考◆走りながら
+
+@print ひぃぃぃっ……殺される殺される殺される！！！！<br>あてぃしまだ推しに貢ぎたいのにぃ！！ { author:Coco speed:1 waitInput:true Wait:true }
+
+# ＠備考◆走りながら
+
+@print はぁっ、はぁっ、はぁっ、はぁっ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマたちは、看守の恐ろしさを知っている。<br>一度捕まってしまったら、力では敵わない。 { speed:1 waitInput:true Wait:true }
+
+@print 射程距離で鎌を振られたら、<br>首でも胴でも簡単に切り離される。 { speed:1 waitInput:true Wait:true }
+
+@print 背後から迫る脅威が足取りを急かし、<br>心臓が必死な鼓動を打つ。 { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆走りながら
+
+@print つ、つーか、逃げるって……っ<br>どこに逃げればいいワケ！？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 息も切れ切れに、ココが叫んだ。 { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆走りながら
+
+@print この島は全部あいつらの管轄っしょ！？<br>どこに逃げたってめっちゃフクロウ飛んでるし、<br>いつかは見つかるに決まってんじゃん！ { author:Coco speed:1 waitInput:true Wait:true }
+
+# ＠備考◆走りながら
+
+@print それでも逃げなくちゃ殺されるのよ！<br>方法が、どこかにあるかもしれないわ……！ { author:Margo speed:1 waitInput:true Wait:true }
+
+# ＠備考◆走りながら泣きべそ
+
+@print "死にたくない！ 帰りたい、帰りたいよぉ……っ<br>会いたいよぉぉ……っ" { author:Coco speed:1 waitInput:true Wait:true }
+
+# ＠備考◆走りながら
+
+@print メソメソするのは後にして！<br>とにかくどこか、隠れる場所を見つけるのよ！ { author:Margo speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 時間経過
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@back 17_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent.Custom { time:0.99 }
+@Wait 0.9
+
+@print エマたちが必死に駆けずりまわってやってきたのは、<br>森の中にある、湖の畔だった。 { speed:1 waitInput:true Wait:true }
+
+@print 昨晩のまま湖面は凍りつき、<br>この付近だけ雪が降り積もっている。 { speed:1 waitInput:true Wait:true }
+
+@print （……まだ昨晩のことだったんだ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （アリサちゃんは生きてて、苦しんでた） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （もっと早く真実にたどりつけていたら、<br>　その死を止められたのかもしれないのに……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Angry1
+
+@print "なんっで、雪が降ってんだよ！！ 死ね！<br>いい加減にしろよ！！ 雪！ 寒いだろうが！！" { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Margo.Pensive1
+
+@print ココちゃん、大きな声を出さないで。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 今は近くに追手がいないようだし、<br>このあたりで隠れる場所を探しましょう。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Pensive1,ArmR13,ArmL10
+
+@print ひぅっ……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 隠れるという言葉が発された瞬間、<br>ココが弓にはじかれたように背筋をのばした。 { speed:1 waitInput:true Wait:true }
+
+@char Margo.Pensive1
+
+@print ……怖がらせてごめんなさい。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 今、牢屋敷の管理者たちは私たちを探している。<br>さっきもフクロウを見たわ……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 少女たちは声を押し殺して、<br>隠れられそうな場所がないか探し回った。 { speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1
+
+@print ――エマちゃん、ココちゃん、<br>ここに隠れましょう。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 少しの間探し回って、<br>マーゴが指し示したのは、大木のうろだった。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Pensive1,ArmR10,ArmL8
+
+@print えっ、こ、こんなとこに入んの……？<br>狭そうだし痛そうだし……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Margo.Pensive1
+
+@print 言ってる場合だと思う？<br>見つかる危険性は少しでも潰しておかなきゃ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Pensive1,ArmR10,ArmL8
+
+@print ……でも、その……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+
+@print ココちゃん……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "ココが普段の様子から考えられないほど<br><ruby=\"おび\">怯</ruby>えていることを、エマは視界の端でとらえた。" { speed:1 waitInput:true Wait:true }
+
+@print マーゴは周辺に視線を巡らせ、<br>近くにあった木の板を拾い上げた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+@char Margo.Normal1
+
+@print 中に入ってから入口にこれを立てかけましょう。<br>さぁ、エマちゃん、ココちゃん、隠れて。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print え、マーゴちゃんは……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Pensive1
+
+@print この穴に３人で入るのは無理よ。<br>私は違う隠れ場所を探してみるわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print で、でも……っ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 話し合っている時間はないのよ。<br>見つかったらおしまいなの。<br>さっさと隠れてちょうだい。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print マーゴちゃん……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1
+
+@print ほら早く。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "急かされて、エマは仕方なく穴の中に入る。<br>ココは――<ruby=\"しゅんじゅん\">逡巡</ruby>していた。" { speed:1 waitInput:true Wait:true }
+
+@char Margo.Pensive1
+@char Coco.Fearful1,ArmR10,ArmL8
+
+@print ココちゃん、ぼんやりしてないで入って。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print う……あてぃし……うぅ……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1
+
+@print それとも、あなたが違う隠れ場所を探す？<br>私はその方が助かるけれど。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print あ、あてぃしが入る！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ココは青ざめながらも、命をはかりにかけて<br>少しでも自分が助かる方を優先したらしい。 { speed:1 waitInput:true Wait:true }
+
+@print 急いでエマの隣に並んで座った。 { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+# 野外で立ち去る足音・1人
+@sfx Sfx_72
+
+# ========================================
+# 穴の中に隠れている為、真っ暗な状態
+# ========================================
+
+@print 木の板が立てかけられ、中は真っ暗になった。<br>そしてすぐにマーゴの足音が遠ざかっていった。 { speed:1 waitInput:true Wait:true }
+
+@print （マーゴちゃん……ありがとう……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 何度も何度もたくさんの少女たちに裏切られて、<br>エマの心はもうボロボロだった。 { speed:1 waitInput:true Wait:true }
+
+@print けれど、それでもエマはマーゴの優しさに触れて、<br>感謝せずにはいられなかった。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 時間経過
+# ========================================
+
+@print 穴に隠れて少し経ったところで、<br>聞き覚えのある羽音が聞こえた。 { speed:1 waitInput:true Wait:true }
+
+# フクロウの羽音
+@sfx Sfx_8
+
+@print ひっ……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_23_1
+
+@print （ゴクチョーだ……！<br>　近くに来てる！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# ずるずる引きずる音
+@sfx Sfx_5
+
+@print 続いて、おぞましい何かが近付いてくる音。<br>看守もいる。 { speed:1 waitInput:true Wait:true }
+
+@print 少しでも何か物音を立ててしまったらおしまいだ。<br>エマは一層身を縮め、息を殺した。 { speed:1 waitInput:true Wait:true }
+
+@print ひっ、ひっ……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print あまりの恐怖に耐えきれなくなったのか、<br>ココの喉から今にも悲鳴が飛び出しそうになっている。 { speed:1 waitInput:true Wait:true }
+
+@print "エマは<ruby=\"とっさ\">咄嗟</ruby>に自分の手でココの口を覆った。" { speed:1 waitInput:true Wait:true }
+
+@print ひっ、ひっ、ひっ、ひっ<br>ひっ、ひっ、ひっ、ひっ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print （ココちゃん、どうしちゃったの……？<br>　普通じゃない……） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 野外で近づいてくる足音・1人
+@sfx Sfx_73
+
+@print エマさーん、ココさーん、マーゴさーん……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"おび\">怯</ruby>えきって震えているメルルの声が、<br>エマの耳に届いた。" { speed:1 waitInput:true Wait:true }
+
+@print ど、どこに行っちゃったんですか……<br>心配しています、出てきてくださーい……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print "何事もなかったかのようなその声は<br>恐怖心を<ruby=\"あお\">煽</ruby>ると同時に、エマの胸を辛く締めつけた。" { speed:1 waitInput:true Wait:true }
+
+@print （メルルちゃんが、<br>　この牢屋敷を管理している黒幕だった……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （たくさんの子が殺された。<br>　魔女だと断罪されて【なれはて】にされた） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （誰も悪くなんかなかったのに……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （大魔女って何？<br>　どうしてそんなののためにボクらは犠牲にならなきゃ<br>　いけなかったの……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ……ふぅ……ここにもいませんね……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print "今日はもう諦めませんか？ 私ちょっと<br>疲れてきちゃって……。" { author:Warden speed:1 waitInput:true Wait:true }
+
+@print だ、だめです。絶対に諦めません……<br>みなさんを見つけなくっちゃ。<br>徹底的に隅から隅まで探してください……っ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print やれやれ……これってサービス残業的なやつじゃありません……？<br>まあ、承知しました……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 話す声が遠ざかっていく。<br>エマとココは見つけられず、当面の危機は脱したようだ。 { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# ========================================
+# 時間経過
+# ========================================
+
+@bgm Bgm_24_1
+
+@print ト、ト、トラウマってさ、みんなあんじゃん？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print "膝に顔を埋めていたココが、<br>不意にぽつりと<ruby=\"つぶや\">呟</ruby>いた。" { speed:1 waitInput:true Wait:true }
+
+@print 言葉はたどたどしく、呼吸がところどころひきつっている。 { speed:1 waitInput:true Wait:true }
+
+@print ココちゃん……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print レ、レ、レイアっちも、そうだった。<br>あいつの目立つことへのこだわりって、異常だった<br>き、きっと昔なんかトラウマがあったんだとおもう。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print アイツは魔女を作るためにストレスがいるって言ってた。<br>み、み、みんな、トラウマえぐられると魔女になんだよ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 言われてみると、<br>エマもたしかに思い当たるところもあった。 { speed:1 waitInput:true Wait:true }
+
+@print あてぃし、あてぃしあてぃしもさ……<br>どうしても苦手なことがあって……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print こんな風に【かくれんぼ】してると、<br>胸が爆発しそうになる……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print そ、それって。<br>もしかして、ココちゃんのトラウマってこと……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマが食いつくように尋ねたが<br>ココは浅い呼吸を繰り返すばかりで、<br>まともに返事をする余裕はないようだった。 { speed:1 waitInput:true Wait:true }
+
+@print あ、あてぃし、安心したいんだよ。<br>みんなを監視する側でいたいし、見守られたい。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print ダ、ダメだわ。ずっと隠れてらんない……<br>マジ無理、泣きそう……たぶんあてぃし、死ぬ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print エマには返す言葉もなかった。 { speed:1 waitInput:true Wait:true }
+
+@print やがてココは、潤んだ瞳でエマを見る。<br>息も絶え絶えといった様子で、少しずつ言葉を紡いだ。 { speed:1 waitInput:true Wait:true }
+
+@print ……え、えま、エマっちに頼みがあって。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 友情とか、大嫌いだけどさ。<br>頼めるの、エマっちしかいない……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print も、も、もし、もしあてぃしがダメだったら、<br>あてぃしの推しのこと、エマっちに頼んでもいい……？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print ……【推し】……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print あてぃしはもうどうなってもいい。<br>でも、推しのことは心残りで。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print お願いだから、推しの傍にいてあげて。<br>ずっと寂しがってるの。<br>毎日あてぃしの写真に話しかけてくれて――。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 大好きなの。大切なの。<br>あてぃしにとって世界の全てなの。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print ……ココちゃんの【推し】って。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 言いたくない。言いたくないけどさ。<br>愛とかそーゆーきれいなの、ダルいから。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print ……でも大好きなんだよ。<br>……あてぃしの、残された最後の家族。<br>……おじいちゃん。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print （あ……そういうことだったんだ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print この牢屋敷に捕まってから、<br>ココは何度かひとりごとのように誰かと会話していた。 { speed:1 waitInput:true Wait:true }
+
+@print それはきっと、ココの家族が、<br>ココの写真に話しかけてくれていたから。 { speed:1 waitInput:true Wait:true }
+
+@print お願い、ねえお願いエマっち。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print ……うん、わかった。<br>ココちゃんのおじいちゃん……<br>ううん、ココちゃんの【推し】に、必ず会いに行くから。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 一緒に生きて帰ろうとは、もはや言えなかった。<br>ただココの心を少しでも軽くしてやるため、<br>涙を堪え、エマは約束した。 { speed:1 waitInput:true Wait:true }
+
+@print ありがとうエマっち。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print あてぃしね、ここの暮らし嫌いじゃなかったよ。<br>ほんのちょっぴりだけど、<br>みんなのこと家族みたいに感じてた。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print だからエマっちも、あてぃしの【推し】かもな。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 死なないでよ。約束、守れよ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print うん……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ココが力ない拳を胸に押し当ててきた。 { speed:1 waitInput:true Wait:true }
+
+@print その手は、震えが激しくなっている。 { speed:1 waitInput:true Wait:true }
+
+@print ……ただの恐怖では到底説明がつかない様子だ。 { speed:1 waitInput:true Wait:true }
+
+@print 木のうろの中は寒くもないのに、歯をカチカチと鳴らして、<br>体全体が揺さぶられているかのように震えている。 { speed:1 waitInput:true Wait:true }
+
+@print （ココちゃん……だめだ、これ以上は<br>　ココちゃんの心がもたない……） { author:Ema speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 演出：ココの立ち絵（半クリーチャー）表示
+# ========================================
+
+@print "ココの顔を<ruby=\"のぞ\">覗</ruby>き見ると、<br>顔に亀裂が入っていた。" { speed:1 waitInput:true Wait:true }
+
+@print ！……コ、ココちゃん……<br>それ、ど、どうしたの……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマがココを揺さぶると、<br>ココはうわごとのように<ruby=\"つぶや\">呟</ruby>く。" { speed:1 waitInput:true Wait:true }
+
+@print あてぃし、あてぃしさ……<br>やっぱダメっぽい。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 【かくれんぼ】してると、<br>忘れてたこと、思いだしちゃう。<br>あの日……あぁ、なんだっけ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print ナイフとか血とか<br>叫び声とか、あてぃしを探すアイツの目とか……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print はは、あれ……？<br>あてぃし、魔女化してねぇ……？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print エマには、ココの身に過去何があったのか<br>知るよしもなかった。 { speed:1 waitInput:true Wait:true }
+
+@print （もう、こうなったら……<br>　隠れるなんて言ってられない……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ココちゃんしっかりして！<br>ね、ねぇここから出よう！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "なんで……？ なんで隠れちゃいけないんだっけ……？<br>ああそっか、そうだった。" { author:Coco speed:1 waitInput:true Wait:true }
+
+@print あぁ、あぁ、あぁあああああ、そうだよ<br>そうだ……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print ……【あの日】だ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@print 泣き笑いのような情けない表情で、<br>ココはエマを見つめた。 { speed:1 waitInput:true Wait:true }
+
+@print 手遅れだと悟る。 { speed:1 waitInput:true Wait:true }
+
+@print ココの禁忌に、踏み込んでしまっていた―― { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 演出：処刑以外のトラウマシーンですが、UIなしでお願いします。
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@bgm Bgm_1_1
+
+@printer Normal.Simple
+
+@print お父さんとお母さん、それに年の離れた弟。 { speed:1 waitInput:true Wait:true }
+
+@print すごくすごく平凡な家族だった。 { speed:1 waitInput:true Wait:true }
+
+@print 毎日が平和すぎて退屈で、でもそんなに悪くない。 { speed:1 waitInput:true Wait:true }
+
+@print あまりに普通の一家で、あてぃしだけがちょっとだけ、<br>気付いたら不思議な力を持っていた。 { speed:1 waitInput:true Wait:true }
+
+@print "あてぃしを見ている人がいたら、<br>その映像をあてぃしは<ruby=\"ふかん\">俯瞰</ruby>することができた。" { speed:1 waitInput:true Wait:true }
+
+@print 直接じゃなくてもいい。<br>あてぃしの映像でも、写真でも、<br>とにかく誰かがあてぃしを見ていたら。 { speed:1 waitInput:true Wait:true }
+
+@print 俯瞰できてしまうのだ。 { speed:1 waitInput:true Wait:true }
+
+@print 誰かの秘密を覗き見れちゃう。<br>好きな男子の情報をリサーチできちゃう。 { speed:1 waitInput:true Wait:true }
+
+@print 情報通のあてぃしは、男子にも女子にも大人気。 { speed:1 waitInput:true Wait:true }
+
+@print なんて素敵な魔法なの！ { speed:1 waitInput:true Wait:true }
+
+@print 素敵な日々は、ある日あっさり崩壊した。 { speed:1 waitInput:true Wait:true }
+
+@print "殺人鬼がうちに押し入ってきて、<br>理由もわからずあてぃしの家族を<ruby=\"ざんさつ\">惨殺</ruby>していった。" { speed:1 waitInput:true Wait:true }
+
+@back 210_1 { time:0 }
+@back Transparent { time:0.9 }
+@WaitForNextFrame 
+
+@animate Stills
+@Wait 1.5
+
+@print あてぃしは、クローゼットに隠れていた。 { speed:1 waitInput:true Wait:true }
+
+@print 階下にいるお父さんが殺されたのを見ちゃって、<br>慌ててそこに飛び込んだ。 { speed:1 waitInput:true Wait:true }
+
+@print "殺人鬼が家の中を<ruby=\"じゅうりん\">蹂躙</ruby>している。" { speed:1 waitInput:true Wait:true }
+
+@print 服の山に隠れて、限界まで息を殺した。 { speed:1 waitInput:true Wait:true }
+
+@print みし、みし、みし、と<br>殺人鬼が階段をのぼってくる。 { speed:1 waitInput:true Wait:true }
+
+@print 怖い。 { speed:1 waitInput:true Wait:true }
+
+@print お母さんも見つかって刺された。 { speed:1 waitInput:true Wait:true }
+
+@print 弟も見つかって刺された。 { speed:1 waitInput:true Wait:true }
+
+@print その時、家の中にある家族写真を、<br>お父さんも、お母さんも見ていた。 { speed:1 waitInput:true Wait:true }
+
+@print だからあてぃしは―― { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@back 210_1 { time:0.8 }
+@Wait 0.5
+
+@print 全部、見た。 { speed:1 waitInput:true Wait:true }
+
+@print 見えてしまった。 { speed:1 waitInput:true Wait:true }
+
+@print どんな風に殺されたのか。 { speed:1 waitInput:true Wait:true }
+
+@print "ざくざくと肉を裂き、<br>血しぶきをあげ、<br>苦しみ、<ruby=\"うめ\">呻</ruby>き、<ruby=\"あえ\">喘</ruby>ぎ、息が<ruby=\"た\">絶</ruby>えるその直前まで。" { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@back 210_1 { Scale:{g_backgroundDefaultScale} time:0.8 }
+@Wait 0.5
+
+@print ごめんなさい、ごめんなさい、ごめんなさい。<br>ひとりだけ隠れてて、ごめんなさい。 { speed:1 waitInput:true Wait:true }
+
+@print お願いだから、もうあてぃしを見ないで。<br>もう見せつけないで。 { speed:1 waitInput:true Wait:true }
+
+@print なんて最低な魔法なの。 { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# ========================================
+# UIなしここまで
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@hide Stills,Stills-Middle,Stills-Front
+
+@HidePrinter 
+@printer Normal.Default
+
+@print あてぃし、あてぃ、あてぃ、あてぃ――。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print "ココの体がぼこぼこと音をたてて変形していく。<br><ruby=\"うめ\">呻</ruby>き声と共に、異形になっていく。" { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆息を呑む
+
+@print ッ――！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@back 17_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_3_1_Loop
+
+@print エマは慌てて穴から飛び出した。 { speed:1 waitInput:true Wait:true }
+
+@print 追いかけるように、<br>化け物になったココも出てきた。 { speed:1 waitInput:true Wait:true }
+
+@print "もはや理性を失った瞳が目の前の獲物を見据え、<br>獣のように<ruby=\"うな\">唸</ruby>り、<ruby=\"よだれ\">涎</ruby>を垂らす。" { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆異形化
+
+# @char Coco.Angry pos:50
+
+@print ぐおぉぉおぉ！！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print （間に合わない――） { author:Ema speed:1 waitInput:true Wait:true }
+
+# @hideChars
+
+@print "襲い掛かってくるココに、<br>エマはただ腕で体を<ruby=\"かば\">庇</ruby>うことしかできなかった。" { speed:1 waitInput:true Wait:true }
+
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@print "痛みを覚悟してぎゅっと目を<ruby=\"つむ\">瞑</ruby>る。" { speed:1 waitInput:true Wait:true }
+
+@print ――しかし、直後に来るはずの痛みも衝撃も、<br>やってこなかった。 { speed:1 waitInput:true Wait:true }
+
+@mask MainBackground-Middle,Margo-Front { Enable:false }
+@back 17_2 { time:0 }
+@char Ema.Cry1,ArmR3,ArmL7 { time:0 }
+@blur Ema-Middle
+@char Margo.Fearful1,ArmR1,ArmL1 { time:0 }
+@blur Margo-Front
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@print おそるおそる目を開くと、<br>エマの前にはマーゴが立っていた。 { speed:1 waitInput:true Wait:true }
+
+@print マーゴちゃん！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print マーゴの腹は、<br>長く伸びたココの腕に、貫かれていた。 { speed:1 waitInput:true Wait:true }
+
+@print 体を貫通し、<br>背中からココの爪が飛び出している。 { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆刺された状態
+
+@print 何、ぼんやりしてるの……っ、<br>逃げなさい！！ { author:Margo speed:1 waitInput:true Wait:true }
+
+@print "マーゴはココの腕を必死で<ruby=\"つか\">掴</ruby>み、<br>暴れるココをなんとか押さえながら叫んだ。" { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆異形化
+
+@print ぐぉぉおぉお！！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print "ココが狂ったように暴れ、<br>ぼたぼたと地面に大量の血が落ちる。<br>その血が色鮮やかな<ruby=\"ちょう\">蝶</ruby>へと変わっていく。" { speed:1 waitInput:true Wait:true }
+
+@print ごほっ……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print どうやら私は、魔女になってない、ようね。<br>死なないことに期待したけど……残念だわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print "顔を<ruby=\"ゆが\">歪</ruby>め、血を吐きながら、<br>マーゴが声をしぼりだす。" { speed:1 waitInput:true Wait:true }
+
+@print やがてマーゴは、エマを振り向く。<br>笑顔を作っているようだったが、<br>どうしても哀しみをたたえているように見えた。 { speed:1 waitInput:true Wait:true }
+
+@print 私、人として死ぬみたい。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print "やだぁ！！ やだよぉ、マーゴちゃん！！" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "なんで庇ったの！？ なんで！！" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ……本当にね……。<br>私だけでも生き残ろうと思っていたのに。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print なんで助けたの……かしらね……。<br>なんのメリットもないのに……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print ココちゃんに襲われるエマちゃんを見て、<br>咄嗟に、助けたくなっちゃった……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print マーゴは、ふっと微笑む。 { speed:1 waitInput:true Wait:true }
+
+@print 私……ね、今まで人をほとんど信じたことがないの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print あなたのことも信じてない。<br>いつも綺麗ごとを言って、人を助けようとするあなたが<br>どこかで裏切る瞬間を楽しみにしてた。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print "いいから！ いつもみたいに平気な顔してよ！<br>嘘だって、立ち上がってよ……！" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print いくらエマがマーゴの体を揺さぶっても、<br>血が大量に流れていくだけ。 { speed:1 waitInput:true Wait:true }
+
+@print ……本当はね。<br>あなたの綺麗ごとが嫌いじゃなかったの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 信じないようにしていたけれど……。<br>少しだけ、信じてみたくなった。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print あなたなら、本当に私たちを<br>救ってくれるんじゃないかっ、て。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 夢を見させてくれて、<br>感謝しているのよ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print ……マーゴちゃん……っ、いなくならないで！<br>ボクをひとりにしないで！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 逃げて……あなただけでも、<br>どうか、生きて……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print ……最悪な時に……本音が出ちゃった、わね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hide Margo-Front
+@blur Ema-Middle
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@print それが最期だった。<br>力を失い、ココの腕が引き抜かれる。<br>意識を失ったマーゴの体が崩れ落ちていく。 { speed:1 waitInput:true Wait:true }
+
+@print なれはてとなったココが、<br>獲物を見据えるギラギラした瞳で、エマの方を見ていた。 { speed:1 waitInput:true Wait:true }
+
+@print ……っ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "エマは歯を食いしばり、<br><ruby=\"きびす\">踵</ruby>を返して走り出した。" { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter05/Act01_Chapter05_Adv08

@@ -1,0 +1,31 @@
+{
+  "format": "manosaba.story",
+  "version": 1,
+  "language": "zh-Hans",
+  "path": "System/System_BadEnd",
+  "events": [
+    {"op": "Skip", "line": 1, "indent": 0, "params": {"Enable": 0}},
+    {"op": "ProcessInput", "line": 2, "indent": 0, "params": {"InputEnabled": 1, "SetEnabled": [{"name": "Continue", "value": 1}, {"name": "Pause", "value": 0}, {"name": "Skip", "value": 0}, {"name": "ToggleSkip", "value": 0}, {"name": "SkipMovie", "value": 0}, {"name": "AutoPlay", "value": 0}, {"name": "ToggleUI", "value": 0}, {"name": "ShowBacklog", "value": 0}, {"name": "Rollback", "value": 0}]}},
+    {"op": "StopBgm", "line": 3, "indent": 0, "params": {"FadeOutDuration": 1.0}},
+    {"op": "ResetText", "line": 4, "indent": 0, "params": {}},
+    {"op": "HideUI", "line": 5, "indent": 0, "params": {"UINames": ["ControlPanel", "AutoToggle", "WitchBookButtonUI"], "AllowToggle": 0}},
+    {"op": "ModifyBackgroundExtended", "line": 6, "indent": 0, "params": {"TintColor": "#000000", "Duration": 1.600000023841858, "Lazy": 0, "AppearanceAndTransition": "SolidColor", "SubId": "Overlay"}},
+    {"op": "Wait", "line": 7, "indent": 0, "params": {"WaitMode": "0.6"}},
+    {"op": "HidePrinter", "line": 9, "indent": 0, "params": {"Duration": 0.8999999761581421}},
+    {"op": "Wait", "line": 10, "indent": 0, "params": {"WaitMode": "1.8"}},
+    {"op": "SpawnExtended", "line": 12, "indent": 0, "params": {"Path": "BadEnd", "Params": ["BAD END"], "Wait": 1}},
+    {"op": "Wait", "line": 14, "indent": 0, "params": {"WaitMode": "i1.8"}},
+    {"op": "DestroySpawnedExtended", "line": 16, "indent": 0, "params": {"Path": "BadEnd", "Wait": 1, "LogWarning": 1}},
+    {"op": "Wait", "line": 18, "indent": 0, "params": {"WaitMode": "i1.2"}},
+    {"op": "AddChoice", "line": 20, "indent": 0, "params": {"ChoiceSummary": "返回先前的分支选项处", "Lock": 0, "AutoPlay": 1, "ShowHandler": 1}, "text_ids": {"ChoiceSummary": ["Common_BadEnd001"]}},
+    {"op": "QuickLoad", "line": 21, "indent": 1, "params": {"SlotNumber": {"expression": "{currentBadEndId}"}, "Wait": 1}},
+    {"op": "AddChoice", "line": 23, "indent": 0, "params": {"ChoiceSummary": "返回标题画面", "Lock": 0, "AutoPlay": 1, "ShowHandler": 1}, "text_ids": {"ChoiceSummary": ["Common_BadEnd002"]}},
+    {"op": "ClearBacklog", "line": 24, "indent": 1, "params": {}},
+    {"op": "ReturnToTitle", "line": 25, "indent": 1, "params": {"FadeDuration": 1.2000000476837158, "MinDelayDuration": 0.6000000238418579, "Wait": 1}},
+    {"op": "Stop", "line": 27, "indent": 0, "params": {}}
+  ],
+  "translations": {
+  "Common_BadEnd001": "返回先前的分支选项处",
+  "Common_BadEnd002": "返回标题画面"
+}
+}

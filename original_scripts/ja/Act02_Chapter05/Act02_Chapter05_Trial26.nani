@@ -1,0 +1,327 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter05/Act02_Chapter05_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# クリーチャー化初期化
+@hide Hiro
+@char CreatureHiro.2 { Position:{hiroPositionX},{characterPositionY},{hiroPositionZ} Rotation:,{hiroRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Meruru
+@char CreatureMeruru.3-5 { Position:{meruruPositionX},{characterPositionY},{meruruPositionZ} Rotation:,{meruruRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Leia
+@char CreatureLeia.0-8 { Position:{leiaPositionX},{characterPositionY},{leiaPositionZ} Rotation:,{leiaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Noah
+@char CreatureNoah.0-3 { Position:{noahPositionX},{characterPositionY},{noahPositionZ} Rotation:,{noahRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Margo
+@char CreatureMargo.0-4 { Position:{margoPositionX},{characterPositionY},{margoPositionZ} Rotation:,{margoRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Nanoka
+@char CreatureNanoka.0-1 { Position:{nanokaPositionX},{characterPositionY},{nanokaPositionZ} Rotation:,{nanokaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Coco
+@char CreatureCoco.2-3 { Position:{cocoPositionX},{characterPositionY},{cocoPositionZ} Rotation:,{cocoRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide AnAn
+@char CreatureAnAn.0-3 { Position:{ananPositionX},{characterPositionY},{ananPositionZ} Rotation:,{ananRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Miria
+
+@hide Alisa { time:0 }
+@char CreatureAlisa.0-7 { Position:{alisaPositionX},{characterPositionY},{alisaPositionZ} Rotation:,{alisaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Hanna { time:0 }
+
+@hide Sherry
+@char CreatureSherry.1-6 { Position:{sherryPositionX},{characterPositionY},{sherryPositionZ} Rotation:,{sherryRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+# ==============================================================================
+# MARK: 10-26: 💬 エマの真実
+# ==============================================================================
+# ＠ト書き▼議論10-26エマの真実
+# 議論開始カットイン
+
+# BGM変更：HirO（Voなし）
+@bgm Bgm_37_1_Loop
+
+# Judge10-26-1
+
+# 基本ダメージなし進行
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@printDebate ……君の過去を、<br>教えてくれ。
+
+@char Ema.Default,ArmR6,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Neutral_Closed
+@gosubModifyCamera 0
+@printDebate うん……。
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open
+@gosubModifyCamera 0
+@printDebate ボクは……<br>学校でいじめられていた。
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open
+@gosubModifyCamera 0
+@printDebate どうして<br>そんなことを<br>されていたのか……<br>どうして<br>嫌われていたのか……。
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Closed
+@gosubModifyCamera 0
+@printDebate "そんなの……<br><link=\"Objection_02_05_26_01\">わからなかった</link>。"
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Closed
+@gosubModifyCamera 0
+@printDebate だから……<br>思ったんだ。
+
+@char Ema.Default,ArmR2-1,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open
+@gosubModifyCamera 0
+@printDebate "――みんな、<br><link=\"Objection_02_05_26_02\">死ねばいいのに</link>。"
+
+@char Ema.Default,ArmR2-1,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Neutral_Closed
+@gosubModifyCamera 0
+@printDebate "みんなを……<br><link=\"Objection_02_05_26_03\">恨んでいた</link>。"
+
+
+# ==============================================================================
+# 10-26議論後独白
+# ==============================================================================
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@Wait 0.2
+
+@print （……エマ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@print （どうして……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-26-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_26_01
+
+@Skip false
+@pauseTrial true
+
+@choice 君は知っている
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-26-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_26_02
+
+@Skip false
+@pauseTrial true
+
+@choice そんなことを思ってはいけない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-26-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_26_03
+
+@Skip false
+@pauseTrial true
+
+@choice 恨む必要なんてない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-26-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 10-26: ❌ ミス選択肢
+# ==============================================================================
+# MARK: 10-26-3: ❌ 反論・そんなことを思ってはいけない
+
+# Judge10-26-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.18
+@gosubModifyCamera 0
+@print ……そんなことは、思ってはいけないよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR2-1,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print わかってるけど……止められなかったんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print どうしてみんな……ボクをいじめるの……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.19
+@gosubModifyCamera 0
+@print （エマの【殺意】が<br>　【魔女を殺す魔法】を起動させる可能性はある……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.19
+@gosubModifyCamera 0
+@print （……慎重に、話を進めよう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-26-1
+
+# MARK: 10-26-4: ❌ 反論・恨む必要なんてない
+
+# Judge10-26-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print 君が恨む必要なんてない……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print 全ては……大魔女の悪意によるものだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR2-1,ArmL2,Angle01/Facial/Eyes>Eyes01_Angry_Open04,Angle01/Facial/Mouth>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print そんなこと……言われても。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print 難しいよ……ボクには。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.19
+@gosubModifyCamera 0
+@print （エマの【殺意】が<br>　【魔女を殺す魔法】を起動させる可能性はある……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.19
+@gosubModifyCamera 0
+@print （……慎重に、話を進めよう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-26-1
+
+# ==============================================================================
+# MARK: 10-26-2: ⭕ 反論・君は知っている
+# ==============================================================================
+
+# Judge10-26-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@gosubCutIn CreatureHiro
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print そんなわけはない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print 君は知っている。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print どうして君が、<br>ターゲットになったのかを。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Lifeless01,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print そんなこと言われても……わからないよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Lifeless01,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open
+@gosubModifyCamera 0
+@print 本当に……わからないんだ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# ＠備考◆そうか…みたいな沈黙
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print …………。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print ……なら、次は私のことを話してくれないか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR13,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Lifeless01,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print えっ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print たのむ、エマ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print う、うん……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print ……わかった。 { author:Ema speed:1 waitInput:true Wait:true }
+
+
+
+@goto Act02_Chapter05/Act02_Chapter05_Trial27

@@ -1,0 +1,80 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-3-11
+
+# ========================================
+# ●シーン2‐3‐11
+# ========================================
+
+@back 9_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_23_1
+
+@print アトリエの片付けを終えたエマは、<br>私を連れて１階の通路を移動し、中庭に向かった。 { speed:1 waitInput:true Wait:true }
+
+@print エマと２人で通路を進んでいると。 { speed:1 waitInput:true Wait:true }
+
+@print うわあああああああっ！？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@print レイアの悲鳴が響いてきた。<br>方向的に、おそらく中庭だ。 { speed:1 waitInput:true Wait:true }
+
+@print "そんな、嘘だ……なんで、どうして……<br>ああああぁぁっ！ うああああぁっ！" { author:Leia speed:1 waitInput:true Wait:true }
+
+# 廊下を走る音
+@sfx Sfx_58
+
+@print しばらくすると、レイアが<br>転がるように通路へと走り込んできた。 { speed:1 waitInput:true Wait:true }
+
+@print "私とエマの姿を見て、<br><ruby=\"すが\">縋</ruby>るような目を向けてくる。" { speed:1 waitInput:true Wait:true }
+
+@char Leia.Fearful1
+
+@print ヒロくん……エマくん……！！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@print レイア……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私もエマも、何も言わない。<br>レイアが目撃したものは、わかりきっている。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Fearful1
+
+@print 雨の音が聞こえた気がして、<br>私は、背景の書き割りが心配になって……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 中庭に様子を見に行ったんだ……<br>案の定、書き割りは雨で絵の具がどろどろに……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print "言葉を<ruby=\"しぼ\">絞</ruby>り出すようにして、<br>レイアは首を横に振る。" { speed:1 waitInput:true Wait:true }
+
+@char Leia.Angry1
+
+@print 違う、私が言いたいのはそんなことじゃない……！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@print いつもは落ち着いた振る舞いの彼女が、<br>ひどく取り乱している。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Cry1
+
+@print アンアンくんが……死んでいた。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 認めたくない事実を口にするように、<br>レイアは重々しく告げた。 { speed:1 waitInput:true Wait:true }
+
+@print ……わかっている。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Cry1
+
+@print ……え？<br>ヒロくん、それはどういう……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@ResetText 
+
+# フクロウの通知音
+@sfx Sfx_14
+@Wait 1
+
+@print そこで、スマホの通知が鳴る。 { speed:1 waitInput:true Wait:true }
+
+@print 確認するまでもない。<br>きっと、少女たちを招集する、<br>ゴクチョーからのメッセージだ。 { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter03/Act02_Chapter03_Adv12

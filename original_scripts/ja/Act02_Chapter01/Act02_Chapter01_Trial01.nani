@@ -1,0 +1,512 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter01/Act02_Chapter01_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+@char Warden { Position:,{hiddenCharacterPositionY} time:0 }
+# ==============================================================================
+# MARK: 6-1: 💬 ヒロが犯人の理由
+# ==============================================================================
+
+# Judge6-1-1
+
+# 議論開始カットイン
+# BGM変更：rAwTell Owk...
+@bgm Bgm_7_1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Leia.Default,ArmR5,ArmL7,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@printDebate まずは<br>死体を発見した<br>状況について<br>確認してみようか。
+
+@char Leia.Default,ArmR5,ArmL7,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@printDebate あの時、<br>私たちは奥の部屋で<br>話をしていてね。<br>そこには私を含めた<br>４人がいた。
+
+@char Miria.Default,ArmR3,ArmL8,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate えと……<br>レイアちゃんと、<br>ココちゃんと、<br>ハンナちゃん……<br>それにおじさんの<br>４人だね。
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@printDebate そのとき、<br>私とナノカちゃんも<br>自分たちの部屋にいたわね。
+
+@char Nanoka.ArmR1,ArmL10,Eyes1_Normal_Open1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@printDebate ……ええ、<br>間違いないわ。
+
+@char Nanoka.ArmR1,ArmL10,Eyes1_Normal_Open1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@printDebate 私たちは全員、<br>城ケ崎ノアと<br>夏目アンアンの<br>部屋の方から<br>ガラスが割れるような音を<br>聞いている……。
+
+@char Margo.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@printDebate そうして駆けつけたら、<br>ヒロちゃんが倒れてたの♡
+
+@char Hanna.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Open
+@gosubModifyCamera 0
+@printDebate こちらの部屋から見ても、<br>同じ状況ですわ……！
+
+@char Hanna.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Smile_Open
+@gosubModifyCamera 0
+@printDebate "つまり、ヒロさんが<br>メルルさんを<br><link=\"Objection_02_01_01_01\">お殺しになって</link>、<br><link=\"Objection_02_01_01_02\">すぐに</link>私たちは<br>駆けつけたんですわ～～！"
+
+@char Miria.Default,ArmR9,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@printDebate "ヒロちゃんの他に<br>犯人がいたなら、<br>６人の<link=\"Objection_02_01_01_03\">誰かが見て</link>いそう<br>なんだけど……。"
+
+@char Leia.Default,Arms,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@printDebate つまり<br>【ヒロくんしか<br>メルルくんを<br>殺せなかった】……。
+
+@char Leia.Default,Arms,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@printDebate 状況はそれで正しいかな？
+
+@char Leia.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@printDebate 私にはこれ以上<br>議論を続ける意味は<br>ないように見えるんだけど、<br>どうだろうか？
+
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Hiro.Normal1,Arms3,Eyes1_Painful_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@Wait 0.2
+
+# ==============================================================================
+# 6-1議論後独白
+# ==============================================================================
+
+@print （……まったく馬鹿げた話だ。<br>　さっき自分たちが確認したことを忘れたのかな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Determined_Closed1
+@print （あの言葉……<br>　さきほど言っていた内容と明確に矛盾している） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Closed1
+
+@print （正しくない論理に正しくない話……<br>　正してみせよう、その全てを……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge6-1-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_01_01_01
+
+@Skip false
+@pauseTrial true
+
+@choice メルルを殺していない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge6-1-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_02_01_01_02
+
+@Skip false
+@pauseTrial true
+
+@choice すぐではなかった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge6-1-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_02_01_01_03
+
+@Skip false
+@pauseTrial true
+
+@choice 見ていなくとも不思議はない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge6-1-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 6-1: ❌ 議論ミス選択肢
+# ==============================================================================
+# MARK: 6-1-3: ❌ 反論・メルルを殺していない
+
+# Judge6-1-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Open3,Mouth2_Determined_Closed1
+@gosubModifyCamera 0
+@print 私は、メルルを殺してなどいない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR8,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print ヒロくん……<br>根拠のない弁明を聞きたいわけじゃないんだよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR8,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print ……客観的に見て、<br>君が殺したとしか思えない……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print それが我々の見解なんだ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print 異論があるなら証拠を――。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print ――そもそも、<br>メルルが死んでいるとは限らないのでは？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Surprised1,ArmR1,ArmL1
+@gosubModifyCamera 0
+@print ……どういうことかな？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 【メルルは黒幕】<br>【魔女は死なない】……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print つまり……<br>メルルは殺されていたように見せかけて、<br>死んではいなかったんだ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR8,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print ……いや、死んでいたよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR8,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print 心臓も動いていないし呼吸もなかった。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR8,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print 瞳孔こそ確認する方法がなかったけれども……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR6,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print 彼女は死んでいた。<br>私が保証しよう。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Closed,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ゴクチョーも言ってましたし、<br>どう見ても死んでましたわー！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print あの傷で起き上がってきたら完全にゾンビかも……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal1,ArmR12,ArmL5,Eyes1_Normal_Closed1,Mouth1_Angry_Open1,Sweat1-1
+@gosubModifyCamera 0
+@print （くっ……！<br>　……前提は問題なかったようだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （もう一度魔女図鑑を確認してみよう。<br>　そこにはメルルの死んだ状況が書かれている） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （それは、彼女のあの発言と明らかに矛盾している……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge6-1-1
+
+# MARK: 6-1-4: ❌ 反論・見ていなくとも不思議はない
+
+# Judge6-1-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print 君たちが犯人を見ていなくとも<br>不思議はない……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print 犯人はメルルを殺したあと、<br>その場からすぐに逃げただけだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR1,ArmL10,Eyes1_Normal_Open1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print ……いいえ。それは私から否定するわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print なに……？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR1,ArmL10,Eyes1_Normal_Open1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print ……もしそうだとしたら、<br>私や宝生マーゴが犯人を見かけているはずよ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# 部屋割りの図説が入った方がわかりやすいかも
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print そうね。<br>私とナノカちゃんの部屋は殺人現場のすぐ隣……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print しかも出口側に位置しているの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR6,ArmL1,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print 犯人が逃げるなら、<br>私たちの部屋の前を通らなきゃならないわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Normal_Open2,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print 私たちはガラスが割れるような音を聞いて<br>すぐに部屋の外を見た。<br>けれど……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR2,ArmL9,Eyes1_Normal_Open2,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print そのとき、部屋の外には誰もいなかったわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL8,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print おじさんたちの部屋側からも<br>誰も見えなかったよ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print つまり犯人は犯行後、<br>その現場から動いていないってことになりますねー！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print やっぱ、二階堂しかいねーだろ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （……たしかに、見過ごした可能性はないか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （【誰もいなかった】という目撃者が６人いる以上、<br>　現場には私以外存在しなかった……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （だが私はメルルを殺していない。<br>　どこかで認識がズレている） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （もう一度魔女図鑑を確認してみよう。<br>　そこにはメルルの死んだ状況が書かれている） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print （それは、彼女のあの発言と明らかに矛盾している……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge6-1-1
+
+# ==============================================================================
+# MARK: 6-1-2: ⭕ 反論・すぐではなかった
+# ==============================================================================
+# Judge6-1-2
+# カットイン
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+@StopBgm 
+@gosubCutIn Hiro
+@Gosub System/System_Subroutine.EndDebate-Last
+
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print ……まったく君たちは揃いも揃って<br>馬鹿ばかりなのか？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print な、なんですの失礼な！？<br>あなた自分の立場がわかっていらっしゃいますの！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Angry_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print 意見とは自分の立場で語るものじゃない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・明るい音
+@sfx Sfx_Common_2
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Angry_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print ……論理と整合性で語るんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 気任せの蝶［チェロ有り］
+@bgm Bgm_45_2
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 私が殺してすぐにみんなが駆けつけた……<br>そんなことは絶対にありえない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print もしそれが違うというなら……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Hiro.Normal1,ArmR6,ArmL8,Eyes1_Normal_Open3,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print まずは【レイアの検死結果】から<br>疑わなくてはいけないんじゃないかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Hanna.Default,ArmR1,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Smile_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ……あっ！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print レイアの検死……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,Arms3,Eyes1_Angry_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print つまり死体の死亡推定時刻を考えれば、<br>死体が発見されたタイミングが殺害直後というのは<br>ありえない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,Arms3,Eyes1_Angry_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print なぜなら……<br>メルルは【２０分以上前に死んでいた】のだからね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Hanna.Surprised1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print うぐっ……！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print 仮に私が犯人だったとして……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,Arms3,Eyes1_Angry_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print 逃げも隠れもせず、<br>２０分以上もその場で死体と共に過ごしていた理由を<br>教えてもらえるかな？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・ガーン
+@sfx Sfx_Common_6
+
+@char Hanna.Surprised1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print そ、それは……！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print ……私はただ単に気を失っていただけなんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,Arms3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print なのにこうして犯人扱いされては困る。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char Hanna.Default,ArmR1,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Smile_Closed,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print おっしゃる通りですわー！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （……ふう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （どうやら納得してもらえたらしい） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （案外、こうして１人ずつ説明していけば<br>　無罪を証明できるのか……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# カットイン-シェリー
+@Wait 0.5
+
+@sfx Sfx_Common_5
+
+@ResetText 
+@voice CommonTrial_Sherry01973
+@char Hiro.Surprised1
+@char Sherry.Default,ArmR3,ArmL3,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubSplitStageScreen 1
+@Wait 1.5
+
+@hideStageScreen 1
+@Wait 0.3
+
+@char Sherry.Default,ArmR4,ArmL5,Angle01/Facial/Eyes>Eyes_Surprised_Open01,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+
+@print なるほど、私わかっちゃいましたよ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print ……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print この事件の全貌……<br>名探偵シェリーちゃんが、暴いちゃいます！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@goto Act02_Chapter01/Act02_Chapter01_Trial02

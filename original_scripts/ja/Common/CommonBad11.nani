@@ -1,0 +1,76 @@
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-ex5
+
+# 建物が揺れる地震の音
+@bgm Ambi_7_1
+
+@back 13_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.2
+
+@bgm Bgm_12_1_Loop
+
+@print ――監獄島全体がアリサの魔法で炎に包まれ、<br>ハンナの魔法によって空高くへと浮上していく。 { speed:1 waitInput:true Wait:true }
+
+@print 振動と地響きの音が激しい。 { speed:1 waitInput:true Wait:true }
+
+@print 空に浮かび上がった監獄島は、<br>自重に耐え切れず崩壊を始めていた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@print ヒロちゃん……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 不安そうにこちらを見つめるエマの手を、<br>私は無言でそっと握る。 { speed:1 waitInput:true Wait:true }
+
+@print "魔女に堕ち、<br>暴走した少女を止めることは<ruby=\"かな\">叶</ruby>わなかった――" { speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@print すまない……。 { author:Hiro speed:1 waitInput:true Wait:true }
+@hideChars 
+
+@print 私はただ、そう口にすることしかできなかった。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+@back SolidColor
+# ========================================
+
+# ========================================
+# 建物が揺れる地震の音
+@bgm Ambi_7_1
+# ========================================
+
+@print やがて裁判所が崩れ、浮遊感に襲われる。<br>そこで、私の意識は途絶えた―― { speed:1 waitInput:true Wait:true }
+@StopBgm 
+@Wait 1.0
+
+# ========================================
+# 時間経過
+# ========================================
+
+# ========================================
+@back SolidColor
+# ========================================
+
+@print 監獄島は崩壊し、<br>巻き込まれた少女たちの行方はわからなくなった。 { speed:1 waitInput:true Wait:true }
+
+# @char Warden.9 pos:50
+@print これはちょっと面倒なことになりましたねえ。 { author:Warden speed:1 waitInput:true Wait:true }
+
+# @char Warden.1 pos:50
+@print まあ、生きていても死んでいても、<br>どっちでもいいんですけど……。 { author:Warden speed:1 waitInput:true Wait:true }
+@hideChars 
+
+@print 魔女因子を持つ者も、<br>すでに魔女と化した者も、<br>外の世界で野放しにするわけにはいかない。 { speed:1 waitInput:true Wait:true }
+
+@print 見つけ出し、適切に処理する。<br>ただそれだけだ。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 『END～監獄島崩壊～』
+# ========================================
+
+# @end
+
+@Gosub System/System_Subroutine.EndAdv
+
+@ClearBacklog 
+@ReturnToTitle { time:1.2000000476837158 delay:0.6000000238418579 }

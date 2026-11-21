@@ -1,0 +1,167 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-4-9
+
+# ========================================
+# ●シーン1‐4-9
+# ========================================
+
+@back 300_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_35_1
+
+@print ともかく現場を調べなくては始まらない。<br>エマはまず裁判所の死体現場を調べることにした。 { speed:1 waitInput:true Wait:true }
+
+@print （……アリサちゃん……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 椅子に拘束され、<br>力なくうなだれている少女の姿はあまりに痛ましい。 { speed:1 waitInput:true Wait:true }
+
+@print 平常の心もちでは、直視なんてできない。<br>手がかりを得ることだけを考え、心を殺した。 { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆泣き声まじり
+
+@print アリサさんは誰かに処刑されたのでしょうか……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print しばらく泣き崩れていたメルルが、<br>よろよろとエマの隣に立つ。 { speed:1 waitInput:true Wait:true }
+
+@print どうやら気を持ち直し、手伝ってくれる様子だ。 { speed:1 waitInput:true Wait:true }
+
+@print （処刑……やっぱり何より気になるのは） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print これって電気、椅子だよね。<br>電気を流して殺す処刑方法に使われる。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print そ、そうだと思います……。<br>背部にスイッチがありますし……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print メルルのいうとおり、<br>椅子の背中側にスイッチがあった。 { speed:1 waitInput:true Wait:true }
+
+@print 詳細はわからないが、<br>これを押せば電気が流れる仕組みなのだろう。 { speed:1 waitInput:true Wait:true }
+
+@print アリサちゃん、髪や服が湿ってる……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （どうしてだろう……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ボクらはアリサちゃんを見ても<br>死因がはっきりわかるわけじゃないけど。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print やっぱり電気椅子の電流が死因なのかな……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_28
+
+# ========================================
+# ☆証拠品：『電気椅子』入手
+# ========================================
+@spawn Clue
+@update 4-2
+@despawn Clue
+
+@print エマさん、これ……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print "メルルが指さしたのは、アリサの顔に残った、<br>模様だった。<br>エマは息を<ruby=\"の\">呑</ruby>む。" { speed:1 waitInput:true Wait:true }
+
+@print これは……火傷？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print それに……魔女化が進んでいるみたいです。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print アリサの姿はすでに通常の人間とは<br>かけ離れた姿になりかけているようだった。 { speed:1 waitInput:true Wait:true }
+
+@print （まるで……なれはてみたいだ） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 写真撮影音
+@sfx Sfx_28
+
+# ========================================
+# ☆証拠品：『アリサの死体写真』入手
+# ========================================
+@spawn Clue
+@update 4-9
+@Wait i1.5
+@despawn Clue
+
+@print 処刑台の床を調べるうち、<br>もうひとつ気になるものに気付く。 { speed:1 waitInput:true Wait:true }
+
+@print 死体の足元を中心として、付近にガラスの破片のようなものが<br>広範囲にわたって散乱していた。 { speed:1 waitInput:true Wait:true }
+
+# 写真撮影音
+@sfx Sfx_28
+
+# ========================================
+# ☆証拠品：『ガラスの破片』入手
+# ========================================
+@spawn Clue
+@update 4-5
+@Wait i1.5
+@despawn Clue
+
+@print （これは一体なんだろう……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 電気椅子にガラス素材はなく、<br>どこかから持ち運ばれたものであるように見えた。 { speed:1 waitInput:true Wait:true }
+
+@print ただ、考えてもすぐに何かはわからない。<br>エマは詰めていた息を吐き出した。 { speed:1 waitInput:true Wait:true }
+
+@print そうして目線を下に向けると、アリサの足元に<br>ガラスの破片に混じった別の透明なかけらを見つける。 { speed:1 waitInput:true Wait:true }
+
+@print これって……蝋……かな？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ああ、本当ですね……。<br>使用済みのロウソクの欠片……でしょうか。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print （……アリサちゃんが使ったのかな？） { author:Ema speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ☆証拠品：『ロウソク』入手
+# ========================================
+@spawn Clue
+@update 4-1
+@Wait i1.5
+@despawn Clue
+
+@print （アリサちゃんの周辺、<br>　ひととおりは見たと思うけど） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （アリサちゃんは<br>　どうして処刑台で……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 写真撮影音
+@sfx Sfx_28
+
+# ========================================
+# ☆証拠品：『処刑台』入手
+# ========================================
+@spawn Clue
+@update 4-8
+@Wait i1.5
+@despawn Clue
+
+@print 引っかかりがあったことから、<br>エマは処刑の台座部分をスマホで撮影する。 { speed:1 waitInput:true Wait:true }
+
+@print （……これまでボクらは何度か処刑を見てきた） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （誰かが処刑される時、元々ある台座が地下に降りて、<br>　違う処刑台が地下からせりあがってきた） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （仕組みがはっきりわかるわけじゃないけど、<br>　機械仕掛けだよね） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 処刑の際の歯車の嫌な音を思い出し、<br>エマは首を強く横に振る。 { speed:1 waitInput:true Wait:true }
+
+@print "それからいまいちどアリサの姿を見ていると、<br>視界が<ruby=\"にじ\">滲</ruby>み始めた。" { speed:1 waitInput:true Wait:true }
+
+@print （アリサちゃんをこんな目に遭わせた犯人がいるなら、<br>　許されない） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマさん、大丈夫ですか……？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print メルルがそっと肩に手を置いたので、<br>エマは袖口で涙を強引に拭う。 { speed:1 waitInput:true Wait:true }
+
+@print 大丈夫。ボクは他の場所に捜査に行くよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print わかりました……無理はしないでくださいね。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print うん、ありがとうメルルちゃん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマは裁判所を後にした。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン1‐4‐8
+# 全てのイベントを消化している＞シーン1‐4‐12
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter04/Act01_Chapter04_Adv08

@@ -1,0 +1,263 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-2-9
+
+# ========================================
+# ●シーン2‐2‐9
+# ========================================
+
+@back 17_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# ========================================
+# ＞『湖方面』を選択
+# ========================================
+
+@bgm Bgm_28_1
+
+@print 私は軽く森を探索しつつ、湖まで行ってみた。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print （湖の底に沈めるというのもありか。<br>　……できれば死体も見つからない状況が望ましいが） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 湖面を見つめながら、エマの殺害方法を考える。<br>すると―― { speed:1 waitInput:true Wait:true }
+
+# 茂みのガサガサ音
+@sfx Sfx_55
+@Wait 0.5
+
+@char Hiro.Surprised1
+
+@print ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 茂みがざわざわと揺れ、私は警戒して身構えた。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@Wait 0.5
+@char Nanoka { time:0.3 }
+@Wait 0.5
+@char Nanoka { time:0.5 }
+
+@print 次の瞬間、<br>ひょっこりと姿を現したのは――ナノカだった。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print また君か。もしかして、<br>茂みから出てくるのが趣味か？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 別に、そういうわけじゃない。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print じゃあ、また私に触れようとしたのかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ナノカの魔法は【幻視】だ。<br>触れた対象の過去がビジョンとして見えるという。 { speed:1 waitInput:true Wait:true }
+
+@print ……いいえ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print ナノカは緩やかに首を横に振る。 { speed:1 waitInput:true Wait:true }
+
+@print たまたまよ。<br>探し物をしてて、それで……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print ああ、そういえばリボンがなくなったと<br>言っていたな。見つかったのか？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "ナノカはアリサが盗んだと決めつけて、<br><ruby=\"ぼうりょくざた\">暴力沙汰</ruby>になる寸前だった。" { speed:1 waitInput:true Wait:true }
+
+@print ナノカは気落ちした様子で首を振る。 { speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Pensive1
+
+@print ……いいえ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print そんなに大切な物なのか？<br>牢屋敷に囚われて、私たちは自分の持ち物など<br>全て奪われているはずだが。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 口にしてから、<br>自分のポケットに入っている万年筆を思い出す。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print （ナノカもまた、<br>　私のように【何か】を持たされていたのか……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print リボンは牢屋敷で回収したのよ。<br>……どこで落としたのか、知っていたから。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print なるほど。君の持つ銃と同様に、<br>幻視で得た情報で入手したのか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@Wait 0.3
+@camera 
+@Wait 0.3
+
+@print "ナノカが<ruby=\"うなず\">頷</ruby>いたので、<br>私は近辺の茂みをかきわけ始めた。" { speed:1 waitInput:true Wait:true }
+
+# 茂みのガサガサ音
+@sfx Sfx_55
+@Wait 1.5
+
+@print あなた、何を……？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 何をって、探し物があるんだろう？<br>ならば見つけないと。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 茂みのガサガサ音
+@sfx Sfx_55
+@Wait 2
+
+@print ……事情を聞かないの？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 言いたくないことを無理に聞き出すつもりはない。<br>私にも話したくない過去はある。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ……そう。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 時間経過
+# ========================================
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+@hideChars { time:0 }
+@camera 
+@Wait 0.3
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@print 私たちはしばらくの間、<br>周辺を探し回ったが……。 { speed:1 waitInput:true Wait:true }
+
+@print 結局リボンは見つからなかった。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro
+@char Nanoka
+
+@print この辺りを調べている時に<br>落とした可能性もあるかと思ったのだけど……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 実際どこで失くしたのかはわからないし、<br>もういいわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed,ArmR2
+
+@print ……そうか。<br>牢屋敷でそれらしきものがないか、<br>今後も気を付けて見てみるよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ……ありがとう。<br>二階堂ヒロ、あなたは本当は良い人ね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive1,ArmR1
+
+@print 本当はとはなんだ。<br>私は常に善良であるべきだと思っているが？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "冗談を言ったつもりはなかったのだが、<br>くすっ、とナノカが<ruby=\"ひか\">控</ruby>えめに笑った。" { speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Smile1
+
+@print いつも険しい顔で考え事ばかりしているから、<br>なんだか企んでいるようにも見えるのよ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print （それは当たっているな……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ここに来てから悩みが増えたんだよ。<br>イライラして仕方ない。せめて糖分がほしいな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 糖分……ね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print ……私、お菓子を作るのが好きなの。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 唐突な返しに、どう反応したものかと困る。 { speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Smile1,ArmL9
+
+@print よければ今度、作ってあげるわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive1
+
+@print そんなの無理だろう。<br>材料もないのに、どうやって？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 材料なら、調達できる。<br>私は色々と抜け道を知ってるから任せて。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print ナノカが微かに笑顔を浮かべる。<br>どうやら私はずいぶん信頼を得てしまったようだ。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive1
+
+@print （皆を遠ざけようとしているのに、<br>　うまくいかないものだな……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 抜け道か……お菓子よりも、<br>そっちが気になるかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Smile1,ArmL1
+
+@print あまり期待するような場所じゃないわ。<br>行くなら規則も破ることになるだろうし……あ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print ふと言葉を止めて、ナノカは私の頭部を見つめる。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Default
+
+@print 何？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 頭のてっぺん。<br>髪に葉っぱがついてるわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print ああ、茂みを探し回ったからな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmR2,ArmL4
+@Wait 1
+@char Nanoka
+
+@print ナノカが私の頭に手を伸ばそうとするが、<br>はたと思いとどまったかのように動きを止める。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro
+
+@print ……よかったのかな。<br>私に触れるチャンスだったのに。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （もっとも、触れさせるつもりはないが） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print エマの殺害を考えている今、<br>【幻視】されるわけにはいかない。 { speed:1 waitInput:true Wait:true }
+
+@print 私は自分で葉っぱをつまみ、指で軽くはらった。 { speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmR1,ArmL1
+
+@print ……考え直したの。<br>あなたのことは視ない。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 二階堂ヒロ。<br>あなたなら……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print ナノカは何か言いたげな素振りを見せる。 { speed:1 waitInput:true Wait:true }
+
+@print ところが、言葉を飲み込むように口を閉ざしてしまった。 { speed:1 waitInput:true Wait:true }
+
+@print ……私はもう行かないと。<br>そろそろ、ここにゴクチョーが来る。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# 茂みのガサガサ音
+@sfx Sfx_55
+
+@Wait 0.5
+
+@print 言うが早いか、<br>ナノカは茂みの奥へと姿を消してしまった。 { speed:1 waitInput:true Wait:true }
+
+@print それからすぐ―― { speed:1 waitInput:true Wait:true }
+
+# フクロウの羽ばたき音
+@sfx Sfx_8
+
+@char Warden.1
+
+@print ナノカの宣言通り、本当にゴクチョーがやってきた。 { speed:1 waitInput:true Wait:true }
+
+@print ああ、ヒロさん。<br>この辺りでナノカさんを見ませんでしたか？ { author:Warden speed:1 waitInput:true Wait:true }
+
+@print さあ、私は見ていない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print そうですか。やれやれ困りましたね。<br>ナノカさんは規則を破って連日、<br>牢屋敷を脱け出しているんですよ。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print なかなか見つけられなくて……追いかけても、<br>こつ然と消えてしまうんですよねえ。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print もし見かけたら、知らせてくれません？ { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 勝手に探せばいい。<br>私には関係ないな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ゴクチョーに教えてやる必要はない。<br>私は言い捨てて、その場を立ち去った。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン2‐2‐4
+# 全てのイベントを消化している＞シーン2‐2‐10
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter02/Act02_Chapter02_Adv04

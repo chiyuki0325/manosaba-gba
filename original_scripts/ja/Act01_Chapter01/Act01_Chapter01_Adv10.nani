@@ -1,0 +1,215 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-1-6
+
+# ========================================
+# ●シーン1‐1-6
+# [back 1]
+# ========================================
+
+@print "エマさん、エマさーん、<br>朝ですよ～？ 起きてくださーい。" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print うう……ん……。<br>あとちょっと……って、わあああっ！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+@camera { time:0 }
+@back 1_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.5 }
+@Wait 1
+
+@print 薄く目を開いたエマの眼前に、シェリーの顔があり。<br>エマはギョッとし、叫んだ。 { speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_1
+
+@hideChars 
+@ResetText 
+@camera { time:0.9 }
+@Wait 0.9
+
+@print それからきょろきょろと周囲に視線を巡らせる。<br>牢屋の中だ。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+@char Sherry.Normal1
+
+@print （やっぱり夢じゃなかったんだ……<br>　ボク、ここに捕まっちゃったんだ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 朝食の後の自由時間が長いので、<br>牢屋敷を探索しようと思ってるんです。一緒に行きません？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ……うん、そうだね。<br>顔洗うからちょっと待ってて。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# ========================================
+# [sfx 119：牢の扉が開く音]
+# ========================================
+
+@sfx Sfx_119
+
+# ========================================
+# [back 2]
+# ========================================
+
+# ========================================
+# [bgm Bgm_019_001_Loop]
+# ========================================
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+@back 2_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent.Custom { time:0.9 }
+@Wait 0.9
+
+@bgm Bgm_19_1
+
+@print エマは急いで顔を洗い、<br>シェリーと共に房を出た。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+@char Sherry.Normal1
+
+@print （そういえば隣は……） { author:Ema speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [sfx 15：カラースプレー噴出音]
+# ========================================
+
+@sfx Sfx_15
+
+# ＠備考◆『童謡』ちょうちょの鼻歌
+
+@hideChars 
+@back 1_1 { Scale:{g_backgroundDefaultScale} }
+@char Noah.Normal1,ArmR1,ArmL5
+
+@print ふんふふ～ん♪ { author:Noah speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@back 2_1 { Scale:{g_backgroundDefaultScale} }
+@char Ema.Normal1
+@char Sherry.Normal1
+
+@print （相変わらず、お絵描きしてる……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （アンアンちゃんはいないみたい……<br>　あのあと大丈夫だったのかな） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "房内のノアの絵は、また<ruby=\"さまが\">様変</ruby>わりしていた。" { speed:1 waitInput:true Wait:true }
+
+@print "スプレーアートは<ruby=\"ちみつ\">緻密</ruby>に描きこまれ、<br>カラフルに<ruby=\"いろど\">彩</ruby>られている。<br>とてもひと晩で描かれたものには見えない。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+
+@print すごい……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1
+
+@print バルーン……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print "ぽつりとシェリーが<ruby=\"つぶや\">呟</ruby>いた言葉で、<br>エマは首を<ruby=\"かし\">傾</ruby>げる。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print バルーン？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Surprised1
+
+@print エマさん、知りませんか？<br>世界的に有名なストリートアーティストですよ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 正体不明でその姿を見た人もいないって<br>噂だったんですけど……まさかのノアさんだったんですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print すごいすごいすご～い！<br>ノアさん、サインください！！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@back 1_1 { Scale:{g_backgroundDefaultScale} }
+@char Noah.Normal1,ArmR1,ArmL1
+
+@print 呼びかけにノアが振り返ってきた。 { speed:1 waitInput:true Wait:true }
+
+@print さいん？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@back 2_1 { Scale:{g_backgroundDefaultScale} }
+@char Ema.Normal1
+@char Sherry.Surprised1
+
+@print ノアさん、【バルーン】なんですよね！？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@back 1_1 { Scale:{g_backgroundDefaultScale} }
+@char Noah.Flushed1
+
+@print "ん？ ああ～そうだよ～？<br>へへ～照れるな～。" { author:Noah speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@back 2_1 { Scale:{g_backgroundDefaultScale} }
+@char Ema.Pensive1
+@char Sherry.Normal1
+
+@print （世界的に有名なアーティストって……本当に？<br>　ただちょっと変わった子だとばかり……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@toast "魔女図鑑 更新…"
+@update Noah
+
+@print そんな有名人が捕まってるなんて……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+
+@print ね、ねえ、ここに連れてこられたのって<br>絶対騒ぎになってるよね！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print そういえばレイアちゃんも芸能人だし、世間が黙ってないよ！<br>きっと警察がボクらのこと捜してる！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 縋るようにエマは口にしたが、<br>シェリーにはピンと来なかったのか、首を捻る。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1
+
+@print どうでしょう？<br>この牢屋敷は国家ぐるみな気がします。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ゴクチョーさんが言ってましたよね。<br>全国で行われた検査に引っかかったって。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print そうなると、警察が動くような事態には<br>なっていないのでは。むしろ協力した側かも。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1
+
+@print もしかしたら私たち、<br>死亡扱いになってるかもしれませんね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print なんでもないことのように、<br>シェリーが爽やかな笑顔で言い放つ。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2
+
+@print そんな……そんなのおかしい！<br>このままにしちゃダメだよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ヒロちゃんが殺されたこと、ちゃんと外の人に知らせないと！<br>救助を呼ぼうよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+
+@print ふむ。それもまたありな展開ですか。<br>脱獄するってことですね？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+
+@print 脱獄……う、うん。<br>ボクらは間違ってここに連れてこられた。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print だからまずは、脱獄を考えよう……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （ああでも……昨日脱走したアリサちゃんは、<br>　あっさり看守に捕まってたっけ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 看守って何人もいるのかな？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 今のところ確認できたのはひとりですね。<br>看守の目を盗めば、<br>なんとかなりそうな気もします。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2
+
+@print ボクらはまだここのことを知らなすぎるし、<br>色々見回って良い脱獄方法がないか探そう！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1
+
+@print 承知しました！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [transition Out,Fade,1,Black]
+# ========================================
+
+@set "chosenAreaFlag = 0"
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter01/Act01_Chapter01_Adv11

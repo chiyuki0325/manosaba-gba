@@ -1,0 +1,27 @@
+{
+  "format": "manosaba.story",
+  "version": 1,
+  "language": "zh-Hans",
+  "path": "Act01_Chapter05/Act01_Chapter05_Adv02",
+  "events": [
+    {"op": "GosubResetWitchBook", "line": 1, "indent": 0, "params": {"Path": "System/System_ResetWitchBook", "IsDebugDirectJump": {"expression": "{isDebugDirectJump}"}}},
+    {"op": "Gosub", "line": 2, "indent": 0, "params": {"Path": "System/System_Subroutine.BeginAdv"}},
+    {"op": "ModifyBackgroundExtended", "line": 4, "indent": 0, "params": {"TintColor": "#000000", "Duration": 1.2000000476837158, "Lazy": 0, "AppearanceAndTransition": "Transparent", "SubId": "Overlay"}},
+    {"op": "label", "name": "Scene1-5-2", "line": 6, "indent": 0},
+    {"op": "BeginIf", "line": 24, "indent": 0, "params": {"Expression": "chosenAreaFlag == 3"}},
+    {"op": "SetCustomVariable", "line": 25, "indent": 1, "params": {"Expression": "chosenAreaFlag = 0"}},
+    {"op": "Gosub", "line": 26, "indent": 1, "params": {"Path": "System/System_Subroutine.EndAdv"}},
+    {"op": "GotoModified", "line": 27, "indent": 1, "params": {"Path": "Act01_Chapter05/Act01_Chapter05_Adv05", "SoftReset": 1}},
+    {"op": "ChoiceMapArea", "line": 29, "indent": 0, "params": {"CategoryNames": ["Courtroom", "ChamberUndine"], "Back": 0, "Global": 0, "MapAreaNames": ["Courtroom", "ChamberUndine"], "FlagVariableName": "chosenAreaFlag"}},
+    {"op": "BeginIf", "line": 31, "indent": 0, "params": {"Expression": "chosenAreaId==\"Courtroom\""}},
+    {"op": "SetCustomVariableAsFlag", "line": 32, "indent": 1, "params": {"Number": 0, "VariableName": "chosenAreaFlag"}},
+    {"op": "Gosub", "line": 33, "indent": 1, "params": {"Path": "System/System_Subroutine.EndAdv"}},
+    {"op": "GotoModified", "line": 34, "indent": 1, "params": {"Path": "Act01_Chapter05/Act01_Chapter05_Adv03", "SoftReset": 1}},
+    {"op": "BeginIf", "line": 36, "indent": 0, "params": {"Expression": "chosenAreaId==\"ChamberUndine\""}},
+    {"op": "SetCustomVariableAsFlag", "line": 37, "indent": 1, "params": {"Number": 1, "VariableName": "chosenAreaFlag"}},
+    {"op": "Gosub", "line": 38, "indent": 1, "params": {"Path": "System/System_Subroutine.EndAdv"}},
+    {"op": "GotoModified", "line": 39, "indent": 1, "params": {"Path": "Act01_Chapter05/Act01_Chapter05_Adv04", "SoftReset": 1}},
+    {"op": "Stop", "line": 41, "indent": 0, "params": {}}
+  ],
+  "translations": {}
+}

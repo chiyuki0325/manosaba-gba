@@ -1,0 +1,615 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act01_Chapter05/Act01_Chapter05_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+@char Warden.1 { Position:,{hiddenCharacterPositionY} time:0 }
+# ==============================================================================
+# MARK: 5-1: 💬 死体の状況について
+# ==============================================================================
+# ＠ト書き▼議論5-1 死体の状況について
+# 議論開始カットイン
+# BGM変更：rAwTell Owk...
+@bgm Bgm_7_1
+
+# Judge5-1-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Open,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@printDebate まずは死体の状況について<br>話しましょう？
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Open,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@printDebate ナノカちゃんの死体は<br>処刑台が地下から上がった<br>タイミングで<br>見つかったわ……。
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Open,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@printDebate ということは、<br>それまで<br>ナノカちゃんの死体は<br>地下で凍っていた<br>わけよね？<br>……アリサちゃんと<br>同じように。
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@printDebate つまりアリサちゃんと<br>ナノカちゃんを<br>殺した犯人は<br>【同一犯】……。
+
+@char Margo.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@printDebate 違うかしら、<br>エマちゃん？
+
+@char Ema.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@printDebate ……少なくとも、<br>ボクはナノカちゃんを<br>殺してないよ。
+
+@char Ema.Default,ArmR3,ArmL11,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@printDebate ボクは朝、<br>ナノカちゃんが<br>地下に入っていくのを<br>見てるんだ。
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open
+@gosubModifyCamera 0
+@printDebate 最後に見たのは<br>ボクだろうし、<br>ボクが容疑者として<br>疑われるのは<br>仕方ないけど……。
+
+@char Ema.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@printDebate でも、<br>ボクはナノカちゃんを<br>殺してなんかない！
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate ……仮にエマちゃんが<br>言ってることが<br>正しいとしても、<br>疑問はいくつか<br>残るわね。
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate "ナノカちゃんの体には<br><link=\"Objection_01_05_01_01\">傷ひとつなかった</link>わ。<br><link=\"Objection_01_05_01_02\">単純な殺害</link>とは<br>思えないわね。"
+
+@char Meruru.ArmR5_1,ArmL8,Eyes1_Downcast_Open1,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@printDebate そうですね……。<br>ナノカさんが<br>どうやって<br>死んだのかは<br>わかりませんが……。
+
+@char Meruru.ArmR5_1,ArmL8,Eyes1_Pensive_Open2,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@printDebate "死体に<br><link=\"Objection_01_05_01_03\">傷が残って</link><br>いないなら、<br>【<link=\"Objection_01_05_01_04\">凍死</link>】か<br>【<link=\"Objection_01_05_01_05\">窒息死</link>】か……<br>そのあたりが<br>疑わしいとは思います。"
+
+@char Ema.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@printDebate ……いや。<br>少なくとも、<br>ナノカちゃんが<br>凍死した事は<br>ありえないよ。
+
+@char Ema.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@printDebate ボクと別れてから、<br>せいぜい数時間程度……。<br>それだけで<br>自然に凍死するとは<br>思えない。
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Angry_Closed
+@gosubModifyCamera 0
+@printDebate じゃあ誰が<br>殺したってんだよ！
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@printDebate そ、それはまだ<br>わからないけど……！<br>でも、ボクじゃない！
+
+@char Coco.Default,ArmR2,ArmL4,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Angry_Open01
+@gosubModifyCamera 0
+@printDebate エマっちが<br>殺してきたなら、<br>全部辻褄は合うじゃん！<br>やっぱエマっちが<br>殺したんだろ！？
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Ema.Default,ArmR2-1,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed { time:0 }
+@gosubModifyCamera 0
+@Wait 0.2
+
+# ==============================================================================
+# 5-1議論後独白
+# ==============================================================================
+
+@print （どうしてナノカちゃんが死んでしまったのか……<br>　それを明らかにする為にも、ボクは諦めない……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR2-1,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@print （ナノカちゃんの死体に残った違和感……<br>　それを指摘するんだ！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge5-1-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_01_05_01_01
+
+@Skip false
+@pauseTrial true
+
+@choice 傷はあった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge5-1-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_01_05_01_02
+
+@Skip false
+@pauseTrial true
+
+@choice 電気椅子で殺された
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge5-1-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_01_05_01_03
+
+@Skip false
+@pauseTrial true
+
+@choice 心の傷は深いのかも
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge5-1-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論4
+# ------------------------------------------------------------------------------
+
+# Objection_01_05_01_04
+
+@Skip false
+@pauseTrial true
+
+@choice 凍死した
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge5-1-5
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論5
+# ------------------------------------------------------------------------------
+
+# Objection_01_05_01_05
+
+@Skip false
+@pauseTrial true
+
+@choice 窒息死した
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge5-1-6
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 5-1: ❌ 議論ミス選択肢
+# ==============================================================================
+# MARK: 5-1-3: ❌ 電気椅子で殺された
+
+# Judge5-1-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print そうか……！<br>ナノカちゃんは電気椅子で殺されたんだよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print ……エマちゃん、ふざけてるの？<br>電気椅子にはアリサちゃんの死体が座っていたのよ？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print だ、第２、第３の電気椅子があって……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print ならそれ、ここに持ってきてよ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print ないものをあるように話すのは、<br>詐欺師の典型的な手法よ？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （マーゴちゃんに詐欺師扱いされちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （……この裁判は、ボクの生死がかかってる。<br>　でも、あまりにも反論材料が少ない……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR2-1,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （だからこそ、議論の中でわずかな矛盾を探すんだ……！<br>　ナノカちゃんの死を無駄にしないためにも……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge5-1-1
+
+# MARK: 5-1-4: ❌ 心の傷は深いのかも
+
+# Judge5-1-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print 体に傷ひとつなくても、<br>心の傷は深かったのかもしれないよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal2,ArmR1_2,ArmL1,Eyes2_Surprised_Open1,Mouth2_Fearful_Open1,Sweat2_1
+@gosubModifyCamera 0
+@print ……えっ？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ナノカちゃんは心の傷によって<br>自ら命を断ったのかもしれない……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print だとしても、死因となるものがないと<br>人は死なないわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print エマちゃん……<br>心の傷で人は殺せないのよ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （論破されちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Ema.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （……この裁判は、ボクの生死がかかってる。<br>　でも、あまりにも反論材料が少ない……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Ema.Default,ArmR2-1,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （だからこそ、議論の中でわずかな矛盾を探すんだ……！<br>　ナノカちゃんの死を無駄にしないためにも……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge5-1-1
+
+# MARK: 5-1-5: ❌ 凍死した
+
+# Judge5-1-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ……ナノカちゃんは、凍死したのかも……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print "あら？ エマちゃんの証言では<br>ナノカちゃんが冷凍室に入ったのは<br>今朝なんでしょう？" { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print そんなに短時間で凍死したということ？<br>それとも……嘘をついていたのかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ち、違うよ！<br>これはその……勘違いしてて。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print あらあら、慌ててる暇なんてあるのかしら。<br>エマちゃんも大変な状況なのにね？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （そ、そうだ……！<br>　うかつなことを言ったら、<br>　ボクへの疑いが深まっちゃう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Ema.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （……この裁判は、ボクの生死がかかってる。<br>　でも、あまりにも反論材料が少ない……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Ema.Default,ArmR2-1,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （だからこそ、議論の中でわずかな矛盾を探すんだ……！<br>　ナノカちゃんの死を無駄にしないためにも……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge5-1-1
+
+# MARK: 5-1-6: ❌ 窒息死した
+
+# Judge5-1-6
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ナノカちゃんは窒息死したのかもしれない……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print どーやって？<br>首しめられた跡とかもないじゃん。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Middle
+@gosubModifyCamera 0
+@print それは……地下には液体窒素とかあったから<br>それを使ったのかも……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print なるほどね。<br>たしかに酸素濃度が変われば、<br>外傷なしでナノカちゃんを殺せるかもしれないわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print それがエマちゃんがナノカちゃんを<br>殺した方法というわけね？<br>それなら特段、異論はないわね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR2-1,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ち、違うよ！<br>ボクはやってない……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print "（ダメだ……！ この可能性を提示しても、<br>　ボクへの疑いは晴れない……！）" { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR2-1,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （ナノカちゃんの死の状況との食い違い……！<br>　【矛盾する証言】を指摘するんだ！） { author:Ema speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge5-1-1
+
+# ==============================================================================
+# MARK: 5-1-2: ⭕ 傷はあった
+# ==============================================================================
+
+# Judge5-1-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+# カットイン
+@StopBgm 
+@gosubCutIn Ema
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR5,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ……ちょっと待って。<br>ナノカちゃんの身体に、傷は残っていたはずだよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print "あら？ そうだったかしら？" { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR2-1,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print うん、その傷があった場所は……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+
+# Judge5-1-7
+
+@choice 指先
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge5-1-9
+
+@choice 心臓
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge5-1-10
+
+@choice 口の中
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge5-1-8
+
+@StopForChoice 
+
+# ==============================================================================
+# ミス選択肢
+# ==============================================================================
+# MARK: 5-1-9: ❌ 指先
+
+# Judge5-1-9
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print たしか指先に血がついてあって……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal1
+@gosubModifyCamera 0
+@print た、たしかに血はついてましたけど、<br>傷はついてませんでしたよエマさん……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print あら、嘘ついちゃダメよ？<br>エマちゃん♡ { author:Margo speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （嘘つき扱いされちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR2-1,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （……証拠品をもう一度よく見てみよう） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR2-1,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （ナノカちゃんの体に傷が残っている場所は――） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge5-1-7
+
+# MARK: 5-1-10: ❌ 心臓
+
+# Judge5-1-10
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ……心臓かな。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print 外傷ないのに心臓が傷ついてるってどういうことだよ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print えと……心臓発作でナノカちゃんが死んだとか……！<br>そうじゃないと外傷がないのが<br>おかしいっていうか……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.ArmR1_1,ArmL8,Eyes1_Pensive_Open2,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print エマさん……いったん落ち着いて考えましょう。<br>思いつきで発言しても、何も解決しません……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR12,ArmL16,Angle01/Head01/Facial01/Eyes01>Eyes01_Thinking_Closed01,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （お、おちつけ……！<br>　ボクの心臓……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR2-1,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （……証拠品をもう一度よく見てみよう） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR2-1,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （ナノカちゃんの体に傷が残っている場所は――） { author:Ema speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge5-1-7
+
+# ==============================================================================
+# MARK: 5-1-8: ⭕ 口の中
+# ==============================================================================
+# カットイン
+# 気任せの蝶［チェロ有り］
+
+# Judge5-1-8
+
+@bgm Bgm_45_1
+@gosubCutIn Ema
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ナノカちゃんは口から血を流していた……<br>これは明らかに、体にできた傷って言えるよね？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print ……そういえば、そうだったわね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print あの血は、上顎の内側にできた傷から出血していたみたい。<br>……つまり、吐血だとか内臓の傷とかでは<br>なかったということね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print でもべつにそれが原因で死んだわけじゃないっしょ？<br>そんなちっちゃい傷でさ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal2
+@gosubModifyCamera 0
+@print そうですね。出血量としては微々たるもので……<br>命を奪うほどのものではないと思います。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print ……エマちゃん、今そんな事が重要なのかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print （重要かどうかは……正直言ってわかんないけど） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （でもこのまま黙って<br>　ナノカちゃんを殺した犯人だと<br>　思われるわけにはいかない！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Ema.Default,ArmR2-1,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ……もちろん、重要だよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print そう？<br>じゃあエマちゃんがそこまで言うなら……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Margo.Default,ArmR1,ArmL3,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print あの傷はどうやってつけられたのか……<br>教えてもらえるかしら。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ……え？ { author:Ema speed:1 waitInput:true Wait:true }
+
+
+@goto Act01_Chapter05/Act01_Chapter05_Trial02

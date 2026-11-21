@@ -1,0 +1,87 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-3-26
+
+# ========================================
+# ●シーン1‐3-26
+# ========================================
+
+@back 9_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# 荘厳な鐘の音
+@sfx Sfx_33
+
+@bgm Bgm_2_1_Loop
+
+@print エマが捜査で走り回るうちに、<br>牢屋敷内に荘厳な鐘が鳴り響いた。 { speed:1 waitInput:true Wait:true }
+
+@print （時間だ――） { author:Ema speed:1 waitInput:true Wait:true }
+
+# フクロウの通知音
+@sfx Sfx_14
+
+@print 通知音が聞こえて、<br>エマは自身のスマホを確認する。 { speed:1 waitInput:true Wait:true }
+
+@print 『魔女裁判の時間となりました』 { speed:1 waitInput:true Wait:true }
+
+@print 『皆さん、必ず自身のスマホを持って、<br>　速やかに裁判部屋に集合してください』 { speed:1 waitInput:true Wait:true }
+
+@print 『従わない者は看守によって<br>　強制連行します』 { speed:1 waitInput:true Wait:true }
+
+@print エマはぐっと拳を握り、<br>裁判所へと向かう。 { speed:1 waitInput:true Wait:true }
+
+# ゆっくりと大扉を開く音
+@sfx Sfx_165
+
+@back 13_1 { time:0 }
+@back Transparent.Custom { time:0.9 }
+@Wait 0.9
+
+@bgm Bgm_2_1_Loop
+
+@back Transparent { time:1.8 }
+@WaitForNextFrame 
+
+@animate MainBackground
+@Wait 1.5
+
+@print 生き残った少女たちは、<br>すでに裁判所にそろっていた。 { speed:1 waitInput:true Wait:true }
+
+@print エマ、シェリー、メルル。<br>ココ、マーゴ、アリサ。<br>そして、ナノカ。 { speed:1 waitInput:true Wait:true }
+
+@back 13_1
+
+@char Warden.1
+
+@print 黒部ナノカさん、今までどこにいたんですか。<br>ずいぶん探したんですよ。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print まあ、今は魔女裁判が優先ですから、<br>黒部ナノカさんの処分については後で……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Pensive1
+
+@print あんさあ、それ前回も言ってたよね。<br>絶対真面目に探してねーだろお前。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Warden.1
+
+@print 心外ですね……私はこんなに働いているのに……<br>まあいいです。<br>さっさと始めてさっさと終わらせましょう。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ７名の少女たちは証言台に立ち、<br>痛みを堪えるかのように、酷く辛そうに、互いを見合う。 { speed:1 waitInput:true Wait:true }
+
+@char Warden.1
+
+@print それでは、魔女裁判開廷です！ { author:Warden speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ＞議論パートへ
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter03/Act01_Chapter03_Trial00

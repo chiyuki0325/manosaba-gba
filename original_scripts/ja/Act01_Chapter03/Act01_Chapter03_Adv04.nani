@@ -1,0 +1,278 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-3-4
+
+# ========================================
+# ●シーン1‐3-4
+# ========================================
+
+@back 1_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_28_1
+
+@print その日の朝、エマは久しぶりに気分よく目覚めた。 { speed:1 waitInput:true Wait:true }
+
+@print （熱が下がったのかも……！<br>　いつもより体が軽い） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマはすぐにシェリー、ハンナ、メルルに<br>チャットを送った。 { speed:1 waitInput:true Wait:true }
+
+@print 『元気になったよ！』 { speed:1 waitInput:true Wait:true }
+
+@print 『今日こそピクニックに行こう！』 { speed:1 waitInput:true Wait:true }
+
+@print ３人からはすぐにＯＫの返事が返ってきて、<br>エマは笑顔になって、通路の方へ出た。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+@back 2_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent.Custom { time:0.9 }
+@Wait 0.9
+
+@char Meruru.Smile
+@char Ema.Normal1
+
+@print あ、エマさん。おはようございます。<br>元気になって良かったです……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print メルルちゃんおはよう！<br>たくさん心配かけちゃってごめんね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print これから朝食に行くの？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print あ、いえ。ピクニックを決行するとのことなので、<br>お弁当を作りに医務室へ……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+
+@print えっ、医務室でお弁当って作れるの？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 食堂のアレをバスケットに詰めるのかなって<br>思ってたんだけど。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Pensive
+
+@print えっと……牢屋敷の外には野草やハーブが<br>たくさんあります、よね……色々採取しておいたんです。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 森の方まで行けば、キノコや木の実もあるんですよ。<br>キノコは気をつけないといけませんけど……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+
+@print "へええ……！ 知らなかった……！" { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default
+
+@print 食堂でいつも食べているものじゃ、<br>寂しいかなと思ったんです。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 少しでもみんなに、笑顔になってほしいんです。<br>私にできることなんて、これくらいで……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print メルルちゃんは優しいね……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Flushed
+
+@print "エマに言われて照れくさそうに<ruby=\"ほほ\">頬</ruby>を染めたメルルだったが、<br>すぐに眉が下がっていた。" { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Pensive
+
+@print きっと、ナノカさんもそういったもので<br>生活しているのじゃないでしょうか……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print お腹を空かせているんじゃないかと、<br>とっても心配です……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print （そうだよね……ナノカちゃんは行方不明のまま……。<br>　どうして見つからないんだろう？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 外で生活していたら、辛いと思います……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print ナノカちゃんのことも探さないとね。<br>実はもう脱獄できてるとかならいいんだけど……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+@hideChars 
+
+@print エマとメルルは話しながら、<br>医務室へと向かい始めた。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+@back 7_2 { time:0 }
+
+@back Transparent.Custom { time:0.9 }
+@Wait 0.9
+
+@char Alisa.Normal1,Option-ArmL-Off
+
+@print 医務室に入ると――そこには、先客がいた。 { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_35_1
+
+@print アリサが薬品棚の前にうずくまり、ごそごそと荒らしていた。<br>その足元には、様々な薬品のビンが散らばっている。 { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Surprised
+
+# ＠備考◆はっと息を呑む
+
+@print ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print エマとメルルが入ってきたことに気付き、<br>アリサは気まずそうに全身を強張らせる。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@back 7_2 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@char Ema.Pensive1,ArmR3
+
+@print アリサちゃん……一体、何を……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa.Angry1,Option-ArmL-Off,ArmL2
+
+@print 関係ねーだろ！！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 突っぱねながらも、<br>アリサはずかずかとメルルの方へと歩み寄ってくる。 { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default
+@char Alisa.Normal1,Option-ArmL-Off,ArmL2
+
+@print 氷上――例のブツはどこだよ？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print （例のブツ……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Pensive
+
+@print ……わ、渡せません……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,ArmL1
+
+@print "ああん！？ おめえ、逆らうつもりかよ！！" { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,ArmL7
+@animate Alisa-Front
+
+
+@print "アリサはメルルの胸倉を<ruby=\"つか\">掴</ruby>んですごむ。<br>その様子はどこか必死に見えた。" { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,ArmL7
+@char Ema.Angry1,ArmR1,ArmL13
+@char Meruru.Pensive
+
+@print は、話が見えないんだけど、<br>乱暴なことはやめて！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,ArmL1
+
+@print チッ……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hide Alisa-Front
+
+@print アリサはメルルをパッと離し、<br>逃げるように早足で、医務室を出ていった。 { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default
+
+@print けほ……けほけほっ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1
+
+@print メルルちゃん、大丈夫！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "その場に膝をついたメルルの背中をエマが<ruby=\"な\">撫</ruby>でる。<br>メルルは、哀しそうに眉を下げていた。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+@char Meruru.Default
+
+@print メルルちゃん、あの……<br>アリサちゃんと、何かあったの……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "メルルは<ruby=\"しゅんじゅん\">逡巡</ruby>していたが、<br>やがてぽつりぽつりと語りだした。" { speed:1 waitInput:true Wait:true }
+
+@print ……ここに捕まってすぐ、<br>アリサさんが眠れないって訴えてきたんです。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Pensive
+
+@print 薬品棚に精神安定剤や睡眠薬があったので、<br>いくつかお渡ししたのですが……<br>どうやらアリサさんは大量服用しているみたいで……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 大量服用……それって良くないよね……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default
+
+@print は、はい。すぐに薬を切らしてしまって、<br>次から次にほしいと……。<br>そんなの、体に良くない影響が出ます。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print とっても、とっても浅はかでした……！<br>辛そうなアリサさんを見てられなくて、私は……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print "くしゃりと泣きそうにメルルの顔が<ruby=\"ゆが\">歪</ruby>む。" { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Pensive
+
+@print 言い訳なんてできません……。<br>私は加害者です……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print そ、そんなに気に病むことないよ！<br>メルルちゃんはアリサちゃんを心配しただけだし、<br>アリサちゃんは元気だし。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print はい……今のところ影響は出ていません……<br>でも、この先はわからないです……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print メルルはよろよろと立ち上がり、<br>ベッドの方へと歩いていく。 { speed:1 waitInput:true Wait:true }
+
+@print そしてシーツの隙間から、<br>１本の薬瓶を取り出した。 { speed:1 waitInput:true Wait:true }
+
+# アイテム表示：『睡眠薬』
+@spawn Clue
+
+@char Meruru.Default
+
+@print これがアリサさんの探していた睡眠薬です。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 強いお薬でよく効くので、<br>アリサさんのお気に入りになってしまって。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Pensive
+
+@print 私、それで、この薬を隠したんです。<br>しばらくこの薬は渡せないって……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print ずっと隠すつもりはなくて、<br>もう少ししたらまたお渡しするつもりでした……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print （そんなことが……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Normal1,ArmR1
+
+@print ……メルルちゃん、お弁当作ろうか！<br>何を手伝えばいい？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print すっかりしょげかえっているメルルを見て、<br>エマは元気づけるように声をかけた。<br>するとメルルもようやく微笑みが戻ってきた。 { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Smile
+
+@print そうですよね……今日はピクニックですもんね。<br>みんなが笑顔になるお弁当、作りましょう……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Smile1
+
+@print うん！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Meruru.Default
+
+@print 私は材料を出してくるので、<br>そうですね……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print エマさんは、<br>薬を片づけてもらってもいいでしょうか……？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Normal1
+
+@print もちろん！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマは薬品棚の前に散らばったビンを拾いはじめた。 { speed:1 waitInput:true Wait:true }
+
+@print （ここはしっかり調べたことなかったけど、<br>　すごいたくさんの薬がある……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 想像のつく薬品もあったが、<br>何に使うものなのか用途不明の薬も多かった。 { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter03/Act01_Chapter03_Adv05

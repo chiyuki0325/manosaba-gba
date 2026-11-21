@@ -1,0 +1,146 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-2-12
+
+# ========================================
+# ●シーン2‐2‐12
+# ========================================
+
+@back 30_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+
+@bgm Bgm_22_1
+
+@print 朝食後。 { speed:1 waitInput:true Wait:true }
+
+@print エマ殺害の準備を進めるため、<br>私は静かにシャワールームへと足を踏み入れた。 { speed:1 waitInput:true Wait:true }
+
+@print 相変わらずシャワールームの壁には、<br>大きな絵が描かれている。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed,ArmR2
+
+@print 【バルーン】、か……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "本人に聞いてみてもいいが、<br>おそらく<ruby=\"とんちゃく\">頓着</ruby>していないだろう。" { speed:1 waitInput:true Wait:true }
+
+@print （ノアは本当にただ純粋に絵を描くのが好きだと<br>　伝わってくる） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （きっとお絵描きできるならどこでもいいんだろうな。<br>　この牢屋敷でも） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+
+@print 改めてノアの絵を見つめ、<br>くすりと笑ってしまった。 { speed:1 waitInput:true Wait:true }
+
+@print （ストレスなく生きているなら、<br>　ノアは魔女化の心配はなさそうだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Surprised1,ArmR1
+
+@print そんなことを考えていて、<br>ハッと我に返る。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1
+
+@print （今はノアは関係ないだろう！<br>　大切なところで集中しないでどうする） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 気を取り直して、準備を進めていく。 { speed:1 waitInput:true Wait:true }
+
+@print やることはシンプルだ。<br>事前にダストシュートに細工をするだけ。 { speed:1 waitInput:true Wait:true }
+
+@print エマが事故と処理されるには、<br>その裏付けとなる証拠が必要だ。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed,ArmR2
+
+@print （よって……ダストシュートのフタは、<br>　【経年劣化で壊れていた】ことにする） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （エマは不運にもそれに気付かず近付いて、<br>　バランスを崩して落下してしまった……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （その衝撃で頭を強く打ったエマは気を失い、<br>　運悪く時間に合わせて自動で焼却炉が稼働……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （エマはそのまま焼かれ、焼死してしまう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （……これが事件の筋書きだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "細工は事件の前に<ruby=\"ほどこ\">施</ruby>す必要があった。" { speed:1 waitInput:true Wait:true }
+
+@print エマが行方をくらました後に<br>細工をしているのを目撃されたら、<br>犯人と疑われる可能性が上がるためだ。 { speed:1 waitInput:true Wait:true }
+
+@print 事前に細工しておけば、<br>万が一見つかってもいくらでも誤魔化しはきく。<br>最悪計画を中止すればいいだけだ。 { speed:1 waitInput:true Wait:true }
+
+@print （私はエマを殺害したあと、<br>　誰かが【事故の証拠】を見つけるのに合わせて<br>　推理を披露すればいいだけだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （【エマは運悪くダストシュートの故障によって<br>　命を落としたのだ】、と） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+
+@print （言いくるめることなんて、いくらでもできる。<br>　なにせ……他殺の証拠なんて何も残らないのだから） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@QuickSave 18
+
+@print （よし、早く済ませてしまおう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@StopBgm { fade:1 }
+
+@print アトリエで見つけた工具を手に、<br>ダストシュートに近付いた私は―― { speed:1 waitInput:true Wait:true }
+
+@choice ネジを少しゆるめた
+	@goto .Choice2-2-1
+
+@choice 念のため中を調べることにした
+	@goto Act02_Chapter02/Act02_Chapter02_Bad01
+
+@StopForChoice 
+
+# Choice2-2-1
+
+@correctChoice 18
+
+# ネジをゆるめる音
+@sfx Sfx_128
+@Wait 2
+
+@print フタのネジを少しゆるめた。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro
+
+@print （これでいい。後は時間が来るのを待つだけ。<br>……いや、まだひとつ懸念があった） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@back 30_2
+@Wait 0.3
+@char Coco.Pensive1
+
+@print ココの存在だ。 { speed:1 waitInput:true Wait:true }
+
+@print （彼女は防音性の高いシャワールームで<br>　配信をすることがある……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print もしエマとの約束の時間に、<br>ココがシャワールームで配信をしようとしたら。 { speed:1 waitInput:true Wait:true }
+
+@print 計画を思いついた時点で、私はこの問題に気付いた。 { speed:1 waitInput:true Wait:true }
+
+@print "ココにもっと適切な配信場所を提供するなど、<br>いくつかの策を<ruby=\"ね\">練</ruby>った。" { speed:1 waitInput:true Wait:true }
+
+@print だが、あまり裏工作のような動きをすると<br>後々怪しまれる要因になりかねない。 { speed:1 waitInput:true Wait:true }
+
+@print "最終的には対策を<ruby=\"こう\">講</ruby>じることができないまま、<br>当日を迎えてしまっていた。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@Wait 0.3
+@back 30_2
+@Wait 0.3
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print （邪魔になりそうなのはココだけじゃない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 他の少女だって、シャワールームを<br>訪れる可能性があるのだ。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1,ArmR1
+
+@print （その時は、うまく追い払うしかない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter02/Act02_Chapter02_Adv13

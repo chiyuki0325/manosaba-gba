@@ -1,0 +1,672 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter03/Act02_Chapter03_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# ==============================================================================
+# MARK: 8-1: 💬 レイアの検分
+# ==============================================================================
+# ＠ト書き▼議論シーン8-1 レイアの検分
+# 議論開始エフェクト
+# BGM変更：rAwTell Owk...
+@bgm Bgm_7_1
+
+# Judge8-1-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Leia.Default,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@printDebate アンアンくんは、<br>２階のベランダから<br>落下して死亡した……。
+
+@char Leia.Default,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@printDebate 運悪く<br>下にあった鉄柵が突き刺さり、<br>命を落としたんだ。
+
+@char Sherry.Default,ArmR4,ArmL5,Angle01/Facial/Eyes>Eyes_Surprised_Open01,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@printDebate 偶然による事故死……<br>ということですね？
+
+@char Leia.Default,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Closed,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@printDebate そうだね。<br>現場の状況から見て、<br>アンアンくんは<br>足を滑らせたんだろう。
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Pensive_Open
+@gosubModifyCamera 0
+@printDebate ……けどよ。<br>あの鉄柵……<br>背中から刺さってたよな。
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open01
+@gosubModifyCamera 0
+@printDebate ベランダから<br>事故で落ちたって言うのは<br>わかるが……。
+
+@char Alisa.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open01
+@gosubModifyCamera 0
+@printDebate "たとえば、<br>ベランダの柵に<br>寄りかかるようにして<br>落ちたんなら、<br><link=\"Objection_02_03_01_01\">前のめりに落ちる</link>のが<br>普通じゃねーか？"
+
+@char Leia.Default,ArmR5,ArmL7,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@printDebate それは……<br>落ちている最中に<br>空中でバランスを<br>崩したのかも<br>しれないけど……。
+
+@char Alisa.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Pensive_Open
+@gosubModifyCamera 0
+@printDebate 落ちたのは<br>２階から１階までの<br>距離だろ？
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02
+@gosubModifyCamera 0
+@printDebate たかだか<br>数メートルだ。
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Normal_Open02
+@gosubModifyCamera 0
+@printDebate その間に体を捻って<br>背中から落ちるなんて、<br>ありえんのかよ？
+
+@char Leia.Default,ArmR5,ArmL7,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@printDebate ありえないとは<br>言い切れないが、<br>何か理由があったのかも<br>しれないね。
+
+@char Leia.Default,ArmR5,ArmL7,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@printDebate たとえば、<br>ベランダが壊れていたとか。
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@printDebate "んー。<br>昨日の時点では、<br>アトリエのベランダは<br><link=\"Objection_02_03_01_02\">壊れてなかった</link>と<br>思うけどなぁ……。"
+
+# ＠備考◆動揺
+
+@char Ema.Default,ArmR3,ArmL4,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@printDebate そ、そんなことないと<br>思うなっ……！
+
+@char Ema.Default,ArmR3,ArmL4,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@printDebate ベランダの柵……<br>壊れてた気がする……！
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@printDebate "うーん……。<br><link=\"Objection_02_03_01_03\">のあの見たこと</link>と、<br>違うけど……。"
+
+
+# ==============================================================================
+# 8-1議論後独白
+# ==============================================================================
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@Wait 0.2
+
+@print （……エマ。<br>　まさか私のことを庇おうとしているのか……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Angry_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@print （……だとしたら、バレバレだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆苛立ち・ため息
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Painful_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@print （…………） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@print （……巻き込むわけには、いかないか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge8-1-1
+
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_03_01_01
+
+@Skip false
+@pauseTrial true
+
+@choice 屋根に上ろうとして落ちた
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge8-1-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_02_03_01_02
+
+@Skip false
+@pauseTrial true
+
+@choice ノアの勘違いだった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge8-1-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_02_03_01_03
+
+@Skip false
+@pauseTrial true
+
+@choice 時系列が違う
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge8-1-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 8-1: ❌ 議論ミス選択肢
+# ==============================================================================
+# MARK: 8-1-3: ❌ 反論・屋根に上ろうとして落ちた
+
+# Judge8-1-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print アンアンが屋根に上ろうとしていたなら、<br>ありえない話ではないんじゃないかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR4,ArmL6,Angle01/Facial/Eyes>Eyes_Angry_Open03
+@gosubModifyCamera 0
+@print "あ？ 屋根って……どういうことだよ。" { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 想像してみて欲しい。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print ベランダに出て屋根に上ろうとしたなら、<br>その背中はどこを向くかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Surprised1,ArmR3,ArmL4,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print あ、そっか……！<br>中庭が背中側になるよね。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print 屋根に上る際、<br>アンアンはベランダの柵を踏み台にしたんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print そしてそこに体重をかけたとき、<br>運悪く足場としていた部分が崩れてしまった……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print それならアンアンが後ろ向きに倒れ、<br>背中が地面側を向いたとしても<br>おかしくはない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02
+@gosubModifyCamera 0
+@print ……でもよ。<br>それならそもそも、なんで夏目は屋根に上ろうとしたんだ？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print たしかにそうですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 屋根の上には何かあったんでしょうか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Open5,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print それは……まだわからないが。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print ならわざわざ上る意味なんてねーだろ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Angry_Open01,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print ヒロさんの言ってることには無理があります！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print （納得させるには動機が弱かったか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Open3,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print （何か根拠を提示したいが<br>　そんなものは無い） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （なら、ここは嘘をついてでも<br>　別の議論へ誘導するべきか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge8-1-1
+
+# MARK: 8-1-4: ❌ 反論・ノアの勘違いだった
+
+# Judge8-1-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print ノア、本当にベランダは壊れてなかったのかな？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print えー？<br>のあ、嘘なんかついてないよ？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print いや、嘘つき呼ばわりしているわけじゃない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print ただ……【勘違い】していたんじゃないかと<br>言いたかったんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR6,Angle01/ArmL>ArmL06,Angle01/Facial/Eyes>Eyes_Surprised_Open02,Angle01/Facial/Mouth>Mouth_Normal_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print 勘違い？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print もしノアが見たというベランダの状態が<br>ずっと前に見たときのものだったとしたらどうかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Closed1,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print ノアが見た時、ベランダの柵はまだ壊れていなかったんだよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print でもそんな勘違い、普通しますかね？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print 普段ベランダの柵なんて意識して見ないんじゃないかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01
+@gosubModifyCamera 0
+@print ううん、昨日見たよ！ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print ……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR1,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print のあ最近ベランダでお絵描きしてるんだー。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR3,ArmL3,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print お外でお絵描きするのって、気持ちいいよねー。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR2,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@print でね、昨日もベランダでお絵描きしてたんだけど……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR4,ArmL1,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01
+@gosubModifyCamera 0
+@print ……うーん。<br>柵はやっぱり壊れてなかったと思うなー。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print ２階の部屋をよく使ってたのはノアさんでしたしね～。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Open
+@gosubModifyCamera 0
+@print たしかに、部屋をアトリエとして普段使いしていた<br>ノアさんの証言の方が信じられますわ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR9,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print ノアちゃんが言うなら、<br>ヒロちゃんの勘違いなんじゃないかな……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （ノアの記憶違いではなかったか……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Angry_Open3,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （何か根拠を提示したいが<br>　そんなものは無い） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （なら、ここは嘘をついてでも<br>　別の議論へ誘導するべきか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge8-1-1
+
+# ==============================================================================
+# MARK: 8-1-2: ⭕ 偽証・時系列が違う
+# ==============================================================================
+# Judge8-1-2
+
+# カットイン
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+@StopBgm 
+@gosubCutIn Hiro
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR6,ArmL1,Eyes2_Normal_Open3,Mouth2_Determined_Open1,Sweat2-1
+@gosubModifyCamera 0
+@print ノアが最後にベランダを見たのはいつだ？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print えーっと……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Smile_Closed
+@gosubModifyCamera 0
+@print 昨日かも！ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print のあは今日、<br>アトリエにも中庭にも行ってないよ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,Arms3,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print なら、ノアが見ていないのも無理はないね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Noah.Default,ArmR4,ArmL1,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@print ……そうなの？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,Arms3,Eyes2_Normal_Open3,Mouth2_Normal_Closed1
+@gosubModifyCamera 0
+@print ああ。なにせベランダは……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 気任せの蝶［チェロ無し］
+@bgm Bgm_45_2
+
+@char Hiro.Normal2,ArmR3,,Eyes2_Normal_Open3,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print 今朝、私が壊したのだからね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Ema.Default,ArmR13,ArmL16,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ……えっ！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （君が反応するなっ……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes2_Normal_Closed1,Mouth1_Determined_Open1,Sweat1-1
+@gosubModifyCamera 0
+@print ……正確には、壊そうとしたわけではないんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print あのベランダは老朽化が進んでいてね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print このままじゃ事故が起こるかと思って、<br>柵の部分だけでも修理しようと思っていたんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL9,Eyes2_Normal_Open2,Mouth2_Determined_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print ……けど中途半端に済ませてしまっていてね。<br>体重をかけでもしたら、壊れてもおかしくない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Open2,Mouth2_Fearful_Open1,Sweat2-1
+@gosubModifyCamera 0
+@print 今回はそれによって不幸な事故が起きてしまったようだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms4,Eyes1_Normal_Open5,Mouth1_Pensive_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print もしそれが原因だとすると、大変申し訳なく思うよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,Arms,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print じゃ、じゃあヒロくんが原因で……？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms4,Eyes1_Normal_Closed1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print そうかもしれないね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Hiro.Normal2,Arms3,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print だけど事故だというなら、<br>【魔女】は関係ないんじゃないかな？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print この裁判は、<br>殺人衝動に支配された【魔女】を探す裁判だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 今回は殺意も何もないただの事故……。<br>アンアンは運が悪かっただけ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print 個人を狙ったような事件でもないのだし、<br>何も問題がないんじゃないかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# モノローグ演出
+
+@char Hiro.Normal2,ArmR13,ArmL13,Eyes2_Normal_Open3,Mouth2_Determined_Closed1
+@gosubModifyCamera 0
+@print （……エマ、君に議論は向いていない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR13,ArmL5,Eyes2_Angry_Open2,Mouth2_Determined_Closed1
+@gosubModifyCamera 0
+@print （嘘をつくなら……堂々とつかなければ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR13,ArmL5,Eyes2_Angry_Open2,Mouth2_Determined_Closed1
+@gosubModifyCamera 0
+@print （……嘘も最後まで貫き通せば、<br>　それは真実だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR13,ArmL5,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1
+@gosubModifyCamera 0
+@print （こんな狂った屋敷で、<br>　これ以上の狂気を広げないためにも……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR13,ArmL5,Eyes2_Angry_Open1,Mouth2_Normal_Closed1
+@gosubModifyCamera 0
+@print （私は……嘘を突き通す……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@print ベランダの修理……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+# SE・明るい音
+@sfx Sfx_Common_2
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print ……うん！<br>今朝に壊れてたなら、のあはわかんないかも。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print 納得してくれたなら問題ないよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ミリアカットイン
+@StopBgm 
+@Wait 0.5
+
+@sfx Sfx_Common_5
+
+@ResetText 
+@voice CommonTrial_Miria00915
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@char Miria.Default,ArmR3,ArmL8,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubSplitStageScreen 1
+@Wait 1.5
+
+@hideStageScreen 1
+@Wait 0.3
+
+@char Miria.Default,ArmR10,ArmL4,Angle01/Facial/Eyes>Eyes_Cry_Open02,Angle01/Facial/Mouth>Mouth_Determined_Close,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……たしかにおじさんも<br>この事件が事故であって欲しいけど。 { author:Miria speed:1 waitInput:true Wait:true }
+
+# BGM変更：rAwTell Owk...
+@bgm Bgm_7_1
+
+@char Miria.Default,ArmR10,ArmL4,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Determined_Close,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print だけどおじさん、<br>気になるものを【目撃】しちゃったんだ……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （なに……！？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print ちょうど死体が見つかる、<br>３０分ぐらい前のことだったと思う……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print あのときおじさん、娯楽室にいて映画を見てたんだ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL8,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print そしたら外から物音が聞こえてきて……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR9,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print それでふと外を見てみたら、<br>星空が綺麗なのが見えたんだよね。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR9,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print 思わずスマホで撮影したんだけど……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Smile_Closed
+@gosubModifyCamera 0
+@print これがそのときの写真だよ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@stageCamera 0 { Rotation:0,{(miriaIdx - 0.1) / 13 * 360},0 time:0.6 }
+@Wait 0.7
+
+
+
+# ☆アイテム追加
+# 【ミリアの写真】
+# ミリアが死体発見の30分前ほどに撮影した写真。
+# 2階から見下ろした写真で、噴水やベランダが映っている。
+# ベランダには2人分の人影が映っているが、何者かまではわからない。
+# アンアンの死体があった位置は木に隠れており、見えない。
+@ResetText 
+@spawn Clue
+@toast "魔女図鑑 更新…"
+@update 8-6
+@Wait i1.2
+@despawn Clue
+
+@char Miria.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Surprised_Open02
+@gosubModifyCamera 0
+@print これに……人影が２人写ってるんだ！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print この２人が事件当時そこにいたアンアンちゃんと、<br>もう１人……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print アンアンちゃんを突き落とした犯人なんじゃないかな！ { author:Miria speed:1 waitInput:true Wait:true }
+
+# ＠備考◆苦しい
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （……決定的な証拠か……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （これはいよいよ言い逃れはできないか……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （しかし……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆青ざめる
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print …………。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR12,ArmL5,Eyes1_Normal_Closed1,Mouth1_Angry_Open1,Sweat1-1
+@gosubModifyCamera 0
+@print （……このまま受け入れるわけにはいかないか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR15,ArmL4,Angle01/Facial/Eyes>Eyes_Wink_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print これは重大な証拠ですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR6,ArmL8,Angle01/Facial/Eyes>Eyes_Surprised_Open03,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print これをもとに、<br>レイアさんの推理の方向性を修正させてください！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char Sherry.Default,ArmR15,ArmL8,Angle01/Facial/Eyes>Eyes_Wink_Open01,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print 私の考えた新たな推理……<br>お話しちゃいます！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@goto Act02_Chapter03/Act02_Chapter03_Trial02

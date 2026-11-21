@@ -1,0 +1,1097 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter03/Act02_Chapter03_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# ==============================================================================
+# MARK: 8-6: 💬 犯人がしたこと
+# ==============================================================================
+# ＠ト書き▼議論シーン8-6 犯人がしたこと
+# 議論開始エフェクト
+# BGM変更：rAwTell Owk...
+@bgm Bgm_7_1
+
+# Judge8-6-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Sherry.Default,ArmR2,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate ヒロさんの言う通り、<br>スマホがアンアンさんの物<br>だったのは<br>見落としていました。
+
+@char Sherry.Default,ArmR3,ArmL3,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Normal_Closed
+@gosubModifyCamera 0
+@printDebate なら可能性は１つです。
+
+@char Sherry.Default,ArmR3,ArmL12,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate さきほどヒロさんが<br>言った通り、<br>犯人は事前に<br>アンアンさんのスマホを<br>盗んでいたんですよ！
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate それなら問題なく、<br>スマホを中庭に<br>置いておけます！
+
+@char Hiro.Normal2,ArmR6,Arms3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@printDebate ……さきほども言った通り、<br>そんなことをしても<br>警戒されて<br>犯行が困難になるだけだよ。
+
+@char Sherry.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@printDebate "<link=\"Objection_02_03_06_01\">バレなければ</link><br>問題ありません！"
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@printDebate 犯人はあらかじめ<br>中庭にスマホを置いてから、<br>アンアンさんを<br>２階のベランダに<br>おびき寄せました。
+
+# ＠備考◆「おちてるぅ～↑…なんて言って」みたいな発音イメージ
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate "もしかすると<br>【あそこにスマホが落ちてる！】<br>なんて言って<br><link=\"Objection_02_03_06_02\">誘導した</link>のかも<br>しれませんよ！"
+
+@char Sherry.Default,ArmR3,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Confused_Open
+@gosubModifyCamera 0
+@printDebate そうして<br>ベランダから身を乗り出して<br>中庭を見たアンアンさんに、<br>襲いかかる犯人！
+
+@char Sherry.Default,ArmR11,ArmL10,Angle01/Facial/Eyes>Eyes_Flushed_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate 哀れアンアンさんは、<br>そのまま落下して<br>串刺しになって<br>しまったんです！
+
+# ＠備考◆焦り
+
+@char Ema.Default,ArmR7,ArmL13,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@printDebate ……で、でも！<br>もし犯人が<br>そんな細工してたら、<br>現場に痕跡が<br>残ってるん<br>じゃないかな……！？
+
+@char Ema.Default,ArmR7,ArmL13,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@printDebate たとえば……<br>足跡とかさ！
+
+@char Sherry.Default,ArmR12,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@printDebate いえいえ、<br>ご心配無用ですエマさん！
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate "足跡を含め、<br>事件の<link=\"Objection_02_03_06_03\">痕跡は全て</link><br>雨によって<br>流されてしまったんです……<br>鉄柵の移動以外は！"
+
+# ＠備考◆焦り
+
+@char Ema.Default,ArmR7,ArmL13,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@printDebate けど……<br>不自然じゃないかな！<br>柵を移動させた痕跡だけ<br>残ってるなんて！
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@printDebate 柵が動いた原因って、<br>もしかしたら<br>何か他にあるのかも……！
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01
+@gosubModifyCamera 0
+@printDebate でもシェリーちゃんの<br>言ってること、<br>筋が通ってると思うな。
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01
+@gosubModifyCamera 0
+@printDebate どうしてエマちゃん、<br>急にそんなこと<br>言い出したの？
+
+@char Hanna.Surprised1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@printDebate もしかしてエマさん……<br>何か知って<br>らっしゃるんですのー！？
+
+# ＠備考◆あからさまに動揺
+
+@char Ema.Default,ArmR3,ArmL3,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@printDebate そ、そんなことは<br>ないけど……！
+
+
+# ==============================================================================
+# 8-6議論後独白
+# ==============================================================================
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+@gosubModifyCamera 0
+@Wait 0.2
+
+# ＠備考◆ここから感情的に
+
+@char Hiro.Normal2,ArmR12,ArmL5,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat1-1
+@print （……エマの嘘が下手過ぎるっ！！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆ここまで
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Normal_Closed1,Mouth2_Angry_Open1,Sweat2-1
+@print （このままでは私だけではなく<br>　エマまで疑われてしまいそうだ……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR13,ArmL13,Eyes1_Normal_Open4,Mouth1_Pensive_Closed1,Sweat2-1
+@print （しかし……何かおかしいな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Closed1,Mouth1_Determined_Closed1
+@print （シェリーの言葉……<br>　おかしな【矛盾】が紛れ込んでいる） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open3,Mouth1_Determined_Closed1
+@print （もう一度これまでの情報を確認してみよう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge8-6-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_03_06_01
+
+@Skip false
+@pauseTrial true
+
+@choice バレずに盗むことは不可能
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge8-6-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_02_03_06_02
+
+@Skip false
+@pauseTrial true
+
+@choice アンアンが来るのは不自然
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge8-6-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_02_03_06_03
+
+@Skip false
+@pauseTrial true
+
+@choice 他にも残された痕跡がある
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge8-6-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 8-6: ❌ 議論ミス選択肢
+# ==============================================================================
+# MARK: 8-6-3: ❌ 反論・バレずに盗むことは不可能
+
+# Judge8-6-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 【バレずに盗む】なんてことは難しいと思うけどね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print スマホは基本肌身離さず持っているものだ。<br>それはアンアンも同じ……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 他人のものを本人に気付かれないまま盗みとるなんて芸当、<br>特別な訓練もしていない者が出来るとは思えないな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print ……いいえ！<br>特別な技術を持っていなくても、<br>可能だと思います！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01
+@gosubModifyCamera 0
+@print ど、どうやって？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 簡単ですよ！<br>アンアンさんがスマホを置き忘れたときにでも盗めばいいんです！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print シャワーを浴びてるときとか寝てるときとか……<br>スマホを盗むタイミングなんて、いくらでもあると思いますよ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR13,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print ヒロさんの指摘は間違ってます！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （この反論では否定しきれないか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （だがシェリーの発言には<br>　明らかな認識の違いがある……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （もう一度、現場に残されたものを振り返ってみよう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge8-6-1
+
+# MARK: 8-6-4: ❌ 反論・アンアンが来るのは不自然
+
+# Judge8-6-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print なくしたスマホが中庭に落ちているなんて、<br>普通は不自然だと思うんじゃないかな？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print そうでしょうか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print なにも、スマホを直前になくしたとは限りません。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 例えば事前にアンアンさんが中庭へ入っており、<br>その後時間が経ってからなくしたことに気づいた……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print それなら疑問に思うこともないと思います！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01
+@gosubModifyCamera 0
+@print たしかにそんな状況なら、<br>中庭を覗き込んでもおかしくはないかも……！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 無理のない状況だと思いますよ、ヒロさん！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （たしかに、時間差があったなら不自然ではないか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （だがシェリーの発言には<br>　明らかな認識の違いがある……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （もう一度、現場に残されたものを振り返ってみよう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge8-6-1
+
+# ==============================================================================
+# MARK: 8-6-2: ⭕ 反論・他にも残された痕跡がある
+# ==============================================================================
+
+# Judge8-6-2
+# カットイン
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+@StopBgm 
+# @gosubCutIn Ema index:1
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Closed2
+@gosubModifyCamera 0
+@print …………。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print ……えっと？<br>どうしました、ヒロさん。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Hiro.Normal1,ArmR4,ArmL5,Eyes2_Angry_Open2,Mouth2_Angry_Open1,Sweat1-1
+@gosubModifyCamera 0
+@print （この矛盾は……どういうことだ？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL5,Eyes1_Angry_Open2,Mouth1_Fearful_Open1,Sweat1-1
+@gosubModifyCamera 0
+@print （現場の状況は、明らかに矛盾している） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR13,ArmL12,Eyes1_Angry_Open3,Mouth1_Angry_Closed2,Sweat1-1
+@gosubModifyCamera 0
+@print （シェリーの推理とも、証拠とも――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char Hiro.Normal1,ArmR13,ArmL12,Eyes1_Serious_Open1,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （――そして、私が見た光景とも……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR13,ArmL13,Eyes1_Pensive_Open1,Mouth1_Cry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （……現段階ではその理由はわからない。<br>　情報が揃っていないせいだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR13,ArmL4,Eyes2_Normal_Closed1,Mouth2_Determined_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （ならば……情報を集めるのみ……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR13,ArmL13,Eyes2_Angry_Open1,Mouth2_Determined_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （……真実へと向かって！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print ……特に何も言うことがないのであれば、<br>話を続けますけど……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# カットイン
+
+@gosubCutIn Hiro
+@Gosub System/System_Subroutine.EndDebate-Last
+
+# BGM変更：HirO（Voなし）
+@bgm Bgm_37_1_Loop
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print ……悪いね。<br>少しだけ考えをまとめるのに時間がかかってしまっていたんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print けれどシェリー。<br>君の推理が間違っていることには変わりないよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・明るい音
+@sfx Sfx_Common_2
+
+# ＠備考◆喜び
+
+@char Sherry.Default,ArmR2,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print そうなんですか！？<br>どこが間違ってるんです！？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Angry_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print ああ。<br>君を満足させられるよう<br>徹底的に君の推理を叩き潰してあげよう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Sherry.Default,ArmR8,ArmL8,Angle01/Facial/Eyes>Eyes_Surprised_Open03,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print 望む所です！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Sherry.Default,ArmR10,ArmL12,Angle01/Facial/Eyes>Eyes_Surprised_Open03,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print それで、どこが問題なんですか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 君はさっき、【全ての痕跡が雨で流れてしまった】と言っていた。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print けれどそれは本当だろうか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print 現場には水で流されなかった<br>決定的な痕跡が残っているよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR15,ArmL4,Angle01/Facial/Eyes>Eyes_Wink_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print なるほどー！<br>ではズバリ、その痕跡とはなんのことでしょう！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# Judge8-6-5
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Closed1,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print 現場に残された痕跡……それは。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@evidence Clue
+
+# アンアンの検死結果
+@if "chosenEvidenceId==\"8-1\""
+	@goto .Judge8-6-6
+
+# アンアンのスマホ
+@if "chosenEvidenceId==\"8-5\""
+	@goto .Judge8-6-7
+
+# 汎用ミス
+@goto .Judge8-6-8
+
+# MARK: 8-6-7: ❌ アンアンのスマホ
+
+# Judge8-6-7
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print アンアンの体の下にあった、スマホだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print たしかに流れてない物だと思うけど……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print それが決定的な痕跡なの……？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,Arms3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print スマホのデータが残っていれば、<br>何か手がかりとなる証拠が……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR8,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print ……いや、先ほども言ったけど、<br>残念ながら大した情報は残されていなかったよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print なら結局何も残ってないのと一緒ですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （……これはアンアンの死とは無関係か） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （もう一度状況の要点を<br>　振り返って考えてみよう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Closed2
+@gosubModifyCamera 0
+@print （昨夜は雨が降っていた……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Closed2
+@gosubModifyCamera 0
+@print （普通なら消えてしまう痕跡があったはずだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge8-6-5
+
+# MARK: 8-6-8: ❌ 汎用ミス
+
+# Judge8-6-8
+
+@char Alisa.Default,ArmR4,ArmL6,Angle01/Facial/Eyes>Eyes_Angry_Open03
+@gosubModifyCamera 0
+@print ……そいつのどこが決定的な痕跡なんだよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Angry_Open01,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print ちょっとわかりませんね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Angry_Open01,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print ヒロさんはその証拠品に対して、<br>具体的にどんな確証を持ったんでしょうか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@print のあもわかんないなー？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （伝わらなかったようだ……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Closed2
+@gosubModifyCamera 0
+@print （昨夜は雨が降っていた……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Closed2
+@gosubModifyCamera 0
+@print （普通なら消えてしまう痕跡があったはずだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge8-6-5
+# MARK: 8-6-6: ⭕ アンアンの検死結果
+# Judge8-6-6
+
+@char Sherry.Default,ArmR10,ArmL1,Angle01/Facial/Eyes>Eyes_Surprised_Open01,Angle01/Facial/Mouth>Mouth_Confused_Open,Angle01/Facial/Sweat>Sweat02
+@gosubModifyCamera 0
+@print アンアンさんの検死結果……！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ＠備考◆「またまた御冗談を～」なノリ
+
+@char Sherry.Default,ArmR10,ArmL1,Angle01/Facial/Eyes>Eyes_Surprised_Open01,Angle01/Facial/Mouth>Mouth_Confused_Open,Angle01/Facial/Sweat>Sweat02
+@gosubModifyCamera 0
+@print ……いやいやヒロさん。<br>いくら強い雨だったとはいえ、<br>洪水になったわけじゃないんですよ？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR10,ArmL11,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print 死体が雨で流されちゃうわけないじゃないですか！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print その通りだ。死体は流れていない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print けれど……流れてもおかしくないものが<br>残ってるんじゃないかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print それって……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Sherry.Default,ArmR4,ArmL5,Angle01/Facial/Eyes>Eyes_Surprised_Open02,Angle01/Facial/Mouth>Mouth_Confused_Open,Angle01/Facial/Sweat>Sweat02
+@gosubModifyCamera 0
+@print ……ああっ！<br>まさか！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,Arms3,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print そう……死体周辺の血痕だよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR8,ArmL4,Eyes2_Normal_Open3,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 君の推理では、<br>現場には強い雨が降って<br>足跡などの痕跡が流れた……という話だったよね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open2,Mouth2_Normal_Closed1
+@gosubModifyCamera 0
+@print なのにこれだけ大量の血液が残っているのは<br>少し不自然じゃないかな？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 言われてみればそうかもしれませんね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print でも雨の状況によってはありえなくは<br>ないんじゃないでしょうか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL12,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print たまたまアンアンさんの周辺だけ、<br>雨が当たりにくい場所だったのかもしれません。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print ベランダも近いことですしね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print ……いいや、それはありえないんだよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR13,ArmL13,Eyes1_Painful_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print この牢屋敷の中においてはね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print 牢屋敷の中……？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆息を呑む。演技大きめに
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ……っ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,Arms3,Eyes2_Normal_Open3,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print どうやら君も気付いたようだね、エマ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# Judge8-6-10
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print アンアンの死体の状況、<br>そこに残されている血痕の状況がありえない理由……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@evidence Clue
+
+# ココの死体写真
+@if "chosenEvidenceId==\"8-8\""
+	@goto .Judge8-6-11
+
+# 汎用ミス
+@goto .Judge8-6-12
+
+@char Hiro.Normal1,ArmR6,Arms3,Eyes1_Angry_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print それはこれとアンアンの死体を比べればわかる！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# MARK: 8-6-12: ❌ 汎用ミス
+
+# Judge8-6-12
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ヒロちゃん、それだとわからないんじゃないかな……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print たしかによくわかんないですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal1,ArmR12,ArmL5,Eyes1_Normal_Closed1,Mouth1_Angry_Open1,Sweat1-1
+@gosubModifyCamera 0
+@print （比較するものはこれではない……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print 【この牢屋敷特有の現象】……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print 何か示せるものはなかったかな？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （もう一度、これまで調べたことを振り返ってみよう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge8-6-10
+
+# MARK: 8-6-11: ⭕ ココが殺された事件
+
+# Judge8-6-11
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01
+@gosubModifyCamera 0
+@print そ、それはココちゃんの……！？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Closed1
+@gosubModifyCamera 0
+@print そうだ。<br>アンアンのスマホに残されていた写真……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@spawn Clue
+
+@char Hiro.Normal2,ArmR6,ArmL8,Eyes2_Normal_Open1,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print ここに写っている血痕に注目して欲しい。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Determined_Closed1
+@gosubModifyCamera 0
+@print ココは地下で殺されたあと<br>中庭に運ばれた。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print 運ばれる間、<br>その血痕は捨てられた衣類で<br>拭き取られていたようだけれど……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL8,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print それでもこの写真に写るように、<br>ココの死体に血の蝶は舞っている。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@despawn Clue
+@spawn Clue
+
+@char Hiro.Normal2,ArmR3,ArmL4,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1
+@gosubModifyCamera 0
+@print ……にも関わらず、<br>アンアンの死体についたほとんどの血痕は、<br>血の蝶になっていない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,Arms3,Eyes2_Normal_Open3,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print こんなこと……<br>ありえるはずがないんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@despawn Clue
+
+# SE・ネガティブ音
+@sfx Sfx_Common_7
+
+@char Alisa.Default,ArmR7,ArmL3,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print あ、ありえないって……！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Alisa.Default,ArmR2,ArmL3,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print でも実際に、夏目は死んでんだろうが！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,Arms3,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print （……そう、問題はそこだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,Arms3,Eyes2_Normal_Open3,Mouth2_Pensive_Closed1
+@gosubModifyCamera 0
+@print （アンアンの死体の状況はありえない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR4,ArmL2,Eyes2_Painful_Open1,Mouth2_Pensive_Closed1
+@gosubModifyCamera 0
+@print （ならばいったい何が起こったのか……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR4,ArmL5
+@gosubModifyCamera 0
+@print ……ヒロちゃん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print この牢屋敷の中では、<br>【血が蝶になる魔法がかかっている】……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print なら……【血が蝶にならない状況】って<br>どういうことなんだろう？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open3,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （……魔法は物理法則を変えるものではあるが、<br>　論理を無視するものではない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （【血が蝶にならなくなった理由】が必ずある！<br>　それは……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# Judge8-6-13
+
+@char Hiro.Normal2,ArmR13,ArmL5,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print ……アンアンの死体の不自然な状況。<br>それは私たちが思い違いをしていたに過ぎない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR13,ArmL5,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print その思い違いとは――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@choice アンアンは今も生きている
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge8-6-15
+
+@choice 魔法の効果が切れた
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge8-6-16
+
+@choice 血は偽物だった
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge8-6-14
+
+@StopForChoice 
+
+# MARK: 8-6-15: ❌ アンアンは今も生きている
+
+# Judge8-6-15
+
+@char Hiro.Normal2,ArmR6,Arms3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 【アンアンが死んでいた】という認識そのものだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,Arms3,Eyes2_Angry_Open1,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print つまりアンアンは今も生きている……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,Arms3,Eyes2_Normal_Closed1,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print 今もこの屋敷内のどこかで身を潜めているに違いない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Closed,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print なんかホラーですわー！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Angry_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print いや、アンアンくんは死んでいたよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Normal_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print 呼吸も脈も瞳孔も調べたんだ。<br>間違いない。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR7,ArmL3,Angle01/Facial/Eyes>Eyes_Fearful_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……しっかり調べたのかよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR1,ArmL5,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open01,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print もちろん。<br>【もしかしたらまだ生きているかもしれない】……<br>私もそう思っていたからね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Pensive_Closed,Angle01/Facial/Mouth>Mouth_Cry_Closed01
+@gosubModifyCamera 0
+@print わずかな望みであっても賭けたくなった……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR2,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Closed,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print "君もそう思ったんだろう？ ヒロくん。" { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1,Arms
+@gosubModifyCamera 0
+@print けれど、アンアンくんは死んでいた。<br>……もう戻ってくることはないんだ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR2,ArmL3,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Smile_Closed
+@gosubModifyCamera 0
+@print "共にこの悲しみを乗り越えよう！ ヒロくん！" { author:Leia speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （……共感されてしまった） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （アンアンに付着した【血】が<br>　蝶にならない理由……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （前提から疑ってみても良いかもしれないな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge8-6-13
+
+# MARK: 8-6-16: ❌ 魔法の効果が切れた
+
+# Judge8-6-16
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open3,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print ノアの魔法の効果が切れていたんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Closed1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print そうでないと、<br>血が蝶にならなかったことの説明がつかない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR6,Angle01/ArmL>ArmL06,Angle01/Facial/Eyes>Eyes_Surprised_Open02,Angle01/Facial/Mouth>Mouth_Normal_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print "えー？ そうなの？" { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR9,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Closed
+@gosubModifyCamera 0
+@print なんで本人がわからねえんだよ……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR8,ArmL5,Angle01/Facial/Eyes>Eyes_Pensive_Closed,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print いやヒロくん、魔法が切れてたということはないと思う。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR8,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open01
+@gosubModifyCamera 0
+@print 私が駆けつけたとき、わずかに蝶は舞っていた。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print 血が蝶になる現象自体が<br>完全になくなったわけではないよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （……私の思い違いか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （アンアンに付着した【血】が<br>　蝶にならない理由……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （前提から疑ってみても良いかもしれないな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge8-6-13
+# MARK: 8-6-14: ⭕ 血は偽物だった
+
+# Judge8-6-14
+
+@gosubCutIn Hiro
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 【血液は偽物だった】……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR13,ArmL13,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print 可能性はそれしかない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print 偽物――！？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 検死の知識があろうとレイアは素人だし、<br>死体の周りの赤い液体が<br>血液かどうかを鑑定できる機材があるわけでもない……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print まして現場は雨上がりの屋外。<br>鉄臭い血の匂いがしていなくても<br>不自然に思うことはない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR8,ArmL1,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open01,Angle01/Facial/Mouth>Mouth_Fearful_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print た、たしかに言われてみれば……<br>血液だったという確証は……ない。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR3,ArmL4,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print なら、現場に残された血液がただの血糊だった可能性は<br>十分にありえる。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Leia.Default,Angle01/ArmR>ArmR11,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Open01,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@print けど、待ちたまえヒロくん！<br>仮にキミの言う通り、<br>それが用意された血糊だったとして……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,Angle01/ArmR>ArmR11,ArmL5,Angle01/Facial/Eyes>Eyes_Downcast_Open,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@print 誰が、どうしてそんなことをしたんだい！？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Angry_Closed
+@gosubModifyCamera 0
+@print アンアンくんは背中から鉄柵が貫通して<br>死亡していた……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print 死体の状況から言って、<br>出血は間違いなく起こっていたはずだ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Yell_Open01
+@gosubModifyCamera 0
+@print わざわざ本物の血があるのに<br>重ねて血糊を偽装するなんて……<br>そんなことありえるのかい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Open3,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print （……たしかにそこが一番の問題か） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL5,Eyes1_Normal_Closed1,Mouth1_Fearful_Open1
+@gosubModifyCamera 0
+@print （【誰が】、【どうして】血液の偽装なんてしたのか……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL4,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （この問いに答えることは……可能なのか？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print …………。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Ema.Pensive1,ArmR3,ArmL7,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ……ヒロちゃん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆息を呑む
+
+@char Hiro.Normal1,ArmR1,ArmL1,Eyes1_Serious_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print …………。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ……ごめんね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆困惑
+
+@char Hiro.Normal1,ArmR1,ArmL1,Eyes1_Painful_Open1,Mouth1_Fearful_Open1,Sweat1-1
+@gosubModifyCamera 0
+@print （……エマ？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print みんな、１つだけ言いたいことがあるんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print 実は黙ってたんだけど……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR2-1,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Middle
+@gosubModifyCamera 0
+@print ミリアちゃんの写真に写っているもうひとりの人影。<br>あれは……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ボクなんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Alisa.Default,ArmR1,ArmL3,Angle01/Facial/Eyes>Eyes_Surprised_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……は？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print じゃ、じゃあ……！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Hanna.Fearful1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print アンアンさんを殺したのは、<br>エマさんですの～～～！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR11,ArmL11,Eyes1_Serious_Open1,Mouth1_Fearful_Open1,Sweat1-1
+@gosubModifyCamera 0
+@print （何を……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+# ＠備考◆「エマぁっ！」ぐらいの勢い
+
+@char Hiro.Normal1,ArmR13,ArmL13,Eyes1_Serious_Open1,Mouth1_Determined_Open2,Sweat1-1
+@gosubModifyCamera 0
+@print （何をしているエマ！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto Act02_Chapter03/Act02_Chapter03_Trial07

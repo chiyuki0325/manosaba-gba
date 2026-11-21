@@ -1,0 +1,47 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-2-3
+
+# ●シーン2‐2‐3
+
+@back 1_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_22_1
+
+@print 翌朝。 { speed:1 waitInput:true Wait:true }
+
+@print 私は目を覚ますと同時に起き上がり、<br>ベッドから降り立つ。 { speed:1 waitInput:true Wait:true }
+
+@print どうやらエマはまだ眠っているようだった。<br>そっと息を吐く。 { speed:1 waitInput:true Wait:true }
+
+@print （顔を合わせたくない者と同室なのは、<br>　どうにも息苦しいな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 牢の施錠音
+@sfx Sfx_4
+@StopSfx 
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+# 牢の扉が開く音
+@sfx Sfx_119
+@Wait 1
+
+@back 2_1 { Scale:{g_backgroundDefaultScale} }
+@back Transparent.Custom { time:0.99 }
+@Wait 0.9
+
+@print "牢の<ruby=\"かいじょうじかん\">開錠時間</ruby>と共に、通路に出た。<br>今日は朝から、牢屋敷を探索すると決めていた。" { speed:1 waitInput:true Wait:true }
+
+@print （私はエマを殺す。<br>　そのためには正しい計画が必要だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print あちこち見て回れば、<br>何かいい方法を思いつくかもしれない。 { speed:1 waitInput:true Wait:true }
+
+@set "chosenAreaFlag = 0"
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter02/Act02_Chapter02_Adv04

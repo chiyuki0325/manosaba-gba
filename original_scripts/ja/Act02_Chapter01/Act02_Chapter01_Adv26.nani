@@ -1,0 +1,581 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-1-21
+
+# ========================================
+# ●シーン2‐1-21
+# ========================================
+
+@bgm Bgm_42_1
+
+@ShowUI ControlPanel
+@back 13_1 { time:0 }
+@Wait 0.9
+
+@back Transparent { time:1.8 }
+@WaitForNextFrame 
+
+@animate MainBackground
+@Wait 1.5
+
+@update Margo
+@update Meruru
+
+@print メルル殺害の犯人は、宝生マーゴだった。 { speed:1 waitInput:true Wait:true }
+
+@print 当然彼女が投票で【魔女】に選ばれ―― { speed:1 waitInput:true Wait:true }
+
+@print それでも裁判所に集った全員が、<br>とても信じられないといった風にマーゴを見ている。 { speed:1 waitInput:true Wait:true }
+
+@print 長い沈黙の末、<br>口を開いたのはマーゴ本人だった。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@back 14_1
+@char Margo.Pensive1
+@Wait 0.3
+
+@print ……私らしくないわね。<br>どうしてか、熱くなってしまったの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print あんなに気持ちが昂ることってあまりないのよ？<br>殺さないと気が済まなかったの。<br>酷い話よね……本当にごめんなさい。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Ema.Angry1,ArmR3,ArmL7
+@mask MainBackground-Front,Ema-Front
+@animate MainBackground-Front
+@animate Ema-Front
+@Wait 0.4
+
+@print "っ、なんで？ メルルちゃんはマーゴちゃんを<br>助けてくれたじゃないか！" { author:Ema speed:1 waitInput:true Wait:true }
+
+# @char Ema.Pensive1
+
+@print 大怪我を負ったマーゴちゃんを必死に看護して、<br>ずっと気にかけて、あんなにも尽くしてくれて……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Ema-Front
+@hide Ema-Front
+@despawn MaskingRectangle
+
+@char Margo.Smile1
+
+@print ええ……メルルちゃんはね、<br>とても、とても優しくしてくれたわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 高熱が出てうなされた時も、<br>ずっと傍に寄り添って手を握ったり、<br>頭をたくさん撫でてくれたり……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 死なないでくださいってぽろぽろと泣きながら、<br>たくさんの愛と慈しみを与えてくれたの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Cry1
+
+@print 私、感動してしまったわ。<br>まだ知り合って間もないのに、<br>こんなに献身的に尽くしてくれるなんて……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print "マーゴは瞳の端に<ruby=\"にじ\">滲</ruby>ませた涙を、そっと<ruby=\"ぬぐ\">拭</ruby>った。<br>私はその<ruby=\"しぐさ\">仕草</ruby>に違和感しか抱けない。" { speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1
+
+@print 彼女は真心に満ちていて、<br>たしかな愛を感じたの。<br>そう、私たちは愛し合っていたのよ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Miria.Pensive1
+@mask MainBackground-Front,Miria-Front
+@animate MainBackground-Front
+@animate Miria-Front
+@Wait 0.4
+
+@print 愛し合ってた、って……。<br>じゃあなんで殺したのか余計にわからないよ……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Miria-Front
+@hide Miria-Front
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Coco.Pensive1
+@mask MainBackground-Front,Coco-Front
+@animate MainBackground-Front
+@animate Coco-Front
+@Wait 0.4
+
+@print "変態の趣味嗜好なんじゃね？ ほらあるじゃん、<br>好きだから殺すってヤツ。" { author:Coco speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Coco-Front
+@hide Coco-Front
+@despawn MaskingRectangle
+
+@char Margo.Flushed1
+
+@print ふふっ、そういうこと。<br>私はね、愛していたから殺したのよ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1
+
+@print あなたたちもきっといずれわかると思うの。<br>愛に応える方法は、究極的に死なのよ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"こうこつ\">恍惚</ruby>とした表情で口にするマーゴに、<br>嫌悪感しかなかった。" { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Hiro.Angry1
+@mask MainBackground-Front,Hiro-Front
+@animate MainBackground-Front
+@animate Hiro-Front
+@Wait 0.4
+
+@print ……歪んでいる。本来そういった思いやりは、<br>感謝すべきものであって、危害を加えるものじゃない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 君は正しくない……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Hiro-Front
+@hide Hiro-Front
+@despawn MaskingRectangle
+
+@char Margo.Smile1
+
+@print あなたたちにはわからないかもしれないわね。<br>それが私にとって、愛のカタチなのよ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+@hideChars 
+@back 14_1 { time:0 }
+@char Warden.1 { time:0 }
+@hide MainBackground-Middle
+@animate MainBackground
+@animate Warden
+@Wait 0.5
+
+@print あっ、お話終わりました？<br>時間も押してますし、<br>そろそろ進行したいんですが……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 各自のスマホにボタンが表示されていると思うので、<br>全員がそれを押したら処刑執行スタートします。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@animate MainBackground,Warden
+@back 590_1 { Scale:{g_backgroundDefaultScale} time:0.6 }
+@Wait 0.6
+
+@print （処刑ボタン……なるほど、<br>　とことん追い詰めにかかっているな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ぐーっと長く押していただけますと……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print （動機がどうあれ、メルルが黒幕であれ、<br>　宝生マーゴが氷上メルルを<br>　殺害した罪人であるのは事実） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （私が彼女を――断罪する） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# TODO: ループ再生化する
+@sfx Sfx_35
+
+@ProcessInput false
+@HidePrinter 
+@HideUI ControlPanel,AutoToggle,WitchBookButtonUI
+@ShowUI ExecutionButton
+
+@if !enableDebugSkip
+	@Skip false
+	@Stop 
+
+# ExecutionConfirmed
+
+@bgm Bgm_31_1
+@HideUI ExecutionButton
+@hide Stills-Middle { time:0.6 }
+@Wait 0.9
+
+@ProcessInput true
+@ShowUI ControlPanel,AutoToggle,WitchBookButtonUI
+@EmoteJump Warden { Speed:1.5 }
+@print "はい！ ではこれより、<br>魔女の処刑を執行します～。" { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@back 13_1 { Scale:{g_backgroundDefaultScale} }
+
+# 歯車がまわる音
+@sfx Sfx_36
+
+@print 宣言と共に、<br>何かの仕掛けが作動しはじめた。 { speed:1 waitInput:true Wait:true }
+
+@print 大仕掛けな歯車の回転音が聞こえたかと思うと、<br>中央の台座がゆっくりと下降していく。 { speed:1 waitInput:true Wait:true }
+
+@print そして、もとあった台座と入れ替わる形で、<br>私たちの前には新たな台座が現れていた。 { speed:1 waitInput:true Wait:true }
+
+@hide MainBackground-Middle
+
+@HidePrinter 
+@animate MainBackground,Warden
+@hide MainBackground,Warden { time:0 }
+@Wait 0.9
+
+@back 440_0 { time:0 }
+@animate Stills
+@back Transparent { time:1.2 }
+@Wait 2.4
+
+@animate Stills
+@back 440_0 { time:0.6 }
+@animate Stills-Middle
+@Wait 2.4
+
+@animate Stills-Middle
+@back 440_0 { Scale:{g_backgroundDefaultScale} time:0 }
+@blur Stills
+@animate Stills-Front
+@blur Stills
+@hide Stills-Middle { time:0.6 }
+@Wait 3
+
+@print 照らされたステージには<br>大きなターゲットボードがあった。 { speed:1 waitInput:true Wait:true }
+
+@print それはどこか悪趣味なショーを予感させ、<br>少女たちはごくりと喉を鳴らした。 { speed:1 waitInput:true Wait:true }
+
+@print ……サーカスでも始める気かよ？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print ナイフ投げでもやるんでしょうかね……？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ……ずいぶんと派手な処刑台だね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 彼女は何を思っているのだろうか。 { speed:1 waitInput:true Wait:true }
+
+@print 木製のターゲットボードの元へと<br>連行されていくマーゴの表情からは、何も読み取れない。 { speed:1 waitInput:true Wait:true }
+
+@print "私たちが<ruby=\"かたず\">固唾</ruby>を<ruby=\"の\">呑</ruby>んで見守る中――" { speed:1 waitInput:true Wait:true }
+
+@back SolidColor { time:0 }
+@hide Stills-Front,Stills-Middle,Stills
+@back 440_1 { Scale:{g_backgroundDefaultScale} }
+@back Transparent { time:0.9 }
+@Wait 1
+
+@print マーゴは両手両足を革のベルトでしっかりと固定されて、<br>体を動かせない状態にされた。 { speed:1 waitInput:true Wait:true }
+
+@print つまり、ターゲットボードに<br>はりつけ状態にされていた。 { speed:1 waitInput:true Wait:true }
+
+@print "あらあ♡ 悪趣味全開でとてもいいわあ♡<br>ゾクゾクしちゃう♡" { author:Margo speed:1 waitInput:true Wait:true }
+
+@print "殺人を犯しても、拘束されても尚――<br>彼女は<ruby=\"ようえん\">妖艶</ruby>な<ruby=\"ほほえ\">微笑</ruby>みを崩さない。" { speed:1 waitInput:true Wait:true }
+
+@print （通常のナイフ投げなら、<br>　対象には刺さないパフォーマンスだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （しかし処刑というからには、<br>　きっとナイフが彼女に……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"きょうじ\">凶事</ruby>の予感からか、<br>多くの少女たちはすでに目を<ruby=\"おお\">覆</ruby>ったり<ruby=\"そむ\">背</ruby>けたりしている。" { speed:1 waitInput:true Wait:true }
+
+# ナイフが飛んでくる音
+@sfx Sfx_122
+
+@print "<ruby=\"くう\">空</ruby>を<ruby=\"き\">切</ruby>り<ruby=\"さ\">裂</ruby>く音と共に、<br>どこかからその凶器が飛んできた。" { speed:1 waitInput:true Wait:true }
+
+@print "鋭い<ruby=\"せんたん\">尖端</ruby>が光を受けて光る。" { speed:1 waitInput:true Wait:true }
+
+# ナイフが板に刺さる音
+@sfx Sfx_123
+
+@back 440_2
+
+# ＠備考◆恐怖に息を呑む
+
+@print ……ッ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print ターゲットボードに刺さったのは、<br>ナイフではなく――悪趣味な形の矢だった。 { speed:1 waitInput:true Wait:true }
+
+@print "その矢はマーゴの<ruby=\"ほお\">頬</ruby>のすぐ隣、<br>ほんの数センチ離れたところに深々と突き刺さっていた。" { speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"すさ\">凄</ruby>まじい<ruby=\"しゃしゅつ\">射出</ruby>のスピードから想像するに、<br>もし刺さっていたら<ruby=\"ようしゃ\">容赦</ruby>なく彼女の<ruby=\"ほお\">頬</ruby>を<ruby=\"つらぬ\">貫</ruby>いていただろう。" { speed:1 waitInput:true Wait:true }
+
+# ナイフが飛んでくる音・連続
+@sfx Sfx_122
+
+# ナイフが板に刺さる音・連続
+@sfx Sfx_123
+
+@back 440_3
+
+@print "続けざまに何本もの矢が飛んできて、<br>それらもまた、マーゴに当たらずぎりぎりの<ruby=\"かしょ\">箇所</ruby>に刺さる。" { speed:1 waitInput:true Wait:true }
+
+@print "自身に刺さらない凶器に逆に追い詰められているのか、<br>さすがにマーゴの表情も<ruby=\"こわば\">強張</ruby>りはじめている。" { speed:1 waitInput:true Wait:true }
+
+@print ……メルルちゃんは、<br>本当に優しくて、いい子だったの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"まと\">的</ruby>に突き刺さる無数の矢の合間合間に、<br>マーゴが<ruby=\"つぶや\">呟</ruby>きをこぼす。" { speed:1 waitInput:true Wait:true }
+
+@print 魔女だったなんて信じられないくらい、<br>可愛らしくて、あまりにいじらしくて……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 全部私のものにしたくなっちゃったのよ。<br>私を見ている驚いた瞳も、<br>清らかな服も愛らしい声も。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 美しい銀白の髪も、<br>飛び散った赤い血も、心臓も、全部、全部全部。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@back 440_4
+
+@print 本当に愛しくて愛しくて、<br>私のものにしたのよ……！ { author:Margo speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"こわば\">強張</ruby>った笑みは、どこまでも<ruby=\"ゆが\">歪</ruby>んでいた。" { speed:1 waitInput:true Wait:true }
+
+@print っ、やめてよ、聞きたくないよ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "涙ながらに首を振っているエマを横目に、<br>私はマーゴを真っすぐに<ruby=\"みす\">見据</ruby>えた。" { speed:1 waitInput:true Wait:true }
+
+@print 嘘だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print もはや黙っていられず言い放つと、<br>マーゴの瞳が私を見つめる。 { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+@back 440_5
+
+@print 残念ながら嘘じゃない。<br>これが私の真実の愛――。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_43_2
+
+@print 嘘だ！！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@back 440_5 { Scale:{g_backgroundDefaultScale} }
+
+@print もう一度強く言い放つと、<br>マーゴの瞳がはじめて揺れた。 { speed:1 waitInput:true Wait:true }
+
+@print 君はメルルを愛してなどいなかった！！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "これが真実の愛？ へどが出る。<br>お前の愛は【嘘】だ！！" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "私の<ruby=\"のうり\">脳裏</ruby>に、彼女の姿が<ruby=\"よぎ\">過</ruby>る。" { speed:1 waitInput:true Wait:true }
+
+@print "失ったことへの胸の痛みは<br>どれだけ長い時間を<ruby=\"へ\">経</ruby>ても消えることがない。" { speed:1 waitInput:true Wait:true }
+
+@print 殺すことが愛なわけがない。 { speed:1 waitInput:true Wait:true }
+
+@print 私はずっと、ずっと――<br>彼女と一緒にいたかった。 { speed:1 waitInput:true Wait:true }
+
+@print そんなものは愛じゃない！！<br>お前は愛を知らない！！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@back 440_6
+@hide Stills-Front
+
+@print "私の心からの叫びは、<br>マーゴの表情を大きく<ruby=\"ゆが\">歪</ruby>めた。" { speed:1 waitInput:true Wait:true }
+
+@print ちがう、ちが……<br>私は愛を知っているの、<br>これは、愛なのよ……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print んー……私は愛についてはよくわかりませんが、<br>ヒロさんの主張の方がしっくりきますね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print マーゴさん、<br>あなたは愛しているから殺したのではなく、<br>消えてほしいから殺したんじゃないでしょうか。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ＠備考◆息を呑む
+
+@print ――！ { author:Margo speed:1 waitInput:true Wait:true }
+
+@print だよなー。<br>嫌いだったって認めた方が楽になれんじゃね？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@back 440_7
+
+# ＠備考◆余裕失って
+
+@print 違う！<br>違う違う違う違う！！ { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 私は愛を知っているのよ！！<br>これが愛なのよ！！ { author:Margo speed:1 waitInput:true Wait:true }
+
+@print もうやめて！！<br>私の愛を否定しないで！！ { author:Margo speed:1 waitInput:true Wait:true }
+
+@back 440_7 { Scale:{g_backgroundDefaultScale} }
+
+@print 私を【愛さないで】――！ { author:Margo speed:1 waitInput:true Wait:true }
+
+@print "絶叫した直後、<br>マーゴ自身がハッと表情を<ruby=\"こわば\">強張</ruby>らせた。" { speed:1 waitInput:true Wait:true }
+
+@back 440_8
+@hide Stills-Front
+
+@print わた、私、今、何を……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print きっとその時。<br>ようやく本音をこぼした唇が震える。 { speed:1 waitInput:true Wait:true }
+
+@print 拘束されたマーゴの体が、<br>変化しはじめていた。 { speed:1 waitInput:true Wait:true }
+
+@print "顔に<ruby=\"きれつ\">亀裂</ruby>が入っていき、<br>手の爪がみるみると伸びていく。" { speed:1 waitInput:true Wait:true }
+
+# ナイフが飛んでくる音・連続
+@sfx Sfx_122
+
+@print "ターゲットボードには<br>もはや<ruby=\"すんぶん\">寸分</ruby>の<ruby=\"すきま\">隙間</ruby>なく、<br>矢が刺さっている。" { speed:1 waitInput:true Wait:true }
+
+@back 440_9 { Scale:{g_backgroundDefaultScale} }
+
+@print 大量の矢が雨のように、<br>いよいよマーゴの全身めがけて飛んでくる。 { speed:1 waitInput:true Wait:true }
+
+@print ああ――私、 { author:Margo speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+@back 440_10 { Scale:{g_backgroundDefaultScale} }
+
+
+@print 愛なんて、知らなかったのね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@back 440_11
+@hide Stills-Front
+
+@print "寂しそうにぽつりと<ruby=\"つむ\">紡</ruby>がれた声は、<br>マーゴの閉じ込めていた【禁忌】の扉を<br>開いてしまっていた――……" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# トラウマシーン
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@hide Stills-Middle
+
+@bgm Bgm_1_1
+
+@printer Normal.Simple
+
+@print ――愛しているよ、と殴られた。 { speed:1 waitInput:true Wait:true }
+
+@print そんな日々は、いつから始まったのだろうか。<br>もはや数えることもやめてしまった。 { speed:1 waitInput:true Wait:true }
+
+@back 230_1 { time:0 }
+@WaitForNextFrame 
+
+@animate Stills
+
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@print "ゴミのたまり場となった、<ruby=\"ふしゅう\">腐臭</ruby>の<ruby=\"ただよ\">漂</ruby>う部屋の中。" { speed:1 waitInput:true Wait:true }
+
+@print 同じくゴミ同然に放置されたマーゴは、<br>いつしか考えることをやめていた。 { speed:1 waitInput:true Wait:true }
+
+@print 母親は、元からロクな人ではなかった。<br>時折家に帰ってマーゴの様子を見ては、<br>食事と金だけ置いて去っていく。 { speed:1 waitInput:true Wait:true }
+
+@print ある日、母が男を連れてきた。<br>母は彼も【愛してる】とのことだった。 { speed:1 waitInput:true Wait:true }
+
+@print 四畳半のふすまの向こうで、<br>母は男に毎日、【愛してる】と告げていた。 { speed:1 waitInput:true Wait:true }
+
+@print その代わり、<br>マーゴに【愛してる】とは言わなくなった。 { speed:1 waitInput:true Wait:true }
+
+@print 男は母の愛に、見返りをくれた。 { speed:1 waitInput:true Wait:true }
+
+@print それは部屋にたまっていくゴミであったり。<br>怒号であったり。<br>母への暴力でもあった。 { speed:1 waitInput:true Wait:true }
+
+@print やがてある日の男は、<br>マーゴが隠れ住む四畳半のふすまを開いた。 { speed:1 waitInput:true Wait:true }
+
+@back 230_1 { time:0.8 }
+@Wait 0.5
+@animate Stills-Front
+
+@print 男はマーゴを殴った。 { speed:1 waitInput:true Wait:true }
+
+@print 殴られた、怒鳴られた、踏まれた。 { speed:1 waitInput:true Wait:true }
+
+@print "叩かれた、<ruby=\"ばとう\">罵倒</ruby>された。<br>髪をつかまれた、物を投げつけられた。" { speed:1 waitInput:true Wait:true }
+
+@print 殴られた、殴られた、殴られた。<br>叩かれた、叩かれた、叩かれた。<br>傷つけられた、傷つけられた、傷つけられた。 { speed:1 waitInput:true Wait:true }
+
+@print ある日、あざだらけのマーゴは<br>切れ切れになった意識の中で、母の視線に気がついた。<br>母はただ、マーゴを見下ろしていた。 { speed:1 waitInput:true Wait:true }
+
+@print マーゴは助けてと、視線を送った。<br>母の表情にこもっていたのは……。 { speed:1 waitInput:true Wait:true }
+
+@back 230_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@hide Stills-Middle,Stills-Front
+
+@print "<ruby=\"ぶべつ\">侮蔑</ruby>。" { speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"さと\">聡</ruby>いマーゴは理解した。<br>私が男の愛を奪ってしまったから。" { speed:1 waitInput:true Wait:true }
+
+@print 母は私を憎んでいるんだ。 { speed:1 waitInput:true Wait:true }
+
+@print "愛を得た私は<ruby=\"しっと\">嫉妬</ruby>されている。<br>若く、美しく、見向きされている。" { speed:1 waitInput:true Wait:true }
+
+@print マーゴは、涙を流しながら、<br>愛のカタチを知ってしまった。 { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@print けれど……。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@hide Stills
+
+@print "母も去り、男も去り、<br>ひとり取り残された布団の上で<br>マーゴは静かに、誰にも聞こえないほど小さく<ruby=\"つぶや\">呟</ruby>いた。" { speed:1 waitInput:true Wait:true }
+
+@print ……私は……<br>とてもとても、いやだったのに。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# トラウマシーンここまで
+# ========================================
+@ResetText 
+@back 440_12 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@printer Normal.Default
+
+@bgm Bgm_44_1
+
+@print マーゴの体には、<br>無数の矢が突き刺さっていた。 { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆吐き気
+
+@print ぐっ……。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+# ＠備考◆拒絶
+
+@print ううぅ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "何本も何本も突き立てられた矢に、<br>マーゴは<ruby=\"けもの\">獣</ruby>のように<ruby=\"うめ\">呻</ruby>き苦しみ――" { speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"ほうこう\">咆哮</ruby>をあげ、<ruby=\"いぎょう\">異形</ruby>と化していく。" { speed:1 waitInput:true Wait:true }
+
+@print 無事に魔女のなれはてとなりましたので、<br>彼女は永遠の牢獄へと閉じ込めます。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 淡々とゴクチョーが口にし、<br>直後に機械の作動音が聞こえてきた。 { speed:1 waitInput:true Wait:true }
+
+@back 13_1 { Scale:{g_backgroundDefaultScale} }
+@hide Stills-Middle
+
+# 歯車がまわる音
+@sfx Sfx_36
+
+@print 仕掛けが作動し、<br>処刑台が地下へと片付けられていく。 { speed:1 waitInput:true Wait:true }
+
+@print おぞましい叫びがしばらく後を引いていたが、<br>床が閉じられたことで、完全に無音となった。 { speed:1 waitInput:true Wait:true }
+
+@print 中央は、もともとの台座に戻っており、<br>ただ、残り香のように――<br>赤い蝶がひらりと舞った。 { speed:1 waitInput:true Wait:true }
+
+@print （これが……魔女の処刑……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"そうぜつ\">壮絶</ruby>な処刑を目の当たりにし、<br>私たちは言葉を失うほかなかった。" { speed:1 waitInput:true Wait:true }
+
+@print おそろしくも哀しいものを見せられ、<br>さぞかし泣いているだろうと<br>自然とエマの方へ視線が移る。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@back 13_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@char Ema.Normal1,ArmR3 { time:0 }
+@Wait 0.9
+
+@print 私の視界に映ったエマは――<br>……笑っていた。 { speed:1 waitInput:true Wait:true }
+
+@print （エマ……君はやはり……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私は声もなく、拳を震わせた。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@hide Ema-Middle { time:0 }
+@back 13_1 { Scale:{g_backgroundDefaultScale} }
+@Wait 0.9
+
+@print 静寂が裁判所内を支配している。<br>しばらく、誰も何も言わない。 { speed:1 waitInput:true Wait:true }
+
+@print 痛いほどの沈黙を破ったのは、<br>やはりゴクチョーだった。 { speed:1 waitInput:true Wait:true }
+
+@char Warden.1
+
+@print 無事に終わって良かったですね。<br>また殺人事件が起きたら<br>魔女裁判を開きます。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print それまでは、今までどおりに<br>囚人として慎ましく生活をしてください。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print これにて、閉廷とします。<br>やれやれ、おつかれさまでした……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 私たちの中に消せない深い傷を残し――<br>裁判は終わったのだ。 { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter01/Act02_Chapter01_Adv27

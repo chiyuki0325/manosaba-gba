@@ -1,0 +1,555 @@
+@gosubResetBook System/System_ResetWitchBook
+@Gosub Act02_Chapter04/Act02_Chapter04_TrialInit
+
+# 議論パート2章4話（議論9）
+
+# Judge9-1-0
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1 { time:0 }
+@char Alisa.Angry1,Option-ArmL-Off
+
+@stageCamera 0 { time:0 }
+@stageCamera 1 { Rotation:-2,{ (7.7 / courtStandCount * 360) },-2 time:0 }
+@WaitForNextFrame 
+
+@stageCamera 1 { Rotation:-1,{ (13.2 / courtStandCount * 360) } time:40 }
+@back Transparent { time:0.9 }
+@Wait 0.6
+
+@ProcessInput true
+
+@badId 7
+
+# ==============================================================================
+# 議論スタート
+# ==============================================================================
+# BGM変更：Kei-Plne Co-Jundic
+@bgm Bgm_25_1
+
+@print （……エマを殺した犯人を決める裁判……か） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@print （エマとレイアが死に……<br>　そして私は容疑者として疑われている） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@print （絶望的……<br>　そう形容するにふさわしい状況だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@print （……しかし） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@ResetText 
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1 { time:0 }
+@stageCamera 0 { Rotation:0,{ (8 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+@hideStageScreen 1
+@stageCamera 0 { Rotation:0,{ (7.9 / courtStandCount * 360) },0 time:0.6 }
+
+@print （諦めるわけにはいかない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@print （必ずエマとレイアを殺した人物を<br>　見つけだしてやる……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print それでは……<br>話し合いを始めましょうか！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE・話の転換音
+@sfx Sfx_Common_5
+
+# ＠備考◆疲弊感
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print ……ちょっと待てよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print いったいなんについて話し合うってんだよ……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print それはもちろん、起きた殺人事件についてですよ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print おふたりの無念を晴らすためにも、<br>犯人を見つけないといけませんよね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE・ガーン
+@sfx Sfx_Common_6
+
+# ＠備考◆青ざめる
+@char Hanna.Fearful1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print さ、殺人事件……！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print ア、アリサちゃんが言いたいのはさ……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print 【どっちを議論するか】……<br>ってことじゃないかな？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print 死体は……２つあるからさ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print ん～……そうですねー。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print まずは状況を整理しつつ、<br>わかりやすい方から議論していく形で<br>いいんじゃないでしょうか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ＠備考◆楽しげ・ノリノリ
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print もしかしたら推理の過程でどちらの犯人も<br>見つかるかもしれませんしね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print もし見つからなかったら、<br>見つかるまで引き続き裁判を続けましょう！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE・明るい音
+@sfx Sfx_Common_2
+# ＠備考◆狂気的に目を見開くようなイメージ
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 犯人を全て明らかにするまで……<br>議論を続けるんですよ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print ……つっても、何から話したらいいのか。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print ……じゃあまず、おじさんが調べたことから言うよ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+# ＠備考◆自分がしっかりしなきゃ、と気を取り直す
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print まず……エマちゃんの死体の状況についてだよ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print エマちゃんの死体は、<br>エレベーターの中で発見された。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print 死因はおそらく、２つの刺し傷……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print レイアちゃんの持つレイピアで刺されたものだと思う。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print レ、レイアさんのレイピア……どうして……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print おじさんたちが乗ったときには気付かなかったんだけど……<br>エレベーターの床には、<br>少しだけ血痕を拭ったような形跡があったよ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print いつ付いたのかはわかりませんねー。<br>エレベーターに乗った時、<br>注意して見ていたわけではないですし。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print ……妙な点としては、<br>エマちゃんが演劇で使う衣装を着ていたことかな。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print 死亡推定時刻は……<br>おそらく発見時から１時間以内。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print レイアちゃんから教えてもらった<br>聞きかじりの知識だから、自信はないんだけど……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@ResetText 
+# ☆アイテム追加
+# 【エマの死体写真】
+# 死後1時間以内と思われる。
+# ドレスが着せられ、レイピアによる刺傷が2ヶ所。
+@spawn Clue
+@toast "魔女図鑑 更新…"
+@update 9-1
+@Wait i1.2
+@despawn Clue
+
+# ☆アイテム追加
+# 【レイピア】
+# レイアの持っていた剣。
+# エマの死体に刺さっている状態で発見。
+@spawn Clue
+@toast "魔女図鑑 更新…"
+@update 9-2
+@Wait i1.2
+@despawn Clue
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Serious_Open
+@gosubModifyCamera 0
+@print ……そういや。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Serious_Open
+@gosubModifyCamera 0
+@print 桜羽の着てたあの舞台衣装……<br>アトリエにあったもんだよな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Serious_Open
+@gosubModifyCamera 0
+@print たしか……<br>ゴクチョーの死体発見の通知が来る<br>【１５分前】かそこらだったかな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Serious_Open
+@gosubModifyCamera 0
+@print その時にはまだ、<br>アトリエにあの衣装があったはずだ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print ならエマさんが殺されたのは、<br>その後かもしれませんねー。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@ResetText 
+# ☆アイテム追加
+# 【ドレス】
+# エマが着せられていたもの。
+# 白地に金の刺繍がされたドレスで、劇で使うはずだったもの。
+# アトリエに飾られており、死体発見の15分ほど前にはアトリエにあったのをアリサが目撃している。
+# 腹部にはレイピアで一突きした穴が空いている。
+@spawn Clue
+@toast "魔女図鑑 更新…"
+@update 9-3
+@Wait i1.2
+@despawn Clue
+
+@char Miria.Default,ArmR3,ArmL8,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print そして……次に、レイアちゃんの死体だけど。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@gosubModifyCamera 0
+@print レイアちゃんは、エレベーターの天井裏で発見されたよ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@gosubModifyCamera 0
+@print 後頭部には、硬いもので殴られたような痕跡があった……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@gosubModifyCamera 0
+@print おそらく死因はこれだね。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@gosubModifyCamera 0
+@print 劇の衣装の王冠を被っていたんだけど……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@gosubModifyCamera 0
+@print これを使って殴ったような形跡はなかったかな。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@gosubModifyCamera 0
+@print レイアちゃんの死体も、死後１時間以内みたいだ……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@ResetText 
+# ☆アイテム追加
+# 【レイアの死体写真】
+# 死後1時間以内と思われる。
+# 後頭部に殴られたような傷。
+@spawn Clue
+@toast "魔女図鑑 更新…"
+@update 9-4
+@Wait i1.2
+@despawn Clue
+
+@ResetText 
+# ☆アイテム追加
+# 【王冠】
+# レイアの死体に被せられていた王冠。
+# ミリアの作ったもの。
+# 衝撃が加わったような痕跡はない。
+@spawn Clue
+@toast "魔女図鑑 更新…"
+@update 9-5
+@Wait i1.2
+@despawn Clue
+
+@char Hanna.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Surprised_Open
+@gosubModifyCamera 0
+@print もう１つ……エレベーター前には怪しい証拠がありましたわ。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR4,ArmL5,Angle01/Facial/Eyes>Eyes_Surprised_Open01,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print ああ！<br>アレですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print 怪しい……か。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print こんな状況で顔色１つ変えねぇ<br>橘の方が怪しい気はするが……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR7,ArmL4
+@gosubModifyCamera 0
+@print 細かいことは気にしちゃダメですよっ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Surprised_Open
+@gosubModifyCamera 0
+@print いいから話を進めましょう。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+# アイテムイラスト提示
+@spawn Clue
+
+@char Hanna.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Smile_Open
+@gosubModifyCamera 0
+@print 私が見つけたのはこれですわ～！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print それは……ハシゴですね！！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE・明るい音
+@sfx Sfx_Common_2
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01
+@gosubModifyCamera 0
+@print え……？<br>それってハシゴじゃなくて、脚立じゃないかな……？ { author:Miria speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print 高い所に登る物なのは一緒です！<br>本質を見ましょうよ、ミリアさん！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE・ネガティブ音
+@sfx Sfx_Common_7
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01
+@gosubModifyCamera 0
+@print え、ええ……？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@despawn Clue
+@Wait 0.5
+
+@char Hanna.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print どっちでも構いませんわ～！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR2,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Open
+@gosubModifyCamera 0
+@print これには発見時、血痕もついていましたわ。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print つまりこの近くで何らかの犯行が行われていたということですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@ResetText 
+# ☆アイテム追加
+# 【脚立】
+# 事件後、エレベーターの外、地上側の入口に置いてあった脚立。
+# 布が被せられており、そこには血痕と思われる染みがあった
+@spawn Clue
+@toast "魔女図鑑 更新…"
+@update 9-6
+@Wait i1.2
+@despawn Clue
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print 死体が発見された現場はどちらもエレベーターの中……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print 少なくとも、<br>この周辺で２人が殺されたことは<br>間違いなさそうですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Serious_Open
+@gosubModifyCamera 0
+@print ……ウチはその辺にはいなかった。<br>ずっと屋敷の中ブラついてたんだからな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print 死体を見つけたときの話は聞いたが……<br>そんなんお前らの中で完結してる話だろ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+# SE・話の転換音
+@sfx Sfx_Common_5
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print ウチは関係ねぇ……<br>事件に関われねーんだからな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print でもそれは逆に言えば、<br>【目撃証言がない】ということでもあります。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print もう一度各自の動きも<br>整理しておく必要がありますね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print ……あらためて説明すると、<br>アリサちゃんが地上にいる間<br>おじさんたちはずっと地下にいたんだよ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print でもその間、各自が思い思いに行動してたから<br>みんなにアリバイがあったとまでは言えない……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Surprised_Open
+@gosubModifyCamera 0
+@print 残念ですが……<br>レイアさんもエマさんも、<br>いつから見ていないのかはわかりませんわ……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print おじさんたち４人は集合時間になっても<br>２人が現れなかったから、<br>先に帰ったんだと思ってエレベーターに乗ったんだ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print あのエレベーターは２人乗りの人数制限が<br>かけられています。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print でもあのときブザーが鳴って……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ==============================================================================
+# ◎回想シーン（流用）●シーン2‐4‐12
+# ========================================
+@bgm Bgm_25_1 { Volume:0.2 }
+@Wait 0.2
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+@back 31_5 { time:0 }
+@char Sherry.Surprised1 { time:0 }
+@char Hanna.Default { time:0 }
+@sfx Sfx_146
+@hideStageScreen 1
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+
+# エレベーターブザー音
+@Wait 1
+
+@print "あれれ？ 動きませんね……？" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print もしかして故障ですの……？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print どうやらひとりずつ行くしかないみたいですね。<br>ハンナさんお先にどうぞ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+@hide MainBackground-Flashback,Sherry-Flashback,Hanna-Flashback { time:0 }
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+# ==============================================================================
+# 回想ここまで
+# ==============================================================================
+
+@bgm Bgm_25_1
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 帰り道は１人ずつしか乗れなかったんですよね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ☆アイテム追加
+# 【エレベーター】
+# 2人乗り制限のエレベーター。
+# 帰るときは1人しか乗れなかった。
+# 中には血痕を拭いたような痕跡が残っている。
+# 天板の入口のフタはシェリーが破壊した。
+@ResetText 
+@spawn Clue
+@toast "魔女図鑑 更新…"
+@update 9-7
+@Wait i1.2
+@despawn Clue
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print そしてヒロちゃん以外の<br>おじさんたちが昇ってから……<br>エレベーターは地下に戻った。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive1,ArmR12,ArmL5
+@gosubModifyCamera 0
+@print ……そして私の前でエレベーターの扉が開いたとき。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR12,ArmL5,Eyes1_Normal_Closed1,Mouth1_Angry_Open1,Sweat1-1
+@gosubModifyCamera 0
+@print そこには、エマの死体があった。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆眉をひそめるようなイメージ
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print …………。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive1,ArmR12,ArmL5
+@gosubModifyCamera 0
+@print だがエレベーターは１人乗り制限……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive1,ArmR12,ArmL5
+@gosubModifyCamera 0
+@print そのまま上に運ぶのは無理だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive1,ArmR12,ArmL5
+@gosubModifyCamera 0
+@print だから私はそこで一旦現場の写真を撮り、<br>エマを下ろして上へと向かった。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive1,ArmR12,ArmL5
+@gosubModifyCamera 0
+@print そこで待っていた３人に事情を説明したんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print ……本来、あのエレベーターは２人まで乗れるものだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print よって犯人が天井裏に隠れているせいで<br>１人分の重量が加算されて乗れなくなった……<br>そう思って天井裏を確認した。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR12,ArmL5,Eyes1_Normal_Closed1,Mouth1_Angry_Open1,Sweat1-1
+@gosubModifyCamera 0
+@print するとそこに……レイアの死体があったんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Serious_Open
+@gosubModifyCamera 0
+@print ……なるほどな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Serious_Open
+@gosubModifyCamera 0
+@print ……だけどよ、単純に考えるなら……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print 【犯人は最後に乗った二階堂】。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print ……この考えであってるか？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print ……もちろん、それは否定させてもらう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 最も怪しい容疑者だということは、<br>理解しているつもりだが。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print だからこそ、私が拘束された……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print なら……それ前提で話させてもらおうか。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print 誰が桜羽と蓮見の２人を殺したのか……な。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+
+@goto Act02_Chapter04/Act02_Chapter04_Trial01

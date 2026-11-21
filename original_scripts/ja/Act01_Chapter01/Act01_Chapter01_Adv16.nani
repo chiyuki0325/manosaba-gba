@@ -1,0 +1,183 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-1-12
+
+# ========================================
+# ●シーン1‐1-12
+# [back 6]
+# ========================================
+
+@back 6_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@print それから、丸１日が経過した。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [bgm Bgm_019_001_Loop]
+# ========================================
+
+@bgm Bgm_19_1
+
+@print "囚人の少女たちは規則に沿って行動し、<br><ruby=\"おのおの\">各々</ruby>好き勝手に過ごしている。" { speed:1 waitInput:true Wait:true }
+
+@print そうして少しずつ、<br>この牢屋敷での生活に慣れ始めていた。 { speed:1 waitInput:true Wait:true }
+
+@print 今日もまた――夕食の時間を迎え、<br>少女たちはぞろぞろと食堂に集う。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive
+
+@print （またノアちゃんがいない……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ノアは食事を取っている気配がない。 { speed:1 waitInput:true Wait:true }
+
+@print 心配になったエマは何度か彼女を誘ってみたが、<br>お絵描きに夢中で出てこようとしない。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char AnAn.Normal1,Angle01/Option_Arms-
+
+@print ただ、アンアンの方は食事に来ていた。<br>顔色はまだ優れないが、少し具合は良くなったらしい。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマは軽く息を吐きながら、<br>シェリー、ハンナ、メルルと共に食事をはじめる。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+@char Hanna.Angry1
+
+@print "まずい。まずいですわ……！ くそー。" { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "ハンナは<ruby=\"なげ\">嘆</ruby>きながらもガツガツ食べている。" { speed:1 waitInput:true Wait:true }
+
+@print 見た目も味も最悪な料理に食欲は減退するが、<br>エマも口に運ぶ。 { speed:1 waitInput:true Wait:true }
+
+@print （ここから脱出するために、体力はつけておきたい） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print と、少し離れたテーブルの方から、<br>騒がしい声があがった。 { speed:1 waitInput:true Wait:true }
+
+@print "マジだって！ あてぃし本人に聞いたもん！" { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 有名なアーティストの【バルーン】だって！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print （バルーンって……ノアちゃんのこと？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1
+@char Meruru.Default
+
+@print おや、あちらのグループでも話題になってるみたいですね。<br>バルーンといえば、知らない人いないですもんねぇ。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print "ばるーん……？ ってなんですか……？" { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print どうやらメルルは知らなかったらしい。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （まあボクも知らなかったんだけど……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1
+
+@print "スプーンを落として、<ruby=\"きょうがく\">驚愕</ruby>の表情を浮かべているのは<br>ハンナだ。" { speed:1 waitInput:true Wait:true }
+
+@print "バルーンがここに捕まっていますの？ そんなバカな……！<br>一体誰でやがりますの！？" { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Normal1
+
+@print 城ケ崎ノアさんです。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Surprised1
+
+@print "はぁっ！？ 嘘でしょう！？<br>【バルーン】といえば、<br>ネットで話題にならない日はありませんのよ！" { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Pensive1
+
+@print "そのアートはどこからか現れ、描くところを見た者はいない…… 正体は謎に包まれ……その芸術的なアートは<br>若者を中心に多くの者を魅了している……。" { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1
+
+@print あの子がそんな、世界的に有名なアーティストだなんて！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Normal1
+
+@print 説明ありがとうございます。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ノアの話題でざわめく食堂の中―― { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [stopBgm]
+# ========================================
+
+# ========================================
+# [sfx 20：皿の割れる音]
+# ========================================
+
+@sfx Sfx_20
+@StopBgm 
+
+@print 皿が床に叩きつけられ、<br>大きな音を立てた。 { speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"とたん\">途端</ruby>に空気が凍りつき、<br>しん、と静まりかえってしまう。" { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,Option-ArmL-Off
+
+@print ゆらりと立ち上がったのは、<br>離れたところで１人食事を取っていたアリサだった。 { speed:1 waitInput:true Wait:true }
+
+@print "懲罰房からようやく出られた彼女は、<br>他の少女たちよりずいぶんと<ruby=\"しょうすい\">憔悴</ruby>してしまっている。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [bgm Bgm_022_001_Loop]
+# ========================================
+
+@bgm Bgm_22_1
+
+@print うるせえよおめえら。<br>人の噂ばっかりしやがって……！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print 不愉快な奴らは<br>全員殺してやりたくなるんだよ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "鋭い瞳が、少女たち全員をぎらりと<ruby=\"にら\">睨</ruby>み渡す。<br>その迫力に、エマはごくりと喉を鳴らした。" { speed:1 waitInput:true Wait:true }
+
+@print （殺してやりたくなる、って、<br>　まさか魔女の殺人衝動……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Normal1
+
+@print それは聞き捨てならないな。<br>アリサくん、危険な思考に支配されているんじゃないか？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR5,ArmL2
+
+@print 辛い目に遭ったのだろうし、<br>良かったら、話を聞くよ。<br>悩みがあるのなら、打ち明けてほしい。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print レイアが立ち上がって穏やかに声をかけると、<br>アリサは舌打ちをする。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa.Angry1,Option-ArmL-Off
+
+@print 優等生は黙ってろ。<br>ウチはやりたいようにやらせてもらう。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print アリサが吐き捨てて食堂を出て行き、<br>その後の食事は静かなものになってしまった。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+
+@print （アリサちゃん、まさか本当に……いいや、あるわけない……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ハンナの手に持つスプーンが、<br>ひどく震えているのが視界に入った。 { speed:1 waitInput:true Wait:true }
+
+@print （みんな怖がってる……誰かが、何かをするんじゃないかって） { author:Ema speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [transition Out,Fade,1,Black]
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter01/Act01_Chapter01_Adv17

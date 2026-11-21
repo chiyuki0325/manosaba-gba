@@ -1,0 +1,778 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter05/Act02_Chapter05_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# クリーチャー化初期化
+@hide Hiro
+@char CreatureHiro.2 { Position:{hiroPositionX},{characterPositionY},{hiroPositionZ} Rotation:,{hiroRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Meruru
+@char CreatureMeruru.3-5 { Position:{meruruPositionX},{characterPositionY},{meruruPositionZ} Rotation:,{meruruRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Leia
+@char CreatureLeia.0-8 { Position:{leiaPositionX},{characterPositionY},{leiaPositionZ} Rotation:,{leiaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+# ==============================================================================
+# MARK: 10-7: 💬 【城ケ崎ノア】
+# ==============================================================================
+# ＠ト書き▼議論10-7【城ケ崎ノア】
+# 議論開始カットイン
+# BGM変更：HirO（Voなし）
+
+@bgm Bgm_37_1_Loop
+
+# ボス演出
+@ResetText 
+@char CreatureHiro.2 { time:0 }
+@stageCamera 1 { Rotation:0,{ (8 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+
+@stageCamera 1 { Rotation:0,{ (8.1 / courtStandCount * 360) },0 time:1 }
+@showStageScreen 1
+@Wait 1.5
+
+@ResetText 
+@char Noah.Default,ArmR2,ArmL4,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open,Angle01/Facial/Mouth>Mouth_Angry_Open,Angle01/Facial/Sweat>Sweat01 { time:0 }
+@stageCamera 0 { Rotation:0,{ (7 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+
+@stageCamera 0 { Rotation:0,{ (6.9 / courtStandCount * 360) },0 time:1 }
+@hideStageScreen 1
+@Wait 1.5
+
+# Judge10-7-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@printDebate な、なんでのあが<br>絵を描かなきゃ<br>いけないの……！
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@printDebate そんなの、<br>のあの勝手だよ……！
+
+@char CreatureHiro.10
+@gosubModifyCamera 0
+@printDebate 君が絵を描くのが<br>好きだと言ったから、<br>私はそれを肯定しただけ<br>なんだけどな。
+
+@char CreatureHiro.11
+@gosubModifyCamera 0
+@printDebate 君にとって、<br>絵を描くことは<br>苦痛なのかい？
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open_1,Angle01/Facial/Mouth>Mouth_Cry_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@printDebate そ、そんなことは……<br>ないけど……。
+
+@char CreatureHiro.11
+@gosubModifyCamera 0
+@printDebate なら見せてくれても<br>いいじゃないか。
+
+@char Noah.Default,ArmR6,Angle01/ArmL>ArmL06,Angle01/Facial/Eyes>Eyes_Angry_Open,Angle01/Facial/Mouth>Mouth_Confused_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@printDebate だ、だめ……！<br>これは……<br>その……！
+
+@char Noah.Default,ArmR6,Angle01/ArmL>ArmL06,Angle01/Facial/Eyes>Eyes_Angry_Open,Angle01/Facial/Mouth>Mouth_Confused_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@printDebate "だれにも……<br><link=\"Objection_02_05_07_01\">見せちゃダメ</link>だから……。"
+
+@char Noah.Default,ArmR4,Angle01/ArmL>ArmL06,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Confused_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@printDebate "他の人に教えちゃダメって……<br><link=\"Objection_02_05_07_02\">約束</link>なの……！"
+
+@char Noah.Default,ArmR6,Angle01/ArmL>ArmL06,Angle01/Facial/Eyes>Eyes_Angry_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@printDebate "だから、<br>ヒロちゃんには<br><link=\"Objection_02_05_07_03\">見せられない</link>のっ！"
+
+
+# ==============================================================================
+# 10-7議論後独白
+# ==============================================================================
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@Wait 0.2
+
+@print （ノアは嘘をついている） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （……だが、子どものつくような嘘だ。<br>　取り合う必要もない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@print （取り繕われ、防御を整えられる前に……<br>　意識外からの一撃を食らわせるんだ！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-7-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_07_01
+
+@Skip false
+@pauseTrial true
+
+@choice すでに見たことがある
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-7-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_07_02
+
+@Skip false
+@pauseTrial true
+
+@choice そんな約束はない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-7-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_07_03
+
+@Skip false
+@pauseTrial true
+
+@choice 見せたくないだけだ
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-7-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 10-7: ❌ 議論ミス選択肢
+# ==============================================================================
+
+# MARK: 10-7-3: ❌ 反論・そんな約束はない
+
+# Judge10-7-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.10
+@gosubModifyCamera 0
+@print そんな約束は聞いたことないが？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open_1,Angle01/Facial/Mouth>Mouth_Smile_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print "え、ええと……<br>専属けーやく？ みたいな……。" { author:Noah speed:1 waitInput:true Wait:true }
+
+# ＠備考◆思いついたように
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open02,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ――そう！<br>他の人に見せちゃいけないって、<br>けーやくしてるの！ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.11
+@gosubModifyCamera 0
+@print それを証明できるものはあるのかな？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR6,Angle01/ArmL>ArmL06,Angle01/Facial/Eyes>Eyes_Angry_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open02,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print だ、だったら、ヒロちゃんはどうなの！？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR6,Angle01/ArmL>ArmL06,Angle01/Facial/Eyes>Eyes_Angry_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open02,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print のあがそういう約束してないって……<br>証拠がないでしょ！ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR6,Angle01/ArmL>ArmL06,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open,Angle01/Facial/Mouth>Mouth_Angry_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print 証拠もないのに人を疑っちゃ、ダメ！ { author:Noah speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （これ以上は水掛け論になるだけか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （ノアの【絵を見せたくない】という意志は固い） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （絵を見せてもらうのは骨が折れそうだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （彼女のトラウマを刺激する方法……<br>　私はそれを知っているはずだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge10-7-1
+
+# MARK: 10-7-4: ❌ 反論・見せたくないだけだ
+
+# Judge10-7-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.10
+@gosubModifyCamera 0
+@print 色々理由付けしているようだが……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.10
+@gosubModifyCamera 0
+@print 【見せられない】ではなく、<br>単純にノアが【見せたくない】んだろう？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open_1,Angle01/Facial/Mouth>Mouth_Pensive_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print そ、そういうわけじゃ……！ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.11
+@gosubModifyCamera 0
+@print なら、ここで描いて私に<br>見せてくれてもいいじゃないか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR6,Angle01/ArmL>ArmL06,Angle01/Facial/Eyes>Eyes_Angry_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print な、なんで今描かなくちゃいけないの！？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR6,Angle01/ArmL>ArmL06,Angle01/Facial/Eyes>Eyes_Angry_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print のあはのあが絵を描きたいと思った時に描くの！ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR6,Angle01/ArmL>ArmL06,Angle01/Facial/Eyes>Eyes_Pensive_Open_1,Angle01/Facial/Mouth>Mouth_Angry_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print のあ、今はそういう気分じゃないし……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR6,Angle01/ArmL>ArmL06,Angle01/Facial/Eyes>Eyes_Pensive_Open_1,Angle01/Facial/Mouth>Mouth_Angry_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ヒロちゃんに勝手に決められたくない！ { author:Noah speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （つっぱねられてしまった……。<br>　お願いするだけでは無理か） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （ノアの【絵を見せたくない】という意志は固い） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （絵を見せてもらうのは骨が折れそうだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （彼女のトラウマを刺激する方法……<br>　私はそれを知っているはずだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge10-7-1
+
+# ==============================================================================
+# MARK: 10-7-2: ⭕ 反論・すでに見たことがある
+# ==============================================================================
+
+# Judge10-7-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+# カットイン
+@StopBgm 
+@gosubCutIn CreatureHiro
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print ああ、申し訳ないけれど……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char CreatureHiro.8
+@gosubModifyCamera 0
+@print ノア。<br>すでに君の絵は、私が見てしまった。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print え。 { author:Noah speed:1 waitInput:true Wait:true }
+
+# BGM変更：HirO（Voなし）
+@bgm Bgm_37_1_Loop
+
+@char CreatureHiro.9
+@gosubModifyCamera 0
+@print 私は【死に戻り】の魔法を持つ……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.18
+@gosubModifyCamera 0
+@print 君が手描きで描いた絵を<br>見る機会があったんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char Noah.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Surprised_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……！ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.18
+@gosubModifyCamera 0
+@print ……君の絵は。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@choice 酷いものだった
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge10-7-7
+
+@choice よくわからなかった
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge10-7-8
+
+@choice 汚かった
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge10-7-9
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 10-7-7: ⭕ 酷いものだった
+# OR選択肢1。どれでもOK
+# ==============================================================================
+# Judge10-7-7
+
+@char CreatureHiro.18
+@gosubModifyCamera 0
+@print ……酷いものだったよ。<br>とても見れたものじゃなかったね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.19
+@gosubModifyCamera 0
+@print それはノアが隠したがるのも仕方ない出来だった……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print 心の底から、そう思うよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-7-10
+
+# ==============================================================================
+# MARK: 10-7-8: ⭕ よくわからなかった
+# OR選択肢2。どれでもOK
+# ==============================================================================
+# Judge10-7-8
+
+@char CreatureHiro.18
+@gosubModifyCamera 0
+@print ……よくわからなかったね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.18
+@gosubModifyCamera 0
+@print 君の絵からは何も伝わってこなかった。<br>情熱も、技量も……何もかもね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.19
+@gosubModifyCamera 0
+@print きっとそれが【才能のなさ】ってやつなのかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-7-10
+
+# ==============================================================================
+# MARK: 10-7-9: ⭕ 汚かった
+# OR選択肢3。どれでもOK
+# ==============================================================================
+# Judge10-7-9
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print ……ひと言で言うなら、汚かったよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.19
+@gosubModifyCamera 0
+@print 乱雑でまともに描こうとしたとは思えない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print 【汚物】……<br>それが君の絵にふさわしい評価だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-7-10
+
+# 選択肢合流
+
+# Judge10-7-10
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （……思ってもいない事を言うのは、<br>　やはり抵抗があるな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （すまないノア……。<br>　許してくれとは言わないが……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （今は……その痛みを受容してくれ……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆泣きそう
+
+@char Noah.Default,ArmR1,ArmL1,Angle01/Facial/Eyes>Eyes_Fearful_Open,Angle01/Facial/Mouth>Mouth_Normal_Closed
+@gosubModifyCamera 0
+@print う……あ……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+# ＠備考◆号泣／子どもの泣き方
+
+@char Noah.Default,ArmR1,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Confused_Open
+@gosubModifyCamera 0
+@print あああぁぁぁ～～ん！！！ { author:Noah speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.8
+
+@hide Noah
+@char CreatureNoah.0-1 { Position:{noahPositionX},{characterPositionY},{noahPositionZ} Rotation:,{noahRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@back SolidColor.Custom { time:0.8 }
+@Wait 0.8
+@back SolidColor.Custom { time:2 }
+@Wait 1
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+@Wait 0.5
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char CreatureNoah.1-1
+@gosubModifyCamera 0
+@print びえぇぇえええ！！ { author:Noah speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ヒ、ヒロちゃん……！<br>いくらなんでも酷いよ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char CreatureLeia.5-2
+@gosubModifyCamera 0
+@print キ、キミには人の心がないのか……！？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （……批難は甘んじて受けよう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.18
+@gosubModifyCamera 0
+@print （だがそれぐらいで済むなら……<br>　安いものだ！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureNoah.1-1
+@gosubModifyCamera 0
+@print "ううぅ……！ あうぅ……！" { author:Noah speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char CreatureNoah.0-2
+@gosubModifyCamera 0
+@print もう……やだぁぁぁ！！ { author:Noah speed:1 waitInput:true Wait:true }
+
+# エフェクト／ノアの魔法（サイケデリックな模様など）
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.5 }
+@Wait 0.5
+@back SolidColor.Custom { time:0.5 }
+@Wait 0.5
+@back SolidColor.Custom { time:0.5 }
+@Wait 0.5
+@back SolidColor.Custom { time:0.5 }
+@Wait 0.5
+
+@char CreatureHiro.22
+@gosubModifyCamera 0
+@print ノアの魔法が……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureNoah.0-1
+@gosubModifyCamera 0
+@print ぅあああぁぁん！！ { author:Noah speed:1 waitInput:true Wait:true }
+
+# ノアが魔女化
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ノ、ノアちゃんの涙に<br>色が付いてる……！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.22
+@gosubModifyCamera 0
+@print ……メルル！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・明るい音
+@sfx Sfx_Common_2
+
+@char CreatureMeruru.2-8
+@gosubModifyCamera 0
+@print は、はい……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char CreatureMeruru.1-2
+@gosubModifyCamera 0
+@print ノアさ～ん、もう大丈夫ですよー……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+# エフェクト／メルルの魔法
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+
+@char CreatureNoah.0-5
+@gosubModifyCamera 0
+@print ううぅ～！ { author:Noah speed:1 waitInput:true Wait:true }
+
+# ＠備考◆鼻をすするようなイメージ
+@char CreatureNoah.0-2
+@print う、うぅ……ひっく……ぐす……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@StopBgm { fade:3 }
+@Wait 3
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print （……ノアも魔女化させることができた） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print （【トラウマ】を刺激すれば、<br>　効率的に魔女化が進行できるかもしれないな――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@update Noah
+@toast "魔女図鑑 更新…"
+
+@StopBgm 
+
+# マーゴカットイン
+@Wait 0.5
+
+@sfx Sfx_Common_5
+
+@ResetText 
+@voice CommonTrial_Margo01682
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubSplitStageScreen 1
+@Wait 1.5
+
+@hideStageScreen 1
+@Wait 0.3
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print ――面白い見世物だったわ、ヒロちゃん。 { author:Margo speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char CreatureHiro.15
+@gosubModifyCamera 0
+@print ……！<br>……マーゴ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# BGM変更：交々のいと
+@bgm Bgm_26_1
+
+@char Margo.Default,ArmR1,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print 魔法を使った変身ショー？<br>それともお涙頂戴の三文芝居かしら。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR4,ArmL1,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print でも……そろそろ飽きてきたわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print 私たちを巻き込んでまで<br>こんなことをする意味……本当にあるの？ { author:Margo speed:1 waitInput:true Wait:true }
+
+# モノローグ演出
+
+# ＠備考◆冷静
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （……マーゴ、妙だな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （彼女と過ごした期間は短かったし、<br>　気まぐれな部分がある人間なのはたしかだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （私も彼女の人となりを、<br>　すべて把握しているわけではない。<br>　しかし……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.1
+@gosubModifyCamera 0
+@print （こちらが情報を握っていることは<br>　先ほどからアピールしている） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.1
+@gosubModifyCamera 0
+@print （それがわからないほど、マーゴは愚かではない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （……彼女の言葉、全てに裏があると考えるべきか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （ならば彼女の言葉はもしかすると――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 演出戻り
+@StopBgm 
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print ……そうだね、マーゴ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.8
+@gosubModifyCamera 0
+@print 君も見ているだけじゃ暇だろう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・明るい音
+@sfx Sfx_Common_2
+
+@char CreatureHiro.8
+@gosubModifyCamera 0
+@print ……一緒に踊るかい。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 目を細めるイメージ
+
+@char Margo.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print ……面白い子ね、ヒロちゃん。 { author:Margo speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Margo.Default,ArmR6,ArmL1,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print でもレディーへの誘い文句としてなら、<br>もう少しスマートな方が好みよ♡ { author:Margo speed:1 waitInput:true Wait:true }
+
+# 気任せの蝶［チェロ有り］
+@bgm Bgm_7_1
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （……及第点はもらえた、ということかな？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （――そう。<br>　これまでの彼女の言葉は、私に対する挑発だ。<br>　もっと言えば……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print "（議論という戦場への<ruby=\"いざな\">誘</ruby>い……！）" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print （マーゴは私の持っている情報を引き出して<br>　自身の身の振り方を決めようとしている……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print （逆に言えば、彼女はまだ私と手を組んで協力すべきかどうか<br>　迷っているんだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （なら……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print ……あなたに私のエスコートができるかしら？<br>ヒロちゃん。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.10
+@gosubModifyCamera 0
+@print ……もちろんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.10
+@gosubModifyCamera 0
+@print 君が望むものを提供しよう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char CreatureHiro.25
+@gosubModifyCamera 0
+@print （……マーゴは今、私を試している） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.25
+@gosubModifyCamera 0
+@print （ならば……<br>　相手が詐欺師だろうとなんであろうと、<br>　信じさせてみせよう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print （そして……否が応でも協力してもらうぞ！<br>　宝生マーゴ！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto Act02_Chapter05/Act02_Chapter05_Trial08

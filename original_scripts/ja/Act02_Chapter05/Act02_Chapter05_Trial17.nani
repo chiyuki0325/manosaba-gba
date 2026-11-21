@@ -1,0 +1,641 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter05/Act02_Chapter05_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# クリーチャー化初期化
+@hide Hiro
+@char CreatureHiro.2 { Position:{hiroPositionX},{characterPositionY},{hiroPositionZ} Rotation:,{hiroRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Meruru
+@char CreatureMeruru.3-5 { Position:{meruruPositionX},{characterPositionY},{meruruPositionZ} Rotation:,{meruruRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Leia
+@char CreatureLeia.0-8 { Position:{leiaPositionX},{characterPositionY},{leiaPositionZ} Rotation:,{leiaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Noah
+@char CreatureNoah.0-3 { Position:{noahPositionX},{characterPositionY},{noahPositionZ} Rotation:,{noahRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Margo
+@char CreatureMargo.0-4 { Position:{margoPositionX},{characterPositionY},{margoPositionZ} Rotation:,{margoRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Nanoka
+@char CreatureNanoka.0-1 { Position:{nanokaPositionX},{characterPositionY},{nanokaPositionZ} Rotation:,{nanokaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Coco
+@char CreatureCoco.2-3 { Position:{cocoPositionX},{characterPositionY},{cocoPositionZ} Rotation:,{cocoRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+# ==============================================================================
+# MARK: 10-17: 💬 【夏目アンアン】
+# ==============================================================================
+# ＠ト書き▼議論10-17【夏目アンアン】
+# 議論開始カットイン
+# BGM変更：HirO（Voなし）
+@bgm Bgm_37_1_Loop
+# ボス演出
+@ResetText 
+@char CreatureHiro.2 { time:0 }
+@stageCamera 1 { Rotation:0,{ (8 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+
+@stageCamera 1 { Rotation:0,{ (8.1 / courtStandCount * 360) },0 time:1 }
+@showStageScreen 1
+@Wait 1.5
+
+@ResetText 
+@char AnAn.Fearful1,ArmR5,ArmL7,Angle01/Head/Facial/Sweat>Sweat01,Angle01/Option_Arms-,ArmR-Option-Off { time:0 }
+@stageCamera 0 { Rotation:0,{ (11 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+
+@stageCamera 0 { Rotation:0,{ (10.9 / courtStandCount * 360) },0 time:1 }
+@hideStageScreen 1
+@Wait 1.5
+
+# Judge10-17-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char AnAn.Default,ArmR2,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Cry_Open02,Angle01/Head/Facial/Mouth>Mouth_Normal_Closed
+@gosubModifyCamera 0
+@printDebate わがはいは<br>静かに暮らしたいだけだ！
+
+@char AnAn.Default,ArmR2,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Cry_Open02,Angle01/Head/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@printDebate "大衆どもに<br><link=\"Objection_02_05_17_01\">理解</link>される必要も、<br>理解する必要もない！"
+
+@char AnAn.Default,ArmR5,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Cry_Open01,Angle01/Head/Facial/Mouth>Mouth_Cry_Closed
+@gosubModifyCamera 0
+@printDebate わがはいには<br>仲間も、<br>幸福も、<br>ぬくもりも……<br>何もいらない！
+
+@char AnAn.Default,ArmR5,ArmL5,Angle01/Head/Facial/Eyes>Eyes_Cry_Open01,Angle01/Head/Facial/Mouth>Mouth_Cry_Closed
+@gosubModifyCamera 0
+@printDebate "そんなものに<link=\"Objection_02_05_17_02\">価値</link>はない！<br>求めていないんだ！"
+
+@char AnAn.Default,ArmR5,ArmL5,Angle01/Head/Facial/Eyes>Eyes_Cry_Open01,Angle01/Head/Facial/Mouth>Mouth_Angry_Closed01
+@gosubModifyCamera 0
+@printDebate "わがはいが真に欲するは<br>深遠なる孤独と<link=\"Objection_02_05_17_03\">静寂</link>……！"
+
+@char AnAn.Default,ArmR7,ArmL10,Angle01/Head/Facial/Eyes>Eyes_Cry_Open02,Angle01/Head/Facial/Mouth>Mouth_Fearful_Open
+@gosubModifyCamera 0
+@printDebate よって貴様に協力はしない！
+
+@char AnAn.Default,ArmR7,ArmL10,Angle01/Head/Facial/Eyes>Eyes_Cry_Open02,Angle01/Head/Facial/Mouth>Mouth_Yell_Open
+@gosubModifyCamera 0
+@printDebate わがはいに干渉するな！
+
+# ==============================================================================
+# 10-17議論後独白
+# ==============================================================================
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@gosubModifyCamera 0
+@Wait 0.2
+
+@char CreatureHiro.2
+@print （アンアンを魔女化させるためには、<br>　心の闇を暴かなくてはならない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@print （だが彼女の発言……<br>　言葉通りに受け取っていいものか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@print （人は触れられたくない傷を隠すものだ……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@print （彼女が偽証している言葉を暴くんだ！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-17-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_17_01
+
+@Skip false
+@pauseTrial true
+
+@choice 理解を求めている
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-17-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_17_02
+
+@Skip false
+@pauseTrial true
+
+@choice 価値はある
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-17-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_17_03
+
+@Skip false
+@pauseTrial true
+
+@choice 快適な環境も必要
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-17-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 10-17: ❌ 議論ミス選択肢
+# ==============================================================================
+# MARK: 10-17-3: ❌ 反論・理解を求めている
+
+# Judge10-17-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print いいや、君は理解を求めている……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.18
+@gosubModifyCamera 0
+@print 君はお話を書くのが得意だったはずだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.18
+@gosubModifyCamera 0
+@print それは大衆に向けたメッセージ……<br>君の興味は常に、外へと向けられている！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,ArmR5,ArmL5,Angle01/Head/Facial/Eyes>Eyes_Cry_Open01,Angle01/Head/Facial/Mouth>Mouth_Cry_Closed
+@gosubModifyCamera 0
+@print そんなことはどうでもいい！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,ArmR5,ArmL5,Angle01/Head/Facial/Eyes>Eyes_Cry_Open01,Angle01/Head/Facial/Mouth>Mouth_Angry_Closed01
+@gosubModifyCamera 0
+@print わがはいは孤独で十分だ！<br>何もいらない！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,ArmR5,ArmL5,Angle01/Head/Facial/Eyes>Eyes_Cry_Open02,Angle01/Head/Facial/Mouth>Mouth_Fearful_Open
+@gosubModifyCamera 0
+@print ここにいられさえすれば……何も！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,ArmR7,ArmL11,Angle01/Head/Facial/Eyes>Eyes_Cry_Open02,Angle01/Head/Facial/Mouth>Mouth_Yell_Open
+@gosubModifyCamera 0
+@print 余計な世話を焼こうとするな！！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （……一際強い感情の訴えに見えるな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （アンアンは何かを隠している） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print （それはきっと彼女にとって一番大切なもの……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print （彼女が欲しているものを、見抜くんだ……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-17-1
+
+# MARK: 10-17-4: ❌ 反論・快適な環境も必要
+
+# Judge10-17-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print 人はパンのみに生きるにあらず……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print 孤独と静寂の他にも、<br>もっと快適に過ごせる環境は<br>必要じゃないかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.18
+@gosubModifyCamera 0
+@print しかしこの牢屋敷ではロクな娯楽もない……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.18
+@gosubModifyCamera 0
+@print この牢屋敷で過ごしたとしても、<br>君はすぐに音を上げてしまうだろう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,ArmR5,ArmL5,Angle01/Head/Facial/Eyes>Eyes_Cry_Open01,Angle01/Head/Facial/Mouth>Mouth_Cry_Closed
+@gosubModifyCamera 0
+@print いいや、わがはいは何もいらない……。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,ArmR5,ArmL5,Angle01/Head/Facial/Eyes>Eyes_Cry_Open01,Angle01/Head/Facial/Mouth>Mouth_Angry_Closed01
+@gosubModifyCamera 0
+@print その気になれば、<br>独房でずっと物語の世界を妄想し<br>その微睡みの中で過ごすことができる。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,ArmR5,ArmL5,Angle01/Head/Facial/Eyes>Eyes_Cry_Open02,Angle01/Head/Facial/Mouth>Mouth_Fearful_Open
+@gosubModifyCamera 0
+@print わがはいは……本当に何もいらないんだ。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,ArmR7,ArmL11,Angle01/Head/Facial/Eyes>Eyes_Cry_Open02,Angle01/Head/Facial/Mouth>Mouth_Yell_Open
+@gosubModifyCamera 0
+@print これ以上……わがはいに構わないでくれ……！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （……物欲が問題ではないか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （アンアンは何かを隠している） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print （それはきっと彼女にとって一番大切なもの……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print （彼女が欲しているものを、見抜くんだ……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-17-1
+
+# ==============================================================================
+# MARK: 10-17-2: ⭕ 反論：価値はある
+# ==============================================================================
+
+# Judge10-17-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+@gosubCutIn CreatureHiro
+@Gosub System/System_Subroutine.EndDebate-Last
+# カットイン
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print ……いいや、それは嘘だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print 君は価値があるとわかっている。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ==============================================================================
+# 回想シーン（流用） ●シーン2‐2‐20
+# ==============================================================================
+# ライター注：ここの回想、カットさせてください。（このシーンはヒロが見ていない為）
+#
+# AnAn: わがはいと、楽しいことをたくさんしよう。|#0205Trial17_AnAn016|
+#
+# AnAn: わがはいが、ノアをたくさん笑わせてやる。|#0205Trial17_AnAn017|
+#
+# ==============================================================================
+# 回想ここまで
+# ==============================================================================
+
+@char CreatureHiro.18
+@gosubModifyCamera 0
+@print ……私の経験した世界で、<br>君には仲の良い友人ができていた。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char AnAn.Default,ArmR5,ArmL7,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Surprised_Open,Angle01/Head/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print な……に……！？ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.19
+@gosubModifyCamera 0
+@print 君は人との触れ合いを無価値と思っているわけでも、<br>コミュニケーション能力が欠如しているわけでもない――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print ――ただ、怖いんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,ArmR5,ArmL7,Angle01/Head/Facial/Eyes>Eyes_Pensive_Open,Angle01/Head/Facial/Mouth>Mouth_Surprised_Open,Angle01/Head/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……ち、ちがう……。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print ……一度得たものを失う恐怖。<br>君はその痛みに怯えている。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆怯え
+
+@char AnAn.Default,ArmR5,ArmL7,Angle01/Head/Facial/Eyes>Eyes_Pensive_Open,Angle01/Head/Facial/Mouth>Mouth_Fearful_Open,Angle01/Head/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print 違う……！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print 両親との幸せな家庭。<br>それを自らの手で破壊してしまった罪悪感。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.19
+@gosubModifyCamera 0
+@print 君はもう一度、<br>自分の手で幸せを壊してしまうことを恐れているんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+# ＠備考◆拒絶
+
+@char AnAn.Default,ArmR7,ArmL10,Angle01/Head/Facial/Eyes>Eyes_Cry_Open02,Angle01/Head/Facial/Mouth>Mouth_Yell_Open,Angle01/Head/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……違う！！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print ……違うのであれば、<br>どうして殻にこもろうとする！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print "自ら幸福を遠ざけ、<br>不幸な自分という<ruby=\"わるざけ\">悪酒</ruby>に酔う<br>依存症の患者……。" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.18
+@gosubModifyCamera 0
+@print それが今の君だ。<br>……違うかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,ArmR7,ArmL10,Angle01/Head/Facial/Eyes>Eyes_Cry_Open01,Angle01/Head/Facial/Mouth>Mouth_Fearful_Open
+@gosubModifyCamera 0
+@print わ、わがはい……は……。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.16
+@gosubModifyCamera 0
+@print 君がそれでいいなら、構わない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.16
+@gosubModifyCamera 0
+@print 君が幸福を拒絶し続ける限り、<br>ずっとそのままだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char CreatureHiro.7
+@gosubModifyCamera 0
+@print 永遠に不幸に包まれながら……<br>孤独の中で、独り眠り続けるといい！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆おびえ・恐怖
+
+@char AnAn.Default,ArmR4,ArmL7,Angle01/Head/Facial/Eyes>Eyes_Fearful_Open,Angle01/Head/Facial/Mouth>Mouth_Angry_Closed01,Angle01/Head/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ………。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+# ＠備考◆おびえ・恐怖
+
+@char AnAn.Default,ArmR4,ArmL7,Angle01/Head/Facial/Eyes>Eyes_Fearful_Open,Angle01/Head/Facial/Mouth>Mouth_Angry_Closed01,Angle01/Head/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print い……。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+# ＠備考◆ポロポロ泣き出すイメージ
+
+@char AnAn.Default,ArmR4,ArmL7,Angle01/Head/Facial/Eyes-,Angle01/Head/Facial/Mouth>Mouth_Fearful_Open,Angle01/Head/Facial/Pale>Pale02
+@gosubModifyCamera 0
+@print ……やだぁ……！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+# エフェクト アンアン魔女化
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.8
+
+@hide AnAn
+@char CreatureAnAn.1-9 { Position:{ananPositionX},{characterPositionY},{ananPositionZ} Rotation:,{ananRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@back SolidColor.Custom { time:0.8 }
+@Wait 0.8
+@back SolidColor.Custom { time:2 }
+@Wait 1
+
+@print ……やだ、やだぁ……！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char CreatureAnAn.1-8
+@gosubModifyCamera 0
+@print そんなの、やだ……！<br>こんな魔法、いらなかった……。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char CreatureAnAn.0-8
+@gosubModifyCamera 0
+@print 普通に、生まれてれば……<br>パパも……ママも……！<br>おかしくなんて、ならなかったのに……！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print なら……私についてくるんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print ナノカの姉と同じく……<br>君の魔女因子も取り除いてやる。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print （……アンアンには前に進む希望が必要だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （大魔女を倒すという、希望が……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@update AnAn
+@toast "魔女図鑑 更新…"
+
+@StopBgm 
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Alisa.Default,ArmR7,ArmL6,Angle01/Facial/Eyes>Eyes_Fearful_Open,Angle01/Facial/Sweat>Sweat02
+@gosubModifyCamera 0
+@print ……な、なんなんだよ……！<br>お前は……！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR7,ArmL6,Angle01/Facial/Eyes>Eyes_Fearful_Open,Angle01/Facial/Sweat>Sweat02
+@gosubModifyCamera 0
+@print 他の奴らを次々化け物にしやがって……！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print ……これは必要なことなんだ。<br>私たちが助かるために……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR7,ArmL6,Angle01/Facial/Eyes>Eyes_Angry_Open01,Angle01/Facial/Sweat>Sweat02
+@gosubModifyCamera 0
+@print そんなん、信じろって方が無理があるだろ……！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print …………。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.14
+@gosubModifyCamera 0
+@print （アリサの言う事はもっともだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （特に慎重な性格であればあるほど、<br>　私の意見には乗りづらいか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# BGM変更：迫るその足音
+@bgm Bgm_23_1
+
+@char CreatureHiro.14
+@gosubModifyCamera 0
+@print （やはり……そもそも説得なんて無理だったのか？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆目が赤く光るなど魔女化の兆候
+
+@char CreatureHiro.22
+@gosubModifyCamera 0
+@print （手足をもいで、苦痛を与えた方が手っ取り早い――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.23
+@gosubModifyCamera 0
+@print （――落ち着け。<br>　思考が殺人衝動に侵食されている……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.23
+@gosubModifyCamera 0
+@print （魔女化がどんどん進んでいるのだろうか……。<br>　私に残された時間は少ない……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （理性が残っているうちに、<br>　みんなの魔女化を済ませてしまわないと……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char Alisa.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Angry_Open04,Angle01/Facial/Sweat>Sweat02
+@gosubModifyCamera 0
+@print ……今度はだんまりか？<br>なんか言えよ……！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Miria.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open02,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ま、待ってよアリサちゃん……！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Angry_Open03,Angle01/Facial/Sweat>Sweat02
+@gosubModifyCamera 0
+@print ああ！？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Angry_Closed01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print い、いや、その……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+# 気任せの蝶［チェロ無し］
+@bgm Bgm_45_2
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Pensive_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print おじさんも確信があるわけじゃないけど……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ヒロちゃんの言ってることも、<br>まるっきり嘘ってこともないんじゃないかなって……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Sweat>Sweat02
+@gosubModifyCamera 0
+@print おめーもバケモンの肩持つってのかよ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open02,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print そ、そんなことは言ってないよ！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……けど……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print いがみ合うのは……良くないと思うんだ……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print （……これは、見ようによってはチャンスかもしれない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print （ミリアの良心を利用するようで申し訳ないが……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print （残り時間が少ない今……なりふり構ってはいられない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （１人でも多く、議論の場に引きずり込むんだ……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char CreatureHiro.8
+@gosubModifyCamera 0
+@print ……なら、君はどちらにつくのかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Surprised_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print えっ？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.10
+@gosubModifyCamera 0
+@print 私を信じるのか……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.9
+@gosubModifyCamera 0
+@print それとも、信じないのか！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print え、ええー！？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@goto Act02_Chapter05/Act02_Chapter05_Trial18

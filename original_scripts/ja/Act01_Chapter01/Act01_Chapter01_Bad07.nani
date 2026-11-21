@@ -1,0 +1,368 @@
+@if isDebugDirectJump
+	@Gosub System/System_Subroutine.BeginAdv
+	@back Transparent { time:0 }
+
+# ========================================
+# ＞『冗談まじりにシェリーをけしかけた』を選択→1‐1‐b7へ
+# ========================================
+
+# Scene1-1-b7
+
+# ========================================
+# ●シーン1-1‐b7
+# ========================================
+
+@back 11_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@bgm Bgm_25_1
+
+@print 冗談まじりにシェリーをけしかけた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+@char Sherry.Normal1
+
+@print うん、やっちゃってシェリーちゃん！<br>なんて、もちろん冗談だけど……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR14
+
+@print 了解でーす！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3
+
+@print え、ちょっと待ってシェリーちゃん！？<br>冗談なんだってば！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマの制止が聞こえていないのか、<br>シェリーはアリサとナノカに向かっていく。 { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1,Option-ArmL-Off,ArmL7
+@char Sherry.Smile1,ArmR18,ArmL13
+@char Nanoka.Default
+
+@print あなたたち、喧嘩はいけませんよー。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 笑顔でそう口にしながらシェリーは、<br>アリサとナノカに拳を振り下ろした。 { speed:1 waitInput:true Wait:true }
+
+# ぶんっと武器が振り下ろされる音
+@sfx Sfx_9
+
+@Wait 1
+
+# 壁を殴る音
+@sfx Sfx_25
+
+@print "アリサとナノカが<ruby=\"とっさ\">咄嗟</ruby>に飛びのき、<br>シェリーの拳が娯楽室の床に<ruby=\"たた\">叩</ruby>きつけられる。" { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆くっと息を呑む
+
+@char Nanoka.Default
+
+@print ！！ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@char Alisa.Angry1,Option-ArmL-Off
+
+@print てめえ……いきなり何しやがる！？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@char Sherry.Normal1,ArmR8,ArmL1
+
+@print 喧嘩を止めようと思いまして。<br>とりあえず、お２人に気絶してもらったら早いかなーと。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa.Angry1,Option-ArmL-Off
+@char Nanoka.Default
+
+@print ……ふざけないで。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print むしろ喧嘩売ってるだろうが。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 当然だがアリサもナノカも、<br>大人しく殴られるつもりはない様子だ。<br>３人の間に、一触即発の空気が流れる。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR8,ArmL1
+
+@print 最初に動いたのはシェリーだった。<br>再びアリサとナノカに殴りかかっていく。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@char Nanoka.Default
+@char Alisa.Angry1,Option-ArmL-Off
+
+@print 今度はアリサもナノカも、応戦の構えを見せる。<br>だが、シェリーの動きは２人の反応よりも早かった。 { speed:1 waitInput:true Wait:true }
+
+# ぶんっと武器が振り下ろされる音
+@sfx Sfx_9
+@Wait 0.8
+
+# 人を殴打する音
+@sfx Sfx_85
+@Wait 0.8
+
+@animate Nanoka,Alisa
+
+# 倒れる音
+@sfx Sfx_19
+@Wait 0.5
+
+# 黒部ナノカ、紫藤アリサ ＯＵＴ
+
+@print シェリーがナノカ、アリサを殴り倒す。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR3,ArmL4
+
+@print "えっへん！ これで揉め事は丸く収まりましたね！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Surprised1
+
+@print どこがですの！？<br>むしろ暴力沙汰を起こしてますけれど！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Jailer.1
+
+@print 看守が姿を現して、シェリー、アリサ、ナノカを<br>拘束する。<br>３人は、そのまま連行されていった。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Margo.Normal1,ArmR2,ArmL1
+
+@print あら大変……あの３人、懲罰房にでも入れられるのかしら。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Surprised1
+
+@print ちょ、ちょっとエマさん！<br>あなたのせいで余計まずい状況になっちゃいましたわよ！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+
+@print そ、そんな……ボクはただ冗談のつもりで。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@hideChars 
+@char Meruru.Default
+
+@print …………。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@ResetText 
+
+# 牢の施錠音
+@sfx Sfx_4
+
+@back SolidColor { time:1 }
+@Wait 1.2
+@back 5_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+
+@print ２日後。<br>エマはシェリーたちが懲罰房から解放されるのを待っている。 { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_9_1
+
+@char Ema.Pensive1,ArmR3
+
+@print もうそろそろ戻ってくるかな。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Pensive1
+
+@print さあ、そんなのわかりませんわ……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （ハンナちゃん、なんだか冷たい気がする……<br>　他のみんなも、ボクを軽蔑してるような……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （やっぱり、みんな怒ってるのかな……？<br>　ボクが、あんなこと言ったから……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 冗談のつもりで口にした言葉が、結果的にシェリーを扇動。<br>事態を悪化させてしまった。<br>そんなエマに、不信感を抱いているのかもしれない。 { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Pensive
+
+@print エマさん、どうか落ち込まないでください……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 暗い顔をするエマに、メルルは心配げに声をかける。<br>彼女だけは唯一、エマと距離を置こうとしない。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3
+
+@print メルルちゃん……ありがとう。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa.Pensive1,Option-ArmL-Off,ArmR7,ArmL2
+@char Nanoka.Default
+
+@print しばらくすると、アリサとナノカの２人が姿を現した。 { speed:1 waitInput:true Wait:true }
+
+@print どちらも疲弊しているように見える。<br>懲罰房で酷い仕打ちを受けたのかもしれない。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Normal1
+
+@print ……シェリーさんはどうしたんですの？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa.Pensive1,Option-ArmL-Off,ArmR7,ArmL2
+
+@print あいつは……たぶん、殺されちまった。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+
+@print "こ、殺された！？ どうして！？" { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa.Angry1,Option-ArmL-Off,ArmR7,ArmL2
+
+@print "知るかよ！ ただゴクチョーの<br>声が聞こえたんだ……。" { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print もう駄目そうですね、処分しましょう……ってな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Cry1,ArmR3
+
+@print そ、そんな……そんなのって、ひどい……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa.Angry1,Option-ArmL-Off,ArmR7,ArmL2
+
+@print 何が酷いだよ……<br>てめえがあいつを煽ったせいだろうが！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Margo.Normal1,ArmR1,ArmL3
+
+@print あら……元はといえば、<br>言い争いをはじめたのは誰だったかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa.Angry1,Option-ArmL-Off,ArmR2,ArmL7
+@char Nanoka.Default
+
+@print 最初に言いがかりをつけてきたのはこいつだろ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print …………。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Meruru.Pensive
+
+@print あ、あの、みなさん、どうか落ち着いて……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+# テーブルを叩く音
+@sfx Sfx_32
+
+@hideChars 
+@char Hanna.Angry1
+
+@print どいつもこいつも、いい加減にしやがれですわ！<br>あなたたち全員の責任でしょう！！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "ハンナが声を荒げ、テーブルを<ruby=\"たた\">叩</ruby>いた。<br>そのまま<ruby=\"げっこう\">激昂</ruby>した様子で部屋を出ていこうとする。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print ハンナちゃん、待って！<br>その……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Angry1
+
+@print 今は話しかけないでくださいまし……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+
+@print ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ハンナはそう言い残して、今度こそ出ていく。<br>エマはただ立ち尽くすだけだった。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+@back SolidColor { time:1 }
+@Wait 1.2
+@back 1_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+
+@print その後。<br>罪悪感に苛まれたエマは、<br>他の少女たちと距離を置くようになっていた。 { speed:1 waitInput:true Wait:true }
+
+@print （シェリーちゃんが殺されちゃったのは、<br>　ボクのせいだから……<br>　なんで、あんなこと言ったんだろう……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 気まずさからか、エマはハンナや<br>他の誰かに話しかけられずにいる。 { speed:1 waitInput:true Wait:true }
+
+@print そうやって過ごすうちに、<br>エマはどんどん心が疲弊していくようだった。 { speed:1 waitInput:true Wait:true }
+
+@print （みんなもきっと、ボクを責めてるんだろうな……<br>　さっきも……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ラウンジで談笑していた少女たち。<br>しかしエマが姿を現すと、全員が声をひそめる。 { speed:1 waitInput:true Wait:true }
+
+@print ささやき合う、少女たちの声と向けられた視線。<br>エマは自分の悪口を言われ、蔑まれているような気分だった。 { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default
+
+@print あの、エマさん……食事を持ってきました。<br>ここに置いておきますから、食べてください……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print あの……どうか元気を出してくださいね。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 優しく接してくれているように思えるメルルの言葉すら、<br>エマには後ろ向きに聞こえてしまう。 { speed:1 waitInput:true Wait:true }
+
+@print （いつまでも被害者面するなってことかな……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマはメルルに返事をせず、膝を抱える。 { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Pensive
+
+@print …………。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print メルルは悲しそうな表情で、房の前から立ち去った。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print 辛いな……何もかも。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print こんな場所にいること。 { speed:1 waitInput:true Wait:true }
+
+@print 空気の読めない冗談のせいで、<br>シェリーを死に追いやってしまったこと。 { speed:1 waitInput:true Wait:true }
+
+@print みんなから、蔑まれること。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print なんかもういいや……疲れちゃった。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR9
+
+@print エマは食堂から持ち出したテーブルナイフを手にして、<br>喉元に押し当てた。 { speed:1 waitInput:true Wait:true }
+
+@print ボクが死んだら、誰か少しは<br>悲しんだりしてくれるのかな……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@HidePrinter 
+
+# ざんっと肉が切れる音
+@sfx Sfx_12
+
+@Wait 1
+
+# 倒れる音
+@sfx Sfx_19
+
+@back SolidColor { time:1 }
+@Wait 1.2
+@back 2_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+
+@print "監房の中。<br>赤い<ruby=\"ちょう\">蝶</ruby>が、エマの周りをひらひらと舞っていた――" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 『END～疲弊した心～』
+# ========================================
+
+@badEnd 7

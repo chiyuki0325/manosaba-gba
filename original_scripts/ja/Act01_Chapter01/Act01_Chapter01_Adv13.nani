@@ -1,0 +1,233 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-1-9
+
+# ========================================
+# ＞『図書室』を選択
+# ========================================
+
+@print 牢屋敷２階で入れる部屋は、２つあった。<br>図書室と、娯楽室だ。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back 12_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+@bgm Bgm_11_1
+
+@print エマとシェリーは、<br>図書室の方へと踏み込んでみる。 { speed:1 waitInput:true Wait:true }
+
+@print "そこは本棚がずらりと並び、<br>古い紙のにおいが漂う<ruby=\"せいひつ\">静謐</ruby>な空間だった。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print どんな本が置いてあるのかな。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマは適当に抜き取ってぱらぱらと<ruby=\"めく\">捲</ruby>ってみるが、<br>読めない文字が並んでいる。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+
+@print うーん……読めない……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1
+@char Sherry.Normal1
+
+@print 私たちの国の文字じゃありませんね。<br>この牢屋敷って、どこの国にあるんでしょうね？<br>というか……まさか異世界！？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+
+@print そっ、そんな絶望するようなこと言わないで！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print シェリーも本棚の本を取り出し、<br>何気なくぱらぱらと捲っていく。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Normal1
+@char Sherry.Surprised1
+
+@print エマさん、エマさん！<br>これ、これ見てください！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+@char Ema.Normal1
+
+@print "シェリーが手招きしたので、<br>エマも本を<ruby=\"のぞ\">覗</ruby>き込む。<br>開かれたページには――" { speed:1 waitInput:true Wait:true }
+
+@print <color=#ff0000>たすけて</color> { speed:1 waitInput:true Wait:true }
+
+@char Ema.Fearful1,ArmR3,ArmL1
+
+@print "と、血文字で書かれていた。<br>エマは息を<ruby=\"の\">呑</ruby>んだ。" { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_27_1 { fade:2 }
+@char Sherry.Smile1
+
+@print これって、前捕まってた魔女候補の子たちの<br>誰かが書いたんですかね！？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print そうかも……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 高まりますね～！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+
+@print ちっとも高まらないよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+
+@ResetText 
+@QuickSave 3
+
+@print 他の本にも、こういうメッセージが<br>残されていたりするんですかね。<br>ちょっと調べてみませんか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@print エマはシェリーの提案に―― { speed:1 waitInput:true Wait:true }
+
+@choice 賛成した
+	@goto Act01_Chapter01/Act01_Chapter01_Bad03
+
+@choice 首を横に振った
+	@goto .Choice1-1-3
+
+@StopForChoice 
+
+# Choice1-1-3
+
+@correctChoice 3
+
+@char Ema.Pensive1
+
+@print 首を横に振った。 { speed:1 waitInput:true Wait:true }
+
+@print 今はやめとこう。さっきの血文字、<br>なんだか怖いよ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print それにこの数の本を調べるなら、<br>もっと人手もあったほうがいいと思うし……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ――あら。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1
+
+@print 並ぶ本棚の陰から、少女が１人、<br>ひょっこりと顔をのぞかせた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR1,ArmL1
+@bgm Bgm_11_1
+
+@print マーゴちゃん……だよね。いたんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1,ArmR5,ArmL3
+
+@print ええ。可愛いさえずりが聞こえたから、<br>ちょっとのぞきにきたの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+
+@print う、うるさくしてごめん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print いいのよ。<br>読める本も見当たらないし、暇してたところだったの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print そう言って、彼女はふらりと歩いていく。<br>誘われるように、エマとシェリーもついていってしまう。 { speed:1 waitInput:true Wait:true }
+
+@print 読書スペースの小さな机には、<br>カードがひろがっていた。 { speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1
+@char Ema.Normal1
+@char Sherry.Normal1
+
+@print これってタロットカードですよね？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ええ。娯楽室に置いてあったからもらったの。<br>もともと好きだったのよ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print あなたたちのことも、<br>占ってさしあげましょうか？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Sherry.Surprised1
+
+@print マーゴさんはもしかして、<br>タロットカードで魔法を使うんですか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print "マーゴは椅子に腰掛け、<ruby=\"ようえん\">妖艶</ruby>に<ruby=\"ほほえ\">微笑</ruby>む。" { speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1
+
+@print いいえ。なんでそんなことを聞くのかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1
+
+@print 私、みんながどんな魔法を使うのか<br>気になっちゃって、気になっちゃって！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print くすくすと、マーゴは笑った。 { speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR5,ArmL3
+
+@print 可愛いわね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print すんなり教えてくれるのかと思ったが、<br>笑顔のままマーゴは首を横に振った。 { speed:1 waitInput:true Wait:true }
+
+@print でも、ごめんなさい。<br>どんな魔法を使えるのか教えたくないわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print この牢屋敷でこれから殺人事件が起こるとしたら、<br>手持ちカードを晒すのは、愚かだと思わない？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+@char Sherry.Normal1
+
+@print "エマはマーゴの言い分に、<br>むっと<ruby=\"まゆね\">眉根</ruby>を寄せてしまう。" { speed:1 waitInput:true Wait:true }
+
+@print 殺人事件なんて、起こるはずないよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "マーゴは１枚のカードを、<br>エマとシェリーに<ruby=\"かざ\">翳</ruby>してみせた。" { speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1,ArmR1,ArmL1
+
+@print 【塔】の正位置。<br>……近い未来、誰か死ぬわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print たかだか占いなのに、<br>マーゴの言葉は妙な説得力がある。 { speed:1 waitInput:true Wait:true }
+
+@print あなたたちも身辺に気を付けて。<br>誰が殺意を抱いているかわからないもの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print そんな……みんなを疑うようなこと……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR5,ArmL3
+
+@print あら。昨日知り合ったばかりなのに、<br>ずいぶん優しいのね。甘い、と言った方がいいかしら。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print お互いのことまだ何も知らないのに、<br>どうして信じられるの？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2
+
+@print それは……で、でも！<br>少なくともボクは、殺人をするような子はいないと思う！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print あなたが唯一親しかった二階堂ヒロは、<br>誰より早く殺意を剥き出しにしていたようだけど？ { author:Margo speed:1 waitInput:true Wait:true }
+
+# ＠備考◆言葉に詰まる
+
+@print ……っ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print マーゴはあくまで満面の笑みを崩さない。<br>それなのに、言葉は鋭利な刃物のようにエマに突き刺さる。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+@char Ema.Determined2
+
+@print 穏やかではない空気が、エマとマーゴの間に漂う。<br>察したようにシェリーが間に立ってきた。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1
+
+@print あーっと、そろそろ行きましょうか、<br>エマさん！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+
+@print うん……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print お邪魔しましたっ！<br>またマーゴさんのこと詳しく聞かせてくださいねっ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ウフフ……占ってほしかったら、<br>いつでも言ってちょうだい。 { author:Margo speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン1‐1‐7
+# 全てのイベントを消化している＞シーン1‐1‐12
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter01/Act01_Chapter01_Adv11

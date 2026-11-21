@@ -1,0 +1,174 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-1-6
+
+# ========================================
+# ●シーン2‐1‐6
+# ========================================
+
+@back 1_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_28_1
+
+@print ――４日目の朝。 { speed:1 waitInput:true Wait:true }
+
+@print 私は起き上がり、<br>二段ベッドからひらりと降り立った。 { speed:1 waitInput:true Wait:true }
+
+@print 視界の端に入ったエマも、<br>すでに上体を起こしていた。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive1
+@char Ema.Pensive1,ArmR3
+
+@print もしかして……寝てないのか？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print あ、ヒロちゃん、おはよう……。<br>いや少しは寝たけど、やっぱりマーゴちゃんが気になって、<br>すぐ目が覚めちゃって……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print マーゴはもう心配ない。<br>昨日も何度か医務室へ様子を見に行ったが、<br>すっかり元気だった。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR1
+
+@print "そうなの！？ 良かった～～。" { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+
+@print ヒロちゃんも、迷惑かけちゃってごめんね……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive1
+
+@print ……君たちに責任の一端はあるけれど、<br>看守がやったことだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print "どうしたの？ なんだかヒロちゃんらしくないね。" { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1
+
+# ＠備考◆カッとしかかる
+
+@print ――ッ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "言い分が<ruby=\"しゃく\">癪</ruby>に<ruby=\"さわ\">障</ruby>り、私はエマを<ruby=\"にら\">睨</ruby>んだ。" { speed:1 waitInput:true Wait:true }
+
+@print 私らしい？<br>君が私の何を知っている。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print ……ごめん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （いちいち謝るのも腹が立つ。<br>　私に謝ったところで、<br>　【彼女】にしたことは取り返しがつかないのに――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "これ以上エマと会話をしたら<br>感情の<ruby=\"せいぎょ\">制御</ruby>がきかなくなりそうだと感じ、<br>私は扉の方へと急ぐ。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3
+
+@print あ、ヒロちゃん待って！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hiro.Angry1
+
+@print "何だ？ これ以上君と話すことなど……。" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマは少し気まずそうに、<br>私にノートと万年筆を差し出してきた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3
+
+@print これ忘れ物だよね。いつも持ち歩いてるから。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hiro.Angry1
+
+# ＠備考◆カッとして
+
+@print ……ッ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# バッと物を奪い取る音
+@sfx Sfx_115
+
+@hideChars 
+
+@print かっさらうように、エマの手から奪い取る。<br>苛立ちが加速している、よくない傾向だと感じる。 { speed:1 waitInput:true Wait:true }
+
+@print （やはりこの環境はストレスが溜まる） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 数日、魔女化による衝動は<br>抑え込むことができている。 { speed:1 waitInput:true Wait:true }
+
+@print この分なら私が魔女になることはないだろうと思う一方、<br>対策の練りようがない事態に焦りは募っている。 { speed:1 waitInput:true Wait:true }
+
+@print （またいつ、あの時のように暴走してしまうかわからない。<br>　ストレスを感じてはいけないのに） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （エマがいるせいだ……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "半ば八つ当たり気味にエマを<ruby=\"にら\">睨</ruby>み、<br>ふと気になった。" { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1
+
+@print ……そういえば、君の魔法は何だ？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Normal1
+
+@print "えっ？ ボクの魔法？" { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+
+@print そ、そうだよね。みんな不思議な力を持ってて……<br>それって魔女の魔法、みたいなものだよね、きっと。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print でもボク、不思議な力なんて何も使えないんだ。<br>間違って連れてこられたんじゃないかなあ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （……間違いなわけがない。<br>　自分で気付いていないのか、隠しているのか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "私はエマから顔を<ruby=\"そむ\">背</ruby>け、<br>手の中にある万年筆を見つめた。" { speed:1 waitInput:true Wait:true }
+
+@print （エマは危険な存在だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+# 牢の扉が開く音
+@sfx Sfx_119
+@char Noah.Angry1
+
+@back 2_1 { Scale:{g_backgroundDefaultScale} }
+@back Transparent.Custom { time:0.99 }
+@Wait 0.9
+
+@print 地下通路の方へ出ると、<br>ノアが私を待ち伏せするように立っていた。 { speed:1 waitInput:true Wait:true }
+
+@print ヒロちゃん、約束、忘れてるのかな。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print "じとっと恨みがましい眼を向けられ、<br><ruby=\"ほお\">頬</ruby>に汗が浮かんだ。" { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive1
+
+@print （そういえば、ノアのお絵描きの場所を<br>　探す約束をしてたな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+
+@print ……忘れていない。少しマーゴのことで忙しかったんだ。<br>ほら、まずは朝食に行こう。約束はそれからだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Smile1,ArmR3,ArmL3
+
+@print わーい！ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive1
+
+@print （色々動きづらそうだが、仕方ないか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "私はノアを<ruby=\"ともな\">伴</ruby>って、<br>牢屋敷の探索に出ることとなった。" { speed:1 waitInput:true Wait:true }
+
+@set "chosenAreaFlag = 0"
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter01/Act02_Chapter01_Adv12

@@ -1,0 +1,136 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-2-21
+
+# ========================================
+# ●シーン1‐2-21
+# ========================================
+
+@back 5_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# ========================================
+# ＞『ラウンジ』を選択
+# ========================================
+
+@bgm Bgm_5_1
+
+@print エマがラウンジに戻ってみると、<br>ココがそのまま残っていたようだ。 { speed:1 waitInput:true Wait:true }
+
+@print ココはソファーに座って、膝に顔を埋めている。<br>肩が震えていた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print （ココちゃん、相当ショックだったんだ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマは声をかけるのを、<ruby=\"ためら\">躊躇</ruby>う。" { speed:1 waitInput:true Wait:true }
+
+@print （少し調べて、さっさとここを出よう……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print なるべく物音を立てないように<br>忍び足で移動していたのだが、<br>ココの方がエマに気付いた。 { speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1
+
+@print "ああ、なんだエマっちか。<br>捜査してんの？ そんなんやって意味ある？" { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+
+@print 意味って……だって調べなきゃ、<br>ミリアちゃんを殺した犯人なんて、わかんないよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Normal1
+
+@print そんなん誰でもいいじゃん。<br>あいつは殺されて当然だったんだよ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Angry1,ArmR1
+
+@print そんな言い方……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "ココがキッとエマを<ruby=\"にら\">睨</ruby>んできた。" { speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1
+
+@print だって裏切り者じゃん！<br>殺されてざまあみろって感じぃ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print （ココちゃん、無理してる……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ココはミリアの死を受け止めきれず、<br>きっとこの場から動けないのだろう。 { speed:1 waitInput:true Wait:true }
+
+@print エマはかける言葉を見つけられず、<br>ただ哀しそうな瞳をココに向けた。 { speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1
+
+@print そうだ、これあげる。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 不意にココが、くしゃくしゃに丸めた紙を差し出してきた。 { speed:1 waitInput:true Wait:true }
+
+@print （なんだろう……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ☆証拠品：『拷問ショーの案内』入手
+# ========================================
+@spawn Clue
+@update 2-1
+@despawn Clue
+
+@print "丸まった紙を開いてみると、<br>【２０時 懲罰房で拷問ショー】<br>と、殴り書きされていた。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+@char Coco.Pensive1
+
+@print これ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 今日の夜ここの壁に貼ってあったのを<br>剥がした。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 運営が書いたんじゃねえの。<br>趣味悪っ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print （そういえば、ゴクチョーが【見せしめ】がどう、<br>　とか言ってた……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （もしかしてミリアちゃんの殺害は、<br>　予告されていたってこと……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 汚い字で書かれた紙を見下ろし、<br>エマの喉がごくりと鳴る。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print ねえココちゃん、これを見つけた時の状況って……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 今は無理。悪いけど誰とも話したくない。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@hide Coco
+
+@print ココは再び膝に顔を埋めてしまった。 { speed:1 waitInput:true Wait:true }
+
+@print ……裁判はちゃんとやるって。<br>そん時にはもうちょっと、なんていうか……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print いつものあてぃしに戻ってるから。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print ……うん、ごめんね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （今はそっとしておいてあげよう） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hide Ema
+
+@print エマは早々にラウンジから出て行った。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン1‐2‐19
+# 全てのイベントを消化している＞シーン1‐2‐26
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter02/Act01_Chapter02_Adv19

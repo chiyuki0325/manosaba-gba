@@ -1,0 +1,984 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter01/Act02_Chapter01_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+@char Warden { Position:,{hiddenCharacterPositionY} time:0 }
+
+# フラグ初期化
+@set Skip6_5_3flag1=false
+@set Skip6_5_3flag2=false
+
+# ==============================================================================
+# MARK: 6-5: 💬 ハンナのアリバイ
+# ==============================================================================
+# ＠ト書き▼議論6-5 ハンナのアリバイ
+
+# Judge6-5-1
+
+# BGM変更：rAwTell Owk...
+@bgm Bgm_7_1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Hanna.Default,ArmR2,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Open
+@gosubModifyCamera 0
+@printDebate "わたくしたち１時間ほど、<br>ず～っと<br>自分たちの部屋に<br><link=\"Objection_02_01_05_01\">いました</link>わ！"
+
+@char Hanna.Default,ArmR2,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Smile_Open
+@gosubModifyCamera 0
+@printDebate "わたくしが<br>部屋を出ていないのは、<br>ココさんとミリアさん、<br>レイアさんが<link=\"Objection_02_01_05_02\">証明できる</link>と<br>思いますの！"
+
+@char Leia.Default,Arms,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@printDebate たしかにその通りだね。<br>それに……。
+
+@char Miria.Default,ArmR3,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@printDebate "おじさんたちは、<br>現場の部屋の方から<br><link=\"Objection_02_01_05_03\">音</link>が聞こえてきたから<br>そっちに向かったんだよ。"
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Middle
+@gosubModifyCamera 0
+@printDebate そしたら<br>死体を見つけたってわけ。
+
+@char Leia.Default,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open02
+@gosubModifyCamera 0
+@printDebate しかし誰とも<br>すれ違ってないし、<br>立ち去る人物も<br>いなかった……。
+
+@if Skip6_5_3flag1
+	@goto .Judge_6-5-3_skip1
+
+# -【ガラスの割れた音】未入手-
+# @備考◆ルートA
+
+@char Leia.Default,ArmR10,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open02
+@gosubModifyCamera 0
+@printDebate つまり、<br>その場にいたヒロくん……<br>キミにしか犯行は<br>不可能なんだよ！
+
+@goto .Judge_6-5-3_skip2
+
+# Judge_6-5-3_skip1
+
+# -【ガラスの割れた音】入手済(judge6-5-3通過)-
+# @備考◆ルートB
+
+@char Leia.Default,ArmR10,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open02
+@gosubModifyCamera 0
+@printDebate "つまり、その場にいて<br>ガラスの割れる音を<br>鳴らすことができたのは……<br>ヒロくん、キミだけだ！<br><link=\"Objection_02_01_05_04\">キミにしか</link>犯行は<br>不可能なんだよ！"
+
+# Judge_6-5-3_skip2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@Wait 0.2
+
+# ==============================================================================
+# 6-5議論後独白
+# ==============================================================================
+
+@print （どうあがいても、<br>　容疑者の立場を免れることはできないようだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Open1
+@print "（しかしいくつか気になる点はあった。<br>　たとえそれが小さな<ruby=\"ごびゅう\">誤謬</ruby>であれ、<br>　見逃すわけにはいかない）" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Open1
+@print （私以外でも犯行が可能だったと、<br>　可能性を示すんだ……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge6-5-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_01_05_01
+
+@Skip false
+@pauseTrial true
+
+@choice もっと前に殺していた
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge6-5-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_02_01_05_02
+
+@Skip false
+@pauseTrial true
+
+@choice ４人が口裏を合わせている
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge6-5-5
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_02_01_05_03
+
+@Skip false
+@pauseTrial true
+
+@choice どんな音だった？
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge6-5-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論4
+# ------------------------------------------------------------------------------
+
+# Objection_02_01_05_04
+
+@Skip false
+@pauseTrial true
+
+@choice 誰にでも音は偽装できる
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge6-5-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 6-5: ❌ 議論選択肢
+# ==============================================================================
+# MARK: 6-5-4: ❌ 反論・もっと前に殺していた
+
+# Judge6-5-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR6,Arms3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print なら、ハンナは<br>もっと前にメルルを殺していたんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,Arms3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print ココやミリア、レイアと集まる前にね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print それならアリバイも無効となる。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Closed,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print あ、ありえねーですわ！！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+# □マップ
+# 部屋割りのマップが出るとわかりやすいかも
+
+@char Leia.Default,ArmR8,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print ……いや、ヒロくん。<br>それは不可能だよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR8,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print まず死亡推定時刻は最長で１時間前……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR8,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print 私たちはその１時間前から、<br>一緒に部屋にいた。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,Arms,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print また、部屋割りを考えても難しいんだ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,Arms,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print 私たちがいたのは廊下奥の部屋……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Middle,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print 仮にハンナくんが事前に<br>殺人を犯していたとしても――。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# 部屋割りのマップ、このあたりまで
+
+@char Leia.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Middle,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print 私たちがアンアンくんの部屋の前を通る際に<br>気付いているだろうね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR2,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Smile_Open
+@gosubModifyCamera 0
+@print わたくしのアリバイは完っ璧ですわ！<br>むしろアリバイがないのは<br>ヒロさんのほうですわ～～！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （アリバイの話になると私のほうが不利か……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （だが、諦めて処刑を受け入れたりはできない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （……気になるのは死体発見直前に聞こえたという【音】だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （真犯人が【音】を鳴らしたのなら、<br>　その姿を誰も見ていないというのはおかしい） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （犯人は別の場所にいながら現場に音を響かせた……<br>　それを可能にする方法があるに違いない！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge6-5-1
+
+# MARK: 6-5-5: ❌ 反論・4人が口裏を合わせている
+
+# Judge6-5-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR6,Arms3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print ココ、ミリア、レイア、ハンナの４人が<br>口裏を合わせれば、アリバイは偽装できる。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR13,ArmL10,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print はあ！？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR8,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print それは私たちが共犯ということかな？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print そ、それは無理があるような……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print そんなこと、わたくしたちしてませんわ～！！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_03,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Angry_Closed01
+@gosubModifyCamera 0
+@print 『もし４人の共犯を疑うなら、その根拠を示すべき』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL6,Angle01/Head/Facial/Eyes>Eyes_Normal_Closed,Angle01/Head/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print 何もないなら……ただの妄想だ。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （さすがに取り合ってもらえないか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （この状況で無闇に複数人へと疑いを広げても、<br>　反感を買うだけだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （疑惑を向けるにしろ、<br>　１人に絞るべき状況だな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （……気になるのは死体発見直前に聞こえたという【音】だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （真犯人が【音】を鳴らしたのなら、<br>　その姿を誰も見ていないというのはおかしい） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （犯人は別の場所にいながら現場に音を響かせた……<br>　それを可能にする方法があるに違いない！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge6-5-1
+
+# ==============================================================================
+# MARK: 6-5-3: ❌ 追求・どんな音だった？
+# ==============================================================================
+
+# Judge6-5-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print 【音】とはどんな音だったのかな？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Hanna.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Open
+@gosubModifyCamera 0
+@print 何かが【パリン】と割れる短い音でしたわー！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR9,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print ガラスビンが割れた……と考えるのが<br>やっぱりわかりやすいかな。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR2,ArmL9,Eyes1_Normal_Open2,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print その音は、現場を挟んだ階段側の<br>私たちの部屋からでも聞こえたわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （……死体のあったノアの部屋は、<br>　彼女たちの部屋に挟まれている） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （であれば、たしかにそこから聞こえたのかな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@if Skip6_5_3flag1
+	@goto .Judge_6-5-3_skip3
+
+# -初回のみ-
+# ☆アイテム追加
+# 【ガラスの音】
+# 死体発見の直前、レイア・マーゴ・ナノカは、ガラスの割れる短い音を聞いた。
+# いずれも、ノアとアンアンの部屋の方から聞こえたとの証言。
+@spawn Clue
+@toast "魔女図鑑 更新…"
+@update 6-5
+@Wait i1.2
+@despawn Clue
+@Wait 0.5
+@set Skip6_5_3flag1=true
+
+# Judge_6-5-3_skip3
+
+@char Miria.Default,ArmR3,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print そして、おじさんたちは部屋に駆けつけたんだ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@if Skip6_5_3flag2
+	@goto .Judge_6-5-3_skip4
+
+@set Skip6_5_3flag2=true
+@toast 議論発展…
+
+# Judge_6-5-3_skip4
+
+@goto .Judge6-5-1
+
+# ==============================================================================
+# MARK: 6-5-2: ⭕ 反論・誰にでも音は偽装できる
+# ==============================================================================
+
+# Judge6-5-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+# カットイン
+@StopBgm 
+@gosubCutIn Hiro
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print 私にしか犯行は不可能だって……？<br>いいや、そんなことはない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Leia.Default,Arms,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print ……どういうことだい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print 聞くところによれば、<br>君たちが聞いたのは【音】であって<br>私がメルルを殺した瞬間を見たわけじゃないんだよね？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Middle,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print それは……最初からそう言っているじゃないか。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print ……なら改めて聞かせてもらうとするけれど。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# BGM変更：Sen-Choose N'o SurC
+@bgm Bgm_38_1_Loop
+
+@char Hiro.Normal2,ArmR6,Arms3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print その音、本当に【ガラスの割れた音】だったのかな？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Leia.Surprised1,ArmR1,ArmL1
+@gosubModifyCamera 0
+@print な……なんだって！？ { author:Leia speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print でも他になんの可能性があるっていうの……？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@print ……聞かせてもらおうか。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@print 私たちが聞いたガラスの割れる音……<br>それがなんだったのかを！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print 正しい答えはひとつ。<br>君たちが聞いたガラスの音は……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# Judge6-5-6
+
+@choice ビンを投げて割った音
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge6-5-8
+
+@choice 偽装された音声
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge6-5-7
+
+@choice 扉の開いた音
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge6-5-9
+
+@StopForChoice 
+
+# MARK: 6-5-8: ❌ ビンを投げて割った音
+
+# Judge6-5-8
+
+@char Hiro.Normal1,ArmR6,Arms3,Eyes1_Angry_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print 遠くからビンを投げて、割った音だったんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,Arms3,Eyes1_Angry_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print 真犯人はメルルを殺したあと、<br>階段側の廊下の角まで移動し――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Painful_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print ノアたちの部屋の前にめがけて<br>ビンを投げたんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print そうすると、<br>ビンが割れた音に気を取られたレイアたちは<br>殺害現場に群がる……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,Arms3,Eyes1_Angry_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print そのうちに犯人は<br>階段方面へ逃げ去ったんだよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,Arms,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print ……なるほど。<br>それなら成立するかもしれないね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,Arms,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print 音が鳴ったのは殺害時ではなく、<br>殺害の少しあとだった……<br>その推理なら、たしかに――。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print ――でもそれっておかしくないですか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print 死亡推定時刻からいくと、<br>ずっと犯人はそこに留まっていたことになりますし……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print それに部屋の前にビンを投げたのなら、<br>【廊下に】ガラス片が落ちてないと<br>おかしいと思うんです。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print でも欠片があったのは部屋の中でしたよね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print "だからその推理は成立しませんよ！ ヒロさん！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR10,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open02
+@gosubModifyCamera 0
+@print "……聞いてのとおりだ！ ヒロくん！<br>成立しないんじゃないかな！" { author:Leia speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal1,ArmR12,ArmL5,Eyes1_Normal_Closed1,Mouth1_Angry_Open1,Sweat1-1
+@gosubModifyCamera 0
+@print （くっ……！<br>　あと少しで納得させられそうだったんだが……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （……私が犯人ではない以上、<br>　死体発見直前に現場でビンが割れたとは考えにくい） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （となれば、その【音】は――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge6-5-6
+# MARK: 6-5-9: ❌ 扉の開いた音
+
+# Judge6-5-9
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print ノアたちの部屋の扉が開いた音だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print 真犯人が逃げ去る際に開けた扉が<br>鳴ってしまったんだよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print みんなはその音を聞き間違えたんだ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆困惑／苦笑
+
+@char Miria.Default,ArmR9,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print いや～……。<br>さすがに扉の開閉する音と<br>ガラスの割れる音を間違えるのは……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open02
+@gosubModifyCamera 0
+@print んなもんどうやっても<br>聞き間違えられるわけねーだろ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （さすがに聞き間違えないか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （……私が犯人ではない以上、<br>　死体発見直前に現場でビンが割れたとは<br>　考えにくい） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （となれば、その【音】は――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge6-5-6
+
+# ==============================================================================
+# MARK: 6-5-7: ⭕ 偽装された音声
+# ==============================================================================
+
+# Judge6-5-7
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Angry_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print レイア、君は蓄音機というものを知っているかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Middle,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print と、当然だろう……！<br>一般教養だ！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Middle,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print さすがに本物を使ったことはないが……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR6,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print 見たことはあるし、知識としても知っている……！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR8,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print それが、この事件になにか関係あるとでもいうのかい！？ { author:Leia speed:1 waitInput:true Wait:true }
+
+# BGM変更：Sen-Choose N'o SurC
+@bgm Bgm_38_1_Loop
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print ああ、もちろん。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print その概念は、<br>発明されてから今も発展を続け……<br>そしてテクノロジーの発達とともにその姿を変えてきた。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Hiro.Normal1,ArmR6,Arms3,Eyes1_Angry_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print その発明の名を……【録音装置】という。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,Arms3,Eyes1_Angry_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print 現代では、スマホにも標準で搭載されている機能だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Leia.Surprised1,ArmR1,ArmL1
+@gosubModifyCamera 0
+@print ぐぅっ！？<br>ま、まさか……！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Painful_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print ここまで言えば、君でも気付いたようだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Painful_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print 君たちの聞いた【音】……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char Hiro.Normal1,ArmR6,ArmL3,Eyes1_Angry_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print それは……<br>【録音された音】だったんだ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+# ＠備考◆ノリよくダメージを受ける
+
+@char Leia.Surprised1,ArmR1,ArmL1
+@gosubModifyCamera 0
+@print がはっ……！？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print アラーム、もしくは着信音などに設定しておけば、<br>犯人は自由に音を鳴らすことができる。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print しかも君たちの話を聞けば、<br>その音は【パリン】という<br>大変短い音だったそうじゃないか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,Arms3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print ならば、多少音質が悪くても気付かないはずだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,Arms3,Eyes1_Angry_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print 録音ではなかったと……<br>いったい誰が証明できるのかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Surprised1,ArmR1,ArmL1
+@gosubModifyCamera 0
+@print なん……だと……！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Painful_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print ……なに、気に病む必要はない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Painful_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print 一瞬の音だったのだし、<br>君たちが違和感に気付かなくても<br>おかしなことじゃないよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmL3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print ただ……<br>それを根拠に私を犯人あつかいするのは<br>あらためてもらおうか！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Leia.Surprised1,ArmR1,ArmL1
+@gosubModifyCamera 0
+@print ぐ……！？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （……さて、可能性は示したが） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （正直、確証があるわけじゃない。<br>　反証があると辛いが――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ――で、でもちょっと待って欲しい……かも。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print ……なんだい。<br>何か問題でもあったかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR9,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print それがさ……<br>現場にはメルルちゃんのスマホは<br>【なかった】んだよね……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR9,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print 音を録音したって言っても……<br>それをできる機材がないとできないんじゃないかな？ { author:Miria speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print ………！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （他に音を再生できるものが現場にあった可能性はある。<br>　しかし、一番考えやすい可能性としては……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Determined_Open1,Sweat1-1
+@gosubModifyCamera 0
+@print ……もしかしたら、犯人が持ち去ったのかもしれない。<br>もしくはメルルが最初から持っていなかったか……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@Wait 0.5
+@StopBgm 
+@StopVoice 
+
+# エマカットイン
+@Gosub System/System_Subroutine.AdditionalDebate-CutIn-2
+# ＠備考◆エマの演技感として、冷静・クール感強めに
+
+@char Ema.Default,ArmR7,ArmL13,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print いや……メルルちゃんは、<br>スマホを持ってたはずだよ。<br>……殺される直前まで。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆息を呑む
+
+@char Hiro.Normal1,ArmR11,ArmL11,Eyes1_Serious_Open1,Mouth1_Determined_Open1,Sweat1-1
+@gosubModifyCamera 0
+@print ……っ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・明るい音
+@sfx Sfx_Common_2
+
+# ＠備考◆憎悪
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （エマ……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print メルルちゃんの死亡推定時刻は<br>死体発見の３０分ぐらい前……<br>それで間違いないよね？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print 正確には、【２０分以上前】だね。<br>その点は、私が保証しようじゃないか。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print なら……やっぱりヒロちゃん以外、<br>メルルちゃんを殺せる人は<br>いないのかもしれない……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （なんだと……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# BGM変更：看るモノ達
+@bgm Bgm_10_1
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ボクはメルルちゃんの死体が発見される<br>【３０分ぐらい前】、２階にいたんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# 暫定で、キャラ表示してます。
+# ==============================================================================
+# □見取り図表示
+# ==============================================================================
+# [map]
+# ▼演出開始
+# 見取り図上のキャラ絵アイコン・レイアウトアニメーション。
+
+# ▽マップ表示-2F
+# ▽キャラアイコン表示-夏目アンアン、城ケ崎ノア
+# - 2Fホール上側・並んで
+# ▽キャラアイコン表示-桜羽エマ
+# - 2Fホール・二人の下
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print そこにはノアちゃんとアンアンちゃんがいて……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Smile_Closed
+@gosubModifyCamera 0
+@print "うん！ エマちゃんとバイバイしたよね。" { author:Noah speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_04,Angle01/Head/Facial/Eyes>Eyes_Neutral_Open,Angle01/Head/Facial/Mouth>Mouth_Normal_Closed
+@gosubModifyCamera 0
+@print 『間違いない。<br>　わがはいたちはその後、ずっと一緒にいた』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+# ▽キャラアイコン移動-桜羽エマ
+# - 2Fホール・階段近くへ
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ……ボクが２人と別れてすぐ、<br>メルルちゃんから電話がかかってきたんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print そこで少しだけ……<br>メルルちゃんと通話したんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print では……エマさんとレイアさんの証言を合わせると、<br>メルルさんが死んだのは２０分から３０分前の間<br>ということになりますね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print うん、そうなんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# ▽キャラアイコン移動-桜羽エマ
+# - 2Fホール・階段へ
+# ▽表示マップ切り替え
+# - 2F→1F
+# ▽キャラアイコン移動-桜羽エマ
+# - ラウンジへ
+# ▽キャラアイコン表示-橘シェリー、紫藤アリサ
+# - ラウンジ奥側・並んで
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print そしてそのあとすぐに、ボクはラウンジで<br>シェリーちゃんたちに会っていて……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print あのとき、私とアリサさんが<br>最初にラウンジにいたんです！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ▽キャラアイコン表示-黒部ナノカ、宝生マーゴ
+# - ラウンジ左下側
+# 注：どこから来たか明示しない。来た方向に近い位置には表示
+# （ナノカは救護室側から、マーゴは地下階段側から来ています）
+
+@char Nanoka.ArmR1,ArmL10,Eyes1_Normal_Open1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print そして桜羽エマと同じタイミングで、<br>私と宝生マーゴが合流したわね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# ▽キャラアイコン移動-桜羽エマ
+# - 中庭～救護室へ向かい、外に繋がる扉の位置へ
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print そのあと、<br>アリサちゃんとシェリーちゃんがラウンジに残って、<br>ボクは外に出たんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# ▽キャラアイコン消去-桜羽エマ
+# ▽キャラアイコン移動-黒部ナノカ、宝生マーゴ
+# - 地下階段へ移動
+# ▽表示マップ切り替え
+# - 1F→B1
+# ▽キャラアイコン移動-黒部ナノカ、宝生マーゴ
+# - 自室（660-661の部屋）
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print 私とナノカちゃんは自分の部屋に戻ったわ。<br>そこから死体発見までの間、２人は一緒にいたの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+# ▽キャラアイコン表示-蓮見レイア、遠野ハンナ、沢渡ココ、佐伯ミリア
+# - レイア自室（666-667の部屋）
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print ……そして、レイアちゃんたち４人は<br>みんな一緒にいた。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR4,ArmL5,Angle01/Facial/Eyes>Eyes_Surprised_Open01,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print つまり……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ＠備考◆今回は1周目と違って控えめでOK
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print みんな【アリバイ】があるってことですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print この中でアリバイがないのは……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# ▽キャラアイコン表示-氷上メルル（死亡。グレーなど）、二階堂ヒロ
+# - 城ケ崎ノアの部屋（664-665の部屋）
+# ※ヒロが入口側
+# ▽キャラアイコン点滅-二階堂ヒロ
+
+@char Ema.Determined2,ArmR2-2,ArmL2,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print ……ヒロちゃん。<br>キミだけなんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# ==============================================================================
+# 見取り図表示終了
+# ==============================================================================
+# [hideMap]
+# ▲演出終了
+
+@StopBgm 
+
+@char Hiro.Normal1,ArmR11,ArmL11,Eyes1_Serious_Open1,Mouth1_Determined_Open1,Sweat1-1
+@gosubModifyCamera 0
+@print （エマ……！<br>　まさか……私を処刑するために……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print ……もう一度、整理しよう。<br>みんなのアリバイを。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto Act02_Chapter01/Act02_Chapter01_Trial06

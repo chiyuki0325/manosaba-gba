@@ -1,0 +1,243 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-4-10
+
+# ========================================
+# ●シーン1‐4-10
+# ========================================
+
+@back 9_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_5_1
+
+@print エマが裁判所前付近の通路を歩いていると、<br>同様にうろついているマーゴと遭遇した。 { speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1
+
+@print エマちゃんも捜査よね。<br>なんだか手慣れてきているように見えるわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+
+@print こんなことに慣れたくないよ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Margo.Pensive1,ArmR7,ArmL5
+
+@print そうね……何度見てもショックが大きいわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 今回は私が最初に見つけてしまって……<br>さすがに悲鳴をあげてしまったの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print （マーゴちゃんが第一発見者だったんだ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Pensive1,ArmR6,ArmL1
+
+@print 今朝、裁判所を覗いたのは扉が開いていたからよ。<br>本当に何気なくだったの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print ただその時には電気椅子もアリサちゃんもいなかったわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Surprised1,ArmR1
+
+@print え、そうなの！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Margo.Normal1,ArmR6,ArmL1
+
+@print ええ……。<br>裁判所に自由に出入りできるチャンスは滅多にないから、<br>朝食後にもう一度調べにいこうと思ったの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Pensive1,ArmR7,ArmL5
+
+@print そうしたらまさか、<br>アリサちゃんがあんなことになっているなんて……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+
+@print うん……信じられないよね……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "アリサとは昨夜話したばかりだ。<br>その時の姿を思い出し、エマは力なく<ruby=\"うつむ\">俯</ruby>く。" { speed:1 waitInput:true Wait:true }
+
+# フクロウの羽ばたき音
+@sfx Sfx_8
+
+@print 羽音が耳に届き、<br>エマははっと顔を上げた。 { speed:1 waitInput:true Wait:true }
+
+@char Warden.1
+
+@print 桜羽エマさん、宝生マーゴさん。<br>黒部ナノカさんを見かけませんでしたか？ { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+@char Margo.Pensive1,ArmR1,ArmL1
+
+@print 私はもう数日見ていないわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print ……ボクも。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "気まずくなりながら、エマは<ruby=\"うそ\">嘘</ruby>をついた。" { speed:1 waitInput:true Wait:true }
+
+@print ナノカとはつい数時間前に会っている。<br>しかし牢屋敷の秘密部分を調査に行ったナノカのことを、<br>この場で話すわけにはいかない。 { speed:1 waitInput:true Wait:true }
+
+@char Margo.Pensive1
+
+@print 私は他のところを捜査に行くわね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hide Margo
+
+@print "マーゴが立ち去っていく。<br>ずいぶん<ruby=\"しょうすい\">憔悴</ruby>しており、足取りが覚束なく見える。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Warden.1
+
+@print やれやれ……困りますよねまったく……。<br>裁判が始まる前には見つけないと……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print （ゴクチョーって、<br>　ナノカちゃんのこと本当に探してたんだ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Surprised1,ArmR1
+
+@print あ、ゴクチョー、待って！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "マーゴに続き<br>今にも再び飛び立とうとするゴクチョーを、<br>エマは<ruby=\"とっさ\">咄嗟</ruby>に呼び止めていた。" { speed:1 waitInput:true Wait:true }
+
+@char Warden.1
+
+@print なんでしょうか。手短にしてくださいね……？<br>私も忙しい身なので。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Normal1
+
+@print アリサちゃんが座っていた電気椅子のこと、<br>教えてほしくて。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Warden.1
+
+@print ああ、昨日話しましたよね。<br>電気椅子に不具合があって、<br>本日の午後、メンテナンスする予定だったんです。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print そのために出しておきました。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print （じゃあ、電気椅子は昨日の時点で、<br>　裁判所に出ていたんだ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Normal1
+
+@print あれは背中についてるスイッチを押せば<br>電気が流れるの？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Warden.1
+
+@print ええ。<br>しかし作動には手順が必要です。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print まず【拘束】ボタンを押して囚人を拘束します。<br>拘束がきちんとされていなければ、<br>起動スイッチを押しても作動しません。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print また、その状態でも起動には<br>【パスコード】が必要です。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Normal1,ArmR3
+
+@print けっこう複雑な手順が必要なんだね……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# ★電気椅子証拠品情報更新
+@spawn Clue
+@update 4-2
+@Wait i1.5
+@despawn Clue
+
+@hideChars 
+@char Warden.1
+
+@print "もういいですか？ 本当に忙しいので……。" { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Surprised1,ArmR1
+
+@print ま、待って。もう１つだけ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print 処刑台の仕組みを教えてほしくて。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Warden.1
+
+@print 見ての通りですよ。<br>処刑台は台座とユニットになっていて、<br>入れ替わる仕組みです。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 昇降の動作自体は、私が持っているコントローラーか、<br>地下の【操作盤】で操作できます。 { author:Warden speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ☆証拠品：『操作盤』入手
+# ========================================
+@spawn Clue
+@update 4-7
+@Wait i1.5
+@despawn Clue
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+
+@print 魔女が処刑台で処刑されて……<br>降りていった処刑台はどこに行くの？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Warden.1
+
+@print ……まあ、それくらいなら教えてさしあげますが、<br>地下に【冷凍室】があるんです。<br>処刑された魔女たちはそこに冷凍保存しています。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print （地下の冷凍室……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 魔女は死なないですから、<br>そうやって保存しているわけです。 { author:Warden speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ☆証拠品：『冷凍室』入手
+# ========================================
+@spawn Clue
+@update 4-6
+@Wait i1.5
+@despawn Clue
+
+@hideChars 
+@char Ema.Normal1,ArmR3
+
+@print ……そういえばマーゴちゃんがさっき<br>処刑台が下がってたのを<br>見たって言ってたけど……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Warden.1
+
+@print ええ、そうみたいですね。<br>履歴が残っていました。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 昨晩の２１時あたりに何度か動いて……<br>今朝の９時に上昇したようです。<br>それまで地下にあったみたいですね。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print そんな予定はなかったんですが……<br>いったい誰があげたやら。<br>やれやれ困りますねぇ。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print （処刑台の昇降記録……<br>　マーゴちゃんの言ってたことは<br>　本当みたいだ） { author:Ema speed:1 waitInput:true Wait:true }
+
+# ★処刑台証拠品情報更新
+@spawn Clue
+@update 4-8
+@Wait i1.5
+@despawn Clue
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+
+@print …………。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# フクロウの羽ばたき音
+@sfx Sfx_8
+
+@print エマが考え込んでいるうちに、<br>ゴクチョーは飛び去ってしまった。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン1‐4‐8
+# 全てのイベントを消化している＞シーン1‐4‐12
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter04/Act01_Chapter04_Adv08

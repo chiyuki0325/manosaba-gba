@@ -1,0 +1,327 @@
+@gosubResetBook System/System_ResetWitchBook
+@Gosub System/System_Subroutine.BeginAdv
+
+# ========================================
+# 魔法少女ノ魔女裁判 第2章3話
+# ========================================
+
+# Scene2-3-1
+
+# ========================================
+# ●シーン2‐3‐1
+# ========================================
+
+@back 26_1
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_26_1
+
+@print その日、私はひとりで地下の冷凍室を訪れていた。 { speed:1 waitInput:true Wait:true }
+
+@print "ここ数日の私は、ナノカから<ruby=\"たく\">託</ruby>された情報を元に、<br>牢屋敷を改めて調査してまわっている。" { speed:1 waitInput:true Wait:true }
+
+@print 全ての元凶――<br>【大魔女】の手がかりを求めて。 { speed:1 waitInput:true Wait:true }
+
+@print （ここは長居できないのが辛いな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 体感でおよそマイナス２０度といったところか。<br>吐く息が白く、鋭い冷気が顔を切りつけるようだ。 { speed:1 waitInput:true Wait:true }
+
+@print "骨まで<ruby=\"し\">染</ruby>みる寒さに身を震わせ、<br>室内をざっと調べていく。" { speed:1 waitInput:true Wait:true }
+
+@camera { time:1 }
+
+@print ここで最も目に付くものはやはり、<br>氷漬けにされた魔女たちの姿。 { speed:1 waitInput:true Wait:true }
+
+@print "加えてどういった<ruby=\"しゅこう\">趣向</ruby>なのか、<br>殺人事件で犠牲になった少女たちも氷漬けにされている。" { speed:1 waitInput:true Wait:true }
+
+@print "つまりこれまでの悲劇の数だけの……<br>無数に存在する氷の<ruby=\"かたまり\">塊</ruby>には、おぞましさと悲しさがある。" { speed:1 waitInput:true Wait:true }
+
+@print （この中には、マーゴやナノカ、ココも……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （……今は感傷に浸りに来たわけじゃない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.6 }
+@Wait 0.6
+
+@print "<ruby=\"ひょうかい\">氷塊</ruby>が並ぶエリアから離れ、<br>私は大きな金庫の前に立った。" { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+# 金庫のキーを打つ音
+@sfx Sfx_134
+
+@Wait 2
+
+# 鉄製の扉を開く音
+@sfx Sfx_62
+
+@camera { time:0 }
+@Wait 2
+@back SolidColor.Custom { time:0.5 }
+@Wait 0.5
+
+@print "暗証番号を打ち込み、<ruby=\"かいじょう\">開錠</ruby>された扉を開く。" { speed:1 waitInput:true Wait:true }
+
+@print この中には元々、<br>マーゴが使用し、ココが所持していた【魔女を殺す薬】が<br>いくつか入っていたはずだ。 { speed:1 waitInput:true Wait:true }
+
+@print しかしその薬はひとつ残らず消え失せている。 { speed:1 waitInput:true Wait:true }
+
+@print ココが所持していた分も、<br>ゴクチョーが回収してしまった。 { speed:1 waitInput:true Wait:true }
+
+@print 薬の行き先については、<br>ゴクチョーから業務報告を受けていた。 { speed:1 waitInput:true Wait:true }
+
+@print 『【トレデキム】が皆さまに見つかってしまった以上、<br>　殺人を推進する危険物ですので……』 { speed:1 waitInput:true Wait:true }
+
+@print 『全てこちらで回収・処分させてもらいますね』 { speed:1 waitInput:true Wait:true }
+
+@print そのため、金庫の中に残っているのは<br>メルル殺害に使用された剣のみだった。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# アイテムスチル：『儀礼剣』表示
+# ========================================
+@spawn Clue
+
+@print （そういえば、この剣……<br>　元から金庫にしまわれていたようだが。<br>　何か、特別な意味のあるものなんだろうか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （今まで【犯行に使用された凶器】という点にしか、<br>　意識が向いていなかったが……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （改めて考えてみると、<br>　重要なもののようにも思えてくる） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "剣を手に取り、<ruby=\"すみずみ\">隅々</ruby>までよく観察してみる。" { speed:1 waitInput:true Wait:true }
+
+@print "装飾が<ruby=\"ほどこ\">施</ruby>された<ruby=\"いしょう\">意匠</ruby>も、<br>単なる武器以外の意味合いを感じさせた。" { speed:1 waitInput:true Wait:true }
+
+@print （あるいは大魔女に関係するのかとも思ったが、<br>　見ただけでは何もわからないな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （もっと調査を進めれば、<br>　わかることもあるのかもしれない。<br>　とにかく今は、手がかりを探さなければ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@despawn Clue
+@StopBgm 
+@ResetText 
+@back SolidColor.Custom { time:0.5 }
+@Wait 0.5
+@sfx Sfx_62
+@Wait 0.5
+
+@print 剣を金庫の中に戻し、扉を閉める。 { speed:1 waitInput:true Wait:true }
+
+@print （……さすがに体が冷えてきた。<br>　そろそろ、他を調べよう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+@back 25_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@camera { time:0 }
+
+@bgm Bgm_26_2
+
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@print 隣室の操作室へと移動し、<br>私は自分のスマホを取り出す。 { speed:1 waitInput:true Wait:true }
+
+@print もう何度も見たが、<br>改めてナノカから送られてきた動画を再生してみる。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.5 }
+@Wait 0.5
+# 配信フレームIN
+@printer Normal.Stream
+@back 24_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@char Nanoka.Default { time:0 }
+@back SolidColor.Custom { time:0.8 }
+@Wait 0.8
+
+# ＠備考◆配信中
+
+@print ――牢屋敷に来てから、<br>私は１人で色々と調査を進めたわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# ＠備考◆配信中
+
+@print でも結局それだけじゃ、黒幕に関する情報は、<br>何も得られなかった。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# ＠備考◆配信中
+
+@print 私が事実を知れたのは――。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@hideChars 
+@printer Normal.Default
+
+@back 330_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+# ＠備考◆配信中
+
+@print 沢渡ココを殺したから。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@HidePrinter 
+@hide Stills { time:0 }
+@printer Normal.Default
+
+@back 25_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print （抑えきれない殺意の衝動……<br>　その時ナノカの魔女化が一気に進行したんだろう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （そして魔女化が進行すれば、<br>　魔法が爆発的に強くなる） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.5 }
+@Wait 0.5
+# 配信フレームIN
+@printer Normal.Stream
+@back 24_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@char Nanoka.Default { time:0 }
+@back SolidColor.Custom { time:0.5 }
+@Wait 0.5
+
+# ＠備考◆配信中
+
+@print 私の【幻視】は、<br>牢屋敷の秘密にまつわるヴィジョンを見せてくれた。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@HidePrinter 
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+@printer Normal.Default
+
+@print 魔女裁判と殺人を裏で操っていた黒幕、メルルの目的。<br>それは【大魔女】を探し求めての行動だった。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ◎回想シーン（1‐0‐4の流用）
+# ========================================
+@back 5_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@char Meruru.Default { time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@print "わわわ、私の名前は、ひっ、ひっ、ひ……<br><ruby=\"ひかみ\">氷上</ruby>、メルル、です……っ" { author:Meruru speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.5 }
+@Wait 0.5
+@hideChars { time:0 }
+@back 26_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+# ========================================
+# 回想ここまで
+# ========================================
+@back SolidColor.Custom { time:1 }
+@Wait 1
+
+@print （メルルと過ごした時間があまりに少ない。<br>　もう少し長く一緒にいたら、<br>　彼女の気持ちの想像がついただろうか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （否――魔女の考えることなど理解する必要もない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私は首を振り、動画の再生に戻る。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+# 配信フレームIN
+@ResetText 
+@back SolidColor.Custom { time:0.5 }
+@Wait 0.5
+
+# 配信フレームIN
+@printer Normal.Stream
+@back 24_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@char Nanoka.Default { time:0 }
+@back SolidColor.Custom { time:0.5 }
+@Wait 0.5
+
+@print 魔女因子の高い少女は、<br>１５歳以降一気に魔女化する恐れがある。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print この牢屋敷は魔女因子の検査で<br>高い数値が検知された少女たちが集められた施設。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 私たちは本来、完全に魔女化する前に<br>国の管轄で殺処分されることが決まっていたの。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 皮肉なことに、<br>私たちは氷上メルルが大魔女を見つけたいという目的で、<br>かろうじて生かされていたのよ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Pensive1
+
+@print "ナノカは吐き出した直後、<br>顔を押さえて苦しげに<ruby=\"うめ\">呻</ruby>く。" { speed:1 waitInput:true Wait:true }
+
+@print この時のナノカはもう魔女化の進行で、<br>ずいぶん苦しめられていたのだろう。 { speed:1 waitInput:true Wait:true }
+
+@print それでも、氷上メルルのしてきたことは、<br>許される行為ではない、わ……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print ……私がこの手で、殺してやりたかった……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print …………。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 何がキッカケなのかはわからないけれど、<br>大魔女が私たちのような【魔女因子】を持つ少女たちの<br>中に潜んでいると、氷上メルルは考えたようね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print だから少女たちの魔女化を進行させるため、<br>殺し合いを誘導し、魔女裁判を――。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"あまた\">数多</ruby>の<ruby=\"せいさん\">凄惨</ruby>な処刑を行っていたのだ。" { speed:1 waitInput:true Wait:true }
+
+@print そうすればいつか、大魔女が見つかると信じて。 { speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Angry1
+
+@print ……絶対に許さない。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print "その暗い<ruby=\"つぶや\">呟</ruby>きに込められた想いは、<br>痛いほどに伝わってくる。" { speed:1 waitInput:true Wait:true }
+
+@print しばらくしてから気を取り直すためか、<br>ナノカは浅く息を吐く。 { speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Pensive1
+
+@print ふぅ……ごめんなさい。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 氷上メルルは殺されてしまった。<br>今伝えたいのは氷上メルルの話じゃないの。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 私たちが探すべきなのは――大魔女。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print どこにいるのか、<br>そもそも今も存在するかどうかもわからないけれど……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 人間が魔女化するようになったのは、<br>大魔女が【魔女因子】を世界中にばら撒いたせい。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print ――世界に放った呪い。 { speed:1 waitInput:true Wait:true }
+
+@print "ウイルスのように<ruby=\"まんえん\">蔓延</ruby>し、<br>数えきれない悲劇と死を生み出してきた。" { speed:1 waitInput:true Wait:true }
+
+@print 全ての元凶は、どこかにいる大魔女なのよ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 裏を返せば、大魔女なら<br>私たちを呪いから解放できるかもしれない。<br>元凶を絶てばあるいは……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 確かなことを言えなくてごめんなさい――。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@back SolidColor.Custom { time:0.5 }
+@Wait 0.5
+
+@hideChars { time:0 }
+@printer Normal.Default
+
+@back 25_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@back SolidColor.Custom { time:0.5 }
+@Wait 0.5
+
+@print そこまで見て動画を閉じ、私はスマホを握りしめた。 { speed:1 waitInput:true Wait:true }
+
+@print （……元凶を絶たなければならない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 囚人の少女たちは被害者であり、<br>これ以上犠牲者を増やしてはならない。 { speed:1 waitInput:true Wait:true }
+
+@print （私がこの手で大魔女を見つけ出し、裁く） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print それが私の進むべき道だ。 { speed:1 waitInput:true Wait:true }
+
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter03/Act02_Chapter03_Adv02

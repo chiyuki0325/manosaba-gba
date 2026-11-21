@@ -1,0 +1,258 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-2-3
+
+# ========================================
+# ●シーン1‐2-3
+# ========================================
+
+@back 2_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_19_1
+
+@print 夕食を手早く済ませ、<br>エマ、シェリー、ハンナはマーゴの房に向かった。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+@char Hanna.Normal1
+@char Sherry.Normal1
+
+@print なんでマーゴちゃんの部屋なんだろうね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print マーゴさんはナノカさんと同室……<br>何かそれが関係しているのかもしれません。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print そういえば、マーゴさんの部屋は<br>目隠しされていますわね。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print マーゴとナノカの房は、エマと隣室にあたる。 { speed:1 waitInput:true Wait:true }
+
+@print （そういえば、マーゴちゃんたちの部屋の方は、<br>　中を見たことなかった） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （どこかから布を調達したのか<br>　カーテンみたいなのがかかってた気がする） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print マーゴの房の前にたどりつくと、<br>やはり布で覆われ、中が見えなくなっていた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print あの、マーゴちゃんいる？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマがおずおずと声をかけると、<br>中から声が聞こえてくる。 { speed:1 waitInput:true Wait:true }
+
+# ボイス加工：カーテン越しの声
+
+@print いらっしゃい。<br>開いているからどうぞ入って。 { author:Margo speed:1 waitInput:true Wait:true }
+
+# 衣ずれの音
+@sfx Sfx_41
+
+@print エマたちはカーテンをたくし上げ、<br>中へと入っていった。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@back 100_1 { time:0 }
+@back Transparent { time:1.8 }
+@WaitForNextFrame 
+
+@animate Stills-Middle
+@Wait 1.5
+
+@print え……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print はえぇ……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ど、ど、どういうことでやがりますの！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 監房内は全面をカーテンで覆われ、<br>まるで占い師の館のような変貌を遂げていた。 { speed:1 waitInput:true Wait:true }
+
+@print その室内中央で、テーブルに肘を置いたマーゴが<br>妖しげに微笑みかける。 { speed:1 waitInput:true Wait:true }
+
+@print 狭いところでごめんなさいね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print これはマーゴさんの魔法でしょうか？<br>劇的なびふぉーあふたーみたいな感じの。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ふふ、違うわよ。時間はたっぷりあったでしょう？<br>過ごしやすいようにリノベーションしたの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 前々から、趣味で占いをやっているの。<br>趣味というか、商売かしら？<br>私、お金を稼ぐのが好きだから。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 一体どうやって……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print この牢屋敷にあるものを借りてきてね。<br>簡単だったわ。あなたたちもやってみたら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@print このお部屋を見せたくて<br>私たちをここへ呼んだのでしょうか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print それもあるけれど……<br>監視カメラを警戒しているの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print えっ！？<br>監視カメラが設置されていますの！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@back 100_1 { Scale:{g_backgroundDefaultScale} time:0.8 }
+@Wait 0.5
+
+@print マーゴは首を横に振る。 { speed:1 waitInput:true Wait:true }
+
+@print ナノカちゃんと協力して数日牢屋敷中を探し回ったけど、<br>監視カメラが設置されている痕跡はどこにもなかった。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print ただ、私たちは囚人としてここに捕まっているのだから、<br>常に見張られているという自覚はしたほうがいいわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print ここは通路からの目隠しもしてあるから、<br>秘密のお話をする時はここを使えば良いと思って。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print （そのためにここに呼んでくれたんだ……<br>　マーゴちゃんって、思ったより親切だな） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print それは別として……私の占いね<br>すごーく当たるって評判なのよ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@QuickSave 9
+
+@print よければあなたたちも占ってあげるわ♡<br>もちろん有料だけど。ウフフ♡ { author:Margo speed:1 waitInput:true Wait:true }
+
+@print （前言撤回……！<br>　マーゴちゃん、商売始める気だ……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+@hide Stills-Middle,Stills-Front
+@back 2_1 { Scale:{g_backgroundDefaultScale} }
+@back Transparent.Custom { time:0.99 }
+@StopBgm { fade:2 }
+@Wait 0.9
+
+@print マーゴの占いをエマは―― { speed:1 waitInput:true Wait:true }
+
+@choice 受けてみることにした
+	@goto Act01_Chapter02/Act01_Chapter02_Bad01
+
+@choice 断った
+	@goto .Choice1-2-1
+
+@StopForChoice 
+
+# Choice1-2-1
+
+@correctChoice 9
+
+@print もちろん断った。 { speed:1 waitInput:true Wait:true }
+
+@print マーゴの監房での占い営業をなんとか逃れ、<br>エマたちは脱力しながら部屋を後にした。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+@char Hanna.Pensive1
+@char Sherry.Normal1
+
+@print お、恐ろしい目に遭いましたわ……<br>お金がないなら、体で支払えだなんて……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 頷いちゃったら、<br>そこからずるずるしぼり取られそうだったよね…。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print シェリーがハッとした表情になる。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Surprised1
+
+@print って、私たち、<br>ぜんぜん脱獄計画練ってませんね！？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1
+
+@print もうすぐ自由時間終わってしまいますわよ！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+
+@print で、でも牢屋敷の中には監視カメラがないとかの<br>情報は増えたし……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 明日こそちゃんと練ろう！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 脱力しつつ、３人は通路を歩きだす。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1
+
+@print ……でも、マーゴさんのあり方が<br>一番正しいかもしれませんね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna.Normal1
+
+@print なんのことですの？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1
+
+@print ストレスがたまればたまるほど魔女化に近付く。<br>それならストレスのない生活を送れば良い。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print マーゴさんを見ていたら<br>彼女はありのまま、自由に生きていて、<br>魔女化しそうにないなあって思って。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print たしかに……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （ボクらは常に、強いストレスを受けながら<br>　生活してる……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 不快感、焦燥、恐怖、怒り。<br>それらの感情はひたひたと、常にエマたちにつきまとう。 { speed:1 waitInput:true Wait:true }
+
+@print （魔女化が進めば進むほど、殺人衝動も高まる……<br>　そうか、ボクらは――） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+@char Hanna.Normal1
+@char Sherry.Pensive1
+
+@print ここで過ごす日数が経つほど、魔女化が進んでいる。<br>だからナノカちゃんは、<br>時間がないって言ったのかもしれない……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print そうですね。<br>そして殺人衝動が高まっているナノカさんが<br>行方をくらましている。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 次に出てくるのは、<br>殺人者としてかもしれませんね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ハンナは青ざめ、ぶるぶると震えだした。 { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Pensive1
+
+@print そんな……あんな銃を持っていたら<br>ひとたまりもありませんわ……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR8
+
+@print 返り討ちにする方法もありますよ。<br>見かけたら即ぶっ潰してしまえばいいんです！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised,ArmR3
+
+@print ちょ、ちょっとシェリーちゃん！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1,ArmR7
+
+@print ……あれ？<br>私、何か変なこと言っちゃいました……？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 魔女になってるなら簡単に死なないですし、殺人には<br>ならないから大丈夫かな～って思ったんですよ。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print "魔女相手でも、<br>ちょっと動きを止めることくらいはできるかな？ って。" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print まだナノカちゃんが魔女化してるとは限らないよ。<br>ただ悲観的になっているだけかもしれない。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR7
+
+@print たしかに。反撃はちゃんと確証を得てからですね。<br>てへっ、気をつけます！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （たまに……シェリーちゃんの言うことが怖い……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ナノカのことはエマも懸念ではあったが、<br>発見されたという報告もない。 { speed:1 waitInput:true Wait:true }
+
+@print （ナノカちゃんは幻視の魔法で<br>　この施設の情報を得ているって言ってた） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （ボクらの知らない隠れる場所を知っていても<br>　おかしくない） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （でも、ゴクチョーや看守の監視の目を、<br>　何日もかいくぐれるものなのかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 少なくともエマたちは、<br>監視されている状況下で定められた規則に従うほかない。 { speed:1 waitInput:true Wait:true }
+
+@print そろそろ今日もゴクチョーの通知が入る。 { speed:1 waitInput:true Wait:true }
+
+@print エマたちは結局規則通りに、<br>自分の監房に戻るしかなかった。 { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter02/Act01_Chapter02_Adv04

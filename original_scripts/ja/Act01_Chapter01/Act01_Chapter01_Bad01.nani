@@ -1,0 +1,87 @@
+@if isDebugDirectJump
+	@Gosub System/System_Subroutine.BeginAdv
+	@back Transparent { time:0 }
+
+# ========================================
+# ＞『レイアを庇った』を選択→1‐1‐b1へ
+# ========================================
+
+# Scene1-1-b1
+
+# ========================================
+# ●シーン1-1‐b1
+# ========================================
+
+@back 5_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@print "レイアを<ruby=\"かば\">庇</ruby>った。" { speed:1 waitInput:true Wait:true }
+
+@back 5_1 { time:0 }
+@char Ema.Determined2,ArmR3,ArmL7 { time:0 }
+
+@print 看守とレイアの間に、エマが飛び込む。 { speed:1 waitInput:true Wait:true }
+
+@print エマくん！？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@char Jailer.1
+@animate Jailer-Middle
+
+@print 看守の鎌がエマに振り下ろされて―― { speed:1 waitInput:true Wait:true }
+
+# ざんっと肉が切れる音
+@HidePrinter 
+@sfx Sfx_12
+@hideChars 
+@back SolidColor { time:0.2 }
+@hide MainBackground-Middle
+
+@print エマの体が左右に分かれて倒れた。 { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_20_1
+
+@print 間も置かず唐突に訪れた悲劇に、<br>多くの少女が恐怖を顔に張りつかせている。 { speed:1 waitInput:true Wait:true }
+
+@print 悲鳴も、看守に抗う声も上がらない。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back 5_1 { time:0 }
+@char Leia.Pensive1 { time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.2
+
+@print どうして私を庇ったりしたんだ……<br>あれくらいなら、避けられたのに……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# フクロウの羽ばたき音
+@sfx Sfx_8
+
+@hideChars 
+@char Warden.1
+
+@print あ～……また死んじゃいました？<br>さっきも死んだばっかりなのに……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print はぁ～～……色々手間が増えちゃうんで……<br>みなさんほんと、逆らわないでくれると助かります。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ゴクチョーが面倒くさそうにため息をつく。 { speed:1 waitInput:true Wait:true }
+
+@char Jailer
+@animate Jailer
+
+@print "看守がヒロとエマの死体を片付ける中、<br>少女たちはただ<ruby=\"ぼうぜん\">呆然</ruby>と立ち尽くしていた。" { speed:1 waitInput:true Wait:true }
+
+@back SolidColor
+
+@print "未来への道が閉ざされて悔やむような表情の少女もいれば、<br>暗いトンネルを歩いているみたいに<ruby=\"おび\">怯</ruby>えきった様子の少女もいる。" { speed:1 waitInput:true Wait:true }
+
+@print きっと、トンネルの先に光はない。<br>ただ絶望が待っているだけ。 { speed:1 waitInput:true Wait:true }
+
+@print 残念だけど、もう終わりだ。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 『END～愚行～』
+# ========================================
+
+@badEnd 1

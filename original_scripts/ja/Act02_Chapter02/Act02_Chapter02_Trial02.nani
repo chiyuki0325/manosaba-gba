@@ -1,0 +1,733 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter02/Act02_Chapter02_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 1500
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# ==============================================================================
+# MARK: 7-2: 💬 エマが疑わしい理由
+# ==============================================================================
+# ＠ト書き▼議論シーン7-2 エマが疑わしい理由
+# 議論開始エフェクト
+# BGM変更：rAwTell Owk...
+@bgm Bgm_7_1
+
+# ボス演出
+@ResetText 
+@char Hiro.Angry1 { time:0 }
+@stageCamera 1 { Rotation:0,{ (8 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+
+@stageCamera 1 { Rotation:0,{ (8.1 / courtStandCount * 360) },0 time:0.6 }
+@showStageScreen 1
+@Wait 1.4
+
+@ResetText 
+@char Ema.Angry1 { time:0 }
+@stageCamera 0 { Rotation:0,{ (0 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+
+@stageCamera 0 { Rotation:0,{ (-0.1 / courtStandCount * 360) },0 time:0.6 }
+@hideStageScreen 1
+@Wait 0.6
+
+# Judge7-2-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@printDebate 私はエマと<br>シャワールームで<br>待ち合わせをしていた。
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Closed1,Mouth2_Determined_Closed1
+@gosubModifyCamera 0
+@printDebate するとココの配信が<br>シャワールームで<br>始まったんだ。
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Closed1,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@printDebate けれど配信は、<br>銃声と共に終了……。
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@printDebate 私がシャワールームへ行くと<br>そこにはエマがいた。
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@printDebate エマ以外の犯人なんて<br>存在しえない。
+
+# カットインエマ
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@printDebate みんなに聞いて<br>欲しいんだけど、<br>そもそもシャワールームに<br>呼び出したのは<br>ヒロちゃんなんだよ。
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed01,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@printDebate 【ヒロちゃんがボクに<br>罪を着せようとした】……。
+
+@char Ema.Determined2,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@printDebate そう考えれば、<br>辻褄が合うんだ。
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@printDebate 何をバカなことを。
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Closed1,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@printDebate シャワールームに<br>エマがいるのを<br>確認したあと、<br>私はココの死体を<br>探そうと廊下に出た。
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Closed1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@printDebate そして中庭の前を通って<br>ラウンジに入ったところで、<br>アンアンや<br>レイアと会って……。
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@printDebate すると、<br>後ろからエマの声がしたんだ。
+
+@char Hiro.Normal2,Arms3,Eyes2_Normal_Closed1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@printDebate 私が来た道を戻り、<br>中庭へ行くと……。
+
+@char Hiro.Normal2,ArmR1,ArmL3,Eyes2_Normal_Open1,Mouth2_Determined_Open3
+@gosubModifyCamera 0
+@printDebate そこには、<br>死体の前で拳銃を持った<br>エマがいた。
+
+@char Ema.Determined2,ArmR7,ArmL7,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@printDebate "ボクは死体の前に落ちてた<br><link=\"Objection_02_02_02_01\">拳銃を拾っただけ</link>だよ。"
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@printDebate ボクは、<br>ヒロちゃんが<br>中庭を通ったあとに<br>死体を見つけている……。
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Middle
+@gosubModifyCamera 0
+@printDebate "つまり、ヒロちゃんが<br>犯人じゃないっていうなら<br><link=\"Objection_02_02_02_02\">死体を見過ごしていた</link><br>ことになるんだ。"
+
+@char Hiro.Normal1,ArmL3,Eyes1_Painful_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@printDebate ……なら、<br>君がシャワールームに<br>いたことは認める、<br>ということでいいのかな。
+
+@char Ema.Normal1,ArmR7,ArmL10,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@printDebate ……いたよ。<br>ヒロちゃんと<br>待ち合わせしてたからね。
+
+@char Hiro.Normal1,ArmR5,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@printDebate だがココの配信は<br>シャワールームで<br>行われていた。
+
+@char Hiro.Normal1,ArmR3,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@printDebate 他に見ていた者がいれば、<br>それを証明してくれるはずだ。
+
+@char Sherry.Default,ArmR8,ArmL12,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate たしかにココさんの配信を<br>見ましたけど、<br>ヒロさんの<br>言う通りでした！
+
+@char Sherry.Default,ArmR12,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate となるとやっぱり、<br>エマさんが<br>犯人なんですねー！
+
+@char Ema.Default,ArmR7,ArmL13,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@printDebate ちょっと待って……！
+
+@char Ema.Default,ArmR7,ArmL13,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@printDebate "もしかしたら配信自体、<br>ヒロちゃんが流した<br><link=\"Objection_02_02_02_03\">録画</link>だった<br>かもしれないよ。"
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@printDebate 配られたスマホは、<br>それぐらいの機能は<br>設定できるはずだし……！
+
+@char Ema.Normal1,ArmR7,ArmL7,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Middle
+@gosubModifyCamera 0
+@printDebate ヒロちゃんは強引に<br>ボクを犯人にしようと<br>してるだけだ！
+
+@char Ema.Determined2,ArmR7,ArmL7,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@printDebate みんな……<br>騙されちゃダメだよ！
+
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+@gosubModifyCamera 0
+@Wait 0.2
+
+# ==============================================================================
+# 7-2議論後独白
+# ==============================================================================
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@print （エマの主張は成立しない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （調べられた現場や死体の状況を確認すれば<br>　エマの話の矛盾点がわかるはずだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-2-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_02_02_01
+
+@Skip false
+@pauseTrial true
+
+@choice エマがその時撃った
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge7-2-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_02_02_02_02
+
+@Skip false
+@pauseTrial true
+
+@choice 考え事をしていた
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge7-2-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_02_02_02_03
+
+@Skip false
+@pauseTrial true
+
+@choice 録画では成立しない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge7-2-2
+
+@choice エマが録画配信をした
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge7-2-5
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 7-2: ❌ 議論ミス選択肢
+# ==============================================================================
+# MARK: 7-2-3: ❌ 反論・エマがその時撃った
+
+# Judge7-2-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print ヘタな言い訳はやめてくれ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 手にしていたその銃で<br>君がココを撃ったんだろう？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Painful_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print 単純な話じゃないか。<br>死体が中庭にあったということは、<br>そこでエマがココを殺したということだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print そんなの無理だよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print ヒロちゃんの話からすると、<br>配信でココちゃんが撃たれたのは<br>ボクが中庭に行くもっと前の出来事だよね？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print それなら、時系列から考えて<br>ボクが中庭でココちゃんを撃つことはできないんじゃないかな？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print キミの推理は間違ってるよ、ヒロちゃん！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print んー……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Smile_Closed
+@gosubModifyCamera 0
+@print たしかにエマちゃんの言ってることの方が正しいね！ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_03,Angle01/Head/Facial/Eyes>Eyes_Neutral_Open,Angle01/Head/Facial/Mouth>Mouth_Normal_Closed
+@gosubModifyCamera 0
+@print 『ヒロの主張は配信と矛盾している』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1
+@gosubModifyCamera 0
+@print （……エマが中庭で撃ったとすると、時系列が合わないか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （しかしココの配信に<br>　シャワールームが映っていたことは事実だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （そして配信直後<br>　エマがシャワールームにいたこともまた事実……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （……言い逃れをしようとしてもムダだ、エマ。<br>　君の発言の矛盾を突きつけてやろう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-2-1
+
+# MARK: 7-2-4: ❌ 反論・考え事をしていた
+
+# Judge7-2-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print ……あのとき中庭の前を素通りしたのは、<br>考え事をしていたからだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print 考え事って？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 直前にあれだけショッキングな配信を見たんだ……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print ココのことが気になって、探していたんだよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print もしココちゃんを探していたなら、<br>中庭だって探すはずじゃないかな？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print そこを見過ごすなんて<br>いつも鋭いヒロちゃんらしくないよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR2-2,ArmL2,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print ……本当は何を考えていたの？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print それは――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （……【エマを殺す計画】に関連することだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （そんなことを今話題に出すわけにはいかない……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ヒロちゃんは何か、<br>言えないようなことでもあるんじゃないかな。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR7,ArmL7,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print ……そんなヒロちゃんの方が、怪しいよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print "（くっ……！ エマめ……！）" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （しかしココの配信に<br>　シャワールームが映っていたことは事実だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （そして配信直後<br>　エマがシャワールームにいたこともまた事実……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （……言い逃れをしようとしてもムダだ、エマ。<br>　君の発言の矛盾を突きつけてやろう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-2-1
+
+# MARK: 7-2-5: ❌ 反論・エマが録画配信をした
+
+# Judge7-2-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print いや、あの配信はエマがしたに違いない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print エマは……<br>ココにあの映像を録画させてから殺害し――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 私との待ち合わせ時間に合わせて配信することで<br>私に罪をなすりつけようとしたんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR4,ArmL5,Angle01/Facial/Eyes>Eyes_Surprised_Open01,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print なるほど！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR4,ArmL5,Angle01/Facial/Eyes>Eyes_Surprised_Open01,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print たしかに動画内のココさんは<br>明らかに怯えた様子でした！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 動画を撮ることを強制されていたようにも<br>見えなくはないですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Leia.Surprised1,ArmR1,ArmL1
+@gosubModifyCamera 0
+@print コ、ココくんは自分が殺害される記録を<br>録画させられていたっていうのかい……！？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL7,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Angry_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print エマくん……<br>それが事実だとしたら、なんて恐ろしいことを……！！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ……そんなわけないよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ボクがそんな偽装工作をしたとして、<br>いったいなんになるっていうのさ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR7,ArmL10
+@gosubModifyCamera 0
+@print ボクは配信前後の間、<br>ずっとシャワールームにいたんだよ？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR7,ArmL10
+@gosubModifyCamera 0
+@print ヒロちゃんに罪をなすりつけようとしたなら、<br>ボクはとっくにその場を離れてるよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Closed,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open
+@gosubModifyCamera 0
+@print たしかに意味がありませんわ～！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01
+@gosubModifyCamera 0
+@print なっとく！<br>エマちゃんだったら、する意味ないよね。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （くっ……！<br>　エマが配信するような理由がないか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （しかしココの配信に<br>　シャワールームが映っていたことは事実だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （そして配信直後<br>　エマがシャワールームにいたことも、また事実） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （……言い逃れをしようとしてもムダだ、エマ。<br>　君の発言の矛盾を突きつけてやろう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge7-2-1
+
+# ==============================================================================
+# MARK: 7-2-2: ⭕ 反論・録画ではありえない
+# ==============================================================================
+# カットイン
+# Judge7-2-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+@StopBgm 
+@gosubCutIn Hiro
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR6,ArmL3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print くだらない反論だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆息を呑む
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ……っ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# 気任せの蝶［チェロ無し］
+@bgm Bgm_45_2
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print 【ココの配信が録画による偽装だった】……？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print そんなことはありえない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print ココの配信が<br>死体発見の直前に行われていたことは<br>たしかなことだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print ……どうしてそんなこと言えるのかな。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,ArmL3,Eyes1_Angry_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print それはレイアが証明してくれるよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆真面目に聞いてる
+
+@char Leia.Normal1
+@gosubModifyCamera 0
+@print …………。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Leia.Surprised1,ArmR1,ArmL1
+@gosubModifyCamera 0
+@print ……なにっ！？<br>私だって！？ { author:Leia speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （どうして君が驚く……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆呆れため息
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print ……はぁ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print レイアの検死結果によれば、<br>ココが死亡したのは直前のことだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Fearful_Open1
+@gosubModifyCamera 0
+@print もしあの配信が私の偽装だとして……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open2,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print ココが死ぬ姿を録画し、<br>たかだか数分で配信を偽装するための<br>動画編集までしていたことになってしまう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 仮に配信を遅延させて放送していたとしても、<br>その偽装にいったい何の意味があったっていうのかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print うっ……！<br>それは……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Leia.Default,ArmR8,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print た、たしかにその通りだ……！<br>さすがだねヒロくん！ { author:Leia speed:1 waitInput:true Wait:true }
+
+# ＠備考◆呆れ
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （君がまず思い当たって然るべきじゃないか……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Smile_Closed
+@gosubModifyCamera 0
+@print ココちゃんが撃たれた配信は<br>アーカイブにも残ってるみたいだよ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print いつでも確認できるね！ { author:Noah speed:1 waitInput:true Wait:true }
+
+
+@ResetText 
+# アイテム追加
+# ☆【配信アーカイブ】
+# ココが死の間際にしていた配信。
+# 後ろにノアの絵が映っている。
+@spawn Clue
+@update 7-3
+@Wait i1.2
+@despawn Clue
+
+@StopBgm 
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （人の死ぬ姿をそう何度も確認したくはないが……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （……このアーカイブ、<br>　ノアの描いた絵が映っている） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （あの絵はシャワールームに描かれていたものだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （やはりエマが殺した以外には考えられないな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ☆アイテム追加
+# 【シャワールーム】
+# シャワーを浴びる部屋。
+# 脱いだ服はダストシュートから焼却炉へと入れる。
+# 防音性が高いため、エマを事故にみせかけて殺害するために呼び出した。
+# 事件の前にノアが落書きをしており、それをココと一緒に確認している。
+
+@ResetText 
+@spawn Clue
+@update 7-4
+@Wait i1.2
+@despawn Clue
+
+# BGM変更：看るモノ達
+@bgm Bgm_10_1
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 死体が発見される直前、<br>ココがシャワールームにいる姿が配信されていた。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Closed1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print そしてシャワールームにいたのはエマだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print よってエマがココを見ていないというのはありえない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle
+@gosubModifyCamera 0
+@print ……そんなのヒロちゃんの言いがかりだよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ヒロちゃんはボクを陥れるために、<br>全部仕組んで――！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・話の転換音
+@sfx Sfx_Common_5
+
+@char Miria.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Confused_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print "――ま、待ってよふたりとも！<br>落ち着いて！ ね！" { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01
+@gosubModifyCamera 0
+@print ……でもふたりともお互いが犯人って言ってるし、<br>ふたりで話してもらった方が早いんじゃないかな？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print そ、それはそうかもしれないけど……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char AnAn.Normal1,Angle01/Option_Arms-,ArmR-Option-Off,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_01
+@gosubModifyCamera 0
+@print 『順番に話せばいい』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL6,Angle01/Head/Facial/Eyes>Eyes_Normal_Closed,Angle01/Head/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print ……お互いに言いたいことがあるなら、な。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print そうですわー！<br>ふたりとももっとお行儀よく<br>お話し遊ばせなさいませ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print そ、そうだね！<br>ヒロちゃんが一方的に話してもよくないし……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open02
+@gosubModifyCamera 0
+@print ……そこまで言うなら、桜羽の話も聞かせろよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR7,ArmL10
+@gosubModifyCamera 0
+@print ……うん。<br>ヒロちゃんが何をしたのか……<br>証明してみせるよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （……攻めるチャンスを逃したか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （まあいい） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （エマの嘘には矛盾が起こるはず……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open2,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print （それを指摘すれば……問題はない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto Act02_Chapter02/Act02_Chapter02_Trial03

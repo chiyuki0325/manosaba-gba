@@ -1,0 +1,144 @@
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-ex3
+
+@bgm Bgm_23_1
+@back 13_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.2
+
+@print ――結論が出ないまま、時間は流れた。<br>処刑される魔女を選ぶための投票が行われる。 { speed:1 waitInput:true Wait:true }
+
+@print 失敗だ。 { speed:1 waitInput:true Wait:true }
+
+@print アンアンの死は事故だった。<br>それが答えだという方向に導きたかったのだが…… { speed:1 waitInput:true Wait:true }
+
+@print ここまでの議論で疑いをかけられた人間に、<br>票を入れるしかない。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms4,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1,Sweat1-1
+@print （すまない……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@print "私は<ruby=\"はが\">歯噛</ruby>みしながら、ボタンを押す。" { speed:1 waitInput:true Wait:true }
+
+@print そうして選ばれたのは―― { speed:1 waitInput:true Wait:true }
+
+# パンパカパーン
+@sfx Sfx_34
+
+@char Alisa.Fearful1,ArmR7,ArmL3,Angle01/Facial/Sweat>Sweat02,Option-ArmL-Off
+@print あ？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@print アリサだった。 { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Fearful1,ArmR4,ArmL6,Angle01/Facial/Eyes>Eyes_Angry_Open01,Angle01/Facial/Sweat>Sweat02
+@print おめぇらふざけんなよ……ウチはやってねえ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@print "アリサは私たちを<ruby=\"にら\">睨</ruby>み付ける。<br>震える声には、憎悪と動揺が入り混じっていた。" { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR9,ArmL8,Angle01/Facial/Eyes>Eyes_Fearful_Open,Angle01/Facial/Sweat>Sweat02
+@print おかしいだろ！<br>二階堂が言ってたじゃねえか！<br>自分が殺したって……！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Open5,Mouth1_Determined_Closed1,Sweat1-1
+@print …………。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Flushed_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Neutral_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@print …………。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+@bgm Bgm_29_1
+@hideChars 
+@char Warden.3
+@print まあ、決定は決定なんで。<br>残念ですけど、諦めてもらうしかないかと。<br>さっさと閉廷したいですし……進行しちゃっていいですかね？ { author:Warden speed:1 waitInput:true Wait:true }
+
+@print ゴクチョーが合図を出し、<br>看守がアリサを拘束しようと動き出す。 { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Fearful1,ArmR7,ArmL3,Angle01/Facial/Sweat>Sweat02
+@print "おい！ ちょっと待てよ！" { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Fearful1,ArmR9,ArmL8,Angle01/Facial/Sweat>Sweat02
+@print ウチは納得してねえ……<br>理不尽に処刑なんてされてたまるかよ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# 炎をぼっと点す音
+@sfx Sfx_30
+
+@print アリサの手に、魔法の火が灯る。 { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR5,ArmL11,Angle01/Facial/Eyes>Eyes_Angry_Open04,Angle01/Facial/Sweat>Sweat02
+@print "近付くんじゃねえ！ 燃やすぞ！" { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@print アリサの言葉は脅しじゃない。<br>声色でそれはわかる。 { speed:1 waitInput:true Wait:true }
+
+@print だが、看守にはまるで通じなかった。<br>火など恐れず、アリサに接近する。 { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Fearful1,ArmR5,ArmL11,Angle01/Facial/Sweat>Sweat02
+@print "来るな！ 来るんじゃねえ……！！" { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Warden.11
+@print やれやれ……抵抗はいけませんよ。<br>まあ、無駄なんですけどね。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# ぶんっと武器が振り下ろされる音
+@sfx Sfx_9
+
+# ざんっと肉が切れる音
+@sfx Sfx_12
+
+@char Alisa.Fearful1,ArmR1,ArmL9,Angle01/Facial/Sweat>Sweat02
+@print ！！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@print 少女たちが悲鳴を上げる。<br>看守が鎌を振るい、アリサを切り裂いたのだ。 { speed:1 waitInput:true Wait:true }
+
+@print ２つに分かたれアリサの鮮血が、<br>裁判所を赤く染める。 { speed:1 waitInput:true Wait:true }
+
+@char Warden.11
+@print あちゃ～……床と壁、掃除しないと……<br>余計な手間を増やさないでいただけると<br>ありがたいんですけどねぇ……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+@ResetText 
+@hideChars 
+@back SolidColor { time:1 }
+@Wait 1.2
+
+@back 28_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.6 }
+@Wait 0.6
+
+@print 魔女裁判の後。<br>私はアンアンが死亡した現場にいた。 { speed:1 waitInput:true Wait:true }
+
+@print アリサが魔女として処刑され、<br>私もエマも難を逃れた。 { speed:1 waitInput:true Wait:true }
+
+@print だが、本当にこれでよかったのだろうか……。 { speed:1 waitInput:true Wait:true }
+
+# 野外で近づいてくる足音・1人
+@sfx Sfx_73
+
+@print ふと、背後に誰かの気配を感じる。<br>そして、背中に焼けるような痛みが走った。 { speed:1 waitInput:true Wait:true }
+
+@print 私は地面に倒れ、空を見上げる。 { speed:1 waitInput:true Wait:true }
+
+@print それが【今回】の記憶の最後―― { speed:1 waitInput:true Wait:true }
+
+@back SolidColor
+
+@print 私は何者かに殺害され、死に戻った。 { speed:1 waitInput:true Wait:true }
+
+@print "ある意味、<ruby=\"ぎょうこう\">僥倖</ruby>だったかもしれない。<br>今度こそは、上手くやってみせる――" { speed:1 waitInput:true Wait:true }
+
+# 『END～失敗～』
+# @end
+
+@Gosub System/System_Subroutine.EndAdv
+
+@ClearBacklog 
+@ReturnToTitle { time:1.2000000476837158 delay:0.6000000238418579 }

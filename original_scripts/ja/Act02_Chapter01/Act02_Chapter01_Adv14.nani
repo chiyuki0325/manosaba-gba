@@ -1,0 +1,328 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-1-9
+
+# ========================================
+# ●シーン2‐1-9
+# ========================================
+
+@back 7_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent.Custom { time:0.99 }
+@Wait 0.9
+
+# ========================================
+# ＞『医務室』を選択
+# ========================================
+
+@bgm Bgm_17_1
+
+@print 医務室に行ってみると、<br>マーゴとメルル、アンアンがいた。 { speed:1 waitInput:true Wait:true }
+
+@print 入室した私とノアを見て、<br>メルルが恐縮しながら近付いてくる。 { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default
+
+@print あっ、あっ……ヒ、ヒロさん……！<br>その節は、大変お世話になりました……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+
+@print 君をお世話した覚えはない。<br>マーゴの様子はどうだ？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print あ、はい……<br>マーゴさんは傷も塞がって、<br>ずいぶん顔色も良くなってきました。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ベッドに横になっていたマーゴが体を起こす。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@animate MainBackground
+@spawn MaskingRectangle
+@back 7_2
+@blur MainBackground-Front
+@char Margo.Normal1 { time:0 }
+@mask MainBackground-Front,Margo-Front
+@animate MainBackground-Front
+@animate Margo-Front
+@Wait 0.3
+
+@print ふふ、メルルちゃんのおかげよ。<br>ずっとつきっきりで看護してくれて……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print もちろんヒロちゃんもよ。<br>あなたたちの献身的な看護のおかげね。<br>本当にありがとう。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 傷は深かったのだし、油断は禁物だ。<br>なるべく安静にはしたほうがいい。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1
+
+@print 私、ヒロちゃんのこと少し誤解していたみたい。<br>とっても優しいのね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 私は当たり前のことを言ってるだけだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print マーゴさん、まだ横になっていてください……。<br>傷が開いてしまうかもしれませんし……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print もう、メルルちゃんったら。<br>本当に心配症なんだから♡ { author:Margo speed:1 waitInput:true Wait:true }
+
+@hide Margo-Front,MainBackground-Front
+@blur MainBackground-Front
+@despawn MaskingRectangle
+@Wait 0.3
+
+@print そっと体に手を添えるメルルに<br>マーゴは大人しく従い、再び横になる。 { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default
+
+@print お薬も飲んでもらいましたし、<br>いちど眠ってください。本当にまだ、<br>安静が必要な時期なんです……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+# ========================================
+# アイテムスチル：『睡眠薬』表示
+# ========================================
+@spawn Clue
+@Wait 0.5
+
+@print メルルが手に持っているビンは、<br>どうやら睡眠薬のようだった。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@despawn Clue
+@Wait 0.5
+
+@print マーゴはすでにうつらうつらとし始めている。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@animate MainBackground
+@spawn MaskingRectangle
+@back 7_2
+@blur MainBackground-Front
+@char Margo.Normal1 { time:0 }
+@mask MainBackground-Front,Margo-Front
+@animate MainBackground-Front
+@animate Margo-Front
+@Wait 0.3
+
+@print ……ねえヒロちゃん。<br>あまりエマちゃんたちを責めないであげてね。<br>私も同じようなことは考えていたのだから。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 君も脱獄を？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ええ。ここから出る方法はないものか<br>考えるのは当然でしょう？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 看守に逆らうのは危険だ。<br>大人しくしていたほうがいい。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Margo.Pensive1
+
+@print ……そうね。<br>今回の件で一筋縄でいかないことはわかったし、<br>もう少しここの調査をしていくつもり。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print ヒロちゃんのこと、頼りにしているわね。<br>一緒に魔女と戦いましょう――。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hide Margo-Front,MainBackground-Front
+@blur MainBackground-Front
+@despawn MaskingRectangle
+@Wait 0.3
+
+@print 眠るために目を閉じたマーゴを見届けてから、<br>メルルの方へと視線を移す。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+@char Meruru.Default
+
+@print 君はずっとマーゴについているのか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print は、はい。日常生活に支障が出る重傷だったので、<br>いろいろ介添えしないといけませんし……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Smile
+
+@print あっ、決して嫌とかじゃありません……！<br>好きでやってるんです……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"りきせつ\">力説</ruby>するメルルをよく観察すれば、<br>目の下に<ruby=\"くま\">隈</ruby>ができているようにも見える。" { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive1
+
+@print （……行き過ぎた心配性も考えものだな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+
+@print マーゴが寝ているのだから、君も少し休むといい。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Meruru.Pensive
+
+@print は、はい。でもアンアンさんも……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print マーゴの隣のベッドには、アンアンが寝ていた。 { speed:1 waitInput:true Wait:true }
+
+@print アンアンはどうしてここに？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default
+
+@print 貧血を起こしてしまったようなんです。<br>気分が悪そうだったので、<br>少し休んでもらっています。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "いつの間にかノアは、<br>アンアンのベッドの<ruby=\"かたわ\">傍</ruby>らにいた。" { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@animate MainBackground
+@spawn MaskingRectangle
+@back 7_2
+@blur MainBackground-Front
+@char AnAn.Normal1 { time:0 }
+@mask MainBackground-Front,AnAn-Front
+@animate MainBackground-Front
+@animate AnAn-Front
+@Wait 0.3
+
+@print アンアンちゃん大丈夫？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@print 『わがはいに構うな。喋りかけるな』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print ねえねえ、そのスケッチブックにお絵描きしたいな。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print 『これはわがはいのものだ。勝手なことは許さない』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print でもお絵描きしたら楽しいんだよ？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char AnAn.Angry1
+
+@print 『わがはいは楽しくない』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@hide AnAn-Front,MainBackground-Front
+@blur MainBackground-Front
+@despawn MaskingRectangle
+@Wait 0.3
+
+@print "ノアがアンアンに<ruby=\"から\">絡</ruby>んでいるのを横目に、<br>私はメルルの方へ向き直る。" { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+@char Meruru.Default
+
+@print アンアンに心配はないのか？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print えっと……微熱が出ていて、<br>環境の劇的変化で疲れが大きいのだと思います。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Pensive
+
+@print 心配ですけど……少し休めば良くなるかと。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print そう。それならあまりうるさくするのは良くないな。<br>マーゴも眠ったようだし、私たちは出よう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ほらノア……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@hideChars 
+@char Noah.Surprised1
+@animate Noah
+
+@print 声をかけた時には、すでにノアは入口に向かっていた。<br>最初は気まぐれかと思ったが、動きがおかしい。 { speed:1 waitInput:true Wait:true }
+
+@animate Noah
+
+@print "あれ？ あれれ？<br>のあ、アンアンちゃんと遊ぼうと思ったのに、<br>勝手に体が……なんで……？" { author:Noah speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "私は察することがあって、アンアンをじっと見る。<br>アンアンは気まずそうに視線を<ruby=\"そ\">逸</ruby>らした。" { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1
+
+@print 君、何をしたんだ？<br>答えによってはもう少し詰めなくてはいけない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@HidePrinter 
+@animate MainBackground
+@spawn MaskingRectangle
+@back 7_2
+@blur MainBackground-Front
+@char AnAn.Surprised1 { time:0 }
+@mask MainBackground-Front,AnAn-Front
+@animate MainBackground-Front
+@animate AnAn-Front
+@Wait 0.3
+
+@print アンアンは慌ててスケッチブックに文字を書き始める。<br>その内容を私に見せてきた。 { speed:1 waitInput:true Wait:true }
+
+@print 『わがはいは軽度の【洗脳】の魔法を持っている。<br>　ノアに出ていけと言っただけだ。<br>　何度もやらなければ人体に影響はない』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print ふうん……興味があるな。<br>一度やってみせてくれないか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "アンアンは青ざめながらも<ruby=\"うなず\">頷</ruby>き、<br>それからノアの方に視線を向けた。" { speed:1 waitInput:true Wait:true }
+
+@char AnAn.Normal1
+
+@print ……わがはいは喉が乾いている。<br>ノア、わがはいに【魔法でお茶を出せ】。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@hide AnAn-Front,MainBackground-Front
+@blur MainBackground-Front
+@despawn MaskingRectangle
+@Wait 0.3
+
+@char Noah.Normal1
+
+@print …………。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print …………。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print …………。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print どうした。何も起こらないじゃないか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print お、おかしい。そんなはずはない。<br>ノア、わがはいにお茶を――。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Noah.Normal1
+@animate Noah
+
+@print ええと、のあの魔法を勘違いしてるからかも？<br>のあの魔法はね、液体を操作できるけど<br>【絵を描く】ことしかできないんだよ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print ノアが後退しながら言ってくる。 { speed:1 waitInput:true Wait:true }
+
+@print お茶を出してあげたいけど、<br>無理みたい。のあは出て行かなきゃいけないし、<br>じゃあねえ～。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ノアは手を振りながら、<br>出ていってしまった。 { speed:1 waitInput:true Wait:true }
+
+@update AnAn
+
+@char Hiro.Normal1
+
+@print ……まあ、信じよう。出て行けという洗脳は<br>本当に有効だったようだしな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ただ、あまり感心できる行為ではない。<br>みだりに使わないように。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@HidePrinter 
+@animate MainBackground
+@spawn MaskingRectangle
+@back 7_2
+@blur MainBackground-Front
+@char AnAn.Surprised1 { time:0 }
+@mask MainBackground-Front,AnAn-Front
+@animate MainBackground-Front
+@animate AnAn-Front
+@Wait 0.3
+
+@print ……！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print "こくこくこく、とアンアンが何度も<ruby=\"うなず\">頷</ruby>く。" { speed:1 waitInput:true Wait:true }
+
+@hide AnAn-Front,MainBackground-Front
+@blur MainBackground-Front
+@despawn MaskingRectangle
+@Wait 0.3
+
+@char Meruru.Smile
+
+@print アンアンさん、私が今お茶をお出ししますね……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "ぱたぱたと<ruby=\"せわ\">忙</ruby>しないメルルを背にし、<br>私もノアを追いかけて医務室を出た。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン2‐1‐7
+# 全てのイベントを消化している＞シーン2‐1‐13
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter01/Act02_Chapter01_Adv12

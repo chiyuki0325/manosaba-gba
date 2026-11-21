@@ -1,0 +1,60 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+@back Transparent { time:1.2 }
+
+# Scene1-2-8
+
+# ========================================
+# ●シーン1‐2-8
+# ========================================
+
+# ========================================
+# マップイベント用分岐
+# ========================================
+
+# ========================================
+# 【ＭＡＰイベント】牢屋敷マップ
+#
+# 地下通路＞シーン1‐2‐9
+# ゲストハウス＞シーン1‐2‐10
+# 娯楽室＞シーン1‐2‐11
+# 湖方面＞シーン1‐2‐12
+# シャワールーム＞1-2-13
+# ※全てのＭＡＰイベントを選択したら終了。
+# 選択済みの場所は消していってください。
+# ========================================
+
+@if "chosenAreaFlag == 31"
+	@set "chosenAreaFlag = 0"
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter02/Act01_Chapter02_Adv14
+
+@map BasementHallway,FrontGuesthouse,RecreationRoom,Lake,Showers BasementHallway,FrontGuesthouse,RecreationRoom,Lake,Showers
+
+@if "chosenAreaId==\"BasementHallway\""
+	@setFlag 0
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter02/Act01_Chapter02_Adv09
+
+@if "chosenAreaId==\"FrontGuesthouse\""
+	@setFlag 1
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter02/Act01_Chapter02_Adv10
+
+@if "chosenAreaId==\"RecreationRoom\""
+	@setFlag 2
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter02/Act01_Chapter02_Adv11
+
+@if "chosenAreaId==\"Lake\""
+	@setFlag 3
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter02/Act01_Chapter02_Adv12
+
+@if "chosenAreaId==\"Showers\""
+	@setFlag 4
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter02/Act01_Chapter02_Adv13
+
+@Stop

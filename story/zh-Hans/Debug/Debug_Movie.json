@@ -1,0 +1,21 @@
+{
+  "format": "manosaba.story",
+  "version": 1,
+  "language": "zh-Hans",
+  "path": "Debug/Debug_Movie",
+  "events": [
+    {"op": "Gosub", "line": 1, "indent": 0, "params": {"Path": "System/System_Subroutine.BeginAdv"}},
+    {"op": "ModifyBackgroundExtended", "line": 3, "indent": 0, "params": {"TintColor": "#000000", "Duration": 0.0, "Lazy": 0, "AppearanceAndTransition": "Transparent", "SubId": "Overlay"}},
+    {"op": "Gosub", "line": 5, "indent": 0, "params": {"Path": ".Main"}},
+    {"op": "Stop", "line": 7, "indent": 0, "params": {}},
+    {"op": "label", "name": "Main", "line": 13, "indent": 0},
+    {"op": "PrintTextModified", "line": 15, "indent": 0, "params": {"Text": "", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["~29a7fe76"]}},
+    {"op": "PlayMovie", "line": 17, "indent": 0, "params": {"MovieName": "Act01_Opening", "Wait": 1}},
+    {"op": "PrintTextModified", "line": 19, "indent": 0, "params": {"Text": "", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["~93dbd26e"]}},
+    {"op": "Return", "line": 21, "indent": 0, "params": {}}
+  ],
+  "translations": {
+  "~29a7fe76": "",
+  "~93dbd26e": ""
+}
+}

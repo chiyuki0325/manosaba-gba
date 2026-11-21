@@ -1,0 +1,398 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-2-15
+
+# ========================================
+# ●シーン2‐2‐15
+# ========================================
+
+@back 30_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# 室内を走る足音・1人
+@sfx Sfx_126
+
+@bgm Bgm_23_1
+
+@print シャワールームに駆け込むと――<br>その場にはエマが立ち尽くしていた。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1
+
+@print エマっ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print ……ヒロちゃん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# 木の扉が閉じる音
+@sfx Sfx_144
+
+@print 後ろでシャワールームの扉が閉まる。 { speed:1 waitInput:true Wait:true }
+
+@print エマとの間に、冷ややかな空気が流れた。 { speed:1 waitInput:true Wait:true }
+
+@print ……ココはどこだ？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print ……何の話？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマの表情からは何も読み取れず、<br>私はざっとシャワールーム内に視線を巡らせる。 { speed:1 waitInput:true Wait:true }
+
+@print ココの姿はなかった。 { speed:1 waitInput:true Wait:true }
+
+@print （どういうことだ！？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+# 天気が悪いので夜差分使用してもよさそう
+
+@back 9_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@sfx Sfx_144
+@Wait 0.2
+
+@back Transparent.Custom { time:0.9 }
+@Wait 0.9
+
+@print 混乱しながら、<br>私はシャワールームを出た。 { speed:1 waitInput:true Wait:true }
+
+@print どこに行けばよいかわからず、<br>とりあえず通路を歩きながら考えた。 { speed:1 waitInput:true Wait:true }
+
+@print （おかしい。ココはどこに行った？<br>　シャワールームで配信をしていたはず） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （明らかにココは撃たれていた） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （ならば死体はどこに消えた……！<br>　死体が移動させられたとしたら……それは） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （……焼却炉か！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@sfx Sfx_126
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@print 思い当たった瞬間、<br>私は駆けだしていた。 { speed:1 waitInput:true Wait:true }
+
+@print （焼却炉は地下……！<br>　今ならまだ間に合うはず……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "１５時に自動で焼却炉が<ruby=\"かどう\">稼働</ruby>するまで、<br>まだ少しだけ時間がある。" { speed:1 waitInput:true Wait:true }
+
+@back 5_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@ResetText 
+@back Transparent.Custom { time:0.9 }
+@Wait 0.9
+@StopBgm { fade:3 }
+
+@print 飛び込むように、<br>ラウンジへと入った瞬間だった。 { speed:1 waitInput:true Wait:true }
+
+# 雷音
+@sfx Sfx_131
+
+# ＠備考◆驚く
+
+@print ――ッ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "<ruby=\"ごうおん\">轟音</ruby>が響いたことで、<br>びくりと立ち止まってしまう。" { speed:1 waitInput:true Wait:true }
+
+# 激しい雨音
+@bgm Ambi_8_1
+
+@print そういえばハンナが先ほど言っていた。<br>雨が降っているのだ。 { speed:1 waitInput:true Wait:true }
+
+@print あまりに焦りすぎて、<br>激しい雨音が聞こえていることに今更気付いた。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Surprised1
+@char AnAn.Normal1,Angle01/Option_Arms-
+
+@print 今の音すごかったね……！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 雷が近くに落ちたのではないか。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print ラウンジの中にはレイアとアンアンがいた。 { speed:1 waitInput:true Wait:true }
+
+@print そういえば、<br>先ほどシャワールームに向かう時も見かけた。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 直後だった。<br>激しい雨と雷の音の合間に―― { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# 遠くから聞こえる
+# ＠備考◆悲鳴を呑みこむ
+
+@print ひっ……あああ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ひきつった悲鳴のようなものが聞こえた。 { speed:1 waitInput:true Wait:true }
+
+@print （今の声は、エマか……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私は廊下の方を振り返った。 { speed:1 waitInput:true Wait:true }
+
+@print "廊下には中庭に<ruby=\"つな\">繋</ruby>がる扉がある。<br>その扉が開いていた。" { speed:1 waitInput:true Wait:true }
+
+@print たった今私が通ったとき、<br>そこは閉まっていたはずだ。 { speed:1 waitInput:true Wait:true }
+
+@print （……エマが開けたのか？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 落雷も激しい雨音も、<br>凶事の前触れかのように感じられた。 { speed:1 waitInput:true Wait:true }
+
+@print ココの映像を見てからずっと、<br>鼓動がうるさく鳴っている。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@print 私はひとり、<br>ふらふらと吸い寄せられるように中庭へと向かった。 { speed:1 waitInput:true Wait:true }
+
+@print そして―― { speed:1 waitInput:true Wait:true }
+
+@print 激しい雨は瞬間的なものだったらしい。 { speed:1 waitInput:true Wait:true }
+
+@print 小雨の降る中庭で―― { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@bgm Bgm_16_1_Loop
+
+@back 330_1 { time:0 }
+@animate Stills
+@back Transparent { time:1.2 }
+@Wait 2.4
+
+@animate Stills
+@back 330_1 { time:0.6 }
+@animate Stills-Middle
+@Wait 2.4
+
+@animate Stills-Middle
+@back 330_1 { time:0 }
+@blur Stills
+@animate Stills
+@blur Stills
+@hide Stills-Middle { time:0.6 }
+@Wait 3
+
+@print 毒舌な配信者の少女、沢渡ココが<br>仰向けに倒れていた。 { speed:1 waitInput:true Wait:true }
+
+@print "ココの両の<ruby=\"まなこ\">眼</ruby>は何かに驚いたような表情のまま、<br>大きく見開かれていた。" { speed:1 waitInput:true Wait:true }
+
+@print "【千里眼】の魔法を持つ彼女だが、<br>その<ruby=\"まなこ\">眼</ruby>はもう何も見ることはできない。" { speed:1 waitInput:true Wait:true }
+
+@print 彼女は生命活動を終えていた。 { speed:1 waitInput:true Wait:true }
+
+@print 頭部に集い舞う赤い蝶の群れで、<br>額を撃ち抜かれ即死したのだと予感した。 { speed:1 waitInput:true Wait:true }
+
+@print ココ……！！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "私は<ruby=\"とっさ\">咄嗟</ruby>に駆け寄ろうとして、<br>ハッと気付く。" { speed:1 waitInput:true Wait:true }
+
+@print ココの死体の前には、エマが立っていた。 { speed:1 waitInput:true Wait:true }
+
+@print 焦点の合わないぼんやりとした瞳で、<br>ココを無感情に見おろしていた。 { speed:1 waitInput:true Wait:true }
+
+@print ――拳銃を手に。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+@back 28_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@hide Stills
+
+@Wait 0.5
+
+@print 君が……ココを撃ったのか？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Fearful1
+
+@print 問いかけると、<br>エマは正気に戻った素振りで私を振り返る。 { speed:1 waitInput:true Wait:true }
+
+@print ヒロちゃん？<br>……違うよ、そんなわけない――。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1
+
+@print ならばその拳銃はなんだ？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print これは……落ちてたから拾ったんだよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマの主張に、<br>私は目を細めて疑念を<ruby=\"にじ\">滲</ruby>ませる。" { speed:1 waitInput:true Wait:true }
+
+@print 本当にそうかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ……どういう意味？ { author:Ema speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 回想シーン（2-1-22から流用）
+# ========================================
+
+@hideChars 
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@back 1_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@print 居心地の悪さから、<br>部屋を出ようと思った時だった。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print …………。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "視界の端で、エマが何かを見つけた風に<br>さっと<ruby=\"ふところ\">懐</ruby>へと隠したのを見た。" { speed:1 waitInput:true Wait:true }
+
+@print （何を隠した……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@back 28_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+# ========================================
+# 回想ここまで
+# ========================================
+
+@char Ema.Fearful1
+@char Hiro.Angry1
+
+@print マーゴの遺品を整理していた時、<br>君はこっそり何かを隠していたな？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print あれはなんだ？<br>もしかして、拳銃なんじゃないか？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+
+@print それは――。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 君はその拳銃でココを殺し、<br>死体をダストシュートから、<br>焼却炉に捨てたんじゃないか？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "エマに反論の<ruby=\"すき\">隙</ruby>を与えず、<br>私は<ruby=\"たた\">畳</ruby>みかけた。" { speed:1 waitInput:true Wait:true }
+
+@print ……ッ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマの瞳が揺れた。 { speed:1 waitInput:true Wait:true }
+
+@print "泣きだすかと思ったが――<br>……エマは私を暗い瞳で<ruby=\"にら\">睨</ruby>んだ。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Angry1
+
+@print いい加減にしてくれないかな。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ヒロちゃんは、<br>そんなにボクを犯人にしたいの……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 私の感情など関係ない。<br>この状況全てが君が犯人だと物語っている。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ……ねえ、ヒロちゃん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ボクをシャワールームに呼び出したのは罠？<br>ボクを陥れるために、<br>ヒロちゃんが仕組んだんじゃないの……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 何故か見えない気配が背中をなぞるような<br>不気味な感覚があって、私はびくりと震えた。 { speed:1 waitInput:true Wait:true }
+
+@print （エマの本性はやはり――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 犯人はヒロちゃんの方なんじゃないの？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@hideChars 
+
+# 野外を走る足音・複数
+@sfx Sfx_71
+
+@Wait 3
+@char Sherry.Normal1
+
+@print あっ、エマさん、ヒロさん！<br>ここにいましたか！<br>さっき私とんでもないものを見てしまい――。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna.Normal1
+
+@print ぜえ、ぜえ、なんでわたくしまで……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print シェリーとハンナが中庭に入ってきた。<br>どうやらシェリーが<br>強引にハンナを引っ張ってきたらしい。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Surprised1
+@char Hanna.Surprised1
+
+@print "そして目の前に広がる光景に、<br><ruby=\"そくざ\">即座</ruby>に気付いた。" { speed:1 waitInput:true Wait:true }
+
+@print これは……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna.Fearful1
+
+@print いやあああああっ！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 目の当たりにしたココの死体に<br>ハンナは絶叫を上げ、思わずといった風に<br>シェリーにしがみついた。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+
+@print エマさん、その拳銃は……？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print シェリーは目ざとく、<br>エマが手に持っていた拳銃について触れる。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+
+@print ちっ、違うよ！<br>これは落ちてたのを拾っただけだよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1
+
+@print どうだろうな？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Angry1
+
+@print ……ッ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# フクロウの通知音
+@sfx Sfx_14
+
+@Wait 2
+@hideChars 
+
+@print その時、スマホの通知音が鳴った。<br>ゴクチョーからのアナウンスだろう。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1
+
+@print 投票までに、もう少しマシな<br>言い訳を考えておいたほうがいい。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 真実は、裁判で明らかにされる。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@hideChars 
+@Wait 0.5
+@sfx Sfx_71
+@char Leia.Surprised1 { time:0.5 }
+@Wait 0.5
+@char AnAn.Surprised1,Angle01/Option_Arms- { time:0.5 }
+@Wait 0.5
+@char Nanoka.Surprised1 { time:0.5 }
+@Wait 0.5
+
+@print 騒がしくなった中庭に、<br>続々と少女たちが集まってくる。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "私は<ruby=\"きびす\">踵</ruby>を返し、<br>中庭を後にした。" { speed:1 waitInput:true Wait:true }
+
+@update Coco
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter02/Act02_Chapter02_Adv16

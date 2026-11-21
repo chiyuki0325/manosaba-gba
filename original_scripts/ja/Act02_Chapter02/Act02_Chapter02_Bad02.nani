@@ -1,0 +1,334 @@
+@if isDebugDirectJump
+	@Gosub System/System_Subroutine.BeginAdv
+
+# ========================================
+# ＞『なんとか追い払うことにした』を選択
+# ========================================
+
+# ========================================
+# ＞シーン2-2-b2へ
+# ========================================
+
+# Scene2-2-b2
+
+# ========================================
+# ●シーン2-2-b2
+# ========================================
+
+@back 9_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_21_1
+
+@char Noah.Normal1
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print なんとか追い払うことにした。 { speed:1 waitInput:true Wait:true }
+
+@print さっき、シャワーを浴びると話している者たちがいた。<br>ここでノアが絵を描き始めたら、迷惑になる。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro
+
+@print それに、そもそもここでは絵を描いてはダメだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Angry1
+
+@print む～、けちだなぁ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"す\">拗</ruby>ねたように、ノアは<ruby=\"ほほ\">頬</ruby>を膨らませる。" { speed:1 waitInput:true Wait:true }
+
+@char Hiro
+
+@print どうしても描きたいなら、<br>シャワーを使う人が終わってからにするべきだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 絵を描く場所があるのに、<br>人に迷惑をかけてまでここに描くべきじゃない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah
+
+@print ……むぅ～、わかった。<br>お絵描きはアトリエでする。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@hide Noah
+
+@print ふくれっ面ではあるものの、<br>ノアは自分のアトリエへと向かっていった。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+@StopBgm { fade:3 }
+
+@print （よし、これで邪魔者は消えた） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 私は周囲に誰もいないことを確認してから、<br>シャワールームへと入った。 { speed:1 waitInput:true Wait:true }
+
+@back 30_2 { Scale:{g_backgroundDefaultScale} }
+@bgm Bgm_27_1
+
+@print （あとはエマが来れば……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 他に邪魔が入らないことを祈りながら待っていると、<br>時間通りエマがシャワールームにやって来た。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print あ、ヒロちゃん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマ、来てくれたんだな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Smile1
+
+@print うん、ヒロちゃんとの約束だからね！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （あぁ、本当に虫唾が走る） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print この能天気な顔を見ていると、<br>怒りで頭が沸騰してしまいそうだ。 { speed:1 waitInput:true Wait:true }
+
+@print （正しくない存在は、<br>　早く消してしまわないと） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 沸き上がる怒りを押し込めて、<br>私は計画を遂行するべく、着替えるふりをしながら<br>アトリエで見つけた工具を握りしめた。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.5 }
+@Wait 0.5
+@camera 
+@char Hiro.Normal1
+
+@print まだ着替えているエマの後ろに立つ。 { speed:1 waitInput:true Wait:true }
+
+@back SolidColor.Custom { time:0.5 }
+@Wait 0.5
+
+@print （ああ、ようやくだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ……なんだかこうしてると、<br>昔を思い出すよね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （ようやく――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 昔はこうして……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@Wait 1
+
+@print ……ヒロちゃん？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Smile1 { time:1 }
+@Wait 1
+
+@print ――君を殺せる。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# 固いもので頭を殴る音
+@sfx Sfx_167
+
+@back SolidColor.Custom { time:0.1 }
+@Wait 0.5
+@camera 
+
+@print ぐがっ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_27_2
+@hideChars { time:0 }
+@back 30_2 { time:0 }
+
+@print あっさりとエマは倒れる。 { speed:1 waitInput:true Wait:true }
+
+@print （――殺せた！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print やった。<br>ようやくエマを殺すことができた。 { speed:1 waitInput:true Wait:true }
+
+@print こんなにスッキリした気分はいつぶりだろう。 { speed:1 waitInput:true Wait:true }
+
+@print "歓喜の感情が湧き上がるのを抑えつつ、<br>エマの肩を<ruby=\"つか\">掴</ruby>んで抱き起こす。" { speed:1 waitInput:true Wait:true }
+
+@back SolidColor.Custom { time:0.5 }
+@Wait 0.5
+
+@print このまま放置しては<br>死体が見つかってしまう。 { speed:1 waitInput:true Wait:true }
+
+@print エマをダストシュートに放り込む必要があった。 { speed:1 waitInput:true Wait:true }
+
+@print 死体は重いかと思ったが、<br>案外軽く担ぐことができる。 { speed:1 waitInput:true Wait:true }
+
+@print "まるで自分が自分ではなくなったような、<br>心地よい気分が満ち<ruby=\"あふ\">溢</ruby>れていた。" { speed:1 waitInput:true Wait:true }
+
+@print これは――<br>まあいいか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print わずかな違和感を覚えるも、今はそれどころではない。 { speed:1 waitInput:true Wait:true }
+
+@print エマの体をダストシュートに押し込める。 { speed:1 waitInput:true Wait:true }
+
+# ダストシュートから死体を落とす音（ガタコンッ）
+@sfx Sfx_168
+
+@back SolidColor.Custom { time:0.2 }
+
+@print 無事、エマの死体をダストシュートから落下させた。 { speed:1 waitInput:true Wait:true }
+
+@print シャワーで血痕を洗い流し、時間を待つ。 { speed:1 waitInput:true Wait:true }
+
+@back SolidColor.Custom { time:0.5 }
+@blur MainBackground
+@Wait 0.5
+
+@print この下は焼却炉。<br>稼働時間は１５時。 { speed:1 waitInput:true Wait:true }
+
+@print （もうすぐだ、もうすぐ……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@print 焦れるような気持ちで、スマホの時計を見つめていると、<br>ダストシュートの底から声が聞こえてきた。 { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_27_3
+
+# 立ち絵なし
+# ボイス加工：ダクトから聞こえる声
+
+@print う、ぅぅ……<br>ヒロちゃん、ヒロちゃん、助けて……っ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （エマの声……！？<br>　死んでいなかった……！？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print そんなバカな。 { speed:1 waitInput:true Wait:true }
+
+@print 再び時計を見る。<br>焼却炉の稼働時間は刻一刻と迫っていた。 { speed:1 waitInput:true Wait:true }
+
+# 立ち絵なし
+# ボイス加工：ダクトから聞こえる声
+
+@print "お願い！ お願いだから……！<br>ここから助けて！" { author:Ema speed:1 waitInput:true Wait:true }
+
+# 立ち絵なし
+# ボイス加工：ダクトから聞こえる声
+
+@print "ごめんなさい！ ボクが悪かったです……！" { author:Ema speed:1 waitInput:true Wait:true }
+
+# 立ち絵なし
+# ボイス加工：ダクトから聞こえる声
+
+@print ユキちゃんが死んだのはボクのせいなんだ！<br>ヒロちゃんごめんなさい！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# 立ち絵なし
+# ボイス加工：ダクトから聞こえる声
+
+@print "全部ボクが悪いんだ！ だから助けて……！" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （……ようやく気付いたか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 正しくないものは、燃やしてしまわないと。 { speed:1 waitInput:true Wait:true }
+
+@print その通りだ、エマ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 正しくない君は、後悔しながら死ぬんだ。<br>……君はここで死ね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 立ち絵なし
+# ボイス加工：ダクトから聞こえる声
+
+@print そんなっ……！<br>ごめんなさい、ヒロちゃん……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "うるさい……死ね！ 死ね！ 死ねっ！" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# 立ち絵なし
+# ボイス加工：ダクトから聞こえる声
+
+@print "ごめんなさい！ ごめんなさい！<br>ごめんなさい……！" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ……ああ、もう時間だ。<br>これで正しくないものは消える。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 燃え上がる音
+@bgm Ambi_6_1
+
+# 立ち絵なし
+# ボイス加工：ダクトから聞こえる声
+
+@print あガあアァァァああアァっ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ふふ、ふふふふっ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ダストシュートから聞こえてきた断末魔に、<br>私の笑い声はかき消されていった。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@StopBgm 
+
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+@blur MainBackground
+
+@print ――――。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@Wait 2
+
+@back 13_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@char Warden.1 { time:0 }
+@back SolidColor.Custom { time:0.1 }
+
+@print "はい！ ではこれより、<br>魔女の処刑を執行します～。" { author:Warden speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@hideChars 
+
+# 歯車がまわる音
+@sfx Sfx_36
+@bgm Bgm_44_1
+
+@Wait 2
+
+@print ……これは。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 処刑を見守る少女たちの顔が、<br>ここからはよく見える。 { speed:1 waitInput:true Wait:true }
+
+@print 皆一様に酷い顔だ。 { speed:1 waitInput:true Wait:true }
+
+@char Coco.Angry1
+
+@print ……なんでエマっちを殺したんだよ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （……そうだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （私は……裁判の結果、<br>　エマ殺しの罪がバレて最多票を集めた） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （エマは……私が殴った時点で死んでいたのだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （最後に聞こえたエマの死に際の謝罪と断末魔は……<br>　ただの私の幻覚か） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （……だとしても、幻覚だろうが現実だろうがもう関係ない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （私はエマを……殺せたんだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Smile1
+
+@print 晴れやかな気持ちが胸いっぱいに広がる。 { speed:1 waitInput:true Wait:true }
+
+@print （私がエマを殺したのは間違いない。<br>　罪を犯した者が裁かれるのは、正しいことだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （たとえ殺したのが、<br>　正しくないものであっても） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print それに、私には【次】がある。 { speed:1 waitInput:true Wait:true }
+
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@print だから、次こそは。 { speed:1 waitInput:true Wait:true }
+
+@print （必ず、うまくやってみせる） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （私は何度でも、エマを殺す） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+# ロープが軋む首吊り音
+@sfx Sfx_127
+@Wait 2
+
+# ========================================
+# 『END～目的達成～』
+# ========================================
+
+@badEnd 19

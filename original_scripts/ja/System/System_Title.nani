@@ -1,0 +1,37 @@
+@ProcessInput true
+@trialMode false
+@bgm Bgm_36_1
+@HideUI ControlPanel,AutoToggle,WitchBookButtonUI
+@back SolidColor { time:0 }
+@back "{ g_gameProgress < 6 ? \"1_1\" : \"2_1\"}" { Scale:{g_backgroundDefaultScale * 1.05} time:0 }
+@blur Stills
+@WaitForNextFrame 
+
+@animate Stills { Scale:{g_backgroundDefaultScale} }
+@blur Stills
+@back Transparent { time:1.8 }
+@Wait i3
+
+@back "{ g_gameProgress < 6 ? \"1_1\" : \"2_1\"}" { Scale:{g_backgroundDefaultScale} time:0 }
+@ShowUI TitleUI
+
+@Stop 
+
+# StartGame
+
+@StopBgm { fade:1.8 }
+@HideUI TitleUI
+@back SolidColor { time:1.8 }
+@Wait 1.8
+
+@goto "{nextScenario}"
+
+# QuitGame
+
+@ProcessInput true
+@StopBgm { fade:1.2 }
+@HideUI TitleUI
+@back SolidColor { time:1.2 }
+@Wait i1.2
+
+@Quit

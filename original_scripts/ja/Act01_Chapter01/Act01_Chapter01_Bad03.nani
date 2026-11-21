@@ -1,0 +1,208 @@
+@if isDebugDirectJump
+	@Gosub System/System_Subroutine.BeginAdv
+	@back Transparent { time:0 }
+
+# ========================================
+# ＞『賛成した』を選択→1‐1‐b3へ
+# ========================================
+
+# Scene1-1-b3
+
+# ========================================
+# ●シーン1‐1-b3
+# ========================================
+@back 12_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@print 賛成した。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print そうだね。何か脱獄に役立つヒントが<br>見つかるかもしれないし。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマとシェリーは端の棚から順に本を調べていった。 { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_27_1 { Volume:0.6 fade:2 }
+@bgm Bgm_27_2 { Volume:0 }
+
+@char Ema.Normal1
+
+@print 読めない本ばっかりだね。<br>特にメッセージとかもないみたいだし……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print なんの収穫もないまま、時間だけが過ぎていく。<br>そうして、エマは何冊目かの本を開いた。 { speed:1 waitInput:true Wait:true }
+
+@print <color=#ff0000>【にくい】</color> { speed:1 waitInput:true Wait:true }
+
+@char Ema.Fearful1
+
+@print ひっ……！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Normal1
+
+@print "エマさん？ どうしました？" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Surprised
+
+@print こっ、これ……！<br>またさっきみたいな文字が！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+
+@print おお、ワクワクしてきましたね！ { author:Sherry speed:1 waitInput:true Wait:true }
+@print "シェリーは目を輝かせながら、エマが持つ本を<ruby=\"のぞ\">覗</ruby>き込む。" { speed:1 waitInput:true Wait:true }
+
+@print おや、こっちにも何か書かれてますよ。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ページの端に、同じく血のような文字で<br><color=#ff0000>【←】</color>と記されていた。 { speed:1 waitInput:true Wait:true }
+
+@print なんの矢印だろう？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1
+
+@print うーん……次のページを見ろってことでしょうか。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# 本のページをめくる音
+@sfx Sfx_43
+
+@print "なるほど、とエマは指でページを<ruby=\"めく\">捲</ruby>る。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Fearful1
+
+@print ！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマの顔から血の気が引く。<br>そこにはこれまであった短い一言ではなく、<br>びっしりと文章が<ruby=\"つづ\">綴</ruby>られていた。" { speed:1 waitInput:true Wait:true }
+
+@print な、何これ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print やっぱり前に捕まってた子が<br>残したものみたいですよ、ほら。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print エマはシェリーが指さした部分に目を向ける。 { speed:1 waitInput:true Wait:true }
+
+@print <color=#ff0000>目が覚めると、牢屋にいた――</color> { speed:1 waitInput:true Wait:true }
+
+@print <color=#ff0000>同じ年頃の子たちが集められていて――</color> { speed:1 waitInput:true Wait:true }
+
+@print 囚人、魔女、殺人事件……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 私たちの状況や、<br>ゴクチョーさんの説明と一致してますね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマとシェリーは先を読み進める。 { speed:1 waitInput:true Wait:true }
+
+@print "しかし、文字が擦れたり<ruby=\"にじ\">滲</ruby>んだりしていて、<br>ところどころしか読み取れない。" { speed:1 waitInput:true Wait:true }
+
+@print "最初は出来事を淡々と記しているように見えた文章に、<br>だんだん<ruby=\"じゅそ\">呪詛</ruby>が混じるようになっていく。" { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_27_1 { Volume:0 time:2 }
+@bgm Bgm_27_2 { Volume:0.8 time:2 }
+
+@print <color=#ff0000>憎い、許せない、もう誰も信じられない――</color> { speed:1 waitInput:true Wait:true }
+
+@print 次は自分が殺される番かもしれないという恐怖。<br>他の少女たちに対する疑念や恨み言が、延々と続く。 { speed:1 waitInput:true Wait:true }
+
+@print <color=#ff0000>とうとう、残り３人になった。</color><br><color=#ff0000>今度こそ、わたしが死ぬ番かもしれない。</color> { speed:1 waitInput:true Wait:true }
+
+@print <color=#ff0000>たすけて。</color> { speed:1 waitInput:true Wait:true }
+
+@print <color=#ff0000>家に帰りたい。</color><br><color=#ff0000>お母さん、お父さん、会いたい。</color> { speed:1 waitInput:true Wait:true }
+
+@print <color=#ff0000>どうしてこんな目にあわなきゃいけないの？</color> { speed:1 waitInput:true Wait:true }
+
+@print <color=#ff0000>わたしは悪くない。</color><br><color=#ff0000>わたしは悪くない。</color> { speed:1 waitInput:true Wait:true }
+
+@print <color=#ff0000>何も悪くないのに、どうして？</color> { speed:1 waitInput:true Wait:true }
+
+@print <color=#ff0000>憎い。</color><br><color=#ff0000>許せない。</color> { speed:1 waitInput:true Wait:true }
+
+@print <color=#ff0000>このままじゃ、殺されるだけ。</color> { speed:1 waitInput:true Wait:true }
+
+@print <color=#ff0000>そうだ。</color> { speed:1 waitInput:true Wait:true }
+
+@print <color=#ff0000>いいこと思いついた。</color><br><color=#ff0000>どうして今まで気がつかなかったんだろう。</color> { speed:1 waitInput:true Wait:true }
+
+@print <color=#ff0000>殺される前に、わたしが殺せばいいんだ。</color> { speed:1 waitInput:true Wait:true }
+
+@print <color=#ff0000>でもきっと、あいつらもそう考えてる。</color> { speed:1 waitInput:true Wait:true }
+
+@print <color=#ff0000>許せない。許せない。許せない。</color><br><color=#ff0000>呪ってやる。苦しめばいい。</color><br><color=#ff0000>みんな、苦しめ。</color> { speed:1 waitInput:true Wait:true }
+
+@print <color=#ff0000>苦しんで、死ねばいいんだ。</color> { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@print 次の一文を読んだエマが短い悲鳴を上げて、<br>本から手を離す。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 演出相談：文字をゆっくり出してほしいです。
+# ========================================
+
+@print <color=#ff0000>【今これを読んでいるお前も死ねばいい】</color> { speed:0.05 }
+
+@bgm Bgm_27_3 { fade:2 }
+
+@char Sherry.Normal1
+
+@print エマさん、まだ続いてるみたいですよ。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# 本のページをめくる音
+@sfx Sfx_43
+
+@print "エマに代わってシェリーが本を手に取り、<br>ページを<ruby=\"めく\">捲</ruby>ると――" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 橘シェリー OUT
+# ========================================
+
+@hideChars 
+@back 12_1 { time:0 }
+@char Sherry.Pensive1
+
+# ぐちゃっ、めきなど体を害する音
+@sfx Sfx_10
+
+@print （え？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@animate Sherry-Middle
+
+@print 肥大化した本が、シェリーの頭部を包み込んでいた。 { speed:1 waitInput:true Wait:true }
+
+# ぐちゃっ、めきなど体を害する音
+@sfx Sfx_10
+@animate Sherry-Middle
+
+@print "肉を<ruby=\"そしゃく\">咀嚼</ruby>するような音を響かせながら、<br>本はどんどんシェリーの全身を飲み込んでいく。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@hide MainBackground-Middle
+@char Ema.Fearful1
+
+@print あ……ああ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print シェリーの体は、あっという間に跡形もなく消えてしまった。 { speed:1 waitInput:true Wait:true }
+
+@print 本がひとりでに浮き、まるでエマに<br>見せるようにページが開かれる。 { speed:1 waitInput:true Wait:true }
+
+@back SolidColor
+
+@print そこには何も書かれておらず、<br>ただ黒く塗りつぶしたような闇が広がっているだけだ。 { speed:1 waitInput:true Wait:true }
+
+@print "理解の追いつかない状況に、<br>エマは<ruby=\"ぼうぜん\">呆然</ruby>としたまま動けなかった――" { speed:1 waitInput:true Wait:true }
+
+# ぶんっと武器が振り下ろされる音
+@sfx Sfx_9
+@Wait 1.2
+
+# ぐちゃっ、めきなど体を害する音
+@sfx Sfx_10
+@Wait 1.2
+
+# ========================================
+# 『END～怨念～』
+# ========================================
+
+@badEnd 3

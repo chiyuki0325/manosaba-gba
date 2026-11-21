@@ -1,0 +1,194 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-4-4
+
+# ========================================
+# ●シーン2‐4‐4
+# ========================================
+
+@back 29_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# ========================================
+# ＞『ノアのアトリエ』を選択
+# ========================================
+
+@bgm Bgm_9_1
+
+@print ノアがいなくなってから、<br>ここにはほとんど足を運ばなくなっていた。 { speed:1 waitInput:true Wait:true }
+
+@print 意識的に避けていたのかもしれない。 { speed:1 waitInput:true Wait:true }
+
+@print （ノアのアトリエ……か。<br>　もうここに名付けた本人はいない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print なんとなく入っただけで、<br>ゴクチョーがここにいる気配はなく……。 { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Normal1
+
+@print 静かなアトリエ内には<br>誰もいないかと思ったが、<br>中にはハンナがいた。 { speed:1 waitInput:true Wait:true }
+
+@print "ハンナは椅子に座って、<br>熱心にせっせと<ruby=\"さいほう\">裁縫</ruby>をしている。" { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1
+@Wait 1
+@char Hanna.Normal1
+@Wait 0.8
+
+@print あら……あなたたち、<br>なんのご用ですのかしら？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 私たちの出現に気付き、<br>少し表情を強張らせたハンナが問いかけてくる。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+@char Leia.Smile1
+
+@print ハンナくんこそ、ここでまだ裁縫を？<br>舞台用の衣装は全て出来上がっているはずだけど……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1
+
+@print ツン、とハンナはそっぽを向いた。 { speed:1 waitInput:true Wait:true }
+
+@print 元々お裁縫が趣味ですのよ。<br>今は人形を作っていますの。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print シェリーさんが集めてくれたおかげで<br>布は大量に余っていますしね。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Pensive1
+
+@print 最近エマさんの元気がなくて、<br>心配していますの。<br>だから少しでも励みになるかと思って……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "手元を見れば、<br>それはどうやら私たちを<ruby=\"も\">模</ruby>した人形のようだった。" { speed:1 waitInput:true Wait:true }
+
+@print 製作しているのは、エマの人形だ。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+
+@print （ずいぶんと健気だな……。<br>　エマはそれだけハンナと親しくなっている、<br>　ということか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Surprised1
+
+@print "へえ！ ハンナくんは本当に器用だね。<br>洗濯も毎日してくれるし、私はそういった<br>家事なんかはてんでダメだから羨ましいよ。" { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1
+
+@print 羨ましい……？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1
+
+@print レイアはアトリエに飾ってある舞台用ドレスの前に立つ。<br>それからうっとりと目を細めた。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# アイテムスチル：『舞台衣装』表示
+# ========================================
+@spawn Clue
+
+@print ハンナくんが作ってくれた舞台用のドレス……<br>本当に見事だ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print この金色の刺繍なんて、<br>とても美しくて……いつまでも見ていたくなるよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print もちろん主役が一番だけどね！<br>この王冠なんて、とても良い仕上がりじゃないか。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@despawn Clue
+
+# ========================================
+# アイテムスチル：『王冠』表示
+# ========================================
+@spawn Clue
+
+@char Hanna.Angry1
+
+@print それはわたくしが作ったものじゃねーですわよ。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1
+
+@print うっ、そ、そうかい……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hanna.Normal1
+
+@print アンアンさんのリクエストで、<br>ミリアさんが作りましたの。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Pensive1
+
+@print アンアンさんが<br>どうしても王冠が欲しいと言って……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@despawn Clue
+
+@print "ハンナは寂しそうに<ruby=\"うつむ\">俯</ruby>く。<br>私はアンアンと共に脚本を仕上げたからすぐ察した。" { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print （そういえば筋書に大分アレンジが入って、<br>　ピーター・パンというより主役が王子様になってたな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （レイアはずいぶん喜んでいたが） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （それで王冠か……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ノアさんから聞きましたけど、<br>アンアンさんは<br>ウェンディ役をやりたがっていたらしいですわね。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print ああ、たしかそんな素振りを見せていたな……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Surprised1
+
+@print そうだったのか……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1
+
+@print ノアとアンアンの話題が出たことで、<br>場の空気が重苦しくなってしまう。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Normal1
+
+@print ハンナくん、ヒロくん、落ち込まないでほしい。<br>私は舞台を諦めていないよ！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@print "レイアがその空気を振り払うように、<br><ruby=\"ほが\">朗</ruby>らかに宣言した。" { speed:1 waitInput:true Wait:true }
+
+@print ハンナくんがせっかく作ってくれた主役の衣装も<br>着たいしね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1
+
+@print 主役の衣装も刺繍が素晴らしくて……<br>ああ、ハンナくんは本当にすごいよ。<br>君を心から尊敬しているんだ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# ＠備考◆言葉に詰まる
+
+@char Hanna.Flushed1
+
+@print ……っ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "レイアの瞳を真正面から受け止めたハンナはかっと<ruby=\"ほお\">頬</ruby>を染め、<br>私たちから背を向けた。" { speed:1 waitInput:true Wait:true }
+
+@print わ、わたくし、いっ、忙しいので<br>もう行ってくださいまし……！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 舞台をやるつもりなら、<br>もう少し衣装も手直ししないといけませんし……っ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hide Hanna
+@Wait 0.5
+
+@print 私とレイアは目を見合わせる。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （照れているのだろうな……。<br>　レイアの言葉はいちいち大げさすぎる） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Normal1
+
+@print ハンナくんの邪魔になってはいけない。<br>私たちはもう行こうか、ヒロくん。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print …………。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1
+
+@print いざゴクチョーを捕まえに！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@print （何故満足げなんだ……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 私たちはアトリエを後にした。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン2‐4‐3
+# 全てのイベントを消化している＞シーン2‐4‐9
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter04/Act02_Chapter04_Adv03

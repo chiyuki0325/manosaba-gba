@@ -1,0 +1,481 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-3-17
+
+# ========================================
+# ●シーン1‐3‐17
+# ========================================
+
+@back 7_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_24_1
+
+@print ――エマが次に目を覚ました時には、<br>医務室のベッドの上だった。 { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Smile
+
+@print あぁっ……エマさん、目が覚めたんですね……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print "ベッドの傍らにはメルルがいて、<br>エマの顔を心配そうに<ruby=\"のぞ\">覗</ruby>き込んでいた。" { speed:1 waitInput:true Wait:true }
+
+@print ごめん、ボク、体調治ってなかったみたい……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default
+
+@print 丸々１日眠っていたんですよ。<br>相当体が限界だったのだと思います……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print （丸々１日……そんなにボク意識を失ってたんだ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Pensive
+
+@print 無理をしては、いけません……。<br>私、エマさんに何かあったらと思うと……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print メルルが両手で包み込むようにして、<br>ぎゅっとエマの手を握ってくる。 { speed:1 waitInput:true Wait:true }
+
+@print 心配かけちゃってごめん。<br>でもずいぶん良くなったみたい。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print このところ眠れなかったのも、大きかったのだろう。<br>長く睡眠を取れたことで、<br>エマの体はずいぶん軽くなっていた。 { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default
+
+@print まだ動いてはいけません。<br>ずっと、ひどい熱でうなされていたんです。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Pensive
+
+@print みんな、みんなすごく心配していたんですよ。<br>そんな時にシェリーさんまで……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print "えっ！？ シェ、シェリーちゃんに<br>何かあったの……！？" { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@HidePrinter 
+@animate MainBackground
+@spawn MaskingRectangle
+@back 7_2
+@blur MainBackground-Front
+@char Sherry.Normal1,ArmR10 { time:0 }
+@mask MainBackground-Front,Sherry-Front
+@animate MainBackground-Front
+@animate Sherry-Front
+@Wait 0.3
+
+@print "エマさ～ん！ ここですよ～！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 隣のベッドから元気な声が聞こえて、<br>エマは視線をそちらへと向ける。 { speed:1 waitInput:true Wait:true }
+
+@print そこには半身を起こしたシェリーがいた。<br>左足に包帯が厳重に巻かれている。 { speed:1 waitInput:true Wait:true }
+
+@print 怪我したの！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1
+
+@print はいー。ちょっとやっちゃいまして。<br>それでついさっき、医務室に来たんです。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hide Sherry-Front,MainBackground-Front
+@blur MainBackground-Front
+@despawn MaskingRectangle
+@Wait 0.3
+
+@char Meruru.Pensive
+
+@print ひ、ひどい怪我で私の治癒魔法では、<br>治しきれず……。<br>安静にしててください、シェリーさん……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print メルルは少し強い口調になって、<br>起き上がっていたシェリーを寝かせる。 { speed:1 waitInput:true Wait:true }
+
+@print （シェリーちゃんに一体何が……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマが疑問を口にしようとした矢先だった。 { speed:1 waitInput:true Wait:true }
+
+@print 医務室の中へ、<br>アリサやマーゴ、ココがぞろぞろと入ってくる。 { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Surprised1,Option-ArmL-Off,ArmL4
+
+@print 桜羽の目が覚めたって、本当かよ！？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1,ArmR7,ArmL6
+
+@print ふぁ～、早朝からチャットすんなし～。<br>まあ、あてぃしは今から寝るんだけどさぁ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Margo.Pensive1
+
+@print ずいぶん心配していたのよ。<br>良かったわ、エマちゃん。<br>あら、シェリーちゃんも怪我を……？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@HidePrinter 
+@animate MainBackground
+@spawn MaskingRectangle
+@back 7_2
+@blur MainBackground-Front
+@char Sherry.Normal1,ArmR10 { time:0 }
+@mask MainBackground-Front,Sherry-Front
+@animate MainBackground-Front
+@animate Sherry-Front
+@Wait 0.3
+
+@print ベッドの上のシェリーが、<br>スマホをぶんぶん振っている。 { speed:1 waitInput:true Wait:true }
+
+@print どうやらシェリーが、エマの目が覚めたことを、<br>牢屋敷の少女たちに伝えてくれたらしい。 { speed:1 waitInput:true Wait:true }
+
+@hide Sherry-Front,MainBackground-Front
+@blur MainBackground-Front
+@despawn MaskingRectangle
+@Wait 0.3
+
+@print エマも自身のスマホを確認すれば、<br>時刻は６時前、まだ朝の解錠前だ。 { speed:1 waitInput:true Wait:true }
+
+@print （なんか、みんな自由時間以外に、<br>　普通に歩き回ってるよね……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマがメルルを見ると、<br>メルルは苦笑いを浮かべた。 { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Smile
+
+@print 看守さんの目が甘いって気付いてから、<br>みんな大人しく牢にいなくなっちゃいましたね……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print あはは……そのうち見つかって、<br>懲罰房行きにならないといいけどね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Pensive1,ArmR7,ArmL6
+@char Alisa.Normal1,ArmL2
+@char Margo.Smile1,ArmL3
+
+@print ねえエマちゃん、高熱でずいぶん汗をかいていたから、<br>きっと気持ち悪いでしょう？<br>私が体を拭いてあげましょうか♡ { author:Margo speed:1 waitInput:true Wait:true }
+
+@print うっわ、キモ……。<br>エマっち、マーゴに触らせるのだけは<br>やめといた方がいい。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Alisa.Smile1,ArmL1
+
+@print 腹減ってるだろ？<br>食堂からなんか持ってきてやろうか？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print みんな……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （溝がどんどん深くなっていってると思ってたけど、<br>　みんな、ボクのために駆けつけてくれたんだ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@HidePrinter 
+@animate MainBackground
+@spawn MaskingRectangle
+@back 7_2
+@blur MainBackground-Front
+@char Sherry.Normal1,ArmR5 { time:0 }
+@mask MainBackground-Front,Sherry-Front
+@animate MainBackground-Front
+@animate Sherry-Front
+@Wait 0.3
+
+@print "はいはーい！ シェリーちゃんは<br>リンゴが食べたいでーす！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hide Sherry-Front,MainBackground-Front
+@blur MainBackground-Front
+@despawn MaskingRectangle
+@Wait 0.3
+
+@char Alisa.Pensive1,ArmL2
+
+@print おめえに言ってねえよ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Margo.Smile1,ArmL3
+
+@print エマちゃん、ほら脱ぎましょう♡ { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Surprised1,ArmR10,ArmL8
+
+@print "絶対やめといたほうがいいって！<br>マジ怖！ ここに来てから一番怖い！" { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Meruru.Default
+
+@print み、みなさん、病人怪我人のいるところでは、<br>静かにしてくださぁい……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@ResetText 
+@back 7_2 { time:0 }
+@Wait 0.2
+
+@back Transparent { time:1.8 }
+@WaitForNextFrame 
+
+@animate MainBackground-Middle
+@Wait 0.2
+
+@print "少女たちが集まると、<br>途端にその場が<ruby=\"にぎ\">賑</ruby>やかに、華やかになる。" { speed:1 waitInput:true Wait:true }
+
+@print "エマにとって、泣きそうになるほど、<br><ruby=\"うれ\">嬉</ruby>しい光景だった。" { speed:1 waitInput:true Wait:true }
+
+@print （ボクらに絆はあるんだ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print メルルがいて、シェリーがいて、<br>マーゴがいて、ココがいて、アリサがいる。 { speed:1 waitInput:true Wait:true }
+
+@print "一旦折れかけていた、<br>エマの見た<ruby=\"はかな\">儚</ruby>い夢が、その光景にはあった。" { speed:1 waitInput:true Wait:true }
+
+@print みんなで仲良く笑い合って、<br>楽しく暮らしていく日々―― { speed:1 waitInput:true Wait:true }
+
+@print 他にはもう何もいらない。<br>ほんの小さな小さな、エマの見た夢。 { speed:1 waitInput:true Wait:true }
+
+@print （ボクらはまだ間に合……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@back 7_2 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@print あれ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print そこで、エマはその光景に違和感を抱く。 { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@print …………。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_27_1
+
+@print （――足りない） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print そんなこと、気付かなければ良かったのに。 { speed:1 waitInput:true Wait:true }
+
+@print "胸に黒い<ruby=\"もや\">靄</ruby>が急速にひろがっていき、<br>エマはどうしようもなく不安になる。" { speed:1 waitInput:true Wait:true }
+
+@print その直後、微かな焦げ臭いにおいが<br>エマの鼻をついた。 { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_27_2
+
+@print このにおい……なに……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+# フクロウの通知音
+@sfx Sfx_14
+
+@print スマホの通知が鳴って、<br>少女たちは一斉に画面を確認する。 { speed:1 waitInput:true Wait:true }
+
+@print 『あの、朝からすみません……お知らせです。<br>　ゲストハウスの方から、<br>　火の手が上がっているようです……』 { speed:1 waitInput:true Wait:true }
+
+@print 『消火活動をはじめますが、<br>　皆さん、お気をつけください。<br>　はぁ、やれやれ……』 { speed:1 waitInput:true Wait:true }
+
+@print 火事……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1,ArmR1,ArmL1
+
+@print 火事ってまさかこっちまで来たりせんよな？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Margo.Pensive1,ArmR1,ArmL1
+
+@print 心配ね。見に行ってみましょう。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print マーゴ、ココ、アリサが医務室の入口へと向かう。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3
+
+@print ボ、ボクも行くよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマもベッドから降りて、続いた。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@animate MainBackground
+@spawn MaskingRectangle
+@back 7_2
+@blur MainBackground-Front
+@char Sherry.Normal1,ArmR4 { time:0 }
+@mask MainBackground-Front,Sherry-Front
+@animate MainBackground-Front
+@animate Sherry-Front
+@Wait 0.3
+
+@print 私も――。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print シェリーさんはだ、だめです！<br>動ける状態じゃありません……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1,ArmR4
+
+@print そんなあ……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hide Sherry-Front,MainBackground-Front
+@blur MainBackground-Front
+@despawn MaskingRectangle
+@Wait 0.3
+
+@StopBgm 
+
+@print メルルに押さえられて、<br>シェリーはベッドへと戻される。 { speed:1 waitInput:true Wait:true }
+
+@print "エマは何故か激しい<ruby=\"どうき\">動悸</ruby>に襲われ、<br>胸を押さえて先を急いだ。" { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@hide MainBackground-Middle,MainBackground-Front
+@Wait 1.5
+
+@back 22_3 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent.Custom { time:0.9 }
+@Wait 0.9
+
+@bgm Bgm_27_3
+
+# ログハウスが燃える音
+@bgm Ambi_4_1
+
+@print 牢屋敷から外に出て、<br>エマたち一行はその光景を目の当たりにした。 { speed:1 waitInput:true Wait:true }
+
+@print ゲストハウスの一棟が、燃え上がっている。 { speed:1 waitInput:true Wait:true }
+
+@char Margo.Surprised1,ArmL1
+
+@print まあ、大変……！ { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Surprised1
+
+@print ウワッ、マジじゃん。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマは予感めいたものを抱き、<br>ふらふらとゲストハウスの方へと歩いていく。 { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Surprised1,Option-ArmL-Off,ArmL8
+
+@print "おい、桜羽！ あぶねーぞ！" { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@ResetText 
+@camera { time:0.9 }
+@Wait 0.9
+
+@print "<ruby=\"とっさ\">咄嗟</ruby>にアリサがエマの手首を<ruby=\"つか\">掴</ruby>んだが、<br>エマはその手を振り切る。" { speed:1 waitInput:true Wait:true }
+
+@print エマの眼は一心に<br>燃え上がるゲストハウスに向けられている。 { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Pensive1,ArmL2
+
+@print 桜羽、一体どう……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （……だって、足りなかった。<br>　いなかった。いるはずの子が、いなかった） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （……そんなワケないよね？<br>　ボクの考えすぎだよね？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "燃え上がっているのは<br>一番手前の棟――<ruby=\"サラマンダー\">火精</ruby>の間だ。" { speed:1 waitInput:true Wait:true }
+
+@print その名のとおり、炎に包まれている。 { speed:1 waitInput:true Wait:true }
+
+@print 幸い建物周囲が燃えているようで、<br>入口付近はまだ無事だ。 { speed:1 waitInput:true Wait:true }
+
+@print エマは閉じられた扉のドアノブに手をかける。 { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆痛そうに
+
+@print ッ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ドアノブは高熱を持ち、エマの手を焦がす。<br>しかも、鍵がかかっていて開かなかった。 { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,ArmL2
+
+@print "おい桜羽どけ！ 開けてやる！" { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@camera { time:0.9 }
+
+@print アリサが駆けつけてきて、怒鳴った。 { speed:1 waitInput:true Wait:true }
+
+# 放たれた炎の音
+@sfx Sfx_46
+
+@print "エマが<ruby=\"とっさ\">咄嗟</ruby>に避けると、<br>アリサがドアに向けて強い炎を放った。" { speed:1 waitInput:true Wait:true }
+
+@print 元々高熱を帯びていたドアは、<br>燃え移った炎で、ぼろぼろと焼け落ちていく。 { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@print ――そして。 { speed:1 waitInput:true Wait:true }
+
+@print その光景は、<br>エマの目に飛び込んできた。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+# @back SolidColor subId:Overlay time:0
+# @wait 1.2
+
+@bgm Bgm_4_1
+
+@animate Stills
+@back 290_1 { time:0.6 }
+@animate Stills
+@back Transparent { time:1.2 }
+@Wait 2.4
+
+@back 290_1 { time:0 }
+@animate Stills-Middle
+@Wait 2.4
+
+@animate Stills-Middle
+@back 290_1 { time:0 }
+@blur Stills
+@animate Stills
+@blur Stills
+@hide Stills-Middle { time:0.6 }
+@Wait 3
+
+@print 室内は温度を急激に上昇させ、炉の中のようだった。<br>濃厚な煙が部屋の中に満ち、視界を遮る。 { speed:1 waitInput:true Wait:true }
+
+@print "そして――煙に<ruby=\"あお\">煽</ruby>られ、<br>天井から<ruby=\"つ\">吊</ruby>り下がってゆらゆらと揺れている<br>【もの】があった。" { speed:1 waitInput:true Wait:true }
+
+@print "ベッドメリーのようにくるくるとまわる、<br><ruby=\"はり\">梁</ruby>からロープで<ruby=\"つ\">吊</ruby>り下げられた人形たち。" { speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"はり\">梁</ruby>から<ruby=\"つ\">吊</ruby>り下げられた――遠野ハンナ。" { speed:1 waitInput:true Wait:true }
+
+@print 首にかかったロープがハンナの生命活動を<br>終了させているのは、明らかだった。 { speed:1 waitInput:true Wait:true }
+
+@print "だらりと<ruby=\"しかん\">弛緩</ruby>したその体は、<br>まるで美しいお人形のようだった。" { speed:1 waitInput:true Wait:true }
+
+@print うわああああああああぁあぁぁ！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print あぁっ、ああああぁぁぁ！！<br>あぁぁああああああっ！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマの喉からは、<br>意味のない叫びしか出てこない。 { speed:1 waitInput:true Wait:true }
+
+@print "エマの夢見た世界が、<br><ruby=\"きれい\">綺麗</ruby>な世界が、崩壊していく。" { speed:1 waitInput:true Wait:true }
+
+@print 大切な友だちと過ごした、<br>宝石のようなキラキラした思い出たちが。 { speed:1 waitInput:true Wait:true }
+
+@print この先、<br>穏やかに幸せに過ごしていけると信じた日々が。 { speed:1 waitInput:true Wait:true }
+
+@print ――真っ黒に汚されて、<br>塗りつぶされていく。 { speed:1 waitInput:true Wait:true }
+
+@print "エマは目を見開き、<br>獣のように<ruby=\"うめ\">呻</ruby>き、ただただ、叫んだ。" { speed:1 waitInput:true Wait:true }
+
+@print そのうちに、喉が潰れ、切れて、<br>口の中に血の味がひろがる。 { speed:1 waitInput:true Wait:true }
+
+@print それでもエマは叫ぶことをやめられなかった。<br>泣くことすら、できなかった。 { speed:1 waitInput:true Wait:true }
+
+@print （降ろしてあげなくちゃ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 室内に飛び込もうとしたエマの体を、<br>アリサが後ろから抱える。 { speed:1 waitInput:true Wait:true }
+
+@print "やめろ桜羽！ 危ない！" { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print エマはもがいた。 { speed:1 waitInput:true Wait:true }
+
+@print "嫌だ！ ボクはハンナちゃんの傍に――。" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print アリサは有無を言わさず、<br>エマを引きずって後ろにさがる。 { speed:1 waitInput:true Wait:true }
+
+@print "やだぁ！ やだあああぁあああぁ！！" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマはハンナに向けて手を伸ばす。<br>届かない手が、ただ宙をかく。 { speed:1 waitInput:true Wait:true }
+
+@print ハンナのいるところは、<br>あまりに高くて届かない。 { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter03/Act01_Chapter03_Adv18

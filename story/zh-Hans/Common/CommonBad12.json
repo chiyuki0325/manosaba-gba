@@ -1,0 +1,32 @@
+{
+  "format": "manosaba.story",
+  "version": 1,
+  "language": "zh-Hans",
+  "path": "Common/CommonBad12",
+  "events": [
+    {"op": "Gosub", "line": 1, "indent": 0, "params": {"Path": "System/System_Subroutine.BeginAdv"}},
+    {"op": "label", "name": "Scene2-ex6", "line": 3, "indent": 0},
+    {"op": "ModifyCharacterExtended", "line": 5, "indent": 0, "params": {"Duration": 0.0, "Lazy": 0, "ScenePosition": [50.0], "IdAndAppearance": "Yuki.11"}},
+    {"op": "ModifyBackgroundExtended", "line": 6, "indent": 0, "params": {"Scale": [2.0], "Duration": 0.0, "Lazy": 0, "ScenePosition": [30.0], "AppearanceAndTransition": "14_1"}},
+    {"op": "ModifyBackgroundExtended", "line": 7, "indent": 0, "params": {"TintColor": "#000000", "Duration": 1.2000000476837158, "Lazy": 0, "AppearanceAndTransition": "Transparent", "SubId": "Overlay"}},
+    {"op": "Wait", "line": 8, "indent": 0, "params": {"WaitMode": "1.2"}},
+    {"op": "PrintTextModified", "line": 10, "indent": 0, "params": {"Text": "已经不需多言了，人类的命运绝不会改变。<br>\n接下来将执行刑罚。", "AuthorId": "Yuki", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["CommonBad12_Yuki001"]}},
+    {"op": "HideAllCharacters", "line": 12, "indent": 0, "params": {"Lazy": 0}},
+    {"op": "ModifyBackgroundExtended", "line": 13, "indent": 0, "params": {"Duration": 0.0, "Lazy": 0, "ScenePosition": [70.0], "AppearanceAndTransition": "14_1"}},
+    {"op": "ModifyCharacterExtended", "line": 15, "indent": 0, "params": {"Lazy": 0, "ScenePosition": [50.0], "IdAndAppearance": "CreatureHiro.22"}},
+    {"op": "PrintTextModified", "line": 16, "indent": 0, "params": {"Text": "等下——！", "AuthorId": "Hiro", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["CommonBad12_Hiro001"]}},
+    {"op": "HideAllCharacters", "line": 18, "indent": 0, "params": {"Lazy": 0}},
+    {"op": "ModifyBackgroundExtended", "line": 19, "indent": 0, "params": {"Duration": 0.0, "Lazy": 0, "ScenePosition": [30.0], "AppearanceAndTransition": "14_1"}},
+    {"op": "ModifyCharacterExtended", "line": 21, "indent": 0, "params": {"Lazy": 0, "ScenePosition": [50.0], "IdAndAppearance": "Yuki.10"}},
+    {"op": "PrintTextModified", "line": 22, "indent": 0, "params": {"Text": "……永别了。", "AuthorId": "Yuki", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["CommonBad12_Yuki002"]}},
+    {"op": "HideAllCharacters", "line": 24, "indent": 0, "params": {"Lazy": 0}},
+    {"op": "Gosub", "line": 39, "indent": 0, "params": {"Path": "System/System_Subroutine.EndAdv"}},
+    {"op": "ClearBacklog", "line": 41, "indent": 0, "params": {}},
+    {"op": "ReturnToTitle", "line": 42, "indent": 0, "params": {"FadeDuration": 1.2000000476837158, "MinDelayDuration": 0.6000000238418579, "Wait": 1}}
+  ],
+  "translations": {
+  "CommonBad12_Yuki001": "已经不需多言了，人类的命运绝不会改变。<br>\n接下来将执行刑罚。",
+  "CommonBad12_Hiro001": "等下——！",
+  "CommonBad12_Yuki002": "……永别了。"
+}
+}

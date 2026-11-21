@@ -1,0 +1,276 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-3-9
+
+# ========================================
+# ●シーン2‐3‐9
+# ========================================
+
+@bgm Bgm_28_1
+
+@print ――数日が経過した。 { speed:1 waitInput:true Wait:true }
+
+@print あれから私たちは劇の制作に、<br>力いっぱい取り組んだ。 { speed:1 waitInput:true Wait:true }
+
+@print そして―― { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+@back 6_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@char Leia.Smile1 { time:0 }
+
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@print みんな、少しいいだろうか。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 夕食時。<br>ふとレイアが立ち上がり、全員に語りかける。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmL3
+
+@print まず、お礼を言わせてほしい。<br>本当にありがとう。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print "胸元に手を当て、<br>レイアは<ruby=\"うやうや\">恭</ruby>しく一礼する。" { speed:1 waitInput:true Wait:true }
+
+@print みんなのおかげで、<br>劇の制作は順調に進んだ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print "台本や衣装、背景の制作、<br>演技の<ruby=\"けいこ\">稽古</ruby>……" { speed:1 waitInput:true Wait:true }
+
+@print 数日間、私たちは力を合わせて、<br>ひとつの劇を作り上げてきた。 { speed:1 waitInput:true Wait:true }
+
+@print あれだけ嫌がっていたアリサですら、<br>気付けば参加していて。 { speed:1 waitInput:true Wait:true }
+
+@print "私も大魔女についての調査をしながら、<br>できる範囲での協力は<ruby=\"お\">惜</ruby>しまなかった。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hiro.Default
+@char AnAn.Default,Angle01/Option_Arms-
+
+@print 私の視線は自然にアンアンの方へと向く。<br>するとアンアンも私を見ていたらしく、目が合った。 { speed:1 waitInput:true Wait:true }
+
+@print …………。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （やれやれ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "気まずそうにさっと<ruby=\"うつむ\">俯</ruby>いたアンアンに、<br>私は軽く息をついた。" { speed:1 waitInput:true Wait:true }
+
+@char Leia.Angry1
+
+@print 明日はいよいよ、劇を発表する日だ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"おごそ\">厳</ruby>かな口調でレイアが告げる。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+
+@print う、うう、もう本番なんだね。<br>ボク、ちゃんとできるかな……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile
+@char Hanna.Default
+
+@print "大丈夫ですよ！ たくさん練習したんですから！<br>もし何かあっても、私がフォローしますので！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print あんまり安心できませんわね、それ……。<br>でもまあ、わたくしもエマさんなら平気だと思いますわ。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "あれ？ もしかして、<br>私の方が平気じゃないって言われてます？" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print "緊張した<ruby=\"おもも\">面持</ruby>ちのエマを、<br>シェリーとハンナが<ruby=\"きづか\">気遣</ruby>う。" { speed:1 waitInput:true Wait:true }
+
+@print 頑張って練習を重ねたのだから、<br>自信を持っていい…… { speed:1 waitInput:true Wait:true }
+
+@print ２人の励ましに、<br>エマも少し心が軽くなったようだ。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Smile
+
+@print シェリーちゃん、ハンナちゃん……<br>ありがとう！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria.Default
+
+@print アンアンちゃん、<br>台本で直したほうがいい部分とか、もうないよね？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile
+
+@print ああ、心配はいらないさ。<br>本当に素晴らしい台本だよ！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Default
+
+@print うん、ボクも読んだだけで感動しちゃった。<br>アンアンちゃんすごいよ。ボクも頑張るね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# 椅子から立ち上がる音
+@sfx Sfx_136
+
+@hideChars 
+
+@print 不意にアンアンが椅子から立ち上がった。<br>その顔は青ざめている。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char AnAn.Fearful1,Angle01/Option_Arms-
+
+@print ……ちがう。告白する。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive
+
+@print えっ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char AnAn
+
+@print それはわがはいが書いたものでは、ない。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_9_1
+
+@print アンアンは苦しげに言葉をしぼりだす。 { speed:1 waitInput:true Wait:true }
+
+@char AnAn.Pensive
+
+@print わがはいは、ほとんど書けなかった。<br>だから、ヒロに手伝ってもらって、<br>ほとんどヒロが書いたような、ものだ……。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print （わざわざ言わなくてもいいとは思うが……<br>　気が済まないのも理解はできる） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Noah.Surprised1
+
+@print いつの間に……？<br>のあぜんぜん気付かなかった。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char AnAn.Pensive
+
+@print うまく書けなくて、<br>察したヒロが、図書室で一緒に作業してくれて……。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa.Normal1,Option-ArmL-Off
+
+@print でもおめえが考えた物語なんだろ？<br>それならやってないわけじゃねえよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile
+
+@print そうですよ！<br>ヒロさんと共同作業で仕上げたんですから！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char AnAn.Cry1
+
+@print …………。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print "アンアンは<ruby=\"なぐさ\">慰</ruby>めの言葉を受け入れず、<br>涙目になってしまっている。" { speed:1 waitInput:true Wait:true }
+
+@print 私はアンアンの元へと歩み寄り、<br>その頭にぽんと手を置いた。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Default
+
+@print たしかに私がやったところは大きい。<br>しかし、君はずっと逃げずに頑張っていた。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 面白いと思えるものを仕上げるために、<br>真摯に机に向き合っていた。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私はずっと一緒に見ていたからわかるよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Noah.Smile
+
+@print ……う、うん、のあも！<br>のあもアンアンちゃんが一生懸命だったの、<br>知ってる！ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Miria.Smile
+
+@print そうだね、おじさんも見てたよ。<br>アンアンちゃんは本当に真剣だった。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hiro.Default
+@char AnAn
+
+@print それだけ大きな気持ちがあったのなら、<br>君はこれからもっと成長する。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 君は将来文豪になるのだろう？<br>次回作を頑張ればいい。期待しているよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print アンアンはようやく顔を上げる。 { speed:1 waitInput:true Wait:true }
+
+@char AnAn.Angry1
+
+@print そ、そうだ……！<br>わがはいはいずれ文豪になるのだ。<br>み、見ていろ……！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print 次こそ皆をあっと言わせる、<br>大傑作を仕上げてみせる……！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hiro.Default
+
+@print ああ。期待しているよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "アンアンの前向きな宣言で、<br>少女たちの雰囲気はほっと<ruby=\"ゆる\">緩</ruby>んだ。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Noah.Smile
+
+@print "のあものあも！ 聞いて！<br>背景はまだちょっとだけ残ってるんだけど……<br>お絵描きできて、嬉しかったなぁ～。" { author:Noah speed:1 waitInput:true Wait:true }
+
+@print 書き割りね、<br>アリサちゃんがたくさん手伝ってくれたんだよ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Noah
+@char Alisa.Flushed1
+
+@print チッ、中庭でうろちょろしてたから仕方なくだ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print （――レイアの目論見は上手くいっている） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 私は心の底から感じていた。 { speed:1 waitInput:true Wait:true }
+
+@print 劇の制作を通じて、<br>少女たちはたしかな交流を深めている。<br>絆が結ばれ始めているようにすら思えた。 { speed:1 waitInput:true Wait:true }
+
+@print （何より私が上演を楽しみにしている……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile
+
+@print ゴクチョーと看守には、<br>最高に素晴らしい舞台を見てもらおうじゃないか。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 我々の仲の良さ、絆の深さを目にすれば、<br>考えを改めるかもしれない。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 瞳をキラキラと輝かせ、<br>レイアは理想を口にする。 { speed:1 waitInput:true Wait:true }
+
+@print "――殺人も起こさず、<br>共に劇を作り上げた少女たちに、もう魔女化の心配などない。<br>そう判断され、全員が<ruby=\"しゃくほう\">釈放</ruby>となる。" { speed:1 waitInput:true Wait:true }
+
+@print そんな風に事が運べば、どれだけいいだろうか。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@char Ema.Normal1,ArmR1
+
+@print そうだよね……うん、頑張ろう！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print レイアの話はあくまで理想だ。<br>それでも彼女らは、希望を持っていたいのだろう。 { speed:1 waitInput:true Wait:true }
+
+@print 理想に同調を示し、本番に向けて、<br>あらためて結束を高めている。 { speed:1 waitInput:true Wait:true }
+
+@print 一方で私の中には、冷めた気持ちもあった。 { speed:1 waitInput:true Wait:true }
+
+@print 劇を見せただけで、<br>何か状況が変わるなんてありえないことだ。 { speed:1 waitInput:true Wait:true }
+
+@print （それでも、無駄ではない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 絆の構築は確実に効果を示している。<br>ここ数日、殺人が起こる気配はない。 { speed:1 waitInput:true Wait:true }
+
+@print "私が知る限り少女たちの間に<ruby=\"も\">揉</ruby>め事もなく、<br>平和に時が過ぎていった。" { speed:1 waitInput:true Wait:true }
+
+@print エマと私の関係は、相変わらず微妙だが。 { speed:1 waitInput:true Wait:true }
+
+@print "もうこれ以上、誰の犠牲も出さず、<br>全ての元凶である大魔女を<ruby=\"さば\">裁</ruby>く。" { speed:1 waitInput:true Wait:true }
+
+@print きっと全てがうまくいく。 { speed:1 waitInput:true Wait:true }
+
+@print 浅はかな理想は抱けないが、<br>私もこの数日で前向きになれた。 { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter03/Act02_Chapter03_Adv10

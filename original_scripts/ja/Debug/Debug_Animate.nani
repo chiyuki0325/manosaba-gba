@@ -1,0 +1,78 @@
+@Gosub System/System_Subroutine.BeginAdv
+
+@back Transparent { time:0 }
+
+# @gosub .Sandbox
+# @gosub .Relative
+@Gosub .Emote
+
+@Stop 
+
+# ==============================================================================
+# サンドボックス
+# ==============================================================================
+
+# Sandbox
+
+@back SolidColor { time:0 }
+@char Ema { time:0 }
+
+@print "Debug_Animate # Sandbox" { speed:1 waitInput:true Wait:true }
+
+@animate Ema
+@i 
+
+@Return 
+
+# ==============================================================================
+# 相対
+# ==============================================================================
+
+# Relative
+
+@back SolidColor { time:0 }
+@char Ema { time:0 }
+
+@print "Debug_Animate # Relative" { speed:1 waitInput:true Wait:true }
+
+@animate Ema
+@i 
+
+@Return 
+
+# ==============================================================================
+# エモート
+# ==============================================================================
+
+# Emote
+
+@back SolidColor { time:0 }
+@char Ema { time:0 }
+
+@print "Debug_Animate # Emote" { speed:1 waitInput:true Wait:true }
+
+@EmoteJump Ema
+@i 
+
+@EmoteJump Ema { Speed:2 }
+@i 
+
+@EmoteJump Ema
+@i 
+
+@EmoteJump Ema { Speed:2 }
+@i 
+
+@EmoteJumpDouble Ema
+@i 
+
+@EmoteNod Ema
+@i 
+
+@EmoteShake Ema
+@i 
+
+@EmoteFall Ema
+@i 
+
+@Return

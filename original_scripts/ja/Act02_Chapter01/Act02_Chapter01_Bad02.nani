@@ -1,0 +1,644 @@
+@if isDebugDirectJump
+	@Gosub System/System_Subroutine.BeginAdv
+
+# ========================================
+# ＞『ココを探す』を選択
+# ========================================
+
+# ========================================
+# ＞シーン2-1-b2へ
+# ========================================
+
+# Scene2-1-b2
+
+# ========================================
+# ●シーン2-1-b2
+# ========================================
+
+@back 30_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_26_2
+
+@print "小さく<ruby=\"うなず\">頷</ruby>いた。" { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+@char Noah.Normal1
+
+@print ココを信用したわけじゃないが、<br>【魔女を殺す薬】の話が本当なら、気になる。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 探しに行こう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Smile1
+
+@print はーい。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 手早く着替えを済ませて、<br>私はココを探すべくシャワールームを後にした。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@back 9_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@char Hiro
+@char Noah.Normal1
+
+@print ココちゃん、どこにいるのかなー？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@print わからない。<br>だから探すんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# @char Hiro
+
+@print （とはいえ、無闇に探したところで<br>　時間を無駄にしてしまう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ひとまず、牢屋敷の部屋を順に回ってみるのがいいだろう。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro
+
+@print ノア、こっちだ。行こう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hide Hiro
+@char Noah.Surprised1
+
+@print あ、ヒロちゃん待ってー。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@ResetText 
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+
+@print 食堂、娯楽室、図書室、ラウンジ……。 { speed:1 waitInput:true Wait:true }
+
+@print 各部屋をくまなく探してみたが、<br>ココの姿はどこにもない。 { speed:1 waitInput:true Wait:true }
+
+@back 4_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@char Hiro
+@char Noah
+
+@print ココちゃん、いないねー。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Hiro
+
+@print どこに隠れているんだ……まったく。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1
+
+@print ココちゃーん、どこー？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+
+@print ココさーん、返事をしてください。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1
+
+@print 出てきなさいですわー！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 他の面々もココを探しているらしい。 { speed:1 waitInput:true Wait:true }
+
+@print 牢屋敷内には、ココを呼ぶ声が<br>そこかしこから聞こえて来た。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hiro
+
+@print （どうして、そこまで徹底して隠れる必要があるんだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print こちらはただ【魔女を殺す薬】について聞きたいだけなのに、<br>こんなに手間取ることになるとは。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Noah.Smile1
+
+@print ココちゃん、かくれんぼ上手なんだね。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 楽しそうなノアは放って、<br>まだ探していない監房の方へ足を向ける。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+
+@back 2_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@back Transparent.Custom { time:0.4 }
+@Wait 0.4
+
+@print （ココの部屋はこっちだったな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 牢の扉を開く音
+@sfx Sfx_122
+
+@print 声を掛けようとしたとき、<br>監房の格子戸が勢いよく開いた。 { speed:1 waitInput:true Wait:true }
+
+@char Noah.Smile1
+
+@print "あ！ ココちゃんみーっけ！" { author:Noah speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Surprised1
+
+@print "っ！ やべ！" { author:Coco speed:1 waitInput:true Wait:true }
+
+# 地下通路を走る音・1人
+@sfx Sfx_51
+
+@char Coco { time:0.2 }
+@hideChars { time:0.15 }
+@Wait 0.3
+@char Hiro.Angry
+
+@print "あ、おい！ 待て！" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 目が合った途端、ココが駆け出す。<br>私は慌ててその背を追いかけた。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+
+@back 4_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@back Transparent.Custom { time:0.4 }
+@Wait 0.4
+
+@char Hiro.Angry1
+
+@print どこに行った……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 途中までは追えていたはずなのに、<br>あっという間に見失ってしまった。 { speed:1 waitInput:true Wait:true }
+
+@print 逃げ足が速いな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Noah.Pensive1
+
+@print はぁ、はぁ……ヒロちゃん、待って～。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print ノアが追いつくのを待って、<br>私は再びココの姿を探し始めた。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@hideChars 
+
+@ResetText 
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+
+@back 4_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@char Hiro { time:0 }
+@char Noah.Normal1 { time:0 }
+
+@back Transparent.Custom { time:0.4 }
+@Wait 0.4
+
+@print （……見つからない。<br>　一体どこに隠れたんだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ヒロちゃん、のあお絵描きしたい。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print お絵描きは、ココを見つけてからだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Pensive1
+
+@print でも、全然みつからないよ～？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@print なら、休んでいる暇はないな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@StopBgm { fade:2 }
+
+@print 再度、下から順に牢屋敷内を回ろうと<br>歩きだしたその時。 { speed:1 waitInput:true Wait:true }
+
+@print "ココちゃん！ ねえ、どうしたの！？" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ココさん、落ち着いてください！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print "なんですの！ なんなんですの！？" { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1
+@char Noah.Surprised1
+
+@print （なんの騒ぎだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"おび\">怯</ruby>えと焦りを含んだ声が聞こえて、<br>私は走り出した。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@ResetText 
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+
+@back 2_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@back Transparent.Custom { time:0.4 }
+@Wait 0.4
+
+@char Hiro.Angry
+
+@print 一体何事だ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1
+
+@print あ、ヒロちゃん……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@bgm Bgm_12_1_Loop
+
+# ========================================
+# 立ち絵：ココ半クリーチャーでお願いします。
+# ========================================
+
+@char CreatureCoco.1-1
+
+@print あ……あぁ、あ……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print （あれは、どういうことだ……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"おび\">怯</ruby>えきったエマたちの向こう。<br>そこには沢渡ココが立っていた。" { speed:1 waitInput:true Wait:true }
+
+@print しかし、様子がおかしい。 { speed:1 waitInput:true Wait:true }
+
+@print ココちゃん？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char CreatureCoco.1-10
+
+@print あてぃし……忘れてたんだ……<br>かくれんぼ……ダメだって。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char CreatureCoco.1-10 { time:1 }
+
+@print "独り言を<ruby=\"つぶや\">呟</ruby>きながら、ココはふらふらと<br>こちらに向かってくる。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char CreatureCoco.1-10 { time:1 }
+
+@print ……ダメ、だった。かくれたら……<br>だめ……だったのにぃ……っ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print もしかして、魔女化が進んでるのか……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Surprised1
+@char Hanna.Surprised1
+@char Noah.Surprised1
+
+@print "思わずこぼれた<ruby=\"つぶや\">呟</ruby>きに、<br>その場の全員が息を飲む。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （このままじゃ……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 魔女化が進めば、殺人衝動が高まる。<br>このままここにいればどうなるか、<br>考えるまでもない。 { speed:1 waitInput:true Wait:true }
+
+@print 逃げるぞ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureCoco.1-2
+
+@print ふ、ふふふふ……っ！<br>ねえ、逃げないでぇ……逃げないでよ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 追いかけたくなっちゃうじゃん！！<br>あは、あははははははっ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+
+@print 私たちが階段を駆け上がるのと同時に、<br>ココの狂気じみた笑い声が響いた。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+@hideChars { time:0 }
+@back 4_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@back Transparent.Custom { time:0.4 }
+@Wait 0.4
+
+@char Noah.Surprised1
+
+@print ヒロちゃん、どこに逃げたら……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1
+
+@print そんなの……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ノアの問いかけに、<br>思わず怒鳴り返してしまいそうになったその時。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# ＠備考◆首を絞められている
+
+@print かはっ……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print "苦しげに<ruby=\"うめ\">呻</ruby>く声が聞こえて、<br>私たちはおそるおそる振り返る。" { speed:1 waitInput:true Wait:true }
+
+@char CreatureCoco.1-2
+@char Sherry.Fearful1,ArmR2,ArmL6
+
+@print つーかまーえたー。 { author:Coco speed:1 waitInput:true Wait:true }
+
+# 首を絞める音
+@sfx Sfx_153
+
+@print いつの間に追いついたのか、<br>人としての理性を手放したココが、シェリーの首を絞め上げていた。 { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆首を絞められている
+
+@print っ……ぐ、ぅっ……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@char Ema.Cry1
+
+@print ココちゃん、止めて！<br>シェリーちゃんを離して！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry
+@char CreatureCoco.1-2
+
+# 首を絞める音
+@sfx Sfx_153
+
+@Wait 0.5
+
+@print "離す？ せっかく捕まえたのにぃ？" { author:Coco speed:1 waitInput:true Wait:true }
+
+# ＠備考◆首を絞められている
+
+@print は……ぁ……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# 首の骨が折れる音
+@sfx Sfx_108
+
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.3
+@hideChars 
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+
+@print エマの懇願も虚しく、<br>玄関ホールに、骨が折れるような嫌な音が響いた。 { speed:1 waitInput:true Wait:true }
+
+# 倒れる音
+@sfx Sfx_19
+
+@print 動かなくなったシェリーの体が、<br>糸の切れた人形のように崩れ落ちる。 { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Fearful1
+
+@print ひっ――！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char CreatureCoco.2-2
+
+@print あーあ、壊れちゃった。 { author:Coco speed:1 waitInput:true Wait:true }
+
+# ＠備考◆駆け出す
+
+@print っ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ココの視線が、次の獲物を探すように<br>こちらを向いたその瞬間。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print その場の全員が、方々に走り出した。 { speed:1 waitInput:true Wait:true }
+
+@print まざまざと見せつけられた残酷な光景に。<br>太刀打ちできない圧倒的な力に。<br>本能的な恐怖が込み上げる。 { speed:1 waitInput:true Wait:true }
+
+@char Noah.Fearful1
+
+@print ヒロちゃん、待って……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print ノア、早く来い！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "伸ばされた手を思わず<ruby=\"つか\">掴</ruby>んで、<br>私は全速力で駆け出した。" { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@ResetText 
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+
+@back 12_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@back Transparent.Custom { time:0.4 }
+@Wait 0.4
+
+@bgm Bgm_20_1
+
+@char Hiro.Angry1
+@char Noah.Pensive1
+
+@print ここなら、しばらくは大丈夫だろう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 図書室なら、万が一見つかっても<br>本棚を使えば逃げおおせる確率が高い。 { speed:1 waitInput:true Wait:true }
+
+@char Noah.Pensive1
+
+@print のあたち、どうなるのかな……？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive1
+
+@print それは……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print さすがに不安なのか、ノアが声を震わせる。<br>けれど、かける言葉が見つからなかった。 { speed:1 waitInput:true Wait:true }
+
+@print それからどれくらいの時間が経っただろう。<br>図書室の扉が開く音がして、<br>私たちは身を固くした。 { speed:1 waitInput:true Wait:true }
+
+@print ふふ、誰かいるかなー？<br>あてぃし探すのは得意なんだよね。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print もういいかーい。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Hiro.Surprised1
+@char Noah.Surprised1
+
+# ＠備考◆息を殺す
+
+@print ……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 近付く足音は、<br>着実にこちらに向かってくる。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1
+
+@print （このままじゃ……<br>　私たちは殺される……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@StopBgm { fade:5 }
+
+@print 私は隣で震えるノアの手を引いて立ち上がると、<br>そのまま静かに、本棚と本棚の間を移動し始めた。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+
+@back 12_1 { time:0 }
+
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+
+@print （よし、このまま出られれば……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+# グサッと刺さる音
+@sfx Sfx_89
+
+@Wait 1
+# ＠備考◆刺されて
+
+@print あっ……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print "嫌な音と共に、<ruby=\"つな\">繋</ruby>がれていたノアの手から<br>力が抜けて行く。" { speed:1 waitInput:true Wait:true }
+
+@print ノア……？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Fearful1
+
+# ＠備考◆痛そうに
+
+@print ヒロ……ちゃ……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# ＠備考◆息を呑む
+
+@print ッ……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_16_1_Loop
+
+@char CreatureCoco.2-2
+
+# ＠備考◆ねっとりと
+
+@print みぃつけたぁ……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print いつの間に接近していたのか、<br>真後ろに、ココが立っていた。 { speed:1 waitInput:true Wait:true }
+
+@print 異様なほどに伸びた爪が、<br>ノアの体を貫いているのが見える。 { speed:1 waitInput:true Wait:true }
+
+@print "そこから、赤い<ruby=\"ちょう\">蝶</ruby>が<ruby=\"あふ\">溢</ruby>れるように<br>次々飛び立っていく。" { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆辛そうに
+
+@print ……ノア……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （どうして……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 気付かれていなかったはずだ。 { speed:1 waitInput:true Wait:true }
+
+@print こちらは足音も立てていなかった。<br>姿だって見られていない。 { speed:1 waitInput:true Wait:true }
+
+@print それなのに―― { speed:1 waitInput:true Wait:true }
+
+@print （そうか、千里眼……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ココの魔法は千里眼。<br>彼女を見る者を、彼女も見ることができる。 { speed:1 waitInput:true Wait:true }
+
+@print その魔法が魔女化で強化され、<br>ココを見なくても、全て見渡せるのだとしたら。 { speed:1 waitInput:true Wait:true }
+
+@print 考えただけでゾッと背筋が凍る。 { speed:1 waitInput:true Wait:true }
+
+@print （逃げないと……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print でも、どこへ？ { speed:1 waitInput:true Wait:true }
+
+@print どこへ逃げても、<br>もはやココから隠れることはできない。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print それでも、とにかく距離を取るように<br>慎重に後退する。 { speed:1 waitInput:true Wait:true }
+
+@print 逃げるなら、ココがノアに気を取られている<br>今しかない。 { speed:1 waitInput:true Wait:true }
+
+@print （他に残っている者と合流しよう――！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+
+@back 9_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@back Transparent.Custom { time:0.4 }
+@Wait 0.4
+
+@char Hiro.Surprised1
+
+# ＠備考◆驚愕
+
+@print ！？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "思い切って廊下に飛び出した私は、<br>そこに広がる光景に<ruby=\"あぜん\">唖然</ruby>とした。" { speed:1 waitInput:true Wait:true }
+
+@print これは……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+
+@print "場を満たすように飛び交うのは真っ赤な<ruby=\"ちょう\">蝶</ruby>。<br>そして鼻をつく、血なまぐさいにおい。" { speed:1 waitInput:true Wait:true }
+
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+
+@print 神秘的でいて絶望的な光景に、<br>私はもう動くことができなかった。 { speed:1 waitInput:true Wait:true }
+
+@back SolidColor.Custom { time:1.5 }
+
+@print そんな私の耳に、重い足音が届いた。 { speed:1 waitInput:true Wait:true }
+
+@char CreatureCoco.2-2 { time:1 }
+
+@print その音に振り返れば、ニヤリと笑ったココが<br>私を見下ろしていた。 { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆ねっとりと
+
+@print 最後の１人……つーかまーえたぁ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char CreatureCoco.2-2 { time:0.2 }
+
+# グサッという音
+@sfx Sfx_89
+
+@hideChars { time:0.15 }
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+
+@print 振り下ろされた鋭い爪が、私の体を貫く。 { speed:1 waitInput:true Wait:true }
+
+@StopBgm { fade:3 }
+
+# ＠備考◆刺されて
+
+@print ぐっ……が、はっ……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@print 激しい熱さに似た痛みが全身を襲う。<br>意識が薄れる。 { speed:1 waitInput:true Wait:true }
+
+@print （つぎ、は……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 次は失敗しない。<br>次こそは、必ず――。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 『END～かくれんぼ～』
+# ========================================
+
+@badEnd 17

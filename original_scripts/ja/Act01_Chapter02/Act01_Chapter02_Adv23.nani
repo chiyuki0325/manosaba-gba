@@ -1,0 +1,122 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-2-23
+
+# ========================================
+# ●シーン1‐2-23
+# ========================================
+
+@back 2_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# ========================================
+# ＞『ミリアの監房』を選択
+# ========================================
+
+@bgm Bgm_5_1
+
+@print ミリアが殺された理由は、<br>一体なんだろうか。 { speed:1 waitInput:true Wait:true }
+
+@print ミリアのことをもっと知るために、<br>エマは彼女の監房へと足を運んでみた。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+@back 1_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent.Custom { time:0.9 }
+@Wait 0.9
+
+@char Margo.Normal1
+
+@print すると先客がいた。マーゴだ。 { speed:1 waitInput:true Wait:true }
+
+@print あら、エマちゃん奇遇ね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print ここで一体何を……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "ただの捜査よ。<br>そんなに警戒しないで？ 今はまだ敵じゃないわ。" { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1
+
+@print 裁判がはじまったら、<br>容赦はしないけれどね。ふふっ { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （笑いごとじゃないのに……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print くすくす、とどこか愉しげに笑うマーゴに<br>エマは反感を抱く。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3
+@char Margo.Normal1,ArmR2
+
+@print ねえ、エマちゃんはミリアちゃんが<br>入れ替わった理由って考えたことある？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@print ふと、マーゴが切り出してきた。 { speed:1 waitInput:true Wait:true }
+
+@print ボクも気になって、本人に聞いてみたんだ。<br>でもはぐらかされちゃって。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 私ね、もしかして入れ替わりの魔法が<br>嘘なんじゃないかと思って<br>一度ミリアちゃんに迫ってみたのよ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 絶対すぐに戻るという約束で、<br>ミリアちゃんの魔法を使ってもらったの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3
+
+@print "えぇっ！？ いつの間に……！" { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR4
+
+@print ふふ、すごく渋られたけど。<br>でも魔法は真実だった。 { author:Margo speed:1 waitInput:true Wait:true }
+
+# ＠備考◆恍惚
+@char Margo.Smile1,ArmR6
+
+@print ほんのひとときだけど、私、ミリアちゃんになったの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print マーゴはうっとりとした表情で、<br>その時のことを想像している様子だった。 { speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1,ArmR6
+
+@print それで早速ミリアちゃんの身体にイタズラしようとしたら、<br>すぐに元に戻されちゃったんだけどね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print （ミリアちゃんの【入れ替わり】の魔法は、<br>　本当だったんだ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@update Miria
+@char Margo.Pensive1,ArmR6
+
+@print そうやって身体を入れ替えてきたのだとしたら、<br>本当のミリアちゃんはどこにいるんでしょうね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "何気ない<ruby=\"つぶや\">呟</ruby>きが、エマの心に引っかかる。" { speed:1 waitInput:true Wait:true }
+
+@print （本当のミリアちゃん……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "昨夜見たミリアの暗い表情と<ruby=\"つぶや\">呟</ruby>き。<br>エマはそこに本当の彼女の姿を見た気がしていた。" { speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1,ArmR1
+
+@print ちなみに、ここでは何も見つからなかったわ。<br>ミリアちゃんはずいぶん秘密主義のようね、<br>何も自分にまつわる痕跡を残していないの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 私のことが信じられないなら、<br>エマちゃんの方でも捜索していいけれど。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print ……ううん。マーゴちゃんを信じるよ。<br>教えてくれてありがとう、マーゴちゃん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマは監房を後にした。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン1‐2‐19
+# 全てのイベントを消化している＞シーン1‐2‐26
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter02/Act01_Chapter02_Adv19

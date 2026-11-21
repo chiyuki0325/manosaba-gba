@@ -1,0 +1,439 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-3-6
+
+# ========================================
+# ●シーン2‐3‐6
+# ========================================
+
+@back 29_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# ========================================
+# ＞『ノアのアトリエ』を選択
+# ========================================
+
+@bgm Bgm_11_1
+
+@char AnAn.Normal1,Angle01/Option_Arms-
+@char Noah.Smile1
+
+@print "アトリエを<ruby=\"のぞ\">覗</ruby>きにいってみると、<br>ノアとアンアンが机に向かっていた。" { speed:1 waitInput:true Wait:true }
+
+@print どちらも黙々と作業をしているようだ。<br>ノアは鼻歌交じりに絵を描き、アンアンは―― { speed:1 waitInput:true Wait:true }
+
+@char AnAn.Angry1
+
+@print むぅぅぅ……。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"けわ\">険</ruby>しい表情で紙束とにらめっこしていた。" { speed:1 waitInput:true Wait:true }
+
+@char Noah.Pensive
+
+@print アンアンちゃん、大丈夫？<br>ヒロインが活躍する展開、思いついた？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char AnAn.Angry1,Arms2,Angle01/Option_Arms>Option_Arms02_01,Angle01/Option_ArmR/Option_ArmR01_01-
+
+@print 『今、天啓を待っているところだ』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Noah.Default
+
+@print 思いついてないってこと？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char AnAn.Pensive1,ArmR1,ArmL1,ArmR1-Option-All,Angle01/Option_Arms-,ArmR1-Option-All
+
+@print ぐぅ……。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print "何気ないノアのひと言が、アンアンを<ruby=\"うな\">唸</ruby>らせる。" { speed:1 waitInput:true Wait:true }
+
+@print "ここだけ切り取れば２人の姿は、<br>学校の授業風景のようで<ruby=\"ほほえ\">微笑</ruby>ましい、が……。" { speed:1 waitInput:true Wait:true }
+
+@char AnAn.Normal1,Arms2,Angle01/Option_Arms>Option_Arms02_01,Angle01/Option_ArmR/Option_ArmR01_01-
+
+@print 『こういうのはどうだ？』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print アンアンがノアに<br>文字をたくさん書き込んだ紙を突き付ける。 { speed:1 waitInput:true Wait:true }
+
+@char Noah.Pensive
+
+@print えーっと……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print えー、ここでヒロインが死んじゃうなんて、<br>聞いたことないよー。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print 内容に目を通したノアが、不満そうな声を上げた。 { speed:1 waitInput:true Wait:true }
+
+@char AnAn.Angry1,Arms2,Angle01/Option_Arms>Option_Arms02_01,Angle01/Option_ArmR/Option_ArmR01_01-
+
+@print 『だからこそ、斬新でいいとは思わないか？<br>　既存の枠に囚われない発想は大事である』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print 『ノアも芸術家ならば理解できるはず！』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Noah.Pensive
+
+@print そうだけど……<br>でも、変えちゃいけない部分ってあると思うなあ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char AnAn.Cry1,ArmR1,ArmL1,ArmR1-Option-All,Angle01/Option_Arms-,ArmR1-Option-All
+
+@print くそう、やはりダメか……！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+# 紙をくしゃくしゃに丸める音
+@sfx Sfx_135
+
+@print アンアンは紙をぐしゃぐしゃに丸めて、<br>床にぽいっと捨てた。 { speed:1 waitInput:true Wait:true }
+
+# 紙をくしゃくしゃに丸める音
+@sfx Sfx_135
+
+@char Noah.Pensive
+
+@print あーのあも失敗した～、ぽいっと。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print …………。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"ほほえ\">微笑</ruby>ましい。<ruby=\"ほほえ\">微笑</ruby>ましいが……<br>次々丸めた紙を床に捨てる行為は、<br>私的に正しくない行為だ。" { speed:1 waitInput:true Wait:true }
+
+@print （注意し、早急に清掃せねば……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char AnAn.Pensive1,ArmR1-Option-All
+@char Noah.Normal1
+
+@print "……ペンも一緒に捨ててしまった。<br>どこだ？ のあ、知らないか？" { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print "んー？ どこだろうね？" { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Surprised1
+
+@print きょろきょろと周囲を見回しはじめたノアが、<br>私がいることに気付く。 { speed:1 waitInput:true Wait:true }
+
+@char Noah.Normal1
+
+@print あ、ヒロちゃん。<br>ヒロちゃん、アンアンちゃんのペン見なかった？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@print 今来たところで見ているわけないだろう。<br>君たちはもっと周囲を綺麗に整理整頓するべきだな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Pensive
+
+@print あ、ほんとだ、めちゃくちゃ散らかってるね……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print まあいい。ちょうど手伝えることを探していたところだ。<br>片付けは私の方でやってやる。<br>君たちは制作を進めてくれ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Smile1
+
+@print えへへ、ありがとうヒロちゃん。<br>そうだ、あのね、のあ……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print ノアが私に何か言いかけて、<br>気まずそうに口を閉ざす。 { speed:1 waitInput:true Wait:true }
+
+@char Noah.Pensive
+
+@print やっぱりいいや！ { author:Noah speed:1 waitInput:true Wait:true }
+
+@print "（なんだ？ 私に何か話があるのか……？）" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char AnAn.Pensive
+
+@print わがはいのペンはどこだ……。<br>天啓が降りてきそうだったのに……。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print その間もアンアンは涙目で落ち込んでいて、<br>深々とため息が漏れる。 { speed:1 waitInput:true Wait:true }
+
+@print 君のペンは私の方で探すから、<br>とりあえずはこれを使うといい。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ========================================
+# アイテムスチル：『万年筆』表示
+# ========================================
+@spawn Clue
+
+@char AnAn.Pensive
+
+@print す……すまない……。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@despawn Clue
+
+@hideChars 
+
+@print "アンアンに万年筆を渡してやると、<br>不意に重なるように、記憶が<ruby=\"よみがえ\">蘇</ruby>った。" { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+# ========================================
+# 回想シーン（新規）
+# ========================================
+
+@StopBgm 
+
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@back 400_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@bgm Bgm_32_1
+
+@print ペンケース、見つからなかったね……<br>一体どこに隠したんだろう。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 本当にひどいよ。<br>いつも嫌がらせばっかり……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 犯人もわからないままだ。腹立たしい。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ……仕方ない。私の万年筆を君にやる。<br>明日からはこれを使うといい。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print お古ですまないが、<br>クラスの皆は私がこれを愛用していたことを知っているはず。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print これなら安易に手出しはしないだろう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "わあ、いいな！ ヒロちゃんの万年筆、<br>すっごく格好いいなって思ってたんだ。" { author:Ema speed:1 waitInput:true Wait:true }
+
+# ＠備考◆名前を呼んだ部分カットのイメージ
+
+@print 良かったね、――。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ねえ、元気出して。<br>そうだ、夏休みの夜にここで集合しない？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print この屋上って、<br>花火が綺麗に見える格別なスポットなんだよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print だが、花火は２０時からだろう？<br>君たちにだって門限はあるはず。<br>ルールには従うべきだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 仮に保護者の許可を得たとしても、<br>あまり夜遅くまで出歩くのはよくない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print もー、ヒロちゃんてば真面目だなぁ……。<br>ねえ、キミはどう思う？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@hide Stills { time:0 }
+
+@back 29_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@StopBgm { fade:5 }
+
+@print （あの時、<br>　屋上で一緒に花火を見ようと約束したんだったな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （……結局、果たされはしなかった約束だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "まるで波が押し寄せるようにあの日の夕暮れが鮮明になり、<br>深く息を吸おうとするたび、<ruby=\"のど\">喉</ruby>が<ruby=\"つ\">詰</ruby>まる感覚に襲われる。" { speed:1 waitInput:true Wait:true }
+
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+# ========================================
+# 回想ここまで
+# ========================================
+
+@print 手のひらをきつく握りしめ、<br>意識を無理やり現実に引き戻した。 { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_11_1
+
+@print 君のペンを見つけたら、返してくれ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print アンアンに声をかけてから、<br>私は床に散らばった紙を拾い集めはじめる。 { speed:1 waitInput:true Wait:true }
+
+@print するとふやけた紙がいくつか落ちていて、<br>妙に気になった。 { speed:1 waitInput:true Wait:true }
+
+@print このふやけた紙は一体なんだ？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Smile1
+
+@print ああそれ？<br>絵の具をうすーく溶かして描いた絵だよ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ……なるほど。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 言われてみれば、<br>うっすらと絵の具がシミのようになっている。 { speed:1 waitInput:true Wait:true }
+
+@print "正直、何を描いているのかは<ruby=\"はんぜん\">判然</ruby>としない。" { speed:1 waitInput:true Wait:true }
+
+@print （模様……に、見えなくもない。<br>　これも芸術というものなんだろうか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 奥が深いな……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print いくつか丸まった紙をダストシュートに捨てていくうちに、<br>アンアンのペンも見つかった。 { speed:1 waitInput:true Wait:true }
+
+@print ほら、君のペンが見つかった。<br>これで集中できるだろう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char AnAn.Pensive
+
+@print ……そうだな。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print 何故かアンアンは不満げな顔で、<br>ペンを奪い取るようにしてかっさらう。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "それから再び書き出そうとするも、<br>頭を抱えて机に<ruby=\"つ\">突</ruby>っ<ruby=\"ぷ\">伏</ruby>してしまった。" { speed:1 waitInput:true Wait:true }
+
+@char AnAn.Fearful1
+@Wait 0.3
+@char AnAn { time:1 }
+
+@print うぅ……ぐふぅっ。スランプだ。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print ほとんど何も書いてないように見えるが？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char AnAn.Angry1
+@Wait 0.3
+@char AnAn { time:0.2 }
+
+@print ばっと顔を上げて、<br>アンアンは何か言いたげな目を私に向ける。 { speed:1 waitInput:true Wait:true }
+
+@char AnAn
+
+@print ……エマがウェンディ役なのが良くない。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char AnAn
+@char Noah.Pensive1
+
+@print エマちゃん？<br>えー、どうして？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char AnAn.Pensive
+
+@print それは……。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print "ノアの疑問に、アンアンは言葉を<ruby=\"つ\">詰</ruby>まらせる。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print それから、アトリエに飾られている<br>舞台衣装に目を向けた。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# アイテムスチル：『舞台衣装』表示
+# ========================================
+
+@char AnAn.Pensive
+
+@spawn Clue
+
+@print ……わがはいだって空を飛びたい。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@despawn Clue
+
+@print "アンアンがぽつりと<ruby=\"つぶや\">呟</ruby>いたことで、納得した。" { speed:1 waitInput:true Wait:true }
+
+@print なるほど。君はウェンディ役の方を<br>やりたかったのか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char AnAn
+@char Noah.Smile
+
+@print そうだったんだ！<br>じゃあみんなに相談してみようよ！ { author:Noah speed:1 waitInput:true Wait:true }
+
+@print 今なら交代できるかも！ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char AnAn.Fearful1,Arms2,Angle01/Option_Arms>Option_Arms02_01,Angle01/Option_ArmR/Option_ArmR01_01-
+
+@print 『演劇なんて無理だ。わがはいは脚本でいい』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print 口にしたことを後悔したのか、<br>ぶんぶんぶんっとアンアンは首を振ってから、<br>再び頭を抱えた。 { speed:1 waitInput:true Wait:true }
+
+@char AnAn.Pensive,ArmR1,ArmL1,ArmR1-Option-All,Angle01/Option_Arms-,ArmR1-Option-All
+
+@print しかし……筆が進まない……。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Noah.Normal1
+
+@print うーん、こういう時は思い切って、<br>別のことやるのもいいんじゃないかなぁ？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char AnAn
+
+@print ……例えばなんだ？ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print んー、好きなことでいいんだよ。<br>アンアンちゃんは何が好きなの？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@print ……わがはいは、小説を書くのが好きだ。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Noah.Smile
+
+@ResetText 
+@QuickSave 20
+
+@print いいね！<br>アンアンちゃんの小説、読んでみたいなぁ～。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char AnAn.Surprised
+
+@print ……！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Noah.Smile1
+
+@print ね、ヒロちゃんも興味あるよね？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@StopBgm 
+
+@print ノアの問いに、私は…… { speed:1 waitInput:true Wait:true }
+
+@choice 興味があると答えた
+	@goto Act02_Chapter03/Act02_Chapter03_Bad01
+
+@choice 言葉を濁した
+	@goto .Choice2-3-1
+
+@StopForChoice 
+
+# Choice2-3-1
+
+@correctChoice 20
+
+@bgm Bgm_11_1
+
+@print 気にならなくもないが、今は掃除をしなければ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "私は言葉を<ruby=\"にご\">濁</ruby>し、２人から離れる。" { speed:1 waitInput:true Wait:true }
+
+@print ノアとアンアンが<br>小説や絵の話に花を咲かせるのを横目に、<br>アトリエの片付けを進めていく。 { speed:1 waitInput:true Wait:true }
+
+@print そうしてあちこちに置かれていた<br>未使用のキャンバスを１カ所に集めていた時だ。 { speed:1 waitInput:true Wait:true }
+
+@StopBgm { fade:3 }
+
+@print （ん……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print キャンバスのひとつを持ち上げた際、<br>ふと裏側に違和感を抱いた。 { speed:1 waitInput:true Wait:true }
+
+@print "裏面の木枠に小さな切れ目があることに気付く。<br>切れ目に指先を<ruby=\"すべ\">滑</ruby>り込ませてみると、<br>紙のざらりとした感触があった。" { speed:1 waitInput:true Wait:true }
+
+@print （なんだ……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"しんちょう\">慎重</ruby>に引き出してみると、<br>それは折りたたまれた紙だった。" { speed:1 waitInput:true Wait:true }
+
+@print "ずいぶん古びていて薄茶色に変色し、<br>端は<ruby=\"す\">擦</ruby>り切れている。" { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_21_1
+
+# ==============================================================================
+# ☆ヒント：『大魔女の手記』入手
+# ==============================================================================
+# MARK: 2-1: ❌ と同一
+@spawn Clue
+@update 17
+
+@print （この内容は……大魔女の……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@despawn Clue
+
+@char Noah.Smile1
+
+@print ヒロちゃん、どうかしたの？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@print ……いや、なんでもない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "私はポケットに手記をしまい、<br><ruby=\"と\">取</ruby>り<ruby=\"つくろ\">繕</ruby>うように清掃に戻った。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン2‐3‐4
+# 全てのイベントを消化している＞シーン2‐3‐9
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter03/Act02_Chapter03_Adv04

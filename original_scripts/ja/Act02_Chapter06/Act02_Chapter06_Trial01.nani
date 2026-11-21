@@ -1,0 +1,676 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter06/Act02_Chapter06_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# ==============================================================================
+# MARK: 11-1: 💬 大魔女の福音
+# ==============================================================================
+# ＠ト書き▼議論11-1 大魔女の福音
+# 議論開始カットイン
+# BGM変更：DArime
+@bgm Bgm_29_1
+
+# Judge11-1-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Yuki.6
+@gosubModifyCamera 0
+@printDebate "人は<link=\"Objection_02_06_01_01\">罪</link>を背負っています。"
+
+@char Yuki.6
+@gosubModifyCamera 0
+@printDebate よってこれより、<br>刑を執行します。
+
+@char Yuki.11
+@gosubModifyCamera 0
+@printDebate ……全人類の処刑。
+
+@char Yuki.7
+@gosubModifyCamera 0
+@printDebate "これは<link=\"Objection_02_06_01_02\">決定事項</link>なんです。"
+
+@char Alisa.Default,ArmR2,ArmL7,Angle01/Facial/Eyes>Eyes_Angry_Open01
+@gosubModifyCamera 0
+@printDebate いきなり出てきたと<br>思ったら……<br>何言ってんだよてめぇ……！
+
+@char Coco.Fearful1,ArmR6,ArmL7,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Normal_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@printDebate 人間全滅させるって<br>言ってる……！？<br>そんなことできんの！？
+
+# ＠備考◆やや焦り
+
+@char Nanoka.ArmR3,ArmL1,Eyes1_Normal_Open2,Mouth1_Angry_Open1,Sweat1_1
+@gosubModifyCamera 0
+@printDebate ……残念だけれど、<br>大魔女にはそれが可能よ。
+
+@char Nanoka.ArmR3,ArmL1,Eyes1_Flushed_Open1,Mouth1_Angry_Closed2,Sweat1_1
+@gosubModifyCamera 0
+@printDebate 彼女には<br>それを実行できる<br>力がある……。
+
+@char Yuki.3
+@gosubModifyCamera 0
+@printDebate 物わかりが良くて<br>助かりますよ、<br>ナノカ。
+
+@char Yuki.3
+@gosubModifyCamera 0
+@printDebate 大丈夫です。<br>あなたのお姉さんも、<br>ずっと一緒ですからね。
+
+# ＠備考◆怒り・威嚇
+
+@char Nanoka.ArmR3,ArmL1,Eyes1_Flushed_Open1,Mouth1_Angry_Closed2,Sweat1_1
+@gosubModifyCamera 0
+@printDebate ………っ！
+
+@char Yuki.6
+@gosubModifyCamera 0
+@printDebate "すでに人類への<link=\"Objection_02_06_01_03\">執行</link>の猶予は<br>十分に与えました。"
+
+@char Yuki.9
+@gosubModifyCamera 0
+@printDebate "もう……<br><link=\"Objection_02_06_01_04\">十分</link>ですよね？"
+
+@char Yuki.6
+@gosubModifyCamera 0
+@printDebate 人類の歴史は<br>今日で終焉を迎えます。
+
+@char Yuki.7
+@gosubModifyCamera 0
+@printDebate "この世界を、<br><link=\"Objection_02_06_01_05\">自然</link>に返しましょう。"
+
+# ==============================================================================
+# 11-1議論後独白
+# ==============================================================================
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@Wait 0.2
+
+@print （ユキが何を考えているのか……<br>　私たちはまだ聞き出せていない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+
+@print （だがこのままでは話を聞く前に<br>　人間が死滅してしまう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+
+@print （……少しでも彼女の行動を遅らせなくては） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge11-1-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_06_01_01
+
+@Skip false
+@pauseTrial true
+
+@choice 罪など背負っていない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge11-1-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_02_06_01_02
+
+@Skip false
+@pauseTrial true
+
+@choice 誰もそんなことは決めていない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge11-1-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_02_06_01_03
+
+@Skip false
+@pauseTrial true
+
+@choice 裁判が行われていない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge11-1-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論4
+# ------------------------------------------------------------------------------
+
+# Objection_02_06_01_04
+
+@Skip false
+@pauseTrial true
+
+@choice 不十分だ
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge11-1-5
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論5
+# ------------------------------------------------------------------------------
+
+# Objection_02_06_01_05
+
+@Skip false
+@pauseTrial true
+
+@choice 自然なものだ
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge11-1-6
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 11-1: ❌ 議論ミス選択肢
+# ==============================================================================
+# MARK: 11-1-3: ❌ 反論・罪など背負っていない
+
+# Judge11-1-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print ……何の話だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR12,ArmL5,Eyes1_Normal_Closed1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print 人が生まれながらに罪を背負っているだと？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print そんなこと、あるはずがない！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Yuki.4
+@gosubModifyCamera 0
+@print あなたは知らないだけ……。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.3
+@gosubModifyCamera 0
+@print いいえ、それとも知っているのに<br>知らないふりをしているだけ？ { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.4
+@gosubModifyCamera 0
+@print どちらにせよ……。<br>あなたの反論に意味はありません。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.8
+@gosubModifyCamera 0
+@print 無駄な時間を使うのであれば……<br>お話は終わりです。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.10
+@gosubModifyCamera 0
+@print 刑を執行しましょう。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （くっ……！<br>　闇雲に反論をしても、話を打ち切られるだけか……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （圧倒的な力を持つ大魔女……<br>　この場ではある意味、裁判官に等しい力を持つ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Eyes1_Normal_Open3
+@gosubModifyCamera 0
+@print （心証を損ねるわけにはいかない……か） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （彼女を納得させるには、<br>　彼女の世界のルールに従う必要があるな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge11-1-1
+
+# MARK: 11-1-4: ❌ 反論・誰もそんなことは決めていない
+
+# Judge11-1-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print 人類の処刑が決定事項……？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 誰もそんなことは決めていない！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Yuki.3
+@gosubModifyCamera 0
+@print 私が決めました。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.4
+@gosubModifyCamera 0
+@print 処刑を行うのも私です。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.6
+@gosubModifyCamera 0
+@print それに反抗するというのであれば……。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.10
+@gosubModifyCamera 0
+@print まずはあなた方から、処刑を実施しましょうか。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal1,ArmR12,ArmL5,Eyes1_Normal_Closed1,Mouth1_Angry_Open1,Sweat1-1
+@gosubModifyCamera 0
+@print （くっ……！<br>　闇雲に反論をしても、話を打ち切られるだけか……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （圧倒的な力を持つ大魔女……<br>　この場ではある意味、裁判官に等しい力を持つ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Eyes1_Normal_Open1
+@gosubModifyCamera 0
+@print （心証を損ねるわけにはいかない……か） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Open1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （彼女を納得させるには、<br>　彼女の世界のルールに従う必要があるな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge11-1-1
+
+# MARK: 11-1-5: ❌ 反論・不十分だ
+
+# Judge11-1-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print いいや、不十分だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 人を殺すのであれば、<br>もっと慎重に検討すべきだ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Yuki.9
+@gosubModifyCamera 0
+@print そうでしょうか？ { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.8
+@gosubModifyCamera 0
+@print 人間の世界であっても死刑はありますし、<br>こんなに時間があったのですから<br>十分な猶予を与えたと言ってもいいでしょう。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.14
+@gosubModifyCamera 0
+@print そしてべつに長い期間の猶予を与えたからといって、<br>罪が無くなるわけでもありません。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.11
+@gosubModifyCamera 0
+@print 愚かな虐殺者には……相応の罰を与えましょう。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal1,ArmR12,ArmL5,Eyes1_Normal_Closed1,Mouth1_Angry_Open1,Sweat1-1
+@gosubModifyCamera 0
+@print （くっ……！<br>　闇雲に反論をしても、話を打ち切られるだけか……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （圧倒的な力を持つ大魔女……<br>　この場ではある意味、裁判官に等しい力を持つ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （心証を損ねるわけにはいかない……か） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Open3,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （彼女を納得させるには、<br>　彼女の世界のルールに従う必要があるな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge11-1-1
+
+# MARK: 11-1-6: ❌ 反論・自然だ
+
+# Judge11-1-6
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print ……自然に返す？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print すでに世界は自然な在り方で存在している……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print なぜなら人間もまた、自然から発生したものだからだ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Yuki.15
+@gosubModifyCamera 0
+@print そんな詭弁に付き合う気はありません。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.6
+@gosubModifyCamera 0
+@print 自然に返すのが嫌というなら……。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.7
+@gosubModifyCamera 0
+@print 無に還してさしあげましょう。<br>……あなた方から。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （……べつに自然環境を守ろうとしているわけでは<br>　なさそうだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （圧倒的な力を持つ大魔女……<br>　この場ではある意味、裁判官に等しい力を持つ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@gosubModifyCamera 0
+@print （心証を損ねるわけにはいかない……か） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （彼女を納得させるには、<br>　彼女の世界のルールに従う必要があるな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge11-1-1
+
+# ==============================================================================
+# MARK: 11-1-2: ⭕ 反論・裁判が行われていない
+# ==============================================================================
+# Judge11-1-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+@StopBgm 
+
+# カットイン「異議あり！」
+# ヒロ＆ミリア
+
+@sfx Sfx_Common_5
+@char Hiro.Normal2,ArmR6,ArmL3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@char Miria.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Surprised_Open02
+
+@set "acameraYaw = ({miriaIdx} + 0.2) / {courtStandCount} * 360"
+@stageCamera 0 { Rotation:0,{acameraYaw},0 time:0 }
+@WaitForNextFrame 
+@gosubSplitStageScreen 1
+@Wait 1
+@voice CommonTrial_Hiro06084
+@voice CommonTrial_Miria00918
+@Wait 0.5
+@gosubCutIn Hiro
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@hideStageScreen 1
+@Wait 0.5
+
+@sfx Sfx_Common_1
+
+@char Miria.Fearful1,ArmR10,ArmL1,Angle01/Facial/Mouth>Mouth_Surprised_Open02,Angle01/Facial/Eyes>Eyes_Angry_Open
+@gosubModifyCamera 0
+@print そ、その刑の執行……<br>もうちょっと待ってもらえないかな！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Yuki.9
+@gosubModifyCamera 0
+@print それは、どうしてですか？ { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print ……ユキ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print 君は今、人類に執行の猶予期間を与えたと言った……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print だがそもそも、その判決に正当性はあるのかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆驚き・不思議。何言ってんの？感
+
+@char Yuki.9
+@gosubModifyCamera 0
+@print ………。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+# 気任せの蝶［チェロ有り］
+@bgm Bgm_45_2
+
+@char Miria.Fearful1,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01
+@gosubModifyCamera 0
+@print し、執行猶予が与えられたってことは……<br>判決が下されたってことだと思うんだけど……！ { author:Miria speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Miria.Surprised1,ArmR10,ArmL4,Angle01/Facial/Eyes>Eyes_Angry_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open02
+@gosubModifyCamera 0
+@print その裁判、不当判決じゃないかな！？ { author:Miria speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆呆れ
+
+@char Alisa.Default,Angle01/Facial/Eyes>Eyes_Disappointed_Open,ArmR9,ArmL1
+@gosubModifyCamera 0
+@print ……お前ら、何言ってんだ……？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,Angle01/Facial/Eyes>Eyes_Disappointed_Open,Angle01/Arms>Arms01,Angle01/ArmR-,Angle01/ArmL-
+@gosubModifyCamera 0
+@print バケモンの親玉に、<br>そんな理屈通じるわけねぇだろ……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Miria.Fearful1,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open,,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print そ、それでも！ { author:Miria speed:1 waitInput:true Wait:true }
+
+# SE・明るい音
+@sfx Sfx_Common_2
+
+@char Miria.Angry1,ArmR3,ArmL1,,Angle01/Facial/Eyes>Eyes_Angry_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open02
+@gosubModifyCamera 0
+@print 理屈は……通すべきだと思うよ！！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Normal_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print だって、君は【人に罪がある】と言った……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,Angle01/Facial/Eyes>Eyes_Pensive_Open01,,Angle01/Facial/Mouth>Mouth_Normal_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print しかもそれは、人間全員が極刑に値するほどの罪だ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,Angle01/Facial/Eyes>Eyes_Angry_Open,,Angle01/Facial/Mouth>Mouth_Normal_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print なら君は、<br>その判断に正当性があると主張しているんだよね……！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open02,ArmL8,ArmR3
+@gosubModifyCamera 0
+@print つまり、君は【自分の意見が正しい】と思ってるはずだ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open02
+@gosubModifyCamera 0
+@print 罰を与えるというなら……<br>被告である人間にその理由を知らせて、<br>反省を促す必要もあるんじゃないかな……！？ { author:Miria speed:1 waitInput:true Wait:true }
+
+# ＠備考◆感心。ふぅん、なるほど…
+
+# @char Yuki.Suprised
+@gosubModifyCamera 0
+@print ………。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （ミリアの理屈は……<br>　正直言ってめちゃくちゃだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@print （この場は、裁判とは名ばかりの真似事のような場……。<br>　法が厳格に適用されるような【法廷】とは言えない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+# ========================================
+@back 10_1 { Scale:{g_backgroundDefaultScale} time:0 }
+# ========================================
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+
+@print （だが相手が圧倒的な力を持っている以上、<br>　暴力で対抗しても意味がないのもたしかだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+# ========================================
+@hide Stills { time:0 }
+# ========================================
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+
+@gosubModifyCamera 0
+@print （まずは彼女との対話に持ち込む……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （反撃はそれからだ……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print ……裁判だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print ――魔女裁判の開廷を要求する！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Yuki.15
+@gosubModifyCamera 0
+@print ……魔女裁判？ { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print そうだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print 人間が、<br>処刑されるべき【魔女】であるかどうか……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmL3,Eyes2_Normal_Open3,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print この島のルールに則って、<br>それを決めるんだ……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Yuki.9
+@gosubModifyCamera 0
+@print …………。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Yuki.3
+@gosubModifyCamera 0
+@print いいですよ。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print ……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_46_1
+
+@char Yuki.2
+@gosubModifyCamera 0
+@print それであなたたちの気が済むのなら……。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.6
+@gosubModifyCamera 0
+@print 少しだけ、お付き合いしましょうか？ { author:Yuki speed:1 waitInput:true Wait:true }
+
+@goto Act02_Chapter06/Act02_Chapter06_Trial02

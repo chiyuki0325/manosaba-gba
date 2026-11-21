@@ -1,0 +1,560 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter05/Act02_Chapter05_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# クリーチャー化初期化
+@hide Hiro
+@char CreatureHiro.2 { Position:{hiroPositionX},{characterPositionY},{hiroPositionZ} Rotation:,{hiroRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Meruru
+@char CreatureMeruru.3-5 { Position:{meruruPositionX},{characterPositionY},{meruruPositionZ} Rotation:,{meruruRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Leia
+@char CreatureLeia.0-8 { Position:{leiaPositionX},{characterPositionY},{leiaPositionZ} Rotation:,{leiaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Noah
+@char CreatureNoah.0-3 { Position:{noahPositionX},{characterPositionY},{noahPositionZ} Rotation:,{noahRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Margo
+@char CreatureMargo.0-4 { Position:{margoPositionX},{characterPositionY},{margoPositionZ} Rotation:,{margoRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Nanoka
+@char CreatureNanoka.0-1 { Position:{nanokaPositionX},{characterPositionY},{nanokaPositionZ} Rotation:,{nanokaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Coco
+@char CreatureCoco.2-3 { Position:{cocoPositionX},{characterPositionY},{cocoPositionZ} Rotation:,{cocoRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide AnAn
+@char CreatureAnAn.0-3 { Position:{ananPositionX},{characterPositionY},{ananPositionZ} Rotation:,{ananRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Miria
+
+@hide Alisa { time:0 }
+@char CreatureAlisa.0-7 { Position:{alisaPositionX},{characterPositionY},{alisaPositionZ} Rotation:,{alisaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Hanna { time:0 }
+@char CreatureHanna.1_5 { Position:{hannaPositionX},{characterPositionY},{hannaPositionZ} Rotation:,{hannaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+# ==============================================================================
+# MARK: 10-23: 💬 【遠野ハンナ】
+# ==============================================================================
+# ＠ト書き▼議論10-23【遠野ハンナ】
+# 議論開始カットイン
+# BGM変更：Guil-me N'o sinruits-Vocal無-
+@bgm Bgm_8_1
+@bgm Ambi_7_1
+@ResetText 
+@char CreatureHiro.2 { time:0 }
+@stageCamera 1 { Rotation:0,{ (8.1 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+@Wait 0.1
+@shakeStageCamera 1 { Force:0.01,-0.01,0 Frequency:1800 damp:0 time:180 }
+
+@showStageScreen 1
+@Wait 1.5
+
+@ResetText 
+@char CreatureHanna.2_7 { time:0 }
+@stageCamera 0 { Rotation:0,{ (0.9 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+@Wait 0.1
+@shakeStageCamera 0 { Force:0.01,-0.01,0 Frequency:1800 damp:0 time:180 }
+
+@hideStageScreen 1
+@Wait 1.5
+
+# Judge10-23-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+@bgm Ambi_7_1 { Volume:0.2 }
+
+@char CreatureHanna.2_7
+@gosubModifyCamera 0
+@Wait 0.1
+@shakeStageCamera 0 { Force:0.01,-0.01,0 Frequency:1800 damp:0 time:180 }
+@printDebate "わたくしが<br>犯してしまった罪は<br><link=\"Objection_02_05_23_01\">身勝手で残忍な</link><br>ものですわ……！"
+
+@char CreatureHanna.2_7
+@printDebate 謝っても許されない、<br>取り返しの<br>つかないもの……。
+
+@char CreatureHanna.2_8
+@printDebate 彼女たちは……<br>別の世界のわたくしたちは、<br>一生懸命生きようとした<br>はずですわ。
+
+@char CreatureHanna.2_8
+@printDebate "それを全て<br><link=\"Objection_02_05_23_02\">なかったことにする</link><br>なんてできませんわ……！"
+
+@char CreatureHanna.1_7
+@printDebate 彼女たちのことを<br>忘れてしまったら……<br>いったい誰が彼女たちを<br>弔ってあげられますの……？
+
+@char CreatureHanna.1_7
+@printDebate わたくしは<br>永遠に忘れてはいけない……。
+
+@char CreatureHanna.1_5
+@printDebate "彼女たちを<br><link=\"Objection_02_05_23_03\">見捨てて</link>しまったら……<br>わたくしは<br>人間ではなくなって<br>しまいますわ！！"
+
+# ==============================================================================
+# 10-23議論後独白
+# ==============================================================================
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+@bgm Ambi_7_1
+
+@ResetText 
+@char CreatureHiro.13
+@gosubModifyCamera 0
+@Wait 0.2
+@shakeStageCamera 0 { Force:0.01,-0.01,0 Frequency:1800 damp:0 time:180 }
+
+@print （ハンナは絶望に支配されている……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.13
+@print （彼女を止められなければ、<br>　このまま全員死んでしまう……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.13
+@print （ハンナの持つトラウマ……<br>　彼女を説得する鍵はそこにある） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.13
+@print （ミリアの魔法によって共有された<br>　【記憶】を思い出すんだ……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-23-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_23_01
+
+@Skip false
+@pauseTrial true
+
+@choice ハンナだけじゃない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-23-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_23_02
+
+@Skip false
+@pauseTrial true
+
+@choice なかったことにはしない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-23-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_23_03
+
+@Skip false
+@pauseTrial true
+
+@choice 見捨てていない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-23-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 10-23: ❌ ミス選択肢
+# ==============================================================================
+
+# MARK: 10-23-3: ❌ 反論・ハンナだけじゃない
+
+# Judge10-23-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@bgm Ambi_7_1
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@Wait 0.1
+@shakeStageCamera 0 { Force:0.01,-0.01,0 Frequency:1800 damp:0 time:180 }
+@print ハンナ落ち着くんだ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.6
+@print 殺人事件なんて、今に始まったことじゃない。<br>世界中で数えきれないほど起こっている！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.6
+@print 君の事件は、<br>そのうちのちっぽけな１つにしか過ぎない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.8
+@print それにあの時の君は、<br>魔女因子の殺人衝動に心を侵されていたんだ……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.8
+@print だから君が気に病む必要はない……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHanna.2_4
+@gosubModifyCamera 0
+@Wait 0.1
+@shakeStageCamera 0 { Force:0.01,-0.01,0 Frequency:1800 damp:0 time:180 }
+@print ……だから、人を殺してもいいと？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char CreatureHanna.2_5
+@print そんな理屈、納得できませんわ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+# ＠備考◆怯え
+
+@char CreatureHanna.1_5
+@Wait 0.1
+@shakeStageCamera 0 { Force:0.01,-0.01,0 Frequency:1800 damp:0 time:180 }
+@print そんな理由で自分を許してしまったら、<br>体だけじゃなく、心まで化け物になってしまいますもの……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char CreatureHanna.1_5
+@print そんなの、わたくしは絶対イヤですわ……！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char CreatureHiro.13
+@gosubModifyCamera 0
+@Wait 0.1
+@shakeStageCamera 0 { Force:0.01,-0.01,0 Frequency:1800 damp:0 time:180 }
+@print （この言葉ではハンナの心に届かないか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.13
+@print （ハンナは今まさに、<br>　自責の念に押しつぶされそうになっている） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.13
+@print （心を少しでも軽くさせるために、<br>　何か掛けられる言葉はないか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge10-23-1
+
+# MARK: 10-23-4: ❌ 反論・なかったことにはしない
+
+# Judge10-23-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@bgm Ambi_7_1
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@Wait 0.1
+@shakeStageCamera 0 { Force:0.01,-0.01,0 Frequency:1800 damp:0 time:180 }
+@print ハンナ、それは違う……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.8
+@print 過ぎてしまったことは仕方がない……<br>なら、大切なのは【今】のはずだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.6
+@print 今度は失敗しないよう、<br>過去を教訓にすればいい！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.6
+@print なかったことにする必要はないんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHanna.2_8
+@Wait 0.1
+@shakeStageCamera 0 { Force:0.01,-0.01,0 Frequency:1800 damp:0 time:180 }
+@print ……ヒロさんはやり直せるから<br>そんなこと言えるんでしょうけど……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char CreatureHanna.2_8
+@print 人の命は本来１回きりですわ。<br>死んでしまったらそれでおしまい……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char CreatureHanna.2_7
+@print 簡単に割り切るなんて出来ませんわ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char CreatureHanna.2_7
+@print 命はそんなに軽いものじゃないんですもの！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char CreatureHiro.13
+@gosubModifyCamera 0
+@Wait 0.1
+@shakeStageCamera 0 { Force:0.01,-0.01,0 Frequency:1800 damp:0 time:180 }
+@print （説得力に欠けていたか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char CreatureHiro.13
+@print （ハンナは今まさに、<br>　自責の念に押しつぶされそうになっている） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.13
+@print （心を少しでも軽くさせるために、<br>　何か掛けられる言葉はないか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge10-23-1
+
+# ==============================================================================
+# MARK: 10-23-2: ⭕ 反論・見捨てていない
+# ==============================================================================
+
+# Judge10-23-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@gosubCutIn CreatureHiro
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+@bgm Ambi_7_1
+@char CreatureHiro.7
+@gosubModifyCamera 0
+@Wait 0.1
+@shakeStageCamera 0 { Force:0.01,-0.01,0 Frequency:1800 damp:0 time:180 }
+@print 違う、ハンナ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.7
+@print 君は見捨てていない……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.7
+@print 見捨てることと、<br>滑り落ちる者の手を掴めなかったことは別物だ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆ハッとする
+
+@char CreatureHanna.2_5
+@gosubModifyCamera 0
+@Wait 0.1
+@shakeStageCamera 0 { Force:0.01,-0.01,0 Frequency:1800 damp:0 time:180 }
+@print ………！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.8
+@gosubModifyCamera 0
+@Wait 0.1
+@shakeStageCamera 0 { Force:0.01,-0.01,0 Frequency:1800 damp:0 time:180 }
+@print ……人の手が届く範囲には限界がある。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.8
+@print たしかに……君の手では救えなかったのかもしれない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.8
+@print でも、君は見捨てたんじゃない……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.8
+@print 君ではどうやっても救えなかった……<br>ただ、それだけなんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆トラウマを思い出し、悔いる
+
+@char CreatureHanna.1_5
+@gosubModifyCamera 0
+@Wait 0.1
+@shakeStageCamera 0 { Force:0.01,-0.01,0 Frequency:1800 damp:0 time:180 }
+@print ああ………あああ……！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@Wait 0.1
+@shakeStageCamera 0 { Force:0.01,-0.01,0 Frequency:1800 damp:0.01 time:180 }
+@print ……たしかにすべてを他人や環境のせいにしてはいけない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.6
+@print けれど、君がすべての責任を抱え込む必要もない……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.9
+@print ……ハンナ！<br>私の手を取ってくれ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.9
+@print 今度は私を……<br>私たちを、見捨てるな！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHanna.1_6 { time:0 }
+@back 14_1 { time:0 }
+
+@print …………ヒロ、さんっ……！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char CreatureHanna.2_6
+@print ……あぁ……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char CreatureHanna.2_6
+@print 今度は……わたくし……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char CreatureHanna.2_6
+@print ちゃんと……握っていられるかしら……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@Wait 0.5
+
+# 転倒SE・ドサッ
+@sfx Sfx_6
+@char CreatureHanna.2_6 { time:0.3 }
+@hide CreatureHanna-Middle { time:0.3 }
+@Wait 0.8
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@hide MainBackground-Middle { time:0.5 }
+@print ……止まったか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@update Hanna
+
+@back 14_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@char Warden.8 { time:0 }
+@print ……現在島の高度はゆっくりと低下中です。<br>無事着水したら、地図を書き換えないといけませんねぇ。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.14
+@gosubModifyCamera 0
+@hide MainBackground-Middle,Warden-Middle { time:0 }
+@print ……何を呑気なことを。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.13
+@gosubModifyCamera 0
+@print （……ひとまず物理的な壊滅は免れたか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.13
+@gosubModifyCamera 0
+@print （残る魔女候補は、２人……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （エマと……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆「ふふ～」と仁王立ちして待ち構えるようなイメージ
+
+@ResetText 
+@char Sherry.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Closed01,Angle01/Facial/Mouth>Mouth_Smile_Closed { time:0 }
+@stageCamera 1 { Rotation:0,{ (2 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+
+@stageCamera 1 { Rotation:0,{ (1.9 / courtStandCount * 360) },0 time:1 }
+@showStageScreen 1
+@Wait 1.5
+
+@print …………。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@hideStageScreen 1
+@print （……シェリーだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print ……他の者たちは魔女化させてもらった。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print 元々この議論の場は、<br>真の黒幕を引きずり出すために用意した場だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print 事後的な了承で済まないが……<br>ここまで来たんだ、協力してくれないかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Closed01,Angle01/Facial/Mouth>Mouth_Smile_Closed
+@gosubModifyCamera 0
+@print ……ええ、いいですよ。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print 元から私は、<br>ヒロさんに反対する気はありませんでしたし。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print ……それに、<br>あなたが体験した過去を見た以上<br>協力しない理由もありません。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print ……助かるよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print ――ですが。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆ムッ
+
+@char CreatureHiro.15
+@gosubModifyCamera 0
+@print ――！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# BGM変更：Guil-me N'o sinruits-Vocal無-
+@bgm Bgm_8_1
+
+@char Sherry.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Normal_Closed
+@gosubModifyCamera 0
+@print あなたに私を魔女化させることができますか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.14
+@gosubModifyCamera 0
+@print ……なるほど。<br>たしかに手強そうな相手だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR12,ArmL14,Angle01/Facial/Eyes>Eyes_Normal_Closed04,Angle01/Facial/Mouth>Mouth_Neutral_Closed
+@gosubModifyCamera 0
+@print そうです、私は――。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.2
+# スチル・シェリー処刑シーン
+@back 50_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@char Sherry.Default,ArmR12,ArmL14,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Flushed_Open
+@gosubModifyCamera 0
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.2
+@Wait 1.5
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+@hide Stills { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+
+@print ――魔女に、なれないんです。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@goto Act02_Chapter05/Act02_Chapter05_Trial24

@@ -1,0 +1,445 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-4-5
+
+# ========================================
+# ●シーン1‐4-5
+# ========================================
+
+@back 2_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_9_1
+
+@print 結局食事はほとんど喉を通らず、<br>エマは地下に来ていた。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+@back 1_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent.Custom { time:0.9 }
+@Wait 0.9
+
+@print ふらふらと入ったのは、<br>エマの監房ではなく、ハンナの監房だった。 { speed:1 waitInput:true Wait:true }
+
+@print （ハンナちゃん……シェリーちゃん……<br>　会いたいよ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ココが中にいる時は遠慮しているが、<br>エマはよくハンナの監房へと足を運ぶ。 { speed:1 waitInput:true Wait:true }
+
+@print "並んだ人形を見ては、涙を<ruby=\"にじ\">滲</ruby>ませる。" { speed:1 waitInput:true Wait:true }
+
+@print 傷はいつまで経っても、<br>癒えることがないように思えた。 { speed:1 waitInput:true Wait:true }
+
+@print エマは自身を模した人形をぎゅっと抱えた。 { speed:1 waitInput:true Wait:true }
+
+@print "一度炎に<ruby=\"あぶ\">焙</ruby>られているので<br>へたしたら崩れてしまうかもと、<br>これまであまり力を入れて触れたことがなかった。" { speed:1 waitInput:true Wait:true }
+
+@print しかし寂しさのあまり強く抱きしめ―― { speed:1 waitInput:true Wait:true }
+
+# 人形の中で紙がカサリと鳴る音
+@sfx Sfx_66
+
+@print その音に気付いた。 { speed:1 waitInput:true Wait:true }
+
+@print （今の音は……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 人形の中から、<br>紙のような音が聞こえた。 { speed:1 waitInput:true Wait:true }
+
+@print エマは人形を見つめ、<br>ほつれている部分からおそるおそる、指を入れてみる。 { speed:1 waitInput:true Wait:true }
+
+@print 綿が詰められている中から、<br>小さく折りたたまれた紙が出てくる。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+
+@print "！ これ……！" { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマは人形を元の場所に戻し、<br>急いでたたまれた紙を開いていく。 { speed:1 waitInput:true Wait:true }
+
+@print そこには殴り書きでメッセージが書かれていた。<br>それは、シェリーから、エマに宛てたものだった。 { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# ＠備考◆涙を呑む
+
+@print ッ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print その手紙を見て、<br>エマは弾かれたように駆けだしていた。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+@back 2_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent.Custom { time:0.9 }
+@Wait 0.9
+
+# ========================================
+# 演出：シェリーの立ち絵なし、ボイスのみ
+# ========================================
+
+@bgm Bgm_40_1_Loop
+
+# ボイス加工：エコー
+
+@print エマさんがこれを見つけた時、<br>私はもうきっとこの世にいないと思います。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ボイス加工：エコー
+
+@print ハンナさんを殺してしまった後、<br>急いで書いています。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+@back 4_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent.Custom { time:0.9 }
+@Wait 0.9
+
+# ボイス加工：エコー
+
+@print 裁判は生き残るために本気で臨むつもりですが、<br>エマさんには勝てないような気もしてて。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ボイス加工：エコー
+
+@print だからこれはまあ、遺書のようなものだと思ってください。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+@back 19_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent.Custom { time:0.9 }
+@Wait 0.9
+
+# ボイス加工：エコー
+
+@print "【<ruby=\"ウンディーネ\">水精</ruby>の間】を調べてください。" { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ボイス加工：エコー
+
+@print 私が建物移動させようとした際、<br>土台が固定されて動かせなかったんです。<br>そこだけ明らかに違うのがわかりました。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ボイス加工：エコー
+
+@print 時間がなくて何があるのかまでは調べられませんでしたが、<br>もしかしたら大きな手がかりを得られるかもしれない。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+@back 22_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent.Custom { time:0.9 }
+@Wait 0.9
+
+# ボイス加工：エコー
+
+@print 何をって言われると、困ってしまいますが。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ボイス加工：エコー
+
+@print エマさんならきっと、<br>真実を見つけられます！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+@back 23_6 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent.Custom { time:0.9 }
+@Wait 0.9
+
+# ボイス加工：エコー
+
+@print 私の代わりに、この忌々しい牢屋敷の<br>真相を暴いちゃってください！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ボイス加工：エコー
+
+@print それが私の願い！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print はぁっ、はぁっ、はぁっ、はぁっ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 全速力でここまで走ってきて、<br>エマは荒い息を吐き出した。 { speed:1 waitInput:true Wait:true }
+
+@print "たどりついた【<ruby=\"ウンディーネ\">水精</ruby>の間】内を<br>ぐるりと見回す。" { speed:1 waitInput:true Wait:true }
+
+@print （何か、何かあるはずなんだ、ここにきっと！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマは次から次に<ruby=\"あふ\">溢</ruby>れてくる涙を拭い、<br>必死に室内を探しまわった。" { speed:1 waitInput:true Wait:true }
+
+@print （シェリーちゃんが託してくれたんだから、<br>　見つけるんだ、今度こそ！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 時間経過
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@back 23_8 { time:0 }
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@print "エマがあちこち<ruby=\"くま\">隈</ruby>なく捜索した結果――" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3
+
+@print 本当に、あった……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "【<ruby=\"ウンディーネ\">水精</ruby>の間】内に<br>ほんのわずかな床の隙間が見つかり、<br>そこを持ち上げて見たところ――隠し階段があった。" { speed:1 waitInput:true Wait:true }
+
+@print （ここに一体何が……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "明らかに隠されていた地下への扉を、<br>エマは<ruby=\"ぼうぜん\">呆然</ruby>と見下ろす。" { speed:1 waitInput:true Wait:true }
+
+@print （行ってみよう……まずは、調べてみるしかない！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@print エマはごくりと喉を鳴らし、<br>おそるおそる下へと降り始めた。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+@back 31_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent.Custom { time:0.9 }
+@Wait 0.9
+
+@bgm Bgm_25_1
+
+@print 階段を降りるとそこは中二階になっている、<br>エレベーターホールだった。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3
+
+@print エレベーター……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （外に繋がっているかもしれない！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@back 31_2 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@print エマは希望を胸に宿し、<br>急いでエレベーターに乗り込む。 { speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_4
+
+@back 31_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@print ボタンは上昇と下降の２つしかない。<br>エマは迷わず下降ボタンを押した。 { speed:1 waitInput:true Wait:true }
+
+# エレベーター稼働音
+@sfx Ambi_5_1
+
+@print 下降するにつれ、<br>エマの鼓動は高鳴っていく。 { speed:1 waitInput:true Wait:true }
+
+@print （この先に、きっと、きっと……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@StopSfx 
+@Wait 0.2
+
+# エレベーター到着音
+@sfx Sfx_68
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@print 歩き出してすぐに、<br>大きな扉に行き当たった。 { speed:1 waitInput:true Wait:true }
+
+@print 他に脇道はなく、<br>どうやらこの部屋に行く１本道のようだ。 { speed:1 waitInput:true Wait:true }
+
+@print （なんの部屋だろう……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+
+@back 25_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent.Custom { time:0.9 }
+@Wait 0.9
+
+@print 扉が開いていたので中に入ると、<br>まるでそこは研究室のようだった。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3
+
+@print え……！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 想像していたものとはまったく違う場所で、<br>エマは驚きの声をあげた。 { speed:1 waitInput:true Wait:true }
+
+@print しかも中に立ち入った途端、<br>ぐっと気温が下がった。 { speed:1 waitInput:true Wait:true }
+
+@print どうやら隣室の気温が相当低いらしく、<br>その影響がこの室内にも出てしまっているようだ。 { speed:1 waitInput:true Wait:true }
+
+@print 吐く息が白く、エマはぶるりと震えた。<br>棒立ちになっていると、<br>そのまま凍りついてしまいそうだ。 { speed:1 waitInput:true Wait:true }
+
+@print （なんなんだろう、この施設……<br>　なんだか研究所みたいだ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （と、とにかく調べてみよう！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 急いで見回っているうち、<br>棚に無造作に置かれたファイルを見つけた。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ☆証拠品：『囚人名簿ファイル』入手
+# ========================================
+
+@print 手に取って開いてみると、<br>囚人名簿が挟まっていた。 { speed:1 waitInput:true Wait:true }
+
+@print ただ、エマの知っている名前の羅列ではなく、<br>どうやら過去に囚人として<br>収監された少女たちの名簿だと気付く。 { speed:1 waitInput:true Wait:true }
+
+@print その中に、驚くべき名前を見つけた。<br>その名前は丁寧に赤丸で囲まれている。 { speed:1 waitInput:true Wait:true }
+
+@print ――黒部ナノカ。 { speed:1 waitInput:true Wait:true }
+
+@print ナノカ、ちゃん……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print めくってみると、<br>次のページにはナノカの顔写真と、個人情報が記されている。 { speed:1 waitInput:true Wait:true }
+
+@print ほとんどがこの牢屋敷で見かけた謎の言語で記されており、<br>何が書かれているのかはわからないが、<br>推測するに彼女の調査レポートだ。 { speed:1 waitInput:true Wait:true }
+
+@print ところどころに、<br>エマの読める言語が走り書きされていた。 { speed:1 waitInput:true Wait:true }
+
+@print ――【要監視対象】【脱獄？】【危険】。 { speed:1 waitInput:true Wait:true }
+
+@print どくどくと、心臓が早鐘を打つ。 { speed:1 waitInput:true Wait:true }
+
+@print （ナノカちゃんは、何者なの……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 直後だった。 { speed:1 waitInput:true Wait:true }
+
+# 施錠音
+@sfx Sfx_4
+
+@print 背後の扉から嫌な音がした。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR1
+
+@print ！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "<ruby=\"とっさ\">咄嗟</ruby>に振り返ると、扉が閉まってしまっている。" { speed:1 waitInput:true Wait:true }
+
+@print エマが驚いて周囲を見回すと、<br>奥には同じように閉ざされた扉が見えた。 { speed:1 waitInput:true Wait:true }
+
+@print エマはその場に自分が閉じ込められてしまったのだと<br>認識する。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3
+
+@print え、どうしよう、ええっ！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 施錠されてしまった扉を開く手だてが見つけられず、<br>エマは慌てた。 { speed:1 waitInput:true Wait:true }
+
+@print 室内の気温の低さで、<br>思考がうまくできない。 { speed:1 waitInput:true Wait:true }
+
+@print 急速に体温を奪われていき、鳥肌が立つ。<br>指先もしびれはじめた。 { speed:1 waitInput:true Wait:true }
+
+@print （このままだと凍死するかも……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ゾッとする考えに青ざめ、<br>エマは操作盤のようなものがある方へと走った。 { speed:1 waitInput:true Wait:true }
+
+@print その操作盤は飲食店にあるタッチパネルのように<br>土台となるスタンドから外せるようになっていた。 { speed:1 waitInput:true Wait:true }
+
+@print そしてその表面にはなんのスイッチかわからないものが、<br>たくさん並んでいる。 { speed:1 waitInput:true Wait:true }
+
+@print エマはパニックに陥ったまま、<br>操作盤に並んだスイッチをガチャガチャと<br>適当に押していく。 { speed:1 waitInput:true Wait:true }
+
+# 施錠音
+@sfx Sfx_4
+
+@print いくつか押していくうちに、<br>やがて室内に扉の開く音が響いた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3
+
+@print 良かった……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "エマはほっと胸を<ruby=\"な\">撫</ruby>でおろし、<br>すぐさまその部屋を出ようとする。" { speed:1 waitInput:true Wait:true }
+
+# 操作盤を落とす音
+@sfx Sfx_104
+
+@print 扉を開けたそのとき、エマの後ろから<br>衝撃音がした。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+
+@print あっ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマが振り返ると、そこには<br>床に落ちて真っ二つに割れた操作盤が見えた。 { speed:1 waitInput:true Wait:true }
+
+@print （ど、どうしよう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマは少しの間、扉の外と落ちた操作盤を見比べて<br>迷った素振りを見せる。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+
+@print ごっ……ごめんなさい！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+@hideChars 
+
+@print エマは誰にともなく謝って、その場を後にした。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+@back 22_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent.Custom { time:0.9 }
+@Wait 0.9
+
+@print ゲストハウスから出て、<br>エマはほーっと、長いため息を吐き出す。 { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_22_1
+
+@print （なんとか脱出できた……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （そろそろ就寝時間だし、一度牢屋敷に戻ろう） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 色々混乱していたため、<br>歩きながら思考を整理していく。 { speed:1 waitInput:true Wait:true }
+
+@print （あの地下施設は一体なんだったんだろう） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （位置的には……牢屋敷の真下にあった） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （もうひとつ気になったのは――あのファイル） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 囚人名簿と、黒部ナノカの調査レポート。<br>あれが意味することは、現状のエマには予測がつかなかった。 { speed:1 waitInput:true Wait:true }
+
+@print ただひとつ思うのは、<br>ナノカは他の囚人とは明らかに違う。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print （わからないことばっかりだけど、<br>　あの地下施設はきっとまた行けるはず） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "念のために【<ruby=\"ウンディーネ\">水精</ruby>の間】内部は<br>元の状態に戻しておいた。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR1
+
+@print （明日もう一度行ってみよう） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 当面の目的を見つけたエマは少し活力を取り戻し、<br>牢屋敷への道を駆けていった。 { speed:1 waitInput:true Wait:true }
+
+@print ――そのエマの姿を、<br>木陰から見ている少女がいた。 { speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Default
+
+@print …………。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter04/Act01_Chapter04_Adv06

@@ -1,0 +1,621 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter05/Act02_Chapter05_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+@badId 11
+
+# クリーチャー化初期化
+@hide Hiro { time:0 }
+@char CreatureHiro.2 { Position:{hiroPositionX},{characterPositionY},{hiroPositionZ} Rotation:,{hiroRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Meruru { time:0 }
+@char CreatureMeruru.3-5 { Position:{meruruPositionX},{characterPositionY},{meruruPositionZ} Rotation:,{meruruRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Leia { time:0 }
+@char CreatureLeia.0-8 { Position:{leiaPositionX},{characterPositionY},{leiaPositionZ} Rotation:,{leiaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Noah { time:0 }
+@char CreatureNoah.0-3 { Position:{noahPositionX},{characterPositionY},{noahPositionZ} Rotation:,{noahRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Margo { time:0 }
+@char CreatureMargo.0-4 { Position:{margoPositionX},{characterPositionY},{margoPositionZ} Rotation:,{margoRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Nanoka { time:0 }
+@char CreatureNanoka.0-1 { Position:{nanokaPositionX},{characterPositionY},{nanokaPositionZ} Rotation:,{nanokaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Coco { time:0 }
+@char CreatureCoco.2-3 { Position:{cocoPositionX},{characterPositionY},{cocoPositionZ} Rotation:,{cocoRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide AnAn { time:0 }
+@char CreatureAnAn.0-3 { Position:{ananPositionX},{characterPositionY},{ananPositionZ} Rotation:,{ananRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Miria { time:0 }
+
+@hide Alisa { time:0 }
+@char CreatureAlisa.0-1 { Position:{alisaPositionX},{characterPositionY},{alisaPositionZ} Rotation:,{alisaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+# ==============================================================================
+# MARK: 10-20: 💬 アリサの裁き
+# ==============================================================================
+# ＠ト書き▼議論10-20アリサの裁き
+
+@set "isPlayed_10_20_3 = false"
+
+# 議論開始カットイン
+# BGM：Guil-me N'o sinruits-Vocal無-
+@bgm Bgm_8_1
+
+@courtFire true
+
+# Judge10-20-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char CreatureAlisa.0-4
+@gosubModifyCamera 0
+@printDebate おめえらだって<br>わかってんだろうがよ……。
+
+@char CreatureAlisa.0-4
+@gosubModifyCamera 0
+@printDebate "ウチらは魔女だ。<br><link=\"Objection_02_05_20_01\">呪われた子</link>だ。"
+
+@char CreatureAlisa.0-4
+@gosubModifyCamera 0
+@printDebate "誰かを<link=\"Objection_02_05_20_02\">殺すための力</link>を<br>持って生まれてきて、<br>実際に誰かを<br>殺すことでしか<br>生きていけねー存在<br>なんだよ。"
+
+@char CreatureAlisa.0-1
+@gosubModifyCamera 0
+@printDebate そんなん、<br>今取り戻した記憶を見りゃ<br>わかるだろ！？
+
+@char CreatureAlisa.2-4
+@gosubModifyCamera 0
+@printDebate ……ならそんなもんは<br>存在しちゃいけねーんだ。
+
+@char CreatureAlisa.2-4
+@gosubModifyCamera 0
+@printDebate "みんな跡形もなく<br>消し炭にして……<br><link=\"Objection_02_05_20_03\">終わらせちまえばいい</link>。"
+
+@char CreatureAlisa.2-4
+@gosubModifyCamera 0
+@printDebate ウチなら、<br>それができる……。
+
+@char CreatureAlisa.1-8
+@gosubModifyCamera 0
+@printDebate "だから……<br><link=\"Objection_02_05_20_04\">大人しく</link>死んどけよぉ！"
+
+
+# ==============================================================================
+# 10-20議論後独白
+# ==============================================================================
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char CreatureHiro.22
+@gosubModifyCamera 0
+@Wait 0.2
+
+@print （……ダメだ！<br>　この熱気……近付くことすらできない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.22
+@print （このままでは大魔女を呼び出すまでもなく、全滅だ……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.22
+@print （なんとかアリサを落ち着かせなければ……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-20-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_20_01
+
+@Skip false
+@pauseTrial true
+
+# 10-20-3通過後
+@choice 悪いのは大魔女だ
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-20-5
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_20_02
+
+@Skip false
+@pauseTrial true
+
+# MARK: 10-20-3: ❌ 通過後
+@choice 正しく力を使える
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-20-6
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_20_03
+
+@Skip false
+@pauseTrial true
+
+# MARK: 10-20-3: ❌ 通過後
+@choice 呪いは終わらない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-20-2
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論4
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_20_04
+
+@Skip false
+@pauseTrial true
+
+@choice 【洗脳】
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-20-3
+
+@choice 【視線誘導】
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-20-7
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 10-20: ❌ ミス選択肢
+# ==============================================================================
+# MARK: 10-20-4: ❌ 10-20-3通過前
+
+# Judge10-20-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.7
+@gosubModifyCamera 0
+@print アリサ、君は――！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureAlisa.1-7
+@gosubModifyCamera 0
+@print うるせぇ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+# 炎エフェクト
+@ResetText 
+@back SolidColor.Custom { time:0.12 }
+@Wait 0.12
+@sfx Sfx_46
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+
+@Damage 
+
+@char CreatureHiro.13 { time:0 }
+@gosubModifyCamera 0
+@char CreatureHiro.13 { time:1 }
+@print くっ……！？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.13
+@gosubModifyCamera 0
+@print "（ダメだ……！ 話を聞く気がない……！）" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-20-1
+
+# MARK: 10-20-5: ❌ 反論・悪いのは大魔女だ
+
+# Judge10-20-5
+
+# アンアン魔法未通過時は失敗
+@if !isPlayed_10_20_3
+	@goto .Judge10-20-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.7
+@gosubModifyCamera 0
+@print その呪いを残した諸悪の根源は、大魔女だ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.7
+@gosubModifyCamera 0
+@print みんな大魔女の悪意に操られて<br>罪を犯してしまっただけだ……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.7
+@gosubModifyCamera 0
+@print だから君たちは悪くない！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureAlisa.2-7
+@gosubModifyCamera 0
+@print ……それで？<br>被害者はそんな言い訳で納得すると思ってんのかよ！？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char CreatureAlisa.2-7
+@gosubModifyCamera 0
+@print 大魔女のせいでこうなってんだとしても、<br>実際に罪を犯したのはウチらだろーが！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char CreatureAlisa.0-7
+@gosubModifyCamera 0
+@print だからみんな死ぬしかねぇんだよッ！！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char CreatureHiro.14
+@gosubModifyCamera 0
+@print （アリサに詭弁は通じないか……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.13
+@gosubModifyCamera 0
+@print （……アリサは、ここでみんなが死ねば<br>　悲劇は止まると思い込んでいる） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.13
+@gosubModifyCamera 0
+@print （だが、本当にそうか……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-20-1
+
+# MARK: 10-20-6: ❌ 反論・正しく力を使える
+
+# Judge10-20-6
+
+# アンアン魔法未通過時は失敗
+@if !isPlayed_10_20_3
+	@goto .Judge10-20-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.7
+@gosubModifyCamera 0
+@print アリサ……それは違う！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.7
+@gosubModifyCamera 0
+@print 魔法の力は、正しく使うことだって出来たじゃないか……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.7
+@gosubModifyCamera 0
+@print この裁判の中でも、<br>誰かを癒したり、前を向かせるために<br>力を使ってくれた子がいた……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.7
+@gosubModifyCamera 0
+@print 大事なのは、力をどう使うかだ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureAlisa.2-4
+@gosubModifyCamera 0
+@print 力をどう使おうが<br>行きつく先は一緒だろ！？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char CreatureAlisa.2-4
+@gosubModifyCamera 0
+@print 佐伯が見せた記憶でもそうだったじゃねえか……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char CreatureAlisa.2-7
+@gosubModifyCamera 0
+@print ここにいる奴ら全員、<br>最後は殺人衝動に飲まれて殺し合っちまうんだ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char CreatureAlisa.2-8
+@gosubModifyCamera 0
+@print どうせ死ぬんなら……<br>今死ねよぉ！！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+
+@Damage 
+
+@char CreatureHiro.14
+@gosubModifyCamera 0
+@print （くっ……<br>　生半可な説得では意味がないか……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char CreatureHiro.13
+@gosubModifyCamera 0
+@print （……アリサは、ここでみんなが死ねば<br>　悲劇は止まると思い込んでいる） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.13
+@gosubModifyCamera 0
+@print （だが、本当にそうか……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge10-20-1
+
+# MARK: 10-20-7: ❌ 魔法・視線誘導
+
+# Judge10-20-7
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print "レイア！ 君の魔法で！" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureLeia.1-1
+@gosubModifyCamera 0
+@print 任せてくれたまえっ！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char CreatureLeia.1-4
+@gosubModifyCamera 0
+@print アリサくん！<br>【あっちを見るんだ】！！ { author:Leia speed:1 waitInput:true Wait:true }
+
+# レイア魔法エフェクト
+@ResetText 
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+
+@char CreatureAlisa.2-4
+@gosubModifyCamera 0
+@print "くそっ……！？ 蓮見、てめえ……！！" { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char CreatureLeia.1-4
+@gosubModifyCamera 0
+@print 安心していいよ……<br>【視線誘導】でキミの視線を逸らしているだけさ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char CreatureLeia.1-5
+@gosubModifyCamera 0
+@print これで、炎の狙いは定まらない……！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char CreatureAlisa.1-7
+@gosubModifyCamera 0
+@print 定める必要ねーんだよ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+# 炎エフェクト
+@ResetText 
+@back SolidColor.Custom { time:0.12 }
+@Wait 0.12
+@sfx Sfx_46
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+
+@Damage 
+
+@char CreatureLeia.5-2 { time:0 }
+@gosubModifyCamera 0
+@char CreatureLeia.5-2 { time:1 }
+@print 熱い熱い熱い！！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.13
+@gosubModifyCamera 0
+@print （だめだ……！<br>　アリサがどこを向いていようと、<br>　炎は広がってくる……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char CreatureHiro.13
+@gosubModifyCamera 0
+@print （……アリサは、ここでみんなが死ねば<br>　悲劇は止まると思い込んでいる） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.13
+@gosubModifyCamera 0
+@print （だが、本当にそうか……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-20-1
+
+# ==============================================================================
+# MARK: 10-20-3: ⭕ 魔法・洗脳
+# 通過必須選択肢。
+# ==============================================================================
+
+# Judge10-20-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print "くっ……！<br>アンアン！ 力を貸してくれ！" { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆まだ迷っている
+
+@char CreatureAnAn.1-9
+@gosubModifyCamera 0
+@print ……わがはいは……。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# @備考◆覚悟を決める
+
+@char CreatureAnAn.0-4
+@gosubModifyCamera 0
+@print 次は……止めてみせる。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char CreatureAnAn.0-4
+@gosubModifyCamera 0
+@print ミリアも……ノアも……レイアもだ……！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char CreatureAnAn.1-5
+@gosubModifyCamera 0
+@print "だから……<color=#9c8eff><b>【人を殺すな】</b></color>！ アリサ！" { author:AnAn speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char CreatureAlisa.2-6
+@gosubModifyCamera 0
+@print ぐっ……！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char CreatureAlisa.2-6
+@gosubModifyCamera 0
+@print 人だと……！？<br>ウチらは魔女だ！<br>もう人間じゃねぇ……！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char CreatureAlisa.2-7
+@gosubModifyCamera 0
+@print そんな命令……聞けるかよ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.13
+@gosubModifyCamera 0
+@print くっ……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char CreatureAnAn.0-5
+@gosubModifyCamera 0
+@print 話を……<color=#9c8eff><b>【聞け】</b></color>ぇ！！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.22
+@gosubModifyCamera 0
+@print （アンアンの魔法、<br>　アリサを完全に制御できるほどの力はないか……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char CreatureAlisa.2-4
+@gosubModifyCamera 0
+@print ……チッ……！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （いや……！<br>　炎の勢いは弱まっている……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （少しは彼女も耳を傾けてくれているということか……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （今なら話を聞いてくれる余地はあるかもしれない……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@if isPlayed_10_20_3
+	@goto .Judge10-20-1
+
+@set "isPlayed_10_20_3 = true"
+@toast 議論発展…
+@StopForChoice { Clear:true }
+
+@goto .Judge10-20-1
+
+# ==============================================================================
+# MARK: 10-20-2: ⭕ 呪いは終わらない
+# ==============================================================================
+
+# Judge10-20-2
+
+# アンアン魔法未通過時は失敗
+@if !isPlayed_10_20_3
+	@goto .Judge10-20-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@gosubCutIn CreatureHiro
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+@char CreatureHiro.7
+@gosubModifyCamera 0
+@print 待てアリサ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.7
+@gosubModifyCamera 0
+@print 魔女を殺したところで魔女因子は消失しない！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.7
+@gosubModifyCamera 0
+@print また新たな犠牲者を生むだけだ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureAlisa.2-6
+@gosubModifyCamera 0
+@print ぐっ……！<br>う、うるせぇ……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char CreatureAlisa.2-8
+@gosubModifyCamera 0
+@print うるせぇうるせぇうるせぇ……！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char CreatureAlisa.2-8
+@gosubModifyCamera 0
+@print ――みんな死ぬしかねぇんだよ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char CreatureHiro.14
+@gosubModifyCamera 0
+@print （くっ……！<br>　説得は効かないか――！？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （……いや、そんなことはない。<br>　また炎の勢いが弱まってきている……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （……アンアンの魔法は、<br>　相手がその言葉に納得しないと効果を発揮しない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （大丈夫だ……！<br>　アリサはちゃんと私の話を聞いている！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （このまま説得を続けるんだ……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto Act02_Chapter05/Act02_Chapter05_Trial21

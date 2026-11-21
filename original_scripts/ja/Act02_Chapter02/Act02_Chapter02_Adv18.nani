@@ -1,0 +1,72 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-2-18
+
+# ========================================
+# ●シーン2‐2‐18
+# ========================================
+
+@back 21_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# 荘厳な鐘の音
+@sfx Sfx_33
+
+@print 夜になり、鐘の音が魔女裁判の開始を告げる。 { speed:1 waitInput:true Wait:true }
+
+@print （時間か――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+@back 13_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@back Transparent.Custom { time:0.99 }
+@Wait 0.9
+
+@bgm Bgm_2_1_Loop
+
+@print 私とエマは看守によって、<br>裁判所まで連行された。 { speed:1 waitInput:true Wait:true }
+
+@print すでに他の少女たちも集まり、<br>証言台に立っている。 { speed:1 waitInput:true Wait:true }
+
+@char Warden.1
+
+@print さて、これで皆さん揃われましたね。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print エマと私が位置についたのを確認し、<br>ゴクチョーが口を開く。 { speed:1 waitInput:true Wait:true }
+
+@print 事前投票では、<br>ヒロさんとエマさんが同数で疑われていますが……<br>どうなるでしょうね。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hiro.Angry1
+
+@print …………。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+
+@print …………。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 私たちは互いに疑い合い、<br>他の何者も目に入らない状態だった。 { speed:1 waitInput:true Wait:true }
+
+@print （いよいよ君の本性が暴かれる時だ。<br>　覚悟しろ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （エマ――君を魔女として必ず処刑台に送る！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@Wait 0.5
+@char Warden.1
+
+@print それでは、魔女裁判開廷です！ { author:Warden speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ＞議論パートへ
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter02/Act02_Chapter02_Trial00

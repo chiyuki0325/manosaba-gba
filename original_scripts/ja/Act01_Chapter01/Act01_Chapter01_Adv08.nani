@@ -1,0 +1,391 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-1-4
+
+# ========================================
+# ●シーン1‐1-4
+# [back 6]
+# ========================================
+
+# ========================================
+# [bgm Bgm_028_001_Loop]
+# ========================================
+
+@back 6_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+@bgm Bgm_28_1
+
+@print エマはマップにしたがって、<br>たどりついた食堂の中へと入る。 { speed:1 waitInput:true Wait:true }
+
+@print 食堂の中では、<br>少女たちはすでに食事をはじめていた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+
+@print えっと……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 先ほど見た光景に未だ動揺し、<br>エマは青ざめながらも周囲を見回す。<br>すると―― { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Normal1,ArmR5
+@EmoteJumpDouble Sherry
+
+@print おーい、エマさーん！<br>こっちこっち！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print シェリーがぶんぶんと手を振って、<br>エマを呼んだ。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Normal1
+
+@print （あ、別に席が決められてるわけじゃないんだ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマはシェリーたちが寄り合うテーブルに<br>椅子を引いて座った。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 先ほど団結したシェリー、ハンナ、メルルがいる。<br>トレーにのせられた食事も既に置いてあった。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR10
+@char Ema.Normal1,ArmR3,ArmL5
+
+@print ビュッフェ形式だったので、<br>エマさんの分も適当に取っておきましたよ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,
+
+@print あ、ありがとう。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print お礼を伝える口元はひきつっている。 { speed:1 waitInput:true Wait:true }
+
+@print 皿に盛られた食事はどろりとしていて、色もグロテスク。<br>なんの料理なのか判然としない。 { speed:1 waitInput:true Wait:true }
+
+@print （い、いじめじゃないよね？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print シェリー、ハンナ、メルルのトレーにあるものも、<br>ビュッフェカウンターに並んでいる料理も、<br>全て似たり寄ったりの気味が悪いものだった。 { speed:1 waitInput:true Wait:true }
+
+@print （ってことは、<br>　この牢屋敷の料理がひどいってことか……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR1,ArmL1
+
+@print そのままのリンゴが１つ置いてあり、<br>エマはほっと息を吐く。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR14
+
+@print 見た目はアレですが、けっこうイケますよ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Normal1,ArmR4
+
+@print あなた味覚ぶっ壊れていますの？<br>超絶まじーですわ……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Normal1,ArmR4
+@char Ema.Normal1
+
+@print ……これって、あの看守が作ってるのかな。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print それを想像すると、<br>なんだかあの看守も可愛く思えてきますよねっ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Normal1,ArmR4
+
+@print ハンナが無言でシェリーを見ている。<br>味覚どころか頭自体疑っているらしい。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Normal1,ArmR3,ArmL7
+
+@print あの、その看守のことなんだけど……<br>ボク、さっきアリサちゃんが捕まっちゃってるの<br>見ちゃって……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Meruru.Default
+
+@print わ、私も見ました……何があったのでしょうか……<br>うぅ、とても心配です……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Normal1
+
+@print さっき出てってやるって息巻いていましたし、<br>脱走でもしたんですかね？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Normal1,ArmR3
+
+@print 禁止時間に外にいたのなら、<br>懲罰房とやらへ連れていかれたのかも<br>しれませんわね……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3,ArmL7
+
+@print 懲罰房……何かされるところなのかな。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "怖ろしい想像をしてしまったのか、<br>全員が沈黙し、<ruby=\"うつむ\">俯</ruby>いてしまう。" { speed:1 waitInput:true Wait:true }
+
+@print 食堂にはノアとアリサ以外がそろっている。<br>皆、仕方なく規則に沿って行動している様子だ。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@animate MainBackground
+@spawn MaskingRectangle
+@back 6_1
+@blur MainBackground-Front
+@char Leia.Normal1 { time:0 }
+@mask MainBackground-Front,Leia-Front
+@animate MainBackground-Front
+@animate Leia-Front
+@Wait 0.4
+
+@print エマたちの席から少し離れたところで、<br>レイアたちの一団も食事をしていた。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@char Leia.Smile1 { time:0.4 }
+@Wait 0.4
+
+@print "エマとレイアの目が合う。<br>レイアがにっこりと<ruby=\"ほほえ\">微笑</ruby>んだことで、<br>エマは<ruby=\"ほお\">頬</ruby>を染め、慌てて目を<ruby=\"そ\">逸</ruby>らした。" { speed:1 waitInput:true Wait:true }
+
+@hide Leia-Front,MainBackground-Front
+@blur MainBackground-Front
+@despawn MaskingRectangle
+@Wait 0.3
+
+@print 一連の挙動を見ていたらしい、<br>ハンナがずいっとエマに顔を寄せた。 { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1
+@char Ema.Normal1,ArmR1,ArmL1
+
+@print あいつ……<br>魔法を使っているにちげーねーですわ。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+
+@print 魔法……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマの顔がぎくりと<ruby=\"こわば\">強張</ruby>る。" { speed:1 waitInput:true Wait:true }
+
+@print （メルルちゃんや、さっきのノアちゃんにも<br>　信じられないものを見せられた。<br>　それって普通のことなのかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 女子を誘惑する魔法なんか使って……<br>しかも芸能人だからって、囲いを作って、偉そうに！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print ハンナはよっぽどレイアが気に食わないようだ。<br>腹立ちのまま、ガツガツと謎の料理を口に運んでいる。 { speed:1 waitInput:true Wait:true }
+
+@print "口調はお嬢様<ruby=\"ぜん\">然</ruby>としているが、<br>その食べ方は粗雑だった。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Normal1,ArmR17
+
+@print 魔法っていえば、メルルさんの魔法も<br>すごかったですよね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print いや現実に魔法があるっていうので<br>私はもうびっくりなんですけどね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Meruru.Default
+
+@print は、はわわ……そ、そんなそんな……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print エマの隣で大人しく食べていたメルルは、<br>会話を向けられただけで、極限まで恐縮している。 { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Flushed
+
+@print たいしたことは、できません……。<br>エマさんの血を止められただけです、し。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@toast "魔女図鑑 更新…"
+@update Meruru
+
+@print "メルルは真っ赤になって<ruby=\"うつむ\">俯</ruby>いてしまった。<br>エマは黙っていられず、思わず立ち上がってしまう。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Normal1
+
+@print ね、ねえみんなは当たり前みたいに魔法って言ってるけど……<br>ここに捕まったみんな、魔法を使えるってこと？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ボク、魔法なんて使えないと思うんだけど……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Normal1,ArmR12
+
+@print 私もエマさんと同じですよ。<br>魔法なんて初めて知りましたし、使えません。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Normal1
+
+@print ……ふぅ、何も知りませんのね。シェリーさんも、<br>あなたも。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "スプーンを置き、ハンナは<ruby=\"おおぎょう\">大仰</ruby>なため息をつく。" { speed:1 waitInput:true Wait:true }
+
+@print 魔女因子を持っている子は、不思議な力が使えるんですの。<br>それが【魔法】。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print あなたたちも気付いてないだけで、<br>何か不思議な力を持っているはずですわ。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Normal1
+
+@print "ええ～？ 私不思議な力なんて<br>持ってないですよ？ 特技っていえば。" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@print シェリーは目の前のリンゴに手を伸ばした。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [stopBgm]
+# ========================================
+
+# ========================================
+# [sfx 16：リンゴ粉砕音]
+# ========================================
+
+@blur MainBackground
+@char Sherry.Normal1,ArmR8
+
+@sfx Sfx_16
+@StopBgm 
+
+@print それを片手で、いともたやすく、ぐしゃっと粉砕した。 { speed:1 waitInput:true Wait:true }
+
+@print 指の力を使っているようには見えなかったが、<br>ものの見事にバラバラになった。<br>果汁が飛び散って、周辺を汚す。 { speed:1 waitInput:true Wait:true }
+
+@blur MainBackground
+@hideChars 
+@char Hanna.Fearful1,ArmR4
+
+@print あ……あ……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Smile1,ArmR8
+
+@print ちょっと力が強いかなってくらいで。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "ハンナも、エマも、<ruby=\"あぜん\">唖然</ruby>としている。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [bgm Bgm_018_001_Loop]
+# ========================================
+
+@bgm Bgm_18_1_Loop
+
+@char Hanna.Surprised1,ArmR3
+@char Sherry.Normal1,ArmR8
+
+@print "どこがちょっとなんですの！？ ゴリラ女！？" { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Cry1,ArmR19,ArmL14
+
+@print ひどいです～。リンゴくらい誰でも潰せますよね？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1
+
+@print はいそれあなたの魔法！！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Flushed1,ArmR7,ArmL1
+
+@print "きょとんと目を丸くしたシェリーは、<br>照れくさそうに、にへらと<ruby=\"そうごう\">相好</ruby>を崩した。" { speed:1 waitInput:true Wait:true }
+
+@print そっかあ……私って魔法が使えたんですね。<br>いやぁ、照れますね～。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@toast "魔女図鑑 更新…"
+@update Sherry
+@char Hanna.Pensive1
+
+@print 逆に今まで気付かなかったのが信じがたいですわ……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR1,ArmL1
+
+@print で、ハンナさんはどんな魔法をお持ちで？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Smile1
+
+@print シェリーが問いかけると、<br>ハンナは得意げな顔になって立ち上がった。 { speed:1 waitInput:true Wait:true }
+
+@print "仕方ないですわね。そんなに見たいのなら見せてあげても<br>よろしくってよ？ よ？" { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print ハンナは目立つところへと移動していき、<br>そこでバッと両手をひろげ―― { speed:1 waitInput:true Wait:true }
+
+@print これがわたくしの魔法ですわあぁっ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Smile1
+@animate Hanna
+
+@print ちょっと浮いた。 { speed:1 waitInput:true Wait:true }
+
+@print ……１０センチくらいだろうか。<br>足先が地面に接しておらず、ふわふわしている。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Surprised1,ArmR8,ArmL8
+
+@print すごいすごいすご～い！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print "シェリーは大はしゃぎだ。<br>ハンナはますます鼻息を荒くし、<ruby=\"ほお\">頬</ruby>を<ruby=\"こうちょう\">紅潮</ruby>させている。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Smile1
+@animate Hanna
+
+@print このまま移動もできますのよ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "少しだけ、移動した。<br>シェリーだけが拍手<ruby=\"かっさい\">喝采</ruby>だ。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Flushed1
+@animate Hanna
+
+@print 疲れたのか、すぐにハンナは地面に降り立った。<br>息も荒くなっている。 { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆息を荒げながら
+
+@StopBgm 
+
+@print ……と、こんな風にわたくしたちは<br>魔法を持っていますの。<br>きっと魔女見習いみたいなものね。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@toast "魔女図鑑 更新…"
+@update Hanna
+@char Hanna.Normal1
+
+@print "ぜえぜえと<ruby=\"あえ\">喘</ruby>ぎながらハンナが言い、<br>自分の席に戻ってきた。" { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_28_1
+
+@print 自分が不思議な力を使えるって気付いた時から、<br>わたくし、色々調べてきましたの。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 魔女因子や牢屋敷のことは、<br>都市伝説で聞いたことがありますわ。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 魔法を持つ者は、魔女になるかもしれないから<br>１５才で牢屋敷送りになるって。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Normal1,ArmR1,ArmL11
+
+@print そういえば、私も友だちから<br>そんなような噂聞いたことあったかも？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@toast "魔女図鑑 更新…"
+@update 1
+
+@hideChars 
+@char Ema.Pensive1,ArmR3,ArmL7
+
+@print ボク、ぜんぜん知らなかった……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （ボク、友だち、いなかったもんな……<br>　でも、やっぱり魔法なんて信じられないや……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ボク、間違えて<br>ここに連れてこられたんじゃないかな？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@toast "魔女図鑑 更新…"
+@update Ema
+@hideChars 
+@char Hanna.Normal1
+
+@print 可能性はありますわね。<br>検査なんて、いつされたのかもわからないですし。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Pensive1
+
+@print ハンナは悔しそうに爪を噛む。 { speed:1 waitInput:true Wait:true }
+
+@print わたくし、牢屋敷送りが嫌で<br>この能力をずっと隠してきましたのに……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print こんなところに閉じ込められて、<br>この先、どうなってしまうんですの……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "ハンナの<ruby=\"つぶや\">呟</ruby>きは、<br>空気を重くするに十分だった。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [transition Out,Fade,1,Black]
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter01/Act01_Chapter01_Adv09

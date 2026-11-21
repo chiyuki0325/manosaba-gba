@@ -1,0 +1,176 @@
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-ex1
+
+@bgm Bgm_23_1
+@back 13_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.2
+
+@char Warden.3
+@print 議論はここまでということで、<br>投票に移ってもらっていいですかね？ { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@print ――私の無実を証明しきれないまま、<br>ゴクチョーにより議論の終了が告げられた。 { speed:1 waitInput:true Wait:true }
+
+@print 投票によって【魔女】に選ばれたのは―― { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# パンパカパーン
+@sfx Sfx_34
+# ========================================
+
+@char Warden.8
+@print やはりというか、なんといいますか。<br>二階堂ヒロの処刑が決定しました～！ { author:Warden speed:1 waitInput:true Wait:true }
+@hideChars 
+
+@StopBgm 
+# ========================================
+@bgm Bgm_29_1
+# ========================================
+
+@char Hiro.Normal2,ArmR13,ArmL13,Eyes2_Angry_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@print …………。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "私は憎悪を込めて、<br>少女全員を<ruby=\"にら\">睨</ruby>みつけた。" { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR13,ArmL12,Eyes2_Normal_Closed1,Mouth2_Angry_Open1,Sweat2-1
+@print 君たちは正しくない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 告げたところで、結果はもう覆せない。<br>それでも、私は繰り返した。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Angry_Open2,Mouth2_Angry_Open1,Sweat2-1
+@print 君たちは……正しくない……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@print 哀れむような視線を向けられる。 { speed:1 waitInput:true Wait:true }
+
+@print 腹の底から沸き起こる怒りのままに、<br>全てをめちゃくちゃにしてやりたい。 { speed:1 waitInput:true Wait:true }
+
+@print 衝動に駆られる一方で、<br>それすらも面倒だと感じていた。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL12,Eyes1_Angry_Open3,Mouth1_Determined_Closed1,Sweat1-1
+@char Warden.9
+@print ……いいだろう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 【今】は、この結果を受け入れる。<br>上手くやれなかった私自身にも責任はあるのだから。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Determined_Closed1,Sweat1-1
+@print さっさと済ませてほしい。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ……話が早くて助かりますが、<br>ちょっと不気味ですねえ。何か企んでます？ { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Open3,Mouth1_Fearful_Open1
+@print べつに。<br>この期に及んで無罪を主張しても、ただ無様なだけだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Warden.9
+@print …………。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 納得したのかはわからないが、<br>ゴクチョーはそうですかとだけ返してくる。<br>そして、淡々と事を進めだした。 { speed:1 waitInput:true Wait:true }
+
+@char Warden.2
+@print 全員がスマホの処刑ボタンを押したら、<br>処刑執行スタートです。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@print ゴクチョーに促された少女たちは、<br>顔を青くしながらも次々にボタンを押していく。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 処刑ボタンを押す音
+@sfx Sfx_86
+# ========================================
+
+@char Warden.8
+@print "はい！ ではこれより、<br>魔女の処刑を執行します～。" { author:Warden speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 歯車がまわる音
+@sfx Sfx_36
+# ========================================
+
+@hideChars 
+@print ゴクチョーの宣言と共に、<br>仕掛けが作動しはじめた。 { speed:1 waitInput:true Wait:true }
+
+@print どこからか歯車の回転音が聞こえ、<br>中央の台座がわずかに揺れた。 { speed:1 waitInput:true Wait:true }
+
+@print 床が開き、台座がゆっくりと下降していく。 { speed:1 waitInput:true Wait:true }
+
+@print もともとあった台座と入れ替わる形で<br>現れた【それ】に、私の胸は大きく脈打った。 { speed:1 waitInput:true Wait:true }
+
+@print 巨大な鉄棒のような装置。<br>中央には、縄が垂れ下がっている。 { speed:1 waitInput:true Wait:true }
+
+@print ――絞首台だ。 { speed:1 waitInput:true Wait:true }
+
+@print 看守に背を押されて、私は台の上へと進む。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@Wait 1.0
+# ========================================
+@back 530_1 { Scale:{g_backgroundDefaultScale} }
+# ========================================
+
+@print "絞首台に立ち、私は<ruby=\"くびつ\">首吊</ruby>り縄を<ruby=\"にら\">睨</ruby>みあげる。" { speed:1 waitInput:true Wait:true }
+
+@print 心がざわつく感覚を覚えた。<br>どうしても【あの時】の光景が頭にちらつく。 { speed:1 waitInput:true Wait:true }
+
+@print 消えない、消せない記憶。 { speed:1 waitInput:true Wait:true }
+
+@print 自分の鼓動が耳にうるさい。<br>そこで初めて気付いた。 { speed:1 waitInput:true Wait:true }
+
+@print 私は動揺している。 { speed:1 waitInput:true Wait:true }
+
+@print "首を<ruby=\"くく\">縊</ruby>るための輪。<br>こんなものが私の大切な友だちを死に至らしめた。" { speed:1 waitInput:true Wait:true }
+
+@print そして今。<br>私の命を奪おうと手招きしている。<br>首を絞め、息の根を止めようと待ち構えている。 { speed:1 waitInput:true Wait:true }
+
+@print ……強く握った拳が震えていた。 { speed:1 waitInput:true Wait:true }
+
+@print 問題ない。私は向き合える。<br>怒りと恐れに飲み込まれたりはしない。 { speed:1 waitInput:true Wait:true }
+
+@print 姿勢を正し、私は深く息を吸い込む。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+@hide Stills
+# ========================================
+
+@print "もう平気だ。覚悟は元よりできている。<br>波打っていた感情は、すっかり<ruby=\"な\">凪</ruby>いでいた。" { speed:1 waitInput:true Wait:true }
+
+@char Hiro.,Arms4,Eyes1_Normal_Closed1,Mouth1_Cry_Closed1,Sweat1-1,Pale1-1
+@print 早く終わらせてくれ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 看守が私の首に縄をかける。 { speed:1 waitInput:true Wait:true }
+
+@print そして。<br>足元の床板が開かれた―― { speed:1 waitInput:true Wait:true }
+@hideChars 
+
+@StopBgm 
+# ========================================
+@back SolidColor
+# ========================================
+
+# ========================================
+# ロープが軋む首つり音
+@sfx Sfx_127
+# ========================================
+
+@print 二階堂ヒロは処刑された。 { speed:1 waitInput:true Wait:true }
+
+@print 彼女の魔法は【死に戻り】。 { speed:1 waitInput:true Wait:true }
+
+@print だが、魔法は発動しなかった。 { speed:1 waitInput:true Wait:true }
+
+@print "処刑に使われた<ruby=\"くびつ\">首吊</ruby>り縄は、<br>魔女を断罪するために作られた特殊なもの。<br>――魔法を封じ込める効果があった。" { speed:1 waitInput:true Wait:true }
+
+@print 少女たちの殺し合いは終わらない。<br>魔女裁判は続く―― { speed:1 waitInput:true Wait:true }
+
+@print だが、ヒロは本当の終わりを迎えたのだ。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 『END～閉じる円環～』
+# ========================================
+
+# @end
+
+@Gosub System/System_Subroutine.EndAdv
+
+@ClearBacklog 
+@ReturnToTitle { time:1.2000000476837158 delay:0.6000000238418579 }

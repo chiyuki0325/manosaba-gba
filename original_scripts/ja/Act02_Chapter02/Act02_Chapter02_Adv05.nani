@@ -1,0 +1,164 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-2-5
+
+# ========================================
+# ●シーン2‐2‐5
+# ========================================
+
+@back 11_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# ========================================
+# ＞『娯楽室』を選択
+# ========================================
+# ========================================
+# フィルムのまわる音
+# @sfx Sfx_44
+# ========================================
+
+@bgm Bgm_5_1
+@Wait 0.5
+
+@char Miria.Smile1
+@char AnAn.Normal1,Angle01/Option_Arms-
+
+@print 娯楽室を訪れると、<br>ミリアとアンアンが映画を再生させていた。 { speed:1 waitInput:true Wait:true }
+
+@print ２人とも集中していて、<br>私が入ってきたことに気付いていない。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print （……ピーター・パンか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "スクリーンに映る古い映画を<ruby=\"いちべつ\">一瞥</ruby>してから、<br>室内を見渡す。" { speed:1 waitInput:true Wait:true }
+
+@print （この場所でエマを殺すとしたら……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@Wait 0.2
+@camera 
+@Wait 0.2
+
+@print "天井を<ruby=\"あお\">仰</ruby>ぎ、シャンデリアに目を留めた。" { speed:1 waitInput:true Wait:true }
+
+@print （このシャンデリアが妥当だろう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "細工を<ruby=\"ほどこ\">施</ruby>せば、エマの頭上に落下させることができる――<br>事故に見せかけた殺害が可能かもしれない。" { speed:1 waitInput:true Wait:true }
+
+@print （問題は、うまく証拠を残さずに<br>　細工できるかどうか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ぶんっと武器が振り下ろされる音
+@sfx Sfx_9
+@Wait 1
+@camera { time:0.5 }
+@Wait 0.5
+
+@print ――えいっ、やあ～。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print "少し間の抜けた<ruby=\"か\">掛</ruby>け声がしたので、<br>思わずそちらを見る。" { speed:1 waitInput:true Wait:true }
+
+@char Miria.Normal1,ArmR10
+
+@print ミリアがスクリーンの前で<br>ビリヤードのキューを振り回していた。 { speed:1 waitInput:true Wait:true }
+
+@print （何をやっているんだ……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print とおっ～……こんな感じ？<br>ね、ねえアンアンちゃん、どうかな。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print "どうやらミリアは、スクリーンの中で剣を振る<br><ruby=\"かいぞく\">海賊</ruby>の真似事をしているようだった。" { speed:1 waitInput:true Wait:true }
+
+@char AnAn.Normal1,Arms2,Angle01/Option_Arms>Option_Arms01_05,Angle01/Option_ArmR/Option_ArmR01_01-
+
+@print 『へっぴり腰で迫力に欠ける。<br>　そんな調子では、フック船長の役は務まらない』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Miria.Surprised1
+
+@print "ええっ！？ うーん……<br>結構自信があったんだけどなぁ……。" { author:Miria speed:1 waitInput:true Wait:true }
+
+@print 『劇に向けて、まだまだ練習が<br>　必要と言わざるを得ない』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print （なるほど、劇制作のために研究していたのか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 君たちは劇で何をするんだ？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive1
+@char AnAn.Surprised1,ArmR1,ArmL1,ArmR1-Option-All,Angle01/Option_Arms-,ArmR1-Option-All
+
+@print あ、ああヒロちゃん。<br>おじさん実はフック船長に大抜擢されてしまってね。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char AnAn.Smile1,Arms2,Angle01/Option_Arms>Option_Arms01_01,Angle01/Option_ArmR/Option_ArmR01_01-
+
+@print 『わがはいは脚本担当である』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"うなだ\">項垂</ruby>れているミリアに対し、<br>アンアンは得意げにスケッチブックを<ruby=\"かか\">掲</ruby>げる。" { speed:1 waitInput:true Wait:true }
+
+@char Miria.Normal1
+
+@print 演目は【ピーター・パン】になったし、<br>２人で勉強会をしてたんだ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print そうか。健闘を祈る。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive1
+
+@print はい、頑張ります……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Normal1
+
+@print アンアンちゃんの方はどうかな。<br>脚本は書けそう？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char AnAn.Normal1,Arms2,Angle01/Option_Arms>Option_Arms01_01,Angle01/Option_ArmR/Option_ArmR01_01-
+
+@print 『草案はできた』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Miria.Surprised1
+
+@print "え、もう？ すごいね……。" { author:Miria speed:1 waitInput:true Wait:true }
+
+@char AnAn.Flushed1,ArmR1,ArmL1,ArmR1-Option-All,Angle01/Option_Arms-,ArmR1-Option-All
+
+@print …………。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Miria.Smile1
+
+@print おじさんも手伝うから、２人で頑張ろうね。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Smile1
+
+@print さすがに、この映画を超えるとまでは言わないけど……<br>素敵な劇ができるといいよね。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print "アンアンが深く<ruby=\"うなず\">頷</ruby>きを返す。<br>２人とも、劇の制作に乗り気な様子だ。" { speed:1 waitInput:true Wait:true }
+
+@print （……レイアの提案は<br>　あながち悪くなかったようだな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （目的が出来て、<br>　皆が活力を取り戻したように見える） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Normal1
+
+@print ピーター・パンといえば空中浮遊だけど、<br>ワイヤーとか使って再現するのかな？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char AnAn.Normal1,Arms2,Angle01/Option_Arms>Option_Arms01_05,Angle01/Option_ArmR/Option_ArmR01_01-
+
+@print 『実際に空を飛べたら、素晴らしいのだが』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive1
+
+@print うーん……ハンナちゃんの魔法って、<br>他の人を浮かせたりできないのかなぁ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print （邪魔をするのも悪いか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 盛り上がっている２人を背に、<br>私は娯楽室を後にした。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン2‐2‐4
+# 全てのイベントを消化している＞シーン2‐2‐10
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter02/Act02_Chapter02_Adv04

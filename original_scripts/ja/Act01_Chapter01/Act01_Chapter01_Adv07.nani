@@ -1,0 +1,253 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-1-3
+
+# ========================================
+# ●シーン1-1‐3
+# [back 1]
+# ========================================
+
+@back 1_1 { time:0 }
+@back Transparent { time:1.2 }
+@blur MainBackground-Front
+@Wait 1.8
+
+# ========================================
+# [sfx 14：フクロウの通知音]
+# ========================================
+
+@sfx Sfx_14
+
+# ========================================
+# [bgm Bgm_035_001_Loop]
+# ========================================
+
+@bgm Bgm_35_1
+
+@print スマホの通知音が、室内に響いた。 { speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_1
+@blur MainBackground-Front
+
+@print まどろんでいたエマはがばりと頭を上げ、<br>急いでスマホを確認した。 { speed:1 waitInput:true Wait:true }
+
+@print 内容はゴクチョーからの通知だった。 { speed:1 waitInput:true Wait:true }
+
+@print 『皆さん、夕食の時間です。<br>　速やかに食堂へ集合してください』 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [sfx 4：牢の施錠音]
+# ========================================
+
+@sfx Sfx_4
+
+@print 並ぶ牢屋が、一斉に開錠されていく。 { speed:1 waitInput:true Wait:true }
+
+@print 夕食……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （そういえば起きてから何も食べてない……。<br>　お腹は空いてる……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （こんな生活受け入れたくないけど……<br>　食べないと考えがまとまらない） { author:Ema speed:1 waitInput:true Wait:true }
+
+@back 1_1 { Scale:{g_backgroundDefaultScale} }
+@hide MainBackground-Front
+
+@char Ema.Pensive1
+
+@print エマはため息をつき、立ち上がった。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+# ========================================
+# [back 2]
+# ========================================
+
+@back 2_1 { Scale:{g_backgroundDefaultScale} }
+@back Transparent.Custom { time:0.9 }
+@Wait 0.9
+
+@char Ema.Normal1
+
+@print 食堂ってどこだろ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマは【魔女図鑑】のマップを思い出し、<br>スマホを開いた。 { speed:1 waitInput:true Wait:true }
+
+@print あ、あったあった、食堂は……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print マップを頼りに歩きだそうとした足は、<br>すぐに止まってしまう。 { speed:1 waitInput:true Wait:true }
+
+@print 隣の房に誰かが残っている気配がし、<br>気になったエマは中を覗き込んだ。 { speed:1 waitInput:true Wait:true }
+
+@print （城ケ崎、ノアちゃん……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@animate MainBackground
+@spawn MaskingRectangle
+@back 1_1
+@char Noah.Smile1,ArmL5
+@mask MainBackground-Front,Noah-Front
+@back Transparent { time:0 }
+@Wait 0.3
+
+# ========================================
+# [sfx 15：カラースプレー噴出音]
+# ========================================
+@Wait 1.0
+@sfx Sfx_15
+
+# ＠備考◆童謡『ちょうちょ』の鼻歌
+
+@print ふんふふ～ん♪ { author:Noah speed:1 waitInput:true Wait:true }
+
+@print ノアはぺたりと地面に座り込み、<br>熱心に何かをしている様子だった。エマには背中を向けている。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3
+
+@print あの、あのさ、ごはんだけど行かないの？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"てつごうし\">鉄格子</ruby>越しに、エマが声をかけた。" { speed:1 waitInput:true Wait:true }
+
+@char Noah.Normal1,ArmL1
+
+@print くるんと、ノアは顔を振り向かせた。<br>手にはカラースプレーを持っている。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print のあは今日、ごはん食べないんだよ？<br>まだお絵描きの途中だから。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+
+@print （この子、捕まってる自覚あるのかな？<br>　なんかやたら呑気だけど……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR1
+
+@print お絵描きって、何を描いてるのかな。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print んー……ちょっと待ってね。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print ノアは立ち上がり、<br>エマに地面が見えるように、少し横に移動する。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR13
+
+@print えっ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマは<ruby=\"きょうがく\">驚愕</ruby>の声を上げる。<br>地面に描かれた絵が――動いていた。" { speed:1 waitInput:true Wait:true }
+
+@print "カラースプレーで描かれた何かは、<br>ぐねぐねと動き、形を<ruby=\"な\">成</ruby>していく。" { speed:1 waitInput:true Wait:true }
+
+@print それはあっという間に、蛇になっていた。 { speed:1 waitInput:true Wait:true }
+
+@print "カラフルに<ruby=\"いろど\">彩</ruby>られた蛇は地面を<ruby=\"は\">這</ruby>うように動き、<br>リアルであまりに気味が悪い。" { speed:1 waitInput:true Wait:true }
+
+@print な、な、何で！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Noah.Smile1
+
+@print "ノアは首を<ruby=\"かし\">傾</ruby>げ、困ったように<ruby=\"ほほえ\">微笑</ruby>む。" { speed:1 waitInput:true Wait:true }
+
+@print ええとね、のあの絵、勝手に動いちゃうんだ。<br>絵だけじゃなくて、液体はね、全部勝手に動くの。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Pensive1
+
+@print 蛇なんて描くつもりなかったのにな。<br>やり直さなきゃ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@hide Noah-Front,MainBackground-Front
+@despawn MaskingRectangle
+@char Ema.Surprised1
+@Wait 0.3
+
+@print （勝手に動くって……<br>　それって、魔法、だよね？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@toast "魔女図鑑 更新…"
+@update Noah
+
+@print "再び背を向け地面にぺたりと座ったノアを、<br>エマはしばし<ruby=\"ぼうぜん\">呆然</ruby>と見つめていた。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print （さっき、メルルちゃんの手が光って、<br>　ボクの血を止めてくれたのと同じだ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （魔法は本当に、存在する……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 不思議な現象を目の当たりにしても、<br>どうしても信じがたいのか、エマは首を振る。 { speed:1 waitInput:true Wait:true }
+
+@print （今は考える余裕がないや……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR1
+
+@print ……じゃ、じゃあボクは行くね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@QuickSave 2
+
+@print ノアの背に声をかけてから、<br>１階へと続く階段へと向かいはじめたところで―― { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "離せ！ クソッ！ 離せよバケモンがよぉ！" { author:Alisa speed:1 waitInput:true Wait:true }
+
+@animate MainBackground
+@spawn MaskingRectangle
+@back 2_1
+@char Alisa.Angry1,Option-ArmL-Off,ArmR3
+@mask MainBackground-Front,Alisa-Front
+@animate MainBackground-Front
+@animate Alisa-Front
+@Wait 0.4
+
+@print 階下へと降りてきた看守と、<br>脇に抱えられているアリサを目撃する。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+
+@print （あの子は、確か紫藤アリサちゃん！？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "ふざけんな！ なんでウチが！" { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print 口では抵抗しているものの、<br>アリサは抱えられたままになって暴れたりはしていない。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Fearful1,ArmR3
+
+@print （抵抗したら……殺されるかも） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマは―― { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 選択肢
+# 『その場から動かない』
+# 『看守とアリサの後を追った』-> 1‐1‐b2へ
+# ========================================
+
+@choice 看守とアリサの後を追った
+	@goto Act01_Chapter01/Act01_Chapter01_Bad02
+
+@choice その場から動かない
+	@goto .Choice1-1-2
+
+@StopForChoice 
+
+# Choice1-1-2
+
+@correctChoice 2
+
+@print その場から動かない。 { speed:1 waitInput:true Wait:true }
+
+@print "つい数時間前に見たおぞましい光景が<ruby=\"のうり\">脳裏</ruby>を<ruby=\"よぎ\">過</ruby>ったのか、<br>エマは立ち尽くし、震えている。" { speed:1 waitInput:true Wait:true }
+
+@hide Alisa-Front,MainBackground-Front,Ema-Middle
+@despawn MaskingRectangle
+@Wait 0.3
+
+@print 看守はアリサを抱えて、<br>通路の向こうへと消えていった。 { speed:1 waitInput:true Wait:true }
+
+@print （アリサちゃんを連れて、一体どこへ……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [transition Out,Fade,1,Black]
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter01/Act01_Chapter01_Adv08

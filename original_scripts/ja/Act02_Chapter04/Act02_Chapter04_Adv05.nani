@@ -1,0 +1,189 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-4-5
+
+# ========================================
+# ●シーン2‐4‐5
+# ========================================
+
+@back 17_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# ========================================
+# ＞『湖方面』を選択
+# ========================================
+
+@bgm Bgm_17_1
+
+@print 私とレイアはゴクチョーの姿を求め、<br>森を抜け、湖方面へと足を運んでいた。 { speed:1 waitInput:true Wait:true }
+
+# 軽く水がはねる音
+@sfx Sfx_156
+
+@print すると、湖の方から水のはねる音が聞こえた。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Surprised
+
+@print 湖に誰かいる……！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print ああ、ゴクチョーかもしれないな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 水の音が聞こえたことで私たちが先を急ぐと、<br>そこには意外な人物がいた。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ミリア立ち絵なし
+# ========================================
+
+@hideChars 
+
+@char Miria.Surprised1,ArmR10
+@Wait 0.2
+@EmoteJump Miria
+@Wait 0.4
+@char Miria
+@hideChars { time:0.2 }
+@Wait 0.2
+
+@print レイアちゃん、ヒロちゃん！？<br>わあああっ { author:Miria speed:1 waitInput:true Wait:true }
+
+@print "水浴びをしていたらしいミリアは慌てた様子で、<br><ruby=\"とっさ\">咄嗟</ruby>に木陰に身を隠す。" { speed:1 waitInput:true Wait:true }
+
+@print び、びびびびっくりした……！<br>まさか誰か来るとは思ってなくて……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print 服を着たまま入っていたのなら、<br>隠れる必要はないと思うが……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print いや、おじさんのくせに<br>はしゃいでたのを見られたのが恥ずかしくて……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print おじさんではないんだろう？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print おじさんではないけども……。<br>そういう問題じゃなくて……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Hiro
+@char Leia.Smile1
+
+@print まあまあヒロくん。<br>普段見せない姿を見せるのは、<br>なかなか勇気がいるものなんだよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print けれど本当に意外だね。<br>ミリアくんは<br>はしゃいだりするタイプには見えなかったよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print ……昨日シェリーちゃんと遊んで。<br>ストレス解消には気分転換って必要だなって<br>しみじみ思ったんだ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print だからたまにはぱーっと湖で泳ぐのも<br>アリかな～って。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print 底の見えない不気味な湖に立ち入る気持ちは、<br>正直理解しかねたが…… { speed:1 waitInput:true Wait:true }
+
+@print シェリーに触発された行動は、<br>私とレイアも同様だ。 { speed:1 waitInput:true Wait:true }
+
+@print そんなことを思っていた矢先だった。 { speed:1 waitInput:true Wait:true }
+
+# フクロウの羽ばたき音
+@sfx Sfx_8
+
+@char Leia.Surprised1
+
+@print 湖の対岸、離れたところに<br>ゴクチョーが飛んできたのが見えた。 { speed:1 waitInput:true Wait:true }
+
+@print "ヒロくん！ ゴクチョーだ！<br>追おう！" { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print ああ……行くしかないな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 水に飛び込む音
+@sfx Sfx_145
+
+# ========================================
+# ここからレイアとヒロの立ち絵なし
+# ========================================
+
+# 水に飛び込むエフェクト
+@hideChars 
+@back SolidColor.Custom { time:0.2 }
+
+@print 私たちは仕方なく湖に飛び込んだ。 { speed:1 waitInput:true Wait:true }
+
+@print 泳いで対岸に行った方が早いと判断したためだ。 { speed:1 waitInput:true Wait:true }
+
+@print （思ったより深いな……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 幸い水は汚くなく透明で、<br>不快感こそなかったが…… { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@QuickSave 22
+
+@print ふと水中に、<br>怪しい影がちらりと映った気がした。 { speed:1 waitInput:true Wait:true }
+
+@print （なんだ……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私は―― { speed:1 waitInput:true Wait:true }
+
+@choice その影を追った
+	@goto Act02_Chapter04/Act02_Chapter04_Bad02
+
+@choice その影をスルーした
+	@goto .Choice2-4-2
+
+@StopForChoice 
+
+# Choice2-4-2
+
+@correctChoice 22
+
+@print 今はそんなことよりゴクチョーだと、<br>その影をスルーした。 { speed:1 waitInput:true Wait:true }
+
+@back SolidColor.Custom { time:0.9 }
+
+@print ――しかし、対岸にたどりついた頃には<br>ゴクチョーはもういなかった。 { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆泳いだ息切れ
+
+@char Hiro.Angry1
+
+@print はぁ、はぁ、はぁ……くそっ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆泳いだ息切れ
+
+@char Leia.Pensive1
+
+@print 結局私たちもずぶ濡れになってしまったね……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 私たちの行動が気になったのか、<br>ミリアも対岸まで来ていた。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Surprised1
+@char Leia.Surprised1
+@char Miria.Smile1,ArmR10
+@Wait 0.5
+
+@print こうなったら……３人で水遊び、する？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+@char Leia.Normal1
+
+@print "ずぶ<ruby=\"ぬ\">濡</ruby>れの私たちは互いの目を合わせ……" { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Smile1
+@char Leia.Smile1
+
+@print "少しの羽休めだと<br>水遊びに<ruby=\"きょう\">興</ruby>じることにした。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "<ruby=\"こも\">木漏</ruby>れ<ruby=\"び\">日</ruby>から差し込む湖面がきらきらと輝き、<br>小さな<ruby=\"はもん\">波紋</ruby>が私たちの動きに合わせて広がっていく。" { speed:1 waitInput:true Wait:true }
+
+@print 水をすくいあげてかけあったり……<br>自由に泳いでみたり……<br>私たちは久々にはしゃいでしまった。 { speed:1 waitInput:true Wait:true }
+
+@print 草の香りと水のひんやりとした気配が混ざり合って、<br>風がとても心地よかった。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン2‐4‐3
+# 全てのイベントを消化している＞シーン2‐4‐9
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter04/Act02_Chapter04_Adv03

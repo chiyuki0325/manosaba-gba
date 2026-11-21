@@ -1,0 +1,151 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-3-18
+
+# ========================================
+# ●シーン１‐3-18
+# ========================================
+
+@back 5_2 { time:0 }
+@Wait 0.9
+
+@back Transparent { time:1.8 }
+@WaitForNextFrame 
+
+@animate MainBackground
+@Wait 1.5
+
+@bgm Bgm_35_1
+
+@print ゴクチョーからの通知が入り、<br>少女たちは、ラウンジに集められた。 { speed:1 waitInput:true Wait:true }
+
+@print ハンナが死んでいたことを聞いて、<br>メルルはしゃくりあげて号泣している。 { speed:1 waitInput:true Wait:true }
+
+@print "シェリーはソファーに体を横たえ、<br><ruby=\"ぼうぜん\">呆然</ruby>としている。" { speed:1 waitInput:true Wait:true }
+
+@print アリサは壁隅で打ちひしがれている。 { speed:1 waitInput:true Wait:true }
+
+@print ココは焦点の合わない瞳で誰かと会話している。 { speed:1 waitInput:true Wait:true }
+
+@print マーゴはうなだれている。 { speed:1 waitInput:true Wait:true }
+
+@print （……そういえば……<br>　ナノカちゃんは、一体どこに行っちゃったんだろう） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマはぼんやりと、そんなことを考えていた。 { speed:1 waitInput:true Wait:true }
+
+# フクロウの羽ばたき音
+@sfx Sfx_8
+
+@back 5_2 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@print そこで、天井近くからの羽ばたき音とともに、<br>ゴクチョーが現れる。 { speed:1 waitInput:true Wait:true }
+
+@char Warden.1
+
+@print やれやれまたですよ……殺人事件……<br>しかも早朝に……時間を考えてほしいですよね……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print そうですねえ……<br>【魔女裁判】は正午に行いましょう。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Pensive1
+
+@print なんでいっつも時間適当なワケ！？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Warden.1
+
+@print これでも深く考えてるんですよ。<br>皆さんがなるべく追い込まれ……いやいや、<br>明日も気持ちよく過ごせるようにですね。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 嫌なことはさっさと終わらせてしまったほうが<br>いいですよね？ { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 今いる囚人の中から必ず殺人犯を特定してください。<br>その者は、【魔女】として処刑……<br>特定できなかったら全員処刑も変わりませんので。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print "あ、ちなみに【<ruby=\"サラマンダー\">火精</ruby>の間】の消火活動は<br>監視フクロウたち総出でしておきましたので。<br>相当大変でした……。" { author:Warden speed:1 waitInput:true Wait:true }
+
+@print せいぜい捜査を頑張って、<br>犯人を特定してくださいね。 { author:Warden speed:1 waitInput:true Wait:true }
+
+# フクロウの羽ばたき音
+@sfx Sfx_8
+
+@hideChars 
+@char Coco.Pensive1
+
+@print 今あいつせいぜいとか言わんかった？<br>なんかもう適当の極みみたいになってね？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Margo.Pensive1
+
+@print この牢屋敷がいつから存在するかは知らないけれど、<br>殺人事件と魔女裁判の流れに<br>うんざりしてるのかしらね……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 私たちにとっては、<br>適当に済ませられることではないのだけど。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマたちは、<br>その場からしばらく動こうとしなかった。 { speed:1 waitInput:true Wait:true }
+
+@print （捜査なんて……できるわけない……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print そんな中、はじめに動きを見せたのは、<br>マーゴだった。 { speed:1 waitInput:true Wait:true }
+
+@char Margo.Pensive1
+
+@print 殺人事件だというのなら、<br>犯人を特定しないといけないわ。<br>そうしないと、全員が死ぬことになる。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "ぽつりと<ruby=\"つぶや\">呟</ruby>きを落として、<br>マーゴはラウンジを出ていった。" { speed:1 waitInput:true Wait:true }
+
+@print 続いて、ココ、アリサものろのろ出ていく。 { speed:1 waitInput:true Wait:true }
+
+@print シェリーもソファーから降りた。 { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Pensive
+
+@print シェリーさんは動ける状態では……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Pensive1
+
+@print 私は名探偵なんですよ？<br>じっとしていられるわけが……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "立っていられなかったのか、<br>シェリーの体がぐらりと傾ぎ、<br>メルルが<ruby=\"とっさ\">咄嗟</ruby>に支える。" { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1
+@char Meruru.Pensive
+
+@print どうかじっとしていてください……！<br>シェリーさんまで何かあったら……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 嫌です。這ってでも私は捜査を……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Determined2,ArmR3
+
+@print メルルちゃん。<br>シェリーちゃんを医務室へ連れていって。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Pensive1
+
+# ＠備考◆抗議っぽく
+
+@print エマさん！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Determined2,ArmR3
+
+@print これが殺人事件だっていうなら……ううん、<br>そうじゃなくても、ボクはハンナちゃんの死の真相を<br>確かめなきゃいけない。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ハンナちゃんのために。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマは静かに言い放ち、<br>振り返らず、ラウンジを後にした。 { speed:1 waitInput:true Wait:true }
+
+@update Hanna
+
+@set "chosenAreaFlag = 0"
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter03/Act01_Chapter03_Adv19

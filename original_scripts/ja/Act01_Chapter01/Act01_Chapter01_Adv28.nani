@@ -1,0 +1,138 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-1-24
+
+# ========================================
+# ●シーン1-1‐24
+# [back 5]
+# ========================================
+
+# ========================================
+# ＞『ラウンジ』を選択
+# ========================================
+
+# ========================================
+# [bgm Bgm_005_001_Loop]
+# ========================================
+
+@back 5_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+@bgm Bgm_5_1
+
+@print ラウンジには、<br>エマにとって大きく気になっていることが１つあった。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@camera { time:0.9 }
+@Wait 0.9
+
+@print （壁にかけられていたボウガンが盗まれた……<br>　一体誰が、いつ……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "壁の前に立ち、<br>エマはうーんと<ruby=\"うな\">唸</ruby>る。" { speed:1 waitInput:true Wait:true }
+
+@print すると、ラウンジにナノカが入ってきた。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@camera { time:0.9 }
+@Wait 0.9
+@char Sherry.Normal1
+@char Nanoka.Default
+
+@print あ、ナノカさん。<br>ナノカさんも調査中ですか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ……別に。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "その冷たい言い方に、<br>むっと<ruby=\"ほお\">頬</ruby>を膨らませたのはハンナだ。" { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1
+@char Nanoka.Default
+
+@print 別にってあなた、<br>人が１人死んでるのに、その態度はないんじゃないかしら。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print …………。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Hanna.Pensive1
+
+@print "特に<ruby=\"にら\">睨</ruby>まれているわけでもない。<br>しかしハンナは、一歩後ずさっていた。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 彼女からは迫力も恐怖も感じないのに、<br>話しかけたことを後悔する何かを持っている。 { speed:1 waitInput:true Wait:true }
+
+@print まるで、踏み入れたら戻れない闇に<br>引き込まれそうな何か――。 { speed:1 waitInput:true Wait:true }
+
+@print エマはナノカにそんな印象を抱きつつも、<br>覚悟を決めて質問を口にする。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3
+@char Nanoka.Default
+
+@print あ、あのさ、ナノカちゃん、<br>ラウンジからボウガンが盗まれたって言ってたよね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print だからなに。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print "暗く<ruby=\"うろん\">胡乱</ruby>げな瞳で見つめられ、<br>エマはごくりと喉を鳴らす。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print ずっとボウガンのこと、気にしてたのかなって。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print この牢屋敷で身を守るために、武器は必要。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print あんなにわかりやすく飾ってあったら、<br>みんな気にしていたと思うけれど。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 話は終わり？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ナノカは既に去ろうとしていたが、<br>シェリーがその前に立ちはだかる。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+@char Nanoka.Default
+
+@print もうひとつ聞かせてください！<br>――ナノカさんの魔法ってなんでしょう？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ……言う必要はないわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1
+
+@print そんなこと仰らず！<br>私、みんなの魔法が気になって仕方ないんです～！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print シェリーが拝むように言うも、ナノカは教える気がなさそうだ。<br>横をするりと通り抜けていった。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1
+
+@print ナノカさんはいかにも怪しいですし、孤立もしています。<br>最悪【魔女】にされてしまいますよ？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print シェリーは笑顔のまま、<br>不穏なことを口にした。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Surprised1,ArmR3
+
+@print シェ、シェリーちゃん！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ナノカの足がピタと止まった。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Nanoka.Default
+
+@print 魔女にしたければ、すればいい。<br>――どうせみんな死ぬんだから。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print （え……？<br>　それって、どういう意味……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "エマが振り返ると、ナノカの姿はもうなかった。<br><ruby=\"はくちゅうむ\">白昼夢</ruby>でも見たかのように。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン1‐1‐21
+# 全てのイベントを消化している＞シーン1‐1‐30
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter01/Act01_Chapter01_Adv25

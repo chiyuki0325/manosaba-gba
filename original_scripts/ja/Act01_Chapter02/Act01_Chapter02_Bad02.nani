@@ -1,0 +1,917 @@
+@if isDebugDirectJump
+	@Gosub System/System_Subroutine.BeginAdv
+
+# ========================================
+# ＞『シェリーから手を離した』を選択
+# ========================================
+
+# ========================================
+# ＞シーン1-2-b2へ
+# ========================================
+
+# Scene1-2-b2
+
+# ========================================
+# ●シーン1‐2-b2
+# ========================================
+
+@back 17_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_12_1_Loop
+
+@print パニックになったのか、<br>シェリーの肩から手を離した。 { speed:1 waitInput:true Wait:true }
+
+@print 途端に、ミリアはシェリーの背から転げ落ちる。 { speed:1 waitInput:true Wait:true }
+
+@print うわっ！？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@print あっ、ミリアさん！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ミリアちゃん！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print うわあああぁ、撃たれる！<br>撃たれて死んじゃうぅ～！！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@print 情けない声を上げながらミリアは茂みの方へと<br>逃げ込んでいく。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised
+
+@print "あ、ミリアちゃん！ そっちは……！" { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Default
+
+@print "エマさん！ 看守はこっちに向かってきてます！<br>早くしないと追いつかれちゃいますよ！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive
+
+@print で、でも！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa.Angry1,Option-ArmL-Off
+
+@print "チッ、おい！ 早くしろ！" { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Surprised
+
+@print ミリアさんのことは、<br>あとで探しに来ましょう！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 今はとにかく逃げないと！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive
+
+@print わ、わかった。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "（ミリアちゃん！ 絶対迎えに来るから<br>　それまで無事でいて……！）" { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマは後ろ髪を引かれる思いで、<br>その場を離れて行った。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+@StopBgm 
+
+@back SolidColor { time:0.2 }
+
+@print 一方その頃、ミリアは―― { speed:1 waitInput:true Wait:true }
+
+@back 17_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@char Miria.Surprised,ArmR10 { time:0 }
+
+@Wait 1.2
+@back Transparent { time:1.2 }
+
+@bgm Bgm_17_1
+
+@print ひっ、ひぇっ……誰か、助け……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# ========================================
+# 立ち絵：クリーチャーA表示
+# ========================================
+
+@char JailerC
+
+@print ……。 { author:StrayNarehate speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマたちとはぐれてたどり着いた先で<br>異形の化け物――魔女のなれはてと出くわしていた。 { speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive
+
+@print ご、ごめんなさい……逃げないから、<br>許して……許してください……！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char JailerC
+
+@print ……。 { author:StrayNarehate speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria.Pensive
+
+@print ……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print なれはてとミリアのあいだに、沈黙が流れる。<br>その間、どちらも身動きひとつしなかった。 { speed:1 waitInput:true Wait:true }
+
+@print けれどそれも長くは続かず、<br>耐えかねたようにミリアがおそるおそる顔を上げた。 { speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive
+
+@print あ、あの……？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char JailerC
+
+@print ……。 { author:StrayNarehate speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria.Pensive
+
+@print おじさんのこと、殺さ……ないの？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char JailerC
+
+@print ……。 { author:StrayNarehate speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria.Default
+
+@print ……あ、あの。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ミリアが首を傾げると、<br>同時になれはても同じ方にかたむく。 { speed:1 waitInput:true Wait:true }
+
+@print ……戻っても、いいですか？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@print ミリアが反対に首を傾げると、<br>なれはても反対にかたむいた。 { speed:1 waitInput:true Wait:true }
+
+@print もしかして……真似、してる？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@print 試しに、ミリアはもう一度反対に<br>首をかしげてみた。 { speed:1 waitInput:true Wait:true }
+
+@print するとなれはても同じように動く。 { speed:1 waitInput:true Wait:true }
+
+@char Miria.Default
+
+@print やっぱり真似……してる、よね。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print ……君は、襲ってこないの？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char JailerC
+
+@print ……。 { author:StrayNarehate speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria.Default
+
+@print あ、う……えっと、じゃあ……<br>おじさん、帰るね……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive
+
+@print "ってあれ？ 牢屋敷ってどっちだっけ。" { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 無我夢中で走ってきたせいか、<br>ここがどこなのかわからない。 { speed:1 waitInput:true Wait:true }
+
+@char Miria.Default
+
+@print あ、あの～……<br>牢屋敷がどっちか、教えてもらえたりは……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ミリアがチラリとなれはてを見れば、<br>それまで動かなかったなれはてが静かに移動し始めた。 { speed:1 waitInput:true Wait:true }
+
+@print ……。 { author:StrayNarehate speed:1 waitInput:true Wait:true }
+
+@print しばらく進むと、まるでミリアを待つように<br>その動きを止める。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria.Default
+
+@print えっ……あ、あの……<br>屋敷の場所、教えてくれるの？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char JailerC
+
+@print ……。 { author:StrayNarehate speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria.Default
+
+@print この子……言葉が分かるのかな？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@StopBgm 
+
+@print ミリアは恐る恐る、なれはてのあとに続いた。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@back 5_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@bgm Bgm_28_1
+
+@print なれはてに案内されミリアが無事に牢屋敷に戻ると、<br>エマとシェリーが駆け寄ってきた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Default
+@char Sherry.Default
+
+@print "ミリアちゃん！ 無事だったんだね！" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print さっきは落としてしまってすみません。<br>怪我とか、ありませんか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria.Default
+
+@print 体だけは丈夫だから平気だよ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print それより、シェリーちゃんは悪くないから謝らないで！<br>悪いのは、パニックになっちゃったおじさんなんだし。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive
+
+@print シェリーちゃん、それにエマちゃんも……<br>心配かけて本当にごめんよ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Smile
+@char Sherry.Smile
+
+@print 大丈夫ですよー！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print "うん！ ミリアちゃんが無事ならいいんだ。" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマとシェリーが笑みを向けると、<br>ミリアもようやくほっとしたように微笑んだ。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Default
+
+@print それにしても、ミリアちゃんが<br>森で迷子にならなくて本当によかった。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default
+
+@print 本当ですよ。迷子になってたら<br>時間までに戻れたかわかりませんし……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria.Pensive
+
+@print ああ、それは……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "言いかけてミリアは<ruby=\"とっさ\">咄嗟</ruby>に言葉を<ruby=\"の\">呑</ruby>み込んだ。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Default
+
+@print "ミリアちゃん？ どうかした？" { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria.Default
+
+@print あ、ううん。なんでもないよ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print あー、なんかほっとしたら眠くなってきちゃったな。<br>ごめんね、おじさん今日はもう休むことにするよ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Default
+@char Sherry.Default
+
+@print そっか、わかった。<br>おやすみ、ミリアちゃん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print おやすみなさい。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria.Default
+
+@print うん、おやすみ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ２人の姿が見えなくなって、<br>ミリアはふうと息を吐く。 { speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive
+
+@print あの子が本当に安全かまだわからないし、<br>余計なことは言わない方が良いよね。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print 明日、またあの子に会いに行ってみよう。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@back 17_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@char Miria.Default
+
+@print えっと、たしかこっちだったよね。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 翌日の自由時間。<br>ミリアは、昨日なれはてと会った場所にいた。 { speed:1 waitInput:true Wait:true }
+
+@char Miria.Smile
+
+@print あ、いた！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char JailerC
+
+@print ……。 { author:StrayNarehate speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria.Default
+
+@print 君、昨日の子……だよね？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char JailerC
+
+@print ……。 { author:StrayNarehate speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print なれはては何も言わない代わりに、<br>ミリアの動きを真似るようにして首をかしげた。 { speed:1 waitInput:true Wait:true }
+
+@char Miria.Smile
+
+@print ああよかった、君だった。<br>昨日は牢屋敷まで案内してくれてありがとう。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print あの、お礼といってはなんだけど……<br>これ、どうぞ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print 自分となれはての間に、ミリアは食堂から持って来た<br>リンゴを置いた。 { speed:1 waitInput:true Wait:true }
+
+@char Miria.Default
+
+@print 食べれるかわからないけど、<br>よかったら……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ミリアが数歩後ろに下がってしばらくすると、<br>なれはてはゆっくりリンゴに近づいた。 { speed:1 waitInput:true Wait:true }
+
+@print "そして、触手のようなもの をしゅるしゅると伸ばすと<br>リンゴを取り上げる。" { speed:1 waitInput:true Wait:true }
+
+@char JailerC
+
+@print ……。 { author:StrayNarehate speed:1 waitInput:true Wait:true }
+
+@print "しばらくリンゴを眺めていたかと思うと、<br>ばっくりと口が開いてリンゴを丸<ruby=\"の\">呑</ruby>みにしてしまった。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria.Default
+
+@print す、すごい食べ方だね……。<br>でも食べてくれてよかった。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print 昨日も思ったけど、君……多分、<br>少しは言葉がわかるんだよね？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char JailerC
+
+@print ……。 { author:StrayNarehate speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria.Default
+
+@print 返事は……できないんだね。<br>でも、言葉が少しでもわかるみたいでよかった。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char JailerC
+
+@print ……。 { author:StrayNarehate speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria.Default
+
+@print 君はずっとここにひとりなのかな。<br>ここを見張る役目、とか？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@print でも、こんな場所見張る必要なさそうだけど……。<br>もしかして、なんか秘密があったりして。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char JailerC
+
+@print ……。 { author:StrayNarehate speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria.Default
+
+@print なんて……話せたとしても、<br>こんなこと答えてくれるはずないか。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Smile
+
+@print でも、君はあの看守と違うみたい。<br>……なんか、なんていうか……優しい、気がする。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char JailerC
+
+@print ……。 { author:StrayNarehate speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria.Default
+
+@print あの……また明日、お礼のリンゴ持って来るね。<br>じゃあ……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print 小さく手を振るミリアの動きを真似てか、<br>なれはても触手を小さく振り返す。 { speed:1 waitInput:true Wait:true }
+
+@char Miria.Smile
+
+@print うん、またね……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 少女らしい笑みを浮かべ、<br>ミリアは軽い足取りで牢屋敷へと戻った。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+@back SolidColor { time:0.2 }
+
+@print それから数日。 { speed:1 waitInput:true Wait:true }
+
+@print ミリアはみんなに内緒で、<br>毎日のようになれはてに会いに出掛けていた。 { speed:1 waitInput:true Wait:true }
+
+@back 5_2 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@char Miria.Default { time:0 }
+
+@Wait 1.2
+@back Transparent { time:1.2 }
+
+@print ……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Default
+
+@print あ、ミリアちゃん！<br>今会いに行こうと思ってたんだけど……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "あれ？ どこかに行くの？" { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria.Surprised
+
+@print ！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Default
+
+@print これから図書室に行くんですけど、<br>ミリアさんも一緒に行きませんか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria.Pensive
+
+@print あ、えっと……あの！<br>おじさん……ちょっと散歩に行こうと思って！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive
+
+@print でも、ナノカちゃんのこともあるし、<br>１人じゃ危ないんじゃ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria.Default
+
+@print "大丈夫！ すぐに戻ってくるから！" { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print その場から逃げ出すようにして、<br>ミリアは牢屋敷への外へと飛び出した。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@back 17_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@char Miria.Default
+
+@print やあ……今日は、パンを持ってきたよ。<br>少し焦げてるけど、どうぞ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char JailerC
+
+@print ……。 { author:StrayNarehate speed:1 waitInput:true Wait:true }
+
+@print "ミリアがパンを差し出すと、<br>なれはてはするりと触手を伸ばしてパンを丸<ruby=\"の\">呑</ruby>みにする。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria.Default
+
+@print 気に入ってくれた？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char JailerC
+
+@print ……。 { author:StrayNarehate speed:1 waitInput:true Wait:true }
+
+@print "相変わらず返事のないなれはてに、<br>ミリアは<ruby=\"うれ\">嬉</ruby>しそうな視線を向けた。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria.Default
+
+@print 君は本当に大人しいね。<br>これなら、みんなに紹介しても大丈夫そうだ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print 君が味方になってくれたら、<br>あの看守にも対抗できるかもしれない。心強いよ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print 明日にでも、エマちゃんとシェリーちゃんに<br>紹介してあげるからね。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char JailerC
+
+@print ……。 { author:StrayNarehate speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria.Default
+
+@print じゃあ今日は……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@hideChars 
+@char JailerC
+
+@print ミリアがそう言って立ち上がりかけた時── { speed:1 waitInput:true Wait:true }
+
+# ドンっと人を押す音
+@sfx Sfx_76
+
+@print 突然、なれはてが触手を伸ばしてミリアを突き飛ばした。 { speed:1 waitInput:true Wait:true }
+
+@print ちょっ、急にどうし……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_3_1_Loop
+
+# 銃声
+@sfx Sfx_38
+
+@print ！？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@print 鋭い破裂音のあと、<br>さっきまでミリアがいた場所に銃弾が撃ち込まれた。 { speed:1 waitInput:true Wait:true }
+
+@print ひっ、ひえっ……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print 腰を抜かすミリアの向こうで茂みが揺れ、<br>銃を構えたナノカが姿を見せた。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Nanoka.Default,Arms4
+
+@print ……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria.Pensive
+
+@print ナ、ナノカちゃん……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Nanoka.Default
+
+@print やっぱり、あなたが黒幕だったのね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria.Pensive
+
+@print "ち、違うよ！ 違う！！<br>おじさんは黒幕なんかじゃ……。" { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Nanoka.Default
+
+@print こんなところでそれと通じておいて、<br>まだ言い逃れするつもり？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char JailerC
+
+@print ……。 { author:StrayNarehate speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria.Pensive
+
+@print あ……この子は、その……<br>看守とは違う、優しい子なんだよ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default
+
+@print その証拠に、道に迷った時は案内してくれたし、<br>今だって助けてくれた！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Nanoka.Default
+
+@print それは、あなたが黒幕だからでしょう。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria.Pensive
+
+@print "そうじゃない！ そうじゃなくて……。" { author:Miria speed:1 waitInput:true Wait:true }
+
+@print "もどかしさに唇を<ruby=\"か\">噛</ruby>むミリアに、<br>ナノカは銃口を向け直す。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Nanoka.Default
+
+@print あなたのことを許さない。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria.Pensive
+
+@print そ、そんな……違うのに……どうして、<br>嫌だ……死にたくないっ……死にたくないっ！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Nanoka.Default
+
+@print 残念だけど、そんな演技私には通用しないから。<br>……さよなら。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria.Fearful
+
+# ＠備考◆恐怖に息を呑む
+
+@print っ！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ミリアが恐怖に身を縮め、<br>ナノカが引き金を引く。 { speed:1 waitInput:true Wait:true }
+
+# 銃声
+@sfx Sfx_38
+
+# 弾丸を弾く音
+# @sfx Sfx_88
+
+# ＠備考◆驚きで息を呑む
+
+@print っ！？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print ……え？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char JailerC
+
+@print ……。 { author:StrayNarehate speed:1 waitInput:true Wait:true }
+
+@print "突如響いた甲高い音に、ミリアが顔を上げると<br>例のなれはてがミリアを<ruby=\"かば\">庇</ruby>うようにして立っていた。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria.Pensive
+
+@print もしかして……守って、くれた？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@print ……。 { author:StrayNarehate speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Nanoka.Default
+
+@print ……それに守られるなんて、<br>ますます黒幕だとしか思えない。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print "今までよりも鋭い眼差しで、<br>ナノカがミリアを<ruby=\"にら\">睨</ruby>みつけ、銃口を向ける。" { speed:1 waitInput:true Wait:true }
+
+@print 今度は絶対に外さない。<br>だから、大人しく死んで。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria.Surprised1
+
+@print ナ、ナノカちゃん、お願いだから<br>ちょっとおじさんの話を……！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Nanoka.Default
+
+@print もう黙って。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria.Fearful
+
+@print っ！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@print ナノカが、再度引き金を引こうとした<br>その時―― { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# グサッと刺さる音
+@sfx Sfx_89
+
+@print ……あ？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# グサグサッと連続で刺さる音
+@sfx Sfx_90
+
+@print っ……かはっ！ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char JailerC
+
+@print ……。 { author:StrayNarehate speed:1 waitInput:true Wait:true }
+
+@print なれはてから伸びた触手が、<br>ナノカの体を容赦なく貫いていた。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria.Surprised
+
+@print なっ……！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# グサグサッと連続で刺さる音
+@sfx Sfx_90
+
+@print はっ……ぐ、がっ……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Miria.Fearful
+
+@print ひっ……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char JailerC
+
+@print ……。 { author:StrayNarehate speed:1 waitInput:true Wait:true }
+
+@print "苦しみに顔を<ruby=\"ゆが\">歪</ruby>めたナノカの手から、<br>銃が落ちる。" { speed:1 waitInput:true Wait:true }
+
+# 地面に銃を落とす音
+# @sfx Sfx_91
+
+@print ……こんな、ところで……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 私にはまだ、やらないといけない、ことが……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print ……。 { author:StrayNarehate speed:1 waitInput:true Wait:true }
+
+# グサグサッと連続で刺さる音
+@sfx Sfx_90
+
+@print ナノカが伸ばした手も、触手に貫かれて<br>そこから血が零れ出す。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria.Pensive
+
+@print "も、もういいから！ もう止めて！<br>ねえ！ 止めてあげてよ！" { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char JailerC
+
+@print ……。 { author:StrayNarehate speed:1 waitInput:true Wait:true }
+
+@print ミリアの叫びなんて聞こえていないかのように、<br>なれはてはナノカを貫き続ける。 { speed:1 waitInput:true Wait:true }
+
+# グサグサッと連続で刺さる音
+@sfx Sfx_90
+
+@hideChars 
+@char Miria.Cry
+
+@print ……も、やめて……おねがい……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print その願いが聞き届けられたのは、<br>ナノカが完全に動かなくなったあとだった。 { speed:1 waitInput:true Wait:true }
+
+@print 全てを終えたなれはては、いつものように大人しく<br>ミリアの傍らに浮いている。 { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char JailerC
+
+@print ……。 { author:StrayNarehate speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria.Cry
+
+@print ……どう、して。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char JailerC
+
+@print ……。 { author:StrayNarehate speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_41_1
+
+@hideChars 
+@char Miria.Angry
+
+@print どうしてナノカちゃんを殺したんだ！<br>どうして！！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@print "ミリアはなれはてに詰め寄ると、<br>思い切りその襟首に<ruby=\"つか\">掴</ruby>みかかった。" { speed:1 waitInput:true Wait:true }
+
+@print 話し合えば、わかってくれたかもしれない！<br>殺すなんて……絶対ダメなのに！！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 叫んだ次の瞬間、ミリアはふわりと<br>なれはてに抱きしめられ、包まれていた。 { speed:1 waitInput:true Wait:true }
+
+@char Miria.Default
+
+@print え……？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@print 異形でありながらもぬくもりを感じ、<br>ミリアは驚いてなれはてを見上げる。<br>そのミリアの瞳は、みるみる潤んでいった。 { speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive
+
+@print あったかい……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print おじさんのこと、守ってくれたんだね……<br>君は本当は優しいなれはてだって、知ってるよ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print おじさんも君みたいに強かったら良かったのに。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print でも、どうしておじさんのことだけを守って……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 触れ合っているうちに、<br>ミリアは自身が光を帯び始めているのを感じた。<br>そこでざっと、一気に血の気が引いていく。 { speed:1 waitInput:true Wait:true }
+
+# ドンっと人を押す音
+@sfx Sfx_76
+
+@print そして、なれはてを突き飛ばした。 { speed:1 waitInput:true Wait:true }
+
+@char Miria.Angry
+
+@print 最初から、君はおじさんの魔法がなんなのか<br>わかっていたんだね……！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive
+
+@print それでおじさんの肉体を手に入れようと……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print 双方が願って触れ合えば、<br>肉体を入れ替えることができる。 { speed:1 waitInput:true Wait:true }
+
+@print それが佐伯ミリアの魔法だった。 { speed:1 waitInput:true Wait:true }
+
+@char Miria.Angry
+
+@print この体は渡せない……！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "ミリアは<ruby=\"そうはく\">蒼白</ruby>になって叫ぶ。<br>すると――" { speed:1 waitInput:true Wait:true }
+
+@print ……。 { author:StrayNarehate speed:1 waitInput:true Wait:true }
+
+# グサッと刺さる音
+@sfx Sfx_89
+
+@hideChars 
+
+# ＠備考◆驚きで息を呑む
+
+@print ……っ { author:Miria speed:1 waitInput:true Wait:true }
+
+@print 自分を触手で貫くなれはてを<br>ミリアは信じられないというように見つめる。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ……。 { author:StrayNarehate speed:1 waitInput:true Wait:true }
+
+# グサグサッと連続で刺さる音
+@sfx Sfx_90
+
+@print い、いたいよ……<br>ともだち……に、なれたと……思った、のに。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print 君のこと、好きだった、のに。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print ……。 { author:StrayNarehate speed:1 waitInput:true Wait:true }
+
+# グサグサッと連続で刺さる音
+@sfx Sfx_90
+
+@print か……はっ……しにたく、ない……<br>しにたくない……しにたくない……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print ……。 { author:StrayNarehate speed:1 waitInput:true Wait:true }
+
+# グサグサッと連続で刺さる音
+@sfx Sfx_90
+
+@print だれか……たすけ……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print ……。 { author:StrayNarehate speed:1 waitInput:true Wait:true }
+
+# グサグサッと連続で刺さる音
+@sfx Sfx_90
+
+@print ミリアが救いを求めるように、<br>血塗れの手を空へ伸ばす。<br>なれはてはそのミリアの手を取った。 { speed:1 waitInput:true Wait:true }
+
+@print ごそごそ。<br>ごそごそ。<br>ごそごそ。 { speed:1 waitInput:true Wait:true }
+
+@back SolidColor
+
+@print ミリアたちは大きな光に包まれた。<br>直後に命が尽きたのか、光は収束していく。 { speed:1 waitInput:true Wait:true }
+
+@print ……。 { author:StrayNarehate speed:1 waitInput:true Wait:true }
+
+@print "なれはてはミリアの死体を見下ろして、<br>そっと<ruby=\"ほほ\">頬</ruby>を<ruby=\"な\">撫</ruby>でる。" { speed:1 waitInput:true Wait:true }
+
+@print ミリアの死体は、とても満足げに微笑んでいた。 { speed:1 waitInput:true Wait:true }
+
+@print そして、なれはてはどこか哀しげに、<br>森の中へと消えていった。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 『END～トモダチ～』
+# ========================================
+
+@badEnd 10

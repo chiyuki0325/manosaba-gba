@@ -1,0 +1,259 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-3-7
+
+# ========================================
+# ●シーン2‐3‐7
+# ========================================
+
+@back 11_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# ========================================
+# ＞『娯楽室』を選択
+# ========================================
+
+# 写真撮影音
+@sfx Sfx_28
+
+@bgm Bgm_11_1
+
+@char Miria.Smile1
+
+@print エマちゃん、いいよ～。<br>おっ、斜めからもいいね～。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Ema.Flushed1
+@sfx Sfx_28
+
+@print あ、あの、ミリアちゃん……<br>写真撮るんじゃなくて、<br>演技を見てもらいたいんだけど……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Miria.Smile
+@Wait 0.5
+
+# 写真撮影音
+@sfx Sfx_28
+
+@print 困った顔も可愛いよ～。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Smile
+@Wait 0.5
+@sfx Sfx_28
+
+@print 娯楽室に行くと、ミリアがスマホを片手に、<br>エマの周りをぐるぐると回っていた。 { speed:1 waitInput:true Wait:true }
+
+@char Miria.Smile
+@Wait 0.5
+@sfx Sfx_28
+
+@print 連続でシャッターを切る音が室内に響く。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive
+@char Ema.Surprised1
+
+# ＠備考◆困惑
+
+@print これは……何をやっているんだ？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "踏み込んでいい状況なのかわからず、<br>私は入口付近で<ruby=\"たたず\">佇</ruby>む。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print あ、ヒロちゃん……<br>これはえっと……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマは私に対し、<br>どこかぎこちない態度だった。 { speed:1 waitInput:true Wait:true }
+
+@print 先の事件での衝突を引きずっているのかもしれない。 { speed:1 waitInput:true Wait:true }
+
+@print 地下の部屋でも相変わらず、<br>私とエマの間に会話はない。<br>冷え切った関係のまま、今日まで来ている。 { speed:1 waitInput:true Wait:true }
+
+@char Miria.Smile1
+
+@print まだ最初のちょっとだけど、台本ができたでしょ？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@print もたもたと口ごもるエマに代わって、<br>ミリアが事情を語りだした。 { speed:1 waitInput:true Wait:true }
+
+@print だからエマちゃんが、<br>おじさんに少し演技を見てくれないかって。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive
+
+@print ……演技を見ているようには思えなかったが。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私の指摘に、ミリアは決まり悪そうに笑った。 { speed:1 waitInput:true Wait:true }
+
+@char Miria.Smile1
+
+@print それはその……なんていうか……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print "歯切れの悪いミリアに、私は小さく首を<ruby=\"かし\">傾</ruby>げた。" { speed:1 waitInput:true Wait:true }
+
+@char Miria.Surprised1
+
+@print すると、ミリアがハッとした様子で、<br>素早くスマホを私へと向ける。 { speed:1 waitInput:true Wait:true }
+
+@print そして…… { speed:1 waitInput:true Wait:true }
+
+# 写真撮影音
+@sfx Sfx_28
+
+@print 何故か写真を撮影した。 { speed:1 waitInput:true Wait:true }
+
+@char Miria.Smile1
+
+@print "スマホの画面を確認し、<br>ミリアは満足そうに<ruby=\"うなず\">頷</ruby>く。" { speed:1 waitInput:true Wait:true }
+
+@char Miria
+@Wait 0.2
+@char Miria.Smile
+
+@print それから、今度は私に画面を見せてきた。 { speed:1 waitInput:true Wait:true }
+
+@print はいっ、可愛く撮れてるよ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print "そこには、小首を<ruby=\"かし\">傾</ruby>げる私の写真が表示されている。" { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry
+
+@print ……どういうつもりかな？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print あまり良い気分がするものではない。<br>眉をひそめ、静かに問う。 { speed:1 waitInput:true Wait:true }
+
+@char Miria.Surprised
+
+@print い、いきなりごめんね！<br>最近おじさん、写真を撮るのにハマってて。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print "ミリアは慌てて<ruby=\"べんめい\">弁明</ruby>してから、<br>ふと、<ruby=\"ものう\">物憂</ruby>げな表情になった。" { speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive1
+
+@print おじさんたち、この先どうなるかわからないでしょ？<br>だからなのかな……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Angry1
+
+@print "なんだか、今この一瞬一瞬を、<br>切り取っておきたい！ みたいな気がして……。" { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Smile1
+
+@print でも、いきなり撮るとか失礼だよね。<br>可愛かったからつい……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print ……そうだな。<br>許可なく写真を撮られるのは、<br>たしかにあまり良い気分じゃない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 場合によっては、<br>肖像権の侵害に該当する行為だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 仮に君がその写真をどこかに無断で掲載したとすると、<br>名誉棄損やプライバシー権の侵害が成立する場合もある。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Surprised1
+
+@print 私は淡々と、<br>刑法についてミリアに語って聞かせた。 { speed:1 waitInput:true Wait:true }
+
+@print "もし<ruby=\"めいよきそんざい\">名誉棄損罪</ruby>が認められた場合、<br>３年以下の<ruby=\"ちょうえき\">懲役</ruby>もしくは<ruby=\"きんこ\">禁固</ruby>、<br>または５０万円以下の罰金という可能性もある。" { speed:1 waitInput:true Wait:true }
+
+@char Miria.Fearful1
+
+@print "という部分でミリアの顔はもう、<br>かわいそうなくらいに<ruby=\"そうはく\">蒼白</ruby>だった。" { speed:1 waitInput:true Wait:true }
+
+@char Miria.Cry1
+
+@print そうでした……<br>うう……以後、気を付けます……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive1
+
+@print でも、でもね、<br>おじさんは絶対どこかに掲載とかそういうのはしないよ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print それだけは絶対に誓えるけど、<br>でも、良くないことだったと思う。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print "反省の意を示すように、<br>ミリアはしゅんと<ruby=\"うなだ\">項垂</ruby>れる。" { speed:1 waitInput:true Wait:true }
+
+@print あまり心配する必要はないかもしれない。<br>もはや外の法律など無意味にも思える。<br>私たちは、とっくに囚人なのだから。 { speed:1 waitInput:true Wait:true }
+
+@print （話は逸れたが、<br>　大体の事情はわかった気がするな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print エマの演技を見る過程でミリアは、<br>先ほどのような衝動に駆られたのだろう。 { speed:1 waitInput:true Wait:true }
+
+@char Miria.Smile1
+
+@print 一生懸命なエマちゃんがなんかもう、<br>いじらしくて……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print たどたどしくセリフを読む姿に、緊張でがちがちの動作。 { speed:1 waitInput:true Wait:true }
+
+@print "とにかく何もかもが、ミリアのツボだったようだ。<br>まるで使命感に動かされているかのように<ruby=\"りきせつ\">力説</ruby>する。" { speed:1 waitInput:true Wait:true }
+
+@char Miria.Angry1
+
+@print これはもう、写真に残すしかないなって！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Ema.Flushed
+
+@print うぅ……<br>恥ずかしいからやめてほしいな。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマは<ruby=\"ほお\">頬</ruby>を赤く染めながら<ruby=\"うめ\">呻</ruby>いた。<br>それからふと、表情を暗くして<ruby=\"うつむ\">俯</ruby>く。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive
+
+@print でも……本当にボクなんかでいいのかな。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Miria.Surprised
+
+@print え、どういうこと？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive
+
+@print 素人で、演技も上手くできないし、<br>セリフだってちゃんと覚えられるか不安で……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print それなのに、重要な役で、<br>素敵な衣装まで作ってもらって……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+@char Hiro.Angry1
+
+@print それで？<br>まさか役を降りたいとでも？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "思わず口を挟んでいた。<br><ruby=\"おさ\">抑</ruby>えられず、私は続ける。" { speed:1 waitInput:true Wait:true }
+
+@print レイア以外はみんな、素人だ。<br>それでも、前向きに頑張っている。<br>自信がないからと、君だけ投げ出す気か？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+
+@print ち、違うよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 慌てたように、エマは強く否定してきた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive
+
+@print もちろんボクだって、頑張るつもりだよ……<br>だけどただ、不安なだけで……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "目を<ruby=\"ふ\">伏</ruby>せて、エマは消え入りそうな声を出す。" { speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive
+
+@print え、えーっと……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+
+@print 私とエマの間に立つミリアが、<br>気まずそうに目を泳がせている。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive1
+
+@print そのことに気付き、<br>深く息を吐き出した。 { speed:1 waitInput:true Wait:true }
+
+@print 頭では理解しているつもりだ。<br>けれどどうしても割り切れない感情がある。 { speed:1 waitInput:true Wait:true }
+
+@print もうこれ以上の犠牲を出さないためには、<br>たとえ表面上だけでも<br>エマと折り合いをつける必要があるのに。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1
+
+@print （やはりエマとは、<br>　なるべく言葉を交わさないほうがいい） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "私は無言で<ruby=\"きびす\">踵</ruby>を返し、娯楽室を後にした。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン2‐3‐4
+# 全てのイベントを消化している＞シーン2‐3‐9
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter03/Act02_Chapter03_Adv04

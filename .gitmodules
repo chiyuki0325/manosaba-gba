@@ -1,0 +1,3 @@
+[submodule "manosaba-web"]
+	path = manosaba-web
+	url = https://github.com/Lianues/manosaba-web

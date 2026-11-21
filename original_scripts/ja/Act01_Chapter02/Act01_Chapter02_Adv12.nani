@@ -1,0 +1,103 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-2-12
+
+# ========================================
+# ●シーン1‐2-12
+# ========================================
+
+@back 17_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# ========================================
+# ＞『湖方面』を選択
+# ========================================
+
+@bgm Bgm_28_1
+
+@print アリサは見当たらない時は大抵、<br>森の中にある湖の畔にいる。 { speed:1 waitInput:true Wait:true }
+
+@print エマはそう踏んで足を運んだのだが、<br>今日は誰もいなかった。 { speed:1 waitInput:true Wait:true }
+
+@print （ここは空振りかあ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print この一帯は薄暗く、<br>エマは少し怖ろしさを覚える。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print アリサちゃんはなんでここが好きなんだろう。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "ぽつりと<ruby=\"つぶや\">呟</ruby>く。" { speed:1 waitInput:true Wait:true }
+
+@print ――彼女は、自分が怖いんだと思うわ。<br>だから、常に水のそばにいる。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print どこかから声が聞こえて、<br>エマはハッと顔を上げた。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@animate MainBackground
+@spawn MaskingRectangle
+@back 17_1
+@blur MainBackground-Front
+@char Nanoka.Default { time:0 }
+@mask MainBackground-Front,Nanoka-Front
+@animate MainBackground-Front
+@animate Nanoka-Front
+@Wait 0.3
+
+@print 茂みの中から、ナノカの姿が垣間見えた。 { speed:1 waitInput:true Wait:true }
+
+@print "ナノカちゃん！ 今までどこに――。" { author:Ema speed:1 waitInput:true Wait:true }
+
+@hide Nanoka-Front,MainBackground-Front
+@blur MainBackground-Front
+@despawn MaskingRectangle
+@Wait 0.3
+
+@print ナノカの姿はすぐに見えなくなる。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3
+
+@print "ナノカちゃん！ 話を聞いて――！" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ミリアちゃんは黒幕じゃないよ！<br>すっごく良い子、ううん、良い人だから！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3
+
+@print アンアンちゃんやココちゃんも、<br>すっかりミリアちゃんに懐いちゃって。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print アンアンちゃんたちだけじゃない。<br>ボクらみんな、ミリアちゃんの存在に救われてるんだよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print お願いだからミリアちゃんの命を狙うのは<br>やめてほしい！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ボクたちと一緒に、<br>ここを出よう！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ……私の目的は出ることじゃない。<br>死のうと魔女になろうと、<br>復讐を遂げてみせる――。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ナノカの声を追いかけ、エマは走った。 { speed:1 waitInput:true Wait:true }
+
+@print しかし声が聞こえたところには、<br>既に誰もいない。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print （ナノカちゃん……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ボクは……みんなと生きて、ここを出たいよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "<ruby=\"つぶや\">呟</ruby>きに応えはもうなかった。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン1‐2‐8
+# 全てのイベントを消化している＞シーン1‐2‐14
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter02/Act01_Chapter02_Adv08

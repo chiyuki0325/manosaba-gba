@@ -1,0 +1,472 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act01_Chapter01/Act01_Chapter01_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 480
+@bgm Bgm_7_1
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# ==============================================================================
+# MARK: 💬 1-2-1 マーゴが犯人の理由
+# ==============================================================================
+
+# Judge1-2-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+@char Sherry.Normal1,ArmR17,ArmL1
+@gosubModifyCamera 0
+@printDebate もう一度<br>現場に残された絵を<br>思い出してみてください。<br>立派な蝶の模様が<br>描かれていますよね？
+
+@printDebate そしてマーゴさんの衣装には……<br>蝶があしらわれています。
+
+@char Margo.Normal1,ArmR1,ArmL3
+@gosubModifyCamera 0
+@printDebate たしかに<br>用意された私の衣装には、<br>蝶をモチーフにした飾りが<br>ついているわね。
+
+@char Sherry.Smile1,ArmR8,ArmL8
+@gosubModifyCamera 0
+@printDebate "そう……<br>つまりあの絵は<br><link=\"Objection_01_01_02_01\">ノアさん</link>が<link=\"Objection_01_01_02_02\">死に際</link>、<br><link=\"Objection_01_01_02_03\">犯人</link>であるマーゴさんを<br>告発したメッセージ<br>だったんですよ！"
+
+@char Sherry.Smile1,ArmR13,ArmL4
+@printDebate 犯人は宝生マーゴさん！<br>あなたで決まりです！
+
+@char Margo.Smile1,ArmR7,ArmL3
+@gosubModifyCamera 0
+@printDebate あら、そうだったのね。<br>知らなかったわ♪
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Ema.Pensive1,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Closed02
+@gosubModifyCamera 0
+@Wait 0.2
+
+@print （今のシェリーちゃんの話……<br>　本当に正しいのかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@gosubSplitStageScreen 1
+
+@char Meruru.Smile1,Mouth1_Normal_Open1
+@print ……エマさん。<br>シェリーさんはもしかすると、<br>【まだ知らない事】があるのかもしれません。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Smile1,Eyes1_Normal_Open3,Mouth1_Normal_Open1
+@print もしそうなら……それを教えてあげると、<br>意見を改めてもらえるかもしれませんね。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR1,ArmL1
+
+@print うん……！<br>もう一度、見つけた物を確認してみるね……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideStageScreen 1
+
+@goto .Judge1-2-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_01_01_02_01
+
+@Skip false
+@pauseTrial true
+
+@choice 絵はノアの描いたものではない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge1-2-3
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_01_01_02_02
+
+@Skip false
+@pauseTrial true
+
+@choice 絵が描かれたのは死に際ではない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge1-2-4
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_01_01_02_03
+
+@Skip false
+@pauseTrial true
+
+@choice 絵は犯人を示した物ではない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge1-2-2
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: ❌ 1-2-3 絵はノアの描いたものではない
+# ==============================================================================
+
+# Judge1-2-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Pensive1,,ArmR5,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+
+@print ねえみんな。<br>あれって本当にノアちゃんが描いたのかな……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print あんな描き方、いくら魔法でも<br>不自然じゃないかと思うんだけど……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char AnAn.Normal1,Arms2,Angle01/Option_Arms>Option_Arms01_03,Angle01/Option_ArmR/Option_ArmR01_01-,Angle01/Head/Facial/Mouth>Mouth_Angry_Closed02
+@gosubModifyCamera 0
+
+@print 『ノアの魔法は本人の意思とは関係なく勝手に発動する』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@gosubModifyCamera 0
+
+@char Meruru.Smile1,Mouth1_Normal_Open1
+@print あの出血量から考えると、<br>ノアさんの魔法以外であの絵を<br>描ききれるとは少し考えにくいですね……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1,ArmR3,ArmL5
+@gosubModifyCamera 0
+
+@print つまり先ほどエマくん自身が証明したように、<br>あの蝶はノアくんが自分の魔法で描いた物と<br>考えるのが自然だね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Coco.Angry1,ArmR2,ArmL1,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+
+@print むしろ不自然なのはエマっちの反論じゃねーの？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@gosubModifyCamera 0
+
+@char Meruru.Normal1,ArmR5_1,ArmL4,Eyes1_Normal_Open2,Mouth1_Angry_Open2,Sweat1_1
+@print で、でも、すでにわかってることでも、<br>再確認は必要かと思うんです……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive1,ArmR9,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open02,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+
+@print おじさんも、誰かを責めるのは良くないと思うな……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@Damage 
+@gosubModifyCamera 0
+
+@print （うぐっ……。<br>　みんなにフォローされちゃったぁ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+
+@print （でもたしかにあの絵はノアちゃんの魔法で<br>　描かれた物で間違いない……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@print （重要なのは、ノアちゃんが<br>　いつ何のために描いたのか……<br>　なのかな） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （持っている情報をもう一度確認してみよう……！<br>　何かヒントがあるかも……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-2-1
+
+# ==============================================================================
+# MARK: ❌ 1-2-4 絵が描かれたのは死に際ではない
+# ==============================================================================
+
+# Judge1-2-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Surprised1,ArmR3,ArmL1
+@gosubModifyCamera 0
+
+@print ……ちょっと待って！<br>その絵って、本当に事件の時に<br>描かれたのかな……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print もしかしたら、別の時間に描かれた絵かも……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR1,ArmL1
+@gosubModifyCamera 0
+
+@print そこは問題ないと思います！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 大量の血を使って描かれている以上、<br>これはノアさんが殺害された後に<br>描かれたものですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR17,ArmL1
+@print ……まあ厳密に言うなら、<br>【血が流れた後】でしょうか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print どちらにせよ【事件の後】なのは<br>変わりありませんね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Leia.Normal1,Arms,Angle01/Facial/Mouth>Mouth_Yell_Open01
+@gosubModifyCamera 0
+
+@print 血は時間が経ちすぎると固まってしまう。<br>少なくとも、ノアくんが死んでから<br>そんなに時間は経っていないタイミングだろうね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,,ArmR5,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+
+@print ……あ。そ、そっか……。<br>そうだよね……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@gosubModifyCamera 0
+
+@char Meruru.Normal2,ArmR1_2,ArmL3,Eyes2_Pensive_Open1,Mouth2_Angry_Open2
+@print ……あ、あの……！<br>エマさんも、議論を進めようとしてくれているので、<br>あんまり責めないであげてください……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1
+@Damage 
+@gosubModifyCamera 0
+
+@print （フォ、フォローされちゃった……！<br>　会議の流れを止めちゃったかも……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （とにかく……あの絵が事件の直後に描かれたのは<br>　間違いないはずだよね） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （問題はあの絵が何なのかだけど……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （調査中に調べた物の中に、<br>　何かヒントになるものは<br>　なかったかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （もう一度確認してみるのもいいかもしれない……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-2-1
+
+# ==============================================================================
+# MARK: ⭕ 1-2-2 絵は犯人を示していない
+# ==============================================================================
+
+# Judge1-2-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+@StopBgm 
+@gosubCutIn Ema
+@Gosub System/System_Subroutine.EndDebate-Last
+@bgm Bgm_5_1
+@spawn Clue
+@char Ema.Determined2,Angle01/ArmR>ArmR02_02,ArmL12
+@gosubModifyCamera 0
+
+@print みんな、これを見て欲しいんだけど……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Miria.Normal1,ArmR1,ArmL1
+@gosubModifyCamera 0
+
+@print それって……ノアちゃんの絵？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Hanna.Normal1,ArmR1,ArmL1
+@gosubModifyCamera 0
+
+@print 死体現場に描かれていたのとそっくりですわ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR15,ArmL1
+@gosubModifyCamera 0
+
+@print "ほら！ やっぱりです！<br>この蝶はノアさんが描いた<br>ダイイングメッセージなんですよ！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR8,ArmL1,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+
+@print いや、実はこれは……<br>アンアンちゃんのスケッチブックに<br>描かれてた物なんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Surprised1,ArmR10,ArmL1
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+@gosubModifyCamera 0
+
+@print えーっ！？<br>そうなんですかアンアンさん！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char AnAn.Normal1,Angle01/Option_Arms-,ArmR1,ArmL1,ArmR1-Option-All
+@gosubModifyCamera 0
+
+@print ……………そう。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Normal1,Arms2,Angle01/Option_Arms>Option_Arms01_03,Angle01/Option_ArmR/Option_ArmR01_01-
+
+@print 『ノアが勝手に描いてった』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,,ArmR8,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+
+@print 事件現場に残された蝶の絵は<br>たしかにノアちゃんが死に際、<br>魔法で描いたんだと思うけど……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@print でもこのスケッチブックの蝶の絵は、<br>前から描かれてた物なんだよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@print ……これって、本当にダイイングメッセージなのかな？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char AnAn.Normal1,Angle01/Option_Arms-,ArmR1,ArmL1,ArmR1-Option-All,Angle01/Head/Facial/Eyes>Eyes_Angry_Open01,Angle01/Head/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+
+@print ……………ちがう。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Normal1,Arms2,Angle01/Option_Arms>Option_Arms01_06,Angle01/Option_ArmR/Option_ArmR01_01-,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Normal_Closed
+
+@print 『蝶はマーゴを示す絵ではない。<br>　わがはいが否定する』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print 『わがはいはこの蝶の絵の意味について、<br>　ノアから事前に聞いている』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Normal1,Angle01/Option_Arms-,ArmR1,ArmL1,ArmR1-Option-All,Angle01/Head/Facial/Mouth>Mouth_Pensive_Open
+
+@print ……この絵はノアの死に関係はない。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@gosubModifyCamera 0
+
+@char Meruru.Normal1,ArmR1_1,ArmL8,Eyes1_Pensive_Open1,Mouth1_Normal_Open2
+@print そういうことなら、<br>これがダイイングメッセージとは<br>少し考えにくいですね……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@despawn Clue
+
+@char Ema.Normal1,,ArmR8,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+
+@print 少なくとも、<br>これでマーゴちゃんを犯人と決めつけるのは、<br>早すぎるんじゃないかな……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,,ArmR9,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+
+@print なるほど～。<br>……たしかにそう考えると<br>違うかもしれませんね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR7,ArmL1
+
+@print それじゃあ、さっきの発言は撤回しちゃいます！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR9,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open01
+@gosubModifyCamera 0
+
+@print ……簡単に自分の間違いを認めていいのかい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 見ようによっては、<br>マーゴくんを犯人に仕立て上げようとした<br>真犯人のようにも見えるよ？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 自分が捕まらない為に……ね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,,ArmR17,ArmL12
+@gosubModifyCamera 0
+
+@print いいんですよぅ。<br>間違ってたのは納得しましたし！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR14,ArmL1
+
+@print 私はその蝶の絵の情報を持っていませんでした。<br>新しい情報を手に入れたなら、<br>考えは変わるものですよ。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open
+@gosubModifyCamera 0
+
+@print （……そうだ。<br>　ボクは知ってるけど<br>　みんながまだ知らない情報もあるんだ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR1,ArmL1
+
+@print （知らないなら正しい推理なんてできない……！<br>　だから正しい情報を共有して、<br>　みんなの間違いを訂正していくんだ！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+
+@print …………。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1,ArmR1,ArmL1
+@gosubModifyCamera 0
+
+@print ……でもさあ。<br>じゃあなんでこんな絵、描いたん？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print いくら天才画家だろうと、<br>きっかけぐらいあんじゃね？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1,ArmR2,ArmL1,Option-ArmL-Off,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open01
+@gosubModifyCamera 0
+
+@print 芸術家の頭の中なんて、<br>バカには理解できねーだろ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_6
+@char Coco.Angry1,ArmR2,ArmL3,Angle01/Facial/Eyes>Eyes_Comical_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+
+@print ああん！？<br>今あてぃしがバカって言ったか！？ { author:Coco speed:1 waitInput:true Wait:true }
+
+# SE・ネガティブ音
+@sfx Sfx_Common_7
+
+# ＠備考◆焦り
+
+@char Alisa.Pensive1,ArmR9,ArmL2,Option-ArmL-Off
+@gosubModifyCamera 0
+
+@print そうは言ってねーだろ……！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print ……凡人のウチらが考えるだけ<br>無駄だって言ったんだよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print たとえば……<br>思いついたもんをその場で描いちまっただけの<br>可能性もあるだろ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Miria.Normal1,ArmR1,ArmL1
+@gosubModifyCamera 0
+
+@print ……あ、でもその可能性は<br>本当にありそうだよね……。<br>ほら、部屋の中って白一色だったでしょ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@print なんかキャンバスっぽいなぁって……！ { author:Miria speed:1 waitInput:true Wait:true }
+
+# ＠備考◆恍惚
+@char Margo.Smile1,ArmR1,ArmL3
+@gosubModifyCamera 0
+
+@print つまりダイイングメッセージのように<br>自分の死体を使った作品を遺した……<br>文字通り【遺作】というわけね……♪ { author:Margo speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆真面目
+@char Margo.Normal1,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open
+@print でももしかすると……<br>本当にそれが真相なのかもしれないわ？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR1,ArmL1,Angle01/Facial/Eyes>Eyes_Surprised_Open01,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+
+@print どういうことですか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Smile_Open
+@StopBgm 
+@gosubModifyCamera 0
+
+@print ノアちゃんの死は<br>【自殺だったかもしれない】……<br>そういうことよ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@goto Act01_Chapter01/Act01_Chapter01_Trial03

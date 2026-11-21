@@ -1,0 +1,777 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act01_Chapter02/Act01_Chapter02_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# ==============================================================================
+# MARK: 12: 💬 証拠
+# ==============================================================================
+# ＠ト書き▼議論2-12 証拠
+# BGM変更：AccUhEarts(Vocal有)
+@bgm Bgm_15_1
+
+# Judge2-12-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR5,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Angry_Closed,Angle01/Head/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@printDebate 鍵なんて<br>どうでもいい事だ！
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Angry_Open01,Angle01/Head/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@printDebate そもそも<br>鍵がかかっていない<br>可能性は<br>最初に話し合っただろう！
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL5,Angle01/Head/Facial/Eyes>Eyes_Angry_Open01,Angle01/Head/Facial/Mouth>Mouth_Uncomfortable_Open
+@gosubModifyCamera 0
+@printDebate "ミリアはあの部屋で<br><link=\"Objection_01_02_12_01\">拘束されていた</link>！<br>ならば<br><link=\"Objection_01_02_12_02\">鍵がかかって</link><br>いなくとも<br>おかしくはない……！"
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL11,Angle01/Head/Facial/Eyes>Eyes_Angry_Open01,Angle01/Head/Facial/Mouth>Mouth_Uncomfortable_Open
+@gosubModifyCamera 0
+@printDebate それはさきほど、<br>エマが証明したはずだ！
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Normal_Open2,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@printDebate 問題なのは<br>鍵がかかって<br>いなかった事<br>ではなく、<br>鍵が看守の手を<br>離れていると<br>いうことよ。
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Angry_Open1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@printDebate 私が鍵を持っている事……<br>あなたはそれをどう<br>説明するつもり？
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL11,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Uncomfortable_Open
+@gosubModifyCamera 0
+@printDebate そんなことは<br>どうとでも説明がつく！
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL5,Angle01/Head/Facial/Eyes>Eyes_Angry_Open01,Angle01/Head/Facial/Mouth>Mouth_Uncomfortable_Open
+@gosubModifyCamera 0
+@printDebate "<link=\"Objection_01_02_12_03\">ナノカが盗んだ</link>り、<br><link=\"Objection_01_02_12_04\">看守が置き忘れた</link>り……<br>可能性はゼロとは言えまい！"
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL5,Angle01/Head/Facial/Eyes>Eyes_Normal_Closed,Angle01/Head/Facial/Mouth>Mouth_Uncomfortable_Open
+@gosubModifyCamera 0
+@printDebate "すでに<br>どの証拠も議論しつくした！<br>これ以上話したとしても、<br><link=\"Objection_01_02_12_05\">誰も新たな情報</link>など<br>出せまい！<br>これ以上の議論など<br>無意味なのだ！"
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL11,Angle01/Head/Facial/Eyes>Eyes_Angry_Open01,Angle01/Head/Facial/Mouth>Mouth_Yell_Open
+@gosubModifyCamera 0
+@printDebate ……むしろ<br>このような言いがかりで<br>わがはいを処刑しようとする<br>桜羽エマ……<br>やつにこそ<br><color=#9c8eff><b>【投票すべき】</b></color>である！
+
+@char Sherry.Default,ArmR7,ArmL14,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate なんだかそんな気も<br>してきましたね！<br>エマさん、<br>投票しちゃっても<br>いいですか？
+
+@char Ema.Surprised1,ArmR3,ArmL1,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open
+@gosubModifyCamera 0
+@printDebate 良くないよ！？
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Ema.Surprised1
+@gosubModifyCamera 0
+@Wait 0.2
+
+# ==============================================================================
+# ADVシーン
+# ==============================================================================
+
+@print （アンアンちゃんの魔法は強力だ……！<br>　気を抜くとうっかりみんな<br>　適当に投票しちゃいそうになってる……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@print （なんとかこの状況を覆すには……<br>　アンアンちゃんの逃げ道を塞がないと……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@char Meruru.Head2,ArmR1_2,ArmL3,Eyes2_Normal_Open1,Mouth2_Angry_Open2
+@gosubSplitStageScreen 1
+@Wait 0.2
+@print エマさん……。<br>もうほとんどの証拠品は議論し尽くしたと思います……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Head2,ArmR1_2,ArmL3,Eyes2_Normal_Open1,Mouth2_Angry_Open2
+
+@print だからもし【新しい見解】が示せるなら、<br>それは議論の始めから変わった状況……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Head2,ArmR9_2,ArmL9,Eyes2_Normal_Open1,Mouth2_Smile_Closed1
+
+@print そこに、私たちの知らない真実があるかもしれません！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideStageScreen 1
+
+@print うん……！<br>わかったよ、メルルちゃん……！<br>新たに示せる道を考えてみるよ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge2-12-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_01_02_12_01
+
+@Skip false
+@pauseTrial true
+
+@choice 拘束されてなかった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge2-12-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_01_02_12_02
+
+@Skip false
+@pauseTrial true
+
+@choice 鍵がかかっていた
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge2-12-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_01_02_12_03
+
+@Skip false
+@pauseTrial true
+
+@choice ナノカが盗めない証拠がある
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge2-12-5
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論4
+# ------------------------------------------------------------------------------
+
+# Objection_01_02_12_04
+
+@Skip false
+@pauseTrial true
+
+@choice 看守が置き忘れていない証拠がある
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge2-12-6
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論5
+# ------------------------------------------------------------------------------
+
+# Objection_01_02_12_05
+
+@Skip false
+@pauseTrial true
+
+@choice 新たな証拠を提示できる
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge2-12-7
+
+@choice 新たな証拠を持っている人がいる
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge2-12-8
+
+@choice 新たな見解を示せる人がいる
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge2-12-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# ミス選択肢
+# ==============================================================================
+# MARK: 2-12-3: ❌ 拘束されてなかった
+
+# Judge2-12-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL13,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print 違うよ！<br>ミリアちゃんは拘束なんてされてなかった！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print されてたし！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1,ArmR2,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Open
+@gosubModifyCamera 0
+@print されてましたわ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Uncomfortable_Open
+@gosubModifyCamera 0
+@print "見よ！ みなの者！<br>虚言で議論をかく乱せんとするエマこそ<br>怪しんでしかるべき！！" { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL11,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Yell_Open
+@gosubModifyCamera 0
+@print <color=#9c8eff><b>【エマを疑え】</b></color>！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （ま、まずい……！<br>　ヘタなことを言えばすぐに<br>　アンアンちゃんの魔法が飛んでくる……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Open02,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print エマっち、犯人じゃね？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （わわわ、早くなんとかしないと……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR2-1,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （ボクらがわかっていることは、もう話し尽くした……。<br>　じゃあ考えるべきは――） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge2-12-1
+
+# MARK: 2-12-4: ❌ 鍵がかかっていた
+
+# Judge2-12-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL13,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print いや、懲罰房の鍵はかかっていたはずだよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Angry_Open01,Angle01/Head/Facial/Mouth>Mouth_Uncomfortable_Open
+@gosubModifyCamera 0
+@print ならばその証拠を示すことだな！<br>ナノカが嘘をついているという証拠だ！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print そ、それは……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Uncomfortable_Open
+@gosubModifyCamera 0
+@print エマ、<br>貴様は同じ話題を繰り返し、<br>議論を止めようとしているな！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL11,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Yell_Open
+@gosubModifyCamera 0
+@print <color=#9c8eff><b>【エマを疑え】</b></color>！！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+# 別選択肢共通
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （ま、まずい……！<br>　ヘタなことを言えばすぐに<br>　アンアンちゃんの魔法が飛んでくる……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR7,ArmL14,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print やっぱりエマさんが怪しいですね～！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （わわわ、早くなんとかしないと……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Ema.Default,ArmR2-1,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （ボクらがわかっていることは、もう話し尽くした……。<br>　じゃあ考えるべきは――） { author:Ema speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge2-12-1
+
+# MARK: 2-12-5: ❌ ナノカが盗めない証拠がある
+
+# Judge2-12-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL13,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print 違うよ、アンアンちゃん……。<br>ナノカちゃんには鍵を盗めない【証拠】がある……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL13,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print それは……これだ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# ==============================================================================
+# 証拠品提示：正解なし
+# ==============================================================================
+
+@evidence Clue
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Normal_Open4,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print ……桜羽エマ、かばってくれるのはありがたいけれど<br>これは証拠にはならないわ……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Uncomfortable_Open
+@gosubModifyCamera 0
+@print 意図不明の反論、根拠皆無な主張！<br>かばいようのない愚者だな、桜羽エマ！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL11,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Yell_Open
+@gosubModifyCamera 0
+@print <color=#9c8eff><b>【エマに投票せよ】</b></color>！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （ま、まずい……！<br>　ヘタなことを言えばすぐに<br>　アンアンちゃんの魔法が飛んでくる……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR2-1,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （ボクらがわかっていることは、もう話し尽くした……。<br>　じゃあ考えるべきは――） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge2-12-1
+
+# MARK: 2-12-6: ❌ 看守が置き忘れていない証拠がある
+
+# Judge2-12-6
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL13,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print 違うよ、アンアンちゃん……。<br>看守は鍵を置き忘れたりなんかしていない……！<br>その【証拠】はこれだよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@evidence Clue
+
+@char Hanna.Angry1,ArmR2,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Open
+@gosubModifyCamera 0
+@print 意味不明ですわー！！<br>これのどこがどのように証拠になりますの！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Uncomfortable_Open
+@gosubModifyCamera 0
+@print 看守だってミスをしないとは限らないだろう！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL11,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Yell_Open
+@gosubModifyCamera 0
+@print こんな意味不明な議論などする必要がない！<br><color=#9c8eff><b>【早く投票せよ】</b></color>！！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+# 別選択肢共通
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （ま、まずい……！<br>　ヘタなことを言えばすぐに<br>　アンアンちゃんの魔法が飛んでくる……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hanna.Smile1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Closed
+@gosubModifyCamera 0
+@print エマさんに清き一票をー！！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （わわわ、早くなんとかしないと……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Ema.Default,ArmR2-1,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （ボクらがわかっていることは、もう話し尽くした……。<br>　じゃあ考えるべきは――） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge2-12-1
+
+# MARK: 2-12-7: ❌ 新たな証拠を提示できる
+
+# Judge2-12-7
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL13,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print アンアンちゃん……！<br>どの証拠も議論しつくしたって言うなら……<br>この新たな【証拠】について議論しようよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@evidence Clue
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Disappointed_Open
+@gosubModifyCamera 0
+@print それのどこが新しいんだ？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print それは……見方を変えれば……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Uncomfortable_Open
+@gosubModifyCamera 0
+@print これでよくわかっただろう！<br>もう議論の余地などないことが！！<br>そして、最も怪しい者は誰なのか！！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL11,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Yell_Open
+@gosubModifyCamera 0
+@print <color=#9c8eff><b>【エマに投票しろ】</b></color></color>！！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+# 別選択肢共通
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （ま、まずい……！<br>　ヘタなことを言えばすぐに<br>　アンアンちゃんの魔法が飛んでくる……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Ema.Default,ArmR2-1,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （ボクらがわかっていることは、もう話し尽くした……。<br>　じゃあ考えるべきは――） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR2-1,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （証拠がないなら……<br>　【知っている人】に話を聞くんだ！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge2-12-1
+
+# MARK: 2-12-8: ❌ 新たな証拠を持っている人がいる
+
+# Judge2-12-8
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL13,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print 待って、アンアンちゃん……！<br>この人なら新しい証拠を持ってるはずだよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# ==============================================================================
+# 人物指定：正解なし
+# ==============================================================================
+@evidence Profile
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Uncomfortable_Open
+@gosubModifyCamera 0
+@print ……この議論の参加者の中で<br>誰かが新しい証拠を隠し持っているとでも言うのか？ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （仮に何かあったとしても、<br>　どんな証拠品があるかなんてわからないかも……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （も、もう一度、考えてみよう……！<br>　証拠以外に何かないかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+# ダメージなし
+@goto .Judge2-12-1
+
+# ==============================================================================
+# MARK: 2-12-1: ⭕ 新たな見解を示せる人がいる
+# ==============================================================================
+
+# Judge2-12-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@gosubCutIn Ema
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print まだ、検討しきれていない事はあるよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Fearful_Open
+@gosubModifyCamera 0
+@print ……何？ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ボクたちはたしかにそれぞれの証拠を検討してきたけど……<br>まだこの人は、証拠を見ていないかもしれない……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# Judge2-12-9
+
+@char Ema.Default,ArmR2-1,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print まだ証拠を見ていない人……その人は……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@evidence Profile
+
+# ゴクチョー
+@if "chosenEvidenceId==\"Warden\""
+	@goto .Judge2-12-10
+
+# 看守
+@if "chosenEvidenceId==\"Jailer\""
+	@goto .Judge2-12-11
+
+# 遠野ハンナ
+@if "chosenEvidenceId==\"Hanna\""
+	@goto .Judge2-12-12
+
+# 城ケ崎ノア or 佐伯ミリア or 二階堂ヒロ or 蓮見レイア
+@if "chosenEvidenceId==\"Noah\"||chosenEvidenceId==\"Miria\"||chosenEvidenceId==\"Hiro\"||chosenEvidenceId==\"Leia\""
+	@goto .Judge2-12-13
+
+# ミス選択肢
+@goto .Judge2-12-14
+
+# ==============================================================================
+# ミス選択肢
+# ==============================================================================
+# MARK: 2-12-11: ❌ 看守
+
+# Judge2-12-11
+
+@char Ema.Default,ArmR3,ArmL12,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print "看守だよ！ 看守からなら新しい話が聞けるかもしれない！" { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR4,ArmL5
+@gosubModifyCamera 0
+@print なるほど確かに！！<br>看守さん、お話聞かせてもらえますか！！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Jailer.1
+@gosubModifyCamera 0
+@print …………。 { author:Jailer speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print なんも言わないんですけど？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Meruru.ArmR1_2,ArmL3,Eyes2_Normal_Open1,Mouth2_Angry_Open2
+@gosubModifyCamera 0
+@print エマさん、た、多分その推理は間違ってません……！<br>あとはちゃんとおしゃべりしてくれる人を見つければ……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+# ダメージなし
+@goto .Judge2-12-9
+
+# MARK: 2-12-12: ❌ 遠野ハンナ
+
+# Judge2-12-12
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print まだあまり証拠を見てない人物……<br>それはハンナちゃんだよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1,ArmL2,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print な、なんでそうなるんですのー！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print 死体の状況とか怖くて直視してなかった……<br>みたいなこと、ないかな？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1,ArmR3
+@gosubModifyCamera 0
+@print そんなビビリじゃねーですわ！！<br>見くびらないでくださいましー！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （怒らせちゃったみたい……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR2-1,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （ちゃんと考えよう……！<br>　【最初から参加してた人たちの話は聞いたはず】。<br>　それなら――） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge2-12-9
+
+# MARK: 2-12-13: ❌ 城ケ崎ノアor佐伯ミリアor二階堂ヒロor蓮見レイア
+
+# Judge2-12-13
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ……死んでしまった子は証拠を見られない。<br>そういうことだよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR6,ArmL2,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print "どゆこと？<br>は？ え？ どゆ意味？" { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print そ、そのままの意味だけど？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR5,ArmL4,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print エマちゃん……亡くなった子たちが<br>何か新しい見解を示せるとでも言うの？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print ……もしかしたら何か手段があるかも。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Uncomfortable_Open
+@gosubModifyCamera 0
+@print 死人に口なしだ！<br>桜羽エマは錯乱しているようだな！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （錯乱されてることにされちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Ema.Default,ArmR2-1,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （ちゃんと考えよう……！<br>　【最初から参加してた人たちの話は聞いたはず】。<br>　それなら――） { author:Ema speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge2-12-9
+
+# MARK: 2-12-14: ❌ 汎用選択ミス
+
+# Judge2-12-14
+
+@char Hanna.Angry1
+@gosubModifyCamera 0
+@print その人物が新しい見解を示せるとは思えませんわ？<br>わたくしたちは議論をし尽くしたんですもの！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Uncomfortable_Open
+@gosubModifyCamera 0
+@print ならば、もう議論は終わりだ！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print エマはただ裁判を長引かせるのみ……<br>その行為こそが不審たる根拠だ！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （そ、そんなことないのに……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Ema.Default,ArmR2-1,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （ちゃんと考えよう……！<br>　【最初から参加してた人たちの話は聞いたはず】。<br>　それなら――） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge2-12-9
+
+# ==============================================================================
+# MARK: 2-12-10: ⭕ 【ゴクチョー】
+# ==============================================================================
+
+# Judge2-12-10
+
+@char Warden.1
+@gosubModifyCamera 0
+@print ……私ですか？ { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print ゴクチョーは途中からこの議論に参加したから<br>まだ十分に証拠を検討できていないはず……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print 犯人を見つける為だから……<br>協力して欲しいんだ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Warden.10
+@gosubModifyCamera 0
+@print ……なるほど？<br>フクロウ使いが荒い人ですねぇ……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Warden.9
+@gosubModifyCamera 0
+@print まあべつに無茶振りにはなれてますし<br>やれと言うならやりますけど……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+# ＠備考◆黒幕のメルルに確認を取っている
+@char Warden.9
+@gosubModifyCamera 0
+@print 皆さんはそれでいいのですね？ { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default
+@gosubModifyCamera 0
+@print ……ウチはいいぜ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_Common_4
+
+# ＠備考◆恫喝
+@char Alisa.Default,ArmR2,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print もちろん他の奴らも……<br>文句ねぇよなぁ！？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+# ＠備考◆睨む
+@char AnAn.Normal1,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL3
+@gosubModifyCamera 0
+@print ……ふん……！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char Warden.8
+@gosubModifyCamera 0
+@print ……わかりました。<br>それが総意というのなら、<br>ご協力いたしましょう。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Warden.1
+@gosubModifyCamera 0
+@print それでは……何を話しましょうかね？ { author:Warden speed:1 waitInput:true Wait:true }
+
+
+@goto Act01_Chapter02/Act01_Chapter02_Trial13

@@ -1,0 +1,374 @@
+@gosubResetBook System/System_ResetWitchBook
+@Gosub Act02_Chapter01/Act02_Chapter01_TrialInit
+
+# 議論パート2章1話（議論6）
+# ==============================================================================
+# 議論スタート
+# ==============================================================================
+
+@badId 7
+
+# 回転背景の立ち絵
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1 { time:0 }
+@char Ema.Pensive1,ArmR4,ArmL5 { time:0 }
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Pensive_Closed1
+@char AnAn.Default,ArmR2,ArmL6,Angle01/Head/Facial/Eyes>Eyes_Normal_Closed,Angle01/Head/Facial/Mouth>Mouth_Surprised_Open,Angle01/Option_Arms-,ArmR-Option-Off { time:0 }
+@char Warden.1 { Position:,{hiddenCharacterPositionY} time:0 }
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Closed
+
+@char Alisa.Angry1,Option-ArmL-Off
+
+@stageCamera 0 { time:0 }
+@stageCamera 1 { Rotation:-2,{ (7.7 / courtStandCount * 360) },-2 time:0 }
+@WaitForNextFrame 
+
+@stageCamera 1 { Rotation:-1,{ (13.2 / courtStandCount * 360) } time:40 }
+@back Transparent { time:0.9 }
+@Wait 0.6
+
+@ProcessInput true
+
+# Judge6-1-0
+
+# BGM変更：Kei-Plne Co-Jundic
+@bgm Bgm_25_1
+
+@char Leia.Default,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@print それじゃあ始めようか。<br>メルルくんを殺した犯人……<br>魔女を決める裁判を！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@print （投票によって犯人が決められ、<br>　そして処刑される魔女裁判） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@print （……拘束されていた私にとってみれば、<br>　裁判など名ばかりで<br>　公平性なんてかけらもない……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・話の転換音
+@sfx Sfx_Common_5
+
+@ResetText 
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Open { time:0 }
+@stageCamera 0 { Rotation:0,{ (5 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+@hideStageScreen 1
+@stageCamera 0 { Rotation:0,{ (5.1 / courtStandCount * 360) },0 time:0.6 }
+@Wait 0.2
+
+@print つーか、何か話すことあるん？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Pensive_Closed { time:0 }
+@stageCamera 1 { Rotation:0,{ (6 / courtStandCount * 360) },0 time:0 }
+@showStageScreen 1
+@WaitForNextFrame 
+@stageCamera 1 { Rotation:0,{ (5.9 / courtStandCount * 360) },0 time:0.6 }
+@Wait 0.2
+
+@print ……というと。 { author:Miria speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Middle
+@gosubModifyCamera 0
+@hideStageScreen 1
+@print そりゃあ……【現行犯】なんだしさ。<br>犯人なんて決まってるじゃん。 { author:Coco speed:1 waitInput:true Wait:true }
+
+# ＠備考◆睨む
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （……度し難い。<br>　こんな茶番、付き合っていられない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・ネガティブ音
+@sfx Sfx_Common_7
+
+@char Miria.Default,ArmR9,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print け、結論を出すには<br>ちょ～っとだけ早いんじゃないかな……？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR9,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print べつにまだヒロちゃんが殺したって<br>決まったわけじゃないしさ……！ { author:Miria speed:1 waitInput:true Wait:true }
+
+# SE・明るい音
+@sfx Sfx_Common_2
+
+@char Leia.Default,ArmR5,ArmL7,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@print ……たしかに、ミリアくんの言う通りかもしれないね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print だ、だよね……！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print それに、仮にヒロくんが犯人だとしても<br>何が起こったのかは<br>明らかにすべきじゃないかな？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR15,ArmL4,Angle01/Facial/Eyes>Eyes_Wink_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print その意見に賛成です！<br>ヒロさんがどうやってメルルさんを殺したのか、<br>お話を整理してみましょうか！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@StopBgm { fade:3 }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （……弁解するチャンスぐらいは<br>　あるのか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print （なら……あがこう。<br>　最後まで、正しい道に向かって……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 気任せの蝶［チェロ無し］
+@bgm Bgm_45_2
+
+@char Leia.Default,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print ……では、まずは現場の状況を<br>私から説明しよう。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print 現場では被害者である氷上メルルくんの死体が発見された。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Closed,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print 発見当時、現場には二階堂ヒロくんがいた……<br>間違いないね？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print ……間違いないよ。<br>私はそこにいた……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@Wait 0.2
+@stageCamera 0 { Rotation:0,{ (2.85 / courtStandCount * 360) },0 time:0.5 }
+@Wait 0.5
+@spawn Clue
+@print これはその時、ココくんが撮った現場写真だ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@print 写真通りメルルくんの横にヒロくんは倒れており、<br>周囲に他の人の足跡はなかった……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# ☆アイテム追加
+# 【倒れていたヒロ】
+# 死体発見現場で、意識を失って倒れていた。
+# 複数人が目撃。
+# 周囲にメルルとヒロ以外の足跡はなかった。
+@toast "魔女図鑑 更新…"
+@update 6-1
+@Wait i1.2
+@despawn Clue
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （たしかに周囲に足跡はない……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （【私以外にメルルを殺せる者はいなかった】……<br>　そう言いたいんだろう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL7,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@print 次に凶器だ。<br>これはメルルくんの胸に刺さっていた剣だろう。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# ☆アイテム追加
+# 【儀礼剣】
+# メルルの胸に刺さっていた剣。
+# 詳細は不明。
+@spawn Clue
+@toast "魔女図鑑 更新…"
+@update 6-2
+@Wait i1.2
+@despawn Clue
+
+@char Leia.Default,ArmR5,ArmL7,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@print これについて、ヒロくんから何か弁解はあるかな？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print ……知らないな。<br>見たこともないものだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Middle,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print なるほど、関与を否定するんだね。<br>たしかに、その方が賢い選択かもしれないけど。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# ＠備考◆やれやれ・諦め・皮肉げ
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print ……ご高説、痛み入るよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print 最後に、メルルくんの死体についてだ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print 勝手ながら、少し体を調べさせてもらったよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Closed,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print 死体の状況からいって、死後２０分以上は経過していたね。<br>……ただ、亡くなったのは１時間以内だろう。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Closed,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print もちろん、ちゃんと調べる設備もないので<br>おおよその時間だけどね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print ……【検死】したのか？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR6,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print ああ。<br>以前、役作りのときにちょっと勉強したことがあってね。<br>あくまでも素人の真似事だが……間違ってはないはずさ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR6,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print 死因は見ての通り、胸の刺し傷だろうね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# ＠備考◆困惑/歯切れ悪く
+
+@char Leia.Default,ArmR8,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print あとこれはまだどういうことなのか<br>わかってはいないんだが……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR8,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print ……彼女の瞳は【義眼】のようになっていたんだ。<br>眼が鉱物のように変化しかけていた……というか。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （眼が鉱物……？<br>　普通の現象ではないようだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print ……あー、それについては<br>あんま気にしなくていいかも。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print 何か知っているのかい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Middle
+@gosubModifyCamera 0
+@print まあ……【魔女】が死んだらそうなるっていうか……。<br>死ぬにはそうするしかないっていうか。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Middle
+@gosubModifyCamera 0
+@print ……ま、今は関係ないんじゃねーかな。<br>死因は刺された傷が原因なんっしょ？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,Arms,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print ……そうだね。<br>遺体を見た限り、心臓を刺されたのが<br>死因なのは間違いない。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,Arms,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print 眼については、死後に何か理由があって<br>死体の損壊が行われた……<br>ということなのかもしれないね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# SE・明るい音
+@sfx Sfx_Common_2
+
+@char Warden.8 { Position:,{characterPositionY} time:0 }
+@gosubModifyCamera 0
+@print ……それについては私からも<br>証言しておきましょうか。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Warden.3
+@gosubModifyCamera 0
+@print メルル様の眼は、<br>魔女の不死性を失わせる薬の<br>副作用によるものですが……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Warden.2
+@gosubModifyCamera 0
+@print この変化具合からいくと、<br>メルル様が胸を突かれたのは<br>薬が効く前のはずです。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Warden.2
+@gosubModifyCamera 0
+@print おそらくは、その剣の刃に塗ってあったのでしょう。<br>間違っても不用意に触って指を切ったりしないでくださいね。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR1,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Smile_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ひっ……！？<br>さっき触ってしまいましたわー！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Middle,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……ハンナくんはちゃんと手を洗うように。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Closed,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print さっき洗いましたわー！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Warden.1
+@gosubModifyCamera 0
+@print ……皆さんが見つけるのは、<br>【薬を刃に塗って、胸を刺した人物】と<br>認識していただいて大丈夫です。 { author:Warden speed:1 waitInput:true Wait:true }
+
+# ☆アイテム追加
+# 【メルルの死体写真】
+# 死因は心臓の刺し傷。
+# 喉・心臓に複数回刺された跡がある。
+# 死体発見時、死後20分～1時間が経過。
+# 眼球が宝石となっているが、死因に関係はない。
+@spawn Clue
+@update 6-3
+@toast "魔女図鑑 更新…"
+@Wait i1.2
+@despawn Clue
+
+@char Leia.Default,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print ……さて、私が調べた現場の状況としては<br>そんなところか。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# ゴクチョー出番終わり
+@char Warden { Position:,{hiddenCharacterPositionY} time:0 }
+
+@char Leia.Default,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Closed,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print みんな、何か意見はあるかい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Hanna.Default,ArmR2,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Open
+@gosubModifyCamera 0
+@print ……やっぱり、犯人はヒロさんとしか思えませんわ。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Hanna.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print 現場に倒れているなんて……<br>怪しすぎるんじゃありませんこと！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print ……客観的に見れば、たしかにそう見えるだろうね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print でも私は殺していないよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print なら……みんなが知っている状況を<br>一度すり合わせてみようか。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print ヒロくんが犯人じゃないなら……<br>何かおかしな点が出てくるのだろうしね！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （一方的な吊るし上げ……<br>　そんなことにならないよう、<br>　毅然と反論しなくては） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print （私を糾弾する間違った意見……<br>　訂正させてもらおう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto Act02_Chapter01/Act02_Chapter01_Trial01

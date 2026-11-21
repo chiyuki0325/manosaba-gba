@@ -1,0 +1,265 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-1-10
+
+# ========================================
+# ●シーン1‐1-10
+# [back 7]
+# ========================================
+
+# ========================================
+# ＞『医務室』を選択
+# ========================================
+
+# ========================================
+# [bgm Bgm_011_001_Loop]
+# ========================================
+
+@print エマとシェリーはマップを頼りに、<br>１階にある医務室へと向かった。 { speed:1 waitInput:true Wait:true }
+
+@back 7_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+@bgm Bgm_11_1
+
+@print 医務室に入ると薬品のにおいはなく、<br>代わりに優しい香りが漂う。 { speed:1 waitInput:true Wait:true }
+
+@print "室内には<ruby=\"ひ\">陽</ruby>ざしがたっぷりと差し込み、<br><ruby=\"え\">得</ruby>がたい安らぎをもたらしていた。" { speed:1 waitInput:true Wait:true }
+
+@print （こういう場所もあるんだ……<br>　良かった、全部がひどい場所じゃなくて） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print アンアンがベッドで眠っていた。<br>メルルと、レイアもいる。 { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default
+@char Ema.Normal1
+@char Sherry.Normal1
+
+@print あ、エマさん、シェリーさん……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print メルルさん、見かけないと思ったら<br>こんなところにいたんですね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Meruru.Pensive
+
+@print は、はい……。アンアンさんの具合が悪いって聞いて、<br>放っておけなくて……ごめんなさい。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print メルルはか細い声で言って、頭を下げる。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Surprised1
+
+@print 謝らなくてもいいですよぉ！<br>えらいです、メルルさん！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print そ、そんなそんなそんな……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+
+@print アンアンちゃん、ずっとここにいたんだ？<br>具合はどうなんだろう。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+
+@print 高熱が出ていて……ゴクチョーさんをお見かけしたので<br>聞いてみたら、さすがに、自室じゃなくて医務室で<br>過ごしても良いとのことでした。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print そうなんだ……わりと緩いんだね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマとシェリーは、<br>アンアンのベッドに近付いていった。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Normal1
+
+@print キミたちか。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+@char Sherry.Normal1
+
+@print あの、アンアンちゃん、大丈夫？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1
+
+@print あまり良い状態とは言えないな……。<br>ああ、でもメルルくんにずいぶん助けられたよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR5,ArmL2
+
+@print 中庭に植物がたくさん茂っているんだが、<br>ハーブを摘んで、お茶を淹れてくれたんだ。<br>ずいぶん気持ちが落ち着いたんじゃないかな。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1
+
+@print へええ、メルルさんすごいですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print （それでこの空間は、<br>　すごく優しいにおいがするんだ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+
+@print 中庭……そういえば通路の途中に<br>出られるところありましたね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ああ、とても雰囲気が良いところでね。<br>よければ案内するよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [back 28]
+# ========================================
+
+@hideChars 
+@back 28_1 { Scale:{g_backgroundDefaultScale} time:1.2 }
+
+@print レイアに案内され、<br>エマとシェリーは中庭にやってきた。 { speed:1 waitInput:true Wait:true }
+
+@print 四方を壁に囲まれているが、<br>吹き抜けになっていて空が見える。 { speed:1 waitInput:true Wait:true }
+
+@print 換気のためか、<br>２階の各所からベランダが張り出しているのも見えた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Smile1
+
+@print （外の空気……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ずっと閉鎖的な場所にいたエマは、<br>緑豊かな庭園の空気を胸いっぱいに吸い込んだ。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia.Smile1
+@char Ema.Normal1
+@char Sherry.Normal1
+
+@print ここは囲まれているけれど、<br>正面玄関から外に出てみると良いよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 自然が溢れていて、良い景観なんだ。<br>もっと解放的になれると思う。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+@char Sherry.Surprised1
+
+@print にこにこと提案してきたレイアに、<br>エマとシェリーは、顔を見合わせる。 { speed:1 waitInput:true Wait:true }
+
+@print ボクら、てっきり正面玄関は<br>鍵がかけられているのかと思ってた。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Normal1,ArmR5,ArmL1
+
+@print 自由時間は、<br>本当に自由に歩き回らせてくれるみたいなんだ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print ただ、さすがに外出禁止時間は<br>鍵がかけられるみたいだけどね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [sfx 8：フクロウの羽ばたき音]
+# ========================================
+
+@sfx Sfx_8
+
+@hideChars 
+
+@print 話し込んでいたら、上空から羽音が聞こえて<br>エマたちは顔を上げる。<br>予感はあったが、ゴクチョーだった。 { speed:1 waitInput:true Wait:true }
+
+@char Warden
+
+@print おや、桜羽エマさん、橘シェリーさん、<br>蓮見レイアさんじゃないですか。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia.Angry1,ArmR1,ArmL1
+@char Ema.Surprised1,ArmR3,ArmL1
+@char Sherry.Normal1
+
+@print ゴクチョー……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print レイアはゴクチョーの出現に警戒し、<br>険しい顔になってエマとシェリーを守るように前に立つ。 { speed:1 waitInput:true Wait:true }
+
+@print 私たちは規則に従って生活をしている。<br>何も悪いことはしていないよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Warden
+
+@print ええ、その調子で頑張ってください。<br>ここはとてもいいところですから、<br>楽しんで暮らしていただけますと。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia.Angry1
+@char Ema.Pensive1
+@char Sherry.Normal1
+
+@print "唐突にゴクチョーが現れたことで<br>エマとレイアは表情を<ruby=\"こわば\">強張</ruby>らせていたが、<br>シェリーだけは目を輝かせている。" { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR1,ArmL6
+@EmoteJumpDouble Sherry
+
+@print 遭遇できるなんてラッキーです！<br>ちょーっといいですか、ゴクチョーさん！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ここ、ずいぶん古い建物ですよね。<br>ゴクチョーさんは長い間、<br>何度も囚人を迎え入れているんでしょうか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 過去に捕まった囚人はどうなったんでしょう！？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print この牢屋敷ってなんなんですか！？<br>ぜひ教えてください～！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Warden
+
+@print ……やれやれ。<br>まあ、わからないことばかりなのもかわいそうですよね。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print あまり時間は取れませんが……<br>ほんの少しだけ教えてあげましょう。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print この牢屋敷はですね、５００年前からあるんですよ。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia.Angry1
+@char Ema.Pensive1
+@char Sherry.Surprised1,ArmR1,ArmL1
+
+@print ５００年！？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print どうりで老朽化が激しいわけだね……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Warden
+
+@print その当時は魔女を捕らえる場所ではなく、<br>魔女が普通に暮らしているお屋敷でした。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 大魔女を中心に、<br>たくさんの魔女が仲良く暮らす良いところだったんですよ。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 感情がまるでわからない存在ではあるが、<br>穏やかに語るトーンから、昔を懐かしんでいる印象を受けた。 { speed:1 waitInput:true Wait:true }
+
+@print あるとき、魔女とは違う種族――<br>人間がこの島にやってきた時も、この中庭でお茶会を催して、<br>魔女たちは人間を歓迎したんです。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia.Angry1
+@char Ema.Pensive1
+@char Sherry.Normal1
+
+@print それがなんで囚人を捕らえる牢獄なんかに？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Warden
+
+@print ええと、それは大魔女が――おっと、<br>おしゃべりのしすぎは良くありませんね。私はこれで。 { author:Warden speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [sfx 8：フクロウの羽ばたき音]
+# ========================================
+
+@sfx Sfx_8
+
+@hideChars 
+
+@print ゴクチョーは逃げるように、<br>さっさと飛び去っていった。 { speed:1 waitInput:true Wait:true }
+
+@print （牢屋敷……大魔女……大切な情報な気がする。<br>　【魔女図鑑】にメモしておこう） { author:Ema speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 【魔女図鑑】の【人物】・【大魔女】の項目更新
+# ========================================
+
+@toast "魔女図鑑 更新…"
+@update 8
+
+@char Leia.Normal1
+@char Ema.Pensive1
+@char Sherry.Smile1
+
+@print もっとゴクチョーさんのお話聞きたかったですね！<br>でも大収穫だった気がします！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print う、うん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （シェリーちゃんみたいに素直には喜べないけど……） { author:Ema speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン1‐1‐7
+# 全てのイベントを消化している＞シーン1‐1‐12
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter01/Act01_Chapter01_Adv11

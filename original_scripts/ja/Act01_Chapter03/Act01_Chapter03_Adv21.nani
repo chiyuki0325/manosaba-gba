@@ -1,0 +1,58 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-3-21
+
+# ========================================
+# ●シーン１‐3-21
+# ========================================
+
+@back 23_3 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# ========================================
+# ＞『水精の間』を選択
+# ========================================
+
+@bgm Bgm_5_1
+
+@print "エマは火事の起こったゲストハウスの並ぶ棟、<br>中間にある【<ruby=\"ウンディーネ\">水精</ruby>の間】へ入った。" { speed:1 waitInput:true Wait:true }
+
+@print 火事が起こった建物ではないので、<br>中は元のままだった。 { speed:1 waitInput:true Wait:true }
+
+@print （ここには何もないみたいだ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@camera { time:0.9 }
+@Wait 0.9
+
+@print （ゴクチョーの像が立ってる……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print そう思ってエマが像を触ると、それはバランスを崩して<br>倒れそうになる。 { speed:1 waitInput:true Wait:true }
+
+@print うわっ！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"とっさ\">咄嗟</ruby>にエマはそれを支え、慎重に手を離した。" { speed:1 waitInput:true Wait:true }
+
+@camera { time:0.9 }
+
+@print （……この像、重心が不安定みたいだ。<br>　作りのせいかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ☆証拠品：『ゴクチョーの像』入手
+# ========================================
+@spawn Clue
+@update 3-6
+@despawn Clue
+
+@print その後、室内を軽く物色してみたが特に何も見つからず、<br>エマは建物から出た。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン1‐3‐19
+# 全てのイベントを消化している＞シーン1‐3‐26
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter03/Act01_Chapter03_Adv19

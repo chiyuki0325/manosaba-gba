@@ -1,0 +1,492 @@
+@Gosub System/System_Subroutine.BeginAdv
+
+@back Transparent { time:0 }
+
+@Gosub .Characters
+# @gosub .LayeredCharacters
+# @gosub .TextPrinter
+# @gosub .Backgrounds
+# @gosub .Tricks
+
+@Stop 
+
+# ==============================================================================
+# キャラクター
+# ==============================================================================
+
+# Characters
+
+@printer Normal
+@back Grid_1 { time:0 }
+@back Grid_2 { time:0 }
+@print "Debug_Actors # Characters" { speed:1 waitInput:true Wait:true }
+
+@set "leftPosX = 25"
+@set "rightPosX = 75"
+
+# @char Warden.4 pos:50,50
+# Warden
+
+# @hideChars
+# @char Jailer.4 pos:25,50
+# @char JailerB pos:50,50
+# @char JailerC pos:75,50
+# Jailer
+
+@char Yuki.1
+@print Yuki.1 { speed:1 waitInput:true Wait:true }
+
+@char Yuki.2
+@print Yuki.2 { speed:1 waitInput:true Wait:true }
+
+@char Yuki.3
+@print Yuki.3 { speed:1 waitInput:true Wait:true }
+
+@char Yuki.4
+@print Yuki.4 { speed:1 waitInput:true Wait:true }
+
+@char Yuki.5
+@print Yuki.5 { speed:1 waitInput:true Wait:true }
+
+@char Yuki.6
+@print Yuki.6 { speed:1 waitInput:true Wait:true }
+
+@char Yuki.7
+@print Yuki.7 { speed:1 waitInput:true Wait:true }
+
+@char Yuki.8
+@print Yuki.8 { speed:1 waitInput:true Wait:true }
+
+@char Yuki.9
+@print Yuki.9 { speed:1 waitInput:true Wait:true }
+
+@char Yuki.10
+@print Yuki.10 { speed:1 waitInput:true Wait:true }
+
+@char Yuki.11
+@print Yuki.11 { speed:1 waitInput:true Wait:true }
+
+@char Yuki.12
+@print Yuki.12 { speed:1 waitInput:true Wait:true }
+
+@char Yuki.13
+@print Yuki.13 { speed:1 waitInput:true Wait:true }
+
+@char Yuki.14
+@print Yuki.14 { speed:1 waitInput:true Wait:true }
+
+@char Yuki.15
+@print Yuki.15 { speed:1 waitInput:true Wait:true }
+
+@char Yuki.16
+@print Yuki.16 { speed:1 waitInput:true Wait:true }
+
+@char Yuki.17
+@print Yuki.17 { speed:1 waitInput:true Wait:true }
+
+@char Yuki.18
+@print Yuki.18 { speed:1 waitInput:true Wait:true }
+
+@char Yuki.19
+@print Yuki.19 { speed:1 waitInput:true Wait:true }
+
+@char Yuki.20
+@print Yuki.20 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna { pos:{leftPosX},50 }
+@char Yuki.2 { pos:{rightPosX},50 }
+@pivot Yuki
+@print Ema { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Determined2 { pos:{leftPosX},50 }
+@char CreatureEma { pos:{rightPosX},50 }
+@print Ema { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hiro { pos:{leftPosX},50 }
+@char CreatureHiro { pos:{rightPosX},50 }
+@print Hiro { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Meruru.Normal2 { pos:{leftPosX},50 }
+@char CreatureMeruru { pos:{rightPosX},50 }
+@print Meruru { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna { pos:{leftPosX},50 }
+@char CreatureHanna { pos:{rightPosX},50 }
+@print Hanna { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry { pos:{leftPosX},50 }
+@char CreatureSherry { pos:{rightPosX},50 }
+@print Sherry { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char AnAn { pos:{leftPosX},50 }
+@char CreatureAnAn { pos:{rightPosX},50 }
+@print AnAn { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia { pos:{leftPosX},50 }
+@char CreatureLeia { pos:{rightPosX},50 }
+@print Leia { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco { pos:{leftPosX},50 }
+@char CreatureCoco { pos:{rightPosX},50 }
+@print Coco { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria { pos:{leftPosX},50 }
+@char CreatureMiria { pos:{rightPosX},50 }
+@print Miria { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Margo { pos:{leftPosX},50 }
+@char CreatureMargo { pos:{rightPosX},50 }
+@print Margo { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Noah { pos:{leftPosX},50 }
+@char CreatureNoah { pos:{rightPosX},50 }
+@print Noah { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Nanoka { pos:{leftPosX},50 }
+@char CreatureNanoka { pos:{rightPosX},50 }
+@print Nanoka { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa { pos:{leftPosX},50 }
+@char CreatureAlisa { pos:{rightPosX},50 }
+@print Alisa { speed:1 waitInput:true Wait:true }
+
+@Return 
+
+# ==============================================================================
+# レイヤーキャラクター
+# ==============================================================================
+
+# LayeredCharacters
+
+@printer Normal
+@back Grid_1 { time:0 }
+@back Grid_2 { time:0 }
+@print "Debug_Actors # LayeredCharacters" { speed:1 waitInput:true Wait:true }
+
+@char Hiro.ArmL1,ArmR1,Normal1
+@print Hiro.ArmL1,ArmR1,Normal1 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.ArmL2,ArmR2,Smile1
+@print Hiro.ArmL2,ArmR2,Smile1 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.ArmL3,ArmR3,Angry1
+@print Hiro.ArmL3,ArmR3,Angry1 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.ArmL4,ArmR4,Pensive1
+@print Hiro.ArmL4,ArmR4,Pensive1 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.ArmL5,ArmR5,Cry1
+@print Hiro.ArmL5,ArmR5,Cry1 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.ArmL6,ArmR6,Surprised1
+@print Hiro.ArmL6,ArmR6,Surprised1 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.ArmL7,ArmR7,Flushed1
+@print Hiro.ArmL7,ArmR7,Flushed1 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.ArmL8,ArmR8,Fearful1
+@print Hiro.ArmL8,ArmR8,Fearful1 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.ArmL9,ArmR9,Normal2
+@print Hiro.ArmL9,ArmR9,Normal2 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.ArmL10,ArmR10,Smile2
+@print Hiro.ArmL10,ArmR10,Smile2 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.ArmL11,ArmR11,Angry2
+@print Hiro.ArmL11,ArmR11,Angry2 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.ArmL12,ArmR12,Pensive2
+@print Hiro.ArmL12,ArmR12,Pensive2 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.ArmL13,ArmR13,Cry2
+@print Hiro.ArmL13,ArmR13,Cry2 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Arms3,Surprised2
+@print Hiro.Arms3,Surprised2 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Arms4,Flushed2
+@print Hiro.Arms4,Flushed2 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.ArmL1,ArmR1,Fearful2
+@print Hiro.ArmL1,ArmR1,Fearful2 { speed:1 waitInput:true Wait:true }
+
+@Return 
+
+# ==============================================================================
+# テキストプリンター
+# ==============================================================================
+
+# TextPrinter
+
+@back SolidColor
+
+@print "Debug_Actors # TextPrinter" { speed:1 waitInput:true Wait:true }
+
+# @char Sherry pos:50,50
+
+@print 「ああそれは、良い情報ですね！<br>　１分しか浮けないなら、<br>　足跡残さず殺すのは無理だって言えるかも！」 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print "-+<sprite name=\"DashLeft\">+<sprite name=\"DashMiddle\">+<sprite name=\"DashRight\">+-" { speed:1 waitInput:true Wait:true }
+
+@print "戻る<sprite name=\"Return\">" { speed:1 waitInput:true Wait:true }
+
+@print "第一話<sprite name=\"Sparkles\">" { speed:1 waitInput:true Wait:true }
+
+@print "PRESS <sprite name=\"GamePadButton_A\"> Button" { speed:1 waitInput:true Wait:true }
+
+@print aaa { speed:1 waitInput:true Wait:true }
+
+@print bbb { speed:1 waitInput:true Wait:true }
+
+@print ccc { speed:1 waitInput:true Wait:true }
+
+@print ddd { speed:1 waitInput:true Wait:true }
+
+@print eee { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@back SolidColor { time:1 }
+@i 
+
+@Return 
+
+# ==============================================================================
+# 背景
+# ==============================================================================
+
+# Backgrounds
+
+@back Grid_1 { time:0 }
+
+@print "Debug_Actors # Backgrounds" { speed:1 waitInput:true Wait:true }
+
+@back 1_1
+@back 10_1
+@back 10_2
+@back 10_3
+@back 10_4
+@back 10_5
+@back 20_1
+@back 20_2
+@back 30_1
+@back 40_1
+@back 50_1
+@back 50_2
+@back 50_3
+@back 80_1
+@back 100_1
+@back 110_1
+@back 120_1
+@back 130_1
+@back 140_1
+@back 140_2
+@back 140_3
+@back 140_4
+@back 150_1
+@back 150_2
+@back 160_1
+@back 170_1
+@back 180_1
+@back 190_1
+@back 200_1
+@back 200_2
+@back 200_3
+@back 200_4
+@back 200_5
+@back 210_1
+@back 220_1
+@back 220_2
+@back 230_1
+@back 240_1
+@back 250_1
+@back 260_1
+@back 270_1
+@back 270_2
+@back 280_1
+@back 290_1
+@back 290_2
+@back 300_1
+@back 310_1
+@back 320_1
+@back 330_1
+@back 340_1
+@back 340_2
+@back 350_1
+@back 360_1
+@back 360_2
+@back 370_1
+@back 370_2
+@back 380_1
+@back 400_1
+@back 400_2
+@back 400_3
+@back 410_1
+@back 410_2
+@back 410_3
+@back 410_4
+@back 420_0
+@back 420_1
+@back 420_2
+@back 420_3
+@back 420_4
+@back 421_1
+@back 421_2
+@back 421_3
+@back 421_4
+@back 421_5
+@back 421_6
+@back 421_7
+@back 421_8
+@back 421_9
+@back 430_1
+@back 430_2
+@back 430_3
+@back 440_0
+@back 440_1
+@back 440_2
+@back 440_3
+@back 440_4
+@back 440_5
+@back 440_6
+@back 440_7
+@back 440_8
+@back 440_9
+@back 440_10
+@back 440_11
+@back 440_12
+@back 450_1
+@back 450_2
+@back 450_3
+@back 450_4
+@back 450_5
+@back 451_1
+@back 451_2
+@back 451_3
+@back 451_4
+@back 451_5
+@back 451_6
+@back 451_7
+@back 460_1
+@back 460_2
+@back 460_3
+@back 460_4
+@back 460_5
+@back 460_6
+@back 460_7
+@back 460_8
+@back 460_9
+@back 460_10
+@back 460_11
+@back 470_1
+@back 470_2
+@back 470_3
+@back 470_4
+@back 470_5
+@back 470_6
+@back 470_7
+@back 470_8
+@back 470_9
+@back 470_10
+@back 480_1
+@back 480_2
+@back 480_3
+@back 480_4
+@back 480_5
+@back 490_1
+@back 500_1
+@back 510_1
+@back 520_1
+@back 530_1
+@back 540_1
+@back 550_1
+@back 550_2
+@back 560_1
+@back 570_0
+@back 570_1
+@back 570_2
+@back 570_3
+@back 570_4
+@back 570_5
+@back 570_6
+@back 570_7
+@back 570_8
+@back 570_9
+@back 570_10
+@back 570_11
+@back 570_12
+@back 570_13
+@back 570_14
+@back 570_15
+@back 580_1
+@back 580_2
+@back 580_3
+@back 590_1
+@back 590_2
+@back 590_3
+@back 590_4
+@back 600_1
+@back 610_1
+@back 620_1
+@back 630_1
+@back 640_1
+@back 650_1
+@back 660_1
+@back 670_1
+@back 680_1
+@back 690_1
+@back 700_1
+@back 700_2
+@back 700_3
+@back 700_4
+@back 700_6
+
+@print Ends. { speed:1 waitInput:true Wait:true }
+
+@Return 
+
+# ==============================================================================
+# トリック図
+# ==============================================================================
+
+# Tricks
+
+@print "Debug_Actors # Tricks" { speed:1 waitInput:true Wait:true }
+
+@back 1_7_1
+@back 1_7_2
+@back 1_13_1
+@back 1_13_2
+@back 1_13_3
+@back 1_13_4
+@back 5_3_1
+@back 5_3_2
+@back 5_3_3
+@back 6_9_1
+@back 6_9_2
+@back 6_9_3
+@back 6_9_4
+@back 6_9_5
+@back 6_9_6
+@back 9_6_1
+@back 9_6_2
+@back 9_6_3
+@back 9_6_4
+
+@print Ends. { speed:1 waitInput:true Wait:true }
+
+@Return

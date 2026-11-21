@@ -1,0 +1,549 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter05/Act02_Chapter05_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# クリーチャー初期化処理
+@hide Hiro
+@char CreatureHiro.1 { Position:{hiroPositionX},{characterPositionY},{hiroPositionZ} Rotation:,{hiroRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+# ==============================================================================
+# MARK: 10-1: 💬 魔女化について
+# ==============================================================================
+# ＠ト書き▼議論10-1 魔女化について
+# 議論開始カットイン
+# BGM変更：rAwTell Owk...
+@bgm Bgm_7_1
+
+# Judge10-1-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Meruru.Head1,ArmR1_1,Eyes1_Normal_Open1,Mouth1_Angry_Open2
+@gosubModifyCamera 0
+@printDebate ま、魔女化とは……<br>大魔女様に付与された<br>【魔女因子】が<br>覚醒することです。
+
+@char Meruru.Head1,ArmR8_1,ArmL8,Eyes1_Normal_Open3,Mouth1_Angry_Open2
+@gosubModifyCamera 0
+@printDebate 魔女因子を持って<br>生まれた少女は<br>体質が合えば<br>魔法が使えるようになります。
+
+@gosubModifyCamera 0
+@printDebate "そして少女の<br><link=\"Objection_02_05_01_01\">精神が魔女化</link>することで、<br><link=\"Objection_02_05_01_02\">肉体もまた魔女と化す</link><br>のです。"
+
+@char Meruru.Head1,ArmR5_1,ArmL8,Eyes1_Pensive_Open2
+@gosubModifyCamera 0
+@printDebate その行き着く先は<br>【なれはて】……。
+
+@gosubModifyCamera 0
+@printDebate 【なれはて】とは、<br>魔女因子が魂を食い尽くした<br>魔女の抜け殻のようなものです。
+
+@char Meruru.Head1,ArmR5_1,ArmL8,Eyes1_Smile_Closed1,Mouth1_Flushed_Closed1
+@gosubModifyCamera 0
+@printDebate 魔法も使えない、<br>ただのお人形……。
+
+@char Meruru.Head1,ArmR1_1,ArmL1,Eyes1_Normal_Open1,Mouth1_Angry_Open2
+@gosubModifyCamera 0
+@printDebate 魔女因子が魂を喰らい尽くすと<br>魔女化して定着した<br>一部の因子を残して<br>その肉体を離れます。
+
+@char Meruru.Head1,Mouth1_Smile_Closed1
+@gosubModifyCamera 0
+@printDebate そして離れた魔女因子は<br>輪廻転生のように<br>新たな少女へと<br>移っていくんです。
+
+@char Meruru.Head2,ArmR5_2,ArmL5,Eyes2_Downcast_Open1,Mouth2_Smile_Closed1
+@gosubModifyCamera 0
+@printDebate ……で、でも私は……<br>そんな魔女化してできた<br>魔女とは<br>違う存在で――。
+
+@char Meruru.Head2,ArmR1_2,Eyes2_Downcast_Open1,Mouth2_Smile_Closed1
+@gosubModifyCamera 0
+@printDebate "――最後に残った<br><link=\"Objection_02_05_01_03\">【原初の魔女】</link>なんです。"
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@printDebate 【原初の魔女】……？
+
+@char Meruru.Head1,ArmR8_1,ArmL8,Eyes1_Normal_Open2,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@printDebate この島にはその昔、<br>大魔女さまと共に<br>【原初の魔女】たる<br>大勢の魔女が住んでいました。
+
+@char Meruru.Head1,ArmR8_1,ArmL8,Eyes1_Normal_Open3,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@printDebate "【原初の魔女】とは、<br>元からこの島に<br><link=\"Objection_02_05_01_04\">住んでいた者</link>たち……。"
+
+@char Meruru.Head1,ArmR8_1,ArmL8,Eyes1_Smile_Closed1,Mouth1_Smile_Closed1
+@gosubModifyCamera 0
+@printDebate "魔法を操る、<br><link=\"Objection_02_05_01_05\">上位の存在</link>なんです……。"
+
+# ==============================================================================
+# 10-1議論後独白
+# ==============================================================================
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@Wait 0.2
+
+@print （……まるで神話のような話だ。<br>　固有名詞ばかりで理解に労する部分もあるが……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （これまで私が見聞きした情報と合わせれば、<br>　彼女が言っていることは真実だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （……一部を除けば、だが） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@print （突きつけてみよう。<br>　彼女の語る言葉と私の持つ情報の相違点を……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-1-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_01_01
+
+@Skip false
+@pauseTrial true
+
+@choice 精神の魔女化とは？
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-1-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_01_02
+
+@Skip false
+@pauseTrial true
+
+@choice 肉体の魔女化とは？
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-1-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_01_03
+
+@Skip false
+@pauseTrial true
+
+@choice メルルは人間だ
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-1-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論4
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_01_04
+
+@Skip false
+@pauseTrial true
+
+@choice 自然発生できない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-1-5
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論5
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_01_05
+
+@Skip false
+@pauseTrial true
+
+@choice 私たちも魔法を使える
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-1-6
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 10-1: ❌ 議論ミス選択肢
+# ==============================================================================
+
+# ==============================================================================
+# MARK: 10-1-3: ❌ 追求・精神の魔女化とは？
+# ==============================================================================
+
+# Judge10-1-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print 精神の魔女化……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print 具体的にそれは何を指すのかな？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Meruru.Head2,ArmR5_2,ArmL2,Eyes2_Normal_Open3,Mouth2_Angry_Open2
+@gosubModifyCamera 0
+@print えっと……<br>それは、精神の凶暴化ですね。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Eyes2_Downcast_Open1,Mouth2_Normal_Open1
+@gosubModifyCamera 0
+@print 魔女化すると、<br>殺人衝動を抱いちゃうんです……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Eyes2_Pensive_Open1,Mouth2_Normal_Open1
+@gosubModifyCamera 0
+@print それが大魔女様の残した呪いです……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （殺人衝動の増加……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （私に残された時間も少ないか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-1-1
+
+# ==============================================================================
+# MARK: 10-1-4: ❌ 追求・肉体の魔女化とは？
+# ==============================================================================
+
+# Judge10-1-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print 肉体の魔女化……<br>それは具体的に、どういうことが起こるのかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Meruru.Smile1,Mouth1_Fearful_Open1
+@gosubModifyCamera 0
+@print 最初は爪が伸びたりする程度ですが……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default
+@gosubModifyCamera 0
+@print 一定のラインを越えると、<br>不老不死になって……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Eyes1_Smile_Closed1
+@gosubModifyCamera 0
+@print そうなったら大きな傷を負ったとしても、<br>時間が経てば治ってしまいます……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Arms1_1,ArmL1,Eyes1_Pensive_Open2,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print それは過去、<br>人間たちが噂した<br>【醜悪な化け物としての魔女】……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Arms1_1,ArmL1,Eyes1_Normal_Open1
+@gosubModifyCamera 0
+@print その虚像としての怪物を再現しているんです。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.ArmR11_1,ArmL12,Eyes1_Uncomfortable_Open1,Mouth1_Flushed_Closed1
+@gosubModifyCamera 0
+@print とっても皮肉……ですよね……。<br>可哀想……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （……そうだ。<br>　それが魔女化だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@gosubModifyCamera 0
+@print （今現在私に起きている現象……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （他のみんなに<br>　【私のような化け物になってくれ】と言っても、<br>　承諾してくれるはずはないか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge10-1-1
+
+# MARK: 10-1-5: ❌ 反論・自然発生できない
+
+# Judge10-1-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print ……それはおかしいな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print ここは絶海の孤島だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@gosubModifyCamera 0
+@print 魔女が無から発生したとでも言うのかな？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal1,Eyes1_Downcast_Open1,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print 魔女たちの出現については<br>私も詳細は知らないんです……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Eyes1_Normal_Open1,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print でもたしかに、<br>この島で発生したとは考えにくいですね……？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@gosubModifyCamera 0
+@print きっと、他の場所から移住してきたんじゃ……ないかと……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.1
+@gosubModifyCamera 0
+@print ……そうか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal1,Eyes1_Downcast_Open1
+@gosubModifyCamera 0
+@print あの……説明を再開させてもらっても<br>いいでしょうか……？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Eyes1_Smile_Closed1,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print 魔女についての考察なら、<br>あとからたくさんお話しましょう……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char CreatureHiro.1
+@gosubModifyCamera 0
+@print （魔女オタク扱いされてしまった……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （今私がすべきは全員の魔女化だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@gosubModifyCamera 0
+@print （しかしどうしてメルルは<br>　私のように魔女化が進んでいないのだろうか。<br>　数百年生きているはずなのに……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@gosubModifyCamera 0
+@print （それを突き止めるためには、<br>　まず彼女自身の情報を集める必要があるな……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-1-1
+
+# MARK: 10-1-6: ❌ 反論・私たちも魔法を使える
+
+# Judge10-1-6
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print ……いいや。<br>私たちだって魔法を使える。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print 島の魔女が人間の上位種であるとは限らない！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Meruru.Head1,ArmR4_1,ArmL4,Eyes1_Pensive_Open2,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print そ、そもそも……！<br>みなさんの魔法は、<br>大魔女様が授けたものなんです……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Eyes1_Angry_Closed1
+@gosubModifyCamera 0
+@print なので、大魔女様と人間が同列だなんて<br>間違っても言わないでください……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （……メルルの機嫌を損ねてしまった気がする） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@gosubModifyCamera 0
+@print （魔女化はさせなくてはいけないが、<br>　途中で議論を打ち切られないようにしないと<br>　いけないな……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@gosubModifyCamera 0
+@print （今私がすべきは全員の魔女化だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@gosubModifyCamera 0
+@print （しかしどうしてメルルは<br>　私のように魔女化が進んでいないのだろうか。<br>　数百年生きているはずなのに……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@gosubModifyCamera 0
+@print （それを突き止めるためには、<br>　まず彼女自身の情報を集める必要があるな……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-1-1
+
+# ==============================================================================
+# MARK: 10-1-2: ⭕ 反論・メルルは人間だ
+# ==============================================================================
+# カットイン
+# Judge10-1-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+# カットイン
+@StopBgm 
+@gosubCutIn CreatureHiro
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.8
+@gosubModifyCamera 0
+@print ……それはどうかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Meruru.Surprised1
+@gosubModifyCamera 0
+@print えっ……！？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+# 気任せの蝶［チェロ無し］
+@bgm Bgm_45_2
+
+@char CreatureHiro.18
+@gosubModifyCamera 0
+@print 私は１つの事実を知っている。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@spawn Clue
+
+@gosubModifyCamera 0
+@print それは、とある場所で見つけた手紙に書かれていたことだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.19
+@gosubModifyCamera 0
+@print この書き手は、この島の住人……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@gosubModifyCamera 0
+@print 君が【原初の魔女】と呼ぶ人たちのようだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@despawn Clue
+
+@char Meruru.Surprised1,Eyes1_Fearful_Open1
+@gosubModifyCamera 0
+@print ……それは…！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.10
+@gosubModifyCamera 0
+@print その中に興味深い記述があった……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@gosubModifyCamera 0
+@print 大魔女が、人間の少女を拾って育てたという話だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@gosubModifyCamera 0
+@print 島の魔女たちが捕まっていく中、<br>最後に残されたのは大魔女と、<br>そしてもう１人……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・明るい音
+@sfx Sfx_Common_2
+
+@char CreatureHiro.18
+@gosubModifyCamera 0
+@print ……【人間の少女】。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+# ＠備考◆焦り
+
+@char Meruru.Surprised1,Eyes1_Fearful_Open1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print ………！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print 君は自分のことを最後に残った原初の魔女だと言った。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@gosubModifyCamera 0
+@print けれど、その手紙によれば最後に残ったのは<br>原初の魔女ではなく、<br>大魔女が育てた普通の人間だった……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.11
+@gosubModifyCamera 0
+@print ……メルル、これは君の証言と矛盾している記述だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.10
+@gosubModifyCamera 0
+@print 君はいったい、何者なのかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・ネガティブ音
+@sfx Sfx_Common_7
+
+@char Meruru.Surprised1,Eyes1_Fearful_Open1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print ……そ、それは……その……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# ＠備考◆自分に言い聞かせるように
+
+@char Meruru.Surprised1,Eyes1_Angry_Closed1
+@gosubModifyCamera 0
+@print ……私は大魔女様に認められ、<br>そして力を与えられた魔女なんです……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Head1,ArmR4_1,ArmL4,Eyes1_Angry_Closed1,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print べつになにも……おかしなことなんてありませんっ！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@goto Act02_Chapter05/Act02_Chapter05_Trial02

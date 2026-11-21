@@ -1,0 +1,180 @@
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-ex3
+
+@bgm Bgm_23_1
+@back 13_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.2
+
+@print ――確たる結論が出ないまま、時間は流れた。 { speed:1 waitInput:true Wait:true }
+
+# 処刑END1から引用
+@char Warden.3
+@print 議論はここまでということで、<br>投票に移ってもらっていいですかね？ { author:Warden speed:1 waitInput:true Wait:true }
+@hideChars 
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Lifeless04,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@print （また、誰を処刑するか決めなくちゃいけないんだ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@print もしかしたら、自分に投票されるのではないか―― { speed:1 waitInput:true Wait:true }
+
+@print 少女たちの間に漂う恐れや緊張といった空気が、<br>濃度を増していく。 { speed:1 waitInput:true Wait:true }
+
+@print 誰もが震え、青ざめているように思えた。<br>凄惨な処刑の光景を思い出しているのだろう。 { speed:1 waitInput:true Wait:true }
+
+@print だが、容赦なく投票の時間はやってくる。 { speed:1 waitInput:true Wait:true }
+
+@print 少女たちは自身のスマホを操作し、<br>投票をしていく。 { speed:1 waitInput:true Wait:true }
+
+@print そして。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# パンパカパーン
+@sfx Sfx_34
+# ========================================
+
+@print ファンファーレ音と共に、<br>スマホに映し出されたのは―― { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 心臓のドキドキ音
+@sfx Sfx_35
+# ========================================
+
+@StopBgm 
+@print ナノカの画像だった。 { speed:1 waitInput:true Wait:true }
+
+@char Warden.8
+@print はい、黒部ナノカの処刑が決定～！ { author:Warden speed:1 waitInput:true Wait:true }
+
+# ========================================
+@bgm Bgm_20_1
+# ========================================
+
+@char Nanoka.ArmR5,ArmL4,Eyes1_Tearful_Open1,Mouth1_Angry_Closed2,Sweat1_1,Pale1-1
+@print あなたたちの結論は間違ってる……！<br>私は殺してなんかない……！ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Warden.4
+@print 間違いでも投票で決まったことなので、<br>諦めていただけると……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR6,ArmL3,Mouth1_Normal_Open1,Sweat1_1,Pale1-1
+@print こんなのバカげてるわ……！<br>私は大人しく処刑されるつもりはない！ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# ========================================
+@back SolidColor
+# ========================================
+
+@print 抵抗を試みたナノカだったが<br>結局は看守によって取り押さえられ、<br>処刑が執行された―― { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+# ========================================
+# ぐちゃっ、めきなど体を害する音
+@sfx Sfx_10
+# ========================================
+
+# ========================================
+@back SolidColor
+# ========================================
+
+@Wait 1.5
+# ========================================
+@back 1_1 { Scale:{g_backgroundDefaultScale} time:0 }
+# ========================================
+
+@back SolidColor
+
+@print "魔女裁判の後。<br>エマは１人、監房で物思いに<ruby=\"ふけ\">耽</ruby>っていた。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR6,ArmL16,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open
+@print （また、殺人事件が起こるのかな……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL16,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Closed02,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Closed02
+@print （そのたびに誰かが殺されて……<br>　誰かが魔女として処刑されて……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR13,ArmL16,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open
+@print もしかしたら次はボクが……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ずるずる引きずる音
+@sfx Sfx_5
+# ========================================
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Lifeless02,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open
+@print あれ、この音って……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 不意に響いてきた音が、<br>どんどんこちらに近付いてくる。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Lifeless03,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+
+@print なんだろう……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマは格子から通路の様子をうかがって―― { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+# ========================================
+# ぶんっと武器が振り下ろされる音
+@sfx Sfx_9
+# ========================================
+
+# ========================================
+# 桜羽エマ ＯＵＴ
+# ========================================
+@hideChars 
+# ========================================
+# ざんっと肉が切れる音
+@sfx Sfx_12
+# ========================================
+
+# ========================================
+@back SolidColor
+# ========================================
+
+@back SolidColor { time:0.5 }
+@Wait 0.5
+# ========================================
+@back 2_1 { Scale:{g_backgroundDefaultScale} time:0 }
+# ========================================
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+
+
+@print 何者かによって致命傷を負わされたエマが、<br>床に倒れ伏す。 { speed:1 waitInput:true Wait:true }
+
+@print 格子の向こうに見えた人影に、エマは目を見開いた。 { speed:1 waitInput:true Wait:true }
+
+@print （そんな……どうして……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print …………。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 問いかけようとした言葉は声にならず――<br>エマは息絶えた。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+@back SolidColor { time:1 }
+# ========================================
+
+@back SolidColor
+# ========================================
+@back 13_1 { Scale:{g_backgroundDefaultScale} time:0 }
+# ========================================
+
+@print エマの命が奪われた。<br>次の犠牲者となった彼女を殺した犯人は誰なのか。 { speed:1 waitInput:true Wait:true }
+
+@print 新たな殺人者か。<br>あるいはミリアを殺した犯人が他にいたのか―― { speed:1 waitInput:true Wait:true }
+
+@print また、魔女裁判が開かれる。 { speed:1 waitInput:true Wait:true }
+
+@print 真実が明らかになる保証はどこにもない―― { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 『END～次の犠牲者～』
+# ========================================
+
+# @end
+
+@Gosub System/System_Subroutine.EndAdv
+
+@ClearBacklog 
+@ReturnToTitle { time:1.2000000476837158 delay:0.6000000238418579 }

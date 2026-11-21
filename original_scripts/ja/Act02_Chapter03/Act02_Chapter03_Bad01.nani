@@ -1,0 +1,468 @@
+@if isDebugDirectJump
+	@Gosub System/System_Subroutine.BeginAdv
+
+# ========================================
+# ＞『興味があると答えた』を選択
+# ========================================
+
+# ========================================
+# ＞シーン2-3-b1へ
+# ========================================
+
+# Scene2-3-b1
+
+# ========================================
+# ●シーン2-3-b1
+# ========================================
+
+@back 29_1 { Scale:{g_backgroundDefaultScale} }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_11_1
+
+@char AnAn.Surprised1,Angle01/Option_Arms-
+@char Noah.Smile1
+
+@print ああ、たしかに興味はあるな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "だよねだよね！ 読んでみたいよね！" { author:Noah speed:1 waitInput:true Wait:true }
+
+@print アンアンが、読ませてもいいと思ってくれるなら。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char AnAn.Pensive
+
+@print わがはいは……。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print "アンアンはムスッとした表情で<ruby=\"うつむ\">俯</ruby>くと、<br>もごもごと言葉を続けた。" { speed:1 waitInput:true Wait:true }
+
+@char AnAn.Flushed1
+
+@print ……読みたいと言うなら、<br>読ませてやらないこともない……。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print "やったー！ アンアンちゃんの小説、<br>楽しみだなぁ。" { author:Noah speed:1 waitInput:true Wait:true }
+
+@print あまり期待はするな。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Noah.Pensive1
+
+@print え～、無理だよ～。<br>もうすっごく楽しみになっちゃったもん。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char AnAn.Pensive1
+
+@print むぅぅ……。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Noah.Smile
+
+@print アンアンちゃんが小説を書いたら、<br>のあが挿絵をたくさん描くからね！ { author:Noah speed:1 waitInput:true Wait:true }
+
+@print ヒロちゃんも楽しみにしてて。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print ああ、小説も挿絵もどちらも楽しみにしている。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print その後も、２人は小説や挿絵についての話題に<br>花を咲かせていた。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@hideChars 
+
+@print それから数日後。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+@back 5_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print （そういえば、アンアンの小説は<br>　どうなったんだろう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print あの日から、アンアンもノアのアトリエに入り浸り、<br>脚本と同時に小説を執筆しているらしい。 { speed:1 waitInput:true Wait:true }
+
+@print 先日聞いたノアの話によれば、<br>もうすぐ完成しそうだという。 { speed:1 waitInput:true Wait:true }
+
+@print （少し、様子を見に行ってみるか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 劇の準備をキリのいいところまで終わらせて、<br>私はアトリエへと足を向けた。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+
+@back 29_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@back Transparent.Custom { time:0.4 }
+@Wait 0.4
+@char Hiro.Default
+
+@print 作業は進んでいるか？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Noah.Smile
+@char AnAn.Smile
+
+@print あ、ヒロちゃん！ { author:Noah speed:1 waitInput:true Wait:true }
+
+# ＠備考◆うっとりと
+
+@print ……ほう。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print アトリエには、上機嫌なノアと<br>目を輝かせたアンアンの姿があった。 { speed:1 waitInput:true Wait:true }
+
+@EmoteJumpDouble Noah
+
+@print "あのね！ アンアンちゃんの小説、<br>すっごく面白いんだよ！" { author:Noah speed:1 waitInput:true Wait:true }
+
+@print だからね、今のあがいーっぱい<br>挿絵を描いてるところなの！ { author:Noah speed:1 waitInput:true Wait:true }
+
+@print どうやら２人の作業の優先度は、<br>劇制作から小説に移ってしまったらしい。 { speed:1 waitInput:true Wait:true }
+
+@print 作業机の上には、小説が書かれた紙と、<br>絵が描かれた紙が散らばっている。 { speed:1 waitInput:true Wait:true }
+
+@char AnAn.Smile
+
+@print ノアはすごい。<br>わがはいが想像したとおりの光景だ。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print 一際感動しているらしい。<br>アンアンはノアの絵を食い入るように見つめている。 { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@print "ふふ、<ruby=\"うれ\">嬉</ruby>しいなぁ～。<br>でも、これで終わりじゃ無いよ。" { author:Noah speed:1 waitInput:true Wait:true }
+
+@print どういうことだ？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 今、仕上げをするね～。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@EmoteJump Noah
+
+@bgm Bgm_34_1
+
+@print 上機嫌に笑いながらノアが筆を動かすと、<br>描かれていた生き物が次々に紙から飛び出し、<br>実体を持つ。 { speed:1 waitInput:true Wait:true }
+
+@print それはまるで、本物のように。 { speed:1 waitInput:true Wait:true }
+
+@print これは……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char AnAn.Smile1
+
+@print 何度見てもすごい。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Noah.Smile
+
+@print でしょでしょ～？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@print 角の生えたウサギや、真っ白で神々しい蛇。<br>それに、鋭い爪を持つ鳥に、<br>ドラゴンのような生き物まで。 { speed:1 waitInput:true Wait:true }
+
+@print 実体化した生き物たちは、<br>ノアとアンアンに甘えるように寄っていく。 { speed:1 waitInput:true Wait:true }
+
+@char Noah.Default
+
+@print 実はね、この子たちの他にも<br>まだまだたくさんいるんだよ～。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print そうなのか？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Smile
+
+@print "うん！ 何日か前から、<br>アンアンちゃんと一緒に考えて<br>いっぱい描いてたんだ。" { author:Noah speed:1 waitInput:true Wait:true }
+
+@EmoteJumpDouble Noah
+
+@print ね～、アンアンちゃん。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default
+
+@print あぁ、今は部屋で留守番させている。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Noah.Default
+
+@print あ、でもさっきのあがお部屋に戻ったとき<br>何匹か逃がしちゃったから……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Default
+
+@print お屋敷の中で<br>遊んでる子もいるかも。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print それは、あとで捕まえた方がよさそうだな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （まあでも、特に危なくはなさそうだし<br>　心配はいらなそうだが……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 可愛らしい生き物たちが戯れるほのぼのとした光景に、<br>こちらの心もつい緩んでしまう。 { speed:1 waitInput:true Wait:true }
+
+@print けれど、１つだけ引っかかることがあった。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Surprised1
+
+@print （ノアの魔法はここまでのものだっただろうか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 目の前にいる生き物は、<br>元々絵だったとは思えないほど本物に近い。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive1
+
+@print （もしかしたら、触れれば案外……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print そう思って、近くにいたウサギのような生き物に<br>手を伸ばしたその時。 { speed:1 waitInput:true Wait:true }
+
+@print シャアァァァァッ！ { author:Rabbit speed:1 waitInput:true Wait:true }
+
+@char Hiro.Surprised1
+@shake Hiro
+
+# ＠備考◆びっくり
+
+@print っ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "さっきまでの穏やかな様子とは一転、<br>それは私に牙を<ruby=\"む\">剥</ruby>いた。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Noah.Angry
+
+@print こら！<br>ヒロちゃんにそんなことしちゃダメだよ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Pensive1
+
+@print "ノアやアンアンが<ruby=\"いさ\">諫</ruby>めるものの、<br>ウサギの敵意は消えない。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print それどころか、他の生き物たちも<br>ノアたちを守るように囲んで、<br>こちらに敵意を向けてくる。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Default
+
+@print 産みの親であるノアとアンアンにしか<br>懐かないみたいだな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Noah.Pensive
+
+@print そんなぁ……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print ノアが残念そうに肩を落とすと、<br>騒ぎを聞きつけたらしい他の面々が<br>アトリエにやって来た。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia.Default
+
+@print 今、何か生き物の声がしたけれど……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised
+
+@print えっ……！<br>どうしたの、その子たち。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1
+
+@print "というか、なんなんですの？<br>ウサギ？ に角が生えてますわ……。" { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char AnAn.Default
+
+@print ノアが描いたんだ。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia.Surprised1
+@char Noah.Smile
+
+@print ノアくんが？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Noah.Smile
+
+@print うん、そうだよ！<br>アンアンちゃんの小説の挿絵に使おうと思って、<br>たくさん描いたんだ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print ほんとにたくさん、たーっくさんね！ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Leia.Default
+
+@print 絵で描いたものを魔法でここまで<br>具現化できるなんて……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile
+
+@print "すごいじゃないか！ ノアくん！" { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Noah.Smile
+
+@print えへへへへ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile
+
+@print これなら、今回の劇は<br>もっといろんなことができるようになる。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia
+
+@print そうだ、せっかくだしこの子たちにも<br>出演を――。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@print そう言って、レイアがウサギに一歩近付いた瞬間。 { speed:1 waitInput:true Wait:true }
+
+# 放たれた炎の音
+@sfx Sfx_46
+@char Leia.Fearful1
+@Wait 0.1
+@hide Leia
+
+@print ウサギが吐き出した炎が、<br>一気にレイアの体を包み込んだ。 { speed:1 waitInput:true Wait:true }
+
+# 倒れる音
+@sfx Sfx_19
+
+@char Noah.Normal1
+
+# ＠備考◆炎に焼かれて
+
+@print ひっ、かはっ……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print あまりに突然のできごとで、<br>その場の誰も動くことができない。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# ＠備考◆息を呑む
+
+@print っ……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print レイア、ちゃん……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 焼けただれたレイアの体が床に倒れ込む。<br>――それが引き金になったらしい。 { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_34_2
+
+@print ノアとアンアンを取り囲む動物たちが、<br>一斉にこちらに襲いかかってきた。 { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Fearful1
+@Wait 0.1
+@char Hanna { time:2 }
+
+@print "や……っ！ やめて！<br>来ないで……いやっ！！" { author:Hanna speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@camera { time:0.2 }
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+
+# ぐちゃっ、めきなど体を害する音
+@sfx Sfx_10
+
+@hideChars { time:0 }
+@camera { time:0 }
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+@char Noah.Fearful1
+@char AnAn.Fearful1
+
+@print ま、まって……っ！ { author:Noah speed:1 waitInput:true Wait:true }
+
+@print ……ひっ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print 壁際に追い詰められたハンナは、<br>ドラゴンに頭を潰された。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@char Ema.Fearful1
+@Wait 0.2
+@char Ema { time:4 }
+
+@print やだ……あっちに行って！<br>ノアちゃんアンアンちゃん！<br>助けて……助けてよっ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Noah.Fearful1
+@char AnAn.Fearful1
+
+@print ……ぁ、うあ……。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print エマちゃん！ { author:Noah speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@Wait 0.3
+@char Ema.Fearful1
+@Wait 0.2
+@camera { time:0.3 }
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+
+# 首を絞める音
+@sfx Sfx_153
+
+# ＠備考◆首を絞められて
+
+@print はっ……がっ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars { time:0 }
+@camera { time:0 }
+@sfx Sfx_19
+@Wait 0.5
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+
+@print 白蛇に締め上げられたエマは、<br>苦しげにもがきながら倒れた。 { speed:1 waitInput:true Wait:true }
+
+@char Noah.Pensive
+@char AnAn.Fearful
+
+# ＠備考◆嘔吐
+
+@print うっ、うぇ……。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Noah
+
+@print アンアンちゃん……！ { author:Noah speed:1 waitInput:true Wait:true }
+
+@print 目の前で一気に起こった凄惨な出来事に、<br>アンアンは耐えられなかったのか、<br>その場でえずき始める。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print そして私の目の前には、<br>エマを殺した白蛇が迫ってきていた。 { speed:1 waitInput:true Wait:true }
+
+@char Noah.Surprised
+
+@print ヒロちゃん、逃げて！ { author:Noah speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （そうしたいところだけれど……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 出口には、ハンナを殺したドラゴンがいるし、<br>ノアとアンアンを取り囲む他の獣たちも、<br>こちらに鋭い視線を向けている。 { speed:1 waitInput:true Wait:true }
+
+@print （どうしたら……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 死に戻りの魔法がある以上、<br>死ねば何とかなるかとも思ったけれど、<br>ノアは数日前からこの生き物たちを描いていたらしい。 { speed:1 waitInput:true Wait:true }
+
+@print （それなら、死に戻っても<br>　こいつらはすでに牢屋敷にいる……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@back SolidColor.Custom { time:0.5 }
+@Wait 0.5
+
+@print もう手遅れだ。 { speed:1 waitInput:true Wait:true }
+
+@back SolidColor.Custom { time:10 }
+
+# 首を絞める音
+@sfx Sfx_153
+
+@print 為す術も無く、私はエマと同じように<br>白蛇に首を締め上げられる。 { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆首を絞められて
+
+@print くっ、かはっ……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 苦しい、苦しい苦しい苦しい――。 { speed:1 waitInput:true Wait:true }
+
+@print "やだ！ ヒロちゃん……ヒロちゃん！" { author:Noah speed:1 waitInput:true Wait:true }
+
+@print ノアがこちらに駆けてこようとする。<br>けれど、周囲を取り囲む獣たちが<br>それを阻んだ。 { speed:1 waitInput:true Wait:true }
+
+@back SolidColor.Custom { time:15 }
+
+@print ２人は聖なる獣たちに守られており、<br>それはまるで美しい神話の一幕のようだった。 { speed:1 waitInput:true Wait:true }
+
+@print こんな時なのに、<br>心が洗われるような神聖な気持ちを抱く。 { speed:1 waitInput:true Wait:true }
+
+@print （ああ、君たちは本当に<br>　傑作を作り上げたんだな――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print もう防ぎようのない事態に深い絶望を感じながらも、<br>私は満足げな笑みを浮かべ、こと切れた。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 『END～共作～』
+# ========================================
+
+@badEnd 20

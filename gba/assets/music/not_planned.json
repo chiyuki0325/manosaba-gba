@@ -1,0 +1,28 @@
+[
+  {
+    "id": "Song002",
+    "title": "救いを求めるヒトの詩",
+    "uncertain": false,
+    "candidates": [
+      "2-20"
+    ],
+    "asset": null,
+    "reason": "游戏内未使用，明确不做",
+    "show_in_game": false,
+    "status": "not_planned",
+    "status_source": "用户确认"
+  },
+  {
+    "id": "Song003",
+    "title": "救いを求めるヒトの詩 (-Piano version-))",
+    "uncertain": false,
+    "candidates": [
+      "3-18"
+    ],
+    "asset": null,
+    "reason": "游戏内未使用，明确不做",
+    "show_in_game": false,
+    "status": "not_planned",
+    "status_source": "用户确认"
+  }
+]

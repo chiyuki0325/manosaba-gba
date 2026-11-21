@@ -1,0 +1,1205 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter02/Act02_Chapter02_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# ==============================================================================
+# MARK: 7-9: 💬 隠し通路
+# ==============================================================================
+# ＠ト書き▼議論シーン7-9 隠し通路
+
+# フラグ初期化
+@set Skip7_9_4flag1=false
+
+# 議論開始エフェクト
+# BGM変更：HirO（Voなし）
+@bgm Bgm_37_1_Loop
+
+# Judge7-9-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Leia.Default,ArmR6,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@printDebate たしかに位置的にも、<br>ノアくんのアトリエにある<br>ダストシュートが<br>焼却炉に繋がっている<br>可能性は大いにある……。
+
+@char Leia.Default,ArmR8,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@printDebate いやむしろ、<br>繋がっているんだろうね。
+
+@char Leia.Default,ArmR3,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Closed,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@printDebate そうでなくては、<br>ノアくんの捨てた紙が<br>焼却炉にあることに<br>説明がつかないからね！
+
+@char Leia.Default,Arms,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@printDebate ……けれど、<br>やはり問題は【重力】なんだ。
+
+@char Leia.Default,Arms,Angle01/Facial/Eyes>Eyes_Normal_Closed03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@printDebate 【犯人は焼却炉に繋がる<br>ダストシュートの中を登った】<br>……。
+
+@char Leia.Default,ArmR5,ArmL7,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@printDebate 掴まるような場所もない<br>ダストシュートの中、<br>本当に私たちか弱い少女に<br>そんなことが<br>可能なんだろうか？
+
+# ＠備考◆皮肉
+
+@char Hanna.Default,ArmR2,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Smile_Open
+@gosubModifyCamera 0
+@printDebate か弱い……？<br>とてもか弱いとは言えない、<br>力自慢の人が<br>いる気がしますわ？
+
+@char Sherry.Default,ArmR13,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate そうそう！<br>重力を無視して<br>空を飛べる人も<br>いますよね！
+
+@char Hanna.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@printDebate わたくしは<br>何もしてませんわ！？<br>きっとそこの怪力女が<br>両手両足で体を支えて、<br>ダストシュートの中を<br>ペタペタ登って<br>いったんですわ～！
+
+@char Sherry.Default,ArmR4,ArmL5,Angle01/Facial/Eyes>Eyes_Surprised_Open01,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@printDebate "【<link=\"Objection_02_02_09_01\">チムニー登り</link>】って<br>ヤツですね！"
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@printDebate "でも、<br>あれ時間かかるので<br><link=\"Objection_02_02_09_02\">現実的じゃなさそう</link><br>ですけどね～。"
+
+@char Sherry.Default,ArmR6,ArmL8,Angle01/Facial/Eyes>Eyes_Surprised_Open03,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@printDebate というか、<br>焼却炉の中には<br>ロープがあったんですよね？
+
+@char Sherry.Default,ArmR15,ArmL4,Angle01/Facial/Eyes>Eyes_Wink_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate ロープを使えば、<br>取っ掛かりのない<br>縦穴だろうと<br>簡単に登れるんじゃ<br>ないでしょうか？
+
+@char Leia.Default,ArmR5,ArmL7,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@printDebate たしかに<br>それはそうだろうね。
+
+@char Leia.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Closed,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@printDebate ただし……<br>それは上から下に<br>降りる場合に限ってだ。
+
+@char Leia.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@printDebate 【ロープを登るのが難しい】<br>って言ってるわけじゃ<br>ないよ？
+
+# IF
+@if Skip7_9_4flag1=true
+	@goto .Judge7_9_4skip1
+# @備考◆ルートA
+
+@char Leia.Default,ArmR6,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed01,Angle01/Facial/Mouth>Mouth_Yell_Open02
+@gosubModifyCamera 0
+@printDebate "そもそも下から入る場合、<br>ロープを<br><link=\"Objection_02_02_09_03\">結んで垂らすこと</link>が<br>できないんだよ。"
+
+@goto .Judge7-9-2
+
+# ELSE
+
+# @備考◆ルートB0
+# Judge7_9_4skip1
+
+@char Leia.Default,ArmR6,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed01,Angle01/Facial/Mouth>Mouth_Yell_Open02
+@gosubModifyCamera 0
+@printDebate "そもそも下から入る場合、<br>ロープを<br><link=\"Objection_02_02_09_04\">結んで垂らすこと</link>が<br>できないんだよ。"
+
+# ENDIF
+
+# Judge7-9-2
+
+@char Ema.Pensive1,ArmR4,ArmL5
+@gosubModifyCamera 0
+@printDebate ……でも誰かが<br>事前に準備してたなら、<br>可能なんじゃないかな。
+
+@char Leia.Default,Arms,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@printDebate 事前に準備……か。
+
+@char Leia.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Closed02,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@printDebate "しかし犯人が<br><link=\"Objection_02_02_09_05\">事前に準備をした</link>に<br>しては、<br>いろいろ不自然な所が<br>多い気がする……。"
+
+@char Leia.Default,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@printDebate "ヒロくんが廊下を通ってから<br>エマくんが通るまでの間、<br>わずか<link=\"Objection_02_02_09_06\">数秒間の隙</link>を<br>狙っていたことに<br>なってしまうしね。"
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@printDebate それは……。
+
+@char Leia.Default,Angle01/ArmR>ArmR11,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Open01,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@printDebate ヒロくんとエマくんの言葉を<br>疑っているわけじゃないよ。
+
+@char Leia.Default,ArmR6,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@printDebate でも私は、<br>やっぱり犯行は<br>突発的に起きたと思うんだ。
+
+@char Leia.Default,ArmR3,ArmL3,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@printDebate そしてもし計画性が<br>なかったのだとしたら、<br>ロープを用意しておくのは<br>不可能じゃないかな？
+
+@char Leia.Default,ArmR6,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@printDebate ロープもなく<br>下からダストシュートを<br>登るのは、<br>かなりの筋力と<br>スタミナが必要になる。
+
+@char Leia.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@printDebate そうなるとやはり、<br>人知を超えた力が<br>必要になってくるかも<br>しれないね。
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@printDebate 人知を超えた力……？
+
+@char Noah.Surprised1
+@gosubModifyCamera 0
+@printDebate ……ハッ！？
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@printDebate "もしかして……<br><link=\"Objection_02_02_09_07\">幽霊の仕業</link>かも……！"
+
+# ＠備考◆呆れ
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Serious_Open
+@gosubModifyCamera 0
+@printDebate 何言ってんだお前……。
+
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@Wait 0.2
+
+# ==============================================================================
+# 7-9議論後独白
+# ==============================================================================
+
+@print （ココの殺害に計画性があるなら、<br>　事前にロープが準備されていた可能性は高い） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@print （しかし計画性を裏付けるような証拠は……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆独り言
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print ……逆に。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@print 仮に事件の前からロープが結んであったとしたら、<br>どうして結んであったんだろう……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Closed1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （その場合、【犯行に関わらず】<br>　ロープは事前に結んであったことになる） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@print （そんな偶然が……<br>　本当にありえるのか？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-9-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_02_09_01
+
+@Skip false
+@pauseTrial true
+
+@choice チムニー登りとは？
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge7-9-5
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_02_02_09_02
+
+@Skip false
+@pauseTrial true
+
+@choice シェリーなら可能
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge7-9-6
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_02_02_09_03
+
+@Skip false
+@pauseTrial true
+
+@choice ロープを引っ掛ける方法があった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge7-9-8
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論4
+# ------------------------------------------------------------------------------
+
+# Objection_02_02_09_04
+
+@Skip false
+@pauseTrial true
+
+@choice ロープを引っ掛ける方法があった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge7-9-8
+
+@choice 【幽霊】が結んでいた
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge7-9-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論5
+# ------------------------------------------------------------------------------
+
+# Objection_02_02_09_05
+
+@Skip false
+@pauseTrial true
+
+@choice 計画的だった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge7-9-9
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論6
+# ------------------------------------------------------------------------------
+
+# Objection_02_02_09_06
+
+@Skip false
+@pauseTrial true
+
+@choice 数秒間だと思い込まされていた
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge7-9-10
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論7
+# ------------------------------------------------------------------------------
+
+# Objection_02_02_09_07
+
+@Skip false
+@pauseTrial true
+
+@choice 幽霊とは？
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge7-9-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 7-9: ❌ 議論選択肢分岐
+# ==============================================================================
+# MARK: 7-9-6: ❌ 反論・シェリーなら可能
+
+# Judge7-9-6
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,Arms3,Eyes1_Painful_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print シェリーなら可能だろうね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,ArmL3,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print その【怪力】の魔法を使えば、<br>煙突ぐらい楽に登れるだろう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print それはどうでしょうか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print いくら無尽蔵に力をかけられると言っても、<br>摩擦には限界があります。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 力を入れたら壊れちゃいますし……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Angry_Open01,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print 自分で言うのもなんですけど、<br>そんなに力加減は得意じゃありませんよ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR2,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Smile_Open
+@gosubModifyCamera 0
+@print どうせこいつ手加減なんてできやしねーですわ！<br>ダストシュートがボロボロになりそうですわ～！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR7,ArmL4,Angle01/Facial/Eyes>Eyes_Flushed_Closed01,Angle01/Facial/Mouth>Mouth_Flushed_Open
+@gosubModifyCamera 0
+@print ご期待に沿えず申し訳ないです、ヒロさん！<br>私にはできないみたいです！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （怪力でダストシュートを登ったら痕跡が残るか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （……考えてみれば、<br>　レイアの疑問はもっともだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （しかし、一概にこれまでの推理が間違いとも言えない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （なら、何か前提に問題があるのかもしれない。<br>　みんなから詳しい話を聞いてみる必要があるか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-9-1
+
+# MARK: 7-9-8: ❌ 反論・ロープを引っ掛ける方法があった
+
+# Judge7-9-8
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print 下からロープを引っかける方法ぐらいある。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print "たとえば……【<ruby=\"かぎなわ\">鉤縄</ruby>】とかだ。" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR6,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print ニンジャの道具だね！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR8,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print なつかしいな……<br>私もクノイチ役をやったときに――。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Closed,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print いきなりなんでニンジャですの！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char AnAn.Angry1,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_01
+@gosubModifyCamera 0
+@print 『そんな代物は見つかっていない』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+# ＠備考◆ネットミームなのでどや顔な感じで
+
+@char Miria.Angry1,ArmR3
+@gosubModifyCamera 0
+@print ニンジャは実在しない……<br>いいね？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （ここに忍者はいないか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （……考えてみれば、<br>　レイアの疑問はもっともだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （しかし、一概にこれまでの推理が間違いとも言えない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （なら、何か前提に問題があるのかもしれない。<br>　みんなから詳しい話を聞いてみる必要があるか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-9-1
+
+# MARK: 7-9-9: ❌ 反論・計画的だった
+
+# Judge7-9-9
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 計画的な犯行だったんじゃないかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print べつにそれを否定するような要素はないと思うが。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR8,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print ……私の勘違いならそれでいいんだが。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL7,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open02
+@gosubModifyCamera 0
+@print けれど計画的に雨の日に、<br>計画的に雷が鳴ったタイミングで、<br>計画的にヒロくんとエマくんの間に死体を差し込む……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL7,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print ココくんの配信も含め……<br>どこまでが計画的だったのかなと思ってね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# ダメージなし
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （たしかに言われてみれば、<br>　一概に計画的な犯行とは言えない気もする……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （犯行が計画的だったのか衝動的だったのか……<br>　それはまだ結論付けられない。<br>　だが――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （……考えてみれば、<br>　レイアの疑問はもっともだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （しかし、一概にこれまでの推理が間違いとも言えない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （なら、何か前提に問題があるのかもしれない。<br>　みんなから詳しい話を聞いてみる必要があるか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-9-1
+
+# MARK: 7-9-10: ❌ 反論・数秒間だと思い込まされていた
+
+# Judge7-9-10
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print そうか……私たちはその時間の隙間を<br>【数秒間だと思い込まされていた】んだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Surprised1
+@gosubModifyCamera 0
+@print ……どういうこと？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print そのように【洗脳されていた】ということだよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 本当はもっと余裕があったんだ。<br>十数秒はあったかもしれない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print だが犯人は私たちを【洗脳】し、それを数秒間だと思い込ませ……<br>捜査をかく乱したんだよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Surprised1
+@gosubModifyCamera 0
+@print 【洗脳】って、まさかアンアンちゃんが……！？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL6,Angle01/Head/Facial/Eyes>Eyes_Normal_Closed,Angle01/Head/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print ……いや。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL6,Angle01/Head/Facial/Eyes>Eyes_Normal_Closed,Angle01/Head/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print わがはいの魔法は<br>そういう意味の洗脳ではないが……。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print んー……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@print 十数秒あったところで、<br>あんまり変わらないんじゃないかなー。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@print それで何が変わるんだろ？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1
+@gosubModifyCamera 0
+@print それは目撃証言など……だろうか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Normal1
+@gosubModifyCamera 0
+@print そこがはっきりしないと、ダメなんじゃないかなー？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char AnAn.Angry1,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_01
+@gosubModifyCamera 0
+@print 『わがはいに変な疑いをかけるな』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL6,Angle01/Head/Facial/Eyes>Eyes_Normal_Closed,Angle01/Head/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print ……断固抗議する！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1
+@gosubModifyCamera 0
+@print （時間間隔がおかしかったわけではないようだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （……考えてみれば、<br>　レイアの疑問はもっともだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （しかし、一概にこれまでの推理が間違いとも言えない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （なら、何か前提に問題があるのかもしれない。<br>　みんなから詳しい話を聞いてみる必要があるか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-9-1
+
+# ==============================================================================
+# MARK: 7-9-5: ❌ 追求・チムニー登りとは？
+# ==============================================================================
+
+# Judge7-9-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print ……チムニー登りとは？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print 煙突のような狭い場所を登るときに使うやりかたですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print 背中と手足で壁面を支えて<br>ズリズリ上がっていくんです！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Flushed_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print 自分で言っておいてなんですけど、<br>ちょっとしんどそうですわね……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Normal_Open2,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print ……かなりの時間がかかってしまうでしょうね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-9-1
+
+# ==============================================================================
+# MARK: 7-9-4: ❌ 追求・幽霊とは？
+# ==============================================================================
+
+# Judge7-9-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 【幽霊】……か。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print ノア、詳しく聞かせてくれないか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Normal_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print う、うん……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Pensive1
+@gosubModifyCamera 0
+@print のあ、あのアトリエに入るとき<br>たまに中から気配がすることがあって……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 気配……。<br>具体的には？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Pensive1
+@gosubModifyCamera 0
+@print 物音だったり、人影だったり……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print でもね、ノアがそれを感じて<br>アトリエに入るんだけど……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print でも、中を見ても誰もいないんだぁ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print ……なるほど。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print それはベランダの外も確認したのかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01
+@gosubModifyCamera 0
+@print "うん！ 中庭にも空にも、だーれもいなかったよ！" { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print 屋根にもよじ登ってみたけど、<br>誰もいなかったんだ～……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print 危ないことはやめようね……！？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （どこに行ったかわからない【幽霊】……か） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01
+@gosubModifyCamera 0
+@print ……あっ。<br>あとね。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print 幽霊を見たとき、決まってゴクチョーが近くにいたの。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print ……ゴクチョーが？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@print うん。そうなんだよ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Normal_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……もしかすると、<br>ゴクチョーに恨みを持つ<br>おばけなのかも……！ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （……非科学的だな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1
+@gosubModifyCamera 0
+@print （まあ、魔法を使える私たちが言えることではないが） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@set Skip7_9_4flag1=true
+@toast 議論発展…
+
+@goto .Judge7-9-1
+
+# ==============================================================================
+# MARK: 7-9-3: ⭕ 【幽霊】が結んでいた
+# ==============================================================================
+
+# Judge7-9-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@gosubCutIn Hiro
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+# カットイン
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Open1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print ……いいや。<br>わざわざロープを繋ぐ必要なんてなかったんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print なぜなら、そこには最初から<br>ロープが結ばれていたのだからね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Surprised1
+@gosubModifyCamera 0
+@print なんだって……！？<br>どういうことだいヒロくん……！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,ArmL3,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print ノアの見た【幽霊】……。<br>それがこの事件を解く鍵だったんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Alisa.Default,ArmR7,ArmL3,Angle01/Facial/Eyes>Eyes_Fearful_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print 【幽霊】なんて……<br>マジで存在したって言うのかよ……！？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Painful_Open1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print いいや？<br>あくまでもそこにいたのは人間だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Painful_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print ノアが目撃したその人物は、<br>アトリエの中に入ってから姿を消している。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print しかしノアの話によれば、<br>ベランダから出た様子もなかった……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print ……となれば、その【幽霊】が使ったルートは限られる。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Ema.Surprised1
+@gosubModifyCamera 0
+@print そっか……！<br>焼却炉へ繋がるダストシュート……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,ArmL3,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print その通り。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 【幽霊】は普段から、<br>ダストシュートを焼却炉に繋がる道として<br>使っていたんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print ２階と地下を行き来するための隠し通路としてね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print 焼却炉が作動するのは、月曜の１５時だけ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print そこを失念しなければ、<br>その通路は安全に使えたと思うよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print ……もちろん、空を飛べるハンナがベランダから<br>抜け出した可能性も否定はできないが、<br>その場合はもう１つ不可解な点が残ってしまう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print ……ハンナちゃんだったら、<br>わざわざダストシュートを通る意味が<br>ないんじゃないかな。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,ArmL8,Eyes1_Normal_Open3,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print そう。<br>それこそ、ベランダから中庭にでも飛び降りればいい。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR2,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Smile_Open
+@gosubModifyCamera 0
+@print その通りですわー！<br>そしてそのぐらいの距離、<br>魔法を使うより歩いた方が早いですわー！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Miria.Default,ArmR3,ArmL8,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print でも……じゃあどうしてその人は<br>そんな通路を使ったの……？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print その答えはノアの目撃証言にある。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 彼女の話によれば、<br>幽霊を目撃したときには<br>ゴクチョーが周りにいたとのことだったね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print うん！<br>ゴクチョーが何か幽霊に関わってるのかな？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print ノアの目撃証言によれば<br>幽霊は近くにゴクチョーたちがいたとき、<br>２階から１階へ降りたと考えられる。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Open3,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print それは【接触を避けた】とも言えるね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Ema.Surprised1
+@gosubModifyCamera 0
+@print そっか……！<br>幽霊は、ゴクチョーに会いたくなかったんだ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,ArmL3,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print ならば、犯人はゴクチョーから逃げ回っていた人物だ。<br>そんな人物は限られる。<br>その人物とは……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# Judge7-9-11
+
+@evidence Profile
+
+# 黒部ナノカ
+@if "chosenEvidenceId==\"Nanoka\""
+	@goto .Judge7-9-12
+
+# 二階堂ヒロ
+@if "chosenEvidenceId==\"Hiro\""
+	@goto .Judge7-9-13
+
+# 紫藤アリサ
+@if "chosenEvidenceId==\"Alisa\""
+	@goto .Judge7-9-14
+
+# 沢渡ココ
+@if "chosenEvidenceId==\"Coco\""
+	@goto .Judge7-9-15
+
+# 汎用選択ミス
+@goto .Judge7-9-16
+
+# MARK: 7-9-13: ❌ 人物・二階堂ヒロ
+
+# Judge7-9-13
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print 私か……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR4,ArmL5
+@gosubModifyCamera 0
+@print ヒロちゃん、何かやましいことがあったの……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print ……ないが。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR4,ArmL5
+@gosubModifyCamera 0
+@print ……なら、違うんじゃない……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print ……たしかに。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （……よく考えよう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （ノアが見たのは【幽霊】なんかじゃない。<br>　れっきとした人間だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （いつもゴクチョーを避け、<br>　時に幽霊のように神出鬼没な人物、それは――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-9-11
+
+# MARK: 7-9-14: ❌ 人物・紫藤アリサ
+
+# Judge7-9-14
+
+@char Hiro.Normal2,ArmR6,ArmL3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 紫藤アリサ、君しかいない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR4,ArmL6,Angle01/Facial/Eyes>Eyes_Angry_Open03
+@gosubModifyCamera 0
+@print はァ？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print アリサが何か<br>ゴクチョーに目をつけられるようなことをして<br>逃げ回っていたとしたら……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print ありえない話じゃない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Angry_Open04
+@gosubModifyCamera 0
+@print んだと……！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR13,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 追いかけられて懲罰房に入れられたりしそうですもんね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL7,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print ウチはんなことで逃げたりしねーよ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL10,Angle01/Facial/Eyes>Eyes_Angry_Open03
+@gosubModifyCamera 0
+@print 正面から叩き潰す！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR4,ArmL6,Angle01/Facial/Eyes>Eyes_Angry_Open03
+@gosubModifyCamera 0
+@print ……根拠もなく人を疑ってんじゃねぇ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+# ダメージなし
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （……根拠としては十分あったと思うが） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （……よく考えよう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （ノアが見たのは【幽霊】なんかじゃない。<br>　れっきとした人間だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （いつもゴクチョーを避け、<br>　時に幽霊のように神出鬼没な人物、それは――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-9-11
+
+# MARK: 7-9-15: ❌ 人物・沢渡ココ
+
+# Judge7-9-15
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 沢渡ココ……彼女だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 彼女は【魔女を殺す薬】の存在を暴露するなど、<br>この牢屋敷に対して反抗的だった……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print ゴクチョーに追われる理由は十分のはずだよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL6,Angle01/Head/Facial/Eyes>Eyes_Normal_Closed,Angle01/Head/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print ……なるほど。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print でもココさん、そんなにアグレッシブに逃げそうなタイプじゃ<br>ないですけどね～。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char AnAn.Pensive1,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_01
+@gosubModifyCamera 0
+@print 『泣いて許しを請うタイプ』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （……別の人物の可能性も考えてみるか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （……よく考えよう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （ノアが見たのは【幽霊】なんかじゃない。<br>　れっきとした人間だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （いつもゴクチョーを避け、<br>　時に幽霊のように神出鬼没な人物、それは――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-9-11
+
+# MARK: 7-9-16: ❌ 汎用選択ミス
+
+# Judge7-9-16
+
+@char Ema.Pensive1,ArmR4,ArmL5
+@gosubModifyCamera 0
+@print ……ヒロちゃん、<br>どうしてその子がゴクチョーに追われてるの……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print ……なんとなく、だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print なんとなくは……ダメかも……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （……よく考えよう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （ノアが見たのは【幽霊】なんかじゃない。<br>　れっきとした人間だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （いつもゴクチョーを避け、<br>　時に幽霊のように神出鬼没な人物、それは――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-9-11
+
+# ==============================================================================
+# MARK: 7-9-12: ⭕ 人物・黒部ナノカ
+# ==============================================================================
+
+# Judge7-9-12
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print ……ナノカ。<br>君はゴクチョーから追われることがあった。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 君ならノアのアトリエと焼却炉を繋ぐ道を作っていても<br>おかしくはない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print ノアの目撃した【幽霊】の正体……<br>それは君だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR4,ArmL2,Eyes1_Uncomfortable_Open1,Mouth1_Flushed_Closed1
+@gosubModifyCamera 0
+@print …………。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Nanoka.ArmR2,ArmL9,Eyes1_Normal_Open2,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print ……そうね。間違いないわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR1,ArmL10,Eyes1_Normal_Open1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print 私はゴクチョーたちの目をかいくぐるために、<br>普段からダストシュートを使って移動していた。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR2,ArmL9,Eyes1_Normal_Open2,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print 他にもいくつか、<br>逃げ隠れできる場所を準備してあるわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print ならやはり、あらかじめ２階と地下を繋ぐロープは<br>存在していたということか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Normal_Open2,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print ええ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print それなら……<br>この事件の前提は大きく覆るよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 議論の当初、<br>私とエマの証言から<br>その間に割り込める人物は存在しなかった……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR7,ArmL7,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print けれど……<br>地下から２階へ繋がる道があるなら、<br>誰にでも可能だったことになるね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char Sherry.Default,ArmR6,ArmL8,Angle01/Facial/Eyes>Eyes_Surprised_Open03,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print では重要なのは誰ができたのか――。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR6,ArmL8,Angle01/Facial/Eyes>Eyes_Surprised_Open03,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print ――つまり、アリバイの確認が必要ですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR15,ArmL4,Angle01/Facial/Eyes>Eyes_Wink_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print みなさんのアリバイ……<br>あらためて聞かせてもらいます！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+
+@goto Act02_Chapter02/Act02_Chapter02_Trial10

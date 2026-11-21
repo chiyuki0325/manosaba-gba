@@ -1,0 +1,785 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-4-12
+
+# ========================================
+# ●シーン2‐4‐12
+# ========================================
+
+@back 31_3 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@print エレベーターは２人乗りなので、<br>まずは私とレイアがエレベーターに乗り込んだ。 { speed:1 waitInput:true Wait:true }
+
+@back 31_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@back SolidColor { time:1 }
+@Wait 1.2
+
+@back 31_3
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+@char Leia.Normal1
+@Wait 0.4
+
+@back SolidColor.Custom { time:1.5 }
+@Wait 1.8
+
+# エレベーター稼働音
+@bgm Ambi_5_1
+
+@bgm Bgm_22_1
+
+@print （目的は――氷漬けになっている犠牲者たち） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print これまで何度も冷凍室に立ち入ったが、<br>氷漬けの彼女らを直視することはあまりできなかった。 { speed:1 waitInput:true Wait:true }
+
+@print 膨大な数の犠牲者だった。<br>なれはてとなったナノカやマーゴ、<br>被害者のココやアンアンもいるはず。 { speed:1 waitInput:true Wait:true }
+
+@print ノアがその中にいないことも、<br>私の胸を辛く締め付ける。 { speed:1 waitInput:true Wait:true }
+
+@print しかし――もはやそんなことは言ってられない。 { speed:1 waitInput:true Wait:true }
+
+@print "ヒロくん、<ruby=\"ゆうべ\">昨夜</ruby>何かあったのかい……？<br>追い詰められるような何かが<br>君にあったとしか……。" { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 一緒にエレベーターに乗り込んだレイアが、<br>私を心配そうに見つめているのがわかる。 { speed:1 waitInput:true Wait:true }
+
+@print 私は彼女の方を見ないようにして、<br>首を横に振った。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive1
+
+@print ……別に何もない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1
+
+@print そうか……でも、本当にちょっとしたことでも、<br>心に引っかかったことがあれば話してほしい。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1
+
+@print 君はひとりじゃないんだよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print …………。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# エレベーター到着音
+@sfx Sfx_68
+
+@StopBgm Ambi_5_1
+
+@back SolidColor { time:1 }
+
+@Wait 1
+
+@hideChars { time:0 }
+
+@back 31_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@back SolidColor.Custom { time:1.5 }
+@Wait 1.8
+
+@print 私とレイアは次々と降りてくる少女たちを待った。 { speed:1 waitInput:true Wait:true }
+
+@back 31_3 { Scale:{g_backgroundDefaultScale} time:1 }
+
+@print "私、レイア、エマ、シェリー、ハンナ、ミリア。<br>６人が<ruby=\"そろ\">揃</ruby>ったところで、レイアが口を開く。" { speed:1 waitInput:true Wait:true }
+
+@char Leia.Normal1
+
+@print 各自気になるところを<br>調べていった方が効率が良いだろうし、<br>一旦ここで散開しよう。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 集合時間だけ決めておこうか。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print そうだな……<br>地下に戻らないといけない時間も考えて、<br>１４時５０分にここで集合にしようか。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@StopBgm { fade:3 }
+
+@print 皆意見に相違なく、<br>早速各自調査のために散っていく。 { speed:1 waitInput:true Wait:true }
+
+@print 私は一目散に冷凍室へと向かった。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+@back 26_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent.Custom { time:0.9 }
+@Wait 0.9
+@bgm Bgm_5_1
+
+@print 冷凍室にたどりつき、<br>私はすぐさま氷漬けになっている犠牲者たちを調べはじめた。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1
+
+@print うぅ……っ、ここはいつ来ても寒すぎるね……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Normal1
+
+@print 【なれはて】を調べるのかい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print 震えながらついてくるレイアに、<br>私はちらりと視線を送る。 { speed:1 waitInput:true Wait:true }
+
+@print なれはてではない。<br>私の目的は、【氷上メルル】の死体だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Surprised1
+
+@print メルルくんの……！？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@print "ああ。ゴクチョーは彼女を<ruby=\"あるじ\">主</ruby>である<br>と言っていた。<br>それなら彼女の死体も当然保管しているだろう。" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ここは魔女たちの眠る場所なのだから。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1
+
+@print なるほど……わかったよ。<br>私も全力で探そう！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 胸に手を当て、<br>はりきってレイアが氷漬けの魔女たちを調べていく。 { speed:1 waitInput:true Wait:true }
+
+@print 近寄ってよく見なければ<br>何が氷漬けにされているのかはわからず、しかも膨大な量だ。 { speed:1 waitInput:true Wait:true }
+
+@print 私たちは手分けして、<br>メルルの死体を探しはじめた。 { speed:1 waitInput:true Wait:true }
+
+@print "少し前にここへやってきた時から、<br>冷凍機能の故障なのか<br>大きな<ruby=\"ひょうかい\">氷塊</ruby>が溶けて散らばっていた。" { speed:1 waitInput:true Wait:true }
+
+@print "ほんの少しだが、<br>寒さも<ruby=\"ゆる\">緩</ruby>んでいる気がする。" { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print （誰よりも大魔女の近くにいたのは、<br>　会いたいと画策していたメルルだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （それなら、メルルなら、必ず持っているはず。<br>　大魔女に繋がるヒントを――！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# ========================================
+# 時間経過
+# ========================================
+
+# 時間経過演出
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 0.9
+@back 26_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@print 調査中、<br>私は主に冷凍室に居座っていた。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Angry1
+@Wait 0.5
+@char Leia.Surprised1
+@Wait 1
+@hideChars 
+@char Ema.Normal1
+@Wait 0.5
+@char Ema.Smile1
+@Wait 1
+@hideChars 
+
+@print その間少女たちは入れかわり立ちかわり、<br>私のところにやってきた。 { speed:1 waitInput:true Wait:true }
+
+@print "氷漬けになったメルルの死体を見つけることは<ruby=\"かな\">叶</ruby>ったが、<br>そこから氷を突き崩す作業をしなければならなかった。" { speed:1 waitInput:true Wait:true }
+
+# 時間経過演出
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+# ========================================
+# 演出：ここからダイジェスト風に
+# キャラ（誰かとヒロの組み合わせ）を入れ替えてほしいです。
+# ========================================
+
+@char Hiro
+@char Hanna.Fearful1
+@back Transparent.Custom { time:0.99 }
+@Wait 0.9
+
+@print うぅ……メルルさん、こんなお姿に……<br>とても悪い魔女だなんて思えませんわ……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 感傷に浸っている暇はない。<br>とにかく急いで死体を取り出したいんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 時間経過演出
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+@hideChars { time:0 }
+@char Hiro
+@char Miria.Pensive1
+@back Transparent.Custom { time:0.99 }
+@Wait 0.9
+
+@print おじさんにはこの寒さは厳しすぎるよ……。<br>うぅ、布団でぬくぬくしたい。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print 甘えるな。君はおじさんではないんだろう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 時間経過演出
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+@hideChars { time:0 }
+@char Hiro
+@char Leia.Pensive1
+@back Transparent.Custom { time:0.99 }
+@Wait 0.9
+
+@print あたたかい飲み物を用意した方が良さそうだ。<br>ちょっと牢屋敷の方に行って持ってくるよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print ありがとう……助かる。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+@hideChars { time:0 }
+@char Hiro
+@char Ema.Normal1
+@back Transparent.Custom { time:0.99 }
+@Wait 0.9
+
+@print あの高いところを調べたいな……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print そうだな、脚立があると便利そうだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+@hideChars { time:0 }
+@char Hiro
+@char Sherry.Normal1
+@back Transparent.Custom { time:0.99 }
+@Wait 0.9
+@EmoteJumpDouble Sherry
+
+@print ヒロさんヒロさん！<br>一緒にやりませんか氷サッカー！<br>楽しいですよー！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry
+@Wait 0.5
+
+@print 遊ぶな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+@hideChars { time:0 }
+@back Transparent.Custom { time:0.99 }
+@Wait 0.9
+
+# ========================================
+# 演出ここまで
+# ========================================
+
+# 氷を突き崩す音
+@sfx Sfx_148
+
+@print ……どれくらいの時間が経っただろうか。 { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆息切れ
+
+@char Hiro.Angry1
+
+@print はぁ、はぁ、はぁ……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 氷を突き崩す音
+@sfx Sfx_175
+
+@print 私は無我夢中でピッケルを振り続けていた。<br>手先の感覚はもはやない。 { speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive1
+
+@print ね、ねぇヒロちゃん。<br>一度休んだ方がいいんじゃないかな？<br>凍えちゃうよ……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print ……放っておいてくれ！<br>もう少し、もう少しなんだ……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 氷を突き崩す音2
+@sfx Sfx_176
+
+# ＠備考◆驚き
+
+@char Miria.Surprised1
+
+@print あっ……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@Wait 2
+@hideChars 
+
+# 倒れる音
+@sfx Sfx_19
+
+@print "――とうとう私は、<br>メルルの死体を<ruby=\"ひょうかい\">氷塊</ruby>の中から取り出していた。" { speed:1 waitInput:true Wait:true }
+
+@print "氷漬けになっていた死体は<ruby=\"ふはい\">腐敗</ruby>しておらず、<br>綺麗な状態だった。" { speed:1 waitInput:true Wait:true }
+
+@print "抵抗感はあったが、<br>私は彼女の衣服の中に手を入れ、<ruby=\"ふところ\">懐</ruby>を探っていく。" { speed:1 waitInput:true Wait:true }
+
+@print （何か、何か持っているはずだきっと……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "……実際、<br>メルルは２つの物を<ruby=\"ふところ\">懐</ruby>に大事にしまっていた。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ☆ヒント：『メルルへの手紙』入手
+# ========================================
+@update 18
+
+@print "メルルに<ruby=\"あ\">宛</ruby>てられた古い手紙と、<br>そして【写真】――" { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_36_1
+
+@back 160_1 { Scale:{g_backgroundDefaultScale} }
+
+@print 古びた写真には、<br>少女が２人映っていた。 { speed:1 waitInput:true Wait:true }
+
+@print "ソファーに腰かけ、<br>穏やかな表情で本を読んでいる少女と、<br><ruby=\"しふく\">至福</ruby>の表情で<ruby=\"ひざまくら\">膝枕</ruby>されているメルル。" { speed:1 waitInput:true Wait:true }
+
+@print あ、あ、あ……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ――本を読んでいる少女は、<br>私のよく知っている人物だった。 { speed:1 waitInput:true Wait:true }
+
+@print 私の、失った、<br>守れなかった、自殺して、<br>友人、大切な―― { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@hide Stills { time:1 }
+@Wait 1.2
+
+@char Miria.Pensive1
+@char Hiro.Fearful1
+
+@print ヒロちゃん、どうしたんだい……？<br>大丈夫……？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@print やはり、やはりそうだったんだ……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Surprised1
+
+@print え……？<br>その写真の一体何に、<br>そんなに驚いてるんだい。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print "ミリアが私の手にある写真を<ruby=\"のぞ\">覗</ruby>き込み、<br>首を<ruby=\"かし\">傾</ruby>げている。" { speed:1 waitInput:true Wait:true }
+
+@print ミリアにはわからなくて当然だった。<br>これは、私とエマにしかわからない。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@hideChars 
+
+@back 160_1 { time:1 }
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print "メルルが<ruby=\"なつ\">懐</ruby>き<ruby=\"した\">慕</ruby>っている少女――" { speed:1 waitInput:true Wait:true }
+
+@print それは、中学時代私たちと友だちだった<br>【月代ユキ】だった。 { speed:1 waitInput:true Wait:true }
+
+@hide Stills
+
+@print "くしゃりと表情が<ruby=\"ゆが\">歪</ruby>む。" { speed:1 waitInput:true Wait:true }
+
+@print 私はずっと、思い違いをしていた……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 正しくないのは、私だった！！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print もはやミリアに構う余裕はなく、<br>私は叫び、出入口に向かって駆けだす。 { speed:1 waitInput:true Wait:true }
+
+@StopBgm { fade:3 }
+
+@print （エマに謝らないといけない……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （私は、私はなんということを……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print エマに今すぐ会って話す必要があった。 { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+@ResetText 
+
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+@back 31_1 { time:0 }
+
+@back Transparent.Custom { time:0.99 }
+@Wait 0.9
+
+@bgm Bgm_24_1
+
+@char Hanna.Normal1
+@char Sherry.Normal1
+
+@Wait 0.5
+
+@print 集合時間も迫っていたので<br>エレベーターまで戻ると、<br>シェリーとハンナがその場に待機していた。 { speed:1 waitInput:true Wait:true }
+
+@print どうやらその場に座って休憩していたようだが、<br>私たちに気付いて立ち上がる。 { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Normal1
+@char Sherry.Normal1
+
+@print ああ、戻ってきましたわ。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 集合時間ですから、<br>そろそろ来るかなって思って待ってました。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hiro.Angry1
+
+@print エマは！？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Pensive1
+
+@print "エマさん？ 中にいませんでした？" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria.Normal1
+
+@print おじさんとヒロちゃんは<br>冷凍室にいたんだけど、<br>そこまでの道のりでエマちゃんは見ていないよ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna
+
+@print レイアさんも来ませんわね……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry
+
+@print 先に上に行っちゃったとかですかね？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print ……監房に戻らないといけないし、<br>仕方ない、私たちも上に行こう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# 注:地下側なので、はしごはないです。アップにして誤魔化してます
+@back 31_1 { time:1 }
+@Wait 1.2
+@back 31_5 { time:1 }
+@Wait 1.2
+
+@print "私はきっと<ruby=\"そうはく\">蒼白</ruby>になっていて、<br>ハンナとシェリーは<ruby=\"いぶか\">訝</ruby>しげになりながらも<br>エレベーターに乗り込む。" { speed:1 waitInput:true Wait:true }
+
+@print ……しかし。 { speed:1 waitInput:true Wait:true }
+
+# エレベーターブザー音
+@sfx Sfx_146
+
+@char Sherry.Pensive1
+
+@Wait 0.5
+
+@print "あれれ？ 動きませんね……？" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna
+
+@print もしかして故障ですの……？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hide Sherry
+
+@print エレベーターからシェリーが降りてみると、<br>ブザー音が止まる。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Smile1
+
+@print どうやらひとりずつ行くしかないみたいですね。<br>ハンナさんお先にどうぞ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna
+
+@print "ハンナが<ruby=\"うなず\">頷</ruby>き、<br>エレベーターの扉が閉まる。" { speed:1 waitInput:true Wait:true }
+
+@hideChars { time:1 }
+@back 31_4 { time:1 }
+@Wait 1.2
+
+@print 少しの間待っていると、<br>やがてエレベーターが戻ってきて、<br>次にシェリーが乗り込んだ。 { speed:1 waitInput:true Wait:true }
+
+@back 31_5 { time:1 }
+@Wait 1.2
+@char Sherry.Normal1 { time:1 }
+@hideChars { time:1 }
+@back 31_4 { time:1 }
+@Wait 1.2
+
+@print 私の隣に立つミリアは、ずいぶん震えている。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro
+@char Miria.Fearful1
+
+@print ……次は君が行け。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Surprised1
+
+@print え、でも……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print 順番などどうでもいいだろう。<br>どうあれ全員上に戻らないといけないんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hide Hiro
+
+@print 戻ってきたエレベーターに、<br>ミリアはおずおずと遠慮がちに乗り込んだ。 { speed:1 waitInput:true Wait:true }
+
+@back 31_5 { time:1 }
+@Wait 1.2
+@char Miria.Pensive1 { time:1 }
+@hideChars { time:1 }
+@back 31_4 { time:1 }
+@Wait 1.2
+
+@print "ひとりになって、<br>私はエレベーターの<ruby=\"とうちゃく\">到着</ruby>をヤキモキと待つ。" { speed:1 waitInput:true Wait:true }
+
+@print （エマになんて言えばいい。<br>　どんな顔で会えばいい） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （殺意も憎悪も<br>　全てが間違いだったと言ったところで、<br>　今さら私のしてきたことは消えない……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （それでも、それでも謝りたいんだ。<br>　私は間違っていた。<br>　正しくなんてなかった……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "泣きそうになって、唇を強く<ruby=\"か\">噛</ruby>む。" { speed:1 waitInput:true Wait:true }
+
+@print それでもエマは、<br>私に笑顔を向けてくれるのだろうか。 { speed:1 waitInput:true Wait:true }
+
+@print けれど私は彼女のことをよく知っている。<br>わかっているはずだ。 { speed:1 waitInput:true Wait:true }
+
+@print 彼女はきっと笑顔で、<br>私の名前を呼んでくれるだろう。 { speed:1 waitInput:true Wait:true }
+
+@print ――大丈夫だよ、ヒロちゃん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ――だってボクたちは、友だちだから。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+# エレベーター到着音
+@sfx Sfx_68
+
+@print "エマのそんな声が聞こえた気がして、<br>同時にエレベーターが<ruby=\"とうちゃく\">到着</ruby>した。" { speed:1 waitInput:true Wait:true }
+
+# エレベーター開閉音
+@sfx Sfx_154
+
+@print そして扉が開く。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@bgm Bgm_3_1_Loop
+
+@back 350_1 { time:0 }
+@animate Stills
+@back Transparent { time:1.2 }
+@Wait 2.4
+
+@animate Stills
+@back 350_1 { time:0.6 }
+@animate Stills-Middle
+@Wait 2.4
+
+@animate Stills-Middle
+@back 350_1 { time:0 }
+@blur Stills
+@animate Stills
+@blur Stills
+@hide Stills-Middle { time:0.6 }
+@Wait 3
+
+@print ――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 目に飛び込んできた光景が、<br>一体何なのかわからなかった。 { speed:1 waitInput:true Wait:true }
+
+@print エレベーターの中の狭い空間には、<br>薄暗い照明がぼんやりと光を落としている。 { speed:1 waitInput:true Wait:true }
+
+@print あちこちに舞いおどる赤い蝶の影が揺らめき―― { speed:1 waitInput:true Wait:true }
+
+@print そして中央には、エマがいた。 { speed:1 waitInput:true Wait:true }
+
+@print 彼女はまるで糸が切れた人形のように、<br>ドレス姿で無防備に倒れていた。 { speed:1 waitInput:true Wait:true }
+
+@print レイピアに腹部を刺され、床に血だまりとなって―― { speed:1 waitInput:true Wait:true }
+
+@print エマは、完全に生命活動を終えていた。 { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆絶望絶叫
+
+@print あああああああぁーっ！！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 頭を抱えて私はただただ叫んだ。 { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆絶望絶叫
+
+@print なんで、なんでなんで……っ！！<br>ああああぁあっ、ぁあ！！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 狂ったように<br>叫ぶことしかできなかった。 { speed:1 waitInput:true Wait:true }
+
+@print 混乱しながらも、<br>とにかく上に行かないといけないと思った。 { speed:1 waitInput:true Wait:true }
+
+# エレベーターブザー音
+@sfx Sfx_146
+
+@print エレベーターに乗り込んだが、<br>エマの死体があるのでブザーが鳴ってしまう。 { speed:1 waitInput:true Wait:true }
+
+@print （……そうだ……死体現場の状況を……<br>　保存しないと……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "私は<ruby=\"うつ\">虚</ruby>ろな瞳で自身のスマホを取り出す。" { speed:1 waitInput:true Wait:true }
+
+# 写真撮影音
+@sfx Sfx_28
+
+@print 半ば無意識に近い状態で、<br>エマの死体を撮影していた。 { speed:1 waitInput:true Wait:true }
+
+@print それからエマの死体を引きずりだす。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@print …………。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 思考が働かない。<br>何も考えられなかった。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 両手にべっとりと血がつく。<br>それはエマの血だった。 { speed:1 waitInput:true Wait:true }
+
+@print "私は<ruby=\"ちまみ\">血塗</ruby>れになりながらも<br>エマをなんとかエレベーターから降ろした。" { speed:1 waitInput:true Wait:true }
+
+@print "そして<ruby=\"ぼうぜん\">呆然</ruby>と上昇ボタンを押した。" { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+# エレベーター稼働音
+@bgm Ambi_5_1
+
+@Wait 1
+
+# エレベーター到着音
+@sfx Sfx_68
+@StopBgm Ambi_5_1
+
+@hide Stills
+@back 23_4 { Scale:{g_backgroundDefaultScale} }
+@Wait 0.2
+
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print ゲストハウスの中で、<br>ハンナ、シェリー、ミリアは私が来るのを待っていた。 { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1
+@char Sherry.Surprised1
+@char Miria.Surprised1
+
+@print 現れた私を見て、<br>３人は一様にギョッとした顔になる。 { speed:1 waitInput:true Wait:true }
+
+@print ヒロちゃん、ど、ど、どうしたんだい<br>その手……！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@print "驚いたのは、<br>私の両手が<ruby=\"ちまみ\">血塗</ruby>れだったからだろう。" { speed:1 waitInput:true Wait:true }
+
+@print エマが……殺されていた……。<br>エレベーターの中で……刺されて。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "私は<ruby=\"しょうぜん\">悄然</ruby>と<ruby=\"つぶや\">呟</ruby>く。" { speed:1 waitInput:true Wait:true }
+
+@print "自分の<ruby=\"つむ\">紡</ruby>いだ言葉が、<br>まるで現実味を帯びていない。" { speed:1 waitInput:true Wait:true }
+
+@print ミリアもシェリーもハンナも、<br>信じられないといった表情だった。 { speed:1 waitInput:true Wait:true }
+
+@print まさか。ありえないよ。<br>だっておじさんが乗った時には<br>死体なんてなかった。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print 私が乗った時も、<br>エマさんの姿なんてどこにもなかったです。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print わたくしも見ていませんわ。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 彼女たちは戸惑いながらも、<br>私の青ざめた様子で冗談ではないことは察したらしい。 { speed:1 waitInput:true Wait:true }
+
+@print ３人の私を見る眼差しが、<br>疑いを含んだものへと変わっていく。 { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Pensive1
+@char Sherry.Pensive1
+@char Miria.Pensive1
+
+@print まさか、ヒロさんが地下で……？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ＠備考◆カッとしかかる
+
+@print ――ッ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （私じゃない！！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 感情的に叫びそうになって、<br>ギリギリで留めた。 { speed:1 waitInput:true Wait:true }
+
+@print ……私は魔女化が進んでいて、<br>彼女たちもその事実に気付いている。 { speed:1 waitInput:true Wait:true }
+
+@print 殺意を抱いて、<br>誰かにそれを向けたと思われてもおかしくない。 { speed:1 waitInput:true Wait:true }
+
+@print "今ここで感情的になって<ruby=\"わめ\">喚</ruby>いたら、<br>自分自身がどうにかなってしまいそうだった。" { speed:1 waitInput:true Wait:true }
+
+@print 無理にでも心を押し殺す。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "それから私はもう一度下へと降りるため、<br><ruby=\"きびす\">踵</ruby>を返した。" { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1
+
+@print ヒロさん、あなた、ど、どこへ……？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print エレベーターを調べる。<br>天井に犯人が隠れている可能性もある。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@back 31_4
+
+@print "半地下に出ると、<br>エレベーターの横に<ruby=\"きゃたつ\">脚立</ruby>があることに気付く。" { speed:1 waitInput:true Wait:true }
+
+@back 31_5 { Scale:{g_backgroundDefaultScale} }
+@Wait 0.5
+@back 31_5 { Scale:{g_backgroundDefaultScale}1 }
+@Wait 1.2
+
+@print "ちょうど良いとその<ruby=\"きゃたつ\">脚立</ruby>をエレベーターに持ち込み、<br>私は天井穴から顔を出した。" { speed:1 waitInput:true Wait:true }
+
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@print そこには―― { speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"ちまみ\">血塗</ruby>れで倒れている、少女の死体があった。" { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+
+@back 690_1 { time:0 }
+@animate Stills
+@back Transparent { time:1.2 }
+@Wait 2.4
+
+@animate Stills
+@back 690_1 { time:0.6 }
+@animate Stills-Middle
+@Wait 2.4
+
+@animate Stills-Middle
+@back 690_1 { time:0 }
+@blur Stills
+@animate Stills
+@blur Stills
+@hide Stills-Middle { time:0.6 }
+@Wait 3
+
+@print その死体は王子様のように王冠をかぶっていた。 { speed:1 waitInput:true Wait:true }
+
+@print お姫様のようなドレスを身にまとって死んでいた、<br>エマに応えるかのように。 { speed:1 waitInput:true Wait:true }
+
+@print "そして、まるで演劇の一幕を<ruby=\"いろど\">彩</ruby>るかのように、<br>彼女の周辺に舞いおどる赤い蝶。" { speed:1 waitInput:true Wait:true }
+
+@print "これが演劇だったら、<ruby=\"きょこう\">虚構</ruby>だったら、<br>どんなに良かっただろうか。" { speed:1 waitInput:true Wait:true }
+
+@print "けれど私の<ruby=\"まなこ\">眼</ruby>が<ruby=\"とら\">捉</ruby>えたその姿は、<br><ruby=\"まぎ\">紛</ruby>れもなく現実で――" { speed:1 waitInput:true Wait:true }
+
+@print 蓮見レイアは死んでいた。 { speed:1 waitInput:true Wait:true }
+
+@print ――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私の叫びは、<br>もはや声にならなかった。 { speed:1 waitInput:true Wait:true }
+
+@update Ema
+@update Leia
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter04/Act02_Chapter04_Adv13

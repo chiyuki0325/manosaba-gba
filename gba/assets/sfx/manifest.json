@@ -1,0 +1,4359 @@
+{
+  "sample_count": 200,
+  "pcm_bytes": 2963078,
+  "cue_count": 204,
+  "sequence_events": 69,
+  "samples": [
+    {
+      "name": "fx_ambi_101_1",
+      "frames": 24,
+      "bytes": 3200,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "d7157780e29dee25467a7ab1ba2959b4e11fb4eaf830379f5fb17689015504dd"
+    },
+    {
+      "name": "fx_ambi_102_1",
+      "frames": 596,
+      "bytes": 79872,
+      "rate": 8000,
+      "loop": true,
+      "sha256": "b12d773169df4da88ed213a24a07ccd0e4a6468c7a0672c776fe0f6e0567e2e9"
+    },
+    {
+      "name": "fx_ambi_10_1",
+      "frames": 179,
+      "bytes": 24040,
+      "rate": 8000,
+      "loop": true,
+      "sha256": "68e1bd91e7903a31f5e974f039a91d7ff2ddd8fa087395f13389b0342c0c103f"
+    },
+    {
+      "name": "fx_ambi_5_1",
+      "frames": 359,
+      "bytes": 48122,
+      "rate": 8000,
+      "loop": true,
+      "sha256": "f377c08f70c5df1188d317d567a5217ff4e51c9eb2673b9d3071a03fa2a3b7fd"
+    },
+    {
+      "name": "fx_ambi_7_1",
+      "frames": 294,
+      "bytes": 39388,
+      "rate": 8000,
+      "loop": true,
+      "sha256": "2404b6e39d64ee47b0885001bc27411f45df08a0229d6aa85a99afc554a730c2"
+    },
+    {
+      "name": "fx_cutin_crack_01",
+      "frames": 53,
+      "bytes": 7106,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "263da0f0ad4c057edf8e750c052f3b6b9bd3f4845f4961399a43ed8b1540d55b"
+    },
+    {
+      "name": "fx_cutin_crack_02",
+      "frames": 124,
+      "bytes": 16668,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "7482d5c0bb3f453863f87a969af55ee1132e565779ea5d8693f8ae214bd44400"
+    },
+    {
+      "name": "fx_fire",
+      "frames": 293,
+      "bytes": 39200,
+      "rate": 8000,
+      "loop": true,
+      "sha256": "79eba226c78dc54aae3ca0e0b1909422a96ae106093480305cf18eea483de4db"
+    },
+    {
+      "name": "fx_glock",
+      "frames": 100,
+      "bytes": 14042,
+      "rate": 8363,
+      "loop": false,
+      "sha256": "dc912fe56331a6c10e02f23053921179d589bcd80a16310b4ee07b446bc3d996"
+    },
+    {
+      "name": "fx_helicopter",
+      "frames": 60,
+      "bytes": 8000,
+      "rate": 8000,
+      "loop": true,
+      "sha256": "a08af293c2ed30115600fe589f459e69e54177e9c07ffaa1626967308d482af6"
+    },
+    {
+      "name": "fx_laughter",
+      "frames": 538,
+      "bytes": 72000,
+      "rate": 8000,
+      "loop": true,
+      "sha256": "3d777680af2f831f6d5386d7f354914f63a5817498e74b28fa97eb39aafad7b0"
+    },
+    {
+      "name": "fx_outdoor_1",
+      "frames": 18,
+      "bytes": 2400,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "5dd8f10dbcfe58d5fc43c18947a8998f44cad61768560630ae8803e632c3f4bd"
+    },
+    {
+      "name": "fx_outdoor_2",
+      "frames": 18,
+      "bytes": 2400,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "6cde2c7620cb657ace4ae8db62b7e35d2aa349ef7748404db4253f27ee9684ed"
+    },
+    {
+      "name": "fx_outdoor_3",
+      "frames": 18,
+      "bytes": 2400,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "13dc42fb50a649fe544df5c60f0b3dc045840b4f88a893e0293e6152177aabb2"
+    },
+    {
+      "name": "fx_sfx_1",
+      "frames": 132,
+      "bytes": 17640,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "25f2960023365f9fc94d951f73a84a19c4e0282fddfef60d4988a553a0ce9487"
+    },
+    {
+      "name": "fx_sfx_10",
+      "frames": 45,
+      "bytes": 5972,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "9d4d31ffc42daf045ba812ec518b9da045038034dc65b762ae974db03dafea18"
+    },
+    {
+      "name": "fx_sfx_100",
+      "frames": 55,
+      "bytes": 7358,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "adf4776b7b80250a1eb6bcf1f7bb3a6cf8bcfee83880cd428b47eb52c4086905"
+    },
+    {
+      "name": "fx_sfx_101",
+      "frames": 40,
+      "bytes": 5330,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "280b81343f2fd5380081434bd9d2c0c501f9dd064592bb72e14dd66693aae885"
+    },
+    {
+      "name": "fx_sfx_103",
+      "frames": 116,
+      "bytes": 15486,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "2ec5b1f11d3d3e65498267bbe02a423c5ea46647bf49dc1a5568c8ef5999ac07"
+    },
+    {
+      "name": "fx_sfx_104",
+      "frames": 13,
+      "bytes": 1686,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "43bc7635145cc6a1a54f24431c0b6948bb50e63fdf202019a9b80b9582a8f6b3"
+    },
+    {
+      "name": "fx_sfx_107",
+      "frames": 21,
+      "bytes": 2760,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "6ff8fffbc75b78cfe5168d3ccec2d40b7eb76f995606cd4305b4b5a5c2672258"
+    },
+    {
+      "name": "fx_sfx_108",
+      "frames": 23,
+      "bytes": 3016,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "6647995a67c882b96f9cbed1dc1a8843f2e0835e3c6f79dde31720cf648ba2ad"
+    },
+    {
+      "name": "fx_sfx_109",
+      "frames": 85,
+      "bytes": 11436,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "3022d9f8fe8df9e7355e0fa1d210951e3b8709c692eaadf26b0d0297a1c3cc92"
+    },
+    {
+      "name": "fx_sfx_111",
+      "frames": 208,
+      "bytes": 27876,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "fbfcb3b5d72e1e138eb8927caa6def93e79c3265e287a97af7310d2d3f21f75a"
+    },
+    {
+      "name": "fx_sfx_112",
+      "frames": 30,
+      "bytes": 3962,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "2dffe695cfb69fc2ffc98ae4c9be5d6d1b00e918b2ae798c23b2f5bb3d249e63"
+    },
+    {
+      "name": "fx_sfx_113",
+      "frames": 202,
+      "bytes": 27002,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "70bb8c27bdfcfab1315c66b4b99a16be503077cde7c0fc89cecfca87feb74682"
+    },
+    {
+      "name": "fx_sfx_114",
+      "frames": 157,
+      "bytes": 21036,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "fff42f0538a7f527ff252f510df8f97b28578c974890d30f4382d8fbb585afae"
+    },
+    {
+      "name": "fx_sfx_115",
+      "frames": 28,
+      "bytes": 3740,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "529715bc0a2585eca687cd3061725b37e1f22ce761f4e227529e518968e3d2dc"
+    },
+    {
+      "name": "fx_sfx_116",
+      "frames": 66,
+      "bytes": 8796,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "536ed2c9e14a994bb162660b681fcd9cacf7d9e75d0f70ca1604f5fc7a017742"
+    },
+    {
+      "name": "fx_sfx_117",
+      "frames": 20,
+      "bytes": 2618,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "ab86d4c6732ab7cf749e16eac8f228d850f618c5dd17a7ce8736f7cf019567a7"
+    },
+    {
+      "name": "fx_sfx_118",
+      "frames": 65,
+      "bytes": 8680,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "07b5145d10d4f5d8c41210de9eec31281012de0c186c19e1ca2e3d1fbfea1fc8"
+    },
+    {
+      "name": "fx_sfx_119",
+      "frames": 45,
+      "bytes": 6074,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "a0e4591cff2054e351188723d7527f196a33633a6ec87c265462b8eb86d10cb7"
+    },
+    {
+      "name": "fx_sfx_12",
+      "frames": 62,
+      "bytes": 8344,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "7e4a066b1961f4aea25885d44263294879a1b0806a4a04207e1421b655b7b767"
+    },
+    {
+      "name": "fx_sfx_120",
+      "frames": 80,
+      "bytes": 10650,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "4c393a456d190cd1175729e947a8b5f1b156a5487de0491e49977bfbd541cd7e"
+    },
+    {
+      "name": "fx_sfx_121",
+      "frames": 26,
+      "bytes": 3488,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "d8a85534485ca8c999c9679ccc9a00f149a4921d7159c6c827e460d49f03e2b3"
+    },
+    {
+      "name": "fx_sfx_122",
+      "frames": 13,
+      "bytes": 1780,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "213f7f312186239817db7be8bca0b96e26eb64ca5e7f121209832a146a190515"
+    },
+    {
+      "name": "fx_sfx_123",
+      "frames": 40,
+      "bytes": 5386,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "4ee0bfa4e937f2fe5fb9dd29f890ae3422e77a24b9838bc5807e7fae658b19b2"
+    },
+    {
+      "name": "fx_sfx_125",
+      "frames": 173,
+      "bytes": 23194,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "d4313a9a57bb92612b6707083770875e670084979181e79143418389b83b4152"
+    },
+    {
+      "name": "fx_sfx_126",
+      "frames": 114,
+      "bytes": 15282,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "0fa03f47bf4426ca7aef3a544d30c9d4b1d329c831accf3af2b6d59f3a2b4a17"
+    },
+    {
+      "name": "fx_sfx_127",
+      "frames": 94,
+      "bytes": 12610,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "ae261d7c7ae6a062cf3174065e735d3b7bf73652ebae69a6e5b355fdbd607409"
+    },
+    {
+      "name": "fx_sfx_128",
+      "frames": 114,
+      "bytes": 15332,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "2d2fdfce435dd096257db858ca4cdefe63395a2f160bd187feebbdaac06a83c5"
+    },
+    {
+      "name": "fx_sfx_129",
+      "frames": 82,
+      "bytes": 10990,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "130a348c3c3c7bec99c8984d9868c97963227e7d3b06189050428f65e634e6b8"
+    },
+    {
+      "name": "fx_sfx_13",
+      "frames": 19,
+      "bytes": 2528,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "7929bcd388f4d6f1b9e6788ff0f0054562644d769c84317d2f14ce06c0c37489"
+    },
+    {
+      "name": "fx_sfx_130",
+      "frames": 82,
+      "bytes": 10990,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "130a348c3c3c7bec99c8984d9868c97963227e7d3b06189050428f65e634e6b8"
+    },
+    {
+      "name": "fx_sfx_131",
+      "frames": 378,
+      "bytes": 50658,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "30360fc74fc52a3ed45552c9ebf746916a432a20b515d94c1d1092549cdb9412"
+    },
+    {
+      "name": "fx_sfx_133",
+      "frames": 116,
+      "bytes": 15480,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "1ce1ccc7b73a38fb5a3a88784f837aaa53286549527b09305e512c4983fa3dd4"
+    },
+    {
+      "name": "fx_sfx_134",
+      "frames": 62,
+      "bytes": 8254,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "d4b31c54249223972b34d4dcf39f6d2ce083eadbeb8aec2c006434256a0944b2"
+    },
+    {
+      "name": "fx_sfx_135",
+      "frames": 99,
+      "bytes": 13278,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "7d9c2b8611fbf842786006beb83c780bcfb8eb130f753a6637e7e162dda6ab81"
+    },
+    {
+      "name": "fx_sfx_136",
+      "frames": 60,
+      "bytes": 8088,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "e3d30f4239521a7f84970ed2369c4d31d9ff83d2cef9f98ea97c8552676c6553"
+    },
+    {
+      "name": "fx_sfx_137",
+      "frames": 30,
+      "bytes": 3994,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "0ecffa13cc4432d7d8208fd811e2982b7394c96e58d299174caa6957aec2a7eb"
+    },
+    {
+      "name": "fx_sfx_14",
+      "frames": 195,
+      "bytes": 26122,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "694401f14811862a20ac22bcc0b3e6bfb1161b8a1e81740b914af74b059e11df"
+    },
+    {
+      "name": "fx_sfx_140",
+      "frames": 102,
+      "bytes": 13644,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "c22a38b0d2ea535ca3b4d64c15cbb39c908ba0fbaa644a416da35e4cfca2eff8"
+    },
+    {
+      "name": "fx_sfx_141",
+      "frames": 110,
+      "bytes": 14668,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "c7e16b67e5bcdc56675ed330b1f58a397f47aa93869c37716bacb8a2172f6e3e"
+    },
+    {
+      "name": "fx_sfx_142",
+      "frames": 224,
+      "bytes": 29996,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "bd8bd71eb0948e2a5ce7d4b406be455b3f5e45c902408fafdc7f48ed7e2fff2e"
+    },
+    {
+      "name": "fx_sfx_143",
+      "frames": 167,
+      "bytes": 22434,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "9a28553b91d688107d35e2fe7f1faed792368b52e0773d88884683bd67967e8b"
+    },
+    {
+      "name": "fx_sfx_144",
+      "frames": 30,
+      "bytes": 4064,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "e5fb32a925f61addd4140a29716595325af91c9e88777b34832301553305932c"
+    },
+    {
+      "name": "fx_sfx_145",
+      "frames": 145,
+      "bytes": 19470,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "0c4c03710e07da945afba04a5c43afba2fdd8e625128c6a45600076edec3f456"
+    },
+    {
+      "name": "fx_sfx_146",
+      "frames": 66,
+      "bytes": 8774,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "16b095a80e9dbb5b5f391b482177edf8ca4b39d7f4b573ddd2b9a987cc5a7ea2"
+    },
+    {
+      "name": "fx_sfx_147",
+      "frames": 212,
+      "bytes": 28344,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "21ec943d362ca58aff17f8818daf4edebfd4b0de1029d99efdbf85d50566e6c2"
+    },
+    {
+      "name": "fx_sfx_148",
+      "frames": 72,
+      "bytes": 9596,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "61369dc53f0e8bae761e67bffaec704f615879f385af170d8ae8bbd72ed72483"
+    },
+    {
+      "name": "fx_sfx_149",
+      "frames": 143,
+      "bytes": 19104,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "f32ff6e9bacffd3743e12d52cb0862eba5dc9aa461f52ace18802033715f2bb4"
+    },
+    {
+      "name": "fx_sfx_15",
+      "frames": 52,
+      "bytes": 6960,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "5bdca59de1ecea008b01143cda8c6d41abf29190a0b0e0161a09c0a11e21bd1a"
+    },
+    {
+      "name": "fx_sfx_150",
+      "frames": 278,
+      "bytes": 37218,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "8394f769f451a0a533a4250a7e090890330ee771ecd1b2e7b24783524d593921"
+    },
+    {
+      "name": "fx_sfx_151",
+      "frames": 72,
+      "bytes": 9598,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "d9d8d100a7b479c88f42ae736a10f66e2fa65ee2d913e1462369915c07590152"
+    },
+    {
+      "name": "fx_sfx_152",
+      "frames": 28,
+      "bytes": 3696,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "a7c99182a625f3c163c63d679724c85f015e1544676e93e42f80e88142165f90"
+    },
+    {
+      "name": "fx_sfx_153",
+      "frames": 61,
+      "bytes": 8146,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "56b96bc388cf93b1d445d65a14564f6bea55dcb775c81d3f6491a3443bc75486"
+    },
+    {
+      "name": "fx_sfx_156",
+      "frames": 91,
+      "bytes": 12196,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "9bcd2629400d1b1db0e7b7021012dbfaf9944a213b8c17df1e38c4156eb406a6"
+    },
+    {
+      "name": "fx_sfx_157",
+      "frames": 129,
+      "bytes": 17322,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "b531ea1c746732db17eb3e9737e65cd396924dfa2e1bebe20edda165ac940a43"
+    },
+    {
+      "name": "fx_sfx_159",
+      "frames": 41,
+      "bytes": 5498,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "d3ea1bd645c1914c9243d4cf91857519279c5a08503f47b68b81b7227cc788dc"
+    },
+    {
+      "name": "fx_sfx_16",
+      "frames": 64,
+      "bytes": 8508,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "5f56d99909bd0acf3823335216adf0c9fb0b1fce25b2cbf0a5ca13e14a0e2cab"
+    },
+    {
+      "name": "fx_sfx_160",
+      "frames": 59,
+      "bytes": 7852,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "735b7e42b3fe7b893bfd405d2a5a097b12cc576a1aeb4deddb7e8462d021896d"
+    },
+    {
+      "name": "fx_sfx_161",
+      "frames": 55,
+      "bytes": 7300,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "69c63abd3d8375bac18e66ec00ea3a0f0e09a5b2f162987dfa1040330717d834"
+    },
+    {
+      "name": "fx_sfx_162",
+      "frames": 58,
+      "bytes": 7792,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "8ef2b541450ff6781bbf181b532f022dad4d0647bffaff83e978acfefff9ffce"
+    },
+    {
+      "name": "fx_sfx_163",
+      "frames": 158,
+      "bytes": 21220,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "2ddb20608790dd134c67c5126c3be3e581f00eb33eaa386d770790697fda2de5"
+    },
+    {
+      "name": "fx_sfx_164",
+      "frames": 37,
+      "bytes": 4948,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "1fcc90e4977c33124e423d6a327b978c9a30f11e1ddb95cfcb86ad2972a30cc4"
+    },
+    {
+      "name": "fx_sfx_165",
+      "frames": 276,
+      "bytes": 36950,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "36dc492114161b0c2d20d330fb09396847d544a3364ee2a1c6558991d6950674"
+    },
+    {
+      "name": "fx_sfx_167",
+      "frames": 48,
+      "bytes": 6460,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "d1f29bf051fbc2ffe267b16bc06d59b22bb59468171a37227c607719ff7b1db7"
+    },
+    {
+      "name": "fx_sfx_168",
+      "frames": 123,
+      "bytes": 16442,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "c137376965505f8ff013d2b25c4d2517ba705681a50ac35b50f91ae2d808795e"
+    },
+    {
+      "name": "fx_sfx_169",
+      "frames": 41,
+      "bytes": 5426,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "a87c7194bfd512036d4af8f595f29f6e7f819645fe1bc0cae8adf9153747f18c"
+    },
+    {
+      "name": "fx_sfx_17",
+      "frames": 69,
+      "bytes": 9176,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "e826df3ce8efdac90745197709ad2c52c7333bc98c1800c85697ed24eb7cc599"
+    },
+    {
+      "name": "fx_sfx_170",
+      "frames": 400,
+      "bytes": 53584,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "1f44e49ae5fc36c16f7d237ac1bba4c06c211558886f9530d0dd1773b7eac7f9"
+    },
+    {
+      "name": "fx_sfx_171",
+      "frames": 321,
+      "bytes": 43000,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "6188914420a513f1b47e8991c7d52bf9c472613d5b5c7c57f8df86a4dea1b39d"
+    },
+    {
+      "name": "fx_sfx_175",
+      "frames": 127,
+      "bytes": 17046,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "8b5b21ef2f1e0b8c881984e9784063b3f5f94fa2346a29d11f476f23baac95be"
+    },
+    {
+      "name": "fx_sfx_176",
+      "frames": 49,
+      "bytes": 6506,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "f0c9b93d958b30645d2d3b5afb73aa2370918ba549531cb4385d459181c3bf73"
+    },
+    {
+      "name": "fx_sfx_177",
+      "frames": 115,
+      "bytes": 15358,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "fc21a290b78b7e235f3a459c4aa8a2fc2637e152f678a4e2dc4be406a4b33fce"
+    },
+    {
+      "name": "fx_sfx_178",
+      "frames": 30,
+      "bytes": 4052,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "06cbef6a9c548f26af1dd995fa7e7ff9128aace7d23698bc7080136d5bf39ea9"
+    },
+    {
+      "name": "fx_sfx_179",
+      "frames": 94,
+      "bytes": 12642,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "2883e5c9347358ee02a3eafd05e57a66c0fbc5b68699a98ecee83faac42cb092"
+    },
+    {
+      "name": "fx_sfx_18",
+      "frames": 8,
+      "bytes": 1078,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "83bdb1c3f36df2cc29fd644fa349b61a9a19f941cbb255d71dc6af626fb76219"
+    },
+    {
+      "name": "fx_sfx_181",
+      "frames": 428,
+      "bytes": 57336,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "07aa437d94437d85db0c8e2ce3e7e18d74e1debb08aa7598ed997efb568af6f1"
+    },
+    {
+      "name": "fx_sfx_183",
+      "frames": 88,
+      "bytes": 11742,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "76c4ec4f2e86d859a50eae3abcb3454b76e4c7cbea2ddd134943e941faef7b41"
+    },
+    {
+      "name": "fx_sfx_184",
+      "frames": 92,
+      "bytes": 12318,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "3c84935e56aa42f50e5aa1fd70fa75a21c31ea7cc64d3e746aca1de1fffe668d"
+    },
+    {
+      "name": "fx_sfx_185",
+      "frames": 173,
+      "bytes": 23218,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "1b8f167594ffcc5bac7222aecd6f1cc6fc3526e3f3205fb2f562f04a5490540c"
+    },
+    {
+      "name": "fx_sfx_19",
+      "frames": 62,
+      "bytes": 8252,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "76b7736d1dcddd26275c13cd3415f3a44f635821b593cfadf2cd53467c32e80d"
+    },
+    {
+      "name": "fx_sfx_20",
+      "frames": 74,
+      "bytes": 9964,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "a9e428386bc50e2933014b21780441a336438b1f35447f938db19e325089a7e1"
+    },
+    {
+      "name": "fx_sfx_22",
+      "frames": 73,
+      "bytes": 9736,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "26f86383560ee299b0d2128a0c5da7ef0a34c604038565a6a71a1c50224dfd00"
+    },
+    {
+      "name": "fx_sfx_23",
+      "frames": 39,
+      "bytes": 5228,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "1d643c7a9fcf101a6bf97820455760f40656707f64c83c6d4df865f26fb2ff28"
+    },
+    {
+      "name": "fx_sfx_24",
+      "frames": 252,
+      "bytes": 33698,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "dac48674610eece20d61e145e84b634aa1dc6e08a88d56d39c796afb6ce0e275"
+    },
+    {
+      "name": "fx_sfx_25",
+      "frames": 143,
+      "bytes": 19164,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "aa2adc27a7901979fac65c90cf9eb0c11f3dee7b2da7db0472c5411280c02dda"
+    },
+    {
+      "name": "fx_sfx_26",
+      "frames": 85,
+      "bytes": 11436,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "3022d9f8fe8df9e7355e0fa1d210951e3b8709c692eaadf26b0d0297a1c3cc92"
+    },
+    {
+      "name": "fx_sfx_27",
+      "frames": 27,
+      "bytes": 3624,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "fd3b2dc8ec504412cc77d03b0eeed0c901268b7dd1b0d4b2110c63217a799bc5"
+    },
+    {
+      "name": "fx_sfx_28",
+      "frames": 28,
+      "bytes": 3710,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "f944d4800a47f8c82a5a4c5fd9ca6da09d59c2d280c2bb6fa848dad593cdb424"
+    },
+    {
+      "name": "fx_sfx_29",
+      "frames": 43,
+      "bytes": 5820,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "2a02cb2756c8803bc7b124f740e627d26ddd904057c15830985073d210933d37"
+    },
+    {
+      "name": "fx_sfx_3",
+      "frames": 50,
+      "bytes": 6724,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "e0f5352beeacf1a2730b486b7314a9e967e40b7d324393f0b144b6ce32053465"
+    },
+    {
+      "name": "fx_sfx_30",
+      "frames": 40,
+      "bytes": 5416,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "c17ac09d5013ae907780e0ce3fe83078d78b45eac658dc850bf691644ab7ad2c"
+    },
+    {
+      "name": "fx_sfx_31",
+      "frames": 94,
+      "bytes": 12620,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "9f198c4512b312728da2807b28d2a90d16c48fb079723ae251c3e8a68adcacb8"
+    },
+    {
+      "name": "fx_sfx_32",
+      "frames": 31,
+      "bytes": 4152,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "80cf95d8aa5f949a08334c16e4c51b80f7dc7e9bf17bb7f8faf6e3dac494ecbc"
+    },
+    {
+      "name": "fx_sfx_34",
+      "frames": 123,
+      "bytes": 16460,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "1809d39d067e76f88829076300d0024b59b0351ee6e47186be914733e72a55aa"
+    },
+    {
+      "name": "fx_sfx_35",
+      "frames": 291,
+      "bytes": 38916,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "cf6c60919bc600678a70581cdfede2734cf498d8b079c5663f0180de9a2765e4"
+    },
+    {
+      "name": "fx_sfx_36",
+      "frames": 241,
+      "bytes": 32290,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "49c3fe3b42829154516f35221fa42dec5eb5c634e9cf3bea85a3d331aad718e4"
+    },
+    {
+      "name": "fx_sfx_37",
+      "frames": 173,
+      "bytes": 23182,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "4e7625586b202a1d089e58d2dfb59ae20a881142b10abf9c55aa76484e12ec0f"
+    },
+    {
+      "name": "fx_sfx_38",
+      "frames": 161,
+      "bytes": 21552,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "813335bb30fe94cc509e86afd41ba85f9af52c9f549ddc64be4dcd3de52d8de9"
+    },
+    {
+      "name": "fx_sfx_39",
+      "frames": 22,
+      "bytes": 2886,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "1c70a8e5863a9045092e4131ad91d1b23f160bf2255eaf07ab0c9d357f469d72"
+    },
+    {
+      "name": "fx_sfx_4",
+      "frames": 112,
+      "bytes": 14952,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "a35224eff6893a222493426489231be9ee991ec7cc2803d8516ad7508e9b1995"
+    },
+    {
+      "name": "fx_sfx_41",
+      "frames": 205,
+      "bytes": 27422,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "c478a1af6575bf8a01085bb4e9d2796c70bc6cc77e5e1c3668eae3990d549e9a"
+    },
+    {
+      "name": "fx_sfx_42",
+      "frames": 18,
+      "bytes": 2448,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "9f0a5059c92fa38ad7f864a0894835d0c6b57d4322d987bb5601245373fdc142"
+    },
+    {
+      "name": "fx_sfx_43",
+      "frames": 133,
+      "bytes": 17810,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "6831f2a19dc563dd7b06929d3cf6af2c884bc9fb08fc63a9c7945f60854de2d5"
+    },
+    {
+      "name": "fx_sfx_45",
+      "frames": 16,
+      "bytes": 2156,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "bd3958d03ec89f0d6e5c1a819f21047accfb2542a074c2335ff709a6f7c5d694"
+    },
+    {
+      "name": "fx_sfx_46",
+      "frames": 68,
+      "bytes": 9108,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "0ab45c80e3ff88c04743bf8681428d274d6a766f397255a7bf0383dc4d700c5f"
+    },
+    {
+      "name": "fx_sfx_47",
+      "frames": 304,
+      "bytes": 40662,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "bc9c7e2e41910ade4bc2588365e1de5b23bf18d9e63e6ab2bcf359cbb5627fb4"
+    },
+    {
+      "name": "fx_sfx_5",
+      "frames": 197,
+      "bytes": 26332,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "efcee501791f07faad8eafaa1840683e02817e79bc1a8844a21859ab377c8eec"
+    },
+    {
+      "name": "fx_sfx_50",
+      "frames": 13,
+      "bytes": 1752,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "11850cf71579c1d8b075a2bd2ee7a228e4139062479c25b50409b2cc1fbf885e"
+    },
+    {
+      "name": "fx_sfx_52",
+      "frames": 59,
+      "bytes": 7900,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "927ee97057c5865d81768ae5aeee668a93ed9d4399b5f33f3c7a16059a1b8f5f"
+    },
+    {
+      "name": "fx_sfx_53",
+      "frames": 332,
+      "bytes": 44438,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "006ac79a3fb5b8acde5066f5e0a0f9eb843d6b6e7d41d8e8b92e240b18ac61cd"
+    },
+    {
+      "name": "fx_sfx_55",
+      "frames": 78,
+      "bytes": 10448,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "189eadb823d4bdfdc765fc8505568e291fa61ed3471e49931c8fb32a6d2431a4"
+    },
+    {
+      "name": "fx_sfx_56",
+      "frames": 49,
+      "bytes": 6500,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "fa3b01d557c6b4f9629b4150b9eb03c8010acf9f89c376936bf29e8e6ad90afd"
+    },
+    {
+      "name": "fx_sfx_58",
+      "frames": 227,
+      "bytes": 30428,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "994f0217b65fa59998a392d8ba12c54e0c3a0bc29522fe79e829ecb042df0d5c"
+    },
+    {
+      "name": "fx_sfx_59",
+      "frames": 294,
+      "bytes": 39338,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "0cf56db2cbab0cd646e3eab6456d5d476812c6a8ea9c0be7adce75934e15d376"
+    },
+    {
+      "name": "fx_sfx_6",
+      "frames": 111,
+      "bytes": 14802,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "8bd46523e60c3c45d74e3c3bdddd03db71b132d161c4d3717266b0056b12be70"
+    },
+    {
+      "name": "fx_sfx_60",
+      "frames": 63,
+      "bytes": 8376,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "94027ffc2184245596a43c38d573186902aa561a04da40310e2a0acd49380985"
+    },
+    {
+      "name": "fx_sfx_61",
+      "frames": 95,
+      "bytes": 12702,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "c79fc3b5e3ed514c7cbd5dbb7368842a844936220abed533374621e0c8ac88a9"
+    },
+    {
+      "name": "fx_sfx_62",
+      "frames": 45,
+      "bytes": 6068,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "086a51698031a0e505440fd19679c7be8138d60e0a1ca03af1ff4d59770f5f39"
+    },
+    {
+      "name": "fx_sfx_64",
+      "frames": 38,
+      "bytes": 5026,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "9a55b53f314830548d42f58f0593ba631a3991e80589f265e64888b1417cafd9"
+    },
+    {
+      "name": "fx_sfx_65",
+      "frames": 182,
+      "bytes": 24424,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "ce5cbe227962a4315a3c1a3a28fdddb504bbe4b9b3f527b13fddd20c5bdb8952"
+    },
+    {
+      "name": "fx_sfx_66",
+      "frames": 18,
+      "bytes": 2386,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "f6409fca723aad31fd7bd45ce242b41cc4af386bff6df1f289f44c792b812f3c"
+    },
+    {
+      "name": "fx_sfx_68",
+      "frames": 95,
+      "bytes": 12742,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "2ad016e52ff0d19e3a45a11d243a176465edfcae45c9f3ec2141fbcccfc9b560"
+    },
+    {
+      "name": "fx_sfx_7",
+      "frames": 222,
+      "bytes": 29742,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "75bd8becf5bd42ee15841778f63656c8dfdd0f562a8e87599c20fc46522ef2e8"
+    },
+    {
+      "name": "fx_sfx_70",
+      "frames": 100,
+      "bytes": 13370,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "d60a5bb52c8460148ddc15dca0fe2bf20ecdf27b8075d47ea0d2b2c72f7d9d42"
+    },
+    {
+      "name": "fx_sfx_72",
+      "frames": 197,
+      "bytes": 26334,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "1e8b2813c21734caaf43ec360585bcf46935a1e3aede13e4266b39f70e703a0e"
+    },
+    {
+      "name": "fx_sfx_73",
+      "frames": 197,
+      "bytes": 26334,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "0b20dcb7cf2724f3fd308f47172a6cc846c410c0ac6469e09e0dab74dec7dff1"
+    },
+    {
+      "name": "fx_sfx_74",
+      "frames": 299,
+      "bytes": 40000,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "8bf7efeb46245970959e8ba4eef2f441ab8cce6eeaf8d696e21a42535075de02"
+    },
+    {
+      "name": "fx_sfx_75",
+      "frames": 95,
+      "bytes": 12754,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "ca41331670c1989bbfbc6d7495f28d5b88349428f017015405d9a1b2459e3b2a"
+    },
+    {
+      "name": "fx_sfx_76",
+      "frames": 15,
+      "bytes": 1996,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "5da630ffd7178639edd914759037c92b385a044bf87e453a12228281b45e2793"
+    },
+    {
+      "name": "fx_sfx_77",
+      "frames": 100,
+      "bytes": 13412,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "c865491d5034ae74d8b5f0b84339c1a16156491f29825f8228894a3a86a34eb7"
+    },
+    {
+      "name": "fx_sfx_78",
+      "frames": 186,
+      "bytes": 24968,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "53edb68abf4c49009486c425482096ae075142ad30c69dc3bba0ad042788f633"
+    },
+    {
+      "name": "fx_sfx_79",
+      "frames": 98,
+      "bytes": 13170,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "0508e910bc6ed558da165b0bcfd3573adaa32ecc40f8916f0c0a702370f72734"
+    },
+    {
+      "name": "fx_sfx_8",
+      "frames": 204,
+      "bytes": 27302,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "136005a24feab55dac77023fdcd52eced61b37ff8041ae1956433c39fe6f0cad"
+    },
+    {
+      "name": "fx_sfx_81",
+      "frames": 258,
+      "bytes": 34620,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "75148829552e4a11ae3b3fe9190daff97f07f013d683e13eec36780c99fd8e34"
+    },
+    {
+      "name": "fx_sfx_82",
+      "frames": 187,
+      "bytes": 25000,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "5b183313e6c68607c8029a946fd010e14a9ef62d60b5d22d5959e8b6ebc37df0"
+    },
+    {
+      "name": "fx_sfx_83",
+      "frames": 187,
+      "bytes": 24998,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "a0850e9d046d816e13191243e67db76fddbf1fcb0ebdb4e4c857fa4ade48247a"
+    },
+    {
+      "name": "fx_sfx_84",
+      "frames": 58,
+      "bytes": 7714,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "a26f01ceec94cf69c8d5c176ab23b46d42a4990b25702a484d8181e7f0f65d1c"
+    },
+    {
+      "name": "fx_sfx_85",
+      "frames": 43,
+      "bytes": 5722,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "68d1a1ddcc7d4ee907070b103244e7d0aa6e5880631940c11ba727ce309ba2c3"
+    },
+    {
+      "name": "fx_sfx_86",
+      "frames": 20,
+      "bytes": 2736,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "3f5e3f2f100ba267d87315e56649f9488ebf0641e126b6e98f8e568a1d150d5d"
+    },
+    {
+      "name": "fx_sfx_89",
+      "frames": 36,
+      "bytes": 4804,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "670f7f9e2d985cc6d48c9a91a2a96c024a119e52b114ae4c62972c6f58817160"
+    },
+    {
+      "name": "fx_sfx_9",
+      "frames": 26,
+      "bytes": 3506,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "6bc3c019a9ef2ddd2eb04cddc715553cd67b3ad32dc216d9b9db5bb197c87083"
+    },
+    {
+      "name": "fx_sfx_90",
+      "frames": 49,
+      "bytes": 6548,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "8448bde1a131d13b627cfac7af6448e7fc54d7682e4130c9a7fb2da850901881"
+    },
+    {
+      "name": "fx_sfx_92",
+      "frames": 10,
+      "bytes": 1282,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "79faa88bdb5793ffac7c2fa3e4e6d4634bced4182dc805383910c9443704a60a"
+    },
+    {
+      "name": "fx_sfx_93",
+      "frames": 178,
+      "bytes": 23886,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "cea2f2a7905fae209b4c1156d545990b99cb20651207ff15ab0906523e693ece"
+    },
+    {
+      "name": "fx_sfx_94",
+      "frames": 134,
+      "bytes": 18002,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "97a6193b2d3c26718e7c03974aecfc15ce30ba3b0d479344d2a8a8d6c0782235"
+    },
+    {
+      "name": "fx_sfx_95",
+      "frames": 127,
+      "bytes": 16946,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "4cc24e855232cb10e606adbe54a72564ddfb4fb41e3a1b2bf7d94aa8aa5cd5a2"
+    },
+    {
+      "name": "fx_sfx_96",
+      "frames": 28,
+      "bytes": 3808,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "c62860838dce0fe86b23de568657d5b25d40c53465d41ab6e1198332f01a98bc"
+    },
+    {
+      "name": "fx_sfx_97",
+      "frames": 266,
+      "bytes": 35606,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "da2558cf21efb3581665d66f1313f01f6b4c402b2f74f4c25a1dfcca8d70a674"
+    },
+    {
+      "name": "fx_sfx_98",
+      "frames": 36,
+      "bytes": 4782,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "39724b60717584e48216107b321a5f38524bafc03f83f8925a59b38f1b73d81e"
+    },
+    {
+      "name": "fx_sfx_99",
+      "frames": 132,
+      "bytes": 17642,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "142abab959f2c08245a4aa4ae95bd0c54b252f7dbeec8b7420055037a3958935"
+    },
+    {
+      "name": "fx_sfx_common_1",
+      "frames": 64,
+      "bytes": 8630,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "4f56de54ef219310ef9fdbf77c973b03483399116db33db408a9fb7f54299201"
+    },
+    {
+      "name": "fx_sfx_common_2",
+      "frames": 39,
+      "bytes": 5192,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "4306844db04c551b1aa4877477b6b84b82a0f92dc90edbf273da5282a9a63ae8"
+    },
+    {
+      "name": "fx_sfx_common_3",
+      "frames": 59,
+      "bytes": 7874,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "ed6edffa0b226e1aa0efe297afbce4cf25fd698bbfc79804313a399fc7f0e16b"
+    },
+    {
+      "name": "fx_sfx_common_4",
+      "frames": 22,
+      "bytes": 2966,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "41c011b6dab08af68498427f82179360bf9b5044171e19ac11096b76db98ca87"
+    },
+    {
+      "name": "fx_sfx_common_5",
+      "frames": 73,
+      "bytes": 9802,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "65cdc9b3fb3464e4e2e6094b11500ccb53f032eaefbdc6e9f47a4a952e2459ba"
+    },
+    {
+      "name": "fx_sfx_common_6",
+      "frames": 68,
+      "bytes": 9064,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "102fdc8c7303bbd01255e7b14aaf52ec7f1269f2afb30b1ad3f4822d26cc2c0a"
+    },
+    {
+      "name": "fx_sfx_common_7",
+      "frames": 45,
+      "bytes": 6034,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "cfd5d0711c5770c7a418dd5aa418439870777d04f306ae908092b1452144b0ba"
+    },
+    {
+      "name": "fx_sfx_system_alert_001",
+      "frames": 4,
+      "bytes": 580,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "a9d8a93359ef46c55793015f2288edae45ed962d04a7b22e4d23a7057dc4f51d"
+    },
+    {
+      "name": "fx_sfx_system_cancel_001",
+      "frames": 14,
+      "bytes": 1900,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "f54c56875845cf74bafa9b5b4c7fab987dd6b6eb6845a8d08a632cb3b8d98f3f"
+    },
+    {
+      "name": "fx_sfx_system_choice_001",
+      "frames": 138,
+      "bytes": 18432,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "ffb1bb4ffffe119d30acd71402ae81600265eb0a5135b4dac7dd234593e1dc85"
+    },
+    {
+      "name": "fx_sfx_system_choice_002a",
+      "frames": 28,
+      "bytes": 3746,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "be5919fb39ef68b9a06483e2a6717631404076ab3d9dcc917ad214f13d81b0a8"
+    },
+    {
+      "name": "fx_sfx_system_choice_002b",
+      "frames": 34,
+      "bytes": 4526,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "afa89bf82d76f9238ea96be47476493e6dab7e0bcf44c4c0ce0e8cdd60665791"
+    },
+    {
+      "name": "fx_sfx_system_choice_002c",
+      "frames": 17,
+      "bytes": 2320,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "90d091f22ea0b0c5c5058f7f47f29cf4b3526ac64552dce948e6d05de26753ec"
+    },
+    {
+      "name": "fx_sfx_system_choice_003b",
+      "frames": 15,
+      "bytes": 2000,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "eabad0115b49a432731fd7a2c7b1431d8a66bdd503a491dc62100ff4eb9feae0"
+    },
+    {
+      "name": "fx_sfx_system_choice_003c",
+      "frames": 15,
+      "bytes": 2014,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "cdef30ebbdd94248f8015f7c1ed21a2029a9961b77b8ae7cbee3b5d165642af2"
+    },
+    {
+      "name": "fx_sfx_system_close_001",
+      "frames": 6,
+      "bytes": 776,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "a46fc0021a2c7dc3cc15e3285654810789de8aabc101e11e071adca6993f8355"
+    },
+    {
+      "name": "fx_sfx_system_closebook_001",
+      "frames": 23,
+      "bytes": 3130,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "f5bdc491fe2cadacc83d88c8ea18d3362e23bbab161b03bc8ada8ea3ddaf7949"
+    },
+    {
+      "name": "fx_sfx_system_executebutton_001",
+      "frames": 592,
+      "bytes": 79312,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "5eb0449cf06f840d571bd1856a6f73d420f082768aa7f157aa891935c87c7911"
+    },
+    {
+      "name": "fx_sfx_system_executebutton_002",
+      "frames": 101,
+      "bytes": 13556,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "82169fbce3f59e06bf97cac53a0123af7c309dceee7fd5105f48dfd8b8c3e278"
+    },
+    {
+      "name": "fx_sfx_system_loaddata_001",
+      "frames": 135,
+      "bytes": 18144,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "25f4896db5280fcc2032248c95d747b47247753504cf30378ebf67527acf22c2"
+    },
+    {
+      "name": "fx_sfx_system_move_001",
+      "frames": 11,
+      "bytes": 1524,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "37267f98e21c18ef3ccbdd23ee5c954e6203ca991c2f035e6379ddffd60eb289"
+    },
+    {
+      "name": "fx_sfx_system_obtainitem_001a",
+      "frames": 59,
+      "bytes": 7864,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "b8f7a281be8b46ca729bd1ad5f50f3394c55412d2b5a057d017065925bc5ef38"
+    },
+    {
+      "name": "fx_sfx_system_obtainitem_001b",
+      "frames": 59,
+      "bytes": 7904,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "150b4c0fdfb353d2a8efb5a2b7b0c50360ab6300980811d101ea51e7bd9dd12f"
+    },
+    {
+      "name": "fx_sfx_system_open_001",
+      "frames": 4,
+      "bytes": 558,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "7f287ecfc22e51dfea87ff2e20b9afffbedbf479b5f88354dc5da6f3b405eba3"
+    },
+    {
+      "name": "fx_sfx_system_openbook_001",
+      "frames": 36,
+      "bytes": 4770,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "774d02ca8d812589158e7b95013033f8dce1c12b986e198ca71b4a6fc9dc3003"
+    },
+    {
+      "name": "fx_sfx_system_savedata_001",
+      "frames": 136,
+      "bytes": 18280,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "f208f214775e299a872248715dd4ee130020a7de3a03308bfa9c8d025d917bf1"
+    },
+    {
+      "name": "fx_sfx_system_savedata_001_2x",
+      "frames": 68,
+      "bytes": 9142,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "aaba76c718aa12a26a55da4fc8795d68dd0bfae637b246c7581fe8fc96b3f695"
+    },
+    {
+      "name": "fx_sfx_system_startgame_001",
+      "frames": 200,
+      "bytes": 26842,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "aa88f08ea14bf291ed794a5167abc188eb0c0ecb0e8cfdc722899656369a5344"
+    },
+    {
+      "name": "fx_sfx_system_submit_001",
+      "frames": 6,
+      "bytes": 760,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "3685a07067b774de8e6e90b4ce9c55f12078cdaa698b2f40c647ef5d8ed2ab29"
+    },
+    {
+      "name": "fx_sfx_system_submit_003a",
+      "frames": 6,
+      "bytes": 760,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "3685a07067b774de8e6e90b4ce9c55f12078cdaa698b2f40c647ef5d8ed2ab29"
+    },
+    {
+      "name": "fx_sfx_system_tab_001a",
+      "frames": 8,
+      "bytes": 1088,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "d4812421336191c6f1cdfb55cde928fad8a0142938eb8f1235c840528af98f11"
+    },
+    {
+      "name": "fx_sfx_system_tab_001b",
+      "frames": 10,
+      "bytes": 1282,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "343b20aa88d092b9a93af949832821623af93a99b0dcf6d8c1b94310454a27d8"
+    },
+    {
+      "name": "fx_train",
+      "frames": 639,
+      "bytes": 85560,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "a704a3ec56ac0c73c465455758af4f87da3a03dfc5187f1ed45a6473a7f53508"
+    },
+    {
+      "name": "fx_underground_1",
+      "frames": 18,
+      "bytes": 2400,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "019e207dcb62691830ac95bba9319c99a65f0d395fb22462ba0d58ba2337b2ac"
+    },
+    {
+      "name": "fx_underground_2",
+      "frames": 18,
+      "bytes": 2400,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "9505463618504bd35a3d73be944ce8bc4d878b4e0096988d6a678b8df1170fc7"
+    },
+    {
+      "name": "fx_underground_3",
+      "frames": 18,
+      "bytes": 2400,
+      "rate": 8000,
+      "loop": false,
+      "sha256": "1fc2940c95207ca0e8ccd283e9828c8d357da6cc1c4594f01f7584e1c648fa35"
+    },
+    {
+      "name": "fx_vibra",
+      "frames": 236,
+      "bytes": 33076,
+      "rate": 8363,
+      "loop": false,
+      "sha256": "12f560f77de20ab797a21f7b544c369312e2e1bc57314f55e418c2227c98c5fd"
+    }
+  ],
+  "cues": [
+    {
+      "alias": "Ambi_101_1",
+      "label": "Ambient_101_001 white-noise-48000sr",
+      "sample": "fx_ambi_101_1",
+      "events": [],
+      "duration": 24,
+      "ambient": true,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Ambi_102_1",
+      "label": "Ambient_102_001 SFX_FireBig_L",
+      "sample": "fx_ambi_102_1",
+      "events": [],
+      "duration": 596,
+      "ambient": true,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Ambi_10_1",
+      "label": "Ambient_010_001 Chain fall out",
+      "sample": "fx_ambi_10_1",
+      "events": [],
+      "duration": 179,
+      "ambient": true,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Ambi_11_1",
+      "label": "Laughing girls / 9s loop",
+      "sample": "fx_laughter",
+      "events": [],
+      "duration": 538,
+      "ambient": true,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Ambi_1_1",
+      "label": "Bird ambience / omitted",
+      "sample": null,
+      "events": [],
+      "duration": 0,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Ambi_2_1",
+      "label": "Ambient 002 / shared fire",
+      "sample": "fx_fire",
+      "events": [],
+      "duration": 293,
+      "ambient": true,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Ambi_4_1",
+      "label": "Ambient 004 / shared fire",
+      "sample": "fx_fire",
+      "events": [],
+      "duration": 293,
+      "ambient": true,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Ambi_5_1",
+      "label": "Ambient_005_001 Operating elevator",
+      "sample": "fx_ambi_5_1",
+      "events": [],
+      "duration": 359,
+      "ambient": true,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Ambi_6_1",
+      "label": "Ambient 006 / shared fire",
+      "sample": "fx_fire",
+      "events": [],
+      "duration": 293,
+      "ambient": true,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Ambi_7_1",
+      "label": "Ambient_007_001 Earthquake",
+      "sample": "fx_ambi_7_1",
+      "events": [],
+      "duration": 294,
+      "ambient": true,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Ambi_8_1",
+      "label": "Ambient 008 / shared fire",
+      "sample": "fx_fire",
+      "events": [],
+      "duration": 293,
+      "ambient": true,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_1",
+      "label": "Sfx_Scenario_001 Wake up",
+      "sample": "fx_sfx_1",
+      "events": [],
+      "duration": 132,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_10",
+      "label": "Sfx_Scenario_010 Body hit",
+      "sample": "fx_sfx_10",
+      "events": [],
+      "duration": 45,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_100",
+      "label": "Sfx_Scenario_100 Spark",
+      "sample": "fx_sfx_100",
+      "events": [],
+      "duration": 55,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_101",
+      "label": "Sfx_Scenario_101 Pull up",
+      "sample": "fx_sfx_101",
+      "events": [],
+      "duration": 40,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_103",
+      "label": "Sfx_Scenario_103 Pipopa",
+      "sample": "fx_sfx_103",
+      "events": [],
+      "duration": 116,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_104",
+      "label": "Sfx_Scenario_104 Hang up",
+      "sample": "fx_sfx_104",
+      "events": [],
+      "duration": 13,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_105",
+      "label": "Train 105 / shared fade",
+      "sample": "fx_train",
+      "events": [],
+      "duration": 639,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_107",
+      "label": "Sfx_Scenario_107 Open cabnet",
+      "sample": "fx_sfx_107",
+      "events": [],
+      "duration": 21,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_108",
+      "label": "Sfx_Scenario_108 Neck bones",
+      "sample": "fx_sfx_108",
+      "events": [],
+      "duration": 23,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_109",
+      "label": "Sfx_Scenario_109 Controller fall",
+      "sample": "fx_sfx_109",
+      "events": [],
+      "duration": 85,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_111",
+      "label": "Sfx_Scenario_111 Pen write paper",
+      "sample": "fx_sfx_111",
+      "events": [],
+      "duration": 208,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_112",
+      "label": "Sfx_Scenario_112 Tray put on desk",
+      "sample": "fx_sfx_112",
+      "events": [],
+      "duration": 30,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_113",
+      "label": "Sfx_Scenario_113 Reverse spray",
+      "sample": "fx_sfx_113",
+      "events": [],
+      "duration": 202,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_114",
+      "label": "Sfx_Scenario_114 MAHOU SYOUJO",
+      "sample": "fx_sfx_114",
+      "events": [],
+      "duration": 157,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_115",
+      "label": "Sfx_Scenario_115 Take by force",
+      "sample": "fx_sfx_115",
+      "events": [],
+      "duration": 28,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_116",
+      "label": "Sfx_Scenario_116 Save body",
+      "sample": "fx_sfx_116",
+      "events": [],
+      "duration": 66,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_117",
+      "label": "Sfx_Scenario_117 Hit face",
+      "sample": "fx_sfx_117",
+      "events": [],
+      "duration": 20,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_118",
+      "label": "Sfx_Scenario_118 Many books",
+      "sample": "fx_sfx_118",
+      "events": [],
+      "duration": 65,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_119",
+      "label": "Sfx_Scenario_119 Open prison door",
+      "sample": "fx_sfx_119",
+      "events": [],
+      "duration": 45,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_12",
+      "label": "Sfx_Scenario_012 Meat cut",
+      "sample": "fx_sfx_12",
+      "events": [],
+      "duration": 62,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_120",
+      "label": "Sfx_Scenario_120 Crash glass",
+      "sample": "fx_sfx_120",
+      "events": [],
+      "duration": 80,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_121",
+      "label": "Sfx_Scenario_121 Water drop",
+      "sample": "fx_sfx_121",
+      "events": [],
+      "duration": 26,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_122",
+      "label": "Sfx_Scenario_122 Sword whip",
+      "sample": "fx_sfx_122",
+      "events": [],
+      "duration": 13,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_123",
+      "label": "Sfx_Scenario_123 Knife stuck in board",
+      "sample": "fx_sfx_123",
+      "events": [],
+      "duration": 40,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_125",
+      "label": "Sfx_Scenario_125 One_Clap_",
+      "sample": "fx_sfx_125",
+      "events": [],
+      "duration": 173,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_126",
+      "label": "Sfx_Scenario_126 One_Run room",
+      "sample": "fx_sfx_126",
+      "events": [],
+      "duration": 114,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_127",
+      "label": "Sfx_Scenario_127 Hanging",
+      "sample": "fx_sfx_127",
+      "events": [],
+      "duration": 94,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_128",
+      "label": "Sfx_Scenario_128 Loose screw",
+      "sample": "fx_sfx_128",
+      "events": [],
+      "duration": 114,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_129",
+      "label": "Sfx_Scenario_129 Walking up the house stairs",
+      "sample": "fx_sfx_129",
+      "events": [],
+      "duration": 82,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_13",
+      "label": "Sfx_Scenario_013 Head drop",
+      "sample": "fx_sfx_13",
+      "events": [],
+      "duration": 19,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_130",
+      "label": "Sfx_Scenario_130 Running down the house stairs",
+      "sample": "fx_sfx_130",
+      "events": [],
+      "duration": 82,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_131",
+      "label": "Sfx_Scenario_131 Thunder",
+      "sample": "fx_sfx_131",
+      "events": [],
+      "duration": 378,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_133",
+      "label": "Sfx_Scenario_133 Machine gun",
+      "sample": "fx_sfx_133",
+      "events": [],
+      "duration": 116,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_134",
+      "label": "Sfx_Scenario_134 Button key push",
+      "sample": "fx_sfx_134",
+      "events": [],
+      "duration": 62,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_135",
+      "label": "Sfx_Scenario_135 Kusya kusya paper",
+      "sample": "fx_sfx_135",
+      "events": [],
+      "duration": 99,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_136",
+      "label": "Sfx_Scenario_136 Move chair",
+      "sample": "fx_sfx_136",
+      "events": [],
+      "duration": 60,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_137",
+      "label": "Sfx_Scenario_137 Hard open wood door",
+      "sample": "fx_sfx_137",
+      "events": [],
+      "duration": 30,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_14",
+      "label": "Sfx_Scenario_014 Owl barking sound",
+      "sample": "fx_sfx_14",
+      "events": [],
+      "duration": 195,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_140",
+      "label": "Sfx_Scenario_140 Kick bucket&Liquid water",
+      "sample": "fx_sfx_140",
+      "events": [],
+      "duration": 102,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_141",
+      "label": "Sfx_Scenario_141 Scrub the floor",
+      "sample": "fx_sfx_141",
+      "events": [],
+      "duration": 110,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_142",
+      "label": "Sfx_Scenario_142 Bubble",
+      "sample": "fx_sfx_142",
+      "events": [],
+      "duration": 224,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_143",
+      "label": "Sfx_Scenario_143 SYOUKYAKURO ASARU",
+      "sample": "fx_sfx_143",
+      "events": [],
+      "duration": 167,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_144",
+      "label": "Sfx_Scenario_144 Close wood door",
+      "sample": "fx_sfx_144",
+      "events": [],
+      "duration": 30,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_145",
+      "label": "Sfx_Scenario_145 Jumping into water",
+      "sample": "fx_sfx_145",
+      "events": [],
+      "duration": 145,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_146",
+      "label": "Sfx_Scenario_146 Elevator buzzer",
+      "sample": "fx_sfx_146",
+      "events": [],
+      "duration": 66,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_147",
+      "label": "Sfx_Scenario_147 Elevator move_TENBAN",
+      "sample": "fx_sfx_147",
+      "events": [],
+      "duration": 212,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_148",
+      "label": "Sfx_Scenario_148 Break ice",
+      "sample": "fx_sfx_148",
+      "events": [],
+      "duration": 72,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_149",
+      "label": "Sfx_Scenario_149 Small rock fall",
+      "sample": "fx_sfx_149",
+      "events": [],
+      "duration": 143,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_15",
+      "label": "Sfx_Scenario_015 Spray",
+      "sample": "fx_sfx_15",
+      "events": [],
+      "duration": 52,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_150",
+      "label": "Sfx_Scenario_150 Hard falling rock",
+      "sample": "fx_sfx_150",
+      "events": [],
+      "duration": 278,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_151",
+      "label": "Sfx_Scenario_151 Broken pen",
+      "sample": "fx_sfx_151",
+      "events": [],
+      "duration": 72,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_152",
+      "label": "Sfx_Scenario_152 Pen fall on floor",
+      "sample": "fx_sfx_152",
+      "events": [],
+      "duration": 28,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_153",
+      "label": "Sfx_Scenario_153 Strangling sounds",
+      "sample": "fx_sfx_153",
+      "events": [],
+      "duration": 61,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_154",
+      "label": "Helicopter / 1s loop + envelope",
+      "sample": "fx_helicopter",
+      "events": [],
+      "duration": 723,
+      "ambient": false,
+      "envelope": 1,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_156",
+      "label": "Sfx_Scenario_156 Drowning",
+      "sample": "fx_sfx_156",
+      "events": [],
+      "duration": 91,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_157",
+      "label": "Sfx_Scenario_157 Elevator door open",
+      "sample": "fx_sfx_157",
+      "events": [],
+      "duration": 129,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_159",
+      "label": "Sfx_Scenario_159 Hit metal on metal",
+      "sample": "fx_sfx_159",
+      "events": [],
+      "duration": 41,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_16",
+      "label": "Sfx_Scenario_016 Crush apple",
+      "sample": "fx_sfx_16",
+      "events": [],
+      "duration": 64,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_160",
+      "label": "Sfx_Scenario_160 Guard a sword",
+      "sample": "fx_sfx_160",
+      "events": [],
+      "duration": 59,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_161",
+      "label": "Sfx_Scenario_161 Lost Bullet",
+      "sample": "fx_sfx_161",
+      "events": [],
+      "duration": 55,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_162",
+      "label": "Sfx_Scenario_162 Hard heartbeat",
+      "sample": "fx_sfx_162",
+      "events": [],
+      "duration": 58,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_163",
+      "label": "Sfx_Scenario_163 coming foot out door",
+      "sample": "fx_sfx_163",
+      "events": [],
+      "duration": 158,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_164",
+      "label": "Sfx_Scenario_164 Broken tree",
+      "sample": "fx_sfx_164",
+      "events": [],
+      "duration": 37,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_165",
+      "label": "Sfx_Scenario_165 Slow open big door",
+      "sample": "fx_sfx_165",
+      "events": [],
+      "duration": 276,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_167",
+      "label": "Sfx_Scenario_167 Hard hit head",
+      "sample": "fx_sfx_167",
+      "events": [],
+      "duration": 48,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_168",
+      "label": "Sfx_Scenario_168 fall out deadman",
+      "sample": "fx_sfx_168",
+      "events": [],
+      "duration": 123,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_169",
+      "label": "Sfx_Scenario_169 Light off",
+      "sample": "fx_sfx_169",
+      "events": [],
+      "duration": 41,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_17",
+      "label": "Sfx_Scenario_017 Fall to ground 01",
+      "sample": "fx_sfx_17",
+      "events": [],
+      "duration": 69,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_170",
+      "label": "Sfx_Scenario_170 Blood",
+      "sample": "fx_sfx_170",
+      "events": [],
+      "duration": 400,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_171",
+      "label": "Sfx_Scenario_171 Blood shower",
+      "sample": "fx_sfx_171",
+      "events": [],
+      "duration": 321,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_173",
+      "label": "Footsteps 173 / molecules",
+      "sample": null,
+      "events": [
+        {
+          "frame": 8,
+          "sample": "fx_outdoor_2",
+          "volume": 57,
+          "rate": 1024,
+          "hold": 18
+        },
+        {
+          "frame": 24,
+          "sample": "fx_outdoor_2",
+          "volume": 97,
+          "rate": 1024,
+          "hold": 18
+        },
+        {
+          "frame": 44,
+          "sample": "fx_outdoor_3",
+          "volume": 199,
+          "rate": 1024,
+          "hold": 18
+        },
+        {
+          "frame": 62,
+          "sample": "fx_outdoor_2",
+          "volume": 91,
+          "rate": 1024,
+          "hold": 18
+        },
+        {
+          "frame": 82,
+          "sample": "fx_outdoor_3",
+          "volume": 239,
+          "rate": 1024,
+          "hold": 18
+        },
+        {
+          "frame": 105,
+          "sample": "fx_outdoor_2",
+          "volume": 120,
+          "rate": 1024,
+          "hold": 18
+        },
+        {
+          "frame": 121,
+          "sample": "fx_outdoor_3",
+          "volume": 138,
+          "rate": 1024,
+          "hold": 18
+        },
+        {
+          "frame": 139,
+          "sample": "fx_outdoor_3",
+          "volume": 199,
+          "rate": 1024,
+          "hold": 18
+        },
+        {
+          "frame": 158,
+          "sample": "fx_outdoor_3",
+          "volume": 408,
+          "rate": 1024,
+          "hold": 18
+        },
+        {
+          "frame": 178,
+          "sample": "fx_outdoor_2",
+          "volume": 122,
+          "rate": 1024,
+          "hold": 18
+        },
+        {
+          "frame": 198,
+          "sample": "fx_outdoor_3",
+          "volume": 334,
+          "rate": 1024,
+          "hold": 18
+        },
+        {
+          "frame": 217,
+          "sample": "fx_outdoor_2",
+          "volume": 137,
+          "rate": 1024,
+          "hold": 18
+        },
+        {
+          "frame": 238,
+          "sample": "fx_outdoor_1",
+          "volume": 364,
+          "rate": 1024,
+          "hold": 18
+        },
+        {
+          "frame": 258,
+          "sample": "fx_outdoor_2",
+          "volume": 98,
+          "rate": 1024,
+          "hold": 18
+        },
+        {
+          "frame": 290,
+          "sample": "fx_outdoor_1",
+          "volume": 293,
+          "rate": 1024,
+          "hold": 18
+        }
+      ],
+      "duration": 335,
+      "ambient": false,
+      "envelope": 0,
+      "first": 0,
+      "count": 15
+    },
+    {
+      "alias": "Sfx_175",
+      "label": "Sfx_Scenario_175 Break ice2",
+      "sample": "fx_sfx_175",
+      "events": [],
+      "duration": 127,
+      "ambient": false,
+      "envelope": 0,
+      "first": 15,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_176",
+      "label": "Sfx_Scenario_176 Break ice3",
+      "sample": "fx_sfx_176",
+      "events": [],
+      "duration": 49,
+      "ambient": false,
+      "envelope": 0,
+      "first": 15,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_177",
+      "label": "Sfx_Scenario_177 abareru shely2",
+      "sample": "fx_sfx_177",
+      "events": [],
+      "duration": 115,
+      "ambient": false,
+      "envelope": 0,
+      "first": 15,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_178",
+      "label": "Sfx_Scenario_178 Landing sound",
+      "sample": "fx_sfx_178",
+      "events": [],
+      "duration": 30,
+      "ambient": false,
+      "envelope": 0,
+      "first": 15,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_179",
+      "label": "Sfx_Scenario_179 Lie down on bed",
+      "sample": "fx_sfx_179",
+      "events": [],
+      "duration": 94,
+      "ambient": false,
+      "envelope": 0,
+      "first": 15,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_18",
+      "label": "Sfx_Scenario_018 Reject shake hands",
+      "sample": "fx_sfx_18",
+      "events": [],
+      "duration": 8,
+      "ambient": false,
+      "envelope": 0,
+      "first": 15,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_181",
+      "label": "Sfx_Scenario_181 Laughing girl",
+      "sample": "fx_sfx_181",
+      "events": [],
+      "duration": 428,
+      "ambient": false,
+      "envelope": 0,
+      "first": 15,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_183",
+      "label": "Sfx_Scenario_183 Hit whip2",
+      "sample": "fx_sfx_183",
+      "events": [],
+      "duration": 88,
+      "ambient": false,
+      "envelope": 0,
+      "first": 15,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_184",
+      "label": "Sfx_Scenario_184 Hit whip3",
+      "sample": "fx_sfx_184",
+      "events": [],
+      "duration": 92,
+      "ambient": false,
+      "envelope": 0,
+      "first": 15,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_185",
+      "label": "Sfx_Scenario_185 Breaking the iron door",
+      "sample": "fx_sfx_185",
+      "events": [],
+      "duration": 173,
+      "ambient": false,
+      "envelope": 0,
+      "first": 15,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_19",
+      "label": "Sfx_Scenario_019 body fall down",
+      "sample": "fx_sfx_19",
+      "events": [],
+      "duration": 62,
+      "ambient": false,
+      "envelope": 0,
+      "first": 15,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_20",
+      "label": "Sfx_Scenario_020 Crash dish",
+      "sample": "fx_sfx_20",
+      "events": [],
+      "duration": 74,
+      "ambient": false,
+      "envelope": 0,
+      "first": 15,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_22",
+      "label": "Sfx_Scenario_022 Indoor wood open",
+      "sample": "fx_sfx_22",
+      "events": [],
+      "duration": 73,
+      "ambient": false,
+      "envelope": 0,
+      "first": 15,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_23",
+      "label": "Sfx_Scenario_023 Fall from a height",
+      "sample": "fx_sfx_23",
+      "events": [],
+      "duration": 39,
+      "ambient": false,
+      "envelope": 0,
+      "first": 15,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_24",
+      "label": "Sfx_Scenario_024 Silent_waves",
+      "sample": "fx_sfx_24",
+      "events": [],
+      "duration": 252,
+      "ambient": false,
+      "envelope": 0,
+      "first": 15,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_25",
+      "label": "Sfx_Scenario_025 Hit wall",
+      "sample": "fx_sfx_25",
+      "events": [],
+      "duration": 143,
+      "ambient": false,
+      "envelope": 0,
+      "first": 15,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_26",
+      "label": "Sfx_Scenario_026 Chess on the floor",
+      "sample": "fx_sfx_26",
+      "events": [],
+      "duration": 85,
+      "ambient": false,
+      "envelope": 0,
+      "first": 15,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_27",
+      "label": "Sfx_Scenario_027 Hit human",
+      "sample": "fx_sfx_27",
+      "events": [],
+      "duration": 27,
+      "ambient": false,
+      "envelope": 0,
+      "first": 15,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_28",
+      "label": "Sfx_Scenario_028 Camera shutter",
+      "sample": "fx_sfx_28",
+      "events": [],
+      "duration": 28,
+      "ambient": false,
+      "envelope": 0,
+      "first": 15,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_29",
+      "label": "Sfx_Scenario_029 Notification sound",
+      "sample": "fx_sfx_29",
+      "events": [],
+      "duration": 43,
+      "ambient": false,
+      "envelope": 0,
+      "first": 15,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_3",
+      "label": "Sfx_Scenario_003 Monitor",
+      "sample": "fx_sfx_3",
+      "events": [],
+      "duration": 50,
+      "ambient": false,
+      "envelope": 0,
+      "first": 15,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_30",
+      "label": "Sfx_Scenario_030 Fire",
+      "sample": "fx_sfx_30",
+      "events": [],
+      "duration": 40,
+      "ambient": false,
+      "envelope": 0,
+      "first": 15,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_31",
+      "label": "Sfx_Scenario_031 Tea",
+      "sample": "fx_sfx_31",
+      "events": [],
+      "duration": 94,
+      "ambient": false,
+      "envelope": 0,
+      "first": 15,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_32",
+      "label": "Sfx_Scenario_032 Hits wood table",
+      "sample": "fx_sfx_32",
+      "events": [],
+      "duration": 31,
+      "ambient": false,
+      "envelope": 0,
+      "first": 15,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_33",
+      "label": "Bell 033 / glock",
+      "sample": null,
+      "events": [
+        {
+          "frame": 0,
+          "sample": "fx_glock",
+          "rate": 851,
+          "volume": 820,
+          "hold": 366
+        },
+        {
+          "frame": 176,
+          "sample": "fx_glock",
+          "rate": 851,
+          "volume": 820,
+          "hold": 190
+        }
+      ],
+      "duration": 366,
+      "ambient": false,
+      "envelope": 0,
+      "first": 15,
+      "count": 2
+    },
+    {
+      "alias": "Sfx_34",
+      "label": "Sfx_Scenario_034 Panpakapan",
+      "sample": "fx_sfx_34",
+      "events": [],
+      "duration": 123,
+      "ambient": false,
+      "envelope": 0,
+      "first": 17,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_35",
+      "label": "Sfx_Scenario_035 Human heartbeat",
+      "sample": "fx_sfx_35",
+      "events": [],
+      "duration": 291,
+      "ambient": false,
+      "envelope": 0,
+      "first": 17,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_36",
+      "label": "Sfx_Scenario_036 Gear(Reverb)",
+      "sample": "fx_sfx_36",
+      "events": [],
+      "duration": 241,
+      "ambient": false,
+      "envelope": 0,
+      "first": 17,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_37",
+      "label": "Sfx_Scenario_037 Open object",
+      "sample": "fx_sfx_37",
+      "events": [],
+      "duration": 173,
+      "ambient": false,
+      "envelope": 0,
+      "first": 17,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_38",
+      "label": "Sfx_Scenario_038 Gun fire",
+      "sample": "fx_sfx_38",
+      "events": [],
+      "duration": 161,
+      "ambient": false,
+      "envelope": 0,
+      "first": 17,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_39",
+      "label": "Sfx_Scenario_039 Fall bird",
+      "sample": "fx_sfx_39",
+      "events": [],
+      "duration": 22,
+      "ambient": false,
+      "envelope": 0,
+      "first": 17,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_4",
+      "label": "Sfx_Scenario_004 Lock prison",
+      "sample": "fx_sfx_4",
+      "events": [],
+      "duration": 112,
+      "ambient": false,
+      "envelope": 0,
+      "first": 17,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_40",
+      "label": "Bell 040 / glock",
+      "sample": null,
+      "events": [
+        {
+          "frame": 7,
+          "sample": "fx_glock",
+          "rate": 1341,
+          "volume": 273,
+          "hold": 24
+        },
+        {
+          "frame": 31,
+          "sample": "fx_glock",
+          "rate": 1341,
+          "volume": 547,
+          "hold": 24
+        },
+        {
+          "frame": 56,
+          "sample": "fx_glock",
+          "rate": 1341,
+          "volume": 820,
+          "hold": 24
+        },
+        {
+          "frame": 80,
+          "sample": "fx_glock",
+          "rate": 1341,
+          "volume": 820,
+          "hold": 24
+        },
+        {
+          "frame": 104,
+          "sample": "fx_glock",
+          "rate": 1341,
+          "volume": 820,
+          "hold": 24
+        },
+        {
+          "frame": 129,
+          "sample": "fx_glock",
+          "rate": 1341,
+          "volume": 820,
+          "hold": 24
+        },
+        {
+          "frame": 153,
+          "sample": "fx_glock",
+          "rate": 1341,
+          "volume": 820,
+          "hold": 24
+        },
+        {
+          "frame": 177,
+          "sample": "fx_glock",
+          "rate": 1341,
+          "volume": 820,
+          "hold": 24
+        },
+        {
+          "frame": 202,
+          "sample": "fx_glock",
+          "rate": 1341,
+          "volume": 820,
+          "hold": 24
+        },
+        {
+          "frame": 226,
+          "sample": "fx_glock",
+          "rate": 1341,
+          "volume": 820,
+          "hold": 24
+        },
+        {
+          "frame": 250,
+          "sample": "fx_glock",
+          "rate": 1341,
+          "volume": 820,
+          "hold": 24
+        },
+        {
+          "frame": 275,
+          "sample": "fx_glock",
+          "rate": 1341,
+          "volume": 820,
+          "hold": 24
+        },
+        {
+          "frame": 299,
+          "sample": "fx_glock",
+          "rate": 1341,
+          "volume": 820,
+          "hold": 24
+        },
+        {
+          "frame": 323,
+          "sample": "fx_glock",
+          "rate": 1341,
+          "volume": 615,
+          "hold": 24
+        },
+        {
+          "frame": 347,
+          "sample": "fx_glock",
+          "rate": 1341,
+          "volume": 410,
+          "hold": 24
+        },
+        {
+          "frame": 372,
+          "sample": "fx_glock",
+          "rate": 1341,
+          "volume": 205,
+          "hold": 24
+        }
+      ],
+      "duration": 407,
+      "ambient": false,
+      "envelope": 0,
+      "first": 17,
+      "count": 16
+    },
+    {
+      "alias": "Sfx_41",
+      "label": "Sfx_Scenario_041 Pull up the curtains",
+      "sample": "fx_sfx_41",
+      "events": [],
+      "duration": 205,
+      "ambient": false,
+      "envelope": 0,
+      "first": 33,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_42",
+      "label": "Sfx_Scenario_042 Book on desk",
+      "sample": "fx_sfx_42",
+      "events": [],
+      "duration": 18,
+      "ambient": false,
+      "envelope": 0,
+      "first": 33,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_43",
+      "label": "Sfx_Scenario_043 Turn page book",
+      "sample": "fx_sfx_43",
+      "events": [],
+      "duration": 133,
+      "ambient": false,
+      "envelope": 0,
+      "first": 33,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_45",
+      "label": "Sfx_Scenario_045 Brokem cloth",
+      "sample": "fx_sfx_45",
+      "events": [],
+      "duration": 16,
+      "ambient": false,
+      "envelope": 0,
+      "first": 33,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_46",
+      "label": "Sfx_Scenario_046 Fire bang",
+      "sample": "fx_sfx_46",
+      "events": [],
+      "duration": 68,
+      "ambient": false,
+      "envelope": 0,
+      "first": 33,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_47",
+      "label": "Sfx_Scenario_047 Shower",
+      "sample": "fx_sfx_47",
+      "events": [],
+      "duration": 304,
+      "ambient": false,
+      "envelope": 0,
+      "first": 33,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_49",
+      "label": "Footsteps 49 / molecules",
+      "sample": null,
+      "events": [
+        {
+          "frame": 0,
+          "sample": "fx_underground_3",
+          "volume": 222,
+          "rate": 1024,
+          "hold": 18
+        },
+        {
+          "frame": 22,
+          "sample": "fx_underground_3",
+          "volume": 274,
+          "rate": 1024,
+          "hold": 18
+        },
+        {
+          "frame": 47,
+          "sample": "fx_underground_1",
+          "volume": 274,
+          "rate": 1024,
+          "hold": 18
+        },
+        {
+          "frame": 62,
+          "sample": "fx_underground_3",
+          "volume": 340,
+          "rate": 1024,
+          "hold": 18
+        },
+        {
+          "frame": 80,
+          "sample": "fx_underground_1",
+          "volume": 371,
+          "rate": 1024,
+          "hold": 18
+        },
+        {
+          "frame": 100,
+          "sample": "fx_underground_3",
+          "volume": 279,
+          "rate": 1024,
+          "hold": 18
+        }
+      ],
+      "duration": 123,
+      "ambient": false,
+      "envelope": 0,
+      "first": 33,
+      "count": 6
+    },
+    {
+      "alias": "Sfx_5",
+      "label": "Sfx_Scenario_005 Hikizuru oto",
+      "sample": "fx_sfx_5",
+      "events": [],
+      "duration": 197,
+      "ambient": false,
+      "envelope": 0,
+      "first": 39,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_50",
+      "label": "Sfx_Scenario_050 Punch ground",
+      "sample": "fx_sfx_50",
+      "events": [],
+      "duration": 13,
+      "ambient": false,
+      "envelope": 0,
+      "first": 39,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_51",
+      "label": "Footsteps 51 / molecules",
+      "sample": null,
+      "events": [
+        {
+          "frame": 2,
+          "sample": "fx_underground_2",
+          "volume": 75,
+          "rate": 1024,
+          "hold": 18
+        },
+        {
+          "frame": 17,
+          "sample": "fx_underground_3",
+          "volume": 243,
+          "rate": 1024,
+          "hold": 18
+        },
+        {
+          "frame": 39,
+          "sample": "fx_underground_2",
+          "volume": 187,
+          "rate": 1024,
+          "hold": 18
+        },
+        {
+          "frame": 60,
+          "sample": "fx_underground_2",
+          "volume": 213,
+          "rate": 1024,
+          "hold": 18
+        },
+        {
+          "frame": 80,
+          "sample": "fx_underground_1",
+          "volume": 322,
+          "rate": 1024,
+          "hold": 18
+        },
+        {
+          "frame": 100,
+          "sample": "fx_underground_3",
+          "volume": 297,
+          "rate": 1024,
+          "hold": 18
+        }
+      ],
+      "duration": 123,
+      "ambient": false,
+      "envelope": 0,
+      "first": 39,
+      "count": 6
+    },
+    {
+      "alias": "Sfx_52",
+      "label": "Sfx_Scenario_052 Broken handcuffs",
+      "sample": "fx_sfx_52",
+      "events": [],
+      "duration": 59,
+      "ambient": false,
+      "envelope": 0,
+      "first": 45,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_53",
+      "label": "Sfx_Scenario_053 Slashing anan",
+      "sample": "fx_sfx_53",
+      "events": [],
+      "duration": 332,
+      "ambient": false,
+      "envelope": 0,
+      "first": 45,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_54",
+      "label": "Train 054 / shared fade",
+      "sample": "fx_train",
+      "events": [],
+      "duration": 639,
+      "ambient": false,
+      "envelope": 0,
+      "first": 45,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_55",
+      "label": "Sfx_Scenario_055 Bushes sound",
+      "sample": "fx_sfx_55",
+      "events": [],
+      "duration": 78,
+      "ambient": false,
+      "envelope": 0,
+      "first": 45,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_56",
+      "label": "Sfx_Scenario_056 High speed thread",
+      "sample": "fx_sfx_56",
+      "events": [],
+      "duration": 49,
+      "ambient": false,
+      "envelope": 0,
+      "first": 45,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_57",
+      "label": "Bell 057 / vibra",
+      "sample": null,
+      "events": [
+        {
+          "frame": 0,
+          "sample": "fx_vibra",
+          "rate": 697,
+          "volume": 820,
+          "hold": 80
+        },
+        {
+          "frame": 60,
+          "sample": "fx_vibra",
+          "rate": 880,
+          "volume": 820,
+          "hold": 80
+        },
+        {
+          "frame": 119,
+          "sample": "fx_vibra",
+          "rate": 783,
+          "volume": 820,
+          "hold": 80
+        },
+        {
+          "frame": 179,
+          "sample": "fx_vibra",
+          "rate": 523,
+          "volume": 820,
+          "hold": 159
+        },
+        {
+          "frame": 299,
+          "sample": "fx_vibra",
+          "rate": 697,
+          "volume": 820,
+          "hold": 80
+        },
+        {
+          "frame": 358,
+          "sample": "fx_vibra",
+          "rate": 783,
+          "volume": 820,
+          "hold": 80
+        },
+        {
+          "frame": 418,
+          "sample": "fx_vibra",
+          "rate": 880,
+          "volume": 820,
+          "hold": 80
+        },
+        {
+          "frame": 478,
+          "sample": "fx_vibra",
+          "rate": 697,
+          "volume": 820,
+          "hold": 80
+        }
+      ],
+      "duration": 603,
+      "ambient": false,
+      "envelope": 0,
+      "first": 45,
+      "count": 8
+    },
+    {
+      "alias": "Sfx_58",
+      "label": "Sfx_Scenario_058 Run corridor",
+      "sample": "fx_sfx_58",
+      "events": [],
+      "duration": 227,
+      "ambient": false,
+      "envelope": 0,
+      "first": 53,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_59",
+      "label": "Sfx_Scenario_059 Digging sound",
+      "sample": "fx_sfx_59",
+      "events": [],
+      "duration": 294,
+      "ambient": false,
+      "envelope": 0,
+      "first": 53,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_6",
+      "label": "Sfx_Scenario_006 Fall down",
+      "sample": "fx_sfx_6",
+      "events": [],
+      "duration": 111,
+      "ambient": false,
+      "envelope": 0,
+      "first": 53,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_60",
+      "label": "Sfx_Scenario_060 Drop smart phone",
+      "sample": "fx_sfx_60",
+      "events": [],
+      "duration": 63,
+      "ambient": false,
+      "envelope": 0,
+      "first": 53,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_61",
+      "label": "Sfx_Scenario_061 Push book stand shely",
+      "sample": "fx_sfx_61",
+      "events": [],
+      "duration": 95,
+      "ambient": false,
+      "envelope": 0,
+      "first": 53,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_62",
+      "label": "Sfx_Scenario_062 Open meatl door",
+      "sample": "fx_sfx_62",
+      "events": [],
+      "duration": 45,
+      "ambient": false,
+      "envelope": 0,
+      "first": 53,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_64",
+      "label": "Sfx_Scenario_064 Move noise in the warehouse",
+      "sample": "fx_sfx_64",
+      "events": [],
+      "duration": 38,
+      "ambient": false,
+      "envelope": 0,
+      "first": 53,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_65",
+      "label": "Sfx_Scenario_065 Hard hit punch ground",
+      "sample": "fx_sfx_65",
+      "events": [],
+      "duration": 182,
+      "ambient": false,
+      "envelope": 0,
+      "first": 53,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_66",
+      "label": "Sfx_Scenario_066 Touch paper",
+      "sample": "fx_sfx_66",
+      "events": [],
+      "duration": 18,
+      "ambient": false,
+      "envelope": 0,
+      "first": 53,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_68",
+      "label": "Sfx_Scenario_068 Arrival elevator",
+      "sample": "fx_sfx_68",
+      "events": [],
+      "duration": 95,
+      "ambient": false,
+      "envelope": 0,
+      "first": 53,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_7",
+      "label": "Sfx_Scenario_007 Go up the stairs(Reverb)",
+      "sample": "fx_sfx_7",
+      "events": [],
+      "duration": 222,
+      "ambient": false,
+      "envelope": 0,
+      "first": 53,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_70",
+      "label": "Sfx_Scenario_070 Multiple_Run pathway",
+      "sample": "fx_sfx_70",
+      "events": [],
+      "duration": 100,
+      "ambient": false,
+      "envelope": 0,
+      "first": 53,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_71",
+      "label": "Footsteps 71 / molecules",
+      "sample": null,
+      "events": [
+        {
+          "frame": 8,
+          "sample": "fx_outdoor_3",
+          "volume": 432,
+          "rate": 1024,
+          "hold": 18
+        },
+        {
+          "frame": 27,
+          "sample": "fx_outdoor_2",
+          "volume": 169,
+          "rate": 1024,
+          "hold": 18
+        },
+        {
+          "frame": 49,
+          "sample": "fx_outdoor_3",
+          "volume": 381,
+          "rate": 1024,
+          "hold": 18
+        },
+        {
+          "frame": 68,
+          "sample": "fx_outdoor_2",
+          "volume": 165,
+          "rate": 1024,
+          "hold": 18
+        },
+        {
+          "frame": 87,
+          "sample": "fx_outdoor_1",
+          "volume": 426,
+          "rate": 1024,
+          "hold": 18
+        },
+        {
+          "frame": 106,
+          "sample": "fx_outdoor_2",
+          "volume": 158,
+          "rate": 1024,
+          "hold": 18
+        },
+        {
+          "frame": 121,
+          "sample": "fx_outdoor_3",
+          "volume": 207,
+          "rate": 1024,
+          "hold": 18
+        },
+        {
+          "frame": 141,
+          "sample": "fx_outdoor_1",
+          "volume": 408,
+          "rate": 1024,
+          "hold": 18
+        },
+        {
+          "frame": 158,
+          "sample": "fx_outdoor_3",
+          "volume": 494,
+          "rate": 1024,
+          "hold": 18
+        },
+        {
+          "frame": 178,
+          "sample": "fx_outdoor_2",
+          "volume": 155,
+          "rate": 1024,
+          "hold": 18
+        },
+        {
+          "frame": 198,
+          "sample": "fx_outdoor_2",
+          "volume": 174,
+          "rate": 1024,
+          "hold": 18
+        },
+        {
+          "frame": 217,
+          "sample": "fx_outdoor_2",
+          "volume": 185,
+          "rate": 1024,
+          "hold": 18
+        },
+        {
+          "frame": 238,
+          "sample": "fx_outdoor_3",
+          "volume": 422,
+          "rate": 1024,
+          "hold": 18
+        },
+        {
+          "frame": 251,
+          "sample": "fx_outdoor_2",
+          "volume": 147,
+          "rate": 1024,
+          "hold": 18
+        },
+        {
+          "frame": 268,
+          "sample": "fx_outdoor_2",
+          "volume": 140,
+          "rate": 1024,
+          "hold": 18
+        },
+        {
+          "frame": 290,
+          "sample": "fx_outdoor_1",
+          "volume": 364,
+          "rate": 1024,
+          "hold": 18
+        }
+      ],
+      "duration": 316,
+      "ambient": false,
+      "envelope": 0,
+      "first": 53,
+      "count": 16
+    },
+    {
+      "alias": "Sfx_72",
+      "label": "Sfx_Scenario_072 One_Footsteps leaving",
+      "sample": "fx_sfx_72",
+      "events": [],
+      "duration": 197,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_73",
+      "label": "Sfx_Scenario_073 One_approaching footsteps_V2_",
+      "sample": "fx_sfx_73",
+      "events": [],
+      "duration": 197,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_74",
+      "label": "Sfx_Scenario_074 Noise",
+      "sample": "fx_sfx_74",
+      "events": [],
+      "duration": 299,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_75",
+      "label": "Sfx_Scenario_075 Hard_open door",
+      "sample": "fx_sfx_75",
+      "events": [],
+      "duration": 95,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_76",
+      "label": "Sfx_Scenario_076 Pushing back",
+      "sample": "fx_sfx_76",
+      "events": [],
+      "duration": 15,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_77",
+      "label": "Sfx_Scenario_077 Hit door",
+      "sample": "fx_sfx_77",
+      "events": [],
+      "duration": 100,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_78",
+      "label": "Sfx_Scenario_078 Far foot sound",
+      "sample": "fx_sfx_78",
+      "events": [],
+      "duration": 186,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_79",
+      "label": "Sfx_Scenario_079 Hit metal",
+      "sample": "fx_sfx_79",
+      "events": [],
+      "duration": 98,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_8",
+      "label": "Sfx_Scenario_008 Owl flapping sound",
+      "sample": "fx_sfx_8",
+      "events": [],
+      "duration": 204,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_81",
+      "label": "Sfx_Scenario_081 Fall human",
+      "sample": "fx_sfx_81",
+      "events": [],
+      "duration": 258,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_82",
+      "label": "Sfx_Scenario_082 Meet cook",
+      "sample": "fx_sfx_82",
+      "events": [],
+      "duration": 187,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_83",
+      "label": "Sfx_Scenario_083 Cooking stew",
+      "sample": "fx_sfx_83",
+      "events": [],
+      "duration": 187,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_84",
+      "label": "Sfx_Scenario_084 TONKATSU",
+      "sample": "fx_sfx_84",
+      "events": [],
+      "duration": 58,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_85",
+      "label": "Sfx_Scenario_085 Hit punch human",
+      "sample": "fx_sfx_85",
+      "events": [],
+      "duration": 43,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_86",
+      "label": "Sfx_Scenario_086 Push switch",
+      "sample": "fx_sfx_86",
+      "events": [],
+      "duration": 20,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_89",
+      "label": "Sfx_Scenario_089 Be stuck GUSA!!",
+      "sample": "fx_sfx_89",
+      "events": [],
+      "duration": 36,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_9",
+      "label": "Sfx_Scenario_009 Swing down",
+      "sample": "fx_sfx_9",
+      "events": [],
+      "duration": 26,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_90",
+      "label": "Sfx_Scenario_090 Multiple_Be stuck GUSA!!",
+      "sample": "fx_sfx_90",
+      "events": [],
+      "duration": 49,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_92",
+      "label": "Sfx_Scenario_092 Land mine switch",
+      "sample": "fx_sfx_92",
+      "events": [],
+      "duration": 10,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_93",
+      "label": "Sfx_Scenario_093 Explosion",
+      "sample": "fx_sfx_93",
+      "events": [],
+      "duration": 178,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_94",
+      "label": "Sfx_Scenario_094 HURIKO YAIBA",
+      "sample": "fx_sfx_94",
+      "events": [],
+      "duration": 134,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_95",
+      "label": "Sfx_Scenario_095 Belt",
+      "sample": "fx_sfx_95",
+      "events": [],
+      "duration": 127,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_96",
+      "label": "Sfx_Scenario_096 Smartphone hit floor",
+      "sample": "fx_sfx_96",
+      "events": [],
+      "duration": 28,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_97",
+      "label": "Sfx_Scenario_097 Slow foot step",
+      "sample": "fx_sfx_97",
+      "events": [],
+      "duration": 266,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_98",
+      "label": "Sfx_Scenario_098 Lever GACHAKON",
+      "sample": "fx_sfx_98",
+      "events": [],
+      "duration": 36,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_99",
+      "label": "Sfx_Scenario_099 Electric",
+      "sample": "fx_sfx_99",
+      "events": [],
+      "duration": 132,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_Common_1",
+      "label": "Sfx_Common_001 Notice1",
+      "sample": "fx_sfx_common_1",
+      "events": [],
+      "duration": 64,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_Common_2",
+      "label": "Sfx_Common_002 Notice2",
+      "sample": "fx_sfx_common_2",
+      "events": [],
+      "duration": 39,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_Common_3",
+      "label": "Sfx_Common_003 Decision",
+      "sample": "fx_sfx_common_3",
+      "events": [],
+      "duration": 59,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_Common_4",
+      "label": "Sfx_Common_004 Hit",
+      "sample": "fx_sfx_common_4",
+      "events": [],
+      "duration": 22,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_Common_5",
+      "label": "Sfx_Common_005 Conversion",
+      "sample": "fx_sfx_common_5",
+      "events": [],
+      "duration": 73,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_Common_6",
+      "label": "Sfx_Common_006 Be shocked",
+      "sample": "fx_sfx_common_6",
+      "events": [],
+      "duration": 68,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_Common_7",
+      "label": "Sfx_Common_007 Negative down",
+      "sample": "fx_sfx_common_7",
+      "events": [],
+      "duration": 45,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_CutIn_Crack_01",
+      "label": "Crack_01 / objection cut-in",
+      "sample": "fx_cutin_crack_01",
+      "events": [],
+      "duration": 53,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_CutIn_Crack_02",
+      "label": "Crack_02 / objection cut-in",
+      "sample": "fx_cutin_crack_02",
+      "events": [],
+      "duration": 124,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_System_Alert_001",
+      "label": "Sfx_System_Alert_001",
+      "sample": "fx_sfx_system_alert_001",
+      "events": [],
+      "duration": 4,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_System_Cancel_001",
+      "label": "Sfx_System_Cancel_001",
+      "sample": "fx_sfx_system_cancel_001",
+      "events": [],
+      "duration": 14,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_System_Choice_001",
+      "label": "Sfx_System_Choice_001",
+      "sample": "fx_sfx_system_choice_001",
+      "events": [],
+      "duration": 138,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_System_Choice_002a",
+      "label": "Sfx_System_Choice_002a",
+      "sample": "fx_sfx_system_choice_002a",
+      "events": [],
+      "duration": 28,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_System_Choice_002b",
+      "label": "Sfx_System_Choice_002b",
+      "sample": "fx_sfx_system_choice_002b",
+      "events": [],
+      "duration": 34,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_System_Choice_002c",
+      "label": "Sfx_System_Choice_002c",
+      "sample": "fx_sfx_system_choice_002c",
+      "events": [],
+      "duration": 17,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_System_Choice_003b",
+      "label": "Sfx_System_Choice_003b",
+      "sample": "fx_sfx_system_choice_003b",
+      "events": [],
+      "duration": 15,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_System_Choice_003c",
+      "label": "Sfx_System_Choice_003c",
+      "sample": "fx_sfx_system_choice_003c",
+      "events": [],
+      "duration": 15,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_System_CloseBook_001",
+      "label": "Sfx_System_CloseBook_001",
+      "sample": "fx_sfx_system_closebook_001",
+      "events": [],
+      "duration": 23,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_System_Close_001",
+      "label": "Sfx_System_Close_001",
+      "sample": "fx_sfx_system_close_001",
+      "events": [],
+      "duration": 6,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_System_ExecuteButton_001",
+      "label": "Sfx_System_ExecuteButton_001",
+      "sample": "fx_sfx_system_executebutton_001",
+      "events": [],
+      "duration": 592,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_System_ExecuteButton_002",
+      "label": "Sfx_System_ExecuteButton_002",
+      "sample": "fx_sfx_system_executebutton_002",
+      "events": [],
+      "duration": 101,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_System_LoadData_001",
+      "label": "Sfx_System_LoadData_001",
+      "sample": "fx_sfx_system_loaddata_001",
+      "events": [],
+      "duration": 135,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_System_Move_001",
+      "label": "Sfx_System_Move_001",
+      "sample": "fx_sfx_system_move_001",
+      "events": [],
+      "duration": 11,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_System_ObtainItem_001a",
+      "label": "Sfx_System_ObtainItem_001a",
+      "sample": "fx_sfx_system_obtainitem_001a",
+      "events": [],
+      "duration": 59,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_System_ObtainItem_001b",
+      "label": "Sfx_System_ObtainItem_001b",
+      "sample": "fx_sfx_system_obtainitem_001b",
+      "events": [],
+      "duration": 59,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_System_OpenBook_001",
+      "label": "Sfx_System_OpenBook_001",
+      "sample": "fx_sfx_system_openbook_001",
+      "events": [],
+      "duration": 36,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_System_Open_001",
+      "label": "Sfx_System_Open_001",
+      "sample": "fx_sfx_system_open_001",
+      "events": [],
+      "duration": 4,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_System_SaveData_001",
+      "label": "Sfx_System_SaveData_001",
+      "sample": "fx_sfx_system_savedata_001",
+      "events": [],
+      "duration": 136,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_System_SaveData_001_2x",
+      "label": "Sfx_System_SaveData_001_2x",
+      "sample": "fx_sfx_system_savedata_001_2x",
+      "events": [],
+      "duration": 68,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_System_StartGame_001",
+      "label": "Sfx_System_StartGame_001",
+      "sample": "fx_sfx_system_startgame_001",
+      "events": [],
+      "duration": 200,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_System_Submit_001",
+      "label": "Sfx_System_Submit_001",
+      "sample": "fx_sfx_system_submit_001",
+      "events": [],
+      "duration": 6,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_System_Submit_003a",
+      "label": "Sfx_System_Submit_003a",
+      "sample": "fx_sfx_system_submit_003a",
+      "events": [],
+      "duration": 6,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_System_Tab_001a",
+      "label": "Sfx_System_Tab_001a",
+      "sample": "fx_sfx_system_tab_001a",
+      "events": [],
+      "duration": 8,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    },
+    {
+      "alias": "Sfx_System_Tab_001b",
+      "label": "Sfx_System_Tab_001b",
+      "sample": "fx_sfx_system_tab_001b",
+      "events": [],
+      "duration": 10,
+      "ambient": false,
+      "envelope": 0,
+      "first": 69,
+      "count": 0
+    }
+  ],
+  "cutin_events": [
+    {
+      "frame": 45,
+      "alias": "Sfx_CutIn_Crack_01",
+      "volume": 1024
+    },
+    {
+      "frame": 75,
+      "alias": "Sfx_CutIn_Crack_02",
+      "volume": 1024
+    }
+  ],
+  "script_alias_overrides": {
+    "Sfx_87": "Sfx_12"
+  }
+}

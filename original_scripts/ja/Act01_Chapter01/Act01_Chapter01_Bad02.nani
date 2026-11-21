@@ -1,0 +1,345 @@
+@if isDebugDirectJump
+	@Gosub System/System_Subroutine.BeginAdv
+	@back Transparent { time:0 }
+
+# ========================================
+# ＞『看守とアリサの後を追った』を選択
+# ========================================
+
+# ========================================
+# ＞シーン1-1-b2へ
+# ========================================
+
+# Scene1-1-b2
+
+# ========================================
+# ●シーン1-1-b2
+# ========================================
+
+@hide Alisa-Front,MainBackground-Front,Ema-Middle
+@despawn MaskingRectangle
+@Wait 0.8
+
+@back 2_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@hide MainBackground-Front,MainBackground-Middle
+@bgm Bgm_35_1
+
+@print 看守とアリサの後を追った。 { speed:1 waitInput:true Wait:true }
+
+@print マップで、通路の先が懲罰房だと確認する。 { speed:1 waitInput:true Wait:true }
+
+@print （アリサちゃんは何か、<br>　規則を破ったのかもしれない） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （出てやるって言ってたし……<br>　脱走しようとして、捕まったのかも） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （懲罰房って……<br>　やっぱり、ひどいことされるのかな） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print もしかしたら、ヒロのように―― { speed:1 waitInput:true Wait:true }
+
+@print 血に染まったラウンジを思い出して、<br>エマは身を震わせる。 { speed:1 waitInput:true Wait:true }
+
+@print （大丈夫だよね……<br>　アリサちゃん、暴れたりはしてなかったし） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+
+@print きっと、殺されはしないはず。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマは自分に言い聞かせるように<ruby=\"つぶや\">呟</ruby>いた。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.2
+
+@back 3_2 { time:0 }
+@Wait 0.9
+@back Transparent.Custom { time:0.99 }
+@WaitForNextFrame 
+
+@animate MainBackground
+@Wait 1.5
+
+@print （ここが懲罰房……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "南京錠で閉ざされた重厚な扉が、ずらりと並んでいた。<br>囚人の房よりも、一段と空気が<ruby=\"よど\">澱</ruby>んでいる。" { speed:1 waitInput:true Wait:true }
+
+@print 通路にはエマ以外、誰の姿もなかった。<br>アリサはすでにもう、扉の向こうに<br>入れられてしまったのかもしれない。 { speed:1 waitInput:true Wait:true }
+
+@print アリサちゃん……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print か細く震える声で、エマはアリサの名前を呼んだ。 { speed:1 waitInput:true Wait:true }
+
+@print たとえどこかにアリサがいたとしても、<br>届くような声量じゃない。 { speed:1 waitInput:true Wait:true }
+
+@print 当然、返事はなかったが―― { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@back 3_2 { Scale:{g_backgroundDefaultScale} }
+
+# 扉が勢いよく開く音
+@sfx Sfx_75
+
+@print ひっ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@camera { time:0.9 }
+@Wait 0.9
+
+@print エマのすぐ目の前にある懲罰房の扉が、<br>激しい音を立てて開かれた。 { speed:1 waitInput:true Wait:true }
+
+@print 中から誰か出てくるのかと、エマは身構える。 { speed:1 waitInput:true Wait:true }
+
+@print …………。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print だが、しばらく経っても誰かが<br>出てくるような気配はない。 { speed:1 waitInput:true Wait:true }
+
+@print ……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "不審に思ったエマは扉に近付き、<br>おそるおそるといった風に室内を<ruby=\"のぞ\">覗</ruby>いた。" { speed:1 waitInput:true Wait:true }
+
+@print ！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 上げそうになった声を押し殺すため、<br>エマは手で口を塞いだ。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@camera { time:0.9 }
+@Wait 0.9
+
+@print 懲罰房の中にある禍々しい道具類に戦慄し、後ずさる。 { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# 背中を押す音
+@sfx Sfx_76
+
+@print え？ { author:Ema speed:1 waitInput:true Wait:true }
+
+# 転ぶ音
+@sfx Sfx_6
+@back 21_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@print 背後から押されて、エマは懲罰房の中に転がった。<br>振り向いた視線の先で、扉が閉まっていく。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+
+@print ま、待って！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# 牢の施錠音
+@sfx Sfx_4
+
+@bgm Bgm_20_1
+
+@print 慌てて起き上がったエマの眼前で、<br>懲罰房の扉は重々しく閉ざされた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+
+@print "開けてよ！ なんでボクを閉じ込めるの！？" { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマの叫びに、答えは返ってこない。 { speed:1 waitInput:true Wait:true }
+
+@back SolidColor
+
+@print 『閉じ込められた』という状況が、<br>エマの脳裏に嫌な思い出を呼び起こしていた。 { speed:1 waitInput:true Wait:true }
+
+@print 中学時代、トイレの個室や体育倉庫に閉じ込められて―― { speed:1 waitInput:true Wait:true }
+
+@print トイレでは、上から水やゴミをかけられていた。 { speed:1 waitInput:true Wait:true }
+
+@print 体育倉庫では、何時間も外に出してもらえなかった。 { speed:1 waitInput:true Wait:true }
+
+# 少女たちのくすくす笑う声
+@bgm Ambi_11_1
+
+@print 悪意に満ちた嘲笑は、<br>今でもエマの耳にこびりついて離れない。 { speed:1 waitInput:true Wait:true }
+
+@print やめて。 { speed:1 waitInput:true Wait:true }
+
+@print やめてやめてやめてやめてやめて！ { speed:1 waitInput:true Wait:true }
+
+@back Transparent { time:0.2 }
+@Wait 0.2
+
+# 扉を叩く音
+@sfx Sfx_77
+
+@print "開けて！ どうしてこんなことするんだよ！" { author:Ema speed:1 waitInput:true Wait:true }
+
+# 扉を叩く音
+@sfx Sfx_77
+
+@print エマがいくら叫んでも、<br>扉が開かれることはなかった―― { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+@StopBgm 
+
+@back SolidColor { time:1 }
+@Wait 1.2
+
+@back Transparent { time:1.2 }
+@Wait 1.2
+
+@print エマは懲罰房の床に力なく横たわっていた。 { speed:1 waitInput:true Wait:true }
+
+@print （……どのくらい経ったのかな） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 閉じ込められてから、どれだけ時間が<br>流れたのだろうかと考える。 { speed:1 waitInput:true Wait:true }
+
+@print スマホは何故かこの懲罰房では電源が入らず、<br>使用できなかった。 { speed:1 waitInput:true Wait:true }
+
+# 扉越しの足音
+@sfx Sfx_78
+
+@print ！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 扉の向こうで足音が聞こえた気がした。 { speed:1 waitInput:true Wait:true }
+
+@print "エマは力を振り絞って立ち上がり、<br>扉に<ruby=\"すが\">縋</ruby>りつくようにして耳をそばだてる。" { speed:1 waitInput:true Wait:true }
+
+# ボイス加工：ドア越しの声
+@print なんなんですのここ……<br>やけに空気が重苦しくありません？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+# ボイス加工：ドア越しの声
+@print "そうですか？ 私は特に感じませんけど。" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print （ハンナちゃん、シェリーちゃん！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 絶望感に囚われていたエマに、一筋の光が差し込んだ。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3,ArmL7
+
+@print "助けて！ お願い！ ここから出して！" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "扉にある<ruby=\"のぞ\">覗</ruby>き窓から、エマは必死に叫ぶ。" { speed:1 waitInput:true Wait:true }
+
+@print "ハンナちゃん！ シェリーちゃん！ ここだよ！" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "すると声に気がついたのか、<br>２人はエマがいる房に歩み寄ってくる。<br>そして、シェリーが中を<ruby=\"のぞ\">覗</ruby>き込んだ。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3,ArmL7
+
+@print "シェリーちゃん！ よかったぁ……！<br>よくわからないけどボク、閉じ込められちゃって……。" { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマは違和感を覚えて、言葉を止めた。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@animate MainBackground
+@spawn MaskingRectangle
+@back 3_2
+@blur MainBackground-Front
+@char Sherry.Normal1 { time:0 }
+@mask MainBackground-Front,Sherry-Front
+@animate MainBackground-Front
+@animate Sherry-Front
+@Wait 0.4
+
+# ボイス加工：ドア越しの声
+@print う～～～～ん……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print "シェリーは間違いなく室内を<ruby=\"のぞ\">覗</ruby>き込んでいる。<br>ところが、その目はまるで<br>エマの存在に気付いていないかのようだった。" { speed:1 waitInput:true Wait:true }
+
+@print なん……で……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+# ボイス加工：ドア越しの声
+@print どうしましたの？<br>もしや、中に誰かいるとか……！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+# ボイス加工：ドア越しの声
+@print いいえ、誰もいませんねぇ～。<br>なんとも、えぐい道具はありますけど。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hide Sherry-Front,MainBackground-Front
+@blur MainBackground-Front
+@despawn MaskingRectangle
+@Wait 0.3
+
+# 扉越しの足音
+@sfx Sfx_78
+
+@print シェリーとハンナは扉から離れて、<br>そのまま立ち去っていく。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3,ArmL7
+
+@print "そんな……待ってよ！<br>シェリーちゃん！ ハンナちゃん！" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "見えてるでしょ！？ 聞こえてるでしょ！？<br>ボクはここにいるんだよ！" { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL7
+
+@print なんで……どうして……？<br>あんなのまるで……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 無視されているみたいだった。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR6,ArmL6
+@print ここに……いるのに……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@bgm Ambi_11_1
+
+@print "エマは頭の奥で、少女たちの声を聞いた。<br>こちらを<ruby=\"おとし\">貶</ruby>めるかのような笑い声が、頭の中で反響する。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Cry1,ArmR11,ArmL15
+
+@print うるさい……<br>うるさいうるさいうるさいうるさいうるさい！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 笑い声はやがて、エマを責め立てる言葉に変わっていく。 { speed:1 waitInput:true Wait:true }
+
+@print "やめてよ！ ボクは悪くない……ボクはっ！" { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "エマは手近にあった拷問器具を手に取り、<br>懲罰房の扉を何度も<ruby=\"たた\">叩</ruby>いた。" { speed:1 waitInput:true Wait:true }
+
+# 金属を叩く音
+@sfx Sfx_79
+
+@print あぁぁぁぁぁっ！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@StopBgm { fade:2 }
+
+@print 不意に、エマは理解した。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1
+
+@print 自分はみんなに、世界に嫌われている。<br>こんなにも嫌われるような自分はきっと―― { speed:1 waitInput:true Wait:true }
+
+@print 死んだほうがいい。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3,ArmL1 { time:1.2 }
+@Wait 1.5
+
+@print …………。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 手にした拷問器具をじっと見つめて、<br>エマは笑みを浮かべた。 { speed:1 waitInput:true Wait:true }
+
+@print "先の鋭く<ruby=\"とが\">尖</ruby>った、鉄の棒――" { speed:1 waitInput:true Wait:true }
+
+@print ちょうどいいや。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@hideChars 
+
+@back SolidColor
+@Wait 1.5
+
+# ぶんっと武器が振り下ろされる音
+@sfx Sfx_9
+
+@back SolidColor
+
+# ざんっと肉が切れる音
+@sfx Sfx_12
+
+@Wait 1.2
+
+# ========================================
+# 『END～寂寞～』
+# ========================================
+
+@badEnd 2

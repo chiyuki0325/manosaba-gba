@@ -1,0 +1,66 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+@back Transparent { time:1.2 }
+
+# Scene1-2-19
+
+# ========================================
+# ●シーン1‐2-19
+# ========================================
+
+# ========================================
+# マップイベント用分岐
+# ========================================
+
+# ========================================
+# 【ＭＡＰイベント】牢屋敷マップ
+#
+# 死体現場＞シーン1‐2‐20
+# ラウンジ＞シーン1‐2‐21
+# 娯楽室＞シーン1‐2‐22
+# ミリアの監房＞シーン1‐2‐23
+# シャワールーム＞シーン1-2-24
+# 玄関ホール＞シーン1‐2‐25
+# ※全てのＭＡＰイベントを選択したら終了。
+# 選択済みの場所は消していってください。
+# ========================================
+
+@if "chosenAreaFlag == 63"
+	@set "chosenAreaFlag = 0"
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter02/Act01_Chapter02_Adv26
+
+@map SolitaryConfinement,Lounge,RecreationRoom,BasementHallway,Showers,EntranceHall SolitaryConfinement,Lounge,RecreationRoom,BasementHallway,Showers,EntranceHall
+
+@if "chosenAreaId==\"SolitaryConfinement\""
+	@setFlag 0
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter02/Act01_Chapter02_Adv20
+
+@if "chosenAreaId==\"Lounge\""
+	@setFlag 1
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter02/Act01_Chapter02_Adv21
+
+@if "chosenAreaId==\"RecreationRoom\""
+	@setFlag 2
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter02/Act01_Chapter02_Adv22
+
+@if "chosenAreaId==\"BasementHallway\""
+	@setFlag 3
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter02/Act01_Chapter02_Adv23
+
+@if "chosenAreaId==\"Showers\""
+	@setFlag 4
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter02/Act01_Chapter02_Adv24
+
+@if "chosenAreaId==\"EntranceHall\""
+	@setFlag 5
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter02/Act01_Chapter02_Adv25
+
+@Stop

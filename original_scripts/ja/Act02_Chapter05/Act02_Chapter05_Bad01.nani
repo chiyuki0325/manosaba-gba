@@ -1,0 +1,1547 @@
+@if isDebugDirectJump
+	@Gosub System/System_Subroutine.BeginAdv
+
+	@back Transparent { time:0 }
+
+# ========================================
+# ＞『儀式を行わない』を選択
+# ========================================
+
+# ========================================
+# ＞シーン2-5-b1へ
+# ========================================
+
+# Scene2-5-b1
+@StopBgm 
+@ResetText 
+@Wait 1.5
+
+# ========================================
+# ●シーン2-5-b1
+@back 1_1 { Scale:{g_backgroundDefaultScale} }
+# ========================================
+
+# ========================================
+@bgm Bgm_24_1
+# ========================================
+
+@print ――儀式は行わない。<br>私はそう心に決めた。 { speed:1 waitInput:true Wait:true }
+
+@print 大魔女の召喚には【１３人の魔女】が必要だ。 { speed:1 waitInput:true Wait:true }
+
+@print 私を含めた全員が、<br>完全に魔女化しなければならない。 { speed:1 waitInput:true Wait:true }
+
+@print エマたち全員のトラウマを引きずり出し、<br>無理やり魔女化させるということ。 { speed:1 waitInput:true Wait:true }
+
+@print それはメルルがしてきた所業と同じ……<br>いや、よりもっと残酷な仕打ちだ。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Fearful1,ArmR13,ArmL6
+
+@print ヒロちゃん……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "驚き、<ruby=\"おび\">怯</ruby>え、困惑した様子ながらも、<br>エマは私を心配してくれている。" { speed:1 waitInput:true Wait:true }
+
+@print その優しさが、私の決意をより強固にしてくれた。 { speed:1 waitInput:true Wait:true }
+
+@print やはり、私に儀式を行うことはできない。 { speed:1 waitInput:true Wait:true }
+
+@print 上手くいく保証なんて、どこにもないのだから。<br>全員がただ【なれはて】と化し、終わる可能性もある。 { speed:1 waitInput:true Wait:true }
+
+@print もしそうなったら、<br>処分されるか看守として使役されるか……<br>最悪な結末が待っているのは確かだ。 { speed:1 waitInput:true Wait:true }
+
+@print ――それだけは、許せない。 { speed:1 waitInput:true Wait:true }
+
+# 心臓が大きくはねる音
+@sfx Sfx_162
+@ResetText 
+@back SolidColor.Custom { Scale:{g_backgroundDefaultScale} time:0 }
+@back SolidColor.Custom { time:0.3 }
+@Wait 0.3
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.3
+
+@hideChars 
+@char CreatureHiro.14
+@char Ema
+
+@print ……くっ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 感情の波が、魔女の殺人衝動を刺激する。 { speed:1 waitInput:true Wait:true }
+
+@print "抗おうとすれば、苦痛が<ruby=\"さいな\">苛</ruby>む。<br>頭の中で、声がする。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+@back SolidColor.Custom { time:0.4 }
+# ========================================
+
+@print ――壊せ。潰せ。 { speed:1 waitInput:true Wait:true }
+
+@print 細胞ひとつひとつが、私を急き立てるみたいに。<br>激しく渦を巻いている。 { speed:1 waitInput:true Wait:true }
+
+@back SolidColor.Custom { time:0.4 }
+
+@print ――殺せ。殺せ。 { speed:1 waitInput:true Wait:true }
+
+@print 苦しい。楽になりたい。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema
+
+@print ふと気付けば、私は救いを求めるように<br>エマへと手を伸ばしていた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL13,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@back SolidColor.Custom { time:1 }
+@Wait 0.4
+
+@print だ、大丈夫……！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+# ＠備考◆はっと息を呑む
+
+@char CreatureHiro.12
+
+@print ……っ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# ========================================
+# 手をはらう音
+@sfx Sfx_18
+# ========================================
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01 { time:0.8 }
+
+@print "<ruby=\"つか\">掴</ruby>もうとしてくれた手を、振り払う。" { speed:1 waitInput:true Wait:true }
+
+@print たった今、自分の頭に浮かんだ考えに、<br>吐き気と悪寒を覚えた。 { speed:1 waitInput:true Wait:true }
+
+@print ――ここでエマを殺せば、<br>少しは楽になれるのだろうか。 { speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+
+@print ……私に、構わないでくれ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 告げて、エマに背を向けた。 { speed:1 waitInput:true Wait:true }
+
+@print 私が救いを求めてどうする。 { speed:1 waitInput:true Wait:true }
+
+@print 私が救わなければ。<br>彼女たちを、解放するんだ。 { speed:1 waitInput:true Wait:true }
+
+@print 異形になりつつある拳を強く握る。 { speed:1 waitInput:true Wait:true }
+
+@print そして。 { speed:1 waitInput:true Wait:true }
+
+@back 1_1 { time:0.4 }
+@Wait 0.6
+
+# ========================================
+# 扉を叩く音
+@sfx Sfx_77
+# ========================================
+@Wait 0.5
+
+@print 私は力任せに鉄格子を破壊し、<br>ひとり監房を脱け出した。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+# ========================================
+@back 19_1 { Scale:{g_backgroundDefaultScale} time:0 }
+# ========================================
+@back Transparent.Custom { time:0.8 }
+@Wait 1
+
+@print 監房を出た直後。<br>当然、看守が私を追ってきた。 { speed:1 waitInput:true Wait:true }
+
+@char Jailer.5
+
+@print 勢いのまま追走を振り切り、<br>私は牢屋敷を飛び出す。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@ResetText 
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+# ========================================
+@back 23_4 { Scale:{g_backgroundDefaultScale} time:0 }
+# ========================================
+@back Transparent.Custom { time:0.8 }
+@Wait 1
+
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+# ========================================
+@back 26_1 { Scale:{g_backgroundDefaultScale} time:0 }
+# ========================================
+@back Transparent.Custom { time:0.8 }
+@Wait 1
+
+@StopBgm { fade:3 }
+
+@print ゲストハウスから、地下の冷凍室へ。 { speed:1 waitInput:true Wait:true }
+
+@print 私は金庫を開き、中に収められた剣と、<br>【魔女を殺す薬】を回収する。 { speed:1 waitInput:true Wait:true }
+
+@print エマたちを救済するために、必要なものだ。 { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_25_1
+@ResetText 
+@char Jailer { time:1 }
+@Wait 1
+
+@print 剣を携え、牢屋敷に戻ろうとする私の前に、<br>看守が立ちふさがる。 { speed:1 waitInput:true Wait:true }
+
+@print ……薬の効果を試すのに、ちょうどいい。<br>私は瓶を開け、刀身に薬液を垂らした。 { speed:1 waitInput:true Wait:true }
+
+@print "武器を手にした私を敵意ありと<ruby=\"みな\">見做</ruby>したのだろう。<br>看守が鎌を掲げ、恐るべき速さで迫りくる。" { speed:1 waitInput:true Wait:true }
+
+
+# ========================================
+# ぶんっと武器が振り下ろされる音
+@sfx Sfx_9
+# ========================================
+@char Jailer { time:0.2 }
+# ========================================
+@Wait 0.1
+# 金属同士が衝突する音
+@sfx Sfx_159
+# ========================================
+
+@print 振り下ろされた鎌を、剣で受け止める。 { speed:1 waitInput:true Wait:true }
+
+@print とてつもない力だった。<br>私の魔女化が進んでいなければ、<br>あっさりと押し負けていただろう。 { speed:1 waitInput:true Wait:true }
+
+@print だが今の私なら対抗できる―― { speed:1 waitInput:true Wait:true }
+
+@char Jailer { time:0.2 }
+@sfx Sfx_159
+# 金属同士が衝突する音
+@Wait 0.4
+
+# ========================================
+# 人を殴打する音
+@sfx Sfx_85
+# ========================================
+@char Jailer { time:0.2 }
+@Wait 0.4
+
+@print 鎌を押し返す。<br>バランスを崩した看守を、すかさず蹴り飛ばした。 { speed:1 waitInput:true Wait:true }
+
+@print 倒れた看守に剣の切っ先を突き付ける。 { speed:1 waitInput:true Wait:true }
+
+# 心臓が大きくはねる音
+@sfx Sfx_162
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.3 }
+@Wait 0.3
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.3
+
+@print ――壊せ。 { speed:1 waitInput:true Wait:true }
+
+@print 頭の中で声がする。 { speed:1 waitInput:true Wait:true }
+
+# 心臓が大きくはねる音
+@sfx Sfx_162
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.3 }
+@Wait 0.3
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.3
+
+@print ――潰せ。 { speed:1 waitInput:true Wait:true }
+
+@print うるさい、黙れ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私は不快な衝動に文句を吐き出す。<br>だが…… { speed:1 waitInput:true Wait:true }
+
+@print 今は少しくらい身をゆだねるのもいいだろう。 { speed:1 waitInput:true Wait:true }
+
+@print そういえば……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "前々回、私は首を<ruby=\"は\">刎</ruby>ねられたんだったな。" { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ざんっと、肉が切れる音
+@sfx Sfx_12
+# ========================================
+@back SolidColor.Custom { time:0.2 }
+@char Jailer { time:0.2 }
+@Wait 0.1
+@char Jailer { time:0.2 }
+@back SolidColor.Custom { time:0.2 }
+@hide Jailer { time:0.2 }
+@Wait 0.4
+
+@print "ちょっとした意趣返しのつもりで、<br>私は看守の首を<ruby=\"は\">刎</ruby>ね飛ばした。" { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+# ========================================
+@back 19_1 { Scale:{g_backgroundDefaultScale} time:0 }
+# ========================================
+@back Transparent.Custom { time:0.8 }
+@Wait 1
+
+@print 私は剣を手に、牢屋敷へと戻ってきた。 { speed:1 waitInput:true Wait:true }
+
+@print 少女たちを解放するために。<br>私は、みんなを―― { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+@ResetText 
+# ========================================
+# 木の扉を開く音
+@sfx Sfx_22
+# ========================================
+
+# ========================================
+@back 4_1 { time:0 }
+# ========================================
+@char Warden.8 { time:0.0 }
+@back Transparent.Custom { time:0.8 }
+@Wait 1
+@Wait 0.4
+
+@print おかえりなさい、二階堂ヒロさん。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 玄関ホールに足を踏み入れた私を、<br>ゴクチョーが出迎える。 { speed:1 waitInput:true Wait:true }
+
+@char Warden.9
+
+@print 他の皆さんにはもう、<br>ここに集められた理由とか説明したんですが……<br>あなたには不要、ですかね？ { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 私は何も答えず、ゴクチョーに歩み寄った。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ぐちゃっ、めきなど体を害する音
+@sfx Sfx_10
+# ========================================
+@back SolidColor.Custom { time:0.15 }
+@back 4_1 { time:0.15 }
+@char Warden { time:0.15 }
+@Wait 0.2
+
+@print 殴り、蹴り、<br>私はゴクチョーの体を徹底的に潰す。 { speed:1 waitInput:true Wait:true }
+
+@back SolidColor.Custom { time:0.2 }
+@sfx Sfx_10
+
+@print ゴクチョーは間違っているものだから。 { speed:1 waitInput:true Wait:true }
+
+@back SolidColor.Custom { time:0.2 }
+@sfx Sfx_10
+
+@print 様々な出来事があった。<br>変化と、複雑な事情。 { speed:1 waitInput:true Wait:true }
+
+@back SolidColor.Custom { time:0.2 }
+@sfx Sfx_10
+
+@print それでも私の中では一貫して、<br>正しくないものは許せない。 { speed:1 waitInput:true Wait:true }
+
+@back SolidColor.Custom { time:0.2 }
+@hideChars 
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+
+@print だが、こんなものは意味のない行為だ。<br>悪を正せない自分に、憤りを感じる。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# フクロウの羽ばたき音
+@sfx Sfx_8
+# ========================================
+@Wait 1.5
+@back 4_1 { time:1 }
+@Wait 1
+@char Warden.8 { time:1 }
+@Wait 1
+
+@print 無意味だったと示すが如く、<br>新たなゴクチョーが飛んできて、<br>階段の手すりにとまる。 { speed:1 waitInput:true Wait:true }
+
+@print "私は殺意を込めてゴクチョーを<ruby=\"にら\">睨</ruby>み、告げた。" { speed:1 waitInput:true Wait:true }
+
+@print 私はみんなを救う。邪魔をするな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Warden.6
+@print ……まあ、良しとしましょうか。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print あっさりとした答えが返ってくる。 { speed:1 waitInput:true Wait:true }
+
+@print ゴクチョーは、<br>全てを察している気がした。 { speed:1 waitInput:true Wait:true }
+
+@print 私が死に戻っていること。<br>これから為そうとしていること。 { speed:1 waitInput:true Wait:true }
+
+@print 何もかもを見通しているような不気味さ。<br>やはり、得体が知れない。 { speed:1 waitInput:true Wait:true }
+
+@char Warden.9
+@print むしろ、こちらとしては助かるかもしれませんし。<br>さっさと処理してもらった方がいいですからね。<br>……ま、頑張ってください。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Warden.8
+
+@hideChars 
+
+# ========================================
+# フクロウの羽ばたき音
+@sfx Sfx_8
+# ========================================
+
+@print 言い残して、ゴクチョーは飛び去っていく。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+# ========================================
+@back 28_2 { time:0 }
+# ========================================
+
+@print 私は中庭で身を潜め、夜の自由時間を待った。 { speed:1 waitInput:true Wait:true }
+
+@back Transparent.Custom { time:0.4 }
+@Wait 0.4
+
+@print なるべく少女たちが全員集まっている状況は、<br>避けたかったからだ。 { speed:1 waitInput:true Wait:true }
+
+@print 場合によっては、目的の達成が困難になる。 { speed:1 waitInput:true Wait:true }
+
+@print 自由時間なら、各々が好きに行動しているはず。<br>一緒にいるとしても、せいぜい２、３人だろう。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:1 }
+@StopBgm { fade:2 }
+@Wait 3.2
+
+@print （……始めよう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 剣を手に取り、一歩を踏み出す。 { speed:1 waitInput:true Wait:true }
+
+@print ――その時だった。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 野外で近づいてくる足音・複数
+@sfx Sfx_163
+# ========================================
+
+@ResetText 
+@bgm Bgm_23_1
+
+@back SolidColor.Custom { time:2.0 }
+@Wait 2.5
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Angry_Open
+
+@char Leia.Default,ArmR1,ArmL5,Angle01/Facial/Eyes>Eyes_Surprised_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open01,Angle01/Facial/Sweat>Sweat01
+
+@print "あれ？ 誰かいるみたい。" { author:Noah speed:1 waitInput:true Wait:true }
+
+@print 待てノアくん、止まるんだ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print ２人の少女が、私の前に姿を現した。 { speed:1 waitInput:true Wait:true }
+
+@char Noah.Fearful1,ArmR2,Angle01/ArmL>ArmL06,Angle01/Facial/Eyes>Eyes_Surprised_Open02,Angle01/Facial/Mouth>Mouth_Confused_Open,Angle01/Facial/Sweat>Sweat01
+
+@print 彼女らを見て、胸が熱くなる。<br>前回の出来事が、鮮明に呼び起こされる。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR1,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Angry_Open,Angle01/Facial/Sweat>Sweat01
+
+@print 監房から逃げ出した囚人がいる……<br>ゴクチョーが説明していたけれど。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Surprised_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Closed,Angle01/Facial/Sweat>Sweat01
+
+@print もしかして、キミがそうなのかな？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@print こちらを警戒しつつ、レイアは問いかけてくる。<br>私の姿を見れば、当然の反応だ。 { speed:1 waitInput:true Wait:true }
+
+@print …………。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私は何も答えなかった。 { speed:1 waitInput:true Wait:true }
+
+@print 言葉を交わせば、きっと心が揺れるから。 { speed:1 waitInput:true Wait:true }
+
+@print 無言でいる私を不気味に思ったのだろう。<br>レイアはさらに警戒の色を強くして、<br>腰のレイピアに手をかける。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Angry_Closed,Angle01/Facial/Sweat>Sweat01
+
+@print ゴクチョーが言っていた通り……<br>本当に、魔女化が進んでいるんだな……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Noah.Fearful1,ArmR2,Angle01/ArmL>ArmL06,Angle01/Facial/Eyes>Eyes_Fearful_Open,Angle01/Facial/Mouth>Mouth_Pensive_Open,Angle01/Facial/Sweat>Sweat01
+
+@print レイアちゃん……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"おび\">怯</ruby>えた様子で、ノアはレイアの陰に隠れた。" { speed:1 waitInput:true Wait:true }
+
+@print 今の私は彼女たちにとって、看守と変わらない。<br>おぞましい怪物を見るような２人の目が、<br>私の胸を締め付ける。 { speed:1 waitInput:true Wait:true }
+
+@print "奥歯を<ruby=\"か\">噛</ruby>んで、私はその感情を殺した。" { speed:1 waitInput:true Wait:true }
+
+@print ――大丈夫、私は正しい。 { speed:1 waitInput:true Wait:true }
+
+@print 私は彼女たちを救う。<br>大魔女の呪いから、解放する。<br>そのために―― { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# @stopBgm
+# ========================================
+
+# ========================================
+# ＞挿入歌『愛の残滓』
+# ========================================
+
+# ========================================
+# @back SolidColor tint:#000000
+# ========================================
+
+@print 殺す。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# @back 28_2
+# ========================================
+
+@char Leia.Default,ArmR1,ArmL5,Angle01/Facial/Eyes>Eyes_Surprised_Open02,Angle01/Facial/Mouth>Mouth_Cry_Closed02,Angle01/Facial/Sweat>Sweat01
+
+@print ！？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+# ========================================
+# ぶんっと武器が振り下ろされる音
+@sfx Sfx_9
+# ========================================
+
+@back 28_2 { time:0.2 }
+@Wait 0.1
+@char Leia { time:0.2 }
+@char Noah { time:0.2 }
+# @shake Camera
+
+# ========================================
+# 金属同士が衝突する音
+@sfx Sfx_159
+# ========================================
+@Wait 0.5
+
+@print 私の真正面からの一撃を、レイアが受け止める。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR1,ArmL5,Angle01/Facial/Eyes>Eyes_Fearful_Open,Angle01/Facial/Mouth>Mouth_Yell_Open01,Angle01/Facial/Sweat>Sweat01
+
+@print ……ノアくん、逃げるんだ！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Noah.Fearful1,ArmR2,ArmL2,Angle01/Facial/Mouth>Mouth_Angry_Open,Angle01/Facial/Sweat>Sweat01
+
+@print でも……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR1,ArmL5,Angle01/Facial/Eyes>Eyes_Pensive_Closed,Angle01/Facial/Mouth>Mouth_Yell_Open01,Angle01/Facial/Sweat>Sweat01
+
+@print いいから早く！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Noah.Fearful1,ArmR2,ArmL2,Angle01/Facial/Mouth>Mouth_Normal_Closed,Angle01/Facial/Sweat>Sweat01
+
+@print ！ { author:Noah speed:1 waitInput:true Wait:true }
+
+@print ――逃がすわけにはいかない。<br>私はレイアを横に弾き飛ばす。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+# ========================================
+# 転ぶ音
+@sfx Sfx_6
+# ========================================
+@back 28_2
+@Wait 0.2
+@char Leia
+@char Noah
+# @shake Camera
+@Wait 0.25
+
+@hideChars 
+
+@print くっ……！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Noah.Fearful1,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Surprised_Open02,Angle01/Facial/Mouth>Mouth_Normal_Closed
+
+@print わっ……！？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@print 私は剣を突き付けながら、<br>じりじりとノアに近づいていく。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back 28_2 { time:0.4 }
+@ResetText 
+@hideChars 
+@Wait 0.5
+@char Noah.Fearful1,ArmR1,ArmL2,Angle01/Facial/Mouth>Mouth_Pensive_Open
+
+@print ひっ……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"おび\">怯</ruby>えきった瞳に、私は射すくめられる。" { speed:1 waitInput:true Wait:true }
+
+@print 脳裏に浮かぶのは、<br>彼女と過ごした前回の記憶。 { speed:1 waitInput:true Wait:true }
+
+@print ノアの笑顔。<br>彼女が描いてくれた似顔絵。 { speed:1 waitInput:true Wait:true }
+
+@print "それらが、私を<ruby=\"ちゅうちょ\">躊躇</ruby>させる。<br>だが、やらなければならない。" { speed:1 waitInput:true Wait:true }
+
+@print 大丈夫、これは正しい。<br>救いなんだ。だから、やれる。 { speed:1 waitInput:true Wait:true }
+
+@char Noah
+
+@print ノア……<br>君の本当の絵、私は大好きだよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Fearful1,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Surprised_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Open,Angle01/Facial/Sweat>Sweat01
+
+@print ……？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back 28_2 { time:0.2 }
+@char Noah { time:0.2 }
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.15 }
+@StopBgm 
+# ========================================
+# グサッと刺さる音
+@sfx Sfx_89
+# ========================================
+
+@print あ……？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@hideChars 
+
+# ========================================
+# 倒れる音
+@sfx Sfx_19
+# ========================================
+@back 570_1 { time:0.1 }
+@bgm Bgm_49_1
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+# スチル未表示あり
+# Introがないのでそのまま流してます
+
+@print 不快だ。 { speed:1 waitInput:true Wait:true }
+
+@print 手に伝わる感触、音、匂い。<br>看守やゴクチョーに手を出すのとは、<br>まるで違う。 { speed:1 waitInput:true Wait:true }
+
+@print 私の中で、大事な何かが失われていくのを感じる。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 木が折れる音
+@sfx Sfx_164
+# ========================================
+
+@print ふと、足で何かを踏みつけた。<br>確かめるとそれは……ノアの絵筆だった。 { speed:1 waitInput:true Wait:true }
+
+@print 何故だか実感が強まった。<br>私は、ノアを殺したのだと―― { speed:1 waitInput:true Wait:true }
+
+@print あ、あああぁぁぁっ！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 背後で、悲痛な叫びが聞こえる。<br>振り向くと、レイアがこちらに武器を向けていた。 { speed:1 waitInput:true Wait:true }
+
+@print みんなで作り上げた舞台……<br>私は見てみたかった。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "レイアの<ruby=\"りん\">凛</ruby>とした振る舞い。<br>責任感、優しさ……" { speed:1 waitInput:true Wait:true }
+
+@print 何より舞台への情熱。<br>それはどれも本物で、正しく美しい。 { speed:1 waitInput:true Wait:true }
+
+@print うああああああああぁっ！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@print レイアは武器を構え、こちらに向かってくる。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.1 }
+# ========================================
+# ぶんっと武器が振り下ろされる音
+@sfx Sfx_9
+# ========================================
+@Wait 0.1
+@back SolidColor.Custom { time:0.1 }
+# ========================================
+# 切り裂かれる音
+@sfx Sfx_53
+# ========================================
+@Wait 0.2
+
+@back SolidColor.Custom { time:0.8 }
+@Wait 1
+
+@print 私は剣を振るい、レイアを下から切り上げた。 { speed:1 waitInput:true Wait:true }
+
+@print 許してほしいとは言わない。<br>これは、君たちを解放するためなんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 化け物め……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 倒れる音
+@sfx Sfx_19
+# ========================================
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.2 }
+
+@print 殺した。 { speed:1 waitInput:true Wait:true }
+
+@print 違う。救ったんだ。 { speed:1 waitInput:true Wait:true }
+
+@print ノアとレイアは、これでもう大丈夫。<br>さあ、他のみんなも解放しないと。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# @back Transparent.Custom subId:Overlay dissolve:HorizontalLinearGradient time:2
+# ========================================
+@Wait 0.3
+# @stopBgm fade:3
+@hide Stills
+# ========================================
+@back 5_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@bgm Bgm_49_2
+# ========================================
+@Wait 3
+
+# @bgm Bgm_2_1_Loop intro:Bgm_2_1_Intro
+
+@back SolidColor.Custom { time:1.5 }
+@Wait 1.8
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR6,ArmL7,Angle01/Head/Facial/Eyes>Eyes_Fearful_Open,Angle01/Head/Facial/Mouth>Mouth_Surprised_Open,Angle01/Head/Facial/Sweat>Sweat01
+
+@char Miria.Fearful1,ArmR10,ArmL5,Angle01/Facial/Eyes>Eyes_Fearful_Open,Angle01/Facial/Mouth>Mouth_Angry_Closed01,Angle01/Facial/Sweat>Sweat01
+
+@print ！？ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print ひっ、ひぇっ！？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@print 私は一足飛びでアンアンに接近して、<br>彼女の首を絞める。 { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆首を絞められて息を詰まらせる
+
+@char AnAn { time:0.2 }
+@char Miria { time:0.2 }
+@back 5_1 { time:0.2 }
+@hide Miria { time:0.2 }
+@Wait 0.2
+
+@char AnAn.Fearful1,Angle01/Option_Arms-,ArmR-Option-Off,ArmR4,ArmL7,Angle01/Head/Facial/Eyes>Eyes_Cry_Open01,Angle01/Head/Facial/Mouth>Mouth_Cry_Closed,Angle01/Head/Facial/Sweat>Sweat01
+
+@print ……ッ！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_153
+@char AnAn { time:1 }
+@Wait 2
+
+@print アンアンの魔法は厄介だ。<br>言葉を発する前に、終わらせる。 { speed:1 waitInput:true Wait:true }
+
+@print ……やめてっ！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@ResetText 
+# ========================================
+# 人を殴打する音
+@sfx Sfx_85
+# ========================================
+
+# ========================================
+@back 5_1
+# ========================================
+
+@hideChars 
+# @shake Camera
+@back SolidColor.Custom { time:0.1 }
+@Wait 0.2
+@back SolidColor.Custom { time:1 }
+@Wait 0.4
+
+@print "頭部に衝撃を感じる。<br>ぽたぽたと、<ruby=\"じゅうたん\">絨毯</ruby>に血が落ちた。<br>私の血だ。" { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+@back 5_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@char Miria.Fearful1,ArmR4,ArmL3,Angle01/Facial/Sweat>Sweat01 { time:0 }
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.3
+
+@print 顔を上げる。<br>ミリアが火かき棒を手に、震えながら立っていた。<br>殴られたのだと理解する。 { speed:1 waitInput:true Wait:true }
+
+@print 私はアンアンの首から手を離す。 { speed:1 waitInput:true Wait:true }
+
+@char AnAn.Surprised1,Angle01/Option_Arms-,ArmR-Option-Off,ArmR7,ArmL10,Angle01/Head/Facial/Eyes>Eyes_Cry_Open01,Angle01/Head/Facial/Mouth>Mouth_Cry_Closed,Angle01/Head/Facial/Sweat>Sweat01
+
+@print げほっ、げほっ……！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print それからミリアの火かき棒を奪い―― { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@char AnAn { time:0.2 }
+@char Miria { time:0.2 }
+@back 5_1 { time:0.2 }
+@hide AnAn { time:0.2 }
+@Wait 0.2
+
+@char Miria.Fearful1,ArmR6,ArmL5,Angle01/Facial/Sweat>Sweat01
+
+@print あっ！？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@ResetText 
+# ========================================
+# 人を殴打する音
+@sfx Sfx_85
+# ========================================
+
+@back SolidColor.Custom { time:0.2 }
+
+@print 彼女の頭部を思い切り殴打した。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# グサッと刺さる音
+@sfx Sfx_89
+# ========================================
+
+@back SolidColor.Custom { time:0.2 }
+@hideChars { time:0 }
+@back 5_1 { time:0 }
+
+@back SolidColor.Custom { time:2 }
+@Wait 2.2
+
+@char AnAn
+@Wait 0.2
+@char AnAn { time:0.4 }
+@Wait 1
+@char AnAn { time:0.4 }
+@Wait 0.4
+
+@char AnAn.Surprised1,Angle01/Option_Arms-,ArmR-Option-Off,ArmR7,ArmL10,Angle01/Head/Facial/Sweat>Sweat01
+
+@print ひっ……ああぁ……！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print アンアンが後ずさる。<br>私はすかさず、彼女の心臓目掛けて刃を伸ばした。 { speed:1 waitInput:true Wait:true }
+
+@char AnAn { time:0.2 }
+@back 5_1 { time:0.2 }
+@Wait 0.2
+
+# ========================================
+# グサッと刺さる音
+@sfx Sfx_89
+# ========================================
+
+@back SolidColor.Custom { time:0.2 }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR7,ArmL10,Angle01/Head/Facial/Eyes>Eyes_Sick_Open02,Angle01/Head/Facial/Mouth>Mouth_Surprised_Open,Angle01/Head/Facial/Sweat>Sweat01
+
+@print か……はっ……。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@hideChars { time:0 }
+@back 5_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@back SolidColor.Custom { time:2 }
+@Wait 2.2
+
+@print 恐怖に目を大きく見開き、<br>夏目アンアンは息絶えた。 { speed:1 waitInput:true Wait:true }
+
+@back 570_6 { time:0.5 }
+
+@print これで、４人目……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back 6_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@hide Stills-Middle
+@Wait 0.8
+
+# ========================================
+# ガタッという物音
+@sfx Sfx_64
+# ========================================
+
+@char Coco.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Comical_Closed,Angle01/Facial/Sweat>Sweat01
+@char Alisa.Fearful1,ArmR7,ArmL6,Angle01/Facial/Eyes>Eyes_Angry_Open01,Angle01/Facial/Sweat>Sweat02,Option-ArmL-Off
+@back Transparent.Custom { time:2 }
+@Wait 0.8
+
+@print ぎゃああああっ！<br>化け物が来たあああ！？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print おめえが物音出すから<br>気付かれたんじゃねえか！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR7,ArmL2,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open02,Angle01/Facial/Mouth>Mouth_Angry_Open01,Angle01/Facial/Sweat>Sweat01
+
+@print "はぁ？ あんたがぶつかってきたんじゃん！<br>あてぃしは悪くねーし！" { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR4,ArmL1,Angle01/Facial/Eyes>Eyes_Fearful_Open,Angle01/Facial/Mouth>Mouth_Pensive_Open,Angle01/Facial/Sweat>Sweat01
+
+@print 言い争ってる場合じゃなさそうよ。<br>ここは協力し合わないと。<br>あの子、私たちを殺す気満々って顔だもの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Nanoka.Fearful1,Arms4,Eyes1_Flushed_Open1,Mouth1_Angry_Closed2,Sweat1_1
+
+@print ……脱走した囚人がいるのに、<br>どうしてゴクチョーや看守が対処しないの？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@back SolidColor.Custom { time:0.2 }
+# ========================================
+# 銃声
+@sfx Sfx_38
+# ========================================
+@hideChars 
+@Wait 0.2
+
+@print ！！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.6
+
+@print 銃声が響き、私の肩が血煙を上げて爆ぜた。<br>撃ったのは黒部ナノカだ。<br>銃を構え、まっすぐにこちらを見据えている。 { speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Arms4,Eyes1_Rage_Open1,Mouth1_Angry_Closed2,Sweat1_1
+
+@print 私はまだ死ねない。<br>悪いけど、容赦しないわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Alisa,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Angry_Open01
+
+@print ウチだって、訳もわからず殺されてたまるかよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hide Nanoka
+@char Margo.Default,ArmR5,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Middle
+
+@print フフ、頼もしい２人だわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hide Alisa
+@char Coco.Fearful1,ArmR6,ArmL4,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Angry_Open02
+
+@print てかあいつ撃たれた傷もう治ってんだけど！？<br>キモぉ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@Wait 0.2
+
+@print 私は大きく息を吸ってから、剣を構えた。<br>……ああ、でも。<br>彼女たちを解放する前にひとつだけ。 { speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Arms4,Eyes1_Rage_Open1,Mouth1_Angry_Closed2,Sweat1_1 { time:0.5 }
+
+@print ナノカ、ありがとう。<br>それから、すまない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "私を信じてくれて。<br>誰も犠牲にしないという願いを<ruby=\"かな\">叶</ruby>えられなくて。" { speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Fearful1,Arms4,Eyes1_Confused_Open1,Mouth1_Cry_Closed1,Sweat1_1
+
+@print ……？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 厳密には、このナノカじゃない。<br>わかっていても、言葉にしたかった。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+@hideChars { time:0 }
+@back 570_1 { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.6
+
+@print もう大丈夫。<br>私が、君たちを救ってあげるから。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.6 }
+@Wait 1
+# ざんっと、肉が切れる音
+@sfx Sfx_12
+@hide Stills
+# ========================================
+@back 9_2 { time:0 }
+# ========================================
+@Wait 3
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@char Hanna.Fearful1,ArmR4,ArmL1,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+
+@print ひっ、なんなんですの……！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print ふむ。ゴクチョーさんやエマさんが<br>話してた人じゃないですか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@ResetText 
+# ========================================
+# 廊下を走る音
+@sfx Sfx_58
+@Wait 1
+# ========================================
+# @shake Camera
+@char Hanna { time:0.6 }
+@char Sherry { time:0.6 }
+@back 9_2 { time:0.6 }
+@hide Sherry { time:0.6 }
+@Wait 0.5
+
+# ==============================================================================
+# 切り裂かれる音
+@sfx Sfx_53
+# ==============================================================================
+
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.1 }
+@Wait 1
+
+@print ――！！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print あ、ぐ……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print ハンナさん！？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 私の剣がハンナの身を切り裂いた。 { speed:1 waitInput:true Wait:true }
+
+@print "事態を理解する間もなかっただろう。<br>ハンナは<ruby=\"あっけ\">呆気</ruby>に取られた表情のまま崩れ落ちて、<br>血だまりを作る。" { speed:1 waitInput:true Wait:true }
+
+@hideChars { time:0 }
+@back 9_2 { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.6
+
+@char Sherry.Default,ArmR4,ArmL8,Angle01/Facial/Eyes>Eyes_Fearful_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Open,Angle01/Facial/Sweat>Sweat01
+
+@print あああああっ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry { time:0.2 }
+@Wait 0.2
+# ========================================
+# ざんっと、肉が切れる音
+@sfx Sfx_12
+# ========================================
+@ResetText 
+@back SolidColor.Custom { time:0.15 }
+@Wait 0.15
+
+@print 私に向かってくるシェリーの腕を切り飛ばす。<br>返す刃で、そのまま彼女を肩口から切り下ろした。 { speed:1 waitInput:true Wait:true }
+
+@back SolidColor.Custom { time:0.05 }
+@back SolidColor.Custom { time:0.1 }
+@Wait 0.2
+@hideChars { time:0 }
+@back 570_13 { time:0 }
+@Wait 2
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@print あ……あはは……やられちゃいました。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 笑顔を浮かべたまま、シェリーは息絶えた。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1
+@StopBgm 
+# ==============================================================================
+# 心臓が大きくはねる音
+@sfx Sfx_162
+# ==============================================================================
+
+@print くっ……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 全身の血が沸き上がる感覚に襲われる。<br>頭の中で、うるさく声が響く。 { speed:1 waitInput:true Wait:true }
+
+@print 殺せ、殺せ、すべて壊してしまえ―― { speed:1 waitInput:true Wait:true }
+
+@print ――本当は愉悦を感じているんでしょう。<br>圧倒的な力で、無力な存在を踏みにじることに。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@print ……うるさい！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 違う！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "違う違う違う違う！ 私は……ッ！" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 悦びなんて感じていない。<br>これは救いのためなんだから。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:1.2 }
+@Wait 2
+
+@hide Stills { time:0 }
+# ========================================
+@back 25_1 { Scale:{g_backgroundDefaultScale} time:0 }
+# ========================================
+@bgm Bgm_49_1
+@back SolidColor.Custom { time:1.5 }
+@Wait 1.8
+
+# ＠備考◆焦っている
+
+@char Meruru.Normal1,ArmR1_1,ArmL4,Eyes1_Angry_Closed1,Mouth1_Angry_Open1,Sweat1_1
+
+@print "どうして……！ どうしてゴクチョーさんは<br>応答してくれないの……！" { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print ここにいたのか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Meruru.Fearful2,ArmR4_2,ArmL7,Mouth2_Normal_Open2,Sweat2_1
+@print ひっ……！？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print ここに逃げ込むと思っていた。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Meruru.Fearful2,ArmR7_2,ArmL5,Eyes2_Fearful_Open1,Mouth2_Angry_Closed1,Sweat2_1
+
+@print この場所のこと、ご存じなんですね。<br>ヒロさん、あなたは一体……？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 他にも色々と知っているよ。<br>もちろん、君の正体と目的もだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 大魔女に会いたいんだろう？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆驚きで息を呑む
+
+@char Meruru.Normal2,ArmR12_2,ArmL7,Eyes2_Surprised_Open1,Mouth2_Surprised_Open1,Sweat2_1
+
+@print ……っ！？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"きょうがく\">驚愕</ruby>して目を見開くメルルに、私は続ける。" { speed:1 waitInput:true Wait:true }
+
+@print どうすれば会えるのかも知っている。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Meruru.ArmR1_2,Eyes2_Surprised_Open1,Mouth2_Surprised_Open2,Sweat2_1
+
+@print ほ、本当ですか！？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print ああ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print でも。 { speed:1 waitInput:true Wait:true }
+
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+# ========================================
+# ざんっと、肉が切れる音
+@sfx Sfx_12
+# ========================================
+@hideChars 
+@back SolidColor.Custom { time:0.1 }
+@Wait 0.2
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.4
+
+@print え……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@back 570_14 { time:0 }
+
+@print 君には教えない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+@print "期待に瞳を輝かせ、こちらへ<ruby=\"すが\">縋</ruby>りつくように<br>近付いてきたメルルの首を切り落とした。" { speed:1 waitInput:true Wait:true }
+
+@back SolidColor.Custom { time:0.6 }
+@Wait 0.8
+
+@print 君は悪だ。<br>まったくもって正しくない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print けれど、大魔女に囚われた哀れな存在だ。<br>だから、私が解き放つ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ……ああ、そんな……<br>その剣、【トレデキム】を塗って……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 床に転がったメルルの首が、言葉を紡ぐ。 { speed:1 waitInput:true Wait:true }
+
+@print やだぁ……死にたくない……<br>たすけて……大魔女様ぁ……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print いいや、君は死ぬ。<br>大魔女にも二度と会えない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+@print ！！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+
+@print "私の言葉に、メルルの表情が大きく<ruby=\"ゆが\">歪</ruby>んだ。" { speed:1 waitInput:true Wait:true }
+
+# ==============================================================================
+# グサッと刺さる音
+@sfx Sfx_89
+# ==============================================================================
+
+@back 570_15 { Scale:{g_backgroundDefaultScale} time:0.5 }
+
+@ResetText 
+@Wait i5
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@StopBgm 
+@bgm Song_1 { Volume:0.35 }
+
+@Wait 3
+
+# ========================================
+@back 13_1 { Scale:{g_backgroundDefaultScale} time:0 }
+# ========================================
+@hide Stills
+@hide Stills-Middle
+# BGM移行
+# ========================================
+# ゆっくりと歩く足音・1人
+@sfx Sfx_97
+# ========================================
+@Wait 2
+# ========================================
+# ゆっくりと大扉を開く音
+@sfx Sfx_165
+# ========================================
+@Wait 2
+
+@print "裁判所を訪れる。<br>そこに、エマがひっそりと<ruby=\"たたず\">佇</ruby>んでいた。<br>静寂の中、まるで私を待ち構えていたかのように。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ゆっくりと歩く足音・1人
+@sfx Sfx_97
+# ========================================
+@Wait 3
+
+@back SolidColor.Custom { time:1.5 }
+@Wait 1.8
+
+@char Ema.Default,ArmR13,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Lifeless01,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open
+
+@print ゆっくりと歩を進め、エマに近づく。 { speed:1 waitInput:true Wait:true }
+
+@print 互いに手が届きそうな距離で、私は足を止めた。<br>しばらく無言で視線を交わす。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Lifeless01,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open
+
+@print ヒロちゃん……<br>きっと何かの冗談だよね？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 先に口を開いたのは、エマだった。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+
+@print 全部、ウソで……<br>本当は誰も死んでなくて……<br>ヒロちゃんは、誰も殺してなんかない。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Lifeless02,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+
+@print ねえ、そうなんでしょ？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Closed01,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open
+
+@print そうだって言ってよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 私は答えない。 { speed:1 waitInput:true Wait:true }
+
+@print 沈黙を肯定と受け取ったのか、<br>エマは呆然とした表情を浮かべる。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Fearful1,ArmR12,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Lifeless01,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Middle
+
+@print なん、で……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Fearful1,ArmR12,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Lifeless01,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open
+
+@print やっぱり、ヒロちゃんは魔女なの？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Fearful1,ArmR12,ArmL16,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Lifeless01,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open
+
+@print 殺人衝動を我慢できなくて、<br>みんなを殺したの……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print そうじゃない。<br>みんなを呪われた運命から救い出すためだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Fearful1,ArmR2-1,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Lifeless03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Open
+
+@print 救うのに、殺すって……<br>おかしいよ、そんなの。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマの様子が、どこか変だ。<br>話す声が虚ろで、目の焦点が合っていなかった。<br>その瞳は、私じゃない何かを映しているみたいだ。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR11,ArmL15,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+
+@print あ、あああ……そんな……<br>【あの子】はずっと近くにいたんだ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "頭を抱え、エマは苦しげに<ruby=\"うめ\">呻</ruby>く。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR11,ArmL15,Angle01/Head01/Facial01/Eyes01>Eyes01_Scream_Closed02,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle
+
+@print うぅぅ……ボクの……大切な友だち……<br>ボクが……ボクが見捨てた……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print その言葉に確信する。<br>エマは今、【彼女】の記憶を取り戻して―― { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.8
+
+@print 不意に、エマの全身から光が放たれた。 { speed:1 waitInput:true Wait:true }
+
+
+@hide Ema { time:0 }
+@char CreatureEma.0-7 { time:0 }
+
+@print ああ、そうか。<br>エマにとって、【彼女】は禁忌。<br>そこに触れてしまったエマは―― { speed:1 waitInput:true Wait:true }
+
+@back SolidColor.Custom { time:0.8 }
+@Wait 0.8
+@back SolidColor.Custom { time:2 }
+@Wait 1
+
+@print 【魔女】として覚醒したのだ。 { speed:1 waitInput:true Wait:true }
+
+@print ヒロちゃんは、間違ってる。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ――！！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureEma.1-1
+
+@print ……【あの子】も、そう言ってるよ？<br>それは救いでもなんでもない。<br>ただ、殺しているだけだって。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char CreatureEma.1-1
+
+@print ああ、でも安心して。<br>ヒロちゃんを否定する気はないよ。<br>だって――。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char CreatureEma { time:0.5 }
+
+@print 怖気の走るような笑顔で、エマは告げる。 { speed:1 waitInput:true Wait:true }
+
+@char CreatureEma.0-3
+
+@print みんな死ねばいいもんね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 私の中で、何かが警鐘を鳴らしている。<br>本能なのか、体に潜む忌まわしい魔女因子か。<br>わからないが告げている。 { speed:1 waitInput:true Wait:true }
+
+@print 目の前にいるエマは。<br>……いや。<br>【魔女】は、とてつもなく危険だと。 { speed:1 waitInput:true Wait:true }
+
+@char CreatureEma.0-1
+
+@print ボクのことも、殺すの？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print やめろ。 { speed:1 waitInput:true Wait:true }
+
+@char CreatureEma.0-7
+
+@print 酷いよ、友だちなのに。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print やめろやめろ。 { speed:1 waitInput:true Wait:true }
+
+@char CreatureEma.0-7
+
+@print "せっかくまた３人、<ruby=\"そろ\">揃</ruby>ったのに。" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 私を惑わせるな！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ========================================
+# @back SolidColor tint:white
+# ========================================
+
+@ResetText 
+# ========================================
+# グサッと刺さる音
+@sfx Sfx_89
+# ========================================
+@Wait 0.1
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.1 }
+@Wait 0.2
+@char CreatureEma { time:0 }
+@back 13_1 { time:0 }
+@back SolidColor.Custom { time:2 }
+@Wait 2.2
+
+@print 私はエマの胸を、剣で刺し貫く。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# @back 13_1
+# ========================================
+
+@print 全ての動きが、ゆっくりに感じられた。 { speed:1 waitInput:true Wait:true }
+
+@char CreatureEma { time:1 }
+
+@print 胸元に剣を突き立てられたまま、<br>エマが仰向けに倒れていく。 { speed:1 waitInput:true Wait:true }
+
+@char CreatureEma { time:1 }
+
+@print 虚ろな瞳で私を捉え、口元を動かす。 { speed:1 waitInput:true Wait:true }
+
+@char CreatureEma { time:1 }
+@Wait 1
+
+@print "し<br>   ね" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.1 }
+# 倒れる音
+@sfx Sfx_19
+# ========================================
+# @stopBgm fade:30
+@Wait 3
+@ResetText 
+
+@back SolidColor { time:0 }
+@hide CreatureEma { time:0 }
+@char Ema.Default,ArmR6,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Smile_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Closed { time:0 }
+@blur Ema
+
+@bgm Song_1 { Volume:0.33 }
+
+@print 瞬間、視界が黒く染まる。 { speed:1 waitInput:true Wait:true }
+
+@bgm Song_1 { Volume:0.29 }
+
+@print 体がまったく動かない。<br>意識が、遠のいていく。 { speed:1 waitInput:true Wait:true }
+
+@bgm Song_1 { Volume:0.26 }
+
+@print ああ、私は死ぬらしい。 { speed:1 waitInput:true Wait:true }
+
+@bgm Song_1 { Volume:0.23 }
+
+@print エマの魔法か。<br>単に私が力尽きたのか。 { speed:1 waitInput:true Wait:true }
+
+@bgm Song_1 { Volume:0.20 }
+
+@print どっちでもいい。<br>ようやく、終わりなんだ。 { speed:1 waitInput:true Wait:true }
+
+@bgm Song_1 { Volume:0.18 }
+
+@print 私の魔法も限界。<br>きっともう、死に戻りは起きない。 { speed:1 waitInput:true Wait:true }
+
+@bgm Song_1 { Volume:0.15 }
+
+@print これで本当に、終わり。 { speed:1 waitInput:true Wait:true }
+
+@bgm Song_1 { Volume:0.11 }
+
+@print 満足だった。<br>みんなを大魔女の呪いから解放できたから。 { speed:1 waitInput:true Wait:true }
+
+@bgm Song_1 { Volume:0.8 }
+
+@print "私も休もう。<br>何も怖くはない。<br>ただ穏やかで、<ruby=\"せいひつ\">静謐</ruby>に包まれている。" { speed:1 waitInput:true Wait:true }
+
+@bgm Song_1 { Volume:0.4 }
+
+@print 私の意識は死という救済に沈んでいく―― { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+# ========================================
+# @back SolidColor tint:white
+# ========================================
+@back SolidColor.Custom { time:1 }
+@bgm Bgm_40_1_Loop
+@Wait 1
+
+@print ――ヒロちゃん。 { speed:1 waitInput:true Wait:true }
+
+@print （…………） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ――ヒロちゃん、起きて。 { speed:1 waitInput:true Wait:true }
+
+@print （この声は……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@blur Ema
+
+@print エマ？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL11,Angle01/Head01/Facial01/Eyes01>Eyes01_Smile_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Open
+
+@print ボクだけじゃないよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ほら、とエマが指さした先。<br>そこには―― { speed:1 waitInput:true Wait:true }
+
+@print 私が解放した少女たちの姿があった。 { speed:1 waitInput:true Wait:true }
+
+@print みんな、こちらに背を向けて、<br>どこかへと歩みを進めている。 { speed:1 waitInput:true Wait:true }
+
+@print 彼女たちの行く手には、ただ光が広がっていた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Smile_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+
+@print みんな、ヒロちゃんに感謝してるんだよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL16,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Lifeless04,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+
+@print ヒロちゃん、ありがとう。<br>ひとりでたくさん頑張ってくれたんだね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマが微笑む。<br>その言葉だけで、私も報われた気持ちになった。 { speed:1 waitInput:true Wait:true }
+
+@print 私は間違っていなかった。<br>ちゃんと正しく、みんなを救えたのだと。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL11,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Lifeless03,Angle01/Head01/Facial01/Mouth01>Mouth01_Smile_Closed
+
+@print 行こう、ヒロちゃん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print そっと、エマが私に手を差し伸べる。 { speed:1 waitInput:true Wait:true }
+
+@print ……どこへ？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL11,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Lifeless04,Angle01/Head01/Facial01/Mouth01>Mouth01_Smile_Closed
+
+@print …………。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマは答えない。<br>ただ柔らかく笑み、手を取るように促してくる。 { speed:1 waitInput:true Wait:true }
+
+@print ……どこでもいいか、君となら。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私はエマの手を取る。<br>握ったその手は、温かかった。 { speed:1 waitInput:true Wait:true }
+
+@print 彼女と２人、歩き出す。 { speed:1 waitInput:true Wait:true }
+
+@print 過去と未来。<br>全てが遠ざかっていく。 { speed:1 waitInput:true Wait:true }
+
+@print この道がどこに続いていようとも、<br>恐れは何もなかった。<br>エマが私の傍にいるから。 { speed:1 waitInput:true Wait:true }
+
+@print 光が、私たちを照らしている。 { speed:1 waitInput:true Wait:true }
+
+@StopBgm { fade:3 }
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@hideChars { time:0 }
+@back 13_1 { time:0 }
+@Wait 3
+
+@back SolidColor.Custom { time:1.5 }
+@Wait 1.8
+
+@print ――二階堂ヒロと、桜羽エマ。 { speed:1 waitInput:true Wait:true }
+
+@print ２人は穏やかな表情を浮かべて横たわっていた。 { speed:1 waitInput:true Wait:true }
+
+@char Warden.8
+
+# ========================================
+# フクロウの羽ばたき音
+@sfx Sfx_8
+# ========================================
+
+@char Warden.1
+
+@print そこに、ゴクチョーが降り立つ。 { speed:1 waitInput:true Wait:true }
+
+@print ヒロとエマの傍に、１本の万年筆が転がっていた。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@char Warden.8
+
+@print ゴクチョーが万年筆を回収し、<br>どこかへと飛び去って行く。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.8 }
+@Wait 1.5
+
+# @bgm Bgm_23_1
+
+@print ――みんな、死んだ。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@print ――エマまで死んでしまったのは、<br>少し想定外だったけれど。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@print ――でも、大丈夫。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@print ――人間はみんな、死ぬんですから……。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@StopBgm { fade:3 }
+@Wait 3
+
+# ========================================
+# 『END～救済～』
+# ========================================
+
+@badEnd 25

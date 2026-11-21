@@ -1,0 +1,540 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act01_Chapter04/Act01_Chapter04_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# ==============================================================================
+# MARK: 4-10: 💬 アリサを殺したもの
+# ==============================================================================
+# ＠ト書き▼議論4-10 アリサを殺したもの
+
+# 議論開始カットイン
+# BGM変更：weRer N'o Hir
+@bgm Bgm_43_1
+
+@ResetText 
+@char Warden.8
+@stageCamera 1 { Rotation:0,{ (8 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+
+@stageCamera 1 { Rotation:0,{ (7.9 / courtStandCount * 360) },0 time:1 }
+@showStageScreen 1
+@Wait 1.8
+
+@char Ema.Pensive1,ArmR3,ArmL7 { time:0 }
+@stageCamera 0 { Rotation:0,{ (0 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+
+@stageCamera 0 { Rotation:0,{ (0.1 / courtStandCount * 360) },0 time:1 }
+@hideStageScreen 1
+@Wait 2.3
+
+# Judge4-10-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Warden.2
+@gosubModifyCamera 0
+@printDebate 処刑台は<br>私がリモコンで操作するか、<br>もしくは地下の施設で<br>操作しない限りは<br>動かないはずなんです。
+
+@char Warden.1
+@gosubModifyCamera 0
+@printDebate ですが実際に動いた記録が<br>残っています。
+
+@char Warden.1
+@gosubModifyCamera 0
+@printDebate "昨晩から今朝にかけて……<br>これはいったい<br>どうして<br><link=\"Objection_01_04_10_01\">動いた</link>んでしょうね？"
+
+# ＠備考◆投げやり
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@printDebate 勘違いとかじゃねーの？<br>もしくは<br>お前が嘘ついてるか。
+
+@char Warden.5
+@gosubModifyCamera 0
+@printDebate 私はあくまでも<br>この施設の管理者ですから。<br>嘘なんてついてませんよ。<br>……皆さんに言えないことは<br>ありますけどね。
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Ema.Determined2 { time:0 }
+@gosubModifyCamera 0
+@Wait 0.2
+
+# ==============================================================================
+# 4-10議論後独白
+# ==============================================================================
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@print （ゴクチョーの言ってる【地下】って……<br>　あの隠し通路のことだよね？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@print （でも……だとすると、昨日の晩に<br>　地下に入って何か操作した人物が<br>　いるってことで……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open
+@print （それって……もしかして） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge4-10-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_01_04_10_01
+
+@Skip false
+@pauseTrial true
+
+@choice 誤作動した
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge4-10-3
+
+@choice ゴクチョーが間違えた
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge4-10-4
+
+@choice 地下で操作した人物がいる
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge4-10-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 4-12: ❌ 議論ミス選択肢
+# ==============================================================================
+# MARK: 4-10-3: ❌ 誤作動した
+
+# Judge4-10-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR8,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ご、誤作動の可能性はないの……！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Warden.1
+@gosubModifyCamera 0
+@print ないと思いますけどねぇ……<br>動くにしても、何かキッカケがないと。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print "で、電気椅子だって不具合があったって言うし……<br>ほ、ほら！ 処刑台にも何か問題があったのかも……！" { author:Ema speed:1 waitInput:true Wait:true }
+
+# ＠備考◆純粋な疑問と疑い
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print ……ねえ、エマちゃん。 { author:Margo speed:1 waitInput:true Wait:true }
+
+# ＠備考◆冷ややかな目
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print あなた、処刑台に誤作動がないと<br>何か困ることでもあるの？<br>さっきから少し様子がおかしいけど……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （マーゴちゃんに疑われちゃったかも……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （……思い当たらないわけじゃない。<br>　昨日の夜に地下の施設から処刑台が動かされたこと……<br>　その可能性を、ボクは知っている……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge4-10-1
+
+# MARK: 4-10-4: ❌ ゴクチョーが間違えた
+
+# Judge4-10-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR8,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ゴ、ゴクチョーが間違えて操作しちゃったんじゃ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Warden.2
+@gosubModifyCamera 0
+@print それはないからお尋ねしてるんですよ。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print そ、そうなんだ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print エマっち、なんかあせってない？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print なんか……隠しごとでもあんの？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （ココちゃんに怪しまれちゃったみたい……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （……思い当たらないわけじゃない。<br>　昨日の夜に地下の施設から処刑台が動かされたこと……<br>　その可能性を、ボクは知っている……） { author:Ema speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge4-10-1
+
+# ==============================================================================
+# MARK: 4-10-2: ⭕ 地下で操作した人物がいる
+# ==============================================================================
+
+# Judge4-10-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+@StopBgm 
+@gosubCutIn Ema
+@Gosub System/System_Subroutine.EndDebate-Last
+# カットイン
+
+# Judge4-10-9
+
+@char Ema.Default,ArmR6,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open
+@gosubModifyCamera 0
+@print 昨日、地下で操作した人物がいるんだ。<br>それは……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# 証拠品提示
+@evidence Profile
+
+# 桜羽エマ
+@if "chosenEvidenceId==\"Ema\""
+	@goto .Judge4-10-5
+
+# 黒部ナノカ
+@if "chosenEvidenceId==\"Nanoka\""
+	@goto .Judge4-10-6
+
+# ゴクチョー or 看守
+@if "chosenEvidenceId==\"Warden\"||chosenEvidenceId==\"Jailer\""
+	@goto .Judge4-10-7
+
+# 汎用選択ミス
+@goto .Judge4-10-8
+
+# ==============================================================================
+# ミス選択肢
+# ==============================================================================
+
+# MARK: 4-10-6: ❌ 黒部ナノカ
+
+# Judge4-10-6
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Closed02
+@gosubModifyCamera 0
+@print （ダ、ダメだ！<br>　ナノカちゃんのことを言ったら……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Closed02
+@gosubModifyCamera 0
+@print （それにナノカちゃんが地下のことを知ったのは、<br>　今朝のことのはず……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Closed02
+@gosubModifyCamera 0
+@print （つまり昨晩、ナノカちゃんが<br>　処刑台を操作できたとは考えにくい……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Warden.2
+@gosubModifyCamera 0
+@print エマさん……もしかして、何か隠してます？ { author:Warden speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （みんなから疑われちゃったかも……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （変な疑いがかかる前に、<br>　早く言わなきゃ……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge4-10-9
+
+# MARK: 4-10-7: ❌ ゴクチョーor看守
+
+# Judge4-10-7
+
+@char Ema.Default,ArmR8,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ゴクチョーたちなんじゃないのかな……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Warden.1
+@gosubModifyCamera 0
+@print それがないから確認しているんです。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Warden.2
+@gosubModifyCamera 0
+@print 不自然なことがないようでしたら……<br>魔女の処刑投票は、通常通り実施させてもらいますよ。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （マズい……！<br>　アリサちゃんが自殺だって<br>　みんなに納得してもらったのに……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （変な疑いがかかる前に、<br>　早く言わなきゃ……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge4-10-9
+
+# MARK: 4-10-8: ❌ 汎用選択ミス
+
+# Judge4-10-8
+@char Warden.1
+@gosubModifyCamera 0
+@print その人がどうやって動かしたんでしょうか？<br>これまでの話からすると、<br>不可能な気がするんですけどねぇ……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+# 別選択肢共通
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （変な疑いがかかる前に、<br>　早く言わなきゃ……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge4-10-9
+
+# ==============================================================================
+# MARK: 4-10-5: ⭕ 【桜羽エマ】
+# ==============================================================================
+
+# Judge4-10-5
+
+# カットイン
+
+@char Ema.Default,ArmR6,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Flushed_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open
+@gosubModifyCamera 0
+@print それは……ボクだよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR13,ArmL10,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print "えっ！？ どゆこと！？" { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （今地下を調べているナノカちゃんの<br>　邪魔をするわけにはいかない……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （朝に処刑台が動いたのは、<br>　地下にいたナノカちゃんなんだろうけど……。<br>　ナノカちゃんのことは黙っておこう） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL10,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （まずは昨日あったことの、<br>　必要最低限の説明だけして……） { author:Ema speed:1 waitInput:true Wait:true }
+
+# BGM変更：Kei-Plne Co-Jundic
+@bgm Bgm_25_1
+
+@char Ema.Default,ArmR8,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print その……昨日偶然、<br>地下に通じる隠し通路を見つけたんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print そこでボク、閉じ込められちゃって……<br>【操作パネル】っぽいものがあったから<br>扉を開けようとしてそれを触ったんだけど……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print もしかしたらその時のボクの操作で<br>処刑台が動いちゃったのかもしれない……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・ガーン
+@sfx Sfx_Common_6
+
+@char Coco.Default,ArmR8,ArmL7,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print か、隠し通路！？ { author:Coco speed:1 waitInput:true Wait:true }
+
+# ＠備考◆恐る恐る確認
+
+@char Coco.Default,ArmR8,ArmL7,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……エ、エマっちが<br>ナノカの言ってた黒幕だったり……<br>しないよな……？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR5,ArmL3,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ボクが黒幕だったら、<br>こんなこと正直に言わないよ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Warden.1
+@gosubModifyCamera 0
+@print ……なるほど。そうだったんですね。<br>どうやら私の疑問は、解決したようです。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle
+@gosubModifyCamera 0
+@print ……地下に入ったけど、ボクは処罰されたりするの？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Warden.2
+@gosubModifyCamera 0
+@print いいえ？<br>べつに【地下の管理室に入ってはいけない】なんて<br>ルールはありませんからねぇ。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR12,ArmL16,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （……良かった。<br>　ならもっと堂々と地下の調査ができるかも……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# マーゴカットイン
+
+@Wait 0.2
+
+@sfx Sfx_Common_5
+
+@ResetText 
+@voice CommonTrial_Margo01682
+@char Ema.Surprised1
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Open,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubSplitStageScreen 1
+@Wait 1.5
+
+@hideStageScreen 1
+@Wait 0.3
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Open,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print ……待って。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR12,ArmL16,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open
+@gosubModifyCamera 0
+@print ……え？ { author:Ema speed:1 waitInput:true Wait:true }
+
+# BGM変更：吸われた祈り
+@bgm Bgm_35_1
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Open,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print ……ねぇ、メルルちゃん。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Meruru.Head2,ArmR12_2,ArmL13,Eyes2_Surprised_Open1,Mouth2_Normal_Open1
+@gosubModifyCamera 0
+@print は、はい……。なんでしょう……？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Open,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print ……アリサちゃんの飲んだ【睡眠薬】について<br>あらためて教えて欲しいんだけど……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print 一度に大量に摂取すると……<br>どうなるのかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Meruru.Head2,ArmR12_2,ArmL13,Eyes2_Surprised_Open1,Mouth2_Normal_Open1
+@gosubModifyCamera 0
+@print え、ええと、それは……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+# SE・明るい音
+@sfx Sfx_Common_2
+
+@char Meruru.Head1,ArmR1_1,ArmL8,Eyes1_Pensive_Open2,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print あのビンに入っていた分を一気に飲み干してしまったら……<br>まずは昏睡状態になると思います。<br>何があっても起きないぐらいに……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Head2,ArmR1_2,ArmL5,Eyes2_Normal_Open1,Mouth2_Surprised_Open2
+@gosubModifyCamera 0
+@print そのあと……<br>おそらく２４時間以内に適切な処置をしないと、<br>手遅れになってしまうかと……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print やっぱり……<br>そういうことなのね……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Gross_Open,Angle01/Facial/Mouth>Mouth_Pensive_Middle
+@gosubModifyCamera 0
+@print な、なんでそんなこと確認すんの……？<br>アリサは自殺ってことなんじゃ……？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print そう、思っていたわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Open,Angle01/Facial/Mouth>Mouth_Neutral_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……さっきまでは。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ど、どういうこと……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print 昨晩アリサちゃんは睡眠薬を飲んだ……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Neutral_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……もし昨夜の時点で、アリサちゃんが<br>【生きていた】としたら……？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ……そ、それは……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Pensive_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print そのあとアリサちゃんは<br>眠った状態で地下に送られた……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Pensive_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print それなら、アリサちゃんの死因は<br>睡眠薬による【オーバードーズ】ではなくて――。 { author:Margo speed:1 waitInput:true Wait:true }
+
+# ＠備考◆焦り
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Pensive_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ――【凍死】、になるんじゃないかしら……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Meruru.Head2,ArmR1_2,ArmL3,Eyes2_Normal_Open1,Mouth2_Angry_Open2
+@gosubModifyCamera 0
+@print そ、それって……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+
+@goto Act01_Chapter04/Act01_Chapter04_Trial11

@@ -1,0 +1,516 @@
+@Stop 
+
+# ==============================================================================
+# MARK: 📖 BeginAdv: ADV 開始
+# ==============================================================================
+
+# BeginAdv
+
+@if isDebugDirectJump
+	@set "hasWitchBook = true"
+
+@set "isDebugDirectJump = false"
+@ProcessInput true { set:Continue.true,Pause.true,Skip.true,ToggleSkip.true,SkipMovie.true,AutoPlay.true,ToggleUI.{allowToggleUI},ShowBacklog.true,Rollback.{allowRollback} }
+@trialMode false
+@ShowPrinter Normal
+@ShowUI ControlPanel,AutoToggle
+
+@if "hasWitchBook && !isReenact"
+	@ShowUI WitchBookButtonUI
+
+@back SolidColor { time:0 }
+@WaitForNextFrame 
+
+@if enableDebugSkip
+	@Skip true
+
+@Return 
+
+# ==============================================================================
+# MARK: 📖 EndAdv: ADV 終了
+# ==============================================================================
+
+# EndAdv
+
+@ProcessInput true
+@StopBgm 
+@HideUI ControlPanel,AutoToggle,WitchBookButtonUI
+@ResetText 
+@back SolidColor { time:{g_fadeDurationAtScenarioTransition} }
+@Wait "{g_fadeDurationAtScenarioTransition}"
+
+@Return 
+
+# ==============================================================================
+# MARK: ⚖️ BeginTrial: 裁判開始
+# ==============================================================================
+
+# BeginTrial
+
+@if isDebugDirectJump
+	@set "hasWitchBook = true"
+
+@set "isDebugDirectJump = false"
+@ProcessInput false { set:Continue.true,Pause.true,Skip.true,ToggleSkip.true,SkipMovie.true,AutoPlay.true,ToggleUI.{allowToggleUI},ShowBacklog.true,Rollback.{allowRollback} }
+@trialMode true
+@ShowPrinter Normal
+@ShowUI ControlPanel,AutoToggle,WitchBookButtonUI
+@back SolidColor { time:0 }
+
+@set "characterPositionY = stageOffsetY + 5"
+@set "hiddenCharacterPositionY = characterPositionY - 100"
+@set "characterScale = 0.25"
+@set "characterDistance = 16"
+
+@if "emaIdx >= 0"
+	@set "emaPositionX = Sin(emaIdx * g_pi * 2 / {courtStandCount}) * characterDistance + stageOffsetX"
+	@set "emaPositionZ = Cos(emaIdx * g_pi * 2 / {courtStandCount}) * characterDistance + stageOffsetZ"
+	@set "emaRotationY = 360 / {courtStandCount} * emaIdx"
+	@char Ema.Default { Position:{emaPositionX},{characterPositionY},{emaPositionZ} Rotation:,{emaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@if "hiroIdx >= 0"
+	@set "hiroPositionX = Sin(hiroIdx * g_pi * 2 / {courtStandCount}) * characterDistance + stageOffsetX"
+	@set "hiroPositionZ = Cos(hiroIdx * g_pi * 2 / {courtStandCount}) * characterDistance + stageOffsetZ"
+	@set "hiroRotationY = 360 / {courtStandCount} * hiroIdx"
+	@char Hiro.Default { Position:{hiroPositionX},{characterPositionY},{hiroPositionZ} Rotation:,{hiroRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@if "meruruIdx >= 0"
+	@set "meruruPositionX = Sin(meruruIdx * g_pi * 2 / {courtStandCount}) * characterDistance + stageOffsetX"
+	@set "meruruPositionZ = Cos(meruruIdx * g_pi * 2 / {courtStandCount}) * characterDistance + stageOffsetZ"
+	@set "meruruRotationY = 360 / {courtStandCount} * meruruIdx"
+	@char Meruru.Default { Position:{meruruPositionX},{characterPositionY},{meruruPositionZ} Rotation:,{meruruRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@if "hannaIdx >= 0"
+	@set "hannaPositionX = Sin(hannaIdx * g_pi * 2 / {courtStandCount}) * characterDistance + stageOffsetX"
+	@set "hannaPositionZ = Cos(hannaIdx * g_pi * 2 / {courtStandCount}) * characterDistance + stageOffsetZ"
+	@set "hannaRotationY = 360 / {courtStandCount} * hannaIdx"
+	@char Hanna.Default { Position:{hannaPositionX},{characterPositionY},{hannaPositionZ} Rotation:,{hannaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@if "sherryIdx >= 0"
+	@set "sherryPositionX = Sin(sherryIdx * g_pi * 2 / {courtStandCount}) * characterDistance + stageOffsetX"
+	@set "sherryPositionZ = Cos(sherryIdx * g_pi * 2 / {courtStandCount}) * characterDistance + stageOffsetZ"
+	@set "sherryRotationY = 360 / {courtStandCount} * sherryIdx"
+	@char Sherry.Default { Position:{sherryPositionX},{characterPositionY},{sherryPositionZ} Rotation:,{sherryRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@if "ananIdx >= 0"
+	@set "ananPositionX = Sin(ananIdx * g_pi * 2 / {courtStandCount}) * characterDistance + stageOffsetX"
+	@set "ananPositionZ = Cos(ananIdx * g_pi * 2 / {courtStandCount}) * characterDistance + stageOffsetZ"
+	@set "ananRotationY = 360 / {courtStandCount} * ananIdx"
+	@char AnAn.Default { Position:{ananPositionX},{characterPositionY},{ananPositionZ} Rotation:,{ananRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@if "leiaIdx >= 0"
+	@set "leiaPositionX = Sin(leiaIdx * g_pi * 2 / {courtStandCount}) * characterDistance + stageOffsetX"
+	@set "leiaPositionZ = Cos(leiaIdx * g_pi * 2 / {courtStandCount}) * characterDistance + stageOffsetZ"
+	@set "leiaRotationY = 360 / {courtStandCount} * leiaIdx"
+	@char Leia.Default { Position:{leiaPositionX},{characterPositionY},{leiaPositionZ} Rotation:,{leiaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@if "cocoIdx >= 0"
+	@set "cocoPositionX = Sin(cocoIdx * g_pi * 2 / {courtStandCount}) * characterDistance + stageOffsetX"
+	@set "cocoPositionZ = Cos(cocoIdx * g_pi * 2 / {courtStandCount}) * characterDistance + stageOffsetZ"
+	@set "cocoRotationY = 360 / {courtStandCount} * cocoIdx"
+	@char Coco.Default { Position:{cocoPositionX},{characterPositionY},{cocoPositionZ} Rotation:,{cocoRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@if "miriaIdx >= 0"
+	@set "miriaPositionX = Sin(miriaIdx * g_pi * 2 / {courtStandCount}) * characterDistance + stageOffsetX"
+	@set "miriaPositionZ = Cos(miriaIdx * g_pi * 2 / {courtStandCount}) * characterDistance + stageOffsetZ"
+	@set "miriaRotationY = 360 / {courtStandCount} * miriaIdx"
+	@char Miria.Default { Position:{miriaPositionX},{characterPositionY},{miriaPositionZ} Rotation:,{miriaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@if "margoIdx >= 0"
+	@set "margoPositionX = Sin(margoIdx * g_pi * 2 / {courtStandCount}) * characterDistance + stageOffsetX"
+	@set "margoPositionZ = Cos(margoIdx * g_pi * 2 / {courtStandCount}) * characterDistance + stageOffsetZ"
+	@set "margoRotationY = 360 / {courtStandCount} * margoIdx"
+	@char Margo.Default { Position:{margoPositionX},{characterPositionY},{margoPositionZ} Rotation:,{margoRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@if "noahIdx >= 0"
+	@set "noahPositionX = Sin(noahIdx * g_pi * 2 / {courtStandCount}) * characterDistance + stageOffsetX"
+	@set "noahPositionZ = Cos(noahIdx * g_pi * 2 / {courtStandCount}) * characterDistance + stageOffsetZ"
+	@set "noahRotationY = 360 / {courtStandCount} * noahIdx"
+	@char Noah.Default { Position:{noahPositionX},{characterPositionY},{noahPositionZ} Rotation:,{noahRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@if "nanokaIdx >= 0"
+	@set "nanokaPositionX = Sin(nanokaIdx * g_pi * 2 / {courtStandCount}) * characterDistance + stageOffsetX"
+	@set "nanokaPositionZ = Cos(nanokaIdx * g_pi * 2 / {courtStandCount}) * characterDistance + stageOffsetZ"
+	@set "nanokaRotationY = 360 / {courtStandCount} * nanokaIdx"
+	@char Nanoka.Normal1 { Position:{nanokaPositionX},{characterPositionY},{nanokaPositionZ} Rotation:,{nanokaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@if "alisaIdx >= 0"
+	@set "alisaPositionX = Sin(alisaIdx * g_pi * 2 / {courtStandCount}) * characterDistance + stageOffsetX"
+	@set "alisaPositionZ = Cos(alisaIdx * g_pi * 2 / {courtStandCount}) * characterDistance + stageOffsetZ"
+	@set "alisaRotationY = 360 / {courtStandCount} * alisaIdx"
+	@char Alisa.Default,Option-ArmL-Off { Position:{alisaPositionX},{characterPositionY},{alisaPositionZ} Rotation:,{alisaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@if "yukiIdx >= 0"
+	@set "yukiPositionX = Sin(yukiIdx * g_pi * 2 / {courtStandCount}) * characterDistance + stageOffsetX"
+	@set "yukiPositionZ = Cos(yukiIdx * g_pi * 2 / {courtStandCount}) * characterDistance + stageOffsetZ"
+	@set "yukiRotationY = 360 / {courtStandCount} * yukiIdx"
+	@char Yuki.2 { Position:{yukiPositionX},{characterPositionY},{yukiPositionZ} Rotation:,{yukiRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@if "wardenIdx >= 0"
+	@set "wardenPositionX = Sin(wardenIdx * g_pi * 2 / {courtStandCount}) * characterDistance + stageOffsetX"
+	@set "wardenPositionZ = Cos(wardenIdx * g_pi * 2 / {courtStandCount}) * characterDistance + stageOffsetZ"
+	@set "wardenRotationY = 360 / {courtStandCount} * wardenIdx"
+	@char Warden.1 { Position:{wardenPositionX},{characterPositionY},{wardenPositionZ} Rotation:,{wardenRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@if "jailerIdx >= 0"
+	@set "jailerPositionX = Sin(jailerIdx * g_pi * 2 / {courtStandCount}) * characterDistance + stageOffsetX"
+	@set "jailerPositionZ = Cos(jailerIdx * g_pi * 2 / {courtStandCount}) * characterDistance + stageOffsetZ"
+	@set "jailerRotationY = 360 / {courtStandCount} * jailerIdx"
+	@char Jailer.1 { Position:{jailerPositionX},{characterPositionY},{jailerPositionZ} Rotation:,{jailerRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@set "currentHp = maxHp"
+
+@showStageScreen 0 { time:0 }
+@showStageScreen 1 { time:0 }
+
+@loadStage "{stageName}"
+
+@WaitForNextFrame 
+
+@if enableDebugSkip
+	@Skip true
+
+@Return 
+
+# ==============================================================================
+# MARK: ⚖️ EndTrial: 裁判終了
+# ==============================================================================
+
+# EndTrial
+
+@ProcessInput true
+@StopBgm 
+@HideUI ControlPanel,AutoToggle,WitchBookButtonUI,DebateUI
+@ResetText 
+@back SolidColor { time:{g_fadeDurationAtScenarioTransition} }
+@Wait "{g_fadeDurationAtScenarioTransition}"
+
+@hideChars { time:0 }
+@hideStageScreen 0 { time:0 }
+@hideStageScreen 1 { time:0 }
+@unloadStage 
+
+@Return 
+
+# ==============================================================================
+# MARK: ⚖️ BeginDebate: 議論開始
+# ==============================================================================
+
+#
+# MARK: BeginDebate-First: 議論開始処理・前半
+# ------------------------------------------------------------------------------
+
+# BeginDebate-First
+
+@ResetText 
+@HidePrinter 
+@HideUI AutoToggle
+
+@Return 
+
+#
+# MARK: BeginDebate-Effect: 議論開始エフェクト
+# ------------------------------------------------------------------------------
+
+# BeginDebate-Effect
+
+@ProcessInput true
+@HideUI WitchBookButtonUI
+@spawn BeginDebateText
+@despawn BeginDebateText
+
+@Return 
+
+#
+# MARK: BeginDebate-Last: 議論開始処理・後半
+# ------------------------------------------------------------------------------
+
+# BeginDebate-Last
+
+@Skip false
+@ProcessInput true { set:Continue.{allowContinueDebate},Pause.false,Skip.true,ToggleSkip.true,SkipMovie.true,AutoPlay.false,ToggleUI.false,ShowBacklog.false,Rollback.{allowRollback} }
+@ShowUI WitchBookButtonUI
+@debate true
+
+@Return 
+
+# ==============================================================================
+# MARK: ⚖️ EndDebate: 議論終了
+# ==============================================================================
+
+#
+# MARK: EndDebate-First: 議論終了処理・前半
+# ------------------------------------------------------------------------------
+
+# EndDebate-First
+
+@debate false
+@ResetText Debate
+@HidePrinter Debate
+
+@Return 
+
+#
+# MARK: EndDebate-Effect: 議論終了エフェクト
+# ------------------------------------------------------------------------------
+
+# EndDebate-Effect
+
+@ProcessInput true
+@HideUI WitchBookButtonUI
+@spawn EndDebateText
+@despawn EndDebateText
+
+@Return 
+
+#
+# MARK: EndDebate-CutIn: 議論終了・反論カットイン
+# ------------------------------------------------------------------------------
+
+# EndDebate-CutIn
+
+@Skip false
+@ProcessInput false
+@HideUI WitchBookButtonUI
+
+@if !enableDebugSkip
+	@spawn "{objectionCutInSpawnPath}" { Params:{objectionCutInIndex} }
+	@despawn "{objectionCutInSpawnPath}"
+
+@Return 
+
+#
+# MARK: EndDebate-Last: 議論終了処理・後半
+# ------------------------------------------------------------------------------
+
+# EndDebate-Last
+
+@Skip false
+@ProcessInput true { set:Continue.true,Pause.true,Skip.true,ToggleSkip.true,SkipMovie.true,AutoPlay.true,ToggleUI.{allowToggleUI},ShowBacklog.true,Rollback.{allowRollback} }
+@ShowUI AutoToggle,WitchBookButtonUI
+
+@if enableDebugSkip
+	@Skip true
+
+@Return 
+
+#
+# MARK: AdditionalDebate-CutIn-2: 追加議論カットイン2
+# ------------------------------------------------------------------------------
+
+# AdditionalDebate-CutIn-2
+
+@if !enableDebugSkip
+	@Skip false
+	@ProcessInput false
+	@HideUI ControlPanel,AutoToggle,WitchBookButtonUI
+	@spawn ObjectionCutIn_Ema
+	@despawn ObjectionCutIn_Ema
+	@ShowUI ControlPanel,AutoToggle,WitchBookButtonUI
+	@ProcessInput true
+
+@Return 
+
+#
+# タイムアップ
+# ------------------------------------------------------------------------------
+
+# TimeIsUp
+
+@Skip false
+@Gosub .EndDebate-First
+@ProcessInput false
+@StopBgm 
+@clearChoice *
+@HideUI ControlPanel,AutoToggle,WitchBookButtonUI,DebateUI
+@spawn TimeIsUpText
+@back SolidColor { time:0.9 }
+@despawn TimeIsUpText
+
+@goto "Common/CommonBad{commonBadEndId}"
+
+# ==============================================================================
+# MARK: 🎥 ModifyCamera: ステージカメラ移動
+# ModifyCamera-{Composition}-{Roll}-{ZoomLevel}
+# ==============================================================================
+
+# ModifyCamera-Center-NoRoll-Lvl1
+
+@set "cameraYaw = {targetCharIdx} / {courtStandCount} * 360"
+@set "cameraRoll = 0"
+@stageCamera "{cameraIdx}" { Rotation:0,{cameraYaw},{cameraRoll} time:0 }
+
+@Return 
+
+# ModifyCamera-Center-NoRoll-Lvl2
+
+@set "cameraYaw = {targetCharIdx} / {courtStandCount} * 360"
+@set "cameraRoll = 0"
+@stageCamera "{cameraIdx}" { Rotation:0,{cameraYaw},{cameraRoll} time:0 }
+
+@Return 
+
+# ModifyCamera-Center-NoRoll-Lvl3
+
+@set "cameraYaw = {targetCharIdx} / {courtStandCount} * 360"
+@set "cameraRoll = 0"
+@stageCamera "{cameraIdx}" { Rotation:0,{cameraYaw},{cameraRoll} time:0 }
+
+@Return 
+
+# ModifyCamera-Center-NoRoll-Lvl4
+
+@set "cameraYaw = {targetCharIdx} / {courtStandCount} * 360"
+@set "cameraRoll = 0"
+@stageCamera "{cameraIdx}" { Rotation:0,{cameraYaw},{cameraRoll} time:0 }
+
+@Return 
+
+# ModifyCamera-Left-NoRoll-Lvl1
+
+@set "cameraYaw = ({targetCharIdx} + 0.1) / {courtStandCount} * 360"
+@set "cameraRoll = 0"
+@stageCamera "{cameraIdx}" { Rotation:0,{cameraYaw},{cameraRoll} time:0 }
+
+@Return 
+
+# ModifyCamera-Left-NoRoll-Lvl3
+
+@set "cameraYaw = ({targetCharIdx} + 0.1) / {courtStandCount} * 360"
+@set "cameraRoll = 0"
+@stageCamera "{cameraIdx}" { Rotation:0,{cameraYaw},{cameraRoll} time:0 }
+
+@Return 
+
+# ModifyCamera-Left-NoRoll-Lvl4
+
+@set "cameraYaw = ({targetCharIdx} + 0.1) / {courtStandCount} * 360"
+@set "cameraRoll = 0"
+@stageCamera "{cameraIdx}" { Rotation:0,{cameraYaw},{cameraRoll} time:0 }
+
+@Return 
+
+# ModifyCamera-Left-Right-Lvl3
+
+@set "cameraYaw = ({targetCharIdx} + 0.1) / {courtStandCount} * 360"
+@set "cameraRoll = -4"
+@stageCamera "{cameraIdx}" { Rotation:0,{cameraYaw},{cameraRoll} time:0 }
+
+@Return 
+
+# ModifyCamera-Left-Right-Lvl4
+
+@set "cameraYaw = ({targetCharIdx} + 0.1) / {courtStandCount} * 360"
+@set "cameraRoll = -4"
+@stageCamera "{cameraIdx}" { Rotation:0,{cameraYaw},{cameraRoll} time:0 }
+
+@Return 
+
+# ModifyCamera-Right-NoRoll-Lvl1
+
+@set "cameraYaw = ({targetCharIdx} - 0.1) / {courtStandCount} * 360"
+@set "cameraRoll = 0"
+@stageCamera "{cameraIdx}" { Rotation:0,{cameraYaw},{cameraRoll} time:0 }
+
+@Return 
+
+# ModifyCamera-Right-NoRoll-Lvl3
+
+@set "cameraYaw = ({targetCharIdx} - 0.1) / {courtStandCount} * 360"
+@set "cameraRoll = 0"
+@stageCamera "{cameraIdx}" { Rotation:0,{cameraYaw},{cameraRoll} time:0 }
+
+@Return 
+
+# ModifyCamera-Right-NoRoll-Lvl4
+
+@set "cameraYaw = ({targetCharIdx} - 0.1) / {courtStandCount} * 360"
+@set "cameraRoll = 0"
+@stageCamera "{cameraIdx}" { Rotation:0,{cameraYaw},{cameraRoll} time:0 }
+
+@Return 
+
+# ModifyCamera-Right-Left-Lvl3
+
+@set "cameraYaw = ({targetCharIdx} - 0.1) / {courtStandCount} * 360"
+@set "cameraRoll = 4"
+@stageCamera "{cameraIdx}" { Rotation:0,{cameraYaw},{cameraRoll} time:0 }
+
+@Return 
+
+# ModifyCamera-Right-Left-Lvl4
+
+@set "cameraYaw = ({targetCharIdx} - 0.1) / {courtStandCount} * 360"
+@set "cameraRoll = 4"
+@stageCamera "{cameraIdx}" { Rotation:0,{cameraYaw},{cameraRoll} time:0 }
+
+@Return 
+
+# ==============================================================================
+# MARK: 🎥 SplitScreen: ステージ画面分割
+# SplitScreen-{Composition}-{Roll}
+# ==============================================================================
+
+# SplitScreen-Left-Right
+
+@set "cameraYaw = ({targetCharIdx} + 0.25) / {courtStandCount} * 360"
+@stageCamera "{cameraIdx}" { Rotation:-3,{cameraYaw},5 time:0 }
+@WaitForNextFrame 
+
+@stageCamera "{cameraIdx}" { time:0.6 }
+@splitStageScreen "{cameraIdx}"
+@showStageScreen "{cameraIdx}"
+
+@Return 
+
+# 左右反転Ver
+# SplitScreen-Right-Left
+
+@set "cameraYaw = ({targetCharIdx} - 0.25) / {courtStandCount} * 360"
+@stageCamera "{cameraIdx}" { Rotation:-3,{cameraYaw},-5 time:0 }
+@WaitForNextFrame 
+
+@stageCamera "{cameraIdx}" { time:0.6 }
+@splitStageScreen "{cameraIdx}"
+@showStageScreen "{cameraIdx}"
+
+@Return 
+
+# 左カットイン
+# SplitScreen-Left-Over
+
+@set "cameraYaw = ({targetCharIdx} + 0.25) / {courtStandCount} * 360"
+@stageCamera "{cameraIdx}" { Rotation:0,{cameraYaw},5 time:0 }
+@WaitForNextFrame 
+
+@stageCamera "{cameraIdx}" { time:0.6 }
+@splitStageScreen "{cameraIdx}"
+@showStageScreen "{cameraIdx}"
+
+@Return 
+
+# 右カットイン
+# SplitScreen-Right-Over
+
+@set "cameraYaw = ({targetCharIdx} - 0.22) / {courtStandCount} * 360"
+@stageCamera "{cameraIdx}" { Rotation:0,{cameraYaw},-5 time:0 }
+@WaitForNextFrame 
+
+@stageCamera "{cameraIdx}" { time:0.6 }
+@splitStageScreen "{cameraIdx}"
+@showStageScreen "{cameraIdx}"
+
+@Return 
+
+# 中央切断カットイン-Right
+# SplitScreen-Right-Center
+
+@set "cameraYaw = ({targetCharIdx} - 0.2) / {courtStandCount} * 360"
+@stageCamera "{cameraIdx}" { Rotation:0,{cameraYaw},0 time:0 }
+@WaitForNextFrame 
+
+@stageCamera "{cameraIdx}" { time:0.6 }
+@splitStageScreen "{cameraIdx}"
+@showStageScreen "{cameraIdx}"
+
+@Return

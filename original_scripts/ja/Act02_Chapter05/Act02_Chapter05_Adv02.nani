@@ -1,0 +1,296 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-5-1
+
+# ========================================
+# ●シーン2-5‐1
+# ========================================
+
+@bgm Bgm_21_1
+
+@back 370_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# ＠備考◆大きく息を呑む
+
+@print ――！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@back 370_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@Wait 0.2
+@back 370_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@Wait 0.4
+@back 370_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@Wait 0.2
+@back 370_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@Wait 0.4
+
+
+@print "<ruby=\"まばた\">瞬</ruby>きをすると、<br>冷たい石の天井が近くにあった。" { speed:1 waitInput:true Wait:true }
+
+# がばりと起き上がる音
+@sfx Sfx_1
+
+@print え、な、なに、ここ……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "ろ、牢屋……！？ なんで！？" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ねえ、ここどこなのかな！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 私たちがこの牢屋敷の囚われた初日であると、<br>二段ベッドの下で【生きている】エマの声を聞き、実感する。 { speed:1 waitInput:true Wait:true }
+
+@back 370_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@Wait 0.2
+
+@print （……戻った。戻れたんだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私は自らの意思で【死に戻り】の魔法を行使し、<br>長く長く時間を飛び超え、<br>ここにたどりついたのだ。 { speed:1 waitInput:true Wait:true }
+@Wait 0.2
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@back 1_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@hide Stills { time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+# ========================================
+# ヒロの立ち絵なし
+# ========================================
+
+# ＠備考◆苦しみ
+
+@print エマ――ぐ、うぅぅぅ……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 誰よりも会いたかった彼女の名前を呼び、<br>私はすぐにベッドから飛び降りようとした。 { speed:1 waitInput:true Wait:true }
+
+@print "しかし、直後に襲ってきた全身の激痛に、<br><ruby=\"うめ\">呻</ruby>き声を上げ、立ち上がることすらままならない。" { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆苦しみ
+
+@print ぐ、うぅ、ぁ、ぁぁあ……っ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print え、な、何……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print 私のもがき苦しむ声に、<br>エマがベッドの方を振り返る。 { speed:1 waitInput:true Wait:true }
+
+@print そして、私がいることに気付いた様子だった。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3
+
+@print ヒロちゃん！？<br>な、なんでここに！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 頭が割れるように痛い。<br>全身が引き裂かれるように痛い。<br>心が壊れてしまいそうに痛い。 { speed:1 waitInput:true Wait:true }
+
+@print （あ、あぁ、そうか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ３周目の死に戻りで、<br>長い時間を飛び越えて私はここへやってきた。 { speed:1 waitInput:true Wait:true }
+
+@print おそらく私の体は、<br>全てがリセットされた状態に戻っていた。 { speed:1 waitInput:true Wait:true }
+
+@print しかし、死に戻る前の私は、魔女化が進んでいた。<br>もう後戻りができないほどに。 { speed:1 waitInput:true Wait:true }
+
+@print それは私の深いところに刻まれてしまった。<br>いちど元に戻ったところで…… { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆苦しみ
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.4
+
+@print ああっ、ぐ、ぁ……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 魔女化は止められない。 { speed:1 waitInput:true Wait:true }
+
+@print "顔面の<ruby=\"ひふ\">皮膚</ruby>がひび割れていく。<br>爪が<ruby=\"えいり\">鋭利</ruby>な枝のように伸びていく。" { speed:1 waitInput:true Wait:true }
+
+@print "めきめきと急速に体が変化していき、<br>その猛烈な痛みに私は苦しみ、ただ<ruby=\"あえ\">喘</ruby>いだ。" { speed:1 waitInput:true Wait:true }
+
+# 倒れる音
+@sfx Sfx_19
+
+@shake Camera
+@Wait 1
+
+@print 私はその状態のまま、<br>ベッドから転がり落ちた。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Surprised1,ArmR3
+
+@print ヒロちゃんっ、大丈夫ヒロちゃん！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ――来るな！<br>私に近寄るな！！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 駆け寄ってくるエマの姿が見えて、<br>私は叫んでいた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print エマがびくりと肩を震わせ、足を止める。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （まだ、まだかろうじて理性がある……。<br>　まだ自分の意思で動ける） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私は荒い息を吐き出しながら、<br>よろよろと立ち上がる。 { speed:1 waitInput:true Wait:true }
+
+@print "するとエマがひっと息を<ruby=\"の\">呑</ruby>んだ声が聞こえた。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ここからヒロの立ち絵表示（半クリーチャー）
+# ========================================
+
+@char Ema.Pensive1,ArmR3
+@char CreatureHiro.22
+
+@print ヒロちゃ……ヒロちゃん、なの……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （エマ……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私の喉から、言葉は出てこなかった。 { speed:1 waitInput:true Wait:true }
+
+@print "少しずつ体が<ruby=\"なじ\">馴染</ruby>んできたのか、<br>痛みは多少薄れている。意識もはっきりしている。" { speed:1 waitInput:true Wait:true }
+
+@print しかし、私は彼女に何を言えばいいのだろうか。 { speed:1 waitInput:true Wait:true }
+
+@print 今にも泣き叫んでしまいそうに、<br>熱いものが込み上げている。でも―― { speed:1 waitInput:true Wait:true }
+
+@print （私は化け物だ。きっともう、戻れない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "エマの存在を振り切るように、<br>視線を<ruby=\"そ\">逸</ruby>らした。" { speed:1 waitInput:true Wait:true }
+
+@print "死に戻りで<ruby=\"ゆうよ\">猶予</ruby>を得たのか、<br>トラウマをねじ伏せたためか、かろうじて理性を保てている。" { speed:1 waitInput:true Wait:true }
+
+@print （……皮肉だな。<br>　ユキ、君との会話で私の魔女化は<br>　ギリギリで抑えられているらしい） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@QuickSave 25
+
+@print （まだ意識がはっきりしているうちに、<br>　やらなければいけないことがある） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （そのために、私はここまで戻ってきたのだから） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "キッと前を<ruby=\"みす\">見据</ruby>える。<br>私たちを閉じこめている<ruby=\"てつごうし\">鉄格子</ruby>が見えた。" { speed:1 waitInput:true Wait:true }
+
+@print 私は―― { speed:1 waitInput:true Wait:true }
+
+@choice サバトの儀式を行う
+	@goto .Choice2-5-1
+
+@choice サバトの儀式を行わない
+	@goto Act02_Chapter05/Act02_Chapter05_Bad01
+
+@StopForChoice 
+
+# Choice2-5-1
+
+@correctChoice 25
+
+@ResetText 
+@Wait 1.5
+
+@print ――そう。<br>サバトの儀式を行うことを心に決めていた。 { speed:1 waitInput:true Wait:true }
+
+@print 少女たちが【魔女の本】に<br>残してくれた手がかりによれば、<br>大魔女の召喚には【１３人の魔女】が必要だ。 { speed:1 waitInput:true Wait:true }
+
+@print つまり……私を含めた全員が、<br>完全に魔女化しなければならない。 { speed:1 waitInput:true Wait:true }
+
+@print エマたち全員のトラウマを引きずり出し、<br>無理やり魔女化させるということ。 { speed:1 waitInput:true Wait:true }
+
+@print それはメルルがしてきた所業と同じ……<br>いや、よりもっと残酷な仕打ちだ。 { speed:1 waitInput:true Wait:true }
+
+@print それでも私の心は決まっていた。 { speed:1 waitInput:true Wait:true }
+
+@print （酷くても、忌避され憎まれても……<br>　不可能でも……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （私は、君たちを救いたいんだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@back 1_1 { time:0.4 }
+@Wait 0.6
+
+# 牢の施錠音
+@sfx Sfx_4
+
+@Wait 0.5
+
+@print 牢が開いた音がしたので、<br>私はエマの方を見ないようにして歩きだした。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print あ、ま、待ってよヒロちゃん！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+@hideChars 
+
+# 牢の扉が開く音
+@sfx Sfx_119
+
+@back 2_1 { Scale:{g_backgroundDefaultScale} }
+@back Transparent.Custom { time:0.9 }
+@Wait 0.9
+
+@print 目的はただひとつ――【サバトの儀式】。 { speed:1 waitInput:true Wait:true }
+
+@print 私はもうそれ以外を考えないようにし、<br>通路の先を急ぐ。 { speed:1 waitInput:true Wait:true }
+
+@char Coco.Surprised1
+
+@print ぎゃああぁぁ！！<br>化け物がもう１匹いるぅぅ！！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 通路には牢屋敷に囚われた少女たちが出てきており、<br>その誰もが私の姿を見て表情を強張らせている。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "それでも私は<ruby=\"うれ\">嬉</ruby>しかった。" { speed:1 waitInput:true Wait:true }
+
+@print （みんな生きている） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 彼女たちの中にはもう、<br>私と過ごした記憶は失われている。 { speed:1 waitInput:true Wait:true }
+
+@print 彼女たちにとって、<br>私はただの化け物だ。 { speed:1 waitInput:true Wait:true }
+
+@print それでも良かった。<br>ここにたどりつく前、私の中にだけ抱いた<br>大切な記憶があるから。 { speed:1 waitInput:true Wait:true }
+
+@print ふと、思い当たることがあって、<br>ポケットの中に手を差し入れた。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 証拠品：『ヒロの万年筆』入手
+# ========================================
+@spawn Clue
+@update 10-1
+@despawn Clue
+
+@print "あんなに粉々に<ruby=\"つぶ\">潰</ruby>したのに、<br>それは傷ひとつない状態で、私の手の中にあった。" { speed:1 waitInput:true Wait:true }
+
+@print 瞬間感情が波たち、増幅し、<br>万年筆を握りつぶしてしまいそうになる。 { speed:1 waitInput:true Wait:true }
+
+# @despawn Clue
+
+@print "ギリギリでその気持ちを押し<ruby=\"とど\">留</ruby>め、<br>私は再び歩きだした。" { speed:1 waitInput:true Wait:true }
+
+@print （待っていろ、ユキ。<br>　今君に会いにいく――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （君を断罪するために） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 階段を上がる音
+@sfx Sfx_7
+@Wait 1.2
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter05/Act02_Chapter05_Adv03

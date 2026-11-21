@@ -1,0 +1,163 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-4-6
+
+# ========================================
+# ●シーン2‐4‐6
+# ========================================
+
+@back 18_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# ========================================
+# ＞『塀の前』を選択
+# ========================================
+
+@bgm Bgm_5_1
+
+@print 私がレイアと共にやってきたのは、<br>牢屋敷から少し離れた塀の前だった。 { speed:1 waitInput:true Wait:true }
+
+@print 外に出て周辺を歩き回っていたら、<br>偶然アリサの姿を目撃したのだ。 { speed:1 waitInput:true Wait:true }
+
+@print 私たちはアリサを追うように、<br>塀の前にやってきた。 { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1,Option-ArmL-Off
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+@char Leia.Smile1
+
+@print やあアリサくん。ここで何をしているんだい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,Option-ArmL-Off
+
+@print おめえらかよ……。<br>別におめえらにカンケーねえだろ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print そうだな関係ない。<br>私たちは私たちでゴクチョーを探しているだけだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print アリサくんはゴクチョーを見なかったかい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1,Option-ArmL-Off
+
+@print ゴクチョーか……いや今日は見てねえな。<br>もう少し遠くに行ったら、<br>ゴクチョーによく似た鳥が飛び回ってるけどな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print あいつらは監視の役目があるみてえだが、<br>話は通じねえ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print そうなのか。どうやって確認した？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,Option-ArmL-Off
+
+@print ……むしゃくしゃしてて、<br>炎をぶつけて落下させたんだよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print （また過激なことを……<br>　アリサもずいぶん追い詰められ、<br>　消耗しているようだな……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1,Option-ArmL-Off
+
+@print ああクソ、この塀さえ登れりゃあな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print "思わずといった風に、<br>塀を<ruby=\"あお\">仰</ruby>いでアリサがぼやいた。" { speed:1 waitInput:true Wait:true }
+
+@print なるほど。君は脱出方法を探しているのか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,Option-ArmL-Off
+
+@print あたりめえだろ。<br>ウチは初日からずっと探してる。<br>こんなとこ出ないと頭おかしくなるだろうが。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1,Option-ArmL-Off
+
+@print この塀だって、何度も登ろうとした。<br>でもどんな手段使っても、途中で落とされんだよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print 私は塀にそっと触れてみた。 { speed:1 waitInput:true Wait:true }
+
+@print （何か魔法のようなものがかけられているのだろうか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,Option-ArmL-Off
+
+@print 早く出ねえと……もうウチは、<br>間に合わなくなりそうなんだよ……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print 間に合わない、とは？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ……魔女化。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Hiro.Surprised1
+
+@print "アリサがぽつりと<ruby=\"つむ\">紡</ruby>いだ言葉に、<br>私は想像以上に動揺し、ぎくりと体を強張らせてしまった。" { speed:1 waitInput:true Wait:true }
+
+@print 自分でわかんだよ。<br>ウチはもう魔女化が進みはじめてる。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print 魔女化が進むと殺人衝動が起こる？<br>最初はそんな話、アホらしいと思ってた。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Pensive1,Option-ArmL-Off
+
+@print でもこうも苦しい日が続いてると、<br>誰かと目が合った時に思うんだ。ああ、殺そう……って。<br>近いうちに、ウチはいつか、ウチじゃなくなる……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Smile1,Option-ArmL-Off
+
+@print だからまあ、<br>ウチのそばにはあんま近寄らねえことだな。<br>誰に殺意が向くかもうわかんねえから。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+@char Leia.Pensive1
+@char Alisa.Normal1,Option-ArmL-Off
+
+@print アリサくん……少なくとも私は<br>キミがそんなことを望んでないと、<br>知っているよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# ＠備考◆鼻で笑う
+
+@char Alisa.Smile1,Option-ArmL-Off
+
+@print ハッ、おめえらの言うことは<br>いちいち嘘くせえんだよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,Option-ArmL-Off
+
+@print 蓮見、二階堂、おめえらはウチが大嫌いなタイプだ。<br>だからウチが魔女化したら、<br>最初におめえらに殺意が向くだろうな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Pensive1,Option-ArmL-Off
+
+@print さっさと消えろよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hide Alisa
+@Wait 0.8
+
+@print ……レイア、行こう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "私は静かに言い放ち、レイアを<ruby=\"うなが\">促</ruby>す。<br>腹が立ったわけではない。" { speed:1 waitInput:true Wait:true }
+
+@print "レイアの言う通り、アリサは危害を加えることを望んでいない。<br>だからこそ私たちを遠ざけたいという気持ちを、<br><ruby=\"く\">汲</ruby>んでやるべきだと思った。" { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆ぽつりと
+
+@char Leia
+
+@print アリサくんは、本当は優しいのかもしれないね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 今さら気付いたのか？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （……アリサだけじゃない。<br>　私たちは、誰も殺人など望んでいない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 昨日集まって楽しく盛り上がったことを思い出してしまい、<br>胸が余計に辛くなる。 { speed:1 waitInput:true Wait:true }
+
+@print （殺し合うのも、魔女だと糾弾し合うのも、<br>　望んでなんかいない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print それなのに――いずれその【時】が訪れてしまう。 { speed:1 waitInput:true Wait:true }
+
+@print "私たちはただ、その【時】に<ruby=\"おび\">怯</ruby>えながら、<br><ruby=\"あらが\">抗</ruby>いながら、迷いながら、<br><ruby=\"しゅくしゅく\">粛々</ruby>と過ごすことしかできない。" { speed:1 waitInput:true Wait:true }
+
+@print 私は拳を握りしめて先を歩き出す。 { speed:1 waitInput:true Wait:true }
+
+@print 爪を隠すために、ぎゅっと、固く。 { speed:1 waitInput:true Wait:true }
+
+@update Alisa
+@update Hiro
+
+# ========================================
+# 消化していないイベントがある＞シーン2‐4‐3
+# 全てのイベントを消化している＞シーン2‐4‐9
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter04/Act02_Chapter04_Adv03

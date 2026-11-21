@@ -1,0 +1,38 @@
+@Gosub System/System_Subroutine.BeginAdv
+
+@back Transparent { time:0 }
+
+# @gosub .Characters
+@Gosub .Background
+
+@Stop 
+
+# ==============================================================================
+# キャラクター
+# ==============================================================================
+
+# Characters
+
+@print "Debug_MultipliableActors # Characters" { speed:1 waitInput:true Wait:true }
+
+@char Ema
+@char Ema
+@char Ema
+@i 
+
+@Return 
+
+# ==============================================================================
+# 背景
+# ==============================================================================
+
+# Background
+
+@print "Debug_MultipliableActors # Background" { speed:1 waitInput:true Wait:true }
+
+@back Hall
+@back Hall
+@back Hall
+@i 
+
+@Return

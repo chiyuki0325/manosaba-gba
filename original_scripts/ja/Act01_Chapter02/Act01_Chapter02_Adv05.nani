@@ -1,0 +1,549 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-2-5
+
+# ========================================
+# ●シーン1‐2-5
+# ========================================
+
+@back 18_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_11_1
+
+@char Sherry.Normal1,ArmR6
+
+@print やっぱりこの塀、高いですねえ。<br>うーん、破壊できればいいんですけど……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 翌日、牢屋敷の外に出たメンバーは<br>塀の前にやってきた。 { speed:1 waitInput:true Wait:true }
+
+@print 大勢で動き回るのは目立つので、<br>来たのはエマ、シェリー、ミリアの３人。 { speed:1 waitInput:true Wait:true }
+
+@print ミリアは何かみんなの役に立ちたいと<br>勢い込んでついてきたのだ。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+@char Sherry.Normal1,ArmR8
+@char Miria.Normal1
+
+@print 試しにもう１回殴ってみていいですか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+
+@print ダ、ダメダメダメ！<br>看守が来ちゃうから！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print どうして壊れないんだろうね？<br>特殊な素材でできてるわけでもないのに。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1,ArmR1
+
+@print 国の陰謀か……<br>はたまた誰かの魔法じゃないでしょうか。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print うん……花畑の方にはずっと虹がかかってるし、<br>この牢屋敷は不思議なところがいっぱいある。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print これまで捕まってきた少女たちの<br>魔法が残ってるんじゃないかと思うんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+
+@print そうなると、死後も魔法の効果は永続的……<br>ってことになりますかね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print これまで捕まってきた少女たちは<br>ほぼ死んでいるでしょうし。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Miria.Surprised1
+
+@print こ、怖いこと言わないでよ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （……本当に、この塀はなんなんだろう……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマが思考に<ruby=\"ふけ\">耽</ruby>っている間に、<br>ミリアとシェリーは塀から離れ、歩きだしていた。" { speed:1 waitInput:true Wait:true }
+
+@print それでも気にかかって、<br>エマは改めて塀をじっくりと眺めまわしてみる。 { speed:1 waitInput:true Wait:true }
+
+@print すると地面近くに、<br>刻まれた落書きがあることに気付く。 { speed:1 waitInput:true Wait:true }
+
+@print 【大昔、大魔女がこの塀に魔法をかけた】 { speed:1 waitInput:true Wait:true }
+
+@print 【どんな魔法も物理的な干渉も受け付けない強力な魔法】 { speed:1 waitInput:true Wait:true }
+
+@print "【大魔女は魔女を守りたかった？ 一体何から？】" { speed:1 waitInput:true Wait:true }
+
+@print 【幻視で視えたのはここまで。囚人記録】 { speed:1 waitInput:true Wait:true }
+
+@print "その走り書きは最近になって書かれたもののようで、<br><ruby=\"にじ\">滲</ruby>むインク跡が新しい。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print （【幻視】って……ナノカちゃんがこれを……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （大魔女はどんな存在だったんだろう……<br>　大切な情報な気がする。【魔女図鑑】にメモしておこう） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# ========================================
+# ☆【魔女図鑑】『エマのメモ２』入手
+# ========================================
+@spawn Clue
+@update 9
+@despawn Clue
+
+@print エマも塀から離れ、<br>ミリアとシェリーに追いつく。 { speed:1 waitInput:true Wait:true }
+
+@char Miria.Normal1
+
+@print 監視フクロウの目が届かない場所を探すんだよね。<br>あっちの方はどうだろう？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@print ほら、木が深く茂ってるから<br>けっこう死角は多そうだよ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+# ＠備考◆こそこそ話風に
+
+@hideChars 
+@char Ema.Normal1
+@char Sherry.Normal1,ArmR6
+
+@print "……どう思います？ ミリアさんのこと。" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print シェリーがエマの隣に並び、<br>こそりと耳打ちした。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+
+@print えっ、ミリアちゃん？ { author:Ema speed:1 waitInput:true Wait:true }
+
+# ＠備考◆こそこそ話風に
+
+@print 黒幕かもしれないって思います？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR6
+
+@print ぜんぜんそんな風には見えないけど……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# ＠備考◆こそこそ話風に
+
+@print でも中身がおじさんなの、<br>内緒にしてましたよね。怪しいと思うんですけど。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 懸命に監視から死角になる場所を探すミリアに、<br>シェリーは近付いていく。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR1
+@char Miria.Normal1
+
+@print うん、ここなんかいい感じかも……。<br>茂みに隠れられそうだし。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print ミリアさん。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print "ん？ なんだい？" { author:Miria speed:1 waitInput:true Wait:true }
+
+@print あなたはどうして<br>ミリアさんと入れ替わったんですか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ＠備考◆はっと息を呑む
+
+@char Miria.Surprised1
+
+@print ――！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@print "（シェリーちゃん！？ いきなり切り込みすぎ……！）" { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+
+@print 気になって仕方ないんですよぉ。教えてください！<br>なんで女の子の体を奪ったんですか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive1,ArmR8
+
+@print ……それは、まあ、色々あって……。<br>あんまり言いたくないかな～……あはは～……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Normal1,ArmR2,ArmL2
+
+@print そ、そんなことより、<br>ほら、脱獄の計画を進めようよ！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Smile1,ArmR2,ArmL2
+
+@print おじさんはりきっちゃうよ～！<br>あっ、ほら、あっちに行ってみよ～っと！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print わざとらしい声をあげ、<br>ミリアは逃げるように走っていった。 { speed:1 waitInput:true Wait:true }
+
+@print シェリーとエマは<br>目を見合わせる。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+@char Sherry.Pensive1
+
+@print 怪しいですよねぇ。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 否定できない、かも。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+@back 17_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent.Custom { time:0.9 }
+@Wait 0.9
+
+@print エマたちが若干距離をあけつつ<br>ミリアの後をついていくと、湖方面に出た。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 17_1
+@char Alisa.Normal1,Option-ArmL-Off
+@mask MainBackground-Front,Alisa-Front
+@animate MainBackground-Front
+@animate Alisa-Front
+@Wait 0.4
+
+@print "湖畔には、アリサが<ruby=\"たたず\">佇</ruby>んでいた。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3
+
+@print アリサちゃん！<br>ちょうど良かった、探してたんだ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@animate MainBackground-Front,Alisa-Front
+@animate MainBackground-Front
+@animate Alisa-Front
+@hide MainBackground-Front,Alisa-Front,Ema
+@despawn MaskingRectangle
+@Wait 0.4
+
+@print エマは顔を綻ばせ、<br>アリサの方へと駆け寄る。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+@char Alisa.Angry1,Option-ArmL-Off
+
+@print ああん？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print "アリサにぎろりと<ruby=\"にら\">睨</ruby>まれ、<br>足がすくんだエマは立ち止まった。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print （そ、そういえばアリサちゃんと<br>　和やかに話し合えたことなかった……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,Option-ArmL-Off
+
+@print ウチはおめえらに用はねえ。<br>こっち来んな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print 特にハエ女とおっさん。<br>不快なんだよおめえら。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print シェリーとミリアはがっくりと肩を落とす。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1,ArmR19,ArmL14
+@char Miria.Pensive1,ArmR6,ArmL6
+
+@print そんなに嫌わなくても……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print ハエじゃなくて妖精さんがいいです……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 慰めるように寄り合う２人を横目に、<br>エマはアリサへと一歩近付く。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmL1
+
+@print アリサちゃんに、力を貸してほしいんだ。<br>ボクらの脱獄計画には、アリサちゃんが必要なんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Surprised1,Option-ArmL-Off,ArmL2
+
+@print ウチが必要……？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Normal1,ArmR1,ArmL1
+
+@print "ですです！ エマさんが思いついたんです！<br>【気球】を作ろうって！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 脱獄のためには、塀を越えるしかない。<br>空を飛べれば簡単だが、ハンナの魔法は使えない。 { speed:1 waitInput:true Wait:true }
+
+@print しかし気球なら、上空まで行けるかもしれない。<br>それが、エマの考えた作戦だった。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR1
+@char Sherry.Normal1
+@char Miria.Normal1,ArmR1,ArmL1
+
+@print マーゴちゃんが布を調達してきて、<br>ハンナちゃんたちが裁縫してくれてる。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 我々は気球を飛ばす場所を探してます！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 見つかったらおしまいだからね……。<br>塀の近くで、かつ目立たないところじゃないと。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print うん。そうやってみんなで力を合わせて<br>気球作りをしてるんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print ただ、問題は燃料で……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3
+
+@print アリサちゃんの魔法、【発火】なら、<br>気球を浮かせることができるんじゃないかって。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa.Flushed1,Option-ArmL-Off
+
+@print ウチが必要……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print "マスクで覆われていてわかりにくいが、<br>じゃっかんアリサの<ruby=\"ほほ\">頬</ruby>が染まっている。" { speed:1 waitInput:true Wait:true }
+
+@print ウチが必要……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print "かけられた言葉を、<br>しみじみと<ruby=\"か\">噛</ruby>みしめているように見える。" { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆ひそひそ声で
+
+@hideChars 
+@char Ema.Normal1,ArmR3
+@char Sherry.Normal1,ArmR6
+
+@print あっさり落ちそうですね。<br>だいぶチョロい気がします、彼女。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print シェリーがエマに耳打ちする。<br>エマも手ごたえを感じ、勢いこんで更に近付く。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa.Flushed1,Option-ArmL-Off
+@char Ema.Determined2,ArmR3
+
+@print ……アリサちゃんがボクたちには必要なんだ！<br>アリサちゃんじゃなきゃダメなんだよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Flushed1,Option-ArmL-Off,ArmR9
+
+@print ……ウ、ウチじゃなきゃ、ダメ……！？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print アリサの耳元が震えている。 { speed:1 waitInput:true Wait:true }
+
+@print そう。アリサちゃんにしかできないんだよ。<br>みんなアリサちゃんのことを待ってる。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ウ、ウチを待ってる……！？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print エマはもう一歩彼女との距離を詰めた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR3
+
+@print お願いアリサちゃん！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Flushed1,Option-ArmL-Off,ArmR9
+
+@print しかし、それに合わせるように<br>アリサが一歩下がってしまった。<br>まるで見えない壁でもあるかのように。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Pensive1,ArmR1
+
+@print あれれ……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa.Flushed1,Option-ArmL-Off,ArmR9
+
+@print ……ふ、ふぅん……それでウチを探してたってワケか。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+
+@print う、うん。うまくいったら、みんなでここを出られる。<br>アリサちゃんの力を貸してほしいんだよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print アリサは、どこか気まずそうに<br>背中を向けてしまった。 { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Pensive1,Option-ArmL-Off,ArmR1,ArmL3
+
+@print ――やめときな。<br>ウチなんかに頼ったら失敗する。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print ウチには無理だ。悪いな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print アリサはその場を立ち去るため、<br>エマの横をすり抜けていく。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3
+
+@print そんな、アリサちゃん……！<br>話を聞いて――。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@StopBgm 
+
+@print その時だった。 { speed:1 waitInput:true Wait:true }
+
+# 銃声
+@sfx Sfx_38
+@Wait 2
+
+@print "空気を裂く銃声が<ruby=\"とどろ\">轟</ruby>いた次の瞬間、<br>ミリアの足元に銃弾が刺さっていた。" { speed:1 waitInput:true Wait:true }
+
+# 銃声
+@sfx Sfx_38
+@Wait 2
+@bgm Bgm_12_1_Loop
+
+@print パン、パンパンッと<br>続け様に銃弾が撃たれてくる。 { speed:1 waitInput:true Wait:true }
+
+@char Miria.Surprised1,ArmR8,ArmL7
+
+@print ぎょええええええぇ！！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print もはや乙女の素養を失った汚い悲鳴で<br>ミリアが逃げ惑う。 { speed:1 waitInput:true Wait:true }
+
+@char Miria.Fearful1,ArmR8,ArmL7
+
+@print "撃たれた！！ 撃たれたあああ！！<br>死ぬうううううぅ！！" { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Normal1,ArmR18,ArmL13
+
+@print 落ち着いてくださいミリアさん！<br>当たってません！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Surprised1,ArmR3
+
+@print ナノカちゃん！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 姿の見えないナノカが<br>どこかから狙撃してきたのだろう。 { speed:1 waitInput:true Wait:true }
+
+@print "エマは<ruby=\"とっさ\">咄嗟</ruby>に周囲に視線を巡らすが、<br>ナノカの姿は見つけられない。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Angry1,ArmR3,ArmL7
+
+@print ナノカちゃんやめるんだ！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa.Angry1,Option-ArmL-Off,ArmR1,ArmL1
+
+@print チッ、看守が来てるぞ……！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@HidePrinter 
+@animate MainBackground
+@spawn MaskingRectangle
+@back 17_1
+@blur MainBackground-Front
+@char Jailer.1 { time:0 }
+@mask MainBackground-Front,Jailer-Front
+@animate MainBackground-Front
+@animate Miria-Front
+@Wait 0.3
+
+@print 銃声を聞きつけたのか、<br>遠くから看守が近付いてきている。 { speed:1 waitInput:true Wait:true }
+
+@print 看守は鎌を掲げて、猛スピードだ。 { speed:1 waitInput:true Wait:true }
+
+@hide Jailer-Front,MainBackground-Front
+@blur MainBackground-Front
+@despawn MaskingRectangle
+@Wait 0.3
+
+@char Ema.Surprised1,ArmR3,ArmL1
+
+@print マズイ、逃げなきゃ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria.Fearful1,ArmR8,ArmL7
+
+@ResetText 
+@QuickSave 10
+
+@print あ、あうあうあう、<br>おじさん、腰ぬけちゃって……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Normal1,ArmR10,ArmL1
+
+@print "仕方ないですね。<br>背負っていきます！ よいしょっと！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "え？ ひえええええっ！？" { author:Miria speed:1 waitInput:true Wait:true }
+
+# ==============================================================================
+# 野外を走る音・複数
+@sfx Sfx_71
+# ==============================================================================
+
+@print "シェリーは軽々とミリアを持ち上げ、<br>背負いながら<ruby=\"さっそう\">颯爽</ruby>と走り出した。" { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@animate MainBackground
+@spawn MaskingRectangle
+@back 17_1
+@blur MainBackground-Front
+@char Miria.Fearful1,ArmR3,ArmL1 { time:0 }
+@mask MainBackground-Front,Miria-Front
+@animate MainBackground-Front
+@animate Miria-Front
+@Wait 0.3
+
+@print うわあああっ！！<br>おじさんには速すぎるよおぉ～！！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@hide Miria-Front,MainBackground-Front
+@blur MainBackground-Front
+@despawn MaskingRectangle
+
+@print "<ruby=\"おび\">怯</ruby>えたように叫ぶと、ミリアは――" { speed:1 waitInput:true Wait:true }
+
+@choice シェリーにしがみついた
+	@goto .Choice1-2-2
+
+@choice シェリーから手を離した
+	@goto Act01_Chapter02/Act01_Chapter02_Bad02
+
+@StopForChoice 
+
+# Choice1-2-2
+
+@correctChoice 10
+
+@HidePrinter 
+@animate MainBackground
+@spawn MaskingRectangle
+@back 17_1
+@blur MainBackground-Front
+@char Miria.Fearful1,ArmR3,ArmL1 { time:0 }
+@mask MainBackground-Front,Miria-Front
+@animate MainBackground-Front
+@animate Miria-Front
+@Wait 0.3
+
+@print 怖い怖い、怖いって～！！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@print なら、そのまましっかり捕まっててください！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ==============================================================================
+# 野外を走る音・複数
+@sfx Sfx_71
+# ==============================================================================
+
+@print ミリアが思い切りシェリーの肩にしがみつくと、<br>シェリーはさらに速度を上げて走り出した。 { speed:1 waitInput:true Wait:true }
+
+@print うわあああっ～！！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@hide Miria-Front,MainBackground-Front
+@blur MainBackground-Front
+@despawn MaskingRectangle
+@Wait 0.3
+
+@sfx Sfx_71
+
+@print 悲鳴に続くように、<br>アリサとエマも牢屋敷の方へと走る。 { speed:1 waitInput:true Wait:true }
+
+@print （ナノカちゃん、本気なんだ……。<br>　本気で、ミリアちゃんを殺す気だ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマは茂みの方を振り返るも、<br>ナノカの姿はやはり見つけられない。 { speed:1 waitInput:true Wait:true }
+
+@print （誰かを殺すなんて、ダメだよ……。<br>　みんなで生きて、ここを出るんだから） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマはぐっと拳を握った。 { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter02/Act01_Chapter02_Adv06

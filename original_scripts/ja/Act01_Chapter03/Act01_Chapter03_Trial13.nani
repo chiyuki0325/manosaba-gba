@@ -1,0 +1,945 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act01_Chapter03/Act01_Chapter03_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+@char Warden.1 { Position:,{hiddenCharacterPositionY} time:0 }
+@char Jailer.1 { Position:,{hiddenCharacterPositionY} time:0 }
+# ==============================================================================
+# MARK: 3-13: 💬 シェリーが犯行不能な理由
+# ==============================================================================
+# カットイン
+# BGM変更：Guil-me N'o sinruits-Vocal有-
+@bgm Bgm_8_1
+# ボス演出
+@ResetText 
+@char Sherry.Smile1,ArmR15,ArmL3,Angle01/Facial/Eyes>Eyes_Wink_Open01,Angle01/Facial/Mouth>Mouth_Smile_Closed { time:0 }
+@stageCamera 1 { Rotation:0,{ (2 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+
+@stageCamera 1 { Rotation:0,{ (1.9 / courtStandCount * 360) },0 time:1 }
+@showStageScreen 1
+@Wait 1.5
+
+@ResetText 
+@char Ema.Normal1,ArmR1,ArmL10,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed { time:0 }
+@stageCamera 0 { Rotation:0,{ (0 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+
+@stageCamera 0 { Rotation:0,{ (0.1 / courtStandCount * 360) },0 time:1 }
+@hideStageScreen 1
+@Wait 1.5
+
+# Judge3-13-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open01,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@printDebate 私は午前１時、<br>ナノカさんと<br>一緒にいました。<br>これはナノカさんが<br>証明してくれますよね？
+
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@printDebate ……あなたが<br>私に<br>襲いかかってきた<br>だけよ。
+
+@char Sherry.Default,ArmR7,ArmL4,Angle01/Facial/Eyes>Eyes_Flushed_Closed01,Angle01/Facial/Mouth>Mouth_Flushed_Open
+@gosubModifyCamera 0
+@printDebate そうとも<br>言いますね！
+
+@char Sherry.Default,ArmR7,ArmL11,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@printDebate でもその時、<br>私は撃たれたんですよ。
+
+@char Sherry.Default,ArmR17,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@printDebate 銃弾を、<br>足に一発。
+
+@char Meruru.ArmR5_1,ArmL4,Eyes1_Normal_Open2,Mouth1_Angry_Open2
+@gosubModifyCamera 0
+@printDebate それは……！<br>たしかにそうです……！
+
+@char Meruru.ArmR5_1,ArmL4,Eyes1_Normal_Open2,Mouth1_Angry_Open2
+@gosubModifyCamera 0
+@printDebate 今朝、<br>シェリーさんは医務室に<br>いらっしゃいました……！
+
+@char Meruru.ArmR1_1,ArmL1,Eyes1_Pensive_Open2,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@printDebate 足に大きな怪我を<br>していて……！<br>血も止まらない<br>ですし……！
+
+@char Sherry.Default,ArmR7,ArmL12,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@printDebate 自己流で<br>止血しようと<br>したんですけど、<br>ダメだったみたいで！
+
+@char Sherry.Default,ArmR3,ArmL1,Angle01/Facial/Eyes>Eyes_Wink_Open02,Angle01/Facial/Mouth>Mouth_Yum_Closed
+@gosubModifyCamera 0
+@printDebate 今も、<br>立っていることすら<br>辛いんですよ☆
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Middle
+@gosubModifyCamera 0
+@printDebate 本当～？<br>嘘<br>言ってんじゃないの？
+
+@char Sherry.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate 傷の深さはメルルさんに<br>聞いてくださーい。
+
+@char Meruru.ArmR5_1,ArmL4,Eyes1_Normal_Open2,Mouth1_Angry_Open2
+@gosubModifyCamera 0
+@printDebate "たしかに……その足では<br><link=\"Objection_01_03_13_01\">無理</link>だと思います。<br>多少歩くならまだしも、<br><link=\"Objection_01_03_13_02\">重いもの</link>を動かす<br>なんて、とても……。<br><link=\"Objection_01_03_13_03\">怪我のある体</link>で、<br>できるわけはないと<br>思います……。"
+
+@char Sherry.Default,ArmR3,ArmL3,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@printDebate "つまり私は<br><link=\"Objection_01_03_13_04\">午前１時以後</link>、<br>重労働はできないんです。<br>それどころか<br>生死の境を<br>彷徨っていたと<br>言いますか……。"
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Flushed_Open
+@gosubModifyCamera 0
+@printDebate "ですがアリサさんの聞いた<br><link=\"Objection_01_03_13_05\">大きな音</link>は<br><link=\"Objection_01_03_13_06\">【午前２時】</link>……。<br>私が足の怪我で<br>苦しんでいた時間です。<br>私では、建物を<br><link=\"Objection_01_03_13_07\">動かす</link>犯行は<br>できないんですよ～。"
+
+# ＠備考◆達観したように穏やかな笑み。最後の「言いますか？」はシリアスさで大人っぽく。
+@char Sherry.Default,ArmR12,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Smile_Closed
+# @gosubModifyCamera 0 look:Sherry comp:Right rollDir:Left zoomLvl:4
+@stageCamera 0 { Rotation:0,{ (1.95 / courtStandCount * 360) },-4 time:3.2 }
+@printDebate それでも<br>私が犯人だって……<br>言いますか？
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01 { time:0 }
+@gosubModifyCamera 0
+@Wait 0.2
+
+# ==============================================================================
+# 3-13議論後独白
+# ==============================================================================
+
+@print （シェリーちゃんは……建物を動かせなかった……。<br>　それが本当なら……シェリーちゃんは犯人じゃない……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR2-1,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@print （……けど！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR2-1,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@print シェリーちゃん、キミの言葉は……<br>間違ってる！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge3-13-1
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_01_03_13_01
+
+@Skip false
+@pauseTrial true
+
+@choice 我慢できた
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge3-13-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_01_03_13_02
+
+@Skip false
+@pauseTrial true
+
+@choice 重くなかった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge3-13-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_01_03_13_03
+
+@Skip false
+@pauseTrial true
+
+@choice 怪我していなかった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge3-13-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論4
+# ------------------------------------------------------------------------------
+
+# Objection_01_03_13_04
+
+@Skip false
+@pauseTrial true
+
+@choice 午前１時前に動かした
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge3-13-5
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論5
+# ------------------------------------------------------------------------------
+
+# Objection_01_03_13_05
+
+@Skip false
+@pauseTrial true
+
+@choice 建物を動かした音ではなかった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge3-13-6
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論6
+# ------------------------------------------------------------------------------
+
+# Objection_01_03_13_06
+
+@Skip false
+@pauseTrial true
+
+@choice 時間が間違っていた
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge3-13-7
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論7
+# ------------------------------------------------------------------------------
+
+# Objection_01_03_13_07
+
+@Skip false
+@pauseTrial true
+
+@choice 動かさなくてよかった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge3-13-8
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 3-13: ❌ 議論他選択肢
+# ==============================================================================
+# MARK: 3-13-3: ❌ 反論・我慢できた
+
+# Judge3-13-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print シェリーちゃんなら、<br>痛みを我慢できたんじゃないかな……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print まあ、我慢強いほうだとは思いますが……<br>体の機能的に、建物は持ち上げられませんよ！<br>だって、踏ん張れませんから！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print それはメルルさんが証明してくれるはずです！<br>……ですよねっ、メルルさん！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Meruru.ArmR1_1,ArmL8,Eyes1_Pensive_Open2,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print そ、そうですね……<br>かなり深い傷でしたし、シェリーさんの言う通り、<br>体を支えきれないと思います……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.ArmR1_1,ArmL8,Eyes2_Cry_Closed2,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print むしろ立つことだけでも精一杯で、<br>どうしてすぐに来てくれなかったのか……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR7,ArmL12,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Flushed_Open
+@gosubModifyCamera 0
+@print まだ寝ている時間に起こすわけにもいきませんよ！<br>自分で処置してみたんですが、<br>あんまり上手くいかなくて～。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print で、でもシェリーちゃんの魔法なら<br>体自体が強化されてたのかもしれないし！<br>演技で乗り切れた可能性も……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default
+@gosubModifyCamera 0
+@print ……歩こうとするだけで出血する状態だったので、<br>やはり難しかったとは思います……。<br>あと少し治療が遅れたら手遅れだった可能性も……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print エマさんがメルルさんの言葉を疑うというなら……<br>私が耐えられたということを<br>証明してみてください！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （う……！<br>　そんなのできるのかな……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （でもシェリーちゃんもメルルちゃんも<br>　嘘をついているような雰囲気はないかも……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （シェリーちゃんがどこかで嘘をついているとしても……<br>　【実際に今大怪我をしている】のは<br>　間違いなさそうだ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge3-13-1
+
+# MARK: 3-13-4: ❌ 反論・重くなかった
+
+# Judge3-13-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open
+@gosubModifyCamera 0
+@print ゲストハウスは重くなんて<br>なかったんじゃないかな……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print そこまで言うならエマさん、<br>持ち上げてみてください！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR5,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print そ、それは無理だけど……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print でも魔法で浮かせた可能性は<br>あるんじゃないかな……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# 声真似
+# ＠遠野ハンナ
+@char Margo.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print 【被害者の魔法で浮かせた可能性ですわねー！？】 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL3,Angle01/Facial/Eyes>Eyes_Normal_Closed02,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print ちっちっち～！<br>甘いですねエマさん！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL3,Angle01/Facial/Eyes>Eyes_Normal_Closed02,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print 仮にハンナさんが生きていたときに<br>魔法がパワーアップして、<br>屋敷ごと浮かせたのだとしても……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print その密室の中で私がハンナさんを殺したあと、<br>どうやって脱出するって言うんですか！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print どうやらエマさんにはこの密室……<br>破れないみたいですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （矛盾を指摘されちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （シェリーちゃんがしている主張は、<br>　事件の前にシェリーちゃんは大怪我を負っていて<br>　重量物を運べなかったという主張だ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （でもその怪我……<br>　できなかった証明としては穴があるはず……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （指摘するんだ……<br>　シェリーちゃんが犯行可能となる可能性を！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge3-13-1
+# MARK: 3-13-5: ❌ 反論・午前1時前に動かした
+
+# Judge3-13-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print 午前１時前にもう動かしてたんじゃないかな？<br>それから足を怪我したなら、<br>シェリーちゃんにもできるはずだよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL13,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print ちょっと待ってくださいエマさん。<br>事件当時、２時頃にアリサさんは<br>現場の方から大きな音を聞いています。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print ナノカさんの１時の話と<br>アリサさんの２時の話……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print これらを無視するのは、<br>エマさんが自分の推理を無理やり<br>成立させようとしているように見えます。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print エマさんは私だけでなく……<br>ナノカさんやアリサさんまで<br>嘘つき呼ばわりしちゃってるんですよ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （たしかにシェリーちゃんの言う通り、<br>　説得力がない主張かも……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （シェリーちゃんがしている主張は、<br>　事件の前にシェリーちゃんは大怪我を負っていて<br>　重量物を運べなかったという主張だ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （でもその怪我……<br>　できなかった証明としては穴があるはず……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （指摘するんだ……<br>　シェリーちゃんが犯行可能となる可能性を！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge3-13-1
+
+# MARK: 3-13-6: ❌ 反論・建物を動かした音ではなかった
+
+# Judge3-13-6
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print いや……でもその音が建物を動かした音だって<br>証明されてないはず……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print もしかしたら別の音だったのかも……！<br>それならシェリーちゃんの犯行は可能だよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print おや、ではなんの音だったんでしょうね？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print エマさんの推理だと、<br>その時間に大怪我をしていた私が起こした、<br>地震のような音ということになりますよね？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print それとも偶然起こった地震の音か何か<br>だったんでしょうか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print そ、それは……<br>前にゴクチョーが言ってた、<br>処刑のあとの地鳴りだった可能性も……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print 昨日処刑台で誰かが殺されましたか？<br>そんなことありませんよね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL3,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print そしてもし２時の音が別の物だったとしても<br>本当に建物を移動したときは<br>静かだったということになってしまいます。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Flushed_Open
+@gosubModifyCamera 0
+@print 音もなく大質量の建物の位置を入れ替える……<br>そんなことが本当に可能なんですか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Flushed_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print エマさんの推理は、<br>エマさんに都合が良すぎて<br>説得力ありませんよ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （ダメだ……！<br>　シェリーちゃんの言う通り、<br>　この指摘には説得力がない……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （シェリーちゃんがしている主張は、<br>　事件の前にシェリーちゃんは大怪我を負っていて<br>　重量物を運べなかったという主張だ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （でもその怪我……<br>　できなかった証明としては穴があるはず……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （指摘するんだ……<br>　シェリーちゃんが犯行可能となる可能性を！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge3-13-1
+
+# MARK: 3-13-7: ❌ 反論・時間が間違っていた
+
+# Judge3-13-7
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print いや、もしかするとアリサちゃんが確認した時間が<br>間違っていたのかもしれない……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print アリサちゃんが聞いた音は、<br>２時に聞いたんじゃなくて、別の時間に聞いたんだ！<br>それならシェリーちゃんは犯行可能になるはずだよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 仮に多少時間がズレたところで、<br>なんの問題もないんですよエマさん。<br>重要なのは音がした時系列……つまり順番なんです。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print "どうです？ アリサさん。<br>倉庫からの銃声と、２時頃にしたという地震の音……。" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print どちらが早かったか、教えてくれますか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Serious_Open
+@gosubModifyCamera 0
+@print ……ああ。<br>もちろん、１時の銃声の方が早かった。<br>……確実にな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print ……というわけで、私が撃たれたあとに<br>その音が鳴ったのは間違いないみたいなんですよね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print つまりエマさんの言う通り建物が動いたのだとしても、<br>それを動かしたのは私じゃありません。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open01,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print エマさんが言っている推理は、<br>真実でもなんでもない……<br>ただの濡れ衣なんですよ。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （アリサちゃんが聞いた音の<br>　時系列は間違ってないみたい……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （シェリーちゃんがしている主張は、<br>　事件の前にシェリーちゃんは大怪我を負っていて<br>　重量物を運べなかったという主張だ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （でもその怪我……<br>　できなかった証明としては穴があるはず……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （指摘するんだ……<br>　シェリーちゃんが犯行可能となる可能性を！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge3-13-1
+
+# MARK: 3-13-8: ❌ 反論・動かさなくてよかった
+
+# Judge3-13-8
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print シェリーちゃん自身が動かさなくても良かった……<br>そう考えれば、シェリーちゃんが<br>怪我をしていても関係ないよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print だとしたら、私以外も犯行できちゃいますね。<br>今までエマさんがしてきた指摘は……<br>完全に無意味です！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （シェリーちゃんの言う通りかも……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （シェリーちゃんがしている主張は、<br>　事件の前にシェリーちゃんは大怪我を負っていて<br>　重量物を運べなかったという主張だ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （でもその怪我……<br>　できなかった証明としては穴があるはず……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （指摘するんだ……<br>　シェリーちゃんが犯行可能となる可能性を！） { author:Ema speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge3-13-1
+
+# ==============================================================================
+# MARK: 3-13-2: ⭕ 怪我していなかった
+# ==============================================================================
+
+# Judge3-13-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@gosubCutIn Ema
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+# カットイン
+
+@char Ema.Determined2,ArmR7,ArmL10,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print １つだけ、可能性はあるんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR6,ArmL1,Angle01/Facial/Eyes>Eyes_Sparkle_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print そうなんですか！？<br>ぜひ、聞かせてください！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Ema.Determined2,ArmR7,ArmL10,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print シェリーちゃんは……<br>そのとき、怪我をしていなかった。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR7,ArmL10,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print それなら、部屋の移動トリックは<br>問題なくできたはずだよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print もちろん、そう主張するからには<br>証拠があるんですよね？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+# ＠備考◆ワクワク
+
+@char Sherry.Default,ArmR13,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Closed02,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print さあ、見せてください！<br>……その証拠を！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# Judge3-13-9
+
+@char Ema.Determined2,ArmR7,ArmL10
+@gosubModifyCamera 0
+@print シェリーちゃんが怪我をしていなかった証拠……<br>それは……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# 証拠品提示
+@evidence Clue
+
+# 弾痕
+@if "chosenEvidenceId==\"3-5\""
+	@goto .Judge3-13-10
+
+# 汎用
+@goto .Judge3-13-11
+
+# MARK: 3-13-11: ❌ 汎用証拠品ミス
+
+# Judge3-13-11
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print それがどうして私が怪我をしていない<br>証拠になるんでしょうか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL3,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print エマさん、当てずっぽうはダメですよ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （もう一度、よく考えてから証拠を提示しよう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （シェリーちゃんの傷は、<br>　ナノカちゃんと揉み合いの最中についたというのが<br>　シェリーちゃんの主張だ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print "（証拠が残っているとしたら、<br>　それが起きた場所のはず……！ ）" { author:Ema speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge3-13-9
+
+# ==============================================================================
+# MARK: 3-13-10: ⭕ 【弾痕】
+# ==============================================================================
+
+# Judge3-13-10
+
+# アイテム表示
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print 弾痕には銃弾が残っていたままだったけど、<br>その周りに血痕はなかった……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print 少なくともその時……<br>【弾が外れた】可能性があるよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print ……証拠としては、弱くないでしょうか。<br>たまたま１滴も血が出ずに<br>貫通しただけかもしれません。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print それに私の怪我の存在とその深さは<br>診察したメルルさんが証明してくれますよ？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print この怪我については<br>どう説明するつもりですか！？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# Judge3-13-12
+@char Ema.Determined2,ArmR2-2,ArmL2
+@gosubModifyCamera 0
+@print シェリーちゃんの怪我、それは……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@choice ハンナに反撃された
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge3-13-14
+
+@choice 自分で傷付けた
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge3-13-13
+
+@choice 入れ替えを行った時に怪我した
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge3-13-15
+
+@StopForChoice 
+
+# MARK: 3-13-14: ❌ ハンナに反撃された
+
+# Judge3-13-14
+
+@char Ema.Default,ArmR8,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print それはもちろん、<br>ハンナちゃんに反撃されてできた傷だよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print でも、エマさんの推理では<br>建物を移動させたのは<br>ハンナさんが殺された後なんですよね？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR13,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print だとしたら、やっぱり私は犯行ができません！<br>エマさんの推理は、間違っています！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （た、たしかに……<br>　時系列を考えたら無理かも……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （シェリーちゃんは建物を移動させたあとに<br>　怪我をしたはず……！<br>　だとしたら、それができたのは……） { author:Ema speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge3-13-12
+
+# MARK: 3-13-15: ❌ 入れ替えを行った時に怪我した
+
+# Judge3-13-15
+
+@char Ema.Default,ArmR8,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print 建物を入れ替えたときについたんだ！<br>たぶん、手をすべらせて落としたとか、<br>引っかかったとかで……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print だとしたら、もっと骨折とかになってません？<br>メルルさんの見解としてはどうでしょう？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Meruru.ArmR1_1,ArmL8,Eyes1_Pensive_Open2,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print そ、そうなると……<br>災害や事故に巻き込まれたような<br>傷ということですよね……？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.ArmR1_1,ArmL8,Eyes1_Pensive_Open2,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print でしたら、シェリーさんの傷は……<br>それでついたとは思いにくい傷かもしれません。<br>小さなものが貫通したような傷だったので……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print だそうです！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR13,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print ……さあエマさん！<br>この論理、打ち破れますか！？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （シェリーちゃんの様子……<br>　やっぱりおかしい！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （想像して、提示するんだ……！<br>　シェリーちゃんの怪我ができたときの状況を……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge3-13-12
+
+# ==============================================================================
+# MARK: 3-13-13: ⭕ 自分で傷つけた
+# ==============================================================================
+
+# Judge3-13-13
+
+@StopBgm 
+@gosubCutIn Ema
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Determined2,ArmR7,ArmL7,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print シェリーちゃんは……自分で傷つけたんだよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char Ema.Determined2,ArmR7,ArmL7,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print 自分の足を自分で……自傷したんだ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL14,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Neutral_Closed
+@gosubModifyCamera 0
+@print …………。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR1,ArmL1,Eyes1_Normal_Open2,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print ……氷上メルル。<br>あなたは【銃創】を見た経験はある？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Meruru.ArmR1_1,ArmL8,Eyes1_Pensive_Open2,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print そ、それは……<br>ありません……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR1,ArmL1,Eyes1_Angry_Open1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print じゃあ橘シェリーの傷に、弾は残っていた？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Meruru.ArmR5_1,ArmL4,Eyes1_Normal_Open2,Mouth1_Angry_Open2
+@gosubModifyCamera 0
+@print ……見てはいません。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR1,ArmL1,Eyes1_Angry_Open1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print 火傷の跡も、ないのね？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Meruru.ArmR5_1,ArmL4,Eyes1_Normal_Open2,Mouth1_Angry_Open2
+@gosubModifyCamera 0
+@print …………はい。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print ……じゃあ――。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Sherry.Default,ArmR17,ArmL14,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print その辺で……いいですよ。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR6,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Lifeless01,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open
+@gosubModifyCamera 0
+@print ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR4,ArmL12,Angle01/Facial/Eyes>Eyes_Flushed_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print メルルさんは何も悪くないですし……<br>責めないであげてくださいね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR13,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Lifeless01,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle
+@gosubModifyCamera 0
+@print シェリーちゃん……じゃあ……<br>本当に……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR7,ArmL14,Angle01/Facial/Eyes>Eyes_Normal_Closed04,Angle01/Facial/Mouth>Mouth_Pensive_Middle
+@gosubModifyCamera 0
+@print ……あーあ。<br>何も決定的な証拠は残していないはずなのに。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL14,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print これがこの島以外だったら……<br>証拠不十分で釈放ですよ？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR7,ArmL4,Angle01/Facial/Eyes>Eyes_Flushed_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print でも……他のみんなができないから、<br>消去法で私に決まっちゃいましたね。<br>私、アリバイもないですし。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR7,ArmL4,Angle01/Facial/Eyes>Eyes_Flushed_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print それを誤魔化す為の<br>いいトリックだと思ったんですけど……<br>もうバレちゃったので、潔く認めましょう！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR15,ArmL1,Angle01/Facial/Eyes>Eyes_Wink_Open02,Angle01/Facial/Mouth>Mouth_Yum_Closed
+@gosubModifyCamera 0
+@print 名探偵シェリーちゃんの活躍は、<br>ここでおしまいなのでしたー☆ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndTrial
+
+@goto Act01_Chapter03/Act01_Chapter03_Trial14

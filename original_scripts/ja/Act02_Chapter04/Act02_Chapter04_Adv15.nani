@@ -1,0 +1,491 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-4-15
+
+# ========================================
+# ●シーン2‐4‐15
+# ========================================
+
+@back 1_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# さらさらと紙にペンを走らせる書き音
+@sfx Sfx_111
+
+@bgm Bgm_24_1
+
+@print ――監獄生活２周目、××日目。 { speed:1 waitInput:true Wait:true }
+
+@print ――遠野ハンナが桜羽エマと蓮見レイアを殺害し、<br>魔女として処刑された。 { speed:1 waitInput:true Wait:true }
+
+@print ――私の気持ちが完全に壊れず、<br>理性を失わずにいられたのは……。 { speed:1 waitInput:true Wait:true }
+
+@print ――心のどこかで、<br>真実を見届けなければと思っていたからだ。 { speed:1 waitInput:true Wait:true }
+
+@print ――見届けた後、<br>やり直せばいいと思っていたからだ。 { speed:1 waitInput:true Wait:true }
+
+@print ――私の魔法を使えば、<br>今日の朝に戻って全てをやり直せる、と。 { speed:1 waitInput:true Wait:true }
+
+@print 万年筆を走らせていた音は、<br>ピタリと止まった。 { speed:1 waitInput:true Wait:true }
+
+@print それ以上書くことができなかった。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive1,ArmL5
+
+@print （ハンナはレイアに、<br>　初めて会った時から憎しみを芽生えさせていた） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （今日の朝へ戻ったところで、<br>　その長く育んだ憎しみを断ち切ることは不可能だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1,ArmL5
+
+@print （今日エマやレイアを助けることは可能だろう。<br>　しかしどうあがいてもレイアはいずれ殺される） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Fearful1,ArmL5
+
+@print （ならば私は……先にハンナを殺すのか？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ハンナの処刑――正義の執行に、<br>胸がスッとするはずだった。 { speed:1 waitInput:true Wait:true }
+
+@print しかし見届けたそれは、<br>私の気持ちを晴れやかにするものではなかった。 { speed:1 waitInput:true Wait:true }
+
+@print 正しくない、とすら思った。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Cry1,ArmL5
+
+@print （私は、私は――！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 万年筆の折れる音
+@sfx Sfx_151
+@Wait 0.5
+
+@print 力をこめすぎて、<br>万年筆が折れてしまった。 { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆忌々しげに
+
+@print "……くっ！ こんなもの……！" { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 万年筆を床に投げ捨てる音
+@sfx Sfx_152
+
+@Wait 0.5
+
+@char Hiro.Angry1,ArmR13,ArmL13
+
+@print 私が大切だと思っていたものは、<br>全て間違いだった！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "立っていられずその場に手と膝をつき、<br>床を拳で<ruby=\"なぐ\">殴</ruby>る。" { speed:1 waitInput:true Wait:true }
+
+@print 私は、私は、私は――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@StopBgm 
+
+@print ――正しくない。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@print "それは私が吐いた言葉ではなかった。<br>どこかからくすくす、<ruby=\"ちょうしょう\">嘲笑</ruby>と共に聞こえてきた。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 演出：BGM切る・黒画面・UIも消す・ささやきのみ
+# ========================================
+
+@ResetText 
+@HidePrinter 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@printer Normal.Simple
+
+# 立ち絵・話者名の表示なし
+@print ――あなたは正しくない。 { author:Unknown speed:1 waitInput:true Wait:true }
+
+@print ――そんなこと、もうとっくにわかっていたでしょう？ { author:Unknown speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@char Hiro.Fearful1,ArmR13,ArmL13
+
+@back Transparent { time:0.8 }
+@Wait 0.9
+# ========================================
+# 演出ここまで
+# ========================================
+
+@printer Normal.Default
+
+@print "ユキ……？ いるの、か……？" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "聞き覚えのある<ruby=\"はかな\">儚</ruby>い声に、<br>私は<ruby=\"ぼうぜん\">呆然</ruby>と立ち上がる。" { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1,ArmR13,ArmL13
+
+@print "どこだ！？ どこにいる！？" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 室内を見回しても、<br>彼女の姿はどこにもなかった。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 演出：BGM切る・黒画面・UIも消す・ささやきのみ
+# ========================================
+
+@ResetText 
+@hideChars 
+@HidePrinter 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@printer Normal.Simple
+
+# 立ち絵・話者名の表示なし
+@print ああ、あと、残念ながらあなたはやり直せませんよ。 { author:Unknown speed:1 waitInput:true Wait:true }
+
+@print 何故ならあなたは、自殺が禁忌でしょう。 { author:Unknown speed:1 waitInput:true Wait:true }
+
+@print 自殺しようとすれば、今度こそ禁忌に踏み込んで<br>あなたは魔女になる。 { author:Unknown speed:1 waitInput:true Wait:true }
+
+@print 理性を失ってなれはてと化したあなたは、<br>死に戻った先で全員を殺すだけなんです。 { author:Unknown speed:1 waitInput:true Wait:true }
+
+@print そしてなれはてになったことで、<br>魔法を失い、二度と死に戻れなくなる。 { author:Unknown speed:1 waitInput:true Wait:true }
+
+@print 残念ですね。かわいそうですね。<br>本当にあなたは、かわいそうですね。 { author:Unknown speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 演出ここまで
+# ========================================
+
+@ResetText 
+@char Hiro.Fearful1,ArmR9,ArmL10
+
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@bgm Bgm_20_1
+
+@print やめろ――！！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "私の頭の中に響く<ruby=\"ささや\">囁</ruby>きは、<br>万年筆から聞こえてくる気がした。" { speed:1 waitInput:true Wait:true }
+
+@print やめろ、やめろ、もうやめてくれ！！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "だから私は何度も万年筆を<ruby=\"ふ\">踏</ruby>み<ruby=\"つぶ\">潰</ruby>し、<br>粉々にした。" { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@hideChars 
+@HidePrinter 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@print ひどいことしないでください。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@print "万年筆を破壊しつくしても、<br>ユキの<ruby=\"ささや\">囁</ruby>きは聞こえ続けていた。" { speed:1 waitInput:true Wait:true }
+
+@print "あなたの私に対する想いが詰まっていて、<br><ruby=\"よりしろ\">依代</ruby>に使いやすかったのに。" { author:Yuki speed:1 waitInput:true Wait:true }
+
+@print でも、依代を失っても…… { author:Yuki speed:1 waitInput:true Wait:true }
+
+# ※ここでヒントシステムのユキが喋りだす演出入れたいけど確定ではないので仮置き。
+
+# ＠備考◆ささやき
+
+@print "【ヒ ロ】" { author:Yuki speed:1 waitInput:true Wait:true }
+
+# ＠備考◆ささやき
+
+@print 【私は、ずっと、あなたのそばにいられます】 { author:Yuki speed:1 waitInput:true Wait:true }
+
+# ＠備考◆戦慄
+
+@ResetText 
+@char Hiro.Fearful1,ArmR9,ArmL10
+
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print ひ、あ、あ――！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "私は耳を<ruby=\"ふさ\">塞</ruby>ぐ。目を閉じる。うずくまる。" { speed:1 waitInput:true Wait:true }
+
+@print "それでも彼女の<ruby=\"ささや\">囁</ruby>きは私に<ruby=\"しんしょく\">浸食</ruby>し続ける。" { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@hideChars 
+@HidePrinter 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.5
+
+@print 【この牢屋敷なら存在が保てるんです】 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@print "【きっと、私の家族の私を想う気持ちが、<br>　<ruby=\"ざんし\">残滓</ruby>のようにあるからですね】" { author:Yuki speed:1 waitInput:true Wait:true }
+
+@print 【……ねぇヒロ。<br>　エマは殺されてしまいました】 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@print 【とてもがっかりしています。<br>　またいちから代わりを探さないといけません】 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@print 【あなたは協力してくれますよね。<br>　だって私たちは友だちですから】 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@char Hiro.Angry1,ArmR13,ArmL13
+
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.5
+
+@print "友だち……？ ふざけるな！" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ユキ――お前が全ての元凶だったんだ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私はずっと、<br>大切な友人だと思っていたのに！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私はずっと、正しくなかったんだ！！<br>間違え続けていたんだ！！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print エマとユキと私。 { speed:1 waitInput:true Wait:true }
+
+@print ３人で過ごした中学時代の記憶が、<br>私にとって何よりも大切だと思っていた宝物が、<br>全て音を立てて崩れていく。 { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# ========================================
+# ◎回想シーン（新規）
+# ========================================
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@hideChars { time:0 }
+@back 140_3 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@back SolidColor.Custom { time:1.5 }
+@Wait 1.8
+
+@bgm Bgm_32_1
+
+@print 中学にあがってすぐ、<br>ひどいいじめを受けている少女がいた。 { speed:1 waitInput:true Wait:true }
+
+@print 少女の名前は月代ユキと言った。 { speed:1 waitInput:true Wait:true }
+
+@print 私は放っておけず、<br>ユキを守るようになった。 { speed:1 waitInput:true Wait:true }
+
+@print "しかしユキは<ruby=\"たて\">盾</ruby>となる私を<ruby=\"うと\">疎</ruby>み、<br>冷たく避けた。" { speed:1 waitInput:true Wait:true }
+
+@print "私はそれでも彼女の<ruby=\"たて\">盾</ruby>となり続けた。<br>それが正しい行動だと思ったからだ。" { speed:1 waitInput:true Wait:true }
+
+@back 400_1 { Scale:{g_backgroundDefaultScale} }
+
+@print ある時、ユキとエマが<br>一緒に行動しているのを見かけた。 { speed:1 waitInput:true Wait:true }
+
+@print エマは中学で別のクラスになってから、<br>少し疎遠になっていた。 { speed:1 waitInput:true Wait:true }
+
+@print ユキとエマが親しげに笑っているのを見かけて。 { speed:1 waitInput:true Wait:true }
+
+@print ――友だちができたのか。良かった。 { speed:1 waitInput:true Wait:true }
+
+@print そう思う反面、<br>心のどこかで抱いたことのない感情を抱いた。 { speed:1 waitInput:true Wait:true }
+
+@print ――どうして私ではダメだったんだ？ { speed:1 waitInput:true Wait:true }
+
+@print ――どうしてよりによって、エマなんだ？ { speed:1 waitInput:true Wait:true }
+
+@print ２人の存在が私の心に深く刻まれ、<br>振り払うことができなくなった。 { speed:1 waitInput:true Wait:true }
+
+@print エマは決して良い子なんかじゃない。<br>その気持ちは更に膨れ上がった。 { speed:1 waitInput:true Wait:true }
+
+@print そうして気にかけているうちに、<br>やがてエマの方が私の眼差しに気付いた。 { speed:1 waitInput:true Wait:true }
+
+@print ――ヒロちゃんも一緒に遊ぼうよ。 { speed:1 waitInput:true Wait:true }
+
+@print エマに差し伸べられた手を、<br>私は自然に取っていた。 { speed:1 waitInput:true Wait:true }
+
+@back 400_2 { Scale:{g_backgroundDefaultScale} }
+
+@print ユキが人目を嫌うので、<br>私たちは３人だけの秘密の場所で過ごす時間が<br>増えていった。 { speed:1 waitInput:true Wait:true }
+
+@print ３人で過ごした、<br>じゃれ合った、<br>ゲームした、 { speed:1 waitInput:true Wait:true }
+
+@print おしゃべりした、<br>お菓子を食べた、<br>時にはケンカした、 { speed:1 waitInput:true Wait:true }
+
+@print かけがえのない宝物のような時間。 { speed:1 waitInput:true Wait:true }
+
+@print けれど―― { speed:1 waitInput:true Wait:true }
+
+@print 私の短期留学が決まったことで、<br>３人の関係に変化が起こった。 { speed:1 waitInput:true Wait:true }
+
+@print "私はエマにユキのことを<ruby=\"たく\">託</ruby>した。<br>学校でのユキへのいじめは変わらず起こっていたから。" { speed:1 waitInput:true Wait:true }
+
+@print ――ユキのことを頼んだ。 { speed:1 waitInput:true Wait:true }
+
+@print ――うん、任せて！ { speed:1 waitInput:true Wait:true }
+
+@print うわべで笑顔を浮かべながら、<br>平気なフリをしながら、<br>私はずっと――エマに嫉妬していた。 { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@print その小さな闇は―― { speed:1 waitInput:true Wait:true }
+
+@back 400_3 { Scale:{g_backgroundDefaultScale} }
+
+@print 帰国し、ユキの自殺を知ったことで<br>爆発的に膨れあがった。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@back 150_1 { Scale:{g_backgroundDefaultScale} }
+
+@back SolidColor.Custom { time:1.5 }
+@Wait 1.8
+
+@bgm Bgm_29_1
+
+@print ――大切な友だちが自殺をした。 { speed:1 waitInput:true Wait:true }
+
+@print （しかしそれは、<br>　エマを追い詰めるための手段にすぎなかった） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 友だちの名前は、月代ユキ。 { speed:1 waitInput:true Wait:true }
+
+@print （彼女は大魔女だった） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@update 4
+
+@print "私が部屋に入った時、<br>まだその場には<ruby=\"くびつ\">首吊</ruby>り<ruby=\"わ\">輪</ruby>が残されていた。" { speed:1 waitInput:true Wait:true }
+
+@print "私は用意された<ruby=\"くびつ\">首吊</ruby>り<ruby=\"わ\">輪</ruby>を<ruby=\"にら\">睨</ruby>みあげた。" { speed:1 waitInput:true Wait:true }
+
+@print （今ならわかる。<br>　彼女はエマにトラウマを植え付けたかった） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"りん\">凛</ruby>と姿勢よく、<br>首を<ruby=\"くく\">縊</ruby>るための輪の先を見据え――<br>あまりの<ruby=\"いまいま\">忌々</ruby>しさに<ruby=\"はが\">歯噛</ruby>みした。" { speed:1 waitInput:true Wait:true }
+
+@print 許せなかった。<br>こんなものがユキの命を奪ったことが。 { speed:1 waitInput:true Wait:true }
+
+@print （だからエマの心を傷つけるために<br>　わざといじめに遭い、<br>　わざと自殺した） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私にとって許されない行為だった。<br>私にとって正しくない行為だった。 { speed:1 waitInput:true Wait:true }
+
+@print （まんまと騙された私は、<br>　一層エマを追い込んだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私は【正しさ】を何より好んでいた。 { speed:1 waitInput:true Wait:true }
+
+@print （ユキの目論見どおり、<br>　私は踊った。踊り狂った） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 世界には、<br>ひとつの間違いもあってはならない。 { speed:1 waitInput:true Wait:true }
+
+@print （全部が間違いだった） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 清らかな湖にひとつの毒を混ぜれば、<br>生き物は死滅する。 { speed:1 waitInput:true Wait:true }
+
+@print （毒は私だった） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"せいち\">精緻</ruby>な絵画にひとつの傷を加えれば、<br>芸術の価値は失われる。" { speed:1 waitInput:true Wait:true }
+
+@print （傷は私だった） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "完璧なハーモニーにひとつの間違った音が<ruby=\"あ\">在</ruby>れば、<br>不協和音になる。" { speed:1 waitInput:true Wait:true }
+
+@print （不協和音は私だった） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "正しいを願う脳に<br>１匹の害虫が<ruby=\"す\">棲</ruby>みついていたならば――" { speed:1 waitInput:true Wait:true }
+
+@print （害虫は私だった） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 世界が、崩壊した。 { speed:1 waitInput:true Wait:true }
+
+@print "――<ruby=\"くびつ\">首吊</ruby>り<ruby=\"わ\">輪</ruby>の先に見えたのは、<br>私にとって正しくない世界を作った存在。" { speed:1 waitInput:true Wait:true }
+
+@print （それは私だった） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （私だった、私だった、私だった、<br>　私だった、私だった、私――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 回想シーンここまで
+# ========================================
+
+@StopBgm 
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@hide Stills { time:0 }
+
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.6
+
+@bgm Bgm_24_1
+
+# ＠備考◆号泣
+
+@print ああ、ああぁあぁっ、あぁぁっぁぁっ！！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私は全てを失った。<br>私に正義などなかった。<br>私は無力だった。 { speed:1 waitInput:true Wait:true }
+
+@print なにひとつ、救えなかった。 { speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"おえつ\">嗚咽</ruby>を漏らし、<br>ただ泣き続けることしかできなかった。" { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆号泣
+
+@print う、うぅう、あぁぁ……っ<br>ああ、ああっ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 暗転
+# ========================================
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@print …………。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ――どれだけ泣き続けたかもわからない。 { speed:1 waitInput:true Wait:true }
+
+@print いつの間にか、ユキの気配は消えていた。<br>私のことなど、正直どうでもいいのだろう。 { speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"ほお\">頬</ruby>は乾き、涙の跡だけが<br><ruby=\"ひふ\">皮膚</ruby>に冷たくはりついている。" { speed:1 waitInput:true Wait:true }
+
+@print 喉からはかすれた息しか漏れず、<br>目は光を映す力すら失っていた。 { speed:1 waitInput:true Wait:true }
+
+@print "胸の奥に広がる<ruby=\"むな\">虚</ruby>しさは深く、<br>残るのは静寂と、感情の<ruby=\"ざんがい\">残骸</ruby>だけ。" { speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"てつごうし\">鉄格子</ruby>の向こうに、<br>ぼんやりと足が映る。" { speed:1 waitInput:true Wait:true }
+
+@print （ああ、そうだ、まだ生き残っている少女が<br>　いたのか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （だがそれもいずれ……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Pensive1,Option-ArmL-Off,ArmL2
+@char Miria.Pensive1,ArmR10
+
+@back SolidColor.Custom { time:3 }
+@Wait 3.2
+
+@print "鈍い挙動で私は顔を上げる。<br>中を<ruby=\"のぞ\">覗</ruby>いていたのは、アリサとミリアだった。" { speed:1 waitInput:true Wait:true }
+
+@print おそらく泣き叫ぶ私の声を聞き、<br>しばらくそっとしておいてくれたのだろう。 { speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"てつごうしご\">鉄格子越</ruby>し、どこか気まずそうに、<br>心配そうに私を見つめている。" { speed:1 waitInput:true Wait:true }
+
+@print ……二階堂、おめえにさ、<br>見せたいもんがある。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print "私に？ 今更何を……。" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive1,ArmR10
+
+@print 辛いなら無理はしないでいいんだよ。<br>でも、おじさんたちも<br>少しでもヒロちゃんの助けになりたくて……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print これがヒロちゃんの助けになるかは、<br>正直わからない。でも……もう泣かないで。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 私はよろよろ立ち上がり、部屋を出る。 { speed:1 waitInput:true Wait:true }
+
+@print それ以上何も考えられず、彼女たちの後に続いた。 { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter04/Act02_Chapter04_Adv16

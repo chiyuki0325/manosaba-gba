@@ -1,0 +1,59 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+@back Transparent { time:1.2 }
+
+# Scene1-3-6
+
+# ========================================
+# ●シーン1‐3-6
+# ========================================
+
+# ========================================
+# マップイベント用分岐
+# ========================================
+
+# ========================================
+# 【ＭＡＰイベント】牢屋敷マップ
+# 玄関ホール＞シーン1‐3‐7
+# ラウンジ＞シーン1‐3‐8
+# 地下通路＞シーン1‐3‐9
+# 娯楽室＞シーン1‐3‐10
+# 図書室＞シーン1-3-11
+# ※全てのＭＡＰイベントを選択したら終了。
+# 選択済みの場所は消していってください。
+# ========================================
+
+@if "chosenAreaFlag == 31"
+	@set "chosenAreaFlag = 0"
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter03/Act01_Chapter03_Adv12
+
+@map EntranceHall,Lounge,BasementHallway,RecreationRoom,Library EntranceHall,Lounge,BasementHallway,RecreationRoom,Library
+
+@if "chosenAreaId==\"EntranceHall\""
+	@setFlag 0
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter03/Act01_Chapter03_Adv07
+
+@if "chosenAreaId==\"Lounge\""
+	@setFlag 1
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter03/Act01_Chapter03_Adv08
+
+@if "chosenAreaId==\"BasementHallway\""
+	@setFlag 2
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter03/Act01_Chapter03_Adv09
+
+@if "chosenAreaId==\"RecreationRoom\""
+	@setFlag 3
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter03/Act01_Chapter03_Adv10
+
+@if "chosenAreaId==\"Library\""
+	@setFlag 4
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter03/Act01_Chapter03_Adv11
+
+@Stop

@@ -1,0 +1,748 @@
+{
+  "clips": [
+    {
+      "name": "Ambient_005_001 Operating elevator",
+      "alias": "Ambi_5_1"
+    },
+    {
+      "name": "Ambient_007_001 Earthquake",
+      "alias": "Ambi_7_1"
+    },
+    {
+      "name": "Ambient_010_001 Chain fall out",
+      "alias": "Ambi_10_1"
+    },
+    {
+      "name": "Ambient_101_001 white-noise-48000sr",
+      "alias": "Ambi_101_1"
+    },
+    {
+      "name": "Ambient_102_001 SFX_FireBig_L",
+      "alias": "Ambi_102_1"
+    },
+    {
+      "name": "Sfx_Scenario_114 MAHOU SYOUJO",
+      "alias": "Sfx_114"
+    },
+    {
+      "name": "Sfx_Scenario_030 Fire",
+      "alias": "Sfx_30"
+    },
+    {
+      "name": "Sfx_System_Cancel_001",
+      "alias": "Sfx_System_Cancel_001"
+    },
+    {
+      "name": "Sfx_Scenario_032 Hits wood table",
+      "alias": "Sfx_32"
+    },
+    {
+      "name": "Sfx_Scenario_086 Push switch",
+      "alias": "Sfx_86"
+    },
+    {
+      "name": "Sfx_System_Choice_001",
+      "alias": "Sfx_System_Choice_001"
+    },
+    {
+      "name": "Sfx_Scenario_083 Cooking stew",
+      "alias": "Sfx_83"
+    },
+    {
+      "name": "Sfx_Scenario_096 Smartphone hit floor",
+      "alias": "Sfx_96"
+    },
+    {
+      "name": "Sfx_Scenario_169 Light off",
+      "alias": "Sfx_169"
+    },
+    {
+      "name": "Sfx_Scenario_164 Broken tree",
+      "alias": "Sfx_164"
+    },
+    {
+      "name": "Sfx_Scenario_064 Move noise in the warehouse",
+      "alias": "Sfx_64"
+    },
+    {
+      "name": "Sfx_System_Choice_003b",
+      "alias": "Sfx_System_Choice_003b"
+    },
+    {
+      "name": "Sfx_Common_003 Decision",
+      "alias": "Sfx_Common_3"
+    },
+    {
+      "name": "Sfx_Scenario_157 Elevator door open",
+      "alias": "Sfx_157"
+    },
+    {
+      "name": "Sfx_Scenario_135 Kusya kusya paper",
+      "alias": "Sfx_135"
+    },
+    {
+      "name": "Sfx_System_Choice_002a",
+      "alias": "Sfx_System_Choice_002a"
+    },
+    {
+      "name": "Sfx_System_SaveData_001_2x",
+      "alias": "Sfx_System_SaveData_001_2x"
+    },
+    {
+      "name": "Sfx_Scenario_148 Break ice",
+      "alias": "Sfx_148"
+    },
+    {
+      "name": "Sfx_Scenario_163 coming foot out door",
+      "alias": "Sfx_163"
+    },
+    {
+      "name": "Sfx_Scenario_175 Break ice2",
+      "alias": "Sfx_175"
+    },
+    {
+      "name": "Sfx_Scenario_153 Strangling sounds",
+      "alias": "Sfx_153"
+    },
+    {
+      "name": "Sfx_Scenario_019 body fall down",
+      "alias": "Sfx_19"
+    },
+    {
+      "name": "Sfx_Scenario_128 Loose screw",
+      "alias": "Sfx_128"
+    },
+    {
+      "name": "Sfx_Scenario_047 Shower",
+      "alias": "Sfx_47"
+    },
+    {
+      "name": "Sfx_Scenario_039 Fall bird",
+      "alias": "Sfx_39"
+    },
+    {
+      "name": "Sfx_Scenario_025 Hit wall",
+      "alias": "Sfx_25"
+    },
+    {
+      "name": "Sfx_Scenario_005 Hikizuru oto",
+      "alias": "Sfx_5"
+    },
+    {
+      "name": "Sfx_Scenario_150 Hard falling rock",
+      "alias": "Sfx_150"
+    },
+    {
+      "name": "Sfx_Scenario_167 Hard hit head",
+      "alias": "Sfx_167"
+    },
+    {
+      "name": "Sfx_Scenario_066 Touch paper",
+      "alias": "Sfx_66"
+    },
+    {
+      "name": "Sfx_Common_004 Hit",
+      "alias": "Sfx_Common_4"
+    },
+    {
+      "name": "Sfx_Scenario_006 Fall down",
+      "alias": "Sfx_6"
+    },
+    {
+      "name": "Sfx_Scenario_053 Slashing anan",
+      "alias": "Sfx_53"
+    },
+    {
+      "name": "Sfx_System_ExecuteButton_002",
+      "alias": "Sfx_System_ExecuteButton_002"
+    },
+    {
+      "name": "Sfx_Scenario_009 Swing down",
+      "alias": "Sfx_9"
+    },
+    {
+      "name": "Sfx_Scenario_095 Belt",
+      "alias": "Sfx_95"
+    },
+    {
+      "name": "Sfx_Scenario_082 Meet cook",
+      "alias": "Sfx_82"
+    },
+    {
+      "name": "Sfx_Scenario_072 One_Footsteps leaving",
+      "alias": "Sfx_72"
+    },
+    {
+      "name": "Sfx_Scenario_129 Walking up the house stairs",
+      "alias": "Sfx_129"
+    },
+    {
+      "name": "Sfx_Scenario_061 Push book stand shely",
+      "alias": "Sfx_61"
+    },
+    {
+      "name": "Sfx_Scenario_060 Drop smart phone",
+      "alias": "Sfx_60"
+    },
+    {
+      "name": "Sfx_System_Open_001",
+      "alias": "Sfx_System_Open_001"
+    },
+    {
+      "name": "Sfx_Scenario_012 Meat cut",
+      "alias": "Sfx_12"
+    },
+    {
+      "name": "Sfx_Scenario_178 Landing sound",
+      "alias": "Sfx_178"
+    },
+    {
+      "name": "Sfx_Scenario_151 Broken pen",
+      "alias": "Sfx_151"
+    },
+    {
+      "name": "Sfx_Scenario_010 Body hit",
+      "alias": "Sfx_10"
+    },
+    {
+      "name": "Sfx_Scenario_077 Hit door",
+      "alias": "Sfx_77"
+    },
+    {
+      "name": "Sfx_Scenario_117 Hit face",
+      "alias": "Sfx_117"
+    },
+    {
+      "name": "Sfx_Scenario_127 Hanging",
+      "alias": "Sfx_127"
+    },
+    {
+      "name": "Sfx_Scenario_179 Lie down on bed",
+      "alias": "Sfx_179"
+    },
+    {
+      "name": "Sfx_System_Tab_001b",
+      "alias": "Sfx_System_Tab_001b"
+    },
+    {
+      "name": "Sfx_Scenario_147 Elevator move_TENBAN",
+      "alias": "Sfx_147"
+    },
+    {
+      "name": "Sfx_Scenario_065 Hard hit punch ground",
+      "alias": "Sfx_65"
+    },
+    {
+      "name": "Sfx_Scenario_029 Notification sound",
+      "alias": "Sfx_29"
+    },
+    {
+      "name": "Sfx_Scenario_112 Tray put on desk",
+      "alias": "Sfx_112"
+    },
+    {
+      "name": "Sfx_Scenario_103 Pipopa",
+      "alias": "Sfx_103"
+    },
+    {
+      "name": "Sfx_Scenario_090 Multiple_Be stuck GUSA!!",
+      "alias": "Sfx_90"
+    },
+    {
+      "name": "Sfx_Scenario_131 Thunder",
+      "alias": "Sfx_131"
+    },
+    {
+      "name": "Sfx_Scenario_074 Noise",
+      "alias": "Sfx_74"
+    },
+    {
+      "name": "Sfx_System_ObtainItem_001a",
+      "alias": "Sfx_System_ObtainItem_001a"
+    },
+    {
+      "name": "Sfx_Scenario_046 Fire bang",
+      "alias": "Sfx_46"
+    },
+    {
+      "name": "Sfx_Scenario_037 Open object",
+      "alias": "Sfx_37"
+    },
+    {
+      "name": "Sfx_Scenario_120 Crash glass",
+      "alias": "Sfx_120"
+    },
+    {
+      "name": "Sfx_Scenario_098 Lever GACHAKON",
+      "alias": "Sfx_98"
+    },
+    {
+      "name": "Sfx_Scenario_015 Spray",
+      "alias": "Sfx_15"
+    },
+    {
+      "name": "Sfx_Scenario_026 Chess on the floor",
+      "alias": "Sfx_26"
+    },
+    {
+      "name": "Sfx_Scenario_118 Many books",
+      "alias": "Sfx_118"
+    },
+    {
+      "name": "Sfx_Scenario_079 Hit metal",
+      "alias": "Sfx_79"
+    },
+    {
+      "name": "Sfx_Scenario_017 Fall to ground 01",
+      "alias": "Sfx_17"
+    },
+    {
+      "name": "Sfx_Scenario_133 Machine gun",
+      "alias": "Sfx_133"
+    },
+    {
+      "name": "Sfx_Scenario_146 Elevator buzzer",
+      "alias": "Sfx_146"
+    },
+    {
+      "name": "Sfx_System_StartGame_001",
+      "alias": "Sfx_System_StartGame_001"
+    },
+    {
+      "name": "Sfx_Scenario_177 abareru shely2",
+      "alias": "Sfx_177"
+    },
+    {
+      "name": "Sfx_Scenario_156 Drowning",
+      "alias": "Sfx_156"
+    },
+    {
+      "name": "Sfx_Scenario_014 Owl barking sound",
+      "alias": "Sfx_14"
+    },
+    {
+      "name": "Sfx_Common_005 Conversion",
+      "alias": "Sfx_Common_5"
+    },
+    {
+      "name": "Sfx_Scenario_109 Controller fall",
+      "alias": "Sfx_109"
+    },
+    {
+      "name": "Sfx_Scenario_184 Hit whip3",
+      "alias": "Sfx_184"
+    },
+    {
+      "name": "Sfx_Scenario_073 One_approaching footsteps_V2_",
+      "alias": "Sfx_73"
+    },
+    {
+      "name": "Sfx_Scenario_170 Blood",
+      "alias": "Sfx_170"
+    },
+    {
+      "name": "Sfx_Scenario_101 Pull up",
+      "alias": "Sfx_101"
+    },
+    {
+      "name": "Sfx_System_Move_001",
+      "alias": "Sfx_System_Move_001"
+    },
+    {
+      "name": "Sfx_Scenario_115 Take by force",
+      "alias": "Sfx_115"
+    },
+    {
+      "name": "Sfx_Scenario_119 Open prison door",
+      "alias": "Sfx_119"
+    },
+    {
+      "name": "Sfx_Scenario_181 Laughing girl",
+      "alias": "Sfx_181"
+    },
+    {
+      "name": "Sfx_Common_006 Be shocked",
+      "alias": "Sfx_Common_6"
+    },
+    {
+      "name": "Sfx_Scenario_113 Reverse spray",
+      "alias": "Sfx_113"
+    },
+    {
+      "name": "Sfx_Scenario_028 Camera shutter",
+      "alias": "Sfx_28"
+    },
+    {
+      "name": "Sfx_Scenario_108 Neck bones",
+      "alias": "Sfx_108"
+    },
+    {
+      "name": "Sfx_Scenario_126 One_Run room",
+      "alias": "Sfx_126"
+    },
+    {
+      "name": "Sfx_System_SaveData_001",
+      "alias": "Sfx_System_SaveData_001"
+    },
+    {
+      "name": "Sfx_Scenario_042 Book on desk",
+      "alias": "Sfx_42"
+    },
+    {
+      "name": "Sfx_Scenario_171 Blood shower",
+      "alias": "Sfx_171"
+    },
+    {
+      "name": "Sfx_Scenario_036 Gear(Reverb)",
+      "alias": "Sfx_36"
+    },
+    {
+      "name": "Sfx_Scenario_045 Brokem cloth",
+      "alias": "Sfx_45"
+    },
+    {
+      "name": "Sfx_Scenario_159 Hit metal on metal",
+      "alias": "Sfx_159"
+    },
+    {
+      "name": "Sfx_Scenario_111 Pen write paper",
+      "alias": "Sfx_111"
+    },
+    {
+      "name": "Sfx_System_Choice_002b",
+      "alias": "Sfx_System_Choice_002b"
+    },
+    {
+      "name": "Sfx_Scenario_099 Electric",
+      "alias": "Sfx_99"
+    },
+    {
+      "name": "Sfx_System_Submit_003a",
+      "alias": "Sfx_System_Submit_003a"
+    },
+    {
+      "name": "Sfx_Scenario_008 Owl flapping sound",
+      "alias": "Sfx_8"
+    },
+    {
+      "name": "Sfx_Scenario_001 Wake up",
+      "alias": "Sfx_1"
+    },
+    {
+      "name": "Sfx_Scenario_183 Hit whip2",
+      "alias": "Sfx_183"
+    },
+    {
+      "name": "Sfx_Scenario_144 Close wood door",
+      "alias": "Sfx_144"
+    },
+    {
+      "name": "Sfx_Scenario_055 Bushes sound",
+      "alias": "Sfx_55"
+    },
+    {
+      "name": "Sfx_Scenario_075 Hard_open door",
+      "alias": "Sfx_75"
+    },
+    {
+      "name": "Sfx_Scenario_068 Arrival elevator",
+      "alias": "Sfx_68"
+    },
+    {
+      "name": "Sfx_System_ObtainItem_001b",
+      "alias": "Sfx_System_ObtainItem_001b"
+    },
+    {
+      "name": "Sfx_Scenario_041 Pull up the curtains",
+      "alias": "Sfx_41"
+    },
+    {
+      "name": "Sfx_Scenario_027 Hit human",
+      "alias": "Sfx_27"
+    },
+    {
+      "name": "Sfx_System_Choice_003c",
+      "alias": "Sfx_System_Choice_003c"
+    },
+    {
+      "name": "Sfx_System_ExecuteButton_001",
+      "alias": "Sfx_System_ExecuteButton_001"
+    },
+    {
+      "name": "Sfx_Scenario_052 Broken handcuffs",
+      "alias": "Sfx_52"
+    },
+    {
+      "name": "Sfx_Scenario_145 Jumping into water",
+      "alias": "Sfx_145"
+    },
+    {
+      "name": "Sfx_Scenario_122 Sword whip",
+      "alias": "Sfx_122"
+    },
+    {
+      "name": "Sfx_Scenario_185 Breaking the iron door",
+      "alias": "Sfx_185"
+    },
+    {
+      "name": "Sfx_Scenario_162 Hard heartbeat",
+      "alias": "Sfx_162"
+    },
+    {
+      "name": "Sfx_Scenario_160 Guard a sword",
+      "alias": "Sfx_160"
+    },
+    {
+      "name": "Sfx_Scenario_104 Hang up",
+      "alias": "Sfx_104"
+    },
+    {
+      "name": "Sfx_Scenario_081 Fall human",
+      "alias": "Sfx_81"
+    },
+    {
+      "name": "Sfx_Scenario_016 Crush apple",
+      "alias": "Sfx_16"
+    },
+    {
+      "name": "Sfx_Scenario_093 Explosion",
+      "alias": "Sfx_93"
+    },
+    {
+      "name": "Sfx_Scenario_094 HURIKO YAIBA",
+      "alias": "Sfx_94"
+    },
+    {
+      "name": "Sfx_Scenario_058 Run corridor",
+      "alias": "Sfx_58"
+    },
+    {
+      "name": "Sfx_Scenario_140 Kick bucket&Liquid water",
+      "alias": "Sfx_140"
+    },
+    {
+      "name": "Sfx_Scenario_022 Indoor wood open",
+      "alias": "Sfx_22"
+    },
+    {
+      "name": "Sfx_Scenario_043 Turn page book",
+      "alias": "Sfx_43"
+    },
+    {
+      "name": "Sfx_Scenario_123 Knife stuck in board",
+      "alias": "Sfx_123"
+    },
+    {
+      "name": "Sfx_Scenario_116 Save body",
+      "alias": "Sfx_116"
+    },
+    {
+      "name": "Sfx_Scenario_121 Water drop",
+      "alias": "Sfx_121"
+    },
+    {
+      "name": "Sfx_Scenario_003 Monitor",
+      "alias": "Sfx_3"
+    },
+    {
+      "name": "Sfx_Scenario_125 One_Clap_",
+      "alias": "Sfx_125"
+    },
+    {
+      "name": "Sfx_Common_001 Notice1",
+      "alias": "Sfx_Common_1"
+    },
+    {
+      "name": "Sfx_Scenario_142 Bubble",
+      "alias": "Sfx_142"
+    },
+    {
+      "name": "Sfx_Scenario_035 Human heartbeat",
+      "alias": "Sfx_35"
+    },
+    {
+      "name": "Sfx_Scenario_056 High speed thread",
+      "alias": "Sfx_56"
+    },
+    {
+      "name": "Sfx_System_Submit_001",
+      "alias": "Sfx_System_Submit_001"
+    },
+    {
+      "name": "Sfx_Scenario_031 Tea",
+      "alias": "Sfx_31"
+    },
+    {
+      "name": "Sfx_Scenario_100 Spark",
+      "alias": "Sfx_100"
+    },
+    {
+      "name": "Sfx_System_Choice_002c",
+      "alias": "Sfx_System_Choice_002c"
+    },
+    {
+      "name": "Sfx_Scenario_168 fall out deadman",
+      "alias": "Sfx_168"
+    },
+    {
+      "name": "Sfx_Scenario_134 Button key push",
+      "alias": "Sfx_134"
+    },
+    {
+      "name": "Sfx_Scenario_050 Punch ground",
+      "alias": "Sfx_50"
+    },
+    {
+      "name": "Sfx_Scenario_007 Go up the stairs(Reverb)",
+      "alias": "Sfx_7"
+    },
+    {
+      "name": "Sfx_System_OpenBook_001",
+      "alias": "Sfx_System_OpenBook_001"
+    },
+    {
+      "name": "Sfx_Scenario_107 Open cabnet",
+      "alias": "Sfx_107"
+    },
+    {
+      "name": "Sfx_Scenario_020 Crash dish",
+      "alias": "Sfx_20"
+    },
+    {
+      "name": "Sfx_System_CloseBook_001",
+      "alias": "Sfx_System_CloseBook_001"
+    },
+    {
+      "name": "Sfx_Scenario_165 Slow open big door",
+      "alias": "Sfx_165"
+    },
+    {
+      "name": "Sfx_Scenario_013 Head drop",
+      "alias": "Sfx_13"
+    },
+    {
+      "name": "Sfx_System_LoadData_001",
+      "alias": "Sfx_System_LoadData_001"
+    },
+    {
+      "name": "Sfx_Scenario_130 Running down the house stairs",
+      "alias": "Sfx_130"
+    },
+    {
+      "name": "Sfx_Scenario_084 TONKATSU",
+      "alias": "Sfx_84"
+    },
+    {
+      "name": "Sfx_Scenario_141 Scrub the floor",
+      "alias": "Sfx_141"
+    },
+    {
+      "name": "Sfx_Scenario_038 Gun fire",
+      "alias": "Sfx_38"
+    },
+    {
+      "name": "Sfx_Scenario_143 SYOUKYAKURO ASARU",
+      "alias": "Sfx_143"
+    },
+    {
+      "name": "Sfx_Scenario_023 Fall from a height",
+      "alias": "Sfx_23"
+    },
+    {
+      "name": "Sfx_Scenario_024 Silent_waves",
+      "alias": "Sfx_24"
+    },
+    {
+      "name": "Sfx_Scenario_076 Pushing back",
+      "alias": "Sfx_76"
+    },
+    {
+      "name": "Sfx_Scenario_018 Reject shake hands",
+      "alias": "Sfx_18"
+    },
+    {
+      "name": "Sfx_Scenario_137 Hard open wood door",
+      "alias": "Sfx_137"
+    },
+    {
+      "name": "Sfx_Scenario_034 Panpakapan",
+      "alias": "Sfx_34"
+    },
+    {
+      "name": "Sfx_Scenario_097 Slow foot step",
+      "alias": "Sfx_97"
+    },
+    {
+      "name": "Sfx_Scenario_078 Far foot sound",
+      "alias": "Sfx_78"
+    },
+    {
+      "name": "Sfx_Common_007 Negative down",
+      "alias": "Sfx_Common_7"
+    },
+    {
+      "name": "Sfx_Scenario_152 Pen fall on floor",
+      "alias": "Sfx_152"
+    },
+    {
+      "name": "Sfx_System_Close_001",
+      "alias": "Sfx_System_Close_001"
+    },
+    {
+      "name": "Sfx_Scenario_149 Small rock fall",
+      "alias": "Sfx_149"
+    },
+    {
+      "name": "Sfx_System_Tab_001a",
+      "alias": "Sfx_System_Tab_001a"
+    },
+    {
+      "name": "Sfx_Scenario_161 Lost Bullet",
+      "alias": "Sfx_161"
+    },
+    {
+      "name": "Sfx_Scenario_176 Break ice3",
+      "alias": "Sfx_176"
+    },
+    {
+      "name": "Sfx_Scenario_004 Lock prison",
+      "alias": "Sfx_4"
+    },
+    {
+      "name": "Sfx_Common_002 Notice2",
+      "alias": "Sfx_Common_2"
+    },
+    {
+      "name": "Sfx_Scenario_089 Be stuck GUSA!!",
+      "alias": "Sfx_89"
+    },
+    {
+      "name": "Sfx_Scenario_062 Open meatl door",
+      "alias": "Sfx_62"
+    },
+    {
+      "name": "Sfx_Scenario_085 Hit punch human",
+      "alias": "Sfx_85"
+    },
+    {
+      "name": "Sfx_Scenario_059 Digging sound",
+      "alias": "Sfx_59"
+    },
+    {
+      "name": "Sfx_System_Alert_001",
+      "alias": "Sfx_System_Alert_001"
+    },
+    {
+      "name": "Sfx_Scenario_092 Land mine switch",
+      "alias": "Sfx_92"
+    },
+    {
+      "name": "Sfx_Scenario_070 Multiple_Run pathway",
+      "alias": "Sfx_70"
+    },
+    {
+      "name": "Sfx_Scenario_136 Move chair",
+      "alias": "Sfx_136"
+    }
+  ]
+}

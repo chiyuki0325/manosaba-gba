@@ -1,0 +1,142 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-2-11
+
+# ========================================
+# ●シーン1‐2-11
+# ========================================
+
+@back 11_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# ========================================
+# ＞『娯楽室』を選択
+# ========================================
+
+@bgm Bgm_11_1
+
+@char Miria.Fearful1,ArmR8,ArmL7
+
+@print キャアアアアアーッ！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマが娯楽室に入るなり、<br>耳をつんざくようなミリアの悲鳴が届く。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3
+
+@print ミリアちゃん！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマは真っ青になって、<br>急いでソファーの方へと駆け寄った。 { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆息荒く
+
+@char AnAn.Normal1,Angle01/Option_Arms-
+@char Miria.Normal1,ArmR8,ArmL7
+@char Ema.Pensive1,ArmR3
+
+@print あ、エ、エマちゃん……？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@print 今の悲鳴って……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print …………。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ミリアの隣にはアンアン。<br>最近では定位置になっている。<br>そこから彼女が無言ですっと前方を指差す。 { speed:1 waitInput:true Wait:true }
+
+@print エマが振り向くと、映し出されたスクリーンで、<br>映画が上映されていた。<br>どうやらホラーテイストのものだ。 { speed:1 waitInput:true Wait:true }
+
+@print ミリアは息を整えながら、<br>エマの方へと歩み寄る。 { speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive1,ArmR2,ArmL2
+@char Ema.Normal1,ArmR3
+
+@print う、うるさくしちゃってごめんね。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print アンアンちゃんがどうしても見たいって言うから、<br>ホラー映画を見てて。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive1,ArmR6,ArmL6
+
+@print うう……おじさんどうにもホラーは苦手で……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print なんだ、良かった。何かあったのかと思った。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print びっくりさせちゃったよね……気をつけます……。<br>エマちゃんたちが一生懸命頑張ってるのに、<br>遊んじゃってるし。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR1
+
+@print そこは気にしなくて大丈夫だよ。<br>ミリアちゃんは安全な場所にいた方がいいし。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print うっ……そ、そうだよね。<br>ナノカちゃん、見つからないね……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print うん……何日も消えるなんて、<br>どうやって隠れてるんだろう。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3
+
+@print 看守も最近よく外を歩き回ってる。<br>多分ナノカちゃんを探してるんだと思う。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Miria.Normal1,ArmR4,ArmL3
+
+@print 看守が歩き回ってるのは怖いよね……。<br>脱獄計画がばれたら大変なことになる。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print 気をつけないとね。<br>脱獄計画、必ず成功させようね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマの言葉に、<br>何故かミリアは暗い表情になった。 { speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive1,ArmR4,ArmL3
+
+@print 本当に出ることが正しいのかな……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print ミリアちゃん？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Miria.Normal1,ArmR2,ArmL2
+
+@print "あっ、ご、ごめん！ いやあおじさんって<br>すぐネガティブになっちゃうから良くない。" { author:Miria speed:1 waitInput:true Wait:true }
+
+@print 気にしないでいいから。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマとミリアが話し込んでいたら、<br>気付けばアンアンが近くに立っていた。 { speed:1 waitInput:true Wait:true }
+
+@char AnAn.Normal1,Angle01/Option_Arms-
+@char Miria.Normal1,ArmR1,ArmL1
+@char Ema.Pensive1,ArmR3
+
+@print …………。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "無言でミリアの裾を引っ張る。<br>その後、エマをぎろりと<ruby=\"にら\">睨</ruby>んできた。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3
+
+@print あ、映画の邪魔しちゃってたよね。<br>ごめん、ボクもう行くね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print （アンアンちゃん、<br>　最近また心を閉ざしてるように見える） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （ミリアちゃんが一緒にいてくれたら、<br>　大丈夫だよね……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 暗いアンアンの様子は心配になったが、<br>エマは娯楽室を早々に出ることにした。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン1‐2‐8
+# 全てのイベントを消化している＞シーン1‐2‐14
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter02/Act01_Chapter02_Adv08

@@ -1,0 +1,385 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act01_Chapter04/Act01_Chapter04_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# ==============================================================================
+# MARK: 4-11: 💬 桜羽エマが犯人の理由
+# ==============================================================================
+# ＠ト書き▼議論4-11 桜羽エマが犯人の理由
+
+@char Warden.1 { Position:,{characterPositionY} time:0 }
+
+# 議論開始カットイン
+# BGM変更：Ema-常-
+@bgm Bgm_13_1_Loop
+
+# Judge4-11-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+# ＠備考◆焦燥感・苦しい
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@printDebate アリサちゃんの<br>飲んだ睡眠薬は<br>過剰摂取しても<br>【即死しない】……。
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@printDebate それであってるわよね、<br>メルルちゃん。
+
+@char Meruru.Default
+@gosubModifyCamera 0
+@printDebate は、はい……。<br>さすがに劇毒ではないので、<br>即死するようなものでは<br>ありません……。
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@printDebate ……であれば、<br>アリサちゃんは<br>昨晩の時点では<br>すぐに死んでいなかった<br>はずよね。
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Pensive_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@printDebate ……そして昨日の夜、<br>エマちゃんは地下で<br>処刑台を操作したのね？
+
+@char Ema.Default,ArmR5,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Middle
+@gosubModifyCamera 0
+@printDebate ま、待って……！<br>そもそもボクが<br>押したボタンが<br>処刑台の操作ボタン<br>だったかは……！
+
+@char Warden.1
+@gosubModifyCamera 0
+@printDebate 地下にあったパネルを<br>操作したのであれば、<br>間違いないでしょうねぇ。
+
+@char Warden.1
+@gosubModifyCamera 0
+@printDebate 処刑台の昇降ボタンは<br>簡単に押せる位置に<br>ありますから。
+
+@char Warden.1
+@gosubModifyCamera 0
+@printDebate それに昨夜、<br>処刑台の昇降は<br>一度しかありませんでした。<br>……履歴から<br>確認ができます。
+
+@char Coco.Default,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Gross_Open,Angle01/Facial/Sweat>Sweat01,Angle01/Facial/Pale>Pale01
+@gosubModifyCamera 0
+@printDebate じゃ、じゃあ……<br>エマっちが操作したせいで<br>眠ってたアリサが<br>地下に<br>閉じ込められた<br>ってこと……！？
+
+# ＠備考◆沈んだ表情・悔しげ
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Pensive_Middle,Angle01/Facial/Mouth>Mouth_Pensive_Closed,Angle01/Facial/Pale>Pale01
+@gosubModifyCamera 0
+@printDebate もし……<br>そうなら……<br>アリサちゃんを<br>凍死させて殺した<br>犯人は……。
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Neutral_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@printDebate "<link=\"Objection_01_04_11_01\">桜羽エマちゃん</link><br>……あなたよ。"
+
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Ema.Fearful1,ArmR5,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open { time:0 }
+@gosubModifyCamera 0
+@Wait 0.2
+
+# ==============================================================================
+# 4-11 議論後独白
+# ==============================================================================
+
+@print （ち、違う……！<br>　ボクが殺したなんてそんなこと……！<br>　指摘……間違いを指摘しないと……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge4-11-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_01_04_11_01
+
+@Skip false
+@pauseTrial true
+
+@choice 殺してない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge4-11-2
+
+@choice 殺意はなかった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge4-11-2
+
+@choice 知らなかった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge4-11-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 4-11-2: ⭕ 選択肢共通
+# ==============================================================================
+
+# Judge4-11-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+# @gosubCutIn Ema index:1
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open
+@gosubModifyCamera 0
+@print 違うよ……！<br>ボクはアリサちゃんを殺してなんかない！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open
+@gosubModifyCamera 0
+@print それに……ボクはそのボタンが<br>なんのボタンかもわからなかったんだ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Scream_Closed01,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open
+@gosubModifyCamera 0
+@print 仮にアリサちゃんが凍死していたとしても……<br>殺す気なんてなかった！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Open,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print ……【過失致死】。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Open,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print ねえ、ゴクチョー。<br>【事故で殺してしまった】ときは、<br>どうするべきなのかしら……？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Warden.1
+@gosubModifyCamera 0
+@print ……選択はお任せいたしますよ。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Warden.1
+@gosubModifyCamera 0
+@print あなたたちが決めることですから。 { author:Warden speed:1 waitInput:true Wait:true }
+
+# ＠備考◆焦る・悩み
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print ……そう……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL13,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Open
+@gosubModifyCamera 0
+@print で、でもアリサちゃんは<br>睡眠薬を自分で飲んだはずだよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL13,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Open
+@gosubModifyCamera 0
+@print 最初から自殺をしようと思っていたはず……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Open
+@gosubModifyCamera 0
+@print 少なくとも、ボクはアリサちゃんを殺そうと思って<br>殺したわけじゃないし……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.ArmR12_2,ArmL13,Eyes2_Cry_Closed2,Mouth2_Normal_Open3,Pale2_1
+@gosubModifyCamera 0
+@print で、ですが……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Meruru.ArmR12_2,ArmL13,Eyes2_Cry_Closed2,Mouth2_Normal_Open3,Pale2_1
+@gosubModifyCamera 0
+@print アリサさんが早く見つかって処置できていれば<br>助けられたかもしれません……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open
+@gosubModifyCamera 0
+@print で、でも……それは……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL13,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open
+@gosubModifyCamera 0
+@print こ、これは……事故だよ……！<br>たまたまアリサちゃんが処刑台にいただけで……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Coco.Default,ArmR10,ArmL5,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print ……本当かよ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Middle
+@gosubModifyCamera 0
+@print え……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR10,ArmL5,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print そんなん、１つも証明できないだろ！！ { author:Coco speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char Coco.Default,ArmR13,ArmL4,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Angry_Open01
+@gosubModifyCamera 0
+@print お前が黒幕で、地下の仕組みも知ってて……<br>狙ってアリサを殺したんじゃねーの！？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open
+@gosubModifyCamera 0
+@print そ、そんなことないよ……！<br>どうして……そんなこと……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print ……眠っていただけのアリサちゃんを、<br>エマちゃんが電気椅子に乗せた可能性は<br>あるんじゃないかしら。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print そしてリフトを操作して地下へと運んだ。<br>……アリサちゃんを凍死させるために。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print エマちゃんが黒幕なら、出来たことね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR2-1,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Scream_Closed01,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Open
+@gosubModifyCamera 0
+@print そんなこと、ボクはしてない！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Head1,ArmR8_1,ArmL8,Eyes1_Pensive_Open2,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print で、でも……していない証拠は……ありません。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print エマちゃんの操作が原因で<br>アリサちゃんが死んだのは確実でしょう？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print なら【エマちゃんに殺意がなかった】と<br>証明することなんて……<br>できるのかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Middle
+@gosubModifyCamera 0
+@print そ、それは……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print ……なあ。<br>それなら今までの殺しだって……<br>疑わしいもんじゃないの……？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print これまでの裁判で、<br>エマっちが率先してみんなを<br>【殺していった】……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Middle
+@gosubModifyCamera 0
+@print ち、違う……！<br>ボクは真相を明らかにしようとしただけで……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR5,ArmL4,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Angry_Open01
+@gosubModifyCamera 0
+@print そもそもお前が裏で仕組んでただけなんじゃねーの！？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR5,ArmL4,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Angry_Open01
+@gosubModifyCamera 0
+@print アンアンとかだって……<br>お前が何もしなきゃ殺しなんてしなかったろ！！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Lifeless01,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Middle
+@gosubModifyCamera 0
+@print ボ、ボクは……そんなつもりじゃ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Lifeless01,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Middle
+@gosubModifyCamera 0
+@print （みんな……どうして……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char Ema.Default,ArmR7,ArmL13,Angle01/Head01/Facial01/Eyes01>Eyes01_Scream_Closed02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print 違う……ボクはやってない！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆疑い・迷い（息を呑む演技）
+
+@char Margo.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Pensive_Middle,Angle01/Facial/Mouth>Mouth_Pensive_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print …………っ { author:Margo speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆悲しみ・怯え
+
+@char Meruru.Head2,ArmR1_2,ArmL6,Eyes2_Cry_Closed3,Mouth2_Angry_Closed1
+@gosubModifyCamera 0
+@print う……うぅ……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆怒り・恐怖（憤りで息を吐くような演技）
+
+@char Coco.Default,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Neutral_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……っ……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Closed02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （……きっとみんな、これまでの魔女裁判で<br>　他人のことを信用できなくなってるんだ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Closed02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （みんなの心に……<br>　疑心暗鬼は広がってる……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Warden.1
+@gosubModifyCamera 0
+@print ……では皆さんの意見も固まったようですし、<br>そろそろ投票に移るとしましょうか。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL13,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print 待って、ボクは……やってない……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR2-1,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Lifeless02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print みんな、話を聞いてよ――！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Warden.1
+@gosubModifyCamera 0
+@print ――それでは、投票をどうぞ。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# ＠備考◆叫び
+@char Ema.Default,ArmR2-1,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Scream_Closed02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ――違うんだ！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndTrial
+
+@goto Act01_Chapter04/Act01_Chapter04_Trial12

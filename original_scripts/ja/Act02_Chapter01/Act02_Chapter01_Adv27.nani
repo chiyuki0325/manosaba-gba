@@ -1,0 +1,216 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-1-22
+
+# ========================================
+# ●シーン2‐1-22
+# ========================================
+
+@back 1_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_32_1
+
+@print 裁判が終わった後、<br>私はマーゴの部屋へとやって来ていた。 { speed:1 waitInput:true Wait:true }
+
+@print ココのボイスメモの話が捨てておけず、<br>何か他に手がかりを残していないかと思ってだ。 { speed:1 waitInput:true Wait:true }
+
+@print "この牢屋敷で過ごした数日間、<br>彼女が確かにここにいた<ruby=\"こんせき\">痕跡</ruby>は何ひとつ残されていない。" { speed:1 waitInput:true Wait:true }
+
+@print どこか寂しい部屋だった。 { speed:1 waitInput:true Wait:true }
+
+@print （何故だろうな。<br>　彼女ならもっと部屋を装飾しそうな気がした） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （……それにしても、手がかりはないか。<br>　明日またココを直接詰めた方が早そうだな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "正直、<ruby=\"そうさく\">捜索</ruby>がやりづらくもあった。" { speed:1 waitInput:true Wait:true }
+
+@print 私がこの部屋に入ってすぐ、<br>エマもまたこの部屋にやってきたからだ。 { speed:1 waitInput:true Wait:true }
+
+@print エマはどうやらマーゴの思い出の品でも<br>探している風だった。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Cry1,ArmR3
+
+@print ぐすっ……マーゴちゃん……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 涙を浮かべながら、<br>マーゴのベッド周辺を探っている。 { speed:1 waitInput:true Wait:true }
+
+@print （ひとりよがりの感傷的な行為だな。<br>　マーゴには、あの魔女には……同情の余地なんてなかった） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （殺人を犯し、私を貶めてまで<br>　罪を逃れようとした卑怯者） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "（【愛】などと<ruby=\"うそぶ\">嘯</ruby>き、<br>　その実ただの身勝手でメルルを殺しただけだ）" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "そう思う。<br>そう思うのに……何故か、<br>私の<ruby=\"こぶし\">拳</ruby>はずっと震え続けている。" { speed:1 waitInput:true Wait:true }
+
+@print "何かを<ruby=\"こら\">堪</ruby>えるかのように。" { speed:1 waitInput:true Wait:true }
+
+@print 当然のように、<br>私とエマの間に会話は生じない。 { speed:1 waitInput:true Wait:true }
+
+@print 居心地の悪さから、<br>部屋を出ようと思った時だった。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print …………。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "視界の端で、エマが何かを見つけた風に<br>さっと<ruby=\"ふところ\">懐</ruby>へと隠したのを見た。" { speed:1 waitInput:true Wait:true }
+
+@print （何を隠した……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 妙に引っかかり、<br>私はエマの方に向き直る。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+
+@print 私はもう行くが、<br>君はまだここで何かを探す気か？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print あ、うん。<br>もう少し色々見てみようかと――。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive1
+
+@print メルルが死に、<br>マーゴが処刑され、<br>君は悲しいと思っているのか？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print それは……そうだよ。<br>２人とも許されないことをしたのかもしれない。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Cry1,ArmR3
+
+@print でも、やっぱり誰かがいなくなるのは、<br>ボクは寂しいし、悲しいよ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 一見エマは、<br>本心からそう語っているように見える。 { speed:1 waitInput:true Wait:true }
+
+@print けれど、涙をぽろぽろとこぼすエマを前に―― { speed:1 waitInput:true Wait:true }
+
+@print "私の<ruby=\"のうり\">脳裏</ruby>に<ruby=\"よみがえ\">蘇</ruby>ったのは、<br>かつてエマと親しかった頃の思い出だった――" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 回想シーン（新規）
+# ========================================
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+@back 400_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+# 学校のチャイム音
+@sfx Sfx_57
+
+@print それは小学校中学年の頃だった。 { speed:1 waitInput:true Wait:true }
+
+@print ぐすっ、ぐすっ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマ、こんなところにいたのか。<br>ホームルームにいなかったから、みんな探して……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print あ、ヒロちゃん……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 君の上履きは見つかっていない。<br>隠すなんて、一体誰がやったのか……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "そこで私は、エマがすでに<br>無いと騒ぎ立てた<ruby=\"うわば\">上履</ruby>きを<ruby=\"は\">履</ruby>いていることに気付いた。" { speed:1 waitInput:true Wait:true }
+
+@print 見つかったのか！<br>じゃあ皆にすぐ報告しないと！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print あ、そうだよね。ごめんね……。<br>でもヒロちゃんならボクのこと、<br>見つけてくれると思った。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 最近ヒロちゃん、<br>ちっともボクと遊んでくれなくて。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print でもボクのこと一番わかってくれるのは、<br>やっぱりヒロちゃんだね！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print いたずらっぽく笑うエマを前に、<br>その時私は少しぞくりと悪寒を覚えた。 { speed:1 waitInput:true Wait:true }
+
+@print エマは私の気を引きたくて、<br>ずっと屋上に隠れて、<br>私を待っていたのかもしれない―― { speed:1 waitInput:true Wait:true }
+
+@print "そもそも<ruby=\"うわば\">上履</ruby>きが無くなったと騒いだのすら、<br><ruby=\"いつわ\">偽</ruby>りなのかもしれない――" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 回想ここまで
+# ========================================
+
+@ResetText 
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@hide Stills { time:0 }
+
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@print （この時だけじゃない。<br>　同じようなことは何度もあった） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （付き合いが長いからこそわかる。<br>　エマは決してみんなが思う良い子ではない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （ユキへのいじめをただ傍観し、<br>　見殺しにしたことからも証明されている） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （エマは、悪だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 回想シーン（新規）
+# ========================================
+@ResetText 
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+@back 400_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@print 中学生になってから<br>月代ユキが私たちの輪に加わり―― { speed:1 waitInput:true Wait:true }
+
+@print "エマがいない時に、<br>私にそっと<ruby=\"ささや\">囁</ruby>いたことがある。" { speed:1 waitInput:true Wait:true }
+
+@print エマはね？<br>いずれ禍をもたらす魔女になるんですよ。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@print たくさんの人を殺します。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@print みんなを不幸にします。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@print とても怖いですね。<br>いずれその時がやってくる。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 回想ここまで
+# ========================================
+
+@ResetText 
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@hide Stills { time:0 }
+
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@print "ユキはいつも<ruby=\"うえん\">迂遠</ruby>な表現ばかりだったから、<br>その時は何かの<ruby=\"あんゆ\">暗喩</ruby>かと思ったが。" { speed:1 waitInput:true Wait:true }
+
+@print 今ならわかる。 { speed:1 waitInput:true Wait:true }
+
+@print （私が裁くべき悪――【魔女】は、<br>　目の前にいた） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （これ以上の悲劇が起こる前に、<br>　君のことは私が責任をもって正さないといけない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （君がこの世界に存在してはいけない魔女ならば、<br>　君のことは――私が殺す） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （それが私のやるべきことだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "抑え込んでいたはずの闇が染みだして、<br><ruby=\"ふく\">膨</ruby>らんでいく。" { speed:1 waitInput:true Wait:true }
+
+@print 私は冷たい殺意と共に、<br>エマの背中を見つめ続けていた。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 次話への引継ぎアイテム：『万年筆』
+# ========================================
+
+@update Ema
+
+# ========================================
+# ＞魔女裁判 第2章2話へ
+# ========================================
+
+@set "g_gameProgress = max(7, g_gameProgress)"
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter02/Act02_Chapter02_Adv01

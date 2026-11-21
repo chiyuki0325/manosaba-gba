@@ -1,0 +1,263 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-1-23
+
+# ========================================
+# ●シーン1-1‐23
+# [back 16]
+# ========================================
+
+# ========================================
+# ＞『湖方面』を選択
+# ========================================
+
+# ========================================
+# [bgm Bgm_005_001_Loop]
+# ========================================
+
+@back 17_1 { Scale:{g_backgroundDefaultScale} }
+@back Transparent { time:1.2 }
+@Wait 1.8
+@bgm Bgm_5_1
+
+@print エマたち一行は外へ出て、<br>森の中にある湖の方までやってきていた。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1
+
+@print こんなところに、何かありますかねぇ？<br>ノアさんの殺害に関係ありそうなものが、<br>あるとは思えませんが……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "歩いている背中に突っ込まれ、<br>エマはうっと<ruby=\"うな\">唸</ruby>る。" { speed:1 waitInput:true Wait:true }
+
+@print （どっちかというと、<br>　外の空気を吸いたかった気持ちが大きいかも） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 牢屋敷の地下には、ノアの遺体がある。<br>それを考えると、エマはいたたまれなかった。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+
+@print ごめん、ここらへんを調査しても<br>あんまり意味はないかも。<br>中に戻ろうか――。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Normal1
+
+@print あれ、でもここまで来ている子がいるみたいですわよ。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 17_1
+@char Alisa.Normal1,Option-ArmL-Off
+@mask MainBackground-Front,Alisa-Front
+@animate MainBackground-Front
+@animate Alisa-Front
+@Wait 0.4
+
+@print ハンナの指さす方向、<br>湖のほとりに座っている少女がいた。 { speed:1 waitInput:true Wait:true }
+
+@print （アリサちゃん……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@animate MainBackground-Front,Alisa-Front
+@animate MainBackground-Front
+@animate Alisa-Front
+@hide MainBackground-Front,Alisa-Front
+@despawn MaskingRectangle
+@Wait 0.4
+
+@char Ema.Normal1
+
+@print せっかくだし、アリサちゃんに話を聞いてみようか。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Normal1
+@char Sherry.Normal1,ArmR7
+@char Hanna.Normal1
+
+@print ああ、それなら私は席を外した方が良さそうです。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print え、なんで？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 私、アリサさんと同室なんですが、<br>めちゃくちゃ嫌われてまして。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna.Normal1
+
+@print わかる気がしますわ。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 私がいたらきっとキレ散らかして逃げると思うので、<br>私は隠れてますね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （シェリーちゃんが隠れるのなんて<br>　できるのかなぁ？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマは首を捻りながらも、<br>アリサの方へと近付いていく。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print あの、アリサちゃん。ここで何を？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+@char Alisa.Angry1,Option-ArmL-Off,ArmL2
+
+@print んだよ、来てんじゃねぇよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print "アリサは明らかに歓迎のムードではなく、<br>チッという舌打ちと共に<ruby=\"にら\">睨</ruby>んでくる。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print "エマは<ruby=\"ひる\">怯</ruby>みながらも、<br>なんとかアリサへと一歩近付いた。" { speed:1 waitInput:true Wait:true }
+
+@print 昨日の夜さ、通路でぶつかったよね？<br>あの時、なんであんなところにいたのかなって。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hanna.Normal1
+
+@print あなたの方からぶつかってきておいて……<br>ずいぶん慌てているように見えましたけれど？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "あ？ おめえら、ウチのこと<br>疑ってやがんのか？" { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+
+@print そ、そういうわけじゃ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print こういう時、やったのはウチだって、<br>みんな口を揃えて言いやがる……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,Option-ArmL-Off,ArmL7
+
+@print "不快なんだよ！ 消えろ！！" { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Hanna.Pensive1,ArmR4
+@char Ema.Pensive1,ArmR3
+
+@print 怒鳴られて、<br>エマもハンナも肩をびくりと震わせてしまう。 { speed:1 waitInput:true Wait:true }
+
+@print お話になりませんわね。<br>ふん、行きましょう、エマさん。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print うん……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマとハンナが背を向けた時だった。 { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Pensive1,Option-ArmL-Off,ArmL3
+
+@print ……アートだよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"つぶや\">呟</ruby>きが届き、エマは振り返る。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3
+
+@print アートって……ノアちゃんが部屋に描いてた、<br>スプレーアート……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "アリサは<ruby=\"いまいま\">忌々</ruby>しそうに顔を<ruby=\"ゆが\">歪</ruby>めていたが、<br>ぽつりぽつりと語りだす。" { speed:1 waitInput:true Wait:true }
+
+@print あいつが【バルーン】だってことにはすぐ気付いて。<br>それから、何回も足を運んで見に行ってた。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print 昨日もそれで見に行ったんだけど、<br>あの優等生と鉢合わせて気まずくなって帰ったんだよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print （そっか……<br>　アリサちゃんは、ノアちゃんの絵を見に来てたんだ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ありがとう話してくれて。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ふてくされたように、<br>アリサは小石を湖に投げた。 { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1,Option-ArmL-Off,ArmL1
+
+@print "そういえば、湖でこんなもん拾った。<br>アイツが探してたやつじゃねーか？ やるよ。" { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print アリサが差し出してきたのは、リボンだった。 { speed:1 waitInput:true Wait:true }
+
+@print （これってもしかして、ナノカちゃんが探してた…？<br>　でも、血がついてるように見える……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 言っとくが、ウチが盗ったんじゃねえからな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print とりあえず、エマはアリサからリボンを受け取る。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 証拠品：『血のついたリボン』入手
+# ========================================
+
+@ResetText 
+@spawn Clue
+@toast "魔女図鑑 更新…"
+@update 1-3
+@Wait i1.2
+
+@despawn Clue
+@Wait 0.6
+
+@print もう用ねーだろ、消えろ。<br>そこに隠れてるハエ女と一緒に。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print せっ、<br>せめて【妖精さん】って言ってください～！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1,ArmR10
+
+@print 思い切りバレていたらしい。<br>茂みに隠れていたシェリーが姿を現した。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1
+
+@print ちなみに私はアリサさんを疑ってないですよ。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Alisa.Pensive1,Option-ArmL-Off,Arms1
+
+@print ふん、どうだか。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR1
+
+@print ああでも、ひとつ確認させてください。<br>アリサさんは、どんな魔法を使えるんで？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1,Option-ArmL-Off
+
+@print ……別に隠すつもりもねえ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [sfx 30：炎をぼっと点す音]
+# ========================================
+
+@sfx Sfx_30
+@char Alisa.Normal1,Angle01/Option_ArmL+,ArmL11,ArmR1
+
+@print "アリサは指先に、<br>まるで見えないライターを持っているかのように<br>ぼっと炎を<ruby=\"とも\">点</ruby>してみせた。" { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Surprised1,ArmR15
+@Wait 0.4
+@EmoteJumpDouble Sherry
+
+@print パイロキネシスですね！<br>すごいすごいすご～い！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@toast "魔女図鑑 更新…"
+@update Alisa
+
+@print シェリーはアリサの魔法を見て大喜びだ。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （魔法によっては、<br>　不可能な殺人を<br>　可能にできる子もいるかもしれないんだ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print いち早くハンナが疑われた理由もそれである。 { speed:1 waitInput:true Wait:true }
+
+@print アリサはもはや<br>エマたちと会話をする気がないようだった。 { speed:1 waitInput:true Wait:true }
+
+@print 無言で湖面を見つめる横顔は、<br>どこか寂しそうに見えた。 { speed:1 waitInput:true Wait:true }
+
+@print エマとシェリー、ハンナは目配せしあい、<br>その場を後にすることにした。 { speed:1 waitInput:true Wait:true }
+
+@print 歩きだしてすぐ、 { speed:1 waitInput:true Wait:true }
+
+@print ウチはあいつの絵、好きだった。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print "ぽつりと<ruby=\"つぶや\">呟</ruby>きが聞こえてきた。" { speed:1 waitInput:true Wait:true }
+
+@print "そのひとりごとは、<br>誰にも届かない<ruby=\"こくう\">虚空</ruby>へと消えていく。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン1‐1‐21
+# 全てのイベントを消化している＞シーン1‐1‐30
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter01/Act01_Chapter01_Adv25

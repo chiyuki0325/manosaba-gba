@@ -1,0 +1,39 @@
+{
+  "format": "manosaba.story",
+  "version": 1,
+  "language": "zh-Hans",
+  "path": "Act01_Chapter03/Act01_Chapter03_Bad01",
+  "events": [
+    {"op": "BeginIf", "line": 1, "indent": 0, "params": {"Expression": "isDebugDirectJump"}},
+    {"op": "Gosub", "line": 2, "indent": 1, "params": {"Path": "System/System_Subroutine.BeginAdv"}},
+    {"op": "label", "name": "Scene1-3-b1", "line": 12, "indent": 0},
+    {"op": "ModifyBackgroundExtended", "line": 18, "indent": 0, "params": {"Scale": {"expression": "{g_backgroundDefaultScale}"}, "Duration": 0.0, "Lazy": 0, "AppearanceAndTransition": "19_2"}},
+    {"op": "ModifyBackgroundExtended", "line": 19, "indent": 0, "params": {"TintColor": "#000000", "Duration": 1.2000000476837158, "Lazy": 0, "AppearanceAndTransition": "Transparent", "SubId": "Overlay"}},
+    {"op": "Wait", "line": 20, "indent": 0, "params": {"WaitMode": "1.8"}},
+    {"op": "PlayBgm", "line": 22, "indent": 0, "params": {"BgmPath": "Bgm_22_1", "Volume": 1.0, "Loop": 1, "FadeInDuration": 0.0}},
+    {"op": "PrintTextModified", "line": 24, "indent": 0, "params": {"Text": "（这说不定是什么线索……）", "AuthorId": "Ema", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0103Bad01_Ema001"]}},
+    {"op": "PrintTextModified", "line": 26, "indent": 0, "params": {"Text": "艾玛全神贯注地不停挖掘。<br>\n过了一会，出现了一个小小的黑色团块。", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0103Bad01_Narrative001"]}},
+    {"op": "ModifyCharacterExtended", "line": 28, "indent": 0, "params": {"Lazy": 0, "ScenePosition": [50.0], "IdAndAppearance": "Ema.Default"}},
+    {"op": "PrintTextModified", "line": 30, "indent": 0, "params": {"Text": "这是什么呢。", "AuthorId": "Ema", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0103Bad01_Ema002"]}},
+    {"op": "StopBgm", "line": 32, "indent": 0, "params": {}},
+    {"op": "PlaySfxModified", "line": 35, "indent": 0, "params": {"SfxPath": "Sfx_92", "Volume": 1.0, "Loop": 0, "FadeInDuration": 0.0}},
+    {"op": "PrintTextModified", "line": 37, "indent": 0, "params": {"Text": "艾玛刚轻轻拿起它，<br>\n黑块就发出了微弱的声响。", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0103Bad01_Narrative002"]}},
+    {"op": "ModifyCharacterExtended", "line": 39, "indent": 0, "params": {"Lazy": 0, "ScenePosition": [50.0], "IdAndAppearance": "Ema.Pensive"}},
+    {"op": "PrintTextModified", "line": 41, "indent": 0, "params": {"Text": "欸……？", "AuthorId": "Ema", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0103Bad01_Ema003"]}},
+    {"op": "HideAllCharacters", "line": 43, "indent": 0, "params": {"Lazy": 0}},
+    {"op": "PlaySfxModified", "line": 46, "indent": 0, "params": {"SfxPath": "Sfx_93", "Volume": 1.0, "Loop": 0, "FadeInDuration": 0.0}},
+    {"op": "PrintTextModified", "line": 48, "indent": 0, "params": {"Text": "一声震天动地的巨响过后，<br>\n现场只剩下了——", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0103Bad01_Narrative003"]}},
+    {"op": "ModifyBackgroundExtended", "line": 50, "indent": 0, "params": {"TintColor": "#000000", "Lazy": 0, "AppearanceAndTransition": "SolidColor"}},
+    {"op": "PrintTextModified", "line": 52, "indent": 0, "params": {"Text": "散落一地的、曾经是艾玛的残骸碎片。", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0103Bad01_Narrative004"]}},
+    {"op": "ProcessBadEnd", "line": 58, "indent": 0, "params": {"Number": 11}}
+  ],
+  "translations": {
+  "0103Bad01_Ema001": "（这说不定是什么线索……）",
+  "0103Bad01_Narrative001": "艾玛全神贯注地不停挖掘。<br>\n过了一会，出现了一个小小的黑色团块。",
+  "0103Bad01_Ema002": "这是什么呢。",
+  "0103Bad01_Narrative002": "艾玛刚轻轻拿起它，<br>\n黑块就发出了微弱的声响。",
+  "0103Bad01_Ema003": "欸……？",
+  "0103Bad01_Narrative003": "一声震天动地的巨响过后，<br>\n现场只剩下了——",
+  "0103Bad01_Narrative004": "散落一地的、曾经是艾玛的残骸碎片。"
+}
+}

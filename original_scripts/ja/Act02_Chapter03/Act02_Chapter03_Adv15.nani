@@ -1,0 +1,70 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-3-15
+
+# ========================================
+# ●シーン2‐3‐15
+# ========================================
+
+@back 27_1
+@back Transparent { time:1.2 }
+
+@bgm Bgm_24_1
+
+@print 裁判の後、<br>私はひとりで地下の焼却炉室に来ていた。 { speed:1 waitInput:true Wait:true }
+
+@print "焼却炉の扉を開くと中は暗く、<br>焦げた<ruby=\"ざんがい\">残骸</ruby>が不規則に積み重なっている。" { speed:1 waitInput:true Wait:true }
+
+@print まだ焼却前のゴミもいくつかあったし、<br>燃え切っていない物もある。 { speed:1 waitInput:true Wait:true }
+
+@print 特に紙類は燃えにくく、<br>重なっているとそのまま残りやすい。 { speed:1 waitInput:true Wait:true }
+
+# 焼却炉の中を漁る音
+@sfx Sfx_143
+
+@print "私は焼け焦げた灰の山に構わず手を入れ、<br>中を<ruby=\"あさ\">漁</ruby>っていく。" { speed:1 waitInput:true Wait:true }
+
+@print （きっと、きっとあるはずだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 何ひとつ確かではない。<br>それでも探る手は止まらなかった。 { speed:1 waitInput:true Wait:true }
+
+@print "私は無我夢中で、必死で、<br>焦げた紙片や金属片を次々と<ruby=\"つか\">掴</ruby>み、外へ放り投げる。" { speed:1 waitInput:true Wait:true }
+
+@print そして――それを見つけた。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+# ぬいぐるみの中で紙がカサリと鳴る音
+@sfx Sfx_66
+
+@Wait 1
+
+@print "<ruby=\"はいまみ\">灰塗</ruby>れになった手で、薄汚れた自身で、<br>それ以上<ruby=\"けが\">穢</ruby>さないように<br>折りたたまれたその紙を開く。" { speed:1 waitInput:true Wait:true }
+
+@print そこにあったのは――ノアの本当の絵。 { speed:1 waitInput:true Wait:true }
+
+@print 見つけられたのは、<br>奇跡のようなものかもしれない。 { speed:1 waitInput:true Wait:true }
+
+@print なるほど……たしかにへたくそだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print くすりと微笑を浮かべながら、<br>私はノアの絵を見下ろす。 { speed:1 waitInput:true Wait:true }
+
+@print その紙の上に、<br>ぱたり、ぱたりと雫が落ちた。 { speed:1 waitInput:true Wait:true }
+
+@print "いくつも、いくつも、<br><ruby=\"ふ\">降</ruby>り<ruby=\"そそ\">注</ruby>ぐ<ruby=\"しずく\">雫</ruby>が止まらない。" { speed:1 waitInput:true Wait:true }
+
+@print まるで雨が降ったかのように。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 次話への引継ぎアイテム：『万年筆』
+# ========================================
+
+# ========================================
+# ＞魔法少女ノ魔女裁判 第2章4話へ
+# ========================================
+
+@set "g_gameProgress = max(9, g_gameProgress)"
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter04/Act02_Chapter04_Adv01

@@ -1,0 +1,647 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter05/Act02_Chapter05_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# クリーチャー化初期化
+@hide Hiro
+@char CreatureHiro.2 { Position:{hiroPositionX},{characterPositionY},{hiroPositionZ} Rotation:,{hiroRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Meruru
+@char CreatureMeruru.3-5 { Position:{meruruPositionX},{characterPositionY},{meruruPositionZ} Rotation:,{meruruRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+# ==============================================================================
+# MARK: 10-4: 💬 レイアの舞台
+# ==============================================================================
+# ＠ト書き▼議論10-4レイアの舞台
+# 議論開始カットイン
+# 気任せの蝶［チェロ有り］
+@bgm Bgm_7_1
+
+# Judge10-4-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char CreatureHiro.18
+@gosubModifyCamera 0
+@printDebate 君が他人を守る？<br>冗談だろう？
+
+@char CreatureHiro.18
+@gosubModifyCamera 0
+@printDebate これまで自分を<br>世間にアピールすることに<br>執心してきた君が？
+
+@char CreatureHiro.16
+@gosubModifyCamera 0
+@printDebate いったい君は<br>これまでその承認欲求で<br>何人のライバルを<br>蹴落としてきたのかな。
+
+@char Leia.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open02,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@printDebate "け、<link=\"Objection_02_05_04_01\">蹴落として</link>なんて<br>いない！"
+
+@char CreatureHiro.16
+@gosubModifyCamera 0
+@printDebate 本当だろうか？<br>君は芸能人だし、<br>その立ち振る舞いを見ても<br>裕福な家で育ったのが<br>見てとれる……。
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@printDebate たとえ自身が<br>手を下していなかったとしても、<br>君に潰された人間は<br>多いんじゃないかな。
+
+@char Leia.Default,ArmR1,ArmL1,Angle01/Facial/Eyes>Eyes_Surprised_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@printDebate だ、だからって、<br>それとこれとは別問題だ！
+
+@char Leia.Default,ArmR5,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open02,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@printDebate "だいたい……<br>それぐらいで諦めるなら、<br>その人物は<br><link=\"Objection_02_05_04_02\">それまでだった</link>と<br>いうことでもある……！"
+
+@char Leia.Default,ArmR9,ArmL8,Angle01/Facial/Eyes>Eyes_Pensive_Closed,Angle01/Facial/Mouth>Mouth_Smile_Middle,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@printDebate "私は<link=\"Objection_02_05_04_03\">正々堂々</link>と努力して、<br>舞台に立っていた！"
+
+@char Leia.Default,ArmR10,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open02
+@gosubModifyCamera 0
+@printDebate 君が言っていることは<br>根も葉もない誹謗中傷だ！
+
+@char Leia.Default,ArmR3,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@printDebate そんなことより……<br>建設的なことを<br>話し合うべきじゃないかな！
+
+@char Leia.Default,Arms,Angle01/Facial/Eyes>Eyes_Normal_Closed02,Angle01/Facial/Mouth>Mouth_Fearful_Open
+@gosubModifyCamera 0
+@printDebate みんなでこれから<br>どうしたらいいのか……<br>この牢屋敷をどうやって<br>脱出するのか……！
+
+@char Leia.Default,ArmR2,ArmL3,Angle01/Facial/Eyes>Eyes_Surprised_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open01
+@gosubModifyCamera 0
+@printDebate "希望はある！<br>みんな私に<br><link=\"Objection_02_05_04_04\">ついてきてくれ</link>たまえ！"
+
+
+# ==============================================================================
+# 10-4議論後独白
+# ==============================================================================
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char CreatureHiro.23
+@gosubModifyCamera 0
+@Wait 0.2
+
+@print （……建設的な議論をされると<br>　困る立ち場になってしまうとは） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@print （だが、優先すべきは彼女たちの魔女化だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@print （彼女の主張を否定して、<br>　議論の主導権を握らないと……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-4-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_04_01
+
+@Skip false
+@pauseTrial true
+
+@choice 踏み台にしてきた
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-4-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_04_02
+
+@Skip false
+@pauseTrial true
+
+@choice 冷血すぎる
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-4-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_04_03
+
+@Skip false
+@pauseTrial true
+
+@choice 実力以外の力も使っていた
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-4-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論4
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_04_04
+
+@Skip false
+@pauseTrial true
+
+@choice 誰もついてこない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-4-5
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 10-4: ❌ 議論ミス選択肢
+# ==============================================================================
+
+# MARK: 10-4-3: ❌ 反論・ 踏み台にしてきた
+
+# Judge10-4-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print 蹴落としていないのなら、<br>踏み台にしてきたんじゃないかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.8
+@gosubModifyCamera 0
+@print 類まれなるルックス……圧倒的な存在感と演技力……<br>それらで、見る者すべてを魅了し――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.7
+@gosubModifyCamera 0
+@print 並び立とうとする者は<br>自分をよく見せるためのステップとしてしか<br>扱っていなかったんじゃないか？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print スターになるためにね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,Arms,Angle01/Facial/Eyes>Eyes_Normal_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Open01,Angle01/Facial/Pale>Pale01
+@gosubModifyCamera 0
+@print …………フッ、ハハハッ……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# ＠備考◆照れ
+
+@char Leia.Default,ArmR8,ArmL8,Angle01/Facial/Eyes>Eyes_Smile_Closed,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print そ、そんなに褒めないでくれたまえ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.24
+@gosubModifyCamera 0
+@print （照れてる……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR8,ArmL8,Angle01/Facial/Eyes>Eyes_Smile_Closed,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print まあ、そうだね……<br>環境に恵まれたことは自覚しているよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,Arms,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print でも、その環境に甘んじていると思われないよう、<br>最大限の努力を続けてきた。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Smile_Closed
+@gosubModifyCamera 0
+@print 並び立つ者がいれば――。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR9,ArmL8,Angle01/Facial/Eyes>Eyes_Normal_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print 踏み台にするのではなく、<br>互いに競い、高め合う同志として接してきたつもりだよ。<br>いつだってね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char CreatureHiro.14
+@gosubModifyCamera 0
+@print （くっ……。<br>　この言葉では彼女の心に踏み込むことはできないか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （……レイアには、<br>　厳しい業界で積み上げてきた輝かしいキャリアがある） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （それに裏打ちされた自信を、素人の私が崩すのは難しいか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （だが……その成功の裏に<br>　後ろめたいことはひとつもなかったのか？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge10-4-1
+
+# MARK: 10-4-4: ❌ 反論・ 冷血すぎる
+
+# Judge10-4-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print 今の発言が、レイアの本性だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.8
+@gosubModifyCamera 0
+@print 他者に対して非情、冷血。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print 君に恨みを持つ者も多いんじゃないのか？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print 口ではヒロイックなことを言っているが、<br>内心で他者を見下す冷たい女なんだよ、君は。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL3,Angle01/Facial/Eyes>Eyes_Normal_Closed03,Angle01/Facial/Mouth>Mouth_Normal_Closed
+@gosubModifyCamera 0
+@print ……冷たく見えることもあるだろう。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL3,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@print 私がいる芸能の世界は、水ものだ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR1,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@print 生き抜くためには<br>非情にならざるを得ない時だってある。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR3,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print 飽きられたり、<br>追い越されたりするのは日常茶飯事さ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,Arms,Angle01/Facial/Eyes>Eyes_Pensive_Closed,Angle01/Facial/Mouth>Mouth_Smile_Closed
+@gosubModifyCamera 0
+@print ……だが、だからこそ――。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,Arms,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print 誰かを見下すヒマなんてない。<br>芸事に真摯に向き合うだけで精一杯だ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR9,ArmL8,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print そう……冷たく見えていようと、<br>私の役者魂は常に熱く燃えているのさ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char CreatureHiro.14
+@gosubModifyCamera 0
+@print （くっ……。<br>　この言葉では彼女の心に踏み込むことはできないか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （……レイアには、<br>　厳しい業界で積み上げてきた輝かしいキャリアがある） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （それに裏打ちされた自信を、素人の私が崩すのは難しいか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （だが……その成功の裏に<br>　後ろめたいことはひとつもなかったのか？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-4-1
+
+# MARK: 10-4-5: ❌ 反論・ 誰もついてこない
+
+# Judge10-4-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print 脱出方法もわからないまま<br>希望を振りかざしても無駄だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print そんな薄っぺらい理想論には<br>誰もついてこないよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@print 悲観的になるよりは<br>よっぽどいいじゃないか！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@print 先導する者は、後に続く者を不安にさせないよう<br>理想を語る義務があるんだよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL3,Angle01/Facial/Eyes>Eyes_Normal_Closed01,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print そして私には数多の理想を叶えてきた実績がある！<br>無論、舞台を通してだけれどね！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR9,ArmL8,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print 今回はこの謎の屋敷を舞台に<br>大いなる理想を叶えてみせようじゃないか！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR9,ArmL8,Angle01/Facial/Eyes>Eyes_Normal_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print さあみんな、私についてきたまえ！！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char CreatureHiro.15
+@gosubModifyCamera 0
+@print （この自信……<br>　これがカリスマか……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （……レイアには、<br>　厳しい業界で積み上げてきた輝かしいキャリアがある） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （それに裏打ちされた自信を、素人の私が崩すのは難しいか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （だが……その成功の裏に<br>　後ろめたいことはひとつもなかったのか？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-4-1
+
+# ==============================================================================
+# MARK: 10-4-2: ⭕ 反論・実力以外の力も使っている
+# ==============================================================================
+# Judge10-4-2
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+# カットイン
+@StopBgm 
+@gosubCutIn CreatureHiro
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.18
+@gosubModifyCamera 0
+@print ……笑わせるね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,Arms,Angle01/Facial/Eyes>Eyes_Surprised_Open02,Angle01/Facial/Mouth>Mouth_Angry_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print な、何がおかしい！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.18
+@gosubModifyCamera 0
+@print だってそうだろう？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# BGM変更：Sen-Choose N'o SurC
+@bgm Bgm_38_1_Loop
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char CreatureHiro.16
+@gosubModifyCamera 0
+@print 舞台で実力以外の力も使っていたのは、<br>【君がこの牢屋敷にいる】という事実で<br>証明できるよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,Arms,Angle01/Facial/Eyes>Eyes_Downcast_Open,Angle01/Facial/Mouth>Mouth_Pensive_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print "うっ……！？ そ、それは……！？" { author:Leia speed:1 waitInput:true Wait:true }
+
+# Judge10-4-6
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print 君が舞台で使っていた力、それは――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@choice 魔法
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge10-4-7
+
+@choice 財力
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge10-4-8
+
+@choice 政治
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge10-4-9
+
+@StopForChoice 
+
+# MARK: 10-4-8: ❌ 選択・財力
+
+# Judge10-4-8
+
+@char CreatureHiro.8
+@gosubModifyCamera 0
+@print 圧倒的な財力だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.8
+@gosubModifyCamera 0
+@print 実家が太いと、<br>あらゆる面で優位に立ちやすいだろうからね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR1,ArmL3,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open01,Angle01/Facial/Mouth>Mouth_Fearful_Open
+@gosubModifyCamera 0
+@print ……たしかに、裕福な家に生まれたおかげで<br>親の七光り的扱いを受けたこともあったけれど……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@print それだけでお客さんたちの心をつかみ続けられるほど<br>甘い業界じゃないよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL4,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Fearful_Open
+@gosubModifyCamera 0
+@print 親の援助に感謝はすれど――。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print 今も舞台に立ち続けられているのは<br>自分の努力と、周りの支えあってのことだろうね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （……彼女が使っていたのは、別の力だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.1
+@gosubModifyCamera 0
+@print （……レイアが――そして私たちが、<br>　この牢屋敷に連れて来られた【原因】を思い出そう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.1
+@gosubModifyCamera 0
+@print （レイアは【それ】の恩恵を受けながら<br>　舞台に立ってきたはずだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （役者人生に誇りを持っているレイアにとって<br>　指摘されたくない事実、それを突きつけるしかない……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （心は痛むが、悪役になりきるんだ……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-4-6
+
+# MARK: 10-4-9: ❌ 選択・政治
+
+# Judge10-4-9
+
+@char CreatureHiro.8
+@gosubModifyCamera 0
+@print 政治的な力だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.8
+@gosubModifyCamera 0
+@print 裕福な家の出ともなれば<br>大物政治家がバックアップしていたとしても<br>不思議じゃないよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR8,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print ……そんな大物に認めてもらえるほどの芸が出来たら<br>光栄だけれど。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print 今のところ、政治とは関わりがないね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed03,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print フフッ、買いかぶらないでくれたまえ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （……彼女が使っていたのは、別の力だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char CreatureHiro.1
+@gosubModifyCamera 0
+@print （……レイアが――そして私たちが、<br>　この牢屋敷に連れて来られた【原因】を思い出そう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.1
+@gosubModifyCamera 0
+@print （レイアは【それ】の恩恵を受けながら<br>　舞台に立ってきたはずだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （役者人生に誇りを持っているレイアにとって<br>　指摘されたくない事実、それを突きつけるしかない……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （心は痛むが、悪役になりきるんだ……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-4-6
+
+# ==============================================================================
+# MARK: 10-4-7: ⭕ 魔法
+# ==============================================================================
+
+# Judge10-4-7
+
+# カットイン
+
+@gosubCutIn CreatureHiro
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.10
+@gosubModifyCamera 0
+@print さぞかし愉快だっただろうね――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char CreatureHiro.11
+@gosubModifyCamera 0
+@print ――【視線誘導】の魔法で、<br>観客の視線を独り占めできるのは。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Leia.Surprised1,ArmR1,ArmL1,Angle01/Facial/Eyes>Eyes_Fearful_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print うぐっ……！？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.21
+@gosubModifyCamera 0
+@print 君は人より優れていた。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print なぜなら――【魔女】だから。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR9,ArmL4,Angle01/Facial/Eyes>Eyes_Fearful_Open,Angle01/Facial/Mouth>Mouth_Yell_Open02,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ち、違う……！<br>わ、わ、私はっ……！<br>そんなことは……！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.25
+@gosubModifyCamera 0
+@print （……動揺しているな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （……あと一息だ。<br>　今レイアの心は無防備となっている） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （嘘でもいい……<br>　彼女のトラウマを刺激するような、<br>　１番彼女が聞きたくない言葉をぶつけるんだ……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print あらためて――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_Common_3
+
+@char CreatureHiro.4
+@gosubModifyCamera 0
+@print 魔女裁判を、開廷しよう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto Act02_Chapter05/Act02_Chapter05_Trial05

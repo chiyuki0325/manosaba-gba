@@ -1,0 +1,28 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-5-11
+
+# ========================================
+# ●シーン1‐5-11
+# ========================================
+
+@back 370_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 3.2
+
+@back 370_2 { Scale:{g_backgroundDefaultScale} time:0.2 }
+@Wait 1.8
+
+@print ――【戻った】、ということか……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print それなら、はじめから、やり直さないと。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ＞魔法少女ノ魔女裁判 2章へ
+# ========================================
+
+@set "g_gameProgress = max(6, g_gameProgress)"
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter01/Act02_Chapter01_Adv01

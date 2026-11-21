@@ -1,0 +1,219 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-1-15
+
+# ========================================
+# ●シーン1‐1-15
+# [back 2]
+# ========================================
+
+# ========================================
+# [bgm Bgm_011_001_Loop]
+# ========================================
+
+@back 1_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+@bgm Bgm_11_1
+
+@print "本日の大半を、<br>エマらは看守との鬼ごっこに<ruby=\"つい\">費</ruby>やしてしまった。" { speed:1 waitInput:true Wait:true }
+
+@print （捕まらなくて良かったけど、<br>　もうへっとへとだよ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+@back 2_1 { Scale:{g_backgroundDefaultScale} }
+@back Transparent.Custom { time:0.9 }
+@Wait 0.9
+
+@print エマはよろよろと自分の房から出る。<br>すると、メルルが待ち構えるように立っていた。 { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default
+
+@print エマさん、大丈夫ですか？<br>か、看守さんに追いかけられたって聞いて……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default
+@char Ema.Pensive1
+
+@print う、うん。何もされてないよ。<br>ちょっと疲れただけ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ほっぺた汚れちゃってます。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "メルルは心配そうに眉を下げ、<br>エマの<ruby=\"ほお\">頬</ruby>をハンカチで拭いた。" { speed:1 waitInput:true Wait:true }
+
+@print （なんかお母さんみたい） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマは照れくさそうに、<br>はにかんで<ruby=\"うつむ\">俯</ruby>いた。" { speed:1 waitInput:true Wait:true }
+
+@print それからメルルは<br>通路脇に置いてあるバケツの方へと、歩いていった。 { speed:1 waitInput:true Wait:true }
+
+@print 掃除のために置いてあるのかもしれないが、<br>今は囚人たちのごみ箱に利用されている。 { speed:1 waitInput:true Wait:true }
+
+@print ハンカチを捨てようとしたところで、<br>メルルは首を傾げた。 { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Pensive
+
+@print これ、なんでしょう？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@ResetText 
+@camera { time:0.9 }
+@Wait 0.9
+
+@print "エマも移動し、バケツの中を<ruby=\"のぞ\">覗</ruby>いてみた。" { speed:1 waitInput:true Wait:true }
+
+@print バラバラに分解された機械のパーツのようなもので、<br>バケツの中はいっぱいになっている。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@camera { time:0.9 }
+@Wait 0.9
+
+@char Meruru.Pensive
+@char Ema.Normal1
+
+@print なんだろうね？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 通路は綺麗だとはいいがたく、<br>そのあたりのゴミを誰かが集めて入れたのかもしれない。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+
+@print （考えても仕方ないか。<br>　ここは、おかしなことばっかりだから） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Pensive
+
+@print エマがため息を吐くと、<br>メルルの手がそっと触れた。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@QuickSave 6
+
+@print 夕食に、行きましょうか。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print そうだね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "手を引いてくれるメルルに、<br>エマは<ruby=\"ほほえ\">微笑</ruby>む。" { speed:1 waitInput:true Wait:true }
+
+@print あ、でもそうだ。<br>ちょっと待って。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマは―― { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 選択肢
+# 『ノアの房を覗いた』
+# 『やっぱりなんでもないと首を振った』-> 1‐1‐b6へ
+# ========================================
+
+@choice ノアの房を覗いた
+	@goto .Choice1-1-6
+
+@choice やっぱりなんでもないと首を振った
+	@goto Act01_Chapter01/Act01_Chapter01_Bad06
+
+@StopForChoice 
+
+# Choice1-1-6
+
+@correctChoice 6
+
+@print "いつものように、ノアの房の方を<ruby=\"のぞ\">覗</ruby>いてみた。" { speed:1 waitInput:true Wait:true }
+
+@animate MainBackground
+@spawn MaskingRectangle
+@back 1_1
+@char Noah.Normal1
+@mask MainBackground-Front,Noah-Front
+@back Transparent { time:0 }
+@Wait 0.3
+
+@print 相変わらずノアの房は、<br>スプレーアートで埋め尽くされている。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print ノアちゃん、今日もごはん行かないの？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Noah.Normal1
+
+@print "あ、エマちゃん、メルルちゃん。<br>のあはへーきだよ？ みんな優しいんだあ。" { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print みんな？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Noah.Normal1
+
+@print うん。差し入れもってきてくれたり、<br>声をかけてくれたりする。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print のあの魔法を見て、みんな驚いてたけど……<br>でも、ここは不思議なことがたくさんで。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Flushed1
+
+@print のあの魔法、怖がられたりしないんだ。<br>えへへ、嬉しいな。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print （へえ……みんなけっこう、<br>　ノアちゃんのこと気にかけてあげてるんだな） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print それなら良かった。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Noah.Smile1
+
+@print うん。お礼にみんなの喜んでくれる絵を<br>頑張って完成させるね。 { author:Noah speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [sfx 15:カラースプレー噴出音]
+# ========================================
+
+@sfx Sfx_15
+
+@print "ノアは早速スプレーを<ruby=\"ま\">撒</ruby>き始めている。<br>刺激臭が立ち去るエマの鼻をついた。" { speed:1 waitInput:true Wait:true }
+
+@hide Noah-Front,MainBackground-Front
+@despawn MaskingRectangle
+@char Ema.Surprised1
+@Wait 0.3
+
+@hideChars 
+@char Ema.Normal1
+@char Meruru.Default
+
+@print ……そういえば、アンアンちゃんは、<br>ノアちゃんとうまくやれてるのかな？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 上り階段の方へと向かいながら、<br>エマはメルルに問いかけた。 { speed:1 waitInput:true Wait:true }
+
+@print どうでしょうか……昨日の夜は房に戻ったんですが、<br>今日また体調を崩してしまって、医務室で寝ています。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print どうしても、同室が辛いらしくて……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print うーん、そっかあ……なんとかならないかな。<br>ほら、ボクと部屋を交換するとか！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Smile
+
+@print いいかもしれませんね！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print （早速掛け合ってみよう……<br>　今度ゴクチョーに遭遇した時にでも……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマとメルルは階段を上がっていく。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [sfx 7：階段を上る音]
+# ========================================
+
+@sfx Sfx_7
+
+# ========================================
+# [transition Out,Fade,1,Black]
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter01/Act01_Chapter01_Adv20

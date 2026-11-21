@@ -1,0 +1,86 @@
+@Gosub System/System_Subroutine.BeginAdv
+
+@back Transparent { time:0 }
+
+# @gosub .Bgm
+@Gosub .Voice
+
+@Stop 
+
+# ==============================================================================
+# BGM
+# ==============================================================================
+
+# Bgm
+
+@print "Debug_Audio # Bgm" { speed:1 waitInput:true Wait:true }
+
+@print "Bgm_1_1 を再生します。" { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_1_1
+
+@print "Bgm_1_1 を再生中です。" { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@print "Bgm_1_1 を停止しました。" { speed:1 waitInput:true Wait:true }
+
+@print "Bgm_2_1 を再生します。" { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_2_1_Loop
+
+@print "Bgm_2_1 を再生中です。" { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@print "Bgm_2_1 を停止しました。" { speed:1 waitInput:true Wait:true }
+
+@Return 
+
+# ==============================================================================
+# Voice
+# ==============================================================================
+
+# Voice
+
+@print "Debug_Audio # Voice" { speed:1 waitInput:true Wait:true }
+
+@voice CommonTrial_Ema05117
+@voice CommonTrial_Hiro00024
+@print "CommonTrial_Ema05117 + CommonTrial_Hiro00024" { speed:1 waitInput:true Wait:true }
+
+@voice CommonTrial_Meruru00921
+@voice CommonTrial_Hanna00568
+@print "CommonTrial_Meruru00921 + CommonTrial_Hanna00568" { speed:1 waitInput:true Wait:true }
+
+@voice CommonTrial_Sherry01051
+@print CommonTrial_Sherry01051 { speed:1 waitInput:true Wait:true }
+
+@voice CommonTrial_AnAn00385
+@print CommonTrial_AnAn00385 { speed:1 waitInput:true Wait:true }
+
+@voice CommonTrial_Leia00424
+@print CommonTrial_Leia00424 { speed:1 waitInput:true Wait:true }
+
+@voice CommonTrial_Coco00921
+@print CommonTrial_Coco00921 { speed:1 waitInput:true Wait:true }
+
+@voice CommonTrial_Miria00282
+@print CommonTrial_Miria00282 { speed:1 waitInput:true Wait:true }
+
+@voice CommonTrial_Margo01190
+@print CommonTrial_Margo01190 { speed:1 waitInput:true Wait:true }
+
+@voice CommonTrial_Noah00035
+@print CommonTrial_Noah00035 { speed:1 waitInput:true Wait:true }
+
+@voice CommonTrial_Nanoka00525
+@print CommonTrial_Nanoka00525 { speed:1 waitInput:true Wait:true }
+
+@voice CommonTrial_Alisa00564
+@print CommonTrial_Alisa00564 { speed:1 waitInput:true Wait:true }
+
+@voice CommonTrial_Yuki00600
+@print CommonTrial_Yuki00600 { speed:1 waitInput:true Wait:true }
+
+@Return

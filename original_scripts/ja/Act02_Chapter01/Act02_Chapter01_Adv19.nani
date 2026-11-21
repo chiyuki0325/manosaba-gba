@@ -1,0 +1,217 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+@back Transparent { time:1.2 }
+
+# Scene2-1-14
+
+# ========================================
+# ●シーン2‐1-14
+# ========================================
+
+@back 30_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_11_1
+
+@print 翌日の夕食後――<br>私とノアはシャワールームに足を運んでいた。 { speed:1 waitInput:true Wait:true }
+
+@print 囚人番号が振られたロッカーの中には、<br>私たちが毎日着せられている同様の服が入っている。 { speed:1 waitInput:true Wait:true }
+
+@print "何度か利用しているが、<br>見るたび<ruby=\"いまいま\">忌々</ruby>しさに舌打ちが漏れる。" { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1
+@char Noah.Normal1,ArmL2
+
+@print 着せ替え人形扱いか……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Angry1,ArmL2
+
+@print お風呂きらい。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print 洗っておいてもらってわがままを言うな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Pensive1,ArmL2
+
+@print 毎日洗わなきゃだめかな？<br>３日に１回くらいで良くないかな？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@print ダメだ。毎日入るんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Angry1,ArmL2
+
+@print けちー。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print ケチではない。ただでさえこの牢屋敷の衛生面は<br>あまりよろしくないんだ。清潔に保つのは当然の……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ノアにくどくどと説教を始めたところで、<br>手に持つスマホがチカチカと光ってなんらかの通知を知らせる。 { speed:1 waitInput:true Wait:true }
+
+@print 確認してみると、<br>沢渡ココが予告どおり配信を開始していた。 { speed:1 waitInput:true Wait:true }
+
+@print "配信画面にはココが映し出されていた。<br>ノアも私のスマホを<ruby=\"のぞ\">覗</ruby>いてくる。" { speed:1 waitInput:true Wait:true }
+
+@char Noah.Normal1,ArmL2
+@Wait 0.2
+@char Noah
+
+@print あ、ココちゃんだ。<br>どこにいるんだろう？？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@hideChars 
+
+# 配信フレームIN
+@printer Normal.Stream
+@back 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.25 }
+@Wait 0.25
+@char Noah { time:0 }
+@hide Noah { time:0 }
+@back SolidColor.Custom { time:0 }
+@char Coco.Smile1
+@camera { time:0 }
+@Wait 0.25
+
+# ＠備考◆配信中
+
+@print どもども～ココたんだよ～！<br>今日は予告しといたからみんな見てくれてるよな～？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print （たしかに、どこにいるかわからないな。<br>　わざと居場所を特定できないようにしているのか？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆配信中
+
+@print ふっふっふ～、<br>今日のあてぃしは重大発表しちゃいまーす。 { author:Coco speed:1 waitInput:true Wait:true }
+
+# ＠備考◆配信中
+
+@StopBgm 
+
+@print "じゃじゃーん！ これ見て見て！" { author:Coco speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_26_1
+
+# ========================================
+# アイテムスチル：『トレデキム』表示
+# ========================================
+
+@char Coco.Normal1
+
+# ＠備考◆配信中
+
+@print 実はこれな、【魔女を殺す薬】なんだよね～。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Smile1
+
+# ＠備考◆配信中
+
+@print その名も【トレデキム】。<br>効果のほどはあてぃしのお墨付き！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1
+
+# ＠備考◆配信中
+
+@print この情報をみんなに明かすの迷ったんだけどさ……<br>だってこれ出しちゃったら<br>あてぃしもヤバい立場になんじゃねーかなーって。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Angry1
+
+# ＠備考◆配信中
+
+@print で、でもあてぃし、もう【魔女を殺す薬】持ってっから！<br>こんなもんにもう二度と殺されねーから！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1
+
+# ＠備考◆配信中
+
+@print 信じるか信じないかは任せる！<br>とにかく【魔女を殺す薬】を使用しなきゃ<br>確実に魔女は殺せないってコト！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Smile1
+
+# ＠備考◆配信中
+
+@print 以上、ココちゃんからの重大発表でした～！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@hideChars 
+@Wait 0.25
+@printer Normal.Default
+@camera { time:0 }
+@back 30_1 { Scale:{g_backgroundDefaultScale} }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@print 配信はあっさり終了した。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Surprised1
+@char Noah.Surprised1
+
+@print （【魔女を殺す薬】……？<br>　本当にそんなものが存在するのか？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@update 15
+
+@char Noah.Pensive1
+
+@ResetText 
+@QuickSave 17
+
+@print ココちゃんの言ったことって本当なのかな？<br>ココちゃんを探して聞いてみる？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+
+@print ……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 私は―― { speed:1 waitInput:true Wait:true }
+
+@StopBgm { fade:3 }
+
+@choice ココを探す
+	@goto Act02_Chapter01/Act02_Chapter01_Bad02
+
+@choice ココを探さない
+	@goto .Choice2-1-2
+
+@StopForChoice 
+
+# Choice2-1-2
+
+@correctChoice 17
+
+@bgm Bgm_26_1
+
+@print 首を横に振った。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1
+
+@print 沢渡ココは信用ならない。<br>放っておけばいい。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （【魔女を殺す薬】の話が本当だったとしても、<br>　多くの情報は引き出せないだろう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （思わせぶりなことを言って、<br>　目立ちたかっただけのようにも見えた） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print とにかく、今はシャワーだ。<br>さっさと洗うぞノア。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Angry1
+
+@print えー。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:1 }
+@StopBgm { fade:1 }
+@Wait 1.2
+
+@sfx Sfx_47
+@Wait 5
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter01/Act02_Chapter01_Adv20

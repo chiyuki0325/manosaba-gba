@@ -1,0 +1,1335 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act01_Chapter01/Act01_Chapter01_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 1500
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# ==============================================================================
+# MARK: 13: 💬 証拠はあるのか
+# ==============================================================================
+# ＠ト書き▼議論シーン1-13 証拠はあるのか
+# BGM変更：AccUhEarts(Vocal有)
+@bgm Bgm_15_1
+
+# Judge1-13-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Angry_Open1,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@printDebate 事件の流れについて<br>おさらいしましょうか。
+
+@char Nanoka.Normal1,ArmR1,ArmL10,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@printDebate 犯行は２０時から<br>２１時の間に行われた。<br>そしてその間に<br>アリバイがないのは……。
+
+@char Leia.Angry1,ArmR7,ArmL3,ArmR7,ArmL3,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@printDebate 私だけ……<br>ということだったね。
+
+@char Leia.Smile1,ArmR3,ArmL3,ArmR3,ArmL3,Angle01/Facial/Eyes>Eyes_Normal_Closed01,Angle01/Facial/Mouth>Mouth_Yell_Open01
+@gosubModifyCamera 0
+@printDebate ……でも私としては、<br>それは何かの行き違いや<br>見落としがあった<br>結果だと思っているけどね。
+
+@char Alisa.Angry1,Option-ArmL-Off
+@gosubModifyCamera 0
+@printDebate お前が犯人だったら、<br>そういうしかねぇだろ。
+
+@char Leia.Pensive1,ArmR5,ArmL3,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open01
+@gosubModifyCamera 0
+@printDebate でも私がやったというような<br>確たる証拠はないよね？<br>それで疑うのは<br>どうかと思うよ。
+
+@char Coco.Pensive1,ArmR2,ArmL1
+@gosubModifyCamera 0
+@printDebate 証拠ね～？<br>でも今までもう<br>散々出尽くしたっしょ～！<br>こんな話し合い、<br>続ける意味ある～？
+
+@char Miria.Pensive1,ArmR3,ArmL4
+@gosubModifyCamera 0
+@printDebate で、でももしかすると、<br>まだちゃんと<br>検討してない物が<br>あるかもしれないし……。
+
+@char Sherry.Normal1,ArmR3,ArmL3
+@gosubModifyCamera 0
+@printDebate では物理的に<br>残っていた証拠を<br>もう一度<br>検討してみましょうか！
+
+@char Sherry.Smile1,ArmR3,ArmL12
+@gosubModifyCamera 0
+@printDebate "たとえば……<br>ナノカさんのリボンとかは<br>どうでしょうね？<br>これは確実に<br><link=\"Objection_01_01_13_01\">犯人さんが使用した物</link>、<br>ですよね！"
+
+@char Margo.Normal1,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@printDebate そのリボン、<br>血がついてたのよね？<br>誰のものなのかしら？
+
+@char Hanna.Fearful1,ArmR3,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@printDebate そ、その血が実は<br>犯人のものだったり<br>するんじゃねーんですわ！？<br>ありがちな展開ですわー！
+
+@char Meruru.Normal1,ArmR1_1,ArmL8,Eyes1_Pensive_Open1,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@printDebate "もしそうだったとしても<br>私たちにそれを<br><link=\"Objection_01_01_13_02\">調べる方法</link>は<br>ありませんし、<br><link=\"Objection_01_01_13_03\">証拠</link>には<br>ならなそうです……。"
+
+@char Miria.Normal1,ArmR3,ArmL8
+@gosubModifyCamera 0
+@printDebate "他には……<br>部屋に塗られた<link=\"Objection_01_01_13_04\">塗料</link>には<br>怪しい所はなかったかな？"
+
+@char Miria.Normal1,ArmR3,ArmL8,Angle01/Facial/Eyes>Eyes_Glare_Open04
+@gosubModifyCamera 0
+@printDebate "あんなに大量に<br>塗られてたのにも<br><link=\"Objection_01_01_13_05\">意味がある</link>かもだし……。"
+
+@char Sherry.Normal1,ArmR3,ArmL12
+@gosubModifyCamera 0
+@printDebate そういえば現場には<br>蝶の絵もありましたよね。
+
+@char AnAn.Normal1,Angle01/Option_Arms-,ArmR-Option-Off,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_03,Angle01/Head/Facial/Eyes>Eyes_Angry_Open01,Angle01/Head/Facial/Mouth>Mouth_Normal_Closed
+@gosubModifyCamera 0
+@printDebate 『あれが犯人に<br>繋がる物じゃないことは<br>わがはいが保証する』
+
+@char Margo.Normal1,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate "じゃああの<link=\"Objection_01_01_13_06\">ホウキ</link>は<br>どうかしら？<br>現場の近くに<br>残されていたのよね？<br>何か<link=\"Objection_01_01_13_07\">痕跡が残って</link>たり<br>しないかしら？"
+
+@char Sherry.Smile1,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate 実は何の変哲もない<br>ホウキに見えて、<br>魔法のホウキだったり<br>するんでしょうか！？
+
+@char Coco.Smile1,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate そうそう魔女だけに――。
+
+@char Coco.Angry1,ArmR13,ArmL10,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Comical_Closed
+@gosubModifyCamera 0
+@printDebate ――ってうるせー！<br>んな都合のいいことあるかー！
+
+@char AnAn.Pensive1,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Uncomfortable_Open02,Angle01/Head/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@printDebate ……はぁ。
+
+@char Alisa.Angry1,Option-ArmL-Off,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open01
+@gosubModifyCamera 0
+@printDebate ……ていうか、<br>本当にこんな話して<br>意味あんのかよ。<br>もう十分話しただろ……！
+
+@char Meruru.Normal1,ArmR8_1,ArmL8,Eyes1_Pensive_Open1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@printDebate 意味は……<br>あると思います。<br>投票したあとで<br>【間違っていたら】<br>なんて……<br>後悔したくありませんから。
+
+@char Alisa.Angry1,Option-ArmL-Off,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02
+@gosubModifyCamera 0
+@printDebate ……チッ……。<br>わかった、<br>続けるよ……。
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01 { time:0 }
+@gosubModifyCamera 0
+@Wait 0.2
+
+# ==============================================================================
+# ADVシーン
+# ==============================================================================
+
+@print （……でも、現場には決定的な証拠なんてなかった。<br>　それはもう議論しつくしたような……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@char Meruru.Normal2,ArmR1_2,ArmL3,Eyes2_Normal_Open1,Mouth2_Angry_Open2
+@gosubSplitStageScreen 1
+
+@print ……エマさん。<br>証拠が存在しないなら……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal2,ArmR1_2,ArmL3,Eyes2_Normal_Open1,Mouth2_Angry_Open2
+@print 【なぜそれが存在しないのか】を考えてみると<br>良いのかもしれません。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideStageScreen 1
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open
+
+@print 【証拠が存在しない理由】……？<br>それは……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3,ArmL1
+@print （【犯人が隠した】……！？<br>　そんな証拠の可能性、指摘できるのかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-13-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_01_01_13_01
+
+@Skip false
+@pauseTrial true
+
+@choice リボンはノアが持っていた
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge1-13-3
+
+@choice リボンは事件と関係ない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge1-13-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_01_01_13_02
+
+@Skip false
+@pauseTrial true
+
+@choice 誰の血か調べる方法がある
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge1-13-5
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_01_01_13_03
+
+@Skip false
+@pauseTrial true
+
+@choice 犯人は傷を負っている
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge1-13-6
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論4
+# ------------------------------------------------------------------------------
+
+# Objection_01_01_13_04
+
+@Skip false
+@pauseTrial true
+
+@choice 犯人は塗料を持ち去っている
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge1-13-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論5
+# ------------------------------------------------------------------------------
+
+# Objection_01_01_13_05
+
+@Skip false
+@pauseTrial true
+
+@choice 塗料はノアのメッセージ
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge1-13-7
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論6
+# ------------------------------------------------------------------------------
+
+# Objection_01_01_13_06
+
+@Skip false
+@pauseTrial true
+
+@choice ホウキに証拠が残っている
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge1-13-8
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論7
+# ------------------------------------------------------------------------------
+
+# Objection_01_01_13_07
+
+@Skip false
+@pauseTrial true
+
+@choice ホウキに仕掛けがあった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge1-13-9
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# ミス選択肢
+# ==============================================================================
+# ==============================================================================
+# MARK: 13-3: ❌ リボンはノアが落とした
+# ==============================================================================
+
+# Judge1-13-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print あのリボン、ノアちゃんが落とした可能性ってないかな？<br>ノアちゃんが拾って持っていたとしたら……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print ……たしかにその場合、<br>これまでの前提は崩れるけれど……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR3,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open04
+@gosubModifyCamera 0
+@print でも犯人が持ち去ったことには変わりないですよね？<br>現場から消えてるんですし。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print そ、それはたしかにそうかも……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print べつに誰が拾ったかは関係ないんじゃないかしら？<br>だって何にせよ、現場にはあったのだしね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR3,ArmL3
+@gosubModifyCamera 0
+@print つまり、無駄な議論って事ですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Pensive1,ArmR6,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （みんなから否定されちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （でもたしかに、あのリボンは証拠にはならないかも……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （他に何か、犯人に繋がるような手がかりはないかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-13-1
+
+# ==============================================================================
+# MARK: 13-4: ❌ リボンは事件と関係ない
+# ==============================================================================
+
+# Judge1-13-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ねぇ……やっぱりあのリボン、<br>実は事件に関わってない物なんじゃないかな……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print 湖で見つかったんだし、<br>この事件とはまったく関係ない物なのかも……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Pensive1,ArmL5,Angle01/ArmR-
+@gosubModifyCamera 0
+@print ……ちなみにそれは間違いなく私のリボンよ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR3,ArmL3
+@gosubModifyCamera 0
+@print つまり昔から湖にあったとかではなく、<br>最近湖に投棄された物というわけですね～！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1,ArmR2
+@gosubModifyCamera 0
+@print 事件の直前になくなった上に、<br>塗料も血もついているんですのよ！？<br>逆になんで関係ないと思うんですの！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print なんかエマっち……怪しくね～？<br>なんか隠そうとしてる～？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Pensive1,ArmR6,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （しまった……！<br>　みんなの考えとは正反対の発言をして<br>　怪しまれちゃったみたい……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （でもたしかに、あのリボンが現場で使われた可能性は高いよね。<br>　となると、これまでの推理は間違ってないはず……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （他に何か、犯人に繋がるような手がかりはないかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-13-1
+
+# ==============================================================================
+# MARK: 13-5: ❌ 誰の血か調べる方法がある
+# ==============================================================================
+
+# Judge1-13-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print 待って……！<br>ここの医務室なら、それに付いてる血が<br>誰の血なのか調べる方法があるんじゃないかな……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Pensive1,ArmR2,ArmL9,Eyes1_Normal_Open3,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@char Meruru.Normal1,ArmR1_1,ArmL8,Eyes1_Pensive_Open1,Mouth1_Normal_Open2
+@print えっと……それは難しいかもしれません……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Pensive1,ArmL5,Angle01/ArmR-
+@gosubModifyCamera 0
+@print 無理よ。血液型を調べるのでさえ試薬が必要なの。<br>ここの設備では血液鑑定は不可能だわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Eyes1_Flushed_Open1,ArmR2,ArmL9,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print 知らない事を適当に言わないで。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR6,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （普通に怒られちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （でもたしかに、あのリボンは証拠にはならないかも……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （他に何か、犯人に繋がるような手がかりはないかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-13-1
+
+# ==============================================================================
+# MARK: 13-6: ❌ 犯人は傷を負っている
+# ==============================================================================
+
+# Judge1-13-6
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print そうだよ、リボンには血が付いてた……！<br>なら犯人は傷を負ってるんじゃないかな！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print ……そうかしら？<br>あの血はノアちゃんの血である可能性が<br>高いと思うけれど……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print それに仮に犯人が怪我をしているとして、<br>どうやって確認するのかしら？<br>……服でも脱がしてみる？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Closed,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print "破廉恥ですわー！！ 変態！" { author:Hanna speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Flushed1,ArmR6,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （変態扱いされちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （でもたしかに、外見で怪我をしているような人はいない……。<br>　仮に怪我をしていたとしても、見つける方法はないかも……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （他に何か、犯人に繋がるような手がかりはないかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-13-1
+
+# ==============================================================================
+# MARK: 13-7: ❌ 犯人が塗料を利用した
+# ==============================================================================
+
+# Judge1-13-7
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ……そうだ。<br>やっぱり犯人が塗料を使ったんじゃないかな？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print 塗料を使えば足跡だって消せるし……<br>そうなるとこれまでの見方も変わってくるはずだよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1
+@gosubModifyCamera 0
+@print ちょ、ちょっと待ちやがれですわ！<br>これまでの推理では現場で槍みたいな物が<br>作られたって話でしたでしょう！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char AnAn.Normal1,Angle01/Option_Arms-,ArmR-Option-Off,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_04,Angle01/Head/Facial/Eyes>Eyes_Angry_Open01
+@gosubModifyCamera 0
+@print 『その状況証拠が揃っているという前提で<br>議論が進んでいたと思うが？』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1,ArmR2,ArmL5,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print それにもし塗料を使って足跡を消したというなら、<br>なぜ【床の傷】が残ったのか<br>説明できないんじゃないかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print エマっちさ～……<br>【空気】って、漢字で書ける？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Smile1,ArmR6,ArmL2
+@gosubModifyCamera 0
+@print ……あっ、そもそも読めないなら無理かな～！？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Pensive1,ArmR6,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （バカにされちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （でも確かに、【床の傷】は犯人が証拠隠滅に塗料を<br>　使ってないことを示しているかもしれない……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （他に何か、犯人に繋がるような手がかりはないかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-13-1
+
+# ==============================================================================
+# MARK: 13-8: ❌ ホウキに証拠が残っている
+# ==============================================================================
+
+# Judge1-13-8
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print 待って！<br>ホウキは犯行に使われたはず……<br>なら、ホウキに何か痕跡が残っているはずだよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print もう一度調べ直してみない？<br>もしかしたら証拠が見つかるかも……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Angry_Closed1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print ……入念に調べたわ。<br>けれど、分解されていること以外に不審な点は何もなかった。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print ですね～！<br>ホウキにおかしなところはありませんでした！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print そっか……ボクの見当違いか……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal1,ArmR1_1,ArmL8,Eyes1_Pensive_Open1,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print ……そうでしょうか？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+@gosubModifyCamera 0
+@print え？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal1,ArmR1_1,ArmL8,Eyes1_Normal_Open1,Mouth1_Surprised_Open2
+@gosubModifyCamera 0
+@print ……いえ、なんでもないんです。<br>でも少しだけ、何か不自然な所があるような……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR4,ArmL5,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （メルルちゃん、何か考えてる……。<br>　もしかして何か問題があるのかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （ホウキを調べても何も出てこなかったということは、<br>　【ホウキに証拠が残っていない】ということだ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Thinking_Closed01,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （これって現場に残された他の証拠と一致しているんだっけ……？<br>　もし違うなら、そこに何か見落としがあるのかも……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （……もう一度考えてみよう！<br>　他に犯人に繋がる証拠がないのかを……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-13-1
+
+# ==============================================================================
+# MARK: 13-9: ❌ ホウキに仕掛けがあった
+# ==============================================================================
+
+# Judge1-13-9
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Surprised1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ……それだよ！<br>ホウキに仕掛けがあったんだ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR4,ArmL5
+@gosubModifyCamera 0
+@print 魔法のホウキだったってことですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR8,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print そうそう！<br>何かすごい仕掛けがあったのかも……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print ……具体的にどんな仕掛けで、<br>それがどうして犯人に繋がる証拠になりうるのかしら？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print えっとそれは……<br>調べてみればわかる……かも……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Miria.Normal1,ArmR3,ArmL8
+@gosubModifyCamera 0
+@print でもたしか散々調べたんだよね……？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal1,ArmR1_1,ArmL8,Eyes1_Uncomfortable_Open1,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print 特に何も不自然な所はなかったと思います……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Coco.Smile1
+@gosubModifyCamera 0
+@print 不自然なのはエマっちの発想だけだよね～！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Pensive1,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （バカにされちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （でも確かに、そんな仕掛けがあったら<br>　みんながとっくに気付いてるよね……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （他に何か、犯人に繋がるような手がかりはないかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-13-1
+
+# ==============================================================================
+# MARK: 13-2: ⭕ 犯人は塗料を持ち去った
+# ==============================================================================
+
+# Judge1-13-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+# @gosubCutIn Ema index:1
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ……それだよ！<br>犯人は……塗料を持ち去ったんだ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Miria.Surprised1,ArmR2,ArmL6
+@gosubModifyCamera 0
+@print "ええ！？ 犯人が！？<br>なんで塗料なんか持って帰ったの……！？" { author:Miria speed:1 waitInput:true Wait:true }
+
+# Judge1-13-10
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print 犯人は塗料を……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@choice 使用する目的があった
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge1-13-12
+
+@choice 持ち去らなくてはならなかった
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge1-13-13
+
+@choice 持ち去った事に気付いてなかった
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge1-13-11
+
+@StopForChoice 
+
+# Judge1-13-12
+
+# ==============================================================================
+# MARK: 13-12: ❌ 使用する目的があった
+# ==============================================================================
+
+@char Ema.Pensive1,ArmR8,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print 犯人はその塗料を使う目的があったんだ！<br>だから持ち帰ったんだよ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive1,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print えっと……それってどうして……？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print それは……これから考える所だけど……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print ……城ケ崎ノアの部屋以外では<br>白い塗料が使われた形跡はないわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Alisa.Pensive1,Option-ArmL-Off,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print ……なあ桜羽。<br>もうちょっと考えて喋ったらどうだ？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Pensive1,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （アリサちゃんに心配されちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （もう一度考えよう……！<br>　あの証拠を考えると、<br>　犯人は塗料を持ち去った可能性が高い……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （でも塗料を持ち去った状況を考えると、<br>　考えられる可能性は多くないはずだ……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-13-10
+
+# Judge1-13-13
+
+# ==============================================================================
+# MARK: 13-13: ❌ 持ち去らなくてはならなかった
+# ==============================================================================
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print きっと、犯人に塗料が付いちゃったんだよ！<br>でも犯人はそれを拭き取ることができなかったんだ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR8,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print だから犯人は塗料を持ち去ったんだよ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print でもそれなら、その【付着した物】を<br>処分すればいいんじゃないかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Hanna.Normal1
+@gosubModifyCamera 0
+@print ……見る限り、いつもと違う格好をした人は<br>いないように見えますわね。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char AnAn.Normal1,Angle01/Option_Arms-,ArmR-Option-Off,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_05,Angle01/Head/Facial/Eyes>Eyes_Normal_Open01
+@gosubModifyCamera 0
+@print 『ならばそれは<br>犯人を追い詰める証拠に<br>ならないのではないか？』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print そ、そう……かも……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal1,ArmR5_1,ArmL4,Eyes1_Normal_Open2,Mouth1_Angry_Open2,Sweat1_1
+@gosubModifyCamera 0
+@print エマさん！<br>落ち着いて考えましょう……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print う、うん……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-13-10
+
+# Judge1-13-11
+
+# ==============================================================================
+# MARK: 13-11: ⭕ 持ち去ったのに気付いてなかった
+# ==============================================================================
+# ==============================================================================
+# 反論成功カットイン
+# ==============================================================================
+# @stopBgm
+# [spawn カットインエフェクトのID]
+
+@char Ema.Determined2,ArmR7,ArmL7,Angle01/Head02/Facial02/Eyes02>Eyes02_Determined_Closed,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print 犯人は……持ち去ろうと思って持ち去ったんじゃない。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# BGM変更：Guil-me N'o sinruits-Vocal無-
+# @bgm Bgm_8_2
+
+@char Ema.Determined2,ArmR8,ArmL7,Angle01/Head02/Facial02/Eyes02>Eyes02_Determined_Open,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print 塗料が付着していたことに【気付かずに】持ち帰って<br>しまったんだ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# ＠備考◆焦り
+@char Leia.Fearful1,ArmR1,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Angry_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……う、ぐっ……！？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1
+@gosubModifyCamera 0
+@print ど、どういうことですの！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+# アイテム表示：床の傷
+@spawn Clue
+
+@char Ema.Determined2,ArmR8,ArmL7,Angle01/Head02/Facial02/Eyes02>Eyes02_Determined_Open,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print ……ノアちゃんの部屋には、<br>一部だけ塗料が剥げていた<br>場所があったよね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@despawn Clue
+
+@char Hanna.Normal1,ArmR3,ArmL2
+@gosubModifyCamera 0
+@print ありましたわねぇそんなの。<br>それがどうかしました？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print そこで剥げた分の塗料って……<br>どこにいったのかな。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1,ArmR2,ArmL1
+@gosubModifyCamera 0
+@print ホウキで長い棒を作ってたんっしょ？<br>だったらその先端にでもついたんじゃねーの。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR3,ArmL11,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print でもでも、ホウキは隅々まで調べましたけど<br>何もついてませんでしたよ？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1
+@gosubModifyCamera 0
+@print 現場にはリボンもあったんだろ？<br>リボン越しに触れたんじゃねーか？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Uncomfortable_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print ……いえ。<br>リボンが間に入ったなら、<br>あの床の傷の形にはならないと思うわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Miria.Normal1,ArmR3,ArmL8
+@gosubModifyCamera 0
+@print たしかにアレは、<br>何か硬い物が直接叩きつけられてできたような……<br>そんな傷だったと思うよ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1,ArmR3,ArmL2,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print じゃあ……ホウキに塗料が付いたあとで、<br>あとから犯人が拭き取ったんじゃねーの？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ううん、それはありえないと思う……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# Judge1-13-14
+
+@char Ema.Default,ArmR8,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print だってこの証拠品が、<br>犯人がホウキに塗料がつかなかったことを<br>証明してるんだ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@evidence Clue
+
+# カラースプレー
+@if "chosenEvidenceId==\"1-5\""
+	@goto .Judge1-13-16
+
+# ミス
+@goto .Judge1-13-15
+
+# ==============================================================================
+# アイテム選択：ミス選択肢
+# ==============================================================================
+# Judge1-13-15
+
+@char Ema.Default,ArmR7,ArmL12,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print それは……これだよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1,ArmL2
+@gosubModifyCamera 0
+@print ……なんで？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Hanna.Pensive1,ArmL2
+@gosubModifyCamera 0
+@print それが【塗料を拭き取っていない】証拠になる意味が<br>わかりませんわー？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （どうやら証拠品を間違えたみたいだ……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （ホウキに付いた塗料を拭き取った可能性だけはありえない……<br>　それを示す証拠品があったはずだ……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print （もう一度証拠品を確認してみよう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-13-14
+# ==============================================================================
+# MARK: 13-16: ⭕ 【カラースプレー】
+# ==============================================================================
+
+# Judge1-13-16
+# @stopBgm
+@gosubCutIn Ema
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@spawn Clue
+
+@char Meruru.Normal1,Mouth1_Surprised_Open2
+@gosubModifyCamera 0
+@print それは……【塗料のスプレー缶】……ですか……？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@despawn Clue
+
+@char Alisa.Angry1,Option-ArmL-Off,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Surprised_Open03
+@gosubModifyCamera 0
+@print ……なるほど、そういうことか。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Miria.Surprised1,ArmR3,ArmL5
+@gosubModifyCamera 0
+@print た、たしかにスプレー缶に書いてあるよ！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Surprised1,ArmR3,ArmL5,Angle01/Facial/Eyes>Eyes_Glare_Open02,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print ……使用上の注意の欄！<br>木製のものについちゃうと……<br>【取れなくなる】みたいだ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print そうなんだ。<br>もしこのホウキに塗料がついてたとしたら、<br>今もそこに付着した痕跡が残っているはずだよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1,Option-ArmL-Off,Angle01/Facial/Eyes>Eyes_Serious_Open
+@gosubModifyCamera 0
+@print あの床の傷をつけたのは、このホウキじゃねーって事だな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print ……うん。<br>だからきっと、おそらく凶器の槍は<br>こんな風に作られたんじゃないかな……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+# Trick2-1-13-16
+# ■図説を表示する・イラスト表示trick1-1
+@back 1_13_1 { Scale:{g_backgroundDefaultScale} }
+
+@char Ema.Default,ArmR8,ArmL11,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@char Miria.Normal1,ArmR10,ArmL4,Angle01/Facial/Mouth>Mouth_Normal_Open
+@print 手元にホウキの棒の部分を持って……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# 表示・図説棒を2本
+@back 1_13_2
+
+@char Ema.Default,ArmR8,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@print その先にもう１つか２つ、長い棒をつなげる。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# 表示追加・図説矢＋リボン
+@back 1_13_3
+
+@char Ema.Default,ArmR7,ArmL12,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print そしてさらに、矢がその先端にくくりつけられていた……。 { author:Ema speed:1 waitInput:true Wait:true }
+@ResetText 
+
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.25
+@back 1_13_4 { time:0 }
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+
+@char Miria.Surprised1,ArmL8,ArmL4,Angle01/Facial/Mouth>Mouth_Surprised_Open02
+@print ……三節棍みたい。<br>短い棒の端を繋げて、一本の長い槍を作ったってことだよね。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hide Ema-trickChar,Miria-trickChar
+@hide Tricks
+
+@char Margo.Normal1,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print でも、随分と強度が低そうに見えるわ？<br>そんな即席の槍で、殺人の衝撃に耐えられるのかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ……いや。<br>実際にそれは、耐えられなかったんだよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Miria.Surprised1,ArmR3,ArmL4
+@gosubModifyCamera 0
+@print 耐えられなかった……？<br>……ってことはもしかして。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print そう……犯行のとき、<br>犯人の想定していなかったことが起きたんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@spawn Clue
+
+@char Ema.Default,ArmR8,ArmL11,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print 途中でリボンが解けて、槍が分解されたんだよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@despawn Clue
+
+@spawn Clue
+
+@char Ema.Default,ArmR7,ArmL12,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print そうして空中で槍が分解されたとき、<br>床を【ホウキじゃない方】の棒の先端が擦ったんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@despawn Clue
+
+@char Nanoka.Normal1,ArmR3,ArmL1,Eyes1_Neutral_Open1,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print 槍を作っている部品は、【ホウキ】と【矢】と【何か】……。<br>もしも蓮見レイアがそれを作ったのだとしたら……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR7,ArmL7,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print そこにはもう１つの素材が使われた。<br>レイアちゃんの持っている、剣だ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# ＠備考◆焦り
+
+@char Leia.Fearful1,ArmR7,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Angry_Closed
+@gosubModifyCamera 0
+@print く……！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR7,ArmL7,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print ……もしも現場で作ったその即席の槍が壊れて、<br>構成するパーツの一部が<br>床を傷つけたのだとしたら……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char Ema.Determined2,ArmR7,ArmL7,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print レイアちゃんの持つその【剣】の先端に、<br>白い塗料がついているはずだよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# ＠備考◆睨む
+@char Leia.Angry1,ArmR7,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Normal_Closed
+@gosubModifyCamera 0
+@print …………。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char Leia.Normal1,ArmR7,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print ……ふ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Closed,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print ふふ……はははは……！ { author:Leia speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+@char Ema.Surprised1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print レイアちゃん……！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR8,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Closed,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print ……いやいや、すまない。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR8,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print ……ごめんね笑ってしまって。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR3,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print ……そうだな。<br>エマくんの推理を検証するなら……<br>剣を抜いて、先端を見せてあげたら満足かな？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3,ArmL1,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ……え？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print どうぞ、ご覧あれ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Ema.Surprised1,ArmR13,ArmL16
+@gosubModifyCamera 0
+
+@spawn Clue
+
+@char Ema.Surprised1,ArmR13,ArmL16,Angle01/Head01/Facial01/Pale01>Pale01_01
+
+@print 先端が……汚れてない……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@despawn Clue
+
+# BGM変更：Sar-gedy-動-
+@bgm Bgm_4_1
+
+@char Leia.Smile1,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Middle,Arms
+@gosubModifyCamera 0
+@print ……ああ、当然だとも。<br>私はそんなことに<br>この剣を使っていないのだから……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR3,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Closed,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print どうだい？<br>これで私の潔白を信じてくれたかな？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Ema.Fearful1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print （そんな……！<br>　ボクの推理は間違ってた……！？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,Option-ArmL-Off,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-
+@gosubModifyCamera 0
+@print ……けどよ、あの塗料が落ちないのは木製のモンだけだろ。<br>金属だったら拭いて落とせるんじゃねーか？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmR1,ArmL10,Eyes1_Angry_Open1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print だとしたら、あなたが証拠を拭き取った可能性は<br>あるんじゃないかしら？<br>……蓮見レイア。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR3,ArmL2
+@gosubModifyCamera 0
+@print そんな身に覚えのない事を言われても困るよ。<br>実際に調べて証拠がなかったんだから。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Ema.Fearful1,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （レイアちゃんが犯人だとしても、<br>　証拠は隠滅されたんだ……<br>　だからもう、証拠は出てこない……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Fearful1,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （いくらレイアちゃんを怪しんだとしても……<br>　決定的な証拠はないんだ……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char Leia.Smile1,ArmR9,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print ……わかってくれたかな？<br>この話題はこれぐらいにして、<br>もっと建設的な話を――。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# ==============================================================================
+# カットイン：黒部ナノカ
+# ==============================================================================
+
+@ResetText 
+@Wait 0.2
+@sfx Sfx_Common_5
+@voice CommonTrial_Nanoka00526
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Pensive_Closed1 { time:0 }
+@gosubSplitStageScreen 1
+@Wait 1.5
+
+@hideStageScreen 1
+@Wait 0.3
+
+@sfx Sfx_Common_1
+
+@gosubModifyCamera 0
+@print ……残念だけど、私は疑り深いの。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print 私のあなたへの容疑はまだ晴れていないわ。<br>蓮見レイア。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR9,ArmL3,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print ……まだ私を疑うというのかい？<br>そんなに信用できないのかな、私のこと。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# BGM変更：鐘楼の音
+@bgm Bgm_39_1
+
+@char Nanoka.Normal1,ArmR2,ArmL9,Eyes1_Normal_Open3,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print 信頼することと疑うことは、裏表の関係じゃないわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmR2,ArmL9,Eyes1_Normal_Open3,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print 疑心暗鬼になるのはいけないこと。<br>……でも、だからと言って<br>盲目的に信じることもまた間違いよ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmR2,ArmL9,Eyes1_Angry_Open1,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print 私は信じるために、疑うの。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmR1,ArmL10,Eyes1_Angry_Open1,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print あなたの議論をうやむやにして感情に訴えかける論法は……<br>私には通じない。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# ＠備考◆イラッ
+@char Leia.Angry1,ArmR1,ArmL3,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open01
+@gosubModifyCamera 0
+@print ……それもまた、言いがかりだよ。<br>私にそんなつもりはないんだからね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR3,ArmL3,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open01
+@gosubModifyCamera 0
+@print キミたちが感情で私を責めるから、<br>私もまた感情に訴えかけるしかないだけさ。<br>結局、証拠は出てこなかったんだしね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Angry_Closed1,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print ……なら、証拠があれば感情ではなく論理で<br>話をするということね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR3,ArmL3,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print ……ああ、もちろんさ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print でもいったい、これ以上何を話し合うっていうんだい？<br>もうすべて話しつくしたろう？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hanna.Pensive1,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Open
+@gosubModifyCamera 0
+@print それは……たしかにそうかもしれませんわ……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Yell_Open01
+@gosubModifyCamera 0
+@print 見つかった証拠品についても話した、<br>死体についても話した……。<br>他に何を話していないっていうのかな？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print ……そ、それは……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# ==============================================================================
+# カットイン：氷上メルル
+# ==============================================================================
+
+@ResetText 
+@Wait 0.2
+@sfx Sfx_Common_5
+@voice CommonTrial_Meruru00921
+@char Meruru.Normal1,ArmR8_1,ArmL8,Eyes1_Angry_Open1,Mouth1_Normal_Open1 { time:0 }
+@gosubSplitStageScreen 1
+@Wait 2
+
+@hideStageScreen 1
+@Wait 0.3
+
+@sfx Sfx_Common_1
+
+@char Meruru.Normal1,ArmR8_1,ArmL8,Eyes1_Angry_Open1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print ……私たち、あなたのことを詳しく聞いていないと思うんです。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Leia.Surprised1,ArmR1,ArmL3
+@gosubModifyCamera 0
+@print ……私のこと？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal1,ArmR8_1,ArmL8,Eyes1_Angry_Open1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print はい。<br>……あなたがひとりの時間、何をしていたのか……<br>あなたのことを、私は知りたいです。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal1,ArmR8_1,ArmL8,Eyes1_Angry_Open1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print もしあなた以外に犯人がいるなら、<br>それはあなたにとっても有益な情報になるはずですし。<br>問題……ないですよね……？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Leia.Surprised1,ArmR3,ArmL3,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open01
+@gosubModifyCamera 0
+@print ……アリバイの事かい？<br>先ほども言ったけど、私はひとりでいた時は<br>適当にブラついていたからあまり詳しく覚えては……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmR1,ArmL10,Eyes1_Angry_Open1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print なら、その後のことでも構わないわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1
+@gosubModifyCamera 0
+@print その後……？<br>今まで言ったことの繰り返しになるとは思うけど……<br>それでもいいのかい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print できるだけ詳細に話して。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print ……ああ、もちろんだとも。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print ただし、それで何も出てこなかったら<br>これ以上無駄に私に疑いを向けないでくれるかい？<br>冤罪だというのに、私ばかり問い詰められるのは悲しいよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Normal_Closed1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print ええ、わかったわ。<br>……私が疑うのはこれで最後にするわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmR1,ArmL10,Eyes1_Normal_Open1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print ……あなたもそれでいいわね？<br>桜羽エマ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR2-2,ArmL2
+@gosubModifyCamera 0
+@print ……うん、わかった。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR2-2,ArmL2
+@gosubModifyCamera 0
+@print （……ナノカちゃんは言った。【信じるために疑う】って） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR3,ArmL2
+@gosubModifyCamera 0
+@print （そうだ……ボクも同じ気持ちだ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR3,ArmL10
+@gosubModifyCamera 0
+@print （レイアちゃんを信じるためにも……<br>　彼女が嘘をついていないか疑ってみるんだ！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@StopBgm 
+@Wait 1
+
+@goto Act01_Chapter01/Act01_Chapter01_Trial14

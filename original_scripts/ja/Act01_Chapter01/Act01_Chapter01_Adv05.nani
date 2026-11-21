@@ -1,0 +1,358 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-1-1
+
+@back 5_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_21_1
+
+@print "血に染まったラウンジの中、<br>少女たちは恐慌状態に<ruby=\"おちい\">陥</ruby>っている。" { speed:1 waitInput:true Wait:true }
+
+@char Jailer
+@animate Jailer
+
+@print ………。 { author:Jailer speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_5
+
+@print "その室内を<ruby=\"かんまん\">緩慢</ruby>に動き回っているのは、<br>看守だけだった。" { speed:1 waitInput:true Wait:true }
+
+@print 看守は二階堂ヒロの死体を片付けていた。<br>その作業途中―― { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa.Fearful1,Option-ArmL-Off,ArmR2,ArmL4
+
+@print くっ……！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print 恐怖に耐えきれずか少女のひとりが地を蹴り、<br>駆けだした。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Jailer.1
+
+@print 看守は逃げ出そうとする気配に反応した。<br>猛烈な勢いでその少女、紫藤アリサを追いはじめる。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （危ない！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Jailer.1
+@animate Jailer-Middle
+
+@print アリサの背を追う看守の鎌が、ギラリと光った。 { speed:1 waitInput:true Wait:true }
+
+@print 再度の悲劇の予感に、<br>少女たちの多くが悲鳴をあげ、目を覆う。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia.Angry1
+
+@ResetText 
+@QuickSave 1
+
+@print 待ちたまえ！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 堂々とした声を発した少女に、<br>その場の全員がハッとし、注目していた。 { speed:1 waitInput:true Wait:true }
+
+@print "その少女――蓮見レイアは<br>腰に<ruby=\"たずさ\">携</ruby>えたレイピアを抜き、アリサと看守の間に立っていた。" { speed:1 waitInput:true Wait:true }
+
+@print 彼女に手を出すな！<br>これ以上の悲劇は起こさせない！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Jailer.1
+@animate Jailer-Middle
+
+@print 看守は聞く耳を持たない様子で、<br>大きく鎌を振った。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@sfx Sfx_9
+
+@print （もうやめてよ――！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@print エマは…… { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 選択肢
+# 『レイアを庇った』-> 1‐1‐b1 へ
+# 『ただ見守った』
+# ========================================
+
+@choice レイアを庇った
+	@goto Act01_Chapter01/Act01_Chapter01_Bad01
+
+@choice ただ見守った
+	@goto .Choice1-1-1
+
+@StopForChoice 
+
+# Choice1-1-1
+
+@correctChoice 1
+
+# ＠備考◆跳躍の気合声
+
+@hideChars 
+@char Leia.Angry1
+
+@print ――ハッ！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_178
+@hideChars 
+
+@print "レイアが<ruby=\"とっさ\">咄嗟</ruby>に後方へと<ruby=\"ちょうやく\">跳躍</ruby>し、避けたことで、<br>看守の鎌は<ruby=\"くう\">空</ruby>を切った。" { speed:1 waitInput:true Wait:true }
+
+@char Leia.Angry1
+@char Alisa.Surprised1,Option-ArmL-Off,ArmR2,ArmL4
+
+@print レイピアを構えたままのレイアは、<br>強い瞳で看守を見据える。 { speed:1 waitInput:true Wait:true }
+
+@print 彼女はルールを破っていない。<br>切り捨てる理由はないはずだ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print "レイアの後ろに立つアリサは<br>さすがに逃亡する気は失せたのか、<ruby=\"ぼうぜん\">呆然</ruby>と立ち尽くしている。" { speed:1 waitInput:true Wait:true }
+
+@print なんでおめえ……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print 私はキミたちを守りたい。<br>そのために互いに冷静になるべきだ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Jailer.1
+
+@print …………。 { author:Jailer speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "元から<ruby=\"けんせい\">牽制</ruby>のつもりだったのか<br>看守はそれ以上鎌を振るわず、元の作業へと戻っていく。" { speed:1 waitInput:true Wait:true }
+
+@print そして、ヒロの死体を抱え、退室していった。 { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_5_1
+
+@print 看守の姿が見えなくなったことで、<br>ようやく少女たちの張り詰めた空気がほんの少し緩む。 { speed:1 waitInput:true Wait:true }
+
+@print ただ、ヒロの死体は片付けられたのだが、<br>室内はむせかえるような血のにおいで充満している。 { speed:1 waitInput:true Wait:true }
+
+@print 先ほど誰かが、<br>この部屋は【臭い】と口にしていた。 { speed:1 waitInput:true Wait:true }
+
+@print "毒々しく、趣味の悪い装飾に<ruby=\"いろど\">彩</ruby>られたラウンジ。" { speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"じゅうたん\">絨毯</ruby>も、ソファーも、カーテンも長きに渡り、<br>少女たちの血を吸い続けてきたのだとしたら――" { speed:1 waitInput:true Wait:true }
+
+@char Coco.Fearful1,ArmL8
+@EmoteNod Coco
+
+@print ぐっ、げええぇっ { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ココが吐いていた。 { speed:1 waitInput:true Wait:true }
+
+@print "今まで誰も吐かなかったのがおかしいくらいだ。<br>それくらい、今の状況は<ruby=\"じょうき\">常軌</ruby>を<ruby=\"いっ\">逸</ruby>している。" { speed:1 waitInput:true Wait:true }
+
+@print そこで、中央に立ったのは、<br>やはりレイアだった。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Normal1,ArmR3
+
+@print みんな、聞いてくれ！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 私たちはどうやらここで共同生活を強いられることになる。<br>それがいつまで続くのかはわからないが……<br>今は大人しく従おう。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 知り合ったばかりではあるが、<br>私はキミたちをできる限り守りたい。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 先ほどのヒロくんのような振る舞い、<br>また、あの状況下でアリサくんのような逃亡は<br>全員に危険が及ぶかもしれない。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 今後は勝手な行動を謹んでもらいたい。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa.Angry1,Option-ArmL-Off,ArmR2,ArmL2
+
+@print チッ……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print さすがに言い返せないのか、<br>アリサは気まずそうに舌打ちした。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Normal1
+
+@print ……まずは、自分のポケットを見てくれないか。<br>各自スマホを配給されているようだ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print レイアに言われて、<br>皆それぞれのポケットを探る。 { speed:1 waitInput:true Wait:true }
+
+@print （ほんとだ……ボクの持ってたやつじゃないけど、<br>　スマホを持たせてくれてる……<br>　これがあれば外と連絡できる！？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Normal1
+
+@print 残念ながら圏外だ。<br>外との連絡手段にはならない。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 我々は捕まって閉じ込められたのだから、<br>当然だろうが……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print エマの希望は早々に打ち砕かれてしまい、<br>がっくりと肩を落とした。 { speed:1 waitInput:true Wait:true }
+
+@print このスマホの中に<br>【魔女図鑑】というアプリが入っていた。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 先ほどゴクチョーも言っていたが、<br>【魔女図鑑】はルールブックらしい。<br>牢屋敷のマップや規則、我々の囚人情報が入っていた。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print "この【魔女図鑑】に記されたルールを<ruby=\"じゅんしゅ\">遵守</ruby>し、 生活していこう。<br>全員、しっかり目を通しておいてくれ。" { author:Leia speed:1 waitInput:true Wait:true }
+
+@gosubResetBook System/System_ResetWitchBook
+
+@set "hasWitchBook = true"
+@ShowUI WitchBookButtonUI
+@hideChars 
+@char Alisa.Angry1,Option-ArmL-Off,ArmR2,ArmL7
+
+@print っ……ざけんな！<br>ウチは守ってくれなんて頼んでねえ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print 魔女とか囚人とか知るかよ！<br>１秒だってこんなとこいたくねえ。<br>ウチはここを出るからな！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print "アリサが噛みついたことで、<br>レイアは<ruby=\"うれ\">憂</ruby>いげなため息をついた。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia.Normal1,ArmR5
+
+@print 反抗的な態度を見せたら、<br>また看守に何をされるかわからないよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa.Angry1,Option-ArmL-Off
+
+@print おめえには関係ねえだろ、ほっとけよ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print アリサは舌打ちし、ラウンジを出ていった。<br>やれやれと肩をすくめるレイア。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Normal1
+
+@print 他のみんなはちゃんと協力してくれるだろう？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Determined2,ArmR3,ArmL7
+
+@print ……ボクも、嫌だ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマは一歩前に出て、口を開いた。 { speed:1 waitInput:true Wait:true }
+
+@print ヒロちゃんを殺した、<br>あいつらに従うのなんて、嫌だっ！<br>あいつらを絶対に許さない！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 涙に濡れた瞳で、強く言い放つ。<br>レイアは意外そうな表情になっていた。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia.Normal1
+
+@print なるほど。エマくんはどうやらヒロくんと<br>顔見知りだったみたいだしね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print しかし、仲が良さそうには見えなかったけれど？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3,ArmL7
+
+@print ヒロちゃんは……っ<br>ヒロちゃんは正しい子だから……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia.Normal1,ArmR5
+
+@print レイアは軽く息を吐いた。 { speed:1 waitInput:true Wait:true }
+
+@print まぁ、従うつもりがないのはわかったよ。<br>強制はしない。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print ただ、今はなるべく穏便に済ませたい。<br>危険因子と行動を共にすることはできないかな。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Normal1,ArmL6
+@EmoteJumpDouble Sherry
+
+@print はいはい！<br>私もエマさんについていきますよぉ～！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print と、シェリーが元気よく挙手をした。 { speed:1 waitInput:true Wait:true }
+
+@print 予想していなかった事態らしく、<br>エマは驚きで目を見開いている。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmL8
+
+@print 面白そうな方につくのが私の信条ですから！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR13,ArmL1
+
+@print そしてエマさん！<br>あなたからは面白そうなにおいがプンプンしているのでっ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Surprised1,ArmR3,ArmL1
+
+@print ぷん、ぷん……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "いつの間にか、エマの<ruby=\"かたわ\">傍</ruby>らには、<br>ハンナとメルルも立っていた。" { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Normal1
+@char Meruru.Default
+
+@print わたくしもあなた側につきますわ。<br>偉そうに仕切るヤツが嫌いなんですの。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print エマの味方をしたいといった風ではなく、<br>単にレイアが気に入らない様子だった。<br>プライドを傷つけられて、よっぽど根に持っているらしい。 { speed:1 waitInput:true Wait:true }
+
+@print うぅ……エマさん……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print メルルに関しては人見知りが激しいのか、<br>エマのそばにぴったりと寄り添っている。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Normal1,ArmR1,ArmL11
+
+@print あれれ～？<br>グループが２分割しちゃいましたねっ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia.Normal1,ArmR5
+
+@print ……どうやらそのようだね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print みんなで協力し合うに越したことはないけれど、<br>意見が合わないなら仕方ない。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 私たちは一旦地下に戻るよ。<br>ルールによれば、地下監房にいなければいけない時間だ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print レイアが歩きだすと、<br>彼女についていくと決めたらしい少女たちが<br>ぞろぞろと続いていく。 { speed:1 waitInput:true Wait:true }
+
+@print ラウンジに残されたのは、<br>エマとシェリー、ハンナとメルルの４人だった。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Normal1,ArmR1,ArmL1
+@EmoteJumpDouble Sherry
+
+@print "で？ で？ 私たちはどうするんですか？<br>みんなで協力して看守をぶっ殺します？" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Surprised1,ArmR1,ArmL1
+
+@print そ、そんなことできないよ。<br>ヒロちゃんみたいに殺されちゃう。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （ヒロちゃんを殺した看守も、ゴクチョーも許せない……<br>　でも……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （考えなしに突っ込んでも、同じ目に遭うだけだ。<br>　冷静に行動しないと） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Normal1
+
+@print ……とりあえず、ボクたちも一度地下に戻ろう。<br>規則には、目を通しておくべきだし。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Normal1
+
+@print まあそうですよね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Determined2
+
+@print でも大人しくしているつもりなんてない。<br>……ボクは絶対に、ヒロちゃんを殺したこと、<br>許さないから。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [transition Out,Fade,1,Black]
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter01/Act01_Chapter01_Adv06

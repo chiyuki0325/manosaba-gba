@@ -1,0 +1,854 @@
+@set "hasWitchBook = false"
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-5-10
+
+# ========================================
+# ●シーン1‐5‐10
+# ========================================
+@back 360_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+
+# エンディング用の　BGM を強制ロードする
+@bgm Bgm_30_1 { Volume:0 }
+@Wait 0.1
+
+@StopBgm 
+@Wait 1.7
+
+# 微かな波の音
+@sfx Sfx_24
+
+@bgm Bgm_1_1
+
+@print エマは崖の先端に立っていた。 { speed:1 waitInput:true Wait:true }
+
+@print 彼方には青い海と広がる空が、<br>どこまでも果てしなく続いている。 { speed:1 waitInput:true Wait:true }
+
+@print "風が髪を<ruby=\"な\">撫</ruby>でて軽やかに舞い、<br>空へと手を伸ばすように揺れる。" { speed:1 waitInput:true Wait:true }
+
+@print エマは本当にひとりぼっちになって、<br>完全な自由を手に入れた。 { speed:1 waitInput:true Wait:true }
+
+@print エマの翼は塀を越え、<br>どこまでも飛んでいけるのだ。 { speed:1 waitInput:true Wait:true }
+
+@print お腹も空かないし、死ぬ心配もない。 { speed:1 waitInput:true Wait:true }
+
+@print ここが世界の中のどこかはわからないけれど。 { speed:1 waitInput:true Wait:true }
+
+@print どんなに時間がかかっても、<br>かつて自分のいたところに帰ることはできそうだった。 { speed:1 waitInput:true Wait:true }
+
+@print エマは静かに空を仰ぐ。 { speed:1 waitInput:true Wait:true }
+
+@print とぎれとぎれになっている思考の中で、<br>少女たちと紡いできた大切な思い出が<br>浮かんでは消えていく。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ◎シーン1‐1-15の回想（流用）
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@hide Stills-Forefront
+@Wait 1.2
+
+@back 1_1 { Scale:{g_backgroundDefaultScale} }
+@char Noah.Normal1
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@print のあの魔法を見て、みんな驚いてたけど……<br>でも、ここは不思議なことがたくさんで。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Flushed1
+
+@print のあの魔法、怖がられたりしないんだ。<br>えへへ、嬉しいな。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print （へえ……みんなけっこう、<br>　ノアちゃんのこと気にかけてあげてるんだな） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print それなら良かった。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Noah.Smile1
+
+@print うん。お礼にみんなの喜んでくれる絵を<br>頑張って完成させるね。 { author:Noah speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 回想ここまで
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@hideChars 
+@hide MainBackground
+@Wait 1.2
+
+@back 360_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@print （ノアちゃんは、すごく、いい子だった。<br>　もっと仲良くなりたかったな） { author:Ema speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ◎シーン1‐1-13の回想（流用）
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@hide Stills-Forefront
+@Wait 1.2
+
+# 配信フレームIN
+
+@ResetText 
+@printer Normal.Stream
+@back 5_1
+@blur MainBackground-Middle
+@char Leia.Normal1
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+# ＠備考◆配信中
+
+@print ――団結するためにも<br>私も定期的に配信をしようと思う。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# ＠備考◆配信中
+
+@print みんな、気持ちをしっかり持ってほしいんだ。<br>どうか衝動的にならないでほしい。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Angry1
+
+# ＠備考◆配信中
+
+@print 今は従うしか方法はない。<br>だが、私たちは決して屈しない。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 回想ここまで
+# ========================================
+
+@ResetText 
+@HidePrinter 
+@back SolidColor { time:0.9 }
+@hideChars 
+@blur MainBackground-Middle
+@hide MainBackground-Middle
+@Wait 1.2
+
+@back 360_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@printer Normal.Default
+
+@print （レイアちゃんはみんなの心の支えになってくれた、<br>　本当は、高潔な心を持った、強い子だった） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 高く広がる青い空が、<br>まるで記憶を吸い上げるように思い出をさらっていく。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ◎シーン1‐2-15の回想（流用）
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@hide Stills-Forefront
+@Wait 1.2
+
+@back 28_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@char Miria.Normal1
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@print エマちゃんはいい子だね。<br>いつも頑張ってて、本当にえらいよ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print えっ、と、突然どうしたの！？<br>そ、そんなことないよ……！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 赤面するエマを見て、ミリアは微笑む。 { speed:1 waitInput:true Wait:true }
+
+@char Miria.Smile1
+
+@print 帰してあげなくちゃって思う。<br>……正直ね、おじさんは帰りたくない気持ちもあるんだけど。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print （帰りたくない……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive1
+
+@print 現実に……自分に向き合うのが、怖いのかも。 { author:Miria speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 回想ここまで
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@hideChars 
+@hide MainBackground
+@Wait 1.2
+
+@back 360_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@print （もっと本当のミリアちゃんのこと、<br>　知りたかったな） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （キミはここにいるんだよって、<br>　見つけてあげたかった） { author:Ema speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ◎シーン1‐2-27の回想（流用）
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@hide Stills-Forefront
+@Wait 1.2
+
+@back 421_9 { time:0.9 }
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@print ノアやレイア、ミリア、メルルといる時間が、<br>とても好きだった。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print それなのに、自分から壊してしまった。<br>わがはいはいつも、気付くのが遅い。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print 幸せを願って、ごめんなさい――。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 回想ここまで
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@hide Stills
+@Wait 1.2
+
+@back 360_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@print （アンアンちゃん、幸せを願ってもいいんだよ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （もしまた会えたら、今度は友だちになれるのかな） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "願いは徐々に<ruby=\"かす\">霞</ruby>んで、薄れ、消えていく。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ◎シーン1‐4-2の回想（流用）
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@hide Stills-Forefront
+@Wait 1.2
+
+@back 17_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@char Alisa.Angry1,Option-ArmL-Off,ArmR7,ArmL6
+
+@print ――さっさと行け！<br>理性がまだ残っているうちに！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print そんな、アリサちゃ――。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ウチに殺させるな！<br>行けぇ……っ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 回想ここまで
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@hideChars 
+@hide MainBackground
+@Wait 1.2
+
+@back 360_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@print （アリサちゃんはボクを守ってくれた。<br>　もっと寄り添えたら、自ら死を選ばずにすんだのかな） { author:Ema speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ◎シーン1‐4-6の回想（流用）
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@hide Stills-Forefront
+@Wait 1.2
+
+@back 22_4 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@char Nanoka.Default
+
+@print ……桜羽エマ。あなたはお人好しね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print わかった。あなたに背中を預けるわ。<br>ただ勘違いしないでほしい。これは取引。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 取引……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 私はあなたを利用する。<br>だから何かあったらあなたも私を利用して。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print そんな、利用なんて……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print ナノカはエマの返事を待たず、さっさと歩き出す。<br>エマはその背中を追った。 { speed:1 waitInput:true Wait:true }
+
+@print ……ボク、約束するよ。<br>絶対ナノカちゃんのこと信じるって。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ナノカちゃんがボクのことを信じて背中を預けてくれるなら……<br>ボクだってキミのことを信じる。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 取引って……そういうことだよね！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ……ふ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print かすかに、ナノカの口から吐息が漏れた。 { speed:1 waitInput:true Wait:true }
+
+@print あなたたちとなら……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 回想ここまで
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@hideChars 
+@hide MainBackground
+@Wait 1.2
+
+@back 360_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@print （ナノカちゃんは、ずっと何かに抗って、<br>　戦おうとしていた） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （一緒に戦えたのかもしれないのに） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print その記憶は空へと溶けていく。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ◎シーン1‐5-7の回想（流用）
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@hide Stills-Forefront
+@Wait 1.2
+
+# 背景真っ暗の設定のため、一旦背景なし
+# @back 17_2 scale:{g_backgroundDefaultScale} tint:#ffffff time:0
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@print ありがとうエマっち。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print あてぃしね、ここの暮らし嫌いじゃなかったよ。<br>ほんのちょっぴりだけど、<br>みんなのこと家族みたいに感じてた。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print だからエマっちも、あてぃしの【推し】かもな。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 死なないでよ、約束、守れよ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 回想ここまで
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@hideChars 
+@Wait 1.2
+
+@back 360_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@print （ココちゃんと約束したのに、<br>　もうその約束が思い出せないんだ……ごめんね） { author:Ema speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ◎シーン１‐5-7の回想（流用）
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@hide Stills-Forefront
+@Wait 1.2
+
+@mask MainBackground-Middle,Margo-Front { Enable:false }
+@back 17_2 { time:0 }
+@char Ema.Cry1,ArmR3,ArmL7 { time:0 }
+@blur Ema-Middle
+@char Margo.Fearful1,ArmR1,ArmL1 { time:0 }
+@blur Margo-Front
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@print ……本当はね。<br>あなたの綺麗ごとが嫌いじゃなかったの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 信じないようにしていたけれど……。<br>少しだけ、信じてみたくなった。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print あなたなら、本当に私たちを<br>救ってくれるんじゃないかっ、て。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 夢を見させてくれて、<br>感謝しているのよ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 回想ここまで
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@hideChars 
+@hide MainBackground-Middle
+@Wait 1.2
+
+@back 360_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@print （ボク……生きるよ……マーゴちゃんに救ってもらった命を、<br>　大切にするよ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ◎シーン1‐3‐9の回想（流用）
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@hide Stills-Forefront
+@Wait 1.2
+
+@back 2_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@char Hanna.Normal1
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@print その……エマさんが少しでも<br>元気になるように、プレゼントを作っていますの。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print エマさん、最近寝込んでいましたし、<br>お見舞いにもなるかなと……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 視線を逸らし、気まずそうにしながら<br>ハンナが言ってくる。 { speed:1 waitInput:true Wait:true }
+
+@print プレゼント……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1
+
+@print 騒がなくってもよろしくてよ！？<br>ぜんぜん大したものじゃありませんから！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 回想ここまで
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@hideChars 
+@hide MainBackground
+@Wait 1.2
+
+@back 360_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@print （ハンナちゃんは……ハンナちゃんは、<br>　ずっとボクノ友ダチ） { author:Ema speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ◎シーン1‐3‐27の回想（流用）
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@hide Stills-Forefront
+@Wait 1.2
+
+@back 50_3
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@print 見せつけてやれましたよね？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 私たちは友だちだって。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ずっと、仲良しだって！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 回想ここまで
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@hide Stills-Front
+@Wait 1.2
+
+@back 360_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@print （シェリーちゃんのことも、<br>　ワスレタクナイ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （ああ、デモ、ボクハもう――） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print どんなに手を伸ばしても、届かない。 { speed:1 waitInput:true Wait:true }
+
+@print "エマは少しでも<ruby=\"すが\">縋</ruby>る気持ちで、<br>万年筆に触れる。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ◎シーン1‐0‐1の回想
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@hide Stills-Forefront
+@Wait 1.2
+
+@back 2_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@char Hiro.Angry1
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@print 君が変わったとして、<br>そのことが、私になんの意味が？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私が君を嫌いなことは変わらない。<br>この先永遠に。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 回想ここまで
+# ========================================
+
+@ResetText 
+@back SolidColor { time:1.8 }
+@Wait 1.2
+
+@StopBgm { fade:2 }
+@Wait 1.2
+
+@hideChars { time:0 }
+@back SolidColor { time:0 }
+@back 360_1 { time:0 }
+@WaitForNextFrame 
+
+@animate Stills-Forefront
+@back Transparent { time:1.8 }
+@Wait 2.1
+
+@print （ヒロちゃん……ヒロちゃん、ヒロちゃん……<br>　ボク、ヒロちゃんのこと、忘れたくナイ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （そういえば、ヒロちゃんの魔法は<br>　なんだったノかナ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@blur Stills-Forefront
+
+@print ――やがて虚ろに、全てが消えた。 { speed:1 waitInput:true Wait:true }
+
+@hide Stills-Forefront { time:1.5 }
+
+@print エマは誰かを殺したくて仕方がない。<br>そのエマへと風の音に乗せて、ささやく。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@Wait 2
+
+# 立ち絵・話者名の表示なし
+
+@print ――この世界にね、<br>長い長い時間をかけて、呪いをばらまいたんですよ。 { author:Unknown speed:1 waitInput:true Wait:true }
+
+@print ――だから、【魔女因子】は、<br>たくさんの人が持っているんです。 { author:Unknown speed:1 waitInput:true Wait:true }
+
+@print ――本当にたくさん。 { author:Unknown speed:1 waitInput:true Wait:true }
+
+@print ――エマに特別な魔法を授けたのはこのため。 { author:Unknown speed:1 waitInput:true Wait:true }
+
+@print ――とても綺麗な心の綺麗な笑顔のあなたが、<br>たくさん人を殺すのを見たかったんです。 { author:Unknown speed:1 waitInput:true Wait:true }
+
+@print ――そのほうが、楽しいでしょう？ { author:Unknown speed:1 waitInput:true Wait:true }
+
+@print ――たくさん、殺しましょうね、エマ。 { author:Unknown speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@blur Stills-Forefront
+@back 360_2 { time:2 }
+@Wait 2
+
+@print "エマはにっこりと、<ruby=\"うなず\">頷</ruby>いた。" { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back 360_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@hide Stills-Forefront { time:1.5 }
+@Wait 1.6
+
+@print 空っぽになったエマの望みはたったひとつのみ。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@Wait 0.9
+
+@print みんなが死ねばいい。 { speed:1 waitInput:true Wait:true }
+
+@Skip false
+@ProcessInput false
+@ResetText 
+@HidePrinter 
+@HideUI ControlPanel,AutoToggle,WitchBookButtonUI
+@back SolidColor { time:0 }
+@back SolidColor { time:2.5 }
+@Wait 0.5
+
+@bgm Bgm_30_1 { Loop:false }
+@Wait 2.6
+
+@credit 1
+@hide Stills-Front { time:0 }
+@back 500_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@Wait 1
+
+@set "bgmUnitDuration = 60 / 88"
+@Wait "{bgmUnitDuration * 16 - 1}"
+
+@back Transparent { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 7}"
+
+@hide Stills-Front { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 1.5}"
+
+@back 10_1 { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 7}"
+
+@hide Stills-Front { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 1.5}"
+
+@back 270_1 { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 7}"
+
+@hide Stills-Front { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 1.5}"
+
+@back 200_5 { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 7}"
+
+@hide Stills-Front { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 1.5}"
+
+@back 410_2 { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 7}"
+
+@hide Stills-Front { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 1.5}"
+
+@back 120_1 { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 7}"
+
+@hide Stills-Front { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 1.5}"
+
+@back 100_1 { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 7}"
+
+@hide Stills-Front { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 1.5}"
+
+@back 280_1 { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 7}"
+
+@hide Stills-Front { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 1.5}"
+
+@back 190_1 { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 7}"
+
+@hide Stills-Front { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 1.5}"
+
+@back 421_9 { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 7}"
+
+@hide Stills-Front { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 1.5}"
+
+@back 40_1 { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 7}"
+
+@hide Stills-Front { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 1.5}"
+
+@back 290_1 { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 7}"
+
+@hide Stills-Front { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 1.5}"
+
+@back 180_1 { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 7}"
+
+@hide Stills-Front { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 1.5}"
+
+@back 50_3 { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 7}"
+
+@hide Stills-Front { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 1.5}"
+
+@back 260_1 { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 7}"
+
+@hide Stills-Front { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 1.5}"
+
+@back 30_1 { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 7}"
+
+@hide Stills-Front { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 1.5}"
+
+@back 300_1 { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 7}"
+
+@hide Stills-Front { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 1.5}"
+
+@back 310_1 { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 7}"
+
+@hide Stills-Front { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 1.5}"
+
+@back 210_1 { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 7}"
+
+@hide Stills-Front { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 1.5}"
+
+@back 160_1 { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 7}"
+
+@hide Stills-Front { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 1.5}"
+
+@back 20_1 { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 7}"
+
+@hide Stills-Front { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 1.5}"
+
+@back 430_2 { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 7}"
+
+@hide Stills-Front { time:{bgmUnitDuration * 1.5} }
+@Wait "{bgmUnitDuration * 1.5}"
+
+@Stop 
+
+# ReverseCredits1
+
+@back 430_2 { time:0.03 }
+@Wait 0.12
+
+@hide Stills-Front { time:0.03 }
+
+@back 20_1 { time:0.03 }
+@Wait 0.12
+
+@hide Stills-Front { time:0.03 }
+
+@back 160_1 { time:0.03 }
+@Wait 0.12
+
+@hide Stills-Front { time:0.03 }
+
+@back 210_1 { time:0.03 }
+@Wait 0.12
+
+@hide Stills-Front { time:0.03 }
+
+@back 310_1 { time:0.03 }
+@Wait 0.12
+
+@hide Stills-Front { time:0.03 }
+
+@back 300_1 { time:0.03 }
+@Wait 0.12
+
+@hide Stills-Front { time:0.03 }
+
+@back 30_1 { time:0.03 }
+@Wait 0.12
+
+@hide Stills-Front { time:0.03 }
+
+@back 260_1 { time:0.03 }
+@Wait 0.12
+
+@hide Stills-Front { time:0.03 }
+
+@back 50_3 { time:0.03 }
+@Wait 0.12
+
+@hide Stills-Front { time:0.03 }
+
+@back 180_1 { time:0.03 }
+@Wait 0.12
+
+@hide Stills-Front { time:0.03 }
+
+@back 290_1 { time:0.03 }
+@Wait 0.12
+
+@hide Stills-Front { time:0.03 }
+
+@back 40_1 { time:0.03 }
+@Wait 0.12
+
+@hide Stills-Front { time:0.03 }
+
+@back 421_9 { time:0.03 }
+@Wait 0.12
+
+@hide Stills-Front { time:0.03 }
+
+@back 190_1 { time:0.03 }
+@Wait 0.12
+
+@hide Stills-Front { time:0.03 }
+
+@back 280_1 { time:0.03 }
+@Wait 0.12
+
+@hide Stills-Front { time:0.03 }
+
+@back 100_1 { time:0.03 }
+@Wait 0.12
+
+@hide Stills-Front { time:0.03 }
+
+@back 120_1 { time:0.03 }
+@Wait 0.12
+
+@hide Stills-Front { time:0.03 }
+
+@back 410_2 { time:0.03 }
+@Wait 0.12
+
+@hide Stills-Front { time:0.03 }
+
+@back 200_5 { time:0.03 }
+@Wait 0.12
+
+@hide Stills-Front { time:0.03 }
+
+@back 270_1 { time:0.03 }
+@Wait 0.12
+
+@hide Stills-Front { time:0.03 }
+
+@back 10_1 { time:0.03 }
+@Wait 0.12
+
+@hide Stills-Front { time:0.03 }
+
+@back 500_1 { time:0.03 }
+@Wait 0.12
+
+@hide Stills-Front { time:0.03 }
+@Stop 
+
+# EndCredits1
+
+@hideCredit 
+@ProcessInput true
+@StopBgm { fade:0.1 }
+@hide Stills-Front { time:0 }
+@back SolidColor { time:0 }
+@goto Act01_Chapter05/Act01_Chapter05_Adv11

@@ -1,0 +1,109 @@
+@gosubResetBook System/System_ResetWitchBook
+@set "isReenact = true"
+@printer Normal.Simple { time:0 }
+@Gosub System/System_Subroutine.BeginAdv
+
+# ==============================================================================
+# 桜羽エマの物語
+# ==============================================================================
+# ＠ト書き▼議論4絵本パート
+
+# Judge4-12-1
+
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# 絵本パート
+# BGM変更：ボクとワタシの
+@bgm Bgm_19_1
+
+# 【1P目イラスト】
+# 地下でパネルを操作しているエマ
+# カメラ外の手前にあるパネルに向かって手を伸ばし
+# 操作しているエマ
+@spawn Reenact_Ch01_E04_S01
+@Wait 1.5
+
+@print 昨日の夜、ボクは地下でボタンを押した。<br>ボタンを押しただけ……だったんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print みんな信じてくれないけれど……<br>本当に、ボクにアリサちゃんを殺す気なんてなかったんだ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print おそらくアリサちゃんはそのとき、<br>裁判所でメルルちゃんからもらった睡眠薬を飲んでいた。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 自殺を、する為に。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch01_E04_S01
+@Wait 1.5
+
+# 【2P目イラスト】
+# アリサが電気椅子に座っているイラスト
+# 目を閉じているようなイメージ
+# 電気椅子は現時点24/10/21で未デザイン。近未来的想定
+
+@spawn Reenact_Ch01_E04_S02
+@Wait 1.5
+
+@print アリサちゃんは裁判所で処刑された子たちのことでも<br>思い出していたのかもしれないね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print けれど、アリサちゃんは睡眠薬を飲み干したあとで<br>１つの問題に気づいたんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 睡眠薬のビンには、メルルちゃんの名前が書いてあった。<br>……このままでは、メルルちゃんが疑われてしまう。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch01_E04_S02
+@Wait 1.5
+
+# 【3P目イラスト】
+# アリサが手の上にビンを持って燃やす
+# デフォルメされた炎でビンを燃やしているようなイメージ
+
+@spawn Reenact_Ch01_E04_S03
+@Wait 1.5
+
+@print だからアリサちゃんはメルルちゃんに<br>疑いが向かないよう、<br>慌てて魔法でラベルを燃やそうとしたんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print でもそのせいで、ビンは砕け散った。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print その衝撃でアリサちゃんの顔には火傷が残って……<br>そして、意識を失ったんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch01_E04_S03
+@Wait 1.5
+
+# 【4P目】1P流用（地下でボタンを押しているエマ）
+
+@spawn Reenact_Ch01_E04_S04
+@Wait 1.5
+
+@print その後、ボクは知らずに地下でボタンを押してしまった……。<br>それによってアリサちゃんは地下に運ばれてしまったんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print アリサちゃんは眠ったまま、地下で氷漬けになって<br>……凍死した。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print これは……事故だったんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch01_E04_S04
+@Wait 1.5
+
+# 【5P目】電気椅子のアリサ（2P目をそのまま流用想定）
+
+@spawn Reenact_Ch01_E04_S02
+@Wait 1.5
+
+@print そして時間経過とともに<br>アリサちゃんの凍りついた体は溶けて、<br>その髪や服を湿らせた。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print アリサちゃんが自殺しようとした理由は、<br>おそらく魔女化が進行していたせい……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ボクたちをその手にかけないよう……<br>守ろうとしてくれたんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print だからこれは……ボクのせいじゃない……。<br>ボクが悪いんじゃ……ない……のに。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch01_E04_S02
+@Wait 0.5
+
+@set "isReenact = false"
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter04/Act01_Chapter04_Adv13

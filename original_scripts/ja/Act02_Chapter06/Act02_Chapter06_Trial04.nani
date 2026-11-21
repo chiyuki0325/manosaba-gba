@@ -1,0 +1,1240 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter06/Act02_Chapter06_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# ==============================================================================
+# MARK: 11-4: 💬 最後の審判
+# ==============================================================================
+# ＠ト書き▼議論11-4最後の審判
+# 議論開始カットイン
+# BGM継続：yUki
+
+@bgm Bgm_48_1
+# Judge11-4-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Yuki.2
+@gosubModifyCamera 0
+@printDebate 説明した通り、<br>人間が滅ぼされるのは<br>過去の咎によるものです。
+
+@char Yuki.6
+@gosubModifyCamera 0
+@printDebate その運命を<br>受け入れてください。
+
+@char Alisa.Default,ArmR2,ArmL7,Angle01/Facial/Eyes>Eyes_Angry_Open04
+@gosubModifyCamera 0
+@printDebate ……【はいそーですか】、<br>なんて言って<br>見過ごせるわけねーだろ。
+
+@char Hanna.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@printDebate そ、そうですわ！
+
+@char Hanna.Angry1
+@gosubModifyCamera 0
+@printDebate いくらあなたたちが<br>可哀想だったとしても、<br>わたくしたちが<br>黙って殺される理由には<br>なりませんわー！
+
+@char Yuki.9
+@gosubModifyCamera 0
+@printDebate "……でも、あなたたちは<br>本当にそんなことを言える<br><link=\"Objection_02_06_04_01\">立ち場</link>なんですか？"
+
+@char Yuki.9
+@gosubModifyCamera 0
+@printDebate ここにいる者たちは、<br>すでに罪を犯している子や<br>逆に人間に<br>ひどい目にあわされてきた者<br>ばかり……。
+
+@char Yuki.15
+@gosubModifyCamera 0
+@printDebate 被害者となる気持ちも、<br>加害者の気持ちも<br>よくわかっていますよね。
+
+@char Yuki.6
+@gosubModifyCamera 0
+@printDebate 人間の被害にあった者なら<br>わかるはずです。<br>――復讐を欲する私の気持ちが。
+
+@char Yuki.7
+@gosubModifyCamera 0
+@printDebate そして加害を<br>起こしてしまった者なら<br>わかっているはずです。<br>――私と同じ加害者のくせに、<br>私を批難する資格なんて<br>持っていないと。
+
+@char Yuki.11
+@gosubModifyCamera 0
+@printDebate "同じ<link=\"Objection_02_06_04_02\">虐殺者</link>同士……<br>仲良くしましょう？"
+
+@char Margo.Smile,ArmL4,ArmR1
+@gosubModifyCamera 0
+@printDebate あら。<br>なら仲良くするついでに<br>私のことは<br>見逃してくれないかしら？
+
+@char Yuki.3
+@gosubModifyCamera 0
+@printDebate 安心してください。
+
+@char Yuki.4
+@gosubModifyCamera 0
+@printDebate あなたたちが<br>魔女化したことにより<br>増大していた力は、<br>すでに私の肉体を<br>構成する素材として<br>消費されましたが――。
+
+@char Yuki.2
+@gosubModifyCamera 0
+@printDebate それでも、<br>あなたたちが<br>元々持っていた魔女因子が<br>全て消えたわけでは<br>ありません。
+
+@char Yuki.6
+@gosubModifyCamera 0
+@printDebate 仲間はずれにはならずに、<br>他の人間と一緒に<br>みんな仲良く死ねますよ。
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Angry_Open02
+@gosubModifyCamera 0
+@printDebate 【仲良く死ねます】、<br>じゃねーんだけど。<br>そもそも死にたくないの。<br>わかる？<br>もしもーし、<br>話通じてますか～？
+
+@char Sherry.Default,ArmR17,ArmL11,Angle01/Facial/Eyes>Eyes_Wink_Open02,Angle01/Facial/Mouth>Mouth_Yum_Closed
+@gosubModifyCamera 0
+@printDebate どうにかオマケして、<br>人類滅亡とか<br>延期してくれませんかね！
+
+@char Yuki.8
+@gosubModifyCamera 0
+@printDebate "人類の死の運命は、<br>変わりません。<br>誰にも<link=\"Objection_02_06_04_03\">変えること</link>は<br>できないんです。"
+
+# ==============================================================================
+# 11-4議論後独白
+# ==============================================================================
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@Wait 0.2
+
+@print （大魔女を止める方法を考えつかなくては、<br>　私たちは……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Surprised1,ArmR1,ArmL2,Angle01/Facial/Mouth>Mouth_Surprised_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……メルルくん！<br>キミは彼女と付き合いが長いんだろう！<br>何か妙案はないかな！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal1,ArmR12_1,ArmL13,Eyes1_Flushed_Closed1,Mouth1_Surprised_Open2
+@gosubModifyCamera 0
+@print そ、そんなこと言われても……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+# ＠備考◆名案！
+@char Meruru.Normal2,ArmR5_2,ArmL2,Eyes2_Smile_Closed1,Mouth2_Angry_Open2
+@gosubModifyCamera 0
+@print ……ではみなさん、ここは１つ<br>大人しく諦めて大魔女様に殺されるというのは<br>いかがでしょう……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,ArmR7,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Angry_Closed,Angle01/Head/Facial/Mouth>Mouth_Uncomfortable_Open,Angle01/Option_Arms-,ArmR-Option-Off
+@gosubModifyCamera 0
+@print こいつの意見を聞く方が間違っているな。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR2,ArmL4,,Angle01/Facial/Eyes>Eyes_Surprised_Open02,Angle01/Facial/Mouth>Mouth_Confused_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print でも……どうにかしないと<br>のあたちも死んじゃうんだよね？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Default,Eyes1_Angry_Closed1,ArmR3,ArmL8,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print ……戦うためには、武器が必要ね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Eyes1_Flushed_Open1,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print "悪しき妖魔を撃ち抜く――<br><ruby=\"シルバーブレット\">銀の弾丸</ruby>が。" { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@goto .Judge11-4-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_06_04_01
+
+@Skip false
+@pauseTrial true
+
+@choice 人には生きる権利がある
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge11-4-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_02_06_04_02
+
+@Skip false
+@pauseTrial true
+
+@choice 彼女たちに罪はない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge11-4-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_02_06_04_03
+
+@Skip false
+@pauseTrial true
+
+@choice 【魔女を殺す魔法】
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge11-4-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 11-4: ❌ 議論ミス選択肢
+# ==============================================================================
+
+# MARK: 11-4-3: ❌ 反論・人には生きる権利がある
+
+# Judge11-4-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print 人には生きる権利がある……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print それを君が蹂躙する権利はない！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Yuki.15
+@gosubModifyCamera 0
+@print では魔女に生きる権利はなかったのですか？ { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.15
+@gosubModifyCamera 0
+@print そうであれば、なぜあなたたち人間にだけ<br>他者を蹂躙する権利があったというのでしょう。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.12
+@gosubModifyCamera 0
+@print そんな理不尽には、<br>理不尽で対抗しなくてはいけません。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.11
+@gosubModifyCamera 0
+@print 人間に……<br>多大なる理不尽な罰を与えなくてはいけないのです。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （ダメだ……！<br>　こんな反論をしても、意味はない……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （説得が難しいなら……<br>　彼女を打ち倒す方法を考えなくては……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge11-4-1
+
+# MARK: 11-4-4: ❌ 反論・彼女たちに罪はない
+
+# Judge11-4-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print ……彼女たちに罪はない！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print 私は死に戻った……！<br>この牢屋敷で人殺しなど、起こっていないんだ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Yuki.6
+@gosubModifyCamera 0
+@print その前に彼女たちが犯した罪までは消えていません。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.7
+@gosubModifyCamera 0
+@print そして……<br>さらにあなたがたは生まれもっての罪も持っているのです。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.12
+@gosubModifyCamera 0
+@print 【人として生まれた罪】……<br>それは私へと償わなくていけない罪なのです。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.10
+@gosubModifyCamera 0
+@print ……今すぐにでも。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （ダメだ……！<br>　こんな反論をしても、意味はない……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （説得が難しいなら……<br>　彼女を打ち倒す方法を考えなくては……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge11-4-1
+
+# ==============================================================================
+# MARK: 11-4-2: ⭕ 魔法・魔女を殺す魔法
+# ==============================================================================
+
+# Judge11-4-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@gosubCutIn Hiro
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （私たちの魔法の中で一番<br>　大魔女に対して有効的な手段になりえる魔法。<br>　それは――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print ――エマ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@gosubModifyCamera 0
+@print 別世界の記憶を共有した今の君なら、<br>理解できるはずだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR12,ArmL5,Eyes1_Normal_Closed1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print 君の魔法なら、大魔女を止められるかもしれないと。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆息を呑む
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Sweat01>Sweat01_01,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print ………っ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 大魔女の説明の通りなら、<br>おそらく君の魔法は大魔女にも効くのだろう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print 彼女を殺して、世界を救えるのは君しかいない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1
+@gosubModifyCamera 0
+@print 彼女を……ユキを殺すんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print 君の【魔女を殺す魔法】で……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print それは……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print ……ユキに対して思うことがあるのはわかる。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Eyes1_Angry_Open2
+@gosubModifyCamera 0
+@print だが彼女が大魔女だと知った以上、<br>私たちはもう止まるわけにはいかない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Eyes1_Painful_Open1
+@gosubModifyCamera 0
+@print 彼女を殺さなければ……<br>世界も、私たちも、何も残らないのだから。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Lifeless04,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Middle
+@gosubModifyCamera 0
+@print ……でも、ボクは……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Eyes1_Pensive_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print ……エマ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print 私が囮になる。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Surprised_Open
+@gosubModifyCamera 0
+@print ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+@gosubModifyCamera 0
+@print 君は私の道具でいてくれればいい。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+@gosubModifyCamera 0
+@print 君は私の凶器。<br>大魔女を――ユキを殺す【犯人】は、<br>私の役割だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Lifeless03,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Middle
+@gosubModifyCamera 0
+@print ヒロちゃん……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （……【死に戻り】の魔法が<br>　前と同じように正常に発動するかはわからない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Eyes1_Pensive_Open1
+@gosubModifyCamera 0
+@print （だがこの中で一番死んでもいいのは……<br>　私だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Eyes1_Normal_Closed1
+@gosubModifyCamera 0
+@print （他のみんなにも、<br>　約束をした） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Eyes1_Angry_Open2
+@gosubModifyCamera 0
+@print （私が君たちを救うのだと） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Eyes1_Normal_Closed1
+@gosubModifyCamera 0
+@print （だから、彼女に立ち向かうのは<br>　私じゃなくちゃいけない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Eyes1_Angry_Open1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print ……エマ。<br>私がなんとかユキの注意を逸らす。<br>だから君は――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# カットインレイア
+@Wait 0.5
+
+@sfx Sfx_Common_5
+
+@ResetText 
+@voice CommonTrial_Leia00425
+@char Hiro.Surprised1
+@char Leia.Angry1,ArmR10,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open02
+@gosubSplitStageScreen 1
+@Wait 1.5
+
+@hideStageScreen 1
+@Wait 0.3
+
+@char Leia.Smile,ArmR10,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print ――おっとヒロくん、<br>適材適所という言葉を知ってるかな。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR11,ArmL11,Eyes1_Serious_Open1,Mouth1_Determined_Open1,Sweat1-1
+@gosubModifyCamera 0
+@print ……！<br>レイア……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile,ArmR6,ArmL3,Angle01/Facial/Eyes>Eyes_Normal_Closed01,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print 目立つことが必要なら、私に任せたまえ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR2,ArmL4,,Angle01/Facial/Eyes>Eyes_Angry_Open,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print のあもやる！ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Smile,,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print きっとなんとかなるよ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Hiro.Surprised1
+@gosubModifyCamera 0
+@print ノア……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （……そうだな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Eyes1_Normal_Open2
+@gosubModifyCamera 0
+@print （自己犠牲にも……<br>　そして今彼女たちに抱いているこの連帯感にも<br>　酔うつもりはない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@gosubModifyCamera 0
+@print （ただまっすぐ、<br>　エマが大魔女を殺せる可能性を<br>　押し上げることを考えよう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Eyes1_Angry_Open2
+@gosubModifyCamera 0
+@print （それが唯一の、私たちが生き残る道だ――！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Eyes1_Angry_Open1
+@gosubModifyCamera 0
+@print ……エマ、頼んでも大丈夫か。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+@gosubModifyCamera 0
+@print ボクは……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print ……うん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print ボクが、ユキちゃんを止めるよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR5,ArmL2,Eyes2_Normal_Closed1,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print ……任せた。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Eyes2_Angry_Open1
+@gosubModifyCamera 0
+@print ……私が前に出る。援護はお願いするよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL3,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print わかった。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# 対峙するヒロ
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print ……ユキ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Yuki.8
+@gosubModifyCamera 0
+@print 死を受け入れる覚悟はできましたか？ { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Painful_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print ……いいや。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Eyes1_Angry_Open1
+@gosubModifyCamera 0
+@print 私は最後まで抵抗する。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print 君の好きにはさせない……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Yuki.15
+@gosubModifyCamera 0
+@print それは残念ですね。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.12
+@gosubModifyCamera 0
+@print ですが……。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Yuki.11
+@gosubModifyCamera 0
+@print ――<color=#6B85D0><b>【ストップ】</b></color>。<br>そこまでです。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print ………！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Leia.Default,ArmR8,ArmL1,Angle01/Facial/Eyes>Eyes_Surprised_Open02,Angle01/Facial/Mouth>Mouth_Angry_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……これは……体が……！ { author:Leia speed:1 waitInput:true Wait:true }
+
+# BGM変更：EmA-危-
+@bgm Bgm_16_1_Loop
+
+@char Yuki.11
+@gosubModifyCamera 0
+@print 抵抗は無駄です。<br>【諦めてください】。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,ArmR7,ArmL10,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Yell_Open,Angle01/Head/Facial/Sweat>Sweat01,Angle01/Option_Arms-,ArmR-Option-Off
+@gosubModifyCamera 0
+@print この魔法は……わがはいと同じ……！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Eyes1_Angry_Open1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print 【洗脳】の魔法か……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Yuki.12
+@gosubModifyCamera 0
+@print 私は自らの存在を魔女因子と変えて世界に放ちました。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.6
+@gosubModifyCamera 0
+@print そしてそれは少女たちに適合し、<br>与えた因子は【魔法】となった……。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.7
+@gosubModifyCamera 0
+@print みなさんが魔女化によって増幅させ、<br>私に還元してくれたこの魔女因子……<br>それは今も私の中に【魔法】として存在しているのです。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Eyes1_Angry_Open1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print くっ……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Yuki.6
+@gosubModifyCamera 0
+@print さあ、私の言う事を聞いてください。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.7
+@gosubModifyCamera 0
+@print すでに十分お話はしましたし、<br>もういいですよね？ { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.8
+@gosubModifyCamera 0
+@print みんな等しく……死に絶えましょう。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmL4,ArmR3,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Lifeless01,Angle01/Head01/Facial01/Mouth01>Mouth01_Surprised_Open
+@gosubModifyCamera 0
+@print ――ユキちゃん、待って！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Yuki.9
+@gosubModifyCamera 0
+@print ……エマ。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Lifeless01,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print ……どうして。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Lifeless01,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Middle
+@gosubModifyCamera 0
+@print どうしてユキちゃんは、<br>ボクたちと一緒にいてくれたの？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Lifeless01,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print ボクは特別なものも持っていない、<br>普通の人間なのに……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@gosubModifyCamera 0
+@print なのにキミはずっと仲良くしてくれた。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Lifeless01,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print キミにとっては短い間だったかもしれないけど……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,Angle01/Head01/Facial01/Eyes01>Eyes01_Scream_Closed01,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open
+@gosubModifyCamera 0
+@print ボクは嬉しかった！<br>楽しかった！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+@gosubModifyCamera 0
+@print だから……知りたいんだ。<br>どうしてボクと友だちになってくれたのかを。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Yuki.2
+@gosubModifyCamera 0
+@print …………。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.5
+@gosubModifyCamera 0
+@print ……どうしてだと思いますか？ { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open
+@gosubModifyCamera 0
+@print ……わかんないよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open
+@gosubModifyCamera 0
+@print だから……<br>ユキちゃんに聞いてるんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Yuki.4
+@gosubModifyCamera 0
+@print ……簡単なことですよ。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.3
+@gosubModifyCamera 0
+@print あなたを、人を殺す道具にするためです。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Ema.Default,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Lifeless01,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+@gosubModifyCamera 0
+@print ………っ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Yuki.6
+@gosubModifyCamera 0
+@print 私は長い時間をかけて、<br>じっくりと人々に魔女因子を浸透させていました。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.4
+@gosubModifyCamera 0
+@print エマもその中の１人に過ぎないだけ……。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.8
+@gosubModifyCamera 0
+@print ……どうしました？<br>何か特別な理由があると期待していましたか？ { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.6
+@gosubModifyCamera 0
+@print あなたも……他の人間たちも同じなんです。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.7
+@gosubModifyCamera 0
+@print 魔女因子を撒くためだけの、ただの媒体。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.4
+@gosubModifyCamera 0
+@print 私の復讐の被害者になってもらうため――。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.6
+@gosubModifyCamera 0
+@print そして……魔女因子という私の悪意を広める<br>【共犯者】となってもらうため……。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.8
+@gosubModifyCamera 0
+@print そのために利用したに過ぎないんです。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.3
+@gosubModifyCamera 0
+@print よくできましたね。エマ。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.6
+@gosubModifyCamera 0
+@print 他の人と仲良く一緒に死ねますよ。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Lifeless01,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print ユキちゃん……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR1,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Lifeless02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open
+@gosubModifyCamera 0
+@print ボクは、キミを……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Yuki.2
+@gosubModifyCamera 0
+@print ……エマ。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Yuki.6
+@gosubModifyCamera 0
+@print 私を殺すつもりですか？<br>……【魔女を殺す魔法】で。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Lifeless01,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed,ArmR3,ArmL7
+@gosubModifyCamera 0
+@print ……っ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Yuki.3
+@gosubModifyCamera 0
+@print ありがとうエマ。<br>それでいいんです。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.4
+@gosubModifyCamera 0
+@print あなたの殺人が、<br>最後のトリガーとなるんですから。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR6,ArmL16,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print ……トリガー……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Yuki.3
+@gosubModifyCamera 0
+@print 私を殺せば、<br>計画が止まると思いましたか？ { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.6
+@gosubModifyCamera 0
+@print 思い出してください、エマ。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.7
+@gosubModifyCamera 0
+@print 私の肉体は死んでいたんですよ？<br>……ついさっきまで。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+# ＠備考◆ハッとする
+
+@char Ema.Default,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed,ArmR3,ArmL7
+@gosubModifyCamera 0
+@print ………！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Yuki.14
+@gosubModifyCamera 0
+@print もとより、私の存在はもう<br>この計画に必要なくなっているんです。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.6
+@gosubModifyCamera 0
+@print 私は人類への復讐のため、<br>その身を魔女因子に変えて世界に振りまきました。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.12
+@gosubModifyCamera 0
+@print あとは……<br>【魔女を殺す魔法】を発動するだけ。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.11
+@gosubModifyCamera 0
+@print その鍵があなた……エマなんです。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.4
+@gosubModifyCamera 0
+@print 魔女を殺す魔法は、<br>一度使えば止めることができず<br>常時展開し続ける魔法です……。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.12
+@gosubModifyCamera 0
+@print 魔法の発動後、<br>魔女を殺す範囲は次第に拡大していきます。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.6
+@gosubModifyCamera 0
+@print そうしてこの世界の全ての人間……<br>最後の１人に宿った魔女因子を暴走させるまで<br>魔法は発動し続けます。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.7
+@gosubModifyCamera 0
+@print 残るのは、人間だったものの死体のみ……。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Ema.Fearful1
+@gosubModifyCamera 0
+@print そん……な……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmL7,ArmR8,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Comical_Closed,Angle01/Facial/Pale>Pale01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print そ、そんなん……どうしようもないじゃん！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,Angle01/Facial/Eyes>Eyes_Angry_Open04,ArmR9,ArmL2
+@gosubModifyCamera 0
+@print ハッタリ……ってわけじゃ……<br>ねーんだよな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Pensive_Open,ArmR4,ArmL4
+@gosubModifyCamera 0
+@print 嘘はついてなさそうかも……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Yuki.3
+@gosubModifyCamera 0
+@print ……もしエマが、<br>どうしても私に殺して欲しいというのであれば、<br>代わりに私が発動しましょうか？ { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed,ArmR3,ArmL7
+@gosubModifyCamera 0
+@print ……っ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Yuki.6
+@gosubModifyCamera 0
+@print 私の肉体には、<br>エマからの因子も入っていますからね。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.2
+@gosubModifyCamera 0
+@print エマの手による人間たちの虐殺が<br>見られなくなるのは少し残念ですが……。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.3
+@gosubModifyCamera 0
+@print せめて選ぶ自由ぐらいは与えてあげましょう。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.4
+@gosubModifyCamera 0
+@print ……さあ、どうしますか？ { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.5
+@gosubModifyCamera 0
+@print このまま何もせず、私に殺されるか。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.3
+@gosubModifyCamera 0
+@print エマが私ごと、人類を滅ぼすか。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.6
+@gosubModifyCamera 0
+@print 私はどちらでもいいですよ？ { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+@gosubModifyCamera 0
+@print そんなの……選べるわけ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Yuki.12
+@gosubModifyCamera 0
+@print ああ……そうそう、もう１つ。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.11
+@gosubModifyCamera 0
+@print 【エマを殺す】という選択肢も用意してあげましょう。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+# ＠備考◆息を呑む
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ………！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Yuki.3
+@gosubModifyCamera 0
+@print エマを殺せば、<br>少なくとも魔女殺しの魔法を継承する<br>第２のエマが出てくるまで人類は滅びません。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.6
+@gosubModifyCamera 0
+@print ……エマをあなたたちの手で殺すなら、<br>私は魔法を使わないと約束してあげましょう。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.15
+@gosubModifyCamera 0
+@print 幾ばくかの時間稼ぎにしかなりませんが……<br>ほんの少しは人類を延命できるかもしれませんね？ { author:Yuki speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （ダメだ、そんなこと……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Eyes1_Normal_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （だが……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Eyes1_Pensive_Open1
+@gosubModifyCamera 0
+@print （それしか……ないのか……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Eyes1_Normal_Closed1
+@gosubModifyCamera 0
+@print （私は……みんなを救うと言った……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@gosubModifyCamera 0
+@print （その約束を守るには……エマを犠牲にするしかない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Eyes1_Flushed_Open1
+@gosubModifyCamera 0
+@print （そうでなければ、人類は死滅する……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Eyes1_Normal_Closed1
+@gosubModifyCamera 0
+@print （なら私は、エマを――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@choice 殺す
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge11-4-5
+
+@choice 殺さない
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge11-4-5
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 11-4-5: ⭕ 選択肢共通
+# ==============================================================================
+
+# Judge11-4-5
+
+@char Hiro.Mouth1_Flushed_Closed1
+@gosubModifyCamera 0
+@print （……エマは） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# フラッシュバック
+# ==============================================================================
+# ◎回想シーン（流用） ●シーン2‐1-19
+# ==============================================================================
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+@back 21_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@char Ema.Pensive1,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01 { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+
+@print ひ、ヒロちゃん。ひとりにならないで！<br>みんなで協力すればきっと――。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+@hide MainBackground-Flashback,Ema-Flashback { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+# ==============================================================================
+# 回想ここまで
+# ==============================================================================
+
+@gosubModifyCamera 0
+@print （私を信じてくれた） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ==============================================================================
+# ◎回想シーン（流用）議論2-1 # judge6-12-2
+# ==============================================================================
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+@back 14_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+
+@print ボクだって、ヒロちゃんの言う事……<br>信じてる……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+@hide MainBackground-Flashback,Ema-Flashback { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+
+# ==============================================================================
+# 回想ここまで
+# ==============================================================================
+
+@gosubModifyCamera 0
+@print （彼女を責め続けた私を） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ==============================================================================
+# ◎回想シーン（流用）●シーン2‐3‐10
+# ==============================================================================
+
+# ＠備考◆泣きながら
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+@back 29_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@char Ema.Cry1,ArmR7,ArmL11,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Lifeless01,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Middle { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+
+@print 生きてよ、ヒロちゃん……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# ＠備考◆泣きながら
+@char Ema.Cry1,Angle01/Head01/Facial01/Eyes01>Eyes01_Cry_Closed02,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open
+
+@print お願いだから、生きて……！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+@hide Ema-Flashback { time:0 }
+# ==============================================================================
+# 回想ここまで
+# ==============================================================================
+
+@back 29_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@char Hiro.Normal1,Arms1,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Closed { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+# 画面暗転
+
+@print （だから私は……エマを守る。<br>　守らなくてはいけない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （……たとえそれが、<br>　世界を敵に回す選択だったとしても） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （私には……エマを犠牲にすることなんて……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （できやしない……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hide Hiro-Flashback { time:3 }
+
+@print （だから……私は……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （……………） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@Wait 2
+
+# ウィンドウ消去・ウェイト
+
+# カットイン エマ（ちょっと待った！など）
+@gosubCutIn Ema
+@Gosub System/System_Subroutine.EndDebate-Last
+
+# ウィンドウ表示
+# エマ主人公UIに切り替え
+
+# 悩む様子
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed03,Angle01/Head01/Facial01/Mouth01>Mouth01_Neutral_Closed
+@gosubModifyCamera 0
+@hide MainBackground-Flashback { time:2 }
+
+@print ……………。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Surprised1
+@gosubModifyCamera 0
+@print ……エマ……？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Middle
+@gosubModifyCamera 0
+@print ちょっと待って、ユキちゃん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Middle
+@gosubModifyCamera 0
+@print キミの言う事は……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Ema.Default,Angle01/Head01/Facial01/Eyes01>Eyes01_Thinking_Closed01,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print 何か、【おかしい】気がする……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Yuki.9
+@gosubModifyCamera 0
+@print ………おかしい？ { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,Angle01/Head01/Facial01/Eyes01>Eyes01_Flushed_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Middle
+@gosubModifyCamera 0
+@print ……上手く言えないけど。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Ema.Default,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Middle
+@gosubModifyCamera 0
+@print 違和感があるんだ。<br>ユキちゃんの言葉には。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# 冷たく睨む
+
+@char Yuki.13
+@gosubModifyCamera 0
+@print ………………。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.15
+@gosubModifyCamera 0
+@print ……気のせいですよ、エマ。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.6
+@gosubModifyCamera 0
+@print お話はここまでです。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.6
+@gosubModifyCamera 0
+@print 私のこの肉体の構築には<br>エマが保有していた<br>魔女因子も含まれています。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.10
+@gosubModifyCamera 0
+@print だから【魔女を殺す魔法】も使えます。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.12
+@gosubModifyCamera 0
+@print 裁判ごっこはこれでおしまい。<br>だから――。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+# カットイン・マーゴ
+
+# BGM変更：rAwTell Owk...
+@bgm Bgm_7_1
+
+# ＠備考◆マーゴの声真似
+# ＠月代ユキ
+
+# @char Margo.Smile,ArmR3,ArmL2
+@print ――それでも、【お話を続けましょう】。 { author:Unknown speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆むっ
+
+@char Yuki.13
+@gosubModifyCamera 0
+@print ………。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+# ＠備考◆マーゴの声真似
+# ＠月代ユキ
+
+@char Margo.Smile,ArmR6,ArmL5,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print お互いに納得いくまで、<br>話し合いを続けませんか？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile
+@gosubModifyCamera 0
+@print ……だってあなたにとって、<br>人類の抹殺は長年の悲願の達成なんでしょう？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile,ArmR6,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Closed
+@gosubModifyCamera 0
+@print なら、もう少し楽しみましょうよ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile,ArmL5,Angle01/Facial/Eyes>Eyes_Pensive_Middle,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print せっかく長い間準備した<br>１度きりのパーティなんだもの……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile,ArmR1,ArmL1
+@gosubModifyCamera 0
+@print 盛大に盛り上げないと損じゃないかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,Angle01/Facial/Mouth>Mouth_Normal_Closed
+@gosubModifyCamera 0
+@print それとも……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Margo.Smile,ArmL3,Angle01/Facial/Eyes>Eyes_Smile_Middle
+@gosubModifyCamera 0
+@print ……私たちが、怖い？ { author:Margo speed:1 waitInput:true Wait:true }
+
+# 冷たく睨む
+
+@char Yuki.17
+@gosubModifyCamera 0
+@print …………。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print （マーゴちゃん……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Normal_Open2,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print ……そうね。<br>どうせ変わらないというのなら……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmR1,ArmL10,Eyes1_Normal_Open1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print 少しぐらい、<br>私たちに付き合ってくれてもいいんじゃないかしら？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.ArmL5,Angle01/ArmR-,Eyes1_Normal_Open5,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print １０分でも１時間でも……<br>あなたの準備した長さに比べたら、<br>ほんのわずかなものでしょう？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print （ナノカちゃんまで……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,ArmR7,ArmL10,Angle01/Head/Facial/Eyes>Eyes_Angry_Closed,Angle01/Head/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print わがはいたちの言葉に<br>反論がないのであれば……。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char AnAn.Default,Angle01/Head/Facial/Eyes>Eyes_Angry_Open02,Angle01/Head/Facial/Mouth>Mouth_Yell_Open,ArmL11
+@gosubModifyCamera 0
+@print <color=#9c8eff><b>【続けるのだ】</b></color>！<br>この審理を……！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Yuki.17
+@gosubModifyCamera 0
+@print ……本当に、愚かな人たちです。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.3
+@gosubModifyCamera 0
+@print とっても素敵ですね。<br>そのありもしない希望に縋る、滑稽な姿は。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char Yuki.6
+@gosubModifyCamera 0
+@print ……いいですよ。<br>少しだけお付き合いしますね。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.11
+@gosubModifyCamera 0
+@print あなたたちが絶望に祈る時間が、<br>増えるだけですが……。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+
+@goto Act02_Chapter06/Act02_Chapter06_Trial05

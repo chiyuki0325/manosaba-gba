@@ -1,0 +1,218 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-1-10
+
+# ========================================
+# ●シーン2‐1-10
+# ========================================
+
+@back 3_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# ========================================
+# ＞『懲罰房』を選択
+# ========================================
+
+@bgm Bgm_21_1
+
+@print 地下の奥まった通路の方へと行ってみると、<br>重厚な扉がずらりと並んでいた。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@back 21_1 { Scale:{g_backgroundDefaultScale} }
+@camera { time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@print "<ruby=\"のぞ\">覗</ruby>き窓があったので、<br>そこから中を<ruby=\"のぞ\">覗</ruby>いてみる。" { speed:1 waitInput:true Wait:true }
+
+@print ……ここはどうやら懲罰房エリアのようだな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "懲罰房？ って何するところ？" { author:Noah speed:1 waitInput:true Wait:true }
+
+@print "ノアも私の隣に並んで中を<ruby=\"のぞ\">覗</ruby>いた。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 演出：覗き窓から中を見ている
+# ========================================
+
+# よさそうだけど1章と演出を揃えるのでコメントアウト
+# @blur
+# @hideChars
+# @animate MainBackground
+# @spawn MaskingRectangle subId:Front pos:50,50 rotation:,,-90 params:50,600,true,0.3,#000000
+# @back 21_1 subId:Front pos:50,50 rotation:,,0 scale:1
+# @mask MainBackground-Front
+# @wait 0.4
+
+@print わ、危なそうな物がいっぱいある！ { author:Noah speed:1 waitInput:true Wait:true }
+
+@print あれとあれとあれを積み重ねてオブジェにしたら、<br>楽しそう～。 { author:Noah speed:1 waitInput:true Wait:true }
+
+# @blur power:0 time:0.4
+# @despawn MaskingRectangle subId:Front
+# @hide MainBackground-Front
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@camera { time:0 }
+@back 3_1 { Scale:{g_backgroundDefaultScale} }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@char Hiro.Pensive1
+@char Noah.Smile1
+
+# ＠備考◆少し呆れ気味
+
+@print ……そうか？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "ノアが扉を開けてみようとするも、<br><ruby=\"なんきんじょう\">南京錠</ruby>に鍵がかかっていて開かない。" { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+@char Noah.Pensive1
+
+@print むー、中に入れないんだよ？<br>ここじゃお絵描きできないね。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print そのようだな。じゃあ他の場所へ――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "私が<ruby=\"きびす\">踵</ruby>を返すと、<br>通路の向こうからひとりの少女が歩いてきた。" { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Surprised1,Option-ArmL-Off
+
+# ＠備考◆ハッとする
+
+@print ……っ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print 紫藤アリサだった。 { speed:1 waitInput:true Wait:true }
+
+@print 向こうも私たちに気付き、<br>気まずそうに立ち尽くす。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+@char Noah.Normal1
+
+@print アリサ、君はもう懲罰房から解放されているはずだが。<br>こんなところに何の用だ？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,Option-ArmL-Off
+
+@print おめえに話す必要ねえだろ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print そうか。ならばいい。<br>行くぞ、ノア。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print アリサちゃんの持ってるその紙、何？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@print ノアを連れてアリサとすれ違おうとしたが、<br>ノアはアリサの持っている紙が気になった様子だった。 { speed:1 waitInput:true Wait:true }
+
+@print 私も目を留め、ハッとする。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Surprised1
+
+@print （……新聞紙……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print およそこの牢屋敷にそぐわないものを目にし、<br>捨て置けず私はアリサへと一歩近付く。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+@char Alisa.Normal1,Option-ArmL-Off
+
+@print 君、それをどこで手に入れた？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Pensive1,Option-ArmL-Off
+
+@print ……懲罰房の中でだよ。<br>磔刑台に拘束されてた時に、<br>台の間に挟まっているのを偶然見つけた。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print アリサが渋々と答える。 { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1,Option-ArmL-Off
+
+@print 方法は知らねえけど、<br>前にウチみたいに捕まったヤツが入手したもんみたいだ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print この牢屋敷では、<br>外部の情報は徹底的にシャットアウトされている。<br>そうなると、過去の囚人のなんらかの魔法だろう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ウチはもう何度も読んだから、おめえにやるよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print アリサは私に新聞紙を渡してきた。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 【魔女図鑑】『新聞紙』入手
+# ========================================
+# @spawn Clue params:
+# @despawn Clue
+
+@update 14
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print ５年前の記事か。興味深いな……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ああ……他にもまだなんかあるかもしれねーって思って、<br>探しに来たんだよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print あるとしても<br>全ての懲罰房に鍵がかけられているようだし、<br>中に入らないと見つけられないだろうな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,Option-ArmL-Off
+
+@print チッ、そうかよ……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print 渡された新聞紙の端が、<br>微かに焦げていることに気付く。 { speed:1 waitInput:true Wait:true }
+
+@print 燃やしたような跡があるな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Pensive1,Option-ArmL-Off
+
+@print それはウチがやった。<br>血文字が気味悪くてな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print でも重要な情報かもしれねーって思い直して、<br>結局やめた。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1,Option-ArmL-Off
+
+@print ウチの魔法は【発火】だからな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+# 炎をぼっと点す音
+@sfx Sfx_30
+
+@char Alisa.Normal1,ArmL11,Angle01/Option_ArmL>Option_ArmL11
+
+@print "アリサは指先に、<br>まるで見えないライターを持っているかのように<br>ぽっと炎を<ruby=\"とも\">点</ruby>してみせた。" { speed:1 waitInput:true Wait:true }
+
+@char Noah.Smile1
+
+@print わあ～、きれい！！ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Alisa.Surprised1,Option-ArmL-Off
+
+@print き、綺麗なもんかよ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print えーすっごくきれいだよ？<br>アリサちゃんってすごいねぇ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Alisa.Flushed1,ArmL2,Option-ArmL-Off
+
+@print おめえ調子狂うな……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print （炎を出せる魔法か……魔女化が進んだら、<br>　危険かもしれない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@update Alisa
+
+@print 私たちはもう行く。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 勝手にしろ。ウチはもう少し、<br>この辺りを調べるつもりだ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "懲罰房にどこか<ruby=\"ひ\">惹</ruby>きつけられている様子で、<br>アリサがふらふらと奥へと歩いていく。" { speed:1 waitInput:true Wait:true }
+
+@print 私たちはその場を後にした。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン2‐1‐7
+# 全てのイベントを消化している＞シーン2‐1‐13
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter01/Act02_Chapter01_Adv12

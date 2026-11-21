@@ -1,0 +1,102 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-1-25
+
+# ========================================
+# ●シーン1-1‐25
+# [back 4]
+# ========================================
+
+# ========================================
+# ＞『玄関ホール』を選択
+# ========================================
+
+# ========================================
+# [bgm Bgm_005_001_Loop]
+# ========================================
+
+@back 4_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+@bgm Bgm_5_1
+
+@print （このあたりを歩くの苦手なんだよな） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 見張りのためか、看守はよく玄関ホールに立っている。<br>いつのっそりと現れてもおかしくない。 { speed:1 waitInput:true Wait:true }
+
+@print （で、でも怖がってる場合じゃない……！<br>　調査をしないと！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1,ArmR3,ArmL4
+
+@print ……ふぅ。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 珍しくシェリーが、重々しくため息をついた。 { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Normal1
+
+@print どうしましたの？<br>あなたがため息なんて。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print なんだか最近、どっと疲れるんです。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 私、体力バカなんですけどねぇ。<br>これは一体どうしたことか。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print ヒロちゃんに次いでノアちゃんまで死んじゃって……<br>そんなの見せられて、普通でいられるわけないよ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "シェリーは唇に指を添え、首を<ruby=\"かし\">傾</ruby>げた。" { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1,ArmR3,ArmL11
+
+@print ん～……死体は見慣れているんですけどねえ。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print "（え……？ それってどういう意味……？）" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマは問いただそうとしてか口を開きかけたが、<br>その前にハンナが声を上げた。 { speed:1 waitInput:true Wait:true }
+
+@print ここにある掃除ロッカー、<br>開きっぱなしになっていますわ。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR1,ArmL1
+
+@print あれ、ほんとですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ３人は階段のそばにある掃除ロッカーへと<br>歩み寄っていく。 { speed:1 waitInput:true Wait:true }
+
+@print 看守が掃除しているところ、<br>見たことあります？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3
+
+@print ううん。誰か掃除したのかな？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "掃除ロッカーからは、長い<ruby=\"え\">柄</ruby>のほうきがはみ出していた。<br>しかもブラシ部分のジョイントが外されている。" { speed:1 waitInput:true Wait:true }
+
+@print （なんか気になるな） { author:Ema speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 証拠品：『ほうきの柄』入手
+# ========================================
+
+@ResetText 
+@spawn Clue
+@toast "魔女図鑑 更新…"
+@update 1-4
+@Wait i1.2
+
+@despawn Clue
+@Wait 0.6
+
+@print たしかにここは埃っぽいですけれど、<br>掃除をする心の余裕はもてませんわね。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print （他に気になるものはなさそうだ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマたちは、看守の目から逃れるように、<br>そそくさと玄関ホールを後にした。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン1‐1‐21
+# 全てのイベントを消化している＞シーン1‐1‐30
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter01/Act01_Chapter01_Adv25

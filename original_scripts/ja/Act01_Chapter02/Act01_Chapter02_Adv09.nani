@@ -1,0 +1,109 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-2-9
+
+# ========================================
+# ●シーン1‐2-9
+# ========================================
+
+@back 2_1 { time:0 }
+@Wait 0.9
+
+@back Transparent { time:1.8 }
+@WaitForNextFrame 
+
+@animate MainBackground
+@Wait 1.5
+
+# ========================================
+# ＞『地下通路』を選択
+# ========================================
+
+@bgm Bgm_18_1_Loop
+
+@print "エマがマーゴの監房前にたどりつくと、<br>既に中では<ruby=\"にぎ\">賑</ruby>わっている声が聞こえてくる。" { speed:1 waitInput:true Wait:true }
+
+# ボイス加工：カーテン越しの声
+
+@print なんで来やがるんですの！！<br>立ち入り禁止って言ったじゃありませんの！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+# ボイス加工：カーテン越しの声
+
+@print 私もお手伝いしたいんですってば。<br>こう見えて手先は器用なんですよ。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ボイス加工：カーテン越しの声
+
+@print ほら、貸してください。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ボイス加工：カーテン越しの声
+
+@print ひぃぃいい！<br>引っ張りやがりましたわコイツー！！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+# ボイス加工：カーテン越しの声
+
+@print ふっ、２人とも落ち着いてください…っ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@back 2_1 { Scale:{g_backgroundDefaultScale} }
+
+@print （ハンナちゃんたちは<br>　気球の球皮部分を作ってくれてる。<br>　一番大事なところだ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default
+
+@print あ、エマさん……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 通路の方に出てきたメルルが、<br>監房の前に立つエマに気付いた。 { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Pensive
+@char Ema.Normal1
+
+@print すみません、今お部屋は立ち入り禁止で……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print うん大丈夫、わかってる。<br>人が入って破いたりしちゃったら大変だもんね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# 布が破れる音
+@sfx Sfx_45
+
+@print 言ってるそばから、<br>ビリィッという音が中から聞こえてきた。 { speed:1 waitInput:true Wait:true }
+
+@print あ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# ボイス加工：カーテン越しの声
+
+@print ……今わたくし決めましたわ。<br>こいつを殺す！！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+# ボイス加工：カーテン越しの声
+
+@print "えー？ そんなこと言っていいんですかー？<br>処刑されちゃいますよー？" { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ボイス加工：カーテン越しの声
+
+@print "構いませんわ！ 絶対殺しますわー！" { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 内部からドタドタと暴れる様子が伝わり、<br>エマとメルルはますます青ざめる。 { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Surprised
+@char Ema.Pensive1
+
+@print こ、ここは任せてください……<br>２人を止めます……っ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print お願い……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print メルルの方が涙目になっているが、<br>騒ぎをなんとか収めてくれるのを願い、<br>エマはその場を後にした。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン1‐2‐8
+# 全てのイベントを消化している＞シーン1‐2‐14
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter02/Act01_Chapter02_Adv08

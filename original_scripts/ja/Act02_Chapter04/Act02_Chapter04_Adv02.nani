@@ -1,0 +1,119 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-4-2
+
+# ========================================
+# ●シーン2‐4‐2
+# ========================================
+
+@back 9_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_28_1
+
+@print 翌日も、静かに穏やかに時間が過ぎていた。 { speed:1 waitInput:true Wait:true }
+
+@print 自由時間になんとなくぶらぶらしていると、<br>レイアが前から歩いてきた。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1
+
+@print やあ、ヒロくん。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 昨日よりレイアはずいぶん顔色が良くなっている。 { speed:1 waitInput:true Wait:true }
+
+@print "あんなちょっとした<ruby=\"よきょう\">余興</ruby>でも、<br>気分転換になったのだろう。" { speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1
+
+@print 最近のヒロくん、覇気がないよね。<br>まあ無理もないが……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1
+
+@print しかし私は何かあった時に頼りになるのは、<br>ヒロくんだと思っているよ。<br>共に切磋琢磨してきた仲間同士だしね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print （共に切磋琢磨した覚えはないが……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1
+
+@print ここはひとつ、<br>一緒にゴクチョーを探さないかい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@print "ゴクチョーを？ 何故？" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print もう一度裁判制度をやめる説得がしたいんだ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Angry1
+
+@print 殺人事件などこれ以上はもう起こらない、<br>と信じるのが一番さ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1
+
+@print けれど魔女裁判のことを考えると、<br>私たちはずいぶん精神的に追い詰められる。<br>みんなの心を少しでも守りたいんだよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 言い分は理解できるが……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （私も何度もゴクチョーに直談判はしている。<br>　けどあのフクロウは聞く耳をもたない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （無駄なあがきな気がするが……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@print "かと言って、<br>私自身、何をすればいいのか<ruby=\"あんちゅうもさく\">暗中模索</ruby>だった。" { speed:1 waitInput:true Wait:true }
+
+@print エマに向けた憎悪や殺意も――<br>他の少女たちへの接し方も――<br>この牢屋敷での立ち回りさえも―― { speed:1 waitInput:true Wait:true }
+
+@print "全てが迷いの霧の中を<ruby=\"さまよ\">彷徨</ruby>うばかりで、<br>出口は見えない。" { speed:1 waitInput:true Wait:true }
+
+@print （こんな弱気な自分は、私らしくない……。<br>　でも、そもそも【私らしさ】って何だ？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR2
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@ResetText 
+@QuickSave 21
+
+@print ヒロくん、<br>どうか私と一緒に来てほしい。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR2 { time:0.8 }
+@Wait 0.8
+
+@print "何かスイッチが入ったのか、<br>唐突にレイアは片膝をつき、<br><ruby=\"うやうや\">恭</ruby>しく手を差し出してくる。" { speed:1 waitInput:true Wait:true }
+
+@print そのポーズは<br>さながら姫に求愛する王子のようだった。 { speed:1 waitInput:true Wait:true }
+
+@StopBgm { fade:3 }
+
+@print 私は―― { speed:1 waitInput:true Wait:true }
+
+@choice 手を取る
+	@goto Act02_Chapter04/Act02_Chapter04_Bad01
+
+@choice 手を取らない
+	@goto .Choice2-4-1
+
+@StopForChoice 
+
+# Choice2-4-1
+
+@correctChoice 21
+
+@print わかった。探しに行こう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR1
+
+@print いちいちレイアにのってやる必要はない。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 手を取らずに簡素にそれだけ言って、<br>私はさっさと歩き出した。 { speed:1 waitInput:true Wait:true }
+
+@set "chosenAreaFlag = 0"
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter04/Act02_Chapter04_Adv03

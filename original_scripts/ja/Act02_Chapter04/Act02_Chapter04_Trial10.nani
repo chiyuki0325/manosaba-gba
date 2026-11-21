@@ -1,0 +1,828 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter04/Act02_Chapter04_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# ==============================================================================
+# MARK: 9-10: 💬 証拠
+# ==============================================================================
+# ＠ト書き▼議論シーン9-10
+# 議論開始エフェクト
+# BGM変更：Guil-me N'o sinruits-Vocal有-
+@bgm Bgm_8_1
+# ボス演出
+@ResetText 
+@char Hanna.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Closed,Angle01/Head01/Facial01/Pale01>Pale01_01 { time:0 }
+@stageCamera 1 { Rotation:0,{ (1 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+
+@stageCamera 1 { Rotation:0,{ (0.9 / courtStandCount * 360) },0 time:1 }
+@showStageScreen 1
+@Wait 1.5
+
+@ResetText 
+@char Hiro.Angry2,ArmR6,ArmL9,Eyes2_Angry_Open2,Mouth1_Angry_Open1 { time:0 }
+@stageCamera 0 { Rotation:0,{ (8 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+
+@stageCamera 0 { Rotation:0,{ (8.1 / courtStandCount * 360) },0 time:1 }
+@hideStageScreen 1
+@Wait 1.5
+
+# Judge9-10-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Hanna.Default,ArmR2,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Pale01>Pale01_01,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@printDebate わたくしが犯人だなんて証拠、<br>１つもありませんわ！
+
+@char Hanna.Default,ArmR2,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Closed,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Closed,Angle01/Head01/Facial01/Pale01>Pale01_01
+@gosubModifyCamera 0
+@printDebate わたくしを<br>犯人扱いするだなんて<br>認められません！
+
+@char Hanna.Normal1,ArmR1,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Surprised_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@printDebate "わたくしには<br><link=\"Objection_02_04_10_01\">エマさんを殺す動機</link>すら<br>ないんですからっ！"
+
+@char Hanna.Default,ArmR1,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Closed,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@printDebate "全てあなたの<link=\"Objection_02_04_10_02\">妄想</link>だわ！"
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@printDebate それを言うのなら、<br>私だって同じだ。
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@printDebate 証拠も動機もないよ。
+
+@char Hanna.Default,ArmR2,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Closed,Angle01/Head01/Facial01/Mouth01>Mouth01_Smile_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@printDebate はんっ……！<br>それはどうだか。
+
+@char Hanna.Default,ArmR2,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Flushed_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@printDebate "あなたとエマさんは<br><link=\"Objection_02_04_10_03\">知り合いだった</link>のでしょう。"
+
+@char Hanna.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Open02,Angle01/Head01/Facial01/Pale01>Pale01_01
+@gosubModifyCamera 0
+@printDebate それに<br>普段のあなたたちの言動が<br>見られていないとでも<br>思ってますの！？
+
+@char Hanna.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Open02
+@gosubModifyCamera 0
+@printDebate "あなたはエマさんを<br>嫌っていたし、<br>エマさんもあなたを<br><link=\"Objection_02_04_10_04\">嫌っていた</link>……！"
+
+@char Hanna.Default,ArmR2,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Open01,Angle01/Head01/Facial01/Pale01>Pale01_01
+@gosubModifyCamera 0
+@printDebate なら殺す動機なんて<br>十分でしょう！
+
+@char Hanna.Default,ArmR2,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open
+@gosubModifyCamera 0
+@printDebate あらゆる面において、<br>わたくしよりもあなたの方が<br>犯人としてふさわしいわ！
+
+
+
+# ==============================================================================
+# 9-9議論後独白
+# ==============================================================================
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Hiro.Pensive1,Arms3
+@gosubModifyCamera 0
+@Wait 0.2
+
+@print （……耳が痛いな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive1,Arms3
+@print （私はエマを嫌悪していた……<br>　もしかしたら、エマもまた私を……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive1,Arms3
+@print （だが……今は後悔している場合じゃない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@print （ハンナを追い詰める証拠……<br>　もしくは何らかの証言……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@print （仮に嘘であったとしても、<br>　彼女に突きつけてみせる……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge9-10-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_04_10_01
+
+@Skip false
+@pauseTrial true
+
+@choice レイアを殺す動機は？
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge9-10-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_02_04_10_02
+
+@Skip false
+@pauseTrial true
+
+@choice ハンナが犯人なのは明白な事実
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge9-10-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_02_04_10_03
+
+@Skip false
+@pauseTrial true
+
+@choice 知り合いではない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge9-10-5
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論4
+# ------------------------------------------------------------------------------
+
+# Objection_02_04_10_04
+
+@Skip false
+@pauseTrial true
+
+@choice エマはハンナを好きだった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge9-10-2
+
+@choice 仲直りした
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge9-10-6
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 9-8: ❌ 議論ミス選択肢
+# ==============================================================================
+# MARK: 9-10-3: ❌ 追求・レイアを殺す動機は？
+
+# Judge9-10-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 【エマを殺す動機はない】……と言ったが。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print それなら、レイアを殺す動機はあったということかな？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Hanna.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Surprised_Open
+@gosubModifyCamera 0
+@print ……っ！<br>そ、そんなの言葉の綾ですわ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Hanna.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Surprised_Open
+@gosubModifyCamera 0
+@print あるわけが……ありません……！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Serious_Open
+@gosubModifyCamera 0
+@print ……動機、か。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open01
+@gosubModifyCamera 0
+@print ２人の死体……。<br>本命はどっちだったんだろうな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print ……それが何か、事件に関係あるんでしょうか。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print ２人のどちらを殺そうとしたかなんて、<br>今となってはどうでもいいじゃないですか。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print ……で、でも……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print なんの為に殺されたのかは……<br>知っておきたいよ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （……動機、か） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （エマを殺した凶器から考えれば<br>　先に殺されたのはレイアということになる） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （レイアが犯人の狙い通りに殺されたのだとしたら……<br>　エマが殺された原因は……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge9-10-1
+
+# MARK: 9-10-4: ❌ 反論・ハンナが犯人なのは明白な事実
+
+# Judge9-10-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print 妄想なものか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print ドレスを使ったトリック、浮遊魔法の所持者、<br>死体発見前にエレベーターに乗った順番――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print すべての証拠が<br>君を犯人だと物語っているんだ、ハンナ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print そんなものは証拠になりません！！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print トリックなんて使わなくても<br>あなたが犯人であれば丸く収まるんです……！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print あなたが言っているのは全部、<br>【あなたが犯人じゃない場合に限った推理】でしょう！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print いい加減、自白なさったらいかが！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （たしかに状況証拠ばかりで<br>　攻めきれないか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （……しかしハンナは明らかに動揺している） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （明確な証拠を突きつけるのが無理なら――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （……その心を責めるべきかもしれない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge9-10-1
+
+# MARK: 9-10-5: ❌ 偽証・知り合いではない
+
+# Judge9-10-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print ……私とエマは知り合いなんかじゃないよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print この牢屋敷で初めて出会ったんだ。<br>なんの因縁もない……彼女への殺す動機も、ない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print ウソつき……！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print エマさんが言ってたわ！<br>２人は幼少期からの知り合いだと！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print …………。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR10,ArmL11,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print ……そうですね。<br>何かしらの関係はあるように見えました。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print ヒロさん、<br>どうしてそんなウソをつくんですの！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Serious_Open
+@gosubModifyCamera 0
+@print ……少なくとも、同室の関係ではあるだろ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print きっとヒロさんは……エマさんを憎んでいたんですわ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print だから殺したんです！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （くっ……。<br>　エマとの関係を偽証したところで<br>　通じはしないか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （……しかしハンナは明らかに動揺している） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （明確な証拠を突きつけるのが無理なら――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （……その心を責めるべきかもしれない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge9-10-1
+
+# MARK: 9-10-6: ❌ 偽証・仲直りした
+
+# Judge9-10-6
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print エマとは……仲直りしたよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR12,ArmL5,Eyes1_Normal_Closed1,Mouth1_Angry_Open1,Sweat1-1
+@gosubModifyCamera 0
+@print 殺す気なんてないし……<br>……エマも、私のことを嫌ってなど……いなかった。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print お、おじさんにはそこまでわかんないけど……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print ２人の関係が難しいのは……<br>なんとなくわかったよ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print あなたとエマさんは争ったことだってありましたわ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print そんなあなたの言う事など……信憑性がありません！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （くっ……。<br>　エマとの関係を偽証したところで<br>　通じはしないか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （……しかしハンナは明らかに動揺している） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （明確な証拠を突きつけるのが無理なら――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （……その心を責めるべきかもしれない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge9-10-1
+
+# ==============================================================================
+# MARK: 9-10-2: ⭕ 偽証・エマはハンナを好きだった
+# ==============================================================================
+
+# Judge9-10-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+# カットイン
+@gosubCutIn Hiro
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Pensive1,Arms3
+@gosubModifyCamera 0
+@print ……残念だよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print ……え？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print たしかに私たちの関係は、<br>良好だったとは言えない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print だが……エマは、君を好きだったんだ。<br>それはまるで……親友のように。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆突然何を言い出したんだ？と困惑
+
+@char Hanna.Surprised1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print な、何を……！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print 仲間として、信頼できる存在だと……<br>友だちだと言っていた。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print その証拠だってある。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# Judge9-10-7
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print エマが君のことを友人だと思っていた証拠、<br>それは――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@evidence Clue
+
+# エマの人形
+@if "chosenEvidenceId==\"9-11\""
+	@goto .Judge9-10-8
+
+# エマの死体写真 or エマの衣服
+@if "chosenEvidenceId==\"9-1\"||chosenEvidenceId==\"9-9\""
+	@goto .Judge9-10-9
+
+# 汎用選択ミス
+@goto .Judge9-10-10
+
+# MARK: 9-10-9: ❌ 【エマの死体写真】or【エマの衣服】
+
+# Judge9-10-9
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print …………エマの死体を思い出すんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print 彼女の死体には、<br>抵抗の跡が見られなかった。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print 友人のハンナを信じていたからこそ……<br>警戒することも出来ず、刺されたんじゃないか？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Surprised_Open
+@gosubModifyCamera 0
+@print ……そ、そんなのこじつけだわ……！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Surprised_Open
+@gosubModifyCamera 0
+@print レイピアで刺されたら、<br>抵抗出来ないまま死ぬ人だっているはずだし……！！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Surprised_Open
+@gosubModifyCamera 0
+@print それに、エマさんは誰に対しても優しくて……<br>わたくしだけじゃなく、あなたのことだって……！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Surprised_Open
+@gosubModifyCamera 0
+@print なのにあなたはエマさんに冷たくしていた！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print あなたが殺したんだわ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+# ダメージなし
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （……たしかに、エマはみんなのことを信じていた） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （……ハンナを追い詰める材料……何かないか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge9-10-7
+
+# MARK: 9-10-10: ❌ 汎用選択ミス
+
+# Judge9-10-10
+
+@char Hanna.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print それがなんだっていうんですの！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print あなたはそうやって自分の犯行を誤魔化すために、<br>丸め込もうとしているだけだわ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （もう一度、選び直そう……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （……ハンナを追い詰める材料……何かないか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge9-10-7
+
+# ==============================================================================
+# MARK: 9-10-8: ⭕ 【エマの人形】
+# ==============================================================================
+
+# Judge9-10-8
+@StopBgm 
+@gosubCutIn Hiro
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print エマが肌身離さず持っていた人形……<br>これがその証拠だよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆びっくり／困惑
+
+@char Hanna.Surprised1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print "え……？ そ、それは……。" { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print 彼女は気丈に振る舞っていたものの、<br>この牢屋敷に連れてこられて心底不安だったんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print 疑心暗鬼と恐怖に苛まれる中、<br>彼女が心の拠り所にしていたもの……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print ……それがこの人形だよ、ハンナ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆殺してしまったエマに同情
+
+@char Hanna.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Surprised_Open
+@gosubModifyCamera 0
+@print そ……そんな……！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_16_1_Loop { fade:20 }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print 牢屋敷でできた<br>一番仲の良い友だちに作ってもらった人形……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print だからこそ彼女は<br>この人形をずっと持ち歩いていた。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char Hiro.Normal1,ArmR12,ArmL5,Eyes1_Normal_Closed1,Mouth1_Angry_Open1,Sweat1-1
+@gosubModifyCamera 0
+@print ――死のその瞬間まで！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Hanna.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Surprised_Open
+@gosubModifyCamera 0
+@print う、うそ……！<br>そんなこと……！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print ……エマは友人が少なかったしね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print もしかすると、君が生涯で一番の友だちだったのかもしれないよ。<br>……ハンナ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Hanna.Fearful1,ArmR1,ArmL1
+@gosubModifyCamera 0
+@print あ……あ……！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print だから……許せないんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print そんな君が、エマを裏切ったことが！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+# ＠備考◆後悔で心が壊れていく
+
+@char Hanna.Fearful1,ArmR1,ArmL1
+@gosubModifyCamera 0
+@print ち、ちが……わた……くし……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR12,ArmL5,Eyes1_Normal_Closed1,Mouth1_Angry_Open1,Sweat1-1
+@gosubModifyCamera 0
+@print （……嘘だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR12,ArmL5,Eyes1_Normal_Closed1,Mouth1_Angry_Open1,Sweat1-1
+@gosubModifyCamera 0
+@print （エマはそんなこと、<br>　言っていない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR12,ArmL5,Eyes1_Normal_Closed1,Mouth1_Angry_Open1,Sweat1-1
+@gosubModifyCamera 0
+@print （人形を喜んでいたのは事実だが……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR12,ArmL5,Eyes1_Normal_Closed1,Mouth1_Angry_Open1,Sweat1-1
+@gosubModifyCamera 0
+@print （とはいえ、そこまでおおげさではなかった） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR12,ArmL5,Eyes1_Normal_Closed1,Mouth1_Angry_Open1,Sweat1-1
+@gosubModifyCamera 0
+@print （死人の感情を偽証するなんて……<br>　悪趣味なのはわかっている） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR12,ArmL5,Eyes1_Normal_Closed1,Mouth1_Angry_Open1,Sweat1-1
+@gosubModifyCamera 0
+@print （……だがそれでも、<br>　真犯人を追い詰めるためなら……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hanna.Fearful1,ArmR1,ArmL1
+@gosubModifyCamera 0
+@print わたくしは……わたくしは……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char Hanna.Fearful1,ArmR1,ArmL1
+@gosubModifyCamera 0
+@print そんなつもりじゃ……なかった、のに……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+# ＠備考◆錯乱していく
+
+@char Hanna.Fearful1,ArmR1,ArmL1,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open
+@gosubModifyCamera 0
+@print 違う……違うの……わたくしは。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Fearful1,ArmR1,ArmL1,Angle01/Head01/Facial01/Mouth01>Mouth01_Surprised_Open
+@gosubModifyCamera 0
+@print エマさんまで殺すつもりなんて……なかった……！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Hanna.Fearful1,ArmR1,ArmL1,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open
+@gosubModifyCamera 0
+@print ……これは………事故……！<br>そう、事故だったの……！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Fearful1,ArmR1,ArmL1,Angle01/Head01/Facial01/Mouth01>Mouth01_Surprised_Open
+@gosubModifyCamera 0
+@print わたくしは……悪く……ない……！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR12,ArmL5,Eyes1_Normal_Closed1,Mouth1_Angry_Open1,Sweat1-1
+@gosubModifyCamera 0
+@print ハンナ……君が、２人を――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hanna.Cry1,ArmR1,ArmL1,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open
+@gosubModifyCamera 0
+@print "――違うの！！ わたくしは――！" { author:Hanna speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+# ＠備考◆一番強く叫ぶ
+
+@char Hanna.Cry1,ArmR1,ArmL1,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open
+@gosubModifyCamera 0
+@print ――殺すつもりじゃ、なかったの！！！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+# 少しウェイト
+@ResetText 
+
+# ＠備考◆寂しげ・哀れみの感情
+
+@char Sherry.Pensive1,ArmR10,ArmL1
+@gosubModifyCamera 0
+@Wait 1
+@print ……ああ。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1,ArmR10,ArmL1
+@gosubModifyCamera 0
+@print ハンナさん……<br>あなたでは支えきれなかったんですね。<br>――その罪の十字架は。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ＠備考◆茫然自失
+
+@char Hanna.Fearful1,ArmR1,ArmL1
+@gosubModifyCamera 0
+@print わた……くし……は……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1,ArmR10,ArmL1
+@gosubModifyCamera 0
+@print ……お疲れ様でした。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna.Cry1,ArmR1,ArmL1
+@gosubModifyCamera 0
+@print ちが……うの……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Cry1,ArmR1,ArmL1
+@gosubModifyCamera 0
+@print しん……じて……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndTrial
+
+@goto Act02_Chapter04/Act02_Chapter04_Trial11

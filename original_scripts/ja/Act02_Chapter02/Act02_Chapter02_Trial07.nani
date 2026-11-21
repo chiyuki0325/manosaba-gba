@@ -1,0 +1,793 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter02/Act02_Chapter02_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# ==============================================================================
+# MARK: 7-7: 💬 ハンナの犯行
+# ==============================================================================
+# ＠ト書き▼議論シーン7-7 ハンナの犯行
+# 議論開始エフェクト
+# BGM変更：rAwTell Owk...
+@bgm Bgm_7_1
+
+# Judge7-7-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@printDebate ハンナさんは焼却炉で<br>ココさんを撃ち殺したあと、<br>死体を運び出したんです！
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Closed04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate "運良く<link=\"Objection_02_02_07_01\">誰にも見つからず</link><br>玄関から出たハンナさんは、<br>死体を担いで<br>中庭の上に<br>浮かんでいた……。"
+
+@char Sherry.Default,ArmR4,ArmL5,Angle01/Facial/Eyes>Eyes_Surprised_Open01,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@printDebate "そしてヒロさんが<br>中庭の前を通りかかった<br>タイミングを見計らって、<br><link=\"Objection_02_02_07_02\">ドスン</link>！"
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate エマさんが通る直前、<br>空からココさんの死体を<br>落下させました！
+
+@char Sherry.Default,ArmR15,ArmL4,Angle01/Facial/Eyes>Eyes_Wink_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate そうして一瞬で<br>現れた死体を、<br>エマさんが<br>発見したんです！
+
+@char Sherry.Default,ArmR8,ArmL8,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@printDebate そのあとはまた<br>玄関から戻って、<br>何食わぬ顔で<br>合流したんですよ。
+
+@char Hanna.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Closed,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@printDebate ま、待ちやがりなさいませ！
+
+@char Hanna.Angry1
+@gosubModifyCamera 0
+@printDebate "それは……<br>なんか無理じゃ<br>ありませんこと！？<br>わたくしには<br><link=\"Objection_02_02_07_03\">絶対無理</link>ですわ～！"
+
+# ＠備考◆煽るように
+
+@char Sherry.Default,ArmR2,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate え～？<br>そうですかね～？
+
+@char Sherry.Default,ArmR2,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Closed03,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate "ハンナさんがずっと<br><link=\"Objection_02_02_07_05\">中庭の空</link>で死体を持って<br>待っていたのだとしたら、<br>全然<link=\"Objection_02_02_07_04\">成立する</link>と<br>思いますけどね！"
+
+@char Hanna.Angry1,ArmR2,ArmL2,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@printDebate 濡れ衣ですわー！<br>きっと<br>こいつが犯人ですわー！
+
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Hiro.Normal1,Arms3,Eyes1_Pensive_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@Wait 0.2
+
+# ==============================================================================
+# 7-7議論後独白
+# ==============================================================================
+
+@print （シェリーの言っていることは<br>　たしかに成立するかもしれない。<br>　けれど……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆独り言でつぶやく
+
+
+@char Ema.Pensive1
+@gosubModifyCamera 0
+@print ……本当にハンナちゃんにできるのかな。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Surprised_Open1,Mouth1_Angry_Closed2
+@gosubModifyCamera 0
+
+@print ……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@print （現場の状況……<br>　もう一度確認してみよう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-7-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_02_07_01
+
+@Skip false
+@pauseTrial true
+
+@choice 見つからないのは不可能
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge7-7-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_02_02_07_02
+
+@Skip false
+@pauseTrial true
+
+@choice 落下したような音は聞こえなかった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge7-7-5
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_02_02_07_03
+
+@Skip false
+@pauseTrial true
+
+@choice ハンナにアリバイを聞く
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge7-7-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論4
+# ------------------------------------------------------------------------------
+
+# Objection_02_02_07_04
+
+@Skip false
+@pauseTrial true
+
+@choice 時系列が成立しない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge7-7-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論5
+# ------------------------------------------------------------------------------
+
+# Objection_02_02_07_05
+
+@Skip false
+@pauseTrial true
+
+@choice 空にいたら誰かに見られる
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge7-7-6
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 7-7: ❌ 議論選択肢分岐
+# ==============================================================================
+# MARK: 7-7-4: ❌ 反論・見つからないのは不可能
+
+# Judge7-7-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print その状態の犯人が<br>誰にも見つからずに玄関を出るのは至難の業だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print さらに死体を抱えていたとなると<br>明らかに目立ってしまう……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print その姿を誰も目撃していないのはおかしい。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print でもできないことではないと思いますよ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 特に死体発見前後は<br>ヒロさんがバタバタと１階を駆けていたと聞きます……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR13,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print つまりヒロさんが目立ってしまっていたということです！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char AnAn.Normal1,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_02
+@gosubModifyCamera 0
+@print 『たしかに騒がしかったな』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print その陰でこっそり外に出るくらい、<br>不可能ではないはずですよ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （……犯人が誰にも見つからず<br>　屋敷内外を動くこと自体は可能か……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （だが、まず確認すべきは……<br>　【ハンナに犯行が可能かどうか】だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （……ココの配信直後、<br>　ハンナがどこにいたか思い出そう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-7-1
+
+# MARK: 7-7-5: ❌ 反論・落下したような音は聞こえなかった
+
+# Judge7-7-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print 死体発見直前……そんな音を聞いた覚えはないな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print もし屋根より高い位置から死体が落とされたのなら、<br>地面に叩きつけられる音がするはずだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print 聞こえないのも無理はありません！<br>豪雨でしたし、雷も鳴っていましたから！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print きっと犯人はその音に紛れさせるように<br>死体を落下させたんですねー！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Smile_Closed
+@gosubModifyCamera 0
+@print 雷がゴロゴロゴロ～って鳴った瞬間なら、<br>音が聞こえなくてもおかしくないよねー。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （あの雷雨の中では、聞こえなくとも不思議はないか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （だが、まず確認すべきは……<br>　【ハンナに犯行が可能かどうか】だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （……ココの配信直後、<br>　ハンナがどこにいたか思い出そう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-7-1
+
+# MARK: 7-7-6: ❌ 反論・空にいたら誰かに見られる
+
+# Judge7-7-6
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print いいや……中庭の空でずっと待っていたら<br>そのうち誰かに見られてしまうんじゃないか？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,Arms,Angle01/Facial/Eyes>Eyes_Normal_Closed03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print たしかに、そうかもしれないね……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,Arms,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print 犯人が死体を抱えて浮遊していたとしたら<br>明らかに目立つよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print でも外は雨が降ってたよねー？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR1,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print 結構暗かったし……<br>誰かが空を飛んでても見ないんじゃないかな？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR6,ArmL8,Angle01/Facial/Eyes>Eyes_Surprised_Open03,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print そう！<br>だからこそ犯人は視界の悪い雨天に決行したんです！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR15,ArmL4,Angle01/Facial/Eyes>Eyes_Wink_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print "ね！？ ハンナさん！？" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Closed,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print わ、わたくしは無実ですわー！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Closed,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ヒロさん、もっとちゃんと反論してくださいまし！！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （なぜ私が怒られる……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （だがまず確認すべきは、<br>　【ハンナに犯行が可能かどうか】だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （……ココの配信直後、<br>　ハンナがどこにいたか思い出そう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge7-7-1
+
+# ==============================================================================
+# MARK: 7-7-3: ❌ 追求・ハンナにアリバイを聞く
+# ==============================================================================
+
+# Judge7-7-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 無理というけど、<br>君にアリバイでもあるのかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆慌て・焦り。えええとは震え声のようなイメージ
+
+@char Hanna.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Flushed_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print えええと、あのときは外にいたら<br>雨が降りそうだったので戻ってきて、<br>それでしばらく……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print "ああっ！ そうですわ！" { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Closed,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open
+@gosubModifyCamera 0
+@print 玄関のホールで階段から降りてくるヒロさんと<br>すれ違いましたわ～！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+
+# ==============================================================================
+# ◎回想シーン（2-2-14からの流用）
+# ==============================================================================
+@bgm Bgm_7_1 { Volume:0.2 }
+@Wait 0.2
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+@back 10_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@char Hanna.Surprised1 { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+
+@print きゃああ！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print うぐっ！？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open
+@hide Hanna-Flashback
+
+# ==============================================================================
+# どんっと人がぶつかる音
+@sfx Sfx_27
+# ==============================================================================
+
+@print 階段の途中で誰かと衝突し、<br>転げ落ちることはなかったが、<br>私はその場に思い切り尻もちをついた。 { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆痛そうに
+
+@print っ……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Closed,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open
+
+@print もうなんなんですのー！！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+@hide MainBackground-Flashback,Hanna-Flashback { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+# ==============================================================================
+# 回想ここまで
+# ==============================================================================
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print ……そうか。<br>たしかにあのとき、ハンナはそこにいた……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Open
+@gosubModifyCamera 0
+@print そこからわたくし、２階に上がりましたわ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print そしてしばらくすると何やら１階の方が騒がしくなり……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Open
+@gosubModifyCamera 0
+@print 中庭の方へ行ったら、<br>皆さんいらっしゃったんですわ～！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print そういえばそのとき、<br>おじさんとノアちゃんが行くよりも前に<br>ハンナちゃんは現場にいたね。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print もちろん血痕とかで濡れたりはしてなかったよ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （……なるほど） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （ハンナのアリバイ……<br>　思ったよりも強固かもしれないな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-7-1
+
+# ==============================================================================
+# MARK: 7-7-2: ⭕ 反論・時系列が成立しない
+# ==============================================================================
+
+# Judge7-7-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+@gosubCutIn Hiro
+@Gosub System/System_Subroutine.EndDebate-Last
+@StopBgm 
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 残念だけど、それは時系列が成立しないんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print えっ？<br>そうでしょうか……？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print ハンナさんは地下の焼却炉でココさんを射殺したあと、<br>その死体を担いで中庭にまっすぐ向かった……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR13,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print そうして空中で待ち構えたあと、<br>タイミングを見計らって死体を投下したんです。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Closed02,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print そして何食わぬ顔でみんなに合流した……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print この時系列に、どこかおかしいところがありますか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print ああ、あるとも。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# BGM変更：Sen-Choose N'o SurC
+@bgm Bgm_38_1_Loop
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print 私は中庭にいくとき<br>ラウンジに入る前にハンナと会っている。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print そこからハンナが外へ出て<br>中庭にココの死体を落としたなら<br>玄関から出て空を飛ぶ必要があるんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print んー……。<br>でもそれなら、その瞬間だけそこにいた可能性はありますよね？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 事前に殺して目撃証言を作り、<br>外に出た可能性はあると思います！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print だがあのとき、現場には激しい雨が降っていた。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Ema.Surprised1,ArmR4,ArmL5
+@gosubModifyCamera 0
+@print "……そっか！ そういえばそうだった……！" { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print たしかに死体発見直後に来てたハンナちゃんは、<br>【血痕や何かで濡れている様子はなかった】よ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print ……そう。<br>もしも短時間であろうと、<br>ハンナが中庭に浮かんでいたというなら……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print 多少雨に濡れていたはずだ。<br>中庭で死体を見つけた、私やエマのようにね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1
+@gosubModifyCamera 0
+@print ……たしかにその通りですわー！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Closed04,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print うーん、なるほどなるほど～。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print でもでも、傘でも差していたなら<br>ギリギリ可能じゃないですか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Alisa.Default,ArmR5,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open
+@gosubModifyCamera 0
+@print いや……あの雨と風だろ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Pensive_Open
+@gosubModifyCamera 0
+@print 遮蔽するものがなにもねー空じゃあ、<br>横殴りの雨にずぶ濡れになると思うけどな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Hanna.Smile1,ArmR3,ArmL2
+@gosubModifyCamera 0
+@print ですわですわー！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR12,ArmL12,Angle01/Facial/Eyes>Eyes_Surprised_Open02,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print そうなると、<br>やっぱり空から侵入することは<br>できなかったっていうことですかね？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_05
+@gosubModifyCamera 0
+@print 『ハンナができないなら、<br>　やはり犯人はヒロかエマのどちらかか』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL6,Angle01/Head/Facial/Eyes>Eyes_Normal_Closed,Angle01/Head/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print エマはそもそも中庭で死体を見つけた第一発見者だし、<br>容疑を完全にはぬぐえない。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL6,Angle01/Head/Facial/Eyes>Eyes_Angry_Closed,Angle01/Head/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print ヒロも、最初から中庭に死体を用意しておけば可能だ。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+# ＠備考◆悩み・ためらい
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print ……それは。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （たしかに理屈の上では私たち２人のどちらか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （ならやはり……エマが……魔女……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# エマカットイン
+@gosubCutIn Ema
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Pensive1,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open
+@gosubModifyCamera 0
+@print まだ……他の可能性は残されていると思う……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR7,ArmL10,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print 犯人が、ボクでも……<br>それにヒロちゃんでもない可能性が！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆困惑
+
+@char Hiro.Surprised1,Arms3,Eyes1_Normal_Open3,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print （……エマ……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ヒロちゃんはたしかに犯行が可能で、<br>容疑者のひとりではあるけど……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR4,ArmL5
+@gosubModifyCamera 0
+@print でも……ココちゃんを殺すなんて思えなくて……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,Arms,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print ……どうしてそう思うんだい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char AnAn.Normal1,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_05
+@gosubModifyCamera 0
+@print 『わがはいには<br>　ヒロはそんなに平和的な人物とも思えないが』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL12,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print た、たしかにヒロちゃんは……<br>気難しいところがあるんだけど……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・ネガティブ音
+@sfx Sfx_Common_7
+
+# ＠備考◆ちょっとギャグっぽく。むっと不満げ
+
+@char Hiro.Normal1,ArmR12,ArmL5,Eyes1_Normal_Closed1,Mouth1_Determined_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （……晒し上げられている） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆不満げ
+
+@char Hiro.Normal1,ArmR12,ArmL5,Eyes1_Pensive_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （べつに否定するつもりはないが） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print で、でもボク思うんだ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR7,ArmL10,
+@gosubModifyCamera 0
+@print ヒロちゃんが誰か殺すなら……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char Ema.Determined2,ArmR7,ArmL10,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print 【ボクを殺した】って！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Surprised1
+@gosubModifyCamera 0
+@print ……はぁ？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+# BGM変更：鐘楼の鐘
+@bgm Bgm_39_1
+
+@char Ema.Pensive1,ArmR4,ArmL5
+@gosubModifyCamera 0
+@print ヒロちゃんが何を考えてるかわからないけど……<br>でも【敵意】を感じたんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print それはボクの感覚でしかないけど……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Middle
+@gosubModifyCamera 0
+@print でも……殺すとしたら、<br>やっぱりココちゃんじゃなくて<br>ボクだったと思うんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ヒロちゃんには<br>ココちゃんを殺す【動機】がないっていうか……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@print じゃあエマちゃんを殺す動機なら<br>あるってこと？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print そ、それは……その……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed01,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ……とにかく。<br>ボクはヒロちゃんの言ってることを<br>信じてもいいと思っている……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ……特に【この事件の犯人じゃない】って部分は。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （……支離滅裂だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （なんの根拠にもなっていない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Open5,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （それに……<br>　自分に殺意を向けている相手を庇うなんて、<br>　損得勘定としても破綻している……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆呆れぎみ
+
+@char Hiro.Normal1,Arms3,Eyes1_Pensive_Open1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （……そういう愚かなところが大嫌いだよ、エマ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆嬉しさ・悲しみ
+
+@char Hiro.Normal1,Eyes1_Normal_Open2
+@gosubModifyCamera 0
+@print （……本当に） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print ……ボクは、べつの犯人がいる可能性はあると思ってるよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR7,ArmL7,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print だから話すね……！<br>……ボクの考えを！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto Act02_Chapter02/Act02_Chapter02_Trial08

@@ -1,0 +1,58 @@
+@if isDebugDirectJump
+	@Gosub System/System_Subroutine.BeginAdv
+
+# ========================================
+# ＞『掘り出した』を選択
+# ========================================
+
+# ========================================
+# ＞シーン1-3-b1へ
+# ========================================
+
+# Scene1-3-b1
+
+# ========================================
+# ●シーン1-3-b1
+# ========================================
+
+@back 19_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_22_1
+
+@print （もしかして、何かの手がかりじゃ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマは夢中で掘り進めた。<br>しばらくして出て来たのは、小さな黒い固まりだった。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Default
+
+@print なんだろう、これ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# カチリという音
+@sfx Sfx_92
+
+@print エマがそっと手に取った瞬間、<br>塊から小さな音がして。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive
+
+@print えっ……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# 爆発音
+@sfx Sfx_93
+
+@print "地を揺らすほどの<ruby=\"ごうおん\">轟音</ruby>の後、<br>その場に残ったのは――" { speed:1 waitInput:true Wait:true }
+
+@back SolidColor
+
+@print "木っ端<ruby=\"みじん\">微塵</ruby>になった『エマだったもの』だけだった。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 『END～きぼう～』
+# ========================================
+
+@badEnd 11

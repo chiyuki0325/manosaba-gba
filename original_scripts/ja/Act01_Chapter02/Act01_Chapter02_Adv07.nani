@@ -1,0 +1,43 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-2-7
+
+# ========================================
+# ●シーン1‐2-7
+# ========================================
+
+@back 1_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_19_1
+
+@print 数日が経過した。<br>エマたちの脱獄計画は順調に進んでいる。 { speed:1 waitInput:true Wait:true }
+
+@print （後はもう、アリサちゃんさえ説得できれば……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_1
+
+@print エマは起き上がり、<br>今日もアリサを捜索することを決めていた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print （毎日説得は続けてるんだけど……<br>　なかなか手ごわい） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print アリサは脱獄に消極的なわけではない。<br>協力自体をそこまで嫌がっている風でもない。 { speed:1 waitInput:true Wait:true }
+
+@print （アリサちゃんは――<br>　大事なところを任されるのを怖がってる……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR1
+
+@print （でも、今日こそアリサちゃんを説得するんだ！<br>　あとできれば、ナノカちゃんも見つけたい！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 限られた自由時間の中で、<br>エマは奔走する。 { speed:1 waitInput:true Wait:true }
+
+@set "chosenAreaFlag = 0"
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter02/Act01_Chapter02_Adv08

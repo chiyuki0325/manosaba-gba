@@ -1,0 +1,433 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-1-22
+
+# ========================================
+# ●シーン1-1‐22
+# [back 2]
+# ========================================
+
+# ========================================
+# ＞『死体現場』を選択
+# ========================================
+
+# ========================================
+# [bgm Bgm_021_001_Loop]
+# ========================================
+
+@back 2_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+@bgm Bgm_21_1
+
+@print "エマたち一行は、<br>何より証拠を<ruby=\"え\">得</ruby>られそうな死体のある現場へと向かった。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+
+@print エマの足取りは重たい。<br>ノアの死体を直視したくない、という気持ちが大きいのだろう。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Smile1
+
+@print そんな中、シェリーはスキップしている。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Normal1
+
+@print ちょっとあなた、神経どうかしてるんじゃありません？<br>よくスキップなんかできますわね。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Surprised1
+
+@print ええっ、私気遣いの子ですよぉ？<br>学校でも、みんなが避けてるの察知して距離あけてましたもん。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ナチュラルにハブられてません？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1
+
+@print そんなことないですって！<br>みんな【妖精さん】って親しみを込めて呼んでくれてました！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print それ絶対良い意味じゃないですわ。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （こんな時だけど……<br>　ハンナちゃんが少し元気を取り戻してくれて良かった） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ２人のやり取りを横目に、エマはホッとしていた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print そういえば昨夜、<br>ノアちゃんの部屋付近で、アリサちゃんを見かけたよね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ふとエマが口にしたことで、<br>シェリーが興味深げに身を乗り出した。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+
+@print アリサさんは私と同室です。私たちは一番手前の部屋なので、<br>奥に行く用事でもあったのでしょうか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna.Normal1
+
+@print なんだか慌ててる様子にも見えましたわね……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+
+@print う、うん。だからボクも、変だなって。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1
+
+@print とっても気になりますね～！<br>それはぜひ、アリサさんに話を聞いてみたいですっ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print （アリサちゃんが、ノアちゃんを……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマはすぐに首を横に振った。 { speed:1 waitInput:true Wait:true }
+
+@print （決めつけはよくないよね。<br>　できるだけ調査しよう） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 話しているうちに、<br>エマたち一行はノアの房の前へと舞い戻ってきた。 { speed:1 waitInput:true Wait:true }
+
+@print （ノアちゃん……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "調べるためにはしっかりと観察しなければいけない。<br>エマは涙を<ruby=\"こら\">堪</ruby>え、ノアの房を見た。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [still illust 27]
+# ========================================
+
+@back 270_2 { Scale:{g_backgroundDefaultScale} }
+
+@print 冷たくなって、動かないノアの遺体は<br>房内の中央に倒れている。 { speed:1 waitInput:true Wait:true }
+
+@hide Stills
+@back 2_1 { Scale:{g_backgroundDefaultScale} }
+
+@char Sherry.Normal1
+@char Hanna.Normal1
+@char Ema.Pensive1
+
+@print うーん、中に入れないのが辛いですね……<br>とりあえず現場の写真を撮っておきましょうか。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print シェリーがスマホを取り出し、<br>房内の撮影をはじめた。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [sfx 28：写真撮影音]
+# ========================================
+
+@sfx Sfx_28
+
+@print こんな残酷なものを撮影しようなんて<br>よく思えますわね……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1
+
+@print 捜査の基本ですから！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print シェリーは胸を張ってから、ふと思いついたのか<br>人差し指をぴんと立てた。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+
+@print そういえば、私たちチャットアプリの<br>お友だち登録していませんでしたよね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print このアプリでお友だち登録すれば、<br>チャットだけじゃなくて通話も可能になりますし、<br>画像を送りあうこともできるんですよ。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print へぇ、そうなんだ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print わたくしたちが普段使っているチャットツールと同じですわね。<br>それなら……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 慣れた様子でシェリーとハンナが友だち登録をさっさと終えて、<br>エマの方へと向き直る。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Flushed1
+@char Hanna.Normal1
+@char Sherry.Normal1
+
+@print あ、え、えっと……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （どうしよう、やり方がわからない……<br>　ボク、もともと持ってた自分のスマホも<br>　友だち０人だったし……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print もたつき、冷や汗をかきながら<br>シェリーとハンナに教えてもらって<br>エマはなんとか友だち登録を終える。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Flushed1
+@char Hanna.Normal1
+@char Sherry.Smile1
+
+@print これで私とエマさん、ハンナさんは<br>いつでも連絡が取り合えます！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print う、うん。メルルちゃんとも後で繋がっておかなきゃね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# ========================================
+# [sfx 29：スマホ通知音]
+# ========================================
+
+@sfx Sfx_29
+
+@print 早速シェリーが、エマたちのスマホに<br>画像を送る。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 証拠品：『フルーツ盛り合わせの写真』入手
+# ========================================
+
+@ResetText 
+@spawn Clue
+@toast "魔女図鑑 更新…"
+@update 1-6
+@Wait i1.2
+
+@despawn Clue
+@Wait 0.6
+
+# ========================================
+# 証拠品：『殺害現場の写真』入手
+# ========================================
+
+@spawn Clue
+@toast "魔女図鑑 更新…"
+@update 1-8
+@Wait i1.2
+
+@despawn Clue
+@Wait 0.6
+
+@char Ema.Normal1
+@char Sherry.Smile1
+@char Hanna.Normal1
+
+@print このフルーツの写真は……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ああそれは昨日撮ったんです！<br>なんとなく記念になるかなって！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print なんの記念ですの……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@back 270_2 { Scale:{g_backgroundDefaultScale} }
+
+@print 画像のやり取りを終え、<br>３人は実際の死体現場の観察を続ける。 { speed:1 waitInput:true Wait:true }
+
+@print 床が真っ白に塗られているのは、<br>ノアさんがスプレーを使用したからですよね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print うん、ノアちゃんは新しくまた何かを描くって言ってた。<br>そのために一旦、白くしたんじゃないかな。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマは念のため、<ruby=\"てつごうし\">鉄格子</ruby>に手を差し入れ、<br>届く範囲の白い塗料を触ってみる。" { speed:1 waitInput:true Wait:true }
+
+@print （既に乾いてる。<br>　やっぱり昨夜のうちに、ノアちゃんが塗ったんだ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print それにしてもこれは足跡がついたら一目瞭然ですね。<br>そしてノアさんの周辺に足跡はなし、と。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 宙に浮き上がってノアさんに近付かないと、<br>殺せませんね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print …………。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"てつごうし\">鉄格子</ruby>で中が見えるとはいえ、<br>その隙間は手を通せる程度でしかない。" { speed:1 waitInput:true Wait:true }
+
+@print そしてノアの遺体は室内中央にある。<br>近付かないと殺害は無理だと思われた。 { speed:1 waitInput:true Wait:true }
+
+@print で、でもさ、中に入らずに殺したのかもよ。<br>あ、ほら、見て！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@camera { time:0.9 }
+@Wait 0.9
+
+@print エマが指さしたのは、<br>ノアの遺体の近くに落ちている短い矢だった。 { speed:1 waitInput:true Wait:true }
+
+@print これって、ボウガンの矢じゃないですか！？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [sfx 28：写真撮影音]
+# ========================================
+
+@sfx Sfx_28
+
+# ========================================
+# 証拠品：『ボウガンの矢』入手
+# ========================================
+
+@ResetText 
+@spawn Clue
+@toast "魔女図鑑 更新…"
+@update 1-10
+@Wait i1.2
+
+@print ノアちゃんは、ボウガンを胸に撃たれて死んだ……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print その可能性は高いですね！<br>それなら、中に入らず犯行に及べますし。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Clue
+@Wait 0.6
+
+@print （ラウンジのボウガンは誰かに盗まれてた……。<br>　誰かがノアちゃんを殺すために持ち出したのかも） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （他に気になることは……やっぱり……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@camera { time:0.9 }
+@Wait 0.9
+
+@print 真っ白なキャンバスのような部屋で、<br>ノアから排出された血の赤が、アートのようになっている。 { speed:1 waitInput:true Wait:true }
+
+@print （蝶の絵――これはどうして、こうなったんだろう？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （何かの意味があるかもしれない。撮影しておこう） { author:Ema speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [sfx 28：写真撮影音]
+# ========================================
+
+@sfx Sfx_28
+
+# ========================================
+# 証拠品：『ダイイングメッセージ？』入手
+# ========================================
+
+@ResetText 
+@spawn Clue
+@toast "魔女図鑑 更新…"
+@update 1-11
+@Wait i1.2
+
+@print あなたたち、よくそんなじろじろと見られますわね……。<br>わたくし気分が悪ぃですわ……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print （いや、ボクもいっぱいいっぱいだよ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマは喉に込み上げるものを<ruby=\"こら\">堪</ruby>え、<br>首を振った。そこでハッと表情を硬くした。" { speed:1 waitInput:true Wait:true }
+
+@print 血のにおいがしない。ううん、スプレーの刺激臭で、<br>消えちゃってるんだ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Clue
+@Wait 0.6
+
+@print ノアは狭い房内で、<br>常にカラースプレーを噴射し続けていた。 { speed:1 waitInput:true Wait:true }
+
+@print 今も尚、房内にはスプレーの刺激臭が満ちている。 { speed:1 waitInput:true Wait:true }
+
+@print エマはノアの脇に転がるカラースプレーも、<br>ズームして撮影した。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [sfx 28：写真撮影音]
+# ========================================
+
+@sfx Sfx_28
+
+# ========================================
+# 証拠品：『カラースプレー』入手
+# ========================================
+
+@ResetText 
+@spawn Clue
+@toast "魔女図鑑 更新…"
+@update 1-5
+@Wait i1.2
+
+@despawn Clue
+@Wait 0.6
+
+@print これで気付いたことは全部でしょうか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print う、うん。たぶんこれ以上見ても――。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print あの、気のせいかもしれませんけど、<br>床にひっかき傷みたいなものがありません？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print ハンナが嫌そうに指さした先に、<br>エマ、シェリーも注目する。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@camera { time:0.9 }
+@Wait 0.9
+
+@print （本当だ……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"かす\">微</ruby>かなものだが、<br>白い塗料に一部傷が入っているように見えた。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [sfx 28：写真撮影音]
+# ========================================
+
+@sfx Sfx_28
+
+@ResetText 
+@spawn Clue
+@toast "魔女図鑑 更新…"
+@update 1-9
+@Wait i1.2
+
+@despawn Clue
+@Wait 0.6
+
+# ========================================
+# 証拠品：『床の傷跡』入手
+# ========================================
+
+@ResetText 
+@camera { time:0.9 }
+@Wait 0.9
+
+@print 気のせいかもしれないけど、<br>何か意味があるかもしれないよね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "そうですね！ 全てを疑うのは探偵の鉄則ですから！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [hideStill]
+# ========================================
+
+# ========================================
+# [back 2]
+# ========================================
+
+@hide Stills
+@back 2_1 { Scale:{g_backgroundDefaultScale} }
+
+@char Sherry.Normal1
+
+@print では、他のところも捜査しに行きましょう。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "シェリーは歩き始めたが、<br>エマは立ち止まり、通路脇に目を<ruby=\"とど\">留</ruby>めた。" { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@camera { time:0.9 }
+@Wait 0.9
+
+@print ――地下通路の脇に置いてあるバケツ。 { speed:1 waitInput:true Wait:true }
+
+@print "エマが中を<ruby=\"のぞ\">覗</ruby>く。" { speed:1 waitInput:true Wait:true }
+
+@print するとそこには、<br>バラバラに解体された機械のパーツのようなものが<br>昨日のまま入っていた。 { speed:1 waitInput:true Wait:true }
+
+@print （昨日はそこまで気にしなかったけど、<br>　これも何か意味があるのかもしれない） { author:Ema speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 証拠品：『機械のパーツ』入手
+# ========================================
+
+@ResetText 
+@spawn Clue
+@toast "魔女図鑑 更新…"
+@update 1-1
+@Wait i1.2
+
+@despawn Clue
+@Wait 0.6
+
+@camera { time:0.9 }
+@Wait 0.9
+
+@print エマたちはひととおりの捜査を終えて、<br>殺害現場を後にした。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン1‐1‐21
+# 全てのイベントを消化している＞シーン1‐1‐30
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter01/Act01_Chapter01_Adv25

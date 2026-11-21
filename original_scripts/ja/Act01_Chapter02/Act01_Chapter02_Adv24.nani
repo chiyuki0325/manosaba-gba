@@ -1,0 +1,112 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-2-24
+
+# ========================================
+# ●シーン1‐2-24
+# ========================================
+
+@back 30_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# ========================================
+# ＞『シャワールーム』を選択
+# ========================================
+
+@bgm Bgm_5_1
+
+@print エマがシャワールームに行こうと思ったのは、<br>水場を探してのことだった。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print （犯人はミリアちゃんを刺して、<br>　返り血を浴びたはず） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （もしそこまで汚れなくて済んでも、<br>　絶対に手には付着する） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （血を洗わなきゃいけないだろうし、<br>　そうなるとシャワールームを使用したんじゃ――） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマが中に入っていくと、<br>アリサも同様の推理をしていたのか、<br>シャワールームのロッカーを見回っていた。 { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1,Option-ArmL-Off
+
+@print ああ桜羽、ちょうど良かった。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print アリサはエマに気付き、歩み寄る。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR1
+@char Alisa.Normal1,Option-ArmL-Off
+
+@print 囚人のロッカーをひととおり見たんだ。<br>そしたらほら、これ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+# ==============================================================================
+# ☆証拠品：『桜羽エマのスマホ』入手
+# ==============================================================================
+@spawn Clue
+@update 2-7
+@despawn Clue
+
+@char Ema.Surprised1
+
+@print あれ、ボクのスマホ……！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print おめえさ、シャワー浴びた時に忘れてったろ。<br>桜羽のロッカーに入ってた。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print う、うん。そうかも。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 気をつけろよ。着てる服に入れたままにしたら、<br>なくしちまうとこだった。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print シャワールームのロッカーには、<br>毎日新品の囚人服と下着が入っている。 { speed:1 waitInput:true Wait:true }
+
+@print 着ていたものは、<br>ダストシュートに捨てることになっている。 { speed:1 waitInput:true Wait:true }
+
+@print （危なかった……服は燃やされちゃうんだっけ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1,Option-ArmL-Off
+
+@print ちなみに、囚人のロッカーは全部見たけど、<br>今日は全員入ったんだろうな。<br>佐伯のロッカー以外はみんな空っぽだった。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Normal1,ArmR3
+
+@print そっか……それ以外に、特に何も見つからなかった？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print アリサは悔しそうに首を振る。 { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Pensive1,Option-ArmL-Off,ArmL4
+
+@print なんもねーよ……クソッ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,Option-ArmL-Off,ArmL4
+
+@print ウチはバカだから、犯人なんてわかんねーよ！<br>なんでウチたちが探さなきゃいけねえんだよ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print こんなの、いがみ合うだけじゃねーか！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "悲痛な叫びに、エマはぎゅっと唇を<ruby=\"か\">噛</ruby>んだ。" { speed:1 waitInput:true Wait:true }
+
+@print （アリサちゃんの言うとおりだ……<br>　なんで誰かを疑わなくちゃいけないの……？<br>　そんなの、間違ってるよ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 荒れているアリサにそれ以上声をかけられず、<br>エマはシャワールームを後にした。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン1‐2‐19
+# 全てのイベントを消化している＞シーン1‐2‐26
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter02/Act01_Chapter02_Adv19

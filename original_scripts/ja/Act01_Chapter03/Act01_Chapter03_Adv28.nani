@@ -1,0 +1,138 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-3-28
+
+# ========================================
+# ●シーン１‐3‐28
+# ========================================
+
+@back 1_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# 1シーン丸々無音は長いのでBGM
+@bgm Bgm_42_1
+
+@print その晩、エマはふらふらとした足取りで、<br>ハンナの監房を訪れた。 { speed:1 waitInput:true Wait:true }
+
+@print 同室のココはおらず、<br>代わりに、メルルがそこにいた。 { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Pensive
+
+@print ……エマさんも、来たんですね。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print メルルはハンナのベッドの上に、<br>降ろしてやったのだろう、<br>少女たちの人形を並べていた。 { speed:1 waitInput:true Wait:true }
+
+@print それはハンナが手作りしたものだ。 { speed:1 waitInput:true Wait:true }
+
+@print メルルのお人形。<br>シェリーのお人形。<br>ハンナのお人形。 { speed:1 waitInput:true Wait:true }
+
+@print エマは、自身の人形をその隣に並べて置く。 { speed:1 waitInput:true Wait:true }
+
+@print "エマは胸にぎゅっと手を当てて、<br>あたたかで<ruby=\"ほの\">仄</ruby>かな光を感じ取っていた。" { speed:1 waitInput:true Wait:true }
+
+@print あまりに小さくて、<br>今にも消えてしまいそうな希望の光。 { speed:1 waitInput:true Wait:true }
+
+@print ハンナと、シェリーが遺してくれたもの。 { speed:1 waitInput:true Wait:true }
+
+@print （ボクらは、たしかに友だちだった――） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ハンナとのちょっとしたやり取りが思い出される。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ◎シーン1‐3‐9の回想シーン（流用）
+# ========================================
+
+@HidePrinter 
+@back SolidColor { time:0 }
+@Wait 0.5
+
+@back 2_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@char Hanna.Normal1
+@char Ema.Pensive1
+@WaitForNextFrame 
+
+@blur MainBackground
+@blur Ema
+@back Transparent { time:0.9 }
+
+@print その……エマさんが少しでも<br>元気になるように、プレゼントを作っていますの。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print エマさん、最近寝込んでいましたし、<br>お見舞いにもなるかなと……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 視線を逸らし、気まずそうにしながら<br>ハンナが言ってくる。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@char Ema.Normal1
+@blur Hanna
+@blur Ema
+@Wait 0.3
+
+@print プレゼント……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@char Hanna.Surprised1
+@blur Ema
+@blur Hanna
+@Wait 0.3
+
+@print 騒がなくってもよろしくてよ！？<br>ぜんぜん大したものじゃありませんから！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 回想ここまで
+# ========================================
+
+@HidePrinter 
+@back SolidColor { time:0 }
+@Wait 0.5
+
+@blur Ema
+@blur MainBackground
+@hideChars 
+
+@back 1_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.9 }
+
+@char Ema.Pensive1,ArmR3
+
+@print 大したものだよ……<br>こんなにたくさんのお人形……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ずっとボクらを元気づけるために、<br>作っていたんだから。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Meruru.Pensive
+
+@print エマさん……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print メルルの手がそっとエマの肩に触れて、<br>これまで堪えていたものがぷつりと切れる。 { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆号泣
+
+@print うわあああああああん！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# ＠備考◆号泣
+
+@print ああああっ、ああああああん！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマはメルルにすがりつき、<br>子供のように泣きじゃくった。 { speed:1 waitInput:true Wait:true }
+
+@print "メルルは背中を<ruby=\"な\">撫</ruby>でてくれていた。<br>いつまでも、いつまでも。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 次話への引継ぎアイテム：『万年筆』、『牢屋敷設計図』
+# 『過去の囚人からの手紙』
+# ========================================
+
+# ========================================
+# ＞魔女裁判 第1章4話へ
+# ========================================
+
+@set "g_gameProgress = max(4, g_gameProgress)"
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter04/Act01_Chapter04_Adv01

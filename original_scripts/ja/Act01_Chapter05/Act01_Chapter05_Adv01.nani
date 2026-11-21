@@ -1,0 +1,124 @@
+@gosubResetBook System/System_ResetWitchBook
+@Gosub System/System_Subroutine.BeginAdv
+
+# ========================================
+# 魔法少女ノ魔女裁判 第1章5話
+# ========================================
+# 4話からの引き継ぎアイテム
+@update 5-15
+@update 5-16
+@update 5-17
+@update 5-18
+
+# Scene1-5-1
+
+# ========================================
+# ●シーン1‐5-1
+# ========================================
+
+@back 9_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_26_1
+
+@print 裁判所を出て、<br>エマは詰めていた息を大きく吐き出す。 { speed:1 waitInput:true Wait:true }
+
+@print 隣には、ココがげんなりした表情を浮かべていた。 { speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1
+
+@print マジびびった…なんでナノカが死んで出てきたのか、<br>もうわけわかんねーし……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1,ArmR3,ArmL2
+
+@print まあでも、エマっちにとってはありがたい展開だよなぁ。<br>首の皮１枚繋がって良かったじゃん。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print …………。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （ナノカちゃんが殺されてて、良かったわけなんて……ない） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （でも、たしかにボクは、自分が生き延びるために、<br>　ナノカちゃんの死を利用した……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ――処刑台からナノカの死体が出てきたことで、<br>エマは必死になってゴクチョーを説き伏せた。 { speed:1 waitInput:true Wait:true }
+
+@print 自分は重要な証人である、<br>ナノカの事件の真相が明らかになる前に<br>処刑は行うべきではない、と。 { speed:1 waitInput:true Wait:true }
+
+@print 結果、ゴクチョーは再び魔女裁判を行うことを渋々承諾し、<br>短時間の捜査も許された。 { speed:1 waitInput:true Wait:true }
+
+@print 次の裁判まで捜査に許された時間は、<br>たった１時間。 { speed:1 waitInput:true Wait:true }
+
+@print （ボクに残された時間は、あまりにも少ない……。<br>　処刑されなくても、このままじゃボクは……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "心の中に闇が膨らんでいく感覚で、<br>エマはひどい<ruby=\"めまい\">目眩</ruby>に襲われていた。" { speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1,ArmR2,ArmL2
+
+@print エマっち今にもぶっ倒れそうじゃん……。<br>そんなんで捜査なんてできるん？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+
+@print ……無理でもやらなきゃ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Pensive1,ArmR2,ArmL2
+
+@print はぁ……エマっちにはりきられると、<br>付き合うあてぃしも疲れるんですがー。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print （ついてこなくていい、とは言えないよね……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ココと行動を共にしているのには、<br>理由があった。 { speed:1 waitInput:true Wait:true }
+
+@print 今回は特例ということで、<br>ゴクチョーから色々条件を出されてしまったのだ。 { speed:1 waitInput:true Wait:true }
+
+@print 死体の証拠保全のために、<br>２人は裁判所に残ってほしいということ。 { speed:1 waitInput:true Wait:true }
+
+@print エマが捜査に出る場合は、<br>誰かと一緒に行動すること。 { speed:1 waitInput:true Wait:true }
+
+@print 少女たちは気まずい空気の中でざっと話し合い、<br>証拠保全のためにその場に残るのはマーゴとメルル、<br>エマに同行するのはココということになった。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print 時間がないし、<br>すぐに捜査をはじめよう。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 早足で歩きだしたエマに、<br>ココはだるそうについていく。 { speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1,ArmR1,ArmL1
+
+# ＠備考◆気まずそうに
+
+@print ……あんさぁ、もしエマっちが逃げたら、<br>あてぃしは容赦なくゴクチョーに知らせっからな。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print （……ココちゃんはアリサちゃんの殺害の犯人、<br>　そしてきっとナノカちゃんを殺したのも<br>　ボクだと思ってるんだろうな……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print うん、それでいいよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマが首だけ振り向かせて口にすると、<br>気まずそうに視線を逸らされてしまった。 { speed:1 waitInput:true Wait:true }
+
+@print （もうボクには誰にも……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 皆がエマから背を向け、<br>ひとりぼっちにされると予感した時から。 { speed:1 waitInput:true Wait:true }
+
+@print "――エマの中で、何かが<ruby=\"うごめ\">蠢</ruby>いている。" { speed:1 waitInput:true Wait:true }
+
+@print エマは強く首を振って、<br>懸命に心の中に宿らせた光をたどる。<br>これまで紡いできた少女たちとの絆を確認する。 { speed:1 waitInput:true Wait:true }
+
+@print （ボクはひとりじゃない） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 深呼吸をすると意識がはっきりしてきて、<br>しっかりと前を見据えることができた。 { speed:1 waitInput:true Wait:true }
+
+@print エマは今度こそ力強く、<br>捜査へと足を踏みだす。 { speed:1 waitInput:true Wait:true }
+
+@set "chosenAreaFlag = 0"
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter05/Act01_Chapter05_Adv02

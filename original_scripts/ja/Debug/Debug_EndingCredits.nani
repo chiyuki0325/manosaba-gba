@@ -1,0 +1,60 @@
+@Gosub System/System_Subroutine.BeginAdv
+
+# @gosub .Act1
+@Gosub .Act2
+
+@Stop 
+
+# ==============================================================================
+# 第 1 章
+# ==============================================================================
+
+# Act1
+
+@print "Debug_EndingCredits # Act1" { speed:1 waitInput:true Wait:true }
+
+@ProcessInput false
+@ResetText 
+@HidePrinter 
+@back SolidColor { time:0 }
+@back Transparent { time:0 }
+@credit 1
+@Stop 
+
+# ReverseCredits1
+
+@Stop 
+
+# EndCredits1
+
+@hideCredit 
+@ProcessInput true
+
+@print "Debug_EndingCredits # Act1 ends." { speed:1 waitInput:true Wait:true }
+
+@Return 
+
+# ==============================================================================
+# 第 2 章
+# ==============================================================================
+
+# Act2
+
+@print "Debug_EndingCredits # Act2" { speed:1 waitInput:true Wait:true }
+
+@ProcessInput false
+@ResetText 
+@HidePrinter 
+@back SolidColor { time:0 }
+@back Transparent { time:0 }
+@credit 2
+@Stop 
+
+# EndCredits2
+
+@hideCredit 
+@ProcessInput true
+
+@print "Debug_EndingCredits # Act2 ends." { speed:1 waitInput:true Wait:true }
+
+@Return

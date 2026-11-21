@@ -1,0 +1,203 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-1-12
+
+# ========================================
+# ●シーン2‐1-12
+# ========================================
+
+@back 9_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent.Custom { time:0.99 }
+@Wait 0.9
+
+# ========================================
+# ＞『？？？』を選択
+# ========================================
+
+@bgm Bgm_5_1
+
+@print "牢屋敷の２階を見回っていると、<br>不自然な<ruby=\"かしょ\">箇所</ruby>を見つけた。" { speed:1 waitInput:true Wait:true }
+
+@print マップ上、明らかに向こう側に部屋があるのに、<br>入るための扉が見当たらないのだ。 { speed:1 waitInput:true Wait:true }
+
+@print 一面が壁になっている。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print この部屋には扉がないな……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Normal1
+
+@print 魔法で消されちゃったのかな？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@print （……否定できないな。図書室の大木といい、<br>　外には常に虹がかかった花畑もあった） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （この監獄には不可思議なところがあまりに多い。<br>　受け入れざるを得ないか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print んー。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print ノアは少し考え込むような素振りを見せ、<br>それからカラースプレーを取り出した。 { speed:1 waitInput:true Wait:true }
+
+@print ノア、何を――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Normal1,ArmL5
+
+# カラースプレー噴出音
+@sfx Sfx_15
+
+@print 止める間もなく、<br>ノアはあっという間に壁に扉を描いてしまった。 { speed:1 waitInput:true Wait:true }
+
+@char Noah.Smile1,ArmL1
+
+@print "じゃーん！ ないから描いてみたよ！" { author:Noah speed:1 waitInput:true Wait:true }
+
+@print じゃーん、ではないだろう。<br>こんなところに落書きしたところで――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "落書きとは言い<ruby=\"がた\">難</ruby>いほど、<br><ruby=\"せいち\">精緻</ruby>に描かれた扉だった。" { speed:1 waitInput:true Wait:true }
+
+@print "あまりにリアルで、<br>ノアの画力が<ruby=\"すさ\">凄</ruby>まじいことを悟った。" { speed:1 waitInput:true Wait:true }
+
+@print すると、その扉が―― { speed:1 waitInput:true Wait:true }
+
+# 木の扉を開く音
+@sfx Sfx_22
+
+@char Hiro.Surprised1
+@char Noah.Surprised1
+
+@print 自然に開いていった。 { speed:1 waitInput:true Wait:true }
+
+@print "えー！？ 本当に開いた！ えー！？" { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print ……君の魔法が、何か牢屋敷の不可思議に干渉し、<br>うまく作用したようだな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Surprised1
+
+@print う、うん。のあもびっくり。<br>絵は描けるんだけど、本物になったことはなかったもん。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Pensive1
+
+@print 実はのあ、<br>他のところでもやったことあるんだけど、<br>それは本物の扉にはならなかったよ？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@print （となると、この部屋に入れるようになっただけか。<br>　とはいえ、入れない部屋に入れるようになったのは<br>　重要なことかもしれない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 私たちは戸惑いながらも、<br>ノアの描いた扉を抜け、中へと足を踏み入れていった。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+@back 29_1 { Scale:{g_backgroundDefaultScale} }
+@back Transparent.Custom { time:0.99 }
+@Wait 0.9
+
+@print 床に置かれたキャンバスや、<br>散らばったたくさんのスケッチ。 { speed:1 waitInput:true Wait:true }
+
+@print "木製のテーブルの上には雑然とパレットや筆があり、<br>ところどころに飛び散った絵具の<ruby=\"こんせき\">痕跡</ruby>……" { speed:1 waitInput:true Wait:true }
+
+@char Noah.Smile1
+
+# ＠備考◆感動
+
+@print わあ……！！ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Smile1
+@Wait 0.3
+
+@print 中はまさにノアの望んでいるかのような、<br>アトリエのような部屋になっていた。 { speed:1 waitInput:true Wait:true }
+
+@char Noah.Smile1
+@Wait 0.3
+
+@print お絵描きするための場所だあ！<br>のあ、ここでお絵描きしてもいいよね！？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+
+@print あ、ああそうだな。<br>ここなら存分に芸術活動が楽しめそうだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 空気に乾いた絵具の香りと、<br>少し古びた木のにおいが混ざり合う。 { speed:1 waitInput:true Wait:true }
+
+@print 奥には中庭を見下ろせるベランダもあった。 { speed:1 waitInput:true Wait:true }
+
+@EmoteJumpDouble Noah
+
+@print すっごい場所見つけちゃった！<br>わーい、わーい！ { author:Noah speed:1 waitInput:true Wait:true }
+
+@print "無邪気に跳ね回っているノアを見ていると、<br>私もふっと<ruby=\"ほお\">頬</ruby>が<ruby=\"ほころ\">綻</ruby>ぶ。" { speed:1 waitInput:true Wait:true }
+
+@print ひととおり見て回ったが、<br>特に重要な場所とも思えなかった。 { speed:1 waitInput:true Wait:true }
+
+@print （となると、ノアの魔法がうまく作用して扉ができたように、<br>　誰かの魔法で扉が消されてしまっただけか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 時間経過
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@hideChars 
+
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@print しばらく私たちがアトリエで過ごしていると、<br>やがて他の少女たちも、<br>この部屋の存在に気付いたようだった。 { speed:1 waitInput:true Wait:true }
+
+@print 多くの少女たちがアトリエにやってきた。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1
+
+@print やあこれはこれは……<br>ノアくん、いい場所を見つけたね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Noah.Smile1
+
+@print うん！<br>ここを【ノアのアトリエ】と名付けます！ { author:Noah speed:1 waitInput:true Wait:true }
+
+# ========================================
+# マップの『？？？』を『ノアのアトリエ』に変更
+# ========================================
+
+@toast "魔女図鑑 更新…"
+@update F2
+
+@hideChars 
+@char Hanna.Smile1
+
+@print ここは作業するにはうってつけですわ～！<br>わたくしも使わせてもらいますわね！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Miria.Smile1
+
+@print いい雰囲気のところだねえ。<br>ベランダからの眺めもいいし、いやあ落ち着くなあ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print 娯楽室の映画もいいけど、<br>ここにもたまに来てもいいかい？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Noah.Smile1
+
+@print もちろんいいよ～！ { author:Noah speed:1 waitInput:true Wait:true }
+
+@print （別にノア専用の部屋ではないんだが……<br>　まあノアが開けたのだし、いいか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "入れ替わり立ち替わり少女たちがやってきては、<br><ruby=\"なご\">和</ruby>んで去っていく。" { speed:1 waitInput:true Wait:true }
+
+@print 私もまた、<br>久々に息苦しさから解放されていた。 { speed:1 waitInput:true Wait:true }
+
+@print （本当にいい場所を見つけたのかもしれないな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン2‐1‐7
+# 全てのイベントを消化している＞シーン2‐1‐13
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter01/Act02_Chapter01_Adv12

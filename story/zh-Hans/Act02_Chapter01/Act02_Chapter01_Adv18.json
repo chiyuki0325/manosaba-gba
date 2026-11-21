@@ -1,0 +1,43 @@
+{
+  "format": "manosaba.story",
+  "version": 1,
+  "language": "zh-Hans",
+  "path": "Act02_Chapter01/Act02_Chapter01_Adv18",
+  "events": [
+    {"op": "GosubResetWitchBook", "line": 1, "indent": 0, "params": {"Path": "System/System_ResetWitchBook", "IsDebugDirectJump": {"expression": "{isDebugDirectJump}"}}},
+    {"op": "Gosub", "line": 2, "indent": 0, "params": {"Path": "System/System_Subroutine.BeginAdv"}},
+    {"op": "label", "name": "Scene2-1-13", "line": 4, "indent": 0},
+    {"op": "ModifyBackgroundExtended", "line": 10, "indent": 0, "params": {"Scale": {"expression": "{g_backgroundDefaultScale}"}, "Duration": 0.0, "Lazy": 0, "AppearanceAndTransition": "1_1"}},
+    {"op": "ModifyBackgroundExtended", "line": 11, "indent": 0, "params": {"TintColor": "#000000", "Duration": 1.2000000476837158, "Lazy": 0, "AppearanceAndTransition": "Transparent", "SubId": "Overlay"}},
+    {"op": "Wait", "line": 12, "indent": 0, "params": {"WaitMode": "1.8"}},
+    {"op": "PlayBgm", "line": 14, "indent": 0, "params": {"BgmPath": "Bgm_6_1", "Volume": 1.0, "Loop": 1, "FadeInDuration": 0.0}},
+    {"op": "PlaySfxModified", "line": 17, "indent": 0, "params": {"SfxPath": "Sfx_111", "Volume": 1.0, "Loop": 0, "FadeInDuration": 0.0}},
+    {"op": "Wait", "line": 18, "indent": 0, "params": {"WaitMode": "1"}},
+    {"op": "PrintTextModified", "line": 20, "indent": 0, "params": {"Text": "——监牢生活第二轮，第四天。", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0201Adv18_Narrative001"]}},
+    {"op": "PrintTextModified", "line": 22, "indent": 0, "params": {"Text": "——到今天为止，<br>\n我获得了许多关于被囚禁在这座监牢中的少女们的<br>\n魔法的信息。", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0201Adv18_Narrative002"]}},
+    {"op": "PrintTextModified", "line": 24, "indent": 0, "params": {"Text": "——远野汉娜是【飘浮】。<br>\n——橘雪莉是【怪力】。<br>\n——城崎诺亚是【操纵液体】。", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0201Adv18_Narrative003"]}},
+    {"op": "PrintTextModified", "line": 26, "indent": 0, "params": {"Text": "——宝生玛格是【模仿】。<br>\n——冰上梅露露是【治愈】。<br>\n——夏目安安是【洗脑】。", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0201Adv18_Narrative004"]}},
+    {"op": "PrintTextModified", "line": 28, "indent": 0, "params": {"Text": "——紫藤亚里沙是【点火】。<br>\n——黑部奈叶香是【幻视】。<br>\n——佐伯米莉亚是【互换】。", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0201Adv18_Narrative005"]}},
+    {"op": "PrintTextModified", "line": 30, "indent": 0, "params": {"Text": "——泽渡可可是【千里眼】。", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0201Adv18_Narrative006"]}},
+    {"op": "PrintTextModified", "line": 32, "indent": 0, "params": {"Text": "——由于我认为独自手握这么多信息<br>\n，似乎对他人不太公平……", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0201Adv18_Narrative007"]}},
+    {"op": "PrintTextModified", "line": 34, "indent": 0, "params": {"Text": "——因此，我已经<br>\n将所有这些信息作为工作联络，<br>\n通过聊天APP分享给了其他少女们。", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0201Adv18_Narrative008"]}},
+    {"op": "PrintTextModified", "line": 36, "indent": 0, "params": {"Text": "——虽然有些魔法<br>\n我并没有亲眼目睹，<br>\n还不能确定可信度有多高。", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0201Adv18_Narrative009"]}},
+    {"op": "PrintTextModified", "line": 38, "indent": 0, "params": {"Text": "——但有一点令我在意的是……", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0201Adv18_Narrative010"]}},
+    {"op": "PrintTextModified", "line": 40, "indent": 0, "params": {"Text": "——樱羽艾玛的魔法是什么？", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0201Adv18_Narrative011"]}},
+    {"op": "Gosub", "line": 42, "indent": 0, "params": {"Path": "System/System_Subroutine.EndAdv"}},
+    {"op": "GotoModified", "line": 44, "indent": 0, "params": {"Path": "Act02_Chapter01/Act02_Chapter01_Adv19", "SoftReset": 1}}
+  ],
+  "translations": {
+  "0201Adv18_Narrative001": "——监牢生活第二轮，第四天。",
+  "0201Adv18_Narrative002": "——到今天为止，<br>\n我获得了许多关于被囚禁在这座监牢中的少女们的<br>\n魔法的信息。",
+  "0201Adv18_Narrative003": "——远野汉娜是【飘浮】。<br>\n——橘雪莉是【怪力】。<br>\n——城崎诺亚是【操纵液体】。",
+  "0201Adv18_Narrative004": "——宝生玛格是【模仿】。<br>\n——冰上梅露露是【治愈】。<br>\n——夏目安安是【洗脑】。",
+  "0201Adv18_Narrative005": "——紫藤亚里沙是【点火】。<br>\n——黑部奈叶香是【幻视】。<br>\n——佐伯米莉亚是【互换】。",
+  "0201Adv18_Narrative006": "——泽渡可可是【千里眼】。",
+  "0201Adv18_Narrative007": "——由于我认为独自手握这么多信息<br>\n，似乎对他人不太公平……",
+  "0201Adv18_Narrative008": "——因此，我已经<br>\n将所有这些信息作为工作联络，<br>\n通过聊天APP分享给了其他少女们。",
+  "0201Adv18_Narrative009": "——虽然有些魔法<br>\n我并没有亲眼目睹，<br>\n还不能确定可信度有多高。",
+  "0201Adv18_Narrative010": "——但有一点令我在意的是……",
+  "0201Adv18_Narrative011": "——樱羽艾玛的魔法是什么？"
+}
+}

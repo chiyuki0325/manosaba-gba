@@ -1,0 +1,145 @@
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-ex4
+
+@back 13_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.2
+
+@print ――少女たちを上手く魔女化に導けないまま、<br>時間だけが過ぎていく。 { speed:1 waitInput:true Wait:true }
+
+@print これではただいたずらに、<br>彼女たちを傷つけているだけだ。 { speed:1 waitInput:true Wait:true }
+
+@print どうする。どうすればいい？ { speed:1 waitInput:true Wait:true }
+
+@print 悩んだ末に私は…… { speed:1 waitInput:true Wait:true }
+
+@print 懐から、薬の入った瓶を取り出した。<br>儀礼剣と一緒にメルルに持ってこさせた、<br>【魔女を殺す薬】だ。 { speed:1 waitInput:true Wait:true }
+
+@print 念のため保険として用意していたが……<br>できれば使いたくはなかった。 { speed:1 waitInput:true Wait:true }
+
+@print 私は瓶の中身を、儀礼剣に振りかける。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Fearful1,ArmR5,ArmL7
+@print ヒロちゃん、何をやって……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# ========================================
+@bgm Bgm_29_1
+# ========================================
+
+# ========================================
+# グサッと刺さる音
+@sfx Sfx_86
+# ========================================
+
+@char Ema.Default,ArmR6,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Lifeless03,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open,Angle01/Head01/Facial01/Pale01>Pale01_03
+@print え……あっ……かはっ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマが驚きに目を見開く。 { speed:1 waitInput:true Wait:true }
+
+@print 私は薬を塗った儀礼剣で彼女の胸を刺し貫いていた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR6,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Lifeless03,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open,Angle01/Head01/Facial01/Pale01>Pale01_03
+@print ヒロちゃん……なんで……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 困惑。悲しみ。絶望。<br>様々な感情が、声と顔に現れている。<br>私はエマの胸から剣を引き抜く。 { speed:1 waitInput:true Wait:true }
+@hideChars 
+
+# ========================================
+# 倒れる音
+@sfx Sfx_19
+# ========================================
+
+@print 裁判所を赤く染め上げ、桜羽エマは絶命した。 { speed:1 waitInput:true Wait:true }
+
+@print 私の行動とエマの死に、少女たちはざわつく。 { speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.1
+@print （みんなを救うには、もう……<br>　殺すしかない） { author:Hiro speed:1 waitInput:true Wait:true }
+@hideChars 
+
+@print そうすれば、大魔女の呪いから解き放たれる。 { speed:1 waitInput:true Wait:true }
+
+@print 魔女化することもない。<br>自分を失い、なれはてと化し、<br>死ねない体で生き続ける苦しみに囚われずに済む。 { speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@print 私が……君たちを救う。 { author:Hiro speed:1 waitInput:true Wait:true }
+@hideChars 
+
+@print エマの血に塗れた剣を強く握る―― { speed:1 waitInput:true Wait:true }
+
+# ========================================
+@back SolidColor
+# ========================================
+
+# ========================================
+# ぐちゃっ、めきなど体を害する音
+@sfx Sfx_10
+# ========================================
+@back SolidColor
+
+@print ある少女は私に敵意を向け、罵倒した。 { speed:1 waitInput:true Wait:true }
+
+@print ある少女は、ただただ私に恐怖した。 { speed:1 waitInput:true Wait:true }
+
+@print ある少女は私こそが魔女だと言い放ち、抗った。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+@back 13_1
+# ========================================
+
+@print "<ruby=\"ほほ\">頬</ruby>を涙が伝う。" { speed:1 waitInput:true Wait:true }
+
+@print そこで初めて気付いた。<br>私は、心を痛めている。 { speed:1 waitInput:true Wait:true }
+
+@print でも、やり遂げた。<br>みんなを【救った】んだ。 { speed:1 waitInput:true Wait:true }
+
+@print そして私は……自らの禁を犯す。 { speed:1 waitInput:true Wait:true }
+
+@print 首に儀礼剣の刃を当てた。<br>手が震え、呼吸が荒くなる。 { speed:1 waitInput:true Wait:true }
+
+@print 大丈夫。これは【救い】なんだから。 { speed:1 waitInput:true Wait:true }
+
+@print 間違ってなんかいない。 { speed:1 waitInput:true Wait:true }
+
+@print ちゃんと自分で幕を引くことこそが正しい。 { speed:1 waitInput:true Wait:true }
+
+@print 覚悟を決めて、私は手を引いた。 { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# ========================================
+# ざんっと肉が切れる音
+@sfx Sfx_12
+# ========================================
+
+@print きっともう、私の魔法は発動しない。 { speed:1 waitInput:true Wait:true }
+
+@print 私は、本当の死を迎える―― { speed:1 waitInput:true Wait:true }
+
+# ========================================
+@back SolidColor
+# ========================================
+
+@char Warden.9
+@print 全員死んじゃいましたけど……<br>これ、あなた様の狙い通りだったりします？ { author:Warden speed:1 waitInput:true Wait:true }
+@hideChars 
+
+# @char Yuki.1 pos:50
+@print ふふ……さあ、どうでしょう？ { author:Yuki speed:1 waitInput:true Wait:true }
+# @char Yuki.19 pos:50
+@Wait 1.5
+@hideChars 
+
+# ========================================
+# 『END～儀式失敗～』
+# ========================================
+
+# @end
+
+@Gosub System/System_Subroutine.EndAdv
+
+@ClearBacklog 
+@ReturnToTitle { time:1.2000000476837158 delay:0.6000000238418579 }

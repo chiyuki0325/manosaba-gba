@@ -1,0 +1,1788 @@
+@ProcessInput false
+@trialMode false
+@HideUI ControlPanel,AutoToggle,WitchBookButtonUI
+@back SolidColor { time:0 }
+
+@back 1_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.5 }
+
+# Top
+
+@choice "第1章 第1話"
+	@goto .Act01_Chapter01
+
+@choice "第1章 第2話"
+	@goto .Act01_Chapter02
+
+@choice "第1章 第3話"
+	@goto .Act01_Chapter03
+
+@choice "第1章 第4話"
+	@goto .Act01_Chapter04
+
+@choice "第1章 第5話"
+	@goto .Act01_Chapter05
+
+@choice "第2章 第1話"
+	@goto .Act02_Chapter01
+
+@choice "第2章 第2話"
+	@goto .Act02_Chapter02
+
+@choice "第2章 第3話"
+	@goto .Act02_Chapter03
+
+@choice "第2章 第4話"
+	@goto .Act02_Chapter04
+
+@choice "第2章 第5話"
+	@goto .Act02_Chapter05
+
+@choice "第2章 第6話"
+	@goto .Act02_Chapter06
+
+@choice 共通
+	@goto .Common
+
+@choice サウンドテスト
+	@set "nextScenario=\"Debug/Debug_SoundTest\""
+	@goto .GoToChosenScenario
+
+@choice 戻る
+	@goto .ReturnToTitle
+
+@Stop 
+
+# Act01_Chapter01
+
+@choice "ADVパート シーン1"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Adv01\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン2"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Adv02\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン3"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Adv03\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン4"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Adv04\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン5"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Adv05\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン6"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Adv06\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン7"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Adv07\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン8"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Adv08\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン9"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Adv09\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン10"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Adv10\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン11"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Adv11\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン12"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Adv12\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン13"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Adv13\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン14"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Adv14\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン15"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Adv15\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン16"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Adv16\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン17"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Adv17\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン18"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Adv18\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン19"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Adv19\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン20"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Adv20\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン21"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Adv21\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン22"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Adv22\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン23"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Adv23\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン24"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Adv24\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン25"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Adv25\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン26"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Adv26\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン27"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Adv27\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン28"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Adv28\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン29"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Adv29\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン30"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Adv30\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン31"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Adv31\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン32"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Adv32\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン33"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Adv33\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン34"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Adv34\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン35"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Adv35\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン36"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Adv36\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート バッドエンド1"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Bad01\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート バッドエンド2"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Bad02\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート バッドエンド3"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Bad03\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート バッドエンド4"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Bad04\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート バッドエンド5"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Bad05\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート バッドエンド6"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Bad06\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート バッドエンド7"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Bad07\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート バッドエンド8"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Bad08\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 導入"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Trial00\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論1"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Trial01\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論2"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Trial02\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論3"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Trial03\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論4"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Trial04\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論5"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Trial05\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論6"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Trial06\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論7"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Trial07\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論8"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Trial08\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論9"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Trial09\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論10"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Trial10\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論11"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Trial11\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論12"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Trial12\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論13"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Trial13\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論14"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Trial14\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論15"
+	@set "nextScenario=\"Act01_Chapter01/Act01_Chapter01_Trial15\""
+	@goto .GoToChosenScenario
+
+@choice 戻る
+	@goto .Top
+
+@Stop 
+
+# Act01_Chapter02
+
+@choice "ADVパート シーン1"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Adv01\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン2"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Adv02\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン3"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Adv03\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン4"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Adv04\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン5"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Adv05\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン6"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Adv06\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン7"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Adv07\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン8"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Adv08\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン9"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Adv09\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン10"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Adv10\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン11"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Adv11\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン12"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Adv12\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン13"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Adv13\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン14"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Adv14\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン15"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Adv15\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン16"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Adv16\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン17"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Adv17\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン18"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Adv18\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン19"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Adv19\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン20"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Adv20\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン21"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Adv21\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン22"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Adv22\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン23"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Adv23\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン24"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Adv24\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン25"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Adv25\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン26"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Adv26\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン27"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Adv27\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン28"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Adv28\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン29"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Adv29\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート バッドエンド1"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Bad01\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート バッドエンド2"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Bad02\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 導入"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Trial00\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論1"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Trial01\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論2"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Trial02\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論3"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Trial03\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論4"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Trial04\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論5"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Trial05\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論6"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Trial06\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論7"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Trial07\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論8"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Trial08\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論9"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Trial09\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論10"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Trial10\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論11"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Trial11\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論12"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Trial12\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論13"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Trial13\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論14"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Trial14\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論15"
+	@set "nextScenario=\"Act01_Chapter02/Act01_Chapter02_Trial15\""
+	@goto .GoToChosenScenario
+
+@choice 戻る
+	@goto .Top
+
+@Stop 
+
+# Act01_Chapter03
+
+@choice "ADVパート シーン1"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Adv01\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン2"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Adv02\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン3"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Adv03\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン4"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Adv04\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン5"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Adv05\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン6"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Adv06\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン7"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Adv07\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン8"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Adv08\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン9"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Adv09\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン10"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Adv10\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン11"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Adv11\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン12"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Adv12\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン13"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Adv13\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン14"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Adv14\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン15"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Adv15\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン16"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Adv16\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン17"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Adv17\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン18"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Adv18\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン19"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Adv19\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン20"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Adv20\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン21"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Adv21\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン22"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Adv22\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン23"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Adv23\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン24"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Adv24\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン25"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Adv25\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン26"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Adv26\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン27"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Adv27\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン28"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Adv28\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート バッドエンド1"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Bad01\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート バッドエンド2"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Bad02\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 導入"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Trial00\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論1"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Trial01\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論2"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Trial02\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論3"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Trial03\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論4"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Trial04\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論5"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Trial05\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論6"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Trial06\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論7"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Trial07\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論8"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Trial08\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論9"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Trial09\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論10"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Trial10\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論11"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Trial11\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論12"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Trial12\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論13"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Trial13\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論14"
+	@set "nextScenario=\"Act01_Chapter03/Act01_Chapter03_Trial14\""
+	@goto .GoToChosenScenario
+
+@choice 戻る
+	@goto .Top
+
+@Stop 
+
+# Act01_Chapter04
+
+@choice "ADVパート シーン1"
+	@set "nextScenario=\"Act01_Chapter04/Act01_Chapter04_Adv01\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン2"
+	@set "nextScenario=\"Act01_Chapter04/Act01_Chapter04_Adv02\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン3"
+	@set "nextScenario=\"Act01_Chapter04/Act01_Chapter04_Adv03\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン4"
+	@set "nextScenario=\"Act01_Chapter04/Act01_Chapter04_Adv04\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン5"
+	@set "nextScenario=\"Act01_Chapter04/Act01_Chapter04_Adv05\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン6"
+	@set "nextScenario=\"Act01_Chapter04/Act01_Chapter04_Adv06\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン7"
+	@set "nextScenario=\"Act01_Chapter04/Act01_Chapter04_Adv07\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン8"
+	@set "nextScenario=\"Act01_Chapter04/Act01_Chapter04_Adv08\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン9"
+	@set "nextScenario=\"Act01_Chapter04/Act01_Chapter04_Adv09\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン10"
+	@set "nextScenario=\"Act01_Chapter04/Act01_Chapter04_Adv10\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン11"
+	@set "nextScenario=\"Act01_Chapter04/Act01_Chapter04_Adv11\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン12"
+	@set "nextScenario=\"Act01_Chapter04/Act01_Chapter04_Adv12\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン13"
+	@set "nextScenario=\"Act01_Chapter04/Act01_Chapter04_Adv13\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート バッドエンド1"
+	@set "nextScenario=\"Act01_Chapter04/Act01_Chapter04_Bad01\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 導入"
+	@set "nextScenario=\"Act01_Chapter04/Act01_Chapter04_Trial00\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論1"
+	@set "nextScenario=\"Act01_Chapter04/Act01_Chapter04_Trial01\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論2"
+	@set "nextScenario=\"Act01_Chapter04/Act01_Chapter04_Trial02\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論3"
+	@set "nextScenario=\"Act01_Chapter04/Act01_Chapter04_Trial03\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論4"
+	@set "nextScenario=\"Act01_Chapter04/Act01_Chapter04_Trial04\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論5"
+	@set "nextScenario=\"Act01_Chapter04/Act01_Chapter04_Trial05\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論6"
+	@set "nextScenario=\"Act01_Chapter04/Act01_Chapter04_Trial06\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論7"
+	@set "nextScenario=\"Act01_Chapter04/Act01_Chapter04_Trial07\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論8"
+	@set "nextScenario=\"Act01_Chapter04/Act01_Chapter04_Trial08\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論9"
+	@set "nextScenario=\"Act01_Chapter04/Act01_Chapter04_Trial09\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論10"
+	@set "nextScenario=\"Act01_Chapter04/Act01_Chapter04_Trial10\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論11"
+	@set "nextScenario=\"Act01_Chapter04/Act01_Chapter04_Trial11\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論12"
+	@set "nextScenario=\"Act01_Chapter04/Act01_Chapter04_Trial12\""
+	@goto .GoToChosenScenario
+
+@choice 戻る
+	@goto .Top
+
+@Stop 
+
+# Act01_Chapter05
+
+@choice "ADVパート シーン1"
+	@set "nextScenario=\"Act01_Chapter05/Act01_Chapter05_Adv01\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン2"
+	@set "nextScenario=\"Act01_Chapter05/Act01_Chapter05_Adv02\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン3"
+	@set "nextScenario=\"Act01_Chapter05/Act01_Chapter05_Adv03\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン4"
+	@set "nextScenario=\"Act01_Chapter05/Act01_Chapter05_Adv04\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン5"
+	@set "nextScenario=\"Act01_Chapter05/Act01_Chapter05_Adv05\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン6"
+	@set "nextScenario=\"Act01_Chapter05/Act01_Chapter05_Adv06\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン7"
+	@set "nextScenario=\"Act01_Chapter05/Act01_Chapter05_Adv07\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン8"
+	@set "nextScenario=\"Act01_Chapter05/Act01_Chapter05_Adv08\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン9"
+	@set "nextScenario=\"Act01_Chapter05/Act01_Chapter05_Adv09\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン10"
+	@set "nextScenario=\"Act01_Chapter05/Act01_Chapter05_Adv10\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン11"
+	@set "nextScenario=\"Act01_Chapter05/Act01_Chapter05_Adv11\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート バッドエンド1"
+	@set "nextScenario=\"Act01_Chapter05/Act01_Chapter05_Bad01\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート バッドエンド2"
+	@set "nextScenario=\"Act01_Chapter05/Act01_Chapter05_Bad02\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 導入"
+	@set "nextScenario=\"Act01_Chapter05/Act01_Chapter05_Trial00\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論1"
+	@set "nextScenario=\"Act01_Chapter05/Act01_Chapter05_Trial01\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論2"
+	@set "nextScenario=\"Act01_Chapter05/Act01_Chapter05_Trial02\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論3"
+	@set "nextScenario=\"Act01_Chapter05/Act01_Chapter05_Trial03\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論4"
+	@set "nextScenario=\"Act01_Chapter05/Act01_Chapter05_Trial04\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論5"
+	@set "nextScenario=\"Act01_Chapter05/Act01_Chapter05_Trial05\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論6"
+	@set "nextScenario=\"Act01_Chapter05/Act01_Chapter05_Trial06\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論7"
+	@set "nextScenario=\"Act01_Chapter05/Act01_Chapter05_Trial07\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論8"
+	@set "nextScenario=\"Act01_Chapter05/Act01_Chapter05_Trial08\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論9"
+	@set "nextScenario=\"Act01_Chapter05/Act01_Chapter05_Trial09\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論10"
+	@set "nextScenario=\"Act01_Chapter05/Act01_Chapter05_Trial10\""
+	@goto .GoToChosenScenario
+
+@choice 戻る
+	@goto .Top
+
+@Stop 
+
+# Act02_Chapter01
+
+@choice "ADVパート シーン1"
+	@set "nextScenario=\"Act02_Chapter01/Act02_Chapter01_Adv01\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン2"
+	@set "nextScenario=\"Act02_Chapter01/Act02_Chapter01_Adv02\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン3"
+	@set "nextScenario=\"Act02_Chapter01/Act02_Chapter01_Adv03\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン4"
+	@set "nextScenario=\"Act02_Chapter01/Act02_Chapter01_Adv04\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン5"
+	@set "nextScenario=\"Act02_Chapter01/Act02_Chapter01_Adv05\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン6"
+	@set "nextScenario=\"Act02_Chapter01/Act02_Chapter01_Adv06\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン7"
+	@set "nextScenario=\"Act02_Chapter01/Act02_Chapter01_Adv07\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン8"
+	@set "nextScenario=\"Act02_Chapter01/Act02_Chapter01_Adv08\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン9"
+	@set "nextScenario=\"Act02_Chapter01/Act02_Chapter01_Adv09\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン10"
+	@set "nextScenario=\"Act02_Chapter01/Act02_Chapter01_Adv10\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン11"
+	@set "nextScenario=\"Act02_Chapter01/Act02_Chapter01_Adv11\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン12"
+	@set "nextScenario=\"Act02_Chapter01/Act02_Chapter01_Adv12\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン13"
+	@set "nextScenario=\"Act02_Chapter01/Act02_Chapter01_Adv13\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン14"
+	@set "nextScenario=\"Act02_Chapter01/Act02_Chapter01_Adv14\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン15"
+	@set "nextScenario=\"Act02_Chapter01/Act02_Chapter01_Adv15\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン16"
+	@set "nextScenario=\"Act02_Chapter01/Act02_Chapter01_Adv16\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン17"
+	@set "nextScenario=\"Act02_Chapter01/Act02_Chapter01_Adv17\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン18"
+	@set "nextScenario=\"Act02_Chapter01/Act02_Chapter01_Adv18\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン19"
+	@set "nextScenario=\"Act02_Chapter01/Act02_Chapter01_Adv19\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン20"
+	@set "nextScenario=\"Act02_Chapter01/Act02_Chapter01_Adv20\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン21"
+	@set "nextScenario=\"Act02_Chapter01/Act02_Chapter01_Adv21\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン22"
+	@set "nextScenario=\"Act02_Chapter01/Act02_Chapter01_Adv22\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン23"
+	@set "nextScenario=\"Act02_Chapter01/Act02_Chapter01_Adv23\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン24"
+	@set "nextScenario=\"Act02_Chapter01/Act02_Chapter01_Adv24\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン25"
+	@set "nextScenario=\"Act02_Chapter01/Act02_Chapter01_Adv25\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン26"
+	@set "nextScenario=\"Act02_Chapter01/Act02_Chapter01_Adv26\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン27"
+	@set "nextScenario=\"Act02_Chapter01/Act02_Chapter01_Adv27\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート バッドエンド1"
+	@set "nextScenario=\"Act02_Chapter01/Act02_Chapter01_Bad01\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート バッドエンド2"
+	@set "nextScenario=\"Act02_Chapter01/Act02_Chapter01_Bad02\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 導入"
+	@set "nextScenario=\"Act02_Chapter01/Act02_Chapter01_Trial00\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論1"
+	@set "nextScenario=\"Act02_Chapter01/Act02_Chapter01_Trial01\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論2"
+	@set "nextScenario=\"Act02_Chapter01/Act02_Chapter01_Trial02\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論3"
+	@set "nextScenario=\"Act02_Chapter01/Act02_Chapter01_Trial03\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論4"
+	@set "nextScenario=\"Act02_Chapter01/Act02_Chapter01_Trial04\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論5"
+	@set "nextScenario=\"Act02_Chapter01/Act02_Chapter01_Trial05\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論6"
+	@set "nextScenario=\"Act02_Chapter01/Act02_Chapter01_Trial06\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論7"
+	@set "nextScenario=\"Act02_Chapter01/Act02_Chapter01_Trial07\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論8"
+	@set "nextScenario=\"Act02_Chapter01/Act02_Chapter01_Trial08\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論9"
+	@set "nextScenario=\"Act02_Chapter01/Act02_Chapter01_Trial09\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論10"
+	@set "nextScenario=\"Act02_Chapter01/Act02_Chapter01_Trial10\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論11"
+	@set "nextScenario=\"Act02_Chapter01/Act02_Chapter01_Trial11\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論12"
+	@set "nextScenario=\"Act02_Chapter01/Act02_Chapter01_Trial12\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論13"
+	@set "nextScenario=\"Act02_Chapter01/Act02_Chapter01_Trial13\""
+	@goto .GoToChosenScenario
+
+@choice 戻る
+	@goto .Top
+
+@Stop 
+
+# Act02_Chapter02
+
+@choice "ADVパート シーン1"
+	@set "nextScenario=\"Act02_Chapter02/Act02_Chapter02_Adv01\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン2"
+	@set "nextScenario=\"Act02_Chapter02/Act02_Chapter02_Adv02\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン3"
+	@set "nextScenario=\"Act02_Chapter02/Act02_Chapter02_Adv03\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン4"
+	@set "nextScenario=\"Act02_Chapter02/Act02_Chapter02_Adv04\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン5"
+	@set "nextScenario=\"Act02_Chapter02/Act02_Chapter02_Adv05\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン6"
+	@set "nextScenario=\"Act02_Chapter02/Act02_Chapter02_Adv06\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン7"
+	@set "nextScenario=\"Act02_Chapter02/Act02_Chapter02_Adv07\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン8"
+	@set "nextScenario=\"Act02_Chapter02/Act02_Chapter02_Adv08\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン9"
+	@set "nextScenario=\"Act02_Chapter02/Act02_Chapter02_Adv09\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン10"
+	@set "nextScenario=\"Act02_Chapter02/Act02_Chapter02_Adv10\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン11"
+	@set "nextScenario=\"Act02_Chapter02/Act02_Chapter02_Adv11\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン12"
+	@set "nextScenario=\"Act02_Chapter02/Act02_Chapter02_Adv12\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン13"
+	@set "nextScenario=\"Act02_Chapter02/Act02_Chapter02_Adv13\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン14"
+	@set "nextScenario=\"Act02_Chapter02/Act02_Chapter02_Adv14\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン15"
+	@set "nextScenario=\"Act02_Chapter02/Act02_Chapter02_Adv15\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン16"
+	@set "nextScenario=\"Act02_Chapter02/Act02_Chapter02_Adv16\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン17"
+	@set "nextScenario=\"Act02_Chapter02/Act02_Chapter02_Adv17\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン18"
+	@set "nextScenario=\"Act02_Chapter02/Act02_Chapter02_Adv18\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン19"
+	@set "nextScenario=\"Act02_Chapter02/Act02_Chapter02_Adv19\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン20"
+	@set "nextScenario=\"Act02_Chapter02/Act02_Chapter02_Adv20\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン21"
+	@set "nextScenario=\"Act02_Chapter02/Act02_Chapter02_Adv21\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート バッドエンド1"
+	@set "nextScenario=\"Act02_Chapter02/Act02_Chapter02_Bad01\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート バッドエンド2"
+	@set "nextScenario=\"Act02_Chapter02/Act02_Chapter02_Bad02\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 導入"
+	@set "nextScenario=\"Act02_Chapter02/Act02_Chapter02_Trial00\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論1"
+	@set "nextScenario=\"Act02_Chapter02/Act02_Chapter02_Trial01\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論2"
+	@set "nextScenario=\"Act02_Chapter02/Act02_Chapter02_Trial02\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論3"
+	@set "nextScenario=\"Act02_Chapter02/Act02_Chapter02_Trial03\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論4"
+	@set "nextScenario=\"Act02_Chapter02/Act02_Chapter02_Trial04\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論5"
+	@set "nextScenario=\"Act02_Chapter02/Act02_Chapter02_Trial05\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論6"
+	@set "nextScenario=\"Act02_Chapter02/Act02_Chapter02_Trial06\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論7"
+	@set "nextScenario=\"Act02_Chapter02/Act02_Chapter02_Trial07\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論8"
+	@set "nextScenario=\"Act02_Chapter02/Act02_Chapter02_Trial08\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論9"
+	@set "nextScenario=\"Act02_Chapter02/Act02_Chapter02_Trial09\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論10"
+	@set "nextScenario=\"Act02_Chapter02/Act02_Chapter02_Trial10\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論11"
+	@set "nextScenario=\"Act02_Chapter02/Act02_Chapter02_Trial11\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論12"
+	@set "nextScenario=\"Act02_Chapter02/Act02_Chapter02_Trial12\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論13"
+	@set "nextScenario=\"Act02_Chapter02/Act02_Chapter02_Trial13\""
+	@goto .GoToChosenScenario
+
+@choice 戻る
+	@goto .Top
+
+@Stop 
+
+# Act02_Chapter03
+
+@choice "ADVパート シーン1"
+	@set "nextScenario=\"Act02_Chapter03/Act02_Chapter03_Adv01\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン2"
+	@set "nextScenario=\"Act02_Chapter03/Act02_Chapter03_Adv02\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン3"
+	@set "nextScenario=\"Act02_Chapter03/Act02_Chapter03_Adv03\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン4"
+	@set "nextScenario=\"Act02_Chapter03/Act02_Chapter03_Adv04\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン5"
+	@set "nextScenario=\"Act02_Chapter03/Act02_Chapter03_Adv05\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン6"
+	@set "nextScenario=\"Act02_Chapter03/Act02_Chapter03_Adv06\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン7"
+	@set "nextScenario=\"Act02_Chapter03/Act02_Chapter03_Adv07\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン8"
+	@set "nextScenario=\"Act02_Chapter03/Act02_Chapter03_Adv08\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン9"
+	@set "nextScenario=\"Act02_Chapter03/Act02_Chapter03_Adv09\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン10"
+	@set "nextScenario=\"Act02_Chapter03/Act02_Chapter03_Adv10\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン11"
+	@set "nextScenario=\"Act02_Chapter03/Act02_Chapter03_Adv11\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン12"
+	@set "nextScenario=\"Act02_Chapter03/Act02_Chapter03_Adv12\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン13"
+	@set "nextScenario=\"Act02_Chapter03/Act02_Chapter03_Adv13\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン14"
+	@set "nextScenario=\"Act02_Chapter03/Act02_Chapter03_Adv14\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン15"
+	@set "nextScenario=\"Act02_Chapter03/Act02_Chapter03_Adv15\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート バッドエンド1"
+	@set "nextScenario=\"Act02_Chapter03/Act02_Chapter03_Bad01\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 導入"
+	@set "nextScenario=\"Act02_Chapter03/Act02_Chapter03_Trial00\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論1"
+	@set "nextScenario=\"Act02_Chapter03/Act02_Chapter03_Trial01\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論2"
+	@set "nextScenario=\"Act02_Chapter03/Act02_Chapter03_Trial02\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論3"
+	@set "nextScenario=\"Act02_Chapter03/Act02_Chapter03_Trial03\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論4"
+	@set "nextScenario=\"Act02_Chapter03/Act02_Chapter03_Trial04\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論5"
+	@set "nextScenario=\"Act02_Chapter03/Act02_Chapter03_Trial05\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論6"
+	@set "nextScenario=\"Act02_Chapter03/Act02_Chapter03_Trial06\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論7"
+	@set "nextScenario=\"Act02_Chapter03/Act02_Chapter03_Trial07\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論8"
+	@set "nextScenario=\"Act02_Chapter03/Act02_Chapter03_Trial08\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論9"
+	@set "nextScenario=\"Act02_Chapter03/Act02_Chapter03_Trial09\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論10"
+	@set "nextScenario=\"Act02_Chapter03/Act02_Chapter03_Trial10\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論11"
+	@set "nextScenario=\"Act02_Chapter03/Act02_Chapter03_Trial11\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論12"
+	@set "nextScenario=\"Act02_Chapter03/Act02_Chapter03_Trial12\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論13"
+	@set "nextScenario=\"Act02_Chapter03/Act02_Chapter03_Trial13\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論14"
+	@set "nextScenario=\"Act02_Chapter03/Act02_Chapter03_Trial14\""
+	@goto .GoToChosenScenario
+
+@choice 戻る
+	@goto .Top
+
+@Stop 
+
+# Act02_Chapter04
+
+@choice "ADVパート シーン1"
+	@set "nextScenario=\"Act02_Chapter04/Act02_Chapter04_Adv01\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン2"
+	@set "nextScenario=\"Act02_Chapter04/Act02_Chapter04_Adv02\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン3"
+	@set "nextScenario=\"Act02_Chapter04/Act02_Chapter04_Adv03\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン4"
+	@set "nextScenario=\"Act02_Chapter04/Act02_Chapter04_Adv04\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン5"
+	@set "nextScenario=\"Act02_Chapter04/Act02_Chapter04_Adv05\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン6"
+	@set "nextScenario=\"Act02_Chapter04/Act02_Chapter04_Adv06\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン7"
+	@set "nextScenario=\"Act02_Chapter04/Act02_Chapter04_Adv07\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン8"
+	@set "nextScenario=\"Act02_Chapter04/Act02_Chapter04_Adv08\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン9"
+	@set "nextScenario=\"Act02_Chapter04/Act02_Chapter04_Adv09\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン10"
+	@set "nextScenario=\"Act02_Chapter04/Act02_Chapter04_Adv10\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン11"
+	@set "nextScenario=\"Act02_Chapter04/Act02_Chapter04_Adv11\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン12"
+	@set "nextScenario=\"Act02_Chapter04/Act02_Chapter04_Adv12\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン13"
+	@set "nextScenario=\"Act02_Chapter04/Act02_Chapter04_Adv13\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン14"
+	@set "nextScenario=\"Act02_Chapter04/Act02_Chapter04_Adv14\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン15"
+	@set "nextScenario=\"Act02_Chapter04/Act02_Chapter04_Adv15\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン16"
+	@set "nextScenario=\"Act02_Chapter04/Act02_Chapter04_Adv16\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート バッドエンド1"
+	@set "nextScenario=\"Act02_Chapter04/Act02_Chapter04_Bad01\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート バッドエンド2"
+	@set "nextScenario=\"Act02_Chapter04/Act02_Chapter04_Bad02\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート バッドエンド3"
+	@set "nextScenario=\"Act02_Chapter04/Act02_Chapter04_Bad03\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート バッドエンド4"
+	@set "nextScenario=\"Act02_Chapter04/Act02_Chapter04_Bad04\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 導入"
+	@set "nextScenario=\"Act02_Chapter04/Act02_Chapter04_Trial00\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論1"
+	@set "nextScenario=\"Act02_Chapter04/Act02_Chapter04_Trial01\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論2"
+	@set "nextScenario=\"Act02_Chapter04/Act02_Chapter04_Trial02\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論3"
+	@set "nextScenario=\"Act02_Chapter04/Act02_Chapter04_Trial03\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論4"
+	@set "nextScenario=\"Act02_Chapter04/Act02_Chapter04_Trial04\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論5"
+	@set "nextScenario=\"Act02_Chapter04/Act02_Chapter04_Trial05\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論6"
+	@set "nextScenario=\"Act02_Chapter04/Act02_Chapter04_Trial06\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論7"
+	@set "nextScenario=\"Act02_Chapter04/Act02_Chapter04_Trial07\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論8"
+	@set "nextScenario=\"Act02_Chapter04/Act02_Chapter04_Trial08\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論9"
+	@set "nextScenario=\"Act02_Chapter04/Act02_Chapter04_Trial09\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論10"
+	@set "nextScenario=\"Act02_Chapter04/Act02_Chapter04_Trial10\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論11"
+	@set "nextScenario=\"Act02_Chapter04/Act02_Chapter04_Trial11\""
+	@goto .GoToChosenScenario
+
+@choice 戻る
+	@goto .Top
+
+@Stop 
+
+# Act02_Chapter05
+
+@choice "ADVパート シーン1"
+	@set "nextScenario=\"Act02_Chapter05/Act02_Chapter05_Adv01\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン2"
+	@set "nextScenario=\"Act02_Chapter05/Act02_Chapter05_Adv02\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン3"
+	@set "nextScenario=\"Act02_Chapter05/Act02_Chapter05_Adv03\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン4"
+	@set "nextScenario=\"Act02_Chapter05/Act02_Chapter05_Adv04\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン5"
+	@set "nextScenario=\"Act02_Chapter05/Act02_Chapter05_Adv05\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン6"
+	@set "nextScenario=\"Act02_Chapter05/Act02_Chapter05_Adv06\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン7"
+	@set "nextScenario=\"Act02_Chapter05/Act02_Chapter05_Adv07\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン8"
+	@set "nextScenario=\"Act02_Chapter05/Act02_Chapter05_Adv08\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート シーン9"
+	@set "nextScenario=\"Act02_Chapter05/Act02_Chapter05_Adv09\""
+	@goto .GoToChosenScenario
+
+@choice "ADVパート バッドエンド1"
+	@set "nextScenario=\"Act02_Chapter05/Act02_Chapter05_Bad01\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 導入"
+	@set "nextScenario=\"Act02_Chapter05/Act02_Chapter05_Trial00\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論1"
+	@set "nextScenario=\"Act02_Chapter05/Act02_Chapter05_Trial01\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論2"
+	@set "nextScenario=\"Act02_Chapter05/Act02_Chapter05_Trial02\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論3"
+	@set "nextScenario=\"Act02_Chapter05/Act02_Chapter05_Trial03\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論4"
+	@set "nextScenario=\"Act02_Chapter05/Act02_Chapter05_Trial04\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論5"
+	@set "nextScenario=\"Act02_Chapter05/Act02_Chapter05_Trial05\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論6"
+	@set "nextScenario=\"Act02_Chapter05/Act02_Chapter05_Trial06\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論7"
+	@set "nextScenario=\"Act02_Chapter05/Act02_Chapter05_Trial07\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論8"
+	@set "nextScenario=\"Act02_Chapter05/Act02_Chapter05_Trial08\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論9"
+	@set "nextScenario=\"Act02_Chapter05/Act02_Chapter05_Trial09\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論10"
+	@set "nextScenario=\"Act02_Chapter05/Act02_Chapter05_Trial10\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論11"
+	@set "nextScenario=\"Act02_Chapter05/Act02_Chapter05_Trial11\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論12"
+	@set "nextScenario=\"Act02_Chapter05/Act02_Chapter05_Trial12\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論13"
+	@set "nextScenario=\"Act02_Chapter05/Act02_Chapter05_Trial13\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論14"
+	@set "nextScenario=\"Act02_Chapter05/Act02_Chapter05_Trial14\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論15"
+	@set "nextScenario=\"Act02_Chapter05/Act02_Chapter05_Trial15\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論16"
+	@set "nextScenario=\"Act02_Chapter05/Act02_Chapter05_Trial16\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論17"
+	@set "nextScenario=\"Act02_Chapter05/Act02_Chapter05_Trial17\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論18"
+	@set "nextScenario=\"Act02_Chapter05/Act02_Chapter05_Trial18\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論19"
+	@set "nextScenario=\"Act02_Chapter05/Act02_Chapter05_Trial19\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論20"
+	@set "nextScenario=\"Act02_Chapter05/Act02_Chapter05_Trial20\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論21"
+	@set "nextScenario=\"Act02_Chapter05/Act02_Chapter05_Trial21\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論22"
+	@set "nextScenario=\"Act02_Chapter05/Act02_Chapter05_Trial22\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論23"
+	@set "nextScenario=\"Act02_Chapter05/Act02_Chapter05_Trial23\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論24"
+	@set "nextScenario=\"Act02_Chapter05/Act02_Chapter05_Trial24\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論25"
+	@set "nextScenario=\"Act02_Chapter05/Act02_Chapter05_Trial25\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論26"
+	@set "nextScenario=\"Act02_Chapter05/Act02_Chapter05_Trial26\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論27"
+	@set "nextScenario=\"Act02_Chapter05/Act02_Chapter05_Trial27\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論28"
+	@set "nextScenario=\"Act02_Chapter05/Act02_Chapter05_Trial28\""
+	@goto .GoToChosenScenario
+
+@choice 戻る
+	@goto .Top
+
+@Stop 
+
+# Act02_Chapter06
+
+@choice "裁判パート 導入"
+	@set "nextScenario=\"Act02_Chapter06/Act02_Chapter06_Trial00\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論1"
+	@set "nextScenario=\"Act02_Chapter06/Act02_Chapter06_Trial01\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論2"
+	@set "nextScenario=\"Act02_Chapter06/Act02_Chapter06_Trial02\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論3"
+	@set "nextScenario=\"Act02_Chapter06/Act02_Chapter06_Trial03\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論4"
+	@set "nextScenario=\"Act02_Chapter06/Act02_Chapter06_Trial04\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論5"
+	@set "nextScenario=\"Act02_Chapter06/Act02_Chapter06_Trial05\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論6"
+	@set "nextScenario=\"Act02_Chapter06/Act02_Chapter06_Trial06\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論7"
+	@set "nextScenario=\"Act02_Chapter06/Act02_Chapter06_Trial07\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論8"
+	@set "nextScenario=\"Act02_Chapter06/Act02_Chapter06_Trial08\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論9"
+	@set "nextScenario=\"Act02_Chapter06/Act02_Chapter06_Trial09\""
+	@goto .GoToChosenScenario
+
+@choice "裁判パート 議論10"
+	@set "nextScenario=\"Act02_Chapter06/Act02_Chapter06_Trial10\""
+	@goto .GoToChosenScenario
+
+@choice 戻る
+	@goto .Top
+
+@Stop 
+
+# Common
+
+@choice CommonBad01
+	@set "nextScenario=\"Common/CommonBad01\""
+	@goto .GoToChosenScenario
+
+@choice CommonBad02
+	@set "nextScenario=\"Common/CommonBad02\""
+	@goto .GoToChosenScenario
+
+@choice CommonBad03
+	@set "nextScenario=\"Common/CommonBad03\""
+	@goto .GoToChosenScenario
+
+@choice CommonBad04
+	@set "nextScenario=\"Common/CommonBad04\""
+	@goto .GoToChosenScenario
+
+@choice CommonBad05
+	@set "nextScenario=\"Common/CommonBad05\""
+	@goto .GoToChosenScenario
+
+@choice CommonBad06
+	@set "nextScenario=\"Common/CommonBad06\""
+	@goto .GoToChosenScenario
+
+@choice CommonBad07
+	@set "nextScenario=\"Common/CommonBad07\""
+	@goto .GoToChosenScenario
+
+@choice CommonBad08
+	@set "nextScenario=\"Common/CommonBad08\""
+	@goto .GoToChosenScenario
+
+@choice CommonBad09
+	@set "nextScenario=\"Common/CommonBad09\""
+	@goto .GoToChosenScenario
+
+@choice CommonBad10
+	@set "nextScenario=\"Common/CommonBad10\""
+	@goto .GoToChosenScenario
+
+@choice CommonBad11
+	@set "nextScenario=\"Common/CommonBad11\""
+	@goto .GoToChosenScenario
+
+@choice CommonBad12
+	@set "nextScenario=\"Common/CommonBad12\""
+	@goto .GoToChosenScenario
+
+@choice CommonBad13
+	@set "nextScenario=\"Common/CommonBad13\""
+	@goto .GoToChosenScenario
+
+@choice 戻る
+	@goto .Top
+
+@Stop 
+
+# GoToChosenScenario
+
+@set "isDebugDirectJump = true"
+@ClearBacklog 
+@back SolidColor { time:0.5 }
+@Wait 0.5
+
+@goto "{nextScenario}"
+
+# ReturnToTitle
+
+@ClearBacklog 
+@ReturnToTitle { time:1.2000000476837158 delay:0.6000000238418579 }

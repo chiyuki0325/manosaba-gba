@@ -1,0 +1,222 @@
+@if isDebugDirectJump
+	@Gosub System/System_Subroutine.BeginAdv
+
+# ========================================
+# ＞『エマを殺す』を選択→2‐4‐b4へ
+# ========================================
+
+# Scene2-4-b4
+
+# ========================================
+# ●シーン2-4-b4
+# ========================================
+
+@back 7_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@print （……私はエマを殺す） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 頭の中で言葉を紡いだ瞬間。<br>迷ってばかりだった心が定まったような気がした。 { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_32_1
+
+@print エマはね？<br>いずれ禍をもたらす魔女になるんですよ。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@print たくさんの人を殺します。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@print みんなを不幸にします。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@print いつのことだったか、<br>ユキが口にした言葉を思い出す。 { speed:1 waitInput:true Wait:true }
+
+@print ユキは、いじめにより自殺した。 { speed:1 waitInput:true Wait:true }
+
+@print エマはユキのいじめの傍観者となり、<br>彼女を守らず素知らぬ顔をした。 { speed:1 waitInput:true Wait:true }
+
+@print きっとそれが、桜羽エマの本性なのだ。 { speed:1 waitInput:true Wait:true }
+
+@print 世界に禍をもたらす、悪しき魔女。 { speed:1 waitInput:true Wait:true }
+
+@print この牢屋敷で垣間見えた彼女の不審な動き、<br>不穏な言葉も、それを物語っている。 { speed:1 waitInput:true Wait:true }
+
+@print （だから私は、エマを殺す） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print いや、殺さなければいけない。<br>それが世界にとって、最良の選択なんだ。 { speed:1 waitInput:true Wait:true }
+
+@print "エマへと伸ばした手で、<br>彼女の細い首を<ruby=\"つか\">掴</ruby>む。<br>それから、ゆっくりと両手に力を込めた。" { speed:1 waitInput:true Wait:true }
+
+# 首を絞める音
+@sfx Sfx_153
+@Wait 1
+
+@print "すぐにでも折れてしまいそうな<ruby=\"ぜいじゃく\">脆弱</ruby>さが、<br>指から伝わってくる。" { speed:1 waitInput:true Wait:true }
+
+@print ――エマとの幼い日々。 { speed:1 waitInput:true Wait:true }
+
+@print ――ユキとエマと私。<br>３人で過ごした日々。 { speed:1 waitInput:true Wait:true }
+
+@print ――この牢屋敷での出来事。 { speed:1 waitInput:true Wait:true }
+
+@print エマとの記憶が、<br>ぐるぐると頭の中を回転する。 { speed:1 waitInput:true Wait:true }
+
+@print 息が詰まって苦しい。<br>首を絞めているのは私なのに。 { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆首を絞められて
+
+@print ぐっ……ぁ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"うめ\">呻</ruby>きながら、エマが目を開く。<br>私の姿を見て、恐怖と戸惑いの色を浮かべる。" { speed:1 waitInput:true Wait:true }
+
+@print "――<ruby=\"だま\">騙</ruby>されるな。" { speed:1 waitInput:true Wait:true }
+
+@print 私は、さらに力を強く込める。 { speed:1 waitInput:true Wait:true }
+
+# 首を絞める音
+@sfx Sfx_153
+@Wait 1
+
+# ＠備考◆首を絞められて
+
+@print あ……が……っ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマが手足をジタバタさせ、抵抗する。 { speed:1 waitInput:true Wait:true }
+
+@print "死ね！ 死ね死ね死ね！ 死ね……！" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "これまで抑えてきた<ruby=\"えんさ\">怨嗟</ruby>が<ruby=\"あふ\">溢</ruby>れ出す。<br>私は一切、指の力を緩めない。" { speed:1 waitInput:true Wait:true }
+
+@print やがて―― { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@Wait 1
+@char Ema.Pensive1,Angle01/ArmR>ArmR06 { time:1 }
+@Wait 1
+
+@print エマは、ぴくりとも動かなくなった。<br>全身から力が抜けて、だらりと横たわっている。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print はぁ……はぁ……死んだ……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私が、エマを、殺したんだ。 { speed:1 waitInput:true Wait:true }
+
+@print 正しい行いのはずだ。<br>それなのに、気分が重い。 { speed:1 waitInput:true Wait:true }
+
+@print "モヤモヤとした気持ちが、<br>心を<ruby=\"むしば\">蝕</ruby>んでいる。" { speed:1 waitInput:true Wait:true }
+
+@print これは罪悪感だろうか。 { speed:1 waitInput:true Wait:true }
+
+@print わからない。 { speed:1 waitInput:true Wait:true }
+
+@print 自分の気持ちが、はっきりとしない。 { speed:1 waitInput:true Wait:true }
+
+@print とにかく、この場を離れたかった。 { speed:1 waitInput:true Wait:true }
+
+@print エマの首から手を離して、一歩後ろに下がる。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@StopBgm 
+@Wait 1.5
+
+@print ――どうして？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ！？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私の心臓が跳ねる。 { speed:1 waitInput:true Wait:true }
+
+@print 死んだとばかり思っていたエマが、言葉を発した。 { speed:1 waitInput:true Wait:true }
+
+@print ひどいよ、ヒロちゃん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Fearful1 { time:3 }
+@Wait 2
+
+@print "ゆっくりと、エマが上体を起こす。<br>その声は<ruby=\"ほのぐら\">仄暗</ruby>く、異質な空気を<ruby=\"まと\">纏</ruby>っていた。" { speed:1 waitInput:true Wait:true }
+
+@print エマの雰囲気に気圧され、私はさらに後ずさる。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema { time:1.5 }
+
+@print また仲良くできるって思ったのに。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ベッドを降りて、<br>エマは私に近付いてくる。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char CreatureEma.0-1 { time:1 }
+
+# ========================================
+# 立ち絵：エマ半クリーチャーでお願いします。
+# ========================================
+
+@bgm Bgm_16_1_Loop
+
+@print その姿が、化け物へと変容していく。 { speed:1 waitInput:true Wait:true }
+
+@print 魔女化したのか……？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print にじり寄るエマに、<br>私は底知れない恐怖を感じていた。 { speed:1 waitInput:true Wait:true }
+
+@print "異形と化したエマの姿は<ruby=\"はかな\">儚</ruby>く<ruby=\"もろ\">脆</ruby>そうで、<br>どこか美しさ、神聖さすら覚える。" { speed:1 waitInput:true Wait:true }
+
+@print "だが、同時に醜いとも感じた。<br>きっと形容しがたい邪悪さのような物を<br><ruby=\"はら\">孕</ruby>んでいるせいだろう。" { speed:1 waitInput:true Wait:true }
+
+@print （私は、間違っていなかった） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print やはりエマは、禍となる魔女だった。 { speed:1 waitInput:true Wait:true }
+
+@print ――本当にそうか？ { speed:1 waitInput:true Wait:true }
+
+@print この期に及んでまだ、私の心は迷う。<br>思考が揺れ惑い、定まらない。 { speed:1 waitInput:true Wait:true }
+
+@print 何が正しかったのか。 { speed:1 waitInput:true Wait:true }
+
+@print 私は、どうするべきだった？ { speed:1 waitInput:true Wait:true }
+
+@char CreatureEma.1-1
+
+@print ボク……思い出したんだ……。<br>あの子のことも、ボクの罪も……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print あの子はね、ずっと傍にいたんだよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print なんの話だ……？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print エマの視線は定まらず、<br>あちこち忙しなく泳いでいる。 { speed:1 waitInput:true Wait:true }
+
+@print あの子がね、ボクの耳元で言うんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ……みんな、死ねばいいって。<br>だから……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print さまよっていたエマの瞳が私を捉えた。 { speed:1 waitInput:true Wait:true }
+
+@print ヒロちゃんも死んで？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 何を――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureEma.1-1 { time:0.2 }
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.1 }
+@Wait 0.1
+
+# 倒れる音
+@sfx Sfx_19
+
+@print 糸が切れた人形のように、<br>ヒロがその場に崩れ落ちる。 { speed:1 waitInput:true Wait:true }
+
+@print 二階堂ヒロは死んだ。 { speed:1 waitInput:true Wait:true }
+
+@print 覚醒したエマの【魔女殺し】の魔法によって、<br>死に戻ることなく、本当の死を迎えた。 { speed:1 waitInput:true Wait:true }
+
+@print "ヒロの亡骸を前に<ruby=\"ぼうぜん\">呆然</ruby>と立ち尽くす<br>エマの耳元で、そっと声が<ruby=\"ささや\">囁</ruby>く。" { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@Wait 1
+
+@print ――たくさん、殺しましょうね、エマ。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 『END～心迷い～』
+# ========================================
+
+@badEnd 24

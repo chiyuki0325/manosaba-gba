@@ -1,0 +1,121 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-3-8
+
+# ========================================
+# ●シーン1‐3‐8
+# ========================================
+
+@back 5_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# ========================================
+# ＞『ラウンジ』を選択
+# ========================================
+
+@bgm Bgm_11_1
+
+@char Alisa.Normal1,Option-ArmL-Off,ArmL2
+
+@print エマがラウンジに入ると、<br>ソファーに座るアリサを発見した。 { speed:1 waitInput:true Wait:true }
+
+@print みんなを探しに出たはずだが、<br>アリサの姿を見つけてエマは臆してしまう。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （ど、どうしよう……声、かける……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 先の医務室での出来事で、<br>エマの足はすくんでいた。 { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1,ArmL2
+
+@print ……桜羽か。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print エマがおずおずとしていたら、<br>アリサの方から声をかけてきた。 { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Pensive1,ArmL2
+
+@print さっきはその……悪かった。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print 辛く当たるつもりはなかった。<br>でも、どうしてもイライラしちまって……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print アリサはもごもごと言いにくそうにし、<br>エマを驚かせる。 { speed:1 waitInput:true Wait:true }
+
+@print （アリサちゃん、悪い子じゃないんだ……<br>　それはもう知ってる……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print 気にしないで。その、体調はどうかな？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1,ArmL2
+
+@print 薬のこと、氷上から聞いたんだな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print ……うん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1,ArmL2
+
+@print 氷上が過保護で大げさに言ってるだけだ。<br>たくさん飲んだって、別に体に影響なんてねえよ。<br>薬には慣れてんだ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print そうなの……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1,ArmL1
+
+@print 勘違いすんなよ。違法薬物とかじゃねーから。<br>薬飲んでると安心できんだよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print こんなところに捕まって……<br>正気でいられるわけねーだろ。だから……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print そう、だよね。不安になる気持ち、わかるよ。<br>でも、体に悪影響が出るのは良くないよ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3
+
+@print "ね、ねえ！ 今日はみんなでピクニックに行くんだ。<br>アリサちゃんも一緒に来ない？" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ひとりで思い悩んでるより、<br>みんなでぱーっと遊んだ方が気も晴れるよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Pensive1,ArmL2
+
+@print ……考えとく。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print アリサは疲弊しきっている様子だが、<br>エマに対する当たりはずいぶんと柔らかい。 { speed:1 waitInput:true Wait:true }
+
+@print （アリサちゃんともっと仲良くなりたい。<br>　みんなが仲良くなれたら――） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （殺人事件なんて、もう絶対起こらない） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR1
+
+@print "ボク、先に行ってるから、<br>良かったら来てね！ 待ってるから！" { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマは勢い込んでアリサに声をかけ、<br>ラウンジを出ていった。 { speed:1 waitInput:true Wait:true }
+
+@print ――その場に残ったアリサは。 { speed:1 waitInput:true Wait:true }
+
+@print 深く、深く息を吐き出してから、<br>天井を仰いだ。 { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Pensive1,ArmR7,ArmL2
+
+@print ……そろそろやるか。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print 限界、だよな。<br>ウチはもう――。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン1‐3‐6
+# 全てのイベントを消化している＞シーン1‐3‐12
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter03/Act01_Chapter03_Adv06

@@ -1,0 +1,6 @@
+/vendor/
+/build*/
+/*.gba
+/*.elf
+/*.elf.*
+/assets/graphics-cache/

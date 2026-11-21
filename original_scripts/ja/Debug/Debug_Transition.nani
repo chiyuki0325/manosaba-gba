@@ -1,0 +1,57 @@
+@Gosub System/System_Subroutine.BeginAdv
+
+@back SolidColor { time:0 }
+@char Ema { time:0 }
+@back Transparent { time:0 }
+
+@Gosub .Main
+
+@Stop 
+
+# ==============================================================================
+# メイン
+# ==============================================================================
+
+# Main
+
+@print "Debug_Transition # Main" { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@back SolidColor.Custom { time:0.75 }
+@i 
+
+@char Tsukasa { time:0 }
+@back Transparent.Custom { time:0.75 }
+@i 
+
+@back SolidColor.Custom { time:2 }
+@i 
+
+@back Transparent.Custom { time:2 }
+@i 
+
+@back SolidColor.Custom { time:2 }
+@i 
+
+@back Transparent.Custom { time:2 }
+@i 
+
+@back SolidColor.Custom { time:2 }
+@i 
+
+@back Transparent.Custom { time:2 }
+@i 
+
+@back SolidColor.Custom { time:2 }
+@i 
+
+@back Transparent.Custom { time:2 }
+@i 
+
+@back SolidColor.Custom { time:2 }
+@i 
+
+@back Transparent.Custom { time:2 }
+@i 
+
+@Return

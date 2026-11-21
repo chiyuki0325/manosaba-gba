@@ -1,0 +1,397 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-2-17
+
+# ========================================
+# ●シーン1‐2-17
+# ========================================
+
+@back 1_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@print 翌日は、ゆっくりと時間が流れていた。 { speed:1 waitInput:true Wait:true }
+
+@print さすがに気落ちが大きかったのだろう。<br>皆が、それぞれの監房にこもりがちだった。 { speed:1 waitInput:true Wait:true }
+
+@print エマもまた何も手につかず、<br>手の中で意味もなくスマホを転がしている。 { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_9_1
+
+@char Ema.Pensive1
+
+@print （やっぱりミリアちゃんの様子を見に行ったほうが<br>　いいのかな） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （それとも明日出てきてから、<br>　話を聞いたほうがいいのかな） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （どうしてあんなことしたの、って） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマは囚人一覧を眺めては、ため息を漏らす。 { speed:1 waitInput:true Wait:true }
+
+@print そこで操作を誤って、<br>ミリアに友だち申請をし、通話をかけてしまった。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+
+@print わわっ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "完全に誤操作だったのだが――<br>想定外にミリアのスマホへ<ruby=\"つな\">繋</ruby>がった。" { speed:1 waitInput:true Wait:true }
+
+@print "え！？ ミ、ミリアちゃん！？" { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマはぎょっとしながらも、慌ててスマホを耳にあてる。 { speed:1 waitInput:true Wait:true }
+
+# ボイス加工：電話
+
+@print ――ああ、桜羽エマさんですか。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3
+
+@print "ゴクチョー！？ え、なんで！？" { author:Ema speed:1 waitInput:true Wait:true }
+
+# ボイス加工：電話
+
+@print なんでって……<br>いえね、ちょうど懲罰房の囚人の様子を見に来まして。 { author:Warden speed:1 waitInput:true Wait:true }
+
+# ボイス加工：電話
+
+@print そしたらスマホの着信があったので、<br>代わりに取ったまでですよ。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print "ミリアちゃんは！？ ミリアちゃんは無事なの！？" { author:Ema speed:1 waitInput:true Wait:true }
+
+# ボイス加工：電話
+
+@print 元気ですよ。やれやれ……<br>何度も問題を起こされると、私の仕事が増えるので<br>勘弁してほしいです……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+# ボイス加工：電話
+
+@print いずれ見せしめも必要かもしれませんね。それでは。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@StopBgm 
+
+@print ぷつりと通話が切れる。 { speed:1 waitInput:true Wait:true }
+
+@print "エマは<ruby=\"ぼうぜん\">呆然</ruby>とスマホを見下ろしていた。" { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+@back 9_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent.Custom { time:0.9 }
+@Wait 0.9
+
+@bgm Bgm_28_1
+
+@print どこかよそよそしい空気が囚人たちの間に漂い、<br>まともな会話もないまま――夜になった。 { speed:1 waitInput:true Wait:true }
+
+@print 脱獄計画をはじめてからの日々で、<br>少女たちの心の距離は縮まっていったはずだった。 { speed:1 waitInput:true Wait:true }
+
+@print その空気は、すっかり失われている。 { speed:1 waitInput:true Wait:true }
+
+@print （ミリアちゃんの存在は、やっぱり大きかったんだ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （あの時は強がったけど、また一致団結して<br>　脱獄を目指すことなんてできるのかな……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 弱気になって落ち込んでいるのを見透かされたのか、<br>夕食後、エマはシェリーに誘われてシャワーを浴びた。 { speed:1 waitInput:true Wait:true }
+
+@print 少しさっぱりとした気分となって、<br>２人で静かな通路を歩く。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+@char Sherry.Normal1
+
+@print ……ミリアちゃん、何か理由があったと思うんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマは自分の考えを、ぽつりと<ruby=\"つぶや\">呟</ruby>く。" { speed:1 waitInput:true Wait:true }
+
+@print 気球を破壊した理由ですか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3
+
+@print うん。黒幕とかじゃなくて、<br>何か気球を破壊しなきゃいけない事情が<br>あったんじゃないかって。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1
+
+@print うーん、なんなんでしょうね？<br>夜に徘徊してまでみんなの計画を台無しにする理由……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 牢屋敷側の人間じゃないと<br>そんなことしないと思いますけど。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ミリアさんはそもそも私たちを騙していたわけですし、<br>やっぱり黒幕なんじゃないですかね？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 脅迫されてやった、っていう<br>パターンも考えられますけど……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 話を聞くうち、エマは萎れた表情になっていく。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print （ボクが望みすぎてるのかな……<br>　ミリアちゃんはやっぱり黒幕なのかな……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@StopBgm 
+
+# 地下通路を走る音・１人
+@sfx Sfx_51
+
+@print 背後から駆け寄ってくる音が聞こえ、<br>エマとシェリーは振り返る。 { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆息を切らしながら
+
+@HidePrinter 
+@back 9_2 { time:0 }
+@blur MainBackground-Middle
+@char Hanna.Cry1 { time:0 }
+@animate MainBackground-Middle
+@animate Hanna-Middle
+@Wait 0.3
+
+@print エマさん……ッ、シェリーさん……ッ。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print ハンナちゃん、どう――。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 問いかけの途中でエマは言葉を失う。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@back 9_2
+@char Hanna.Cry1
+@Wait 0.3
+
+@print ハンナは、ぼろぼろに泣いていた。 { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_3_1_Loop
+
+@print 真っ赤になって、涙をこぼしながら<br>エマたちの方へと向かってくる。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@hide MainBackground-Middle,Hanna-Middle { time:0 }
+@blur MainBackground-Middle
+@Wait 0.3
+
+@print "エマは、心臓をぎゅっと<ruby=\"わしづか\">鷲掴</ruby>みされたような<br>嫌な感覚に襲われていた。<br>急速な<ruby=\"どうき\">動悸</ruby>に胸を押さえる。" { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Cry1
+@char Ema.Pensive1
+@char Sherry.Normal1
+
+@print （ノアちゃんを見つけた時と同じ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print す、すぐに来てくださいまし……！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "エマとシェリーは<ruby=\"うなず\">頷</ruby>き、<br>ハンナの後に続いて走り出した。" { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+@back 3_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent.Custom { time:0.9 }
+@Wait 0.9
+
+@print ハンナに先導されて<br>エマたちがたどりついたのは、<br>地下にある、懲罰房の並ぶ通路だった。 { speed:1 waitInput:true Wait:true }
+
+@char AnAn.Cry1,Angle01/Option_Arms-
+@char Meruru.Cry
+@char Coco.Cry1,ArmR5,ArmL5
+
+@print そこには既にメルル、ココ、アンアンがいる。<br>３人は寄り添って、さめざめと泣いていた。 { speed:1 waitInput:true Wait:true }
+
+@print "主に動揺が激しいココとアンアンを、<br>メルルが<ruby=\"な\">撫</ruby>でて介抱している。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@char Meruru.Cry
+@char Ema.Pensive1,ArmR3
+
+@print ああ、エマさん……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print メルルちゃん、一体何が……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマはからからに乾いてはりつく喉から、<br>なんとか声をしぼりだす。 { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Cry
+
+# ＠備考◆泣きながら
+
+@print 中でミリアさんが……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Cry1,ArmR5,ArmL5
+
+# ＠備考◆泣きながら
+
+@print "おっさんが刺されてる！ でも扉が開かなくて！<br>まだ生きてるかもしんないんだよ！？<br>その部屋開けてよ、ねえ！" { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ココが指さした扉の前に、<br>エマとシェリーは立つ。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+@char Sherry.Pensive1
+
+@print （ミリアちゃんが、刺されてる……？<br>　そんな、なんで……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 信じたくなくて、<br>視界がぐらぐらと揺れている。 { speed:1 waitInput:true Wait:true }
+
+@print エマさん。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print さすがに青ざめているシェリーが、<br>エマの手をぎゅっと握ってくれた。 { speed:1 waitInput:true Wait:true }
+
+@print エマが倒れてしまいそうに見えたのだろう。<br>あるいは自身のためかもしれない。 { speed:1 waitInput:true Wait:true }
+
+@print "ぼろぼろの心を支え合うように手を<ruby=\"つな\">繋</ruby>ぎ、<br>エマとシェリーは、<br><ruby=\"のぞ\">覗</ruby>き窓から中へと、視線を投じた。" { speed:1 waitInput:true Wait:true }
+
+@print ぐっ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ミリアからおびただしい血液が流れている――<br>あまりに凄惨な状態だった。 { speed:1 waitInput:true Wait:true }
+
+@print "直視ができず、エマは<ruby=\"とっさ\">咄嗟</ruby>にこみ上げた吐き気を堪える。<br>そこでシェリーの手が離れた。" { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1,ArmR8
+
+@print 少し下がっていてくださいエマさん。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 固い声で言って、<br>シェリーはエマが一歩下がったのを確認してから、<br>懲罰房の前に下がっていた錠前を―― { speed:1 waitInput:true Wait:true }
+
+# 錠前を引きちぎる音
+@sfx Sfx_52
+
+# ＠備考◆破壊の気合声
+
+@char Sherry.Angry1,ArmR8,ArmL8
+
+@print あああっ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@StopBgm 
+
+@print 怪力の魔法で、素手で引きちぎった。 { speed:1 waitInput:true Wait:true }
+
+@print 懲罰房の扉を開き、<br>エマたちは中へと立ち入る。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print （ミリアちゃん、ミリアちゃんミリアちゃん、ミリアちゃん――！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print そして、それを見た。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+# @bgm Bgm_12_1_Loop
+@bgm Bgm_12_1_Loop
+
+@animate Stills
+@back 280_1 { time:0.6 }
+@animate Stills
+@back Transparent { time:1.2 }
+@Wait 2.4
+
+@back 280_1 { time:0 }
+@animate Stills-Middle
+@Wait 2.4
+
+@animate Stills-Middle
+@back 280_1 { time:0 }
+@blur Stills
+@animate Stills
+@blur Stills
+@hide Stills-Middle { time:0.6 }
+@Wait 3
+
+# @bgm Bgm_23_1
+
+@print ――中身が大人の少女、<br>佐伯ミリアの瞳は光を失い、虚ろだった。 { speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"たっけいだい\">磔刑台</ruby>に拘束されたまま、<br>めった刺しにされたのか<br>胸から腹部にかけて大量の血が出ている。" { speed:1 waitInput:true Wait:true }
+
+@print "その赤は全て<ruby=\"ちょう\">蝶</ruby>となって――<br>まるで<ruby=\"たっけいだい\">磔刑台</ruby>の少女の神聖な死を彩るように、<br>彼女の周辺を舞っている。" { speed:1 waitInput:true Wait:true }
+
+@print ノアさんの魔法、まだ残っているんですね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print "シェリーがぽつりと<ruby=\"つぶや\">呟</ruby>く。" { speed:1 waitInput:true Wait:true }
+
+@print ミリアは……本当に刺されているのか？ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print "あいつは映画が好きだった……<br>特殊メイク、ではないのか？ 確認したほうがいい。" { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print ふらふらと立ち入ってきたアンアンに言われて、<br>エマたちは、ハッとする。 { speed:1 waitInput:true Wait:true }
+
+@print （そうだよ、まだ生きてるのかもしれない……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print メルルさん！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print シェリーが呼んで、メルルも中に入ってくる。<br>もしまだ息があるのなら、メルルの魔法が有効だ。 { speed:1 waitInput:true Wait:true }
+
+@print "エマたちはミリアへと<ruby=\"すが\">縋</ruby>るように駆け寄って、<br>状態を確認する。" { speed:1 waitInput:true Wait:true }
+
+@print メルルは光を放つ手を伸ばし、<br>ミリアに触れる。 { speed:1 waitInput:true Wait:true }
+
+@print しかしすぐに、辛そうに首を振った。 { speed:1 waitInput:true Wait:true }
+
+@print ダメです……もう、亡くなっています。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"ちょう\">蝶</ruby>の絵になっても、<br>むせかえるような血のにおいは変わらない。" { speed:1 waitInput:true Wait:true }
+
+@print それに、ミリアの死体は<br>とても直視ができるような状態ではない。 { speed:1 waitInput:true Wait:true }
+
+@hide Stills
+@back 3_2 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@print エマたちは必死で吐き気を堪えながら、<br>一度外へと出る。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Cry1,ArmR3
+@char AnAn.Cry1,Angle01/Option_Arms-
+
+@print ミリアちゃん……なんで……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ……ミリアのスマホが落ちていた。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print アンアンがミリアの端末を差し出してきて、<br>エマはそれを受け取った。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ☆証拠品：『ミリアの端末』入手
+# ========================================
+@spawn Clue
+@update 2-8
+@despawn Clue
+
+@print "ミリアのスマホを見下ろすと、<br>エマは涙が<ruby=\"あふ\">溢</ruby>れて止まらなくなった。" { speed:1 waitInput:true Wait:true }
+
+@print "少女たちの悲痛な<ruby=\"おえつ\">嗚咽</ruby>や<ruby=\"どうこく\">慟哭</ruby>が、<br>地下通路に響く。" { speed:1 waitInput:true Wait:true }
+
+# フクロウの通知音
+@sfx Sfx_14
+
+@print タイミングを見計らったように、<br>スマホ通知音が鳴った。 { speed:1 waitInput:true Wait:true }
+
+@print 『はぁ……報せが入りました。<br>　痛ましい殺人事件が発生したようですね』 { speed:1 waitInput:true Wait:true }
+
+@print 『既に外出禁止時間ですが、<br>　緊急事態なので特別措置とします』 { speed:1 waitInput:true Wait:true }
+
+@print 『皆さん今すぐラウンジに集合してください。<br>　従わなければ看守が連行しちゃうので……』 { speed:1 waitInput:true Wait:true }
+
+@char Jailer.1
+
+@print ゴクチョーのメッセージどおり、<br>看守が通路に現れている。 { speed:1 waitInput:true Wait:true }
+
+@print この後に起きる出来事を想像してか、<br>エマたちは力なく歩きだした。 { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter02/Act01_Chapter02_Adv18

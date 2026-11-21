@@ -1,0 +1,164 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-2-15
+
+# ========================================
+# ●シーン1‐2-15
+# ========================================
+
+@back 30_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@print ラウンジでの話し合いの後―― { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+@back 28_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent.Custom { time:0.9 }
+@Wait 0.9
+
+@print エマはシャワーを浴び、<br>ひとり中庭に出てきていた。 { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_17_1
+
+@char Ema.Pensive1
+
+@print ふぅ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 夜の空気に触れ、火照りを冷ます。 { speed:1 waitInput:true Wait:true }
+
+@print （明日ボクたちはここを脱出する……<br>　こんなに頑張ったんだから、必ず成功する） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 四角く切り取られた夜空には、幾数の星が瞬いている。 { speed:1 waitInput:true Wait:true }
+
+@print （お父さんとお母さんに早く会いたいな） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （高校も、今からだって間に合うはず。<br>　ボクはやり直すんだから――） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print あれ、エマちゃん……？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@print 夜空を見上げていたため、<br>声をかけられるまでエマは気付かなかった。 { speed:1 waitInput:true Wait:true }
+
+@print ミリアが中庭に入ってきて、<br>エマの傍に歩み寄ってくる。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+@char Miria.Normal1
+
+@print エマちゃんも眠れないんだ……？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@print うん、なんだか興奮しちゃって。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print おじさんも。はは、遠足の前みたいだよね。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+
+@print ……ねえ、ミリアちゃん。<br>ミリアちゃんには一体何があったの？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print どうして入れ替わりなんてことを――。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ２人きりになったことで、<br>エマは思い切って問いかけていた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print （少し前に聞いた時ははぐらかされちゃったけど、<br>　やっぱり知っておきたい） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （ナノカちゃんから聞いた話が、<br>　ミリアちゃんの真実だとはどうしても思えなくて……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ミリアは困ったように眉を下げてしまう。 { speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive1
+
+@print ……参ったな。<br>おじさん、自分のことあんまり話したくないんだ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+
+@print う、うん。それはなんとなくわかる。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print でもそのせいで大きな誤解を生んじゃったのも確かで。<br>だから、こんな自分の性格を呪ってる。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print （ミリアちゃんは、自分のことが好きじゃない……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Miria.Normal1
+
+@print エマちゃんはいい子だね。<br>いつも頑張ってて、本当にえらいよ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Ema.Flushed1
+
+@print えっ、と、突然どうしたの！？<br>そ、そんなことないよ……！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 赤面するエマを見て、ミリアは微笑む。 { speed:1 waitInput:true Wait:true }
+
+@char Miria.Smile1
+
+@print 帰してあげなくちゃって思う。<br>……正直ね、おじさんは帰りたくない気持ちもあるんだけど。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print （帰りたくない……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive1
+
+@print 現実に……自分に向き合うのが、怖いのかも。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ミリアは諦めたように息を吐き、<br>やがてぽつりぽつりと語りだした。 { speed:1 waitInput:true Wait:true }
+
+@back 220_2 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@print これは、おじさんの知ってる少女のお話なんだけど……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print 今の子ってさ、ほら、<br>スマホが全てみたいなところあるよね。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print それは、そうかも……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@back 220_2 { time:0 }
+
+@print 例に漏れず、その少女もスマホでSNSを活用してて。<br>もうそれが世界の全てみたいに感じてたんだ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print で、友だちグループとさ、<br>恥ずかしい画像を撮影しあう<br>罰ゲームみたいな遊びがはやってて。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print その少女は友だちグループに裏切られて、<br>自分の恥ずかしい画像をSNSに流出されちゃったんだよね。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print そのうえで、友だちグループはその少女を嘲笑った。<br>面白がって、おもちゃにされた。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print ひどい……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print まあ、これはおじさんの知ってる少女のお話で、<br>おじさんは関係ないんだけどね。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print その少女は絶望のあまり自殺しようとした。<br>それをおじさんが――。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hide Stills,Stills-Middle
+
+@print "そこまで口にして、ミリアは口を<ruby=\"つぐ\">噤</ruby>んだ。" { speed:1 waitInput:true Wait:true }
+
+@print "暗い顔になり、<br>口の中だけで何かブツブツと<ruby=\"つぶや\">呟</ruby>いている。" { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆暗いトーンで
+
+@char Ema.Pensive1,ArmR3
+@char Miria.Pensive1
+
+@print これは自分に起きたことじゃない。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print 踏み込んだらいけない禁忌に抵抗しているかのように―― { speed:1 waitInput:true Wait:true }
+
+@print おじさんは部屋に戻るね。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hide Miria
+
+@print 逃げるようにそそくさとミリアは立ち去っていく。 { speed:1 waitInput:true Wait:true }
+
+@print （今の話がミリアちゃんに起きたことだとしたら、<br>　おじさんはその時ミリアちゃんを救ったんじゃ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 予感を抱いたが、<br>その答えを聞く相手はもういなくなっていた。 { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter02/Act01_Chapter02_Adv16

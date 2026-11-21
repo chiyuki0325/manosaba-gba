@@ -1,0 +1,96 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-4-12
+
+# ========================================
+# ●シーン1‐4-12
+# ========================================
+
+@back 9_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# 荘厳な鐘の音
+@sfx Sfx_33
+
+@bgm Bgm_2_1_Loop
+
+@print 牢屋敷内に、荘厳な鐘が鳴り響く。 { speed:1 waitInput:true Wait:true }
+
+@print （裁判がはじまる――） { author:Ema speed:1 waitInput:true Wait:true }
+
+# フクロウの通知音
+@sfx Sfx_14
+
+@print 通知音が聞こえて、<br>エマは自身のスマホを確認する。 { speed:1 waitInput:true Wait:true }
+
+@print 『魔女裁判の時間となりました』 { speed:1 waitInput:true Wait:true }
+
+@print 『皆さん、必ず自身のスマホを持って、<br>　速やかに裁判部屋に集合してください』 { speed:1 waitInput:true Wait:true }
+
+@print 『従わない者は看守によって<br>　強制連行します』 { speed:1 waitInput:true Wait:true }
+
+@print 『ちなみに紫藤アリサさんのご遺体は、<br>　一度処刑台を下げて片づけておきましたので……』 { speed:1 waitInput:true Wait:true }
+
+@print （アリサちゃん……） { author:Ema speed:1 waitInput:true Wait:true }
+
+# ゆっくりと大扉を開く音
+@sfx Sfx_165
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+@back 13_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent.Custom { time:0.9 }
+@Wait 0.9
+
+@print 裁判所に入ると、<br>少女たちの目が一斉にエマに向く。 { speed:1 waitInput:true Wait:true }
+
+@print メルル、ココ、マーゴ。 { speed:1 waitInput:true Wait:true }
+
+@print （こんな人数で裁判するなんて……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Pensive1
+
+@print ナノカちゃん、来ないようね……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Pensive1
+
+@print どうせあいつが犯人なんじゃねーの。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+
+@print ナノカちゃんはそんなことしないよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Pensive1
+
+@print まーだそんなこと言ってんのかよ。<br>どれだけ庇っても、誰かが犯人なんだろうがよ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Meruru.Pensive
+
+@print う、うぅ……ナノカさん抜きで、<br>進めてしまっていいんでしょうか……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Warden.1
+
+@print そうですねぇ、困りましたねぇ……。<br>ただ探しても見つからなかったので<br>仕方ありませんよね……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print ４名で始めてしまいましょう。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print ４名の少女たちは証言台に立つ。 { speed:1 waitInput:true Wait:true }
+
+@print それでは、魔女裁判開廷です！ { author:Warden speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ＞議論パートへ
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter04/Act01_Chapter04_Trial00

@@ -1,0 +1,1655 @@
+{
+  "layouts": [
+    {
+      "chapter": "Act01_Chapter01",
+      "stage": 0,
+      "seats": [
+        0,
+        5,
+        2,
+        7,
+        12,
+        4,
+        8,
+        255,
+        255,
+        10,
+        11,
+        3,
+        9
+      ],
+      "count": 13
+    },
+    {
+      "chapter": "Act01_Chapter02",
+      "stage": 0,
+      "seats": [
+        0,
+        5,
+        2,
+        255,
+        12,
+        4,
+        255,
+        15,
+        14,
+        10,
+        11,
+        3,
+        9
+      ],
+      "count": 13
+    },
+    {
+      "chapter": "Act01_Chapter03",
+      "stage": 0,
+      "seats": [
+        0,
+        255,
+        2,
+        255,
+        12,
+        4,
+        255,
+        15,
+        14,
+        10,
+        11,
+        255,
+        9
+      ],
+      "count": 13
+    },
+    {
+      "chapter": "Act01_Chapter04",
+      "stage": 0,
+      "seats": [
+        0,
+        255,
+        255,
+        255,
+        255,
+        4,
+        255,
+        255,
+        14,
+        10,
+        255,
+        255,
+        9
+      ],
+      "count": 13
+    },
+    {
+      "chapter": "Act01_Chapter05",
+      "stage": 0,
+      "seats": [
+        0,
+        255,
+        255,
+        255,
+        255,
+        4,
+        255,
+        255,
+        14,
+        10,
+        255,
+        255,
+        9
+      ],
+      "count": 13
+    },
+    {
+      "chapter": "Act02_Chapter01",
+      "stage": 0,
+      "seats": [
+        0,
+        5,
+        2,
+        7,
+        12,
+        4,
+        8,
+        6,
+        1,
+        10,
+        11,
+        3,
+        14
+      ],
+      "count": 13
+    },
+    {
+      "chapter": "Act02_Chapter02",
+      "stage": 0,
+      "seats": [
+        0,
+        5,
+        2,
+        7,
+        12,
+        255,
+        8,
+        6,
+        1,
+        255,
+        11,
+        3,
+        255
+      ],
+      "count": 13
+    },
+    {
+      "chapter": "Act02_Chapter03",
+      "stage": 0,
+      "seats": [
+        0,
+        5,
+        2,
+        7,
+        12,
+        255,
+        8,
+        6,
+        1,
+        255,
+        255,
+        255,
+        255
+      ],
+      "count": 13
+    },
+    {
+      "chapter": "Act02_Chapter04",
+      "stage": 0,
+      "seats": [
+        255,
+        5,
+        2,
+        255,
+        12,
+        255,
+        8,
+        255,
+        1,
+        255,
+        255,
+        255,
+        255
+      ],
+      "count": 13
+    },
+    {
+      "chapter": "Act02_Chapter05",
+      "stage": 0,
+      "seats": [
+        0,
+        5,
+        2,
+        7,
+        12,
+        4,
+        8,
+        6,
+        1,
+        10,
+        11,
+        3,
+        9
+      ],
+      "count": 13
+    },
+    {
+      "chapter": "Act02_Chapter06",
+      "stage": 1,
+      "seats": [
+        0,
+        5,
+        2,
+        7,
+        12,
+        4,
+        8,
+        6,
+        1,
+        10,
+        11,
+        3,
+        9,
+        13
+      ],
+      "count": 14
+    }
+  ],
+  "motions": [
+    {
+      "path": "Act01_Chapter01/Act01_Chapter01_Trial00",
+      "line": 82,
+      "kind": "orbit",
+      "layout": 0,
+      "start": 1251,
+      "end": 1818,
+      "frames": 1500,
+      "ease": 0,
+      "wait": 0
+    },
+    {
+      "path": "Act01_Chapter01/Act01_Chapter01_Trial00",
+      "line": 118,
+      "kind": "yaw",
+      "layout": 0,
+      "start": 1373,
+      "end": 1364,
+      "frames": 36,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act01_Chapter01/Act01_Chapter01_Trial00",
+      "line": 131,
+      "kind": "yaw",
+      "layout": 0,
+      "start": 1222,
+      "end": 1232,
+      "frames": 36,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act01_Chapter01/Act01_Chapter01_Trial14",
+      "line": 26,
+      "kind": "yaw",
+      "layout": 0,
+      "start": 899,
+      "end": 909,
+      "frames": 36,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act01_Chapter01/Act01_Chapter01_Trial14",
+      "line": 35,
+      "kind": "yaw",
+      "layout": 0,
+      "start": 1373,
+      "end": 1364,
+      "frames": 36,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act01_Chapter02/Act01_Chapter02_Trial00",
+      "line": 58,
+      "kind": "orbit",
+      "layout": 1,
+      "start": 1014,
+      "end": 1660,
+      "frames": 2400,
+      "ease": 0,
+      "wait": 0
+    },
+    {
+      "path": "Act01_Chapter02/Act01_Chapter02_Trial00",
+      "line": 94,
+      "kind": "yaw",
+      "layout": 1,
+      "start": 1219,
+      "end": 1235,
+      "frames": 36,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act01_Chapter02/Act01_Chapter02_Trial00",
+      "line": 104,
+      "kind": "yaw",
+      "layout": 1,
+      "start": 1062,
+      "end": 1046,
+      "frames": 36,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act01_Chapter02/Act01_Chapter02_Trial01",
+      "line": 887,
+      "kind": "yaw",
+      "layout": 1,
+      "start": 1077,
+      "end": 1062,
+      "frames": 36,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act01_Chapter02/Act01_Chapter02_Trial14",
+      "line": 24,
+      "kind": "yaw",
+      "layout": 1,
+      "start": 904,
+      "end": 920,
+      "frames": 60,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act01_Chapter02/Act01_Chapter02_Trial14",
+      "line": 33,
+      "kind": "yaw",
+      "layout": 1,
+      "start": 2637,
+      "end": 2621,
+      "frames": 60,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act01_Chapter03/Act01_Chapter03_Trial00",
+      "line": 82,
+      "kind": "orbit",
+      "layout": 2,
+      "start": 1014,
+      "end": 1723,
+      "frames": 2400,
+      "ease": 0,
+      "wait": 0
+    },
+    {
+      "path": "Act01_Chapter03/Act01_Chapter03_Trial00",
+      "line": 108,
+      "kind": "yaw",
+      "layout": 2,
+      "start": 1692,
+      "end": 1707,
+      "frames": 36,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act01_Chapter03/Act01_Chapter03_Trial00",
+      "line": 119,
+      "kind": "yaw",
+      "layout": 2,
+      "start": 1219,
+      "end": 1203,
+      "frames": 36,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act01_Chapter03/Act01_Chapter03_Trial03",
+      "line": 875,
+      "kind": "yaw",
+      "layout": 2,
+      "start": 2495,
+      "end": 2464,
+      "frames": 48,
+      "ease": 1,
+      "wait": 1
+    },
+    {
+      "path": "Act01_Chapter03/Act01_Chapter03_Trial13",
+      "line": 26,
+      "kind": "yaw",
+      "layout": 2,
+      "start": 1219,
+      "end": 1203,
+      "frames": 60,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act01_Chapter03/Act01_Chapter03_Trial13",
+      "line": 35,
+      "kind": "yaw",
+      "layout": 2,
+      "start": 904,
+      "end": 920,
+      "frames": 60,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act01_Chapter04/Act01_Chapter04_Trial00",
+      "line": 52,
+      "kind": "orbit",
+      "layout": 3,
+      "start": 589,
+      "end": 1566,
+      "frames": 2400,
+      "ease": 0,
+      "wait": 0
+    },
+    {
+      "path": "Act01_Chapter04/Act01_Chapter04_Trial00",
+      "line": 91,
+      "kind": "yaw",
+      "layout": 3,
+      "start": 904,
+      "end": 888,
+      "frames": 36,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act01_Chapter04/Act01_Chapter04_Trial00",
+      "line": 101,
+      "kind": "yaw",
+      "layout": 3,
+      "start": 1692,
+      "end": 1707,
+      "frames": 36,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act01_Chapter04/Act01_Chapter04_Trial10",
+      "line": 26,
+      "kind": "yaw",
+      "layout": 3,
+      "start": 2164,
+      "end": 2149,
+      "frames": 60,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act01_Chapter04/Act01_Chapter04_Trial10",
+      "line": 34,
+      "kind": "yaw",
+      "layout": 3,
+      "start": 904,
+      "end": 920,
+      "frames": 60,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act01_Chapter05/Act01_Chapter05_Trial00",
+      "line": 109,
+      "kind": "orbit",
+      "layout": 4,
+      "start": 715,
+      "end": 1723,
+      "frames": 2400,
+      "ease": 0,
+      "wait": 0
+    },
+    {
+      "path": "Act01_Chapter05/Act01_Chapter05_Trial00",
+      "line": 133,
+      "kind": "yaw",
+      "layout": 4,
+      "start": 1692,
+      "end": 1707,
+      "frames": 36,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act01_Chapter05/Act01_Chapter05_Trial00",
+      "line": 144,
+      "kind": "yaw",
+      "layout": 4,
+      "start": 904,
+      "end": 888,
+      "frames": 36,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act01_Chapter05/Act01_Chapter05_Trial09",
+      "line": 24,
+      "kind": "yaw",
+      "layout": 4,
+      "start": 2794,
+      "end": 2779,
+      "frames": 60,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act01_Chapter05/Act01_Chapter05_Trial09",
+      "line": 33,
+      "kind": "yaw",
+      "layout": 4,
+      "start": 904,
+      "end": 920,
+      "frames": 60,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter01/Act02_Chapter01_Trial00",
+      "line": 25,
+      "kind": "orbit",
+      "layout": 5,
+      "start": 2117,
+      "end": 2984,
+      "frames": 2400,
+      "ease": 0,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter01/Act02_Chapter01_Trial00",
+      "line": 53,
+      "kind": "yaw",
+      "layout": 5,
+      "start": 1692,
+      "end": 1707,
+      "frames": 36,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter01/Act02_Chapter01_Trial00",
+      "line": 63,
+      "kind": "yaw",
+      "layout": 5,
+      "start": 1849,
+      "end": 1833,
+      "frames": 36,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter01/Act02_Chapter01_Trial00",
+      "line": 144,
+      "kind": "yaw",
+      "layout": 5,
+      "start": 1392,
+      "end": 1353,
+      "frames": 30,
+      "ease": 0,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter01/Act02_Chapter01_Trial06",
+      "line": 756,
+      "kind": "yaw",
+      "layout": 5,
+      "start": 920,
+      "end": 888,
+      "frames": 36,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter01/Act02_Chapter01_Trial12",
+      "line": 30,
+      "kind": "yaw",
+      "layout": 5,
+      "start": 2164,
+      "end": 2180,
+      "frames": 60,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter01/Act02_Chapter01_Trial12",
+      "line": 39,
+      "kind": "yaw",
+      "layout": 5,
+      "start": 2322,
+      "end": 2306,
+      "frames": 60,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter02/Act02_Chapter02_Trial00",
+      "line": 24,
+      "kind": "orbit",
+      "layout": 6,
+      "start": 2117,
+      "end": 2984,
+      "frames": 2400,
+      "ease": 0,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter02/Act02_Chapter02_Trial00",
+      "line": 48,
+      "kind": "yaw",
+      "layout": 6,
+      "start": 1377,
+      "end": 1392,
+      "frames": 36,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter02/Act02_Chapter02_Trial00",
+      "line": 64,
+      "kind": "yaw",
+      "layout": 6,
+      "start": 1534,
+      "end": 1518,
+      "frames": 36,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter02/Act02_Chapter02_Trial02",
+      "line": 26,
+      "kind": "yaw",
+      "layout": 6,
+      "start": 2164,
+      "end": 2180,
+      "frames": 36,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter02/Act02_Chapter02_Trial02",
+      "line": 35,
+      "kind": "yaw",
+      "layout": 6,
+      "start": 904,
+      "end": 888,
+      "frames": 36,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter02/Act02_Chapter02_Trial11",
+      "line": 29,
+      "kind": "yaw",
+      "layout": 6,
+      "start": 2479,
+      "end": 2464,
+      "frames": 60,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter02/Act02_Chapter02_Trial11",
+      "line": 38,
+      "kind": "yaw",
+      "layout": 6,
+      "start": 2164,
+      "end": 2180,
+      "frames": 60,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter02/Act02_Chapter02_Trial12",
+      "line": 34,
+      "kind": "yaw",
+      "layout": 6,
+      "start": 2164,
+      "end": 2149,
+      "frames": 60,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter02/Act02_Chapter02_Trial12",
+      "line": 43,
+      "kind": "yaw",
+      "layout": 6,
+      "start": 1849,
+      "end": 1865,
+      "frames": 60,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter03/Act02_Chapter03_Trial01",
+      "line": 598,
+      "kind": "yaw",
+      "layout": 7,
+      "start": 1865,
+      "end": 1833,
+      "frames": 36,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter03/Act02_Chapter03_Trial04",
+      "line": 662,
+      "kind": "yaw",
+      "layout": 7,
+      "start": 1235,
+      "end": 1203,
+      "frames": 36,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter03/Act02_Chapter03_Trial04",
+      "line": 747,
+      "kind": "yaw",
+      "layout": 7,
+      "start": 1392,
+      "end": 1361,
+      "frames": 36,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter03/Act02_Chapter03_Trial13",
+      "line": 25,
+      "kind": "yaw",
+      "layout": 7,
+      "start": 2164,
+      "end": 2180,
+      "frames": 60,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter03/Act02_Chapter03_Trial13",
+      "line": 34,
+      "kind": "yaw",
+      "layout": 7,
+      "start": 2007,
+      "end": 1991,
+      "frames": 60,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter04/Act02_Chapter04_Trial00",
+      "line": 15,
+      "kind": "orbit",
+      "layout": 8,
+      "start": 2117,
+      "end": 2984,
+      "frames": 2400,
+      "ease": 0,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter04/Act02_Chapter04_Trial00",
+      "line": 48,
+      "kind": "yaw",
+      "layout": 8,
+      "start": 2164,
+      "end": 2149,
+      "frames": 36,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter04/Act02_Chapter04_Trial10",
+      "line": 25,
+      "kind": "yaw",
+      "layout": 8,
+      "start": 1062,
+      "end": 1046,
+      "frames": 60,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter04/Act02_Chapter04_Trial10",
+      "line": 34,
+      "kind": "yaw",
+      "layout": 8,
+      "start": 2164,
+      "end": 2180,
+      "frames": 60,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter05/Act02_Chapter05_Trial00",
+      "line": 18,
+      "kind": "orbit",
+      "layout": 9,
+      "start": 2117,
+      "end": 2826,
+      "frames": 2400,
+      "ease": 0,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter05/Act02_Chapter05_Trial02",
+      "line": 29,
+      "kind": "yaw",
+      "layout": 9,
+      "start": 2164,
+      "end": 2180,
+      "frames": 60,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter05/Act02_Chapter05_Trial02",
+      "line": 38,
+      "kind": "yaw",
+      "layout": 9,
+      "start": 2794,
+      "end": 2779,
+      "frames": 60,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter05/Act02_Chapter05_Trial05",
+      "line": 33,
+      "kind": "yaw",
+      "layout": 9,
+      "start": 2164,
+      "end": 2180,
+      "frames": 60,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter05/Act02_Chapter05_Trial05",
+      "line": 42,
+      "kind": "yaw",
+      "layout": 9,
+      "start": 1377,
+      "end": 1361,
+      "frames": 60,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter05/Act02_Chapter05_Trial07",
+      "line": 37,
+      "kind": "yaw",
+      "layout": 9,
+      "start": 2164,
+      "end": 2180,
+      "frames": 60,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter05/Act02_Chapter05_Trial07",
+      "line": 46,
+      "kind": "yaw",
+      "layout": 9,
+      "start": 2007,
+      "end": 1991,
+      "frames": 60,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter05/Act02_Chapter05_Trial09",
+      "line": 39,
+      "kind": "yaw",
+      "layout": 9,
+      "start": 2164,
+      "end": 2180,
+      "frames": 60,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter05/Act02_Chapter05_Trial09",
+      "line": 48,
+      "kind": "yaw",
+      "layout": 9,
+      "start": 2322,
+      "end": 2306,
+      "frames": 60,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter05/Act02_Chapter05_Trial12",
+      "line": 42,
+      "kind": "yaw",
+      "layout": 9,
+      "start": 2164,
+      "end": 2180,
+      "frames": 60,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter05/Act02_Chapter05_Trial12",
+      "line": 51,
+      "kind": "yaw",
+      "layout": 9,
+      "start": 2479,
+      "end": 2464,
+      "frames": 60,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter05/Act02_Chapter05_Trial14",
+      "line": 47,
+      "kind": "yaw",
+      "layout": 9,
+      "start": 2164,
+      "end": 2180,
+      "frames": 60,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter05/Act02_Chapter05_Trial14",
+      "line": 56,
+      "kind": "yaw",
+      "layout": 9,
+      "start": 1692,
+      "end": 1676,
+      "frames": 60,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter05/Act02_Chapter05_Trial17",
+      "line": 47,
+      "kind": "yaw",
+      "layout": 9,
+      "start": 2164,
+      "end": 2180,
+      "frames": 60,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter05/Act02_Chapter05_Trial17",
+      "line": 56,
+      "kind": "yaw",
+      "layout": 9,
+      "start": 2637,
+      "end": 2621,
+      "frames": 60,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter05/Act02_Chapter05_Trial19",
+      "line": 50,
+      "kind": "yaw",
+      "layout": 9,
+      "start": 2164,
+      "end": 2180,
+      "frames": 60,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter05/Act02_Chapter05_Trial19",
+      "line": 59,
+      "kind": "yaw",
+      "layout": 9,
+      "start": 1849,
+      "end": 1833,
+      "frames": 60,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter05/Act02_Chapter05_Trial21",
+      "line": 56,
+      "kind": "yaw",
+      "layout": 9,
+      "start": 2164,
+      "end": 2180,
+      "frames": 60,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter05/Act02_Chapter05_Trial21",
+      "line": 65,
+      "kind": "yaw",
+      "layout": 9,
+      "start": 1534,
+      "end": 1518,
+      "frames": 60,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter05/Act02_Chapter05_Trial23",
+      "line": 471,
+      "kind": "yaw",
+      "layout": 9,
+      "start": 1219,
+      "end": 1203,
+      "frames": 60,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter05/Act02_Chapter05_Trial25",
+      "line": 57,
+      "kind": "yaw",
+      "layout": 9,
+      "start": 2164,
+      "end": 2180,
+      "frames": 60,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter05/Act02_Chapter05_Trial25",
+      "line": 66,
+      "kind": "yaw",
+      "layout": 9,
+      "start": 1219,
+      "end": 1203,
+      "frames": 60,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter05/Act02_Chapter05_Trial28",
+      "line": 59,
+      "kind": "yaw",
+      "layout": 9,
+      "start": 2164,
+      "end": 2180,
+      "frames": 60,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter05/Act02_Chapter05_Trial28",
+      "line": 68,
+      "kind": "yaw",
+      "layout": 9,
+      "start": 904,
+      "end": 888,
+      "frames": 60,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter06/Act02_Chapter06_Trial09",
+      "line": 27,
+      "kind": "yaw",
+      "layout": 10,
+      "start": 904,
+      "end": 919,
+      "frames": 60,
+      "ease": 1,
+      "wait": 0
+    },
+    {
+      "path": "Act02_Chapter06/Act02_Chapter06_Trial09",
+      "line": 35,
+      "kind": "yaw",
+      "layout": 10,
+      "start": 2074,
+      "end": 2060,
+      "frames": 60,
+      "ease": 1,
+      "wait": 0
+    }
+  ],
+  "unmapped": [],
+  "counts": {
+    "total": 86,
+    "close_pan": 69,
+    "pan": 9,
+    "reduced_compound": 8
+  },
+  "source_counts": {
+    "mapped": 78,
+    "unmapped": 8,
+    "kinds": {
+      "orbit": 9,
+      "yaw": 69
+    }
+  },
+  "source_compound": [
+    {
+      "path": "Act01_Chapter01/Act01_Chapter01_Trial00",
+      "line": 142,
+      "reason": "perspective_or_vertical",
+      "params": {
+        "Index": 0,
+        "Height": 5.5,
+        "Distance": 12.0,
+        "Duration": 4.0,
+        "EaseName": "OutSine"
+      }
+    },
+    {
+      "path": "Act01_Chapter01/Act01_Chapter01_Trial00",
+      "line": 165,
+      "reason": "perspective_or_vertical",
+      "params": {
+        "Index": 0,
+        "Height": 5.0,
+        "Rotation": {
+          "expression": "2,{ (12.5 / courtStandCount * 360) },0"
+        },
+        "Distance": 4.0,
+        "Duration": 8.0,
+        "EaseName": "InOutSine"
+      }
+    },
+    {
+      "path": "Act01_Chapter01/Act01_Chapter01_Trial00",
+      "line": 206,
+      "reason": "perspective_or_vertical",
+      "params": {
+        "Index": 1,
+        "Distance": 11.0,
+        "Duration": 2.0,
+        "EaseName": "OutSine"
+      }
+    },
+    {
+      "path": "Act01_Chapter03/Act01_Chapter03_Trial12",
+      "line": 798,
+      "reason": "perspective_or_vertical",
+      "params": {
+        "Index": 1,
+        "Height": 5.0,
+        "Duration": 1.0,
+        "EaseName": "OutQuad"
+      }
+    },
+    {
+      "path": "Act01_Chapter03/Act01_Chapter03_Trial13",
+      "line": 111,
+      "reason": "perspective_or_vertical",
+      "params": {
+        "Index": 0,
+        "Height": 6.0,
+        "Rotation": {
+          "expression": "0,{ (1.95 / courtStandCount * 360) },-4"
+        },
+        "Distance": 14.0,
+        "Duration": 3.200000047683716,
+        "EaseName": "OutQuad"
+      }
+    },
+    {
+      "path": "Act02_Chapter02/Act02_Chapter02_Trial12",
+      "line": 25,
+      "reason": "perspective_or_vertical",
+      "params": {
+        "Index": 1,
+        "Height": 5.599999904632568,
+        "Rotation": {
+          "expression": "0,{ (10 / courtStandCount * 360) },0"
+        },
+        "Distance": 12.0,
+        "Duration": 1.0,
+        "EaseName": "OutQuad"
+      }
+    },
+    {
+      "path": "Act02_Chapter03/Act02_Chapter03_Trial00",
+      "line": 17,
+      "reason": "perspective_or_vertical",
+      "params": {
+        "Index": 0,
+        "Height": 5.5,
+        "Distance": 13.0,
+        "Duration": 30.0
+      }
+    },
+    {
+      "path": "Act02_Chapter06/Act02_Chapter06_Trial09",
+      "line": 45,
+      "reason": "perspective_or_vertical",
+      "params": {
+        "Index": 1,
+        "Height": 5.599999904632568,
+        "Rotation": {
+          "expression": "0,{ (13 / courtStandCount * 360) },0"
+        },
+        "Distance": 12.0,
+        "Duration": 1.0,
+        "EaseName": "OutQuad"
+      }
+    }
+  ],
+  "width": 2048,
+  "tile_bytes_by_actor": [
+    [
+      3584,
+      4896,
+      5088,
+      6688,
+      4256,
+      5952,
+      6528,
+      3840,
+      4704,
+      5312,
+      5024,
+      5088,
+      4544,
+      4928,
+      9600,
+      7552,
+      5536
+    ],
+    [
+      3584,
+      4896,
+      5088,
+      6688,
+      4256,
+      5952,
+      6528,
+      3840,
+      4704,
+      5312,
+      5024,
+      5088,
+      4544,
+      4928,
+      9600,
+      7552,
+      5536
+    ]
+  ],
+  "obj_count_by_actor": [
+    [
+      7,
+      12,
+      13,
+      18,
+      4,
+      16,
+      12,
+      8,
+      13,
+      7,
+      10,
+      9,
+      10,
+      9,
+      17,
+      18,
+      9
+    ],
+    [
+      7,
+      12,
+      13,
+      18,
+      4,
+      16,
+      12,
+      8,
+      13,
+      7,
+      10,
+      9,
+      10,
+      9,
+      17,
+      18,
+      9
+    ]
+  ],
+  "reduced_compound": [
+    {
+      "path": "Act01_Chapter01/Act01_Chapter01_Trial00",
+      "line": 142,
+      "index": 0,
+      "view": 8,
+      "seat": 0,
+      "layout": 0,
+      "start": {
+        "height": 5.0,
+        "distance": 10.0,
+        "rotation": [
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      "end": {
+        "height": 5.5,
+        "distance": 12.0,
+        "rotation": [
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      "frames": 240,
+      "ease": "OutSine",
+      "wait": false,
+      "motion": 78,
+      "policy": "representative start view, small BG vertical scroll and actor scaling, then endpoint cut"
+    },
+    {
+      "path": "Act01_Chapter01/Act01_Chapter01_Trial00",
+      "line": 165,
+      "index": 0,
+      "view": 9,
+      "seat": 13,
+      "layout": 0,
+      "start": {
+        "height": 5.5,
+        "distance": 12.0,
+        "rotation": [
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      "end": {
+        "height": 5.0,
+        "distance": 4.0,
+        "rotation": [
+          2.0,
+          -13.846153846153811,
+          0.0
+        ]
+      },
+      "frames": 480,
+      "ease": "InOutSine",
+      "wait": false,
+      "motion": 79,
+      "policy": "horizontal pan then endpoint cut"
+    },
+    {
+      "path": "Act01_Chapter01/Act01_Chapter01_Trial00",
+      "line": 206,
+      "index": 1,
+      "view": 10,
+      "seat": 0,
+      "layout": 0,
+      "start": {
+        "height": 5.5,
+        "distance": 12.0,
+        "rotation": [
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      "end": {
+        "height": 5.5,
+        "distance": 11.0,
+        "rotation": [
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      "frames": 120,
+      "ease": "OutSine",
+      "wait": false,
+      "motion": 80,
+      "policy": "representative start view, small BG vertical scroll and actor scaling, then endpoint cut"
+    },
+    {
+      "path": "Act01_Chapter03/Act01_Chapter03_Trial12",
+      "line": 798,
+      "index": 1,
+      "view": 33,
+      "seat": 2,
+      "layout": 2,
+      "start": {
+        "height": 4.5,
+        "distance": 13.0,
+        "rotation": [
+          0.0,
+          52.615384615384606,
+          0.0
+        ]
+      },
+      "end": {
+        "height": 5.0,
+        "distance": 13.0,
+        "rotation": [
+          0.0,
+          52.61538461538461,
+          0.0
+        ]
+      },
+      "frames": 60,
+      "ease": "OutQuad",
+      "wait": false,
+      "motion": 81,
+      "policy": "representative start view, small BG vertical scroll and actor scaling, then endpoint cut"
+    },
+    {
+      "path": "Act01_Chapter03/Act01_Chapter03_Trial13",
+      "line": 111,
+      "index": 0,
+      "view": 34,
+      "seat": 2,
+      "layout": 2,
+      "start": {
+        "height": 5.5,
+        "distance": 12,
+        "rotation": [
+          0,
+          52.61538461538461,
+          4
+        ]
+      },
+      "end": {
+        "height": 6.0,
+        "distance": 14.0,
+        "rotation": [
+          0.0,
+          54.0,
+          -4.0
+        ]
+      },
+      "frames": 192,
+      "ease": "OutQuad",
+      "wait": false,
+      "motion": 82,
+      "policy": "representative start view, small BG vertical scroll and actor scaling, then endpoint cut"
+    },
+    {
+      "path": "Act02_Chapter02/Act02_Chapter02_Trial12",
+      "line": 25,
+      "index": 1,
+      "view": 28,
+      "seat": 10,
+      "layout": 6,
+      "start": {
+        "height": 4.599999904632568,
+        "distance": 10.0,
+        "rotation": [
+          0.0,
+          276.92307692307696,
+          0.0
+        ]
+      },
+      "end": {
+        "height": 5.599999904632568,
+        "distance": 12.0,
+        "rotation": [
+          0.0,
+          276.92307692307696,
+          0.0
+        ]
+      },
+      "frames": 60,
+      "ease": "OutQuad",
+      "wait": false,
+      "motion": 83,
+      "policy": "representative start view, small BG vertical scroll and actor scaling, then endpoint cut"
+    },
+    {
+      "path": "Act02_Chapter03/Act02_Chapter03_Trial00",
+      "line": 17,
+      "index": 0,
+      "view": 40,
+      "seat": 8,
+      "layout": 7,
+      "start": {
+        "height": 4.0,
+        "distance": 4.0,
+        "rotation": [
+          0.0,
+          221.53846153846155,
+          0.0
+        ]
+      },
+      "end": {
+        "height": 5.5,
+        "distance": 13.0,
+        "rotation": [
+          0.0,
+          221.53846153846155,
+          0.0
+        ]
+      },
+      "frames": 1800,
+      "ease": "Linear",
+      "wait": false,
+      "motion": 84,
+      "policy": "representative start view, small BG vertical scroll and actor scaling, then endpoint cut"
+    },
+    {
+      "path": "Act02_Chapter06/Act02_Chapter06_Trial09",
+      "line": 45,
+      "index": 1,
+      "view": 54,
+      "seat": 13,
+      "layout": 10,
+      "start": {
+        "height": 4.599999904632568,
+        "distance": 10.0,
+        "rotation": [
+          0.0,
+          334.2857142857143,
+          0.0
+        ]
+      },
+      "end": {
+        "height": 5.599999904632568,
+        "distance": 12.0,
+        "rotation": [
+          0.0,
+          334.2857142857142,
+          0.0
+        ]
+      },
+      "frames": 60,
+      "ease": "OutQuad",
+      "wait": false,
+      "motion": 85,
+      "policy": "representative start view, small BG vertical scroll and actor scaling, then endpoint cut"
+    }
+  ],
+  "representative_views": 18,
+  "representative_width": 320,
+  "view_positions": [
+    [
+      [
+        160,
+        8,
+        160,
+        256
+      ],
+      [
+        121,
+        8,
+        160,
+        256
+      ],
+      [
+        199,
+        8,
+        160,
+        256
+      ],
+      [
+        160,
+        -6,
+        160,
+        320
+      ],
+      [
+        102,
+        -6,
+        160,
+        320
+      ],
+      [
+        218,
+        -6,
+        160,
+        320
+      ],
+      [
+        160,
+        -24,
+        160,
+        384
+      ],
+      [
+        83,
+        -25,
+        160,
+        384
+      ],
+      [
+        237,
+        -25,
+        160,
+        384
+      ]
+    ],
+    [
+      [
+        160,
+        8,
+        160,
+        256
+      ],
+      [
+        124,
+        8,
+        160,
+        256
+      ],
+      [
+        196,
+        8,
+        160,
+        256
+      ],
+      [
+        160,
+        -6,
+        160,
+        320
+      ],
+      [
+        106,
+        -6,
+        160,
+        320
+      ],
+      [
+        214,
+        -6,
+        160,
+        320
+      ],
+      [
+        160,
+        -24,
+        160,
+        384
+      ],
+      [
+        88,
+        -25,
+        160,
+        384
+      ],
+      [
+        232,
+        -25,
+        160,
+        384
+      ]
+    ]
+  ],
+  "policy": "distance 10/12/13, left/centre/right, tilt merged; short yaw retains close view; compound motion approximated"
+}

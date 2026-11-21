@@ -1,0 +1,423 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter05/Act02_Chapter05_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+@badId 10
+
+# クリーチャー化初期化
+@hide Hiro
+@char CreatureHiro.2 { Position:{hiroPositionX},{characterPositionY},{hiroPositionZ} Rotation:,{hiroRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Meruru
+@char CreatureMeruru.3-5 { Position:{meruruPositionX},{characterPositionY},{meruruPositionZ} Rotation:,{meruruRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Leia
+@char CreatureLeia.0-8 { Position:{leiaPositionX},{characterPositionY},{leiaPositionZ} Rotation:,{leiaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Noah
+@char CreatureNoah.0-3 { Position:{noahPositionX},{characterPositionY},{noahPositionZ} Rotation:,{noahRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Margo
+@char CreatureMargo.0-4 { Position:{margoPositionX},{characterPositionY},{margoPositionZ} Rotation:,{margoRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Nanoka
+@char CreatureNanoka.0-1 { Position:{nanokaPositionX},{characterPositionY},{nanokaPositionZ} Rotation:,{nanokaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Coco
+@char CreatureCoco.2-3 { Position:{cocoPositionX},{characterPositionY},{cocoPositionZ} Rotation:,{cocoRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide AnAn
+@char CreatureAnAn.0-3 { Position:{ananPositionX},{characterPositionY},{ananPositionZ} Rotation:,{ananRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Miria
+
+@hide Alisa { time:0 }
+@char CreatureAlisa.0-7 { Position:{alisaPositionX},{characterPositionY},{alisaPositionZ} Rotation:,{alisaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Hanna { time:0 }
+
+# ==============================================================================
+# MARK: 10-24: 💬 シェリーの過去
+# ==============================================================================
+# ＠ト書き▼議論10-24
+# 議論開始カットイン
+# BGM変更：Guil-me N'o sinruits-Vocal有-
+@bgm Bgm_8_1
+
+# Judge10-24-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+# ＠備考◆ずっと冷静
+
+@char Sherry.Default,ArmR12,ArmL4,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@printDebate 私は小さい頃、<br>日常的に肉体を<br>傷付けられていました。
+
+@char Sherry.Default,ArmR3,ArmL3,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Normal_Closed
+@gosubModifyCamera 0
+@printDebate でもある日<br>子供ながらに少し<br>反抗したんです。
+
+@char Sherry.Default,ArmR7,ArmL3,Angle01/Facial/Eyes>Eyes_Flushed_Closed01,Angle01/Facial/Mouth>Mouth_Cry_Open
+@gosubModifyCamera 0
+@printDebate ……でも<br>私はちょっと<br>人より力が<br>強かったんですよね。
+
+@char Sherry.Default,ArmR10,ArmL9,Angle01/Facial/Eyes>Eyes_Wink_Open02,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@printDebate その結果、<br>この世から<br>命が１つ<br>消えてしまいました。
+
+@char Sherry.Default,ArmR3,ArmL12,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Normal_Closed
+@gosubModifyCamera 0
+@printDebate 施設職員の惨殺死体は、<br>事件の迷宮入りと共に<br>事故死として扱われて<br>闇に葬られます。
+
+# ＠備考◆絵本を読むように/笑顔
+
+@char Sherry.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Closed02,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate でもそのあと<br>シェリーちゃんは<br>新しいご家庭に<br>引き取られました。
+
+@char Sherry.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Closed03,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate そうして<br>優しいお義父さんや<br>お義母さんのもと、<br>シェリーちゃんは<br>末永く幸せに<br>暮らしましたとさ。<br>めでたしめでたし――。
+
+# ＠備考◆真顔／シリアスにやや低めに・大人っぽく
+
+@char Sherry.Default,ArmR3,ArmL14,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Neutral_Closed
+@gosubModifyCamera 0
+@printDebate ――そうなったら、<br>良かったんですけどね。
+
+@char Sherry.Default,ArmR13,ArmL12,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@printDebate でもシェリーちゃんは、<br>それから他の人とは<br>少し違う生き物に<br>なってしまった<br>みたいでした。
+
+@char Sherry.Default,ArmR3,ArmL14,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@printDebate お義父さんにも<br>お義母さんにも<br>不満はないです。<br>だから彼らが望む<br>【いいこ】になろうと<br>したつもりです。
+
+@char Sherry.Default,ArmR3,ArmL14,Angle01/Facial/Eyes>Eyes_Normal_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@printDebate 周りの人間に対しても<br>同じです。<br>……わからないなりに、<br>溶け込もうとしていたんですよ。
+
+@char Sherry.Default,ArmR7,ArmL14,Angle01/Facial/Eyes>Eyes_Flushed_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Closed
+@gosubModifyCamera 0
+@printDebate "でも……<br><link=\"Objection_02_05_24_01\">やっぱりダメ</link>だった<br>みたいで。"
+
+# ＠備考◆大げさな演技・わざとらしい泣き真似
+
+@char Sherry.Default,ArmR10,ArmL11,Angle01/Facial/Eyes>Eyes_Cry_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@printDebate 頑張っても<br>普通の人間のフリが<br>できない……<br>これってとっても<br>悲しくないですか？<br>えーんえんえんえーん……！
+
+# ＠備考◆冷静
+
+@char Sherry.Default,ArmR3,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Neutral_Closed
+@gosubModifyCamera 0
+@printDebate "……【悲しい】って、<br><link=\"Objection_02_05_24_02\">これであって</link>ます？"
+
+
+# ==============================================================================
+# 10-24議論後独白
+# ==============================================================================
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@Wait 0.2
+
+@print （シェリーの心は……<br>　たしかに閉ざされている） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@print （彼女の欠落した感情は<br>　一朝一夕でどうにかなるものでもない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@print （しかしこれまでの魔女化を考えれば、<br>　シェリーの魔女化も不可能ではないはずだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@print （それには……<br>　まずシェリーの心に向き合って、<br>　彼女の心を紐解くんだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-24-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_24_01
+
+@Skip false
+@pauseTrial true
+
+@choice そんなことはない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-24-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_24_02
+
+@Skip false
+@pauseTrial true
+
+@choice それで正しい
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-24-4
+
+@choice 痛みだ
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-24-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 10-24: ❌ ミス選択肢
+# ==============================================================================
+# MARK: 10-24-3: ❌ 反論・そんなことはない
+
+# Judge10-24-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print そんなことはない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print 君は私たちと打ち解けていた。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print ……たしかに、<br>少しズレているところがなかったとは言えないが……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print それも個性の範囲だろう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL14,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Closed
+@gosubModifyCamera 0
+@print 優しいんですね、ヒロさんは。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print でも私はそうは思っていません。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print 今でも理解できないことは多いし、<br>正解の選択肢が見えないんです。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Flushed_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Closed
+@gosubModifyCamera 0
+@print ヒロさんと私が見えている世界は、違うんですよ。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.14
+@gosubModifyCamera 0
+@print （……この言葉では<br>　シェリーに届かないか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （魔女化させるためには、<br>　まずは彼女の抱える問題を正確に理解しないといけないな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-24-1
+
+# MARK: 10-24-4: ❌ 反論・それで正しい
+
+# Judge10-24-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.25
+@gosubModifyCamera 0
+@print ……ああ、それでいい。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.25
+@gosubModifyCamera 0
+@print 君の反応は、たしかに意図して作られたものかもしれない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.25
+@gosubModifyCamera 0
+@print だがそれであっても<br>コミュニケーションが取れるなら十分じゃないか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL3,Angle01/Facial/Eyes>Eyes_Smile_Closed02,Angle01/Facial/Mouth>Mouth_Yum_Closed
+@gosubModifyCamera 0
+@print そうなんですね！<br>じゃあ私に欠点なんてないのかもしれません！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print ……うーん、でもそれじゃあどうしましょうか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR15,ArmL2,Angle01/Facial/Eyes>Eyes_Wink_Open02,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print 私、パーフェクト名探偵シェリーちゃんになっちゃいました！<br>魔女化なんてしませんよ、きっと！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char CreatureHiro.24
+@gosubModifyCamera 0
+@print （……魔女化が後退した気がする……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （魔女化させるためには、<br>　まずは彼女の抱える問題を正確に理解しないといけないな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-24-1
+
+# ==============================================================================
+# MARK: 10-24-2: ⭕ 反論・痛みだ
+# ==============================================================================
+
+# Judge10-24-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+@StopBgm 
+@gosubCutIn CreatureHiro
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.21
+@gosubModifyCamera 0
+@print ……それは【痛み】だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Sherry.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Confused_Open
+@gosubModifyCamera 0
+@print え？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print 君が感じていない感情だよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print 君は痛みを正しく認識できていないんじゃないかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL3,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print ……そうでしょうか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Flushed_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 手を切れば痛いですし、<br>足を刺せば痛いですよ？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Flushed_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 痛覚が鈍いわけではないと思うんですけどね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_37_1_Loop
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print 皮膚から来る信号と、<br>君がそれをどう受け取るかは別の問題だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.19
+@gosubModifyCamera 0
+@print 君の心は痛みを苦しいものだと感じていない……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.18
+@gosubModifyCamera 0
+@print だから無茶なことだってできるし、<br>処刑されるような事態に陥っても魔女化はしない……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.18
+@gosubModifyCamera 0
+@print ……それに、よくよく考えれば<br>君の魔法には多少なりとも反動があるはずだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print 物体に力をかけるとき、体に反作用の力がかかる。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print それを軽減するのも君の魔法の<br>効果のうちかもしれないが――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print ――でも、君が痛みを苦痛と受け取らないからこそ<br>万全に使いこなせる魔法なんじゃないかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print ……君の心は、痛みを受容することを拒否している。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print 君と他者との決定的な違いはそこだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open01,Angle01/Facial/Mouth>Mouth_Smile_Closed
+@gosubModifyCamera 0
+@print なるほど！<br>面白い推理ですね～！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Sherry.Default,ArmR10,ArmL11,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print でも……それならなおさら<br>私を【魔女化】させることは難しいんじゃないでしょうか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （たしかに……そうかもしれない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （だが彼女の内面への理解は一歩進んだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （今なら彼女の心を揺さぶり、<br>　魔女化させることができるかもしれない……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （向き合うんだ。<br>　彼女の心と――！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto Act02_Chapter05/Act02_Chapter05_Trial25

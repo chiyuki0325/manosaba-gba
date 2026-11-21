@@ -1,0 +1,223 @@
+@gosubResetBook System/System_ResetWitchBook
+@Gosub Act01_Chapter02/Act01_Chapter02_TrialInit
+
+# 魔女裁判議論パート2
+
+# Judge2-1-0
+@badId 4
+
+# ==============================================================================
+# ADVシーン
+# =============================================;
+# 証拠品一覧
+# 【ミリアの死体写真】
+# 死体発見時、拘束され、腹部が滅多刺しにされていた。
+# 刺し傷は胸と腹部にある。
+#
+# ※文字はなぐり書きで、筆跡をわざとわからなくしている
+# 【拷問ショーの案内】
+# 「20時 懲罰房で拷問ショー」と書かれたメモ。
+# 事件後、ラウンジで見つかった。
+#
+# 【壊れた錠前】
+# 懲罰房の扉についていた錠前。
+# 扉の外に取り付けられている。
+# くすんだ金色をしている。
+# 橘シェリーが引きちぎった為、
+# 原型を留めていない。
+#
+# 【佐伯ミリアのスマホ】
+# 佐伯ミリアが持っていたスマホ。
+# ケースにゴテゴテな装飾がされている。
+# データは初期化されている。
+#
+# 【小さな鍵】
+# 佐伯ミリアの口の中から出てきた鍵。
+# くすんだ金色をしている。
+#
+# 【桜羽エマのスマホ】
+# ミリアへ発信した履歴が残っている。
+#
+# 【刃こぼれしたナイフ】
+# 錆びついてボロボロだが、切れ味は残っているナイフ。
+# 先端は鋭利で、血がついている。
+
+# BGM変更：Kei-Plne Co-Jundic
+
+@char Warden.1 { Position:,{hiddenCharacterPositionY} time:0 }
+@char Jailer.1 { Position:,{hiddenCharacterPositionY} time:0 }
+@char Alisa.Angry1,Option-ArmL-Off
+
+@char Sherry.Smile,ArmR9,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Smile_Closed
+@char Hanna.Pensive1,ArmR4
+
+@stageCamera 0 { time:0 }
+@stageCamera 1 { Rotation:-2,{ (0.7 / courtStandCount * 360) },-2 time:0 }
+@WaitForNextFrame 
+
+@stageCamera 1 { Rotation:-1,{ (4.8 / courtStandCount * 360) } time:40 }
+@back Transparent { time:0.9 }
+@Wait 0.6
+
+@ProcessInput true
+
+@bgm Bgm_25_1
+
+@char Ema.Pensive1,ArmR3,ArmL1
+@print （２回目の……魔女裁判……。<br>　みんなの沈黙が……重い……） { author:Ema speed:1 waitInput:true Wait:true }
+
+# ＠備考◆青ざめる・発狂しそう
+@char Hanna.Fearful1
+@print ……またこんなことするんですの……！？<br>疑い合うなんて、もうたくさんですわ……！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+# ＠備考◆にっこり
+@char Margo.Smile1
+@print べつに無理に参加しなくてもいいんじゃないかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+# ＠備考◆薄目で怖い笑み
+@char Margo.Normal1,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Middle
+@print 欠席裁判になっても<br>文句がないなら……ね？ { author:Margo speed:1 waitInput:true Wait:true }
+
+# SE・ガーン
+@sfx Sfx_Common_6
+
+# ＠備考◆青ざめる
+@char Hanna.Fearful1,ArmR3
+
+@print そ、それはっ……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@char Sherry.Default,ArmR12 { time:0 }
+@stageCamera 0 { Rotation:0,{ (sherryIdx / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+@hideStageScreen 1
+@stageCamera 0 { Rotation:0,{ ((sherryIdx + 0.1) / courtStandCount * 360) },0 time:0.6 }
+@Wait 0.2
+
+@print 大丈夫です！<br>きっと今回も真犯人を見つけられますよ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@char Hanna.Pensive1,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Closed { time:0 }
+@stageCamera 1 { Rotation:0,{ (hannaIdx / courtStandCount * 360) },0 time:0 }
+@showStageScreen 1
+@WaitForNextFrame 
+@stageCamera 1 { Rotation:0,{ ((hannaIdx - 0.1) / courtStandCount * 360) },0 time:0.6 }
+@Wait 0.2
+
+# SE・ネガティブ音
+@sfx Sfx_Common_7
+
+# ＠備考◆だだをこねる
+@print べつに真犯人が見つからないことを<br>心配しているわけではなくてぇ……！<br>そもそもこんなやり方が……！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideStageScreen 1
+
+# ＠備考◆呆れ
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Angry_Closed1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print ……心配ごとがないというなら、<br>早く議論を始めましょう。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# ＠備考◆真剣
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print 私たちが取れる選択肢は、<br>そう多くはないのだから。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別の方を見て独り言っぽく喋る
+@char Alisa.Normal1,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open01
+@gosubModifyCamera 0
+@print チッ……。<br>こんな狂ったこと平然と続けようなんて、<br>まともなヤツの方が少ねぇのか……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+# ＠備考◆煽り
+@char Coco.Angry1,ArmR7,ArmL5,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print 自分だけまともアピールうっざ～。<br>メンタルよわよわで怖がってるだけなの、<br>正当化しないでくれますぅー？ { author:Coco speed:1 waitInput:true Wait:true }
+
+# ＠備考◆睨む
+@char Alisa.Angry1,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Angry_Open03
+@gosubModifyCamera 0
+@print んだとてめぇ……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+# SE・ネガティブ音
+@sfx Sfx_Common_7
+
+# ＠備考◆慌てる/青ざめる・恐怖
+@char Meruru.Fearful,ArmR1_2,ArmL5,Eyes2_Surprised_Open1,Mouth2_Normal_Open1
+@gosubModifyCamera 0
+@print あ、あの……！<br>喧嘩をしてしまうと、この後の話し合いに<br>差し支えが出てしまうのではないかと……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char AnAn.Normal1,Angle01/Option_Arms-,ArmR-Option-Off,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_03,Angle01/Head/Facial/Eyes>Eyes_Normal_Open02
+@gosubModifyCamera 0
+@print 『話し合いというよりは、殺し合いだ。<br>　問題ない』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Margo.Normal1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print たしかにアンアンちゃんの言う通りね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print だってこの議論には、<br>命が賭かっているのだもの……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （みんなピリピリしてる……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （……２人目の仲間が殺されて、<br>　しかもこの中に殺人犯がいるんだから<br>　当然だよね……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Pensive_Closed1
+@gosubModifyCamera 0
+@print ……まずは事件の内容について<br>確認しましょう。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Closed01
+@gosubModifyCamera 0
+@print ですね！<br>お互いの前提に行き違いがあったら<br>まともに議論できませんし！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print いんじゃね？<br>部屋の中見てないヤツもいるかもだし。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Smile1,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Middle
+@gosubModifyCamera 0
+@print ……あのぐちゃぐちゃになった死体とかさ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+# ＠備考◆青ざめる
+@char Hanna.Fearful1,ArmR3
+@gosubModifyCamera 0
+@print う……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print では話にも出た事ですし、<br>死体の状況から話しましょうか！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+@gosubModifyCamera 0
+@print （……この中に犯人がいるなんて……そんな） { author:Ema speed:1 waitInput:true Wait:true }
+
+@StopBgm { fade:5 }
+
+@ResetText 
+@char Meruru.ArmR1_2,ArmL5,Eyes2_Normal_Open1,Mouth2_Surprised_Open2
+@gosubSplitStageScreen 1
+@print ……エマさん。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3,ArmL1
+@print な、なに……？<br>メルルちゃん……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.ArmR1_2,ArmL5,Eyes2_Downcast_Open1,Mouth2_Normal_Open1
+@print みなさんの中から魔女を見つけるなんて、<br>気が進むものではないと思いますが……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Smile1,ArmR1_1,ArmL1,Eyes1_Smile_Closed1,Mouth1_Smile_Closed1
+@print でも……ファイト、です……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2
+@print ……うん！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideStageScreen 1
+
+@char Ema.Determined2,ArmR3,ArmL1
+@print （ミリアちゃんのためにも……<br>　頑張らないと！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+@goto Act01_Chapter02/Act01_Chapter02_Trial01

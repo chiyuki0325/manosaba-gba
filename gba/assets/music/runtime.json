@@ -1,0 +1,770 @@
+{
+  "schema_version": 1,
+  "binding_policy": "Variants normally share their current asset; Bgm027 variant1 has its own texture, while variants2/3 share another",
+  "config": {
+    "music_channels": 16,
+    "sfx_channels": 2,
+    "mixing_rate_hz": 15768,
+    "stereo": true
+  },
+  "volume_units": 1024,
+  "entries": [
+    {
+      "id": "Bgm001",
+      "variants": [
+        1
+      ],
+      "asset": "bgm001",
+      "volume": 768,
+      "intro_order": 0,
+      "loop_order": 0,
+      "direct_loop_order": 0,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 0
+    },
+    {
+      "id": "Bgm002",
+      "variants": [
+        1
+      ],
+      "asset": "bgm002_001",
+      "volume": 768,
+      "intro_order": 0,
+      "loop_order": 3,
+      "direct_loop_order": 3,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 0
+    },
+    {
+      "id": "Bgm003",
+      "variants": [
+        1
+      ],
+      "asset": "bgm004",
+      "volume": 768,
+      "intro_order": 0,
+      "loop_order": 3,
+      "direct_loop_order": 0,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 0
+    },
+    {
+      "id": "Bgm004",
+      "variants": [
+        1
+      ],
+      "asset": "bgm004",
+      "volume": 768,
+      "intro_order": 3,
+      "loop_order": 3,
+      "direct_loop_order": 3,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 3
+    },
+    {
+      "id": "Bgm005",
+      "variants": [
+        1
+      ],
+      "asset": "bgm005",
+      "volume": 512,
+      "intro_order": 0,
+      "loop_order": 0,
+      "direct_loop_order": 0,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 0
+    },
+    {
+      "id": "Bgm006",
+      "variants": [
+        1
+      ],
+      "asset": "bgm006",
+      "volume": 512,
+      "intro_order": 0,
+      "loop_order": 1,
+      "direct_loop_order": 0,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 0
+    },
+    {
+      "id": "Bgm007",
+      "variants": [
+        1
+      ],
+      "asset": "bgm007",
+      "volume": 512,
+      "intro_order": 0,
+      "loop_order": 1,
+      "direct_loop_order": 1,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 0
+    },
+    {
+      "id": "Bgm008",
+      "variants": [
+        1,
+        2
+      ],
+      "asset": "bgm008_001",
+      "volume": 640,
+      "intro_order": 0,
+      "loop_order": 0,
+      "direct_loop_order": 0,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 0
+    },
+    {
+      "id": "Bgm009",
+      "variants": [
+        1
+      ],
+      "asset": "bgm009",
+      "volume": 768,
+      "intro_order": 0,
+      "loop_order": 1,
+      "direct_loop_order": 1,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 1
+    },
+    {
+      "id": "Bgm010",
+      "variants": [
+        1
+      ],
+      "asset": "bgm010",
+      "volume": 512,
+      "intro_order": 0,
+      "loop_order": 1,
+      "direct_loop_order": 1,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 1
+    },
+    {
+      "id": "Bgm011",
+      "variants": [
+        1
+      ],
+      "asset": "bgm011",
+      "volume": 688,
+      "intro_order": 0,
+      "loop_order": 0,
+      "direct_loop_order": 0,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 0
+    },
+    {
+      "id": "Bgm012",
+      "variants": [
+        1
+      ],
+      "asset": "bgm013_001",
+      "volume": 512,
+      "intro_order": 4,
+      "loop_order": 5,
+      "direct_loop_order": 5,
+      "default_loop": true,
+      "loop_verified": true,
+      "aliases": [
+        "Bgm016"
+      ],
+      "story_default_order": 4
+    },
+    {
+      "id": "Bgm013",
+      "variants": [
+        1
+      ],
+      "asset": "bgm013_001",
+      "volume": 512,
+      "intro_order": 0,
+      "loop_order": 5,
+      "direct_loop_order": 5,
+      "default_loop": true,
+      "loop_verified": true,
+      "aliases": [
+        "Bgm014"
+      ],
+      "story_default_order": 0
+    },
+    {
+      "id": "Bgm015",
+      "variants": [
+        1,
+        2
+      ],
+      "asset": "bgm015_002",
+      "volume": 640,
+      "intro_order": 0,
+      "loop_order": 0,
+      "direct_loop_order": 0,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 0
+    },
+    {
+      "id": "Bgm017",
+      "variants": [
+        1
+      ],
+      "asset": "bgm017",
+      "volume": 512,
+      "intro_order": 0,
+      "loop_order": 0,
+      "direct_loop_order": 0,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 0
+    },
+    {
+      "id": "Bgm019",
+      "variants": [
+        1
+      ],
+      "asset": "bgm019",
+      "volume": 512,
+      "intro_order": 0,
+      "loop_order": 0,
+      "direct_loop_order": 0,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 0
+    },
+    {
+      "id": "Bgm020",
+      "variants": [
+        1
+      ],
+      "asset": "bgm020",
+      "volume": 1024,
+      "intro_order": 0,
+      "loop_order": 1,
+      "direct_loop_order": 0,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 0
+    },
+    {
+      "id": "Bgm021",
+      "variants": [
+        1
+      ],
+      "asset": "bgm021",
+      "volume": 1024,
+      "intro_order": 0,
+      "loop_order": 1,
+      "direct_loop_order": 0,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 0
+    },
+    {
+      "id": "Bgm022",
+      "variants": [
+        1
+      ],
+      "asset": "bgm022",
+      "volume": 1024,
+      "intro_order": 0,
+      "loop_order": 1,
+      "direct_loop_order": 0,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 0
+    },
+    {
+      "id": "Bgm023",
+      "variants": [
+        1
+      ],
+      "asset": "bgm023",
+      "volume": 1024,
+      "intro_order": 0,
+      "loop_order": 1,
+      "direct_loop_order": 0,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 0
+    },
+    {
+      "id": "Bgm024",
+      "variants": [
+        1
+      ],
+      "asset": "bgm024",
+      "volume": 724,
+      "intro_order": 0,
+      "loop_order": 0,
+      "direct_loop_order": 0,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 0
+    },
+    {
+      "id": "Bgm025",
+      "variants": [
+        1
+      ],
+      "asset": "bgm025",
+      "volume": 1024,
+      "intro_order": 0,
+      "loop_order": 0,
+      "direct_loop_order": 0,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 0
+    },
+    {
+      "id": "Bgm026",
+      "variants": [
+        1,
+        2
+      ],
+      "asset": "bgm026_001",
+      "volume": 362,
+      "intro_order": 0,
+      "loop_order": 1,
+      "direct_loop_order": 1,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 1
+    },
+    {
+      "id": "Bgm027",
+      "variants": [
+        1
+      ],
+      "asset": "bgm027_001",
+      "volume": 768,
+      "intro_order": 0,
+      "loop_order": 1,
+      "direct_loop_order": 0,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 0
+    },
+    {
+      "id": "Bgm027",
+      "variants": [
+        2,
+        3
+      ],
+      "asset": "bgm027_002",
+      "volume": 768,
+      "intro_order": 0,
+      "loop_order": 1,
+      "direct_loop_order": 0,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 0
+    },
+    {
+      "id": "Bgm028",
+      "variants": [
+        1
+      ],
+      "asset": "bgm028",
+      "volume": 768,
+      "intro_order": 0,
+      "loop_order": 0,
+      "direct_loop_order": 0,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 0
+    },
+    {
+      "id": "Bgm029",
+      "variants": [
+        1
+      ],
+      "asset": "bgm029",
+      "volume": 768,
+      "intro_order": 0,
+      "loop_order": 0,
+      "direct_loop_order": 0,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 0
+    },
+    {
+      "id": "Bgm030",
+      "variants": [
+        1,
+        2
+      ],
+      "asset": "bgm030",
+      "volume": 768,
+      "intro_order": 0,
+      "loop_order": 0,
+      "direct_loop_order": 0,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 0
+    },
+    {
+      "id": "Bgm031",
+      "variants": [
+        1
+      ],
+      "asset": "bgm031",
+      "volume": 384,
+      "intro_order": 0,
+      "loop_order": 0,
+      "direct_loop_order": 0,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 0
+    },
+    {
+      "id": "Bgm032",
+      "variants": [
+        1
+      ],
+      "asset": "bgm032",
+      "volume": 512,
+      "intro_order": 0,
+      "loop_order": 1,
+      "direct_loop_order": 1,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 1
+    },
+    {
+      "id": "Bgm033",
+      "variants": [
+        1
+      ],
+      "asset": "bgm033",
+      "volume": 768,
+      "intro_order": 0,
+      "loop_order": 12,
+      "direct_loop_order": 12,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 0
+    },
+    {
+      "id": "Bgm034",
+      "variants": [
+        1,
+        2
+      ],
+      "asset": "bgm034",
+      "volume": 512,
+      "intro_order": 0,
+      "loop_order": 0,
+      "direct_loop_order": 0,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 0
+    },
+    {
+      "id": "Bgm035",
+      "variants": [
+        1
+      ],
+      "asset": "bgm035",
+      "volume": 610,
+      "intro_order": 0,
+      "loop_order": 0,
+      "direct_loop_order": 0,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 0
+    },
+    {
+      "id": "Bgm036",
+      "variants": [
+        1
+      ],
+      "asset": "bgm036",
+      "volume": 768,
+      "intro_order": 0,
+      "loop_order": 0,
+      "direct_loop_order": 0,
+      "default_loop": false,
+      "loop_verified": false,
+      "story_default_order": 0
+    },
+    {
+      "id": "Bgm037",
+      "variants": [
+        1,
+        2
+      ],
+      "asset": "bgm037_002",
+      "volume": 960,
+      "intro_order": 0,
+      "loop_order": 8,
+      "direct_loop_order": 8,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 0
+    },
+    {
+      "id": "Bgm038",
+      "variants": [
+        1,
+        2
+      ],
+      "asset": "bgm038_001",
+      "volume": 768,
+      "intro_order": 0,
+      "loop_order": 1,
+      "direct_loop_order": 1,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 1
+    },
+    {
+      "id": "Bgm039",
+      "variants": [
+        1,
+        2
+      ],
+      "asset": "bgm039_002",
+      "volume": 362,
+      "intro_order": 0,
+      "loop_order": 1,
+      "direct_loop_order": 1,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 1
+    },
+    {
+      "id": "Bgm040",
+      "variants": [
+        1
+      ],
+      "asset": "bgm040",
+      "volume": 768,
+      "intro_order": 0,
+      "loop_order": 4,
+      "direct_loop_order": 4,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 0
+    },
+    {
+      "id": "Bgm041",
+      "variants": [
+        1
+      ],
+      "asset": "bgm041",
+      "volume": 640,
+      "intro_order": 0,
+      "loop_order": 0,
+      "direct_loop_order": 0,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 0
+    },
+    {
+      "id": "Bgm042",
+      "variants": [
+        1,
+        2
+      ],
+      "asset": "bgm042",
+      "volume": 768,
+      "intro_order": 0,
+      "loop_order": 0,
+      "direct_loop_order": 0,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 0
+    },
+    {
+      "id": "Bgm043",
+      "variants": [
+        1,
+        2
+      ],
+      "asset": "bgm043_001",
+      "volume": 768,
+      "intro_order": 0,
+      "loop_order": 0,
+      "direct_loop_order": 0,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 0
+    },
+    {
+      "id": "Bgm044",
+      "variants": [
+        1
+      ],
+      "asset": "bgm044",
+      "volume": 512,
+      "intro_order": 0,
+      "loop_order": 0,
+      "direct_loop_order": 0,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 0
+    },
+    {
+      "id": "Bgm045",
+      "variants": [
+        1,
+        2
+      ],
+      "asset": "bgm045_002",
+      "volume": 768,
+      "intro_order": 0,
+      "loop_order": 1,
+      "direct_loop_order": 1,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 1
+    },
+    {
+      "id": "Bgm046",
+      "variants": [
+        1
+      ],
+      "asset": "bgm046",
+      "volume": 512,
+      "intro_order": 0,
+      "loop_order": 0,
+      "direct_loop_order": 0,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 0
+    },
+    {
+      "id": "Bgm047",
+      "variants": [
+        1
+      ],
+      "asset": "bgm047",
+      "volume": 247,
+      "intro_order": 0,
+      "loop_order": 0,
+      "direct_loop_order": 0,
+      "default_loop": false,
+      "loop_verified": false,
+      "story_default_order": 0
+    },
+    {
+      "id": "Bgm048",
+      "variants": [
+        1
+      ],
+      "asset": "bgm047_048_wrap",
+      "volume": 768,
+      "intro_order": 1,
+      "loop_order": 1,
+      "direct_loop_order": 1,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 1
+    },
+    {
+      "id": "Bgm049",
+      "variants": [
+        1,
+        2
+      ],
+      "asset": "bgm049",
+      "volume": 848,
+      "intro_order": 0,
+      "loop_order": 1,
+      "direct_loop_order": 0,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 0
+    },
+    {
+      "id": "Song001",
+      "variants": [
+        1
+      ],
+      "asset": "song001",
+      "volume": 768,
+      "intro_order": 0,
+      "loop_order": 0,
+      "direct_loop_order": 0,
+      "default_loop": false,
+      "loop_verified": false,
+      "story_default_order": 0
+    },
+    {
+      "id": "Song004",
+      "variants": [
+        1
+      ],
+      "asset": "song004",
+      "volume": 768,
+      "intro_order": 0,
+      "loop_order": 0,
+      "direct_loop_order": 0,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 0
+    },
+    {
+      "id": "Ambi003",
+      "variants": [
+        1
+      ],
+      "asset": "ring_chakumero",
+      "volume": 768,
+      "intro_order": 0,
+      "loop_order": 0,
+      "direct_loop_order": 0,
+      "default_loop": true,
+      "loop_verified": true,
+      "story_default_order": 0
+    },
+    {
+      "id": "Bgm018",
+      "variants": [
+        1
+      ],
+      "asset": "bgm018",
+      "volume": 768,
+      "intro_order": 0,
+      "loop_order": 3,
+      "direct_loop_order": 3,
+      "story_default_order": 0,
+      "default_loop": true,
+      "loop_verified": true
+    }
+  ],
+  "part_overrides": [
+    {
+      "id": "Bgm002",
+      "part": "Intro",
+      "asset": "bgm002_001_intro",
+      "volume": 768,
+      "intro_order": 0,
+      "loop_order": 3,
+      "direct_loop_order": 0,
+      "standalone_intro_only": true
+    }
+  ],
+  "not_packed": [],
+  "not_planned": [
+    "Song002",
+    "Song003"
+  ],
+  "intro_links": [
+    {
+      "path": "Bgm_48_1",
+      "intro": "Bgm_47_1",
+      "order": 0
+    }
+  ]
+}

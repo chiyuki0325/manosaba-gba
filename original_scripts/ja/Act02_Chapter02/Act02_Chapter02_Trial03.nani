@@ -1,0 +1,824 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter02/Act02_Chapter02_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# ==============================================================================
+# MARK: 7-3: 💬 エマのアリバイ
+# ==============================================================================
+# ＠ト書き▼議論シーン7-3 ヒロとエマの推理
+
+@set Skip7_3_3flag1=false
+@set Skip7_3_3flag2=false
+
+# 議論開始エフェクト
+# BGM変更：rAwTell Owk...
+@bgm Bgm_7_1
+
+# Judge7-3-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@printDebate ボクはヒロちゃんに<br>呼び出されて、<br>シャワールームにいたんだ。
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@printDebate "でも<link=\"Objection_02_02_03_01\">時間</link>になっても、<br>ヒロちゃんはこなかった……。"
+
+@char Ema.Determined2,ArmR7,ArmL7,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@printDebate ヒロちゃんは<br>ボクを疑ってるけど<br>そんなことありえないよ。
+
+@char Ema.Default,ArmR7,ArmL13,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@printDebate "だってヒロちゃんが<br>来たときだって、<br>シャワールームに<br>ココちゃんは<br><link=\"Objection_02_02_03_02\">いなかった</link>んだよ？"
+
+@char Ema.Pensive1,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01
+@gosubModifyCamera 0
+@printDebate そして当然、<br>そこには<br>死体もなかった……。
+
+@char Ema.Determined2,ArmR7,ArmL7,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@printDebate なのにヒロちゃんは<br>ボクを疑ってるんだ。
+
+@char Ema.Pensive1,ArmR8,ArmL11,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open
+@gosubModifyCamera 0
+@printDebate そんなの、<br>おかしいよね。
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@printDebate ヒロちゃんは<br>ボクに罪を<br>なすりつけるために、<br>シャワールームに<br>呼び出した……。
+
+# IF-7-3-4未通過
+@if Skip7_3_3flag1=true
+	@goto .Judge_7-3-3_skip1
+
+# @備考◆ルートA
+
+@char Ema.Default,ArmR7,ArmL13,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open
+@gosubModifyCamera 0
+@printDebate そしてヒロちゃんは<br>ボクを犯人に<br>仕立て上げるために、<br>偽装工作をしてたんだよ！
+
+@goto .Judge_7-3-3_skip2
+
+# Judge_7-3-3_skip1
+# ELSE-7-3-4通過済み
+
+# @備考◆ルートB
+
+@char Ema.Default,ArmR7,ArmL13,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open
+@gosubModifyCamera 0
+@printDebate "そしてヒロちゃんは<br>あの<link=\"Objection_02_02_03_03\">ダストシュート</link>や<br><link=\"Objection_02_02_03_04\">落書き</link>で<br>ボクを犯人に<br>仕立て上げようと、<br>あらかじめ偽装工作を<br>してたんだよ！"
+
+# Judge_7-3-3_skip2
+
+@char Ema.Determined2,ArmR7,ArmL7,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@printDebate 全部、<br>ヒロちゃんの<br>仕業なんだ……！
+
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1 { time:0 }
+@gosubModifyCamera 0
+@Wait 0.2
+
+# ==============================================================================
+# 7-3議論後独白
+# ==============================================================================
+
+@print （無理筋な意見を強引にねじこんでも、<br>　私の印象が悪化してしまう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,,Mouth1_Angry_Closed1
+@print （とはいえ、疑問があれば追求せざるをえないな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@print （……どうせエマの話は嘘だ。<br>　無理な嘘には矛盾が生じるだろう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,,Mouth1_Angry_Closed1
+@print （エマを攻撃できるのであれば、<br>　嘘をついてでも攻め手を緩めるつもりはない……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-3-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_02_03_01
+
+@Skip false
+@pauseTrial true
+
+@choice その間、何をしていた？
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge7-3-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_02_02_03_02
+
+@Skip false
+@pauseTrial true
+
+@choice 見逃した
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge7-3-5
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_02_02_03_03
+
+@Skip false
+@pauseTrial true
+
+@choice ダストシュートは壊れてなかった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge7-3-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論4
+# ------------------------------------------------------------------------------
+
+# Objection_02_02_03_04
+
+@Skip false
+@pauseTrial true
+
+@choice 落書きなんてなかった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge7-3-6
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 7-3-4: ❌ 追求・その間、何をしていた？
+# ==============================================================================
+
+# Judge7-3-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print ……その間、何をしていた？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print ……べつに何も。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print シャワールームでヒロちゃんを待ってただけだよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print ただぼーっとしていたというのか？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print それは……壁に描かれた落書きを見てて……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Ema.Pensive1,ArmR4,ArmL5
+@gosubModifyCamera 0
+@print ……そういえば<br>ヒロちゃんが来る少し前、<br>【小さな破裂音】が聞こえたかな……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR4,ArmL5
+@gosubModifyCamera 0
+@print 今思い返すと、<br>それはヒロちゃんがココちゃんを撃った<br>【銃声】だったのかもしれない。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Painful_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print シャワールームで自分が発砲した時の音なんじゃないか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3,ArmL1,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open
+@gosubModifyCamera 0
+@print そんなことないよ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3,ArmL1,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open
+@gosubModifyCamera 0
+@print シャワールームには血もないし、<br>撃たれたような痕跡だってなかった……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Miria.Normal1
+@gosubModifyCamera 0
+@print たしかに……おじさんもシャワールームを調べたけど、<br>そういう痕跡はなかったかな？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Normal1
+@gosubModifyCamera 0
+@print あとは落書きがされてて……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print ……それに、ダストシュートも壊れてたよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print けどそれは事件の前から壊れてたんだ。<br>もちろんボクは何もしてない……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1 { time:0 }
+@gosubModifyCamera 0
+
+@if Skip7_3_3flag1=true
+	@goto .Judge7-3-3_skip3
+
+# ☆アイテム追加
+# 【銃声】
+# エマがシャワールームで聞いたと証言。
+@ResetText 
+@spawn Clue
+@toast "魔女図鑑 更新…"
+@update 7-6
+@Wait i1.2
+@despawn Clue
+@Wait 0.5
+
+# ☆アイテム追加
+# 【ダストシュート】
+# 焼却炉に繋がるゴミ捨て場。
+# 今朝、ヒロが見えない内側の留め具に細工をしている。
+@ResetText 
+@spawn Clue
+@toast "魔女図鑑 更新…"
+@update 7-7
+@Wait i1.2
+@despawn Clue
+@Wait 0.5
+
+@set Skip7_3_3flag1=true
+
+# Judge7-3-3_skip3
+
+@print （……時系列について矛盾はなさそうだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@if Skip7_3_3flag2=true
+	@goto .Judge7-3-3_skip4
+
+@toast 議論発展…
+@set Skip7_3_3flag2=true
+
+# Judge7-3-3_skip4
+
+@goto .Judge7-3-1
+
+# ==============================================================================
+# MARK: 7-3: ❌ 議論ミス選択肢
+# ==============================================================================
+# MARK: 7-3-5: ❌ 偽証・見逃した
+
+# Judge7-3-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print それは私が見逃しただけだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Angry_Open2,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 本当はシャワールームのどこかにココがいたんだよ。<br>エマが隠していた可能性も――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@print でもヒロちゃんは<br>ココちゃんの配信を見てシャワールームに探しに行ったんだよね？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01
+@gosubModifyCamera 0
+@print だったらもしシャワールームにココちゃんがいたら<br>見逃すはずないんじゃないかな？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL1,Angle01/Head/Facial/Eyes>Eyes_Neutral_Open,Angle01/Head/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print ……本当に見逃していたのだとしたら。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL6,Angle01/Head/Facial/Eyes>Eyes_Normal_Closed,Angle01/Head/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print 今後、二階堂ヒロの証言は信用できない。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@print たしかにそうかも……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （……発言の信用性が損なわれてしまったか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （ここはひとまず、<br>　エマがボロを出すまで情報を引き出すのが先決だ……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （私の記憶とエマの発言との間で少しでも食い違いがあれば、<br>　嘘をついてでも追い詰めてみせる……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge7-3-1
+
+# MARK: 7-3-6: ❌ 偽証・落書きなんてなかった
+
+# Judge7-3-6
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print ……シャワールームに落書きなんてあっただろうか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Angry_Open2,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print もしかするとただの勘違いじゃ……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR15,ArmL4,Angle01/Facial/Eyes>Eyes_Wink_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print ありましたよ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Miria.Normal1
+@gosubModifyCamera 0
+@print おじさんも確認してるけど、<br>たしかに落書きは描かれてたね。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL7,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Middle,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ヒロくん、どうしてそんな嘘を……？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （……すぐにわかる嘘だったな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （ここはひとまず、<br>　エマがボロを出すまで情報を引き出すのが先決だ……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （私の記憶とエマの発言との間で少しでも食い違いがあれば、<br>　嘘をついてでも追い詰めてみせる……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-3-1
+
+# ==============================================================================
+# MARK: 7-3-3: ⭕ 偽証・ダストシュートは壊れてなかった
+# ==============================================================================
+
+# Judge7-3-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+# カットイン
+@StopBgm 
+@gosubCutIn Hiro
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print 私がダストシュートに細工をしたなんて、<br>酷い難癖だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL4,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open
+@gosubModifyCamera 0
+@print 難癖なんかじゃないよ。<br>ボクは見たんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print ……いいや。<br>私が今朝シャワールームに行ったとき<br>ダストシュートは壊れてなんていなかった。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Hiro.Normal1,Arms3,Eyes1_Painful_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print そもそも、ダストシュートが壊れていたなんて<br>誰か確認しているのかな？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print そ、それは……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （あの細工は見ただけではわからないようにしていた） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （エマが気付いたということは、<br>　ダストシュートを使ったということだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （やはりエマが犯人に違いない――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Miria.Default,ArmR3,ArmL8,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print あっ……。<br>それならおじさんも見てるよ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print ダストシュートのフタ……<br>外れてたんだよね。 { author:Miria speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+# ＠備考◆驚き
+
+@char Hiro.Normal1,ArmR12,ArmL4,Eyes1_Serious_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print ……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆平静
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Angry_Open2,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print ……詳しく聞かせてもらっていいかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 気任せの蝶［チェロ無し］
+@bgm Bgm_45_2
+
+@char Miria.Default,ArmR3,ArmL8,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print う、うん。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR9,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print エマちゃんが言った通り、壊れてたのは本当だよ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print 誰が見てもわかるぐらい、<br>完全に壊れてフタが外れちゃってたね！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print ……ヒロちゃんがシャワールームに来たときは<br>慌ててたみたいだし、<br>奥まで確認しなかったけど……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print あのとき、ダストシュートのフタはなかったんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （……見逃していた……のか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+# ★アイテム更新
+# 【ダストシュート】
+# 焼却炉に繋がるゴミ捨て場。
+# 今朝、見えないようにヒロが留め具に細工をしている。
+# 犯行後、壊れているのをミリアが発見。
+# フタが外れていた。
+
+@ResetText 
+@spawn Clue
+@toast "魔女図鑑 更新…"
+@update 7-7
+@update 7-11
+@Wait i1.2
+@despawn Clue
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （しかし……妙だな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （……私が細工をしたのは<br>　留め具を外れやすくしただけ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （エマを殺したあとで、<br>　それが事故であったと見せかけるためだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （ミリアの証言によれば、<br>　そのあとに本当に壊れていたということになる） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Closed1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （なら……<br>　犯行後の死体の行方もそれでわかるのかもしれない……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print なるほどね。<br>……つまりこういうことか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR5,ArmL4,Eyes1_Normal_Closed1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print ……【エマはダストシュートを使って死体を隠した】。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Normal_Open3,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print つまり殺したあと、<br>エマはダストシュートに死体を投げ入れたんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Angry_Open2,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 死体を隠すのに使ったときに<br>ダストシュートのフタは壊れた……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print それなら、辻褄は合う。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ……そんなことボクはしてないよ。<br>何か証拠でもあるの？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Closed1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 証拠……それは。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# カットイン-レイア
+@Wait 0.5
+
+@sfx Sfx_Common_5
+
+@ResetText 
+@voice CommonTrial_Leia01358
+@char Hiro.Surprised1
+@char Leia.Angry1,ArmR10,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open02
+@gosubSplitStageScreen 1
+@Wait 1.5
+
+@hideStageScreen 1
+@Wait 0.3
+
+@char Leia.Default,ArmR6,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print ……どうやら私の出番のようだね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （レイア……まさか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# BGM変更：Sar-gedy-静-
+@bgm Bgm_5_1
+
+@char Leia.Default,ArmR6,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print ダストシュートが向かう先……<br>それはもちろん、焼却炉だ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR8,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print 当然……私は事前に調べておいたのさ！ { author:Leia speed:1 waitInput:true Wait:true }
+
+# ＠備考◆驚き
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （私が頼んでいた内容だ……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL11,Eyes1_Serious_Open1,Mouth1_Determined_Open1,Sweat1-1
+@gosubModifyCamera 0
+@print まさかレイア、君……<br>自分が注目されるタイミングまで<br>情報を隠してたんじゃないだろうな……？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・ネガティブ音
+@sfx Sfx_Common_7
+
+@char Leia.Surprised1,ArmR4,ArmL6,Angle01/Facial/Mouth>Mouth_Yell_Open02,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print だ、断じてそんなことはない！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Surprised1,ArmR3,ArmL8,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print さっきから言おうとしてたのに<br>遮られてタイミングがなかっただけだ！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR10,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open02
+@gosubModifyCamera 0
+@print さ、さあ！<br>そんなことより！<br>これを見たまえ！ { author:Leia speed:1 waitInput:true Wait:true }
+
+# アイテム表示
+@spawn Clue
+
+@char Leia.Default,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print これは地下の焼却炉の写真だよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print 中は薄暗いが、壁は鮮やかな緑色だね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,Arms,Angle01/Facial/Eyes>Eyes_Normal_Closed01,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@print この焼却炉は毎週月曜日の１５時に稼働する……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR10,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print そう、奇しくも今日だ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# SE・明るい音
+@sfx Sfx_Common_2
+
+@char Leia.Default,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Closed
+@gosubModifyCamera 0
+@print ギリギリ炉が動く１５時前に入って、<br>中の物を回収できたよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@despawn Clue
+@Wait 0.5
+
+@char Sherry.Default,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print おおー！<br>何か気になるものでもありましたか！？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE・明るい音
+@sfx Sfx_Common_2
+
+@char Leia.Default,ArmR6,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print ふふ、そう慌てなくていい。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print まずは周辺の状況からだ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR6,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print 焼却炉室の床にはなんと……<br>血痕らしきものが残されていた！ { author:Leia speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Sherry.Default,ArmR6,ArmL8,Angle01/Facial/Eyes>Eyes_Surprised_Open03,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print 本当ですか！？<br>それはすごい証拠ですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print ちなみに普段から焼却炉のある部屋の扉には<br>鍵はかかっていない。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR9,ArmL8,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open02
+@gosubModifyCamera 0
+@print 事件当時も、誰でも入れたようだね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+
+# ☆アイテム追加
+# 【焼却炉室】
+# 焼却炉がある地下の部屋。
+# 15時に自動で燃焼し、煙は分煙されダストシュートに入らないようになっている。
+# 薄暗く、鮮やかな緑色の壁に覆われている。
+# 床に血が流れた跡がある。
+
+@ResetText 
+@spawn Clue
+@toast "魔女図鑑 更新…"
+@update 7-5
+@Wait i1.2
+@despawn Clue
+
+@char Leia.Default,ArmR6,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@print そして焼却炉の中にはこれらの物が残されていた……<br>それぞれ確認してくれたまえ！ { author:Leia speed:1 waitInput:true Wait:true }
+
+# ☆アイテム追加
+# 【衣類】
+# 少女たちが脱いだ衣類。
+# 一部に血痕が付着している。
+
+@ResetText 
+@spawn Clue
+@toast "魔女図鑑 更新…"
+@update 7-8
+@Wait i1.2
+@despawn Clue
+@Wait 0.5
+
+# ☆アイテム追加
+# 【紙】
+# 大量の紙。
+# 何枚もの絵が描かれている。
+
+@ResetText 
+@spawn Clue
+@toast "魔女図鑑 更新…"
+@update 7-9
+@Wait i1.2
+@despawn Clue
+@Wait 0.5
+
+# ☆アイテム追加
+# 【ロープ】
+# 10m近くあるロープ。
+@ResetText 
+@spawn Clue
+@toast "魔女図鑑 更新…"
+@update 7-10
+@Wait i1.2
+@despawn Clue
+@Wait 0.5
+
+@char Leia.Default,ArmR10,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open02
+@gosubModifyCamera 0
+@print どうだい！<br>これこそが決定的な証拠――。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# SE・ネガティブ音
+@sfx Sfx_Common_7
+
+# ＠備考◆やや不安げ
+
+@char Leia.Default,ArmR5,ArmL7,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open01,Angle01/Facial/Mouth>Mouth_Fearful_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ――と思うんだが、どうだろうか？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （……決定的と言えるかどうかはわからないが） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （だが、状況を変えうるものではあるか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print ……そうだね。<br>おかげでエマが殺した方法がわかったよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆息を呑む
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ………っ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print 説明しようか……その方法を。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto Act02_Chapter02/Act02_Chapter02_Trial04

@@ -1,0 +1,164 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-2-8
+
+# ========================================
+# ●シーン2‐2‐8
+# ========================================
+
+@back 30_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# ========================================
+# ＞『シャワールーム』を選択
+# ========================================
+
+# 写真撮影の音
+@sfx Sfx_28
+@bgm Bgm_11_1
+
+@print シャワールームに入ると、<br>ココがスマホで室内を撮影していた。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print 何を撮影している？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Surprised1
+
+@print ぎゃあああっ！？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1
+
+@print んだよ、ヒロっちか。<br>いきなり声かけないでくれる？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 夢中で撮影していたらしく、<br>私に話しかけられて動揺している様子だった。 { speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1
+
+@print ただその表情は、<br>すぐに興奮したものに変わる。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@camera 
+@Wait 0.5
+
+@print この落書きにさっき気付いてさ、<br>これすごくね？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print ああ……恐らくノアの犯行だな。<br>まったく、どこにでも落書きを……<br>消さないと。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print いやいや消すなし。<br>これめっちゃ価値あるもんかもしれんくて。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print ……価値とは？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ヒロっち知らない？<br>世界的に有名なアーティストの【バルーン】。<br>たぶんノアそれだって！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print あまり詳しくないが、耳にしたことはある。 { speed:1 waitInput:true Wait:true }
+
+@print ストリートに落書きをする正体不明のアーティストとして、<br>かなりの有名人であるとか……。 { speed:1 waitInput:true Wait:true }
+
+@print たしかにノアの絵は人並み外れた魅力がある。<br>有名人であってもおかしくないな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print でしょ。撮影しておけば<br>後からめちゃバズれるかもしんないからさ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+# 写真撮影の音
+@sfx Sfx_28
+
+@print 有名人に乗っかって、<br>これであてぃしも有名ストリーマー入りってわけ。<br>きひひ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print ……君は帰る気なんだな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "は？ んなの当たり前じゃん。<br>あてぃしは絶対に帰る。どんな手を使っても絶対。" { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 何せあてぃしには、<br>【推し】が待ってるからさ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print "ぽつりと<ruby=\"つぶや\">呟</ruby>く横顔を見ていて、<br>今は彼女に踏み込むチャンスではないかと思い当たる。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@Wait 0.2
+@camera 
+@Wait 0.5
+@char Hiro
+@char Coco
+
+@print ……君にひとつだけ聞きたい。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 先日の配信について。<br>君は地下施設があったという情報以外にも、<br>何か知っているのでは？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 何を掴んでいる？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 切り出してみると、<br>ココはあからさまに嫌そうな顔になった。 { speed:1 waitInput:true Wait:true }
+
+@char Coco.Angry1
+
+@print ……ばーか。話すわけないじゃん。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1
+
+@print 誰がいつ魔女化すんのかわかんねーし、<br>殺意を抱かれるかもしんないんだよ？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Angry1
+
+@print ここにいるヤツら全員どいつもこいつも！<br>ぜんっぜん信用できないじゃん！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print あてぃしはもう二度と死にたくないんだよ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive1
+
+@print 二度と……？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 口を滑らしたのか、ココの表情がハッと強張る。 { speed:1 waitInput:true Wait:true }
+
+@char Coco.Surprised1
+
+@print べ、別にただの言い間違い。<br>もうさ、どっか行ってくれる？<br>あてぃし配信の準備したいんだけど。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print 配信……ここで？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1
+
+@print ここ壁が厚いのか、音漏れしないんだよね。<br>だから１回試しにやってみようかと思って。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print ……シャワーを浴びに来る人がいるんじゃないか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Coco.Smile1
+
+@print こんな時間にいないって！<br>それに来たらやめるし。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Angry1
+
+@print ほら、邪魔だから行った行った！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1
+
+@print それとも一緒に配信する？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1
+
+@print ……遠慮しておく。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （防音か……有益な情報だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 退散する前にさり気なく、<br>シャワールーム全体に視線を巡らせた。 { speed:1 waitInput:true Wait:true }
+
+@camera 
+
+@print （あのダストシュート……<br>　何かに利用できないかな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@camera 
+
+@print そう思いつつ、<br>シャワールームを後にした。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン2‐2‐4
+# 全てのイベントを消化している＞シーン2‐2‐10
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter02/Act02_Chapter02_Adv04

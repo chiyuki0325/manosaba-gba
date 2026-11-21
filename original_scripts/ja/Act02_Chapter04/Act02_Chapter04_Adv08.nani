@@ -1,0 +1,248 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-4-8
+
+# ========================================
+# ●シーン2‐4‐8
+# ========================================
+
+@back 23_4 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# ========================================
+# ＞『水精の間』を選択
+# ========================================
+
+@bgm Bgm_5_1
+
+@print "私とレイアはゲストハウス、<br>【<ruby=\"ウンディーネ\">水精</ruby>の間】にやってきた。" { speed:1 waitInput:true Wait:true }
+
+@print ゴクチョーはいなかったが…… { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+
+@print いやあ偶然ですね！<br>レイアさん、ヒロさん！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print シェリーがいた。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+@char Leia.Smile1
+
+@print もしかしてシェリーくんは<br>地下探索にでも来たのかい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1
+
+@print ご名答！<br>やっぱり調査するならここしかないですよね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+
+@print ちょうど良かったです。<br>一緒に地下探索に行きませんか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ゴクチョーが地下にいる可能性はあるな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Normal1
+
+@print そうだね、何せあそこには<br>色々牢屋敷のカラクリを動かすものがあるんだし。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+
+@print いいだろう、付き合おう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1
+
+@print やったー！<br>ではでは早速行きましょう！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@hideChars 
+
+@back 31_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print ――私たちは隠し階段から半地下へと降り、<br>３人でエレベーターに乗り込んだ。 { speed:1 waitInput:true Wait:true }
+
+@back 31_2 { time:0.5 }
+@Wait 0.6
+
+@char Leia
+@char Sherry
+@char Hiro
+
+@print ……しかし。 { speed:1 waitInput:true Wait:true }
+
+# エレベーターブザー音
+@sfx Sfx_146
+
+@char Leia.Surprised1
+@char Sherry.Surprised1
+@char Hiro.Surprised1
+@Wait 1
+
+@print ブザーが鳴ってしまい、<br>エレベーターは動かない。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+@char Sherry.Pensive1
+
+@print ああそういえば、<br>このエレベーターは２人乗りでしたね……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1
+
+@print ずいぶん古いしね……<br>仕方ない。私は待っているから、<br>２人で行ってきてくれたまえ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@hide Leia
+
+@print "レイアが気をきかせて<br><ruby=\"さっそう\">颯爽</ruby>とエレベーターを降りていく。" { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@Wait 1
+
+# エレベーター稼働音
+@bgm Ambi_5_1
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+@hideChars 
+
+@print するとようやく、<br>エレベーターが動き出した。 { speed:1 waitInput:true Wait:true }
+
+@back 31_2 { time:0 }
+@char Sherry.Smile1 { time:0 }
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed { time:0 }
+@back SolidColor.Custom { time:1.5 }
+@Wait 1.8
+
+@print やりましたねヒロさん！<br>地下探索にゴーゴーです！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print （正直……私が待っているのでも良かった） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+@StopBgm Bgm_5_1 { fade:10 }
+
+@print それにしても、<br>このエレベーターの中暑くありません？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print "手で自身をぱたぱたと<ruby=\"あお\">扇</ruby>ぎながら、<br>シェリーが言ってくる。" { speed:1 waitInput:true Wait:true }
+
+@print …………。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私はあえて聞こえないふりをした。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@QuickSave 23
+
+@print "不気味な雰囲気ですよねぇ。<br>このまま異世界にでも行ってしまいそうな……<br>知ってます？ エレベーターにまつわる怪談。" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print …………。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1
+
+@print ここは不思議なことばっかりですし、<br>やってみたら案外行けちゃうかもですね！<br>異世界！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print …………。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 思いついたらやってみたくなってきちゃいました！<br>試してみませんか！？<br>異世界エレベーター！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive1
+
+@print …………。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1
+
+@print 気になって仕方ありません！<br>やっちゃいましょう！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 私は―― { speed:1 waitInput:true Wait:true }
+
+@choice シェリーを止めた
+	@goto .Choice2-4-3
+
+@choice シェリーを止めなかった
+	@goto Act02_Chapter04/Act02_Chapter04_Bad03
+
+@StopForChoice 
+
+# Choice2-4-3
+
+@correctChoice 23
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print いい加減にしろ。<br>私たちは地下施設の探索をするのだろう。<br>目的を忘れるな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "重たい口を開き、シェリーを<ruby=\"いさ\">諫</ruby>めた。" { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Flushed1
+
+@print "てへ☆ そうでした！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print （まったく……黙っていれば静かになると思えば……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# エレベーター到着音
+@StopBgm Ambi_5_1
+@sfx Sfx_68
+
+@bgm Bgm_5_1
+
+@char Sherry.Smile1
+@char Hiro
+
+@print "やったー！ つきましたよヒロさん！<br>いざ地下探索です！ えいえいおー！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@EmoteJumpDouble Sherry
+
+@print シェリーが拳を突き上げ、<br>勢いよく飛び上がったことで―― { speed:1 waitInput:true Wait:true }
+
+# エレベーターの天板のフタが外れる音
+@sfx Sfx_147
+
+@back 31_3
+@Wait 0.5
+
+@print その拳は天井まで届き、<br>エレベーターの天板のフタが外れてしまった。 { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆ため息
+
+@print はぁ……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （すでに疲れ果てているんだが……<br>　嫌な予感しかしないな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@back 26_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@back SolidColor.Custom { time:1.5 }
+@Wait 1.8
+
+@print ……その後。 { speed:1 waitInput:true Wait:true }
+
+@print 私たちは地下施設を見てまわったが、<br>ゴクチョーは見つけられず。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+@Wait 0.2
+@char Sherry { time:0.8 }
+@Wait 1.1
+@char Sherry.Smile1
+@char Sherry { time:1 }
+@Wait 1.2
+
+@print "冷凍室の氷が溶けて<br>大きな<ruby=\"ひょうかい\">氷塊</ruby>が転がっていたので、<br>シェリーの氷サッカーに付き合わされた。" { speed:1 waitInput:true Wait:true }
+
+@print ……ただ疲れただけだった。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン2‐4‐3
+# 全てのイベントを消化している＞シーン2‐4‐9
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter04/Act02_Chapter04_Adv03

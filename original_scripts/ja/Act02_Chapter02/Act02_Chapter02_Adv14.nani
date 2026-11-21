@@ -1,0 +1,369 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-2-14
+
+# ========================================
+# ●シーン2‐2‐14
+# ========================================
+
+@back 10_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@Wait 1
+# 屋敷の階段を上る音
+@sfx Sfx_129
+@Wait 1
+
+@print 不満そうなノアを連れて２階へ行く。 { speed:1 waitInput:true Wait:true }
+
+# スマホ通知音
+@sfx Sfx_29
+@Wait 1
+@bgm Bgm_11_1
+
+@print ちょうど階段を上りきったところで、<br>スマホに通知が入った。 { speed:1 waitInput:true Wait:true }
+
+@print （エマとの約束の時間を過ぎている……。<br>　催促か……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print スマホを取り出してちらりと見る。 { speed:1 waitInput:true Wait:true }
+
+@print するとそこには<br>【ココちゃん配信中！】という文字。 { speed:1 waitInput:true Wait:true }
+
+@print ため息をついてスマホをしまうと同時、<br>明るい声がした。 { speed:1 waitInput:true Wait:true }
+
+@char Miria.Smile1
+
+@print あれっ？<br>ヒロちゃんどうしたの？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1
+
+@print ……ノアが。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Angry1
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print んー？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@print "ミリアは<ruby=\"ほお\">頬</ruby>をふくらませているノアの顔を覗<ruby=\"のぞ\">覗</ruby>き込む。" { speed:1 waitInput:true Wait:true }
+
+@char Miria.Smile1
+
+@print ……ははーん。<br>さてはヒロちゃんに怒られたんだね。<br>いたずらでもしちゃったのかな～？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@print のあ、べつに悪いことしてないもん。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print そっかぁ～。そうだよね～。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Smile1
+
+@print じゃあノアちゃんは、<br>何をしてたの？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Noah.Angry1
+
+@print …………お絵描き。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print ……壁に落描きをしていた。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Pensive1
+@char Miria.Smile1
+
+@print あー、なるほど。<br>それがヒロちゃんにバレちゃったんだね。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive1
+
+@print それはよくないな～ノアちゃん。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Noah.Pensive1
+
+@print ……お仕置きされちゃう？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Miria.Smile1
+
+@print うん、そうだね。<br>酷いお仕置きされちゃうかも。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Noah.Surprised1
+
+@print ええっ……！？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print ……私をなんだと思ってる。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Smile1
+
+@print 冗談じょうだん！<br>ヒロちゃんはそんなことしないよ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Normal1
+
+@print ……お説教ぐらいはされるかもしれないけど。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Noah.Angry1
+
+@print む～。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive1
+
+@print ん～……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print ミリアは腕組みし、<br>少し考え込んでから口を開いた。 { speed:1 waitInput:true Wait:true }
+
+@char Miria.Smile1
+
+@print ……じゃあノアちゃん、<br>おじさんといっしょに映画でも見る？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Noah.Surprised1
+
+@print ……映画？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Miria.Smile1
+
+@print うん。<br>街の壁に落書きする、<br>ストリートアーティストの話。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Noah.Angry1
+
+@print ……面白くなさそう。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Miria.Normal1
+
+@print じゃあヒロちゃんにお説教される？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Noah.Angry1
+
+@print ……映画見る。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Miria.Smile1
+
+@print よし、じゃあ見ようか。<br>おじさんが解説してあげるよ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ミリアはそう言うと、ノアの手を引く。 { speed:1 waitInput:true Wait:true }
+
+@char Miria.Smile1
+
+@print そして私に向けてウインクをした。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （……助かる） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ノアをミリアに押し付け、一息つく。 { speed:1 waitInput:true Wait:true }
+
+@print （これ以上待たせては、<br>　エマが帰ってしまうかもしれないな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# スマホ通知音
+@sfx Sfx_29
+@Wait 1
+
+@print 階段を降りようとしてすぐ、<br>再び通知音が鳴り、スマホが震える。 { speed:1 waitInput:true Wait:true }
+
+@print （……またか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 苛立ちながらも立ち止まり、<br>スマホを確認した。 { speed:1 waitInput:true Wait:true }
+
+@print やはりココの名前が表示されている。 { speed:1 waitInput:true Wait:true }
+
+@print 無視しようと決め、<br>スマホをしまおうとして、思い直す。 { speed:1 waitInput:true Wait:true }
+
+@print （……まさかシャワー室で配信を……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ふと嫌な予感に襲われたので、<br>念のため配信画面を開いた。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+@StopBgm 
+
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1
+# 配信フレームIN
+@printer Normal.Stream
+@back 30_2 { time:0 }
+@blur MainBackground
+@char Coco.Fearful1 { time:0 }
+@Wait 0.3
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+# ＠備考◆配信中
+
+@print …………。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_21_1
+
+@print "（なんだ？ 何か様子がおかしい）" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 画面に映ったココの表情に、<br>私は違和感を覚えた。 { speed:1 waitInput:true Wait:true }
+
+@print "目が激しく泳いでいる。<br>何かに<ruby=\"おび\">怯</ruby>えているような、焦っているような。" { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆配信中
+
+@print …………。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 配信を始めたというのに、<br>ココはひと言も発しようとしない。 { speed:1 waitInput:true Wait:true }
+
+@print あっ、やば……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Surprised1
+@Wait 1
+@char Coco.Pensive1
+
+@print どもども、ココたんだよ～！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print "しばらくしてから、<br>ココは<ruby=\"と\">取</ruby>り<ruby=\"つくろ\">繕</ruby>うように<ruby=\"しゃべ\">喋</ruby>りだす。" { speed:1 waitInput:true Wait:true }
+
+@print えーと、今日は……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Fearful1
+
+@print その……なんていうか……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1
+
+@print "そ、そう！ 雑談！<br>雑談配信でもしようかと思って～……！" { author:Coco speed:1 waitInput:true Wait:true }
+
+@print （……明らかに挙動不審だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 加えて、嫌な予感は的中していた。<br>ココの背後には見覚えのある絵。 { speed:1 waitInput:true Wait:true }
+
+@print （シャワールーム……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 今、ココはシャワールームから配信をしている。 { speed:1 waitInput:true Wait:true }
+
+@print チッ……また邪魔が入った……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （今、シャワールームにはエマとココがいる） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （今行ってしまえば、間違いなくエマといっしょにいるところを<br>　目撃されてしまうか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （そうなれば疑われるのは確実……<br>　悔しいが、今回は諦めるしか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Coco.Surprised1
+
+@print ……あっ！！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print ココの驚くような声に、<br>配信を閉じようとしかけた手を止める。 { speed:1 waitInput:true Wait:true }
+
+@char Coco.Fearful1
+
+@print おーい、聞こえてますか～……！<br>……えっ？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 画面の向こうにいる視聴者にココは声をかけ、<br>そして止まった。 { speed:1 waitInput:true Wait:true }
+
+@char Coco.Surprised1
+
+@print ちょ……まっ { author:Coco speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# 銃声
+@sfx Sfx_38
+
+@back SolidColor.Custom { time:0 }
+
+@print なっ！？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "銃声のような音が響くと同時に、<br>赤黒い<ruby=\"しぶき\">飛沫</ruby>が画面を汚した。" { speed:1 waitInput:true Wait:true }
+
+@back SolidColor.Custom { time:0 }
+@hideChars { time:0 }
+@back 10_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@blur MainBackground
+@printer Normal.Default
+
+@print それからすぐに、<br>ぷつりと配信が切れて画面が黒くなった。 { speed:1 waitInput:true Wait:true }
+
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+@bgm Bgm_21_1
+
+@print 配信画面の向こうとはいえ、<br>衝撃的な光景を見せられて心臓が激しく脈打っている。 { speed:1 waitInput:true Wait:true }
+
+@print スマホを持つ手も震えていた。 { speed:1 waitInput:true Wait:true }
+
+@print （銃声……？<br>　何が起こった……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （……いや、考えるまでもない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 画面の向こうで、<br>ココは何者かに撃たれていた。 { speed:1 waitInput:true Wait:true }
+
+@print （シャワールームで……殺人事件が起こった……<br>　ならば犯人は……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私の頭には、ありありと彼女の顔が浮かぶ。 { speed:1 waitInput:true Wait:true }
+
+@print ……エマ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 叫ぶと同時、<br>シャワールームに向かって駆け出した。 { speed:1 waitInput:true Wait:true }
+
+@print ――しかし。 { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised
+
+# どんっと人がぶつかる音
+@sfx Sfx_27
+
+@shake Camera
+
+@print きゃああ！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print うぐっ！？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 階段の途中で誰かと衝突し、<br>転げ落ちることはなかったが、<br>私はその場に思い切り尻もちをついた。 { speed:1 waitInput:true Wait:true }
+
+@print っ……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1
+
+@print もうなんなんですのー！！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 声の方を見れば、<br>私が衝突した相手はハンナだった。 { speed:1 waitInput:true Wait:true }
+
+@print 数段下でハンナも私同様に尻もちをついている。<br>ハンナの周りには、衣服が散乱していた。 { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1
+
+@print 雨が降ってきたから取り込んだのに……<br>これじゃあまた洗い直しですわー！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "（雨……？ 気付かなかった。<br>　この衣服は洗濯した物か）" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "私は立ち上がり、<br>ほとんど乾いたそれらを<ruby=\"よ\">除</ruby>けつつ、<br>ハンナの横を通り過ぎていく。" { speed:1 waitInput:true Wait:true }
+
+@print ……すまないが、私は先を急ぐ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry
+
+@print ちょっとー！<br>そっちからぶつかってきたんだから<br>手伝ってくださいましー！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "後ろから手を<ruby=\"つか\">掴</ruby>まれてしまったが、<br>本当に今はそれどころではない。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# 手を払う音
+@sfx Sfx_18
+
+@print "申し訳なさを抱きながらも、<br>勢いよくハンナの手を振り払う。<br>そして<ruby=\"かんぱつ\">間髪</ruby>入れずに駆け出した。" { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.6 }
+@Wait 0.6
+
+@print もう……！<br>ゲリラ豪雨に交通事故に、散々ですわー！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+# 屋敷の階段を駆け降りる音
+@sfx Sfx_130
+
+
+@print そんな声を背中に浴びながら、<br>私はシャワールームへと急いだ。 { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter02/Act02_Chapter02_Adv15

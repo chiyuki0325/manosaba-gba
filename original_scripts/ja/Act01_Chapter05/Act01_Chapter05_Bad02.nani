@@ -1,0 +1,375 @@
+@if isDebugDirectJump
+	@Gosub System/System_Subroutine.BeginAdv
+
+# ========================================
+# ＞『メルルに歩み寄った』を選択→シーン1-5-b2へ
+# ========================================
+
+# Scene1-5-b2
+
+# ========================================
+# ●シーン1-5-b2
+# ========================================
+
+@back 14_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@char Ema.Pensive1,ArmR3
+@char Meruru.Pensive
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@bgm Bgm_22_1
+
+@print ……ひと、り……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマはうわごとのようにつぶやいた。 { speed:1 waitInput:true Wait:true }
+
+@print ぐすっ……<br>優しいエマさんなら……わかってくれますよね？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive
+
+@print （……何言ってるの？<br>　メルルちゃんの気持ちなんて想像もできない） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （……でも、もしここでメルルちゃんから逃げたら<br>　……ボクは、どうなるんだろう） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （この島から出る方法だって見つからない。<br>　ひとりで、隠れて） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマは青ざめながら、震える自らの体を<br>両手で抱きしめた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Fearful
+
+@print （きっと……死ぬだけ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （どうすればいいかなんて……<br>　全然わからないよ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive
+
+@print "エマはメルルに歩み寄って、静かに<ruby=\"うつむ\">俯</ruby>いた。" { speed:1 waitInput:true Wait:true }
+
+@print 数十秒にも及ぶ長い沈黙。 { speed:1 waitInput:true Wait:true }
+
+@print "その末に、小さな声で<ruby=\"つぶや\">呟</ruby>く。" { speed:1 waitInput:true Wait:true }
+
+@print ――ボクも、メルルちゃんと一緒だよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ひとりは、大嫌い。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 一言一言の合間は、<br>数回の呼吸を挟むほどに長かった。 { speed:1 waitInput:true Wait:true }
+
+@print （あれ……ボク、なに言ってるんだろう） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （自分でなに言ってるかわかってる？<br>　この子は、みんなを殺したのに） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマの葛藤を遮るかのように、<br>メルルがずいと身を乗り出して、エマの両肩を<ruby=\"つか\">掴</ruby>む。" { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Smile
+
+@print エマさんならそう言ってくれると<br>思ってました！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print "死にたくないですよね？<br>逃げたくないですよね？ 私たちは友だちですよね？" { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Pensive
+
+@print もちろん悩む気持ちもわかります。<br>みなさんを裏切るようで辛いんですよね。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print メルルは切なげに目を伏せてから、<br>ぱっと笑顔になり手を打つ。 { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Smile
+
+@print でも大丈夫です！<br>みんな死んじゃいました。不幸中の幸いです……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 裏切っても責める人は誰もいません。<br>だからあなたは悪い人にはなりません。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print エマさんにとって、私を慰めてくれることが、<br>優しい人でいられる唯一の方法なんです。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive
+
+@print ……そう、だね。<br>そうなの……かも……しれない。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Fearful
+
+@print （……気持ち悪い） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （みんなの死を、なんだと思ってるの？<br>　この子、おかしいよ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （でも……どうしても………<br>　拒絶する勇気が持てない） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （きっとこの手が、ボクの人生で差し伸べられる<br>　最期の救いなんだから） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 優しくメルルの手を握ると、<br>エマはぎこちない微笑みを浮かべた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive
+
+@print ……メルルちゃん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマは、自らの肩を<ruby=\"つか\">掴</ruby>む<br>メルルの手に、自分の手を添えた。" { speed:1 waitInput:true Wait:true }
+
+@print 小さく、震える声で、<br>迷いながら……。 { speed:1 waitInput:true Wait:true }
+
+@print 全ての感情を押し殺し、<br>その一言を絞りだした。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive
+
+@print ……助けて。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Smile
+
+@print ……はい。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print エマの一言に、<br>メルルもまた静かに微笑み、涙を一筋こぼす。 { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Pensive
+
+@print エマさん……助けられたのは、私の方です。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default
+
+@print 私には、今までずっと<br>歩み寄ってくれる人なんていませんでした。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 今まで、ずっと寂しかったんですけど……<br>みなさんの死は無駄じゃありませんでした。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Smile
+
+@print "こんなに素敵な友だちに、<ruby=\"であ\">出逢</ruby>えたんですから。" { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print はにかむようにメルルが笑う。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive
+
+@print ……うん、うん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "そうしてメルルは、エマを優しく胸に抱きとめる。<br>エマは静かに何度も<ruby=\"うなず\">頷</ruby>いていた。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive
+@char Meruru.Smile
+
+@print 嬉しいです……今までこんなこと、<br>１度だってなかったので。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print （もう、何もわからない。<br>　考えが頭の中でまとまらない） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （とにかく……メルルちゃんを<br>　なんとか受け入れないと） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （ボクはこの子を見捨てちゃだめだ。<br>　じゃないと、ボクが……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default
+
+@print 私のことを、見捨てたりしませんか？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Default
+
+@print ……うん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Smile
+
+@print ……エマさん……！<br>私、エマさんのことはたぶん絶対殺しません！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive
+
+@print （そうだよ。<br>　メルルちゃんは、話すと穏やかで……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （いつも人のことを心配してくれていて<br>　他人のために涙を流せる、優しい子……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （だから……これは、間違いなんかじゃない。<br>　正しい選択なんだ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （今は、心をカラにしよう） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマは、自らを抱きしめるメルルへ応じるように、<br>腕を彼女の背中に回した。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Default
+
+@print ……一緒に大魔女を探そう。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default
+
+@print ……いいんですか？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print ……もちろん。<br>ボクも呪いを解きたいから。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print すごく、心強いです……<br>今まで、本当に１人で考えていろいろやっていたので。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Smile
+
+@print 早速……次の魔女候補たちを<br>迎える準備をしよう。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 少しでも早く、大魔女を見つけられるように。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマとメルルは手を取り合い、<br>２人で裁判所を出ることにした。 { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@hideChars 
+@char Ema.Default
+@char Meruru.Default
+
+@print こうして、メルルとともにエマも牢屋敷の<br>管理者として今後の計画に参加することになり――。 { speed:1 waitInput:true Wait:true }
+
+@back 12_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@bgm Bgm_19_1
+
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print 新しく来る子、母子家庭だっていうから調べたけど、<br>お父さんが借金苦で自殺してるんだって。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print それがどうかしたんですか？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 別の子の大切なものを盗んでおこうよ。<br>その子の仕業に仕立て上げて、返してって要求させるんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print たぶん、お父さんのことを思い出して<br>トラウマが刺激されると思う。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Smile
+
+@print わあ、とっても素敵ですね！<br>それなら魔女化もすぐに進行しそうです。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive
+
+@print そうだね。<br>他の子のトラウマもちゃんと調べて……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 淡々と話したあと、<br>ふと息を止めて、エマははっとしたように目を見開く。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Default
+
+@print （そういえば、最近何も感じない……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 見知らぬ誰かを傷つける計画を立てているというのに、<br>エマの心は少しの痛みも罪悪感も感じない。 { speed:1 waitInput:true Wait:true }
+
+@print "ただ<ruby=\"な\">凪</ruby>いでいる海のように。<br>静かで穏やかだ。" { speed:1 waitInput:true Wait:true }
+
+@print （おかげで、ボクは魔女になる心配はなさそう） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （気に病んでいたらキリがないから、<br>　仕方ないよね、仕方ない……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default
+@char Meruru.Smile
+
+@print ふふ、エマさん最近笑顔が増えてきましたね。<br>私、とっても嬉しいです。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print "え？ ボク笑ってる？" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 気付いてなかったんですか？<br>今だって、楽しそうなお顔されてますよ。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print （ボクが、楽しそう……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマは自分の<ruby=\"ほほ\">頬</ruby>に触れてみると、<br>たしかに口角が上がっている気がする。" { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default
+
+@print ちょうど次の候補の資料が届いたので、<br>あとで一緒に見てもらえますか……？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Default
+
+@print もちろん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 微笑んで頷くエマに、<br>メルルはほっとしたように息を吐く。 { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Smile
+
+@print やっぱりエマさんは頼りになります。<br>私１人じゃ、ここまで考えられなかったので……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Smile
+
+@print ボクが役に立てたならよかった。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマは<ruby=\"うれ\">嬉</ruby>しそうに言うと、メルルの手を取った。" { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default
+
+@print 次の魔女候補たちが来るまでもう少し時間があるし、<br>準備、一緒に頑張ろうね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default
+
+@print はい。そして今度こそ、<br>大魔女様を見つけましょう。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@back SolidColor { time:0.2 }
+
+@print それからしばらくの時間が経ち、<br>新しい魔女候補たちが、牢屋敷へとやってきた。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@hideChars 
+
+@back 9_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print なんなのよ、ここ！ { author:WitchCandidate1 speed:1 waitInput:true Wait:true }
+
+@print 帰りたいよぉ。 { author:WitchCandidate2 speed:1 waitInput:true Wait:true }
+
+@print ……うっさいなぁ。<br>ピーピー騒ぐなよ。 { author:WitchCandidate3 speed:1 waitInput:true Wait:true }
+
+@print 久々に騒がしくなった牢屋敷で、<br>エマとメルルは他の魔女候補たちに混じり、<br>様子を見守っていた。 { speed:1 waitInput:true Wait:true }
+
+@print （……ボクが初めてここに来た日が懐かしいな） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print あの日も、今日のように<br>みんなそれぞれ動揺していた。 { speed:1 waitInput:true Wait:true }
+
+@print （でも、もうあの時とは違う） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 今のエマは、管理者としてここにいる。 { speed:1 waitInput:true Wait:true }
+
+@print （この中に大魔女がいるといいんだけど） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print そんなことを考えているエマの袖を、<br>メルルが引っ張った。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Default
+
+@print どうしたの？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 他の魔女候補が、ラウンジに向かって歩き出す。<br>その列の最後尾で、エマとメルルは<br>密やかに言葉を交わす。 { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default
+
+@print あの、私……ちゃんとできるでしょうか。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Default
+
+@print 心配要らないよ。<br>今回はボクも一緒だから。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "ほの<ruby=\"ぐら\">昏</ruby>い瞳で微笑んで、エマはメルルの手を握る。" { speed:1 waitInput:true Wait:true }
+
+@print 相手を逃さないように、体温を探るように<br>お互いの指と指を絡め合わせた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Smile
+@char Meruru.Default
+
+@print 大好きだよ、メルルちゃん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Smile
+
+@print 私も大好きですよ、エマさん。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマはメルルの返しに、<br>手を握る力を強める。 { speed:1 waitInput:true Wait:true }
+
+@print エマは廊下を歩いていく<br>魔女候補たちの背中を見つめた。 { speed:1 waitInput:true Wait:true }
+
+@print 次に悲鳴が聞こえるのはいつだろう。<br>次に命乞いが聞こえるのはいつだろう。 { speed:1 waitInput:true Wait:true }
+
+@print 永遠にも思える繰り返しの中で、<br>握られた手の温もり以外は、全てまやかしに思えた。 { speed:1 waitInput:true Wait:true }
+
+@print エマは確かなこの手だけを決して離さないと決め、<br>薄暗い道を行く。 { speed:1 waitInput:true Wait:true }
+
+@print 彼女たちの命を引き換えに。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ＞BADEND用EDロール突入
+# ========================================
+
+# ========================================
+# 『END～新たなる管理者～』
+# ========================================
+
+@badEnd 15

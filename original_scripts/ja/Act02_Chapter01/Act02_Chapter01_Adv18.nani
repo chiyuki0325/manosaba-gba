@@ -1,0 +1,44 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-1-13
+
+# ========================================
+# ●シーン2‐1-13
+# ========================================
+
+@back 1_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_6_1
+
+# さらさらと紙にペンを走らせる書き音
+@sfx Sfx_111
+@Wait 1
+
+@print ――監獄生活２周目、４日目。 { speed:1 waitInput:true Wait:true }
+
+@print ――今日に至るまで、<br>この監獄に囚われた少女たちの、<br>魔法の情報を多く得ることができた。 { speed:1 waitInput:true Wait:true }
+
+@print ――遠野ハンナが【浮遊】。<br>――橘シェリーが【怪力】。<br>――城ケ崎ノアが【液体操作】。 { speed:1 waitInput:true Wait:true }
+
+@print ――宝生マーゴが【モノマネ】。<br>――氷上メルルが【治癒】。<br>――夏目アンアンが【洗脳】。 { speed:1 waitInput:true Wait:true }
+
+@print ――紫藤アリサが【発火】。<br>――黒部ナノカが【幻視】。<br>――佐伯ミリアが【入れ替わり】。 { speed:1 waitInput:true Wait:true }
+
+@print ――沢渡ココが【千里眼】。 { speed:1 waitInput:true Wait:true }
+
+@print ――私だけが得ている情報が多いのは、<br>公平ではないと感じたため……。 { speed:1 waitInput:true Wait:true }
+
+@print ――それらの情報は、<br>業務連絡としてチャットで<br>少女たちに全てを共有済みだ。 { speed:1 waitInput:true Wait:true }
+
+@print "――実際その魔法を<br>目の当たりにしたわけではないものもあり、<br><ruby=\"しんぴょうせい\">信憑性</ruby>は定かではないが。" { speed:1 waitInput:true Wait:true }
+
+@print ――ただ、ひとつ引っかかっているのは…… { speed:1 waitInput:true Wait:true }
+
+@print ――桜羽エマの魔法はなんだ？ { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter01/Act02_Chapter01_Adv19

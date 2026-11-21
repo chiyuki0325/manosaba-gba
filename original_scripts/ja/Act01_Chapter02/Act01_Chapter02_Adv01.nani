@@ -1,0 +1,688 @@
+@gosubResetBook System/System_ResetWitchBook
+@Gosub System/System_Subroutine.BeginAdv
+
+# ========================================
+# 魔女裁判 第1章2話
+# ========================================
+
+# Scene1-2-1
+
+# ========================================
+# ●シーン1-2‐1
+# ========================================
+
+@back 120_1 { time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@animate Stills { Scale:{g_backgroundDefaultScale} }
+
+@bgm Bgm_21_1
+
+@print 撃たれて地面に落ちたゴクチョーは、<br>ぴくりとも動かず、完全に活動停止している。 { speed:1 waitInput:true Wait:true }
+
+@print 魔女候補の少女たちは息を詰め、<br>銃を構える黒部ナノカを見つめていた。 { speed:1 waitInput:true Wait:true }
+
+@print ナノカちゃん、一体何を……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマはそう口にしながら、<br>視線だけ入口付近に<ruby=\"たたず\">佇</ruby>む看守へと向けた。" { speed:1 waitInput:true Wait:true }
+
+@print 看守は動いていない。<br>指令系統に混乱が生じているのだろうか。 { speed:1 waitInput:true Wait:true }
+
+@print このバカげた殺人ゲームを仕組んでいる<br>黒幕が私たちの中にいる。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 銃を構えた姿勢のまま、<br>ナノカが鋭く瞳を光らせた。 { speed:1 waitInput:true Wait:true }
+
+@print 私たちが魔女になっていくのを誘導し、<br>近くで見て、愉しんでいるやつがいる。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print そいつが真の牢屋敷の管理者よ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print もう誰かは予測がついてる。<br>大人しく名乗り出たら。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print "どこか<ruby=\"すが\">縋</ruby>るように、<br>彼女は喉奥から声を絞り出す。" { speed:1 waitInput:true Wait:true }
+
+@print 私はあなたを決して許さない。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@hide Stills
+
+@back 13_1 { time:0 }
+@back Transparent { time:0.9 }
+@Wait 1
+
+@print （ボクたちの中に、黒幕がいる……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマは思わず裁判所にいる少女たちを、<br>ぐるりと見回してしまった。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Margo.Normal1
+@mask MainBackground-Front,Margo-Front
+@animate MainBackground-Front
+@animate Margo-Front
+@Wait 0.3
+
+@print 自分が殺されたり、処刑されたりするかもしれないのに<br>私たちの中に混ざるなんて、悪趣味ね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Margo-Front
+@hideChars 
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Alisa.Angry,Option-ArmL-Off
+@mask MainBackground-Front,Alisa-Front
+@animate MainBackground-Front
+@animate Alisa-Front
+@Wait 0.3
+
+@print おいっ、言っとくがウチじゃねーからな！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Alisa-Front
+@hideChars 
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char AnAn.Angry,Arms2,Angle01/Option_Arms>Option_Arms01_01,Angle01/Option_ArmR/Option_ArmR01_01-
+@mask MainBackground-Front,AnAn-Front
+@animate MainBackground-Front
+@animate AnAn-Front
+@Wait 0.3
+
+@print 『わがはいでもない！』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,AnAn-Front
+@hideChars 
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Coco.Angry
+@mask MainBackground-Front,Coco-Front
+@animate MainBackground-Front
+@animate Coco-Front
+@Wait 0.3
+
+@print 全員うさんくさいっつーの。<br>もうあてぃし以外みんな処刑でよくね？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Coco-Front
+@hideChars 
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Meruru.Default
+@mask MainBackground-Front,Meruru-Front
+@animate MainBackground-Front
+@animate Meruru-Front
+@Wait 0.3
+
+@print う、疑い合うのは良くないです……。<br>みんなが、嫌な気持ちになってしまいます……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Meruru-Front
+@hideChars 
+@despawn MaskingRectangle
+
+@print "銃に<ruby=\"おび\">怯</ruby>えた様子ながら、<br>ハンナがぐいっと一歩前へと出た。" { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Hanna.Surprised1
+@mask MainBackground-Front,Hanna-Front
+@animate MainBackground-Front
+@animate Hanna-Front
+@Wait 0.3
+
+@print ちょ、ちょ、ちょっとお待ちなさい！<br>何故あなたはそんなこと知っていやがるんですの！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print そっちの方がよっぽど怪しいですわよ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Hanna-Front
+@hideChars 
+@despawn MaskingRectangle
+
+@print ハンナがびしりと指差すと、<br>ナノカはため息混じりに構えた銃をおろした。 { speed:1 waitInput:true Wait:true }
+
+@back 14_1
+
+@char Nanoka
+
+@print これに関しては、信じてもらうしかないけれど……<br>私の魔法は【幻視】なの。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Ema.Pensive1,ArmR3
+@mask MainBackground-Front,Ema-Front
+@animate MainBackground-Front
+@animate Ema-Front
+@Wait 0.3
+
+@print 幻視……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Ema-Front
+@hide Ema-Front
+@despawn MaskingRectangle
+@Wait 0.3
+
+@print その人自身や想いの詰まった物に触れると、<br>対象の過去や未来が映像として視える時がある。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 私は牢屋敷の過去の情報を【幻視】で視たの。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print この銃も、かつて牢屋敷に囚われた人が魔法で制作し、<br>隠していたことを視て、ここに捕まってすぐ回収した。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 装填数は６発。<br>１日１発自動で弾が回復する魔法の銃よ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Margo.Normal1
+@mask MainBackground-Front,Margo-Front
+@animate MainBackground-Front
+@animate Margo-Front
+@Wait 0.3
+
+@print なるほど。殺し合いが起きるかもしれない中、<br>あなただけ最初から銃を携帯していた辻褄は合うわね……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print レイピアはまだしも、銃はアンフェアだと思っていたの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Margo-Front
+@hide Margo-Front
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Sherry.Normal1,ArmR2
+@mask MainBackground-Front,Sherry-Front
+@animate MainBackground-Front
+@animate Sherry-Front
+@Wait 0.3
+
+@print ふむ、そうなると、ナノカさんは<br>魔法で黒幕がいることがわかったと？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Sherry-Front
+@hide Sherry-Front
+@despawn MaskingRectangle
+
+@print ええ。ここに捕まる前から私は牢屋敷のことを知っていた。<br>そして、黒幕がいることも。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print ただ私の魔法は完璧じゃない。<br>触れたら絶対に視えるわけではないし、<br>偶然によるものが大きい。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print わかっていたのは、<br>この牢屋敷で殺人ゲームを仕組んでいる誰かが、<br>囚人に混ざっているってことだけ……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Sherry.Normal1,ArmR2
+@mask MainBackground-Front,Sherry-Front
+@animate MainBackground-Front
+@animate Sherry-Front
+@Wait 0.3
+
+@print なるほどぉ……魔女見習いの私たちでは、<br>まだうまく魔法をつかいこなせていないんですね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Sherry-Front
+@hide Sherry-Front
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Margo.Normal1,ArmR2
+@mask MainBackground-Front,Margo-Front
+@animate MainBackground-Front
+@animate Margo-Front
+@Wait 0.3
+
+@print 過去だけでなく未来まで視える……。<br>コントロールさえできたら、予言者になれるわ。<br>羨ましい能力ね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@update Nanoka
+
+@animate MainBackground-Front,Margo-Front
+@hide Margo-Front
+@despawn MaskingRectangle
+@Wait 0.3
+
+@print ……捕まってから、私はずっとその黒幕が誰かを探していた。<br>そこで魔法が発動して、私は視たの。<br>ぬけぬけと少女のフリをしている人物がいるのを。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+@hideChars 
+@hide MainBackground-Middle
+
+@print ナノカは再び銃を構え、<br>その銃口をゆっくりと、ひとりの少女に向けた。 { speed:1 waitInput:true Wait:true }
+
+@Wait 0.4
+
+@back 14_1
+@char Miria.Surprised1,ArmR10
+
+@print ――佐伯ミリアの方へと。 { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆息を呑む
+@print ――っ！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@print 全員の視線が、ミリアへと集まった。 { speed:1 waitInput:true Wait:true }
+
+@print あなたは【佐伯ミリア】の体を奪い、<br>ここにいるんでしょう。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print ナノカは幻視で見た<br>その時の情景を語りだす―― { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@hide MainBackground,MainBackground-Middle
+
+@hideChars 
+@back 220_1 { Scale:{g_backgroundDefaultScale} }
+@back Transparent { time:0.9 }
+@Wait 1
+
+# @bgm Bgm_6_1(効果音が長めのためBGMない方が引き立つかも)
+
+# 踏切音
+@sfx Sfx_40
+
+@print ひとけのない夜――<br>地方によくある、ありふれた踏切の前だった。 { speed:1 waitInput:true Wait:true }
+
+@print 佐伯ミリアはくたびれたスーツの男に迫られていた。<br>男の顔は暗がりに沈んでよく見えない。 { speed:1 waitInput:true Wait:true }
+
+@print 遮断機は降りていて、<br>赤い警告灯がぼんやりと光を放っている。 { speed:1 waitInput:true Wait:true }
+
+@print そして闇を裂くように、<br>警告音が鳴り響いている。 { speed:1 waitInput:true Wait:true }
+
+@print ――やめてよぉっ { speed:1 waitInput:true Wait:true }
+
+@print "手首を<ruby=\"つか\">掴</ruby>まれたミリアが泣きじゃくり、叫ぶ。" { speed:1 waitInput:true Wait:true }
+
+@print ――おじさんに、その体をくれないか。 { speed:1 waitInput:true Wait:true }
+
+@print "男はミリアの抵抗に焦りを<ruby=\"にじ\">滲</ruby>ませていた。" { speed:1 waitInput:true Wait:true }
+
+@print "――君は手を<ruby=\"つな\">繋</ruby>いだだけで、入れ替わることができるんだろう？" { speed:1 waitInput:true Wait:true }
+
+@print "――その話が本当なら、ぜひおじさんに君の体を<ruby=\"ゆず\">譲</ruby>ってほしい！" { speed:1 waitInput:true Wait:true }
+
+@print ――一度でいいから、女の子になるのが夢だったんだよねえ！ { speed:1 waitInput:true Wait:true }
+
+# 電車が近づいてくる音
+@sfx Sfx_105
+
+@print "遠くから電車の<ruby=\"あか\">灯</ruby>りと音が近付いてくる。<br>重く鈍い振動が足元の地面にまで伝わってくる。" { speed:1 waitInput:true Wait:true }
+
+@print ミリアは後ずさった。<br>遮断機があって、それ以上は行けない。 { speed:1 waitInput:true Wait:true }
+
+@print "――こっちに来るんだ！ ほら！" { speed:1 waitInput:true Wait:true }
+
+@print その時、男とミリアの触れ合った箇所が光を放った。 { speed:1 waitInput:true Wait:true }
+
+@print 同時に低いうなり声をあげるかのように、<br>電車が闇の中から現れる。 { speed:1 waitInput:true Wait:true }
+
+# 電車通過音
+@sfx Sfx_54
+
+@back SolidColor
+@hide Stills-Forefront
+
+@print ――はは、本当に入れ替わった……！<br>――おじさんは君になったんだ！<br>――すごい、すごいぞ……！ { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@hide MainBackground-Forefront
+@back 14_1
+@char Miria.Pensive1,ArmR4,ArmL3
+@Wait 0.5
+
+@print ナノカが語ったミリアの過去は、<br>少女たちに衝撃と混乱を与えた。 { speed:1 waitInput:true Wait:true }
+
+@StopSfx 
+
+@print "（え、え……？<br>　ミリアちゃんはミリアちゃんじゃなくって、<br>　男……？ お、おじさん……？）" { author:Ema speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Hanna.Surprised1
+@mask MainBackground-Front,Hanna-Front
+@animate MainBackground-Front
+@animate Hanna-Front
+@Wait 0.3
+
+@print 入れ替わりの魔法って……<br>そ、そ、そんな、マジですの……？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_21_1
+
+@animate MainBackground-Front,Hanna-Front
+@hide Hanna-Front
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Coco.Pensive1,ArmR2,ArmL2
+@mask MainBackground-Front,Coco-Front
+@animate MainBackground-Front
+@animate Coco-Front
+@Wait 0.3
+
+@print キモすぎてドン引きなんだけど。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Coco-Front
+@hide Coco-Front
+@despawn MaskingRectangle
+@Wait 0.3
+
+@print え、あ、ち、違うんだよ……？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Sherry.Normal1,ArmR2,ArmL4
+@mask MainBackground-Front,Sherry-Front
+@animate MainBackground-Front
+@animate Sherry-Front
+@Wait 0.3
+
+@print ナノカさんが嘘をついていると？<br>あなたは本当に佐伯ミリアさんなのでしょうか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Sherry-Front
+@hide Sherry-Front
+@despawn MaskingRectangle
+
+@print そ、そうだよ……？<br>おじさんは本物の佐伯ミリアだよ……？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@print 信じられるはずもなく少女たちは青ざめて後ずさり、<br>ミリアからじりじりと距離を空けた。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Nanoka.Default
+@mask MainBackground-Front,Nanoka-Front
+@animate MainBackground-Front
+@animate Nanoka-Front
+@Wait 0.3
+
+@print 黒幕は私たちを弄んで苦しめて――<br>全員を、異形の魔女にすることを目的としている。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 唯一ここで大人の、あなたなんでしょう？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Nanoka-Front
+@hide Nanoka-Front
+@despawn MaskingRectangle
+@Wait 0.3
+
+@print （……たしかに、ストレスが魔女になる原因だって言いながら、<br>　この牢屋敷はボクらを追い詰めているように感じる……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （ナノカちゃんの言う【黒幕】がいると考えると、<br>　腑に落ちる……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@back 410_1 { time:0 }
+@blur Stills-Forefront
+@back Transparent { time:0.9 }
+@Wait 1
+
+@print 蓮見レイアは処刑され、【なれはて】となった。<br>あの処刑は、魔女化を一気に進めるものだった。 { speed:1 waitInput:true Wait:true }
+
+@print （そこまでする必要なんて、なかったのに） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマの<ruby=\"もうまく\">網膜</ruby>に焼き付いたそのおぞましい光景は、<br>しばらく忘れられそうにない。" { speed:1 waitInput:true Wait:true }
+
+@print （この牢屋敷はボクら全員を【なれはて】に<br>　しようとしている…？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@hide Stills-Forefront
+
+@print だから違うって！<br>これには色々複雑な事情があって……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Angry1
+
+@print 決して黒幕なんかじゃないから！<br>信じて！！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Nanoka.Default
+@mask MainBackground-Front,Nanoka-Front
+@animate MainBackground-Front
+@animate Nanoka-Front
+@Wait 0.3
+
+@print 少女のフリして混ざっていた人を、<br>信じられると思う？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print この茶番を終わらせるために<br>あなたには死んでもらう。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Nanoka-Front
+@hide Nanoka-Front
+@despawn MaskingRectangle
+@Wait 0.3
+
+@print そんな――！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Meruru.Cry,ArmR3_1,ArmL3
+
+@print だ、だめですぅ……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print 両手をひろげ、ミリアの前に立ちはだかったのは<br>メルルだった。 { speed:1 waitInput:true Wait:true }
+
+@print も、もうこれ以上、誰かにひどいことをするのは<br>やめてくださいぃ……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print "涙目で震えながらも、<br>メルルは必死にミリアを<ruby=\"かば\">庇</ruby>っている。" { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Ema.Angry1,ArmR3,ArmL7
+@mask MainBackground-Front,Ema-Front
+@animate MainBackground-Front
+@animate Ema-Front
+@Wait 0.3
+
+@print メルルちゃん……そ、そうだよ、黒幕かもしれなくっても、<br>いきなり殺すなんて良くないよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Ema-Front
+@hide Ema-Front
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Nanoka.Default
+@mask MainBackground-Front,Nanoka-Front
+@animate MainBackground-Front
+@animate Nanoka-Front
+@Wait 0.3
+
+@print ……私たちには、時間がない。どいて。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Nanoka-Front
+@hide Nanoka-Front
+@despawn MaskingRectangle
+@Wait 0.3
+
+@print "い、い、いやです……！ どきません……っ" { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print （ボクたちには時間がない……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@print "ナノカは<ruby=\"かば\">庇</ruby>っているメルルごと、<br>銃弾の雨を浴びせそうなほど<ruby=\"せっぱ\">切羽</ruby>詰まった様子だった。" { speed:1 waitInput:true Wait:true }
+
+@print 引き金にかけていた指先に、<br>ぐっと力を込めようとしている。 { speed:1 waitInput:true Wait:true }
+
+@print "その直後――<ruby=\"かす\">微</ruby>かな振動が<br>足元から伝わってきていることに、エマは気付く。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@back 13_1 { time:0 }
+
+# 建物が揺れる地震音
+@bgm Ambi_7_1
+@spawn ShakeCamera
+
+@print （え、な、何……！？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 最初はエマの気のせいかと思うほどの揺れだったが、<br>やがて裁判所全体が静かに波打つように小刻みに揺れ始める。 { speed:1 waitInput:true Wait:true }
+
+@print こ、これ地震ですの！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print どうやら牢屋敷が揺れているようですね……！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 揺れは収まる気配を見せず、<br>少女たちは戸惑いと緊張に包まれる。<br>そこで―― { speed:1 waitInput:true Wait:true }
+
+# フクロウの羽ばたき音
+@sfx Sfx_8
+
+@print 羽ばたき音が聞こえて、<br>その場の全員がハッと天を仰ぐ。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Warden.1
+@mask MainBackground-Front,Warden-Front
+@animate MainBackground-Front
+@animate Warden-Front
+@Wait 0.3
+
+@print ゴクチョーが手すりにとまって、<br>少女たちを見下ろしていた。 { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+@bgm Bgm_10_1
+
+@print "は？ あれ、え？ どゆこと？" { author:Coco speed:1 waitInput:true Wait:true }
+
+@print ココが撃たれて活動を停止したゴクチョーと、<br>新たに現れたゴクチョーを交互に見る。 { speed:1 waitInput:true Wait:true }
+
+@print やれやれ……かわいいゴクチョーを撃つなんて、<br>ひどいことしないでください。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 代わりはいくらでもいるので、<br>今回は見逃しますが……本来なら処刑ものですよ？ { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 裁判は終わりましたし、<br>皆さん速やかに自分の房へ戻ってくださいね……？ { author:Warden speed:1 waitInput:true Wait:true }
+
+@print ああ、ちなみにこの揺れですが、<br>処刑を執行した後は屋敷が揺れるんですよ。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print しばらく続きますが、危険な揺れではありませんので<br>お気になさらず。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 少女たちは驚きで固まり、<br>ただゴクチョーを見上げている。 { speed:1 waitInput:true Wait:true }
+
+@print （ゴクチョーをやっつけても、<br>　意味なんかないんだ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （ボクたちは、きっともっと<br>　大きな何かに囚われている……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print あの、外出禁止時間なので、<br>戻らないと懲罰房行きになっちゃいますよ……？ { author:Warden speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Warden-Front
+@hideChars 
+@WaitForNextFrame 
+
+@spawn MaskingRectangle
+@back 14_1
+@char Jailer.1
+@mask MainBackground-Front,Jailer-Front
+@animate MainBackground-Front
+@animate Jailer-Front
+@Wait 0.3
+
+@print "その言葉に<ruby=\"こおう\">呼応</ruby>するかのように、<br>静止していた看守がのろのろと動きだした。" { speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Jailer-Front
+@hide Jailer-Front
+@WaitForNextFrame 
+
+@HidePrinter 
+@animate MainBackground
+@spawn MaskingRectangle
+@back 14_1
+@blur MainBackground-Front
+@char Coco.Pensive1 { time:0 }
+@mask MainBackground-Front,Coco-Front
+@animate MainBackground-Front
+@animate Coco-Front
+@Wait 0.3
+
+@print "ひぃっ！ やばばばば。<br>あてぃし関係ねーし、部屋に戻るからね！" { author:Coco speed:1 waitInput:true Wait:true }
+
+@hide Coco-Front,MainBackground-Front
+@blur MainBackground-Front
+@despawn MaskingRectangle
+@Wait 0.3
+
+@print "ココは<ruby=\"だっと\">脱兎</ruby>のごとく裁判所を出ていった。" { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@animate MainBackground
+@spawn MaskingRectangle
+@back 14_1
+@blur MainBackground-Front
+@char Nanoka.Default { time:0 }
+@mask MainBackground-Front,Nanoka-Front
+@animate MainBackground-Front
+@animate Nanoka-Front
+@Wait 0.3
+
+@print ナノカは舌打ちし、<br>構えていた銃をおろす。 { speed:1 waitInput:true Wait:true }
+
+@print 邪魔が入った。<br>でも私は諦めない。必ずあなたを殺すわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@hide Nanoka-Front,MainBackground-Front
+@blur MainBackground-Front
+@despawn MaskingRectangle
+@Wait 0.3
+
+@print 言い捨てて、ナノカも裁判所から出て行く。 { speed:1 waitInput:true Wait:true }
+
+@print 看守に捕まってしまったら、懲罰房行きになってしまう。<br>他の少女たちも、慌てて走り出した。 { speed:1 waitInput:true Wait:true }
+
+@print "走りながら、エマはちら、とミリアの顔を<ruby=\"うかが\">窺</ruby>っていた。" { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@animate MainBackground
+@spawn MaskingRectangle
+@back 14_1
+@blur MainBackground-Front
+@char Miria.Pensive1 { time:0 }
+@mask MainBackground-Front,Miria-Front
+@animate MainBackground-Front
+@animate Miria-Front
+@Wait 0.3
+
+@print うう……違う、違うのに……。<br>そんな、殺すなんて……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print "ミリアは青ざめてぶつぶつと<ruby=\"つぶや\">呟</ruby>いている。" { speed:1 waitInput:true Wait:true }
+
+@hide Miria-Front,MainBackground-Front
+@blur MainBackground-Front
+@despawn MaskingRectangle
+@Wait 0.3
+
+@print （ミリアちゃんが全部の黒幕なんて、<br>　そんな風にはとても見えないけど……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （でも、あんなに良い人だと思ってたレイアちゃんが<br>　殺人をしていたんだ……誰が何を考えているかなんて……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマは首を振った。 { speed:1 waitInput:true Wait:true }
+
+@print （誰も信じられなくなったら、もうおしまいだ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:1.2 }
+@Wait 1.8
+
+@print ――その日の夜、<br>黒部ナノカは自分の房に戻らなかった。 { speed:1 waitInput:true Wait:true }
+
+@print ゴクチョーからの通知が入り、<br>黒部ナノカは見つかり次第<br>懲罰房行きになると宣告された。 { speed:1 waitInput:true Wait:true }
+
+@update Miria
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter02/Act01_Chapter02_Adv02

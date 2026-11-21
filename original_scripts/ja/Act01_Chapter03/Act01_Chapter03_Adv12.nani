@@ -1,0 +1,352 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-3-12
+
+# ========================================
+# ●シーン1‐3‐12
+# ========================================
+
+@back 16_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_19_1
+
+@print 花畑にやってきたのは、<br>エマ、シェリー、ハンナ、メルルの４人だ。 { speed:1 waitInput:true Wait:true }
+
+@print （みんなに声をかけたけど……<br>　やっぱりこの４人になるよね……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （寂しい気持ちもあるけど……<br>　でも、今日は色々忘れて楽しもう！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 広大な敷地には緑の芝と花畑がひろがり、<br>遠くに青空がひろがっている。 { speed:1 waitInput:true Wait:true }
+
+@print ハンナとメルルは敷布の上に、<br>早速食べものを取り出していく。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Normal1
+@char Sherry.Normal1
+
+@print ここ見晴らし良いですよね～！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 常に虹が出てるの不気味ですけど、<br>こういう時はなんだか嬉しくなりますわね。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+# お茶を淹れる音
+@sfx Sfx_31
+
+@hideChars 
+@char Meruru.Smile
+
+@print みなさん、あたたかいお茶をどうぞ。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Normal1
+
+@print わ、メルルちゃんありがとう！<br>あったかいお茶嬉しい！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Normal1
+
+@print エマさん、体調崩してますもんね。<br>辛かったらすぐ言ってください！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Normal1
+
+@print ありがとう、シェリーちゃん。<br>もう大丈夫。きっと疲れが出たんだと思う。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@ResetText 
+
+@back 16_1 { time:0 }
+@Wait 0.2
+
+@animate MainBackground-Middle
+@Wait 0.2
+
+@print メルル特製のサンドイッチやお菓子と、<br>あたたかいお茶をみんなで一緒に楽しむ。 { speed:1 waitInput:true Wait:true }
+
+@print やわらかな風が、木の葉をそよがせている。<br>咲き誇る花の香りに包まれて心地良かった。 { speed:1 waitInput:true Wait:true }
+
+@print （少し場所を変えるだけで、<br>　久しぶりに穏やかな気持ち……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （やっぱり、気分転換は必要だよね。<br>　これからも色々企画してみよう） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （カラオケとか、ゲーム大会とか……<br>　みんなで一緒にやったら、絶対楽しい） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 少女たちは食事をつまんだり、<br>お花を摘んだりして、笑い合う。 { speed:1 waitInput:true Wait:true }
+
+@print いつになく、<br>ゆったりとした時間が進んでいた。 { speed:1 waitInput:true Wait:true }
+
+@back 16_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@char Sherry.Normal1
+
+@print エマさん、すっごく良い笑顔ですね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Normal1
+
+@print "そ、そうかな？ こういうの久しぶりだから<br>なんだか嬉しくなっちゃって。" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 友だちと一緒に過ごして、お喋りして……。<br>本当に、久しぶり……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "かつて友だちと笑い合ったシーンが、<br><ruby=\"かすみ\">霞</ruby>がかって脳裏を過る。" { speed:1 waitInput:true Wait:true }
+
+@print 何故か胸の痛みを伴って、<br>エマはそのビジョンをすぐに振り切った。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print ご、ごめん勝手に友だちとか！<br>と、友だちとはちょっと違うのかもしれないけど！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Flushed1
+
+@print 友だちって認識で合ってますわよ。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ハンナはぶっきらぼうに言い放ち、<br>照れくさそうにぷいっとそっぽを向いてしまった。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3
+
+@print ハンナちゃん……ありがとう……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Smile1
+
+@print "ですです！ 私たちはもう友だちです！<br>こんなにずっと一緒にいるんですからズッ友です！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Normal1
+
+@print それ、意味が違うんじゃないかしら。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Normal1
+
+@print さて、ではそろそろ……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ひととおり食事が済んだところで、<br>シェリーが立ち上がった。 { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Normal1
+
+@print あら、もう帰るんですの？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Normal1
+
+@print まっさかー。ここからが本番ですよ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR11,ArmL10
+
+@print じゃーん！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print シェリーはどこからか、<br>ほうきを取り出して掲げた。 { speed:1 waitInput:true Wait:true }
+
+@print "（あ！ さっき持ってたほうきだ！<br>　……結局何に使うつもりなんだろう？）" { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hanna.Normal1
+
+@print ほうきで何をするつもりですの？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ハンナもエマと同じ疑問を抱いたらしく、<br>シェリーに質問する。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR8,ArmL4
+
+@print ふっふっふー。よくぞ聞いてくれました！<br>これでハンナさんに飛んでもらおうって思って！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Surprised1
+
+@print なっ……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Surprised1,ArmR1
+
+@print "ああ！ そういうことか！" { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print シェリーはほうきを手にハンナにずいっと迫る。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR8,ArmL4
+@char Hanna.Normal1
+
+@print 魔女といえばほうきで空を飛びますよね！？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ちっちゃい頃からほうきで空を飛ぶ魔女を見て<br>育ちましたよね！？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR8,ArmL4
+
+@print 私、ゴクチョーさんから魔女の話出された最初から、<br>ずっとこれが見たくて見たくて！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1
+
+@print 捕まった直後のあのやばい状況下で<br>そんなこと考えてましたのあなた！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR8,ArmL4
+
+@print このほうきには<br>全人類の夢がつまってるんです！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 大げさに言って乗せようとしてません！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR11,ArmL10
+
+@print ハンナさんやっちゃってください！<br>お願いします！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ずびしとほうきを差し出すシェリー。 { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1
+
+@print あ、あなたも魔女候補でしょう！？<br>あなたがやればいーんじゃねーかしら！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR11,ArmL10
+
+@print 私は名探偵ですが、空は飛べません！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print そしてハンナさんは空を飛べます！<br>唯一の特技！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1
+
+@print 唯一っていうな！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR11,ArmL10
+
+@print あわよくば、私を後ろに乗せてくださぁい！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print シェリーは目をキラキラと輝かせ、<br>完全に童心に帰っている表情だ。 { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Pensive1
+
+@print う、うぅ……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ほんの少し涙目になったハンナが、<br>エマとメルルに訴えかける眼差しを向けてくる。 { speed:1 waitInput:true Wait:true }
+
+@print （ごめんハンナちゃん……<br>　この勢いはきっと止められない……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Pensive
+
+@print わ、私でお手伝いできることがあったら<br>良かったのですが……ごめんなさい～～。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print どうしても空を飛ぶことはできません……<br>私はどうすれば……あわわわ……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 泣きそうになっているメルルを見て、<br>ハンナは諦めたように大きくため息をついた。 { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Normal1
+
+@print ……わかりましたわよ！<br>やればいいんでしょ、やれば！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ハンナがシェリーの手からほうきをかっさらう。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR8,ArmL8
+@EmoteJumpDouble Sherry-Middle
+
+@print やったぁ～！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print シェリーは飛び跳ねて喜んでいる。<br>エマも苦笑が漏れてしまった。 { speed:1 waitInput:true Wait:true }
+
+@print （なんだかんだ、ハンナちゃんも付き合い良いよね……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@print そして―― { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@back 40_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.8 }
+
+@bgm Bgm_18_1_Loop
+
+@print くっ……お、おも……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print シェリーの要望どおり、<br>ハンナはほうきで空を飛んでいた。 { speed:1 waitInput:true Wait:true }
+
+@print 厳密にはほうきで空を飛んでいるわけではなく、<br>ほうきを手に持って浮いている。 { speed:1 waitInput:true Wait:true }
+
+@print 加えて後ろにシェリーを乗せているので、<br>よろよろとした低空飛行だ。 { speed:1 waitInput:true Wait:true }
+
+@animate Stills-Middle
+
+@print "わ～い！ 魔女になった気分です～！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 魔女になったらダメでしょうが！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print た～のし～！！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print わたくしは楽しくありませんがっ！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print ハンナは苦い表情で<br>なんとか空を飛ぶ体裁を整えている。 { speed:1 waitInput:true Wait:true }
+
+@print "シェリーの望みを<ruby=\"かな\">叶</ruby>えてやろうと、<br>顔を真っ赤にして、落ちまいと必死な様子だった。" { speed:1 waitInput:true Wait:true }
+
+@QuickSave 12
+@animate Stills-Middle
+
+@print このまま塀を超えちゃいましょうよ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print バカなの！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 塀を越えるんだったら、<br>ほうきとあなたを捨てるに決まってるでしょう！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print え～<br>ザ・ほうきパワーでなんとかなりませんかね～？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@animate Stills-Middle { Scale:{g_backgroundDefaultScale} }
+
+@print これは魔法のほうきじゃなくて清掃用のほうき！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print ほんと捨ててやりたいですわ～！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 捨てないでくださぁい。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print "くっつくなですわ～！ あつくるしい～！" { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print シェリーは―― { speed:1 waitInput:true Wait:true }
+
+@choice もっとくっついた
+	@goto Act01_Chapter03/Act01_Chapter03_Bad02
+
+@choice 少し離れた
+	@goto .Choice1-3-2
+
+@StopForChoice 
+
+# Choice1-3-2
+
+@correctChoice 12
+
+@animate Stills-Middle
+
+@print おっと、ちゃんとバランス取ってくださいね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print あなたがそれを言う！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print きゃんきゃんと言い合いながら、<br>シェリーとハンナは青空を駆けていく。 { speed:1 waitInput:true Wait:true }
+
+@animate Stills-Middle
+
+@print よろよろと遠くへと飛んでいき、<br>２人の会話はやがて聞こえなくなっていった。 { speed:1 waitInput:true Wait:true }
+
+@print メルルとエマは、<br>２人を見て笑顔になってしまうのだった。 { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter03/Act01_Chapter03_Adv13

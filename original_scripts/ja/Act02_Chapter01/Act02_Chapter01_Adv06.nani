@@ -1,0 +1,136 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-1-1
+
+# ========================================
+# ●シーン2-1‐1
+# ========================================
+
+@back 1_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_9_1
+
+@print ラウンジでゴクチョーの話を聞いた後……。 { speed:1 waitInput:true Wait:true }
+
+@print 私たちは規則に従い、<br>それぞれの囚人番号が振られた地下の部屋に戻ってきていた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print どうしてこんなことに……<br>ぜんぜんわかんないよ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 私と同室のエマはベッドに腰掛け、<br>青ざめ、すっかり落ち込んでいる。 { speed:1 waitInput:true Wait:true }
+
+@print 魔女って何……？<br>ボクら一体どうなっちゃうのかな……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 私は横目でエマをちらりと見るが、<br>すぐに自身の作業に戻った。 { speed:1 waitInput:true Wait:true }
+
+@print 室内にあった椅子に座り、<br>スマホで【魔女図鑑】の確認をしていく。 { speed:1 waitInput:true Wait:true }
+
+@print 先ほどは流し見だったので、<br>改めてじっくりとルールを知るべきだと思った。 { speed:1 waitInput:true Wait:true }
+
+@print "様々な情報を頭の中に<ruby=\"たた\">叩</ruby>きこんでいく。<br>特に気になるのは【魔女化】についてだ。" { speed:1 waitInput:true Wait:true }
+
+@print （私たちはストレスによって魔女化が進む……<br>　それ以上の詳細な情報はなし、か） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （ともかく衝動を抑え込むことはできているし、<br>　ストレスを避けて生活するしかないな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print ヒロちゃんは落ち着いてるよね。<br>すごいなあ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive1
+
+@print ――そんなことはない。<br>あと話しかけないでほしい。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+
+@print ……ごめん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマの方を見ないようにして、<br>胸元でぎゅっと拳をつくる。 { speed:1 waitInput:true Wait:true }
+
+@print （さらに私にとって逆境なのは、<br>　エマと同室で長い時間を過ごす、この環境だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （そんなものストレスを受けるに決まっている。<br>　何か対策が必要かもしれない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （とりあえず自由時間は<br>　なるべく外に出たほうがいいな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ため息をつきながら、<br>先ほどポケットの中で見つけた、もう１つのものを取り出す。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# アイテムスチル：『ヒロの万年筆』表示
+# ========================================
+@spawn Clue
+
+@print 私が中学時代愛用していて、<br>【彼女】にプレゼントしたはずの、万年筆。 { speed:1 waitInput:true Wait:true }
+
+@print （何故これがここに……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 考えてもわからなかったが、<br>ペンが欲しくもあったため、ありがたくもあった。 { speed:1 waitInput:true Wait:true }
+
+@print 私は思考の整理のために、<br>毎日日記をつけるようにしている。 { speed:1 waitInput:true Wait:true }
+
+@print 幸い書き物ができそうな小さなノートが<br>この部屋にはあったので、<br>今日からはこれを私の日記帳にすることに決める。 { speed:1 waitInput:true Wait:true }
+
+@despawn Clue
+@Wait 0.5
+
+# さらさらと紙にペンを走らせる書き音
+@sfx Sfx_111
+
+@print とりあえず、今日のできごとを書き記した。<br>万年筆を走らせるうちに頭がすっきりとしていく。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1
+
+@print "え？ それって前に<br>ヒロちゃんが持ってた……？" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマが私の行動に注目し、<br>思わずといった風に声をかけてくる。 { speed:1 waitInput:true Wait:true }
+
+@print ――チッ、と舌打ちが漏れた。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1
+
+@print 勝手にポケットに入っていたんだ。<br>君も何か入っていなかったのか？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print えっ、ボクは別に何も……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマは慌てた様子でポケットの中を探っている。 { speed:1 waitInput:true Wait:true }
+
+@print （なんでよりにもよって、この万年筆を……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print いっそ折ってしまおうかと手に力を込めるが<br>……結局、できなかった。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive1
+
+@print …………。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "<ruby=\"かんしょう\">感傷</ruby>を振り切って、日記に戻る。<br>無表情に、機械的にペンを走らせる。" { speed:1 waitInput:true Wait:true }
+
+# さらさらと紙にペンを走らせる書き音
+@sfx Sfx_111
+
+@print ――監獄生活２周目、初日。<br>無事に死を回避し、私は生きている。 { speed:1 waitInput:true Wait:true }
+
+@print ――しかし私はどうやら<br>魔女化が進んでいると判明した。 { speed:1 waitInput:true Wait:true }
+
+@print ――ストレスを避け、落ち着いて生活すれば<br>衝動的にならずにいられるだろう。 { speed:1 waitInput:true Wait:true }
+
+@print ――進行していくものなのか、<br>防げる方法はないものか。 { speed:1 waitInput:true Wait:true }
+
+@print ――タイムリミットはいつまで…… { speed:1 waitInput:true Wait:true }
+
+@print ――魔女にならないようにするため、<br>私はこの牢屋敷のことをもっと知る必要がある。 { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter01/Act02_Chapter01_Adv07

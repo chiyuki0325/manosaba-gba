@@ -1,0 +1,35 @@
+{
+  "format": "manosaba.story",
+  "version": 1,
+  "language": "zh-Hans",
+  "path": "Act02_Chapter01/Act02_Chapter01_Adv10",
+  "events": [
+    {"op": "GosubResetWitchBook", "line": 1, "indent": 0, "params": {"Path": "System/System_ResetWitchBook", "IsDebugDirectJump": {"expression": "{isDebugDirectJump}"}}},
+    {"op": "Gosub", "line": 2, "indent": 0, "params": {"Path": "System/System_Subroutine.BeginAdv"}},
+    {"op": "label", "name": "Scene2-1-5", "line": 4, "indent": 0},
+    {"op": "ModifyBackgroundExtended", "line": 10, "indent": 0, "params": {"Scale": {"expression": "{g_backgroundDefaultScale}"}, "Duration": 0.0, "Lazy": 0, "AppearanceAndTransition": "1_1"}},
+    {"op": "ModifyBackgroundExtended", "line": 11, "indent": 0, "params": {"TintColor": "#000000", "Duration": 1.2000000476837158, "Lazy": 0, "AppearanceAndTransition": "Transparent", "SubId": "Overlay"}},
+    {"op": "Wait", "line": 12, "indent": 0, "params": {"WaitMode": "1.8"}},
+    {"op": "PlaySfxModified", "line": 15, "indent": 0, "params": {"SfxPath": "Sfx_111", "Volume": 1.0, "Loop": 0, "FadeInDuration": 0.0}},
+    {"op": "Wait", "line": 16, "indent": 0, "params": {"WaitMode": "3"}},
+    {"op": "PlayBgm", "line": 18, "indent": 0, "params": {"BgmPath": "Bgm_6_1", "Volume": 1.0, "Loop": 1, "FadeInDuration": 0.0}},
+    {"op": "PrintTextModified", "line": 20, "indent": 0, "params": {"Text": "——监狱生活第二轮，第二天。<br>\n玛格被看守攻击，身负重伤。", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0201Adv10_Narrative001"]}},
+    {"op": "PrintTextModified", "line": 22, "indent": 0, "params": {"Text": "——原因是艾玛、雪莉、汉娜三人<br>\n策划越狱并反抗看守。<br>\n玛格被卷入其中。", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0201Adv10_Narrative002"]}},
+    {"op": "PrintTextModified", "line": 24, "indent": 0, "params": {"Text": "——我和蕾雅、梅露露在医务室<br>\n照料玛格。", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0201Adv10_Narrative003"]}},
+    {"op": "PrintTextModified", "line": 26, "indent": 0, "params": {"Text": "——其他囚犯也轮流<br>\n来探望玛格。", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0201Adv10_Narrative004"]}},
+    {"op": "PrintTextModified", "line": 28, "indent": 0, "params": {"Text": "——玛格一度发高烧，生命垂危，<br>\n但在梅露露的魔法下好转，状况已稳定。<br>\n不用再担心了。", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0201Adv10_Narrative005"]}},
+    {"op": "PrintTextModified", "line": 30, "indent": 0, "params": {"Text": "——虽然是以我不愿意看到的方式，<br>\n至少看守的危险性已为众人所知。<br>\n少女们都变得畏缩了起来。", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0201Adv10_Narrative006"]}},
+    {"op": "PrintTextModified", "line": 32, "indent": 0, "params": {"Text": "——为防止再次有人策划越狱，<br>\n我决定每天定时检查各个关押囚犯的房间。", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["0201Adv10_Narrative007"]}},
+    {"op": "Gosub", "line": 34, "indent": 0, "params": {"Path": "System/System_Subroutine.EndAdv"}},
+    {"op": "GotoModified", "line": 36, "indent": 0, "params": {"Path": "Act02_Chapter01/Act02_Chapter01_Adv11", "SoftReset": 1}}
+  ],
+  "translations": {
+  "0201Adv10_Narrative001": "——监狱生活第二轮，第二天。<br>\n玛格被看守攻击，身负重伤。",
+  "0201Adv10_Narrative002": "——原因是艾玛、雪莉、汉娜三人<br>\n策划越狱并反抗看守。<br>\n玛格被卷入其中。",
+  "0201Adv10_Narrative003": "——我和蕾雅、梅露露在医务室<br>\n照料玛格。",
+  "0201Adv10_Narrative004": "——其他囚犯也轮流<br>\n来探望玛格。",
+  "0201Adv10_Narrative005": "——玛格一度发高烧，生命垂危，<br>\n但在梅露露的魔法下好转，状况已稳定。<br>\n不用再担心了。",
+  "0201Adv10_Narrative006": "——虽然是以我不愿意看到的方式，<br>\n至少看守的危险性已为众人所知。<br>\n少女们都变得畏缩了起来。",
+  "0201Adv10_Narrative007": "——为防止再次有人策划越狱，<br>\n我决定每天定时检查各个关押囚犯的房间。"
+}
+}

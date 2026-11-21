@@ -1,0 +1,298 @@
+@if isDebugDirectJump
+	@Gosub System/System_Subroutine.BeginAdv
+	@back Transparent { time:0 }
+
+# ========================================
+# ＞『少し考える素振りを見せた』を選択→1‐1‐b8へ
+# ========================================
+
+# Scene1-1-b8
+
+# ========================================
+# ●シーン1-1‐b8
+# ========================================
+
+@back 30_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@bgm Bgm_5_1
+
+@print 少し考える素振りを見せた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+@char Sherry.Normal1
+
+@print うーん……どうしようかな。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print おや、何か気になるんですか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print うん。でも別に手がかりじゃないと思う、というか……。<br>そもそも、ボクの気のせいかもしれないし。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 歯切れの悪いエマの返答に、シェリーは首を傾げた。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1
+
+@print どういうことです？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print えっと、笑わないでね？<br>実はここに入ってからずっと――。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia.Normal1,ArmR3
+
+@print エマくん、シェリーくん。<br>我々は他の場所を調べに行くよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Margo.Smile1,ArmR3
+
+@print フフ、何か手がかりが見つけられるといいわね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+
+@print あ、う、うん、そうだね……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print レイア、マーゴ、ミリアの３人が、<br>シャワールームを後にする。 { speed:1 waitInput:true Wait:true }
+
+@print それからすぐ入れ替わるように、<br>ハンナが戻ってきた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+@char Sherry.Normal1
+@char Hanna.Normal1
+
+@print ハンナちゃん、大丈夫……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "……べっつに？ ぜんぜん平気ですわよ。<br>で、ここに何か手がかりはあったんですの？" { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+
+@print 今のところは特に……。<br>でも、エマさんが何か気になることがあるそうで。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print "あ、うん……。<br>だけど、ほんとに笑わないでね？ えっと……。" { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@StopBgm 
+
+@print シェリーとハンナに念を押してから、<br>エマはおずおずと切り出した。 { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_21_1
+
+@char Ema.Pensive1,ArmR3
+
+@print ここに入ってからずっと、<br>誰かに見られてるような気がしない……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ハンナとシェリーが、顔を見合わせる。<br>それからエマに向き直り、同時に首を横に振った。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+@char Hanna.Normal1
+
+@print うーん、私は感じませんね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print わたくしも、まったく。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+
+@print そっか……。<br>やっぱり気のせいなのかな……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ３人は誰からともなく、シャワールームを見渡す。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+
+@print もしや、どこかにカメラでも<br>仕掛けられているとか……？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Surprised1
+
+@print "げっ！？ もしそうだとしたら最低ですわっ！" { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print シェリーとハンナが、あちこち念入りに探り始める。<br>エマも同じように辺りを調べていると―― { speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_181
+
+@print 少女の笑い声が響いた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print "え……！？ 何、今の声……。" { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 明らかに、シェリーとハンナではない。<br>声は、シャワー内に備え付けられた鏡の方から<br>聞こえたような気がした。 { speed:1 waitInput:true Wait:true }
+
+# 心臓のドキドキ音
+@sfx Sfx_35
+
+@back 30_1 { time:0 }
+
+@print "エマはおそるおそる、割れた鏡を<ruby=\"のぞ\">覗</ruby>き込む。" { speed:1 waitInput:true Wait:true }
+
+# 皿が割れる音
+@sfx Sfx_20
+
+@print ひび割れていた鏡に、さらに亀裂が走った。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Fearful,ArmR3
+
+@print ひっ！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@print 鏡の中から、誰かの両腕がエマめがけて伸びてくる。 { speed:1 waitInput:true Wait:true }
+
+@print （な、なに……！？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "細く青白い腕が、エマの肩をがっちりと<ruby=\"つか\">掴</ruby>む。" { speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_181
+
+@print ――あなたなら波長が合うと思った。 { speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"きれい\">綺麗</ruby>な桜色の髪……" { speed:1 waitInput:true Wait:true }
+
+@print ――ねえ、わたしにちょうだい？ { speed:1 waitInput:true Wait:true }
+
+@print ！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# ========================================
+# 桜羽エマ ＯＵＴ
+# ========================================
+
+@print そのままエマは声を上げる間すらなく、<br>鏡の中に引きずり込まれた―― { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+@back SolidColor { time:1 }
+@Wait 1.2
+@hide MainBackground-Middle
+@back Transparent { time:1.2 }
+
+# スマホを床に落とした音
+@sfx Sfx_60
+
+@char Hanna.Pensive1
+
+@print 今の音、なんですの？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Normal1
+
+@print エマさんが何か落としたんじゃないでしょうか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ハンナとシェリーが、音のした方へ向かう。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+@char Hanna.Normal1
+
+@print エマさん？<br>……あれ、いませんね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print そこ、スマホが落ちてますわ。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print ハンナが指さした先、タイルの上に<br>スマホが転がっていた。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1
+
+@print ふむ……。さっきの物音は、<br>これが落ちた時のものでしょうか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 口にしながら、シェリーがスマホを拾い上げる。 { speed:1 waitInput:true Wait:true }
+
+@print それ、エマさんのなんですの？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "あれ？ 電源が入りませんね……。" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 落ちた時に、壊れてしまったのかもしれない。 { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Pensive1
+
+@print というか、エマさんはどこに消えたんですの！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 謎ですねえ。どこかに隠し扉があるとか……？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+@back SolidColor { time:1 }
+@Wait 1.2
+@back Transparent { time:1.2 }
+
+@bgm Bgm_20_1
+
+@hideChars 
+
+@print "シェリーちゃん！ ハンナちゃん！<br>ボクはここだよ！ お願い気付いて！！" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマは【鏡の向こう側】にいる<br>シェリーとハンナに、大声で呼びかけた。<br>だが、エマの叫びは２人に届かない。 { speed:1 waitInput:true Wait:true }
+
+@print ど、どうなってるの……？<br>ここって、もしかして鏡の中の世界とか……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print シェリーとハンナは鏡の向こうのシャワールームで、<br>どこかに隠し扉はないかと探し回っている。 { speed:1 waitInput:true Wait:true }
+
+@print 彼女たちの背後に現れた人影を目にして、<br>エマは戸惑いの声を上げた。 { speed:1 waitInput:true Wait:true }
+
+@print う、嘘……なんで！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+@char Hanna.Normal1
+
+@print あら、エマさん？<br>もう、どこに消えてたんですの？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 突然いなくなるから、<br>びっくりしちゃいましたよ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Normal1
+
+# ＠桜羽エマ
+
+@print ごめんごめん。<br>外で物音がした気がして、見に行ってたんだ。<br>でも、ボクの気のせいだったみたい。 { author:EmaFake speed:1 waitInput:true Wait:true }
+
+@print エマの姿をした【なにか】が、<br>シェリー、ハンナと会話している。 { speed:1 waitInput:true Wait:true }
+
+@print な、なんで……誰なの、あれ？<br>ボクはここにいるのに……！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+# ＠桜羽エマ
+
+@print そろそろ行こっか。 { author:EmaFake speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Normal1
+@char Hanna.Normal1
+
+@print そうですわね。<br>ここにはもう、何もなさそうですし。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print あ、そうだ。スマホが落ちてたんですけど、<br>これエマさんのじゃありませんか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print シェリーとハンナが、エマの姿をした【それ】と連れ立って<br>シャワールームを後にしようとする。 { speed:1 waitInput:true Wait:true }
+
+@print "２人とも待って！ それはボクじゃない！<br>ボクはこっちだよ！" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマの訴えもむなしく、３人は鏡の前から去っていく。 { speed:1 waitInput:true Wait:true }
+
+@print 去り際に一度だけ、エマの姿をした【なにか】は<br>本物のエマがいる鏡を振り向いた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+# ＠桜羽エマ
+
+@print ふふふ……。 { author:EmaFake speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 『END～入れ替わり～』
+# ========================================
+
+@badEnd 8

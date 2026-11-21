@@ -1,0 +1,101 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-2-21
+
+# ========================================
+# ●シーン2‐2‐21
+# ========================================
+
+@back 1_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@print 裁判の後。<br>私はナノカとマーゴの部屋を訪れた。 { speed:1 waitInput:true Wait:true }
+
+@print （ふたりとも、いなくなってしまったな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私は力なく自身のスマホを取り出す。 { speed:1 waitInput:true Wait:true }
+
+@print 処刑前にナノカが送ってきた、<br>メッセージを確認するつもりだった。 { speed:1 waitInput:true Wait:true }
+
+@print ナノカからのメッセージを開く。 { speed:1 waitInput:true Wait:true }
+
+@print "メッセージには、<br>動画が<ruby=\"てんぷ\">添付</ruby>されているようだ。" { speed:1 waitInput:true Wait:true }
+
+@print （ナノカ……君は一体、私に何を？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+# ========================================
+# 時間経過
+# ========================================
+
+# 配信フレームIN
+@back 24_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@char Nanoka.Default { time:0 }
+@printer Normal.Stream
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@bgm Bgm_41_1
+
+# ＠備考◆配信中
+
+@print ……以上が、私の知る情報の全てよ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print ナノカが私に残した動画は、<br>牢屋敷にまつわる情報だった。 { speed:1 waitInput:true Wait:true }
+
+@print （まさか、そんな秘密が……<br>　全ての元凶は【大魔女】……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （だがナノカは何故、<br>　私にこんな情報を残したんだ……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print きっと、どうして私があなたに情報を送ったのか、<br>不思議に思っているでしょうね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print まるで私の疑問に答えるように、<br>画面の中でナノカは語る。 { speed:1 waitInput:true Wait:true }
+
+@print 正直、自分でもよくわからないわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print ただ、あなたならこの牢屋敷の、いえ、<br>魔女の秘密の全てを暴けると思った。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print だから私に何かあったら、あなたに託す。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print どうか真実を突き止めて。<br>そしてもうこれ以上、<br>私のような魔女を生み出さないで。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print もう誰も、犠牲になってほしくないから。<br>……よろしくね、二階堂ヒロ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@hideChars 
+@Wait 0.2
+@printer Normal.Default
+
+@print そこで、映像は終わった。 { speed:1 waitInput:true Wait:true }
+@back 1_1 { Scale:{g_backgroundDefaultScale} }
+
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@print ……勝手な遺言だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "声が震えて、私は唇を<ruby=\"か\">噛</ruby>んだ。" { speed:1 waitInput:true Wait:true }
+
+@print もし私が距離を置こうとせず、<br>ナノカと協力関係を結んでいたら―― { speed:1 waitInput:true Wait:true }
+
+@print 違った未来もあったのかもしれない。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 次話への引継ぎアイテム：『万年筆』
+# ========================================
+
+# ========================================
+# ＞魔女裁判 第2章3話へ
+# ========================================
+
+@set "g_gameProgress = max(8, g_gameProgress)"
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter03/Act02_Chapter03_Adv01

@@ -1,0 +1,440 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-3-10
+
+# ========================================
+# ●シーン2‐3‐10
+# ========================================
+
+@back 9_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@print 夕食後の自由時間。 { speed:1 waitInput:true Wait:true }
+
+@print シャワーを浴びた後、<br>私は何気なく２階の通路を歩いていた。 { speed:1 waitInput:true Wait:true }
+
+@print （図書室でも行くか……。<br>　何か大魔女についての手がかりが<br>　見つけられるかもしれない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_21_1
+
+# ガタッという物音
+@sfx Sfx_64
+
+@print 足が図書室の方へ向いた矢先、<br>アトリエの方から物音が聞こえた。 { speed:1 waitInput:true Wait:true }
+
+@print （アトリエに誰かいるのか？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 行先をアトリエに変更し、<br>私はその部屋の前に立つ。 { speed:1 waitInput:true Wait:true }
+
+@print ノブに手をかけ、<br>扉を開こうとしたのだが―― { speed:1 waitInput:true Wait:true }
+
+# ボイス加工：ドア越しの声
+
+@print お、落ち着いてよ、アンアンちゃん！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# ボイス加工：ドア越しの声
+
+@print う、うるさい……！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print "扉の向こうから、<br><ruby=\"けんのん\">剣呑</ruby>な空気を感じさせる声が聞こえた。" { speed:1 waitInput:true Wait:true }
+
+# ボイス加工：ドア越しの声
+
+@print や、やめて……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@print "単なる<ruby=\"も\">揉</ruby>め事とは違う、<ruby=\"せっぱく\">切迫</ruby>した雰囲気が、<br>エマの声音から伝わってくる。" { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆息を呑む
+
+@print ……っ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+# 木製の扉が勢いよく開く音
+@sfx Sfx_137
+
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@back 29_2 { time:0 }
+
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@bgm Bgm_25_1
+
+@print 不穏な気配に、<br>私は慌てて室内に飛び込んだ。 { speed:1 waitInput:true Wait:true }
+
+@print "部屋の中が荒れ果てている。<br>中では、エマとアンアンが<ruby=\"も\">揉</ruby>み合っていた。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive
+@char AnAn.Angry1,Angle01/Option_Arms-,Angle01/Option_ArmR-,ArmR5,ArmL11
+
+@print や、やめてよアンアンちゃん！<br>なんでこんなことするの……！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ……黙れっ！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print うっ、うぅっ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "アンアンが暗く沈みつつも殺気のある表情で、<br>エマに<ruby=\"つか\">掴</ruby>みかかっている。" { speed:1 waitInput:true Wait:true }
+
+@print "エマの方は必死の<ruby=\"ぎょうそう\">形相</ruby>で、<br>なんとかアンアンを押しのけようとしていた。" { speed:1 waitInput:true Wait:true }
+
+@print "アンアンの手に、鈍く光るものが見える。<br><ruby=\"さかて\">逆手</ruby>に握られたナイフだった。" { speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"えいり\">鋭利</ruby>な<ruby=\"き\">切</ruby>っ<ruby=\"さき\">先</ruby>が、<br>エマに突き立てられようとしている。" { speed:1 waitInput:true Wait:true }
+
+@print それを目にした瞬間、<br>私は反射的に駆け出していた。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1,ArmR12,ArmL12
+
+@print 何をしている！？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro
+@Wait 0.1
+@char Ema
+@char AnAn
+
+@print "<ruby=\"とっさ\">咄嗟</ruby>に割って入ると、<br>アンアンが舌打ちし、ぱっとエマから離れた。" { speed:1 waitInput:true Wait:true }
+
+@char AnAn.Angry { time:3 }
+
+@print わがはいの、邪魔をするな……！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print ナイフをこちらに向けたまま、<br>アンアンがじりじりと後退していく。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print そのままアンアンはベランダの方まで<br>下がっていった。 { speed:1 waitInput:true Wait:true }
+
+@back 29_2
+@Wait 0.5
+@char Hiro.Angry1
+
+@print 一体何があった！？<br>とにかくそのナイフをこちらに寄越せ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char AnAn.Angry
+
+@print 嫌だ……っ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Hiro
+
+@print "私はアンアンの手首を<ruby=\"つか\">掴</ruby>み、<br>どうにかナイフを奪い取ろうとした。" { speed:1 waitInput:true Wait:true }
+
+@char Hiro { time:2 }
+@char AnAn { time:2 }
+@shake Hiro
+@shake AnAn
+@Wait 1
+
+@print "私たちは<ruby=\"も\">揉</ruby>み合って、<br>ベランダの手すりの方へとじりじり寄っていく。" { speed:1 waitInput:true Wait:true }
+
+@print ――離れろ！！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"うっとう\">鬱陶</ruby>しそうに、アンアンが強く言い放った。<br>その瞬間だった。" { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1
+@char AnAn
+@hide AnAn
+@Wait 0.3
+
+@print 自身の意思とは無関係に、<br>私は彼女の手をぱっと離してしまう。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive1
+@shake 
+
+# 転ぶ音
+@sfx Sfx_6
+
+# ＠備考◆転倒
+
+@print うぐ……っ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "おそらくアンアンの魔法だろう。<br>私は不自然なほど体を<ruby=\"はじ\">弾</ruby>かれ、<br>勢い余って床に尻もちをついた。" { speed:1 waitInput:true Wait:true }
+
+# 物が落ちる音
+@sfx Sfx_17
+
+@print "アンアンの方も不可思議な力に<ruby=\"はじ\">弾</ruby>かれたらしく、<br>その場にナイフを落とし、バランスを崩していた。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Surprised
+
+@print あっ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+@hideChars 
+@camera { time:0 }
+@char AnAn.Fearful1 { time:0 }
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+
+@StopBgm 
+
+@print "視線の先で<ruby=\"せつな\">刹那</ruby>に<ruby=\"かいまみ\">垣間見</ruby>たアンアンの表情は、<br>恐怖で引きつっていた。" { speed:1 waitInput:true Wait:true }
+
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+@char AnAn.Fearful1 { time:0 }
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+
+@print それはコマ送りのような時間だった。 { speed:1 waitInput:true Wait:true }
+
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+@char AnAn.Surprised1 { time:0 }
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+
+@print 手すりを越え、<br>アンアンの体がふわりと宙に踊る。 { speed:1 waitInput:true Wait:true }
+
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+@char AnAn { time:0 }
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+
+@print 重力に引かれるように、<br>ゆっくりと真下へと落ちていく。 { speed:1 waitInput:true Wait:true }
+
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+@char AnAn.Fearful1 { time:0 }
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+
+@print 周囲の雑音も風の音も全てが消え失せ、<br>ただ、アンアンが遠ざかっていく姿だけが瞳に焼き付く。 { speed:1 waitInput:true Wait:true }
+
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+@hideChars { time:0 }
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+
+@print やがて―― { speed:1 waitInput:true Wait:true }
+
+@shake MainBackground
+
+# どすんと落ちる音
+@sfx Sfx_23
+
+@bgm Bgm_23_1
+
+@print 背筋を凍らせるような鈍い音が響いた。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@Wait 1
+
+@print （私が、落としてしまった……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"こい\">故意</ruby>ではなかったとはいえ、<br>私がアンアンを追い詰めて落下させた。" { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@print その事実に私は全身の血の気が引き、<br>目の前が真っ暗になる。 { speed:1 waitInput:true Wait:true }
+
+@camera { time:0 }
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@char Ema.Fearful1,ArmR3
+
+@print アンアンちゃん、大丈夫……！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマもベランダの方へと出てきて、<br>私たちは手すりから下を<ruby=\"のぞ\">覗</ruby>き込む。" { speed:1 waitInput:true Wait:true }
+
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@hideChars 
+
+@print だが夜闇で視界が悪いせいか、<br>アンアンの姿は見当たらない。 { speed:1 waitInput:true Wait:true }
+
+@print "それでも目を<ruby=\"こ\">凝</ruby>らして必死に探すと――" { speed:1 waitInput:true Wait:true }
+
+@print ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@print 見つけた。<br>見つけてしまった。 { speed:1 waitInput:true Wait:true }
+
+@print 夜の闇に浮かび上がる【それ】を。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+
+@bgm Bgm_16_1_Loop
+
+@back 340_1 { time:0 }
+@animate Stills
+@back Transparent { time:1.2 }
+@Wait 2.4
+
+@animate Stills
+@back 340_1 { time:0.6 }
+@animate Stills-Middle
+@Wait 2.4
+
+@animate Stills-Middle
+@back 340_1 { time:0 }
+@blur Stills
+@animate Stills
+@blur Stills
+@hide Stills-Middle { time:0.6 }
+@Wait 3
+
+@print "ベランダの下、中庭に設置された<ruby=\"さく\">柵</ruby>。<br>そこに背中から突き刺さった……" { speed:1 waitInput:true Wait:true }
+
+@print 夏目アンアン―― { speed:1 waitInput:true Wait:true }
+
+@print "落下の衝撃で、いくつかの<ruby=\"さく\">柵</ruby>が折れ曲がってしまっている。" { speed:1 waitInput:true Wait:true }
+
+@print "そして天を仰ぐ彼女の胸元あたりから、<br><ruby=\"やり\">槍</ruby>のように<ruby=\"とが\">尖</ruby>った<ruby=\"さく\">柵</ruby>の先端が、<br>１本飛び出している。" { speed:1 waitInput:true Wait:true }
+
+@print "遠目に見ても、アンアンを<ruby=\"つらぬ\">貫</ruby>いたそれが<br><ruby=\"ちめいしょう\">致命傷</ruby>だったのは、明らかだった。" { speed:1 waitInput:true Wait:true }
+
+@print 胸元から大量の血が流れたのか、<br>地面を染めて―― { speed:1 waitInput:true Wait:true }
+
+@print アンアンの姿はまるで、<br>ピンで固定された蝶の標本のようだった。 { speed:1 waitInput:true Wait:true }
+
+@print そんな……アンアンちゃん！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマも死体を目にしたのか、悲痛な声を上げる。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@hide Stills,Stills-Middle
+
+@print 私が……私が殺してしまった。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@back 29_2 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@print 視界がぐらぐらと揺れている。<br>頭の中が真っ白で、何も考えられない。 { speed:1 waitInput:true Wait:true }
+
+@print 耳元で何か呼びかける声が聞こえるような気がした。<br>それが誰の声なのか、<br>何を言っているのかまるで理解できなかった。 { speed:1 waitInput:true Wait:true }
+
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@print 気付けば私はいつの間にかアトリエ内にいた。 { speed:1 waitInput:true Wait:true }
+
+@print どうやらエマに引きずられて、<br>中に戻ってきたらしい。 { speed:1 waitInput:true Wait:true }
+
+@print （エマは、エマは一体何をしている……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@print "エマはベランダにいた。<br>私の<ruby=\"うつ\">虚</ruby>ろな視線は自然と夜空に向く。" { speed:1 waitInput:true Wait:true }
+
+@print "まるで空がため息をついたかのように<br>ぽつりと<ruby=\"しずく\">滴</ruby>が落ちてきた。" { speed:1 waitInput:true Wait:true }
+
+@print "ひとつ、ふたつ。<br>その線は次第にその数を増し、<br>地面を<ruby=\"たた\">叩</ruby>く音の<ruby=\"つら\">連</ruby>なりが耳に届いた。" { speed:1 waitInput:true Wait:true }
+
+# 激しい雨音
+@bgm Ambi_8_1
+@Wait 1
+
+@ResetText 
+
+# 金属を叩く音
+@sfx Sfx_79
+@Wait 1
+
+@print "エマはその雨音を好都合といわんばかりに、<br>力いっぱい手すりを<ruby=\"け\">蹴</ruby>りつけはじめた。" { speed:1 waitInput:true Wait:true }
+
+@print エマが何をしているのか理解できない。<br>何も考えられず、立ち上がることすらままならない。 { speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"ふ\">降</ruby>り<ruby=\"そそ\">注</ruby>ぐ水音が<br>私の心の中をかき乱す雑音のようにただ響く。" { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+# 暴れて破壊する音
+@sfx Sfx_61
+
+@Wait 1
+
+@print "元々<ruby=\"もろ\">脆</ruby>くなっていたのか、<br>手すりがエマの<ruby=\"け\">蹴</ruby>りによって変形し、<br>やがて破壊された。" { speed:1 waitInput:true Wait:true }
+
+@print 落ちていたナイフを拾って、<br>エマが室内に戻ってくる。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Cry1,ArmR1
+
+@print "争った<ruby=\"こんせき\">痕跡</ruby>を端から<ruby=\"つぶ\">潰</ruby>すかのように、<br>エマは部屋を片付けはじめた。" { speed:1 waitInput:true Wait:true }
+
+@print "エマの<ruby=\"ほお\">頬</ruby>が<ruby=\"ぬ\">濡</ruby>れている。" { speed:1 waitInput:true Wait:true }
+
+@print 屋根の下だったとはいえ雨に打たれたのか、<br>泣いているのか。<br>あるいは両方か。 { speed:1 waitInput:true Wait:true }
+
+@print はぁ、はぁ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"せわ\">忙</ruby>しなく必死で動き回っている途中で――" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Fearful1
+
+@print ……あっ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema
+@hideChars 
+
+# 大量のペンキがこぼれる音
+@sfx Sfx_140
+
+@print "エマが並んでいたペンキバケツの１つを<br><ruby=\"け\">蹴</ruby>とばしてしまい、<br>赤いペンキをぶちまけていた。" { speed:1 waitInput:true Wait:true }
+
+# 床をごしごしと拭く音
+@sfx Sfx_141
+
+@char Ema.Cry
+@Wait 0.2
+@char Ema.Cry
+
+# ＠備考◆必死な息切れと涙
+
+@print はぁ、はぁ……ぐすっ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマはそれを急いで布で<ruby=\"ふ\">拭</ruby>き取っている。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （エマは何を必死に――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print アンアンの死を目撃し、<br>涙でぐしゃぐしゃになりながら、<br>それでも尚エマは必死に立ち回っている。 { speed:1 waitInput:true Wait:true }
+
+@print （誰のために――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+
+@camera { time:0 }
+@char Ema.Cry1,ArmR3
+
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+
+@char Ema
+
+@print 生きてよ、ヒロちゃん……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print お願いだから、生きて……！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:1 }
+@Wait 1
+
+@print いつもなら反感を抱くエマの声が、<br>その時はすっと心に届いた。 { speed:1 waitInput:true Wait:true }
+
+@print エマの声だけが、<br>響く雨音だけが、<br>かろうじて自分がここにいることを伝えてくれる。 { speed:1 waitInput:true Wait:true }
+
+@print "でもそれすらもどこか<ruby=\"ひとごと\">他人事</ruby>のようで、<br>私は現実に追いつけないままだった。" { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter03/Act02_Chapter03_Adv11

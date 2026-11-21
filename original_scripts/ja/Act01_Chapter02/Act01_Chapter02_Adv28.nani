@@ -1,0 +1,73 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-2-28
+
+# ========================================
+# ●シーン1‐2‐28
+# ========================================
+
+@back 11_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_24_1
+
+@print エマには、ひとつわからないことがあった。 { speed:1 waitInput:true Wait:true }
+
+@print そのため自分の房に戻る前に、<br>急いで娯楽室へと立ち寄った。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@camera { time:0.9 }
+@Wait 0.9
+
+# キャビネットを鍵で開く音
+@sfx Sfx_107
+
+@print キャビネットの前へと行き、<br>ミリアの持っていた鍵を使って開けてみる。 { speed:1 waitInput:true Wait:true }
+
+@print 中にはたくさんのフィルムが入っていた。<br>それは予測できていたことだった。 { speed:1 waitInput:true Wait:true }
+
+@print （でも、もしかしたら、他にも何か――） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print フィルムの束を漁っていくうちに、<br>やがて【それ】を見つけた。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ☆証拠品：『牢屋敷設計図』入手
+# ========================================
+@spawn Clue
+@update 3-3
+@despawn Clue
+
+@print 牢屋敷の設計図が書かれた紙。<br>どうやら少し古いものだ。 { speed:1 waitInput:true Wait:true }
+
+@print その設計図を裏返すと、<br>かつての囚人が残したメッセージが走り書きされていた。 { speed:1 waitInput:true Wait:true }
+
+@print 【脱出方法を残す】 { speed:1 waitInput:true Wait:true }
+
+@print 牢屋敷から少し離れた湖付近に、<br>バツ印が記されている。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@camera { time:0.9 }
+@Wait 0.9
+@blur MainBackground
+
+@print "心にほのかな希望が灯ると同時、<br>エマの瞳から涙が<ruby=\"あふ\">溢</ruby>れていた。" { speed:1 waitInput:true Wait:true }
+
+@print 日常的に娯楽室に入り浸って映画を見ていたミリアが、<br>これを見つけられなかったわけがない。 { speed:1 waitInput:true Wait:true }
+
+@print そして、鍵を飲み込んだ意味。 { speed:1 waitInput:true Wait:true }
+
+@print ミリアちゃんは、アンアンちゃんと同じ気持ちだった。<br>ここを出たくなんか、なかったんだよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print その言葉は、<br>アンアンにはもう届けられない。 { speed:1 waitInput:true Wait:true }
+
+@blur MainBackground
+
+@print エマは扉の方へと歩いていき、<br>出る前に一度中を振り返る。 { speed:1 waitInput:true Wait:true }
+
+@print ソファーに、ミリアとアンアンが<br>仲良く座っている幻影を見た気がした。 { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter02/Act01_Chapter02_Adv29

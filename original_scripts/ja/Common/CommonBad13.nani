@@ -1,0 +1,64 @@
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-ex7
+
+@bgm Bgm_29_1
+@back 14_1 { time:0 }
+@char Yuki.6 { time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.2
+
+@print ――言いたいことは、それで終わりですか？ { author:Yuki speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@back 14_1 { time:0 }
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@print 何……？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@back 14_1 { time:0 }
+
+@char Yuki.6
+@print ゆるやかに、ユキは頭を振る。 { speed:1 waitInput:true Wait:true }
+
+@char Yuki.8
+@print どのような言葉を並べられても、<br>忌まわしい記憶は消せません。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.7
+@print もう、うんざりです。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.19
+@print でもね……ヒロ、エマ。<br>あなたたちには感謝しているんですよ。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@print ユキは微笑む。 { speed:1 waitInput:true Wait:true }
+
+@print "美しい笑顔。<br>だが、<ruby=\"にじ\">滲</ruby>み出る怒りと憎悪が、背筋を凍らせる。" { speed:1 waitInput:true Wait:true }
+
+@char Yuki.12
+@print あなたたちの魔力が、<br>以前はできなかったことを可能にしてくれました。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@print ユキはゆっくりと両腕を広げ、天を仰いだ。<br>まるで神の言葉でも告げるように、超然と言葉を紡ぐ。 { speed:1 waitInput:true Wait:true }
+
+@char Yuki.12
+@print ふふふ……すべての人類に<br>私の声を届けましょう。 { author:Yuki speed:1 waitInput:true Wait:true }
+
+@char Yuki.10
+@StopBgm 
+@Wait 1.0
+
+@camera 
+@char Yuki.11
+@print "み ん な し ね。" { author:Yuki speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# ========================================
+# 『END～終焉～』
+# ========================================
+
+# @end
+
+@Gosub System/System_Subroutine.EndAdv
+
+@ClearBacklog 
+@ReturnToTitle { time:1.2000000476837158 delay:0.6000000238418579 }

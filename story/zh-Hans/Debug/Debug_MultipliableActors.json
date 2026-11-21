@@ -1,0 +1,30 @@
+{
+  "format": "manosaba.story",
+  "version": 1,
+  "language": "zh-Hans",
+  "path": "Debug/Debug_MultipliableActors",
+  "events": [
+    {"op": "Gosub", "line": 1, "indent": 0, "params": {"Path": "System/System_Subroutine.BeginAdv"}},
+    {"op": "ModifyBackgroundExtended", "line": 3, "indent": 0, "params": {"TintColor": "#000000", "Duration": 0.0, "Lazy": 0, "AppearanceAndTransition": "Transparent", "SubId": "Overlay"}},
+    {"op": "Gosub", "line": 6, "indent": 0, "params": {"Path": ".Background"}},
+    {"op": "Stop", "line": 8, "indent": 0, "params": {}},
+    {"op": "label", "name": "Characters", "line": 14, "indent": 0},
+    {"op": "PrintTextModified", "line": 16, "indent": 0, "params": {"Text": "", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["~3ca14d2a"]}},
+    {"op": "ModifyCharacterExtended", "line": 18, "indent": 0, "params": {"Lazy": 0, "ScenePosition": [50.0, 50.0], "IdAndAppearance": "Ema"}},
+    {"op": "ModifyCharacterExtended", "line": 19, "indent": 0, "params": {"Lazy": 0, "ScenePosition": [25.0, 50.0], "IdAndAppearance": "Ema", "SubId": "Sub1"}},
+    {"op": "ModifyCharacterExtended", "line": 20, "indent": 0, "params": {"Lazy": 0, "ScenePosition": [75.0, 50.0], "IdAndAppearance": "Ema", "SubId": "Sub2"}},
+    {"op": "WaitForInput", "line": 21, "indent": 0, "params": {}},
+    {"op": "Return", "line": 23, "indent": 0, "params": {}},
+    {"op": "label", "name": "Background", "line": 29, "indent": 0},
+    {"op": "PrintTextModified", "line": 31, "indent": 0, "params": {"Text": "", "RevealSpeed": 1.0, "WaitForInput": 1, "Wait": 1}, "text_ids": {"Text": ["~7db468f4"]}},
+    {"op": "ModifyBackgroundExtended", "line": 33, "indent": 0, "params": {"Lazy": 0, "ScenePosition": [50.0, 0.0], "AppearanceAndTransition": "Hall"}},
+    {"op": "ModifyBackgroundExtended", "line": 34, "indent": 0, "params": {"Lazy": 0, "ScenePosition": [0.0, 50.0], "AppearanceAndTransition": "Hall", "SubId": "Sub1"}},
+    {"op": "ModifyBackgroundExtended", "line": 35, "indent": 0, "params": {"Lazy": 0, "ScenePosition": [100.0, 100.0], "AppearanceAndTransition": "Hall", "SubId": "Sub2"}},
+    {"op": "WaitForInput", "line": 36, "indent": 0, "params": {}},
+    {"op": "Return", "line": 38, "indent": 0, "params": {}}
+  ],
+  "translations": {
+  "~3ca14d2a": "",
+  "~7db468f4": ""
+}
+}

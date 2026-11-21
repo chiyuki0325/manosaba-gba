@@ -1,0 +1,83 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# ========================================
+# 魔女裁判 序章
+# ========================================
+
+# Scene1-0-1
+
+@set "g_gameProgress = max(1, g_gameProgress)"
+@set "hasWitchBook = false"
+
+# ========================================
+# ●シーン1‐0-1
+# ========================================
+
+@back 140_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Ambi_11_1
+
+@print ――ここは牢獄だ。 { speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"さくらば\">桜羽</ruby>エマは周囲の悪意に<br>耳を塞ぎたかった。" { speed:1 waitInput:true Wait:true }
+
+@print けれど囚人のように見えない鎖で繋がれ、<br>それすらも許されない。 { speed:1 waitInput:true Wait:true }
+
+@print あるときはトイレの個室に閉じ込められた。 { speed:1 waitInput:true Wait:true }
+
+@print あるときは教科書を破り捨てられた。 { speed:1 waitInput:true Wait:true }
+
+@print あるときは上履きに虫を詰められた。 { speed:1 waitInput:true Wait:true }
+
+@print あるときは集団リンチにあった。 { speed:1 waitInput:true Wait:true }
+
+@print あるときは縛られてさらしものにされた。 { speed:1 waitInput:true Wait:true }
+
+@print あるときはあるときはあるときは―― { speed:1 waitInput:true Wait:true }
+
+@print "日を追うごとにいじめの空気は過熱し、<br>心臓は<ruby=\"なまり\">鉛</ruby>のように重くなっていった。" { speed:1 waitInput:true Wait:true }
+
+@print やめてよ。<br>やめて、やめて、やめてやめてやめて。 { speed:1 waitInput:true Wait:true }
+
+@print もう虐めないで！！ { speed:1 waitInput:true Wait:true }
+
+@print どうしてもその一言が発せない。 { speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"さげす\">蔑</ruby>まれ、<ruby=\"おとし\">貶</ruby>められ、<ruby=\"ちょうしょう\">嘲笑</ruby>される毎日に、<br>終わりは見えなかった。" { speed:1 waitInput:true Wait:true }
+
+@print その残酷な行為は、あまりにも徹底的に、長期に及んだ。 { speed:1 waitInput:true Wait:true }
+
+@print 誰よりも臆病な自分を責めて、<br>自分を嫌って、消えていなくなってしまいたくなる。 { speed:1 waitInput:true Wait:true }
+
+@print 繰り返される日常に絶望し、<br>漆黒の闇がエマを包む。 { speed:1 waitInput:true Wait:true }
+
+@print 周りの少女たちがただただ、はしゃいだ声をあげる。 { speed:1 waitInput:true Wait:true }
+
+@print "嫌われたくない、嫌われたくないよ、<br>どうして嫌うの？ 嫌わないでよ。" { speed:1 waitInput:true Wait:true }
+
+@print "心が<ruby=\"きし\">軋</ruby>んだ悲鳴をあげ続けている。" { speed:1 waitInput:true Wait:true }
+
+@print エマはずっと自分を責め続けていたけれど―― { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [back 黒]
+# ========================================
+
+@back SolidColor { time:0 }
+
+@print 唐突に答えを見つけた。 { speed:1 waitInput:true Wait:true }
+
+@print ああ、そうだ―― { speed:1 waitInput:true Wait:true }
+
+@back 140_2 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@print みんなが死ねばいい。 { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter01/Act01_Chapter01_Adv02

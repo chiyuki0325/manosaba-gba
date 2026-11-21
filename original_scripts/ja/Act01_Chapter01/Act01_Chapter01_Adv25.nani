@@ -1,0 +1,75 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-1-21
+
+# ========================================
+# ●シーン1‐1-21
+# ========================================
+
+# ========================================
+# マップイベント用分岐
+# ========================================
+
+# ========================================
+# 【ＭＡＰイベント】牢屋敷マップ
+# 死体現場＞シーン1‐1‐22
+# 湖方面＞シーン1‐1‐23
+# ラウンジ＞シーン1‐1‐24
+# 玄関ホール＞シーン1‐1‐25
+# 医務室＞シーン1-1-26
+# 食堂＞シーン1‐1‐27
+# 娯楽室＞シーン1‐1‐28
+# シャワールーム＞シーン1‐1‐29
+# ※全てのＭＡＰイベントを選択したら終了。
+# 選択済みの場所は消していってください。
+# ========================================
+
+@if "chosenAreaFlag == 255"
+	@set "chosenAreaFlag = 0"
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter01/Act01_Chapter01_Adv34
+
+@map BasementHallway,Lake,Lounge,EntranceHall,Infirmary,MessHall,RecreationRoom,Showers BasementHallway,Lake,Lounge,EntranceHall,Infirmary,MessHall,RecreationRoom,Showers
+
+@if "chosenAreaId==\"BasementHallway\""
+	@setFlag 0
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter01/Act01_Chapter01_Adv26
+
+@if "chosenAreaId==\"Lake\""
+	@setFlag 1
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter01/Act01_Chapter01_Adv27
+
+@if "chosenAreaId==\"Lounge\""
+	@setFlag 2
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter01/Act01_Chapter01_Adv28
+
+@if "chosenAreaId==\"EntranceHall\""
+	@setFlag 3
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter01/Act01_Chapter01_Adv29
+
+@if "chosenAreaId==\"Infirmary\""
+	@setFlag 4
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter01/Act01_Chapter01_Adv30
+
+@if "chosenAreaId==\"MessHall\""
+	@setFlag 5
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter01/Act01_Chapter01_Adv31
+
+@if "chosenAreaId==\"RecreationRoom\""
+	@setFlag 6
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter01/Act01_Chapter01_Adv32
+
+@if "chosenAreaId==\"Showers\""
+	@setFlag 7
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter01/Act01_Chapter01_Adv33
+
+@StopForChoice

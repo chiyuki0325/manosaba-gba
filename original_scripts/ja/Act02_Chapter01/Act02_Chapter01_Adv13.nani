@@ -1,0 +1,274 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-1-8
+
+# ========================================
+# ●シーン2‐1-8
+# ========================================
+
+@back 12_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent.Custom { time:0.99 }
+@Wait 0.9
+
+# ========================================
+# ＞『図書室』を選択
+# ========================================
+
+@bgm Bgm_11_1
+
+@print 牢屋敷２階の図書室に行ってみると、<br>読書スペースにはシェリー、ハンナ、エマがいた。 { speed:1 waitInput:true Wait:true }
+
+@print "ノアは図書室中央の大木に目を奪われて、<br>何やらお絵描きの構想を<ruby=\"ね\">練</ruby>りだしたので、<br>私はひとり、シェリーたちへ近寄っていく。" { speed:1 waitInput:true Wait:true }
+
+@print 何をしている。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1
+@char Ema.Surprised1
+@char Sherry.Normal1
+@Wait 1
+
+@print 出ましたわね。風紀委員……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 風紀委員ではないが？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hanna.Pensive1
+
+@print 毎日何度も私たちの部屋の見回りまでしておいて、<br>風紀委員じゃなくてなんだって言うんですの……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "ああヒロさん！ 今日は私たち、<br>図書室の本を色々調べまわっているんです！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print うん、何かこの牢屋敷のこと、<br>もっとわかるんじゃないかと思って。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3
+
+@print でも読めない本ばっかりで、<br>困ったねって話してたところだよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 法則さえつかめば、<br>なんとなく解読できる気はするんですけどねぇ～。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print （私も図書室の本はざっと目を通したが、<br>　たしかに読めない本ばかりだったな……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print あ、あとそうそう。<br>ヒロさん、これを見てください！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print シェリーが、机の上の分厚い本を指差した。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# アイテムスチル：『魔女の本』表示
+# ========================================
+@hideChars 
+# 番号仮入れ。魔女の本を表示する
+# @spawn Clue params:10-1
+@Wait 0.5
+
+@print "豪華な<ruby=\"そうてい\">装丁</ruby>のいかにも<ruby=\"いわ\">曰</ruby>くありげな本だった。" { speed:1 waitInput:true Wait:true }
+
+@char Sherry
+
+@print この本には<br>どうやら魔女や魔法のことが書かれているようなんです。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# @despawn Clue
+@Wait 0.5
+
+@StopBgm { fade:1 }
+
+# 本のページをぱらぱらめくる音
+@sfx Sfx_43
+
+@hideChars 
+
+@print 開かれていたページに、私も注目する。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@bgm Bgm_36_1
+
+@back 510_1 { Scale:{g_backgroundDefaultScale} }
+
+@print 独自の文字で書かれたこれだけの書物……<br>見せかけの飾りというわけではなさそうだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print どうやら運営側は私たちと異なる<br>文化や歴史をもっているらしい。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （恐らく、魔女……に関係するものなのだろう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@back 510_1 { time:0.3 }
+
+@print ……特にこの絵が気になるな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "私が指差したのは、<br>たくさんの魔女が手を<ruby=\"つな\">繋</ruby>いで囲み、<br>偉そうな魔女が<ruby=\"こうりん\">降臨</ruby>している風の図解。" { speed:1 waitInput:true Wait:true }
+
+@print これは【サバト】の絵じゃないでしょうかね？<br>魔女が大魔女を召喚する儀式的な。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ……なるほど？<br>詳しくはないが、たしかに一般的な伝承でも、<br>魔女にはリーダーがいるらしい。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 魔女にとって【大魔女】は、<br>なくてはならない存在……そう、つまり！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print つまり……！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hide Stills,Stills-Middle
+@Wait 0.6
+@char Sherry.Normal1,ArmR3,ArmL3
+@char Hiro.Normal1
+
+@print シェリーはずばりと人差し指を立てたが、<br>それきり静止してから、むむむとうなり始めた。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Pensive1,ArmR3,ArmL3
+
+@print "ん～！ 文字さえ解読できたら、<br>もっと詳細に内容がわかるんですけどね～。" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 安易な推理は危険だが……<br>この本に沿って考えるなら<br>運営もまた、魔女側ということかもしれないな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ゴクチョーは、大魔女さえ見つかったら呪いが……<br>と言いかけていた。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print なら、このバカげたゲームは<br>大魔女を召喚するために行われている<br>魔女側の儀式、と考えられる。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1
+@EmoteJumpDouble Sherry
+@Wait 0.2
+
+@print "あ～！ それです～！<br>私もそれが言いたかったんです！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@animate Sherry
+
+@print ヒロさんやりますね～！<br>いっしょに名探偵コンビになれるかもしれません！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 遠慮しておく。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print なれなれしくすり寄られたが、<br>別に悪い気はしない。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Pensive1
+
+@print しっかし、それにしたって……<br>なんでわたくしたちが拉致されなきゃなりませんの？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "別の本を読んでいたハンナが<br><ruby=\"いまいま\">忌々</ruby>しそうに口を開く。" { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+
+@print それについても仮説は立てられる。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 大魔女を召喚したい運営が<br>わざわざ多くの魔女候補を集める理由……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私はシェリーとハンナの注意を引くように、<br>人差し指を立てた。 { speed:1 waitInput:true Wait:true }
+
+@print ひとつめは、大魔女の召喚に少女の死が必要。<br>単純だが――生け贄というやつだな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print シンプルに最悪ですわ～……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print ぞっとした表情のハンナをよそに、<br>私は淡々と２本目の指を立てた。 { speed:1 waitInput:true Wait:true }
+
+@print ふたつめは……少し飛躍するが。<br>殺すことが目的ではなく<br>少女を集めることが目的、という線だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1
+
+@print 例えば、奴らが大魔女を呼ぶために必要な<br>【魔法を探している】としたらどうだ？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1
+
+@print ちょっと待ってくださいまし。<br>ふたつめは、ありえますの？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1
+
+@print 魔法が知りたいだけなら<br>わざわざ手間暇かけて<br>こんな場所に監禁までしなくたって……！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+
+@print ルールブックにあっただろう。<br>魔女化が進むことで、魔法は進化する。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 見たところ魔法はひとりひとり違う。<br>どんな魔法に進化するかは、きっと運営も知らない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print もし私たちの魔法が進化した先に<br>運営が期待する魔法があるとしたら？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print この屋敷は、<br>私たちの魔女化を進めるための家畜小屋……。<br>そう考えれば辻褄が合う部分もある。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Normal1,ArmR2,ArmL2
+
+@print んー……魔法や魔女にわからないことが多いので<br>断定はできませんが、否定もできませんね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "ハンナは言い返す言葉を失ったようで、<br><ruby=\"あき\">呆</ruby>れ半分の視線を私に向けてくる。" { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1
+@char Hiro.Normal1
+
+@print ……ヒロさん。<br>あなた、それ、いつ気付いたんですの？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 大魔女を呼ぶ儀式については今知ったんだ。<br>今考えたに決まっている。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hanna.Pensive1
+
+@print て、敵には回したくないお方ですわね……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Normal1,ArmR3
+
+@StopBgm { fade:3 }
+
+@print ……そう。<br>ヒロちゃんは、すごいんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ずっと黙りこくっていたエマが口を開く。<br>私はエマに視線を送って……外した。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+
+@print 敵に回したくないのは私も同じことだ。<br>私はもう行こう。時間も限られて――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 私は彼女たちに別れを告げながら、<br>大木の前にいるノアの方へと歩いていく。 { speed:1 waitInput:true Wait:true }
+
+@char Noah
+
+@print "ノアはスプレーを<ruby=\"かか\">掲</ruby>げ、<br>大木に色をつけようとしていた。" { speed:1 waitInput:true Wait:true }
+
+@Wait 0.3
+@back 12_1 { time:1 }
+@bgm Bgm_34_1
+@Wait 1
+
+@char Hiro.Normal1
+@char Noah.Normal1
+
+@print ――おいノア、何をするつもりだ？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Smile1
+
+@print あ、ヒロちゃん。<br>えへへ、あのね、この木をカラフルにしたら<br>きっとすごいことになるなーって思うんだあ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print 絶対みんな大喜びだよ～！ { author:Noah speed:1 waitInput:true Wait:true }
+
+@print 却下。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Pensive1
+
+@print "えーダメかなー？ 絶対綺麗になるのにー。" { author:Noah speed:1 waitInput:true Wait:true }
+
+@print ……早く出よう。<br>図書室は静粛にするものだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "<ruby=\"なごりお\">名残惜</ruby>しそうなノアを半ば引きずるようにして、<br>図書室を後にした。" { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@StopBgm { fade:1.2 }
+
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@print （魔法は強くなる……か） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （予想外の強い魔法が<br>　私たちの中に生まれることもある……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "微かなざわめきが、私の胸に<ruby=\"うずま\">渦巻</ruby>き始めていた。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン2‐1‐7
+# 全てのイベントを消化している＞シーン2‐1‐13
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter01/Act02_Chapter01_Adv12

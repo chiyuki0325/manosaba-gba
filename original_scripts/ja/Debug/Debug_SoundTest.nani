@@ -1,0 +1,429 @@
+@ProcessInput false
+@trialMode false
+@ShowUI SoundTestUI
+@back SolidColor { time:0 }
+@WaitForNextFrame 
+
+@back 11_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.9 }
+
+@set "bgm_1_1=\"1. 燦色の檻\""
+@set "bgm_2_1=\"2. eXi\\' N\\'o FooKah\""
+@set "bgm_3_1=\"3. Sar-gedy-流-\""
+@set "bgm_4_1=\"4. Sar-gedy-動-\""
+@set "bgm_5_1=\"5. Sar-gedy-静-\""
+@set "bgm_6_1=\"6. その牢\""
+@set "bgm_7_1=\"7. rAwTell Owk...\""
+@set "bgm_8_1=\"8. Guil-me N'o sinruits (1)\""
+@set "bgm_8_2=\"8. Guil-me N'o sinruits (2)\""
+@set "bgm_9_1=\"9. 深層の畝\""
+@set "bgm_10_1=\"10. 看るモノ達\""
+@set "bgm_11_1=\"11. 迷宮の徒\""
+@set "bgm_12_1=\"12. EmA-虚-\""
+@set "bgm_13_1=\"13. EmA-常-\""
+@set "bgm_14_1=\"14. EmA-狂-\""
+@set "bgm_15_1=\"15. AccUhEarts (1)\""
+@set "bgm_15_2=\"15. AccUhEarts (2)\""
+@set "bgm_16_1=\"16. EmA-危-\""
+@set "bgm_17_1=\"17. pAciKa' ConWa\""
+@set "bgm_18_1=\"18. 小鳥達の閑話休題\""
+@set "bgm_19_1=\"19. ボクとワタシの\""
+@set "bgm_20_1=\"20. 蠢きの寝屋\""
+@set "bgm_21_1=\"21. 鉛の腱\""
+@set "bgm_22_1=\"22. 靴の裏\""
+@set "bgm_23_1=\"23. 迫るその足音\""
+@set "bgm_24_1=\"24. 海の森\""
+@set "bgm_25_1=\"25. Kei-Plne Co-Jundic\""
+@set "bgm_26_1=\"26. 交々のいと (1)\""
+@set "bgm_26_2=\"26. 交々のいと (2)\""
+@set "bgm_27_1=\"27. 慄き鳴き (1)\""
+@set "bgm_27_2=\"27. 慄き鳴き (2)\""
+@set "bgm_27_3=\"27. 慄き鳴き (3)\""
+@set "bgm_28_1=\"28. 望むのは日常\""
+@set "bgm_29_1=\"29. DArime\""
+@set "bgm_30_1=\"30. yUki (1)\""
+@set "bgm_30_2=\"30. yUki (2)\""
+@set "bgm_31_1=\"31. 飛者の迎え-序-\""
+@set "bgm_32_1=\"32. あなたたちの聲で\""
+@set "bgm_33_1=\"33. Reka N'o Ro-Coh\""
+@set "bgm_34_1=\"34. 人形さんの詰込袋-正-\""
+@set "bgm_34_2=\"34. 人形さんの詰込袋-負-\""
+@set "bgm_35_1=\"35. 吸われた祈り\""
+@set "bgm_36_1=\"36. gDie Divil JIO\""
+@set "bgm_37_1=\"37. HirO (1)\""
+@set "bgm_37_2=\"37. HirO (2)\""
+@set "bgm_38_1=\"38. Sen-Choose N'o SurC (1)\""
+@set "bgm_38_2=\"38. Sen-Choose N'o SurC (2)\""
+@set "bgm_39_1=\"39. 鐘楼の鐘 (1)\""
+@set "bgm_39_2=\"39. 鐘楼の鐘 (2)\""
+@set "bgm_40_1=\"40. 救いを求めるヒトの音\""
+@set "bgm_41_1=\"41. 身罷りの香り\""
+@set "bgm_42_1=\"42. 野花 (1)\""
+@set "bgm_42_2=\"42. 野花 (2)\""
+@set "bgm_43_1=\"43. weRer N'o Hir (1)\""
+@set "bgm_43_2=\"43. weRer N'o Hir (2)\""
+@set "bgm_44_1=\"44. 飛者の迎え-終-\""
+@set "bgm_45_1=\"45. 気任せの蝶 (1)\""
+@set "bgm_45_2=\"45. 気任せの蝶 (2)\""
+
+# ChoiceTop
+
+@choice "{bgm_1_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_1_1
+	@audioPlayer "{bgm_1_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_2_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_2_1_Loop
+	@audioPlayer "{bgm_2_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_3_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_3_1_Loop
+	@audioPlayer "{bgm_3_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_4_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_4_1
+	@audioPlayer "{bgm_4_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_5_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_5_1
+	@audioPlayer "{bgm_5_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_6_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_6_1
+	@audioPlayer "{bgm_6_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_7_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_7_1
+	@audioPlayer "{bgm_7_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_8_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_8_1
+	@audioPlayer "{bgm_8_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_8_2}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_8_2
+	@audioPlayer "{bgm_8_2}"
+	@goto .ChoiceTop
+
+@choice "{bgm_9_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_9_1
+	@audioPlayer "{bgm_9_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_10_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_10_1
+	@audioPlayer "{bgm_10_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_11_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_11_1
+	@audioPlayer "{bgm_11_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_12_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_12_1_Loop
+	@audioPlayer "{bgm_12_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_13_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_13_1_Loop
+	@audioPlayer "{bgm_13_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_14_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_14_1_Loop
+	@audioPlayer "{bgm_14_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_15_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_15_1
+	@audioPlayer "{bgm_15_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_15_2}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_15_2
+	@audioPlayer "{bgm_15_2}"
+	@goto .ChoiceTop
+
+@choice "{bgm_16_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_16_1_Loop
+	@audioPlayer "{bgm_16_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_17_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_17_1
+	@audioPlayer "{bgm_17_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_18_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_18_1_Loop
+	@audioPlayer "{bgm_18_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_19_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_19_1
+	@audioPlayer "{bgm_19_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_20_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_20_1
+	@audioPlayer "{bgm_20_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_21_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_21_1
+	@audioPlayer "{bgm_21_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_22_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_22_1
+	@audioPlayer "{bgm_22_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_23_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_23_1
+	@audioPlayer "{bgm_23_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_24_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_24_1
+	@audioPlayer "{bgm_24_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_25_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_25_1
+	@audioPlayer "{bgm_25_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_26_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_26_1
+	@audioPlayer "{bgm_26_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_26_2}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_26_2
+	@audioPlayer "{bgm_26_2}"
+	@goto .ChoiceTop
+
+@choice "{bgm_27_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_27_1
+	@audioPlayer "{bgm_27_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_27_2}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_27_2
+	@audioPlayer "{bgm_27_2}"
+	@goto .ChoiceTop
+
+@choice "{bgm_27_3}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_27_3
+	@audioPlayer "{bgm_27_3}"
+	@goto .ChoiceTop
+
+@choice "{bgm_28_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_28_1
+	@audioPlayer "{bgm_28_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_29_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_29_1
+	@audioPlayer "{bgm_29_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_30_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_30_1
+	@audioPlayer "{bgm_30_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_30_2}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_30_2_Loop
+	@audioPlayer "{bgm_30_2}"
+	@goto .ChoiceTop
+
+@choice "{bgm_31_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_31_1
+	@audioPlayer "{bgm_31_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_32_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_32_1
+	@audioPlayer "{bgm_32_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_33_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_33_1_Loop
+	@audioPlayer "{bgm_33_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_34_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_34_1
+	@audioPlayer "{bgm_34_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_34_2}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_34_2
+	@audioPlayer "{bgm_34_2}"
+	@goto .ChoiceTop
+
+@choice "{bgm_35_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_35_1
+	@audioPlayer "{bgm_35_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_36_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_36_1
+	@audioPlayer "{bgm_36_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_37_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_37_1_Loop
+	@audioPlayer "{bgm_37_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_37_2}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_37_2_Loop
+	@audioPlayer "{bgm_37_2}"
+	@goto .ChoiceTop
+
+@choice "{bgm_38_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_38_1_Loop
+	@audioPlayer "{bgm_38_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_38_2}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_38_2_Loop
+	@audioPlayer "{bgm_38_2}"
+	@goto .ChoiceTop
+
+@choice "{bgm_39_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_39_1
+	@audioPlayer "{bgm_39_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_39_2}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_39_2
+	@audioPlayer "{bgm_39_2}"
+	@goto .ChoiceTop
+
+@choice "{bgm_40_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_40_1_Loop
+	@audioPlayer "{bgm_40_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_41_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_41_1
+	@audioPlayer "{bgm_41_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_42_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_42_1
+	@audioPlayer "{bgm_42_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_42_2}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_42_2
+	@audioPlayer "{bgm_42_2}"
+	@goto .ChoiceTop
+
+@choice "{bgm_43_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_43_1
+	@audioPlayer "{bgm_43_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_43_2}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_43_2
+	@audioPlayer "{bgm_43_2}"
+	@goto .ChoiceTop
+
+@choice "{bgm_44_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_44_1
+	@audioPlayer "{bgm_44_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_45_1}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_45_1
+	@audioPlayer "{bgm_45_1}"
+	@goto .ChoiceTop
+
+@choice "{bgm_45_2}"
+	@StopBgm { fade:0.1 }
+	@bgm Bgm_45_2
+	@audioPlayer "{bgm_45_2}"
+	@goto .ChoiceTop
+
+@choice "BGM 停止"
+	@StopBgm { fade:0.1 }
+	@audioPlayer 
+	@goto .ChoiceTop
+
+@choice タイトルへ戻る
+	@StopBgm 
+	@clearChoice *
+	@goto Debug/Debug_Home
+
+@Stop

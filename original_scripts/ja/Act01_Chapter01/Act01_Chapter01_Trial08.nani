@@ -1,0 +1,640 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act01_Chapter01/Act01_Chapter01_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# ==============================================================================
+# MARK: 8: 💬 レイアのアリバイ
+# ==============================================================================
+# ＠ト書き▼議論シーン1-8 レイアのアリバイ
+# BGM変更：AccUhEarts(Vocal無)
+@bgm Bgm_15_1
+
+# Judge1-8-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Leia.Smile1,ArmR6,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Closed,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@printDebate "ああそうそう、<br>思い出したよ。<br><link=\"Objection_01_01_08_01\">小腹が空いて</link><br><link=\"Objection_01_01_08_02\">食堂</link>にでも行った気がするな。<br>いや、どうだったかな？<br><link=\"Objection_01_01_08_03\">勘違い</link>かも。"
+
+@char Margo.Smile1,ArmR1,ArmL4
+@gosubModifyCamera 0
+@printDebate ふふ、<br>お腹が空いたなら<br>しょうがないわよねぇ。
+
+@char Alisa.Angry1,Option-ArmL-Off
+@gosubModifyCamera 0
+@printDebate そんな適当な話を<br>信じろってのか？
+
+@char Leia.Smile1,ArmR4,ArmL6,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@printDebate 悪い悪い。<br>バカにする気はないよ。<br>……けど、こんなことを話して<br>本当に意味があるのかな？
+
+@char Leia.Smile1,ArmR5,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@printDebate たしかに私には<br>アリバイがないのかも<br>しれないね。<br>けれどそれは<br>とても些末なことだと<br>思わないかい？
+
+@char Leia.Pensive1,ArmR5,ArmL3,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@printDebate "……なぜなら私は<br><link=\"Objection_01_01_08_04\">空を飛べない</link>んだ。<br>私には<link=\"Objection_01_01_08_05\">塗料を越え</link>、<br>入り口から３ｍほどは離れた<br><link=\"Objection_01_01_08_06\">ノアくんに近付く方法がない</link>。"
+
+@char Leia.Smile1,ArmR5,ArmL8,Angle01/Facial/Eyes>Eyes_Normal_Closed03,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@printDebate ……だからね、<br>この話題をいくら続けたって<br>意味がないんだよ。<br>もっと建設的な話をしようか。
+
+@char Nanoka.Default
+@gosubModifyCamera 0
+@printDebate ……必要かどうかは、<br>私たちが決めるわ。<br>少なくとも<br>あなたが決める事じゃ<br>ないでしょう。
+
+# ==============================================================================
+# ADVシーン
+# ==============================================================================
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@Wait 0.2
+
+@print （レイアちゃんの意見は一見<br>　筋が通っているような気がする……。<br>　でも何か、引っかかるかも……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open
+@print （それに、あのときたしか<br>　レイアちゃんとは地下で<br>　会ってたような……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@print （可能性を検討してみよう。<br>　レイアちゃんの言っていることで、<br>　間違ってるかもしれないことはないかな……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-8-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_01_01_08_01
+
+@Skip false
+@pauseTrial true
+
+@choice お腹が空いていたはずはない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge1-8-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_01_01_08_02
+
+@Skip false
+@pauseTrial true
+
+@choice レイアは食堂に行っていない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge1-8-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_01_01_08_03
+
+@Skip false
+@pauseTrial true
+
+@choice 記憶が曖昧なはずはない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge1-8-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論4
+# ------------------------------------------------------------------------------
+
+# Objection_01_01_08_04
+
+@Skip false
+@pauseTrial true
+
+@choice 空を飛べるかもしれない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge1-8-5
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論5
+# ------------------------------------------------------------------------------
+
+# Objection_01_01_08_05
+
+@Skip false
+@pauseTrial true
+
+@choice 塗料を越える必要はない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge1-8-7
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論6
+# ------------------------------------------------------------------------------
+
+# Objection_01_01_08_06
+
+@Skip false
+@pauseTrial true
+
+@choice ノアに近付く方法があった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge1-8-6
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# ミス選択肢
+# ==============================================================================
+# ==============================================================================
+# MARK: 8-2: ❌ お腹が空いていたはずはない
+# ==============================================================================
+
+# Judge1-8-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Angry1,ArmR3,ArmL3,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print "……待って！ おかしいよ！<br>そのとき夕飯の直後だったはず……！<br>すぐにお腹が空くなんてありえないよ……！" { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR8,ArmL5
+@gosubModifyCamera 0
+@print そうは言っても、お腹が空いたんだ。<br>それとも私が空腹を感じていなかった<br>証拠でもあるのかい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ……それは。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR5,ArmL3
+@gosubModifyCamera 0
+@print 私の個人的な感覚まで否定されるのは……<br>とても悲しいな。<br>ただでさえこんな所に閉じ込められているのにね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Surprised1,ArmR3,ArmL1,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （それとこれとは、別問題だと思うけど……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （レイアちゃん、有名人なだけあって堂々としてる……。<br>　変な発言しちゃうと、逆に反撃されちゃうかも……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@char Meruru.Normal2,ArmR5_2,ArmL2,Eyes2_Pensive_Open1,Mouth2_Angry_Open2
+@gosubSplitStageScreen 1
+@print エマさん……レイアさんが嘘をついてたとしても、<br>暴くのは難しいかもしれません。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1
+@print そ、そうだよね……。<br>じゃあ犯人の手がかりは……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal2,ArmR5_2,ArmL2,Eyes2_Normal_Open3,Mouth2_Smile_Closed1
+@print 逆に……【ハンナさん以外が犯人だとしたら】と<br>考えてみてはどうでしょうか？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal2,ArmR5_2,ArmL2,Eyes2_Normal_Open3,Mouth2_Smile_Closed1
+@print ありえない可能性を除けば……<br>【ありえたかもしれない可能性】が残ります。<br>もしかすると、それが真実かもしれません……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideStageScreen 1
+
+@char Ema.Determined2,ArmR3,ArmL1,Angle01/Head02/Facial02/Sweat02>Sweat02_01
+@gosubModifyCamera 0
+@print （【ありえたかもしれない可能性】……。<br>　議論を進める為に、いろいろな可能性を<br>　考えてみよう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-8-1
+
+# ==============================================================================
+# MARK: 8-3: ❌ レイアは食堂に行っていない
+# ==============================================================================
+
+# Judge1-8-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Pensive1,ArmR3,ArmL3,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print レイアちゃんが食堂に行った……？<br>おかしいな、そんなことないはずだけど……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR3,ArmL5
+@gosubModifyCamera 0
+@print へえ？<br>それはどうしてだい？<br>教えてごらん。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print それは……<br>きっと食堂に行ったなら、<br>誰かが見ているはずじゃ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR3,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Closed,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print 誰かって、誰のことだい？<br>誰か食堂にでもいたのかい？<br>そんな発言はなかったと思うけど。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print そ、それは……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR5,ArmL3
+@gosubModifyCamera 0
+@print むしろそこに誰もいないことが、<br>私がそこにいた証拠と言えるんじゃないかな。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print 妄想で人を犯人扱いするなんて……<br>酷いよ、エマくん……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Surprised1,ArmR12,ArmL16,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open
+@gosubModifyCamera 0
+@print （ボ、ボクが悪者になっちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （レイアちゃん、有名人なだけあって堂々としてる……。<br>　変な発言しちゃうと、逆に反撃されちゃうかも……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@char Meruru.Normal2,ArmR5_2,ArmL2,Eyes2_Pensive_Open1,Mouth2_Angry_Open2
+@gosubSplitStageScreen 1
+@print エマさん……レイアさんが嘘をついてたとしても、<br>暴くのは難しいかもしれません。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print そ、そうだよね……。<br>じゃあ犯人の手がかりは……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal2,ArmR5_2,ArmL2,Eyes2_Normal_Open3,Mouth2_Smile_Closed1
+@print 逆に……【ハンナさん以外が犯人だとしたら】と<br>考えてみてはどうでしょうか？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal2,ArmR5_2,ArmL2,Eyes2_Normal_Open3,Mouth2_Smile_Closed1
+@print ありえない可能性を除けば……<br>【ありえたかもしれない可能性】が残ります。<br>もしかすると、それが真実かもしれません……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideStageScreen 1
+@char Ema.Determined2,ArmR3,ArmL1,Angle01/Head02/Facial02/Sweat02>Sweat02_01
+@gosubModifyCamera 0
+@print （【ありえたかもしれない可能性】……。<br>　議論を進める為に、いろいろな可能性を<br>　考えてみよう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-8-1
+
+# ==============================================================================
+# MARK: 8-4: ❌ 記憶が曖昧なはずはない
+# ==============================================================================
+
+# Judge1-8-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL3,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print 記憶が曖昧なんておかしいよ……！<br>こんな場所でこんな事件が起こったのに……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1,ArmR5,ArmL8,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open01
+@gosubModifyCamera 0
+@print エマくん、事件が発覚したのは今日だ。<br>昨日の時点で些細な事まで記憶しておくなんて……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR5,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Yell_Open01
+@gosubModifyCamera 0
+@print それじゃあまるで<br>事件が起こるとわかっていたようじゃないか。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print そ、それは……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR5,ArmL3
+@gosubModifyCamera 0
+@print むしろ記憶が曖昧な事こそ、<br>私が犯人ではない証拠と言えるんじゃないかい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3,ArmL6,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print そう……なの、かな……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR10,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open01
+@gosubModifyCamera 0
+@print ついでに言えば、昨日のことを覚えていて当然だという<br>エマくんこそが怪しいんじゃないかな？<br>犯人だから強く覚えていたんだよ……昨日の記憶をね！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Surprised1,ArmR10,ArmL6
+@gosubModifyCamera 0
+@print （ボ、ボクが犯人だったの……！？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （レイアちゃん、有名人なだけあって堂々としてる……。<br>　変な発言しちゃうと、逆に反撃されちゃうかも……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@char Meruru.Normal2,ArmR5_2,ArmL2,Eyes2_Pensive_Open1,Mouth2_Angry_Open2
+@gosubSplitStageScreen 1
+@print エマさん……レイアさんが嘘をついてたとしても、<br>暴くのは難しいかもしれません。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print そ、そうだよね……。<br>じゃあ犯人の手がかりは……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal2,ArmR5_2,ArmL2,Eyes2_Normal_Open3,Mouth2_Smile_Closed1
+@print 逆に……【ハンナさん以外が犯人だとしたら】と<br>考えてみてはどうでしょうか？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+# 共通
+@char Meruru.Normal2,ArmR5_2,ArmL2,Eyes2_Normal_Open3,Mouth2_Smile_Closed1
+@print ありえない可能性を除けば……<br>【ありえたかもしれない可能性】が残ります。<br>もしかすると、それが真実かもしれません……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideStageScreen 1
+
+@char Ema.Determined2,ArmR3,ArmL1,Angle01/Head02/Facial02/Sweat02>Sweat02_01
+@print （【ありえたかもしれない可能性】……。<br>　議論を進める為に、いろいろな可能性を<br>　考えてみよう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-8-1
+
+# ==============================================================================
+# MARK: 8-5: ❌ 空を飛べるかもしれない
+# ==============================================================================
+
+# Judge1-8-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL3,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print "ちょっと待って！ レイアちゃんなら空を飛べても<br>おかしくないよ！" { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR7,ArmL5
+@gosubModifyCamera 0
+@print ……どうしてだい？<br>理解に苦しむけれど、一応理由は聞いておこうか。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print だって……その……<br>舞台とかで飛んだり<br>するかもしれないし……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR3,ArmL5
+@gosubModifyCamera 0
+@print キミの夢を壊すようで悪いけれど……<br>ああいうのは必ずステージに仕掛けがあるんだよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed03,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print トリックもなしに飛ぶなんて、<br>魔法でも使わない限り無理なんだ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR9,ArmL8
+@gosubModifyCamera 0
+@print そして私の魔法は魅了の魔法……<br>キミの意見は絶対に不可能だと<br>否定させてもらうよ！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@Damage 
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （うう……！<br>　レイアちゃんの言う通りかも……！<br>　レイアちゃんが空を飛んだ証拠なんてないし……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （レイアちゃん、有名人なだけあって堂々としてる……。<br>　変な発言しちゃうと、逆に反撃されちゃうかも……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@char Meruru.Normal2,ArmR5_2,ArmL2,Eyes2_Pensive_Open1,Mouth2_Angry_Open2
+@gosubSplitStageScreen 1
+@print エマさん……レイアさんが嘘をついてたとしても、<br>暴くのは難しいかもしれません。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print そ、そうだよね……。<br>じゃあ犯人の手がかりは……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal2,ArmR5_2,ArmL2,Eyes2_Normal_Open3,Mouth2_Smile_Closed1
+@print 逆に……【ハンナさん以外が犯人だとしたら】と<br>考えてみてはどうでしょうか？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal2,ArmR5_2,ArmL2,Eyes2_Normal_Open3,Mouth2_Smile_Closed1
+@print ありえない可能性を除けば……<br>【ありえたかもしれない可能性】が残ります。<br>もしかすると、それが真実かもしれません……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideStageScreen 1
+@char Ema.Determined2,ArmR3,ArmL1,Angle01/Head02/Facial02/Sweat02>Sweat02_01
+@print （【ありえたかもしれない可能性】……。<br>　議論を進める為に、いろいろな可能性を<br>　考えてみよう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-8-1
+
+# ==============================================================================
+# MARK: 8-6: ❌ ノアに近付く方法があった
+# ==============================================================================
+
+# Judge1-8-6
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL3,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ノアちゃんに近付く方法……<br>他にもあったんじゃないかな？<br>たとえば……【ノアちゃんが外に出てた】とかさ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR7,ArmL3
+@gosubModifyCamera 0
+@print 殺害後の死体移動トリック……ということかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1,ArmR3,ArmL5,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print しかし残念だけど現場には足跡もないし、<br>あの血痕を見ればあそこでノアくんが殺されたのは<br>明らかだ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR3,ArmL5
+@gosubModifyCamera 0
+@print むしろそれができないという証拠が山程あるはずだよ。<br>どうしてキミはそんな浅はかな疑いを<br>私に向けたんだい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print そ、それは……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Angry1,ArmR5,ArmL8,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open01
+@gosubModifyCamera 0
+@print まるで根拠のない事を言って<br>議論を煙に巻こうとしている犯人みたいじゃないか！<br>……私には、そう見えるよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Surprised1,ArmR12,ArmL16,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open
+@gosubModifyCamera 0
+@print （やってないことまで自白させられちゃいそう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （レイアちゃん、有名人なだけあって堂々としてる……。<br>　変な発言しちゃうと、逆に反撃されちゃうかも……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@char Meruru.Normal2,ArmR5_2,ArmL2,Eyes2_Pensive_Open1,Mouth2_Angry_Open2
+@gosubSplitStageScreen 1
+@print エマさん……レイアさんが嘘をついてたとしても、<br>暴くのは難しいかもしれません。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print そ、そうだよね……。<br>じゃあ犯人の手がかりは……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal2,ArmR5_2,ArmL2,Eyes2_Normal_Open3,Mouth2_Smile_Closed1
+@print 逆に……【ハンナさん以外が犯人だとしたら】と<br>考えてみてはどうでしょうか？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal2,ArmR5_2,ArmL2,Eyes2_Normal_Open3,Mouth2_Smile_Closed1
+@print ありえない可能性を除けば……<br>【ありえたかもしれない可能性】が残ります。<br>もしかすると、それが真実かもしれません……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideStageScreen 1
+@char Ema.Determined2,ArmR3,ArmL1,Angle01/Head02/Facial02/Sweat02>Sweat02_01
+@print （【ありえたかもしれない可能性】……。<br>　議論を進める為に、いろいろな可能性を<br>　考えてみよう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge1-8-1
+
+# ==============================================================================
+# MARK: 8-7: ⭕ 塗料を越える必要はない
+# ==============================================================================
+
+# Judge1-8-7
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+@StopBgm 
+@gosubCutIn Ema
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Determined2,ArmR3,ArmL1,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open,Angle01/Head02/Facial02/Sweat02>Sweat02_01
+@gosubModifyCamera 0
+@print ……本当に塗料を越える必要ってあったのかな？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Angry1,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print ……それはどういうことだい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_38_1_Loop
+
+@char Ema.Determined2,ArmR8,ArmL2,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print たしかに外からこの部屋の中に足を踏み入れたら、<br>足跡が残ってしまう……<br>だから犯人は床を踏んでいないはず……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print ……なら、部屋に入らずに外から殺したっていう<br>可能性があるんじゃないかな？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL12,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print それなら宙に浮かなくったって犯行は可能だよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+@gosubModifyCamera 0
+@print ……でもでも、ボウガンは使えなかったんですよ～？<br>矢を撃てないのに、どうやって外から<br>突き刺すんですか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR3,ArmL5
+@gosubModifyCamera 0
+@print ……その通り。<br>私にはノアくんに矢を刺すことなんてできやしないんだ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR5,ArmL4
+@gosubModifyCamera 0
+@print 犯人はその手で、直接ノアくんの胸に矢を突き立てた。<br>……空を飛んでね。<br>そうとしか考えられないよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1,ArmR2,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Closed
+@gosubModifyCamera 0
+@print "だから！ わたくしじゃねーですわ！" { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （……何かボクたち……<br>　根本的な【勘違い】をしているような……） { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Meruru.Normal1,ArmR8_1,ArmL5,Eyes1_Normal_Open3,Mouth1_Angry_Open2
+@gosubModifyCamera 0
+@print ……で、では……<br>もう一度、詳しい状況を話して……<br>整理してみるというのはどうでしょうか……？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR4,ArmL5,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open
+@gosubModifyCamera 0
+@print 詳しい状況……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Normal1,ArmR2,ArmL9,Eyes1_Normal_Open2,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print ……私もその意見に賛成するわ。<br>殺害の状況は事件の重要なポイント……<br>納得できるまで、話し合うべきね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@StopBgm { fade:2 }
+
+@char Sherry.Smile1,ArmR16,ArmL1
+@gosubModifyCamera 0
+@print 私も賛成です！<br>では事件を再現するつもりで、<br>状況を整理してみましょうか！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+
+@goto Act01_Chapter01/Act01_Chapter01_Trial09

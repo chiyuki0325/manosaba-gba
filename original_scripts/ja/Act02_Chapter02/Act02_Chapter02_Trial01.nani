@@ -1,0 +1,410 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter02/Act02_Chapter02_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# ==============================================================================
+# MARK: 7-1: 💬 銃殺した犯人
+# ==============================================================================
+# ＠ト書き▼議論シーン7-1 銃殺した犯人
+# 議論開始エフェクト
+# BGM変更：rAwTell Owk...
+@bgm Bgm_7_1
+
+# Judge7-1-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Alisa.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open04
+@gosubModifyCamera 0
+@printDebate 犯人は黒部だろ。
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@printDebate 沢渡は脳天を<br>銃で吹っ飛ばされてんだ。
+
+@char Alisa.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open04
+@gosubModifyCamera 0
+@printDebate "なら、犯人は<br><link=\"Objection_02_02_01_01\">銃を持ってる黒部</link><br>しかいねー。"
+
+@char Alisa.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Angry_Open01
+@gosubModifyCamera 0
+@printDebate 何か反論あるかよ。
+
+# ＠備考◆さらっと流すように
+
+@char Nanoka.ArmR4,ArmL2,Eyes1_Uncomfortable_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@printDebate ……ないわね。
+
+@char Nanoka.ArmR4,ArmL2,Eyes1_Uncomfortable_Open1,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@printDebate "<link=\"Objection_02_02_01_02\">私だけ</link>が<br>銃を持っていたことは<br>否定できないわ。"
+
+@char Sherry.Default,ArmR15,ArmL4,Angle01/Facial/Eyes>Eyes_Wink_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate "<link=\"Objection_02_02_01_03\">謎は全て</link><br>解けちゃいましたね！<br>さすがアリサさんです！"
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Closed1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@Wait 0.2
+
+# ==============================================================================
+# MARK: 7-1: 議論後独白
+# ==============================================================================
+
+@print （……どうやらアリサはナノカを疑っているらしい） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Closed1,Mouth1_Determined_Closed1
+@print （人は一度思考がロックされてしまうと、<br>　既存の考えに囚われてしまいがちだ……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Angry_Open2,Mouth1_Determined_Closed1
+@print （間違った情報を指摘して、<br>　彼女の先入観を否定してみるとしよう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-1-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_02_01_01
+
+@Skip false
+@pauseTrial true
+
+@choice ナノカは現場にいなかった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge7-1-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_02_02_01_02
+
+@Skip false
+@pauseTrial true
+
+@choice 他にも銃があった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge7-1-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_02_02_01_03
+
+@Skip false
+@pauseTrial true
+
+@choice 謎はまだある
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge7-1-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 7-1: ❌ 議論ミス選択肢
+# ==============================================================================
+# MARK: 7-1-3: ❌ 反論・ナノカは現場にいなかった
+
+# Judge7-1-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print いや、ナノカが犯人だとは考えにくい。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 死亡推定時刻が死体発見の直近なことから、<br>犯人は死体近くにいた人物から疑っていくべきだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Serious_Open
+@gosubModifyCamera 0
+@print でもよ、現場にいなくてもヤれんじゃねーのか？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Serious_Open
+@gosubModifyCamera 0
+@print 遠くから銃弾を撃ち込む方法だってあんだろ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR13,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print "ですね！ 狙撃とか！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open02
+@gosubModifyCamera 0
+@print そんな芸当、<br>ドデカイ銃担いでる黒部ぐらいにしかできねーだろ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL7,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print いい加減なこと言ってんじゃねーぞ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （もっと直接的な証拠にもとづいた推理をしないと<br>　取り合ってはくれないか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （……だが、凶器はナノカの銃とは限らない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （現場の状況を思い出そう。<br>　他にも凶器となりうるものはあったはずだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-1-1
+
+# MARK: 7-1-4: ❌ 反論・謎はまだある
+# Judge7-1-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print いいや、謎はまだある。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print ココがどこで殺されたのか……<br>彼女の配信についてなど――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,ArmL3,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print 検証すべきことが残っている段階で<br>結論を出すのは早計じゃないか？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print んな細けーことはいいんだよ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print こんな裁判、早く終わるに越したことねーじゃねーか……！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Surprised_Open
+@gosubModifyCamera 0
+@print そ、それはそうですわね……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print 探偵の真似事してーなら、あとで勝手にやれよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR15,ArmL4,Angle01/Facial/Eyes>Eyes_Wink_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print "はい！ じゃあそうしますね！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR4,ArmL6,Angle01/Facial/Eyes>Eyes_Angry_Open03
+@gosubModifyCamera 0
+@print 二階堂に言ってんだよ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （もっと直接的な証拠にもとづいた推理をしないと<br>　取り合ってはくれないか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （……だが、凶器はナノカの銃とは限らない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （現場の状況を思い出そう。<br>　他にも凶器となりうるものはあったはずだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge7-1-1
+
+# ==============================================================================
+# MARK: 7-1-2: ⭕ 反論・他にも銃はあった
+# ==============================================================================
+# カットイン
+# Judge7-1-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+@StopBgm 
+@gosubCutIn Hiro
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print ……どうやらアリサ、<br>君は知らないようだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1
+@gosubModifyCamera 0
+@print ……あ？<br>何がだ？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_45_2
+
+@char Hiro.Normal1,ArmR6,ArmL3,Eyes1_Angry_Open1,Mouth1_Smile_Open1
+@gosubModifyCamera 0
+@print もちろん、【もう１丁の銃】の存在だよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Surprised1
+@gosubModifyCamera 0
+@print もう１丁の銃だと……？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print そう。<br>現場にはそれが残されていた。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print もしくは……<br>発見者は、わざと君たちに伝えなかったのかな？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print ――そんなことないよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Lifeless04,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Middle
+@gosubModifyCamera 0
+@print ボクは現場で拳銃を拾った……<br>ただそれだけだよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_Common_1
+
+@char Alisa.Surprised1
+@gosubModifyCamera 0
+@print ……拳銃だと？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print なら、銃は黒部の銃以外にもあったってことかよ……！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Open1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print そういうことになるね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Open3,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print つまり、死因が銃殺だからと言って<br>ナノカの銃によるものとは限らない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_Common_1
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open01
+@gosubModifyCamera 0
+@print ……チッ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open01
+@gosubModifyCamera 0
+@print ……わかったよ。ウチが間違ってた。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open01
+@gosubModifyCamera 0
+@print 今回もまた、話し合いは必要ってことだな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02
+@gosubModifyCamera 0
+@print ……こんなクソみてーな話し合いがよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print そうだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open2,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print けれど安心していい。<br>今回は犯人がわかっているのだから。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_Common_1
+
+@char Ema.Default,ArmR12,ArmL16,Angle01/Head01/Facial01/Eyes01>Eyes01_Fearful_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ……っ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 現場で銃を手に取っていた犯人……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print それはエマだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_Common_1
+
+@char Ema.Determined2,ArmR7,ArmL10,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print ……そう、ヒロちゃん。<br>それがキミの意見なんだね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR3,ArmL10,Angle01/Head02/Facial02/Mouth02>Mouth02_Nervous_Open
+@gosubModifyCamera 0
+@print なら……<br>ボクとしてもヒロちゃんが犯人の可能性が高いと<br>言わざるを得ないかな。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print なら、私から説明させてもらおうか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Angry_Open2,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print エマしか犯行ができない……<br>その理由を！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR7,ArmL7,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print ボクだって……<br>反論させてもらうよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@StopBgm { fade:1 }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （どちらの主張が正しいのか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print （勝負だ、エマ！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto Act02_Chapter02/Act02_Chapter02_Trial02

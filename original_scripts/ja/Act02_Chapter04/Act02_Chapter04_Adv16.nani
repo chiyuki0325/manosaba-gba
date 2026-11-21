@@ -1,0 +1,765 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-4-16
+
+# ========================================
+# ●シーン2‐4‐16
+# ========================================
+
+@back 12_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@print アリサとミリアに連れられてやってきたのは、<br>図書室だった。 { speed:1 waitInput:true Wait:true }
+
+@print どうしてここに連れてこられたのか、<br>何もわからない。 { speed:1 waitInput:true Wait:true }
+
+@print "考える気力もない。<br>私はただぼんやりと<ruby=\"うつ\">虚</ruby>ろな瞳で、<br>読書スペースの椅子に腰かけた。" { speed:1 waitInput:true Wait:true }
+
+@print すると、アリサがどこかから持ってきた本を、<br>机の上に置いた。 { speed:1 waitInput:true Wait:true }
+
+# 机に本を置く音
+@sfx Sfx_42
+@Wait 1
+
+# ========================================
+# アイテムスチル：『魔女の本』表示
+# ========================================
+@spawn Clue
+
+@print その本は、見覚えがあった。 { speed:1 waitInput:true Wait:true }
+
+@print 牢屋敷に囚われて間もなく、<br>シェリーたちが私に見せてきた、<br>魔女について書かれた本――。 { speed:1 waitInput:true Wait:true }
+
+@print あの日に見せられて以来、<br>すっかり忘れていた。 { speed:1 waitInput:true Wait:true }
+
+@print "内容もほとんど<ruby=\"はあく\">把握</ruby>していない。" { speed:1 waitInput:true Wait:true }
+
+@print この本に一体なんの意味が……？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 言いながら、私は本を開く。 { speed:1 waitInput:true Wait:true }
+
+@despawn Clue
+
+# 本のページをぱらぱらめくる音
+@sfx Sfx_43
+@Wait 2
+
+# ========================================
+# ＞挿入歌『救いを求めるヒトの詩』
+# ========================================
+
+@bgm Bgm_40_1_Loop
+
+# ＠備考◆息を呑む
+
+@char Hiro.Surprised1
+
+@print ――！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "ぱらぱらとページを<ruby=\"めく\">捲</ruby>っていくうちに、<br>私の目はみるみる見開かれていった。" { speed:1 waitInput:true Wait:true }
+
+@print そこに書かれていたのは、<br>この牢屋敷に囚われた少女たちの文字だった。 { speed:1 waitInput:true Wait:true }
+
+@print "不思議な文字を解読しようと書き込みし、<br>解読されていった、たくさんの……<br>本当にたくさんの<ruby=\"こんせき\">痕跡</ruby>だった。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@char Alisa.Pensive1,Option-ArmL-Off
+
+@print 桜羽の発案でさ、<br>順番にみんなで時間かけて<br>書き込んでいったんだよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive1,ArmR10
+
+@print エマちゃん、<br>ヒロちゃんには<br>なかなか回せなかったみたいで……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print だからヒロちゃんは<br>まだ目を通してないよね……？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "こくりと<ruby=\"うなず\">頷</ruby>いた瞬間――" { speed:1 waitInput:true Wait:true }
+
+@print "本の上に涙の<ruby=\"しずく\">雫</ruby>が、<br>ぱたりぱたりと落ちていった。" { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Cry1
+
+@print （ああ――そういうこと、だったのか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "マーゴの部屋で、<br>エマが<ruby=\"ふところ\">懐</ruby>にさっと隠し、回収したもの。" { speed:1 waitInput:true Wait:true }
+
+@print それは凶器なんかじゃなかった。<br>この本だった。 { speed:1 waitInput:true Wait:true }
+
+@print たしかにここにいた彼女たちの証を、<br>指先でなぞる。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro
+
+@print ほとんど、解読できている。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （私はずっとひとりで、足掻いていたと思っていた。<br>　皆、こんなにも戦っていたのに――……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@char Alisa
+@char Miria
+
+@print ……もう行かないと。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Surprised1,Option-ArmL-Off
+@char Miria.Surprised1
+
+@print 私は本をそっと胸に抱き、<br>立ち上がった。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print そして、歩きだす。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@back 9_2 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+
+@print 本の中で最初に見つけたのは、<br>マーゴが書き残した言葉だった。 { speed:1 waitInput:true Wait:true }
+
+# @show Clue
+
+@print ――大魔女を召喚する方法について。<br>――１３人の魔女が１カ所に集う儀式が必要だと判明。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print ――１３人の魔女が儀礼剣に向かって強く念じること。<br>――そうすれば大魔女が受肉し、私たちの元に降臨する。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print ――わかったのはここまで。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print ――私たちは１３人だけど、<br>儀礼剣があれば大魔女を召喚できるということかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+# @hide Clue
+
+# ========================================
+# ◎回想シーン（2-1-9の流用）
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@back 7_1 { time:0 }
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@animate MainBackground
+@spawn MaskingRectangle
+@back 7_2
+@blur MainBackground-Front
+@char Margo.Normal1 { time:0 }
+@mask MainBackground-Front,Margo-Front
+@animate MainBackground-Front
+@animate Margo-Front
+@Wait 0.3
+
+@print ……ねえヒロちゃん。<br>あまりエマちゃんたちを責めないであげてね。<br>私も同じようなことは考えていたのだから。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 君も脱獄を？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ええ。ここから出る方法はないものか<br>考えるのは当然でしょう？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 看守に逆らうのは危険だ。<br>大人しくしていたほうがいい。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Margo.Pensive1
+
+@print ……そうね。<br>今回の件で一筋縄でいかないことはわかったし、<br>もう少しここの調査をしていくつもり。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print ヒロちゃんのこと、頼りにしているわね。<br>一緒に魔女と戦いましょう――。 { author:Margo speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 回想シーンここまで
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@hide Margo-Front,MainBackground-Front
+@blur MainBackground-Front
+@despawn MaskingRectangle
+@Wait 0.3
+
+@back 9_2 { time:0 }
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print 端に、本当に小さく小さく、<br>誰にも見つからないようにと書き残したのだろう、<br>メルルの言葉があることにも気付いた。 { speed:1 waitInput:true Wait:true }
+
+# @show Clue
+
+@print ――大魔女様に会いたい。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+# @hide Clue
+
+# ========================================
+# ◎ 回想シーン（2-1-4からの流用）
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@back 9_1 { time:0 }
+@hideChars { time:0 }
+@char Meruru.Pensive { time:0 }
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print あ、ああ、なんてひどい怪我を……<br>嫌です、ダメです、絶対に死なせません……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print しっかりしてください、マーゴさん……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+# ＠備考◆重傷で苦しげ
+
+@print みんなを助けてあげようと思ったのに……<br>私がやられちゃざまあないわね……くっ { author:Margo speed:1 waitInput:true Wait:true }
+
+@print しゃべってはダメです……<br>私が治しますから、しっかりしてください……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 回想シーンここまで
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@hideChars { time:0 }
+
+@back 9_2 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print ミリアとココとアリサの<br>書き残した言葉もあった。 { speed:1 waitInput:true Wait:true }
+
+@print "文字の解読を試みている書き込みも多かったが、<br>３人のぼやきのような走り書きに<ruby=\"ほお\">頬</ruby>が緩んだ。" { speed:1 waitInput:true Wait:true }
+
+# @show Clue
+
+@print ――おじさんたちは魔女化によって<br>魔法が強くなるらしい。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print ――入れ替わりの魔法が強くなったら、<br>どうなるんだろう？ { author:Miria speed:1 waitInput:true Wait:true }
+
+# @hide Clue
+
+# ========================================
+# ◎回想シーン（議論9-2-2からの流用）
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@back 13_1 { time:0 }
+@hideChars { time:0 }
+@char Miria.Pensive1,ArmR10 { time:0 }
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print だって……この中に仲間を２人も殺した人がいるなんて、<br>信じられないよ……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print それに……さ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print そうすれば……これ以上誰か処刑されなくて済むよね……？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@print だって、犯人なんていないんだからさ……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print これ以上誰かが死ぬなんて……間違ってるよ……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Angry1
+
+@print これ以上誰か死ぬなんて……<br>もういやなんだ！ { author:Miria speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 回想シーンここまで
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@hideChars { time:0 }
+
+@back 9_2 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+# @show Clue
+
+@print ――解読めんどくせえ。あてぃしはパス！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print ――でもあてぃしの魔法が強くなったら、<br>異次元でも繋がれるんだよね。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print ――あてぃしらみんな、<br>スゲー魔法使えるようになんじゃね？ { author:Coco speed:1 waitInput:true Wait:true }
+
+# @hide Clue
+
+# ========================================
+# ◎回想シーン（2-2-10からの流用）
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@back 27_1 { time:0 }
+@hideChars { time:0 }
+@char Coco.Pensive1,ArmR11 { time:0 }
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print あー元気だよ？<br>んな心配すんなって。まったくさぁ毎日毎日飽きもせず……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1
+
+@print ううん、嬉しいよ。<br>あてぃしのことずっと忘れずにいてくれて。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Smile1
+
+@print 絶対、絶対帰るからね。<br>いや、だからあてぃしの心配すんなし！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1
+
+@print あてぃしはじーちゃんのが心配だっつの！<br>すっかり弱っちゃってさぁ……そんな顔しないでよ……。 { author:Coco speed:1 waitInput:true Wait:true }
+
+# ＠備考◆涙声
+@char Coco.Smile1
+
+@print あてぃしが笑顔にしてあげるから……待っててよ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 回想シーンここまで
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@hideChars { time:0 }
+
+@back 9_2 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+# @show Clue
+
+@print ――魔法が強くなったらウチらをこんな目に遭わせた奴ら、<br>全員焼き尽くしてやる。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+# @hide Clue
+
+# ========================================
+# ◎回想シーン（2-4-6の流用）
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@back 18_1 { time:0 }
+@hideChars { time:0 }
+@char Alisa.Smile1,Option-ArmL-Off { time:0 }
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+# ＠備考◆鼻で笑う
+
+@print ハッ、おめえらの言うことは<br>いちいち嘘くせえんだよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,Option-ArmL-Off
+
+@print 蓮見、二階堂、おめえらはウチが大嫌いなタイプだ。<br>だからウチが魔女化したら、<br>最初におめえらに殺意が向くだろうな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Pensive1,Option-ArmL-Off
+
+@print さっさと消えろよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 回想シーンここまで
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@hideChars { time:0 }
+
+@back 29_2 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print 当然のようにノアの描いた落書きもあった。<br>それに添えるようにアンアンの見慣れた文字も。 { speed:1 waitInput:true Wait:true }
+
+@print そのページはノアの落書きに埋めつくされ、<br>ほとんど何もわからなくなってしまっていた。 { speed:1 waitInput:true Wait:true }
+
+@print "そして<ruby=\"すみ\">隅</ruby>に書かれているメッセージに、<br>胸が切なく締め付けられた。" { speed:1 waitInput:true Wait:true }
+
+# @show Clue
+
+@print ――ヒロちゃん大好き！ { author:Noah speed:1 waitInput:true Wait:true }
+
+# @hide Clue
+
+# ========================================
+# ◎回想シーン（2-3-14からの流用）
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@back 460_7 { Scale:{g_backgroundDefaultScale} time:0 }
+@hideChars { time:0 }
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+# ＠備考◆鼻すすりながら
+
+@print ……でもね、嬉しいって気持ちもあったんだ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print アンアンちゃんに、<br>本当の絵を好きだって言われて……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print だから、ヒロちゃんにも見てほしかった。<br>のあの本当の絵、褒めてもらいたかったな。 { author:Noah speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 回想シーンここまで
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@hide Stills { time:0 }
+@back 29_2 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+# @show Clue
+
+@print ――落書きするな。真面目にやれ。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print ――わがはいたちが助かるためには、<br>この本に書かれた文字を解読せねば…… { author:AnAn speed:1 waitInput:true Wait:true }
+
+# @hide Clue
+
+@print アンアンはその２文しか書いておらず、<br>きっと面倒になったのだろう。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ◎回想シーン（2-3-9からの流用）
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@back 6_1 { time:0 }
+@hideChars { time:0 }
+@char AnAn.Angry1,Angle01/Option_Arms- { time:0 }
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print そ、そうだ……！<br>わがはいはいずれ文豪になるのだ。<br>み、見ていろ……！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print 次こそ皆をあっと言わせる、<br>大傑作を仕上げてみせる……！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 回想シーンここまで
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@hideChars { time:0 }
+
+@back 29_2 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print 空っぽになったはずの心に、<br>ひとりひとりの存在が刻まれ、<br>あたたかさが宿っていく。 { speed:1 waitInput:true Wait:true }
+
+@print 時を刻みながら、<br>私は一歩一歩、前に進む。 { speed:1 waitInput:true Wait:true }
+
+@back 10_1 { Scale:{g_backgroundDefaultScale} time:1 }
+@Wait 1
+
+@print ナノカは膨大な量の書き込みをしていた。<br>その中に気になる文章があった。 { speed:1 waitInput:true Wait:true }
+
+# @show Clue
+
+@print ――【死に戻り】の魔法の解明について。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print ――【死に戻り】の魔法は、<br>強くなればなるほど、飛距離が伸びる。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print ――つまり遡れる時間が増える。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# @hide Clue
+
+# ========================================
+# ◎回想シーン（2-2-21からの流用）
+# ========================================
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+# 配信フレームIN
+@back 24_1 { time:0 }
+@hideChars { time:0 }
+@char Nanoka { time:0 }
+@printer Normal.Stream
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+# ＠備考◆配信中
+
+@print 正直、自分でもよくわからないわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print ただ、あなたならこの牢屋敷の、いえ、<br>魔女の秘密の全てを暴けると思った。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print だから私に何かあったら、あなたに託す。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print どうか真実を突き止めて。<br>そしてもうこれ以上、<br>私のような魔女を生み出さないで。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print もう誰も、犠牲になってほしくないから。<br>……よろしくね、二階堂ヒロ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 回想シーンここまで
+# ========================================
+
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@HidePrinter 
+@hideChars { time:0 }
+@printer Normal.Default
+
+@back 10_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print その近くにレイアの書き込みも見つけた。 { speed:1 waitInput:true Wait:true }
+
+# @show Clue
+
+@print ――魔法が強まると、私たちは異形と化してしまう。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print ――【死に戻り】の魔法所有者に警告しておく。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print ――強くなった魔法を使うべきではない。<br>魔女化が進んだ状態で使えば、<br>死ねない体になって、二度と魔法は使用できなくなる。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# @hide Clue
+
+# ========================================
+# ◎回想シーン（2-4-9からの流用）
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@back 9_1 { time:0 }
+@hideChars { time:0 }
+@char Leia.Smile1 { time:0 }
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print ヒロくんがいてくれて良かった。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 顔を上げたレイアが笑顔で言ってくる。 { speed:1 waitInput:true Wait:true }
+
+@print キミの強さが私の支えになっているんだと思う。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print ここまで折れずにやってこれたのは、<br>きっとヒロくんが傍にいてくれたおかげだよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 回想シーンここまで
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@hideChars { time:0 }
+
+@back 10_1 { time:0 }
+
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print 彼女たちはもしかしたら、<br>私の魔法に気付いていたのかもしれない。 { speed:1 waitInput:true Wait:true }
+
+@print けれどもうそのことを確かめる術がない。 { speed:1 waitInput:true Wait:true }
+
+@back 4_1 { Scale:{g_backgroundDefaultScale} time:1 }
+@Wait 1
+
+@print シェリーとハンナは、<br>じゃれあうように書き込んでいた。 { speed:1 waitInput:true Wait:true }
+
+# @show Clue
+
+@print ――シェリーちゃんの名推理によりますと！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ――【魔女を１３人集める】というのは、<br>私たちが魔女化していないと<br>いけないのかもしれませんね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ――わたくし魔女になりたくありませんわ。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "――詰んだ！ 無理かも！笑" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ――全員を助けられるなら、<br>なってやらんこともないですわ。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print ――ウワ～～上から目線でありがとうございます！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# @hide Clue
+
+# ========================================
+# ◎回想シーン（2-4-14からの流用）
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@back 470_7 { Scale:{g_backgroundDefaultScale} time:0 }
+@hideChars { time:0 }
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print でも……でも、わたくし、<br>魔女になりたくありませんの……っ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print どんなに汚くても、<br>罪深くても、人間のままでいさせてほしいの……っ { author:Hanna speed:1 waitInput:true Wait:true }
+
+# @back 470_8 id:Stills scale:1 time:0 tint:#dfd1a2
+
+@print どうか人間のままで殺して――！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print わたくしを化け物にしないでよぉっ！<br>わたくしのままでいさせてよぉっ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 置き去りが嫌だって言ったので、<br>一緒に逝きましょう！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 私が一緒ですから、ハンナさんはもう大丈夫！<br>置き去りにしてもいないし、<br>置き去りにされてもいません！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@back 470_9 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@print なれはてには、させませんっ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 回想シーンここまで
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@hide Stills { time:0 }
+@back 4_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print "まだ失われた実感が<ruby=\"ともな\">伴</ruby>わない。<br>今にも彼女たちのはしゃぐ声が、聞こえてくるようだった。" { speed:1 waitInput:true Wait:true }
+
+@back 2_1 { Scale:{g_backgroundDefaultScale} time:1 }
+@Wait 1
+
+@print ……そして最後に、<br>エマの書いた言葉を見つけた。 { speed:1 waitInput:true Wait:true }
+
+# @show Clue
+
+@print ――絶対、みんなそろってここを出ようね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# @hide Clue
+
+# ========================================
+# ◎回想シーン（2-3-10からの流用）
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@back 29_2 { time:0 }
+@hideChars { time:0 }
+@char Ema.Cry1,ArmR3 { time:0 }
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+# ＠備考◆泣きながら
+@print 生きてよ、ヒロちゃん……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print お願いだから、生きて……！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 回想シーンここまで
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@hideChars { time:0 }
+
+@back 2_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print "もうすっかり<ruby=\"か\">枯</ruby>れ果てたと思っていた涙が、<br>熱く<ruby=\"ほお\">頬</ruby>を伝い、流れていく。" { speed:1 waitInput:true Wait:true }
+
+@print 私は、本当のエマを見つけた。 { speed:1 waitInput:true Wait:true }
+
+@print ようやく正しさを見つけた。 { speed:1 waitInput:true Wait:true }
+
+@print （私は……叶うならもう一度、<br>　君たちに会いたい） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （ただそれだけだったんだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@hideChars 
+
+@back 1_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print "<ruby=\"くびつ\">首吊</ruby>り<ruby=\"わ\">輪</ruby>の準備はできていた。" { speed:1 waitInput:true Wait:true }
+
+@print おそらく今の私は魔女化が進んでいながら、<br>死ねることのできるギリギリのラインに立っている。 { speed:1 waitInput:true Wait:true }
+
+@print 今なら最大限の魔法が使用できる。 { speed:1 waitInput:true Wait:true }
+
+@print 長く長く、飛べる。<br>きっと牢屋敷に囚われた初日に、戻れる。 { speed:1 waitInput:true Wait:true }
+
+@print それより前に行く必要はない。<br>私が目指すのはただその時。 { speed:1 waitInput:true Wait:true }
+
+@print 彼女たち全員が生きていた、<br>初めて会った、その日に。 { speed:1 waitInput:true Wait:true }
+
+@print そして――チャンスは一度きりだ。 { speed:1 waitInput:true Wait:true }
+
+@print 彼女たちと過ごした記憶が、<br>たとえ私の中にしか残らなかったとしても。 { speed:1 waitInput:true Wait:true }
+
+@print （どうか――もう一度、会わせてください） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 祈るように、縄の前で頭を垂れる。 { speed:1 waitInput:true Wait:true }
+
+@print そして、私は顔を上げた。 { speed:1 waitInput:true Wait:true }
+
+@print 心の禁忌を踏み越え、私は必ず会いに行く。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@print ――君たちを救いに。 { speed:1 waitInput:true Wait:true }
+
+# ロープが軋む首吊り音
+@sfx Sfx_127
+@Wait 3
+
+# ========================================
+# ＞魔女裁判 第2章5話へ
+# ========================================
+
+@set "g_gameProgress = max(10, g_gameProgress)"
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter05/Act02_Chapter05_Adv01

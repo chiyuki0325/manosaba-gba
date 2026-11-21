@@ -1,0 +1,785 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter03/Act02_Chapter03_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+@badId 9
+
+# ==============================================================================
+# MARK: 8-9: 💬 アンアンの行動の理由
+# ==============================================================================
+# ＠ト書き▼議論シーン8-9 アンアンの行動の理由
+# 議論開始エフェクト
+# BGM変更：HirO（Voなし）
+@bgm Bgm_37_1_Loop
+
+# Judge8-9-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@printDebate 夏目が自作自演で<br>自殺した……？
+
+@char Alisa.Default,ArmR4,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open03
+@gosubModifyCamera 0
+@printDebate だとしたら、<br>なんの為に<br>んな七面倒臭いこと<br>したってんだよ！
+
+@char Miria.Default,ArmR3,ArmL8,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate たしかに……<br>それは疑問だよね。
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Cry_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@printDebate アンアンちゃんは<br>なんでそんなことを<br>したんだろう。
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Angry_Closed02
+@gosubModifyCamera 0
+@printDebate 仮にヒロちゃんの推理が<br>真実なら、<br>事前にしっかり<br>準備しておかないと<br>いけないし……。
+
+@char Miria.Default,ArmR3,ArmL8,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate 本当にそんなこと、<br>アンアンちゃんは<br>したのかな……。
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@printDebate でもヒロちゃんの<br>推理の通りなら、<br>ボクの見た光景と<br>一致するんだ。
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Open
+@gosubModifyCamera 0
+@printDebate それに現場には<br>偽物の血痕が<br>残されていた……。
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Open
+@gosubModifyCamera 0
+@printDebate アンアンちゃん自身が<br>偽装工作を行ったのは、<br>残された偽の血痕からも<br>明らかだよ。
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@printDebate うーん、<br>でも本当にそうなのかなぁ？
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Surprised_Open01
+@gosubModifyCamera 0
+@printDebate "その推理が正しいなら、<br>アンアンちゃんは<br>誰もいない暗い夜の中庭で、<br>１人で<link=\"Objection_02_03_09_01\">死体のフリ</link>をしてた<br>ってことだよね？"
+
+@char Hanna.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Closed,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@printDebate お化け屋敷でも<br>作る気だったとしか<br>考えられませんわー！
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Closed03,Angle01/Facial/Mouth>Mouth_Angry_Closed
+@gosubModifyCamera 0
+@printDebate たしかに……。<br>狂言自殺だったとするなら、<br>誰かにそれを<br>アピールする必要が<br>あるのかもしれませんね。
+
+@char Sherry.Default,ArmR3,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate "偶然ミリアさんが<br>写真を撮っていましたけど、<br>それもあくまで<br><link=\"Objection_02_03_09_02\">偶然</link>ですし……。"
+
+@char Sherry.Default,ArmR4,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed02,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@printDebate それに死体も<br>写ってませんでしたしね。
+
+@char Leia.Default,ArmR5,ArmL8,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@printDebate "演目には観客が必要だ。<br>でもそんな人物は<br>その場に<link=\"Objection_02_03_09_03\">いなかった</link>……。"
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@printDebate だったらなおさらだ。
+
+@char Alisa.Default,ArmR4,ArmL6,Angle01/Facial/Eyes>Eyes_Angry_Open03
+@gosubModifyCamera 0
+@printDebate "そこまで大掛かりな<br><link=\"Objection_02_03_09_04\">仕掛け</link>を<br>準備しても、<br>本人になんの得も<br>ねーだろ……！"
+
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+@gosubModifyCamera 0
+@Wait 0.2
+
+# ==============================================================================
+# 8-9議論後独白
+# ==============================================================================
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@print （アンアンの目的……か） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@print （死人に口なし。<br>　動機全てをここで明らかにするのは<br>　難しいかもしれない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Closed1,Mouth1_Determined_Closed1
+@print （だが、その一部であれば推理することは可能だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR13,ArmL13,Eyes1_Normal_Open5,Mouth1_Determined_Closed1
+@print （考えるんだ……アンアンの行動の理由を！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge8-9-1
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_03_09_01
+
+@Skip false
+@pauseTrial true
+
+@choice 気絶していた
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge8-9-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_02_03_09_02
+
+@Skip false
+@pauseTrial true
+
+@choice 偶然ではなかった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge8-9-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_02_03_09_03
+
+@Skip false
+@pauseTrial true
+
+@choice 見ていた観客がいる
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge8-9-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論4
+# ------------------------------------------------------------------------------
+
+# Objection_02_03_09_04
+
+@Skip false
+@pauseTrial true
+
+@choice 仕掛けを準備していない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge8-9-5
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 8-9: ❌ 議論ミス選択肢
+# ==============================================================================
+# MARK: 8-9-3: ❌ 反論・気絶していた
+
+# Judge8-9-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR6,ArmL1,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print ……いいや。<br>【死体のフリ】じゃなくて、<br>落下の衝撃で【気絶】してたんだよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Normal_Closed1
+@gosubModifyCamera 0
+@print それなら、何も不自然ではないだろう？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR4,ArmL5
+@gosubModifyCamera 0
+@print ……でもそれだと、<br>あの血痕の説明がつかなくなっちゃうよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04
+@gosubModifyCamera 0
+@print 落下時に気絶したなら、<br>偽物の血で細工することが不可能になるよね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print でも落下直後に見たときは、あの血はすでについてた……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL11,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print 気絶してはいなかったと思うよ、ヒロちゃん！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# [damage]
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （……エマに否定されてしまった） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （アンアンの狂言自殺が不自然だというなら、<br>　自然な流れを説明すればいい） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR13,ArmL13,Eyes1_Normal_Open5,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （一度アンアンの目線になって考えてみよう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge8-9-1
+
+# MARK: 8-9-4: ❌ 反論・偶然ではなかった
+
+# Judge8-9-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print 待ってくれシェリー。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 本当に【偶然】だと割り切っていいものだろうか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print どういうことでしょうか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print ミリアは【外から物音が聞こえた】<br>【空を見たら星を撮りたくなった】と言っていた。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Closed1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print しかし、両者の行動の繋がりは少ない。<br>突飛過ぎる発想じゃないかな？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 実はアンアンに狂言殺人の撮影を頼まれていて、<br>その事実を隠してるってこともありえるよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print そ、そんなこと頼まれてないって！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR9,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print たしかにおじさん、思いつきで行動しちゃったかなって<br>思わないでもないけど……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR9,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print でももしアンアンちゃんに頼まれてたんなら、<br>おじさん、娯楽室よりもっと<br>撮りやすい場所から撮ってるって！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print たしかに、ミリアさんの写真では、<br>落下場所の死体などの決定的な瞬間が写っていません。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print 仮に他の人に罪をなすりつけるために撮ったなら、<br>ベランダにいた人の顔が<br>ちゃんと写っていないのもおかしな話です。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print すぐに撮り直すことだってできたはずですしね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print ミリアさんの写真を疑うほどの理由にはならないように思います。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01
+@gosubModifyCamera 0
+@print そうだよ！<br>酷いよヒロちゃん！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （ミリアに言いがかりをつけてしまったか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （アンアンの狂言自殺が不自然だというなら、<br>　自然な流れを説明すればいい） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR13,ArmL13,Eyes1_Normal_Open5,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （一度アンアンの目線になって考えてみよう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge8-9-1
+
+# MARK: 8-9-5: ❌ 反論・仕掛けを準備していない
+
+# Judge8-9-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print 【アンアンが仕掛けを準備していた】……？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print 本当にそうだろうか？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR4,ArmL6,Angle01/Facial/Eyes>Eyes_Angry_Open03
+@gosubModifyCamera 0
+@print "あ？ 準備してねえと<br>とっさにこんなこと出来ねえだろうが。" { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print 落ちた先に、<br>たまたま血糊や折れた鉄柵が落ちていたのだとしたら？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print それを見つけたアンアンは、<br>その場で思いついて即興でやってみせたんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL8,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print そ、そんなに都合よく<br>落ちてるなんてありえるのかな……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 偶然血糊や鉄柵が落ちてたなんて、考えにくいですよね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print それにとっさにするのが死体のフリなのも、<br>わけがわかりません。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print ……ならやっぱ夏目が準備してたってことだろ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR4,ArmL6,Angle01/Facial/Eyes>Eyes_Angry_Open03
+@gosubModifyCamera 0
+@print 変なとこ突っ込んでんじゃねーぞ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （論点からズレてしまったか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （アンアンの狂言自殺が不自然だというなら、<br>　自然な流れを説明すればいい） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （一度アンアンの目線になって考えてみよう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge8-9-1
+
+# ==============================================================================
+# MARK: 8-9-2: ⭕ 反論・見ていた観客はいた
+# ==============================================================================
+
+# Judge8-9-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+@gosubCutIn Hiro
+@Gosub System/System_Subroutine.EndDebate-Last
+
+# カットイン
+@StopBgm 
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print いいや。<br>当然観客はいたさ。忘れたのかい？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# Judge8-9-6
+
+@char Hiro.Normal2,ArmR6,Arms3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 一部始終を見ていた人物がいる……<br>それは、この人物だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@evidence Profile
+
+@if "chosenEvidenceId==\"Ema\""
+	@goto .Judge8-9-7
+
+@if "chosenEvidenceId==\"Hiro\""
+	@goto .Judge8-9-9
+
+@if "chosenEvidenceId==\"Miria\""
+	@goto .Judge8-9-10
+
+# 汎用ミス
+@goto .Judge8-9-8
+
+# MARK: 8-9-8: ❌ 汎用ミス
+
+# Judge8-9-8
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （……いや、この人物が現場にいた証拠はない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR13,ArmL13,Eyes1_Normal_Open5,Mouth1_Determined_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （一度冷静になって考え直そう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （アンアンの狂言自殺の観客となりえた人物） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Open3,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （……あの人物しかいないか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge8-9-6
+# MARK: 8-9-9: ❌ 二階堂ヒロ
+
+# Judge8-9-9
+
+@char Hiro.Normal2,ArmR11,ArmL11,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （私……か） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Pensive_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （間違いではないが、<br>　この流れでそこにいたと打ち明けるのは悪手だな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,ArmL9,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （正しく議論を進めるためにも、<br>　ここはエマの推理を邪魔しない方がいい） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR13,ArmL13,Eyes1_Normal_Open5,Mouth1_Determined_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （そうなると、今回私が示すべき人物は……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Hiro.Normal1,ArmR13,ArmL13,Eyes1_Normal_Open5,Mouth1_Determined_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （……あの人物しかいないか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge8-9-6
+
+# MARK: 8-9-10: ❌ 佐伯ミリア
+
+# Judge8-9-10
+
+@char Hiro.Normal2,ArmR6,ArmL1,Eyes2_Angry_Open1,Mouth2_Determined_Closed1
+@gosubModifyCamera 0
+@print ミリア……君だよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR10,ArmL4,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Confused_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print "ええ！？ お、おじさんが！？" { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,Arms3,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print ミリアはアンアンが落下する直前、<br>娯楽室から写真を撮っていた。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print その時にアンアンからも見えていたんじゃないかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print そ、それは……！<br>わかんないけど……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print ……んー……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print 仮にアンアンさんが娯楽室にいたミリアさんを見ていたとしても、<br>それを見たのってたまたまじゃないですかね？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print ミリアさんはたまたま空を見ようとして覗いただけですし、<br>アンアンさんがそれを想定して<br>計画的に準備していたとは思えません。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print ……うん。<br>アンアンちゃんがミリアちゃんに見せていたって考えるには<br>無理があるんじゃないかな……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+
+@Damage 
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （ミリアに向けた狂言だったと考えるのは不自然か……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@char Ema.Default
+@gosubSplitStageScreen 1
+@Wait 0.2
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open
+@print ……ヒロちゃん、もう一度ちゃんと考えてみて。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Closed
+@print あの時、中庭の状況を見ていた人は、<br>他にもいたはずだよ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideStageScreen 1
+@Wait 0.3
+
+@char Hiro.Normal2,ArmR13,ArmL13,Eyes2_Normal_Closed1,Mouth2_Determined_Closed1
+@gosubModifyCamera 0
+@print （……そうだ。もう１人いる。<br>　アンアンが見ていた人物……それは） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge8-9-6
+
+# MARK: 8-9-7: ⭕ 桜羽エマ
+
+# Judge8-9-7
+
+@char Hiro.Normal2,ArmR6,ArmL1,Eyes2_Angry_Open1,Mouth2_Determined_Closed1
+@gosubModifyCamera 0
+@print それは、【エマ】……。<br>つまり、ミリアの写真に写っていた人物だよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,Arms3,Eyes2_Normal_Closed1,Mouth2_Pensive_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （……実際は、<br>　ミリアの写真に写っていたのは私だろう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,Arms4,Eyes2_Normal_Closed1,Mouth2_Determined_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （アンアンを突き落としたのも私……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR13,ArmL13,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （だけどエマは【自分がいた】と<br>　言ってしまった） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# BGM変更：HirO（Voなし）
+@bgm Bgm_37_1_Loop
+
+@char Hiro.Normal2,ArmR13,ArmL5,Eyes2_Normal_Open3,Mouth2_Angry_Closed1
+@gosubModifyCamera 0
+@print （なら……疑われないようにするには<br>　私とエマの立場を入れ替え、<br>　嘘をつき通すしかない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR12,ArmL5,Eyes1_Normal_Closed1,Mouth2_Pensive_Closed1
+@gosubModifyCamera 0
+@print （状況に大差はないとはいえ……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・明るい音
+@sfx Sfx_Common_2
+
+@char Hiro.Normal2,ArmR12,ArmL5,Eyes2_Normal_Open3,Mouth2_Determined_Closed1
+@gosubModifyCamera 0
+@print （他人の命を賭ける以上、<br>　この勝負に負けることはできない！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print ……アンアンはエマに見せるために<br>狂言自殺を行ったんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Closed1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print その詳細な動機まではわからない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print だが、現場にはエマという観客がいた。<br>そして観客は、アンアンの狙い通り動揺した……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,ArmL8,Eyes1_Angry_Open1,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print アンアンの動機がイタズラだったのだとしたら、<br>それは十分成功したと言えるんじゃないか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ……そうだね。<br>気が気じゃなかったよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ボクが殺してしまったんだ……って思ったからね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Open3,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （……エマは当事客観的に状況を見ていたからこそ、<br>　慌てずに嘘をつき続けられる） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Open4,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （私はエマを庇う立場だからこそ……<br>　本来は当事者であるのに、<br>　一歩引いて冷静になれる） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,ArmL11,Eyes1_Normal_Closed1,Mouth1_Normal_Closed1
+@gosubModifyCamera 0
+@print （この入れ替わりによる心理的有利……<br>　利用させてもらう……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print でもでも、理由はさておき……<br>最大の問題が残っていますよ？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆少し妖艶ぎみに
+
+@char Sherry.Default,ArmR3,ArmL12,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Normal_Closed
+@gosubModifyCamera 0
+@print それは……【アンアンさんを殺した犯人は誰か】です。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ＠備考◆軽く息を呑む
+
+@char Ema.Surprised1,ArmR3,ArmL1,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print …………！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Closed03,Angle01/Facial/Mouth>Mouth_Neutral_Closed
+@gosubModifyCamera 0
+@print アンアンさんは自殺するつもりはなかった……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL12,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print たしかにそれなら、<br>現場に施された工作にも納得できます。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Angry_Closed
+@gosubModifyCamera 0
+@print ですが……<br>実際にアンアンさんは死んでいるんですよ。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Angry_Open01,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print であればやはり、<br>この事件にはまだ表に出てきていない<br>【殺人鬼】が存在することになります。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 違いますか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL6,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print ……その通りだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print アンアンは自作自演の狂言自殺を行ったあと、<br>それを利用されて真犯人によって<br>中庭で刺殺されたんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR10,ArmL11,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print エマさんはその犯人を見ていないんですか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open
+@gosubModifyCamera 0
+@print ……うん。<br>ボクは犯人を見てはいないよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR4,ArmL5
+@gosubModifyCamera 0
+@print ベランダから見たとき、<br>アンアンちゃんは血まみれだった……<br>だから完全に死んだと思ってたんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print それでボクはアトリエの中に戻っちゃって……<br>その後のことはわからないんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR7,ArmL3,Angle01/Facial/Eyes>Eyes_Fearful_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print 見捨てたってのかよ……！<br>マジで刺さってたとしても、<br>まだ生きてたかもしんねーのに……！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR5,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open
+@gosubModifyCamera 0
+@print ……ごめん。動転しちゃって。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL7,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@print なら、そこから私が発見するまでの間に<br>誰かがアンアンくんを殺したということになる。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print ……誰が殺したってんだよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL7,Angle01/Facial/Eyes>Eyes_Pensive_Closed,Angle01/Facial/Mouth>Mouth_Normal_Closed
+@gosubModifyCamera 0
+@print 事件発生時すでに夜も遅く、<br>みんな各自で思い思いのことをしていた……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL7,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@print 私が確認した限り、<br>誰にもアリバイはないみたいだね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL7,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@print つまり誰にでも犯行は可能ということだ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Leia.Default,ArmR5,ArmL7,Angle01/Facial/Eyes>Eyes_Pensive_Closed,Angle01/Facial/Mouth>Mouth_Normal_Closed
+@gosubModifyCamera 0
+@print ……私にだってね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print なるほどなるほど……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print では……これまでの発言から見ると……<br>怪しいのはアリサさんな気もします。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+# ＠備考◆若干「ああん！？」みたいな感じで
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print ……ああ？<br>いきなり何を根拠に言ってんだ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR17,ArmL1
+@gosubModifyCamera 0
+@print 根拠ですか？<br>では説明しちゃいますね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+
+
+@goto Act02_Chapter03/Act02_Chapter03_Trial10

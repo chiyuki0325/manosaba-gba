@@ -1,0 +1,1111 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act01_Chapter02/Act01_Chapter02_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# 冒頭非表示処理
+@char Warden.1 { Position:,{hiddenCharacterPositionY} time:0 }
+@char Jailer.1 { Position:,{hiddenCharacterPositionY} time:0 }
+# ==============================================================================
+# MARK: 7: 💬 悲鳴について
+# ==============================================================================
+# ＠ト書き▼議論2-7 悲鳴について
+# BGM変更：rAwTell Owk...
+@bgm Bgm_7_1
+
+# Judge2-7-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Serious_Open
+@gosubModifyCamera 0
+@printDebate そもそも、<br>佐伯の悲鳴を<br>思い通りに聞かせた……<br>なんて橘の推理が<br>間違ってるんじゃねーか？
+
+@char Alisa.Default,Angle01/Facial/Eyes>Eyes_Pensive_Open
+@gosubModifyCamera 0
+@printDebate "遠野たちは<br>たまたまそのタイミングで<br>音を聞いた。<br>【<link=\"Objection_01_02_07_01\">偶然</link>】、<br>音声が再生されたタイミングに<br>居合わせただけ……。"
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open01
+@gosubModifyCamera 0
+@printDebate それなら<br>なんの矛盾もなく<br>説明できるぞ。
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@printDebate 本当にそうでしょうか？<br>状況が出来すぎていると<br>思うんですけどねー。
+
+@char Nanoka.Default,ArmR3,ArmL1,Eyes1_Normal_Open2,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@printDebate ……私もそう思うわ。
+
+@char Nanoka.Default,ArmR1,ArmL10,Eyes1_Normal_Open1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@printDebate 現に、<br>私たちは死亡推定時刻を<br>誤認していた……。<br>これは推理の陽動を狙った<br>撹乱よ。
+
+@char Nanoka.Eyes1_Flushed_Open1
+@gosubModifyCamera 0
+@printDebate だから<br>声が再生されたのは<br>必然のタイミングだったと<br>見るべきね。
+
+@char Nanoka.Default,ArmR2,ArmL9,Eyes1_Normal_Open3,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@printDebate "犯人は誰かが来たら<br>自動で反応するよう、<br>【<link=\"Objection_01_02_07_02\">仕掛けをしていた</link>】んじゃ<br>ないかしら？"
+
+@char Sherry.Default,ArmR17,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@printDebate センサーに<br>引っかかったら……<br>みたいな装置ですかね？
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@printDebate そんな大掛かりな仕掛け<br>作れるん？<br>スパイ映画かっての。
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate "むしろ……<br>やっぱ誰か、<br>部屋の中に<br>【<link=\"Objection_01_02_07_03\">隠れてた</link>】んじゃね？"
+
+@char Nanoka.Default,ArmR3,ArmL1,Eyes1_Normal_Open2,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@printDebate ……でも現場には<br>誰も隠れていなかったわ。<br>隠れる場所もない<br>あんな部屋で、<br>見逃すはずがない……。
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@printDebate "なら、<br>【<link=\"Objection_01_02_07_04\">遠くから操作</link>】<br>できるように<br>アプリでも<br>仕込まれていたとかは<br>ないのかしら？"
+
+# ＠備考◆茶化すように
+@char Coco.Default,ArmR6,ArmL6,Angle01/Facial/Eyes>Eyes_Gross_Open,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@printDebate ……もしもーし！<br>お客様の中に<br>プログラマーさんは<br>いますか～！？
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@printDebate この中に<br>んなことできるヤツ<br>いる！？
+
+@char Hanna.Default,ArmR2,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Open
+@gosubModifyCamera 0
+@printDebate "なら超常現象……<br>誰かの【<link=\"Objection_01_02_07_05\">魔法</link>】<br>という可能性は<br>ないんですの？"
+
+@char Hanna.Default,ArmR2,ArmL2
+@gosubModifyCamera 0
+@printDebate 魔法の使い方によっては、<br>そのようなことも<br>できるんじゃ<br>ありませんこと？
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@printDebate そうねぇ。<br>私の魔法で、<br>好きな場所で自由に<br>声を再生できたりするなら<br>ありえるかも<br>しれないわね？
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@printDebate ……実はできるんじゃ<br>ねぇだろうな！？<br>ああ！？
+
+@char Margo.Default,ArmR7,ArmL3,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@printDebate それが本当だとして、<br>正直に言うと思う？
+
+@char Alisa.Default,ArmR4,ArmL7,Angle01/Facial/Eyes>Eyes_Angry_Open03
+@gosubModifyCamera 0
+@printDebate てめぇ……！
+
+@char Meruru.Default,ArmR12_1,ArmL13,Eyes1_Cry_Closed3,Mouth1_Surprised_Open2
+@gosubModifyCamera 0
+@printDebate ケンカは<br>やめてくださぁい……！
+
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed { time:0 }
+@gosubModifyCamera 0
+@Wait 0.2
+
+# ==============================================================================
+# ADVシーン
+# ==============================================================================
+
+@print （【偶然】、【仕掛け】、【隠れていた】、【遠隔操作】、<br>　【魔法】……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open
+
+@print （ミリアちゃんの悲鳴がいったいなんだったのか……。<br>　どうしてハンナちゃんたちが聞くことになったのか……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+
+@print （ひとつ気になっていることはあるけど……。<br>　【あの人】が死体を見つけた時にとった行動って、<br>　もしかして……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge2-7-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_01_02_07_01
+
+@Skip false
+@pauseTrial true
+
+@choice タイミングは偶然だった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge2-7-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_01_02_07_02
+
+@Skip false
+@pauseTrial true
+
+@choice ハンナたちに自動反応した
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge2-7-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_01_02_07_03
+
+@Skip false
+@pauseTrial true
+
+@choice 部屋に犯人が隠れていた
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge2-7-5
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論4
+# ------------------------------------------------------------------------------
+
+# Objection_01_02_07_04
+
+@Skip false
+@pauseTrial true
+
+@choice スマホが遠隔操作された
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge2-7-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論5
+# ------------------------------------------------------------------------------
+
+# Objection_01_02_07_05
+
+@Skip false
+@pauseTrial true
+
+@choice 魔法によって声が聞こえた
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge2-7-6
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# ミス選択肢
+# ==============================================================================
+# MARK: 2-7-3: ❌ タイミングは偶然だった
+
+# Judge2-7-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print アリサちゃんの言う通り、<br>音声が再生されたタイミングは偶然だったのかも……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default,ArmR1_1,ArmL8,Eyes1_Pensive_Open2,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print で、ですが……ミリアさんの悲鳴の音声は、<br>ずっと再生され続けていたわけじゃありませんよね……？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Open
+@gosubModifyCamera 0
+@print そうですわね……<br>わたくしたちが懲罰房の廊下に<br>到着したタイミングで再生されて――。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Default,ArmR3,ArmL1,Eyes1_Normal_Open2,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print ……私が行ったときには、聞こえなかったわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print 計算されたようなタイミングね？<br>偶然で納得はしづらいわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print ヤンキーの意見に乗っかって、<br>うやむやにしようとしてんじゃねーの！？<br>エマっち怪しすぎ！！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （そんなことないのに……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （……これまであったことを思い出してみよう。<br>　何かの形で、【音】を操れるような<br>　方法は何かなかったかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （もう一回、みんなの話し合いを聞いてみよう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge2-7-1
+
+# MARK: 2-7-4: ❌ ハンナたちに自動反応した
+
+# Judge2-7-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ナノカちゃん……！<br>それだ、自動反応する仕掛けだよ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL12,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print 自動ドアとかセンサーライトみたく、<br>近付いたら反応する仕掛けがあったんだよ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default
+@gosubModifyCamera 0
+@print ……いやちょっと待てよ。<br>それならそのあと部屋に入った、<br>黒部にも反応するんじゃねーか？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ……あっ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print そもそも、そんな装置は現場から見つかってませんわー？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print 小型のセンサーだとしても、見つけられると思うけどね？<br>それはどう説明するの、エマちゃん。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print え、ええっと……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print "根拠がない話は……<br>しない方がいいんですよ！ エマさん！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （教えられちゃった……！！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （……じゃあやっぱり、<br>　音声が再生されたのは誰かの仕業……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （……これまであったことを思い出してみよう。<br>　何かの形で、【音】を操れるような<br>　方法は何かなかったかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （もう一回、みんなの話し合いを聞いてみよう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+
+# ダメージなし
+@goto .Judge2-7-1
+
+# MARK: 2-7-5: ❌ 部屋に犯人が隠れていた
+
+# Judge2-7-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ……やっぱりココちゃんが言うように、<br>部屋に犯人が隠れてたんだよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print "んで、お嬢たちが通りがかったタイミングで<br>音声を再生した……！ これでしょ！" { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Default,ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print だとしたら、そのあと犯人は<br>私と鉢合わせることになるわね<br>……ならなかったけれど。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR7,ArmL6,Angle01/Facial/Eyes>Eyes_Comical_Closed,Angle01/Facial/Mouth>Mouth_Comical_Closed
+@gosubModifyCamera 0
+@print うっ！？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print それに、犯人が犯行現場に留まったまま<br>ミリアちゃんの悲鳴を再生するメリットがないわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ううっ！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print ２人とも……適当なこと言い過ぎですわ～～～！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Pensive1,ArmR4,ArmL5
+@gosubModifyCamera 0
+@print （……じゃ、じゃあ犯人は、<br>　どこから音声を再生したんだろう） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （……これまであったことを思い出してみよう。<br>　何かの形で、【音】を操れるような<br>　方法は何かなかったかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （もう一回、みんなの話し合いを聞いてみよう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge2-7-1
+
+# MARK: 2-7-6: ❌ 魔法によって声が聞こえた
+
+# Judge2-7-6
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print そ、そうだよハンナちゃん！<br>魔法で声を聞かせることが出来れば……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,ArmR3,ArmL3
+@gosubModifyCamera 0
+@print つまりマーゴさんが犯人って事ですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print 私がやったとしたなら、<br>その場にいたということになるけれど……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print その声を聞いたあと、<br>現場にはナノカちゃんが<br>入っているのよ？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR6,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 残念だけど、誰も私のことを見ていない……<br>私はそこにいることができなかったの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default,ArmR1_1,ArmL8,Eyes1_Normal_Open1,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print ……他に声を操るような<br>魔法を使う人はいません。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default,ArmR1_1,ArmL8,Eyes1_Pensive_Open2,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print しいて言うなら、<br>魔法がなにかわかっていない<br>エマさんぐらいでしょうか……？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_01,Angle01/Head/Facial/Eyes>Eyes_Uncomfortable_Open01
+@gosubModifyCamera 0
+@print 『たしかに』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print エマさんが犯人ですわ！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ボク！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （流れ弾みたいに疑われちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （……じゃ、じゃあ犯人は、<br>　どこから音声を再生したんだろう） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （……これまであったことを思い出してみよう。<br>　何かの形で、【音】を操れるような<br>　方法は何かなかったかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print （もう一回、みんなの話し合いを聞いてみよう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge2-7-1
+
+# ==============================================================================
+# MARK: 2-7-2: ⭕ スマホが操作された
+# ==============================================================================
+
+# Judge2-7-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+@StopBgm 
+@gosubCutIn Ema
+@Gosub System/System_Subroutine.EndDebate-Last
+
+# BGM変更：Sen-Choose N'o SurC
+@bgm Bgm_38_1_Loop
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print ……スマホが遠隔操作されたんだと思う。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default
+@gosubModifyCamera 0
+@print "はあ？ どうやって？<br>エマっちってそういうの得意なん？" { author:Coco speed:1 waitInput:true Wait:true }
+
+# SE・ネガティブ音
+@sfx Sfx_Common_7
+
+@char Ema.Default,ArmR3,ArmL3,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print そ、そんな難しい事じゃなくて……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL3,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ……このスマホって、市販のものと<br>同じような操作方法だよね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print そうね。おかげで違和感なく使えるわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print ……これ、相手のＩＤがわかっていれば<br>スマホ同士でメッセージのやりとりや<br>通話もできるんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print あら、そうなのね。<br>知らなかったわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print でも外部との連絡が取れないのなら<br>あまり意味はなさそうだけど。 { author:Margo speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆気付く
+
+@char Nanoka.Default,ArmR2,ArmL1,Eyes1_Confused_Open1,Mouth1_Surprised_Open1,Sweat1_1
+@gosubModifyCamera 0
+@print ……通話……！ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print うん。連絡が取れるなら<br>メッセージでもなんでもいいんだけどさ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL11,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print ……スマホに【着信音】を設定していれば、<br>狙ったタイミングで遠隔操作する事は<br>難しくないはずだよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Coco.Default,ArmR6,ArmL2,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print ……たしかに！<br>電話かけるだけで好きなタイミングで<br>声を流せるってことじゃん！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@print うん。<br>それなら難しいプログラムとか組まなくても<br>ボクたちにだってできるよね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Nanoka.Default,ArmR3,ArmL1,Eyes1_Flushed_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print ……ちょっと待って。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# @char Nanoka.Default
+@gosubModifyCamera 0
+@print 仮に、佐伯ミリアに電話をかけて悲鳴を再生したのなら……<br>スマホにその記録が残っているんじゃないかしら。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL3
+@gosubModifyCamera 0
+@print 【着信履歴】ですね！<br>たしかに２０時あたりの履歴を見れば<br>誰が鳴らしたのかわかるかもしれません！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print そうでなくても、<br>設定は確認する必要がありそうね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Middle
+@gosubModifyCamera 0
+@print ミリアちゃんの声が着信音に設定されていれば、<br>今の推理が正しいかの裏付けになるのだし。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open
+@gosubModifyCamera 0
+@print そ、それが……<br>現場から見つかったスマホに<br>データは残っていませんでしたわ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+# SE・ネガティブ音
+@sfx Sfx_Common_7
+
+@char Hanna.Default
+@gosubModifyCamera 0
+@print 着信の履歴も、内部データも……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Alisa.Surprised1
+@gosubModifyCamera 0
+@print なんだそりゃ？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print データがないってことは、<br>じゃあ結局エマっちの推理は<br>間違いって事？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Middle
+@gosubModifyCamera 0
+@print いや……そんなはずないよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL11,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Middle
+@gosubModifyCamera 0
+@print 実はボク、事件の前にミリアちゃんに<br>電話をかけちゃったんだ。<br>間違えてなんだけど……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# ==============================================================================
+# 回想シーン（流用）
+# ==============================================================================
+
+@bgm Bgm_38_1_Loop { Volume:0.2 }
+@Wait 0.2
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+@back 1_1 { time:0 }
+@char Ema.Surprised1 { time:0 }
+@hideStageScreen 1
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+# ボイス加工：電話
+
+@print 『――ああ、桜羽エマさんですか』 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print "ゴクチョー！？ え、なんで！？" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 『なんでって……<br>　いえね、ちょうど懲罰房の囚人の様子を見に来まして』 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 『そしたらスマホの着信があったので、<br>　代わりに取ったまでですよ』 { author:Warden speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+@hide MainBackground-Flashback,Ema-Flashback { time:0 }
+@char Hanna.Surprised1,ArmR3,ArmL1,Angle01/Head01/Facial01/Mouth01>Mouth01_Surprised_Open { time:0 }
+@gosubModifyCamera 0
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+@bgm Bgm_38_1_Loop
+
+# ==============================================================================
+# 回想ここまで
+# ==============================================================================
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@print えっ！？<br>でも確認しましたが、<br>履歴には何も……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+# @char Hanna.Default
+@gosubModifyCamera 0
+@print 【エマさんとの通話履歴】も存在していませんでしたわ！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_38_1_Loop
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print あの時、ゴクチョーがミリアちゃんのスマホを操作して<br>出ていたはずなんだ。<br>だから履歴は残っているはず……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ……きっと誰かが後からスマホのデータを消したんだと思う。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Middle
+@gosubModifyCamera 0
+@print そうじゃないと、説明がつかないよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL1,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print ……つか、アイツめちゃくちゃスマホデコってたじゃん？<br>いつもいじってたし、【データが全くない】なんて<br>不自然過ぎるっしょ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Default,ArmR3,ArmL1,Eyes1_Normal_Open2,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print たしかにそうね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Default,ArmR1,ArmL10,Eyes1_Normal_Open1,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@print 仮に誰かが故意にデータを消していたのではないにしろ、<br>【データが消えるような何か】があったはずよ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print ……犯人が自分が仕込んだ仕掛けを<br>見破られたくなくて消したってのが<br>一番しっくりくるけどな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print そんなこといったって<br>いったいそんなこと誰ができるんですの！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print 部屋に入ったのってナノカだけなんだろ～？<br>ならもう犯人はあいつでいいって！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Default,ArmR3,ArmL1,Eyes1_Normal_Open2,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print ……たしかに、遠野ハンナたちが悲鳴を録音してから<br>私が鍵を閉めるまで私以外には誰も入っていない……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# ＠備考◆悔しげ
+
+@char Nanoka.Sweat1_1,ArmR3,ArmL1,Eyes1_Flushed_Open1,Mouth1_Angry_Closed2
+@gosubModifyCamera 0
+@print 客観的に見て、私以外にデータを消した人物は<br>いないということね……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print でも当然、私は消していないわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （ナノカちゃんが犯人の可能性は消えない……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Middle
+@gosubModifyCamera 0
+@print （けどナノカちゃんが今言ったこと……<br>　本当に正しいのかな？） { author:Ema speed:1 waitInput:true Wait:true }
+
+
+# Judge2-7-8
+
+# 選択肢
+@choice データはナノカにしか消せない
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge2-7-10
+
+@choice ナノカ以外にも消せる
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge2-7-9
+
+@StopForChoice 
+
+# ==============================================================================
+# ミス選択肢
+# ==============================================================================
+# MARK: 2-7-10: ❌ データはナノカにしか消せない
+
+# Judge2-7-10
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open
+@gosubModifyCamera 0
+@print ……そう、だね。<br>スマホのデータは……<br>ナノカちゃんにしか消せない、と思う。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Eyes1_Flushed_Open1,ArmL5,Angle01/ArmR-
+@gosubModifyCamera 0
+@print 桜羽エマ……！ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print だよね～。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_01,Angle01/Head/Facial/Eyes>Eyes_Normal_Open02
+@gosubModifyCamera 0
+@print 『妥当』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 【おっさんのスマホは現場から見つかった】わけで、<br>【悲鳴の再生後、スマホに触れる機会があったのはナノカだけ】<br>もう確定じゃん！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Middle
+@gosubModifyCamera 0
+@print （……あれ？<br>　何か違和感が――） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR1,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Open
+@gosubModifyCamera 0
+@print ……ナノカさん、どうして……！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Eyes1_Angry_Open1,Mouth1_Angry_Closed1,Sweat1_1
+@gosubModifyCamera 0
+@print 違う……！<br>私は殺してない……！ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Middle
+@gosubModifyCamera 0
+@print （データを消すにはスマホに触れる必要があったはず……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Middle
+@gosubModifyCamera 0
+@print （……スマホに触れた人……本当に誰もいなかったっけ……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL3,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print みんな、ちょっと待って……！<br>データを消せた人は……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# ダメージなし
+
+@goto .Judge2-7-8
+
+# Judge2-7-9
+
+# ==============================================================================
+# MARK: 2-7-9: ⭕ ナノカ以外にも消せる
+# ==============================================================================
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print いや……ひとりだけいるはずだよ。<br>ナノカちゃん以外に、<br>データを消せた人物が……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （ボクの記憶違いでなければ、あのとき……） { author:Ema speed:1 waitInput:true Wait:true }
+
+# Judge2-7-11
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print その人は……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@evidence Profile
+
+@if "chosenEvidenceId==\"AnAn\""
+	@goto .Judge2-7-12
+
+@if "chosenEvidenceId==\"Ema\"||chosenEvidenceId==\"Hanna\"||chosenEvidenceId==\"Sherry\"||chosenEvidenceId==\"Coco\"||chosenEvidenceId==\"Meruru\""
+	@goto .Judge2-7-13
+
+@if "chosenEvidenceId==\"Miria\""
+	@goto .Judge2-7-14
+
+@goto .Judge2-7-16
+
+# ==============================================================================
+# ミス選択肢
+# ==============================================================================
+# MARK: 2-7-13: ❌ 桜羽エマor遠野ハンナor橘シェリーor沢渡ココor氷上メルル
+
+# Judge2-7-13
+
+@char Ema.Default,ArmR3,ArmL13,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print この人だ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR2,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Open
+@gosubModifyCamera 0
+@print 何を言ってるんですか、エマさん！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR2,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Surprised_Open
+@gosubModifyCamera 0
+@print わたくしたちが現場でスマホを手にした時点で、<br>すでにデータは消えていたじゃありませんか！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ……という事実をはっきりさせておきたかったんだ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL7,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print 早く本題に入れ！！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （怒られちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Surprised1,Eyes1_Pensive_Open1,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print エマさん……。<br>ほ、本当にいるんですか……？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default,Eyes1_Pensive_Open1,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print 【悲鳴が再生されてから、<br>エマさんたちが現場でスマホを手にするまでの間で<br>スマホに触ってデータを消せた人物】が……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@goto .Judge2-7-11
+
+# MARK: 2-7-14: ❌ 佐伯ミリア
+
+# Judge2-7-14
+
+@char Ema.Default,ArmR3,ArmL13,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print それは、スマホの持ち主である……<br>ミリアちゃんしかいないよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Default,ArmL5,Angle01/ArmR-,Eyes1_Flushed_Open1,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print ……佐伯ミリアは拘束されていたのよ。<br>その状態でスマホには触れないでしょう。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print そ、そっか……だよね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print "なに、エマっち大丈夫？ 疲れてる？ 寝とく？" { author:Coco speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （心配されちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+@char Meruru.Surprised1,Eyes1_Pensive_Open1,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print エマさん……。<br>ほ、本当にいるんですか……？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+@char Meruru.Default,Eyes1_Pensive_Open1,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print 【悲鳴が再生されてから、<br>エマさんたちが現場でスマホを手にするまでの間で<br>スマホに触ってデータを消せた人物】が……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@goto .Judge2-7-11
+
+# MARK: 2-7-16: ❌ 汎用選択ミス
+
+# Judge2-7-16
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print エマさん、よく考えてみてください！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print その人は……<br>現場でスマホに触れるタイミングなどありませんよ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ＠備考◆笑顔で凄む
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print 人を疑う時は慎重にしないと……♡ { author:Margo speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （すごまれちゃった……） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Meruru.Surprised1,Eyes1_Pensive_Open1,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print エマさん……。<br>ほ、本当にいるんですか……？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Meruru.Surprised1,Eyes1_Pensive_Open1,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print 【悲鳴が再生されてから、<br>エマさんたちが現場でスマホを手にするまでの間で<br>スマホに触ってデータを消せた人物】が……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@goto .Judge2-7-11
+
+# Judge2-7-12
+
+# ==============================================================================
+# MARK: 2-7-12: ⭕ 夏目アンアン
+# ==============================================================================
+
+@char Ema.Determined2,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print ……アンアンちゃん、キミだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_Common_1
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR5,ArmL1,Angle01/Head/Facial/Eyes>Eyes_Surprised_Open,Angle01/Head/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print …………！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print "はあ？ なんで突然？" { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Open
+@gosubModifyCamera 0
+@print ……ボクたちが死体を発見したときのことなんだけど。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print あのとき部屋に一緒に入ったのは、<br>ボクとハンナちゃん、それにシェリーちゃんと<br>……アンアンちゃんの４人だったんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print そして部屋の中を調べていたら……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# ==============================================================================
+# 回想シーン（流用）
+# ==============================================================================
+
+@bgm Bgm_38_1_Loop { Volume:0.2 }
+@Wait 0.2
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+
+@back 3_2 { time:0 }
+@char Ema.Fearful1,ArmR13,ArmL16 { time:0 }
+@char AnAn.Pensive1,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL5 { time:0 }
+@hideStageScreen 1
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+
+@print ミリアちゃん……なんで……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ……ミリアのスマホが落ちていた。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+
+@hide MainBackground-Flashback,Ema-Flashback,AnAn-Flashback { time:0 }
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+
+@bgm Bgm_38_1_Loop
+
+# ==============================================================================
+# 回想ここまで
+# ==============================================================================
+
+@char Ema.Default,ArmR8,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ミリアちゃんのスマホを見つけたアンアンちゃんが、<br>ボクにそれを手渡してくれたんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# 無表情睨み
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Surprised_Open,Angle01/Head/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print …………。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print その時、中を調べたらデータは消えていた。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Determined2,ArmR7,ArmL7,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@print つまり、ナノカちゃんを除いてデータを消せるのは<br>発見したボクたちの中でアンアンちゃんだけなんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Surprised_Open,Angle01/Head/Facial/Mouth>Mouth_Angry_Closed01
+@gosubModifyCamera 0
+@print …………。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Normal_Open02,Angle01/Head/Facial/Mouth>Mouth_Uncomfortable_Open
+@gosubModifyCamera 0
+@print ……わずらわしい話だ。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+# ＠備考◆息を呑む
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Normal_Open02,Angle01/Head/Facial/Mouth>Mouth_Uncomfortable_Open
+@gosubModifyCamera 0
+@print やはり、ナノカが全てを仕組んだのだろう。<br>わがはいは関与していない。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Nanoka.Default,ArmL5,Angle01/ArmR-,Eyes1_Normal_Open2,Mouth1_Surprised_Open1
+@gosubModifyCamera 0
+@print ……あなたがデータを消せた事は否定しないのね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Normal_Open02,Angle01/Head/Facial/Mouth>Mouth_Uncomfortable_Open
+@gosubModifyCamera 0
+@print 否定する意味がない。<br>ナノカの方が怪しいのは<br>誰の目にも明らかであるからな。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL3,Angle01/Head/Facial/Eyes>Eyes_Normal_Open02,Angle01/Head/Facial/Mouth>Mouth_Angry_Closed01
+@gosubModifyCamera 0
+@print 証拠の偽証、明確な動機、アリバイ……<br>全てがナノカが犯人であると示している。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL11,Angle01/Head/Facial/Eyes>Eyes_Normal_Open02,Angle01/Head/Facial/Mouth>Mouth_Angry_Closed01
+@gosubModifyCamera 0
+@print わがはいより、ナノカのことを疑うべきではないか？ { author:AnAn speed:1 waitInput:true Wait:true }
+
+# SE・話の転換音
+@sfx Sfx_Common_5
+
+@char Alisa.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print んだてめぇ……<br>突然べらべら喋りだしやがって……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+# 魔法の色は仮
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL11,Angle01/Head/Facial/Eyes>Eyes_Normal_Open02,Angle01/Head/Facial/Mouth>Mouth_Angry_Closed01
+@gosubModifyCamera 0
+@print ……事件に関係ない発言は、<color=#9c8eff><b>【慎め】</b></color>よ。<br>わがはいが喋るという事は、そういうことだ。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+# SE・ガーン
+@sfx Sfx_Common_6
+
+@char Alisa.Default,ArmR5,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ぐっ……！？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR2,ArmL1,Angle01/Head/Facial/Eyes>Eyes_Neutral_Open,Angle01/Head/Facial/Mouth>Mouth_Uncomfortable_Open
+@gosubModifyCamera 0
+@print ……では、議論を続けるとしようか。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@goto Act01_Chapter02/Act01_Chapter02_Trial08

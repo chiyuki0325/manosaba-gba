@@ -1,0 +1,777 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter05/Act02_Chapter05_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# クリーチャー化初期化
+@hide Hiro { time:0 }
+@char CreatureHiro.2 { Position:{hiroPositionX},{characterPositionY},{hiroPositionZ} Rotation:,{hiroRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Meruru { time:0 }
+@char CreatureMeruru.3-5 { Position:{meruruPositionX},{characterPositionY},{meruruPositionZ} Rotation:,{meruruRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Leia { time:0 }
+@char CreatureLeia.0-8 { Position:{leiaPositionX},{characterPositionY},{leiaPositionZ} Rotation:,{leiaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Noah { time:0 }
+@char CreatureNoah.0-3 { Position:{noahPositionX},{characterPositionY},{noahPositionZ} Rotation:,{noahRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Margo { time:0 }
+@char CreatureMargo.0-4 { Position:{margoPositionX},{characterPositionY},{margoPositionZ} Rotation:,{margoRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Nanoka { time:0 }
+@char CreatureNanoka.0-1 { Position:{nanokaPositionX},{characterPositionY},{nanokaPositionZ} Rotation:,{nanokaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Coco { time:0 }
+@char CreatureCoco.2-3 { Position:{cocoPositionX},{characterPositionY},{cocoPositionZ} Rotation:,{cocoRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide AnAn { time:0 }
+@char CreatureAnAn.0-3 { Position:{ananPositionX},{characterPositionY},{ananPositionZ} Rotation:,{ananRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Miria { time:0 }
+
+@hide Alisa { time:0 }
+@char CreatureAlisa.0-7 { Position:{alisaPositionX},{characterPositionY},{alisaPositionZ} Rotation:,{alisaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+# ==============================================================================
+# MARK: 10-21: 💬 【紫藤アリサ】
+# ==============================================================================
+# ＠ト書き▼議論10-21紫藤アリサ
+@set Judge10_21_3Flag=false
+# 議論開始カットイン
+# BGM変更：Guil-me N'o sinruits-Vocal無-
+@bgm Bgm_8_1
+# ボス演出
+@ResetText 
+@char CreatureHiro.2 { time:0 }
+@stageCamera 1 { Rotation:0,{ (8 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+
+@stageCamera 1 { Rotation:0,{ (8.1 / courtStandCount * 360) },0 time:1 }
+@showStageScreen 1
+@Wait 1.5
+
+@ResetText 
+@char CreatureAlisa.2-8 { time:0 }
+@stageCamera 0 { Rotation:0,{ (4 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+
+@stageCamera 0 { Rotation:0,{ (3.9 / courtStandCount * 360) },0 time:1 }
+@hideStageScreen 1
+@Wait 1.5
+
+@courtFire true
+
+# Judge10-21-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char CreatureAlisa.2-8
+@gosubModifyCamera 0
+@printDebate うっせぇな！<br>死ね死ね死ね！
+
+@char CreatureAlisa.2-8
+@gosubModifyCamera 0
+@printDebate ウチらは存在することが<br>罪なんだ……。
+
+@char CreatureAlisa.0-7
+@gosubModifyCamera 0
+@printDebate "お前らだって<br>人に言えないことの<br>１つや２つ<br><link=\"Objection_02_05_21_01\">やってきた</link>んだろ……！？"
+
+# 選択肢は10-21-3通過済に選択可能に
+
+@if Judge10_21_3Flag=false
+	@goto .Judge10-21-1skip
+
+@char CreatureAlisa.0-7
+@gosubModifyCamera 0
+@printDebate "周りに知られたら<br>ドン引きされて、<br>ぜってーに<br><link=\"Objection_02_05_21_02\">許されねぇ</link>ぐらいの<br>ことをよ！"
+
+# Judge10-21-1skip
+
+@char CreatureAlisa.0-4
+@gosubModifyCamera 0
+@printDebate "だったらここで<br>死んだって<link=\"Objection_02_05_21_03\">いい</link>だろ……。"
+
+@char CreatureAlisa.0-4
+@gosubModifyCamera 0
+@printDebate "文句があんなら<br><link=\"Objection_02_05_21_04\">かかってこい</link>よ！"
+
+@char CreatureAlisa.1-4
+@gosubModifyCamera 0
+@printDebate 骨すら残さねーぐらい、<br>ウチが燃やし尽くしてやる！
+
+@char CreatureAlisa.1-3
+@gosubModifyCamera 0
+@printDebate "安心しな……<br>ウチだっててめーらと同じ<br><link=\"Objection_02_05_21_05\">罪人</link>の１人だ。"
+
+@char CreatureAlisa.1-3
+@gosubModifyCamera 0
+@printDebate おめえらの後は、<br>すぐに追いかけてやるよ！
+
+
+# ==============================================================================
+# 10-21議論後独白
+# ==============================================================================
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char CreatureHiro.1
+@gosubModifyCamera 0
+@Wait 0.2
+
+@print （私たちを巻き込んでの無理心中か……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@print （悪いがそれに付き合うことはできない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@print （失うわけにはいかないんだ。<br>　私たちの命も……そして、君の命も！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-21-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_21_01
+
+@Skip false
+@pauseTrial true
+
+@choice 誰も罪を犯していない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-21-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_21_02
+
+@Skip false
+@pauseTrial true
+
+# MARK: 10-21-3: ❌ 通過
+@choice 私は許す
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-21-2
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_21_03
+
+@Skip false
+@pauseTrial true
+
+@choice いいわけない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-21-5
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論4
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_21_04
+
+@Skip false
+@pauseTrial true
+
+@choice 力づくで止めてやる
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-21-6
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論5
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_21_05
+
+@Skip false
+@pauseTrial true
+
+@choice 【幻視】
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-21-3
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 10-21-3: ❌ 魔法・幻視
+# ==============================================================================
+
+# Judge10-21-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print "……ナノカ！ アリサについて教えてくれ！" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureNanoka.1-1
+@gosubModifyCamera 0
+@print 彼女の罪……それは放火ね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char CreatureNanoka.1-1
+@gosubModifyCamera 0
+@print "偶然が重なって、<br>彼女の悪戯が<ruby=\"おおごと\">大事</ruby>になってしまった……。" { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char CreatureNanoka.2-1
+@gosubModifyCamera 0
+@print でも彼女が罰せられることはなかったわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.15
+@gosubModifyCamera 0
+@print ……どうしてそんなことが。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureNanoka.2-1
+@gosubModifyCamera 0
+@print ……親に事実を隠蔽されたのよ。<br>おそらく世間体が悪かったのでしょうね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char CreatureNanoka.2-6
+@gosubModifyCamera 0
+@print だから――。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆頭痛
+@char CreatureNanoka.2-6
+@gosubModifyCamera 0
+@print ――うくっ！ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# ＠備考◆苦しげ
+@char CreatureNanoka.2-7
+@gosubModifyCamera 0
+@print ……ごめんなさい。<br>このぐらいで……大丈夫かしら……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char CreatureNanoka.2-7
+@gosubModifyCamera 0
+@print 連続で使うには……<br>この姿だと、少し負担が大きいみたい……。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.25
+@gosubModifyCamera 0
+@print ……すまない。<br>休んでいてくれ、ナノカ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@if Judge10_21_3Flag=true
+	@goto .Judge10-21-1
+
+@update Nanoka
+@update Alisa
+@toast "魔女図鑑 更新…"
+@Wait i1.2
+@toast 議論発展…
+@set Judge10_21_3Flag=true
+
+@goto .Judge10-21-1
+
+# ==============================================================================
+# MARK: 10-21: ❌ ミス選択肢
+# ==============================================================================
+
+# MARK: 10-21-4: ❌ 偽証・誰も罪を犯していない
+
+# Judge10-21-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.7
+@gosubModifyCamera 0
+@print いいや！<br>誰も罪を犯してなんていない！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.7
+@gosubModifyCamera 0
+@print みんな潔白だ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureAlisa.0-7
+@gosubModifyCamera 0
+@print すぐバレる嘘つくんじゃねぇ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char CreatureAlisa.0-7
+@gosubModifyCamera 0
+@print この中にはウチみたく<br>過去に罪を犯したやつらもいる……！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char CreatureAlisa.0-7
+@gosubModifyCamera 0
+@print 遅かれ早かれ<br>全員罪を犯すんだよ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char CreatureHiro.14
+@gosubModifyCamera 0
+@print （嘘で言いくるめられるような相手じゃないか……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.13
+@gosubModifyCamera 0
+@print （……アリサも、過去に犯した罪がある） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.13
+@gosubModifyCamera 0
+@print （罪に対する想いが、<br>　暴走の一因であることは間違いない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.13
+@gosubModifyCamera 0
+@print （その過去に、<br>　何か心残りがあったとしたら――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge10-21-1
+
+# MARK: 10-21-5: ❌ 反論・いいわけない
+
+# Judge10-21-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print 違うぞ、アリサ……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print 死んでいい人間なんていない！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureAlisa.0-7
+@gosubModifyCamera 0
+@print キレイごと言ってんじゃねぇ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char CreatureAlisa.0-7
+@gosubModifyCamera 0
+@print じゃあ生きる価値もないほど<br>償い切れねぇ罪を犯したヤツはどうすんだよ……！？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char CreatureAlisa.1-7
+@gosubModifyCamera 0
+@print "死ぬべきだろ……！？ なあ！？" { author:Alisa speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char CreatureHiro.14
+@gosubModifyCamera 0
+@print （アリサの主張を否定したところで、<br>　反発されるだけか……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char CreatureHiro.13
+@gosubModifyCamera 0
+@print （……アリサも、過去に犯した罪がある） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.13
+@gosubModifyCamera 0
+@print （罪に対する想いが、<br>　暴走の一因であることは間違いない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.13
+@gosubModifyCamera 0
+@print （その過去に、<br>　何か心残りがあったとしたら――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-21-1
+
+# MARK: 10-21-6: ❌ 同意・力づくで止めてやる
+
+# Judge10-21-6
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.14
+@gosubModifyCamera 0
+@print （そうだな……こうなれば、力づくで止めるしかない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.14
+@gosubModifyCamera 0
+@print （頭数はこちらのほうが上だ。<br>　一斉にかかればアリサだって――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.13
+@gosubModifyCamera 0
+@print （……いや） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.13
+@gosubModifyCamera 0
+@print （暴力に訴えれば犠牲が出る……<br>　それはダメだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （……誰ひとり欠けることなく<br>　この牢屋敷を脱出するんだ……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （だから、今は他の方法を考えよう……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char CreatureHiro.13
+@gosubModifyCamera 0
+@print （……アリサも、過去に犯した罪がある） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.13
+@gosubModifyCamera 0
+@print （罪に対する想いが、<br>　暴走の一因であることは間違いない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.13
+@gosubModifyCamera 0
+@print （その過去に、<br>　何か心残りがあったとしたら――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-21-1
+
+# ==============================================================================
+# MARK: 10-21-2: ⭕ 私は許す
+# ==============================================================================
+
+# Judge10-21-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@gosubCutIn CreatureHiro
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print 私は……許すよ、アリサ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char CreatureAlisa.3-5
+@gosubModifyCamera 0
+@print ああ！？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print 君が過去にしたことも、全て。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureAlisa.3-5
+@gosubModifyCamera 0
+@print おめえに……何がわかるってんだ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print わからない。<br>……それでも、許すんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureAlisa.3-6
+@gosubModifyCamera 0
+@print 人が死んだんだ……！<br>ウチは……許されちゃいけないんだよ！！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+# ＠備考◆有無を言わさぬような圧
+
+@char CreatureHiro.18
+@gosubModifyCamera 0
+@print ――それでも！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char CreatureAlisa.3-6
+@gosubModifyCamera 0
+@print ……っ……！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print ……誰かが君を、許さなくちゃいけないんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print 人を殺し、周りを殺し……<br>そして最後には自分も殺すか？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print まるで泣きわめく赤ん坊を見ているかのようだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureAlisa.2-4
+@gosubModifyCamera 0
+@print なっ……！？<br>んだとおめえ……！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print 君がやっていることは、<br>そんな子どもの癇癪と<br>変わらないと言っているんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print ……君の行動で人死にが出たと言ったな。<br>だが君が後ろ向きに自罰を続ければ、<br>被害者が生き返るのか？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆バツが悪そうに
+
+@char CreatureAlisa.2-5
+@gosubModifyCamera 0
+@print ……それは……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print 何があったかは知らない。<br>君の過去を知る気もない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.19
+@gosubModifyCamera 0
+@print だが君がしている自傷や自罰は、償いではない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print ただの自己満足で、君が楽になるための現実逃避だ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char CreatureAlisa.2-6
+@gosubModifyCamera 0
+@print ぐっ……！？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print ……だから、私は君を許すんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print 無関係だからこそ、君を受け入れる。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print 友人として君を支えよう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print だから……そうやって罪から逃げるんじゃない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆泣きかけ
+
+@char CreatureAlisa.3-5
+@gosubModifyCamera 0
+@print ウ……ウチ、は……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print ……生きるんだよ、アリサ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print そして悔いて、罪に向き合い続けるんだ。<br>それが君の――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print ――私たちの、贖罪だ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆泣き
+
+@char CreatureAlisa.3-6
+@gosubModifyCamera 0
+@print う……う、う……！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char CreatureAlisa.3-9
+@gosubModifyCamera 0
+@print ぐ、うぅ……う……！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char CreatureAlisa.3-9
+@gosubModifyCamera 0
+@print そう……だ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char CreatureAlisa.3-9
+@gosubModifyCamera 0
+@print ウチ……は……怖かった……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char CreatureAlisa.3-9
+@gosubModifyCamera 0
+@print 誰も責めないのが……<br>誰も……叱ってくれないのが……！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char CreatureAlisa.3-10
+@gosubModifyCamera 0
+@print ウチ……は……！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char CreatureAlisa.3-10
+@gosubModifyCamera 0
+@print ごめんなさい……<br>ごめん……なさい……！！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# 炎エフェクト終了
+@StopBgm Ambi_102_1
+@ResetText 
+@back SolidColor { time:0.4 }
+
+@courtFire false
+@back Transparent { time:0.8 }
+
+@Wait 2
+
+@update Alisa
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print （……炎の勢いは収まった） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print （アリサの戦意は喪失したか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print （危ないところだったが、なんとかなっ――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 振動／轟音
+@bgm Ambi_7_1
+
+@shakeStageCamera 0 { Force:0.4,-0.2,0 Frequency:50 time:3 }
+@Wait 0.5
+
+@char CreatureCoco.2-10
+@gosubModifyCamera 0
+@Wait 0.5
+
+@shakeStageCamera 0 { Force:0.4,-0.2,0 Frequency:50 time:1 }
+@Wait 0.5
+
+@print なにこれっ！？ { author:Coco speed:1 waitInput:true Wait:true }
+
+# ＠備考◆揺れ
+
+@char CreatureHiro.15
+@gosubModifyCamera 0
+
+@print ……今度はなんだっ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# BGM変更：EmA-虚-
+@bgm Bgm_12_1_Loop
+
+@back 14_1 { time:0 }
+@char Warden.11 { time:0 }
+
+@print いやーこれは大変ですねぇ……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.14
+@gosubModifyCamera 0
+@hide MainBackground-Flashback,Warden-Flashback { time:0 }
+@print 全然大変そうじゃない前置きはいい！<br>何があったか簡潔に教えろ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@back 14_1 { time:0 }
+@char Warden.11 { time:0 }
+@print それがこの島、浮いちゃってます。<br>ザパーって海を離れて、空へ向かってふわふわと。 { author:Warden speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char CreatureHiro.15
+@gosubModifyCamera 0
+@hide MainBackground-Flashback,Warden-Flashback { time:0 }
+@print 空へ……【浮く】！？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.15
+@gosubModifyCamera 0
+@print ……まさか！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 魔女化しているハンナ
+@hide Hanna { time:0 }
+@char CreatureHanna.2_10 { Position:{hannaPositionX},{characterPositionY},{hannaPositionZ} Rotation:,{hannaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@StopBgm Bgm_12_1_Loop { fade:3 }
+# @備考◆錯乱
+
+@char CreatureHanna.2_4
+@gosubModifyCamera 0
+@Wait 0.5
+@shakeStageCamera 0 { Force:0.5,-0.5,0 time:0.5 }
+@Wait 0.5
+
+@print わたくしが……わたくしが……わたくしが……！<br>そんなの嘘……嘘……！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char CreatureHanna.2_5
+@gosubModifyCamera 0
+@Wait 0.5
+@shakeStageCamera 0 { Force:0.5,-0.5,0 time:0.5 }
+@Wait 0.5
+
+@print 嘘よ……ねぇ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char CreatureHanna.1_5
+@gosubModifyCamera 0
+@Wait 0.5
+@shakeStageCamera 0 { Force:0.5.-0.5,0 time:0.5 }
+@Wait 0.5
+
+@print ……嘘でしょう！！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@update Hanna
+
+
+@goto Act02_Chapter05/Act02_Chapter05_Trial22

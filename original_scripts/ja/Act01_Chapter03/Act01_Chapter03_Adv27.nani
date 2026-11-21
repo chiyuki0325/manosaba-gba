@@ -1,0 +1,785 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-3-27
+
+# ========================================
+# ●シーン１‐3‐27
+# ========================================
+
+@ShowUI ControlPanel
+@back 13_1 { time:0 }
+@Wait 0.9
+
+@bgm Bgm_42_1
+@back Transparent { time:1.8 }
+@WaitForNextFrame 
+
+@animate MainBackground
+@Wait 1.5
+
+@print 橘シェリーが、遠野ハンナを殺した犯人だった。 { speed:1 waitInput:true Wait:true }
+
+@print 受け止めたくない現実だったが、<br>それがエマの突き止めた事実だった。 { speed:1 waitInput:true Wait:true }
+
+@print 当然、少女たちによる魔女を選出する投票は、<br>シェリーが選ばれることとなった。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@back 14_1
+@char Sherry.Normal1
+@Wait 0.3
+
+@print 完全犯罪を目指したのですが、<br>犯人だとバレてしまって残念です。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print でも、私が殺したって特定できるのは、<br>エマさんだけだと思っていました。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print これまでの裁判でも大活躍でしたもんね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1
+
+@print さすがです、エマさん。<br>完敗です！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print シェリーは笑顔で、<br>どこか清々しく言い放った。 { speed:1 waitInput:true Wait:true }
+
+@print "エマは信じられないといった風に、<br>涙をいっぱいにためた瞳でシェリーを<ruby=\"にら\">睨</ruby>んだ。" { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Ema.Angry1,ArmR3,ArmL7
+@mask MainBackground-Front,Ema-Front
+@animate MainBackground-Front
+@animate Ema-Front
+@Wait 0.4
+
+@print ゲームでもやってるつもりだったの！？<br>シェリーちゃん、人を殺したんだよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print キミはハンナちゃんを――<br>友だちを殺したんだよ！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマが感情的に喚いても、<br>シェリーは肩をすくめるだけだった。 { speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Ema-Front
+@hide Ema-Front
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Alisa.Angry1,Option-ArmL-Off
+@mask MainBackground-Front,Alisa-Front
+@animate MainBackground-Front
+@animate Alisa-Front
+@Wait 0.4
+
+@print おめえに心はねえのかよ！？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Alisa-Front
+@hide Alisa-Front
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Coco.Pensive1
+@mask MainBackground-Front,Coco-Front
+@animate MainBackground-Front
+@animate Coco-Front
+@Wait 0.4
+
+@print 無駄だって。<br>こいつ、殺したことに良心の呵責なんて感じちゃいない。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 心のないバケモンなんだって。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Coco-Front
+@hide Coco-Front
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Margo.Pensive1
+@mask MainBackground-Front,Margo-Front
+@animate MainBackground-Front
+@animate Margo-Front
+@Wait 0.4
+
+@print そうね……人の好いフリをして、<br>まるでゲームを愉しむかのように計画的に殺人をしてみせた。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 私たちの理解の範疇を超えているわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Margo-Front
+@hide Margo-Front
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Meruru.Cry
+@mask MainBackground-Front,Meruru-Front
+@animate MainBackground-Front
+@animate Meruru-Front
+@Wait 0.4
+
+@print みなさん……もう、やめてください……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print シェリーを見る少女らの目は冷たく、<br>メルルが耳を塞ぎ、涙を流して訴える。 { speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Meruru-Front
+@hide Meruru-Front
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Coco.Pensive1
+@mask MainBackground-Front,Coco-Front
+@animate MainBackground-Front
+@animate Coco-Front
+@Wait 0.4
+
+@print んなこと言って、<br>メルルもシェリーに投票したんだろ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Coco-Front
+@hide Coco-Front
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Meruru.Cry
+@mask MainBackground-Front,Meruru-Front
+@animate MainBackground-Front
+@animate Meruru-Front
+@Wait 0.4
+
+@print それ、は……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Meruru-Front
+@hide Meruru-Front
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Coco.Angry1,ArmL3
+@mask MainBackground-Front,Coco-Front
+@animate MainBackground-Front
+@animate Coco-Front
+@Wait 0.4
+
+@print 犯人だもんね。投票するしかないもんね。<br>……この偽善者が。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Coco-Front
+@hide Coco-Front
+@despawn MaskingRectangle
+
+@print ココが吐き捨て、<br>メルルは言い返せずにうなだれた。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@back SolidColor { time:0.9 }
+@hide Stills-Forefront,Stills-Front,Stills-Middle
+@Wait 1.2
+@hideChars 
+
+@print "メルルのことを<ruby=\"かば\">庇</ruby>うだけの余裕を、<br>エマは持てない様子だった。" { speed:1 waitInput:true Wait:true }
+
+@print 大切だと思っていた友だちを<br>処刑台送りにするのは、エマもまた同じだ。 { speed:1 waitInput:true Wait:true }
+
+@print （友だち――ううん、そんなの全部幻想だったんだ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@back 16_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@blur MainBackground-Middle
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@print エマの脳裏に、<br>楽しく４人でピクニックをした光景が浮かんだ。 { speed:1 waitInput:true Wait:true }
+
+@print （シェリーちゃんが、全部を壊していった） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （ボクらは友だちなんかじゃなかった） { author:Ema speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@back SolidColor { time:0.9 }
+@hide Stills-Forefront,Stills-Front,Stills-Middle
+@WaitForNextFrame 
+
+@print "目の前が絶望で、真っ暗で。<br>いっそ死んだ方が楽だと、エマの心は<ruby=\"きし\">軋</ruby>み続ける。" { speed:1 waitInput:true Wait:true }
+
+@back 14_1 { time:0 }
+@back Transparent { time:0.9 }
+@char Warden.1 { time:0 }
+@blur MainBackground-Middle
+@hide MainBackground-Middle
+@animate MainBackground
+@animate Warden
+@Wait 0.5
+
+@StopBgm 
+
+@print それでは皆さん、<br>ちゃっちゃと処刑ボタンを押してください。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@animate MainBackground,Warden
+@back 580_3 { Scale:{g_backgroundDefaultScale} time:0.6 }
+@Wait 0.6
+
+@print （ボクらが、<br>　シェリーちゃんを断罪しないといけない……） { author:Ema speed:1 waitInput:true Wait:true }
+
+# TODO: ループ再生化する
+@sfx Sfx_35
+
+@ProcessInput false
+@HidePrinter 
+@HideUI ControlPanel,AutoToggle,WitchBookButtonUI
+@ShowUI ExecutionButton
+
+@if !enableDebugSkip
+	@Skip false
+	@Stop 
+
+# ExecutionConfirmed
+
+@bgm Bgm_31_1
+@HideUI ExecutionButton
+@hide Stills-Middle { time:0.6 }
+@Wait 0.9
+
+@ProcessInput true
+@ShowUI ControlPanel,AutoToggle,WitchBookButtonUI
+@EmoteJump Warden { Speed:1.5 }
+@print はい、ＯＫです！<br>これより、魔女の処刑を執行します～！ { author:Warden speed:1 waitInput:true Wait:true }
+
+@print あっ、ただすみません……<br>最近処刑台の仕掛けの調子が悪くてですね……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 今回はそのまま、<br>この場にある処刑台を使います。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@back 14_1
+@char Sherry.Normal1
+@Wait 0.3
+
+@print なるほど、わかりました。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print シェリーは足を引きずりながら、<br>みずから処刑台に歩いて行った。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@back 13_1 { time:0 }
+@hide MainBackground-Middle
+@Wait 0.9
+
+@print ゴクチョーの言葉どおり、<br>仕掛けは作動せず、処刑台はそのままだった。 { speed:1 waitInput:true Wait:true }
+
+@print "シェリーが看守によって、<br>中央にある棒へと縛り付けられていく。<br>拘束に使用されたのは<ruby=\"いばら\">茨</ruby>だった。" { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@back 14_1 { time:0 }
+@char Warden.1 { time:0 }
+@Wait 0.5
+
+@print 昔は全部この処刑方法だったんですけどねぇ……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print ゴクチョーはしみじみと言ってから、<br>少女たちを見回す。 { speed:1 waitInput:true Wait:true }
+
+@print あっ、他の人たちは動かないでくださいね。<br>邪魔や介入をすれば、<br>看守がその者も同様に断罪します。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@animate MainBackground,Warden
+@hide MainBackground,Warden { time:0 }
+@back 13_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Coco.Pensive1,ArmL3
+@mask MainBackground-Front,Coco-Front
+@animate MainBackground-Front
+@animate Coco-Front
+@Wait 0.4
+
+@print 邪魔しないっての。<br>シェリーはまごうことなき、クソ女じゃん。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Coco-Front
+@hide Coco-Front
+@WaitForNextFrame 
+
+@HidePrinter 
+@spawn MaskingRectangle
+@back 14_1
+@char Margo.Pensive1
+@mask MainBackground-Front,Margo-Front
+@animate MainBackground-Front
+@animate Margo-Front
+@Wait 0.4
+
+@print そうね……遊び感覚で人殺しなんて、<br>あまりに危険人物だわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 友だちごっこに付き合わされていた<br>エマちゃんたちには心底同情するわね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@animate MainBackground-Front,Margo-Front
+@hide Margo-Front
+@despawn MaskingRectangle
+
+@HidePrinter 
+@back SolidColor { time:0.9 }
+@Wait 0.9
+
+@print …………。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマは何故か薄笑いを浮かべる。<br>もはや彼女の心は壊れかけているのかもしれない。 { speed:1 waitInput:true Wait:true }
+
+@print （そうだよ、こんなの、<br>　友だちごっこでしかなかった） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （信じなければよかった。<br>　好きになんてならなければよかった） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （そうすればこんなに傷つかずに済んだのに） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "もうシェリーの姿を見たくないと言わんばかりに、<br>エマは<ruby=\"うつむ\">俯</ruby>いて唇を強く<ruby=\"か\">噛</ruby>みしめる。" { speed:1 waitInput:true Wait:true }
+
+@hide MainBackground-Front,MainBackground
+@back 50_4
+
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@print ちょっと待ってくださぁい！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print そこで、シェリーが唐突に抗議の声をあげた。 { speed:1 waitInput:true Wait:true }
+
+@print それはちょっと聞き捨てなりませんね！<br>私たちは友だちですよ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print はぁ？？？？<br>まじでどっかのネジ飛んでんの？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print どこの世界生きてたら、<br>友だちだって思ってるヤツを殺すんだよ。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 好きだからこそ殺した……<br>なんてパターンもあるけれど。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print シェリーちゃんの場合、理性的すぎて<br>当てはまらないように感じるわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 殺された遠野はお前を恨んでるだろうし、<br>ここにいる桜羽も氷上も。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print おめえのことなんか、<br>もう誰も友だちだなんて思っちゃいねえよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print それでも私は、友だちだと思っています！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print "メルルは<ruby=\"おえつ\">嗚咽</ruby>を漏らして泣き崩れる。<br>エマは<ruby=\"うつむ\">俯</ruby>き、肩を震わせていた。" { speed:1 waitInput:true Wait:true }
+
+@print それ、命乞いのつもりか！？<br>それとも良い人だと思われて死にたいってか！？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print 桜羽と氷上の気持ちを考えろよ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print 友だちだと思ってたやつ殺されて、<br>友だちだと思ってたやつを処刑台送りにしなきゃいけない！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print それがどれだけ相手を傷つけてるのか、<br>いい加減気付けよ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print 悪あがきなんてやめて、<br>悪人に徹して処刑されろよ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print エマちゃん、メルルちゃん、もう聞くのをやめた方がいいわ。<br>傷つけているって、彼女にはわからないのよ。<br>きっと罪悪感もないのだから。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print それは……そうかもしれませんね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print シェリーは肩をすくめ、<br>あっさりと認めた。 { speed:1 waitInput:true Wait:true }
+
+@print 正直、他人の気持ちはよくわからないし、<br>罪悪感はありません。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 友だちだって言い続けることで、<br>相手を傷つけているのならごめんなさい。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print それでも私は、ハンナさんも、<br>メルルさんも、エマさんも、<br>今でも友だちだって思っちゃってるんですよ。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print （やめてよ、もう聞きたくないよ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （これ以上シェリーちゃんのこと、<br>　憎みたくないよ……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print しかしシェリーは、話を続ける。 { speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"じょうぜつ\">饒舌</ruby>なのは縛られていて、処刑直前でも変わらない。" { speed:1 waitInput:true Wait:true }
+
+@print どうしてこうなっちゃったのかな。<br>あぁ――。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 私、人を殺したことがあるんです。<br>きっとその時から、心が壊れちゃったのかな……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@print ――エマたちは、<br>橘シェリーの禁忌へと、引き込まれる。 { speed:1 waitInput:true Wait:true }
+
+@print "ずるずると引きずられ、<br>強制的に深い深い闇を<ruby=\"のぞ\">覗</ruby>かされる。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# トラウマシーン
+# ========================================
+
+@HidePrinter 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@bgm Bgm_1_1
+
+@printer Normal.Simple
+
+@print みなしごで、施設育ちなのは話しましたっけ。 { speed:1 waitInput:true Wait:true }
+
+@print そこで私、<br>施設の大人から日常的に虐待を受けていました。 { speed:1 waitInput:true Wait:true }
+
+@print 毎日、毎日飽きもせず。<br>ありとあらゆる暴力を受けました。 { speed:1 waitInput:true Wait:true }
+
+@print 慣れみたいなものでしょうか。<br>心を殺せばいいって処世術で身につけて。 { speed:1 waitInput:true Wait:true }
+
+@print 私、その時から――<br>ほとんど何も感じなくなってしまったんです。 { speed:1 waitInput:true Wait:true }
+
+@print それでも痛いのは嫌です。 { speed:1 waitInput:true Wait:true }
+
+@print ひどいことをするなぁって、<br>それなら私もやり返していいよねって。 { speed:1 waitInput:true Wait:true }
+
+@print あるとき、殴りかかったんです。 { speed:1 waitInput:true Wait:true }
+
+@back SolidColor
+@hide Stills-Middle,MainBackground
+
+@print 私の拳は、<br>職員さんの頭を<br>スイカのように簡単に割ってしまいました。 { speed:1 waitInput:true Wait:true }
+
+@print 職員さんは死んでいました。 { speed:1 waitInput:true Wait:true }
+
+@print 私、驚いたんです。<br>人ってこんなに簡単に死ぬんだ、って。 { speed:1 waitInput:true Wait:true }
+
+@print それが私の魔法の目覚めだったんでしょうね。<br>ずっと気付きませんでした。 { speed:1 waitInput:true Wait:true }
+
+@back 180_1
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@print 職員さんが死んだことには、<br>特に何も感じなかったです。 { speed:1 waitInput:true Wait:true }
+
+@print そういえば本やテレビでも、<br>日常的に簡単に人って死んでいくじゃないか。 { speed:1 waitInput:true Wait:true }
+
+@print こんなに簡単に壊れるのなら、<br>人の生き死には、価値は、とんでもなく軽いんだ。 { speed:1 waitInput:true Wait:true }
+
+@print そう結論づけました。 { speed:1 waitInput:true Wait:true }
+
+@print それよりも<br>両手と服が血まみれになったことが気になって。 { speed:1 waitInput:true Wait:true }
+
+@print 汚しちゃったら、<br>叱られてしまうじゃないですか。 { speed:1 waitInput:true Wait:true }
+
+@back 180_1 { Scale:{g_backgroundDefaultScale} }
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@print 廊下に出て、騒ぎに駆けつけた職員さんたちを前に<br>私は折檻が怖くて誤魔化し笑いをしました。 { speed:1 waitInput:true Wait:true }
+
+@print ――汚しちゃって、ごめんなさい。 { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+@HidePrinter 
+@back SolidColor { time:0.9 }
+@hide Stills-Forefront,Stills-Front,Stills-Middle
+@Wait 1.2
+
+@printer Normal.Default
+@back 50_4
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@bgm Bgm_43_1
+
+@print ハンナさんを殺したことに、<br>私は何を思う必要があるんでしょうか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print "後悔？ 罪悪感？ 悲しみ？ 怒り？<br>自分で殺したのに、それを感じる必要がありますか？" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print その感情に意味はあるんですか？<br>ハンナさんが生き返るわけでもないのに。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# @char Margo.Normal1 pos:50
+
+@print ……理解はできるわ。<br>けれど、それが人間なのよ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 悼む心がないのなら……それはもう人間じゃない。 { author:Margo speed:1 waitInput:true Wait:true }
+
+# @char Sherry.Normal1 pos:50
+
+@print そうですね、<br>魔女に選ばれてしまいましたからね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ――もう、もう聞きたくない！<br>早く終わらせてよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマは顔を上げ、真正面からシェリーを<ruby=\"にら\">睨</ruby>んだ。" { speed:1 waitInput:true Wait:true }
+
+# @char Ema.Cry1 pos:50
+
+@print 早く――ボクの前から消えてよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 涙を流しながら、心から叫んでいた。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+# @char Sherry.Pensive1 pos:50
+
+@print そうですね……<br>処刑、やっちゃってください。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print シェリーは少しだけ寂しそうに、<br>微笑む。 { speed:1 waitInput:true Wait:true }
+
+@print エマの憎悪が映し出されたかのように、<br>シェリーの足下から炎の手が上がる。 { speed:1 waitInput:true Wait:true }
+
+# 燃え上がる音
+@bgm Ambi_6_1
+
+@back 50_1 { Scale:{g_backgroundDefaultScale} }
+
+# ＠備考◆痛そうに
+
+@print ……っ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print "炎に<ruby=\"あぶ\">焙</ruby>られて、<br>シェリーは苦しげに顔を<ruby=\"ゆが\">歪</ruby>めた。" { speed:1 waitInput:true Wait:true }
+
+@print 火あぶりの処刑光景は、<br>見ている少女たちにとってもあまりに過酷なものだった。 { speed:1 waitInput:true Wait:true }
+
+@print ほとんどの少女が目を逸らすが、<br>皮膚を焦がす臭いが鼻をつく。 { speed:1 waitInput:true Wait:true }
+
+@print ……変、です……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print "メルルがどこか<ruby=\"ぼうぜん\">呆然</ruby>とした様子で、<br>ぽつりと口にした。" { speed:1 waitInput:true Wait:true }
+
+@back 50_2 { Scale:{g_backgroundDefaultScale} }
+
+@print うぅうぅう……うぅうぅ……<br>あついなぁ……これ、ほんと、きっついですね……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 変です！<br>シェリーさん、再生していないです……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print え……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 最初、メルルが何を言っているのか<br>エマには理解できなかった。 { speed:1 waitInput:true Wait:true }
+
+@print シェリーの肉体が、<br>膝から下の皮膚が焼けてめくれている。 { speed:1 waitInput:true Wait:true }
+
+@print ごうごうと燃え盛る炎の合間に、その痛々しい様子が<br>見て取れた。 { speed:1 waitInput:true Wait:true }
+
+@print ――エマがその意味にたどりつくまで、<br>さらに数秒が必要だった。 { speed:1 waitInput:true Wait:true }
+
+@print シェリーちゃんは魔女じゃない……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 魔女化していない少女の肉体は不死ではない。 { speed:1 waitInput:true Wait:true }
+
+@print じゃ、じゃあシェリーちゃんは、<br>本当に死んじゃうの！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ……でしょうね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print さすがにマーゴも動揺しており、<br>処刑台から顔を背けてしまう。 { speed:1 waitInput:true Wait:true }
+
+@print 自分たちの手によって、<br>ほんとうに少女がひとり殺されようとしている。 { speed:1 waitInput:true Wait:true }
+
+@print 魔女にならないで殺人したのかよ……<br>やっぱ、どうかしてるこいつ……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print べ、べっつにさぁ、い、いいんじゃん？<br>だって犯人はコイツなんでしょ？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print その事実は変わらないんだし、<br>死んで当然じゃん、こんなヤツさぁ！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@print ココの声も上ずっていた。 { speed:1 waitInput:true Wait:true }
+
+@print 処刑を止められないの！？<br>こんなの、こんなのダメだよ！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print シェリーちゃんが死んじゃう！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマとメルルは処刑台へと走るが、<br>行く手を看守に遮られてしまう。 { speed:1 waitInput:true Wait:true }
+
+@print もう止められません……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@back 50_3 { Scale:{g_backgroundDefaultScale} }
+@hide Stills,Stills-Middle,Stills-Forefront,MainBackground
+
+@print 処刑台の上で、<br>シェリーはさめざめと泣いていた。 { speed:1 waitInput:true Wait:true }
+
+@print "あまりの痛みと熱さで泣いているのかと思ったが、<br>シェリーの<ruby=\"つぶや\">呟</ruby>きで違うとわかる。" { speed:1 waitInput:true Wait:true }
+
+@back 50_3
+
+@print 後悔も、罪悪感も、<br>ありません……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print でも、私、処刑されちゃダメなんですよ……。<br>死んじゃダメなんです。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 約束やぶっちゃいました。<br>それだけは、ごめんなさい……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print やく、そく……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print こんなザマじゃ、<br>ハンナさんに叱られてしまいますね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print １回くらい、褒められたかったなぁ。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@print シェリーの瞳は、ここではないどこかを見ていた。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ◎回想シーン（新規）
+# ========================================
+
+@HidePrinter 
+@back SolidColor { time:0 }
+@hide Stills,Stills-Middle,Stills-Front,Stills-Forefront
+@Wait 0.5
+
+@back 40_1 { Scale:{g_backgroundDefaultScale} }
+@blur Stills
+@back Transparent { time:0.9 }
+
+@print それは、いつか見た青空だった。 { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_42_2
+
+@print ハンナの背中にはりつき、<br>ほうきで一緒に空を駆けたあの日。 { speed:1 waitInput:true Wait:true }
+
+@print エマとメルルの姿が遠ざかって、<br>シェリーはあることに気付く。 { speed:1 waitInput:true Wait:true }
+
+@back 40_1
+@blur Stills-Middle
+
+@print ……ハンナさん、こんなに高く、長く、<br>空を飛べましたっけ。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ぎくりとハンナの背中が強張った。 { speed:1 waitInput:true Wait:true }
+
+@print やがて、諦めたかのように<br>深く深く息を吐き出す。 { speed:1 waitInput:true Wait:true }
+
+@print ……わたくし、<br>魔女になりかけているのだと思います。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print こんなに魔法が強くなっているなら、<br>もう時間は残されていないでしょうね。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print ――ねぇ、シェリーさん。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print わたくしが魔女になる前に、<br>いっそ殺してくれないかしら。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print ……冗談、ですよね？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ええ、本気に取ってもらわなくてもいいわ。<br>もしもの話よ。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print でもわたくし、魔女になりたくありませんの。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 魔女になって、誰かを憎んだり、<br>殺意を抱いたりしたくないんですの。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print この監獄の決められた流れに、<br>組み込まれたくない。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 魔女になるのが避けられないのなら、<br>せめて抗いたい。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print ハンナさんを殺したら、<br>私は魔女として処刑されてしまいますが。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print だからあなたにしか打ち明けていないんじゃないの。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print えっ、ひど！<br>私だったら処刑されてもいいってことですか！？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print だぁっ、違うわよ！<br>完全犯罪を目指すのよ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "完全犯罪？ 高まるワードですねぇ！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print "できるでしょう？ 名探偵のあなたなら。" { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print もしもの話だけれど、もしも、もしも……<br>その時が来たら。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 約束よ。あなたは絶対に死なないで。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "もっちろん！ 任せてください！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 回想ここまで
+# ========================================
+
+@HidePrinter 
+@back SolidColor { time:0 }
+@blur Stills
+@blur Stills-Middle
+@hide Stills-Middle,Stills
+@Wait 0.5
+
+@back 50_3
+@back Transparent { time:0.9 }
+
+@print "炎にあぶられているシェリーが、<br>苦しげな<ruby=\"うめ\">呻</ruby>きの合間にぽつりぽつと語った真実。" { speed:1 waitInput:true Wait:true }
+
+@print そこには、絆があった。 { speed:1 waitInput:true Wait:true }
+
+@print 友だちだから殺した、という事実があった。 { speed:1 waitInput:true Wait:true }
+
+@print ……死んじゃうの、ごめん、なさい。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ……っ、<br>ばかあぁぁぁ！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print シェリーちゃん、<br>心が壊れてなんかないじゃないか！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 友だちのために、<br>やりたくないことをやったんじゃないか！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ぜんぶ、ぜんぶ友だちのためだったんじゃないか！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 何もかもが手遅れだった。<br>処刑は止められず、シェリーの命は尽きようとしている。 { speed:1 waitInput:true Wait:true }
+
+@print 看守に止められながら、エマはじたばたとあがく。<br>あがくことしかできない。 { speed:1 waitInput:true Wait:true }
+
+@back 50_3 { Scale:{g_backgroundDefaultScale} }
+
+@print 処刑を中止してよ！<br>シェリーちゃんは魔女じゃないんだよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print いなくなっちゃう！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 消えてなんて言ってごめんねぇ！<br>あんなひどいこと言ってごめんねぇ……っ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "シェリーちゃん！ シェリーちゃん！<br>シェリーちゃん！！" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 泣かないで、エマさん。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print どれだけの痛みと辛さなのか、<br>想像を絶する光景の中で。 { speed:1 waitInput:true Wait:true }
+
+@back 50_3
+
+@print シェリーはエマの方を見て、微笑んでみせた。 { speed:1 waitInput:true Wait:true }
+
+@print 見せつけてやれましたよね？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 私たちは友だちだって。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ずっと、仲良しだって！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+@HidePrinter 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@hide Stills-Middle,Stills-Front,Stills
+
+# 燃え上がる音
+@bgm Ambi_6_1
+
+@bgm Bgm_44_1
+
+@print あああぁぁぁ……ぁ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマの喉から、かすれた悲鳴のような声が漏れる。 { speed:1 waitInput:true Wait:true }
+
+@print シェリーの肉体は復活せず、<br>全てが燃えて朽ちていく。 { speed:1 waitInput:true Wait:true }
+
+@print 魔女のなれはてにならず、<br>シェリーは焼け死んだ。 { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@print "シェリーが焼け死んでしまったことで、<br>永遠の<ruby=\"ろうごく\">牢獄</ruby>は開かなかった。" { speed:1 waitInput:true Wait:true }
+
+@back 13_1 { Scale:{g_backgroundDefaultScale} }
+@back Transparent { time:0 }
+@Wait 0.9
+
+@char Warden.1
+
+@print なんか……さすがにちょっと後味悪いですねえ……<br>まあ皆さん、ドンマイです。ゆっくり休んでください。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print これにて閉廷にします～。 { author:Warden speed:1 waitInput:true Wait:true }
+
+# フクロウの羽ばたき音
+@sfx Sfx_8
+
+@hideChars 
+
+@print 少し気まずかったのか、<br>ゴクチョーは逃げるように飛び立っていった。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@print "エマはしばらく<ruby=\"ぼうぜん\">呆然</ruby>と、<br>ただその場に膝をついていた。" { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter03/Act01_Chapter03_Adv28

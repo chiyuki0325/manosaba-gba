@@ -1,0 +1,820 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter05/Act02_Chapter05_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# クリーチャー化初期化
+@hide Hiro
+@char CreatureHiro.2 { Position:{hiroPositionX},{characterPositionY},{hiroPositionZ} Rotation:,{hiroRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Meruru
+@char CreatureMeruru.3-5 { Position:{meruruPositionX},{characterPositionY},{meruruPositionZ} Rotation:,{meruruRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Leia
+@char CreatureLeia.0-8 { Position:{leiaPositionX},{characterPositionY},{leiaPositionZ} Rotation:,{leiaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Noah
+@char CreatureNoah.0-3 { Position:{noahPositionX},{characterPositionY},{noahPositionZ} Rotation:,{noahRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Margo
+@char CreatureMargo.0-4 { Position:{margoPositionX},{characterPositionY},{margoPositionZ} Rotation:,{margoRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Nanoka
+@char CreatureNanoka.0-1 { Position:{nanokaPositionX},{characterPositionY},{nanokaPositionZ} Rotation:,{nanokaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Coco
+@char CreatureCoco.2-3 { Position:{cocoPositionX},{characterPositionY},{cocoPositionZ} Rotation:,{cocoRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide AnAn
+@char CreatureAnAn.0-3 { Position:{ananPositionX},{characterPositionY},{ananPositionZ} Rotation:,{ananRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Miria
+
+@hide Alisa { time:0 }
+@char CreatureAlisa.0-7 { Position:{alisaPositionX},{characterPositionY},{alisaPositionZ} Rotation:,{alisaRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@hide Hanna { time:0 }
+
+# ==============================================================================
+# MARK: 10-25: 💬 【橘シェリー】
+# ==============================================================================
+# ＠ト書き▼議論10-25【橘シェリー】
+# 議論開始カットイン
+# BGM変更：Guil-me N'o sinruits-Vocal有-
+@bgm Bgm_37_1_Loop
+
+@ResetText 
+@char CreatureHiro.2 { time:0 }
+@stageCamera 1 { Rotation:0,{ (8 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+
+@stageCamera 1 { Rotation:0,{ (8.1 / courtStandCount * 360) },0 time:1 }
+@showStageScreen 1
+@Wait 1.5
+
+@ResetText 
+@char Sherry.Default,ArmR15,ArmL4,Angle01/Facial/Eyes>Eyes_Wink_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open { time:0 }
+@stageCamera 0 { Rotation:0,{ (2 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+
+@stageCamera 0 { Rotation:0,{ (1.9 / courtStandCount * 360) },0 time:1 }
+@hideStageScreen 1
+@Wait 1.5
+
+# Judge10-25-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Sherry.Default,ArmR7,ArmL4,Angle01/Facial/Eyes>Eyes_Flushed_Closed01,Angle01/Facial/Mouth>Mouth_Flushed_Open
+@gosubModifyCamera 0
+@printDebate 実際<br>私は処刑を前にしても<br>魔女化することは<br>ありませんでした。
+
+@char Sherry.Default,ArmR3,ArmL3,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@printDebate 【痛みへの恐怖がないのだから、<br>死の恐怖も感じることはない】<br>……。
+
+@char Sherry.Default,ArmR3,ArmL3,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate ヒロさんの推理通りなら<br>納得ですよね。
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@printDebate ……でも、<br>だとしたらどうするんです？
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Smile_Closed
+@gosubModifyCamera 0
+@printDebate 痛みを苦痛と感じるまで、<br>拷問でもしてみますか？
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@printDebate ……そんなことをしても<br>無駄だ。
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@printDebate 君は痛みの信号を<br>不快と思わないのだから。
+
+@char Sherry.Default,ArmR7,ArmL13,Angle01/Facial/Eyes>Eyes_Flushed_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@printDebate それは良かったです。<br>無意味に痛めつけられても、<br>時間の無駄ですしね。
+
+@char Sherry.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Normal_Closed
+@gosubModifyCamera 0
+@printDebate ……きっと、<br>私の体は苦しみを感じても<br>意味がないと<br>学んでしまったんです。
+
+@char Sherry.Default,ArmR3,ArmL3,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@printDebate 痛みは肉体の危機を<br>避けるための<br>警報器ですから。
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Closed
+@gosubModifyCamera 0
+@printDebate "……ずっと<br>鳴りっぱなしの警報は、<br>うるさいだけで<br>存在する意味が<link=\"Objection_02_05_25_01\">ありません</link>。"
+
+@char Sherry.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate "なので私は<br>いくらこの牢屋敷で暮らそうと、<br><link=\"Objection_02_05_25_02\">魔女になることはない</link><br>でしょうね。"
+
+@char Sherry.Default,ArmR3,ArmL3,Angle01/Facial/Eyes>Eyes_Normal_Closed04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate "私は人として<br><link=\"Objection_02_05_25_03\">感情が欠落している</link>んです。"
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate "……おかしいですよね。<br><link=\"Objection_02_05_25_04\">人から離れれば</link><br>離れるほど<br>魔女になりにくいなんて。"
+
+
+# ==============================================================================
+# 10-25議論後独白
+# ==============================================================================
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@Wait 0.2
+
+@print （シェリーに苦痛を与えても魔女化することはない……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@print （痛み、悲しみ、恐怖、不安……<br>　これらの負の感情では、<br>　シェリーが魔女化することはないだろう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@print （可能性があるとすれば――【怒り】だろうか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@print （これまでの魔女化で言えば<br>　マーゴのような【怒り】を誘発することができれば、<br>　あるいは……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-25-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_25_01
+
+@Skip false
+@pauseTrial true
+
+@choice 存在する意味はある
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-25-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_25_02
+
+@Skip false
+@pauseTrial true
+
+@choice 諦めなければきっとなれる
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-25-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_25_03
+
+@Skip false
+@pauseTrial true
+
+@choice 君は感情豊かだ
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-25-5
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論4
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_25_04
+
+@Skip false
+@pauseTrial true
+
+@choice 君は人間だ
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-25-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 10-25: ❌ 反論選択肢
+# ==============================================================================
+
+# MARK: 10-25-3: ❌ 反論・存在する意味はある
+
+# Judge10-25-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print 警報が鳴っているなら、それは存在する意味がある。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print 君が過去の自分を否定してはいけない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print そして痛みを取り戻すんだ……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print １度壊れたものは容易には戻りません。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print それは体だって、心だって同じです。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL3,Angle01/Facial/Eyes>Eyes_Normal_Closed04,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print つまり私が言いたいことは……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL3,Angle01/Facial/Eyes>Eyes_Wink_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 【無茶言わないでください】、<br>ってことですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char CreatureHiro.13
+@gosubModifyCamera 0
+@print （……言い返す言葉もない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （彼女は自身の生い立ちをなんでもないように語るが……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （彼女自身、自らの不幸に<br>　自身のアイデンティティを依存してないだろうか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （だとしたら……それを否定する必要があるかもしれない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-25-1
+
+# MARK: 10-25-4: ❌ 反論・諦めなければきっとなれる
+
+# Judge10-25-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.7
+@gosubModifyCamera 0
+@print ……諦めるな！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.7
+@gosubModifyCamera 0
+@print 頑張ればきっと魔女化もできる！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR8,ArmL8,Angle01/Facial/Eyes>Eyes_Angry_Open01,Angle01/Facial/Mouth>Mouth_Smile_Closed
+@gosubModifyCamera 0
+@print そうですよね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR16,ArmL8,Angle01/Facial/Eyes>Eyes_Smile_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Closed
+@gosubModifyCamera 0
+@print "うおおー！ ファイト～！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR16,ArmL8,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print ……それで、どうやって魔女化しましょう？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char CreatureHiro.13
+@gosubModifyCamera 0
+@print （……魔女化が遠のいた気がする） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （彼女は自身の生い立ちをなんでもないように語るが……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （彼女自身、自らの不幸に<br>　自身のアイデンティティを依存してないだろうか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （だとしたら……それを否定する必要があるかもしれない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-25-1
+
+# MARK: 10-25-5: ❌ 反論・君は感情豊かだ
+
+# Judge10-25-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print 君は十分に感情豊かだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print それ以上感情を増やす必要はないんじゃないかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR10,ArmL11,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print そうですか？<br>こう見えて、頑張ってるんですけどね～？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR7,ArmL1,Angle01/Facial/Eyes>Eyes_Wink_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print なんにせよ、お褒めいただき光栄です！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR7,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print ……それで、どうやって魔女化しましょう？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char CreatureHiro.24
+@gosubModifyCamera 0
+@print （……話がズレてしまった） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （彼女は自身の生い立ちをなんでもないように語るが……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （彼女自身、自らの不幸に<br>　自身のアイデンティティを依存してないだろうか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.12
+@gosubModifyCamera 0
+@print （だとしたら……それを否定する必要があるかもしれない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge10-25-1
+
+# ==============================================================================
+# MARK: 10-25-2: ⭕ 反論・君は人間だ
+# ==============================================================================
+
+# Judge10-25-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@gosubCutIn CreatureHiro
+@Gosub System/System_Subroutine.EndDebate-Last
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+@char CreatureHiro.18
+@gosubModifyCamera 0
+@print ……君は人間だよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR10,ArmL11,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Closed
+@gosubModifyCamera 0
+@print そうでしょうか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Normal_Closed
+@gosubModifyCamera 0
+@print 痛みを感じず人にも共感できない……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print そんな存在が人を名乗っていいんですかね？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.18
+@gosubModifyCamera 0
+@print ……君が人である証拠がある。<br>それは――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# Judge10-25-6
+
+@evidence Clue
+
+# 遠野ハンナ殺人事件
+@if "chosenEvidenceId==\"10-22\""
+	@goto .Judge10-25-7
+
+@goto .Judge10-25-8
+
+# MARK: 10-25-8: ❌ 汎用ミス選択肢
+
+# Judge10-25-8
+
+@char CreatureHiro.24
+@gosubModifyCamera 0
+@print （……いや、これはシェリーの人格には関係ないな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （シェリーの心の形を知るのに、<br>　一番ふさわしいもの……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （それはもちろん、<br>　彼女がしでかしたあの事件だ……！）. { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.18
+@gosubModifyCamera 0
+@print ……君が人である証拠、それは――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-25-6
+
+# ==============================================================================
+# MARK: 10-25-7: ⭕ 遠野ハンナ殺人事件
+# ==============================================================================
+
+# Judge10-25-7
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print 君が、遠野ハンナを殺した事件だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL12,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print ……それこそ、<br>私がまともな人間じゃない証拠じゃないですか。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL12,Angle01/Facial/Eyes>Eyes_Flushed_Closed01,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print 友人を殺すなんて、<br>人のすることじゃないですし――。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE・明るい音
+@sfx Sfx_Common_2
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print ――違う。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ==============================================================================
+# 回想シーン（流用）
+# ==============================================================================
+
+@bgm Bgm_37_1_Loop { Volume:0.2 }
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+# スチル暫定
+@back 40_1 { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+
+@print でもわたくし、魔女になりたくありませんの。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 魔女になって、誰かを憎んだり、<br>殺意を抱いたりしたくないんですの。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print この監獄の決められた流れに、<br>組み込まれたくない。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print 魔女になるのが避けられないのなら、<br>せめて抗いたい。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+@hide Stills { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+@bgm Bgm_37_1_Loop
+# ==============================================================================
+# 回想ここまで
+# ==============================================================================
+
+@char CreatureHiro.8
+@gosubModifyCamera 0
+@print 君はハンナの願いを叶えたと語った……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Closed04,Angle01/Facial/Mouth>Mouth_Neutral_Closed
+@gosubModifyCamera 0
+@print "……<ruby=\"しょくたく\">嘱託</ruby>殺人。" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print 普通の人なら、<br>他人に頼まれたところで人殺しなんてしませんよ？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print ……殺人自体を肯定するつもりはない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.6
+@gosubModifyCamera 0
+@print "けれど君なりに<ruby=\"ひと\">他人</ruby>の気持ちを想像して、<br>他者のために動いた結果だ。" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.10
+@gosubModifyCamera 0
+@print それは君が人間である、何よりの証拠だよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR4,ArmL14,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Neutral_Closed
+@gosubModifyCamera 0
+@print ……私は。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char Sherry.Default,ArmR4,ArmL14,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Neutral_Closed
+@gosubModifyCamera 0
+@print そんなふうに言われるのは、嫌です。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆息を呑む
+
+@char CreatureHiro.15
+@gosubModifyCamera 0
+@print ………！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# BGM変更：深層の畝
+@bgm Bgm_9_1
+
+@char Sherry.Default,ArmR4,ArmL14,Angle01/Facial/Eyes>Eyes_Normal_Closed03,Angle01/Facial/Mouth>Mouth_Normal_Closed
+@gosubModifyCamera 0
+@print ……そうです。<br>思い出しました。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR12,ArmL14,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Middle
+@gosubModifyCamera 0
+@print 私は……嫌だったんですよ。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR12,ArmL14,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Middle
+@gosubModifyCamera 0
+@print ハンナさんが変わっていくのも。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR12,ArmL12,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Neutral_Closed
+@gosubModifyCamera 0
+@print ハンナさんがいなくなってしまうのも。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR12,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Closed04,Angle01/Facial/Mouth>Mouth_Neutral_Closed
+@gosubModifyCamera 0
+@print ハンナさんが悩み苦しむ姿を見るのも……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR4,ArmL14,Angle01/Facial/Eyes>Eyes_Normal_Closed04,Angle01/Facial/Mouth>Mouth_Cry_Open
+@gosubModifyCamera 0
+@print 全部全部……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR4,ArmL14,Angle01/Facial/Eyes>Eyes_Normal_Closed02,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print とっっても嫌でした。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Normal_Closed
+@gosubModifyCamera 0
+@print ……だから。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Normal_Closed
+@gosubModifyCamera 0
+@print 私は、自分も嫌いです。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Normal_Closed
+@gosubModifyCamera 0
+@print あの選択をしてしまったことも。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Closed04,Angle01/Facial/Mouth>Mouth_Cry_Open
+@gosubModifyCamera 0
+@print それを選択せざるを得なかったことも。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR12,ArmL14,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Cry_Open
+@gosubModifyCamera 0
+@print そして……少しでもそのときの自分を肯定したい、<br>今の自分も……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ＠備考◆悲しげ
+
+@char Sherry.Default,ArmR12,ArmL14,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Cry_Open
+@gosubModifyCamera 0
+@print みんなみんな……大っ嫌いなんです。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.14
+@gosubModifyCamera 0
+@print ……シェリー、でも君は――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆怒鳴る
+
+@char Sherry.Normal1,ArmR12,ArmL14,Angle01/Facial/Eyes-,Angle01/Facial/Mouth>Mouth_Surprised_Open,Angle01/Facial/Pale>Pale02 { time:0 }
+@gosubModifyCamera 0
+@print ――だから！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ＠備考◆悲しみ
+
+@char Sherry.Normal1,ArmR12,ArmL14,Angle01/Facial/Eyes-,Angle01/Facial/Mouth>Mouth_Fearful_Open,Angle01/Facial/Pale>Pale02,Angle01/Facial/Mouth>Mouth_Normal_Closed
+@gosubModifyCamera 0
+@print そんな私を……<br>わかった気になって、肯定しないでください……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ＠備考◆息を呑む
+
+@char CreatureHiro.15
+@gosubModifyCamera 0
+@print ………！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR3,ArmL14,Angle01/Facial/Mouth>Mouth_Normal_Middle { time:0 }
+@gosubModifyCamera 0
+@print 私はやっぱり、生まれたときから人の心がわからない、<br>身も心も醜悪な化け物――。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR12,ArmL14,Angle01/Facial/Eyes-,Angle01/Facial/Mouth>Mouth_Fearful_Open,Angle01/Facial/Pale>Pale02,Angle01/Facial/Mouth>Mouth_Normal_Closed
+@gosubModifyCamera 0
+@print ――【魔女】だったんですよ。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.5 }
+@Wait 0.5
+@back SolidColor.Custom { time:0 }
+# 魔女化エフェクト
+# 注・シェリーはこの時点では魔女かがまだで、エフェクト（オーラ？霧など？）をまとっている状態。もしくは本当に少しなりかけ「【半】半クリーチャー」みたいな状態
+
+@char CreatureHiro.15
+@gosubModifyCamera 0
+@print ……シェリー……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆驚き
+
+@back SolidColor.Custom { time:0 }
+@char Sherry.Normal1,ArmR4,ArmL14,Angle01/Facial/Mouth>Mouth_Neutral_Open,Angle01/Facial/Pale>Pale02,Angle01/Facial/Eyes-
+@gosubModifyCamera 0
+@print これは……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ＠備考◆微笑
+
+@char Sherry.Normal1,ArmR4,ArmL14,Angle01/Facial/Mouth>Mouth_Neutral_Open,Angle01/Facial/Pale>Pale02,Angle01/Facial/Eyes-
+@gosubModifyCamera 0
+@print なるほど……<br>魔女化って、【こう】なんですね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR4,ArmL1,Angle01/Facial/Mouth>Mouth_Neutral_Open,Angle01/Facial/Pale>Pale02,Angle01/Facial/Eyes-
+@gosubModifyCamera 0
+@print なら……こうすれば……。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.8
+
+@hide Sherry
+@char CreatureSherry.1-8 { Position:{sherryPositionX},{characterPositionY},{sherryPositionZ} Rotation:,{sherryRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+@back SolidColor.Custom { time:0.8 }
+@Wait 0.8
+@back SolidColor.Custom { time:2 }
+@Wait 1
+# 魔女化するシェリー
+
+# ＠備考◆苦笑
+
+@char CreatureSherry.1-8
+@gosubModifyCamera 0
+@Wait 3.0
+
+@char CreatureSherry.1-8
+@gosubModifyCamera 0
+@print ……できちゃいました。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ＠備考◆悲しげ
+
+@char CreatureSherry.1-6 { time:1 }
+@gosubModifyCamera 0
+@print こんなことできちゃうなんて……<br>やっぱり人間離れしてますね、私。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ＠備考◆怯む
+
+@char CreatureHiro.15
+@gosubModifyCamera 0
+@print …………。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print ……それでも、君は人間だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆苦笑
+
+@char CreatureSherry.1-4
+@gosubModifyCamera 0
+@print …………。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ＠備考◆苦笑
+
+@char CreatureSherry.0-4
+@gosubModifyCamera 0
+@print ……強情な人ですね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print …………。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@update Sherry
+@toast "魔女図鑑 更新…"
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print （……シェリーも無事に魔女化させた） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print （私に立ち止まっている時間はない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print （だから……進むんだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （……これで１２人の魔女が揃った。<br>　残すは――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# BGM変更：HirO（Voなし）
+@bgm Bgm_37_1_Loop
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print ――エマ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR6,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Neutral_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ……ヒロちゃん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print ……話をしよう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print うん……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open
+@gosubModifyCamera 0
+@print まさか、ヒロちゃんからそんなこと<br>言われるなんて思わなかった。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.13
+@gosubModifyCamera 0
+@print ……すまなかった。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Closed
+@gosubModifyCamera 0
+@print ううん、いいんだ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print ……エマ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print それでは、追求するとしようか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print ――私たちの、真実を。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto Act02_Chapter05/Act02_Chapter05_Trial26

@@ -1,0 +1,209 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-3-5
+
+# ========================================
+# ●シーン2‐3‐5
+# ========================================
+
+@back 28_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# ========================================
+# ＞『中庭』を選択
+# ========================================
+
+@bgm Bgm_28_1
+
+@print 私が中庭に出ると、<br>ハンモックでくつろぐアリサの姿が見えた。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print 君は劇の制作には参加しないのか？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 近付いて声をかけると、<br>アリサは面倒くさそうに上体を起こす。 { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,Option-ArmL-Off { time:0.6 }
+@Wait 0.6
+
+@print するわけねえだろ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print "何故？ もう少し協調性を持つべきだ。" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "アリサは私を<ruby=\"うっとう\">鬱陶</ruby>しそうに<ruby=\"にら\">睨</ruby>む。" { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1
+
+@print チッ……うるせえな。<br>大体、おめえだって最初は否定的だっただろ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print そうだな。<br>だけど、今はやるべきだと感じている。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive
+
+@print 関係性を深めるのは殺人の抑止に繋がる。<br>これ以上の犠牲者を出したくない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Pensive1
+
+@print ……本心からそう思ってんのかよ？<br>ウチから見たらおめえが<br>一番やらかしそうに見えるけどな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"しんい\">真意</ruby>をはかるように、<br>アリサが真っすぐに私を見つめてくる。" { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1
+
+@print やっぱりおめえの言うことは信用できねえ。<br>仲良くなんて、できるかよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print それに関しては同感だ。<br>私も君と仲良くなれる気はしない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+
+@print しかし協調性は持つべきだろう？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "微笑を浮かべる私に対し、<br>アリサが燃え<ruby=\"さか\">盛</ruby>る炎のように激しく<ruby=\"にら\">睨</ruby>んでくる。" { speed:1 waitInput:true Wait:true }
+
+@print 周囲の空気がピンと張り詰めた。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@HidePrinter 
+
+# 野外で近づいてくる足音・1人
+@sfx Sfx_73
+@Wait 2
+
+@char Leia.Smile
+
+@print ヒロくんにアリサくん、<br>何を話しているんだい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hiro.Pensive1
+@char Alisa.Surprised1
+
+@print また面倒そうなのが来やがった……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print "レイアの姿を見て、<br>アリサは緊張を崩し、<ruby=\"へきえき\">辟易</ruby>とした声を<ruby=\"も\">漏</ruby>らす。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+@char Leia.Smile1,ArmR8
+
+@print もしかして、邪魔をしてしまったかな。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 別に、大した話はしていない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR1
+
+@print それならよかった。ところで……<br>ヒロくん、何を手伝うかは決まったかな。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro
+
+@print いいや。まだ見て回っている最中だよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia
+
+@print そうか。焦らず、じっくり考えてくれたまえ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro
+
+@print 君はここへ何をしに？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 台本を読みつつ、<br>軽くセリフの練習をしようかとね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa.Pensive
+
+@print どっか他でやってくれよ……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Leia.Angry1
+
+@print 悪いが、それは難しい。<br>本番もここで劇をやるつもりだからね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1
+
+@print 練習なら別の場所でもできるだろーが。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1
+
+@print なるべく本番に近い環境で稽古したいんだよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 劇について語るレイアは真剣で、<br>それでいて楽しそうに見える。 { speed:1 waitInput:true Wait:true }
+
+@print 彼女が放つキラキラとした輝きと前向きな姿勢は、<br>他の少女たちを引っ張っていく力があるようだ。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmL8
+
+@print ああそうだ、ちょうどよかった。<br>実はアリサくんにお願いがあったんだ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print "あ？ なんだよ、いきなり。" { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print 劇に役を追加したいと考えていてね。<br>そこでアリサくんにも……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Alisa
+
+@print ぜってー嫌だね。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print "アリサが食い気味にレイアへの<ruby=\"きょぜつ\">拒絶</ruby>を示す。" { speed:1 waitInput:true Wait:true }
+
+@char Leia.Cry1,ArmR8,ArmL4
+
+@print "そんな！ キミにしか頼めない役だというのに！<br>火を司る妖精で……！" { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1
+
+@print ……なんでウチが妖精役なんだよ！<br>もっとなんか他にあんだろ！？<br>いやそもそもウチは劇なんか出る気はねえ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Leia.Cry1,ArmR1,ArmL4
+@hide Alisa
+
+@print ああっ、アリサくん！ { author:Leia speed:1 waitInput:true Wait:true }
+
+# 野外を走る音・1人
+@sfx Sfx_173
+
+@hideChars 
+@char Hiro
+@char Leia.Pensive1,ArmR8,ArmL4
+
+@print 行ってしまった……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print "走り去るアリサの背を見つめながら、<br>レイアはしょんぼりと<ruby=\"つぶや\">呟</ruby>く。" { speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR1,ArmL1
+
+@print ああ、ところでヒロくん。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 視線を私へと移し、<br>レイアはにこやかな顔になった。 { speed:1 waitInput:true Wait:true }
+
+@print 切り替えが早いな。<br>というか嫌な予感がするんだが……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 君にもやはり妖精役をやってほしいと思うんだ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive
+
+@print 妖精はもういいだろう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR5,ArmL2
+
+@print しかし、主演である私の周囲を華やかに彩る妖精！<br>これは劇にとってとても大切だと思うんだよ！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print 遠慮しておく。<br>他に手伝えることを探すことにするよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# 野外で立ち去る足音・1人
+@sfx Sfx_72
+
+@print アリサくんもヒロくんも手ごわいな。<br>けど、私は諦めないよ……ふふふ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 背後でレイアが不敵に笑うのが聞こえた。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン2‐3‐4
+# 全てのイベントを消化している＞シーン2‐3‐9
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter03/Act02_Chapter03_Adv04

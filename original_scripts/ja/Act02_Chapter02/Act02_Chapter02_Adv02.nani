@@ -1,0 +1,275 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+@back Transparent { time:1.2 }
+
+# Scene2-2-2
+
+# ========================================
+# ●シーン2‐2‐2
+# ========================================
+
+@back 5_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_11_1
+
+@print 朝食を終えた私は、<br>レイアの呼びかけに応じてラウンジに入った。 { speed:1 waitInput:true Wait:true }
+
+@print "すると中には、少女たちが全員<ruby=\"そろ\">揃</ruby>っていた。" { speed:1 waitInput:true Wait:true }
+
+@print （少し意外だな……。<br>　いや、一部は私と同じように考えただけか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Coco.Normal1
+
+@print んで、話し合いってなんなん？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Miria.Normal1
+
+@print レイアちゃんは何か、<br>ここから逃げ出す方法を思いついたの？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia.Pensive1
+
+@print ああいや、期待させてしまってすまない。<br>脱出に関しては、まだ何も。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Angry1
+@char Leia
+
+@print んだよそれ、マジで期待はずれだし！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1
+
+@print "<ruby=\"あくたい\">悪態</ruby>をつくココに、<br>レイアは困ったような笑みを返す。" { speed:1 waitInput:true Wait:true }
+
+@hide Coco
+@char Nanoka
+
+@print だったら、何を話し合うというの？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Leia.Normal1
+
+@print これ以上、殺人事件を起こさないための<br>対策についてだよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print ……君には何か、妙案があるのか？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "エマの殺害を<ruby=\"くわだ\">企</ruby>てている私にとっては、<br>聞き捨てならない話題だった。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia
+
+@print ああ、みんなに聞いてほしい。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 少女たちが注目する中、<br>レイアは演説するかのように語り出す。 { speed:1 waitInput:true Wait:true }
+
+@print 殺人が起こらなければ、魔女裁判も開かれずに済む。 { speed:1 waitInput:true Wait:true }
+
+@print "少なくとも誰かが<ruby=\"むざん\">無惨</ruby>に殺され、<br>誰かが残酷に処刑されるということはないはず。" { speed:1 waitInput:true Wait:true }
+
+@print さっきも言ったが、<br>そのためには私たちが団結しなければならない。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print つまり、もっと交流して互いの絆を深める<br>必要があると思うんだ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Surprised1
+
+@print えっと……みんなで<br>仲良くなろうってことかな？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia.Smile1
+
+@print ああそうさ、仲良くなり絆が生まれれば、<br>殺人が起きる可能性は減ると思うんだよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1
+
+@print "親しくなったことで<br>逆に<ruby=\"あつれき\">軋轢</ruby>を生むこともあるかもしれないが、<br>それでも――。" { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Normal1
+
+@print 衝動的に殺してしまう事態は、<br>起きづらくなるはず。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Angry1
+
+@print "何それキモッ！ 頭ン中お花畑なんじゃないのー？<br>この状況で仲良しこよしとか無理だって！" { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia
+
+@print なんと言ってくれても構わないよ。<br>理解されないことも難しいことも、<br>承知の上での提案だからね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print "ココの批判的な声にも<ruby=\"ひる\">怯</ruby>まず、レイアは続ける。" { speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1
+
+@print それでも何もしないでいるよりは、<br>いいと思わないかな？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco
+@char Leia.Normal1
+
+@print んなことより、どうにか逃げ出す方法<br>考えるほうがいいって！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1
+
+@print もちろん、脱出方法を模索するのも大事だよ。<br>だけど、囚われの私たちにできることはもう少ない。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive1
+
+@print うん、調べられそうな場所はもう、<br>調べ尽くした感があるしね……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1
+
+@print その通り。だから別の方向からも、<br>生き残るための道を探るべきじゃないかな。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 少女たちは数名を除き、レイアの言葉に<br>少なからず納得している様子だった。 { speed:1 waitInput:true Wait:true }
+
+@print （生き残るための道を探るというのは正しい。<br>　だが……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print 私はそっと、エマに目を向ける。<br>それから、ラウンジにいる全員を順に見回す。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （今の私はエマを殺すことを決めている。<br>　皆で仲良くしようという提案に乗るわけには<br>　いかない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hanna.Normal1
+
+@print 仲を深めると言ったって、<br>具体的には何をするんですの？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1
+
+@print ふふふ、ハンナくん！<br>よくぞ聞いてくれた！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@print ハンナの質問に、レイアは<br>ここぞとばかりに目を輝かせた。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia.Angry1
+
+@print 絆を強くするために必要なのはやはり、<br>同じ目標に向かって苦楽を共にすること。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 芝居がかった大げさな身振り手振りで、<br>レイアが告げる。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR2,ArmL3
+
+@print みんなで、劇を作ろうじゃないか！<br>一丸となって、舞台を作り上げるんだ！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+@HidePrinter 
+@Wait 1
+
+@print ……一瞬、場が静まり返った。 { speed:1 waitInput:true Wait:true }
+
+# 拍手音・1人
+@sfx Sfx_125
+@Wait 1
+
+@print "私たちが固まっている中、<br>場の空気を読まないひとりの<ruby=\"はくしゅ\">拍手</ruby>が響く。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@Wait 0.5
+
+@bgm Bgm_5_1
+
+@char Sherry.Smile
+@Wait 0.2
+
+@print "素晴らしい！ 中々の名案ですね！<br>ひとつの目標を一緒に成し遂げる……<br>きっとお互いの気持ちが深まりますよ！" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna.Pensive1
+
+@print 劇って……誰に見せるんですの？<br>まさか、ゴクチョーと看守？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "乗り気なシェリーとは対照的に、<br>ハンナは<ruby=\"あき\">呆</ruby>れ気味に疑問を<ruby=\"てい\">呈</ruby>した。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 囚人が演じる舞台を観劇する、<br>ゴクチョーと看守―― { speed:1 waitInput:true Wait:true }
+
+@print 思い浮かべるとシュールな光景だ。 { speed:1 waitInput:true Wait:true }
+
+@print ただ、シェリーが乗り気な反応を見せたことで、<br>他の少女たちもそれぞれの考えを口にし始める。 { speed:1 waitInput:true Wait:true }
+
+@char Noah.Smile1
+@char AnAn.Normal1,Arms2,Angle01/Option_Arms>Option_Arms01_05,Angle01/Option_ArmR/Option_ArmR01_01-
+
+@print お芝居か～、楽しそう！<br>いいよ、のあお手伝いしてあげる！ { author:Noah speed:1 waitInput:true Wait:true }
+
+@print 『考えてやらないこともない』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Nanoka.Default
+
+@print ……好きにすればいい。<br>でも、参加はしない。<br>私は私で、やることがある。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Alisa.Pensive1,Option-ArmL-Off
+
+@print ……付き合ってらんねえ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Coco.Pensive1
+
+@print あてぃしも……てか、劇て。<br>んなことしてる場合じゃないっつーの。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 冷めた様子で、ナノカ、アリサ、<br>ココの３人はラウンジを出ていった。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1,ArmR1,ArmL1
+
+@print 残念だけど、仕方がないね。<br>……ヒロくん、キミはどうだろう？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hiro
+
+@print 私も遠慮しておく。<br>君たちと仲良く何かをする気になれない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 先の事件で、<br>私は事前投票で犯人扱いされた身だ。 { speed:1 waitInput:true Wait:true }
+
+@print そのことは重々承知しているだろう、<br>レイアは気遣うように眉を下げる。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1
+
+@print ……そうか、残念だよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 正直なことを言えば、<br>犯人扱いされたことに対してもう腹は立っていなかった。 { speed:1 waitInput:true Wait:true }
+
+@print 私が彼女たちの立場なら、<br>あの状況で投票すべき相手は私で当然だ。 { speed:1 waitInput:true Wait:true }
+
+@print 彼女たちの判断は正しかった。 { speed:1 waitInput:true Wait:true }
+
+@print （だが、私はもう君たちと仲良くするわけには<br>　いかないんだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 哀しげなレイアの表情にもどかしさを抱えながら、<br>私はラウンジを後にした。 { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+@hideChars 
+@ResetText 
+@back SolidColor { time:1 }
+@Wait 1.4
+
+# さらさらと紙にペンを走らせる書き音
+@sfx Sfx_111
+@Wait 2
+@back 1_1 { Scale:{g_backgroundDefaultScale} time:0 }
+
+@Wait 1
+@back Transparent { time:1 }
+@Wait 1
+@bgm Bgm_20_1
+
+@print ――監獄生活２周目、１１日目。 { speed:1 waitInput:true Wait:true }
+
+@print ――私は魔女を殺す。 { speed:1 waitInput:true Wait:true }
+
+@print ――殺す。殺す。殺す。殺す。<br>殺す殺す殺す殺す殺す殺す殺す殺す殺す { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter02/Act02_Chapter02_Adv03

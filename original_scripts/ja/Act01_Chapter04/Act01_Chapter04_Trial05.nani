@@ -1,0 +1,545 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act01_Chapter04/Act01_Chapter04_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+@char Warden.1 { Position:,{hiddenCharacterPositionY} time:0 }
+# ==============================================================================
+# MARK: 4-5: 💬 電気の印
+# ==============================================================================
+# ＠ト書き▼議論4-5 電気の印
+# 議論開始カットイン
+# BGM変更：rAwTell Owk...
+@bgm Bgm_7_1
+
+# Judge4-5-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate アリサちゃんの顔には<br>火傷のような痕が<br>ついていたわ。
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@printDebate 偶然にもそれは<br>美しい蝶のように<br>なっていたみたいだけど……。
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@printDebate "あの火傷の模様こそが<br><link=\"Objection_01_04_05_01\">電気を流された証拠</link>ね。<br>たしか電紋と呼ぶはずよ。"
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@printDebate 水をかけられていたか、<br>かけられていないかに<br>関わらず……<br>アリサちゃんのあの傷は、<br>彼女が電気椅子で<br>処刑されたことを示しているわ。
+
+@char Coco.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Middle
+@gosubModifyCamera 0
+@printDebate でも……<br>この蝶の形、<br>なんかノアの死体を<br>思い出すなぁ。
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@printDebate ……関係ないことは<br>黙ってくれるかしら、<br>ココちゃん。<br>今はナノカちゃんが犯人という<br>議論を進めるんだから。
+
+@char Coco.Default,ArmR13,ArmL10,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@printDebate はぁ！？<br>感想言うぐらい<br>べつにいいじゃん！
+
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed { time:0 }
+@gosubModifyCamera 0
+@Wait 0.2
+
+# ==============================================================================
+# 4-5議論後独白
+# ==============================================================================
+
+@print （ココちゃんが怒られてる……。<br>　べつにマーゴちゃんとココちゃんが協力してたりは<br>　しないみたいだ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@print （……アリサちゃんの頬の火傷痕はどうしてついたのかな。<br>　何か推測できそうなもの……<br>　見たことなかったっけ？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge4-5-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_01_04_05_01
+
+@Skip false
+@pauseTrial true
+
+@choice 電気以外でもつけられる
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge4-5-2
+
+@choice 火傷ではない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge4-5-3
+
+@choice 雷に打たれた
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge4-5-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 4-5: ❌ 議論ミス選択肢
+# ==============================================================================
+# MARK: 4-5-3: ❌ 火傷ではない
+
+# Judge4-5-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print 本当にそれ……火傷なの？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print 他になんだと思うの？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL12,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ペイントか何かだっていう可能性は……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print 残念だけど、これは皮膚につけられた傷よ。<br>焼かれたような、高熱の痕跡……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print エマちゃんがするような落書きじゃないの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Flushed1,ArmR3,ArmL1,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （落書きなんてしてないのに……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （……【アリサちゃんの顔には火傷痕がある】。<br>　それが電気椅子によるものなのかどうか……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （判断するのに参考になるような証拠品は<br>　何かないかな……） { author:Ema speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge4-5-1
+
+# MARK: 4-5-4: ❌ 雷に打たれた
+
+# Judge4-5-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Ema.Surprised1,ArmR3,ArmL6
+@gosubModifyCamera 0
+@print そうか……！<br>もしかするとアリサちゃんは昨晩、<br>雷に打たれたのかもしれない……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print それなら電気で火傷した痕が残っていても<br>おかしくないよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print は？<br>あてぃしら中庭でティーパーティーしてたんだけど？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal1,ArmR1_1,ArmL8,Eyes1_Pensive_Open1,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print 雷どころか雨雲ひとつない空でした……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print そ、そうだった……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print 思いつきでしゃべんなー！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （雷落とされちゃった……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （……【アリサちゃんの顔には火傷痕がある】。<br>　それが電気椅子によるものなのかどうか……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （判断するのに参考になるような証拠品は<br>　何かないかな……） { author:Ema speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge4-5-1
+
+# ==============================================================================
+# MARK: 4-5-2: ⭕ 電気以外でもつけられる
+# ==============================================================================
+
+# Judge4-5-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+@StopBgm 
+@gosubCutIn Ema
+@Gosub System/System_Subroutine.EndDebate-Last
+
+# カットイン
+
+@char Ema.Default,ArmR3,ArmL4,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print 待ってマーゴちゃん。<br>電気でついたとは限らないと思うよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR2,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print "あら？ そうかしら。" { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmR2,ArmL5
+@gosubModifyCamera 0
+@print でもエマちゃん。<br>可能性だけならいくらだって言えるわ？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print 具体的に、いったい何がアリサちゃんに<br>火傷をつけたというのかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+# Judge4-5-5
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print アリサちゃんに火傷をつけたもの……<br>それは。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# 証拠品提示
+@evidence Clue
+
+# 睡眠薬
+@if "chosenEvidenceId==\"4-3\""
+	@goto .Judge4-5-6
+
+# 電気椅子
+@if "chosenEvidenceId==\"4-2\""
+	@goto .Judge4-5-7
+
+# ロウソク
+@if "chosenEvidenceId==\"4-1\""
+	@goto .Judge4-5-8
+
+# 汎用選択ミス
+@goto .Judge4-5-9
+
+# ==============================================================================
+# ミス選択肢
+# ==============================================================================
+# MARK: 4-5-7: ❌ 電気椅子
+
+# Judge4-5-7
+
+@char Ema.Default,ArmR7,ArmL13,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open
+@gosubModifyCamera 0
+@print 電気椅子だよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open02,Angle01/Facial/Mouth>Mouth_Gross_Open
+@gosubModifyCamera 0
+@print 電気椅子じゃん！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print エマちゃん、それは自白と取っていいのかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,ArmR3,ArmL6,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open04,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （電気椅子で火傷がついたんだとしたら、<br>　それはボクかナノカちゃんが<br>　やった可能性しかない……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （アリサちゃんの顔の火傷……<br>　あんな特徴的な痕をつけられそうなものは、<br>　他にないかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge4-5-5
+
+# MARK: 4-5-8: ❌ ロウソク
+
+# Judge4-5-8
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ロウソクで……火傷をつけたんだ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal2,ArmR1_2,ArmL3,Eyes2_Normal_Open1,Mouth2_Angry_Open2
+@gosubModifyCamera 0
+@print あ、あの……<br>ロウソクで、どうやってあんな火傷痕を……？<br>かなり細かな傷だと思いましたけど……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Middle,Angle01/Facial/Mouth>Mouth_Smile_Open
+@gosubModifyCamera 0
+@print エマちゃんで試してあげましょうか？<br>ロウソクのロウって、とっても熱いのよ……♡ { author:Margo speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Flushed1,ArmR3,ArmL1,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （ロウソクたらされちゃう……！？） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （アリサちゃんの顔の火傷……<br>　あんな特徴的な痕をつけられそうなものは、<br>　他にないかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge4-5-5
+
+# MARK: 4-5-9: ❌ 汎用選択ミス
+
+# Judge4-5-9
+
+@char Meruru.Normal1,ArmR1_1,ArmL8,Eyes1_Pensive_Open1,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@print あの……それは火傷と関係ないような……？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Ema.Default,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Closed04,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print （間違えちゃったみたい……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （アリサちゃんの顔の火傷……<br>　あんな特徴的な痕をつけられそうなものは、<br>　他にないかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge4-5-5
+
+# ==============================================================================
+# MARK: 4-5-6: ⭕ 【睡眠薬】
+# ==============================================================================
+
+# Judge4-5-6
+
+# カットイン
+
+@char Ema.Default,ArmR7,ArmL13,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open
+@gosubModifyCamera 0
+@print あの模様と同じもの……<br>それは、これだよっ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# 睡眠薬
+@spawn Clue
+
+@char Margo.Surprised1,ArmR1,ArmL4
+@gosubModifyCamera 0
+@print ……それは……！ { author:Margo speed:1 waitInput:true Wait:true }
+
+@despawn Clue
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print メルルちゃんの渡した【睡眠薬】だよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# BGM変更：Sen-Choose N'o SurC
+@bgm Bgm_38_1_Loop
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print これはメルルちゃんがアリサちゃんに渡したものとは<br>別の新しいビンだけど……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print でもこのビン、フタに蝶の模様が刻まれてるんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR8,ArmL7,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print たしかに……！<br>アリサの火傷そっくりだ……！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print メルルちゃん、アリサちゃんに渡したビンのフタには<br>この模様はついてたのかな？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal2,ArmR5_2,ArmL2,Eyes2_Normal_Open3,Mouth2_Angry_Open2
+@gosubModifyCamera 0
+@print はい……！<br>同じものがついていたと思います。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print だとしたらやっぱり、<br>アリサちゃんの火傷は睡眠薬のビンでできた跡<br>なんじゃないかな。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Coco.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open01,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print ……でも、睡眠薬が勝手に熱くなるわけないじゃん。<br>アリサの顔に火傷がついたのは、なんでさ？ { author:Coco speed:1 waitInput:true Wait:true }
+
+# Judge4-5-10
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@print （アリサちゃんの顔に、<br>　フタの模様通りの火傷ができた理由……<br>　それは……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+
+@choice 漏電
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge4-5-12
+
+@choice 冷気
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge4-5-13
+
+@choice 魔法
+	@sfx Sfx_System_SaveData_001_2x
+	@goto .Judge4-5-11
+
+@StopForChoice 
+
+# ==============================================================================
+# ミス選択肢
+# ==============================================================================
+# MARK: 4-5-12: ❌ 漏電
+
+# Judge4-5-12
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （電気が漏れてた……とか……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR4,ArmL5
+@gosubModifyCamera 0
+@print （でも電気椅子に拘束以外の不具合があったなんて<br>　ゴクチョーは言ってなかったし……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （別の可能性があるかも……。<br>　もう一度考えてみよう） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge4-5-10
+
+# MARK: 4-5-13: ❌ 冷気
+
+# Judge4-5-13
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （アリサちゃんが地下にいたなら<br>　ビンも一緒に地下にあったのかもしれない……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （だとしたら、凍傷が原因の火傷だったんじゃないかな） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR4,ArmL5
+@gosubModifyCamera 0
+@print （……いや、でも裁判所にはビンの破片も散乱してたし、<br>　あの火傷は地下じゃなくて<br>　地上でついたんじゃないかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print （別の可能性があるかも……。<br>　もう一度考えてみよう） { author:Ema speed:1 waitInput:true Wait:true }
+
+@goto .Judge4-5-10
+
+# ==============================================================================
+# MARK: 4-5-11: ⭕ 魔法
+# ==============================================================================
+
+# Judge4-5-11
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ……アリサちゃんの魔法だよ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print 現場にはロウソクを使った跡もあった。<br>けどマッチやライターなんかは見つかっていない……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print これはアリサちゃんの炎の魔法が<br>使われた痕跡でもあるよね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print だったら、このフタだって、<br>炎で熱せられていてもおかしくないと思う。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR4,ArmL5,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@print ……辺りにはガラスの破片も飛び散ってたよね？<br>もしかしたらビンが割れたのも<br>熱したタイミングなのかも……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Normal2,ArmR1_2,ArmL5,Eyes2_Normal_Open1,Mouth2_Surprised_Open2
+@gosubModifyCamera 0
+@print ……でもだとしたら、<br>どうしてアリサさんはそんなこと……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# マーゴカットイン
+
+@Wait 0.2
+
+@sfx Sfx_Common_5
+
+@ResetText 
+@voice CommonTrial_Margo01679
+@char Meruru.Surprised
+@char Margo.Smile1,ArmR1,ArmL5
+@gosubSplitStageScreen 1
+@Wait 1.5
+
+@hideStageScreen 1
+@Wait 0.3
+
+@char Margo.Default,ArmR1,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print ……エマちゃんはどうしても<br>電気椅子が使われなかったことにしたいようね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL13,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print そ、そういうわけじゃないけど、<br>でも現場の状況は――！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print ――そう。<br>現場の状況よ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print 仮に電気椅子が使われなかったとすると……<br>大きな矛盾が発生するわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@char Margo.Default,ArmR7,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Middle,Angle01/Facial/Mouth>Mouth_Neutral_Open
+@gosubModifyCamera 0
+@print それに答えられないようなら……<br>エマちゃんの推理は、意味をなさないの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+
+@goto Act01_Chapter04/Act01_Chapter04_Trial06

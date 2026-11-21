@@ -1,0 +1,728 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter03/Act02_Chapter03_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# ==============================================================================
+# MARK: 8-12: 💬 ノアの嘘
+# ==============================================================================
+# ＠ト書き▼議論シーン8-12 ノアの嘘
+# 議論開始エフェクト
+# BGM変更：Guil-me N'o sinruits-Vocal無-
+@bgm Bgm_37_1_Loop
+
+# Judge8-12-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@printDebate アンアンは<br>わざとベランダから<br>落ちたあと、<br>死んだフリをする<br>偽装工作を準備していた。
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@printDebate それ自体は<br>イタズラか何か<br>だったのかもしれない。<br>……けれど、<br>その用意周到な計画を<br>利用した人物がいたんだ。
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@printDebate その人物は<br>あらかじめ折って<br>準備していた鉄柵で<br>アンアンを刺殺……。
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@printDebate その後、<br>雨を降らせて<br>自らが殺害した痕跡を<br>消したんだ。
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Closed1,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@printDebate そんなことができるのは<br>液体操作の魔法を<br>使える者だけ……。
+
+@char Hiro.Normal2,ArmR6,ArmL3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@printDebate 城ケ崎ノア……<br>君が犯人だ。
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@printDebate それはヒロちゃんが<br>勝手に思い込んでる<br>だけだよね？
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Surprised_Open01,Angle01/Facial/Mouth>Mouth_Surprised_Open01
+@gosubModifyCamera 0
+@printDebate だって今ヒロちゃんが<br>言ったよね。<br>【痕跡は消した】って。
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@printDebate "証拠が何も<br>残っていないなら、<br><link=\"Objection_02_03_12_01\">証明できること</link>なんて<br>何も存在しないんじゃ<br>ないかな。"
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@printDebate もしかしたら<br>ぜーんぶヒロちゃんの<br>想像で、<br>アンアンちゃんは<br>落ちたときに<br>死んでたのかも。
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@printDebate で、でもヒロちゃんは、<br>血痕が偽物だって<br>証明したよ……！
+
+@char Noah.Default,ArmR3,ArmL3,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@printDebate "そんなことないと<br>思うけどな……。<br>偽物の血だって、<br><link=\"Objection_02_03_12_02\">誰にだって</link><br>用意できると思うし。"
+
+@char Noah.Default,ArmR2,ArmL4,Angle01/Facial/Eyes>Eyes_Pensive_Open_1,Angle01/Facial/Mouth>Mouth_Smile_Closed
+@gosubModifyCamera 0
+@printDebate "雨だって<br><link=\"Objection_02_03_12_03\">偶然</link>降ったりした<br>のかもしれないし、<br>水を中庭に撒く方法なんて<br>いくらでもあるんじゃ<br>ないかなぁ？"
+
+@char Noah.Default,ArmR2,ArmL4,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@printDebate それにのあ以外の<br>他の人にだって、<br>アリバイないよね？
+
+@char Hiro.Normal2,ArmR6,Arms3,Eyes2_Angry_Open1,Mouth2_Determined_Open2,Sweat2-1
+@gosubModifyCamera 0
+@printDebate ……それでも、<br>足跡を消すことができるのが<br>ノアだけという事実は<br>覆らない。
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open,Angle01/Facial/Mouth>Mouth_Flushed_Open
+@gosubModifyCamera 0
+@printDebate 本当の本当？
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@printDebate "たとえば中庭に<br>最初に足を踏み入れた<br><link=\"Objection_02_03_12_04\">レイアちゃん</link>は、<br>そもそも足跡を<br>消す必要がないよ。"
+
+@char Noah.Default,ArmR2,ArmL3,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Smile_Closed
+@gosubModifyCamera 0
+@printDebate だって第一発見者だもん。<br>足跡が残ってて<br>当然だもんね。
+
+@char Leia.Default,ArmR5,ArmL7,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@printDebate ……そうだね。<br>だから私の足跡は<br>現場に残っている。
+
+@char Noah.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@printDebate ……ほらね？
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open_1,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@printDebate ヒロちゃんの推理は<br>歪んでいて、<br>構図がぐちゃぐちゃ……。
+
+# ＠備考◆笑顔
+@char Noah.Default,ArmR5,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Smile_Closed
+@gosubModifyCamera 0
+@printDebate パースも視点も……<br>全然合ってないと思うよ？
+
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+@gosubModifyCamera 0
+@Wait 0.2
+
+# ==============================================================================
+# 8-12議論後独白
+# ==============================================================================
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@print （追求を重ねても<br>　のらりくらりとかわされてしまう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1
+@print （しかしノアがアンアンの計画を利用し、<br>　私とエマを陥れようとしたのは明白だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Angry_Open1,Mouth2_Cry_Closed1
+@print （理由はわからないが……<br>　それでも、見過ごせることじゃない！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 2話のアンアンの洗脳が残ってる
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1
+@print （どんな手段を使ってでも彼女の嘘を……<br>　【真犯人】を暴いてみせる！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge8-12-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_03_12_01
+
+@Skip false
+@pauseTrial true
+
+@choice 証明出来る
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge8-12-3
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_02_03_12_02
+
+@Skip false
+@pauseTrial true
+
+@choice 血糊はノアにしか用意できない
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge8-12-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_02_03_12_03
+
+@Skip false
+@pauseTrial true
+
+@choice 雨が降る可能性は低い
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge8-12-4
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論4
+# ------------------------------------------------------------------------------
+
+# Objection_02_03_12_04
+
+@Skip false
+@pauseTrial true
+
+@choice レイアは殺せないと証明する
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge8-12-5
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 8-12: ❌ 議論ミス選択肢
+# ==============================================================================
+# MARK: 8-12-3: ❌ 反論・証明できる
+
+# Judge8-12-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print いいや、証明出来ることはある。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Pensive1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print ……ふーん、どうやって？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print いくら水で流したといっても、<br>どうしても残ってしまう痕跡はあるはずだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print 例えば、髪の毛とか……<br>服の繊維とかね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Pensive1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print …………。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print それで、その【証拠】ってどこにあるのかな？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print っ……！<br>それは……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Middle
+@gosubModifyCamera 0
+@print ……事件後、あの中庭には<br>みなさん入っているはずです。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR17,ArmL12,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 痕跡だけで言うなら、<br>ノアさんに限らず誰かの痕跡が残っていても<br>特段おかしくはないかもしれませんね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print "……ね？ ヒロちゃん。" { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@print やっぱり証明なんて……できないんだよ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （証拠がない以上、追い詰めることはできないか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Angry_Open2,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （嘘でもなんでも、<br>　ノアを追いつめなくてはいけないが……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Angry_Open2,Mouth2_Cry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （半端な嘘では見破られてしまう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （何か使えるものはなかっただろうか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （……もう一度情報を見直してみよう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge8-12-1
+
+# MARK: 8-12-4: ❌ 反論・雨が降る可能性は低い
+
+# Judge8-12-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 雨が偶然降ったなんて、<br>そんな可能性は限りなく低い。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print なぜなら、空には雲ひとつなかった……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print "そうだろう？ ミリア。" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print "……あ、ああ、うん！ それは間違いないよ！" { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print 星空が綺麗な、雲ひとつない夜空だったよ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print ……ということだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Closed1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print なら、雨は人為的に降らせたと考える方が<br>自然じゃないかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@print うーん……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@print でも【絶対降らない】とは言い切れないよね？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Pensive1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print どんな天気だって、<br>突然雨が降ってくることはあると思うなー？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR1,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print 【天気雨】とか言うぐらいだしさ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Open
+@gosubModifyCamera 0
+@print それはわたくしもノアさんの意見に賛成ですわ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Fearful1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print 雨が降らないという天気予報を信じて、<br>今まで何度洗濯物を台無しにしてしまったか……。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+# ＠備考◆力強く
+
+@char Hanna.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Closed,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print 雨が偶然降ることはあると思いますわー！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （自然現象を根拠にはできないか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Angry_Open2,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （嘘でもなんでも、<br>　ノアを追いつめなくてはいけないが……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Angry_Open2,Mouth2_Cry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （半端な嘘では見破られてしまう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （何か使えるものはなかっただろうか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （もう一度情報を見直してみよう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge8-12-1
+
+# MARK: 8-12-5: ❌ 偽証・レイアは殺せないと証明する
+
+# Judge8-12-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print ……いいや、レイアは中庭には近付いていないよ。<br>少なくとも、アンアンの死亡推定時刻の間はね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print それは私が保障する。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Pensive1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print ……ふうん。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print でもそれも、嘘なんじゃないかなー？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01
+@gosubModifyCamera 0
+@print ヒロちゃんがレイアちゃんを庇ってるだけ……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print 違うかな？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print ……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@print そもそも死亡推定時刻を調べたのってレイアちゃんだよね？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open_1,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@print ならレイアちゃんがアンアンちゃんの死んだ時間を<br>偽装した可能性だってあるよ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@print レイアちゃんとヒロちゃんは本当に会ってるのかな？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@print レイアちゃんの口からも聞きたいな？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL7,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@print ……いや。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.ArmR5,ArmL7,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@print ヒロくんが見ていたかどうかはわからないが、<br>私は見ていない。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL7,Angle01/Facial/Eyes>Eyes_Pensive_Closed,Angle01/Facial/Mouth>Mouth_Normal_Closed
+@gosubModifyCamera 0
+@print だから私から証言できることは何もない。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL7,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@print ……逆に言えば、私にアリバイがあるとも言えない。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Noah.Pensive1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print ふーん……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Smile1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print レイアちゃんは、すごい役者さんだね。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Smile1,ArmR2,ArmL2
+@gosubModifyCamera 0
+@print でもやっぱりヒロちゃんの言う事には信憑性がないんじゃないかな？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Smile_Closed
+@gosubModifyCamera 0
+@print 証拠も何もない……<br>意味がない話だと思うなー？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal1,ArmR12,ArmL5,Eyes1_Normal_Closed1,Mouth1_Angry_Open1,Sweat1-1
+@gosubModifyCamera 0
+@print "（く……！ この嘘ではノアを攻めることはできないか）" { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 別選択肢共通
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Angry_Open2,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （嘘でもなんでも、<br>　ノアを追いつめなくてはいけないが……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Angry_Open2,Mouth2_Cry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （半端な嘘では見破られてしまう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （何か使えるものはなかっただろうか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （もう一度情報を見直してみよう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge8-12-1
+
+# ==============================================================================
+# MARK: 8-12-2: ⭕ 偽証・血糊はノアにしか用意できない
+# ==============================================================================
+
+# Judge8-12-2
+
+# カットイン
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+@StopBgm 
+@gosubCutIn Hiro
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print ……いいや。<br>あの血は、ノアにしか用意できないんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print のあにしか……？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print そうだよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 誰か、２階のノアのアトリエは調べていたかな？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print ノアのアトリエには元々ペンキが置かれていた……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# BGM変更：HirO（Voなし）
+@bgm Bgm_37_1_Loop
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print ――その中で、<br>事件前に赤いペンキだけが大きく減っていたのを見ているよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print ………！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print これは犯行にそのペンキが使われたということを<br>示している。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR12,ArmL5,Eyes1_Normal_Closed1,Mouth1_Determined_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （……事件のあと、<br>　エマが倒してしまったペンキだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR12,ArmL5,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （しかしそれはすでに掃除してしまった。<br>　よって私たちしか知らない情報だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print アトリエにあったペンキ……<br>あれを管理していたのはノアだった。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01
+@gosubModifyCamera 0
+@print た、たしかに……！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR4,ArmL3,Angle01/Facial/Eyes>Eyes_Surprised_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print アトリエにあったペンキの中で、<br>赤いペンキだけが減ってたのは<br>確認してるよ……！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print しかしアトリエには<br>そんなに大量に赤色を使ったような絵が<br>あったわけでもない……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL3,Eyes2_Angry_Open1,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print いったい何に使ったんだい？<br>ノア。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆驚き
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open,Angle01/Facial/Mouth>Mouth_Smile_Closed
+@gosubModifyCamera 0
+@print ……そんな風に戦うんだ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 悪いが……手加減する気はないからね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print アンアンのためにも、<br>私は真犯人を捕まえることを<br>ためらわない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print ……うん、わかった！ { author:Noah speed:1 waitInput:true Wait:true }
+
+# SE・明るい音
+@sfx Sfx_Common_2
+
+@char Noah.Default,ArmR2,ArmL4,Angle01/Facial/Eyes>Eyes_Pensive_Open_1,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print じゃあ……のあも頑張るね？ { author:Noah speed:1 waitInput:true Wait:true }
+
+# ＠備考◆警戒
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print ……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_34_1
+
+@char Noah.Default,ArmR1,ArmL1,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print まずね、アトリエにあったペンキは水性ペンキなんだ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR1,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Open01,Angle01/Facial/Mouth>Mouth_Surprised_Open01
+@gosubModifyCamera 0
+@print だから現場では使われてないよ？<br>乾く前に濡れたら固まらないし、<br>そのまま流されちゃってるはずだしね。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR2,ArmL4,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01
+@gosubModifyCamera 0
+@print そんなこと調べればすぐにわかるのに……<br>でもヒロちゃんは<br>のあのこと犯人だって言うんだ？ { author:Noah speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print ……くっ……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆冷たく
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@print ……でものあにはわかるよ、<br>その理由。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Noah.Default,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open_1,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print ヒロちゃん、<br>アンアンちゃんを突き落とした犯人なんだもんね……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Angry_Open2,Mouth2_Angry_Closed1
+@gosubModifyCamera 0
+@print ……なんだって？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_34_2
+
+@char Noah.Default,ArmR3,ArmL3,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Surprised_Open01
+@gosubModifyCamera 0
+@print のあ、ヒロちゃんがアンアンちゃんを<br>突き落としているところを見たんだ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Hiro.Normal2,ArmR12,ArmL12,Eyes2_Serious_Open1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print ……っ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆笑顔
+
+@char Noah.Default,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Closed01,Angle01/Facial/Mouth>Mouth_Smile_Closed
+@gosubModifyCamera 0
+@print アンアンちゃんを殺したのは、ヒロちゃん。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR1,ArmL2,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print エマちゃんがヒロちゃんを庇っているだけ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Noah.Default,ArmR5,ArmL2,Angle01/Facial/Eyes>Eyes_Uncomfortable_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01
+@gosubModifyCamera 0
+@print のあはね……ヒロちゃんが犯人だって告発するよ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@print （ノアめ……。<br>　正面から私と戦いに来たか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print ……いいだろう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print その告発……<br>正々堂々、叩き返してやる。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+
+@goto Act02_Chapter03/Act02_Chapter03_Trial13

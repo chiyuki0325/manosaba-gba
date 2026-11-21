@@ -1,0 +1,166 @@
+@gosubResetBook System/System_ResetWitchBook
+@set "isReenact = true"
+@printer Normal.Simple { time:0 }
+@Gosub System/System_Subroutine.BeginAdv
+
+# ==============================================================================
+# 絵本パート マーゴの物語
+# ==============================================================================
+# ＠ト書き▼絵本パート マーゴの物語
+
+# Judge6-13-1
+
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# BGM変更：ボクとワタシの
+@bgm Bgm_19_1
+
+# 【1P目】
+# マーゴが胸元にハートを抱えているような、抽象的なイメージイラスト
+@spawn Reenact_Ch02_E01_S01
+@Wait 1.5
+
+@print それはとっても素敵だったから。<br>キラキラしていて、暖かくて……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print だからね……殺したの。<br>ただ、それだけ。……それだけよ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 彼女を殺す方法……<br>それは、ココちゃんの音声メモから知ったわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print この牢屋敷の地下にある金庫には、<br>魔女を殺す薬や、凶器となる武器が入っていたの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print だからそれを持ってきたのよ。<br>警備なんてなかったから、開ける方法さえ知っていれば<br>簡単だったわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print でも何があるかわからない。<br>ゴクチョーや看守に邪魔されるかもしれないしね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print この、内に燻った感情をぶつけるために、<br>万全を期しておきたかったの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch02_E01_S01
+@Wait 1.5
+
+# 【2P目】
+# 牢屋の中に呼び出され、倒れるヒロ
+@spawn Reenact_Ch02_E01_S02
+@Wait 1.5
+
+@print まずはヒロちゃんを昏倒させたの。<br>手袋に中庭の砂を詰めて、後頭部から１発……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print フィクションと違って、そのまま死んでしまう可能性も<br>あったかもしれないけど……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print そんなこと、どうでもいいわよね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print そうしてヒロちゃんをノアちゃんの部屋に寝かせたあと……<br>メルルちゃんを呼び出したわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print ヒロちゃんが倒れたって言ったらすぐに来てくれたのよ。<br>なんて優しい子かしら……♡ { author:Margo speed:1 waitInput:true Wait:true }
+
+@print メルルちゃんはヒロちゃんを見て、<br>すぐに駆け寄ったわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch02_E01_S02
+@Wait 1.5
+
+# 【3P目】
+# マーゴが、倒れたヒロの上に乗って、
+# メルルの首～胸元あたりを刺している。
+# また、メルルの服からビンが床に転がっている。
+@spawn Reenact_Ch02_E01_S03
+@Wait 1.5
+
+@print だからね。<br>その瞬間、私はヒロちゃんに飛び乗ったの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print そして、隠し持っていた剣でメルルちゃんの喉を突いたわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print あの瞬間のメルルちゃんの驚いた顔……♡<br>とっても、可愛らしかったわね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print そしてそのまま、毒薬を塗った刃で<br>何度もメルルちゃんを刺したわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 何度も……何度もね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print ……ああ、そういえばこのとき、<br>メルルちゃんが持ってたビンが割れちゃったのよね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print だから咄嗟に、逆位相の音を出して打ち消したの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print ……元々この魔法、牢屋敷に来る前から<br>どこまでやれるのか興味があって訓練してたのよ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print だから多少の悲鳴ぐらいはかき消せる自信があった……。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print とはいえ、ガラスビンの割れる音は想定してなかったから、<br>完全には消せなかったのよね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print ……どうやらレイアちゃんは舞台をやってるだけあって、<br>耳が良かったみたい♡ { author:Margo speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch02_E01_S03
+@Wait 1.5
+
+# 【4P目】
+# 電話をするマーゴ
+@spawn Reenact_Ch02_E01_S04
+@Wait 1.5
+
+@print 私はそうしてメルルちゃんを刺したあと、<br>彼女のスマホを回収してその場を離れたの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print その後、アリバイを作るためにエマちゃんに電話したわ。<br>……メルルちゃんのスマホを使ってね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 私の演技……とっても上手だったでしょう？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 医務室にナノカちゃんがいたのは誤算だったけどね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print そしてすぐにラウンジでみんなと合流したの。<br>これでアリバイ作りは完了したはずだったんだけどね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch02_E01_S04
+@Wait 1.5
+
+# 【5P目】
+# 牢屋の自室で、マーゴとナノカがいる。
+# マーゴは口元をスマホで隠している。
+@spawn Reenact_Ch02_E01_S05
+@Wait 1.5
+
+@print でも見つけて欲しいときには見つけてくれない……<br>人生って、そういうものなのかもしれないわね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print しばらく待ってアリバイを作ったのに、<br>メルルちゃんの死体は一向に発見されなかった。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print それで……ナノカちゃんと一緒に部屋に戻ったあと、<br>音を鳴らすことにしたの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print このまま時間が過ぎたら、<br>せっかく作ったアリバイの意味が<br>なくなっちゃうかもしれないもの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print だから……死体のある部屋から聞こえるように調整して、<br>ガラスの音を鳴らしたの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 【モノマネ】……の魔法でね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print そしてみんなと一緒に<br>死体とヒロちゃんを発見したわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print メルルちゃんのスマホを<br>ヒロちゃんの服に仕込んだのも、そのときね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print みんなが死体に気を取られている隙に、<br>ヒロちゃんを気遣うフリをしながら入れておいたの。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch02_E01_S05
+@Wait 1.5
+
+# 【1P目を再利用】
+@spawn Reenact_Ch02_E01_S01
+@Wait 1.5
+
+@print これで……私のお話はおしまい。<br>どうだった？<br>楽しい話だったでしょう。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print ……でも。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print 今になっては、そのときに感じた気持ちや考えすらも<br>本当のものだったのか……<br>私には、わからないわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print そんな嘘つきの……<br>信頼できない語り手による、<br>信用のできない物語。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@print "こんな<ruby=\"ざれごと\">戯言</ruby>を信じるかどうかは任せるわ。" { author:Margo speed:1 waitInput:true Wait:true }
+
+@print あなたは私の話……<br>本当だと思うかしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@despawn Reenact_Ch02_E01_S01
+@Wait 0.5
+
+@set "isReenact = false"
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter01/Act02_Chapter01_Adv26

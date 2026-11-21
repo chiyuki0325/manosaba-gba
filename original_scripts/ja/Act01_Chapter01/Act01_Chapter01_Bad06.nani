@@ -1,0 +1,257 @@
+@if isDebugDirectJump
+	@Gosub System/System_Subroutine.BeginAdv
+	@back Transparent { time:0 }
+
+# ========================================
+# ＞『やっぱりなんでもないと首を振った』を選択→1‐1‐b6へ
+# ========================================
+
+# Scene1-1-b6
+
+# ========================================
+# ●シーン1-1‐b6
+# ========================================
+
+@back 2_1 { Scale:{g_backgroundDefaultScale} }
+@bgm Bgm_11_1
+
+@print やっぱりなんでもないと首を振った。 { speed:1 waitInput:true Wait:true }
+
+@char Meruru.Default
+
+@print "そうですか……？ では行きましょう。" { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print メルルに手を引かれながら、エマは歩き出す。 { speed:1 waitInput:true Wait:true }
+
+@print それでもノアの様子が気になったのか、<br>一瞬だけ彼女の房に目を向けた。 { speed:1 waitInput:true Wait:true }
+
+@print （ノアちゃん、今日もごはん行かないのかな） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print またアートに勤しんでいるのだろうか。 { speed:1 waitInput:true Wait:true }
+
+@print （でも、おかしいな。<br>　いつもなら、スプレーの音が聞こえてくるはずだけど……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+@char Meruru.Default
+
+@print エマさん、やっぱり何か<br>気になることがあるんじゃないですか？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print ……ううん、大丈夫。行こう。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Meruru.Pensive
+
+@print 本当ですか？<br>もしかして、具合が悪いんじゃ……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print メルルに心配されながら、エマは階段を上がっていく。 { speed:1 waitInput:true Wait:true }
+
+# 階段を上る音
+@sfx Sfx_7
+
+@ResetText 
+@back SolidColor.Custom { time:0.9 }
+@Wait 1.5
+
+@back 6_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent.Custom { time:0.9 }
+@Wait 0.9
+
+@StopBgm 
+
+@print （今日もまた、あのごはんかぁ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 食堂に入ったエマはどろりとしたグロテスクな色の<br>料理を思い浮かべて、ため息をついた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print "あれ？ なんか今日はいい匂いがするような……。" { author:Ema speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_34_1
+
+@hideChars 
+
+@print 漂う香ばしい匂いに、<br>エマは思わずといった様子で鼻を鳴らした。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR5
+
+@print あっ、エマさーん！<br>やっと来ましたね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print シェリーが手を振って、エマを呼ぶ。<br>珍しく、他の少女たちも同じテーブルに寄り合っていた。<br>既に全員が、食事をはじめている。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Surprised1,ArmR13
+
+@print ええっ、嘘でしょ……！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print トレーにのせられた料理を目にして、<br>エマは驚きの声を上げた。 { speed:1 waitInput:true Wait:true }
+
+# 肉が焼ける音
+@sfx Sfx_82
+
+@print 盛り付けられているのは、<br>いつもの気味が悪い料理ではない。<br>焼き目がいい具合についたステーキだった。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR13
+
+@print ……これ、お肉なの！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ステーキだけじゃない。<br>シチューに、揚げ物、スペアリブ。<br>他にも、色とりどりの肉料理が並んでいる。 { speed:1 waitInput:true Wait:true }
+
+# シチューを煮込む音
+@sfx Sfx_83
+
+@char Hanna.Smile1
+@char Leia.Smile1
+
+@print このシチュー、お肉ホロホロで、<br>うんめえ～ですわ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR3
+
+@print これは、極上の味と香りだね。<br>ステーキの焼き加減も絶妙だよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Normal1,ArmR11
+
+@print ほら、ナノカさんも食べてください！<br>こっちの赤いジュースも美味しいですよ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Nanoka.Default
+
+@print え、ええ……<br>……あ、たしかに美味しいかも。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char AnAn.Smile1,Arms2,Angle01/Option_Arms>Option_Arms01_03,Angle01/Option_ArmR/Option_ArmR01_01-
+
+@print 『癖になりそう。どんな隠し味が？』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+# 揚げ物を切るような音
+@sfx Sfx_84
+
+@hideChars 
+@char Coco.Smile1,ArmR6
+@char Miria.Normal1,ArmR10
+
+@print てか、こっちの唐揚げもうますぎだし！<br>ほら、ミリアも食えって！ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Miria.Smile1,ArmR10
+
+@print おじさん、こってりしてるのはちょっと……<br>あっ、でもこれ思ったよりあっさりしてるかも。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa.Normal1,ArmR5,ArmL2,Option-ArmL-Off
+@char Margo.Normal1
+
+@print 本当、めでたいやつら。<br>飯ぐらいでよくもまぁそんなに喜べるよな。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile,ArmL3
+
+@print ウフフ……そんなこと言って、<br>あなたそれ何皿目かしら？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Smile1,ArmR4
+
+@print エマさんもメルルさんも、早く一緒に食べましょう！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Normal1,ArmR3
+
+@print あ……う、うん！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print シェリーに促されて、エマとメルルも席につく。 { speed:1 waitInput:true Wait:true }
+
+@print いただきまーす。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 手を合わせて、エマも料理を口に運ぶ。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Smile1,ArmR1
+
+@print うん、美味しい……！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Meruru.Smile
+
+@print 今日はみなさん幸せそうでよかった、ですね……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Default
+
+@print そうだね。なんか、こういうのっていいな……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print みんなで一緒にワイワイごはん食べるのって、<br>やっぱり楽しいよね……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ここに来て以来、常に殺伐とした空気や緊張感に包まれていた。<br>だが今夜は、少女たちの間にも和やかなムードが漂っている。 { speed:1 waitInput:true Wait:true }
+
+@print （このまま殺し合いなんて起きずに、<br>　全員でここを出られたら最高なのに） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR3
+
+@print ……あ、ノアちゃん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ふと、今ここに１人足りていないことを思い出す。 { speed:1 waitInput:true Wait:true }
+
+@print （こんなに美味しいごはん、食べないなんてもったいないよね。<br>　後でノアちゃんにも持っていってあげよう） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Smile1,ArmR1
+
+@print それにしても、本当に美味しいなぁ……このお肉！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@ResetText 
+
+@back SolidColor { time:1 }
+@Wait 1.2
+@back 2_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+
+@print 夕食のあと。<br>エマはノアに料理の差し入れを持ってきた。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print ノアちゃん、今日の夕飯なんだけど……あれ？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print スプレーアートで埋め尽くされた房の中に、<br>ノアの姿はなかった。 { speed:1 waitInput:true Wait:true }
+
+@print 彼女が使ったであろうスプレー缶が、<br>ポツンと転がっている。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print （おかしいな……どこかに行ってるのかな？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 夕食後は長めの自由時間だ。<br>別の場所で過ごしているのかもしれない。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1
+
+@print （だったら、そのうち帰ってくるよね。<br>　差し入れ、喜んでくれるかなあ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@back SolidColor { time:1 }
+@Wait 1
+
+@print だが、いつまで経っても<br>城ケ崎ノアは戻ってこなかった。 { speed:1 waitInput:true Wait:true }
+
+@print あちこち探したが、<br>見つからないまま１日、２日と時間だけが流れていく。 { speed:1 waitInput:true Wait:true }
+
+@print その後も、牢屋敷では<br>定期的に【ごちそう】が出たのだが―― { speed:1 waitInput:true Wait:true }
+
+@print そのたびに少女が１人、姿を消した。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 『END～ごちそう～』
+# ========================================
+
+@badEnd 6

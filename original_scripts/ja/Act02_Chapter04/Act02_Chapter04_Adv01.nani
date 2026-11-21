@@ -1,0 +1,604 @@
+@gosubResetBook System/System_ResetWitchBook
+@Gosub System/System_Subroutine.BeginAdv
+
+# ========================================
+# 魔女裁判 第2章4話
+# ========================================
+
+# Scene2-4-1
+
+# ========================================
+# ●シーン2-4‐1
+# ========================================
+
+@back 11_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_9_1
+@Wait 0.5
+
+@char Sherry.Angry1
+
+@print くらーい！！<br>みなさん、暗いですよー！！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print その日の朝食後、<br>私たちはシェリーの呼びかけで娯楽室に集まっていた。 { speed:1 waitInput:true Wait:true }
+
+@print シェリー、ハンナ、レイア、ミリア、<br>アリサ、エマ、そして――私の７人。 { speed:1 waitInput:true Wait:true }
+
+@print もう６人も……<br>この牢屋敷に囚われた少女が悲劇に見舞われ、<br>いなくなってしまった。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Normal1,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Open
+
+@print 明るく振舞える状況だとでも？<br>正直、規則を守って生活するだけで<br>いっぱいいっぱいですわ。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Pensive1
+
+@print もう何も考えたくないですわ……。<br>わたくし、とても疲れましたの。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "ハンナの悲痛な<ruby=\"つぶや\">呟</ruby>きは、<br>私たちの気持ちをよく代弁している。" { speed:1 waitInput:true Wait:true }
+
+@print "集合をかけられて<ruby=\"だせい\">惰性</ruby>のように来たものの、<br>皆一様に<ruby=\"まと\">纏</ruby>う空気も口も重たい。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia.Pensive1
+
+@print ここに呼んだ意図を聞かせてくれないか。<br>シェリーくん。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print "あんなに<ruby=\"じょうぜつ\">饒舌</ruby>だったレイアすら、<br>目の下に<ruby=\"くま\">隈</ruby>ができ、輝きが失われているように見える。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （牢屋敷を何度も隅々まで調査してきたが、<br>　私たちにとって何も有効な手だてが得られていない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （大魔女など……本当に存在するのだろうか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （私を含め……限界が近い） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed,ArmR3
+
+@print …………。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "特に<ruby=\"けんちょ\">顕著</ruby>なのはエマだった。<br>最近、ほとんど笑わなくなってしまったのだ。" { speed:1 waitInput:true Wait:true }
+
+@print （エマはわざと心配をかけさせたくて……<br>　いや、でも） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私はわからなくなってきていた。<br>エマのことも、自分のことも。 { speed:1 waitInput:true Wait:true }
+
+@print "わからないから、彼女から目を<ruby=\"そ\">逸</ruby>らす。" { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+@hideChars 
+
+@print 重苦しい空気を吹き飛ばすかのように、<br>シェリーがぱちんと両手を合わせた。 { speed:1 waitInput:true Wait:true }
+
+@Wait 1.0
+@char Sherry.Smile1
+
+@bgm Bgm_18_1_Loop
+
+@print 今日はみなさんと遊ぼうと思いまして！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 私たちはストレスで魔女化が進むんですし、<br>楽しく過ごすのが一番！<br>もっと元気よくいきましょう！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ……なるほど、提案は間違っていない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive1,ArmR3,ArmL8
+
+@print でも遊ぶって何をするつもりだい？<br>ここなら映画を見るとか、<br>ビリヤードとか、チェスとかあるけども。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Pensive1,Angle01/Facial/Eyes>Eyes_Glare_Open04
+
+@print どれも元気よく遊ぶ感じではない、かなぁ。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+
+@print 何もここにあるものでなくとも、<br>みんなで遊ぶことはできると思うんです！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print たとえばですね……ん～<br>ドッジボールとか鬼ごっことか！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1
+
+@print あなたとだけはやりたくない遊びばかりですわね！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Miria.Surprised1,ArmR2,ArmL2
+
+@print 娯楽室が壊れちゃう！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa.Angry1,Option-ArmL-Off,Angle01/Facial/Eyes>Eyes_Angry_Open02
+
+@print ウチはパスだ。<br>何度も言ってるが、おめえらと仲良くつるむ気はねえ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "早々にアリサが冷たく言い放ち、<br>出ていこうと<ruby=\"きびす\">踵</ruby>を返した。" { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆煽り笑い
+@char Sherry.Normal1,Angle01/Facial/Eyes>Eyes_Normal_Open04,ArmR9
+
+@print "あー、どう考えても私に勝てないからって、<br>逃げる気なんですね？ ぷぷぷー。" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa.Angry1,Option-ArmL-Off
+
+@print ……んだと？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print "アリサの足がピタリと止まった。<br>振り返って、シェリーを<ruby=\"にら\">睨</ruby>む。" { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,Option-ArmL-Off,ArmL7
+
+@print "なんの勝負だ？ さっさと決めろよ。" { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1,Angle01/Facial/Eyes>Eyes_Smile_Closed02,ArmR8
+
+@print おっ、いいですね～！<br>それなら準備も楽ですし、<br>腕相撲でもやりましょうか！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,Angle01/Facial/Eyes>Eyes_Normal_Open03,ArmR8
+
+@print 魔法アリでルール無用の……<br>名付けて【まじかる腕相撲】です！！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 上等だ、受けて立ってやる。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （単純極まりないな。<br>　まんまとシェリーに乗せられている） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "ため息をつきながらも、<br><ruby=\"そろ\">揃</ruby>ったメンバーを見回すと少し瞳に光が戻っている。" { speed:1 waitInput:true Wait:true }
+
+@print （……付き合ってやるか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私は一歩前に出た。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print 審判は私がやろう。<br>私は魔女ではないから魔法を使えないしな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 君たちとは違うんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1
+
+@print ……ふんっ、まだそんなこと言ってますの？<br>いい加減お認めになりましたら？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1
+@char Hanna.Pensive1
+@Wait 0.2
+
+@print "ギロリと<ruby=\"いちべつ\">一瞥</ruby>すれば、ハンナはすぐに押し黙った。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia.Smile1
+
+@print まあまあ、魔女でも魔女じゃなくても<br>いいじゃないか。<br>ここはひとつ、楽しくやろう！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+@hideChars 
+
+# ========================================
+# 時間経過
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@back 11_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.8 }
+@Wait 0.9
+
+@print ……というわけで、<br>私たちはシェリーが考案した<br>【まじかる腕相撲】をやることとなり―― { speed:1 waitInput:true Wait:true }
+
+@print 明らかに強いであろうシェリーに、<br>少女たちが総当たりで挑むこととなった。 { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_8_1
+@char Sherry.Smile1,ArmR8
+
+@print ふっふっふ、私に勝ってみせなさい。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print シェリーはすでに王者の風格で<br>ソファーにゆったりと座り、余裕の笑みを浮かべている。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa.Angry1,ArmL7
+
+@print 笑ってられんのも今のうちだ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print ローテーブルを挟み、<br>シェリーとアリサが膝立ちになった。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed
+
+@print 準備はいいか？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa.Angry1,ArmL11,Angle01/Option_ArmL+
+@char Sherry.Normal1,ArmR8
+
+@print "互いの視線が一瞬<ruby=\"こうさく\">交錯</ruby>し、<br>その瞬間火花が散ったように見えた。" { speed:1 waitInput:true Wait:true }
+
+@print "……実際、アリサの手は炎を<ruby=\"まと\">纏</ruby>っていた。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hiro.
+
+@print ……はじめ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa.Angry1,ArmL11,Angle01/Option_ArmL+
+@char Sherry.Angry1,ArmR8
+
+@print 合図と同時に、互いの手がぶつかり合う。 { speed:1 waitInput:true Wait:true }
+
+# 目を見開く
+@char Alisa.Angry1,ArmL11,Angle01/Option_ArmL+
+
+@print ウチの炎に勝てるやつなんざいねえんだよ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Normal1
+
+@print 熱して相手を弱体化させる作戦ですわね！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Leia.Angry1
+
+@print 卑怯だがたしかにこれならシェリーくんにだって――。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# 受け身の音
+@sfx Sfx_116
+
+@print ズバン！ { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Surprised1,ArmL4,Option-ArmL-Off
+
+@print ぐぅっ！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print ――手を組んだ瞬間、<br>あっさりとアリサはひっくり返されていた。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Surprised1,ArmR8
+
+@EmoteJumpDouble Sherry
+
+@print あっつあっつ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print "一方で炎に手を突っ込んだ形となったシェリーも、<br>軽い<ruby=\"やけど\">火傷</ruby>を負っていた。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hiro.Normal1,ArmR8
+
+@print 勝者、橘シェリー！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa.Surprised1,ArmL4,Option-ArmL-Off
+
+@print くそぉ……っ、強すぎる……っ { author:Alisa speed:1 waitInput:true Wait:true }
+
+# ＠備考◆「勝てないだろう」の意
+
+@hideChars 
+
+@print （いや勝てんだろ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "シェリーは【怪力】の魔法を持っているのだ。<br>それには<ruby=\"とうてい\">到底</ruby>勝てる者などいるはずもなく――" { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+@back Transparent.Custom { time:0.4 }
+@Wait 0.4
+
+# 受け身の音
+@sfx Sfx_116
+@Wait 1
+
+@char Hanna.Cry1
+
+@print ゴリラー！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ハンナはあっさりと吹き飛ばされていた。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR8
+
+@print 勝者、橘シェリー！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@Wait 0.2
+
+@ResetText 
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+@char Leia.Smile1
+@back Transparent.Custom { time:0.4 }
+@Wait 0.4
+
+@print シェリーくん、私のことを見てごらん。<br>ほうら、うっとりして力が入らなく……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+# 受け身の音
+@sfx Sfx_116
+
+@Wait 0.2
+@hideChars 
+@Wait 0.5
+
+@print あだだだだ！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@print "レイアは<ruby=\"しゅんさつ\">瞬殺</ruby>されていた。" { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR8
+
+@print 勝者、橘シェリー！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+@hideChars 
+@char Miria.Smile1,ArmR10,ArmL1
+@back Transparent.Custom { time:0.4 }
+@Wait 0.4
+
+@print シェリーちゃん、あのさ、<br>おじさんと入れ替わりたくならない？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@print （なるほど、肉体を入れ替えて、<br>　精神的勝者になる作戦か） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print おじさんの体楽しいよきっと。<br>ほらほらおじさんと入れ替わって……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Smile1,ArmR8
+
+@print 嫌ですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@hideChars 
+
+# 受け身の音
+@sfx Sfx_116
+
+@Wait 0.5
+
+@char Miria.Cry1,ArmR10,ArmL1
+
+@print あうっ、痛い！ { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ミリアもあえなく敗退……。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR8
+
+@print 勝者、橘シェリー！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+@hideChars 
+@char Sherry.Smile1,ArmR8
+@back Transparent.Custom { time:0.4 }
+@Wait 0.4
+
+@print てかみなさん、弱すぎません？？<br>ああ、シェリーちゃんの魔法が最強すぎましたか！<br>あっはっは、いやこれは参りました！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Angry1
+
+@print きぃぃ、悔しい、悔しいですわー！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print "ソファーでふんぞり返るシェリーに、<br>ハンナが<ruby=\"じだんだ\">地団駄</ruby>を踏んでいる。" { speed:1 waitInput:true Wait:true }
+
+@char Leia.Angry1
+
+@print もうエマくんしか残っていない。<br>ぜひシェリーくんに勝ってほしい！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+
+@print "……え？ あ、うん。" { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 少し離れたところで見学していたエマが、<br>ようやく前に出てくる。 { speed:1 waitInput:true Wait:true }
+
+@print えっと、シェリーちゃんと<br>腕相撲すればいいんだよね……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "状況も<ruby=\"はあく\">把握</ruby>できていない様子だ。" { speed:1 waitInput:true Wait:true }
+
+@print （やはりエマの様子がおかしいな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Smile1,ArmR8
+
+@print そういえばエマさんがまだ残っていましたね！<br>どう見ても私に勝てるわけありませんが！<br>わっはっは、わぁっはっは！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Angry1
+
+@print くぅっ、調子にノリすぎですわあのゴリラ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print よっぽど悔しいのか涙目になっているハンナが、<br>エマへと歩み寄る。 { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1
+@char Ema.Surprised1
+
+@print 絶対、絶対勝ってくださいまし、エマさん！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print が、頑張るよ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマさんが勝てるようにおまじないですわ。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1
+
+@print そう言って、ハンナは<br>そっとエマの手を自身の手で包み込む。<br>何やら仕込んだ風に見えた。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hiro.Normal1,ArmR1
+
+@print ……２人とも準備はいいか？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Normal1,ArmR8
+
+@print いつでもどうぞ！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Determined2
+
+@print うん、大丈夫……！<br>よし、勝つぞ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1,ArmR8
+
+@print 私が開始の合図をかけると、<br>テーブルの中心で２人が手を組み合う。<br>その直後―― { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia.Surprised1,ArmR6
+
+@print あ、ＵＦＯ！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print レイアが声を上げたことで、<br>全員が強制的に<br>あさっての方向に視線を向けてしまった。 { speed:1 waitInput:true Wait:true }
+
+@print "目を離した一瞬の<ruby=\"すき\">隙</ruby>に……" { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# 受け身の音
+@sfx Sfx_116
+@Wait 2.0
+
+@print ――ひっくり返ったのは、<br>シェリーの方だった。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Surprised1,ArmR8
+
+@print ……はれ？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@hideChars 
+@char Hanna.Smile1
+@char Ema.Surprised1
+@bgm Bgm_9_1
+@Wait 0.2
+
+@EmoteJumpDouble Hanna
+
+@print "やったやった！ やりましたわねエマさん！" { author:Hanna speed:1 waitInput:true Wait:true }
+
+@print あ、う、うん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ＵＦＯに気を取られて力が緩んだ隙に、<br>シェリーちゃんをひっくり返せた、みたい……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （レイアか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （魔法も使いようによっては、<br>　思わぬ作用が期待できるんだな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR1
+
+@print まあまあ勝ったからいいじゃないか！<br>シェリーくん、もはや君は王者ではない！<br>その玉座から降りたまえ！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Sherry.Angry1,ArmR8
+
+@print ぐぬぬぬ……納得いきません！<br>もう１回やりましょう、もう１回！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hiro.Normal1,ArmR6
+
+@print 潔く負けを認めろ。<br>この勝負はエマの勝ちだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Surprised1
+
+@print 私が言い放つと、自然にエマと目が合った。 { speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"あお\">煽</ruby>り倒してくるシェリーに勝って、<br>私も正直胸がすっとしていた。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hiro.Normal1,ArmR6
+
+@print "エマを<ruby=\"たた\">称</ruby>えるような笑みを<br>浮かべてしまいそうになっていた。" { speed:1 waitInput:true Wait:true }
+
+@print まるで昔の、<br>無邪気に笑い合っていたあの頃の私たちに<br>戻ったかのようで―― { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Surprised1,ArmR9
+
+@print ハッとし、手元に口を当てて即座に堪える。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive1,ArmR9
+
+@print （私は何を……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Closed,ArmR1
+
+@print 楽しませてもらったよ。<br>私はこれで失礼する。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 私はみんなに背中を向け、<br>急いで部屋を出た。 { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+# 木の扉を閉じる音
+@sfx Sfx_144
+@Wait 1
+
+@bgm Bgm_24_1
+
+@print 楽しかったなど、<br>思うだけで罪深い――。 { speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"きし\">軋</ruby>むように胸が痛み、<br>扉の前で、ぐっと拳を握る。" { speed:1 waitInput:true Wait:true }
+
+@print 伸びた爪が、手のひらに食い込んだ。<br>爪は今朝切ったばかりのはずなのに。 { speed:1 waitInput:true Wait:true }
+
+@print （一度は鎮まった、抑えられたと思っていた……<br>　けど――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"のうり\">脳裏</ruby>をかすめたのは、<br>ナノカの言葉だった。" { speed:1 waitInput:true Wait:true }
+
+
+# ========================================
+# ◎回想シーン（2-1-16_からの流用）
+# ========================================
+
+@ResetText 
+# セピア色
+@back 9_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@char Nanoka.Normal1 { time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@print 詳しくはないけれど……【なれはて】になるまで、<br>個人差があったり状況によって変わることは知っているわ。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 心の傷を深く抉られるようなキッカケがあれば、<br>一気に魔女化は進むけれど。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print ただストレスを溜めているだけなら、<br>長く理性は保てるはず。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print 心の強さ次第、というところね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 回想ここまで
+# ========================================
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@print …………。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私の【魔女化】は止まっていない。 { speed:1 waitInput:true Wait:true }
+
+@print そして……タイムリミットが、迫っている。 { speed:1 waitInput:true Wait:true }
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter04/Act02_Chapter04_Adv02

@@ -1,0 +1,236 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-2-7
+
+# ========================================
+# ●シーン2‐2‐7
+# ========================================
+
+@back 28_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+# ========================================
+# ＞『中庭』を選択
+# ========================================
+
+@bgm Bgm_11_1
+
+@print 私は中庭に出てみた。 { speed:1 waitInput:true Wait:true }
+
+@print "洋風の庭園といった<ruby=\"おもむ\">趣</ruby>きで、<br>お茶会でも開けそうだ。" { speed:1 waitInput:true Wait:true }
+
+@print けれども長い間手入れがされていないのだろう。<br>全体的にツタが生い茂っていた。 { speed:1 waitInput:true Wait:true }
+
+@print "見上げると、<br>２階の各所から<ruby=\"かんき\">換気</ruby>のためかベランダが張り出している。" { speed:1 waitInput:true Wait:true }
+
+@print "中央には<ruby=\"ふんすい\">噴水</ruby>もある。" { speed:1 waitInput:true Wait:true }
+
+@print （あの噴水にエマを沈めれば……<br>　いや、この場所は各所のベランダからも見下ろせるし、<br>　人目につく可能性が高い） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 実際、少し離れたところに<br>レイアとノア、アリサの姿があった。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Normal1
+@char Noah.Normal1
+
+@print レイアとノアは劇について相談し合っている様子だ。<br>アリサの方は―― { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Alisa.Normal1,Option-ArmL-Off
+
+@print ２本並んで立つ木の下で、何かの作業をしている。<br>手にロープを持っているのが見えた。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print ……！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+@back 150_2 { Scale:{g_backgroundDefaultScale} }
+@Wait 1
+@hide Stills
+
+@print ちらついた光景に、瞬間で鼓動が速くなる。 { speed:1 waitInput:true Wait:true }
+
+@print （落ち着け。アリサは何も、<br>　自殺しようとしているわけじゃない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 深呼吸していると、<br>レイアとノアが私に気付いて近寄ってきた。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1
+@char Noah
+
+@print やあヒロくん。<br>キミもこれを見てくれないか。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print ……なんだ？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print レイアは少し興奮した様子で、<br>私にスケッチブックを見せてきた。 { speed:1 waitInput:true Wait:true }
+
+@print 舞台の背景イメージだよ。<br>ノアくんに描いてもらったんだ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print レイアがスケッチブックをめくっていく。 { speed:1 waitInput:true Wait:true }
+
+# 本のページをめくる音
+@sfx Sfx_43
+
+@print どのページにも美しく幻想的な風景が描かれていて、<br>私も思わず見入ってしまう。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1
+
+@print "どうだい？ 素晴らしいだろう？<br>ノアくんはセンスの塊だ！" { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Noah.Flushed1
+
+@print えへへ照れちゃうなー。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print ……そうだね。どれも芸術的だ。<br>君はスプレーアートだけではないのだな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Smile1
+
+@print のあお絵描きはなんでも好き。<br>いちばんはやっぱりスプレーアートだけどね。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print 話しかけてみるとノアが笑顔を見せてくれたので、<br>私はどこかホッとしていた。 { speed:1 waitInput:true Wait:true }
+
+@char Noah.Smile1
+
+@print 最近ね、前より<br>魔法がコントロールできるように<br>なってきたかもしれなくて。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Smile1
+
+@print 自分が描きたい絵になってくれるんだよ。<br>きっとのあのお絵描きが上達したからだと思うんだ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"ほこ\">誇</ruby>らしげに胸を張るノアに、<br>レイアは<ruby=\"うれ\">嬉</ruby>しそうにうんうんと<ruby=\"うなず\">頷</ruby>く。" { speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1
+
+@print "ノアくんの<ruby=\"えが\">描</ruby>く背景に、私の演技……<br>ああ、今から舞台に立つのが楽しみで仕方がないよ！" { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Noah.Smile1
+
+@print うん、のあも楽しみ～。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR9,ArmL3
+
+@print みんなで、最高の舞台を作り上げよう！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@print レイアとノアが、顔を見合わせて笑う。 { speed:1 waitInput:true Wait:true }
+
+@print ……ずいぶん熱心だな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR1,ArmL1
+
+@print 私は舞台に立つのが好きだからね。<br>やるからには本気でやりたい。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Normal1
+
+@print プロとして中途半端なのは許せない。<br>いいものを作りたいんだ。<br>観客の心を動かすような、いいものを。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print それはまるで【私の心にも】と<br>こちらに語りかけているように聞こえた。 { speed:1 waitInput:true Wait:true }
+
+@print （レイアの姿勢はプロとして正しい。<br>　それを無下にしたくはない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ……私にはやることがある。<br>だから、君たちの手伝いはできない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print だけど、上演する時は見に行く。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1
+
+@print 本当かい！？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Noah.Smile1
+
+@print やったねー、レイアちゃん。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1
+
+@print ああ、ますます意欲が湧いてきたよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR6,ArmL3
+
+# 劇（ピーター・パン）のセリフ
+
+@print 『なら僕と行こう。<br>夢がいっぱいで、時間になんて縛られない場所へ！』。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Noah.Smile1
+
+@print すごーい！<br>ほんとにレイアちゃんじゃないみたい！ { author:Noah speed:1 waitInput:true Wait:true }
+
+@print レイアが劇のワンシーンを演じ、<br>ノアが目を輝かせている。 { speed:1 waitInput:true Wait:true }
+
+@print "私もほんの少し<ruby=\"ほお\">頬</ruby>が<ruby=\"ゆる\">緩</ruby>んだ。" { speed:1 waitInput:true Wait:true }
+
+@print 以前のような親しさは薄れてしまったかもしれないが、<br>彼女たちは今の私にとって―― { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@hideChars 
+
+# ロープが軋む首吊り音
+@sfx Sfx_127
+@Wait 2
+
+@print ――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "<ruby=\"なわ\">縄</ruby>の<ruby=\"きし\">軋</ruby>む音がして、<br>思考が凍りつく。" { speed:1 waitInput:true Wait:true }
+
+@char Alisa
+
+@print 少し離れた木の下で、<br>アリサがロープと布を使って何かを作っていた。 { speed:1 waitInput:true Wait:true }
+
+@print ２本並んでいる木の両方に、それぞれロープを巻きつける。<br>それから広げた布を、フックを使ってロープに引っかけた。 { speed:1 waitInput:true Wait:true }
+
+@print よし、こんなもんか。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 私はノアたちから離れ、<br>アリサの方へと近付いていく。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro
+@char Alisa.Normal1
+
+@print 何をしているのかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Smile1
+
+@print 見ればわかんだろ。<br>ハンモックを作ってんだよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print ……なんのために？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Surprised1
+
+@print は？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@print 私の問いにアリサは一瞬、<br>困惑したように目を瞬かせる。 { speed:1 waitInput:true Wait:true }
+
+@char Alisa.Pensive1
+
+@print 寝るために決まってんだろ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print それ以上は話すことがないといったように、<br>アリサは私に背を向けた。 { speed:1 waitInput:true Wait:true }
+
+@print 強度に問題がなさそうか確認する素振りを見せてから、<br>アリサはハンモックの上で横になる。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+# ロープが軋む首吊り音
+@sfx Sfx_127
+
+@Wait 2
+
+# ＠備考◆痛みを堪える
+
+@print ……っ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 耐えられない息苦しさを覚え、<br>私は中庭から逃げるように去った。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン2‐2‐4
+# 全てのイベントを消化している＞シーン2‐2‐10
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter02/Act02_Chapter02_Adv04

@@ -1,0 +1,339 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-1-5
+
+# ========================================
+# ●シーン1‐1-5
+# [back 2]
+# ========================================
+
+# ========================================
+# [bgm Bgm_028_001_Loop]
+# ========================================
+
+@back 2_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+@bgm Bgm_28_1
+
+@print 夕食の後は、長めの自由時間となっていた。 { speed:1 waitInput:true Wait:true }
+
+@print 行ける範囲で散策できたり、<br>シャワーを浴びたりできるらしかった。 { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1
+
+@print （色々見てまわりたいけど……<br>　すごく疲れてる） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （今日はもう寝よう……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "地下の房へと入る前、<br>エマは何気なくといった風に隣の房を<ruby=\"のぞ\">覗</ruby>いた。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [stopBgm]
+# ========================================
+
+@StopBgm 
+
+@print そして、息を呑んだ。 { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆息を呑む
+
+@char Ema.Surprised1
+
+@print ――！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# ========================================
+# [sfx 15：カラースプレー噴出音]
+# ========================================
+
+@sfx Sfx_15
+
+# ＠備考◆童謡『ちょうちょ』の鼻歌
+
+@print ふんふふ～ん♪ { author:Noah speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [back 赤]
+# ========================================
+
+# ========================================
+# [bgm Bgm_026_001_Loop]
+# ========================================
+
+@back 1_1 { Scale:{g_backgroundDefaultScale} }
+@bgm Bgm_26_1
+
+@char Noah.Normal1,ArmR1,ArmL5
+@animate Noah
+
+@print ――室内全体は、<br>真っ赤に塗りつぶされていた。 { speed:1 waitInput:true Wait:true }
+
+@print ノアはそこにいて、<br>ぺたりと地面に座っている。 { speed:1 waitInput:true Wait:true }
+
+@print さほど広くない房内は、徹底的に塗りつぶされ<br>カラースプレーのにおいが充満していた。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@back 2_1 { Scale:{g_backgroundDefaultScale} }
+@char Ema.Surprised1,ArmR9,ArmL8
+
+@print "エマは驚き、<ruby=\"てつごうし\">鉄格子</ruby>にしがみつく。" { speed:1 waitInput:true Wait:true }
+
+@print ノ、ノアちゃん！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@back 1_1 { Scale:{g_backgroundDefaultScale} }
+@char Noah.Pensive1,ArmR1,ArmL1
+@animate Noah
+
+@print ノアが振り向く。<br>不思議そうな表情だった。 { speed:1 waitInput:true Wait:true }
+
+@print "ん？ そんなに慌てて、どうしたのかな？" { author:Noah speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@back 2_1 { Scale:{g_backgroundDefaultScale} }
+@char Ema.Surprised1
+
+@print い、いやだって、この部屋……<br>なんでこんなことに？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@back 1_1 { Scale:{g_backgroundDefaultScale} }
+@char Noah.Normal1
+@animate Noah
+
+@print のあの描きたい絵になってくれなかったから、<br>消さなきゃって思ったの。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print そしたら、全部こうなっちゃった。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@back 2_1 { Scale:{g_backgroundDefaultScale} }
+@char Ema.Surprised1
+
+@print （絵が勝手に動くって言ってたっけ……<br>　ノアちゃんは魔法をコントロールできない、ってこと？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@toast "魔女図鑑 更新…"
+@update Noah
+
+# ========================================
+# [back 2]
+# ========================================
+
+@print そこで近寄る足音に気付く。<br>その足音は極限まで小さく、忍ばせたものだった。 { speed:1 waitInput:true Wait:true }
+
+@char AnAn.Pensive1,Angle01/Option_Arms-
+
+@print "エマが通路の方へと目を<ruby=\"や\">遣</ruby>ると、<br>１人の少女が立っていた。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Normal1,ArmR1,ArmL1
+
+@print えっと……キミは、夏目、アンアンちゃんだよね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print …………。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print アンアンは口を開かない。<br>きゅっと固く唇を結んだまま、エマを片目でじとっと見ている。 { speed:1 waitInput:true Wait:true }
+
+@print （何かボクに言いたいことがあるのかな……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "アンアンは何かを<ruby=\"じ\">焦</ruby>れている様子で、<br>ひたすらエマを見つめている。" { speed:1 waitInput:true Wait:true }
+
+@print えーと、ボクに何か用？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print …………。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print （人見知りが激しいのかな……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 大きくため息を吐いて、<br>アンアンは手に持っていたスケッチブックを開こうとした。<br>しかし―― { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [sfx 17：スケッチブックが落ちる音]
+# ========================================
+
+@sfx Sfx_17
+@char AnAn.Angry1,ArmR1-Option-2
+
+@print 不器用なのか、もたもたとした動きで、<br>スケッチブックを落としてしまった。 { speed:1 waitInput:true Wait:true }
+
+@animate Ema
+
+@print "エマは<ruby=\"とっさ\">咄嗟</ruby>にそれを拾おうとしたが――" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [sfx 18：手をはらう音]
+# ========================================
+
+@sfx Sfx_18
+
+# ＠備考◆驚き
+
+@char AnAn.Angry1,Angle01/Option_Arms-
+@char Ema.Surprised1
+@animate Ema
+
+@print っ……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print その手を思い切り払われる。<br>よっぽど触られるのが嫌だったらしい。 { speed:1 waitInput:true Wait:true }
+
+@animate AnAn
+
+@print アンアンは急いでスケッチブックを拾い、<br>持っていたペンで<br>スケッチブックにすらすらと何かを書いている。 { speed:1 waitInput:true Wait:true }
+
+@char AnAn.Angry1,Arms2,Angle01/Option_Arms>Option_Arms01_02,Angle01/Option_ArmR/Option_ArmR01_01-
+@animate AnAn
+
+@print すぐにそのページを、<br>エマの方へ見せてきた。 { speed:1 waitInput:true Wait:true }
+
+@print 『どけ。わがはいの邪魔である』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print え、どけって……わああっ、ごめん！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hide Ema
+
+@print エマはノアのいる房内の前、<br>扉を塞ぐように立っていたことに気付いた。<br>すぐにその場から移動する。 { speed:1 waitInput:true Wait:true }
+
+@print ノアちゃんと同室だったんだね。<br>知らなくて、ほんとごめん。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char AnAn.Pensive1,ArmR1,ArmL1,ArmR1-Option-All,Angle01/Option_Arms-,ArmR1-Option-All
+
+@print …………。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char AnAn.Pensive1,Angle01/Option_Arms-
+
+@print アンアンは小さく息をつき、<br>房の扉の前に立った。 { speed:1 waitInput:true Wait:true }
+
+@print そこでようやく顔を房内に向けて―― { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆ひっと息を呑む
+
+@char AnAn.Fearful1,ArmR6,ArmL7,ArmR-Option-Off,Angle01/Option_Arms-
+
+@print ――！！ { author:AnAn speed:1 waitInput:true Wait:true }
+
+@print 悲鳴をあげそうになったのか、<br>両手でバッと口を塞いだ。 { speed:1 waitInput:true Wait:true }
+
+@print "真っ<ruby=\"か\">赤</ruby>に塗りつぶされた房内は、<br>ショックを与えるに十分足りうるものだ。" { speed:1 waitInput:true Wait:true }
+
+@print しかも、カラースプレーの刺激臭が<br>房内に満ちて、外に漏れ出している。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@back 1_1 { Scale:{g_backgroundDefaultScale} }
+@char Noah.Smile1
+@animate Noah
+
+@print あ、アンアンちゃんだぁ。<br>おかえりぃ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print 悪びれた様子もなく、<br>ノアは満面の笑みを浮かべた。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@back 2_1 { Scale:{g_backgroundDefaultScale} }
+@char AnAn.Fearful1,Angle01/Option_Arms-
+
+@print "アンアンの顔からみるみる血の<ruby=\"け\">気</ruby>が引き、<br>真っ<ruby=\"さお\">青</ruby>になってガクガク震え……" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print そして、倒れた。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [sfx 19：倒れる音]
+# ========================================
+
+@sfx Sfx_19
+@char Ema.Surprised1,ArmR8,ArmL1
+@animate Ema
+
+@print わぁっ、アンアンちゃん、大丈夫！？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_18
+
+@char Ema.Surprised1,ArmR1,ArmL1
+@animate Ema
+
+@print "<ruby=\"とっさ\">咄嗟</ruby>にエマの伸ばした手は、<br>アンアンにはねつけられる。<br>かろうじて意識が残っているらしい。" { speed:1 waitInput:true Wait:true }
+
+@sfx Sfx_49
+@hideChars 
+
+@print 騒ぎに気付いたのか、<br>ほかの少女たちも数人駆け寄ってきた。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Surprised1
+@char Ema
+
+@print 一体何があったんだ！？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@print ええと、アンアンちゃんがこの部屋にびっくりして<br>貧血を起こしちゃったみたいで……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Normal1
+@animate Leia
+
+@print レイアはアンアンの体を軽々と持ち上げた。 { speed:1 waitInput:true Wait:true }
+
+@hide Leia
+
+@print "エマは驚く。<br><ruby=\"こがら\">小柄</ruby>な少女とはいえ、相当な力が必要だろう。" { speed:1 waitInput:true Wait:true }
+
+@print マップには医務室があったね。<br>アンアンくんをそこに連れていく。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print "レイアはアンアンをお姫様抱っこし、<br><ruby=\"さっそう\">颯爽</ruby>と連れていってしまった。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 騒ぎが収束したので、<br>集った少女たちも解散していった。 { speed:1 waitInput:true Wait:true }
+
+@back 1_1 { Scale:{g_backgroundDefaultScale} }
+@char Noah.Pensive1
+@animate Noah
+
+@print 監房の中で、<br>ノアは困ったように立ち尽くしている。 { speed:1 waitInput:true Wait:true }
+
+@print ……びっくりさせちゃったのかな？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@back 2_1 { Scale:{g_backgroundDefaultScale} }
+@char Ema.Pensive1
+
+@print う、うん。そうみたい。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@back 1_1 { Scale:{g_backgroundDefaultScale} }
+@char Noah.Smile1,ArmR1,ArmL5
+
+@print じゃあ、今度はアンアンちゃんが喜んでくれる<br>絵を描くね！ { author:Noah speed:1 waitInput:true Wait:true }
+
+@animate Noah
+
+@print 言って、ノアはまた地面にぺたりと座り込み、<br>カラースプレーを噴出しはじめる。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [sfx 15：カラースプレー噴出音]
+# ========================================
+
+@sfx Sfx_15
+
+# ＠備考◆童謡『ちょうちょ』の鼻歌
+
+@print ふんふふ～ん♪ { author:Noah speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@back 2_1 { Scale:{g_backgroundDefaultScale} }
+@char Ema.Pensive1
+
+@print （たぶんこのにおいも原因っぽいから<br>　アンアンちゃんとノアちゃんって、相性最悪なんじゃ……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （でも楽しそう……本当に絵を描くのが好きなんだ……<br>　やめたほうがいいなんて、言えないや） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （ボクらはまだほとんど知らない者同士だし） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "エマは喉元まで出かかった声を<ruby=\"の\">呑</ruby>み込み、<br><ruby=\"きびす\">踵</ruby>を返し、自分の房へと入っていった。" { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# [transition Out,Fade,1,Black]
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter01/Act01_Chapter01_Adv10

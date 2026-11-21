@@ -1,0 +1,44 @@
+@Gosub System/System_Subroutine.BeginAdv
+
+@back Transparent { time:0 }
+
+@Gosub .Rectangle
+
+@Stop 
+
+# ==============================================================================
+# 長方形
+# ==============================================================================
+
+# Rectangle
+
+@back 14_1
+@char Ema
+
+@print "Debug_Mask # Rectangle" { speed:1 waitInput:true Wait:true }
+
+@spawn MaskingRectangle
+@back 14_1 { time:0.5 }
+@char Hiro { time:0.5 }
+@mask MainBackground-Middle,Hiro-Middle
+@Wait 0.5
+
+@print 1 { speed:1 waitInput:true Wait:true }
+
+@char Ema
+@spawn MaskingRectangle
+@back 14_1 { time:0.5 }
+@char Nanoka { time:0.5 }
+@mask MainBackground-Front,Nanoka-Front
+@Wait 0.5
+
+@print 2 { speed:1 waitInput:true Wait:true }
+
+@despawn MaskingRectangle
+@hide MainBackground-Middle,Hiro-Middle { time:0.5 }
+
+@print 3 { speed:1 waitInput:true Wait:true }
+
+@mask MainBackground-Middle,Hiro-Middle { Enable:false }
+
+@Return

@@ -1,0 +1,270 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-4-13
+
+# ========================================
+# ●シーン1‐4-13
+# ========================================
+
+@bgm Bgm_31_1
+
+@back 14_1
+@back Transparent { time:1.2 }
+@char Ema.Fearful1,ArmR3,ArmL7
+@Wait 0.3
+
+@print 投票によって【魔女】に選出されたのは、<br>エマだった。 { speed:1 waitInput:true Wait:true }
+
+@print エマの耳元で、どくどくどく、と<br>激しく鼓動が脈打っている。 { speed:1 waitInput:true Wait:true }
+
+@print （そんな、そんな、ボクがアリサちゃんを、殺した――？） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （ボクが、処刑される……？） { author:Ema speed:1 waitInput:true Wait:true }
+
+# ＠備考◆泣きながら
+
+@print エマさん、うぅ……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print （どうしよう、どうしよう、どうしよう……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "目の前がぐるぐるまわって、視界が<ruby=\"ゆが\">歪</ruby>む。<br>あまりのことに、<br>足ががくがくと震えだす。" { speed:1 waitInput:true Wait:true }
+
+@ProcessInput false
+@StopBgm 
+@HidePrinter 
+@HideUI ControlPanel,AutoToggle,WitchBookButtonUI
+@ShowUI ExecutionButton
+
+@if !enableDebugSkip
+	@Skip false
+	@Stop 
+
+# ExecutionConfirmed
+
+@bgm Bgm_31_1 { fade:1 }
+@HideUI ExecutionButton
+@hide Stills-Middle { time:0.6 }
+@Wait 0.9
+
+@ProcessInput true
+@ShowUI ControlPanel,AutoToggle,WitchBookButtonUI
+@print はい、処刑ボタンも皆さん押されましたね！<br>これより、魔女の処刑を執行します～！ { author:Warden speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 0.9
+@hideChars 
+@back 13_1 { time:0 }
+@back Transparent { time:1.2 }
+
+@animate MainBackground
+@Wait 0.9
+
+@print 恐怖で立っていられなくなったエマを支えるかのように、<br>看守がエマの体を抱えた。 { speed:1 waitInput:true Wait:true }
+
+@print やめ、やめてよ……っ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 看守の力に抗えず、<br>エマは処刑台の方へと引きずられていく。 { speed:1 waitInput:true Wait:true }
+
+@print 少女たちを見回すも、<br>誰も目を合わせてくれない。 { speed:1 waitInput:true Wait:true }
+
+@print やだぁ……っ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ええと、どの処刑台にしますかね……。<br>桜羽エマさん、桜羽エマさん……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print ちょっと忘れてしまったので、<br>この処刑台にしますか――えいっと。 { author:Warden speed:1 waitInput:true Wait:true }
+
+# 歯車がまわる音
+@sfx Sfx_36
+
+@hideChars 
+
+@print 歯車の回転がはじまり、<br>中央の台座が入れ替えられていく。 { speed:1 waitInput:true Wait:true }
+
+@print じたばたもがいても、恐怖で泣き喚いても、<br>死にたくない、魔女じゃないと叫んでも<br>看守は離してくれない。 { speed:1 waitInput:true Wait:true }
+
+@print （もうおしまいだ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print どくん、とひときわ大きく鼓動が鳴った。 { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# ========================================
+# 演出：BGM切る・黒画面・UIも消す・ささやきのみ
+# ========================================
+
+# 立ち絵・話者名の表示なし
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@printer Normal.Simple
+
+@print ――本当にそれでいいんですか。 { author:Unknown speed:1 waitInput:true Wait:true }
+
+@print ――あなたならできるはずなのに。 { author:Unknown speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 演出ここまで
+# ========================================
+
+@HidePrinter 
+@back 13_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@printer Normal.Default
+
+@bgm Bgm_13_1_Loop
+
+@print "エマは、ずっと耳元で<ruby=\"ささや\">囁</ruby>かれている。<br>今も、聞こえているはずだ。" { speed:1 waitInput:true Wait:true }
+
+@print この場にいない者の声なのに、<br>声はどんどん大きくなり続けている。 { speed:1 waitInput:true Wait:true }
+
+@print それはエマにとって不思議な感覚だった。 { speed:1 waitInput:true Wait:true }
+
+@print 指先や顔がむずむずとし、<br>奥底に閉じ込めていた闇が、<br>内部から生じて、割れて、飛び出しそうな―― { speed:1 waitInput:true Wait:true }
+
+@print "ハッとして指先をみると、<br>爪が<ruby=\"とが\">尖</ruby>って伸び、指先がほんの少し変形していた。" { speed:1 waitInput:true Wait:true }
+
+@print （魔女化――） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （そんな、そんな、ボクもとうとう魔女に……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 震えが止まらず、<br>足元から崩れていきそうになる。 { speed:1 waitInput:true Wait:true }
+
+@print "全てを諦め、<br>聞こえる<ruby=\"ささや\">囁</ruby>きを、受け入れてしまいそうになる。" { speed:1 waitInput:true Wait:true }
+
+@print 絶望したエマの眼前に、<br>ゆっくりと処刑台がせりあがってきた。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@print "目の前が真っ暗だった。<br>もう何も見たくないと、目すら<ruby=\"つむ\">瞑</ruby>った。" { speed:1 waitInput:true Wait:true }
+
+@print そのエマの耳に。 { speed:1 waitInput:true Wait:true }
+
+@print 少女たちの悲鳴が届く。 { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆驚愕
+
+@print ぎゃああああああっ { author:Coco speed:1 waitInput:true Wait:true }
+
+# ＠備考◆驚愕
+
+@print これは一体どういうことなの！？ { author:Margo speed:1 waitInput:true Wait:true }
+
+# ＠備考◆驚愕
+
+@print あ、あ、ああああぁっ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@print （一体何が――） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマは戸惑い、目を開く。 { speed:1 waitInput:true Wait:true }
+
+@HidePrinter 
+
+@animate Stills
+@back 310_1 { time:0 }
+@animate Stills
+@back Transparent { time:0.9 }
+@Wait 2.4
+
+@back 310_1 { time:0 }
+@animate Stills-Middle
+@back Transparent { time:1.2 }
+@Wait 2.4
+
+@animate Stills-Middle
+@back 310_1 { time:0 }
+@blur Stills
+@animate Stills
+@blur Stills
+@hide Stills-Middle { time:0.6 }
+@Wait 3
+
+@print エマの目の前に現れたのは――<br>ナノカの死体だった。 { speed:1 waitInput:true Wait:true }
+
+@print ナノカ、ちゃん……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマは<ruby=\"ぼうぜん\">呆然</ruby>と、<br>処刑台の上で死んでいるナノカを見つめる。" { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@print 頭は追いつかないが、<br>ナノカの言葉が脳裏を過った。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ◎シーン1-4‐6の回想シーン（流用）
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+
+@back 22_4 { Scale:{g_backgroundDefaultScale} time:0 }
+@blur MainBackground-Middle
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@char Ema.Smile1,ArmR3
+@char Nanoka.Default
+
+@bgm Bgm_41_1
+
+@print ……桜羽エマ。あなたはお人好しね。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@print わかった。あなたに背中を預けるわ。<br>ただ勘違いしないでほしい。これは取引。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print 取引……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 私はあなたを利用する。<br>だから何かあったらあなたも私を利用して。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# ========================================
+# 回想ここまで
+# ========================================
+
+@ResetText 
+@back SolidColor { time:0.9 }
+@Wait 1.2
+@blur MainBackground-Middle
+@back 13_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:0.9 }
+@Wait 0.9
+
+@print "ナノカを想い、<ruby=\"ほほ\">頬</ruby>を伝う涙が、熱い。" { speed:1 waitInput:true Wait:true }
+
+@print （ナノカちゃんは殺された） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （ここでボクが処刑されるわけにはいかない……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （ボクは、魔女にならない！！<br>　今度こそ、本物の魔女を見つけるんだ！！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマはキッとゴクチョーを<ruby=\"にら\">睨</ruby>んだ。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Angry1,ArmR3,ArmL7
+
+@print ゴクチョー！<br>裁判の申請をします！！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print ナノカちゃんは殺されている！<br>これは殺人事件だ！<br>その裁判を執り行わないといけない！ { author:Ema speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 次話への引継ぎアイテム：『万年筆』、『牢屋敷設計図』
+# 『過去からの囚人の手紙』、『アリサの死体現場写真』
+# 『処刑台』、『冷凍室』
+# ========================================
+# 5話であらためて追加するので、万年筆以外は一括で伏せ
+@update Nanoka
+
+# ========================================
+# ＞魔法少女ノ魔女裁判 1章5話へ
+# ========================================
+
+@set "g_gameProgress = max(5, g_gameProgress)"
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter05/Act01_Chapter05_Adv01

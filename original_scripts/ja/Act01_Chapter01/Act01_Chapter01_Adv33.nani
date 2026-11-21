@@ -1,0 +1,249 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene1-1-29
+
+# ========================================
+# ●シーン1-1‐29
+# [back 8]
+# ========================================
+
+# ========================================
+# ＞『シャワールーム』を選択
+# ========================================
+
+# ========================================
+# [bgm Bgm_005_001_Loop]
+# ========================================
+
+@back 30_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+@bgm Bgm_5_1
+
+@print "エマたちがシャワールームに行ってみると、<br>調査中のレイア、マーゴ、ミリアと<ruby=\"そうぐう\">遭遇</ruby>した。" { speed:1 waitInput:true Wait:true }
+
+@print "どうやら彼女たちも<br>捜査中に<ruby=\"はちあ\">鉢合</ruby>わせ、合流した様子だ。" { speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1
+@Wait 1
+@hideChars 
+
+@print "ハンナは嫌そうに顔をしかめ、<br><ruby=\"そうそう\">早々</ruby>にシャワールームから出て行く。" { speed:1 waitInput:true Wait:true }
+
+@char Margo.Smile1,ArmL4
+
+@print あら、あなたたちも探偵ごっこ？ { author:Margo speed:1 waitInput:true Wait:true }
+
+@print "ロッカーを調べていたマーゴが、<br>エマたちにくすっと<ruby=\"ほほえ\">微笑</ruby>みかけてきた。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Angry1
+
+@print ごっこなんかじゃ……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Smile1,ArmR18,ArmL13
+
+@print まあまあ、喧嘩してる場合じゃありませんから。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "シェリーに<ruby=\"なだ\">宥</ruby>められ、<br>エマは深呼吸でなんとか気持ちを<ruby=\"しず\">鎮</ruby>める。" { speed:1 waitInput:true Wait:true }
+
+@print （マーゴちゃんはわざと煽るようなこと言ってきてるんだ。<br>　落ち着かなきゃ） { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Sherry.Normal1,ArmR1,ArmL1
+
+@print そっちは何か手がかり、得られました？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print その言葉に肩をすくめたのはレイアだった。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia.Normal1,ArmR3
+@char Margo.Normal1,ArmL1
+
+@print いや、有力な手がかりは何も。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 私たちの見解では、怪しいのはやっぱり<br>ハンナちゃんじゃないかって、まとまりつつあるわね。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Angry1
+
+@print ハンナちゃんは絶対そんなことしない！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 今度こそエマが噛みつく。<br>するとレイアが、深々とため息を漏らした。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia.Pensive1,Arms
+
+@print エマくん、キミはハンナくんのことを<br>どれだけ知っているんだい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 私は彼女のことをほとんど知らない。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 人を殺すような少女かもしれないし、<br>そうではないかもしれない。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 真っすぐに信じられるキミが、<br>少し羨ましくもあるよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Angry1,ArmR3
+
+@print ……っ、レイアちゃんは、<br>誰も信じていないの……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@print "エマは反撃にもならない弱弱しい声音で問いかけた。<br>するとレイアは優しく<ruby=\"ほほえ\">微笑</ruby>む。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia.Smile1,ArmR3,ArmL1
+
+@print 私はみんなを守りたいと思っている。<br>だから、信じている少女たちを全力で魔女から守るんだよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （レイアちゃんの考え方が間違ってるとは思わない。<br>　でもハンナちゃんは……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （友だちがいないボクと、仲良くしてくれた。<br>　……個人的な感情でしかないかもしれないけど） { author:Ema speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@QuickSave 8
+
+@print （ボクはハンナちゃんが魔女じゃないって<br>　信じたい） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Normal1
+
+@print "シャワールームは何もなさそうですね。<br>どうします？ もう出ますか？" { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print シェリーがエマの肩にそっと触れてきた。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print エマは―― { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 選択肢
+# 『シェリーに頷きを返した』
+# 『少し考える素振りを見せた』-> 1‐1‐b8へ
+# ========================================
+
+@choice シェリーに頷きを返した
+	@goto .Choice1-1-8
+
+@choice 少し考える素振りを見せた
+	@goto Act01_Chapter01/Act01_Chapter01_Bad08
+
+@StopForChoice 
+
+# Choice1-1-8
+
+@correctChoice 8
+
+@print "シェリーに<ruby=\"うなず\">頷</ruby>きを返した。" { speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR3
+
+@print そうだね……。<br>ああ、でも、魔法について聞いておきたいんだ。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@print レイアちゃんたちがどんな魔法を使うのか<br>ボクらは知らないから。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria.Surprised1,ArmR10,ArmL4
+
+@print え”っ…。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print ぎょっとした声をあげたのは、<br>ミリアだった。 { speed:1 waitInput:true Wait:true }
+
+@Wait 0.3
+@animate Miria
+
+@print 猛烈な勢いでエマに迫ってくる。 { speed:1 waitInput:true Wait:true }
+
+@print 金髪でピアス。頭からつま先までばっちり決まっている、<br>モデル体型のカリスマ美女。 { speed:1 waitInput:true Wait:true }
+
+@print 間近に迫られたエマは、<br>ごくりと喉を鳴らした。 { speed:1 waitInput:true Wait:true }
+
+@print "ままっ、まままま魔法なんてあるわけないよ？<br>その話はやめよ？ ははははは。" { author:Miria speed:1 waitInput:true Wait:true }
+
+@print 乾いた笑いが<br>シャワールームに響く。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （む、むちゃくちゃ怪しい……！） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print 咳払いをしたのはレイアだ。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Normal1,ArmR3,ArmL1
+
+@print エマくんもどうやら魔法を使えないみたいだし、<br>みんながみんな自覚があるわけではないんじゃないか？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+
+@print ああ、うん。そうだよね……。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Leia.Smile1,ArmR3,ArmL2
+
+@print ちなみに私は少々キミたちを誘惑してしまう魔法を、<br>無自覚に使ってしまっているようだね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print （レイアちゃんはたしかに） { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1,ArmR1,ArmL1
+
+@print もういいかい？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+
+@print ええと……あと、昨夜の行動について聞いておきたくて。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@animate Miria
+@char Miria.Surprised1,ArmR10,ArmL4
+
+@print え”っ…。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@Wait 0.3
+@animate Miria
+
+@print ミリアがまたもぎょっとした声を上げ、<br>エマにせかせかと迫ってくる。 { speed:1 waitInput:true Wait:true }
+
+@print レイアちゃんと同室で寝ているけど、同室ってだけだからね？<br>変な意味じゃないからね？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@print それぞれ違うベッドで寝ているからね？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print …………。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print …………。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1
+
+@print そんなに焦って言われると<br>逆に怪しんでしまいそうですね。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print 満面の笑顔でシェリーがさらりと突っ込む。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@animate Miria
+@char Miria.Fearful1,ArmR8,ArmL7
+
+@print あああっ……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print ミリアは頭を抱えてしまった。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （どっちかというと、<br>　昨夜の配信について聞きたかったんだけど） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print （なんだろう、このいたたまれない空気は……） { author:Ema speed:1 waitInput:true Wait:true }
+
+@print エマとシェリーは、<br>シャワールームを後にした。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 消化していないイベントがある＞シーン1‐1‐21
+# 全てのイベントを消化している＞シーン1‐1‐30
+# ========================================
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act01_Chapter01/Act01_Chapter01_Adv25

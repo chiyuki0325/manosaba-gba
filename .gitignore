@@ -1,0 +1,28 @@
+# Local Python environments and caches
+.venv/
+.venv-*/
+__pycache__/
+*.py[cod]
+*.log
+.DS_Store
+
+# Original installation and large extracted media; keep local copies
+/original_game/
+/ost/
+/original_sprites/*
+!/original_sprites/manifest.csv
+/original_music/
+/midi/
+/original_sfx/
+
+# Downloaded tools and generated reverse-engineering output
+/python_workspace/tools/
+/python_workspace/il2cpp_output/*
+# Required by export_naninovel.py to reconstruct command parameters
+!/python_workspace/il2cpp_output/dump.cs
+
+# Local release outputs
+/dist/
+
+# Optional character compositor previews
+/character_composition_demo/output/

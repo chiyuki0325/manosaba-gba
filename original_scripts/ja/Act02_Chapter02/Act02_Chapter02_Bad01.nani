@@ -1,0 +1,459 @@
+@if isDebugDirectJump
+	@Gosub System/System_Subroutine.BeginAdv
+
+# ========================================
+# ＞『念のため中を調べることにした』を選択
+# ========================================
+
+# Scene2-2-b1
+
+# ========================================
+# ＞シーン2-2-b1へ
+# ========================================
+
+# ========================================
+# ●シーン2-2-b1
+# ========================================
+
+@back 30_2 { time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_22_1
+
+@print 私はダストシュートの中を詳しく調べることにした。 { speed:1 waitInput:true Wait:true }
+
+@print （事前のチェックは必要だ。<br>　どんなトラブルが起きるかわからない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 仕掛けに影響しないよう、<br>重たい鉄製のフタをそっと開く。 { speed:1 waitInput:true Wait:true }
+
+@print 中を覗くと冷たい空気が吹き抜けていった。 { speed:1 waitInput:true Wait:true }
+
+@print （……暗くてよく見えないな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print もう少ししっかり確認しようと、更に身を乗り出した<br>――瞬間だった。 { speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# 背中を押す音
+@sfx Sfx_76
+
+@print うわっ！？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@camera { time:0.2 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 1
+
+# ＠備考◆落下の瞬間
+
+@print （しまっ……――！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_12_1_Loop
+
+@print "誰かに強く背中を押されて、<br>バランスを崩した私は狭いダクトに<ruby=\"の\">吞</ruby>み込まれた。" { speed:1 waitInput:true Wait:true }
+
+@print 暗闇の中を急降下していき、<br>心臓が一気にはね上がる。 { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆落下中
+
+@print （くっ、止められな――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@StopBgm { fade:1 }
+@camera 
+@Wait 2
+
+# 激しい風の音
+# BGMない
+# @bgm Ambi_9_1
+
+@print 風が耳元で叫び声のように渦巻くのを感じながら、<br>私の意識は途中でぷつりと途絶えた――。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+@StopBgm 
+
+
+@back 21_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@blur MainBackground
+# 演出相談：背景を歪ませてほしいです。
+
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+# 水滴の音
+@sfx Sfx_121
+
+@print ……徐々に意識を取り戻し、<br>私はがばりと起き上がった。 { speed:1 waitInput:true Wait:true }
+
+@print するとそこは――懲罰房の中だった。 { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_20_1
+
+@char Hiro.Pensive
+
+@print "な、なんだ……？ 懲罰房、か……？" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （落下して死んだのか私は……？<br>　いやでも、それなら牢屋のベッドで目覚めるはず） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print あれだけの距離のダクトを落下したのに、<br>自身には怪我も痛みもない。 { speed:1 waitInput:true Wait:true }
+
+@print それに、ダクトの先は焼却炉のはずだ。 { speed:1 waitInput:true Wait:true }
+
+@print （いったい何が起きたんだ……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 戸惑いながら懲罰房を見回すと、<br>違和感は更に膨らんだ。 { speed:1 waitInput:true Wait:true }
+
+@blur MainBackground
+
+@print "壁が<ruby=\"ゆが\">歪</ruby>んでいる、いや、<br>空気そのもの、世界全てが<ruby=\"ゆが\">歪</ruby>んでいた。" { speed:1 waitInput:true Wait:true }
+
+@print "（自身の魔法が牢屋敷に干渉して、<br>　不可思議な現象に<ruby=\"つな\">繋</ruby>がったのかもしれないな）" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （ともかく調べてみるしかなさそうだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 出入口の方へ足を向けると、<br>先に扉が勢いよく開いた。 { speed:1 waitInput:true Wait:true }
+
+# 扉が勢いよく開く音
+@sfx Sfx_75
+
+@Wait 1
+@char Hiro.Surprised
+
+# ＠備考◆息を呑む
+
+@print ！？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# ========================================
+# 立ち絵：クリーチャーB表示
+# ========================================
+
+@char JailerB.1
+
+@print 現れたのは――異形の化け物だった。 { speed:1 waitInput:true Wait:true }
+
+@print （なれはてか！？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 中に入ってきた相手もまた、<br>私の存在に気付きびくりと体を強張らせた。 { speed:1 waitInput:true Wait:true }
+
+@print "互いに警戒し<ruby=\"にら\">睨</ruby>み合うこと数秒――<br>なれはてが武器を掲げる。" { speed:1 waitInput:true Wait:true }
+
+# 二階堂ヒロのボイス加工：逆再生
+# ＠二階堂ヒロ
+
+@print ■■■■■■■■ { author:Unknown speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hiro.Angry
+
+@print なんだ！？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char JailerB.1
+
+@print なれはてが何かを喚きながら、<br>猛烈な勢いで私に向かってくる。 { speed:1 waitInput:true Wait:true }
+
+# ぶんっと武器が振り下ろされる音
+@sfx Sfx_9
+
+@print "明らかな殺意をむき出しに、<ruby=\"おの\">斧</ruby>が振られる。" { speed:1 waitInput:true Wait:true }
+
+@print くっ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "私は身を翻し、<ruby=\"とっさ\">咄嗟</ruby>に避けた。" { speed:1 waitInput:true Wait:true }
+
+@print こちらには対抗する術がない。<br>私は逃げるため、扉の方へと駆け抜けた。 { speed:1 waitInput:true Wait:true }
+
+@back 3_2 { Scale:{g_backgroundDefaultScale} time:0.5 }
+# 演出相談：背景を歪ませてほしいです。
+
+# 地下通路を走る音・1人
+@sfx Sfx_51
+
+@Wait 0.5
+
+@print あれが何なのかはわからないが、<br>私を殺そうとしたのは空気で伝わった。 { speed:1 waitInput:true Wait:true }
+
+@char JailerB.1
+
+@print 走りながら、ちらりと後ろを振り向いた。<br>なれはてはまだ私を追いかけてきている。 { speed:1 waitInput:true Wait:true }
+
+# 二階堂ヒロのボイス加工：逆再生
+# ＠二階堂ヒロ
+
+@print ■■■■■■■！ { author:Unknown speed:1 waitInput:true Wait:true }
+
+@print （何を言っている！？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "振り向いたせいで前方がおろそかになり、<br>何かに<ruby=\"つまづ\">躓</ruby>いてしまう。" { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Surprised
+
+# ＠備考◆躓いて
+
+@print あ……ッ！？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 転ぶ音
+@sfx Sfx_6
+
+@char Hiro
+@hideChars 
+
+@print 脚がもつれ、私はその場に倒れ込んだ。 { speed:1 waitInput:true Wait:true }
+
+# ＠備考◆転倒して痛がっている
+
+@print うっ……くっ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char JailerB.1
+
+@print 何か考えている暇もなく、<br>なれはては目前まで迫ってきていた。 { speed:1 waitInput:true Wait:true }
+
+@print 待――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ざんっと肉が切れる音
+@sfx Sfx_12
+
+@ResetText 
+@back SolidColor.Custom { time:0.1 }
+@Wait 0.2
+
+@hideChars 
+
+@print 肉を裂き骨を貫く衝撃が自身を襲う。<br>痛みを感じる間すら与えられず、<br>【死】が急速に迫ってくるのを感じた。 { speed:1 waitInput:true Wait:true }
+
+@print （死ぬ、のか……私は……なん……で……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.5 }
+@Wait 0.8
+
+@back 6_1 { Scale:{g_backgroundDefaultScale} time:0 }
+# 演出相談：背景を歪ませてほしいです。
+
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@print ……え？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 目が醒めると、そこは食堂だった。 { speed:1 waitInput:true Wait:true }
+
+@print 何故だ！？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "先ほどの懲罰房と同じ、<ruby=\"ゆが\">歪</ruby>んだ世界。" { speed:1 waitInput:true Wait:true }
+
+@print （【死に戻り】が発動しなかったのか？<br>　いや、違う――私の傷は治っている。<br>　それなら、【死に戻り】は発動したはず） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 立ち絵：クリーチャーB表示
+# ========================================
+
+@hideChars 
+
+@char JailerB.1
+
+@print そして食堂にはまた、<br>先ほど遭遇したなれはてがいた。 { speed:1 waitInput:true Wait:true }
+
+# 二階堂ヒロのボイス加工：逆再生
+# ＠二階堂ヒロ
+
+@print ■■■■■■■！ { author:Unknown speed:1 waitInput:true Wait:true }
+
+@print なれはてが武器を掲げ、私に向かってくる。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print やめ――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+# ぶんっと武器が振り下ろされる音
+@sfx Sfx_9
+@Wait 0.5
+
+# ざんっと肉が切れる音
+@sfx Sfx_12
+
+@back SolidColor.Custom { time:0.1 }
+@Wait 0.5
+
+@print "容赦のない一撃で、<br>私の首は<ruby=\"は\">刎</ruby>ね飛ばされた。" { speed:1 waitInput:true Wait:true }
+
+@print （何故――殺される） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@print ……その後は同じことの繰り返しだった。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+@back 9_1 { Scale:{g_backgroundDefaultScale} time:0 }
+# 演出相談：背景を歪ませてほしいです。
+
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@print やめてくれ、まだ――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+# ぶんっと武器が振り下ろされる音
+@sfx Sfx_9
+@Wait 0.5
+
+# ざんっと肉が切れる音
+@sfx Sfx_12
+
+@back SolidColor.Custom { time:0.1 }
+@Wait 0.5
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@back 11_1 { Scale:{g_backgroundDefaultScale} time:0 }
+# 演出相談：背景を歪ませてほしいです。
+
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@print 来るなあああ！！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print ひぃぃっ……嫌だああああ！！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+# ぶんっと武器が振り下ろされる音
+@sfx Sfx_9
+
+@Wait 0.5
+
+# ぐちゃ、めきっなど体を害する音
+@sfx Sfx_12
+
+@back SolidColor.Custom { time:0.1 }
+@Wait 0.5
+
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@print 逃げる。<br>殺される。<br>目が醒める。 { speed:1 waitInput:true Wait:true }
+
+@print 隠れる。<br>殺される。<br>目が醒める。 { speed:1 waitInput:true Wait:true }
+
+@print 逃げる。<br>殺される。<br>目が醒める…… { speed:1 waitInput:true Wait:true }
+
+@print その繰り返しだった。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+# ざんっと肉が切れる音
+@sfx Sfx_12
+
+@back SolidColor.Custom { time:0.1 }
+@Wait 0.5
+
+@back 1_1 { Scale:{g_backgroundDefaultScale} time:0 }
+# 演出相談：背景を歪ませてほしいです。
+
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+# ＠備考◆震えて怖がっている
+
+@print あ……ああ……来るな、来るなぁ……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "幾度となく首を<ruby=\"は\">刎</ruby>ねられ、<br>もう何度目かもわからない。" { speed:1 waitInput:true Wait:true }
+
+@print 私は壁隅にうずくまり、ガタガタと震えていた。 { speed:1 waitInput:true Wait:true }
+
+# ずるずる引きずる音
+@sfx Sfx_5
+@Wait 1
+
+@print "鉄格子の向こうで、<br>私を探して<ruby=\"はいかい\">徘徊</ruby>しているなれはての気配があった。" { speed:1 waitInput:true Wait:true }
+
+# 二階堂ヒロのボイス加工：逆再生
+# ＠二階堂ヒロ
+
+@print ■は■し■■い。君は■■く■い。君■正しくな■ { author:Unknown speed:1 waitInput:true Wait:true }
+
+@print ――唐突に気付く。<br>ずっと同じことを言われて殺され続けていて、<br>ようやく理解が追いついたのかもしれない。 { speed:1 waitInput:true Wait:true }
+
+@print （正しくない……だと？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# 二階堂ヒロのボイス加工：逆再生
+# ＠二階堂ヒロ
+
+@print 君は■しくない。■は正しくない。君は正しく■い。 { author:Unknown speed:1 waitInput:true Wait:true }
+
+@print 逃げながら、私はずっと考えていた。 { speed:1 waitInput:true Wait:true }
+
+@print "どうしてこの化け物は、<br>私をここまで<ruby=\"しつよう\">執拗</ruby>に狙うのだろうと。" { speed:1 waitInput:true Wait:true }
+
+@print （――このなれはては、私だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （落下で私の魔法が不可思議に干渉し、<br>　違う世界線に迷い込んだのか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "（ここは私がなれはてとなって、<br>　牢屋敷を<ruby=\"はいかい\">徘徊</ruby>している世界――）" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （あの【私】にとっては、<br>　私が間違っている、正しくない存在なんだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 否――私は、間違ってなんかいない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print "ぽつりと<ruby=\"つぶや\">呟</ruby>きを落とした。<br>すっかり萎えていた気力が、ようやく戻ってきた。" { speed:1 waitInput:true Wait:true }
+
+@back 2_1 { Scale:{g_backgroundDefaultScale} }
+# 演出相談：背景を歪ませてほしいです。
+
+@print 通路の方へ出ると、なれはてが私に気付く。 { speed:1 waitInput:true Wait:true }
+
+# 二階堂ヒロのボイス加工：逆再生
+# ＠二階堂ヒロ
+@char JailerB.1
+
+@print 君は正しくない！ { author:Unknown speed:1 waitInput:true Wait:true }
+
+@print 正しくないのは貴様だ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私は間違ったものを排除する！！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 貴様を正し、私が正しい世界を手に入れる！！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 私は食堂で入手したナイフを手に、<br>なれはてへと突っ込んでいった。 { speed:1 waitInput:true Wait:true }
+
+@print アアアアアッ！！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@print 戦いは終わらない。<br>終わるわけがない。 { speed:1 waitInput:true Wait:true }
+
+@print 私が何度殺されようと、<br>なれはてを倒してみせようと―― { speed:1 waitInput:true Wait:true }
+
+@print 互いに【死に戻り】続けるだけなのだ。 { speed:1 waitInput:true Wait:true }
+
+@print もうその答えにはたどりついたはずなのに、<br>私はこの結末を受け入れるしかないのだ。 { speed:1 waitInput:true Wait:true }
+
+@print "決して終わることはない、<ruby=\"えいごう\">永劫</ruby>の戦いを。" { speed:1 waitInput:true Wait:true }
+
+@print 互いに譲れない【正しさ】のために、<br>永遠の孤独を。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 『END～永遠の孤独～』
+# ========================================
+
+@badEnd 18

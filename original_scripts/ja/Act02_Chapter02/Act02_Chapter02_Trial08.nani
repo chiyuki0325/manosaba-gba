@@ -1,0 +1,1104 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter02/Act02_Chapter02_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+# ==============================================================================
+# MARK: 7-8: 💬 死体の落とされた場所
+# ==============================================================================
+# ＠ト書き▼議論シーン7-8 死体の落とされた場所
+# 議論開始エフェクト
+# BGM変更：AccUhEarts(Vocal無)
+@bgm Bgm_15_1
+
+# Judge7-8-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Ema.Default,ArmR7,ArmL7,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Determined_Closed
+@gosubModifyCamera 0
+@printDebate やっぱり<br>ボクとヒロちゃんの間に<br>割り込むには、<br>死体を空から落とす方法しか<br>ないと思う。
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Serious_Open
+@gosubModifyCamera 0
+@printDebate けど、<br>それが唯一できた<br>遠野の服は<br>濡れてなかったんだろ。
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Serious_Open
+@gosubModifyCamera 0
+@printDebate ってことはつまり、<br>外に出てねーってことだ。
+
+@char Alisa.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open01
+@gosubModifyCamera 0
+@printDebate ならその理屈は<br>通らねーんじゃねーか。
+
+@char Ema.Determined2,ArmR7,ArmL7,Angle01/Head02/Facial02/Mouth02>Mouth02_Angry_Open
+@gosubModifyCamera 0
+@printDebate 外にいなかったとしても、<br>死体を落とすことは<br>できるんじゃないかな。
+
+@char Ema.Default,ArmR3,ArmL12,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Middle
+@gosubModifyCamera 0
+@printDebate "中庭は四方を<br><link=\"Objection_02_02_08_01\">壁に囲まれている</link><br><br>場所だよね。"
+
+@char Ema.Default,ArmR8,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@printDebate それは逆に言えば、<br>ほとんど雨に濡れずに<br>死体を中庭に<br>運び入れることが<br>できる場所も<br>あったってことだと<br>思うんだ。
+
+@char Ema.Default,ArmR1,ArmL10,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Angry_Middle
+@gosubModifyCamera 0
+@printDebate ……ベランダとかさ。
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@printDebate でもエマさん。<br>ココさんは地下の焼却炉室で<br>殺されたんですよね？
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@printDebate だとすると、<br>犯人は地下から２階まで<br>運んだことになりますよ？
+
+@char Leia.Default,Arms,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@printDebate "<link=\"Objection_02_02_08_02\">誰にも見つからず</link>に<br>階段で運ぶのは<br>さすがに無理なんじゃ<br>ないかな？"
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Flushed_Middle,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@printDebate それは……<br>何か死体を移動させる方法が<br>あったのかも……。
+
+@char Sherry.Smile1
+@gosubModifyCamera 0
+@printDebate 隠し通路なんかが<br>あったってことですかね！
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@printDebate でもそんな証拠なんて<br>あるのかな～？
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open01,Angle01/Head01/Facial01/Mouth01>Mouth01_Confused_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@printDebate "き、きっとあるはずだよ……！<br>地下から２階に、<br>誰にも気付かれずに<br><link=\"Objection_02_02_08_03\">移動できる道</link>が……！"
+
+@char Miria.Default,ArmR9,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@printDebate "うーん……。<br>でも<link=\"Objection_02_02_08_04\">テレポート</link>でも<br>しない限り、<br>物理的に難しいんじゃ<br>ないかな……。"
+
+@char Leia.Default,ArmR6,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@printDebate "となると考えられる可能性は<br>【何者かの<link=\"Objection_02_02_08_05\">魔法</link>による移動】、<br>かな。"
+
+@char Leia.Default,ArmR3,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@printDebate まあ、もしその論を<br>肯定するのだとしても、<br>何かしらの根拠が<br>欲しいけどね。
+
+@char Ema.Pensive1,ArmR4,ArmL5
+@gosubModifyCamera 0
+@printDebate うぅ……。
+
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@Wait 0.2
+
+# ==============================================================================
+# 7-8議論後独白
+# ==============================================================================
+
+@print （エマの説には強度が足りない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@print （だが……簡単に切り捨てていい説なのだろうか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@print （少し……魔女図鑑を確認してみようかな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-8-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_02_08_01
+
+@Skip false
+@pauseTrial true
+
+@choice 接している部屋は？
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge7-8-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_02_02_08_02
+
+@Skip false
+@pauseTrial true
+
+@choice たまたま視認されなかった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge7-8-4
+
+@choice 人に見られないよう仕向けていた
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge7-8-5
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_02_02_08_03
+
+@Skip false
+@pauseTrial true
+
+@choice 道があった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge7-8-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論4
+# ------------------------------------------------------------------------------
+
+# Objection_02_02_08_04
+
+@Skip false
+@pauseTrial true
+
+@choice 瞬時に移動する方法があった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge7-8-6
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論5
+# ------------------------------------------------------------------------------
+
+# Objection_02_02_08_05
+
+@Skip false
+@pauseTrial true
+
+@choice 魔法が使用された
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge7-8-7
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 7-8: ❌ 議論選択肢分岐
+# ==============================================================================
+# MARK: 7-8-4: ❌ 反論・たまたま視認されなかった
+
+# Judge7-8-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print たまたま視認されなかったんだよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 偶然、誰も見ていないタイミングで<br>犯人は死体を２階へと運んだんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print で、でもわたくし、<br>ヒロさんとぶつかったときに落とした洗濯物を<br>階段で拾っていましたが――。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1,ArmR3,ArmL1
+@gosubModifyCamera 0
+@print そのとき不審な人物なんて見てないですわ？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Pensive_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Surprised_Open
+@gosubModifyCamera 0
+@print だから、偶然犯人が見つからなかったとする説は<br>無理がある気がしますわー？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR2,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open02
+@gosubModifyCamera 0
+@print 偶然でいいなら、なんとでも言えるだろ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1
+@gosubModifyCamera 0
+@print （……整理して考えよう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1
+@gosubModifyCamera 0
+@print （ココが殺されたのは焼却炉室……<br>　……その後、死体は中庭で発見された） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （この点と点を繋ぐピースとなるもの……<br>　何かなかったかな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （……見つかった証拠品の中で<br>　場違いなものなどはなかっただろうか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-8-1
+
+# MARK: 7-8-5: ❌ 反論・人に見られないよう仕向けていた
+
+# Judge7-8-5
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,Arms3,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print 無理なことはないよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 犯人が死体を運ぶ瞬間だけ<br>階段側に目が向かないよう他者を仕向ければいいんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Closed1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print ……そのために犯人は配信を行った。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print それによって<br>【犯行現場をシャワールームだと誤認させ】<br>そっちに注目を集めさせたんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print 結果、私はまんまとシャワールームに誘導され――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Closed1,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print その裏で犯人は階段を上って死体を運んだんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL8,Angle01/Facial/Eyes>Eyes_Glare_Open04,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print ……でもあの配信、ココちゃん自身がしてたよね？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL8,Angle01/Facial/Eyes>Eyes_Pensive_Closed,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print たしかにちょっとぎこちなかったけど、<br>ココちゃんがやらされてたって感じは<br>なかったと思うけどな……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print それに全員がココちゃんの配信を見るとも限らないしね。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print 仮に見たとしても、２階にいた人は階段を使うでしょうし、<br>不自然ですね～。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1
+@gosubModifyCamera 0
+@print （……整理して考えよう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1
+@gosubModifyCamera 0
+@print （ココが殺されたのは焼却炉室……<br>　……その後、死体は中庭で発見された） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （この点と点を繋ぐピースとなるもの……<br>　何かなかったかな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （……見つかった証拠品の中で<br>　場違いなものなどはなかっただろうか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge7-8-1
+
+# MARK: 7-8-6: ❌ 反論・瞬時に移動する方法があった
+
+# Judge7-8-6
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print となると、<br>瞬時に牢屋敷内を移動する方法があったんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 【魔女が住む館】だ……<br>テレポート可能なワープホールくらい<br>あっても不思議じゃないよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print そんなのあったかなー？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL7,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@print 現場はあらかた調べたけれど、<br>そんなものは見つかっていないね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Smile_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print "なかったって！ ヒロちゃん！" { author:Noah speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （……なんでもあるわけではないか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1
+@gosubModifyCamera 0
+@print （……整理して考えよう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1
+@gosubModifyCamera 0
+@print （ココが殺されたのは焼却炉室……<br>　……その後、死体は中庭で発見された） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （この点と点を繋ぐピースとなるもの……<br>　何かなかったかな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （……見つかった証拠品の中で<br>　場違いなものなどはなかっただろうか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge7-8-1
+
+# MARK: 7-8-7: ❌ 反論・魔法が使用された
+
+# Judge7-8-7
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print いや、やはり魔法が使用されたんだよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print なにも移動に関する魔法じゃなくても<br>使えるものはある。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,ArmL3,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print たとえば……【視線誘導】とか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆意味深に
+
+@char Leia.Default,ArmR8,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print フッ…………私の魔法のことかな？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print ああ……<br>【視線誘導】を駆使して<br>階段付近の人間の視線を逸らしておけば――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print 犯人が２階に上がっていくのを<br>目撃させずに済むんじゃないかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Alisa.Normal1
+@gosubModifyCamera 0
+@print だとすると、蓮見が共犯ってことになるが……。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Miria.Surprised1
+@gosubModifyCamera 0
+@print そ、そうなの、レイアちゃん……！？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char AnAn.Default,Angle01/Option_Arms-,ArmR-Option-Off,ArmR3,ArmL1,Angle01/Head/Facial/Eyes>Eyes_Normal_Closed,Angle01/Head/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print ……いや、それはありえないな。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char AnAn.Angry1,Angle01/Arms>Arms01,Angle01/Option_Arms>Option_Arms01_02
+@gosubModifyCamera 0
+@print 『当時、レイアはラウンジにいた』 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open,Angle01/Head01/Facial01/Mouth01>Mouth01_Normal_Open
+@gosubModifyCamera 0
+@print 私も階段の近くにいましたけど、<br>レイアさんに魔法をかけられた覚えはありませんわ～？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR8,ArmL5,Angle01/Facial/Eyes>Eyes_Smile_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print フッ……私もかけた覚えはないね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR10,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open02
+@gosubModifyCamera 0
+@print それとも君はかけられた覚えがあるのかな……<br>階段を通ったヒロくん！！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （……ない、か） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1
+@gosubModifyCamera 0
+@print （……整理して考えよう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1
+@gosubModifyCamera 0
+@print （ココが殺されたのは焼却炉室……<br>　……その後、死体は中庭で発見された） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （この点と点を繋ぐピースとなるもの……<br>　何かなかったかな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （……見つかった証拠品の中で<br>　場違いなものなどはなかっただろうか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-8-1
+
+# ==============================================================================
+# MARK: 7-8-3: ❌ 追求・接している部屋は？
+# ==============================================================================
+
+# Judge7-8-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print 一応認識を合わせる意味で確認するが……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print 中庭が接しているのは、<br>１階はホール、廊下、シャワールーム、倉庫で<br>間違いないかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print そうだね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Nervous_Closed
+@gosubModifyCamera 0
+@print そして２階は、娯楽室と廊下、<br>それにノアちゃんのアトリエだよね。 { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print ……なるほど。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （位置と構造は間違いない。<br>　しかし……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （この牢屋敷の構造……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （何か不自然な所はないか……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-8-1
+
+# ==============================================================================
+# MARK: 7-8-2: ⭕ 同意・隠し通路があった
+# ==============================================================================
+
+# Judge7-8-2
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+@StopBgm 
+# ヒロカットイン
+@gosubCutIn Hiro
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print ……そうだ。<br>隠し通路は【あった】……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print それを示す根拠は――！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# Judge7-8-8
+
+@evidence Clue
+
+# 【紙】
+@if "chosenEvidenceId==\"7-9\""
+	@goto .Judge7-8-9
+
+# 【焼却炉室】or【ダストシュート】or【シャワールーム】
+@if "chosenEvidenceId==\"7-5\"||chosenEvidenceId==\"7-11\"||chosenEvidenceId==\"7-4\""
+	@goto .Judge7-8-10
+
+# 【ロープ】
+@if "chosenEvidenceId==\"7-10\""
+	@goto .Judge7-8-11
+
+# 汎用選択ミス
+@goto .Judge7-8-12
+
+# MARK: 7-8-10: ❌ 【焼却炉室】or【ダストシュート】or【シャワールーム】
+
+# Judge7-8-10
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 殺害現場の焼却炉室とシャワールーム……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print それらはダストシュートで<br>繋がっているんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,Arms,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print ……つまりヒロくんは、<br>そこが隠し通路だっていうのかい……？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hanna.Normal1
+@gosubModifyCamera 0
+@print でも……犯人が焼却炉室からその通路を使ったとしても、<br>１階のシャワールームまでしか行けないことになりますわよ？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Serious_Open
+@gosubModifyCamera 0
+@print それじゃ意味ねーんじゃねーの？<br>犯人は【２階から】死体を落としたってハナシだろ？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print そう……この隠し通路は<br>【２階】に繋がっている必要がある。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （……考え方はあっているはずだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （……牢屋敷のマップを思い出そう。<br>　焼却炉室やシャワールームの上には何があったのか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print それを示す証拠が、これだ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-8-8
+
+# MARK: 7-8-11: ❌ 【ロープ】
+
+# Judge7-8-11
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 焼却炉室に落ちていたロープだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print このロープを使って、<br>２階に通じる隠し通路を登ったに違いない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Miria.Default,ArmR9,ArmL1,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Smile_Open02
+@gosubModifyCamera 0
+@print ……ええと、それで……<br>その隠し通路って、どこにあるのかな？ { author:Miria speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Pensive_Open
+@gosubModifyCamera 0
+@print やっぱりダストシュートじゃないかな？ { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Normal_Open03,Angle01/Facial/Mouth>Mouth_Surprised_Open
+@gosubModifyCamera 0
+@print ですが、ダストシュートを登ったとしても<br>１階のシャワールームにしか着かないんじゃないでしょうか？ { author:Sherry speed:1 waitInput:true Wait:true }
+
+# ＠備考◆別選択肢共通
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Serious_Open
+@gosubModifyCamera 0
+@print それじゃ意味ねーんじゃねーの？<br>犯人は【２階から】死体を落としたってハナシだろ？ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print そう……この隠し通路は<br>【２階】に繋がっている必要がある。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （……考え方はあっているはずだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （……牢屋敷のマップを思い出そう。<br>　焼却炉室やシャワールームの上には何があったのか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print それを示す証拠が、これだ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-8-8
+
+# MARK: 7-8-12: ❌ 汎用選択ミス
+
+# Judge7-8-12
+
+@char Ema.Pensive1,ArmR4,ArmL5
+@gosubModifyCamera 0
+@print ヒロちゃん……<br>それは隠し通路がある根拠にはならないんじゃないかな……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （考え直そう……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （……焼却炉室から上階に上がる道は<br>　ダストシュートぐらいしか考えられない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （そしてダストシュートが<br>　シャワールームと繋がっているのは判明している） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR1,ArmL4,Eyes1_Normal_Open1,Mouth1_Determined_Closed1
+@gosubModifyCamera 0
+@print （……しかし、シャワールームから捨てられたとは<br>　考えにくい物が焼却炉から見つかっている……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （それが隠し通路のヒントになるはずだ……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-8-8
+
+# ==============================================================================
+# MARK: 7-8-9: ⭕ 選択・【紙】
+# ==============================================================================
+
+# Judge7-8-9
+
+# ヒロカットイン
+@gosubCutIn Hiro
+@Gosub System/System_Subroutine.EndDebate-Last
+
+# ＠備考◆味方してくれたヒロに驚き
+
+@char Ema.Surprised1
+@gosubModifyCamera 0
+@print ……ヒロちゃん――！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print （……確実な証拠とは言い切れないかもしれない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# BGM変更：HirO（Voなし）
+@bgm Bgm_37_1_Loop
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open1,Mouth2_Determined_Closed1
+@gosubModifyCamera 0
+@print （けれどこの道は……<br>　真実へ繋がっている！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Angry_Open2,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print ……それは、この大量の紙だよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Pensive1,ArmR4,ArmL5
+@gosubModifyCamera 0
+@print それって、<br>焼却炉で見つかった紙だよね？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print ああ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Closed1,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print シャワールームのダストシュートは<br>焼却炉へと繋がっていた……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print だから、事件に関係あるものや衣類が<br>焼却炉から見つかるのに違和感はない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR8,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print しかし……この紙はどうだろうか？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Painful_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print まさかこの紙がシャワールームから<br>捨てられたわけはない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,ArmL3,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print ……それについては、<br>捨てた本人に直接聞いた方が早いか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# Judge7-8-13
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print この紙を使ったであろう人物……<br>それは。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@evidence Profile
+
+# 城ケ崎ノア
+@if "chosenEvidenceId==\"Noah\""
+	@goto .Judge7-8-14
+
+# 夏目アンアン
+@if "chosenEvidenceId==\"AnAn\""
+	@goto .Judge7-8-15
+
+# 遠野ハンナ
+@if "chosenEvidenceId==\"Hanna\""
+	@goto .Judge7-8-16
+
+# 二階堂ヒロ
+@if "chosenEvidenceId==\"Hiro\""
+	@goto .Judge7-8-17
+
+# 汎用選択ミス
+@goto .Judge7-8-18
+
+# MARK: 7-8-15: ❌ 人物・夏目アンアン
+
+# Judge7-8-15
+
+@char Hiro.Normal2,ArmR6,ArmL3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print アンアン、君だよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,ArmL3,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print 君がいつも使っているスケッチブックの紙だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char AnAn.Pensive1
+@gosubModifyCamera 0
+@print 違うが。 { author:AnAn speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,Angle01/Arms>Arms01,Angle01/ArmL-,Angle01/ArmR-,Angle01/Facial/Eyes>Eyes_Serious_Open
+@gosubModifyCamera 0
+@print 違うってよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （違ったか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （……そうだ、紙には【絵】が描いてあった。<br>　【絵】に関する人物といえば――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-8-13
+
+# MARK: 7-8-16: ❌ 人物・遠野ハンナ
+
+# Judge7-8-16
+
+@char Hiro.Normal2,ArmR6,ArmL3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 君だよ、ハンナ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hanna.Normal1
+@gosubModifyCamera 0
+@print わたくしじゃありませんわね。 { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,ArmL3,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print ……劇の衣装案を考えていただろう？<br>それをイラストにして描いたり――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hanna.Angry1
+@gosubModifyCamera 0
+@print 紙にメモしたりはしましたけれど、<br>それらはもったいなくて捨ててませんわ！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Hanna.Default,ArmR3,ArmL2,Angle01/Head01/Facial01/Eyes01>Eyes01_Angry_Closed,Angle01/Head01/Facial01/Mouth01>Mouth01_Cry_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print 濡れ衣ですわー！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （違ったか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （……そうだ、紙には【絵】が描いてあった。<br>　【絵】に関する人物といえば――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-8-13
+
+# MARK: 7-8-17: ❌ 人物・二階堂ヒロ
+
+# Judge7-8-17
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print 私だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR2,ArmL4,Eyes1_Normal_Open3,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print …………としたら、<br>どうして紙をここに捨てたのか、<br>考えてみているところだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Sherry.Default,ArmR15,ArmL4,Angle01/Facial/Eyes>Eyes_Wink_Open01,Angle01/Facial/Mouth>Mouth_Normal_Open
+@gosubModifyCamera 0
+@print 相手の立場に立って<br>物事を考えるというのは素晴らしいことですね！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Alisa.Default,ArmR3,ArmL4,Angle01/Facial/Eyes>Eyes_Angry_Open04
+@gosubModifyCamera 0
+@print いいから結論言えよ。 { author:Alisa speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （……きちんと考えて答えよう） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （……そうだ、紙には【絵】が描いてあった。<br>　【絵】に関する人物といえば――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-8-13
+
+# MARK: 7-8-18: ❌ 汎用選択ミス
+
+# Judge7-8-18
+
+@char Hanna.Surprised1
+@gosubModifyCamera 0
+@print その人が、紙をこんなに使ったようには思えませんわね……？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+# ＠備考◆別選択肢共通
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （違ったか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR4,ArmL2,Eyes1_Normal_Open5,Mouth1_Angry_Closed1,Sweat1-1
+@gosubModifyCamera 0
+@print （……そうだ、紙には【絵】が描いてあった。<br>　【絵】に関する人物といえば――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge7-8-13
+
+# ==============================================================================
+# MARK: 7-8-14: ⭕ 人物・城ケ崎ノア
+# ==============================================================================
+
+# Judge7-8-14
+
+@char Hiro.Normal1,ArmR6,ArmL3,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print もちろん、ノア。<br>君だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆わかりやすくとぼけてる
+
+@char Noah.Default,ArmR4,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Smile_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ど、どうかな？<br>のあわかんない。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print とぼけても無駄だよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,Arms3,Eyes2_Normal_Closed1,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print あの紙には絵が描かれていたはずだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL4,Eyes2_Normal_Open3,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print 問題は、あの紙がどこから捨てられたのかだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL3,Eyes2_Angry_Open1,Mouth2_Determined_Open2
+@gosubModifyCamera 0
+@print もう１度聞こう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL3,Eyes2_Angry_Open1,Mouth2_Smile_Open1
+@gosubModifyCamera 0
+@print あの紙はシャワールームから捨てたわけじゃないな？<br>ノア。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆焦り
+
+@char Noah.Surprised1
+@gosubModifyCamera 0
+@print そ、それは……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL6,Eyes2_Normal_Open3,Mouth2_Determined_Open1
+@gosubModifyCamera 0
+@print 教えてくれ。<br>真実にたどり着くには、この情報が必要なんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR3,ArmL1,Angle01/Head01/Facial01/Eyes01>Eyes01_Normal_Open03,Angle01/Head01/Facial01/Mouth01>Mouth01_Pensive_Middle
+@gosubModifyCamera 0
+@print ノアちゃん……！<br>お願い。 { author:Ema speed:1 waitInput:true Wait:true }
+
+# SE・明るい音
+@sfx Sfx_Common_2
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Angry_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……のあが捨てたのは、アトリエだよ。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Angry_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open01
+@gosubModifyCamera 0
+@print アトリエにもゴミを捨てる穴、あるから。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR2,ArmL2,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Angry_Open
+@gosubModifyCamera 0
+@print あの紙はそこから捨てたの。 { author:Noah speed:1 waitInput:true Wait:true }
+
+
+# アイテム追加
+# 【紙】
+# 焼却炉から見つかった、大量の紙。
+# 絵が描かれたものが混じっている。
+
+@ResetText 
+@spawn Clue
+@toast "魔女図鑑 更新…"
+@update 7-9
+@Wait i1.2
+@despawn Clue
+@Wait 0.5
+
+@char Ema.Surprised1
+@gosubModifyCamera 0
+@print じゃあ、やっぱり……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Angry_Closed1
+@gosubModifyCamera 0
+@print そう……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Determined_Open1
+@gosubModifyCamera 0
+@print 焼却炉は、シャワールームだけでなく、<br>２階のノアのアトリエ……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Angry_Open2,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print そこにある、もうひとつのダストシュートに<br>繋がっていたんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,Arms3,Eyes1_Normal_Closed1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print そしてノアのアトリエにはベランダがある。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1,ArmR6,ArmL3,Eyes1_Angry_Open1,Mouth1_Determined_Open2
+@gosubModifyCamera 0
+@print 焼却炉からノアのアトリエを中継して、<br>中庭へとココの死体を落としたのだとしたら……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Ema.Default,ArmR7,ArmL13,Angle01/Head01/Facial01/Eyes01>Eyes01_Surprised_Open02,Angle01/Head01/Facial01/Mouth01>Mouth01_Scream_Open,Angle01/Head01/Facial01/Sweat01>Sweat01_01
+@gosubModifyCamera 0
+@print 配信のアーカイブの情報とも<br>ボクとヒロちゃんが見た光景とも、<br>話は合致するよ！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+# レイアカットイン
+@Wait 0.5
+
+@sfx Sfx_Common_5
+
+@ResetText 
+@voice CommonTrial_Leia00425
+@char Ema.Surprised1
+@char Leia.Angry1,ArmR10,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open02
+@gosubSplitStageScreen 1
+@Wait 1.5
+
+@hideStageScreen 1
+@Wait 0.3
+
+@char Leia.Default,ArmR6,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print しかし……その推理には１つ穴があるかもしれないね。<br>エマくん、ヒロくん。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR1,ArmL4,Eyes2_Normal_Open3,Mouth2_Surprised_Open1
+@gosubModifyCamera 0
+@print 穴……？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR6,ArmL5,Angle01/Facial/Eyes>Eyes_Normal_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print その通り。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR5,ArmL7,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open02
+@gosubModifyCamera 0
+@print なにせ私はシャワールームと焼却炉のダストシュートについて<br>調べているのだからね……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal2,ArmR6,ArmL9,Eyes2_Normal_Closed1,Mouth2_Angry_Closed1,Sweat2-1
+@gosubModifyCamera 0
+@print （私に言われて調べたのに、<br>　まるで自発的に調べたかのような言い草だな……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char Leia.Default,ArmR10,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open02
+@gosubModifyCamera 0
+@print 【通常の方法で地下から上の階に向かうのは不可能】……<br>そう断言させてもらうよ！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@goto Act02_Chapter02/Act02_Chapter02_Trial09

@@ -1,0 +1,385 @@
+@if isDebugDirectJump
+	@Gosub System/System_Subroutine.BeginAdv
+
+# ========================================
+# ＞『手を取る』を選択→2‐4‐b1へ
+# ========================================
+
+# Scene2-4-b1
+
+# ========================================
+# ●シーン2-4-b1
+# ========================================
+
+@back 9_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@print たまにはレイアにのってやるのもいいだろう。<br>軽い気持ちで、彼女の手を取った。 { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_19_1
+
+@char Leia.Surprised1,ArmR2
+
+@print ！！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@print レイアが驚いたように顔を上げる。 { speed:1 waitInput:true Wait:true }
+
+@print 自分からポーズを取っておきながら、<br>私が無視すると思っていたに違いない。 { speed:1 waitInput:true Wait:true }
+
+@char Leia.Flushed1,ArmR2
+
+@print ヒロくん……？ { author:Leia speed:1 waitInput:true Wait:true }
+
+@print "こちらの真意を測ろうとするように、<br>レイアが私の目を<ruby=\"のぞ\">覗</ruby>き込む。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@char Hiro.Normal1
+@char Leia.Flushed1,ArmR1
+
+@print ……どうした？<br>ゴクチョーを探しに行くのでは？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1 { time:1 }
+
+@print そうだね……行こう。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print "しばらく<ruby=\"ほう\">呆</ruby>けてから、<br>レイアはどこか<ruby=\"うれ\">嬉</ruby>しそうに微笑する。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 彼女の手を取ったのは、単なる気まぐれ。<br>深い意味はない。 { speed:1 waitInput:true Wait:true }
+
+@print だが、差し出された手を取った時。<br>顔を上げたレイアと目が合った瞬間。<br>私は不思議な感覚に襲われていた。 { speed:1 waitInput:true Wait:true }
+
+@print 上手く説明はできないが…… { speed:1 waitInput:true Wait:true }
+
+@print "これまで欠けていたピースを見つけたような。<br>ようやく歯車が<ruby=\"か\">嚙</ruby>み合ったような。<br>何か、レイアとの<ruby=\"つな\">繋</ruby>がりが生まれた気がしたのだ。" { speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1
+@char Hiro.Normal1
+
+@print 自由時間が終わる前に、<br>ゴクチョーを見つけないと。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print とりあえず、牢屋敷の中から探してみようか。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 私とレイアは肩を並べて歩き出した。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+@hideChars 
+
+@back 1_1 { time:0 }
+
+@back SolidColor.Custom { time:1.5 }
+@Wait 1.8
+
+@print 数日後の夜。 { speed:1 waitInput:true Wait:true }
+
+@print 私は日課となっている日記をつけていた。 { speed:1 waitInput:true Wait:true }
+
+# さらさらと紙にペンを走らせる書き音
+@sfx Sfx_111
+@Wait 1
+
+@print ゴクチョーの説得は失敗に終わった。 { speed:1 waitInput:true Wait:true }
+
+@print いくら魔女裁判をやめろと訴えても、<br>あのフクロウはまるで聞く耳を持たない。 { speed:1 waitInput:true Wait:true }
+
+@print レイアは少し気を落としていたが、<br>私に感謝していた。 { speed:1 waitInput:true Wait:true }
+
+@print 私がいるから。<br>私の強さが、レイアの支えになっているのだとか。 { speed:1 waitInput:true Wait:true }
+
+@print "正直、歯の浮くようなセリフには<ruby=\"あき\">呆</ruby>れる。" { speed:1 waitInput:true Wait:true }
+
+@print だけど、私も同じだ。<br>今日一日、彼女と２人で行動して気が付いた。 { speed:1 waitInput:true Wait:true }
+
+@print 恥ずかしくて、とても口にする気にはなれないが―― { speed:1 waitInput:true Wait:true }
+
+@print 私は、レイアと共に歩くことに安心感を得ている。<br>彼女がいてくれて、よかった。 { speed:1 waitInput:true Wait:true }
+
+@print ――そこまで書いて、私は筆を置く。 { speed:1 waitInput:true Wait:true }
+
+@print "ふと自分の爪を目にして、唇を小さく<ruby=\"か\">噛</ruby>んだ。" { speed:1 waitInput:true Wait:true }
+
+@print 今朝、短く切ったはずの爪が、既に長く伸びていた。 { speed:1 waitInput:true Wait:true }
+
+@print 認めたくはない。<br>だが、私にも魔女化の兆候が現れている。 { speed:1 waitInput:true Wait:true }
+
+@print （もう、残された時間は少ない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 大魔女の手がかりは未だ見つからない。 { speed:1 waitInput:true Wait:true }
+
+@print ゴクチョーを説得することもできない。 { speed:1 waitInput:true Wait:true }
+
+@print なら、どうすればいい。 { speed:1 waitInput:true Wait:true }
+
+@StopBgm { fade:3 }
+
+@print どうすれば、みんなを救える？ { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@back 17_1 { time:0 }
+
+@StopBgm 
+@back SolidColor.Custom { time:1.5 }
+@Wait 1.8
+
+@bgm Bgm_40_1_Loop
+
+@print さらに数日が過ぎた。 { speed:1 waitInput:true Wait:true }
+
+@print 残された時間が少ないのは、私だけじゃない。<br>みんな、ストレスが限界に近かった。 { speed:1 waitInput:true Wait:true }
+
+@print さっきも、ふとしたことで<br>アリサと他の少女たちが言い争っていた。<br>いつ殺意が芽生えてもおかしくない状況だ。 { speed:1 waitInput:true Wait:true }
+
+@print このままでは遠からず、殺人事件が起きる。 { speed:1 waitInput:true Wait:true }
+
+@print 私はここ数日、考えた。 { speed:1 waitInput:true Wait:true }
+
+@print 彼女たちを救う方法を。<br>何が、彼女たちにとっての【救い】なのかを。 { speed:1 waitInput:true Wait:true }
+
+@print そして、ひとつの答えを導き出した。<br>今日は私の答えを、レイアに打ち明けるつもりだ。 { speed:1 waitInput:true Wait:true }
+
+@print もしかしたら……<br>いや、かなりの確率で否定されるかもしれない。 { speed:1 waitInput:true Wait:true }
+
+@print それならそれで構わなかった。<br>私はひとりでも、やり遂げる。 { speed:1 waitInput:true Wait:true }
+
+@print だけどもし、隣にレイアがいてくれたら―― { speed:1 waitInput:true Wait:true }
+
+# 野外で近づいてくる足音・1人
+@sfx Sfx_73
+
+@char Leia.Smile1
+
+@print お待たせ、ヒロくん。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 呼び出してすまない。<br>君に話したいことがある。<br>実は――。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+@hideChars 
+
+@back 28_1 { time:0 }
+
+@back SolidColor.Custom { time:1.5 }
+@Wait 1.8
+
+@print ――レイアは私の答えを受け入れてくれた。 { speed:1 waitInput:true Wait:true }
+
+@print それからすぐ、私たちは行動を起こした。 { speed:1 waitInput:true Wait:true }
+
+@print アリサが死んだ。<br>ミリアが死んだ。 { speed:1 waitInput:true Wait:true }
+
+@print シェリーが死んだ。<br>ハンナが死んだ。<br>エマが死んだ。 { speed:1 waitInput:true Wait:true }
+
+@print 残されたのは、私とレイアの２人きり。 { speed:1 waitInput:true Wait:true }
+
+@print 穏やかな光の射す中庭。<br>私は地面に腰かけ、レイアを膝枕していた。 { speed:1 waitInput:true Wait:true }
+
+@print まるで時間が止まったかのような静けさの中、<br>葉陰だけがゆっくりと揺れる。 { speed:1 waitInput:true Wait:true }
+
+@print 私が彼女の柔らかな髪に指を滑らせ、<br>髪をすくうたび、<br>レイアはくすぐったそうに目を細める。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+@char Leia.Smile1
+
+@print みんな、死んだね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Smile1
+
+@print ああ、死んだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 視線を交わして、クスクスと微笑み合う。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 私は……私とレイアは、やり遂げた。 { speed:1 waitInput:true Wait:true }
+
+@print ２人で、みんなを殺した。 { speed:1 waitInput:true Wait:true }
+
+@print 彼女たちを大魔女の呪いから解き放つ。 { speed:1 waitInput:true Wait:true }
+
+@print そのために、殺す。 { speed:1 waitInput:true Wait:true }
+
+@print それが、私の導き出した答え。<br>みんなを救う、唯一の方法だった。 { speed:1 waitInput:true Wait:true }
+
+@print 私たちは計画を練り、<br>ひとりずつ少女の命を奪った。 { speed:1 waitInput:true Wait:true }
+
+@print レイアが隣にいてくれたから。<br>彼女は賢く、行動力がある。 { speed:1 waitInput:true Wait:true }
+
+@print だから、みんなを殺すという行為自体は、<br>思ったよりも容易に事が運んだ。 { speed:1 waitInput:true Wait:true }
+
+@print きっとこれは、他の誰にもできなかった。<br>私とレイアだからこそ成し遂げられたんだ。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Normal1
+
+@print レイア、ありがとう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私は彼女の手を取る。<br>するとレイアは、緩やかに首を横に振った。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hiro
+@char Leia.Smile1
+
+@print いいんだ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Pensive1
+
+@print 最初、君には反対されると思った。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print たしかに……提案された時は驚いたよ。<br>だけど、キミの考えは正しいと思った。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1
+
+@print 私たちにはもう、<br>死という救済しかないんだってね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1
+
+@print みんな限界だったんだ。<br>それは、私も同じだよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print レイアは自嘲めいた笑みを浮かべる。<br>それから罪を告白するように続けた。 { speed:1 waitInput:true Wait:true }
+
+@print ……エマくんに、殺意を抱いていたんだ。<br>始まりは嫉妬心だったけどね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Surprised1
+
+@print "嫉妬？ エマに？" { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1
+
+@print ああ。だってキミはいつだって、<br>エマくんを気にかけていたから。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1
+
+@print あのままだったら、<br>私はどのみち彼女を殺していたと思う。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私はね、ヒロくんに、<br>私だけを見てほしかったんだよ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 少し冗談めかした口調だったが、<br>レイアの目は真剣だ。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Flushed1
+
+@print どんな反応をすればいいのか困っている私に、<br>彼女はさらに言葉を重ねる。 { speed:1 waitInput:true Wait:true }
+
+@print だから嬉しくもあったんだ。<br>キミが、私に話してくれて。<br>私を、共犯に選んでくれて。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Normal1
+
+@print ああ……そうか。<br>私が最期まで魔女化に抗えたのは、<br>そのおかげかもしれないね。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Smile1
+
+@print ヒロくんが、私を選んでくれたから。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print レイアが、私をじっと見つめた。<br>その瞳は、文字通り宝石のようにキラキラと輝いている。 { speed:1 waitInput:true Wait:true }
+
+@print 残された時間は、ないのだと悟った。<br>レイアの瞳は比喩じゃなく、<br>本当に宝石のように硬化している。 { speed:1 waitInput:true Wait:true }
+
+@print きっとこれは副作用か何かだろう。<br>レイアが飲んだ薬。<br>牢屋敷に隠されていた【魔女を殺す薬】の。 { speed:1 waitInput:true Wait:true }
+
+@print 私たちは誓いを立てていた。<br>全てが終わったら、自ら幕を引くのだと。 { speed:1 waitInput:true Wait:true }
+
+@print ……ありがとう。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Hiro.Cry1
+
+@print もう少し待ってほしい。<br>私はまだ、君に伝えていないんだ……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print 私なんだ、お礼を言うべきなのは……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Hiro.Smile1
+
+@print 少しだけど、君と歩めて嬉しかった。<br>この牢屋敷で君と会えて、本当によかった……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "恥ずかしくて、口にできなかった言葉が<ruby=\"あふ\">溢</ruby>れる。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 私が言い終えると同時。 { speed:1 waitInput:true Wait:true }
+
+@print レイアは静かに息を引き取った。 { speed:1 waitInput:true Wait:true }
+
+@print 想いは伝わっただろうか―― { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# ◎回想シーン（2-4-2の流用）
+# ========================================
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+
+@back 9_1 { time:0 }
+@char Leia.Smile1,ArmR2 { time:0 }
+
+@back SolidColor.Custom { time:1.5 }
+@Wait 1.8
+
+@print ヒロくん、<br>どうか私と一緒に来てほしい。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 何かスイッチが入ったのか、<br>唐突にレイアは片膝をつき、<br>恭しく手を差し出してくる。 { speed:1 waitInput:true Wait:true }
+
+@print そのポーズは<br>さながら姫に求愛する王子のようだった。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 回想シーンここまで
+# ========================================
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:1 }
+@Wait 1.2
+@hideChars 
+
+@back 28_1 { time:0 }
+
+@back SolidColor.Custom { time:1.5 }
+@Wait 1.8
+
+@print あの手を取った時。 { speed:1 waitInput:true Wait:true }
+
+@print "私はレイアとの<ruby=\"つな\">繋</ruby>がりを感じた気がした。<br>これまで欠けていたピースを見つけたような。<br>ようやく歯車が<ruby=\"か\">嚙</ruby>み合ったような、不思議な感覚。" { speed:1 waitInput:true Wait:true }
+
+@print 今ならわかる。<br>あれはきっと、自分の半身となる存在との<br>出会いを悟った瞬間だったんだ。 { speed:1 waitInput:true Wait:true }
+
+@print だけどもう、失われてしまった。 { speed:1 waitInput:true Wait:true }
+
+@print 私は、蓮見レイアという半身を永遠に失くしたのだ。 { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Smile1
+
+@print 私もすぐに行くよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 私は薬の瓶を取り出し、中身を一気にあおる。<br>レイアが飲んだ物と同じ、【魔女を殺す薬】だ。 { speed:1 waitInput:true Wait:true }
+
+@print これで、私も完全に死ねるのだろうか。 { speed:1 waitInput:true Wait:true }
+
+@print 死に戻りの魔法も発動せず、<br>終わりを迎えられるのだろうか。 { speed:1 waitInput:true Wait:true }
+
+@print 私は目を閉じた。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.6 }
+@Wait 0.8
+
+@print ただ静かに、幕が下りるのを待つ。 { speed:1 waitInput:true Wait:true }
+
+# ========================================
+# 『END～共犯～』
+# ========================================
+
+@badEnd 21

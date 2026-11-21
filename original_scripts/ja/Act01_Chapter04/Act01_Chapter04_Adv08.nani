@@ -1,0 +1,48 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+@back Transparent { time:1.2 }
+
+# Scene1-4-8
+
+# ========================================
+# ●シーン1‐4-8
+# ========================================
+
+# ========================================
+# マップイベント用分岐
+# ========================================
+
+# ========================================
+# 【ＭＡＰイベント】牢屋敷見取り図
+# 殺人現場＞シーン1‐4‐9
+# 裁判所前通路＞シーン1‐4‐10
+# 地下通路＞シーン1-4‐11
+# ※全てのＭＡＰイベントを選択したら終了。
+# 選択済みの場所は消していってください。
+# 滝口注・4-10の情報が4-9前提になっているので、最初に4-9としてください（そのあと、4-10と4-11の選択としてください）
+# ========================================
+
+@if "chosenAreaFlag == 7"
+	@set "chosenAreaFlag = 0"
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter04/Act01_Chapter04_Adv12
+
+@map Courtroom,CourtroomHallway,BasementHallway Courtroom,CourtroomHallway,BasementHallway
+
+@if "chosenAreaId==\"Courtroom\""
+	@setFlag 0
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter04/Act01_Chapter04_Adv09
+
+@if "chosenAreaId==\"CourtroomHallway\""
+	@setFlag 1
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter04/Act01_Chapter04_Adv10
+
+@if "chosenAreaId==\"BasementHallway\""
+	@setFlag 2
+	@Gosub System/System_Subroutine.EndAdv
+	@goto Act01_Chapter04/Act01_Chapter04_Adv11
+
+@Stop

@@ -1,0 +1,928 @@
+@gosubResetBook System/System_ResetWitchBook
+
+@if isDebugDirectJump
+	@Gosub Act02_Chapter05/Act02_Chapter05_TrialInit
+	@hideStageScreen 1 { time:0 }
+	@back Transparent { time:0 }
+
+@timer 900
+@HideUI ControlPanel
+@ShowUI DebateUI
+
+@hide Hiro
+@char CreatureHiro.2 { Position:{hiroPositionX},{characterPositionY},{hiroPositionZ} Rotation:,{hiroRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+# ==============================================================================
+# MARK: 10-2: 💬 【氷上メルル】
+# ==============================================================================
+# ＠ト書き▼議論10-2氷上メルル
+# 議論開始カットイン
+# 気任せの蝶［チェロ有り］
+@bgm Bgm_45_2
+
+# ボス演出
+@ResetText 
+@char CreatureHiro.2 { time:0 }
+@stageCamera 1 { Rotation:0,{ (8 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+
+@stageCamera 1 { Rotation:0,{ (8.1 / courtStandCount * 360) },0 time:1 }
+@showStageScreen 1
+@Wait 1.5
+
+@ResetText 
+@char Meruru.Normal2,ArmR1_2,ArmL3,Eyes2_Angry_Open1,Mouth2_Angry_Closed1 { time:0 }
+@stageCamera 0 { Rotation:0,{ (12 / courtStandCount * 360) },0 time:0 }
+@WaitForNextFrame 
+
+@stageCamera 0 { Rotation:0,{ (11.9 / courtStandCount * 360) },0 time:1 }
+@hideStageScreen 1
+@Wait 1.5
+
+
+# Judge10-2-1
+
+@Gosub System/System_Subroutine.BeginDebate-First
+@Gosub System/System_Subroutine.BeginDebate-Effect
+@Gosub System/System_Subroutine.BeginDebate-Last
+@pauseTrial false
+
+@hideStageScreen 1
+
+@char Meruru.Head1,ArmR5_1,ArmL8,Eyes1_Uncomfortable_Open1,Mouth1_Fearful_Open1
+@gosubModifyCamera 0
+@printDebate たしかに私は……<br>元々は人間でした……。
+
+@char Meruru.Head1,ArmR3_1,ArmL3,Eyes1_Pensive_Open1,Mouth1_Angry_Open1
+@gosubModifyCamera 0
+@printDebate でも私はこの島で暮らして、<br>大魔女様に<br>認められたんです……！
+
+@char Meruru.Head1,ArmR5_1,ArmL8,Eyes1_Cry_Closed2,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@printDebate 大魔女様は<br>そんな私の身を案じて、<br>自分で身を守れるように<br>魔法を与えて<br>くださったんです……。
+
+# ＠備考◆喜び
+
+@char Meruru.Head1,ArmR5_1,ArmL8,Eyes1_Pensive_Open1,Mouth1_Smile_Closed1
+@gosubModifyCamera 0
+@printDebate "そして私は魔女となって、<br><link=\"Objection_02_05_02_01\">大魔女様の家族</link>と<br>なりました！"
+
+@char Meruru.Head1,ArmR8_1,ArmL8,Eyes1_Downcast_Open1,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@printDebate ……そのあと大魔女様は、<br>世界に呪いをバラまいたんです。
+
+@char Meruru.Head1,ArmR1_1,ArmL1,Eyes1_Downcast_Open1,Mouth1_Normal_Open2
+@gosubModifyCamera 0
+@printDebate "人間たち同士で<br>永遠に争うように……<br>自身の魔女としての因子を<br><link=\"Objection_02_05_02_02\">植え付け</link>ました。"
+
+@char Meruru.Head1,ArmR1_1,ArmL1,Eyes1_Cry_Closed2,Mouth1_Normal_Open1
+@gosubModifyCamera 0
+@printDebate とっても……可哀想です。<br>私も１人残されてしまって……<br>寂しかったです……。
+
+@char Meruru.Normal1
+@gosubModifyCamera 0
+@printDebate でも大魔女様は<br>自身が消える直前に、<br>私に言い残しました……<br>【自身の存在を魔女因子に変える】<br>って……。
+
+@char Meruru.Head1,ArmR1_1,ArmL1,Eyes1_Cry_Closed2,Mouth1_Angry_Open2
+@gosubModifyCamera 0
+@printDebate "だから私は……<br>大魔女様は魔女因子となって<br>人々の中に<br><link=\"Objection_02_05_02_03\">お隠れになった</link>……。<br>そう考え、<br>今も探し続けているんです。"
+
+# ==============================================================================
+# 10-2議論後独白
+# ==============================================================================
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial true
+@Gosub System/System_Subroutine.EndDebate-Effect
+@Gosub System/System_Subroutine.EndDebate-Last
+
+#
+# 議論終了
+# ------------------------------------------------------------------------------
+
+@ResetText 
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@Wait 0.2
+
+@print （メルルの話は嘘をついているようには見えない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print （しかし……彼女が見聞きしたことが真実とは限らない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@print （他のみんなが事の成り行きを静観している今のうちに……<br>　突きつけよう、真実を！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-2-1
+
+#
+# 反論1
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_02_01
+
+@Skip false
+@pauseTrial true
+
+@choice 君は実験体だった
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-2-2
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論2
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_02_02
+
+@Skip false
+@pauseTrial true
+
+@choice 君もその犠牲者だ
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-2-3
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+#
+# 反論3
+# ------------------------------------------------------------------------------
+
+# Objection_02_05_02_03
+
+@Skip false
+@pauseTrial true
+
+@choice 大魔女は死んだ
+	@sfx Sfx_System_SaveData_001_2x
+	@StopVoice 
+	@CancelGosub 
+	@goto .Judge10-2-4
+
+
+@choice 戻る
+	@pauseTrial false
+	@Wait "i{debateWaitTime}"
+	@Return 
+
+@StopForChoice 
+
+# ==============================================================================
+# MARK: 10-2: ❌ 議論ミス選択肢
+# ==============================================================================
+# MARK: 10-2-3: ❌ 反論・君もその犠牲者だ
+
+# Judge10-2-3
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print 大魔女は人間同士を争わせようとした……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.8
+@gosubModifyCamera 0
+@print つまり君も大魔女に操られた、<br>その犠牲者の１人というわけだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@gosubModifyCamera 0
+@print その証拠に、<br>君はここで魔女候補の少女たちを殺し合わせようと<br>黒幕を続けてきたわけだしね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Meruru.Head1,ArmR5_1,ArmL4,Eyes1_Normal_Open2,Mouth1_Angry_Open2
+@gosubModifyCamera 0
+@print そ、それは違うと思います……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@gosubModifyCamera 0
+@print 私はもう……人間じゃないですし……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Head1,ArmR5_1,ArmL4,Eyes1_Pensive_Open2,Mouth1_Smile_Closed1
+@gosubModifyCamera 0
+@print 私は大魔女様と同じ魔女……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Head1,Arms1_1,Eyes1_Normal_Open1,Mouth1_Angry_Open2
+@gosubModifyCamera 0
+@print みなさんは可哀想ですけど……<br>でもそれってあくまでも同情で……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Head1,Arms1_1,Eyes1_Flushed_Closed1,Mouth1_Angry_Open2
+@gosubModifyCamera 0
+@print 同じ存在だとは思わないでもらえると、<br>助かります。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （私の言葉に<br>　メルルの信念を揺るがすほどの力は<br>　なかったみたいだ……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （彼女は自分のことをまるで天の御遣いかのように<br>　特別な存在だと思っている……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print （ならば、その傲慢な天使の羽をむしり取り、<br>　地に落としてやるとしよう……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@goto .Judge10-2-1
+
+# MARK: 10-2-4: ❌ 偽証・君の考えは間違いだ
+
+# Judge10-2-4
+
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print 【大魔女が隠れた】……<br>本当にそうかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.8
+@gosubModifyCamera 0
+@print 大魔女はただ死んだに過ぎない。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.4
+@gosubModifyCamera 0
+@print 全て君の妄想だ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Meruru.Head1,Arms1_1,Eyes1_Cry_Closed3,Mouth1_Flushed_Closed1
+@gosubModifyCamera 0
+@print ふふ……そうだとして……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Head1,Arms1_1,Eyes1_Normal_Open2,Mouth1_Angry_Open2
+@gosubModifyCamera 0
+@print 何か、変わるんですか？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.14
+@gosubModifyCamera 0
+@print なに……！？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Meruru.Head1,ArmR5_1,ArmL8,Eyes1_Pensive_Open2,Mouth1_Smile_Closed1
+@gosubModifyCamera 0
+@print もし大魔女様が死んだのだとしても……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Head1,ArmR5_1,ArmL8,Eyes1_Pensive_Open2,Mouth1_Smile_Closed1
+@gosubModifyCamera 0
+@print 可能性のある限り、私は諦めません……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+# ＠備考◆狂信
+
+@char Meruru.Head2,ArmR5_2,ArmL2,Eyes2_Normal_Open3,Mouth2_Angry_Open2
+@gosubModifyCamera 0
+@print 大魔女様と会えるその日まで……<br>私はここで待ち続けるんです！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@Damage 
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （私の言葉に<br>　メルルの信念を揺るがすほどの力は<br>　なかったみたいだ……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （彼女は自分のことをまるで天の御遣いかのように<br>　特別な存在だと思っている……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print （ならば、その傲慢な天使の羽をむしり取り、<br>　地に落としてやるとしよう……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@goto .Judge10-2-1
+# ==============================================================================
+# MARK: 10-2-2: ⭕ 反論・君は実験体だった
+# ==============================================================================
+# カットイン
+# Judge10-2-2
+@Gosub System/System_Subroutine.EndDebate-First
+@pauseTrial false { timer:false }
+@HideUI DebateUI
+@ShowUI ControlPanel
+
+@StopBgm 
+@gosubCutIn CreatureHiro
+@Gosub System/System_Subroutine.EndDebate-Last
+
+@char CreatureHiro.19
+@gosubModifyCamera 0
+@print 【大魔女が君を魔女にした】……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.19
+@gosubModifyCamera 0
+@print なるほど、たしかにそうなんだろうね。<br>実際君は不老不死で、魔女だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print だが……気付いているだろうか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print 【魔女】という言葉に、<br>２つの意味があることに。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Meruru.Surprised2,Eyes2_Fearful_Open1,Sweat2_1
+@gosubModifyCamera 0
+@print ………っ！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.21
+@gosubModifyCamera 0
+@print １つはこの島に住んでいたという<br>魔法を操る種族のこと。<br>そしてもう１つは……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・明るい音
+@sfx Sfx_Common_2
+
+# BGM変更：HirO（Voなし）
+@bgm Bgm_37_1_Loop
+
+@char CreatureHiro.18
+@gosubModifyCamera 0
+@print ……私たちと同じ、<br>魔女因子を埋め込まれて魔女化した<br>【化け物】のことだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Meruru.Surprised2,Eyes2_Fearful_Open1,Mouth2_Surprised_Open2,Sweat2_1
+@gosubModifyCamera 0
+@print ……な、何が言いたいんですか……！？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@spawn Clue
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print ……私が知っている資料はもう１つある。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print そこに書かれている、<br>大魔女がしたことを教えよう。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print 大魔女は同胞を皆殺しにされ、<br>人間たちへの復讐を誓ったんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.8
+@gosubModifyCamera 0
+@print ……その方法は、人間たちを化け物にすること。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@gosubModifyCamera 0
+@print 【魔法を操り、悪逆非道の限りを尽くす、異形】<br>……すなわち、想像上の【魔女】へ変える呪術。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.7
+@gosubModifyCamera 0
+@print それが【魔女因子】だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.21
+@gosubModifyCamera 0
+@print まるで人間の遺伝子を書き換えるウィルスのように……<br>生物兵器のような厄介な呪術だね。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@gosubModifyCamera 0
+@print 大魔女はその効果を試すために、<br>ある人間の少女を実験体としたんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@despawn Clue
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆息を呑む
+
+@char Meruru.Surprised2,Eyes2_Fearful_Open1,Mouth2_Angry_Closed1,Sweat2_1
+@gosubModifyCamera 0
+@print …………！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print ……今度は聞き方を変えようか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.21
+@gosubModifyCamera 0
+@print 魔女という言葉には<br>【この島に住んでいた、魔法を扱える種族】という意味と<br>【人間に魔女因子を埋め込んだ化け物】という意味がある。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char CreatureHiro.20
+@gosubModifyCamera 0
+@print ……君はどっちの【魔女】なのかな、メルル。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Meruru.Head2,ArmR4_2,ArmL13,Eyes2_Angry_Open1,Mouth2_Surprised_Open1,Sweat2_1
+@gosubModifyCamera 0
+@print "ち、違……！ 違います……！" { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Head2,ArmR4_2,ArmL13,Eyes2_Angry_Closed1,Mouth2_Surprised_Open1,Sweat2_1
+@gosubModifyCamera 0
+@print だって、私は大魔女様に……【家族】だって……！<br>そう……言ってくれて……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.11
+@gosubModifyCamera 0
+@print ……本当に君のことを家族として愛していたなら、<br>人間を殺戮する呪いの実験体に使うだろうか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Meruru.Head2,ArmR4_2,ArmL3,Eyes2_Angry_Closed1,Mouth2_Angry_Open1,Sweat2_1
+@gosubModifyCamera 0
+@print だ、大魔女様は私のことを信頼してくれたんです……！<br>実験……だなんて……そんなこと……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Head2,ArmR4_2,ArmL3,Eyes2_Angry_Closed1,Mouth2_Normal_Open1,Sweat2_1
+@gosubModifyCamera 0
+@print だから私はこうして、<br>大魔女様のために……<br>魔女を集めていたのに……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print 【信頼】か……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@gosubModifyCamera 0
+@print でも大魔女が望んだのは、<br>本当にそんなことなのかな？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Meruru.Head2,ArmR4_2,ArmL3,Eyes2_Surprised_Open1,Mouth2_Fearful_Open1,Sweat2_1
+@gosubModifyCamera 0
+@print え……？ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print ……魔女因子は、本来なら君を【なれはて】にして<br>新しい少女へと転移していく呪術だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.8
+@gosubModifyCamera 0
+@print でも君は【なれはて】ることすらできなかった。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@gosubModifyCamera 0
+@print そのくせ、こんな絶海の孤島で<br>人に魔女因子を振りまくこともなく<br>静かに暮らし続けている……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.16
+@gosubModifyCamera 0
+@print 大魔女にしてみたら……<br>とんだ失敗作だったんじゃないかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Meruru.Head2,ArmR13_2,ArmL13,Eyes2_Fearful_Open1,Sweat2_1
+@gosubModifyCamera 0
+@print そ、そんな……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.16
+@gosubModifyCamera 0
+@print ……出来損ないのモルモットを、<br>大魔女は本当に愛しているだろうか？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Meruru.Head2,ArmR13_2,ArmL14,Eyes2_Angry_Closed1,Mouth2_Angry_Open1,Sweat2_1
+@gosubModifyCamera 0
+@print "い……嫌……！ そ、そんなこと……！" { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.16
+@gosubModifyCamera 0
+@print ――いい加減認めたらどうかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.21
+@gosubModifyCamera 0
+@print 君は……大魔女に利用されていたんだ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.8
+@gosubModifyCamera 0
+@print そこに大魔女からの愛なんてなかったし、<br>君はそれを勘違いして暴走しているだけ……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.8
+@gosubModifyCamera 0
+@print ただの実験素材だった君に……<br>愛される権利なんて最初からなかったんだよ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Meruru.Head2,ArmR13_2,ArmL14,Eyes2_Angry_Closed1,Mouth2_Angry_Open1,Sweat2_1
+@gosubModifyCamera 0
+@print "そ、そんな……！<br>私は……！ こんなに長い間、大魔女様のために……！" { author:Meruru speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Meruru.Head2,ArmR13_2,ArmL14,Eyes2_Cry_Closed3,Mouth2_Normal_Open1,Sweat2_1
+@gosubModifyCamera 0
+@print そんなのは……嘘です！<br>大魔女様は、私のことを……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print ……なら聞くが。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.10
+@gosubModifyCamera 0
+@print 大魔女と別れるとき……<br>君はなんて言われたんだった？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@gosubModifyCamera 0
+@print 【さようなら】？<br>【また会おう】？<br>【体に気をつけて】……？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.11
+@gosubModifyCamera 0
+@print そんな言葉、君は１つでも言われたかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+# ＠備考◆言葉に詰まる
+
+@char Meruru.Fearful2,Eyes2_Fearful_Open1,Mouth2_Angry_Closed1,Sweat2_1
+@gosubModifyCamera 0
+@print ……っ！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.11
+@gosubModifyCamera 0
+@print 本当に親しい相手なら別れの言葉ぐらい贈るだろう。<br>……いや、そもそも。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.16
+@gosubModifyCamera 0
+@print 君の聞いた最後の大魔女の言葉……<br>本当に君に向けた言葉だったのかな。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Meruru.Fearful2,Mouth2_Fearful_Open1,Sweat2_1
+@gosubModifyCamera 0
+@print あ……あ……。<br>……それ、は……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.16
+@gosubModifyCamera 0
+@print ――君が勝手に大魔女を家族だと思っていただけで。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.16
+@gosubModifyCamera 0
+@print 彼女からしてみれば、<br>ただちょうどそこにあっただけの<br>都合の良い実験素材だっただけなんじゃないかな？ { author:Hiro speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+@char Meruru.Head2,ArmR13_2,ArmL14,Eyes2_Cry_Closed3,Mouth2_Angry_Open1
+@gosubModifyCamera 0
+@print ………あ……あああああああ！！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+# メルル魔女化エフェクト
+
+@ResetText 
+@back SolidColor.Custom { time:0 }
+# ① まずほんのり白みを足す（じわりと来る予兆）
+@back SolidColor.Custom { time:1 }
+@Wait 1
+
+# ② 少しためて「ブワッ！」と強く真っ白に
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.8
+
+@hide Meruru
+@char CreatureMeruru.3-5 { Position:{meruruPositionX},{characterPositionY},{meruruPositionZ} Rotation:,{meruruRotationY} Scale:{characterScale},{characterScale},1 time:0 }
+
+# ③ 光が一瞬続いた後、ゆっくり暗くなる（光が収まる演出）
+@back SolidColor.Custom { time:0.8 }
+@Wait 0.8
+
+@back SolidColor.Custom { time:2 }
+@Wait 1
+
+@gosubModifyCamera 0
+@print そんな……そんなはず……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Alisa.Default,ArmR7,ArmL3,Angle01/Facial/Eyes>Eyes_Fearful_Open,Angle01/Facial/Sweat>Sweat02
+@gosubModifyCamera 0
+@print な、なんだありゃあ……！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@char Hanna.Surprised1,Angle01/Head01/Facial01/Mouth01>Mouth01_Fearful_Open
+@gosubModifyCamera 0
+@print あの姿は……！？ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR1,ArmL4,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……メルルくんに何をしたんだっ！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print これが……【魔女化】だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+# ＠備考◆心の痛みに耐えている
+
+@char CreatureMeruru.3-5
+@gosubModifyCamera 0
+@print ……うぅ……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.1
+@gosubModifyCamera 0
+@print （……メルルは姿形こそ人のままだったが……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.1
+@gosubModifyCamera 0
+@print （本来はとっくの昔に魔女化している人間だったんだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+@update Meruru
+@toast "魔女図鑑 更新…"
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （メルルが強靭な精神力を持っていたのか……<br>　それとも実験段階の呪いだった為に<br>　不具合があったのか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （それはわかりようもない） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （しかしメルルのように精神を追い詰めれば、<br>　魔女化を強制的に引き起こすことは<br>　可能だということはわかった） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print （ならば、他のみんなも魔女化させてしまえば……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR9,ArmL4,Angle01/Facial/Eyes>Eyes_Surprised_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open01,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ――メルルくん！<br>大丈夫か！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR7,ArmL4,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Angry_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print おのれ……！<br>魔女だか悪魔だか知らないが、彼女をこんな姿にして……！ { author:Leia speed:1 waitInput:true Wait:true }
+
+# ＠備考◆後半は気合を入れる感じ
+
+@char CreatureMeruru.1-5
+@gosubModifyCamera 0
+@print ……う、うぅ……！<br>ああああっ！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+# 緑の光エフェクト
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Leia.Default,ArmR1,ArmL1,Angle01/Facial/Eyes>Eyes_Surprised_Open01,Angle01/Facial/Mouth>Mouth_Fearful_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print こ、これは……！？ { author:Leia speed:1 waitInput:true Wait:true }
+
+# ＠備考◆辛そう
+
+@char CreatureMeruru.1-5
+@gosubModifyCamera 0
+@print 大……丈夫です……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char CreatureMeruru.1-4
+@gosubModifyCamera 0
+@print ……【治し】ましたから……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.15
+@gosubModifyCamera 0
+@print （あれはまさか……【治療】の魔法……！？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+# ==============================================================================
+# ◎回想シーン（流用）●シーン2‐1‐4
+# ==============================================================================
+
+@bgm Bgm_37_1_Loop { Volume:0.2 }
+@Wait 0.2
+@ResetText 
+@back SolidColor.Custom { time:0 }
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+@back 9_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@char Meruru.Head1,ArmR1_1,ArmL16,Eyes1_Cry_Closed1,Mouth1_Normal_Open1 { time:0 }
+@hideStageScreen 1
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+
+@print あ、ああ、なんてひどい怪我を……<br>嫌です、ダメです、絶対に死なせません……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char Meruru.Head1,ArmR1_1,ArmL15,Eyes1_Angry_Closed1,Mouth1_Angry_Open1
+@print しっかりしてください、マーゴさん……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@ResetText 
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+@hide MainBackground-Flashback,Meruru-Flashback { time:0 }
+@char CreatureHiro.15
+@gosubModifyCamera 0
+@back SolidColor.Custom { time:0.4 }
+@Wait 0.4
+@bgm Bgm_37_1_Loop
+# ==============================================================================
+# 回想ここまで
+# ==============================================================================
+
+@print （だが私が見たメルルの魔法は、<br>　傷を治す魔法だったはず……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.17
+@gosubModifyCamera 0
+@print （まさかそれを【心の傷】に使ったのか……？<br>　そんなことが……？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@gosubModifyCamera 0
+@print （いや、もしかすると……<br>　魔女化による、魔法の成長か……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@update Meruru
+@update 1
+@update 2
+@toast "魔女図鑑 更新…"
+
+@char CreatureMeruru.2-4
+@gosubModifyCamera 0
+@print ふ……ふふ……酷い絶望です。<br>今にも心がガラガラと崩れてしまいそう……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char CreatureMeruru.2-8
+@gosubModifyCamera 0
+@print でも……今更引けるわけ、ないじゃないですか……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char CreatureHiro.15
+@gosubModifyCamera 0
+@print …………！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureMeruru.2-7
+@gosubModifyCamera 0
+@print たとえ……私がただの実験動物でも……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@gosubModifyCamera 0
+@print この長い長い時間を……<br>永遠のように長い時間を、<br>待ち続けてきたんです……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char CreatureMeruru.2-1
+@gosubModifyCamera 0
+@print 私には……たとえ痛みと絶望で心と体がバラバラに<br>引き裂かれてしまうことになったとしても、<br>大魔女様に会わなくちゃいけない理由があります……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char CreatureMeruru.2-3
+@gosubModifyCamera 0
+@print それが私が今、ここに存在する意味なんです……。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@gosubModifyCamera 0
+@print それがなくなったら……壊れてしまうから。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char CreatureMeruru.2-2
+@gosubModifyCamera 0
+@print だから私は……諦めません。<br>大魔女様と再び会うまで……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+# ＠備考◆憐れみ
+
+@char CreatureHiro.15
+@gosubModifyCamera 0
+@print …………。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureMeruru.0-3
+@gosubModifyCamera 0
+@print なのでヒロさん、続けましょう。 { author:Meruru speed:1 waitInput:true Wait:true }
+
+# SE・決め音
+@sfx Sfx_Common_3
+
+# ＠備考◆トランス状態に近いイメージ。
+
+@char CreatureMeruru.0-3
+@gosubModifyCamera 0
+@print 大魔女様を呼び出すための、儀式をっ……！ { author:Meruru speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print （……途中で諦めたら<br>　殺されてしまいそうな勢いだな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print （だが……道筋は見えた） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （私たちの中に残る魔女因子……<br>　それを活性化させ、大魔女を引きずり出すんだ……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+# レイアカットイン
+@Wait 0.5
+
+@sfx Sfx_Common_5
+
+@ResetText 
+@voice CommonTrial_Leia01357
+@char Leia.Angry1,ArmR10,ArmL1,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open02
+@gosubSplitStageScreen 1
+@Wait 1.5
+
+@hideStageScreen 1
+@Wait 0.3
+
+@char Leia.Default,ArmR5,ArmL4,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Angry_Closed
+@gosubModifyCamera 0
+@print ……さっきから黙って見ていれば……。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR10,ArmL4,Angle01/Facial/Eyes>Eyes_Angry_Open02,Angle01/Facial/Mouth>Mouth_Yell_Open01
+@gosubModifyCamera 0
+@print たとえメルルくんが魔女だったとして、<br>それが何だって言うんだ！ { author:Leia speed:1 waitInput:true Wait:true }
+
+# SE・気になる音
+@sfx Sfx_Common_1
+
+@char Sherry.Default,ArmR2,ArmL3,Angle01/Facial/Eyes>Eyes_Normal_Open04,Angle01/Facial/Mouth>Mouth_Pensive_Middle
+@gosubModifyCamera 0
+@print ……この状況で魔女の説明がされたのは、<br>大変重要なお話だったと思いますけど。 { author:Sherry speed:1 waitInput:true Wait:true }
+
+@char Noah.Default,ArmR5,ArmL4,Angle01/Facial/Eyes>Eyes_Normal_Open02,Angle01/Facial/Mouth>Mouth_Smile_Open01
+@gosubModifyCamera 0
+@print のあもそう思うー。 { author:Noah speed:1 waitInput:true Wait:true }
+
+# SE・ネガティブ音
+@sfx Sfx_Common_7
+
+# ＠備考◆気まずい。…むぅ…みたいな納得できない息を吐く感じ
+
+@char Leia.Default,ArmR5,ArmL5,Angle01/Facial/Eyes>Eyes_Surprised_Open02,Angle01/Facial/Mouth>Mouth_Pensive_Closed,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print …………。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR10,ArmL5,Angle01/Facial/Eyes>Eyes_Pensive_Closed,Angle01/Facial/Mouth>Mouth_Yell_Open02,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……とにかく！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_45_2
+
+# SE・軽い衝撃音
+@sfx Sfx_Common_4
+
+@char Leia.Default,ArmR10,ArmL5,Angle01/Facial/Eyes>Eyes_Angry_Open01,Angle01/Facial/Mouth>Mouth_Yell_Open02,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print これ以上の蛮行はやめてもらおう！ { author:Leia speed:1 waitInput:true Wait:true }
+
+# ＠備考◆懐かしい・親しい感情
+
+@char CreatureHiro.25
+@gosubModifyCamera 0
+@print （……相変わらずだな、レイアは） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@gosubModifyCamera 0
+@print （発想が突飛で、周りの賛同を得られていない……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.3
+@gosubModifyCamera 0
+@print （だが……それが彼女なりの正義とも言える。<br>　勇気と勇み足は紙一重だ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@gosubModifyCamera 0
+@print （わかりやすい彼女相手であれば……<br>　あるいは、【説得】が可能か？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （いや……魔女化は、説得などと言う穏当なものではないか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print ……わかった。<br>いいだろう。君の話を聞こうか。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR4,ArmL5,Angle01/Facial/Eyes>Eyes_Fearful_Open,Angle01/Facial/Mouth>Mouth_Surprised_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……な、なんだ、急に殊勝になって……！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.5
+@gosubModifyCamera 0
+@print 私が求めているのは議論であり対話だ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.9
+@gosubModifyCamera 0
+@print 私の目的はこの牢屋敷から全員で脱出し、<br>みんなを救うこと……。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.9
+@gosubModifyCamera 0
+@print 私のすることに意見があるなら……<br>君の言葉で話してくれ。 { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR3,ArmL5,Angle01/Facial/Eyes>Eyes_Pensive_Open,Angle01/Facial/Mouth>Mouth_Angry_Open,Angle01/Facial/Sweat>Sweat01
+@gosubModifyCamera 0
+@print ……わ、わかった。<br>任せてくれたまえ。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@char Leia.Default,ArmR9,ArmL8,Angle01/Facial/Eyes>Eyes_Normal_Closed02,Angle01/Facial/Mouth>Mouth_Smile_Middle
+@gosubModifyCamera 0
+@print それでは……語り合おうじゃないか！ { author:Leia speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@char CreatureHiro.1
+@gosubModifyCamera 0
+@print （……また嘘を重ねてしまったな） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char CreatureHiro.2
+@gosubModifyCamera 0
+@print （悪いがレイア……<br>　君の心、狙い撃たせてもらうよ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+
+
+@goto Act02_Chapter05/Act02_Chapter05_Trial03

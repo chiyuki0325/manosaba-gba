@@ -1,0 +1,298 @@
+@gosubResetBook System/System_ResetWitchBook { IsDebugDirectJump:{isDebugDirectJump} }
+@Gosub System/System_Subroutine.BeginAdv
+
+# Scene2-1-18
+
+# ========================================
+# ●シーン2‐1-18
+# ========================================
+
+# ========================================
+# 演出：ここからヒロの立ち絵はしばらく表示なし（白く汚れている＆血も浴びてそう）
+# ========================================
+
+@print メルルの死体が見つかってすぐ――<br>スマホにゴクチョーからのメッセージが届いた。 { speed:1 waitInput:true Wait:true }
+
+@print 『はぁ……報せが入りました。<br>　痛ましい殺人事件が発生したようですね』 { speed:1 waitInput:true Wait:true }
+
+@print 『一体どういうことなのか……』 { speed:1 waitInput:true Wait:true }
+
+@print 『ともかく皆さん、今すぐラウンジに集合してください。<br>　従わなければ看守が連行しちゃうので……』 { speed:1 waitInput:true Wait:true }
+
+@print 私たちは混乱しながらも、<br>現れた看守に従うほかなく……。 { speed:1 waitInput:true Wait:true }
+
+@ResetText 
+
+@back 5_1 { Scale:{g_backgroundDefaultScale} time:0 }
+@back Transparent { time:1.2 }
+@Wait 1.8
+
+@bgm Bgm_35_1
+
+@print ラウンジには<br>メルル以外の少女、１２人全員が集まっていた。 { speed:1 waitInput:true Wait:true }
+
+@print 明らかに殺されたとわかる死体など、初めて目にしただろう。<br>もちろん私も初めて見た。 { speed:1 waitInput:true Wait:true }
+
+@print 一様に彼女らは青ざめている。 { speed:1 waitInput:true Wait:true }
+
+@char Sherry.Smile1
+
+@print ほんとに起きましたね殺人事件！ { author:Sherry speed:1 waitInput:true Wait:true }
+
+@print ……約１名を除き。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@back 5_1 { time:0 }
+@Wait 0.9
+
+@animate MainBackground-Middle
+@Wait 1.5
+
+@print "ある者は涙し、<br>ある者は吐き気を<ruby=\"こら\">堪</ruby>え、<br>ある者は小さな悲鳴を上げ続けていた。" { speed:1 waitInput:true Wait:true }
+
+@print その彼女らの私を見る眼は……<br>明らかに変わってしまっていた。 { speed:1 waitInput:true Wait:true }
+
+@print まるで殺人者を見るかのような、<br>恐怖の色を宿した眼差し―― { speed:1 waitInput:true Wait:true }
+
+@print （ッ、なんだその目は……！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print あまりの居心地の悪さに、<br>彼女らを怒鳴りつけたくなる。 { speed:1 waitInput:true Wait:true }
+
+@print "しかし、<ruby=\"いま\">未</ruby>だ混乱のさなかではあるものの、<br>なんとなく状況は<ruby=\"つか\">掴</ruby>めてきた。" { speed:1 waitInput:true Wait:true }
+
+@print "私は死体のあった部屋に倒れていた。<br>しかも白い塗料と返り血で汚れ、<ruby=\"せいさん\">凄惨</ruby>な状態だ。" { speed:1 waitInput:true Wait:true }
+
+@print （今私が何かを言ったところで、<br>　ただ恐怖を深めるだけだ） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "私は後頭部を殴られて、<br>先ほどまで<ruby=\"こんとう\">昏倒</ruby>していたのだ。" { speed:1 waitInput:true Wait:true }
+
+@print "自身のまとう<ruby=\"い\">忌</ruby>まわしい血の臭いのせいで、<br>頭痛と吐き気が<ruby=\"や\">止</ruby>まない。" { speed:1 waitInput:true Wait:true }
+
+@print ――心底最悪な気分だった。 { speed:1 waitInput:true Wait:true }
+
+@print （今は静観するしか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hide MainBackground-Middle { time:0 }
+
+# フクロウの羽ばたき音
+@sfx Sfx_8
+
+@print 羽ばたき音が聞こえて、<br>私たちの空気はより緊張で張り詰める。 { speed:1 waitInput:true Wait:true }
+
+@char Warden.1
+
+@print はぁ……殺人事件……<br>起きちゃいましたね……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 今夜、【魔女裁判】を開廷します。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 今いる囚人の中から必ず殺人犯を特定してください。<br>その者は、【魔女】として処刑するので。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print やすやすと死なない魔女の活動を<br>確実に沈黙させる方法での処刑です。<br>かなり酷いこととか……しちゃうので。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print また、囚人全員への告知ですが、<br>特定ができなかった場合は、全員処刑とします。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print 現れたゴクチョーが淡々と説明していったことに、<br>彼女らは騒ぎ出した。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Hanna.Surprised1
+
+@print 全員処刑なんてめちゃくちゃですわ……！ { author:Hanna speed:1 waitInput:true Wait:true }
+
+@char Alisa.Angry1,Option-ArmL-Off
+
+@print おいふざけんな鳥！！ { author:Alisa speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 一方で、ゴクチョーもまた、<br>困惑しているかのように首を傾げている。 { speed:1 waitInput:true Wait:true }
+
+@char Warden.1
+
+@print "私は<ruby=\"あるじ\">主</ruby>に命令され、<br>決められていることを<br>お伝えしているだけなので……。" { author:Warden speed:1 waitInput:true Wait:true }
+
+@print "ただ、その当人である<ruby=\"あるじ\">主</ruby>が殺されてしまい、<br>私もどうしたものかと驚いています。" { author:Warden speed:1 waitInput:true Wait:true }
+
+@print "ざわめきが一層<ruby=\"ふく\">膨</ruby>らんだ。" { speed:1 waitInput:true Wait:true }
+
+@print （氷上メルルがゴクチョーに命令を下していた……！？） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print 状況が飲み込めない中、<br>ナノカが一歩前へと出てくる。 { speed:1 waitInput:true Wait:true }
+
+@char Warden.1
+@char Nanoka.Default
+
+@print 牢屋敷の管理者側……<br>つまり裏で糸を引いていた【黒幕】の【魔女】は<br>氷上メルルだった、ということ？ { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@char Warden.1
+
+@print そういうことになりますかね……？ { author:Warden speed:1 waitInput:true Wait:true }
+
+# ========================================
+# この時ナノカはミリアが黒幕だと疑っていて、
+# メルル黒幕がまだかみ砕けず困惑している想定です。
+# ========================================
+
+# ＠備考◆呆然と
+
+@print ……そう、そうだったの。 { author:Nanoka speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （氷上メルル……<br>　あんな優しげに振舞っておきながら、魔女だったのか） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print どう思えばいいのか、<br>正直わからなかった。 { speed:1 waitInput:true Wait:true }
+
+@print メルルとは何度か言葉を交わしたが、<br>それほど親しく接したわけではない。 { speed:1 waitInput:true Wait:true }
+
+@print "それでも殺された姿が<ruby=\"のうり\">脳裏</ruby>にちらつき、<br><ruby=\"あく\">悪</ruby>だと聞いても尚、胸が<ruby=\"きし\">軋</ruby>むように痛んでいる。" { speed:1 waitInput:true Wait:true }
+
+@print （こんな短期間でも情は感じるものか……） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Warden.1
+
+# ＠備考◆ぶつぶつひとりごと風
+
+@print メルル様がいなくなっても<br>牢屋敷の取り決めが消えたわけではないので……<br>これまで通り運営していくしかないですね。 { author:Warden speed:1 waitInput:true Wait:true }
+
+# ＠備考◆ぶつぶつひとりごと風
+
+@print 大体よく考えたら、<br>ここを取り仕切っているのはほぼ私なんです。<br>メルル様がいなくても成り立ちますね。 { author:Warden speed:1 waitInput:true Wait:true }
+
+# ＠備考◆ぶつぶつひとりごと風
+
+@print なんなら鳥使いの荒い上司が消えて、<br>やりやすくなったまでありますね……。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@StopBgm 
+
+@print "ブツブツと何やら<ruby=\"つぶや\">呟</ruby>いていたゴクチョーが、<br>唐突にバッと翼をひろげた。" { speed:1 waitInput:true Wait:true }
+
+@bgm Bgm_10_1
+
+@print 良い機会です。<br>前々から準備していたのですが、<br>【事前投票】を導入しましょう！ { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Ema.Pensive1,ArmR3
+
+@print 事前、投票……？ { author:Ema speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Warden.1
+
+@print ええ。捜査の前に先に投票をしてもらい、<br>一番疑わしき囚人を拘束します。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@print そうすれば捜査中に犯人による不正も行われないでしょうし、<br>特定がしやすくなるんじゃないかと。<br>つまり裁判がさっさと終わる。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Margo
+
+@print さっさと終わらせたいのね？<br>まあ……気持ちはわからなくもないわ。 { author:Margo speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Warden.1
+
+@print それではみなさん、<br>自身のスマホで一番疑わしき囚人に投票してください。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Coco.Pensive1
+
+@print ……ちょっと待て待て。<br>なんも変わってねーじゃん。<br>むしろ悪くなってね……？ { author:Coco speed:1 waitInput:true Wait:true }
+
+@char Leia.Pensive1
+
+# ＠備考◆葛藤
+
+@print スマホは持ち歩いているけれど……<br>しかし……うぅ……すまない。 { author:Leia speed:1 waitInput:true Wait:true }
+
+@print 戸惑いながらも、<br>少女たちはスマホを取り出した。 { speed:1 waitInput:true Wait:true }
+
+@print "私はそれを<ruby=\"なが\">眺</ruby>めながら<br>――<ruby=\"ぼうぜん\">呆然</ruby>と立ち尽くすしかなかった。" { speed:1 waitInput:true Wait:true }
+
+@print （事前投票なんてしたら<br>　どう考えたって――） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+# モニター音
+@sfx Sfx_3
+
+@back SolidColor.Custom { time:0.2 }
+@Wait 0.2
+
+@printer Normal.Stream
+
+# パンパカパーン的な音
+@sfx Sfx_34
+
+@print ラウンジのモニターがついたかと思うと、<br>直後に間抜けなファンファーレ音が鳴り響いた。 { speed:1 waitInput:true Wait:true }
+
+@print そして、画面に映し出されていたのは…… { speed:1 waitInput:true Wait:true }
+
+@char Hiro.Angry1
+
+@print 圧倒的多数の投票により、<br>二階堂ヒロさんに決定しました！ { author:Warden speed:1 waitInput:true Wait:true }
+
+@print あなたを魔女裁判開廷まで、拘束しますね～。<br>それではみなさん、<br>頑張って犯人を特定してください。 { author:Warden speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@Wait 0.2
+@printer Normal.Default
+@back SolidColor.Custom { time:1.2 }
+@Wait 1.8
+
+# フクロウの羽ばたき音
+@sfx Sfx_8
+
+# ＠備考◆途中で口を塞がれる
+
+@print ふっ、ふざけ――ぐぅ！ { author:Hiro speed:1 waitInput:true Wait:true }
+
+@char Jailer.1
+
+@print "抗議の声は<br>長い手をたくさん持つ看守に<ruby=\"さえぎ\">遮</ruby>られる。" { speed:1 waitInput:true Wait:true }
+
+@print "私は口を<ruby=\"ふさ\">塞</ruby>がれたうえに、<br>はがいじめに拘束されていた。" { speed:1 waitInput:true Wait:true }
+
+@blur Jailer-Middle
+@char Ema.Surprised1
+
+# ＠備考◆心配
+
+@print ヒロちゃん……！ { author:Ema speed:1 waitInput:true Wait:true }
+
+@char Noah.Pensive1
+
+# ＠備考◆心配
+
+@print ヒロちゃん……。 { author:Noah speed:1 waitInput:true Wait:true }
+
+@print "看守の力は<ruby=\"すさ\">凄</ruby>まじく、<br>私がどれだけもがいても微動だにしない。" { speed:1 waitInput:true Wait:true }
+
+@print "私はその状態で、<br>この場にいる少女全員を<ruby=\"にら\">睨</ruby>みつけた。" { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+@char Miria.Fearful1
+@char Coco.Pensive1
+
+@print ひっ……。 { author:Miria speed:1 waitInput:true Wait:true }
+
+@print コワ～。 { author:Coco speed:1 waitInput:true Wait:true }
+
+@print 私は選ばれたのだ。 { speed:1 waitInput:true Wait:true }
+
+@print この場にいる少女たちに、<br>私が殺人者――【魔女】であると。 { speed:1 waitInput:true Wait:true }
+
+@hideChars 
+
+@print （いいだろう……全員敵だ……！！） { author:Hiro speed:1 waitInput:true Wait:true }
+
+@print "胸に芽生えかけた<br>情の<ruby=\"かけら\">欠片</ruby>はもはや消え失せた。" { speed:1 waitInput:true Wait:true }
+
+@print "私は看守に連行されながら、<br>ただただ全員を<ruby=\"にら\">睨</ruby>み続けた。" { speed:1 waitInput:true Wait:true }
+
+@update Meruru
+@Wait 1
+
+@Gosub System/System_Subroutine.EndAdv
+
+@goto Act02_Chapter01/Act02_Chapter01_Adv24
