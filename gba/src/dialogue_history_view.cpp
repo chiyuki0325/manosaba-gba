@@ -14,12 +14,12 @@ namespace manosaba
 void dialogue_history_view::archive(save_archive& a)
 {
     bool opened=_open;int scroll=_scroll;a.field(opened);a.field(scroll);
-    if(a.reading()){close();if(opened){open();_scroll=scroll;repaint();}}
+    if(a.reading()){close();if(opened){open();_scroll=bn::clamp(scroll,0,bn::max(0,_rows-8));repaint();}}
 }
 void dialogue_history_view::open()
 {
     _open=true;_rows=0;
-    for(int i=0;i<_vm.history_count();++i){_rows+=_vm.history(i).lines+2;_ends[i]=uint16_t(_rows);}
+    for(int i=0;i<_vm.history_count();++i){const auto& entry=_vm.history(i);_rows+=entry.lines+1+int(entry.speaker!=0);_ends[i]=uint16_t(_rows);}
     _rows=_rows ? _rows-1 : 1;_scroll=bn::max(0,_rows-8);repaint();
 }
 void dialogue_history_view::close()
@@ -46,7 +46,7 @@ void dialogue_history_view::line(text_canvas& canvas,int row)
     int low=0,high=_vm.history_count();
     while(low<high){int mid=(low+high)/2;if(_ends[mid]<=row)low=mid+1;else high=mid;}
     int local=row-(low ? _ends[low-1] : 0);const auto& entry=_vm.history(low);
-    if(!local)
+    if(entry.speaker && !local)
     {
         const char* name=story_speakers[entry.speaker];uint16_t color=19|(18<<5)|(18<<10);
         for(int i=0;i<nameplate_count;++i)if(bn::string_view(name)==nameplates[i].speaker){color=nameplates[i].color;break;}
@@ -54,10 +54,11 @@ void dialogue_history_view::line(text_canvas& canvas,int row)
         static constexpr int inks[]={2,3,4,5,7,8,9,10,11,15};int ink=inks[row%10];
         canvas.reader_color(ink,color);canvas.reader_line(row,name,text_canvas::ink(ink));return;
     }
-    if(local>entry.lines){canvas.reader_line(row,"",text_canvas::white);return;}
+    local-=int(entry.speaker!=0);
+    if(local>=entry.lines){canvas.reader_line(row,"",text_canvas::white);return;}
     if(_cached!=low){_vm.history_text(low,_text);_cached=low;}
     const char* value=_text;
-    for(int i=1;i<local;++i){while(*value && *value!='\n')++value;if(*value)++value;}
+    for(int i=0;i<local;++i){while(*value && *value!='\n')++value;if(*value)++value;}
     const auto* style=_vm.history_style(low);
     if(style)canvas.reader_color(12+style->color,story_text_colors[style->color]);
     canvas.reader_line(row,value,text_canvas::white,false,style,value-_text);

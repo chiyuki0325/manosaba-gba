@@ -88,6 +88,10 @@ int main(int argc,char** argv){
     tap(KEY_L);ready();layers();unsigned line=history().line_left,total=history().total_left;count=history().count;
     frames(300);expect(history().line_left==line && history().total_left==total && history().count==count,"history freezes discussion clocks and its dialogue index");screenshot(directory,"history-trial");
     tap(KEY_B);frames(80);expect(!history().open && history().total_left<total,"closing history resumes the discussion clock");
+    debug_boot();tap(KEY_DOWN);tap(KEY_A);tap(KEY_A);frames(220);
+    expect(history().count==1,"opening story reaches its first narrator entry");
+    before=frame_hash();tap(KEY_L);ready();expect(history().rows==1,"story narrator starts with its body and has no heading row");screenshot(directory,"history-story-narrator");
+    tap(KEY_B);frames(220);expect(frame_hash()==before,"narrator history returns to the same story pixels");
     printf("History frames=%u peak_ticks=%u\n",history_frames,history_peak);expect(history_peak<4389,"history overlay frame budget");
     puts("PASS: shared history/reader, 18-frame turbo guard, old-block cache reads, pause, cross-script reset and frozen trial clocks");
     mCoreConfigDeinit(&core->config);core->deinit(core);mLogSetDefaultLogger(NULL);mStandardLoggerDeinit(&logger);return 0;

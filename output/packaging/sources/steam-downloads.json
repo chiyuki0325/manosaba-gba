@@ -1,0 +1,67 @@
+[
+  {
+    "file": "steam-header-zh.jpg",
+    "url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3101040/391eceaea28b1d5564901c57e9aa0d733d9177de/header_schinese.jpg",
+    "bytes": 60794,
+    "size": [
+      460,
+      215
+    ],
+    "mode": "RGB"
+  },
+  {
+    "file": "steam-library-cover.jpg",
+    "url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3101040/library_600x900.jpg",
+    "bytes": 72047,
+    "size": [
+      300,
+      450
+    ],
+    "mode": "RGB"
+  },
+  {
+    "file": "steam-library-cover-2x.jpg",
+    "url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3101040/library_600x900_2x.jpg",
+    "bytes": 205423,
+    "size": [
+      600,
+      900
+    ],
+    "mode": "RGB"
+  },
+  {
+    "file": "steam-library-hero.jpg",
+    "url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3101040/library_hero.jpg",
+    "bytes": 387471,
+    "size": [
+      1920,
+      620
+    ],
+    "mode": "RGB"
+  },
+  {
+    "file": "steam-library-logo.png",
+    "url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3101040/logo.png",
+    "bytes": 161084,
+    "size": [
+      640,
+      360
+    ],
+    "mode": "RGBA"
+  },
+  {
+    "file": "steam-library-logo-zh.png",
+    "url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3101040/logo_schinese.png",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "file": "steam-background.jpg",
+    "url": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3101040/page_bg_raw.jpg",
+    "bytes": 1682509,
+    "size": [
+      1438,
+      810
+    ],
+    "mode": "RGBA"
+  }
+]
