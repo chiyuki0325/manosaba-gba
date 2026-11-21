@@ -159,6 +159,11 @@ uint8_t stage_player::scale_policy(const stage_event* event) const
     if(event)for(int i=0;i<event->count;++i)
     {
         const auto& c=_commands[event->first+i];
+        if(c.kind==stage_kind::clear)
+        {
+            for(int id=c.first;id<c.first+c.count;++id)rotating[id]=false;
+            continue;
+        }
         if(c.property!=int(stage_property::angle) || (c.target>=stage_actor_count && c.target!=stage_camera))continue;
         if(c.kind==stage_kind::set)rotating[c.target]=c.value!=0;
         else if(c.kind==stage_kind::tween)

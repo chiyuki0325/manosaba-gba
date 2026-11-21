@@ -1,4 +1,4 @@
-// Payload SHA256: aefd292b0611b1255983bb412e62a7d7ca635538dd7e04f9f7fb266e3d13cbe6
+// Payload SHA256: 66f01f56580fac304e9b4552a349575a71166198fd4fca33ee914e8d8f0bff75
 .section .rodata.graphics_bytes,"a",%progbits
 .balign 4
 .global _ZN8manosaba14graphics_bytesE

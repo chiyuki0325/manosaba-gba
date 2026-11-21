@@ -1,0 +1,35 @@
+{
+  "generator": "built-in image_gen",
+  "revision": "v2 clean high-resolution branding",
+  "assets": [
+    {
+      "file": "manosaba.png",
+      "width": 1619,
+      "height": 971,
+      "mode": "RGBA",
+      "sha256": "99f0879d121b11e5d01ea16f0d61982d48eba51cad998b22b59a4a0520b4763b",
+      "transparent_background": true
+    },
+    {
+      "file": "cartridge-label.png",
+      "width": 1774,
+      "height": 887,
+      "mode": "RGB",
+      "sha256": "a89bb969c031e233a2140c84f12ec7fad18f1e7379fd9a06c30fd0dd54028379"
+    },
+    {
+      "file": "box-front.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "sha256": "de006600d5557f98a6040f740004276e86620ef333df8db6eb07717d57089f16"
+    },
+    {
+      "file": "product-mockup.png",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB",
+      "sha256": "298a4bea193ca1f7a467f0ea59b43218eb332aa8713148185a212e42e6262169"
+    }
+  ]
+}

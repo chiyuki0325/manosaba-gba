@@ -12,6 +12,30 @@ from import_gba_graphics import png_object
 from encode_gba_graphics import rectangles,vector_tiles,encode_mask,encode_actor,train_family,color_centers,background_palette,quantize_background
 
 class EncodingTest(unittest.TestCase):
+    def test_baked_portrait_sampling_is_independent_of_obj_partition(self):
+        from actor_cache import bake
+        raw=bytes([0x11])*32;payload=raw;offsets={'filled':0}
+        def part(x,y,w,h):return dict(x=x,y=y,width=w,height=h,bank=0,tiles=['filled']*(w*h//64))
+        whole=dict(width=64,height=64,pivot=[32,32],palette='palette',parts=[part(0,0,64,64)])
+        split=dict(whole,parts=[part(x,y,32,32) for y in (0,32) for x in (0,32)])
+        def pixels(result):
+            asset,blobs,_=result
+            image=np.zeros((max(p['y']+p['height'] for p in asset['parts']),max(p['x']+p['width'] for p in asset['parts'])),dtype=np.uint8)
+            for p in asset['parts']:
+                for i,ref in enumerate(p['tiles']):
+                    tile=np.frombuffer(blobs[ref],dtype=np.uint8).reshape(8,4)
+                    unpacked=np.empty((8,8),dtype=np.uint8);unpacked[:,::2]=tile&15;unpacked[:,1::2]=tile>>4
+                    x=p['x']+i%(p['width']//8)*8;y=p['y']+i//(p['width']//8)*8
+                    target=image[y:y+8,x:x+8];take=unpacked!=0;target[take]=unpacked[take]
+            return image
+        for scale,phase,matrix in ((230,0,(4034,700,279,49,-50,279)),(307,51,(4034,700,209,37,-38,209))):
+            a=pixels(bake(whole,scale,2560,phase,0,matrix,payload,offsets))
+            b=pixels(bake(split,scale,2560,phase,0,matrix,payload,offsets))
+            np.testing.assert_array_equal(a,b)
+            for row in b:
+                ink=np.flatnonzero(row)
+                if len(ink):self.assertTrue(np.all(row[ink[0]:ink[-1]+1]))
+
     def test_tall_obj_split_retains_pixels_palette_and_sparse_coverage(self):
         from obj_parts import split_tall_parts
         original=[dict(x=24,y=32,width=64,height=64,bank=2,tiles=list(range(64))),

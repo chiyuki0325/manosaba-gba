@@ -68,25 +68,36 @@ def candidate_states(assets,work):
 
 def bake(asset,scale,angle,phase_x,phase_y,matrix,payload,offsets):
     co,si,pa,pb,pc,pd=matrix;c=div(co*scale,4096);s=div(si*scale,4096)
-    parts=[];bounds=[]
+    parts=[]
     for p in asset['parts']:
         dx=p['x']+p['width']//2-asset['pivot'][0];dy=p['y']+p['height']//2-asset['pivot'][1]
         cx=(phase_x+dx*c-dy*s)//256;cy=(phase_y+dx*s+dy*c)//256
         twice=doubled(pa,pb,pc,pd,p['width'],p['height']);bw=p['width']*(2 if twice else 1);bh=p['height']*(2 if twice else 1)
-        parts.append((p,cx,cy,bw,bh));bounds.append((cx-bw//2,cy-bh//2,cx+bw//2,cy+bh//2))
-    left=min(b[0]for b in bounds)//8*8;top=min(b[1]for b in bounds)//8*8
-    right=(max(b[2]for b in bounds)+7)//8*8;bottom=(max(b[3]for b in bounds)+7)//8*8
-    width,height=right-left,bottom-top
-    indices=np.zeros((height,width),dtype=np.uint8);banks=np.full((height,width),-1,dtype=np.int8)
-    # Original same-priority sprite order is reverse creation order in Butano.
-    for p,cx,cy,bw,bh in reversed(parts):
-        x0,y0=cx-bw//2,cy-bh//2;yy,xx=np.mgrid[y0:y0+bh,x0:x0+bw]
-        u=((pa*(xx-cx)+pb*(yy-cy))>>8)+p['width']//2;v=((pc*(xx-cx)+pd*(yy-cy))>>8)+p['height']//2
-        valid=(u>=0)&(u<p['width'])&(v>=0)&(v<p['height']);u=u.clip(0,p['width']-1);v=v.clip(0,p['height']-1)
-        source=np.frombuffer(b''.join(payload[offsets[t]:offsets[t]+32]for t in p['tiles']),dtype=np.uint8)
-        tile=(v//8)*(p['width']//8)+u//8;packed=source[tile*32+(v%8)*4+(u%8)//2];ink=(packed>>((u&1)*4))&15
-        dest=indices[y0-top:y0-top+bh,x0-left:x0-left+bw];owners=banks[y0-top:y0-top+bh,x0-left:x0-left+bw]
-        take=valid&(ink!=0)&(owners<0);dest[take]=ink[take];owners[take]=p['bank']
+        parts.append((p,cx,cy,bw,bh))
+    sw=max(asset['width'],max(p['x']+p['width'] for p in asset['parts']))
+    sh=max(asset['height'],max(p['y']+p['height'] for p in asset['parts']))
+    source=np.zeros((sh,sw),dtype=np.uint8);source_banks=np.full((sh,sw),-1,dtype=np.int8)
+    # Composite the original indexed pixels before transforming them. Sampling
+    # each part around its rounded center would bake hardware seams into ROM.
+    for p in reversed(asset['parts']):
+        raw=np.frombuffer(b''.join(payload[offsets[t]:offsets[t]+32]for t in p['tiles']),dtype=np.uint8)
+        pixels=np.empty((len(p['tiles']),8,8),dtype=np.uint8)
+        packed=raw.reshape(-1,8,4);pixels[:,:,::2]=packed&15;pixels[:,:,1::2]=packed>>4
+        pixels=pixels.reshape(p['height']//8,p['width']//8,8,8).transpose(0,2,1,3).reshape(p['height'],p['width'])
+        dest=source[p['y']:p['y']+p['height'],p['x']:p['x']+p['width']]
+        owners=source_banks[p['y']:p['y']+p['height'],p['x']:p['x']+p['width']]
+        take=(pixels!=0)&(owners<0);dest[take]=pixels[take];owners[take]=p['bank']
+    det=pa*pd-pb*pc;corners=[]
+    for x,y in ((0,0),(sw,0),(0,sh),(sw,sh)):
+        u=x-asset['pivot'][0];v=y-asset['pivot'][1]
+        corners.append((phase_x+div(65536*(pd*u-pb*v),det),phase_y+div(65536*(pa*v-pc*u),det)))
+    left=(min(x for x,y in corners)-256)//2048*8;top=(min(y for x,y in corners)-256)//2048*8
+    right=(max(x for x,y in corners)+2303)//2048*8;bottom=(max(y for x,y in corners)+2303)//2048*8
+    width,height=right-left,bottom-top;yy,xx=np.mgrid[top:bottom,left:right]
+    u=((pa*(xx*256-phase_x)+pb*(yy*256-phase_y))>>16)+asset['pivot'][0]
+    v=((pc*(xx*256-phase_x)+pd*(yy*256-phase_y))>>16)+asset['pivot'][1]
+    valid=(u>=0)&(u<sw)&(v>=0)&(v<sh);u=u.clip(0,sw-1);v=v.clip(0,sh-1)
+    indices=np.where(valid,source[v,u],0);banks=np.where(valid,source_banks[v,u],-1)
     packed_parts=[];blobs={}
     for bank in range(4):
         plane=np.where(banks==bank,indices,0);occupied=plane.reshape(height//8,8,width//8,8).any(axis=(1,3))
