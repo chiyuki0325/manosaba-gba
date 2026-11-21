@@ -80,6 +80,8 @@ int main(int argc,char** argv){
         ready();navigation_guard();check_frame();expect(metric().source,"formal credits keep their source");
         screenshot(output,"formal-entry");
         key(KEY_START);unsigned paused=metric().pixel;run(60);expect(metric().pixel==paused,"formal pause freezes credits");
+        screenshot(output,"formal-pause");unsigned bgs=(core->busRead16(core,0x04000000)>>8)&15;
+        expect(bgs && !(bgs&(bgs-1)),"pause owns one BG; the full-screen credits reader is released");
         key(KEY_START);ready();expect(metric().pixel<=paused+2,"formal resume preserves scroll position");check_frame();
         unsigned reverse=0,snow=0,quiet=0,snow_audio=0;
         unsigned effects=elf_symbol("mm_sfx_bitmask");

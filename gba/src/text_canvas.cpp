@@ -757,7 +757,7 @@ bool text_canvas::save_page(const uint32_t* tiles,const uint16_t* palette)
     {
         if(!_save_tiles)
         {
-            if(_bg){release();return false;}
+            if(_bg || _map_bg){release();return false;}
             _graphical=_choice_ui=false;_palette_colors=16;allocate();
         }
         _save_tiles=tiles;_save_bytes=0;_picture=nullptr;_picture_bytes=38400;
