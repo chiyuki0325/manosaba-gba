@@ -15,6 +15,7 @@ public:
     trial_player(story_vm& vm,image_scene& images) : _vm(vm),_images(images) {}
     void reset();
     void dialogue_speed(int value){_dialogue_speed=value;}
+    void original_breaks(bool value){if(_dialogue.original_breaks(value)){_prepared=false;_full=true;}}
     void archive(save_archive& data);
     bool rebuild_ready(bool display_ready);
     bool rebuild_draw() const;

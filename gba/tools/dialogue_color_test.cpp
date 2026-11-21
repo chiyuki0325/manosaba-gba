@@ -32,7 +32,8 @@ int main()
             assert(r.history_first<r.history_last && r.history_last<=std::strlen(history));
             assert((uint8_t(vm.text()[r.first])&192)!=128 && (uint8_t(vm.text()[r.last])&192)!=128);
             assert(r.last-r.first==r.history_last-r.history_first);
-            assert(!std::memcmp(vm.text()+r.first,history+r.history_first,r.last-r.first));++span_count;
+            for(unsigned j=0;j<r.last-r.first;++j)assert((vm.text()[r.first+j]=='\r' ? '\n' : vm.text()[r.first+j])==history[r.history_first+j]);
+            ++span_count;
         }
         uint8_t bytes[6144];save_archive writer(bytes,sizeof(bytes),false);vm.archive(writer);assert(writer.good());
         story_vm restored;save_archive reader(bytes,writer.size(),true);restored.archive(reader);assert(reader.good());

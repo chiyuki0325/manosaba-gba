@@ -1,4 +1,5 @@
 #include "text_canvas.h"
+#include "text_breaks.h"
 #include "trial_title_data.h"
 #include "story_layout.h"
 #include "story_format.h"
@@ -325,7 +326,7 @@ const char* text_canvas::text(int x, int y, const char* value, ink color, int ri
 #ifdef __arm__
 __attribute__((section(".ewram.ui_setup"),target("arm")))
 #endif
-const char* text_canvas::text(cursor& position, const dialogue_layout& box, const char* value, const char* end, ink color,bool cast_shadow)
+const char* text_canvas::text(cursor& position, const dialogue_layout& box, const char* value, const char* end, ink color,bool cast_shadow,bool original_breaks)
 {
     int& x = position.x;
     int& y = position.y;
@@ -333,7 +334,8 @@ const char* text_canvas::text(cursor& position, const dialogue_layout& box, cons
     {
         const char* previous = value;
         unsigned code = decode(value);
-        if(code == '\n')
+        if(code=='\r' && !original_breaks){if(x>box.left && soft_break_space(previous))x+=dialogue_ascii_width;continue;}
+        if(code == '\n' || code=='\r')
         {
             x = box.left;
             y += dialogue_line_height;
@@ -469,9 +471,9 @@ void text_canvas::reader_line(int row,const char* value,ink color,bool centered,
     styled_text(position,{0,y,216,y+13},value,end,color,style,offset,true);_reader_drawing=false;
 }
 void text_canvas::styled_text(cursor& position,const dialogue_layout& box,const char* value,const char* end,ink color,
-                              const story_text_style* style,int offset,bool history)
+                              const story_text_style* style,int offset,bool history,bool original_breaks)
 {
-    if(!style || color!=white){text(position,box,value,end,color);return;}
+    if(!style || color!=white){text(position,box,value,end,color,true,original_breaks);return;}
     while(value<end)
     {
         int length=end-value;auto segment_color=color;
@@ -482,7 +484,7 @@ void text_canvas::styled_text(cursor& position,const dialogue_layout& box,const 
             if(offset>=first && offset<last){segment_color=text_canvas::ink(history ? 12+style->color : selection);length=bn::min(length,last-offset);}
             else if(offset<first)length=bn::min(length,first-offset);
         }
-        text(position,box,value,value+length,segment_color);value+=length;offset+=length;
+        text(position,box,value,value+length,segment_color,true,original_breaks);value+=length;offset+=length;
     }
 }
 void text_canvas::reader_position(int pixel){_map_bg->set_top_left_position(12,_reader_top-(pixel&(_reader_full ? 255 : 127)));}

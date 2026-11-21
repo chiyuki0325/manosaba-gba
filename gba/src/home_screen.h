@@ -2,7 +2,7 @@
 #include "dialogue_page.h"
 namespace manosaba {
 class text_canvas;class save_system;
-enum class home_action {none,start,new_game,load,gallery,music,settings,debug,back};
+enum class home_action {none,start,new_game,load,gallery,music,settings,disable_breaks,debug,back};
 class home_screen {
 public:
  void open(int page,bool hiro=false,int selected=0);

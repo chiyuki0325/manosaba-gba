@@ -22,6 +22,7 @@ public:
     bool complete() const {return _page.complete();}
     bool redrawing() const {return _redrawing;}
     bool changed() const {return _step!=reveal_step::none;}
+    bool original_breaks(bool value){if(value==_original_breaks)return false;_original_breaks=value;reset();return true;}
     void speed(int value){if(value!=_speed){_speed=value;_delay=0;}if(_speed==2 && _prepared && !complete())finish();}
     bool tick(){if(_speed==0 && (++_delay&1))return false;_step=_page.tick();return changed();}
     void finish(){_page.finish();_guard.restart();repaint();}
@@ -40,9 +41,9 @@ private:
     int _speed=1,_delay=0;
     int _drawn=0,_last_begin=0,_last_end=0;
     reveal_step _step=reveal_step::none;
-    bool _prepared=false,_redrawing=false;
+    bool _prepared=false,_redrawing=false,_original_breaks=true;
     static void range(text_canvas& canvas,text_canvas::cursor& cursor,const char* text,const dialogue_layout& box,
-                      int first,int last,text_canvas::ink ink,const story_link* links,int count,const story_text_style* style);
+                      int first,int last,text_canvas::ink ink,const story_link* links,int count,const story_text_style* style,bool original_breaks);
 };
 }
 #endif

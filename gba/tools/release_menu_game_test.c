@@ -10,9 +10,9 @@ static void tap(unsigned keys){core->setKeys(core,keys);frames(3);core->setKeys(
 static void options(void){for(int i=0;i<4;++i){tap(KEY_DOWN);}tap(KEY_A);expect(home().page==2 && home().selected==0,"formal options open at dialogue speed");}
 static void check_options(void)
 {
-    for(unsigned i=1;i<=4;++i){tap(KEY_DOWN);expect(home().selected==i%4,"four settings wrap without a debug row");}
-    tap(KEY_UP);expect(home().selected==3,"up wraps to branch hints");tap(KEY_A);tap(KEY_START);
-    expect(home().page==2 && home().selected==3,"A and Start do not open debug from options");
+    for(unsigned i=1;i<=5;++i){tap(KEY_DOWN);expect(home().selected==i%5,"five settings wrap without a debug row");}
+    tap(KEY_UP);expect(home().selected==4,"up wraps to branch hints");tap(KEY_A);tap(KEY_START);
+    expect(home().page==2 && home().selected==4,"A and Start do not open debug from options");
     tap(KEY_RIGHT);expect(!home().hints,"branch hints setting remains usable");tap(KEY_LEFT);expect(home().hints,"branch hints can be restored");
 }
 int main(int argc,char** argv)
@@ -31,6 +31,6 @@ int main(int argc,char** argv)
     tap(KEY_UP);tap(KEY_A);tap(KEY_B);expect(home().page==1 && home().selected==1,"load returns to main menu");
     tap(KEY_UP);tap(KEY_A);frames(240);tap(KEY_START);frames(120);expect(core->busRead32(core,save_address)==2,"new game has normal pause menu");
     for(int i=0;i<3;++i){tap(KEY_DOWN);}tap(KEY_A);expect(home().page==2,"pause settings open formal options");screenshot(argv[2],"pause-options-release");tap(KEY_B);tap(KEY_B);frames(60);expect(core->busRead32(core,save_address)!=2,"settings and pause return to story");
-    screenshot(argv[2],"story-release");puts("PASS: no debug symbol; four settings; title, music, gallery, load, new game and pause return paths");
+    screenshot(argv[2],"story-release");puts("PASS: no debug symbol; five settings; title, music, gallery, load, new game and pause return paths");
     mCoreConfigDeinit(&core->config);core->deinit(core);mLogSetDefaultLogger(0);mStandardLoggerDeinit(&logger);return 0;
 }

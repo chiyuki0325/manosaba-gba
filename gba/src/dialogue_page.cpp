@@ -1,4 +1,5 @@
 #include "dialogue_page.h"
+#include "text_breaks.h"
 #include "save_archive.h"
 
 namespace manosaba
@@ -17,7 +18,7 @@ int next_character(const char* text, int at)
 }
 }
 
-void dialogue_page::begin(const char* text, int offset, const dialogue_layout& box)
+void dialogue_page::begin(const char* text, int offset, const dialogue_layout& box,bool original_breaks)
 {
     _text = text;
     _start = _visible = _glyph_begin = offset;
@@ -25,7 +26,8 @@ void dialogue_page::begin(const char* text, int offset, const dialogue_layout& b
     int x = box.left, y = box.top, at = offset;
     while(text[at])
     {
-        if(text[at] == '\n')
+        if(text[at]=='\r' && !original_breaks){if(x>box.left && soft_break_space(text+at))x+=dialogue_ascii_width;++at;continue;}
+        if(text[at] == '\n' || text[at]=='\r')
         {
             x = box.left;
             y += dialogue_line_height;
@@ -56,7 +58,7 @@ reveal_step dialogue_page::tick()
     }
     if(_visible == _end) return reveal_step::none;
     _glyph_begin = _visible;
-    while(_visible < _end && _text[_visible] == '\n') ++_visible;
+    while(_visible < _end && (_text[_visible] == '\n' || _text[_visible]=='\r')) ++_visible;
     if(_visible < _end)
     {
         _visible = next_character(_text, _visible);

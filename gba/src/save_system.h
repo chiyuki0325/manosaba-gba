@@ -25,6 +25,7 @@ public:
     int dialogue_speed() const {return (_global.settings&3)<3 ? _global.settings&3 : 0;}
     int music_level() const {return (_global.volume+128)/256;}
     int sound_level() const {return 4-(_global.reserved<=4 ? _global.reserved : 0);}
+    bool original_line_breaks() const {return !(_global.settings&8);}
     bool branch_hints() const {return !(_global.settings&4);}
     void setting(int index,int value);
     void editing_settings(bool value){_editing_settings=value;}

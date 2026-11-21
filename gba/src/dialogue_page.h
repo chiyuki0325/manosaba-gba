@@ -21,7 +21,7 @@ class dialogue_page
 {
 public:
     void archive(save_archive& data,const char* text);
-    void begin(const char* text, int offset, const dialogue_layout& box);
+    void begin(const char* text, int offset, const dialogue_layout& box,bool original_breaks=true);
     reveal_step tick();
     void finish() { _visible = _end; _fading = false; }
     bool complete() const { return _visible == _end && ! _fading; }

@@ -24,7 +24,7 @@ public:
     void open_chapters();
     save_system& progress(){return _saves;}
     bool settings_requested(){bool value=_settings_requested;_settings_requested=false;return value;}
-    void settings_closed(){_saves.settings_closed();}
+    void settings_closed(){_saves.settings_closed();_dialogue.reset();}
     bool update(bool display_ready = true);
     void draw(text_canvas& canvas);
     void background_io(){_saves.pump();}

@@ -43,6 +43,16 @@ int main()
     page.begin("\ue003\ue004",0,dialogue_layout{0,0,26,12});
     expect(page.end()==6,"combined D-pad glyphs keep the same 13px advance");
 
+    const char* split="可是，她被无形的锁链束缚着，\r就像个囚犯一样，连捂紧耳朵也做不\r到。";
+    page.begin(split,0,graphical_dialogue);
+    expect(split[page.end()],"source line arrangement retains its third line by default");
+    page.begin(split,0,graphical_dialogue,false);
+    expect(!split[page.end()],"folding soft breaks fits the full 32-character sentence in one page");
+    page.begin("甲\n乙\n丙",0,graphical_dialogue,false);
+    expect(page.end()==8,"forced short-line emphasis still paginates with source breaks disabled");
+    page.begin("ab\rcd",0,dialogue_layout{0,0,24,12},false);
+    expect(page.end()==4,"Latin words retain a separating space when soft breaks fold");
+
     advance_button button;
     sentence_guard guard;
     guard.restart();

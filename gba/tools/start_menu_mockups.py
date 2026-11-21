@@ -32,9 +32,9 @@ def main_page(selected=0):
   y=4+31*index;frame(im,36,y,168,28,index==selected);center(im,y+7,label)
  return im
 
-def options(skulls=True,selected=3):
+def options(hints=True,selected=3,debug=True,breaks=True):
  im=background();center(im,5,'选项')
- for index,(label,value) in enumerate((('对话速度','< 标准 >'),('音乐音量','<100%>'),('音效音量','<100%>'),('重要分支选项提示','< 开 >' if skulls else '< 关 >'),('debug入口',''))):
+ for index,(label,value) in enumerate((('对话速度','< 标准 >'),('音乐音量','<100%>'),('音效音量','<100%>'),('原作文字拆行','< 开 >' if breaks else '< 关 >'),('debug入口','') if debug else ('重要分支选项提示','< 开 >' if hints else '< 关 >'))):
   y=24+25*index;frame(im,16,y,208,24,index==selected)
   if value:
    text(im,39,y+5,label);width=sum(6 if ord(ch)<128 else 12 for ch in value);text(im,197-width,y+5,value)
@@ -43,7 +43,7 @@ def options(skulls=True,selected=3):
 
 def main():
  OUT.mkdir(exist_ok=True)
- pages={'start-menu':main_page(),'options':options(),'options-hints-off':options(False),'options-debug':options(selected=4)}
+ pages={'start-menu':main_page(),'options':options(),'options-breaks-off':options(breaks=False),'options-debug':options(selected=4)}
  # Preserve the original contrast and render glyphs in the same native RGB555 space.
  for name,im in pages.items():
   im=im.convert('RGB').quantize(colors=240,method=Image.Quantize.MEDIANCUT).convert('RGB');im=rgb555(im);im.save(OUT/(name+'-native.png'));im.resize((960,640),Image.Resampling.NEAREST).save(OUT/(name+'-preview.png'));pages[name]=im

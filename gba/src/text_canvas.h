@@ -67,9 +67,9 @@ public:
     void stamp(int x,int y,int width,int height,const uint8_t* pixels,int stride=0);
     void initial(int x,int y,const uint16_t* rows,ink color);
     const char* text(int x, int y, const char* value, ink color = white, int right = 228, int bottom = 160,bool cast_shadow=true);
-    const char* text(cursor& position, const dialogue_layout& box, const char* value, const char* end, ink color,bool cast_shadow=true);
+    const char* text(cursor& position, const dialogue_layout& box, const char* value, const char* end, ink color,bool cast_shadow=true,bool original_breaks=true);
     void styled_text(cursor& position,const dialogue_layout& box,const char* value,const char* end,ink color,
-                     const story_text_style* style,int offset=0,bool history=false);
+                     const story_text_style* style,int offset=0,bool history=false,bool original_breaks=true);
     void present();
     void decoration(const uint32_t* tiles);
     void toast(int id);

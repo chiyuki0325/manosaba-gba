@@ -96,7 +96,7 @@ save_metadata story_scene::save_info() const
     {
         unsigned byte=uint8_t(*text);int count=byte<128 ? 1 : byte<224 ? 2 : byte<240 ? 3 : 4;
         if(out+count>=int(sizeof(info.summary)))break;
-        if(byte=='\n'){info.summary[out++]=' ';++text;}
+        if(byte=='\n' || byte=='\r'){info.summary[out++]=' ';++text;}
         else if(byte==0xee && uint8_t(text[1])>=0x80 && uint8_t(text[1])<=0x83)text+=count;
         else {std::memcpy(info.summary+out,text,unsigned(count));out+=count;text+=count;}
     }
@@ -204,6 +204,7 @@ const dialogue_layout& story_scene::layout() const
 
 void story_scene::prepare_page()
 {
+    _dialogue.original_breaks(_saves.original_line_breaks());
     _dialogue.speed(_saves.dialogue_speed());
     _dialogue.begin(_vm.text(),layout());
     _advance.reset();
@@ -231,7 +232,8 @@ void story_scene::render(text_canvas& canvas)
 
 bool story_scene::update(bool display_ready)
 {
-    _dialogue.speed(_saves.dialogue_speed());_trial.dialogue_speed(_saves.dialogue_speed());
+    _dialogue.original_breaks(_saves.original_line_breaks());
+    _dialogue.speed(_saves.dialogue_speed());_trial.dialogue_speed(_saves.dialogue_speed());_trial.original_breaks(_saves.original_line_breaks());
     if(!_selecting && !_restoring && !_test_music && story_scripts[_vm.script()].mode<2)
         _saves.unlock_music(music_player::collection_key());
     if(!_selecting && !_restoring && !overlay() && display_ready)_vm.tick_toast(1+bn::core::last_missed_frames());

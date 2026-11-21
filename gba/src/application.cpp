@@ -46,8 +46,10 @@ void application::handle_home(home_action action)
         if(_home.page()==2){saves.editing_settings(false);_home.open(1);}
         else _home.title();
         _redraw=true;break;
+    case home_action::disable_breaks:
+        _home_confirm=2;_confirm_ok=false;_redraw=true;break;
     case home_action::new_game:
-        if(saves.has_saves()){_new_game_confirm=true;_new_game_ok=false;_redraw=true;break;}
+        if(saves.has_saves()){_home_confirm=1;_confirm_ok=false;_redraw=true;break;}
         _home_started=false;_debug_origin=false;_menu.open_scene(scene_id::script);_story.new_game();_redraw=true;break;
     case home_action::load:
         saves.editing_settings(false);saves.open_load();_home_load=true;_redraw=true;break;
@@ -67,20 +69,37 @@ void application::close_settings()
 {
     _pause_settings=false;_story.settings_closed();_story.progress().editing_settings(false);_redraw=true;
 }
-void application::draw_new_game_confirm()
+void application::update_home_confirm()
+{
+    if(bn::keypad::left_pressed() || bn::keypad::right_pressed())
+    {_confirm_ok=!_confirm_ok;play_ui_sound(ui_sound::move);_redraw=true;}
+    if(bn::keypad::b_pressed())
+    {_home_confirm=0;_home.repaint();_redraw=true;play_ui_sound(ui_sound::cancel);}
+    else if(bn::keypad::a_pressed())
+    {
+        int kind=_home_confirm;_home_confirm=0;play_ui_sound(ui_sound::confirm);
+        if(_confirm_ok && kind==1)
+        {_home_started=false;_debug_origin=false;_menu.open_scene(scene_id::script);_story.new_game();}
+        else
+        {if(_confirm_ok)_story.progress().setting(4,0);_home.repaint();}
+        _redraw=true;
+    }
+}
+void application::draw_home_confirm()
 {
     _canvas.rectangle(24,42,192,68,text_canvas::background);
     _canvas.rectangle(24,42,192,1,text_canvas::muted);
-    _canvas.text(48,49,"已有存档",text_canvas::accent);
-    _canvas.text(40,68,"开始新游戏会覆盖自动存档",text_canvas::white);
-    _canvas.rectangle(41,84,68,20,_new_game_ok ? text_canvas::background : text_canvas::selection);
-    _canvas.rectangle(129,84,68,20,_new_game_ok ? text_canvas::selection : text_canvas::background);
-    _canvas.text(62,88,"取消",_new_game_ok ? text_canvas::muted : text_canvas::white,109,104);
-    _canvas.text(150,88,"确定",_new_game_ok ? text_canvas::white : text_canvas::muted,197,104);
+    _canvas.text(48,49,_home_confirm==2 ? "关闭原作文字拆行？" : "已有存档",text_canvas::accent);
+    _canvas.text(40,68,_home_confirm==2 ? "可能导致剧情表现力下降" : "开始新游戏会覆盖自动存档",text_canvas::white);
+    _canvas.rectangle(41,84,68,20,_confirm_ok ? text_canvas::background : text_canvas::selection);
+    _canvas.rectangle(129,84,68,20,_confirm_ok ? text_canvas::selection : text_canvas::background);
+    _canvas.text(62,88,"取消",_confirm_ok ? text_canvas::muted : text_canvas::white,109,104);
+    _canvas.text(150,88,"确定",_confirm_ok ? text_canvas::white : text_canvas::muted,197,104);
 }
 void application::draw()
 {
     unsigned begin=unsigned(bn::core::current_cpu_ticks());
+    home_runtime.confirm=unsigned(_home_confirm);
     bool overlay=_pause_settings || _home_load;
 #if MANOSABA_DEBUG_MENU
     if(_menu.open() || _menu.scene()!=scene_id::ending)_ending.suspend();
@@ -92,7 +111,7 @@ void application::draw()
     if(_menu.open()) _menu.draw(_canvas);
     else
 #endif
-    if(_pause_settings){_home.draw(_canvas,_story.progress());_canvas.present();}
+    if(_pause_settings){_home.draw(_canvas,_story.progress());if(_home_confirm && !_home.painting())draw_home_confirm();_canvas.present();}
     else if(_home_load){_story.progress().draw(_canvas,_story);_canvas.present();}
     else if(story_page()) _story.draw(_canvas);
     else if(gallery_page())_gallery.draw(_canvas,_story.progress());
@@ -101,7 +120,7 @@ void application::draw()
         if(_home_started)
         {
             _home.draw(_canvas,_story.progress());
-            if(_new_game_confirm && !_home.painting())draw_new_game_confirm();
+            if(_home_confirm && !_home.painting())draw_home_confirm();
             _canvas.present();
         }
         else {_canvas.clear();_canvas.present();}
@@ -240,27 +259,7 @@ void application::update()
             }
             else
             {
-                if(_new_game_confirm)
-                {
-                    if(bn::keypad::left_pressed() || bn::keypad::right_pressed())
-                    {
-                        _new_game_ok=!_new_game_ok;play_ui_sound(ui_sound::move);_redraw=true;
-                    }
-                    if(bn::keypad::b_pressed())
-                    {
-                        _new_game_confirm=false;_home.repaint();_redraw=true;play_ui_sound(ui_sound::cancel);
-                    }
-                    else if(bn::keypad::a_pressed())
-                    {
-                        play_ui_sound(ui_sound::confirm);
-                        if(_new_game_ok)
-                        {
-                            _new_game_confirm=false;_home_started=false;_debug_origin=false;
-                            _menu.open_scene(scene_id::script);_story.new_game();_redraw=true;
-                        }
-                        else {_new_game_confirm=false;_home.repaint();_redraw=true;}
-                    }
-                }
+                if(_home_confirm)update_home_confirm();
                 else
                 {
                     handle_home(_home.update(_canvas,_story.progress()));
@@ -268,11 +267,13 @@ void application::update()
                 }
             }
         }
+        else if(_pause_settings && _home_confirm)update_home_confirm();
         else if(_pause_settings)
         {
             auto result=_home.update(_canvas,_story.progress());
             _redraw|=_home.painting();
-            if(result==home_action::back)close_settings();
+            if(result==home_action::disable_breaks)handle_home(result);
+            else if(result==home_action::back)close_settings();
 #if MANOSABA_DEBUG_MENU
             else if(result==home_action::debug)
             {

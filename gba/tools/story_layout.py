@@ -92,20 +92,25 @@ def wrap_paragraph(text, width):
     return '\n'.join(lines)
 
 
-def reflow(source, width):
+def reflow(source, width, marked=False):
     if width < CONFIG['wide_width']:
         raise ValueError('Text box must fit at least one wide glyph')
+    soft = '\r' if marked else '\n'
     paragraphs = []
-    for original_lines in source_paragraphs(source):
-        lines, pending = [], ''
-        for original in original_lines:
+    for originals in source_paragraphs(source):
+        # Consecutive brief lines are deliberate emphasis, even with source wrapping off.
+        brief = [pixel_width(line) <= CONFIG['emphasis_short_width'] for line in originals]
+        force = [brief[i] and ((i and brief[i-1]) or (i+1<len(brief) and brief[i+1]))
+                 for i in range(len(originals))]
+        result, pending = '', ''
+        for i, original in enumerate(originals):
             pending = join_source(pending, original)
             if pixel_width(original) <= width:
-                lines.append(wrap_paragraph(pending,width))
+                result += wrap_paragraph(pending,width).replace('\n',soft)
+                if i+1<len(originals):result += '\n' if force[i] or force[i+1] else soft
                 pending = ''
-        if pending:
-            lines.append(wrap_paragraph(pending,width))
-        paragraphs.append('\n'.join(lines))
+        if pending:result += wrap_paragraph(pending,width).replace('\n',soft)
+        paragraphs.append(result)
     return '\n\n'.join(paragraphs)
 
 
@@ -119,7 +124,7 @@ def profile_for(script):
 
 def dialogue_text(source, script):
     profile = PROFILES[profile_for(script)]
-    return reflow(source, profile['right']-profile['left'])
+    return reflow(source, profile['right']-profile['left'], marked=True)
 
 
 def write_runtime_header():
@@ -154,7 +159,7 @@ def catalog():
                 records.append(dict(script=doc['path'], line=event['line'],
                                     text_ids=event.get('text_ids', {}).get('Text', []),
                                     profile=profile_for(doc['path']), source=source,
-                                    text=dialogue_text(source, doc['path'])))
+                                    text=dialogue_text(source, doc['path']).replace('\r','\n')))
     return records
 
 

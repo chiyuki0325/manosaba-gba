@@ -47,7 +47,7 @@ make -C gba prepare-assets
 | --- | --- |
 | `original_scripts/zh-Hans/`、`story/zh-Hans/` | 按文本 ID 同步校字，参考 typo-corrections.md |
 | `assets/graphical-story.json` | 全章选择、图像与 ROM 预算 |
-| `assets/text-layout.json` | 对话区域、拆行策略 |
+| `assets/text-layout.json` | 对话区域、拆行策略及强调短句宽度阈值 |
 | `assets/nameplates.json`、`trial-ui-palette.json` | 姓名、代表色与 UI 色槽 |
 | `assets/cg-detail-protection.json` | 已批准的嘴／眼等小区域，编码时精确保留 |
 | `assets/reenact-layout.json` | 小剧场统一裁剪、定姿与移动降级 |

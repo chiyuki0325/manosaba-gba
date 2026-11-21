@@ -38,6 +38,15 @@ class StoryLayoutTest(unittest.TestCase):
     def test_markup_and_entities(self):
         self.assertEqual(clean_text('<color=#fff>甲</color>[wait 1]<br>乙 &amp; 丙'), '甲乙 & 丙')
 
+    def test_optional_and_emphatic_source_breaks(self):
+        from story_layout import dialogue_text
+        source='可是，她被无形的锁链束缚着，<br>就像个囚犯一样，连捂紧耳朵也做不到。'
+        marked=dialogue_text(source,'Act01_Chapter01/Act01_Chapter01_Adv01')
+        self.assertIn('\r',marked)
+        self.assertEqual(marked.replace('\r',''),clean_text(source))
+        self.assertEqual(reflow('不对。<br>不是这样。<br>绝对不是。',198,marked=True),'不对。\n不是这样。\n绝对不是。')
+        self.assertEqual(reflow('甲<br><br>乙',198,marked=True),'甲\n\n乙')
+
     def test_complete_corpus(self):
         records = catalog()
         for r in records:

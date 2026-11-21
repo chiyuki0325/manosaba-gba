@@ -65,7 +65,7 @@ void story_vm::string(char* out)
 void story_vm::remember(uint16_t pc)
 {
     for(int i=0;i<_history_count;++i)if(_history[i].pc==pc)return;
-    int lines=1;for(const char* p=_text;*p;++p)lines+=*p=='\n';
+    int lines=1;for(const char* p=_text;*p;++p)lines+=*p=='\n' || *p=='\r';
     _history[_history_count++]={pc,_speaker,uint8_t(lines)};
 }
 void story_vm::history_text(int index,char* destination)
@@ -76,7 +76,7 @@ void story_vm::history_text(int index,char* destination)
     for(char* p=destination;*p;)
     {
         if(uint8_t(p[0])==0xee && uint8_t(p[1])==0x80 && uint8_t(p[2])>=0x80 && uint8_t(p[2])<=0x82)p+=3;
-        else *out++=*p++;
+        else {*out++=*p=='\r' ? '\n' : *p;++p;}
     }
     *out=0;
 }

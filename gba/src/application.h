@@ -38,9 +38,11 @@ private:
     bool _redraw=false;
     bool _home_started=false,_home_load=false,_pause_settings=false;
     bool _debug_origin=false,_debug_from_home=false;
-    bool _new_game_confirm=false,_new_game_ok=false;
+    int _home_confirm=0;
+    bool _confirm_ok=false;
     void draw();
-    void draw_new_game_confirm();
+    void draw_home_confirm();
+    void update_home_confirm();
     bool story_page() const;
     bool gallery_page() const;
     void handle_home(home_action action);

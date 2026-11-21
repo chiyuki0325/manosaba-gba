@@ -66,6 +66,7 @@ void save_system::setting(int index,int value)
     else if(index==1){_global.volume=uint16_t(value*256);music_player::set_master_volume(_global.volume);}
     else if(index==2){_global.reserved=uint8_t(4-value);sfx_player::set_master_volume(value*256);}
     else if(index==3)_global.settings=uint8_t((_global.settings&~4)|(value ? 0 : 4));
+    else if(index==4)_global.settings=uint8_t((_global.settings&~8)|(value ? 0 : 8));
     _global_dirty=true;
 }
 void save_system::new_story(){_seed_size=0;_seed_script=_auto_script=-1;_seed_pc=0;_seed_dirty=false;close();}
