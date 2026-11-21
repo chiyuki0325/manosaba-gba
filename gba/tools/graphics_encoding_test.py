@@ -12,6 +12,18 @@ from import_gba_graphics import png_object
 from encode_gba_graphics import rectangles,vector_tiles,encode_mask,encode_actor,train_family,color_centers,background_palette,quantize_background
 
 class EncodingTest(unittest.TestCase):
+    def test_tall_obj_split_retains_pixels_palette_and_sparse_coverage(self):
+        from obj_parts import split_tall_parts
+        original=[dict(x=24,y=32,width=64,height=64,bank=2,tiles=list(range(64))),
+                  dict(x=96,y=80,width=8,height=16,bank=1,tiles=[64,65])]
+        parts=split_tall_parts(original)
+        def cells(rows):
+            return {(p['x']//8+x,p['y']//8+y):(p['bank'],p['tiles'][y*(p['width']//8)+x])
+                    for p in rows for y in range(p['height']//8) for x in range(p['width']//8)}
+        self.assertEqual(cells(parts),cells(original))
+        self.assertTrue(all(p['height']<=32 for p in parts))
+        self.assertEqual(sum(len(p['tiles']) for p in parts),66)
+
     def test_fading_cg_has_lower_resources_before_its_hide_endpoint(self):
         from graphics_usage import resource_usage
         assets={key:dict(kind='background') for key in ('cg','room')}

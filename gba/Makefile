@@ -208,6 +208,10 @@ graphics-import-test:
 	../python_workspace/.venv/bin/python tools/graphics_import_test.py
 	../python_workspace/.venv/bin/python tools/graphics_encoding_test.py
 
+.PHONY: camera-test
+camera-test: all
+	../python_workspace/.venv/bin/python tools/run_camera_test.py manosaba.gba build-butano/camera-test
+
 graphics-link: graphics-import
 	../python_workspace/.venv/bin/python ../python_workspace/encode_gba_graphics.py
 	../python_workspace/.venv/bin/python tools/graphics_cpp.py

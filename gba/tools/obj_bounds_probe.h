@@ -4,6 +4,32 @@
  * separate from the native/unlimited-scanline framebuffer comparison. */
 #ifndef MANOSABA_OBJ_BOUNDS_PROBE_H
 #define MANOSABA_OBJ_BOUNDS_PROBE_H
+/* A bottom-edge 128px OBJ box can also put ink at the top after Y wraps.
+ * This is independent of source clipping and scanline exhaustion. */
+static unsigned object_y_wrap_ink(void){
+    static const int widths[3][4]={{8,16,32,64},{16,32,32,64},{8,8,16,32}};
+    static const int heights[3][4]={{8,16,32,64},{8,8,16,32},{16,32,32,64}};
+    unsigned ink=0;
+    for(int i=0;i<128;++i){
+        unsigned a=core->busRead16(core,0x07000000+i*8),b=core->busRead16(core,0x07000002+i*8),c=core->busRead16(core,0x07000004+i*8);
+        if((a&768)!=768 || (a>>14)==3)continue;
+        int w=widths[a>>14][b>>14],h=heights[a>>14][b>>14],top=a&255;
+        if(top>=160 || top+2*h<=256)continue;
+        int left=b&511;if(left>=256)left-=512;
+        unsigned matrix=0x07000000+((b>>9)&31)*32;
+        int pa=(int16_t)core->busRead16(core,matrix+6),pb=(int16_t)core->busRead16(core,matrix+14);
+        int pc=(int16_t)core->busRead16(core,matrix+22),pd=(int16_t)core->busRead16(core,matrix+30);
+        for(int y=0;y<top+2*h-256;++y)for(int x=left<0?0:left;x<left+2*w && x<240;++x){
+            int dx=x-left-w,dy=y+256-top-h;
+            int u=((pa*dx+pb*dy)>>8)+w/2,v=((pc*dx+pd*dy)>>8)+h/2;
+            if(u<0 || v<0 || u>=w || v>=h)continue;
+            unsigned tile=(c&1023)+(v/8)*(w/8)+u/8;
+            unsigned p=core->busRead8(core,0x06010000+(tile&1023)*32+(v%8)*4+(u%8)/2);
+            ink+=!!((p>>((u&1)*4))&15);
+        }
+    }
+    return ink;
+}
 static unsigned object_bounds_clipping(unsigned* above_dialogue){
     static const int widths[3][4]={{8,16,32,64},{16,32,32,64},{8,8,16,32}};
     static const int heights[3][4]={{8,16,32,64},{8,8,16,32},{16,32,32,64}};

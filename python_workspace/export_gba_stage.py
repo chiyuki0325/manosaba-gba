@@ -8,6 +8,9 @@ from pathlib import Path
 from stage_schema import CAMERA, OVERLAY, MASK_FIRST, MASK_COUNT, SCENERY_FIRST, SCENERY_COUNT
 
 FPS = 16777216 / 280896
+# CameraConfiguration: 1440 reference pixels / 100 pixels per world unit.
+# Fit the world viewport to GBA height; camera offsets are not scene percentages.
+CAMERA_PIXELS_PER_UNIT = 160 * 100 / 1440
 PROPS = ['x','y','scale','angle','opacity','tint','blur','reveal','fill','red','green','blue']
 EASES = {'Linear':0,'SmoothStep':1,'EaseInQuad':2,'EaseOutQuad':3,'EaseInOutQuad':4,
          'EaseInCubic':5,'EaseOutCubic':6,'EaseInOutSine':7,'EaseOutBack':8}
@@ -200,8 +203,16 @@ def compile_stage(events,char_textures,backgrounds,rectangles,white,black,mappin
         elif op=='ModifyCamera':
             duration,ease,flags=timing(p)
             if 'Offset' in p:
-                for prop,value in zip(('x','y'),p['Offset']): tween(CAMERA,prop,value*2.4 if prop=='x' else -value*1.6,duration,ease,flags)
-            if 'Zoom' in p: tween(CAMERA,'scale',1/max(.0625,1-p['Zoom']),duration,ease,flags)
+                for prop,value in zip(('x','y'),p['Offset']):
+                    tween(CAMERA,prop,value*CAMERA_PIXELS_PER_UNIT*(1 if prop=='x' else -1),duration,ease,flags)
+            if 'Zoom' in p:
+                zoom=1/max(.0625,1-p['Zoom'])
+                # Apply the portrait closeup downgrade to camera-driven shots
+                # too. Keep the authored world-space focus and motion timing.
+                if zoom>3 and any(slot<3 and states[key]['visible'] for key,slot in assigned.items()):
+                    degradation.append(dict(line=event['line'],reason='camera-closeup',scale=zoom,shown_scale=2))
+                    zoom=2
+                tween(CAMERA,'scale',zoom,duration,ease,flags)
             rotation=p.get('Roll',p.get('Rotation'))
             if rotation is not None: tween(CAMERA,'angle',numeric(rotation[-1:] if isinstance(rotation,list) else rotation),duration,ease,flags)
         elif op=='SpawnBlur':

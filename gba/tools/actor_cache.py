@@ -9,6 +9,7 @@ import subprocess
 import numpy as np
 from graphics_project import GBA, canonical, digest, write_changed
 from actor_repack_study import rectangles
+from obj_parts import split_tall_parts
 
 BUDGET=128*1024
 ENTITY=struct.Struct('<12i4hB3x')
@@ -98,6 +99,7 @@ def bake(asset,scale,angle,phase_x,phase_y,matrix,payload,offsets):
                     data=(tile[:,::2]|(tile[:,1::2]<<4)).tobytes();key=hashlib.sha256(data).hexdigest();refs.append(key)
                     if key not in offsets:blobs[key]=data
             packed_parts.append(dict(x=tx*8,y=ty*8,width=tw*8,height=th*8,bank=bank,tiles=refs))
+    packed_parts=split_tall_parts(packed_parts)
     if len(packed_parts)>64:return None
     return dict(width=width,height=height,pivot=[-left,-top],parts=packed_parts,nominal_scale=scale,baked_angle=angle,palette=asset['palette']),blobs,parts
 
@@ -115,7 +117,7 @@ def cost(parts,pivot,position):
 def build(assets,ids,offsets,payload,programs):
     work=GBA/'build-butano/actor-cache';work.mkdir(parents=True,exist_ok=True)
     cache=GBA/'assets/graphics-cache/actor-cache';cache.mkdir(parents=True,exist_ok=True)
-    signature=digest(dict(assets=digest(assets),programs=programs,payload=hashlib.sha256(payload).hexdigest(),stage=hashlib.sha256((GBA/'src/stage_player.cpp').read_bytes()).hexdigest(),tools=[hashlib.sha256((GBA/'tools'/n).read_bytes()).hexdigest()for n in('actor_cache.py','graphics_transform_helper.cpp','graphics_budget_scan.cpp','graphics_budget_scan.py')]))
+    signature=digest(dict(assets=digest(assets),programs=programs,payload=hashlib.sha256(payload).hexdigest(),stage=hashlib.sha256((GBA/'src/stage_player.cpp').read_bytes()).hexdigest(),tools=[hashlib.sha256((GBA/'tools'/n).read_bytes()).hexdigest()for n in('actor_cache.py','obj_parts.py','graphics_transform_helper.cpp','graphics_budget_scan.cpp','graphics_budget_scan.py')]))
     manifest=cache/'manifest.json';binary=cache/'payload.bin'
     if manifest.exists():
         old=json.loads(manifest.read_text())

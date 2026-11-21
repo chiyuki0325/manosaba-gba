@@ -54,7 +54,7 @@ static void compare(const char* directory,const char* name){
     }
     unsigned peak=0,row=0;for(unsigned y=0;y<160;++y)if(cost[y]>peak){peak=cost[y];row=y;}objects=n;
     unsigned limit=core->busRead16(core,0x04000000)&32?954:1210;
-    unsigned bounds_above=0,bounds_clipped=object_bounds_clipping(&bounds_above);
+    unsigned bounds_above=0,bounds_clipped=object_bounds_clipping(&bounds_above),wrap_ink=object_y_wrap_ink();
     dump_objects(directory,name);
     expect(core->loadState(core,saved),"restore the exact native frame");
     struct GBAVideoRenderer* renderer=gba->video.renderer;native_scanline=renderer->drawScanline;
@@ -62,7 +62,12 @@ static void compare(const char* directory,const char* name){
     snprintf(label,sizeof(label),"%s-unlimited",name);screenshot(directory,label);
     unsigned changed=0,above=0;
     for(int i=0;i<240*160;++i)if((original[i]&0xffffffu)!=(pixels[i]&0xffffffu)){++changed;above+=i<240*104;}
-    printf("scene=%s bank=%u event=%u cycles=%u limit=%u y=%u objects=%u changed=%u above_dialogue=%u bounds_clipped=%u bounds_above=%u\n",name,metric(4),metric(5),peak,limit,row,objects,changed,above,bounds_clipped,bounds_above);fflush(stdout);
+    printf("scene=%s bank=%u event=%u cycles=%u limit=%u y=%u objects=%u changed=%u above_dialogue=%u bounds_clipped=%u bounds_above=%u wrap_ink=%u\n",name,metric(4),metric(5),peak,limit,row,objects,changed,above,bounds_clipped,bounds_above,wrap_ink);fflush(stdout);
+    if(getenv("MANOSABA_ASSERT_COMPLETE_OBJECTS")){
+        expect(!changed,"no pixels lost to OBJ scanline exhaustion");
+        expect(!bounds_clipped,"no pixels lost to OBJ output boxes");
+        expect(!wrap_ink,"no bottom-edge OBJ ink wraps to the top");
+    }
     const char* overrides=getenv("MANOSABA_OBJ_OVERRIDES");
     if(overrides){
         char path[512];snprintf(path,sizeof(path),"%s/%s-override.bin",overrides,name);FILE* f=fopen(path,"rb");
@@ -93,11 +98,15 @@ int main(int argc,char** argv){
     mCoreLoadConfig(core);core->setVideoBuffer(core,pixels,240);expect(mCoreLoadFile(core,argv[1]),"load ROM");
     debug_boot();compare(argv[2],"control-menu");
     FILE* plan=fopen(argv[4],"r");expect(plan!=NULL,"open scene plan");
-    unsigned bank,event,offset;char name[80];
-    while(fscanf(plan,"%79s %u %u %u",name,&bank,&event,&offset)==4){
+    unsigned bank,event,offset;char name[80],row[256];
+    while(fgets(row,sizeof(row),plan)){
+        unsigned ordinal;
+        int fields=sscanf(row,"%79s %u %u %u %u",name,&bank,&event,&offset,&ordinal);
+        expect(fields==4 || fields==5,"scene plan has bank, event, offset and optional script ordinal");
+        if(fields==4)ordinal=bank;
         debug_boot();tap(KEY_DOWN);tap(KEY_A);
-        for(unsigned i=0;i<bank/6;++i)tap(KEY_RIGHT);
-        for(unsigned i=0;i<bank%6;++i)tap(KEY_DOWN);
+        for(unsigned i=0;i<ordinal/6;++i)tap(KEY_RIGHT);
+        for(unsigned i=0;i<ordinal%6;++i)tap(KEY_DOWN);
         tap(KEY_A);
         int reached=0,cooldown=140;
         for(unsigned frame=0;frame<100000;++frame){
@@ -107,7 +116,7 @@ int main(int argc,char** argv){
             --cooldown;frames(1);
         }
         core->setKeys(core,0);
-        if(!reached){printf("UNREACHED scene=%s bank=%u event=%u last_bank=%u last_event=%u\n",name,bank,event,metric(4),metric(5));fflush(stdout);continue;}
+        if(!reached){printf("UNREACHED scene=%s bank=%u event=%u last_bank=%u last_event=%u\n",name,bank,event,metric(4),metric(5));fflush(stdout);expect(0,"planned source scene is reached");}
         unsigned start=metric(12);
         for(unsigned guard=0;guard<3000 && (metric(11) || metric(12)<start+offset);++guard)frames(1);
         frames(2);compare(argv[2],name);

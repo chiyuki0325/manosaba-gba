@@ -17,6 +17,7 @@ from graphics_project import ContentCache,canonical,config,digest,write_changed
 from graphics_archive import build_archive
 from cg_detail_protection import regions_for,tile_positions,transformed_regions
 from image_encoding import rgb555, quantized, train
+from obj_parts import split_tall_parts
 
 SHAPES=[(8,8),(8,4),(4,8),(4,4),(4,2),(2,4),(2,2),(4,1),(1,4),(2,1),(1,2),(1,1)]
 
@@ -358,6 +359,11 @@ def run(cache_root=None,link=True):
         proxies=encode_scene_proxy(assets[key],cache,project['effects']['blur_levels'] if key in blurred else 1)
         encoded[key]['obj_frames']=[proxy['id'] for proxy in proxies]
         for proxy in proxies:encoded[proxy['id']]=proxy
+    for asset in encoded.values():
+        if asset['kind']=='obj':
+            previous=len(asset['parts'])
+            asset['parts']=split_tall_parts(asset['parts'])
+            asset['rom_directory_bytes']+=12*(len(asset['parts'])-previous)
     write_changed(cache.root/'encoded.json',canonical(encoded))
     return build_archive(cache,encoded,programs,project=project,extra_resources=extras) if link else dict(assets=len(encoded),cache_hits=cache.hits,cache_misses=cache.misses)
 

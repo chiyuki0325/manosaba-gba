@@ -146,6 +146,23 @@ class StageCorpusImportTest(unittest.TestCase):
         _,base=resource_usage([p],dict(room=dict(kind='background'),white=dict(kind='solid'),black=dict(kind='solid')))
         self.assertEqual(base['room'],{256})
 
+    def test_camera_offsets_use_world_units_on_both_axes(self):
+        from export_gba_stage import compile_stage,CAMERA,PROPS
+        events=[dict(op='ModifyCamera',line=1,params=dict(Offset=[8,3.5],Zoom=.6,Duration=0))]
+        result=compile_stage(events,{},{},{},1,2,{})
+        values={PROPS[c[5]]:result['keys'][c[1]][0] for c in result['commands'] if c[4]==CAMERA}
+        self.assertEqual(values,dict(x=22756,y=-9956,scale=640))
+
+    def test_camera_driven_portrait_closeup_downgrade_preserves_focus(self):
+        from export_gba_stage import compile_stage,CAMERA,PROPS
+        actor=dict(op='ModifyCharacterExtended',line=1,params=dict(IdAndAppearance='Sherry.Normal1'))
+        shot=dict(op='ModifyCamera',line=2,params=dict(Offset=[0,3.5],Zoom=.75,Duration=.2))
+        for shown,expected in ((False,1024),(True,512)):
+            events=[actor,shot] if shown else [shot]
+            p=compile_stage(events,{9:9},{},{},1,2,{0:9} if shown else {})
+            camera={PROPS[c[5]]:p['keys'][c[1]][0] for c in p['commands'] if c[4]==CAMERA}
+            self.assertEqual(camera,dict(x=0,y=-9956,scale=expected))
+
     def test_three_standalone_shakes_use_existing_emote(self):
         from export_gba_stage import compile_stage,seconds,CAMERA
         events=[dict(op='ModifyBackgroundExtended',line=1,params=dict(AppearanceAndTransition='room')),
