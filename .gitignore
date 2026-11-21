@@ -24,3 +24,7 @@ __pycache__/
 
 # Optional character compositor previews
 /character_composition_demo/output/
+
+# Separate web project and local MIDI work archive
+/manosaba-web
+/魔裁midi工作.zip
