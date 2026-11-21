@@ -271,7 +271,14 @@ int main(int argc,char** argv){
                 }
                 if(snapshots && !vm.animating()){
                     auto m=measure(vm,slots);
-                    if(m.cycles>1000){
+                    bool clipped=false;
+                    for(int s=0;s<3 && !clipped;++s)if(m.images[s]>=0 && m.entities[s]<3){
+                        const auto& e=vm.entity(m.entities[s]);const auto& cam=vm.entity(stage_camera);auto t=transform(e,cam);
+                        int scale=e.values[2]*cam.values[2]/256,angle=e.values[3]+cam.values[3];
+                        for(int index:slots[s].loaded){const auto& p=assets[m.images[s]].parts[index];int factor=doubled(scale,angle,p)?2:1;
+                            if(abs(t.c)*p.w+abs(t.s)*p.h>factor*p.w*256+256 || abs(t.s)*p.w+abs(t.c)*p.h>factor*p.h*256+256){clipped=true;break;}}
+                    }
+                    if(m.cycles>1000 || clipped){
                         int header[]={bank,event,events[event].source_line,dwell,2,frames,m.bytes,m.cycles,m.objects,m.row,
                             m.images[0],m.images[1],m.images[2],m.entities[0],m.entities[1],m.entities[2]};
                         std::array<stage_entity,stage_entity_count> settled;

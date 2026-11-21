@@ -45,6 +45,7 @@ struct graphic_cache_entry
     uint16_t base,image,scale;
     int16_t angle;
     uint8_t phase_x,phase_y;
+    uint32_t coverage_key;
 };
 // Optional clear-CG view; its tiles are the sharp affine variant's shared dictionary.
 struct graphic_regular

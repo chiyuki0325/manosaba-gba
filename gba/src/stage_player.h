@@ -25,6 +25,8 @@ public:
     bool blocked() const;
     bool animating() const;
     bool geometry_animating(int entity) const;
+    bool affine_animating(int entity) const
+    {return _tracks[entity][int(stage_property::scale)].active || _tracks[entity][int(stage_property::angle)].active;}
     const stage_entity& entity(int index) const { return _entities[index]; }
     bool printer_visible() const { return _printer; }
     unsigned clock() const { return _clock; }

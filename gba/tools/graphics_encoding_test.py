@@ -29,12 +29,25 @@ class EncodingTest(unittest.TestCase):
                     target=image[y:y+8,x:x+8];take=unpacked!=0;target[take]=unpacked[take]
             return image
         for scale,phase,matrix in ((230,0,(4034,700,279,49,-50,279)),(307,51,(4034,700,209,37,-38,209))):
-            a=pixels(bake(whole,scale,2560,phase,0,matrix,payload,offsets))
-            b=pixels(bake(split,scale,2560,phase,0,matrix,payload,offsets))
-            np.testing.assert_array_equal(a,b)
-            for row in b:
-                ink=np.flatnonzero(row)
-                if len(ink):self.assertTrue(np.all(row[ink[0]:ink[-1]+1]))
+            for viewport in (None,(-24,-32,24,32)):
+                a=pixels(bake(whole,scale,2560,phase,0,matrix,payload,offsets,viewport))
+                b=pixels(bake(split,scale,2560,phase,0,matrix,payload,offsets,viewport))
+                np.testing.assert_array_equal(a,b)
+                for row in b:
+                    ink=np.flatnonzero(row)
+                    if len(ink):self.assertTrue(np.all(row[ink[0]:ink[-1]+1]))
+
+    def test_clipped_cached_entry_only_settles_its_initial_turn(self):
+        from actor_cache import cached_entry_angles
+        program=dict(resources=['actor'],keys=[[486,0,0,0],[10240,21,0,0]],
+                     commands=[[0,0,1,3,0,0,0],[0,0,0,0,0,0,0],
+                               [0,0,1,1,0,2,0],[0,1,1,1,0,3,0],
+                               [0,1,1,1,0,3,0]],events=[[0,4,0],[4,1,0]])
+        cached=[dict(base=7,scale=486,angle=10240,clipped=True)]
+        self.assertEqual(cached_entry_angles(program,{'actor':7},cached),{3})
+        self.assertFalse(cached_entry_angles(program,{'actor':7},[]))
+        program['commands'][3][-1]=127
+        self.assertFalse(cached_entry_angles(program,{'actor':7},cached))
 
     def test_tall_obj_split_retains_pixels_palette_and_sparse_coverage(self):
         from obj_parts import split_tall_parts

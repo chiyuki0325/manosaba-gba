@@ -104,8 +104,8 @@ bool part_visible(const actor_transform& t,const graphic_asset& asset,const grap
     auto center=t.part(asset,part);
     int half_x=(bn::abs(t.c)*part.width+bn::abs(t.s)*part.height)/2;
     int half_y=(bn::abs(t.s)*part.width+bn::abs(t.c)*part.height)/2;
-    return center.x+half_x>=-margin*256 && center.x-half_x<=(240+margin)*256 &&
-           center.y+half_y>=-margin*256 && center.y-half_y<=(160+margin)*256;
+    return center.x+half_x> -margin*256 && center.x-half_x<(240+margin)*256 &&
+           center.y+half_y> -margin*256 && center.y-half_y<(160+margin)*256;
 }
 
 uint32_t geometry_key(const stage_entity& entity,const stage_entity& relative,int id)
@@ -483,11 +483,11 @@ bool image_scene::retire_actor(int slot,int image,uint32_t viewport_key)
             auto needed=[&](int index){return part_needed(placement,asset,asset.parts[index],clipping);};
             int previous_bytes=0;for(const auto& tiles:actor.tiles)previous_bytes+=tiles.tiles_count()*32;
             bool uploading=actor.cursor<previous_bytes,removed=false;
-            bool loaded[64]={};
+            uint32_t loaded[8]={};
             for(int i=actor.part_indices.size()-1;i>=0;--i)
             {
                 int index=actor.part_indices[i];
-                if(needed(index))loaded[index]=true;
+                if(needed(index))loaded[index>>5]|=1u<<(index&31);
                 else
                 {
                     actor.sprites.erase(actor.sprites.begin()+i);actor.tiles.erase(actor.tiles.begin()+i);actor.part_indices.erase(actor.part_indices.begin()+i);
@@ -500,7 +500,7 @@ bool image_scene::retire_actor(int slot,int image,uint32_t viewport_key)
             if(removed && uploading){actor.cursor=actor.decoded=0;actor.phase=-1;}
             if(removed)actor.display_key=0;
             for(int part=0;part<asset.count;++part)
-                if(!loaded[part] && needed(part))
+                if(!(loaded[part>>5]&(1u<<(part&31))) && needed(part))
                 {actor.allocating=3;actor.part_cursor=0;actor.phase=-1;_loading=true;break;}
             actor.viewport_key=viewport_key;
             if(removed || actor.allocating)return true; // Flush all retirements before allocating.
@@ -690,30 +690,34 @@ void image_scene::select_actor_cache(int* images,const uint32_t* viewport_keys)
         for(int slot=0;slot<3;++slot)images[slot]=_selected_actor_images[slot];
     else
     {
-    // New bakes require stable geometry; existing ones can follow translations.
+    // A fixed scale/angle can use a bake while the actor translates.
     int candidates[3]={-1,-1,-1};bool found=false;
     const auto& camera=_player.entity(stage_camera);
     for(int slot=0;slot<3;++slot)
     {
         int image=images[slot],id=_actor_entities[slot];
-        if(image<0 || id>=stage_actor_count || clip_for(id)>=0)continue;
+        if(image<0 || id>=stage_actor_count)continue;
         const auto& entity=_player.entity(id);
         if(!entity.get(stage_property::tint) || entity.image!=image)continue;
-        bool enter=_actors[slot].image!=image && !_player.geometry_animating(id) && !_player.geometry_animating(stage_camera);
+        bool enter=!_player.affine_animating(id) && !_player.affine_animating(stage_camera);int best_phase=513;
         int scale=entity.get(stage_property::scale)*camera.get(stage_property::scale)/256;
         int angle=(entity.get(stage_property::angle)+camera.get(stage_property::angle))%(360*256);
         if(angle>=180*256)angle-=360*256;
         if(angle< -180*256)angle+=360*256;
         auto center=camera_point(camera,entity.get(stage_property::x),entity.get(stage_property::y));
+        uint32_t coverage=1;
+        for(int value:{scale,angle,center.x>>11,center.y>>13})coverage=(coverage^unsigned(value))*16777619u;
+        if(!coverage)coverage=1;
         for(int c=0;c<graphic_cache_entry_count;++c)
         {
             const auto& e=graphic_cache_entries[c];
-            if(e.base!=image || e.scale!=scale || e.angle!=angle)continue;
+            if(e.base!=image || e.scale!=scale || e.angle!=angle || (e.coverage_key && e.coverage_key!=coverage))continue;
             // Keep an existing bake through translations; switching the same
             // pose in/out on every fractional position would reload its tiles.
             if(e.image==_actors[slot].image){candidates[slot]=e.image;found=true;break;}
-            if(enter && e.phase_x==(center.x&255) && e.phase_y==(center.y&255))
-            {candidates[slot]=e.image;found=true;}
+            int phase=bn::abs(int(int8_t(e.phase_x-(center.x&255))))+bn::abs(int(int8_t(e.phase_y-(center.y&255))));
+            if(enter && phase<best_phase)
+            {candidates[slot]=e.image;found=true;best_phase=phase;}
         }
     }
     if(found)
@@ -733,7 +737,7 @@ void image_scene::select_actor_cache(int* images,const uint32_t* viewport_keys)
     for(int slot=0;slot<3;++slot)if(candidates[slot]>=0)
     {
         int part_count,bytes=resident(slot,candidates[slot],part_count);
-        if(resident_bytes-slot_bytes[slot]+bytes<=32768 && resident_parts-slot_parts[slot]+part_count<=128)
+        if(part_count<=64 && resident_bytes-slot_bytes[slot]+bytes<=32768 && resident_parts-slot_parts[slot]+part_count<=128)
         {images[slot]=candidates[slot];resident_bytes+=bytes-slot_bytes[slot];resident_parts+=part_count-slot_parts[slot];}
     }
     }
@@ -884,7 +888,7 @@ void image_scene::positions()
     int top_order=_backgrounds[1].entity>=0 ? _player.entity(_backgrounds[1].entity).order : -1;
     for(int slot=0;slot<3;++slot)
     {
-        auto& actor=_actors[slot];if(actor.image<0 || !actor.matrix)continue;
+        auto& actor=_actors[slot];if(actor.image<0 || !actor.matrix || actor.allocating==4)continue;
         const auto& entity=_player.entity(_actor_entities[slot]);const auto& asset=graphic_assets[actor.image];
         uint64_t material=material_key(entity);
         if(actor.material!=material)

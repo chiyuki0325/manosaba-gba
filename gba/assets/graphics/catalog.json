@@ -59543,15 +59543,15 @@
     },
     "chapters": 282,
     "directory_estimate_bytes": 2463828,
-    "graphics_bytes": 13464942,
-    "payload_bytes": 9361912,
+    "graphics_bytes": 13464982,
+    "payload_bytes": 9361656,
     "program_bytes": 1613206,
-    "projected_total_bytes": 23950702,
+    "projected_total_bytes": 23950742,
     "reserved_audio_bytes": 8388608,
     "reserved_other_bytes": 2097152,
     "rom_limit_bytes": 33554432,
     "shared_blobs": 141764,
-    "actor_cache_bytes": 128684,
+    "actor_cache_bytes": 128724,
     "cached_variants": 12
   }
 }
