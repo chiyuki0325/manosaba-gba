@@ -4,6 +4,12 @@
 
 基于 Steam 简体中文版进行移植。不包含 NS 版新增内容。
 
+<img src="output/packaging/final/product-mockup-v2.webp" width="100%">
+
+<img src="docs/screenshots/title.png" width="49%"> <img src="docs/screenshots/adv04-not-evil.png" width="49%">
+
+<img src="docs/screenshots/trial-sleep.png" width="49%"> <img src="docs/screenshots/trial-discussion.png" width="49%">
+
 ## 操作
 
 | 画面 | 操作 |
