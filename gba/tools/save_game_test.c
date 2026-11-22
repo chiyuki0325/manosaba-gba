@@ -8,6 +8,8 @@
 #include <mgba/core/blip_buf.h>
 #include <string.h>
 #include <mgba/internal/gba/gba.h>
+#include <mgba/internal/gba/overrides.h>
+#include <time.h>
 static unsigned save_address,trial_address,graphics_address,menu_peak,nonzero;
 static const char* output;
 static unsigned timeup_frames,timeup_changes,timeup_peak,last_timeup_hash;
@@ -47,14 +49,18 @@ int main(int argc,char** argv){
     open_list(0);expect(state().selected==0,"first empty manual slot selected");screenshot(output,"save-empty");
     save_slot();screenshot(output,"save-filled");
     tap(KEY_A);wait_ui(0);expect(state().confirm && !state().confirm_choice,"overwrite defaults to cancel");screenshot(output,"save-overwrite");tap(KEY_A);wait_ui(0);expect(!state().confirm,"new A cancels overwrite by default");
-    GBAHardwareInitRTC(&((struct GBA*)core->board)->memory.hw);
-    for(int slot=1;slot<12;++slot){((struct GBA*)core->board)->memory.hw.rtc.control=slot==2 ? 0x80 : 0x40;tap(KEY_DOWN);wait_ui(0);expect(state().selected==(unsigned)slot,"manual slot selection");expect(state().first==(unsigned)(slot<11 ? slot : 10),"two cards scroll proactively");save_slot();}
+    int initial_rtc=!!(((struct GBA*)core->board)->memory.hw.devices&HW_RTC);
+    struct Configuration* overrides=mCoreConfigGetOverrides(&core->config);
+    ConfigurationSetIntValue(overrides,"override.MSBA","hardware",HW_RTC);
+    GBAOverrideApplyDefaults((struct GBA*)core->board,overrides);
+    core->rtc.override=RTC_FIXED;core->rtc.value=1700000000000LL;
+    for(int slot=1;slot<12;++slot){((struct GBA*)core->board)->memory.hw.rtc.control=slot==2 ? 0x80 : 0x40;tap(KEY_DOWN);wait_ui(0);expect(state().selected==(unsigned)slot,"manual slot selection");expect(state().first==(unsigned)(slot<11 ? slot : 10),"two cards scroll proactively");save_slot();if(slot==1 || slot==2)screenshot(output,slot==1 ? "save-rtc-time" : "save-time-unavailable");}
     uint8_t* flash=malloc(131072);expect(flash!=NULL,"allocate host Flash copy");
     uint8_t original[8];for(int i=0;i<8;++i)original[i]=core->busRead8(core,0x0e000000+i);
     for(unsigned bank=0;bank<2;++bank){core->busWrite8(core,0x0e005555,0xaa);core->busWrite8(core,0x0e002aaa,0x55);core->busWrite8(core,0x0e005555,0xb0);core->busWrite8(core,0x0e000000,bank);for(unsigned i=0;i<65536;++i)flash[bank*65536+i]=core->busRead8(core,0x0e000000+i);}
     core->busWrite8(core,0x0e005555,0xaa);core->busWrite8(core,0x0e002aaa,0x55);core->busWrite8(core,0x0e005555,0xb0);core->busWrite8(core,0x0e000000,memcmp(original,flash,8)!=0);
     for(int slot=0;slot<12;++slot)expect(records(flash,slot)>0,"all manual slots committed");
-    expect(records(flash,12)>0,"normal entry auto save committed");expect(records(flash,14)>0,"global flags committed in upper bank");for(int p=0;p<15;++p){unsigned at=p*8192;if(flash[at+63]!=0xa5)continue;unsigned slot=flash[at+22];if(slot==1){fprintf(stderr,"RTC slot1 valid=%u date=%02x/%02x/%02x\n",flash[at+85],flash[at+78],flash[at+79],flash[at+80]);expect(flash[at+85],"valid optional RTC stored");}if(slot==2)expect(!flash[at+85],"power-lost RTC omitted");}free(flash);
+    expect(records(flash,12)>0,"normal entry auto save committed");expect(records(flash,14)>0,"global flags committed in upper bank");for(int p=0;p<15;++p){unsigned at=p*8192;if(flash[at+63]!=0xa5)continue;unsigned slot=flash[at+22];if(slot==0 && !initial_rtc)expect(!flash[at+85],"default mGBA without RTC stores no wall-clock timestamp");if(slot==1){time_t fixed=1700000000;struct tm date;localtime_r(&fixed,&date);expect(flash[at+78]==date.tm_year-100 && flash[at+79]==date.tm_mon+1 && flash[at+80]==date.tm_mday && flash[at+81]==date.tm_hour && flash[at+82]==date.tm_min,"configured RTC stores the fixed wall clock rather than play time");fprintf(stderr,"RTC slot1 valid=%u date=%02x/%02x/%02x\n",flash[at+85],flash[at+78],flash[at+79],flash[at+80]);expect(flash[at+85],"valid optional RTC stored");}if(slot==2)expect(!flash[at+85],"power-lost RTC omitted");}free(flash);
     fprintf(stderr,"stage: all slots written\n");tap(KEY_B);wait_ui(2);tap(KEY_B);wait_game();expect(frame_hash()==first,"pause/save restores unchanged story pixels");
     fprintf(stderr,"stage: returned to story\n");press(KEY_A);expect(state().pc!=pc,"story advanced before load");
     open_list(1);tap(KEY_DOWN);wait_ui(1);expect(state().selected==1,"load manual 01 below auto");screenshot(output,"save-load");tap(KEY_A);wait_ui(1);expect(state().confirm && !state().confirm_choice,"load defaults to cancel");tap(KEY_RIGHT);tap(KEY_A);wait_game();expect(state().script==script && state().pc==pc,"load restores original VM script and PC without replay");expect(frame_hash()==first,"loaded story pixels exactly match saved page");

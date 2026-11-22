@@ -37,6 +37,11 @@ void chapter(char* out,int size,const save_metadata& metadata,bool short_form=fa
     segment+=*segment=='T' ? 5 : 3;int index=(segment[0]-'0')*10+segment[1]-'0';
     copy(out,size,bn::format<48>("第{}章 {}{}",number,label,digits(unsigned(index))));
 }
+bn::string<32> saved_at(const save_timestamp& date)
+{
+    if(!date.valid)return bn::string<32>("未记录时间");
+    return bn::format<32>("{}-{}-{} {}:{}",2000+date.year,digits(date.month),digits(date.day),digits(date.hour),digits(date.minute));
+}
 text_canvas::ink ink(int color){return text_canvas::ink(color);}
 struct work_timer {uint32_t& result;unsigned begin=unsigned(bn::core::current_cpu_ticks());~work_timer(){result=unsigned(bn::core::current_cpu_ticks())-begin;}};
 }
@@ -333,10 +338,9 @@ bool save_system::row(text_canvas& canvas,int row)
     {chapter(label,sizeof(label),meta);if(row_text(canvas,y+5,label,text_canvas::white))_row_line=3;return false;}
     if(_row_line==3)
     {if(row_text(canvas,y+19,meta.summary,text_canvas::white))_row_line=4;return false;}
-    unsigned hours=meta.play_frames/216000,minutes=meta.play_frames/3600%60;
-    if(meta.trial)copy(label,sizeof(label),bn::format<80>("游玩{}:{} 剩余{}:{}",digits(hours),digits(minutes),digits(unsigned(meta.trial_left/3600)),digits(unsigned(meta.trial_left/60%60))));
-    else if(meta.timestamp.valid)copy(label,sizeof(label),bn::format<80>("{}-{} {}:{} {}:{}",digits(meta.timestamp.month),digits(meta.timestamp.day),digits(meta.timestamp.hour),digits(meta.timestamp.minute),digits(hours),digits(minutes)));
-    else copy(label,sizeof(label),bn::format<80>("游玩 {}:{}",digits(hours),digits(minutes)));
+    auto stamp=saved_at(meta.timestamp);
+    if(meta.trial)copy(label,sizeof(label),bn::format<48>("{} 余{}:{}",stamp,digits(unsigned(meta.trial_left/3600)),digits(unsigned(meta.trial_left/60%60))));
+    else copy(label,sizeof(label),stamp);
     if(!row_text(canvas,y+32,label,text_canvas::muted))return false;
     _preview_row=row;_preview_line=0;_row_line=0;return true;
 }
@@ -432,10 +436,9 @@ void save_system::draw(text_canvas& canvas,story_scene& scene)
                 copy(text,sizeof(text),slot==save_auto_slot ? bn::string<48>("读取自动记录？") : bn::format<48>(_confirm==1 ? "覆盖记录 {}？" : "读取记录 {}？",digits(unsigned(slot+1))));
                 canvas.text(66,53,text,text_canvas::white,224,67);
             }
-            else if(_confirm_stage==1 && old.timestamp.valid)
+            else if(_confirm_stage==1)
             {
-                const auto& date=old.timestamp;
-                auto stamp=bn::format<32>("{}-{}-{} {}:{}",2000+date.year,digits(date.month),digits(date.day),digits(date.hour),digits(date.minute));
+                auto stamp=saved_at(old.timestamp);
                 canvas.text(63,34,stamp.c_str(),text_canvas::muted,224,48);
             }
             else if(_confirm_stage==2)
