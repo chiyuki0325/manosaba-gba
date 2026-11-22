@@ -8,6 +8,7 @@ from host_test_cache import CACHE,GBA,build,dependencies,digest,file_hash,locked
 ROOT=GBA.parent
 PYTHON=str(ROOT/'python_workspace/.venv/bin/python')
 EVIDENCE=('Act01_Chapter02_Trial01','Act02_Chapter03_Trial01','Act02_Chapter03_Trial04')
+MAPS=('Act01_Chapter01_Trial06','Act01_Chapter01_Trial07','Act01_Chapter02_Trial02')
 NATIVE={
  'adv-smoke':('smoke_test',False),'adv-choice':('choice_smoke_test',True),
  'story-retry':('story_retry_game_test',False),
@@ -19,6 +20,8 @@ def select(files):
     groups=set();trial_scripts=[]
     for path in files:
         name=Path(path).name
+        if name in ('text_canvas.cpp','text_canvas.h','trial_map_scene.cpp','trial_map_scene.h'):
+            groups.update(('adv-smoke','adv-choice','overlay-panel','trial-workflow','trial-maps'));continue
         if name.startswith(('warning_screen','run_warning_screen')):
             groups.add('startup');continue
         if path.startswith('gba/') and (name.startswith('music_room') or name in ('music_collection_test.cpp','run_music_room_test.py','room-titles.tsv')):
@@ -76,7 +79,7 @@ def main():
     else:changed=args.changed
     groups,trial_scripts=select(changed)
     if args.full:
-        groups.update((*NATIVE,'adv-entries','story-host','trial-workflow','trial-full','trial-narrator','graphics-budget','graphics-footprint','save','sfx','gallery','cg-appearance','adv-instant','music-room','startup'))
+        groups.update((*NATIVE,'adv-entries','story-host','trial-workflow','trial-full','trial-maps','trial-narrator','graphics-budget','graphics-footprint','save','sfx','gallery','cg-appearance','adv-instant','music-room','startup'))
         groups.discard('adv-entry-sample');groups.discard('trial-evidence');groups.discard('trial-changed')
     print('Selected: '+(', '.join(sorted(groups)) or 'none (no affected runtime tests)'),flush=True)
     if args.list:return
@@ -97,7 +100,7 @@ def main():
         if group=='trial-full':return max(1,args.jobs*2//3)
         if group=='save':return min(2,args.jobs)
         if group=='adv-entries':return max(1,args.jobs-max(1,args.jobs*2//3))
-        if group in ('trial-evidence','adv-entry-sample'):return min(3,args.jobs)
+        if group in ('trial-evidence','trial-maps','adv-entry-sample'):return min(3,args.jobs)
         if group=='trial-changed':return min(3,args.jobs,len(trial_scripts))
         return 1
     @contextmanager
@@ -116,6 +119,7 @@ def main():
         else:
             scripts={
              'trial-workflow':['run_trial_game_test.py','trial_game_test.c'],
+             'trial-maps':['run_trial_walk.py','trial_walk_test.c','trial_walk_probe_test.c','trial_route_plan.cpp'],
              'trial-evidence':['run_trial_walk.py','trial_walk_test.c','trial_walk_probe_test.c','trial_route_plan.cpp'],
              'trial-changed':['run_trial_walk.py','trial_walk_test.c','trial_walk_probe_test.c','trial_route_plan.cpp'],
              'trial-full':['run_trial_walk.py','trial_walk_test.c','trial_walk_probe_test.c','trial_route_plan.cpp'],
@@ -134,7 +138,7 @@ def main():
              'adv-instant':['run_adv_instant_test.py','adv_instant_test.c'],
             }[group]
             sources.extend(GBA/'tools'/p for p in scripts)
-        if group in ('story-host','trial-evidence','trial-changed','trial-full','trial-narrator'):
+        if group in ('story-host','trial-evidence','trial-maps','trial-changed','trial-full','trial-narrator'):
             sources.extend((GBA/'src/story_vm.cpp',GBA/'src/lzss.cpp',GBA/'src/story_data.cpp'))
         deps=dependencies(sources)
         assets={
@@ -175,10 +179,11 @@ def main():
                 return run.returncode
             with ThreadPoolExecutor(max_workers=inner) as pool:codes=list(pool.map(shard,ranges))
             if any(codes):raise RuntimeError('an ADV entrance shard failed')
-        elif group in ('trial-evidence','trial-changed','trial-full'):
-            matches=EVIDENCE if group=='trial-evidence' else trial_scripts if group=='trial-changed' else ()
+        elif group in ('trial-evidence','trial-maps','trial-changed','trial-full'):
+            matches=EVIDENCE if group=='trial-evidence' else MAPS if group=='trial-maps' else trial_scripts if group=='trial-changed' else ()
             argv=[PYTHON,GBA/'tools/run_trial_walk.py',rom,directory,'--scope','both' if group=='trial-full' else 'segment','--jobs',str(inner)]
             for match in matches:argv+=['--match',match]
+            if group=='trial-maps':argv+=['--special-restores']
             if args.fresh:argv+=['--fresh']
             command(argv)
         elif group=='trial-narrator':

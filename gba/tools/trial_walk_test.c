@@ -34,10 +34,51 @@ static save_runtime_profile save_status(void)
 static trial_special_profile special(void)
 {trial_special_profile p;uint32_t* v=(uint32_t*)&p;for(unsigned i=0;i<sizeof(p)/4;++i)v[i]=core->busRead32(core,special_address+4*i);return p;}
 static trial_runtime_profile metric(void);
+static unsigned map_canvas_address,map_checked_pc;
+static void evidence(const char* name);
+static void check_map_ui(trial_special_profile map_state)
+{
+    if(!map_state.map_ready)return;
+    trial_runtime_profile player=metric();
+    if(!player.canvas_ready || !player.interaction_ready || player.vm_state!=1)return;
+    unsigned key=(player.pc<<4)|map_state.map;
+    if(key==map_checked_pc)return;
+    map_checked_pc=key;
+    unsigned bg=4,dispcnt=core->busRead16(core,0x04000000);
+    for(unsigned i=0;i<4;++i)
+        if((dispcnt&(0x100u<<i)) && !(core->busRead16(core,0x04000008+i*2)&3)){bg=i;break;}
+    expect(bg<4,"map dialogue has a visible UI background");
+    unsigned cnt=core->busRead16(core,0x04000008+bg*2);
+    unsigned base=0x06000000+((cnt>>2)&3)*16384,map=0x06000000+((cnt>>8)&31)*2048;
+    // Scroll registers are write-only on the GBA; inspect the renderer shadow.
+    struct GBA* gba=core->board;
+    struct GBAVideoSoftwareRenderer* renderer=(struct GBAVideoSoftwareRenderer*)gba->video.renderer;
+    unsigned ox=renderer->bg[bg].x&255,oy=renderer->bg[bg].y&255,wrong=0;
+    for(unsigned y=0;y<160;++y)for(unsigned x=0;x<240;++x)
+    {
+        unsigned tx=x/8,ty=y/8;
+        if(!(ty>=10 || (tx<4 && ty<5) || (tx>=26 && ty<8)))continue;
+        unsigned sx=(x+ox)&255,sy=(y+oy)&255;
+        unsigned cell=core->busRead16(core,map+(sy/8*32+sx/8)*2),px=sx%8,py=sy%8;
+        if(cell&1024)px=7-px;
+        if(cell&2048)py=7-py;
+        unsigned actual=core->busRead8(core,base+(cell&1023)*32+py*4+px/2)>>(px%2*4)&15;
+        unsigned expected=core->busRead8(core,map_canvas_address+(ty*30+tx)*32+(y%8)*4+(x%8)/2)>>(x%2*4)&15;
+        wrong+=actual!=expected;
+    }
+    if(wrong)
+    {
+        fprintf(stderr,"MAP_UI_MISMATCH map=%u pc=%u wrong=%u bg=%u cnt=%04x offset=%u,%u\n",map_state.map,player.pc,wrong,bg,cnt,ox,oy);
+        evidence("map-ui-mismatch");
+        expect(0,"map dialogue decoration is uploaded to its current BG allocation");
+    }
+}
+
 static void map_observe(void)
 {
     if(!special_address || map_suspended)return;
     trial_special_profile p=special();
+    check_map_ui(p);
     static unsigned picture_pc;
     if(p.picture && metric().interaction_ready && (metric().vm_state==1 || metric().vm_state==6) && metric().pc!=picture_pc)
     {picture_pc=metric().pc;char name[64];snprintf(name,sizeof(name),"picture-%u",picture_pc);screenshot(directory,name);fprintf(events,"{\"kind\":\"picture\",\"pc\":%u}\n",picture_pc);fflush(events);}
@@ -409,6 +450,8 @@ int main(int argc,char** argv)
         for(unsigned i=0;i<screen_probe_count;++i){char* end;screen_probes[i].mode=(unsigned)strtoul(modes,&end,10);modes=*end ? end+1 : end;}
     }
     if(getenv("MANOSABA_TRIAL_SCREEN_PAUSE_PC"))screen_pause=(unsigned)strtoul(getenv("MANOSABA_TRIAL_SCREEN_PAUSE_PC"),NULL,10);
+    if(special_address)
+    {map_canvas_address=elf_symbol("_ZN12_GLOBAL__N_1L12canvas_tilesE");expect(map_canvas_address,"map canvas symbol is exported");}
     wait_frames(30);debug_hotkey();tap(KEY_START);tap(KEY_DOWN);tap(KEY_DOWN);tap(KEY_A);wait_frames(80);
     for(unsigned i=0;i<offset/6;++i)tap(KEY_RIGHT);
     for(unsigned i=0;i<offset%6;++i)tap(KEY_DOWN);
@@ -469,7 +512,7 @@ int main(int argc,char** argv)
             {
                 tap(overlays[i]);wait_frames(100);unsigned frozen=special().map_clock;
                 wait_frames(60);expect(special().map_clock==frozen,"overlay freezes map timeline");
-                tap(i==2 ? KEY_B : overlays[i]);
+                tap(i==2 ? KEY_B : overlays[i]);map_checked_pc=0;
                 for(unsigned n=0;n<1200 && !special().map_ready;++n)wait_frames(1);
                 expect(special().map_ready && special().map_clock>=frozen && special().map_clock<frozen+40,"overlay restores current map frame and motion");
             }
@@ -485,7 +528,7 @@ int main(int argc,char** argv)
             for(unsigned i=0;i<3;++i)
             {
                 tap(overlays[i]);wait_frames(120);expect(metric().pc==pc,"picture overlay freezes dialogue");
-                tap(i==2 ? KEY_B : overlays[i]);
+                tap(i==2 ? KEY_B : overlays[i]);map_checked_pc=0;
                 for(unsigned n=0;n<1800 && !metric().interaction_ready;++n)wait_frames(1);
                 wait_frames(60);expect(special().picture && metric().interaction_ready && metric().pc==pc,"picture restores after overlay");
             }

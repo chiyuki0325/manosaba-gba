@@ -860,7 +860,8 @@ void text_canvas::decoration(const uint32_t* tiles)
         {
             if(target[row]!=source[row]){target[row]=source[row];changed=true;}
         }
-        if(changed)dirty(index);
+        // A rebuilt BG has new VRAM even when its CPU pixels are unchanged.
+        if(full || changed)dirty(index);
         _occupied[index]=false;
     }
 }
