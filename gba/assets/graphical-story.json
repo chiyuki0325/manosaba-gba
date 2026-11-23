@@ -5,7 +5,7 @@
   "rom_scripts": "all",
   "budgets": {
     "rom_bytes": 33554432,
-    "graphics_bytes": 17825792,
+    "graphics_bytes": 17858560,
     "audio_reserve_bytes": 8388608,
     "other_reserve_bytes": 2097152
   },

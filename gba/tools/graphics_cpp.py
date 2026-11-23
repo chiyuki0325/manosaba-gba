@@ -19,7 +19,7 @@ def emit(cache_root=None,output=None):
     catalog_path=GBA/'assets/graphics/catalog.json'
     if not catalog_path.exists() or json.loads(catalog_path.read_text())['chapters']!=preliminary:
         write_changed(catalog_path,json.dumps(dict(chapters=preliminary,rom=linked['report']),ensure_ascii=False,indent=2)+'\n')
-    from actor_cache import build as build_actor_cache,BUDGET,cached_entry_angles
+    from actor_cache import build as build_actor_cache,BUDGET,cached_entry_angles,large_tilt_fallbacks
     trial_bytes=sum(p.stat().st_size for p in (GBA/'assets/trial').glob('*.bin'))
     room=config()['budgets']['graphics_bytes']-linked['report']['graphics_bytes']-trial_bytes
     cached,payload,cache_report=build_actor_cache(assets,ids,offsets,payload,linked['programs'],min(BUDGET,room))
@@ -83,13 +83,15 @@ def emit(cache_root=None,output=None):
     banks=[];catalog=[]
     for bank,path in enumerate(paths):
         program=cache.get_json(linked['programs'][path]);resources=program['resources']
-        entry_angles=cached_entry_angles(program,ids,cached);keys=list(program['keys'])
+        entry_angles=cached_entry_angles(program,ids,cached);fallbacks=large_tilt_fallbacks(program,assets,ids,cached);keys=list(program['keys'])
         command_rows=[];event_rows=[]
         for event_index,event in enumerate(program['events']):
             begin=len(command_rows)
             for command_index in range(event[0],event[0]+event[1]):
                 value,first,count,kind,target,prop,flags=program['commands'][command_index]
-                if command_index in entry_angles:
+                if command_index in fallbacks:
+                    first=len(keys);keys.append(fallbacks[command_index])
+                elif command_index in entry_angles:
                     value_,_,ease,relative=keys[first];first=len(keys);keys.append([value_,0,ease,relative])
                 if kind==0:value=ids[resources[value]]
                 command_rows.append('{'+f'{value},{first},{count},stage_kind({kind}),{target},{prop},{flags}'+'}')

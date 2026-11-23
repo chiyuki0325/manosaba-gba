@@ -9,10 +9,10 @@ class save_archive;
 struct music_checkpoint
 {
     uint32_t key=0;
-    int volume=0,fade_start=0,fade_target=0,fade_total=0,fade_left=0;
-    bool loop=false,stopping=false;
-    uint32_t return_key=0;int return_volume=0;bool return_loop=false,return_pending=false;
+    int volume=0;
+    bool loop=false;
     void archive(save_archive& data);
+    void legacy_archive(save_archive& data);
 };
 enum class music_result : uint8_t { started, modified, stopped, not_packed, invalid_alias };
 

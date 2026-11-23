@@ -74,11 +74,11 @@ void advance_button::reset()
     _armed = false;
 }
 
-bool advance_button::update(bool held, bool ready)
+bool advance_button::update(bool held, bool ready,int frames)
 {
     bool pressed = held && ! _held;
     _held = held;
-    if(_cooldown) --_cooldown;
+    _cooldown=_cooldown>frames ? _cooldown-frames : 0;
     if(! ready)
     {
         _released = 0;

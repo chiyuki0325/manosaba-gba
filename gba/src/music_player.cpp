@@ -6,7 +6,16 @@
 namespace manosaba {
 void music_checkpoint::archive(save_archive& a)
 {
-    a.field(key);a.field(volume);a.field(fade_start);a.field(fade_target);a.field(fade_total);a.field(fade_left);a.field(loop);a.field(stopping);a.field(return_key);a.field(return_volume);a.field(return_loop);a.field(return_pending);
+    a.fixed(key);a.fixed(volume);a.fixed(loop);
+}
+void music_checkpoint::legacy_archive(save_archive& a)
+{
+    int start=0,target=0,total=0,left=0,return_volume=0;bool stopping=false,return_loop=false,pending=false;uint32_t return_key=0;
+    a.field(key);a.field(volume);a.field(start);a.field(target);a.field(total);a.field(left);a.field(loop);a.field(stopping);
+    a.field(return_key);a.field(return_volume);a.field(return_loop);a.field(pending);
+    if(return_key){key=return_key;volume=return_volume;loop=return_loop;}
+    else if(stopping || (left ? target : volume)==0){key=0;volume=0;}
+    else if(left)volume=target;
 }
 }
 
@@ -185,18 +194,17 @@ music_result execute(const music_command& command)
 music_checkpoint checkpoint()
 {
     music_checkpoint result;
-    if(playing())result={data.cue->key,data.volume,data.fade_start,data.fade_target,data.fade_total,data.fade_left,music_backend::looping(),data.stop_on_fade};
-    if(previous.cue){result.return_key=previous.cue->key;result.return_volume=previous.volume;result.return_loop=previous.loop;result.return_pending=previous.pending;}
+    if(previous.cue && (!data.cue || data.cue->key==ringtone_key))return {previous.cue->key,previous.volume,previous.loop};
+    int volume=data.fade_left ? data.fade_target : data.volume;
+    if(playing() && !data.stop_on_fade && volume>0)result={data.cue->key,volume,music_backend::looping()};
     return result;
 }
 void restore(const music_checkpoint& saved)
 {
     int trim=data.master_trim;reset();data.master_trim=trim;
-    previous={saved.return_key ? find_music_cue(saved.return_key) : nullptr,saved.return_volume,saved.return_loop,saved.return_pending};
     data.cue=saved.key ? find_music_cue(saved.key) : nullptr;if(!data.cue)return;
     data.alias=data.cue->alias;++data.generation;
-    data.volume=saved.volume;data.fade_start=saved.fade_start;data.fade_target=saved.fade_target;
-    data.fade_total=saved.fade_total;data.fade_left=saved.fade_left;data.stop_on_fade=saved.stopping;
+    data.volume=saved.volume;
     music_backend::start(data.cue->module,effective_volume(),saved.loop,data.cue->story_order);
 }
 

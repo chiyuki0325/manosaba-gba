@@ -26,6 +26,7 @@ int main(){
     story_vm vm;vm.start(script("Act01_Chapter01_Adv04"));
     assert(vm.book_version(entry("10-1",0))==1);
     assert(vm.book_version(entry("1-1",0))==0);
+    assert(vm.book_version(entry("1",4))==1 && vm.book_version(entry("10",4))==0);
     for(int i=0;i<book_entry_count;++i)if(book_entries[i].kind==1)assert(vm.book_version(i)==1);
     vm.start(script("Act01_Chapter01_Trial14"));
     assert(vm.book_version(entry("1-1",0))==2);
@@ -38,5 +39,9 @@ int main(){
     assert(vm.book_version(entry("Warden",1))==0 && vm.book_version(entry("Jailer",1))==0);
     int person=candidate(vm,"Miria");assert(person>=0);vm.choose_item(person);
     assert(!std::strcmp(story_items[vm.chosen_item()].id,"Miria"));
-    std::puts("PASS: original book entry versions, direct starts, two evidence branches, 13-person restriction, hidden entries and submitted ID");
+    vm.start(script("Act02_Chapter06_Trial00"));
+    assert(vm.book_version(entry("1",4))==3 && vm.book_version(entry("2",4))==2);
+    int notes=0;for(int i=0;i<book_entry_count;++i)if(book_entries[i].kind==4 && vm.book_version(i))++notes;
+    assert(notes==18);
+    std::puts("PASS: original book and Note versions, direct starts, two evidence branches, 13-person restriction, hidden entries and submitted ID");
 }

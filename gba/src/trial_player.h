@@ -12,11 +12,14 @@ namespace manosaba {
 class trial_player
 {
 public:
+    void protect() const {_scene.protect();_reenact_stage.protect();}
     trial_player(story_vm& vm,image_scene& images) : _vm(vm),_images(images) {}
     void reset();
     void dialogue_speed(int value){_dialogue_speed=value;}
     void original_breaks(bool value){if(_dialogue.original_breaks(value)){_prepared=false;_full=true;}}
     void archive(save_archive& data);
+    bool stage_pending() const {return _picture_event<0;}
+    void restored();
     bool rebuild_ready(bool display_ready);
     bool rebuild_draw() const;
     void suspend();
@@ -24,6 +27,7 @@ public:
     bool release() {return _scene.release() && _movie.release() && _reenact_stage.release();}
     bool update(bool display_ready);
     void draw(text_canvas& canvas);
+    bool painting() const {return _preview && !_preview_ready;}
     void render(text_canvas& canvas);
     int commit(int bytes);
     bool exited() const {return _exited;}
@@ -46,7 +50,7 @@ private:
     int _observed_evidence=0,_preview=0,_bar=-1,_seconds=-1,_resume_movie=0;
     int _title_frame=0,_title_change=0,_title_stage=0;
     int _reenact_wait=0;
-    bool _reenact_started=false;
+    bool _reenact_started=false,_settled_reenact=false;
     bool _map_settle=false;
     bool _prepared=false,_full=true,_hud=true,_exited=false,_preview_ready=false;
     bool _canvas_blank=false;

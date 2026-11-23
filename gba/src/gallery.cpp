@@ -1,3 +1,4 @@
+#include "video_upload.h"
 #include "gallery.h"
 #include "gallery_data.h"
 #include "save_ui_data.h"
@@ -19,6 +20,9 @@
 #include "bn_format.h"
 extern "C" {BN_DATA_EWRAM_BSS gallery_runtime_profile gallery_runtime={};}
 namespace manosaba {
+void gallery::protect() const
+{if(_bg)video_upload::protect(*_bg);if(_regular)video_upload::protect(*_regular);}
+
 namespace {
 // Warm charcoal, ivory type and a one-pixel gray shadow, based on the original gallery.
 alignas(4) constexpr uint16_t paper[256]={0x1084,0x5f1a,0x4632,0x677d,0x2109,0x4e73,0x1ce8,0x14a6,0x77bd,0};
@@ -155,7 +159,7 @@ void gallery::draw(text_canvas& canvas,const save_system& progress)
         else
         {
             canvas.clear();canvas.palette_color(6,0x1ce8);bn::bg_palettes::set_transparent_color(bn::color(0,0,0));
-            bn::core::update();
+            video_upload::reclaim();
             const auto& asset=graphic_assets[gallery_images[_image].asset];
             _palette=bn::bg_palette_ptr::create(bn::bg_palette_item(bn::span<const bn::color>(reinterpret_cast<const bn::color*>(asset.palette),112),bn::bpp_mode::BPP_8));
             if(_native && regular_graphic(gallery_images[_image].asset))
@@ -168,7 +172,7 @@ void gallery::draw(text_canvas& canvas,const save_system& progress)
             {
                 _tiles=bn::affine_bg_tiles_ptr::allocate(512,false);
                 expand_affine_map(asset,asset.variants[0],graphic_map_cells);
-                auto map=bn::affine_bg_map_ptr::create(bn::affine_bg_map_item(graphic_map_cells[0],bn::size(64,64)),*_tiles,*_palette);
+                auto map=video_upload::map(bn::affine_bg_map_item(graphic_map_cells[0],bn::size(64,64)),*_tiles,*_palette);
                 _bg=bn::affine_bg_ptr::create(0,0,map);_bg->set_priority(3);_bg->set_visible(false);
             }
             _upload=0;position();
@@ -211,7 +215,7 @@ void gallery::draw(text_canvas& canvas,const save_system& progress)
                     uint8_t line[thumb_width];const auto* columns=gallery_columns[image.columns];
                     for(int n=0;n<12 && _row<thumb_height;++n,++_row)
                     {
-                        if(unsigned(bn::core::current_cpu_ticks())>=3200)break;
+                        if(!video_upload::finishing && unsigned(bn::core::current_cpu_ticks())>=3200)break;
                         if(_row>=top && _row<top+height)
                         {
                             int sy=(512-asset.height)/2+(_row-top)*asset.height/height;

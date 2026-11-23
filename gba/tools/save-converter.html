@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>魔女审判 GBA 存档转换</title>
+<style>
+:root{color-scheme:only light;background:#fff;color:#222;font:16px/1.6 system-ui,sans-serif}body{background:#fff;color:#222;max-width:720px;margin:24px auto;padding:0 16px}h1{font-size:24px}h2{font-size:18px}label{display:block;margin:16px 0}input,select,button{box-sizing:border-box;font:inherit;min-height:44px;max-width:100%}input,select{width:100%;background:#fff;color:#222}select,button,input::file-selector-button{border:1px solid #888;border-radius:2px}button,input::file-selector-button{background:#f3f3f3;color:#222}button{padding:8px 20px}button:disabled{background:#eee;color:#777;opacity:1}option{background:#fff;color:#222}#status{white-space:pre-wrap}.slots{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}small{display:block;margin-top:20px}@media(max-width:540px){.slots{grid-template-columns:1fr}}[hidden]{display:none!important}
+</style>
+<h1>魔女审判 GBA 存档转换</h1>
+<p>Flash128K 与 SRAM 32 KiB 存档双向转换。文件仅在本机处理，不上传，也不修改原文件。</p>
+<label>输入存档（.sav／.srm）<input id="file" type="file" accept=".sav,.srm"></label>
+<label>输出格式<select id="target"><option value="sram">SRAM 32 KiB · 8个手动槽</option><option value="flash">Flash128K · 27个手动槽</option></select></label>
+<section id="mapping" hidden>
+<h2>选择保留的8个手动槽</h2>
+<p>自动档、重试档、日期、设置和收集一并保留。未选中的槽不写入新文件，请保留原文件。</p>
+<div class="slots" id="slots"></div><p id="omitted"></p>
+</section>
+<button id="download" disabled>下载转换结果</button>
+<p id="status" role="status">请选择游戏的普通存档；不支持模拟器即时存档。</p>
+<small>关闭模拟器后，将结果改为目标ROM对应的存档文件名。输出保留输入的.sav／.srm扩展名，模拟器附加数据不复制。</small>
+<script>
+'use strict';
+/* SAVE_CONVERTER_DATA_BEGIN */
+const SAVE_CONTENT={"signature":2378416637,"mapAnchors":[[10,82,29],[24,130,29],[51,99,34],[62,117,34],[80,105,34],[93,108,34],[112,84,34],[120,63,34],[143,102,34],[164,102,34],[187,96,34],[202,99,34]],"curtainChanges":[[245,71,0],[245,257,1],[245,269,0],[245,709,1],[245,721,0],[245,1165,1],[245,1177,0],[245,1577,1],[245,1589,0],[245,1934,1],[245,1946,0],[245,2861,1],[245,2873,0],[245,3109,1],[261,71,0],[261,559,1],[261,571,0],[261,1022,1],[261,1034,0],[261,1317,1],[261,1329,0],[261,2102,1],[261,2114,0],[261,2680,1],[276,71,0],[276,434,1],[276,446,0],[276,620,1],[276,632,0],[276,854,1],[276,866,0],[276,1248,1],[276,1260,0],[276,1914,1],[276,1926,0],[276,2314,1],[276,2326,0],[276,2790,1],[289,71,0],[289,390,1],[289,402,0],[289,714,1],[289,726,0],[289,1026,1],[289,1038,0],[289,1331,1],[289,1343,0],[289,1738,1],[300,71,0],[300,939,1],[300,951,0],[300,1459,1],[300,1471,0],[300,1739,1],[300,1751,0],[300,2081,1],[300,2093,0],[300,2610,1],[300,2622,0],[300,3101,1],[300,3113,0],[300,3611,1],[300,3623,0],[300,4276,1],[314,71,0],[314,786,1],[314,798,0],[314,1364,1],[314,1376,0],[314,2278,1],[314,2290,0],[314,2709,1],[314,2721,0],[314,3647,1],[314,3659,0],[314,4170,1],[328,71,0],[328,326,1],[328,338,0],[328,760,1],[328,772,0],[328,1052,1],[328,1605,0],[328,2188,1],[328,2872,0],[328,4012,1],[328,4024,0],[328,4597,1],[343,71,0],[343,558,1],[343,570,0],[343,962,1],[343,974,0],[343,1512,1],[343,1524,0],[343,1861,1],[343,2125,0],[343,2453,1],[343,2465,0],[343,3035,1],[355,71,0],[355,351,1],[355,363,0],[355,669,1],[355,759,0],[355,1551,1],[355,1563,0],[355,2213,1],[355,2225,0],[355,2829,1],[395,71,0],[395,487,1],[395,499,0],[395,769,1],[395,781,0],[395,1496,1],[395,1508,0],[395,2023,1],[395,2035,0],[395,2516,1]],"scriptSizes":[1671,6937,2449,23416,8690,5034,4446,9132,6225,4474,239,4874,5503,6469,3898,4502,5103,10543,4026,6283,4157,5382,3799,7589,339,8133,5741,2994,1914,5400,5927,3297,4904,4120,14216,6936,1489,6636,4497,5949,10428,5396,7075,6034,13548,9762,6805,9490,11254,4957,814,279,1735,3195,3041,1794,3524,7316,4099,7978,9056,5943,320,5376,2627,1843,2576,2204,1696,2298,17420,1425,4843,8389,16668,9495,3707,1798,6514,759,285,2329,2568,2042,2921,6251,7427,6594,6865,6022,3725,10042,3507,311,3414,772,2033,2341,2540,2187,1451,16724,2141,643,5346,7165,8023,6624,5723,10022,7667,3040,218,3756,5322,1478,1674,4700,3314,3198,174,4314,11644,1013,11932,16993,751,22926,8546,175,8168,9367,258,1476,7561,15642,1862,3681,8787,4457,16208,841,3808,282,6647,6433,4065,10150,4335,1164,3523,8402,7953,2658,7268,5937,1842,12803,4986,17992,11477,12739,6635,697,282,3404,5745,5185,3624,5908,5905,3525,3789,2360,7446,7312,2731,2547,1102,19161,3028,1856,7151,6085,7588,14540,1866,253,4731,9317,6730,3640,7502,8087,1728,2951,604,15608,1383,9420,12294,2564,279,4422,3695,4163,2358,4067,2025,7532,4078,15441,2147,16157,10826,12888,9170,7694,5597,4938,1755,6358,7352,4457,3117,12588,8064,6018,1060,25127,2481,6958,7874,12366,11829,10036,13552,23549,12098,16423,14881,12143,14813,23797,18668,3153,3174,17608,14322,11034,9891,9014,11387,18473,15253,12383,16875,13793,10821,19369,14632,2724,1706,9458,11526,15923,12285,13866,9728,14722,13712,20075,15131,8128,13068,16371,2834,2062,9276,7122,15048,8506,8654,16996,10742,11563,10296,8178,6128,1782,1278,9086,15161,18657,10733,7738,8800,18365,23710,24536,4320,6811,7733,9939,14687,6245,15461,33892,11302,27014,12121,18555,22182,17621,4214,2813,5433,11361,10515,20089,9267,11095,12657,16309,18840,7364,18578,8596,4641,5361,10523,6783,9535,13049,7291,17911,11775,14893,13784,14613,12029,11880,16302,3079,9639,6597,7646,11500,20793,10610,12664,13441,15595,9610,11459,2873,5484,8158,16873,6129,10809,17096,4390,10582,8380,20757,6915,6576,16624,7272,10426,14387,8917,9184,7549,12592,7823,10468,4191,8234,6587,12040,3130,2946,7301,3273,9219,6694,10158,20653,15673,9039,11188,15213,10635,2560,889,1202,5408,2656,2804,5851,7421,2145,4091,3930,3142,2797,1337,339,1104],"scriptModes":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0],"sfxAmbient":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]};
+/* SAVE_CONVERTER_DATA_END */
+const SaveConverter=(()=>{
+ const u16=(v,p)=>v.getUint16(p,true),u32=(v,p)=>v.getUint32(p,true);
+ const table=Array.from({length:256},(_,v)=>{for(let j=0;j<8;j++)v=v&1?(v>>>1)^0xedb88320:v>>>1;return v>>>0});
+ function crc(bytes){let v=0xffffffff;for(const b of bytes)v=(v>>>8)^table[(v^b)&255];return (v^0xffffffff)>>>0}
+ function parse(bytes){
+  const records=new Map(),versions=new Set();let damaged=0;
+  function header(at){if(at+64>bytes.length)return null;const v=new DataView(bytes.buffer,bytes.byteOffset+at,64);return u32(v,0)===0x56534e4d&&bytes[at+63]===0xa5&&u32(v,24)===crc(bytes.subarray(at,at+24))?v:null}
+  const strongFlash=[122880,126976].some(at=>{const h=header(at);return h&&((u16(h,16)===3&&bytes[at+22]===14)||(u16(h,16)===5&&bytes[at+22]===29))});
+  const strongSram=[32256,32512,3072,6144,9216,15360,18432,21504,27648,29184].some(at=>{const h=header(at),slot=bytes[at+22],expected=at>=32256?10:at===29184?-1:at===27648?9:at/3072;return h&&u16(h,16)===5&&(expected<0?slot<10:slot===expected)});
+  const backend=bytes.length===32768||(!strongFlash&&strongSram)?'sram':'flash';
+  if(bytes.length<(backend==='sram'?32768:131072))throw Error('需要32 KiB SRAM或128 KiB Flash的.sav／.srm，不能使用即时存档。');
+  function add(at,capacity,prefix,slot,version){
+   const b=bytes.subarray(at,at+capacity),v=new DataView(b.buffer,b.byteOffset,b.byteLength),size=u16(v,18),seed=u16(v,20);
+   if(prefix+size+seed>b.length||u32(v,12)!==crc(b.subarray(64,prefix+size+seed))){damaged++;return}
+   if(slot!==29&&u32(v,8)!==SAVE_CONTENT.signature)throw Error('本文件与当前游戏数据不匹配，请使用对应游戏附带的转换工具。');
+   const record={version,sequence:u32(v,4),signature:u32(v,8),metadata:b.slice(64,256),state:b.slice(prefix,prefix+size),seed:b.slice(prefix+size,prefix+size+seed)};
+   if(!records.has(slot)||((record.sequence-records.get(slot).sequence)|0)>0)records.set(slot,record);versions.add(version);
+  }
+  if(backend==='flash')for(let page=0;page<32;page++){
+   const at=page*4096,v=header(at);if(!v)continue;const version=u16(v,16);let slot=bytes[at+22];
+   if(![3,5].includes(version))throw Error('无法识别这个Flash存档。');
+   if(version===3){if(slot>14||(page<30&&(page&1)))continue;if(slot>=12)slot=slot===12?27:slot===13?28:29}
+   if(slot>29||(page<30)!==(slot<29))continue;
+   add(at,page<30&&version===3?8192:4096,version===5&&slot===28?64:256,slot,version);
+  }
+  else for(let page=0;page<13;page++){
+   const at=page<9?page*3072:page===9?27648:page===10?29184:32256+(page-11)*256,v=header(at);if(!v)continue;
+   const rawSlot=bytes[at+22],version=u16(v,16);if(version!==5)throw Error('无法识别这个SRAM存档。');
+   if(rawSlot>10||(page<10&&rawSlot!==page)||(page===10&&rawSlot===10)||(page>=11&&rawSlot!==10))continue;
+   const slot=rawSlot<8?rawSlot:rawSlot===8?27:rawSlot===9?28:29;
+   add(at,rawSlot===10?256:rawSlot===9?1536:3072,rawSlot>=9?64:256,slot,version);
+  }
+  if(!records.size)throw Error('未找到可校验的本游戏存档记录。');
+  return {records,backend,versions:[...versions].sort(),manualSlots:backend==='sram'?8:versions.has(5)?27:12,damaged,extra:bytes.length-(backend==='sram'?32768:131072)};
+ }
+
+ function minimal(bytes){
+  let at=0;
+  function u(){let v=0;for(let shift=0;shift<35;shift+=7){if(at>=bytes.length)throw Error('存档正文截断。');const b=bytes[at++];if(shift===28&&(b&240))throw Error('存档数据损坏。');v|=(b&127)<<shift;if(!(b&128))return v>>>0}throw Error('存档数据损坏。')}
+  const i=()=>{const v=u();return (v>>>1)^-(v&1)},skip=n=>{while(n--)u()},raw=n=>{if(at+n>bytes.length)throw Error('存档正文截断。');const v=bytes.slice(at,at+n);at+=n;return v},text=()=>raw(u());
+  const links=()=>{const n=i();if(n<0||n>3)throw Error('存档数据损坏。');skip(n*4);return n};
+  const kind=u(),m={script:i(),pc:u(),state:u(),speaker:u(),text:text()};text();text();
+  u();m.visual=i();m.event=i();m.flags=u();m.area=u();m.direct=u();m.map=u();
+  const count=i(),optionText=[];if(count<0||count>8)throw Error('存档数据损坏。');
+  for(let n=0;n<count;n++){optionText.push(text().length);if(!m.map)skip(2);u()}
+  raw(u()*4);m.trialFlags=[u(),u()];const linkCount=links();
+  i();m.hp=i();m.bad=i();m.actor=i();m.view=i();m.picture=i();m.camera=i();m.poses=Array.from({length:17},u);m.layout=u();m.cameraDuration=u();
+  u();u();m.total=u();const candidates=i();skip(candidates);m.chosen=i();m.inventory=i();u();m.cutin=i();i();
+  m.book=raw(168);m.chapter=u();m.returnValid=u();u();m.witch=u();m.printer=u();m.reenact=u();u();m.reenactScene=i();u();m.reenactAction=u();
+  if(m.state===15)u();m.mapSegment=i();u();m.screen=Array.from({length:4},u);skip(6);m.fire=u();skip(7);skip(4);
+  const r={script:0,source:0,actor:0,view:0,picture:0,camera:0,duration:0,poses:Array(17).fill(0),layout:0,witch:0};
+  if(m.returnValid){const t=text(),n=links(),end=u();r.script=i();i();u();u();r.actor=i();r.view=i();r.picture=i();r.camera=i();r.duration=u();r.poses=Array.from({length:17},u);r.layout=u();r.witch=u();skip(4);r.source=end-12-t.length-10*n;}
+  const defaults=[30720,20480,256,0,0,256,0,256,256,256,256,256];
+  let entities=Array.from({length:16},(_,id)=>({values:defaults.map((v,p)=>id===11&&p<2?0:v),image:-1,order:0,mask:-1,presentation:1})),printer=1,pictureEvent=-1,active=-1;
+  function stage(){i();i();u();entities=Array.from({length:16},()=>{const e={values:Array.from({length:12},i),image:i()};i();e.order=i();e.mask=i();e.presentation=u();return e});printer=u()}
+  const page=()=>skip(7);
+  if(kind===2)stage();
+  if(kind===0){
+   if(m.state>=0&&SAVE_CONTENT.scriptSizes[m.script]===undefined)throw Error('未知剧本。');
+   // The archived image scene exists once: ADV or Trial, never both.
+   if(SAVE_CONTENT.scriptModes[m.script]){i();pictureEvent=i();stage();skip(4);page();skip(5)}else{stage();page()}
+   skip(18);raw(4);skip(2);active=i();skip(5);
+  }
+  let key=u(),volume=i();i();const target=i();i();const left=i(),loop=u(),stopping=u(),returnKey=u(),returnVolume=i(),returnLoop=u();u();let musicLoop=loop;
+  if(returnKey){key=returnKey;volume=returnVolume;musicLoop=returnLoop}else if(stopping||(left?target:volume)===0){key=0;volume=0}else if(left)volume=target;
+  let sounds=[];
+  for(let n=0;n<6;n++){const cue=i();if(cue<0)continue;const gain=i(),loop=u(),left=i(),target=i(),stop=u();if(cue>=SAVE_CONTENT.sfxAmbient.length)throw Error('未知音效。');if(stop||(left?target:gain)<=0||(!loop&&!SAVE_CONTENT.sfxAmbient[cue]))continue;const value={cue,volume:left?target:gain,loop};if(sounds.length<2)sounds.push(value);else {const rank=s=>SAVE_CONTENT.sfxAmbient[s.cue]?0:s.loop,replace=rank(sounds[0])<rank(sounds[1])?0:1;if(rank(value)>=rank(sounds[replace]))sounds[replace]=value;}}
+  if(at!==bytes.length)throw Error('存档内容不完整或不受支持。');
+  let flags=0,source=m.pc;
+  if(m.state===1)source-=5+m.text.length;
+  else if(m.state===6)source-=12+m.text.length+10*linkCount;
+  else if(m.state===2){if(m.map){const match=SAVE_CONTENT.mapAnchors.find(x=>x[0]===m.script&&x[1]===m.pc);if(!match)throw Error('存档中的地图进度无法识别。');source=match[2]}else source-=5+8*count+optionText.reduce((a,b)=>a+b,0)}
+  else if(m.state===7)source-=6+(m.inventory===2?2*candidates:0);
+  else if(m.state===3||m.state===4)source-=4+m.text.length;
+  else if(m.state===12&&m.cutin!==2)source-=4;
+  else if(m.state===8)source-=5;
+  else if(m.state===15)source-=4;
+  else if(m.state===16)source-=3;
+  else if(m.state===5){source-=5;if(SAVE_CONTENT.scriptModes[m.script]?pictureEvent<0:active<0)flags|=2}
+  else {flags|=1;if(m.state===12&&m.cutin===2)flags|=4;}
+  if(source<0||source>=SAVE_CONTENT.scriptSizes[m.script])throw Error('存档中的剧情进度无法识别。');
+  const out=new Uint8Array(1254),v=new DataView(out.buffer);let w=0;
+  const b=n=>{v.setUint8(w++,n)},h=n=>{v.setUint16(w,n,true);w+=2},d=n=>{v.setUint32(w,n>>>0,true);w+=4};
+  const court=(actor,view,picture,camera,duration,poses,layout,witch)=>{[actor,view,picture,camera,duration].forEach(d);poses.forEach(h);b(layout);b(witch)};
+  b(flags);d(m.script);d(source);h(m.flags);b(m.area);b(m.direct);m.trialFlags.forEach(d);[m.hp,m.bad,m.chosen,m.total].forEach(d);m.book.forEach(b);b(m.chapter);
+  court(m.actor,m.view,m.picture,m.camera,m.cameraDuration,m.poses,m.layout,m.witch);d(m.visual);b(m.printer);let closed=m.reenactAction===1;for(const x of SAVE_CONTENT.curtainChanges)if(x[0]===m.script&&x[1]<=m.pc)closed=!!x[2];b(m.reenact?(1|(closed&&m.reenactScene>=0?2:0)):0);h(m.reenactScene);h(m.mapSegment);m.screen.forEach(h);b(m.fire);
+  b(m.returnValid);d(r.script);d(r.source);court(r.actor,r.view,r.picture,r.camera,r.duration,r.poses,r.layout,r.witch);
+  for(const e of entities){e.values.forEach(d);h(e.image);h(e.order);h(e.mask);b(e.presentation)}b(printer);d(key);d(volume);b(musicLoop);
+  while(sounds.length<2)sounds.push({cue:-1,volume:0,loop:0});for(const e of sounds){d(e.cue);d(e.volume);b(e.loop)}
+  if(w!==out.length)throw Error('转换失败，请保留原文件。');return out;
+ }
+ function convert(parsed,selection=[0,1,2,3,4,5,6,7],target='sram'){
+  if(!['sram','flash'].includes(target))throw Error('未知目标格式。');
+  if(target==='sram'&&(selection.length!==8||new Set(selection).size!==8||selection.some(n=>n<0||n>=parsed.manualSlots)))throw Error('请选择8个互不重复的原手动槽。');
+  const output=new Uint8Array(target==='sram'?32768:131072).fill(255),v=new DataView(output.buffer);
+  function record(slot,source){
+   if(!source)return;const global=slot===29,retry=slot===28;
+   let state,seed;
+   if(global){if(![92,112,120].includes(source.state.length))throw Error('未知全局状态长度。');state=new Uint8Array(120);state.set(source.state);seed=new Uint8Array()}
+   else {state=source.version===5?source.state:minimal(source.state);seed=source.seed.length?(source.version===5?source.seed:minimal(source.seed)):new Uint8Array();if(state.length!==1254||(seed.length&&seed.length!==1254))throw Error('存档内容不完整或不受支持。')}
+   const sram=target==='sram',logical=sram?(slot<8?slot:slot===27?8:retry?9:10):slot;
+   const first=sram?(logical<9?logical*3072:retry?27648:32256):(global?122880:logical*4096);
+   const capacity=sram?(global?256:retry?1536:3072):4096,prefix=retry||(sram&&global)?64:256;
+   if(prefix+state.length+seed.length>capacity)throw Error('记录超出目标容量；原文件未修改。');
+   for(let copy=0;copy<(global?2:1);copy++){
+    const at=first+copy*(sram?256:4096);
+    v.setUint32(at,0x56534e4d,true);v.setUint32(at+4,(source.sequence+copy)>>>0,true);v.setUint32(at+8,source.signature,true);
+    v.setUint16(at+16,5,true);v.setUint16(at+18,state.length,true);v.setUint16(at+20,seed.length,true);output[at+22]=logical;output[at+23]=0;output[at+63]=0xa5;
+    if(!global&&!retry){output.set(source.metadata,at+64);output.fill(0,at+64,at+68);}
+    output.set(state,at+prefix);output.set(seed,at+prefix+state.length);
+    v.setUint32(at+12,crc(output.subarray(at+64,at+prefix+state.length+seed.length)),true);v.setUint32(at+24,crc(output.subarray(at,at+24)),true);
+   }
+  }
+  if(target==='sram')selection.forEach((old,i)=>record(i,parsed.records.get(old)));
+  else for(let i=0;i<27;i++)record(i,parsed.records.get(i));
+  for(const slot of [27,28,29])record(slot,parsed.records.get(slot));return output;
+ }
+
+ function caption(record){
+  if(!record)return '空白记录';
+  return new TextDecoder().decode(record.metadata.subarray(22,118)).split('\0')[0].replace(/[\r\n]/g,' ')||'已有记录';
+ }
+ return {parse,convert,minimal,crc,caption};
+})();
+globalThis.SaveConverter=SaveConverter;
+const file=document.getElementById('file'),target=document.getElementById('target'),status=document.getElementById('status'),mapping=document.getElementById('mapping'),slots=document.getElementById('slots'),download=document.getElementById('download');
+let parsed,inputName;
+function selection(){return [...slots.querySelectorAll('select')].map(s=>Number(s.value))}
+function update(){
+ if(!parsed)return;mapping.hidden=target.value!=='sram'||parsed.backend==='sram';const chosen=selection();
+ const omitted=[...parsed.records.keys()].filter(n=>n<27&&!chosen.includes(n));
+ document.getElementById('omitted').textContent=omitted.length?'未迁移的原手动槽：'+omitted.map(n=>String(n+1).padStart(2,'0')).join('、'):'所有已有手动档均已选中。';
+ download.disabled=!mapping.hidden&&new Set(chosen).size!==8;
+ const label=parsed.backend==='flash'?'Flash128K':'SRAM 32 KiB';
+ status.textContent='已识别：'+label+'。'+(parsed.damaged?' 已忽略'+parsed.damaged+'条校验失败的记录。':'')+(download.disabled?' 同一个原槽不能重复选择。':'');
+}
+target.addEventListener('change',update);
+file.addEventListener('change',async()=>{
+ parsed=null;mapping.hidden=true;download.disabled=true;
+ try{
+  const f=file.files[0];if(!f)return;inputName=f.name;parsed=SaveConverter.parse(new Uint8Array(await f.arrayBuffer()));
+  target.value=parsed.backend==='flash'?'sram':'flash';slots.replaceChildren();
+  for(let i=0;i<8;i++){
+   const label=document.createElement('label');label.textContent=`新手动槽 ${i+1} ← 原槽`;const select=document.createElement('select');
+   for(let n=0;n<parsed.manualSlots;n++){const option=document.createElement('option');option.value=n;option.textContent=String(n+1).padStart(2,'0')+' · '+SaveConverter.caption(parsed.records.get(n));select.append(option)}
+   select.value=i;select.addEventListener('change',update);label.append(select);slots.append(label);
+  }
+  update();
+ }catch(e){parsed=null;status.textContent=e.message}
+});
+download.addEventListener('click',()=>{
+ try{
+  const bytes=SaveConverter.convert(parsed,selection(),target.value),url=URL.createObjectURL(new Blob([bytes],{type:'application/octet-stream'})),a=document.createElement('a');
+  const ext=inputName.toLowerCase().endsWith('.srm')?'srm':'sav';a.href=url;a.download=inputName.replace(/\.(sav|srm)$/i,'')+'.'+target.value+'.'+ext;a.click();
+  setTimeout(()=>URL.revokeObjectURL(url),10000);status.textContent='已生成 '+(target.value==='flash'?'128 KiB Flash':'32 KiB SRAM')+'存档。原文件未修改。';
+ }catch(e){status.textContent=e.message}
+});
+</script>
+</html>

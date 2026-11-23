@@ -6,7 +6,7 @@ SOURCES=('font_data.c','story_data.cpp','story_layout.h','graphics_data.cpp','st
          'trial_data.cpp','trial_ui_data.cpp','trial_cutin_data.cpp','witch_book_art.cpp',
          'book_map_data.cpp','reenact_data.cpp','credits_data.cpp','execution_data.cpp',
          'trial_map_data.cpp','home_art.cpp','music_room_data.cpp','warning_screen_data.cpp',
-         'story_ui_data.cpp','choice_ui_data.cpp','nameplate_data.cpp','save_ui_data.cpp','sfx_data.cpp')
+         'story_ui_data.cpp','choice_ui_data.cpp','nameplate_data.cpp','save_ui_data.cpp','sfx_data.cpp','save_legacy_data.h')
 missing=[str(Path('src')/name) for name in SOURCES if not (GBA/'src'/name).is_file()]
 for assembly in (GBA/'src').glob('*.s'):
     for name in re.findall(r'\.incbin\s+"\.\./(assets/[^\"]+)"',assembly.read_text()):

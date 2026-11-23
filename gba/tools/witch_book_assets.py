@@ -87,7 +87,7 @@ def main():
         entries.append('{'+str(entry)+',{'+palette_ptr+',nullptr,'+name+'},'+','.join(map(str,result['rect']))+'}')
     lines.append('const book_image book_images[]={'+','.join(entries)+'};')
     lines.append(f'const int book_image_count={len(entries)};')
-    initials={ord(v['name'][0]) for v in book.texts if v['name']}|set(map(ord,'证人地规'))
+    initials={ord(v['name'][0]) for v in book.texts if v['name']}|set(map(ord,'证人地规记'))
     glyphs=[]
     with gzip.open(GBA/'assets/unifont-17.0.03.hex.gz','rt') as font:
         for line in font:

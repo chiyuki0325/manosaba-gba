@@ -6,6 +6,8 @@
 #include "../src/witch_book_runtime.h"
 #include "../src/trial_special_runtime.h"
 #include "../src/save_runtime.h"
+#include "../src/graphics_profile.h"
+#include <stddef.h>
 #include <mgba/internal/gba/gba.h>
 #include <mgba/internal/gba/renderers/video-software.h>
 #include <string.h>
@@ -34,11 +36,13 @@ static save_runtime_profile save_status(void)
 static trial_special_profile special(void)
 {trial_special_profile p;uint32_t* v=(uint32_t*)&p;for(unsigned i=0;i<sizeof(p)/4;++i)v[i]=core->busRead32(core,special_address+4*i);return p;}
 static trial_runtime_profile metric(void);
-static unsigned map_canvas_address,map_checked_pc;
+static unsigned map_canvas_address,map_checked_pc,upload_pending_address;
 static void evidence(const char* name);
 static void check_map_ui(trial_special_profile map_state)
 {
     if(!map_state.map_ready)return;
+    if(!upload_pending_address)upload_pending_address=elf_symbol("_ZN8manosaba20graphics_performanceE")+offsetof(struct graphics_profile,upload_pending);
+    if(core->busRead32(core,upload_pending_address))return;
     trial_runtime_profile player=metric();
     if(!player.canvas_ready || !player.interaction_ready || player.vm_state!=1)return;
     unsigned key=(player.pc<<4)|map_state.map;

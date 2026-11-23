@@ -78,5 +78,7 @@ def main():
     write(GBA/'src/save_ui_data.cpp','\n'.join(lines)+'\n')
     write(GBA/'src/save_ui_bytes.s','.section .rodata.save_ui_bytes,"a",%progbits\n.balign 4\n.global _ZN8manosaba13save_ui_bytesE\n_ZN8manosaba13save_ui_bytesE:\n.incbin "../assets/save-ui.bin"\n')
     write(GBA/'assets/save-ui.bin',payload)
+    from save_converter_assets import generate
+    generate()
     print('save/load artwork:',len(payload),'shared base bytes, 16 UI colors')
 if __name__=='__main__':main()

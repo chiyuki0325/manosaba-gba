@@ -1,3 +1,4 @@
+#include "video_upload.h"
 #include "application.h"
 #include "bn_core.h"
 #include "bn_keypad.h"
@@ -99,6 +100,7 @@ void application::draw_home_confirm()
 void application::draw()
 {
     unsigned begin=unsigned(bn::core::current_cpu_ticks());
+    if(story_page())_story.published(false);
     home_runtime.confirm=unsigned(_home_confirm);
     bool overlay=_pause_settings || _home_load;
 #if MANOSABA_DEBUG_MENU
@@ -157,12 +159,17 @@ void application::draw()
 }
 void application::commit()
 {
-    int remaining = _canvas.commit(4096);
+    video_upload::begin();
+    video_upload::commit();
+    int remaining = _canvas.commit(65536);
     if(!_menu.open() && story_page() && !_pause_settings && !_home_load) _story.commit(remaining);
-    else if(!_menu.open() && gallery_page())_gallery.commit(remaining);
+    else if(!_menu.open() && gallery_page())_gallery.commit(4096);
+    video_upload::end();
+    if(story_page())_story.published(_canvas.ready());
 }
 void application::update()
 {
+    video_upload::start_frame();_canvas.protect();_story.protect();_gallery.protect();
     sfx_player::update(1+bn::core::last_missed_frames());
     music_player::update(sfx_player::foreground_active());
     _canvas.prepare();
@@ -337,8 +344,24 @@ void application::update()
         }
 #endif
     }
+    video_upload::finishing=true;
     if(_redraw){draw();_redraw=false;}
     else if(!_menu.open() && story_page() && !_pause_settings)_story.render(_canvas);
+    bool painting;
+    do
+    {
+        _canvas.prepare();
+        painting=_pause_settings ? _home.painting() : _home_load ? _story.progress().painting() :
+            !_menu.open() && story_page() ? _story.painting() :
+            !_menu.open() && gallery_page() ? _gallery.painting() :
+            !_menu.open() && _menu.scene()==scene_id::title && _home_started ? _home.painting() : false;
+        if(painting){video_upload::reclaim();draw();}
+    }while(painting || !_canvas.ready());
+    _canvas.commit(65536);
+    if(story_page() && video_upload::pending())_story.published(false);
+    video_upload::prepare();
+    video_upload::finishing=false;
     if(story_page())_story.background_io();
+
 }
 }

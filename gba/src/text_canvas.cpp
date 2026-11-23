@@ -1,3 +1,4 @@
+#include "video_upload.h"
 #include "text_canvas.h"
 #include "text_breaks.h"
 #include "trial_title_data.h"
@@ -35,6 +36,9 @@ extern const unsigned font_count;
 namespace
 {
 BN_DATA_EWRAM_BSS bn::tile canvas_tiles[1200];
+auto* const sprite_pixels=reinterpret_cast<bn::tile*>(manosaba::video_upload::book_pixels);
+BN_DATA_EWRAM_BSS bool sprite_dirty[1024];
+bool sprites_pending=false;
 BN_DATA_EWRAM_BSS uint16_t label_inks[256];
 int label_color=-1;
 const uint8_t* label_ink_source=nullptr;
@@ -84,9 +88,8 @@ constexpr auto make_execution_map()
     return cells;
 }
 constexpr auto execution_cells=make_execution_map();
-// Once uploaded, this part of the paper bitmap is no longer edited in a reader.
-// Reuse its CPU copy for the 224x128 text ring; no second image buffer.
-bn::tile* reader_pixels(bool full){return canvas_tiles+(full ? 0 : 480);}
+// Readers replace scene scenery; reuse its staging area for their text ring.
+bn::tile* reader_pixels(bool){return manosaba::video_upload::scenery;}
 
 constexpr int toast_index(int logical)
 {
@@ -96,6 +99,7 @@ constexpr int toast_index(int logical)
 }
 constexpr int compact_index(int logical)
 {
+
     int x=logical%30,y=logical/30;
     if(y>=10)return 1+32+20+(y-10)*30+x;
     if(x<4 && y<5)return 1+y*4+x;
@@ -160,7 +164,35 @@ unsigned decode(const char*& text)
 
 namespace manosaba
 {
+void text_canvas::protect() const
+{if(_bg)video_upload::protect(*_bg);if(_map_bg)video_upload::protect(*_map_bg);}
 
+
+bn::tile& video_upload::sprite_tile(bn::tile* target)
+{
+    int tile=int(target-reinterpret_cast<bn::tile*>(0x06010000));
+    sprite_dirty[tile]=true;sprites_pending=true;
+    if(tile<424)video_upload::book_cache_dirty=true;
+    return tile<424 ? sprite_pixels[tile] : canvas_tiles[600+tile-424];
+}
+#ifdef __arm__
+__attribute__((section(".ewram.video_commit"),target("arm"),noinline))
+#endif
+void commit_sprites()
+{
+    if(!sprites_pending)return;
+    sprites_pending=false;
+    for(int first=0;first<1024;)
+    {
+        if(!sprite_dirty[first]){++first;continue;}
+        int end=first+1,limit=first<424 ? 424 : 1024;
+        while(end<limit && sprite_dirty[end])++end;
+        const auto* source=first<424 ? sprite_pixels+first : canvas_tiles+600+first-424;
+        video_upload::upload(*source,end-first,*reinterpret_cast<bn::tile*>(0x06010000+first*32));
+        for(int i=first;i<end;++i)sprite_dirty[i]=false;
+        first=end;
+    }
+}
 text_canvas::text_canvas(bool compact) : _graphical(compact)
 {
     allocate();
@@ -168,11 +200,12 @@ text_canvas::text_canvas(bool compact) : _graphical(compact)
 }
 void text_canvas::allocate()
 {
+
     auto bpp=_choice_ui ? bn::bpp_mode::BPP_8 : bn::bpp_mode::BPP_4;
     const auto* palette_colors=_choice_ui ? reinterpret_cast<const bn::color*>(choice_ui_palette) : colors;
     // Keep the compact UI inside its existing six 2KiB BG blocks (384 tiles).
     _tiles = bn::regular_bg_tiles_ptr::allocate(_choice_ui ? 1200 : _execution_ui ? 290 : _graphical ? 381 : 600,bpp,_trial_canvas || bool(_map_bg));
-    _bg = bn::regular_bg_ptr::create(8,48,bn::regular_bg_map_ptr::create(
+    _bg = bn::regular_bg_ptr::create(8,48,video_upload::map(
         bn::regular_bg_map_item(_execution_ui ? execution_cells[0] : _graphical ? compact_cells[0] : canvas_cells[0],bn::size(32,32)),*_tiles,
         bn::bg_palette_ptr::create(bn::bg_palette_item(bn::span<const bn::color>(palette_colors,_choice_ui ? _palette_colors : 16),bpp))));
     _bg->set_priority(0);
@@ -185,8 +218,8 @@ void text_canvas::allocate()
     }
     if(_graphical)
     {
-        auto vram=_tiles->vram().value();
-        for(auto& word:vram[0].data)word=0;
+        static constexpr bn::tile empty{};
+        video_upload::copy(&empty,_tiles->vram()->data(),32);
     }
 }
 void text_canvas::clear(bool compact)
@@ -377,6 +410,7 @@ const char* text_canvas::text(cursor& position, const dialogue_layout& box, cons
 
 void text_canvas::release()
 {
+
     map_close();
     _execution_ui=false;
     _bg.reset();_tiles.reset();_picture=nullptr;_save_tiles=nullptr;_save_bytes=0;_picture_bytes=38400;_trial_canvas=false;_decoration=nullptr;
@@ -388,9 +422,10 @@ void text_canvas::book_page(const uint8_t* tiles,const uint16_t* palette,int fir
 {
     if(!first)
     {
+
         reader_close();
         if(!_choice_ui || !_bg || _palette_colors!=(reader ? 32 : 256))
-        {release();bn::core::update();_palette_colors=reader ? 32 : 256;_choice_ui=true;_graphical=false;allocate();}
+        {release();video_upload::reclaim();_palette_colors=reader ? 32 : 256;_choice_ui=true;_graphical=false;allocate();}
         _trial_canvas=false;_picture=nullptr;
         book_colors(palette);
     }
@@ -407,7 +442,7 @@ void text_canvas::reader_picture(const ui_picture& image,const uint8_t* remap,in
 {
     if(!first)
     {
-        release();bn::core::update();_palette_colors=240;_choice_ui=true;_graphical=false;allocate();
+        release();video_upload::reclaim();_palette_colors=240;_choice_ui=true;_graphical=false;allocate();
         auto palette=_bg->palette();
         palette.set_colors(bn::span<const bn::color>(reinterpret_cast<const bn::color*>(image.palette),240));
         std::memcpy(_colors,image.palette,32);
@@ -422,7 +457,7 @@ void text_canvas::reader_open(int top,int height,bool full,bool black)
 {
     if(full)
     {
-        release();bn::core::update();_choice_ui=_graphical=false;_dirty_count=0;std::memset(_dirty,0,sizeof(_dirty));_toast=0;
+        release();video_upload::reclaim();_choice_ui=_graphical=false;_dirty_count=0;std::memset(_dirty,0,sizeof(_dirty));_toast=0;
         static constexpr uint16_t palette[16]={32767,7|(2<<5)|(2<<10),14|(7<<5)|(7<<10),30|(10<<5)|(10<<10),0,0,28|(27<<5)|(24<<10)};
         std::memcpy(_colors,palette,sizeof(_colors));
         if(black){_colors[background]=0;_colors[white]=32767;_colors[shadow]=4|(4<<5)|(4<<10);}
@@ -433,7 +468,7 @@ void text_canvas::reader_open(int top,int height,bool full,bool black)
     _map_tiles=bn::regular_bg_tiles_ptr::allocate(full ? 896 : 448,bn::bpp_mode::BPP_4,true);
     auto palette=bn::bg_palette_ptr::create(bn::bg_palette_item(
         bn::span<const bn::color>(reinterpret_cast<const bn::color*>(_colors),16),bn::bpp_mode::BPP_4));
-    _map_bg=bn::regular_bg_ptr::create(0,0,bn::regular_bg_map_ptr::create(
+    _map_bg=bn::regular_bg_ptr::create(0,0,video_upload::map(
         bn::regular_bg_map_item(full ? credits_cells[0] : reader_cells[0],bn::size(32,32)),*_map_tiles,palette));
     _map_tile_vram=_map_tiles->vram()->data();
     _map_bg->set_priority(0);_map_bg->set_visible(false);if(_bg)_bg->set_priority(1);
@@ -498,7 +533,7 @@ void text_canvas::reader_show()
 {bn::rect_window::internal().set_visible(true);_map_bg->set_visible(true);}
 void text_canvas::execution_screen()
 {
-    release();bn::core::update();_execution_ui=_graphical=true;_choice_ui=false;_palette_colors=16;
+    release();video_upload::reclaim();_execution_ui=_graphical=true;_choice_ui=false;_palette_colors=16;
     allocate();auto palette=_bg->palette();palette.set_colors(bn::span<const bn::color>(reinterpret_cast<const bn::color*>(execution_colors),16));
     std::memset(_dirty,0,sizeof(_dirty));_dirty_count=0;
     const auto* source=execution_base+8;
@@ -577,7 +612,7 @@ void text_canvas::map_page(const uint16_t* palette,int first,int count,bool stor
 {
     if(!first)
     {
-        release();bn::core::update();_choice_ui=_trial_canvas=false;_graphical=story;
+        release();video_upload::reclaim();_choice_ui=_trial_canvas=false;_graphical=story;
         _map_tiles=bn::regular_bg_tiles_ptr::allocate(map_tile_capacity,bn::bpp_mode::BPP_4);
         auto colors=bn::bg_palette_ptr::create(bn::bg_palette_item(
             bn::span<const bn::color>(reinterpret_cast<const bn::color*>(palette),16),bn::bpp_mode::BPP_4));
@@ -602,7 +637,11 @@ void text_canvas::map_position(int left,int top)
 }
 int text_canvas::map_cell_offset() const {return _map_bg->palette().id()<<12;}
 void text_canvas::map_upload(const uint8_t* pixels,int first,int count)
-{_map_data=pixels;_map_first=first;_map_bytes=count*32;}
+{
+    std::memcpy(video_upload::scenery+first,pixels,count*32);
+    _map_data=reinterpret_cast<const uint8_t*>(video_upload::scenery);_map_first=0;
+    _map_bytes=bn::max(_map_bytes,(first+count)*32);
+}
 void text_canvas::map_cells(const uint16_t* cells)
 {_map_cells_data=cells;_map_cells_pending=true;}
 void text_canvas::map_capture(int row,int count)
@@ -612,11 +651,11 @@ void text_canvas::map_capture(int row,int count)
         int first=bn::max(4,tx*8),last=bn::min(236,tx*8+8),index=y/8*30+tx;
         int sx=first-4+_map_left,sy=y-25+_map_top,tile_x=sx/8;
         int cell=tile_x/32*1024+(sy/8)*32+tile_x%32;
-        unsigned source=_map_tile_vram[_map_cell_vram[cell]&1023].data[sy%8]>>((sx%8)*4);
+        unsigned source=video_upload::scenery[_map_cells_data[cell]&1023].data[sy%8]>>((sx%8)*4);
         if(sx%8)
         {
             ++tile_x;cell=tile_x/32*1024+(sy/8)*32+tile_x%32;
-            source|=_map_tile_vram[_map_cell_vram[cell]&1023].data[sy%8]<<((8-sx%8)*4);
+            source|=video_upload::scenery[_map_cells_data[cell]&1023].data[sy%8]<<((8-sx%8)*4);
         }
         auto& target=canvas_tiles[index].data[y%8];
         unsigned occupied=(((target&0x77777777u)+0x77777777u)|target)&0x88888888u;
@@ -692,7 +731,7 @@ void text_canvas::trial_screen()
 {
     if(!_trial_canvas)
     {
-        release();bn::core::update();_graphical=_choice_ui=false;_trial_canvas=true;allocate();
+        release();video_upload::reclaim();_graphical=_choice_ui=false;_trial_canvas=true;allocate();
         for(int i=0;i<600;++i)dirty(i);
     }
     clear(false);
@@ -741,9 +780,10 @@ bool text_canvas::picture(const ui_picture& image,bool reload)
 {
     if(reload || _picture!=&image || !_choice_ui)
     {
+
         if(!_choice_ui || _palette_colors!=256)
         {
-            release();bn::core::update();_palette_colors=256;_choice_ui=true;_graphical=false;allocate();
+            release();video_upload::reclaim();_palette_colors=256;_choice_ui=true;_graphical=false;allocate();
         }
         _picture=&image;_picture_bytes=0;
         auto palette=_bg->palette();palette.set_colors(bn::span<const bn::color>(reinterpret_cast<const bn::color*>(image.palette),256));
@@ -757,7 +797,7 @@ bool text_canvas::save_page(const uint32_t* tiles,const uint16_t* palette)
     {
         if(!_save_tiles)
         {
-            if(_bg || _map_bg){release();return false;}
+            if(_bg || _map_bg){release();video_upload::reclaim();}
             _graphical=_choice_ui=false;_palette_colors=16;allocate();
         }
         _save_tiles=tiles;_save_bytes=0;_picture=nullptr;_picture_bytes=38400;
@@ -768,9 +808,10 @@ bool text_canvas::save_page(const uint32_t* tiles,const uint16_t* palette)
 }
 void text_canvas::prepare()
 {
+
     if(_save_tiles && _save_bytes<19200)
     {
-        int amount=bn::min(4096,19200-_save_bytes);
+        int amount=19200-_save_bytes;
         std::memcpy(reinterpret_cast<uint8_t*>(canvas_tiles)+_save_bytes,reinterpret_cast<const uint8_t*>(_save_tiles)+_save_bytes,amount);
         for(int tile=_save_bytes/32;tile<(_save_bytes+amount)/32;++tile)dirty(tile);
         _save_bytes+=amount;return;
@@ -809,7 +850,7 @@ void text_canvas::restore(int x,int y,int width,int height)
     }
 }
 #ifdef __arm__
-__attribute__((section(".iwram"),target("arm")))
+__attribute__((section(".ewram.ui_blit"),target("arm")))
 #endif
 void text_canvas::blit(int x,int y,int width,int height,const uint32_t* source)
 {
@@ -827,7 +868,7 @@ void text_canvas::blit(int x,int y,int width,int height,const uint32_t* source)
 
 void text_canvas::present()
 {
-    // Dirty tiles are uploaded by application during VBlank.
+    // Application stages updates while retaining the old display, then publishes them together.
 }
 
 void text_canvas::toast(int id)
@@ -873,7 +914,7 @@ void text_canvas::flat_screen(const uint16_t* palette)
 {
     if(!_choice_ui || !_bg || _palette_colors!=256)
     {
-        release();bn::core::update();
+        release();video_upload::reclaim();
         _palette_colors=256;_choice_ui=true;_graphical=false;allocate();
     }
     _picture=nullptr;_picture_bytes=38400;_decoration=nullptr;
@@ -911,7 +952,7 @@ void text_canvas::choice_screen()
     if(! _choice_ui || _palette_colors!=256)
     {
         release();
-        bn::core::update();
+        video_upload::reclaim();
         _palette_colors=256;_choice_ui=true;_graphical=false;allocate();
         for(int index=0;index<600;++index)dirty(index);
     }
@@ -961,11 +1002,12 @@ void text_canvas::choice_button(int y,const char* label,bool highlighted,bool ba
 void text_canvas::graphical(bool enabled)
 {
     if(enabled==_graphical && ! _choice_ui && !_execution_ui && _bg)return;
+
     _decoration=nullptr;
     _picture=nullptr;_picture_bytes=38400;
     _graphical=enabled;_choice_ui=_execution_ui=false;_trial_canvas=false;
     _bg.reset();_tiles.reset();
-    bn::core::update(); // Reclaim the previous fixed canvas tile allocation.
+    video_upload::reclaim(); // Reclaim bookkeeping without publishing a cleared canvas.
     allocate();
     for(int index=0;index<600;++index)dirty(index);
 }
@@ -974,6 +1016,7 @@ __attribute__((section(".iwram"),target("arm")))
 #endif
 int text_canvas::commit(int bytes)
 {
+    commit_sprites();
     if(_reader_active)
     {
         int budget=bytes,used=0;
@@ -983,7 +1026,7 @@ int text_canvas::commit(int bytes)
             if(!(_reader_dirty&(1u<<row))){++row;continue;}
             int count=1;
             while(row+count<rows && (_reader_dirty&(1u<<(row+count))) && budget>=(count+1)*28*32)++count;
-            bn::memory::copy(reader_pixels(_reader_full)[row*28],count*28,_map_tile_vram[row*28]);
+            video_upload::upload(reader_pixels(_reader_full)[row*28],count*28,_map_tile_vram[row*28]);
             _reader_dirty&=~(((1u<<count)-1)<<row);used+=count*28*32;budget-=count*28*32;row+=count;
         }
         bytes-=used;
@@ -991,12 +1034,12 @@ int text_canvas::commit(int bytes)
     if(_map_bytes)
     {
         int count=bn::min(bytes,_map_bytes)/32;
-        bn::memory::copy(*reinterpret_cast<const uint32_t*>(_map_data),count*8,_map_tile_vram[_map_first].data[0]);
+        video_upload::upload(*reinterpret_cast<const uint32_t*>(_map_data),count*8,_map_tile_vram[_map_first].data[0]);
         _map_data+=count*32;_map_first+=count;_map_bytes-=count*32;bytes-=count*32;
     }
     if(_map_cells_pending && !_map_bytes && bytes>=4096)
     {
-        bn::memory::copy(*_map_cells_data,2048,*_map_cell_vram);_map_cells_pending=false;bytes-=4096;
+        video_upload::upload(*_map_cells_data,2048,*_map_cell_vram);_map_cells_pending=false;bytes-=4096;
     }
     if(_map_hold_ui)return bytes;
     if(_map_atomic_ui){bytes=19200;_map_atomic_ui=false;}
@@ -1019,14 +1062,14 @@ int text_canvas::commit(int bytes)
                 unsigned value=source[row],occupied=(((value&0x77777777u)+0x77777777u)|value)&0x88888888u;
                 tile.data[row]=(canvas_tiles[index].data[row]&~((occupied>>3)*15))|value;
             }
-            bn::memory::copy(tile,1,vram[physical]);
+            video_upload::upload(video_upload::stable_tile(tile),1,vram[physical]);
             _dirty[index++]=false;--_dirty_count;bytes-=32;continue;
         }
         int count=1,limit=bn::min(bytes/tile_bytes,600-index);
         while(count<limit && _dirty[index+count] &&
               (!_toast || toast_index(index+count)<0) &&
               (!_graphical || (_execution_ui ? execution_index(index+count) : compact_index(index+count))==physical+count))++count;
-        bn::memory::copy(canvas_tiles[index*units],count*units,vram[physical]);
+        video_upload::upload(canvas_tiles[index*units],count*units,vram[physical]);
         for(int i=0;i<count;++i)_dirty[index+i]=false;
         _dirty_count-=count;bytes-=count*tile_bytes;index+=count;
     }
@@ -1116,6 +1159,8 @@ void text_canvas::name_label(const label_art* art, uint16_t color)
     for(int y=0;y<4;++y)
     {
         int index=(11+y)*30+1;
+        // Compose the base in RAM before overlaying the letters. Deferring this
+        // copy until VRAM publication would erase the freshly painted name.
         bn::memory::copy(nameplate_diamond[y*96],96,canvas_tiles[index].data[0]);
         for(int x=0;x<12;++x)dirty(index+x);
     }

@@ -19,10 +19,10 @@ static void finish(save_store& store)
 int main()
 {
     constexpr unsigned signature=0x12345678;
-    alignas(4) uint8_t page[save_page_size];flash.fill(255);
+    alignas(4) uint8_t page[save_buffer_size];flash.fill(255);
     save_store store;assert(store.mount(signature));
     save_metadata meta{};meta.script=37;std::strcpy(meta.summary,"checkpoint");
-    for(int slot=0;slot<15;++slot)
+    for(int slot=0;slot<=save_global_slot;++slot)
     {
         std::memset(page+save_payload_offset,slot+1,512);
         assert(store.begin_write(slot,page,400,112,meta));finish(store);
@@ -49,21 +49,49 @@ int main()
     flash=original;assert(store.mount(signature));
     for(int round=0;round<40;++round)
     {
-        std::memset(page+save_payload_offset,round,600);assert(store.begin_write(round%14,page,500,100,meta));finish(store);
+        std::memset(page+save_payload_offset,round,600);assert(store.begin_write(round%save_global_slot,page,500,100,meta));finish(store);
     }
     save_store incompatible;assert(incompatible.mount(signature+1));assert(incompatible.status(0)==save_slot_status::incompatible);
     assert(!incompatible.begin_read(0,page));
     assert(incompatible.status(save_global_slot)==save_slot_status::valid);
     assert(incompatible.begin_read(save_global_slot,page));finish(incompatible);
-    assert(page[save_payload_offset]==15); // Global collection survives story-signature changes.
+    assert(page[save_payload_offset]==save_global_slot+1); // Global collection survives story-signature changes.
     // A committed payload with later bit damage is rejected before application.
     assert(store.begin_read(0,page));finish(store);
-    for(unsigned i=0;i<15;++i)
+    for(unsigned i=0;i<30;++i)
     {
-        unsigned addr=i*8192;if(flash[addr+22]==0 && flash[addr+63]==0xa5)flash[addr+256]^=1;
+        unsigned addr=i*4096;if(flash[addr+22]==0 && flash[addr+63]==0xa5)flash[addr+256]^=1;
     }
     assert(store.mount(signature));assert(store.begin_read(0,page));
     for(int n=0;n<10000 && store.busy();++n)store.step();
     assert(store.failed() && store.status(0)==save_slot_status::corrupt);
+
+    // Old 8KiB pages occupy both sectors until a new 4KiB record commits.
+    flash.fill(255);
+    struct old_header {uint32_t magic,sequence,signature,crc;uint16_t version,length,seed;uint8_t slot,flags;uint32_t header_crc;uint8_t reserved[35],commit;};
+    static_assert(sizeof(old_header)==64);
+    auto legacy=[&](unsigned sector,int slot,unsigned size,uint8_t value)
+    {
+        auto* target=flash.data()+sector*4096;std::memcpy(target+64,&meta,sizeof(meta));std::memset(target+256,value,size);
+        old_header h{};h.magic=0x56534e4d;h.sequence=sector+1;h.signature=signature;h.version=3;h.length=uint16_t(size);h.slot=uint8_t(slot);h.commit=0xa5;
+        h.crc=save_crc32(target+64,192+size);h.header_crc=save_crc32(&h,24);std::memcpy(target,&h,sizeof(h));
+    };
+    legacy(0,2,5000,0x44);legacy(2,12,400,0x55);legacy(4,13,300,0x66);legacy(30,14,120,0x77);
+    save_store old;assert(old.mount(signature));assert(old.status(12)==save_slot_status::empty);
+    assert(old.begin_read(2,page));finish(old);assert(old.version()==3 && old.length()==5000);
+    for(int i=0;i<5000;++i)assert(page[256+i]==0x44);
+    for(int slot:{save_auto_slot,save_retry_slot,save_global_slot}){assert(old.begin_read(slot,page));finish(old);assert(old.version()==3);}
+    auto old_image=flash;
+    std::memset(page+256,0x35,1254);operations=0;assert(old.begin_write(2,page,1254,0,meta));finish(old);unsigned migrate_cuts=operations;
+    for(unsigned cut=0;cut<=migrate_cuts;++cut)
+    {
+        flash=old_image;save_store w;assert(w.mount(signature));std::memset(page+256,0x35,1254);operations=0;assert(w.begin_write(2,page,1254,0,meta));
+        for(int guard=0;guard<100000 && w.busy() && operations<cut;++guard)w.step();
+        save_store reboot;assert(reboot.mount(signature));assert(reboot.begin_read(2,page));finish(reboot);
+        assert((reboot.version()==3 && reboot.length()==5000) || (reboot.version()==5 && reboot.length()==1254));
+        uint8_t expected=reboot.version()==3 ? 0x44 : 0x35;for(unsigned i=0;i<reboot.length();++i)assert(page[256+i]==expected);
+        assert(reboot.status(save_auto_slot)==save_slot_status::valid && reboot.status(save_retry_slot)==save_slot_status::valid);
+    }
+    std::printf("PASS: 27 manual + auto/retry, one-sector v5, legacy auto/retry mapping and %u legacy migration power cuts\n",migrate_cuts+1);
     std::printf("PASS: 128KiB banks, all slots/globals, %u power-cut prefixes, page reuse, compatibility and CRC damage\n",cuts);
 }

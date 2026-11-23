@@ -26,8 +26,11 @@ class text_canvas;
 class image_scene
 {
 public:
+    void protect() const;
     int visible_background(int plane) const;
     void archive(save_archive& data);
+    void checkpoint(save_archive& data,int bank,int frame,bool double_buffer);
+    void settle(){_player.settle();}
     void set_bank(int bank,bool double_buffer=true);
     void request(int frame) { _frame=frame; }
     void invalidate() {}
@@ -53,7 +56,7 @@ private:
         bn::optional<bn::sprite_affine_mat_ptr> matrix;
         uint64_t material=~uint64_t(0);
         uint32_t clip_key=0,viewport_key=0,display_key=0;
-        int published_parts=0,scratch_first=0,scratch_offset=0;
+        int published_parts=0;
         int image=-1,phase=-1,cursor=0,decoded=0;
         int allocating=0,part_cursor=0;
         bool silhouette_shared=false;
@@ -91,7 +94,7 @@ private:
     bn::fixed _panel_y=-1024,_panel_x=-1024;
     bn::optional<bn::blending_transparency_attributes_hbe_ptr> _alpha_hbe;
     int _last_alpha=-1;bool _last_printer=false;
-    int _frame=-1,_bank_id=-1,_allocate_delay=1,_allocation_budget=4,_decode_budget=64,_scratch_used=0;
+    int _frame=-1,_bank_id=-1,_allocate_delay=1,_allocation_budget=4,_decode_budget=64;
     bool _visible=false,_ready=false,_loading=false,_prepared=false;
     bool _dim=false,_double_buffer=true;
     void allocate();

@@ -11,6 +11,7 @@ struct graphics_profile
     uint32_t core_ticks,max_core_ticks,max_vblank_ticks;
     uint32_t ui_ticks,update_ticks;
     uint32_t loading,clock;
+    uint32_t upload_pending;
 };
 #ifdef __cplusplus
 extern graphics_profile graphics_performance;

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Unlock the CG gallery and music room in a Manosaba Flash128K .sav.
+"""Unlock the CG gallery and music room in a Manosaba Flash128K or SRAM .sav.
 
 Uses only Python's standard library. Writes a new file; never edits the input.
 """
@@ -18,57 +18,79 @@ MUSIC_OFFSET, MUSIC_SIZE = 112, 8
 HEADER = struct.Struct('<4sIIIHHHBBI')
 
 
-def checksums(data, offset):
+def checksums(data, offset, payload=PAYLOAD):
     length, seed = struct.unpack_from('<HH', data, offset + 18)
-    crc = zlib.crc32(data[offset + 64:offset + PAYLOAD + length + seed])
+    crc = zlib.crc32(data[offset + 64:offset + payload + length + seed])
     struct.pack_into('<I', data, offset + 12, crc)
     struct.pack_into('<I', data, offset + 24, zlib.crc32(data[offset:offset + 24]))
 
 
 def unlock(source):
-    if len(source) < FLASH_SIZE:
-        raise ValueError('需要至少 128 KiB 的 Flash128K 存档，不能使用 64 KiB 存档或即时存档。')
+    if len(source) < 32768:
+        raise ValueError('需要本游戏的 Flash 或 SRAM 存档，不能使用即时存档。')
+    def valid_header(at):
+        return (len(source) >= at+64 and source[at:at+4] == b'MNSV'
+                and source[at+63] == 0xa5
+                and struct.unpack_from('<I', source, at+24)[0] == zlib.crc32(source[at:at+24]))
+    # Page zero is shared by both layouts; it cannot identify padded SRAM.
+    flash_global = any(valid_header(at) and
+                       (struct.unpack_from('<H', source, at+16)[0], source[at+22]) in ((3, 14), (5, 29))
+                       for at in GLOBAL_PAGES)
+    sram_pages = (3072, 6144, 9216, 15360, 18432, 21504, 27648, 29184, 32256, 32512)
+    def sram_header(at):
+        expected = 10 if at >= 32256 else -1 if at == 29184 else 9 if at == 27648 else at//3072
+        return (valid_header(at) and struct.unpack_from('<H', source, at+16)[0] == 5
+                and (source[at+22] < 10 if expected < 0 else source[at+22] == expected))
+    sram = len(source) == 32768 or (not flash_global and any(map(sram_header, sram_pages)))
+    global_pages = (32256, 32512) if sram else GLOBAL_PAGES
+    page_size, payload, expected_slot, expected_version = (256, 64, 10, 5) if sram else (PAGE_SIZE, PAYLOAD, 29, 5)
+    if not sram and len(source) < FLASH_SIZE:
+        raise ValueError('需要本游戏的 128 KiB Flash 或 32 KiB SRAM 存档，不能使用即时存档。')
     pages = []
-    for offset in GLOBAL_PAGES:
-        page = source[offset:offset + PAGE_SIZE]
-        if page == b'\xff' * PAGE_SIZE or page[63] != 0xa5:
+    for offset in global_pages:
+        page = source[offset:offset + page_size]
+        if page == b'\xff' * page_size or page[63] != 0xa5:
             continue
         magic, _, _, crc, version, length, seed, slot, _, header_crc = HEADER.unpack_from(page)
-        if magic != b'MNSV' or slot != 14:
+        if magic != b'MNSV' or slot != (expected_slot if sram or version != 3 else 14):
             raise ValueError('不是本游戏的全局存档记录。')
-        if version != 3 or length != GLOBAL_SIZE or seed:
-            raise ValueError('仅支持当前版本的全局存档格式（版本 3，120 字节）。')
-        if header_crc != zlib.crc32(page[:24]) or crc != zlib.crc32(page[64:PAYLOAD + length]):
+        if version not in ((5,) if sram else (3, 5)) or length != GLOBAL_SIZE or seed:
+            raise ValueError('仅支持当前版本的 120 字节全局存档格式。')
+        if header_crc != zlib.crc32(page[:24]) or crc != zlib.crc32(page[64:payload + length]):
             raise ValueError('全局存档校验失败，未生成修改文件。')
         pages.append(offset)
 
     result = bytearray(source)
     if not pages:
         # A fresh save has not written either global journal page yet.
-        if source[GLOBAL_PAGES[0]:FLASH_SIZE] != b'\xff' * (2 * PAGE_SIZE):
+        if source[global_pages[0]:global_pages[0]+2*page_size] != b'\xff' * (2 * page_size):
             raise ValueError('未找到已提交的全局记录，请先在游戏中存档或修改一次设置。')
-        if source[:GLOBAL_PAGES[0]] != b'\xff' * GLOBAL_PAGES[0]:
+        if source[:global_pages[0]] != b'\xff' * global_pages[0]:
+            story_pages = (*range(0, 27648, 3072), 27648, 29184) if sram else range(0, GLOBAL_PAGES[0], 4096)
             recognized = any(
                 source[at:at + 4] == b'MNSV' and source[at + 63] == 0xa5
                 and struct.unpack_from('<I', source, at + 24)[0] == zlib.crc32(source[at:at + 24])
-                for at in range(0, GLOBAL_PAGES[0], 8192)
+                for at in story_pages
             )
             if not recognized:
                 raise ValueError('未找到本游戏的存档记录。')
-        offset = GLOBAL_PAGES[0]
-        HEADER.pack_into(result, offset, b'MNSV', 1, 0, 0, 3, GLOBAL_SIZE, 0, 14, 0, 0)
+            expected_version = next(struct.unpack_from('<H', source, at + 16)[0] for at in story_pages
+                                    if source[at:at + 4] == b'MNSV' and source[at + 63] == 0xa5)
+        if not sram and expected_version == 3:expected_slot = 14
+        offset = global_pages[0]
+        HEADER.pack_into(result, offset, b'MNSV', 1, 0, 0, expected_version, GLOBAL_SIZE, 0, expected_slot, 0, 0)
         result[offset + 63] = 0xa5
-        result[offset + 64:offset + PAYLOAD + GLOBAL_SIZE] = bytes(192 + GLOBAL_SIZE)
-        struct.pack_into('<H', result, offset + 64 + 10, 65535)
-        struct.pack_into('<H', result, offset + PAYLOAD, 1024)
+        result[offset + 64:offset + payload + GLOBAL_SIZE] = bytes(payload - 64 + GLOBAL_SIZE)
+        if not sram:struct.pack_into('<H', result, offset + 64 + 10, 65535)
+        struct.pack_into('<H', result, offset + payload, 1024)
         pages.append(offset)
 
     for offset in pages:
-        base = offset + PAYLOAD
+        base = offset + payload
         for bit in range(GALLERY_COUNT):
             result[base + GALLERY_OFFSET + bit // 8] |= 1 << (bit % 8)
         result[base + MUSIC_OFFSET:base + MUSIC_OFFSET + MUSIC_SIZE] = b'\xff' * MUSIC_SIZE
-        checksums(result, offset)
+        checksums(result, offset, payload)
     return bytes(result)
 
 

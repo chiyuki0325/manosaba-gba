@@ -14,6 +14,7 @@ public:
     void close();
     void repaint();
     bool active() const {return _open;}
+    bool painting() const {return dirty() && !_reader.moving();}
     bool dirty() const {return _paint!=604;}
     bool update();
     void draw(text_canvas& canvas);

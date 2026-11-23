@@ -1,3 +1,4 @@
+#include "video_upload.h"
 #include "trial_scene.h"
 #include "trial_data.h"
 #include "bn_regular_bg_map_ptr.h"
@@ -9,6 +10,9 @@
 #include "court_heat.h"
 #include <cstring>
 namespace manosaba {
+void trial_scene::protect() const
+{if(_bg)video_upload::protect(*_bg);}
+
 namespace {
 BN_DATA_EWRAM_BSS bn::regular_bg_map_cell trial_cells[1024];
 alignas(4) BN_DATA_EWRAM_BSS uint16_t heat_rows[2][160];

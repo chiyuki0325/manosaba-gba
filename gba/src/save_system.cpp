@@ -1,9 +1,12 @@
+#include "video_upload.h"
 #include "save_system.h"
 #include "reenact_data.h"
 #include "story_scene.h"
 #include "save_ui_data.h"
 #include "save_rtc.h"
 #include "save_archive.h"
+#include "save_checkpoint.h"
+#include "save_legacy.h"
 #include "save_runtime.h"
 #include "sfx_ui.h"
 #include "sfx_player.h"
@@ -21,6 +24,7 @@
 extern "C" {BN_DATA_EWRAM_BSS save_runtime_profile save_runtime={};}
 namespace manosaba {
 namespace {
+BN_DATA_EWRAM_BSS uint32_t thumbnail_pixels[2][256];
 void copy(char* out,int size,const bn::string_view& text)
 {int length=bn::min(size-1,text.size());std::memcpy(out,text.data(),unsigned(length));out[length]=0;}
 bn::string<12> digits(unsigned value)
@@ -48,7 +52,7 @@ struct work_timer {uint32_t& result;unsigned begin=unsigned(bn::core::current_cp
 void save_system::init(){save_runtime.view=~0u;_store.mount(save_content_signature);}
 bool save_system::buffer()
 {
-    if(!_buffer)_buffer=static_cast<uint8_t*>(bn::memory::ewram_alloc(save_page_size));
+    if(!_buffer)_buffer=static_cast<uint8_t*>(bn::memory::ewram_alloc(save_buffer_size));
     return _buffer!=nullptr;
 }
 void save_system::free_buffer()
@@ -65,6 +69,8 @@ bool save_system::has_saves() const
     for(int slot=0;slot<=save_auto_slot;++slot)if(_store.metadata(slot,info))return true;
     return false;
 }
+bool save_system::retry_choice() const
+{return _seed_size && _seed_script>=0 && !story_scripts[_seed_script].mode;}
 void save_system::setting(int index,int value)
 {
     if(index==0)_global.settings=uint8_t((_global.settings&~3)|value);
@@ -84,21 +90,45 @@ void save_system::open_pause(bool failure)
 {_load_only=false;_failure=failure;_view=2;_pause=failure && !retry_available() ? 1 : 0;_paint=0;_confirm=0;_preview_row=-1;_preview_line=0;_advance.reset();}
 void save_system::list(bool header)
 {
-    int total=_view==1 ? 13 : 12;_first=_selected[_view]<total-1 ? _selected[_view] : total-2;
+    int total=save_manual_slots+int(_view==1);_first=_selected[_view]<total-1 ? _selected[_view] : total-2;
     _paint=header ? 1 : 2;_confirm=0;_preview_row=-1;_preview_line=_row_line=_line_offset=0;_header_restored=false;_advance.reset();
 }
 void save_system::mark(const char* message)
 {_message=message;_notice=90;_paint=5;}
 bool save_system::write(story_scene& scene,int slot,operation kind)
 {
+    if(_store.needs_compaction(slot))
+    {if(compact(slot,kind))return true;mark("保存失败");return false;}
     if(!buffer()){mark("内存不足");return false;}
-    unsigned begin=unsigned(bn::core::current_cpu_ticks());int size=scene.snapshot(_buffer+save_payload_offset,save_state_limit);
+    unsigned begin=unsigned(bn::core::current_cpu_ticks());
+    int limit=bn::min(save_state_limit,save_page_size-save_payload_offset-int(_seed_size));
+    int size=scene.snapshot(_buffer+save_payload_offset,limit);
     save_runtime.snapshot_work=unsigned(bn::core::current_cpu_ticks())-begin;
     if(size<0){mark("无法保存当前状态");return false;}
     if(_seed_size)std::memcpy(_buffer+save_payload_offset+size,_seed,_seed_size);
     auto metadata=scene.save_info();metadata.timestamp=save_rtc_now();
     if(!_store.begin_write(slot,_buffer,unsigned(size),_seed_size,metadata)){mark("存储不可用");return false;}
     _operation=kind;_last_progress=-1;return true;
+}
+bool save_system::compact(int slot,operation kind)
+{
+    int victim=_store.legacy_slot();
+    if(victim<0 || !buffer() || !_store.begin_read(victim,_buffer))return false;
+    _pending_slot=slot;_pending_operation=kind;_compact_slot=victim;_operation=compact_read;return true;
+}
+bool save_system::convert_loaded_record(unsigned& length,unsigned& seed)
+{
+#if !MANOSABA_SAVE_SRAM
+    unsigned bytes=save_checkpoint_bytes*(seed ? 2u : 1u);
+    auto* converted=static_cast<uint8_t*>(bn::memory::ewram_alloc(int(bytes)));
+    if(!converted)return false;
+    bool good=convert_legacy_save(_buffer+save_payload_offset,int(length),converted);
+    if(good && seed)good=convert_legacy_save(_buffer+save_payload_offset+length,int(seed),converted+save_checkpoint_bytes);
+    if(good){std::memcpy(_buffer+save_payload_offset,converted,bytes);length=save_checkpoint_bytes;seed=seed ? save_checkpoint_bytes : 0;}
+    bn::memory::ewram_free(converted);return good;
+#else
+    (void)length;(void)seed;return false;
+#endif
 }
 void save_system::unlock_gallery_asset(int asset)
 {
@@ -117,9 +147,13 @@ void save_system::unlock_music(uint32_t key)
     if(bit<0 || music_unlocked(bit))return;
     _global.music[bit/8]|=uint8_t(1u<<(bit%8));_global_dirty=true;++_music_revision;
 }
+void save_system::observe(story_scene& scene,bool ready)
+{
+    save_runtime={unsigned(_view),unsigned(ready ? _paint : 0),unsigned(_view<2 && _view>=0 ? _selected[_view] : _pause),unsigned(_first),unsigned(_confirm),unsigned(_confirm_choice),unsigned(_operation),unsigned(_store.busy() || _operation!=none),_store.progress(),unsigned(_store.available()),_seed_size,unsigned(scene.script()),0,0,save_runtime.draw_work,save_runtime.thumb_work,save_runtime.snapshot_work,unsigned(_row_line)};
+}
 void save_system::tick(story_scene& scene,bool gameplay)
 {
-    save_runtime={unsigned(_view),unsigned(_paint),unsigned(_view<2 && _view>=0 ? _selected[_view] : _pause),unsigned(_first),unsigned(_confirm),unsigned(_confirm_choice),unsigned(_operation),unsigned(_store.busy()),_store.progress(),unsigned(_store.available()),_seed_size,unsigned(scene.script()),0,0,save_runtime.draw_work,save_runtime.thumb_work,save_runtime.snapshot_work,unsigned(_row_line)};
+    observe(scene,true);
     if(_notice && !--_notice){_message="";if(active() && _paint==6)_paint=5;}
     if(!_global_checked)
     {
@@ -141,6 +175,30 @@ void save_system::tick(story_scene& scene,bool gameplay)
     {
         if(_operation==load_record){_load_ready=true;return;}
         bool failed=_store.failed();
+        if(_operation==compact_read || _operation==compact_write)
+        {
+            if(_operation==compact_read && !failed)
+            {
+                unsigned length=_store.length(),seed=_store.seed_length();save_metadata metadata{};
+                failed=(_compact_slot!=save_retry_slot && !_store.metadata(_compact_slot,metadata)) || !convert_loaded_record(length,seed);
+                metadata.legacy_frames=0;
+                if(!failed && _store.begin_write(_compact_slot,_buffer,length,seed,metadata))
+                {_operation=compact_write;return;}
+                failed=true;
+            }
+            operation pending=_pending_operation;int slot=_pending_slot;
+            _operation=_pending_operation=none;_pending_slot=_compact_slot=-1;
+            if(failed){mark("保存失败");return;}
+            if(pending==retry_write)
+            {
+                std::memcpy(_buffer+save_payload_offset,_seed,_seed_size);
+                if(_store.begin_write(slot,_buffer,_seed_size,0,scene.save_info()))
+                {_operation=retry_write;_seed_dirty=false;}
+                else mark("保存失败");
+            }
+            else write(scene,slot,pending);
+            return;
+        }
         if(_operation==global_read && !failed && (_store.length()==92 || _store.length()==112 || _store.length()==sizeof(_global)))
         {
             // The first 92 bytes retain the pre-gallery global format.
@@ -163,6 +221,8 @@ void save_system::tick(story_scene& scene,bool gameplay)
     }
     else if(gameplay && _seed_dirty && buffer())
     {
+        if(_store.needs_compaction(save_retry_slot))
+        {if(!compact(save_retry_slot,retry_write))mark("保存失败");return;}
         std::memcpy(_buffer+save_payload_offset,_seed,_seed_size);save_metadata metadata=scene.save_info();
         if(_store.begin_write(save_retry_slot,_buffer,_seed_size,0,metadata)){_operation=retry_write;_seed_dirty=false;}
     }
@@ -187,19 +247,24 @@ save_ui_result save_system::update(story_scene& scene,bool ready)
     if(_load_ready)
     {
         _load_ready=false;_operation=none;
-        if(_store.failed() || !scene.restore_snapshot(_buffer+save_payload_offset,int(_store.length())))
+        unsigned length=_store.length(),seed=_store.seed_length();
+        bool good=!_store.failed();
+#if !MANOSABA_SAVE_SRAM
+        if(good && _store.version()==3)good=convert_loaded_record(length,seed);
+#endif
+        if(!good || (seed && seed!=save_checkpoint_bytes) || !scene.restore_snapshot(_buffer+save_payload_offset,int(length)))
         {mark("记录损坏");_confirm=0;list(true);return save_ui_result::none;}
-        _seed_size=_store.seed_length();
+        _seed_size=seed;
+        if(seed)std::memcpy(_seed,_buffer+save_payload_offset+length,seed);
         if(_seed_size)
         {
-            std::memcpy(_seed,_buffer+save_payload_offset+_store.length(),_seed_size);
-            save_archive reader(_seed,int(_seed_size),true);unsigned kind=0;reader.field(kind);reader.field(_seed_script);reader.field(_seed_pc);_seed_dirty=true;
+            save_archive reader(_seed,int(_seed_size),true);uint8_t flags=0;reader.fixed(flags);reader.fixed(_seed_script);reader.fixed(_seed_pc);_seed_dirty=true;
         }
         else {_seed_script=-1;_seed_pc=0;}
         play_ui_sound(ui_sound::load);_auto_script=scene.script();close();return save_ui_result::loaded;
     }
-    bool locked=_store.busy() && (_view<2 || _operation==manual_write || _operation==load_record);
-    bool action=_advance.update(bn::keypad::a_held(),ready && _paint==6 && _preview_row<0 && !locked);
+    bool locked=(_store.busy() || _operation!=none) && (_view<2 || _operation==manual_write || _operation==load_record);
+    bool action=_advance.update(bn::keypad::a_held(),ready && _paint==6 && _preview_row<0 && !locked,1+bn::core::last_missed_frames());
     if(locked)return save_ui_result::none;
     if(bn::keypad::l_pressed() || bn::keypad::r_pressed())play_ui_sound(ui_sound::tab);
     else if(bn::keypad::up_pressed() || bn::keypad::down_pressed() || bn::keypad::left_pressed() || bn::keypad::right_pressed())play_ui_sound(ui_sound::move);
@@ -236,7 +301,7 @@ save_ui_result save_system::update(story_scene& scene,bool ready)
             {
                 _view=_failure || _pause==2 ? 1 : 0;
                 if(!_view && !_remembered)
-                {for(int i=0;i<12;++i)if(_store.status(i)==save_slot_status::empty){_selected[0]=i;break;}_remembered=true;}
+                {for(int i=0;i<save_manual_slots;++i)if(_store.status(i)==save_slot_status::empty){_selected[0]=i;break;}_remembered=true;}
                 list(true);_paint=0;
             }
         }
@@ -246,7 +311,7 @@ save_ui_result save_system::update(story_scene& scene,bool ready)
     if(bn::keypad::b_pressed())
     {for(int i=0;i<2;++i){_thumbs[i].reset();_thumb_tiles[i].reset();_thumb_palettes[i].reset();}_view=2;_paint=0;_preview_row=-1;_preview_line=0;_advance.reset();return save_ui_result::none;}
     if(!_load_only && !_failure && (bn::keypad::l_pressed() || bn::keypad::r_pressed())){_view^=1;list(true);}
-    int total=_view==1 ? 13 : 12;
+    int total=save_manual_slots+int(_view==1);
     if(bn::keypad::up_pressed()){_selected[_view]=(_selected[_view]+total-1)%total;list();}
     if(bn::keypad::down_pressed()){_selected[_view]=(_selected[_view]+1)%total;list();}
     if(action)
@@ -400,7 +465,8 @@ void save_system::thumbnail(text_canvas&,int row,const save_metadata& meta)
     auto shape=bn::sprite_shape_size(64,32);
     _thumb_palettes[row]=bn::sprite_palette_ptr::create_new(bn::sprite_palette_item(bn::span<const bn::color>(reinterpret_cast<const bn::color*>(palette),16),bn::bpp_mode::BPP_4));
     _thumb_tiles[row]=bn::sprite_tiles_ptr::allocate(32,bn::bpp_mode::BPP_4);
-    std::memcpy(_thumb_tiles[row]->vram()->data(),pixels,1024);
+    std::memcpy(thumbnail_pixels[row],pixels,1024);
+    video_upload::copy(thumbnail_pixels[row],_thumb_tiles[row]->vram()->data(),1024);
     _thumbs[row]=bn::sprite_ptr::create(-71,34+row*54+20+16-80,shape,*_thumb_tiles[row],*_thumb_palettes[row]);
     _thumbs[row]->set_bg_priority(0);_preview_row=-1;_preview_line=0;
 }
@@ -408,8 +474,9 @@ void save_system::draw(text_canvas& canvas,story_scene& scene)
 {
     work_timer timer{save_runtime.draw_work};
     if(_view<0)return;
+    save_runtime.paint=0;
     // The mixer has already run. Defer this small UI step on its heavier frames.
-    if(bn::core::current_cpu_ticks()>1800)return;
+    if(!video_upload::finishing && bn::core::current_cpu_ticks()>1800)return;
     if(_store.busy() && _view<2)
     {
         if(_paint==5){canvas.rectangle(0,144,240,16,text_canvas::background);char text[32];copy(text,sizeof(text),bn::format<48>("{} {}%",_operation==load_record ? "读取中" : "保存中",_store.progress()));canvas.text(78,145,text,text_canvas::muted,238,159);_paint=6;}
@@ -475,7 +542,7 @@ void save_system::draw(text_canvas& canvas,story_scene& scene)
     else if(_paint==2 || _paint==3){if(row(canvas,_paint-2))++_paint;return;}
     if(_paint==4)
     {
-        int total=_view==1 ? 13 : 12,selected=_selected[_view];canvas.restore(232,32,8,112);
+        int total=save_manual_slots+int(_view==1),selected=_selected[_view];canvas.restore(232,32,8,112);
         canvas.rectangle(234,35,1,99,ink(10));int height=198/total;canvas.rectangle(234,35+(99-height)*selected/(total-1),2,height,text_canvas::muted);_paint=5;
     }
     if(_paint==5)
@@ -486,7 +553,7 @@ void save_system::draw(text_canvas& canvas,story_scene& scene)
         else
         {
             canvas.text(8,145,"\ue003选择",text_canvas::muted,63,159);key(canvas,63,144,0,_view ? "读取" : "存入");key(canvas,131,144,1,"返回");
-            char count[16];copy(count,sizeof(count),bn::format<16>("{}/{}",_selected[_view]+1,_view ? 13 : 12));canvas.text(199,145,count,text_canvas::muted,239,159);
+            char count[16];copy(count,sizeof(count),bn::format<16>("{}/{}",_selected[_view]+1,save_manual_slots+int(_view==1)));canvas.text(199,145,count,text_canvas::muted,239,159);
         }
         _paint=6;
     }

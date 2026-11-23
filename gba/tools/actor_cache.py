@@ -2,6 +2,7 @@
 import collections
 import hashlib
 import json
+import math
 from pathlib import Path
 import struct
 import subprocess
@@ -11,7 +12,7 @@ from graphics_project import GBA, canonical, digest, write_changed
 from actor_repack_study import rectangles
 from obj_parts import split_tall_parts
 
-BUDGET=128*1024
+BUDGET=160*1024
 ENTITY=struct.Struct('<12i4hB3x')
 
 
@@ -61,16 +62,17 @@ def candidate_states(assets,work):
             mask=next(((i,m) for i,m in reversed(list(enumerate(states[13:],13)))
                        if e[16] and m[12]>=0 and m[4]>0 and div(m[14]+1,20)==div(e[14],20)),None)
             scale=div(e[2]*cam[2],256);angle=(e[3]+cam[3]+180*256)%(360*256)-180*256
-            if (scale==256 and angle==0)or not(128<=scale<=512)or not(-32768<=angle<=32767):continue
+            if (scale==256 and angle==0)or not(128<=scale<=1024)or not(-32768<=angle<=32767):continue
             pairs.add((scale,angle));rows.append((base,scale,angle,e,cam,mask))
     matrices=geometry(pairs,work);counts=collections.Counter();positions={};viewports={}
     for base,scale,angle,e,cam,mask in rows:
         cc,ss,*_=matrices[cam[2],cam[3]]
         dx=e[0]-120*256-cam[0];dy=e[1]-80*256-cam[1]
         cx=120*256+div((dx*cc-dy*ss)*cam[2],4096*256);cy=80*256+div((dx*ss+dy*cc)*cam[2],4096*256)
-        signature=coverage_key(cx,cy,scale,angle) if mask else 0
+        cropped=mask or scale>512
+        signature=coverage_key(cx,cy,scale,angle) if cropped else 0
         viewport=None
-        if mask:
+        if cropped:
             # Keep all pixels that can enter the viewport within this position
             # cell, including while a live mask is still fading in.
             x=(cx>>11)*8;y=(cy>>13)*32
@@ -163,6 +165,30 @@ def cached_entry_angles(program,ids,cached):
         for target,(index,angle) in angles.items():
             angle=(angle+180*256)%(360*256)-180*256
             if (images[target],scales.get(target,256),angle) in safe:result.add(index)
+    return result
+
+
+def large_tilt_fallbacks(program,assets,ids,cached):
+    """Keep one-shot portrait zoom/turns within the 2x OBJ output box."""
+    result={};safe={(v['base'],v['scale'],v['angle'])for v in cached if v['clipped']}
+    for begin,count,_ in program['events']:
+        transforms=collections.defaultdict(dict);images={}
+        for index in range(begin,begin+count):
+            value,first,n,kind,target,prop,flags=program['commands'][index]
+            if kind==0 and target<3:images[target]=program['resources'][value]
+            if kind==1 and target<3 and prop in (2,3) and n==1 and not(flags&127):
+                key=program['keys'][first]
+                if not key[3]:transforms[target][prop]=(index,key)
+        for target,props in transforms.items():
+            if target not in images or 2 not in props or 3 not in props:continue
+            scale,turn=props[2],props[3]
+            size=scale[1][0];angle=(turn[1][0]+180*256)%(360*256)-180*256;image=images[target]
+            if size<=256 or not angle or (size<=512 and (ids[image],size,angle) in safe):continue
+            c=abs(math.cos(math.radians(angle/256)))*size;s=abs(math.sin(math.radians(angle/256)))*size
+            if any(c*p['width']+s*p['height']>512*p['width'] or s*p['width']+c*p['height']>512*p['height']
+                   for p in assets[image].get('parts',[])):
+                if size>512:result[scale[0]]=(512,*scale[1][1:])
+                result[turn[0]]=(0,0,turn[1][2],0)
     return result
 
 

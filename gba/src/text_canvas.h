@@ -6,6 +6,7 @@
 #include "bn_optional.h"
 #include "story_layout.h"
 #include "ui_picture.h"
+#include "video_upload.h"
 #include "label_art.h"
 
 namespace manosaba
@@ -16,6 +17,7 @@ struct story_text_style;
 class text_canvas
 {
 public:
+    void protect() const;
     enum ink { background, white, muted, accent, selection, warning, shadow, dark };
     struct cursor { int x, y; };
 
@@ -59,7 +61,7 @@ public:
     void map_upload(const uint8_t* pixels,int first,int count);
     void map_cells(const uint16_t* cells);
     int map_cell_offset() const;
-    bool map_pending() const {return _map_bytes || _map_cells_pending;}
+    bool map_pending() const {return !video_upload::finishing && (_map_bytes || _map_cells_pending);}
     void map_capture(int row,int count);
     void map_hold_ui(bool held) {_map_hold_ui=held;}
     void map_reveal(bool atomic=true);
@@ -83,7 +85,7 @@ public:
     void choice_button(int y,const char* label,bool highlighted,bool bad,int height=40);
     int commit(int bytes);
     const uint16_t* bitmap_colors() const { return _colors; }
-    bool ready() const { return _dirty_count == 0 && _picture_bytes==38400 && (!_save_tiles || _save_bytes==19200) && !map_pending() && !_map_hold_ui && !_map_atomic_ui && !_reader_dirty; }
+    bool ready() const { return (video_upload::finishing || _dirty_count == 0) && _picture_bytes==38400 && (!_save_tiles || _save_bytes==19200) && !map_pending() && !_map_hold_ui && (video_upload::finishing || (!_map_atomic_ui && !_reader_dirty)); }
 
 private:
     bn::optional<bn::regular_bg_tiles_ptr> _tiles;

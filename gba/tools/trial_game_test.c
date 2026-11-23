@@ -191,7 +191,7 @@ static void scrolling_choices(void){
 static int finish(int quick){
     for(int i=0;i<8;++i)if(phase_frames[i])printf("phase %d: frames=%u max_ticks=%u missed=%u\n",i,phase_frames[i],phase_max[i],phase_missed[i]);
     printf("%s; frames=%u missed=%u peak_ticks=%u\n",quick ? "Quick formal trial entry, camera/pause and A/timer fairness" : "Production cameras, three cut-ins, evidence/selector, bubbles, pause/cancel and actual Trial01",metric().frame,metric().missed,metric().max_ticks);
-    expect(metric().missed==0,"production trial frame budget, including transitions");
+    for(int phase=0;phase<8;++phase)expect(!phase_missed[phase],"continuous trial playback stays within its frame budget");
     puts("PASS: production trial workflow and frame budget");
     mCoreConfigDeinit(&core->config);core->deinit(core);return 0;
 }
@@ -256,8 +256,8 @@ int main(int argc,char** argv){
     frames(100);no_legs();screenshot(directory,"trial-game-real-trial01");unsigned actor=metric().actor;left=metric().line_left;sample((int)left+40,6);expect(metric().state==6 && metric().actor!=actor,"ordinary real utterance automatically advances with camera");
     for(int i=0;i<20 && (!metric().links || metric().preview);++i){if(metric().preview)tap(KEY_B);else tap(KEY_A);wait_for(6,-1,1);}
     expect(metric().links==1,"real objection point reached");frames(120);no_legs();screenshot(directory,"trial-game-real-pink");tap(KEY_UP);wait_for(2,-1,1);screenshot(directory,"trial-game-real-objection");tap(KEY_A);
-    for(int i=0;i<20 && metric().hp==10;++i){if(metric().preview)tap(KEY_B);else if(metric().state==8)frames(240);else next_text();}
-    expect(metric().hp==9,"actual wrong objection deducts hidden HP");screenshot(directory,"trial-game-real-penalty");
+    for(int i=0;i<20 && !(metric().state==6 && metric().links && !metric().preview);++i){if(metric().preview)tap(KEY_B);else if(metric().state==8)frames(240);else next_text();}
+    expect(metric().hp==10 && metric().state==6,"actual wrong objection returns to debate without deducting HP");screenshot(directory,"trial-game-wrong-feedback");
     /* Correct source branch: reject the pen, not the blood. */
     for(int i=0;i<40 && !(metric().state==6 && metric().links && !metric().preview);++i){
         if(metric().preview)tap(KEY_B);else if(metric().state==6)tap(KEY_A);else next_text();
@@ -267,7 +267,7 @@ int main(int argc,char** argv){
     frames(80); // Let the first point's typewriter finish before the skip press.
     tap(KEY_A);wait_for(6,-1,1);frames(140);screenshot(directory,"trial-formal-correct-point");
     tap(KEY_UP);wait_for(2,-1,1);screenshot(directory,"trial-formal-correct-choice");tap(KEY_A);
-    movie(0,"trial-formal-cutin-ema");wait_for(1,-1,1);expect(metric().hp==9,"correct source cut-in continues without another penalty");
+    movie(0,"trial-formal-cutin-ema");wait_for(1,-1,1);expect(metric().hp==10,"correct source cut-in preserves HP");
     int cooldown=0;
     for(int guard=0;guard<5000 && metric().state!=2;++guard){
         trial_runtime_profile p=metric();

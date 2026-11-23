@@ -17,15 +17,16 @@
 
 ## A：原资产到 GBA 资产
 
-只有改原作素材、剧本或转换规则时才运行这一阶段。将游戏安装放在 `original_game/`，初始化 `manosaba-web` 子模块取得当前 UI 源图。Python 环境由 uv 管理：
+只有改原作素材、剧本或转换规则时才运行这一阶段。将游戏安装放在 `original_game/`，另行取得 `manosaba-web` 的当前 UI 源图。Python 环境由 uv 管理：
 
 ```sh
 uv sync --project python_workspace
 uv sync --project sfx
-git submodule update --init manosaba-web
+git clone https://github.com/Lianues/manosaba-web manosaba-web
+git -C manosaba-web checkout da31228ac5531e85afa298e58f4a49224074c289
 ```
 
-`manosaba-web` 作为固定提交的 Git 子模块保留，本次使用 `da31228ac5531e85afa298e58f4a49224074c289`。原作提取器和拼合代码保留在 `python_workspace/`、`character_composition_demo/compose.py`；提取器只读取 `python_workspace/command_metadata.json` 中实际用到的命令别名、参数类型和默认值。完整IL2CPP转储仅留本机，不进入仓库；更新命令定义的方法见[提取工作区说明](../python_workspace/README.md)。
+`manosaba-web` 是按需下载的外部输入，不随发布仓库携带；当前固定提交为 `da31228ac5531e85afa298e58f4a49224074c289`。原作提取器和拼合代码保留在 `python_workspace/`、`character_composition_demo/compose.py`；提取器只读取 `python_workspace/command_metadata.json` 中实际用到的命令别名、参数类型和默认值。完整IL2CPP转储仅留本机，不进入仓库；更新命令定义的方法见[提取工作区说明](../python_workspace/README.md)。
 
 原版或译文发生变化时，按需要执行提取（不要无故覆盖已校订剧本）：
 
@@ -80,6 +81,15 @@ make -C gba release -j12
 
 `release` 使用 `DEBUG_MENU=0`，输出 `gba/manosaba-release.gba/.elf`；开发版直接 `make -C gba -j12`。两者分别使用 `build-release/` 和 `build-butano/`，不会复用不同配置的音频数组。`make clean` 只清编译产物，保留准备好的 GBA 资产。构建完成检查真实 ROM 以及图像、音频预留预算。
 
+存档后端可用 `SAVE_BACKEND=flash`（默认）或 `SAVE_BACKEND=sram`。例如：
+
+```sh
+make -C gba release SAVE_BACKEND=sram -j12
+make -C gba SAVE_BACKEND=sram -j12
+```
+
+输出分别为`manosaba-release-sram.gba/.elf`和`manosaba-sram.gba/.elf`，使用独立的`build-sram-release/`、`build-sram/`目录。SRAM版为32 KiB、8手动槽；Flash版为128 KiB、27手动槽。存档不可直接混用，Flash旧／新档与SRAM档可用[单文件离线网页](../gba/tools/save-converter.html)双向转换。两版都保留自动档、重试、设置和收集。
+
 普通 `make` 不自动进入 A 阶段。更新剧本或原图后明确执行 `prepare-assets`，避免发布构建偷偷依赖本机的原作或历史报告。
 
 ## 音乐是外部输入
@@ -97,3 +107,5 @@ mmutil 统一打包并去重音乐与音效采样，不能并发运行多个共�
 
 `gba/build*/`、`__pycache__/`、各 Python 虚拟环境、试听和测试输出都可重建。`assets/graphics-cache/` 可删，但会让下次 A 阶段重做图像处理。已淘汰的原型、交接文档及历史输出先隔离，经过资产重生成、独立目录编译和测试验证后统一删除。
 
+
+存档转换所需的地图锚点、幕布目标与脚本模式，由 `save_converter_assets.py` 从已准备的 `story_data.cpp`、`save_ui_data.cpp`、`sfx_data.cpp`生成C++小表并内嵌到HTML；不读取研究报告或ROM。`prepare-code`等待剧本等生成完毕后再生成存档资产，避免并行读到上一版字节码。

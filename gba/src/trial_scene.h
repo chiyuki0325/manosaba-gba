@@ -8,6 +8,7 @@ namespace manosaba {
 class trial_scene
 {
 public:
+    void protect() const;
     void init();
     void reset();
     bool release();

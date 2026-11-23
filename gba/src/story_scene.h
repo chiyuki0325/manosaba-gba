@@ -9,6 +9,7 @@
 #include "dialogue_history_view.h"
 #include "save_system.h"
 #include "music_player.h"
+#include "sfx_player.h"
 #include "credits_player.h"
 #include "execution_player.h"
 namespace manosaba
@@ -17,6 +18,7 @@ class text_canvas;
 class story_scene
 {
 public:
+    void protect() const {_images.protect();_trial.protect();}
     story_scene();
     void reset();
     void start_trial();
@@ -27,6 +29,8 @@ public:
     void settings_closed(){_saves.settings_closed();_dialogue.reset();}
     bool update(bool display_ready = true);
     void draw(text_canvas& canvas);
+    bool painting() const;
+    void published(bool ready);
     void background_io(){_saves.pump();}
     void persistent_tick(){_saves.tick(*this,false);_saves.pump();}
     const save_system& progress() const {return _saves;}
@@ -60,7 +64,7 @@ private:
     advance_button _advance;
     save_system _saves;
     music_checkpoint _saved_music;
-    uint32_t _play_frames=0;
+    sfx_checkpoint _saved_sfx;
     bool _settings_requested=false;
     bool _restoring=false,_restore_canvas=false;
     int _active_stage = -1;

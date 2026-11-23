@@ -1,3 +1,4 @@
+#include "video_upload.h"
 #include "witch_book.h"
 #include "save_archive.h"
 #include "witch_book_runtime.h"
@@ -14,7 +15,7 @@ extern "C" {BN_DATA_EWRAM_BSS witch_book_profile witch_book_runtime={};}
 namespace manosaba {
 namespace {
 BN_DATA_EWRAM_BSS uint8_t book_shared[book_shared_size];
-alignas(4) BN_DATA_EWRAM_BSS uint8_t book_pixels[216*120];
+auto& book_pixels=video_upload::book_pixels;
 alignas(4) BN_DATA_EWRAM_BSS uint8_t book_block[4096];
 constexpr int preview_bytes=76*76,photo_offset=preview_bytes*3;
 int shared_offset=0;
@@ -40,8 +41,12 @@ void witch_book::archive(save_archive& a)
 {
     int mode=_mode,scroll=_scroll;
     a.field(_open);a.field(_forced);a.field(_map);a.field(_tab);a.field(mode);a.field(scroll);
-    for(auto& i:_selected)a.field(i);
-    for(auto& i:_first)a.field(i);
+    // Rules scroll as one document: their old list slots were always zero.
+    // Reuse those slots for Notes without moving any subsequent save fields.
+    for(int i=0;i<3;++i)a.field(_selected[i]);
+    a.field(_selected[4]);
+    for(int i=0;i<3;++i)a.field(_first[i]);
+    a.field(_first[4]);
     if(a.reading() && _open)
     {
         list();_mode=mode;_scroll=scroll;_reader_started=false;_reader.reset();
@@ -53,12 +58,13 @@ void witch_book::observe(bool paused,bool ready) const
 {
     unsigned frames=witch_book_runtime.frames+1,missed=witch_book_runtime.missed+unsigned(bn::core::last_missed_frames());
     witch_book_runtime={unsigned(_open),unsigned(_mode),unsigned(_tab),unsigned(count()),unsigned(selected()),
-        unsigned(_tab==3 ? _scroll : _first[_tab]),unsigned(_image_offset<38400 || shared_offset<book_shared_size),unsigned(_open && !dirty() && ready),
+        unsigned(_tab==3 || (_tab==4 && _mode==1) ? _scroll : _first[_tab]),unsigned(_image_offset<38400 || shared_offset<book_shared_size),unsigned(_open && !dirty() && ready),
         unsigned(paused),unsigned(_vm.script()),unsigned(_vm.state()),_vm.statement_left(),_vm.trial_left(),_vm.camera_frame(),unsigned(_tab==2 ? _maps.paint() : _paint),frames,missed,
         _maps.floor(),_maps.area(),_maps.left(),_maps.top(),unsigned(count() ? source() : 0)};
 }
 void witch_book::list()
 {
+    if(video_upload::book_cache_dirty){invalidate_images();video_upload::book_cache_dirty=false;}
     _count=0;
     if(_tab==2)
     {invalidate_images();_image=nullptr;_image_offset=38400;_width=_height=0;_maps.open(_forced,_map);_mode=0;_advance.reset();return;}
@@ -91,6 +97,11 @@ void witch_book::list()
 void witch_book::window()
 {
     if(!_count){_first[_tab]=0;return;}
+    if(_tab==4)
+    {
+        _first[4]=bn::clamp(_first[4],bn::max(0,_selected[4]-5),_selected[4]);
+        _first[4]=bn::min(_first[4],bn::max(0,_count-6));return;
+    }
     int heights[book_entry_count/2],count=(_count+1)/2;
     for(int i=0;i<count;++i)heights[i]=16;
     int first=bn::min(_first[_tab]/2,bn::max(0,count-2));
@@ -129,7 +140,7 @@ void witch_book::request_image()
     _cache_pending=-1;_image=nullptr;_image_offset=38400;_width=_height=0;
     std::memset(_colors,0,sizeof(_colors));std::memcpy(_colors,book_page_palette,64);
     book_theme(_colors,hiro_book_theme(_vm));
-    int index=entry();if(index<0 || _mode==1 || _tab==3)return;
+    int index=entry();if(index<0 || _mode==1 || _tab>=3)return;
     int x=0,y=0,w=0,h=0;
     const auto& item=book_entries[index];
     if(item.kind==0)
@@ -239,22 +250,22 @@ void witch_book::invalidate_images()
     for(auto& preview:_previews)preview=nullptr;
     _photo_tab=-1;_large=nullptr;_cache_pending=-1;
 }
-void witch_book::patch(int paint){_partial_list=paint==620;_heading_done=false;_paint=paint;_line=_stamp_row=0;_advance.reset();}
+void witch_book::patch(int paint){_partial_list=paint==620 || (_tab==4 && paint==604);_heading_done=false;_paint=paint;_line=_stamp_row=0;_advance.reset();}
 void witch_book::repaint()
 {
     _text_total=_tab==3 ? rule_rows() : 0;
-    if(_tab<2 && _mode==1){const auto* text=content();_text_total=text ? rows(text->detail) : 1;}
+    if((_tab<2 || _tab==4) && _mode==1){const auto* text=content();_text_total=text ? rows(text->detail) : 1;}
     _reader_started=false;_reader.reset();_partial_list=false;_heading_done=false;
     _paint=_line=_stamp_row=0;if(_tab==2)_maps.repaint();_advance.reset();
 }
 book_result witch_book::update(bool ready)
 {
-    bool action=_advance.update(bn::keypad::a_held(),ready && !dirty());
+    bool action=_advance.update(bn::keypad::a_held(),ready && !dirty(),1+bn::core::last_missed_frames());
     if(bn::keypad::select_pressed() && !_forced)return book_result::close;
     if(_tab==2)
     {
         if(!_mode && !_forced && (bn::keypad::l_pressed() || bn::keypad::r_pressed()))
-        {_tab=(_tab+(bn::keypad::r_pressed() ? 1 : 3))%4;list();return book_result::none;}
+        {_tab=(_tab+(bn::keypad::r_pressed() ? 1 : 4))%5;list();return book_result::none;}
         int result=_maps.update(action,ready);_mode=_maps.mode();
         return result<0 ? book_result::close : result ? book_result::submit : book_result::none;
     }
@@ -262,7 +273,7 @@ book_result witch_book::update(bool ready)
     {
         if(bn::keypad::b_pressed())return book_result::close;
         if(bn::keypad::l_pressed() || bn::keypad::r_pressed())
-        {_tab=(_tab+(bn::keypad::r_pressed() ? 1 : 3))%4;list();return book_result::none;}
+        {_tab=(_tab+(bn::keypad::r_pressed() ? 1 : 4))%5;list();return book_result::none;}
         scroll_input();
         return book_result::none;
     }
@@ -274,20 +285,21 @@ book_result witch_book::update(bool ready)
     if(!_mode)
     {
         if(!_forced && (bn::keypad::l_pressed() || bn::keypad::r_pressed()))
-        {_tab=(_tab+(bn::keypad::r_pressed() ? 1 : 3))%4;list();return book_result::none;}
+        {_tab=(_tab+(bn::keypad::r_pressed() ? 1 : 4))%5;list();return book_result::none;}
         int previous=_selected[_tab];
         if(_count)
         {
             int next=previous;
-            if(bn::keypad::left_pressed())--next;
-            else if(bn::keypad::right_pressed())++next;
-            else if(bn::keypad::up_pressed())next-=2;
-            else if(bn::keypad::down_pressed())next+=2;
+            if(bn::keypad::left_pressed())next-=_tab==4 ? 6 : 1;
+            else if(bn::keypad::right_pressed())next+=_tab==4 ? 6 : 1;
+            else if(bn::keypad::up_pressed())next-=_tab==4 ? 1 : 2;
+            else if(bn::keypad::down_pressed())next+=_tab==4 ? 1 : 2;
+            if(_tab==4 && (bn::keypad::left_pressed() || bn::keypad::right_pressed()))next=bn::clamp(next,0,_count-1);
             next=(next+_count)%_count;
             if(next!=previous)
             {
                 _selected[_tab]=next;
-                window();request_image();patch(_tab==3 || _photo_tab==_tab ? 620 : 0);
+                window();request_image();patch(_tab==4 ? 604 : _photo_tab==_tab ? 620 : 0);
             }
             if(action && previous==next){_mode=1;_scroll=0;request_image();repaint();}
         }
@@ -320,10 +332,10 @@ void witch_book::reader_line(text_canvas& canvas,int row)
 void witch_book::footer_count(text_canvas& canvas)
 {
     canvas.rectangle(184,144,52,16,text_canvas::dark);
-    if(_tab==3)
+    if(_tab==3 || _tab==4)
     {
-        int total=rule_rows();auto position=bn::to_string<20>(total ? _scroll+1 : 0);
-        position+="-";position+=bn::to_string<8>(bn::min(_scroll+8,total));
+        int total=_tab==3 ? rule_rows() : _text_total;auto position=bn::to_string<20>(total ? _scroll+1 : 0);
+        position+="-";position+=bn::to_string<8>(bn::min(_scroll+(_tab==3 ? 8 : 7),total));
         position+="/";position+=bn::to_string<8>(total);
         canvas.text(238-position.size()*6,145,position.c_str(),text_canvas::muted,239,158);
     }
@@ -356,20 +368,20 @@ void witch_book::initial(text_canvas& canvas,int x,int y,const char*& value,text
 }
 void witch_book::tabs(text_canvas& canvas,int first)
 {
-    static constexpr const char* labels[]={"证物","人物","地图","规定"};
-    for(int i=first;i<first+2;++i)
+    static constexpr const char* labels[]={"证物","人物","地图","规定","记录"};
+    for(int i=first;i<(first ? 5 : 2);++i)
     {
-        int x=23+i*49,top=i==_tab ? 1 : 5;
-        canvas.rectangle(x+3,top,41,1,text_canvas::warning);
+        int x=23+i*39,top=i==_tab ? 1 : 5;
+        canvas.rectangle(x+3,top,31,1,text_canvas::warning);
         for(int y=top+1;y<23;++y)
         {
             int inset=bn::max(0,top+3-y);
-            canvas.rectangle(x+inset,y,47-inset*2,1,text_canvas::warning);
-            if(y<22)canvas.rectangle(x+inset+1,y,45-inset*2,1,text_canvas::ink(i==_tab ? 9 : 11));
+            canvas.rectangle(x+inset,y,37-inset*2,1,text_canvas::warning);
+            if(y<22)canvas.rectangle(x+inset+1,y,35-inset*2,1,text_canvas::ink(i==_tab ? 9 : 11));
         }
         const char* label=labels[i];
-        if(i==_tab){initial(canvas,x+8,4,label,text_canvas::accent);canvas.text(x+25,7,label);}
-        else canvas.text(x+11,8,label,_forced ? text_canvas::warning : text_canvas::muted);
+        if(i==_tab){initial(canvas,x+4,4,label,text_canvas::accent);canvas.text(x+21,7,label);}
+        else canvas.text(x+7,8,label,_forced ? text_canvas::warning : text_canvas::muted);
     }
     if(!_mode && !_forced && first==2){key(canvas,1,8,2);key(canvas,221,8,3);}
 }
@@ -392,6 +404,13 @@ void witch_book::heading(text_canvas& canvas)
 }
 void witch_book::footer(text_canvas& canvas,int part)
 {
+    if(_tab==4 && !_mode)
+    {
+        canvas.rectangle(4,144,232,16,text_canvas::dark);
+        canvas.text(8,145,"\ue003选择 \ue004翻页",text_canvas::muted);
+        auto count=bn::to_string<12>(_count ? _selected[4]+1 : 0);count+="/";count+=bn::to_string<8>(_count);
+        canvas.text(238-count.size()*6,145,count.c_str(),text_canvas::muted,239,158);return;
+    }
     if(_tab==3)
     {
         if(part)return;
@@ -439,6 +458,18 @@ void witch_book::footer(text_canvas& canvas,int part)
     auto count=bn::to_string<12>(_count ? _selected[_tab]+1 : 0);count+="/";count+=bn::to_string<8>(_count);
     canvas.text(238-count.size()*6,113,count.c_str(),text_canvas::muted,239,126);
 }
+void witch_book::note_row(text_canvas& canvas,int row)
+{
+    int y=32+row*18,index=_first[4]+row;
+    bool selected=index<_count && index==_selected[4];
+    if(_partial_list && !selected)canvas.book_restore(book_shared,8,y,224,18);
+    if(index>=_count)
+    {if(!_count && !row)canvas.text(12,y+2,"暂无条目",text_canvas::muted);return;}
+    if(selected)canvas.rectangle(10,y,220,17,text_canvas::selection);
+    int entry_index=_entries[index];const auto& item=book_entries[entry_index];
+    canvas.text(24,y+2,book_texts[item.first+_vm.book_version(entry_index)-1].name,text_canvas::white,228,y+15);
+    if(selected)canvas.text(12,y+2,">",text_canvas::accent);
+}
 int witch_book::work_cost() const
 {
     if(shared_offset<book_shared_size)return 1400;
@@ -451,6 +482,7 @@ int witch_book::work_cost() const
         if(paint==615 || paint==616 || paint==618 || paint==620)return 2200;
         return 1000;
     }
+    if(_tab==4 && !_mode && _paint>=604 && _paint<610)return 2600;
     if(_paint==600 || _paint==601)return _mode==2 ? 0 : 2200;
     if(_paint==603)
     {
@@ -560,6 +592,12 @@ void witch_book::draw_step(text_canvas& canvas)
             _stamp_row+=count;return;
         }
         _paint=604;return;
+    }
+    if(_tab==4 && !_mode && _paint>=604 && _paint<=610)
+    {
+        if(_paint<610)note_row(canvas,_paint-604);
+        else footer(canvas,0);
+        ++_paint;return;
     }
     if(_paint==604){if(!_heading_done)heading(canvas);_paint=605;return;}
     if(_paint<610 && _paint>=605)

@@ -37,6 +37,11 @@ public:
         for(auto& value:_target)a.field(value);
         if(a.reading()){for(int i=0;i<4;++i)_current[i]=_from[i]=_target[i];_duration=_left=0;}
     }
+    void checkpoint(save_archive& a)
+    {
+        for(auto& value:_target)a.fixed(value);
+        if(a.reading()){for(int i=0;i<4;++i)_current[i]=_from[i]=_target[i];_duration=_left=0;}
+    }
 private:
     uint16_t _current[4]={31,31,31,0},_from[4]={31,31,31,0},_target[4]={31,31,31,0};
     uint16_t _duration=0,_left=0;

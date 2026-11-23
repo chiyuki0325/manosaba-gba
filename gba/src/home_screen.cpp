@@ -36,7 +36,7 @@ home_action home_screen::update(text_canvas& canvas,save_system& saves)
  if(!_page && ready && _music && _fade){--_fade;bn::bg_palettes::set_fade_intensity(bn::fixed(_fade)/32);}
  ready=ready && !_fade && saves.settings_ready();
  home_runtime.page=unsigned(_page);home_runtime.selected=unsigned(_selected);home_runtime.ready=ready;home_runtime.hiro=_hiro;home_runtime.fade=unsigned(_fade);home_runtime.speed=unsigned(saves.dialogue_speed());home_runtime.music=unsigned(saves.music_level());home_runtime.sound=unsigned(saves.sound_level());home_runtime.hints=saves.branch_hints();home_runtime.breaks=saves.original_line_breaks();
- bool action=_advance.update(bn::keypad::a_held(),ready);
+ bool action=_advance.update(bn::keypad::a_held(),ready,1+bn::core::last_missed_frames());
  if(!ready)return home_action::none;
  if(!_page)return action ? home_action::start : home_action::none;
  if(bn::keypad::b_pressed())return home_action::back;
@@ -74,7 +74,7 @@ void home_screen::draw(text_canvas& canvas,const save_system& saves)
  {
   bool reload=_paint<0;_paint=0;
   bool loaded=canvas.picture(_page ? home_menus[_page-1] : home_titles[_hiro],reload);canvas.visible(false);
-  if(loaded){_paint=_page ?1:2;if(_page==2)canvas.text(108,5,"选项");}return;
+  if(loaded){canvas.visible(true);_shown=true;_paint=_page ?1:2;if(_page==2)canvas.text(108,5,"选项");}return;
  }
  if(!_page)return;
  for(int row=0;row<5;++row)if(_dirty&(1<<row))

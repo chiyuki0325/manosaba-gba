@@ -32,9 +32,10 @@ public:
     void open_pause(bool failure=false);
     void close();
     bool active() const {return _view>=0;}
-    bool busy() const {return _store.busy();}
+    bool busy() const {return _store.busy() || _operation!=none;}
     bool retry_available() const {return _seed_size!=0;}
-    bool retry_choice() const {return _seed_size && _seed[0]==2;}
+    bool retry_choice() const;
+    void observe(story_scene& scene,bool ready);
     void tick(story_scene& scene,bool gameplay=true);
     bool gallery_unlocked(int index) const {return _global.gallery[index/8]&(1u<<(index%8));}
     void unlock_gallery_asset(int asset);
@@ -45,6 +46,7 @@ public:
     void pump();
     save_ui_result update(story_scene& scene,bool ready);
     void draw(text_canvas& canvas,story_scene& scene);
+    bool painting() const {return dirty() && (_view>=2 || !busy());}
     bool dirty() const {return _paint<6 || _preview_row>=0;}
 private:
     save_store _store;
@@ -52,8 +54,10 @@ private:
     uint8_t _seed[save_seed_limit];
     unsigned _seed_size=0,_seed_pc=0;
     int _seed_script=-1,_auto_script=-1;
-    enum operation {none,manual_write,load_record,auto_write,retry_write,global_read,global_write};
+    enum operation {none,manual_write,load_record,auto_write,retry_write,global_read,global_write,compact_read,compact_write};
     operation _operation=none;
+    operation _pending_operation=none;
+    int _pending_slot=-1,_compact_slot=-1;
     struct global_data {uint16_t volume=1024;uint8_t settings=0,reserved=0;uint8_t scripts[64]={},endings[2]={},book[21]={},legacy_padding=0,gallery[gallery_flag_bytes]={},music[music_flag_bytes]={};} _global;
     static_assert(sizeof(global_data)==120);
     unsigned _gallery_revision=0,_music_revision=0;
@@ -79,6 +83,8 @@ private:
     int selected_slot() const {return _view==1 ? (_selected[1] ? _selected[1]-1 : save_auto_slot) : _selected[0];}
     void list(bool header=false);
     bool write(story_scene& scene,int slot,operation kind);
+    bool compact(int slot,operation kind);
+    bool convert_loaded_record(unsigned& length,unsigned& seed);
     void mark(const char* message);
     void key(text_canvas& canvas,int x,int y,int index,const char* label);
     void heading(text_canvas& canvas,story_scene& scene);

@@ -31,6 +31,9 @@ public:
     void bind_sfx(sfx_sink sink,void* context){_sfx_sink=sink;_sfx_context=context;}
     void start(int script);
     void archive(save_archive& data);
+    uint8_t checkpoint(save_archive& data,uint8_t flags=0);
+    void legacy_anchors();
+    unsigned source_position() const {return _source_pc;}
     void advance();
     void choose(int index);
     void object(int index);
@@ -99,6 +102,7 @@ public:
     bool simple_trial_text() const {return _printer_style!=0;}
     bool live() const {return _printer_style==2;}
     bool reenact() const {return _reenact;}
+    bool reenact_closed() const {return _reenact_closed;}
     int reenact_scene() const {return _reenact_scene;}
     int reenact_action() const {return _reenact_action;}
     int credits_act() const {return _credits_act;}
@@ -130,6 +134,7 @@ private:
     uint8_t _toast=0,_toast_left=0;
     story_option _options[story_max_options];
     uint32_t _pc = 0;
+    uint32_t _source_pc=0;
     story_history_entry _history[story_history_capacity];
     uint16_t _history_count=0;
     int _script = 0;
@@ -156,7 +161,7 @@ private:
     int _candidate_count=0,_chosen_item=0,_inventory_kind=0,_cutin_kind=0,_cutin_variant=0;
     bool _inventory_back=false,_return_valid=false,_restored=false,_witch_hiro=false;
     uint8_t _printer_style=0;
-    bool _reenact=false,_bad_end=false;
+    bool _reenact=false,_reenact_closed=true,_bad_end=false;
     int16_t _reenact_scene=-1;
     uint16_t _reenact_wait=0;
     uint8_t _reenact_action=0;
@@ -174,7 +179,7 @@ private:
     {
         char text[story_text_capacity];
         story_link links[3];
-        uint32_t pc,duration,left,camera_frame,camera_duration;
+        uint32_t pc,source_pc,duration,left,camera_frame,camera_duration;
         int script,speaker,link_count,actor,view,picture,camera;
         uint16_t poses[17];
         uint8_t trial_layout;
@@ -189,6 +194,8 @@ private:
     void jump(int script, uint32_t pc);
     void fail();
     void remember(uint16_t pc);
+    bool restore_payload(bool returning=false);
+    unsigned anchor_before(int script,unsigned end,bool* curtain=nullptr);
 };
 }
 #endif

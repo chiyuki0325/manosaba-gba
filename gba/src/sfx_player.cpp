@@ -127,18 +127,52 @@ bool foreground_active()
 }
 int current_cue(){init();int cue=-1;unsigned serial=0;for(auto& s:state.streams)if(s.cue>=0 && s.serial>=serial){serial=s.serial;cue=s.cue;}return cue;}
 void set_master_volume(int value){init();state.master=value;}
-void archive(save_archive& a)
+
+sfx_checkpoint checkpoint()
 {
-    init();if(a.reading())reset();
-    // Restore sustained sounds from the beginning; transient one-shots are omitted.
+    init();sfx_checkpoint result;int chosen[2]={-1,-1},count=0;
+    auto eligible=[](int id)
+    {const auto& s=state.streams[id];return s.cue>=0 && (s.loop || sfx_cues[s.cue].ambient) && !s.stopping && (s.fade_left ? s.fade_target : s.volume)>0;};
+    for(const auto& v:state.voices)if(v.stream>=0 && eligible(v.stream) && v.stream!=chosen[0] && count<2)chosen[count++]=v.stream;
+    while(count<2)
+    {
+        int best=-1;
+        for(int i=0;i<6;++i)if(i!=chosen[0] && i!=chosen[1] && eligible(i) &&
+            (best<0 || priority(i)>priority(best) || (priority(i)==priority(best) && state.streams[i].serial>state.streams[best].serial)))best=i;
+        if(best<0)break;
+        chosen[count++]=best;
+    }
+    for(int i=0;i<count;++i)
+    {const auto& s=state.streams[chosen[i]];result.sounds[i]={s.cue,s.fade_left ? s.fade_target : s.volume,s.loop};}
+    return result;
+}
+void restore(const sfx_checkpoint& saved)
+{
+    reset();for(const auto& s:saved.sounds)if(s.cue>=0)
+    {sfx_command c;c.cue=s.cue;c.volume=s.volume;c.loop=s.loop;execute(c);}
+}
+}
+namespace manosaba {
+void sfx_checkpoint::archive(save_archive& a)
+{for(auto& s:sounds){a.fixed(s.cue);a.fixed(s.volume);a.fixed(s.loop);if(a.reading() && s.cue>=sfx_cue_count)a.reject();}}
+void sfx_checkpoint::legacy_archive(save_archive& a)
+{
+    *this={};int count=0;
     for(int i=0;i<6;++i)
     {
-        auto& s=state.streams[i];int cue=(s.cue>=0 && (s.loop || sfx_cues[s.cue].ambient)) ? s.cue : -1;
-        a.field(cue);if(cue<0)continue;
-        int volume=s.volume;bool loop=s.loop;int fade_left=s.fade_left,target=s.fade_target;bool stopping=s.stopping;
-        a.field(volume);a.field(loop);a.field(fade_left);a.field(target);a.field(stopping);
-        if(a.reading())
-        {sfx_command c;c.cue=cue;c.volume=volume;c.loop=loop;execute(c);for(auto& restored:state.streams)if(restored.cue==cue)fade(restored,target,fade_left,stopping);}
+        int cue=-1;a.field(cue);if(cue<0)continue;
+        int volume=0,left=0,target=0;bool loop=false,stopping=false;
+        a.field(volume);a.field(loop);a.field(left);a.field(target);a.field(stopping);
+        if(cue>=sfx_cue_count){a.reject();return;}
+        int gain=left ? target : volume;if(stopping || gain<=0 || (!loop && !sfx_cues[cue].ambient))continue;
+        sound value{cue,gain,loop};
+        if(count<2)sounds[count++]=value;
+        else
+        {
+            auto rank=[](const sound& s){return sfx_cues[s.cue].ambient ? 0 : int(s.loop);};
+            int replace=rank(sounds[0])<rank(sounds[1]) ? 0 : 1;
+            if(rank(value)>=rank(sounds[replace]))sounds[replace]=value;
+        }
     }
 }
 }

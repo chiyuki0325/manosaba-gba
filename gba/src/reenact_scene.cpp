@@ -1,3 +1,4 @@
+#include "video_upload.h"
 #include "reenact_scene.h"
 #include "bn_regular_bg_map_item.h"
 #include "bn_regular_bg_map_ptr.h"
@@ -14,6 +15,9 @@
 #include "bn_blending.h"
 #include "bn_sprites.h"
 namespace manosaba {
+void reenact_scene::protect() const
+{if(_bg)video_upload::protect(*_bg);for(const auto& bg:_curtains)if(bg)video_upload::protect(*bg);}
+
 namespace {
 constexpr auto cells()
 {
@@ -99,7 +103,7 @@ bool reenact_scene::release()
     _background_tiles.reset();_curtain_tiles.reset();_background_palette.reset();_palette.reset();
     _pose=-1;_background=nullptr;_retiring=false;return true;
 }
-void reenact_scene::request(int scene,bool settled)
+void reenact_scene::request(int scene,bool settled,bool closed)
 {
     bool changed=scene!=_scene;
     bool rebuilding=!_bg;
@@ -112,7 +116,7 @@ void reenact_scene::request(int scene,bool settled)
     if(changed)
     {
         _sprites.clear();_tiles[0].clear();_tiles[1].clear();_scene=scene;_pose=-1;_target=0;_front=0;
-        _clock=settled ? reenact_assets[scene].duration : 0;_opening=settled ? 120 : 0;
+        _clock=settled ? reenact_assets[scene].duration : 0;_opening=settled && !closed ? 120 : 0;
         _transition=0;_fade_out=_retiring=false;_fade=0;_background=nullptr;
     }
     if(!_bg){allocate();_pose=-1;}

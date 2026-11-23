@@ -1,3 +1,4 @@
+#include "video_upload.h"
 #include "dialogue_history_view.h"
 #include "save_archive.h"
 #include "dialogue_history_runtime.h"
@@ -14,7 +15,7 @@ namespace manosaba
 void dialogue_history_view::archive(save_archive& a)
 {
     bool opened=_open;int scroll=_scroll;a.field(opened);a.field(scroll);
-    if(a.reading()){close();if(opened){open();_scroll=scroll;repaint();}}
+    if(a.reading()){close();if(opened){open();_scroll=bn::clamp(scroll,0,bn::max(0,_rows-8));repaint();}}
 }
 void dialogue_history_view::open()
 {

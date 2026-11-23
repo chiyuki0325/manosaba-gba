@@ -41,7 +41,7 @@ class advance_button
 {
 public:
     void reset();
-    bool update(bool held, bool ready);
+    bool update(bool held, bool ready,int frames=1);
 private:
     int _released = 0, _cooldown = 0;
     bool _held = false, _armed = false;

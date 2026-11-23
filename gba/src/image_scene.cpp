@@ -1,3 +1,4 @@
+#include "video_upload.h"
 #include "image_scene.h"
 #include "graphics_decode.h"
 #include "save_archive.h"
@@ -27,11 +28,15 @@
 #endif
 namespace manosaba
 {
-BN_DATA_EWRAM graphics_profile graphics_performance={0,0,0,0,-1,-1,0,0,0,0,0,0,0};
+void image_scene::protect() const
+{for(const auto& bg:_backgrounds){if(bg.regular)video_upload::protect(*bg.regular);if(bg.affine)video_upload::protect(*bg.affine);}
+    if(_panel_map){auto cells=_panel_map->vram().value();video_upload::protect(cells.data(),cells.size()*2);}
+    if(_panel_tiles){auto tiles=_panel_tiles->vram().value();video_upload::protect(tiles.data(),tiles.size()*32);}}
+
+BN_DATA_EWRAM graphics_profile graphics_performance={0,0,0,0,-1,-1,0,0,0,0,0,0,0,0};
 namespace
 {
-BN_DATA_EWRAM_BSS bn::tile actor_pixels[64];
-BN_DATA_EWRAM_BSS bn::tile bg_pixels[2][512];
+bn::tile* scenery_pixels(int plane){return video_upload::scenery+(plane ? 256 : 0);}
 auto& top_cells=graphic_map_cells;
 BN_DATA_EWRAM_BSS bn::regular_bg_map_cell lower_cells[1024];
 BN_DATA_EWRAM_BSS bn::color background_colors[240];
@@ -197,6 +202,14 @@ bool covers_screen(const stage_entity& entity,const stage_entity& camera,const g
     }
     return true;
 }
+// Scenery selection stays in ROM, outside the IWRAM preparation loop.
+__attribute__((noinline))
+bool single_cg_camera(const stage_player& player,int below,int above,int clip)
+{
+    if(clip<0 || !regular_graphic(below) || regular_graphic(above))return false;
+    const auto& mask=player.entity(clip);const auto& shape=graphic_assets[mask.image];
+    return !mask.get(stage_property::angle) && shape.width*mask.get(stage_property::scale)<240*256;
+}
 
 }
 void image_scene::archive(save_archive& a)
@@ -205,8 +218,14 @@ void image_scene::archive(save_archive& a)
     if(a.reading()){reset();set_bank(bank,_double_buffer);_frame=frame;}
     _player.archive(a);
 }
+void image_scene::checkpoint(save_archive& a,int bank,int frame,bool double_buffer)
+{
+    if(a.reading()){reset();set_bank(bank,double_buffer);_frame=frame;}
+    _player.checkpoint(a);
+}
 void image_scene::reset()
 {
+
     _dim=false;
     _selection_key=0;
     _alpha_hbe.reset();_last_alpha=-1;
@@ -234,6 +253,7 @@ void image_scene::set_visible(bool visible)
     if(visible){_loading=true;_ready=false;}
     else
     {
+
         _dim=false;
         _alpha_hbe.reset();_last_alpha=-1;
         bn::rect_window::internal().set_visible(false);bn::rect_window::external().set_visible(false);
@@ -308,7 +328,7 @@ void image_scene::allocate()
     lower.regular->set_priority(3);lower.regular->set_blending_bottom_enabled(true);lower.regular->set_visible(false);
     top.affine_tiles[0]=bn::affine_bg_tiles_ptr::allocate(512,false);
     top.affine_tiles[1]=_double_buffer ? bn::affine_bg_tiles_ptr::allocate(512,false) : *top.affine_tiles[0];
-    top.affine=bn::affine_bg_ptr::create(0,0,bn::affine_bg_map_ptr::create(
+    top.affine=bn::affine_bg_ptr::create(0,0,video_upload::map(
         bn::affine_bg_map_item(top_cells[0],bn::size(64,64)),*top.affine_tiles[0],*_palette));
     top.affine->set_priority(2);top.affine->set_blending_bottom_enabled(true);top.affine->set_visible(false);
     // BG-over-OBJ alpha can retain a character underneath the dialogue panel.
@@ -323,8 +343,8 @@ void image_scene::allocate()
         int row=(tile-1)*8+y;
         if(row>=16 || bayer[y%4][x%4]<row+1)panel_pixels[tile*64+y*8+x]=225;
     }
-    bn::memory::copy(panel_tiles_data[0],8,panel_vram[0]);
-    _panel_map=bn::regular_bg_map_ptr::create(bn::regular_bg_map_item(panel_cells[0],bn::size(32,32)),*_panel_tiles,*_palette);
+    video_upload::copy(panel_tiles_data,panel_vram.data(),256);
+    _panel_map=video_upload::map(bn::regular_bg_map_item(panel_cells[0],bn::size(32,32)),*_panel_tiles,*_palette);
     _panel_image=-2;_panel_priority=-1;_panel_y=_panel_x=-1024;
     bn::sprites::set_blending_bottom_enabled(true);
     bn::blending::set_transparency_alpha(bn::fixed(.625));
@@ -336,12 +356,12 @@ bool image_scene::background_backend(bool regular)
     if((regular && bg.regular) || (!regular && bg.affine))return true;
     if(bg.regular || bg.affine)
     {
+
         bg.clip_hbe.reset();bg.clip_key=0;bg.regular.reset();bg.affine.reset();
         bg.regular_tiles.reset();for(auto& tiles:bg.affine_tiles)tiles.reset();
         bg.image=bg.target=-1;bg.bytes=bg.cursor=bg.decoded=0;bg.publish=bg.map_pending=false;
         bg.window_x=bg.window_y=-1024;
-        // Butano reclaims released tile/map blocks at the next core update.
-        return false;
+        video_upload::reclaim();
     }
     if(regular)
     {
@@ -353,7 +373,7 @@ bool image_scene::background_backend(bool regular)
     {
         bg.affine_tiles[0]=bn::affine_bg_tiles_ptr::allocate(512,false);
         bg.affine_tiles[1]=_double_buffer ? bn::affine_bg_tiles_ptr::allocate(512,false) : *bg.affine_tiles[0];bg.front=0;
-        bg.affine=bn::affine_bg_ptr::create(0,0,bn::affine_bg_map_ptr::create(
+        bg.affine=bn::affine_bg_ptr::create(0,0,video_upload::map(
             bn::affine_bg_map_item(top_cells[0],bn::size(64,64)),*bg.affine_tiles[0],*_palette));
         bg.affine->set_priority(2);bg.affine->set_blending_bottom_enabled(true);bg.affine->set_visible(false);
     }
@@ -388,10 +408,11 @@ void image_scene::regular_position(int image,int x,int y)
 __attribute__((noinline))
 bool image_scene::begin_background(int plane,int entity,int image,int variant)
 {
-    auto& bg=_backgrounds[plane];bg.target=image;bg.target_variant=variant;bg.cursor=bg.decoded=0;
+    auto& bg=_backgrounds[plane];
+    bg.target=image;bg.target_variant=variant;bg.cursor=bg.decoded=0;
     if(graphic_assets[image].kind==graphic_kind::solid)
     {
-        auto* tile=reinterpret_cast<uint8_t*>(bg_pixels[plane]);
+        auto* tile=reinterpret_cast<uint8_t*>(scenery_pixels(plane));
         if(entity==stage_overlay)
         {
             bg.bytes=bg.decoded=64;
@@ -421,7 +442,20 @@ void image_scene::apply(int event)
 {
     int previous[stage_entity_count];
     for(int id=0;id<stage_entity_count;++id)previous[id]=_player.entity(id).image;
+    int replacing=-1;
+    for(int i=0;i<_bank->events[event].count;++i)
+    {
+        const auto& command=_bank->commands[_bank->events[event].first+i];
+        if(command.kind!=stage_kind::image || command.target!=_backgrounds[1].entity)continue;
+        int old=previous[command.target],next=command.value;
+        if(old>=0 && next>=0 && old!=next && old==_backgrounds[1].image &&
+           graphic_assets[old].kind==graphic_kind::bg && graphic_assets[next].kind==graphic_kind::bg)
+        {replacing=command.target;}
+    }
     _player.apply(_bank->events[event]);
+    // A single scenery slot cannot crossfade two images. Cut at publication
+    // instead of revealing the unrelated scenery underneath the new image.
+    if(replacing>=0)_player.apply(stage_command{256,0,0,stage_kind::set,uint8_t(replacing),uint8_t(stage_property::reveal),0});
     graphics_performance.event=event;
     for(int index=0;index<_bank->events[event].count;++index)
         if(_bank->commands[_bank->events[event].first+index].kind==stage_kind::image)
@@ -456,12 +490,22 @@ bool image_scene::update(int frames,bool input)
                     const auto& variant=graphic_assets[bg.image].variants[bg.variant];
                     expand_affine_map(graphic_assets[bg.image],variant,top_cells);
                 }
-                auto map=bg.affine->map();map.reload_cells_ref();
+                bg.map_pending=true;
             }
             else
             {
-                const auto& variant=graphic_assets[bg.image].variants[bg.variant];
-                std::memcpy(lower_cells,variant.map,sizeof(lower_cells));
+                const auto& asset=graphic_assets[bg.image];
+                if(asset.kind==graphic_kind::solid)
+                {
+                    std::memset(lower_cells,0,sizeof(lower_cells));
+                    if(bg.entity!=stage_overlay)for(int y=6;y<26;++y)for(int x=1;x<31;++x)lower_cells[y*32+x]=1;
+                }
+                else if(asset.kind==graphic_kind::mask && !asset.variants[bg.variant].map)
+                {
+                    std::memset(lower_cells,0,sizeof(lower_cells));
+                    for(int y=0;y<20;++y)for(int x=0;x<30;++x)lower_cells[y*32+x]=x+1;
+                }
+                else std::memcpy(lower_cells,asset.variants[bg.variant].map,sizeof(lower_cells));
                 bg.map_pending=true;
             }
         }
@@ -590,7 +634,7 @@ void image_scene::prepare_actor(int slot,int image,uint32_t clip_key,uint32_t vi
         for(int tile=0;tile<count && at<end;++tile,++at)
         {
             if(at<first)continue;
-            auto& target=actor_pixels[_scratch_used+at-first];
+            auto& target=video_upload::sprite_tile(actor.tiles[part].vram()->data()+tile);
             const auto& source=*reinterpret_cast<const bn::tile*>(graphics_bytes+p.tiles[tile]);
             if(clip<0)target=source;
             else for(int y=0;y<8;++y)
@@ -600,8 +644,8 @@ void image_scene::prepare_actor(int slot,int image,uint32_t clip_key,uint32_t vi
             }
         }
     }
-    actor.scratch_first=first;actor.scratch_offset=_scratch_used;
-    actor.decoded=end*32;_decode_budget-=end-first;_scratch_used+=end-first;
+    actor.decoded=actor.cursor=end*32;_decode_budget-=end-first;
+    if(actor.decoded==total)actor.published_parts=actor.sprites.size();
 }
 int image_scene::clip_for(int entity) const
 {
@@ -767,6 +811,11 @@ void image_scene::prepare()
             _player.entity(id).get(stage_property::reveal)>=256 && clip_for(id)<0 &&
             covers_screen(_player.entity(id),_player.entity(stage_camera),graphic_assets[image_for(id)]);
     };
+    // A narrow scenery cut-in over a full CG becomes one CG camera. Keep its
+    // foreground actor/mask, and avoid quantizing the CG into the lower BG.
+    if(wanted[0]>=0 && wanted[1]>=0 &&
+       single_cg_camera(_player,image_for(wanted[0]),image_for(wanted[1]),clip_for(wanted[1])) && opaque_cover(wanted[0]))
+    {wanted[1]=wanted[0];wanted[0]=-1;}
     // Once the new static background is published and opaque, stop maintaining
     // the scenery behind it. The lower BG is then used only for the dialogue panel.
     bool top_covered=opaque_cover(wanted[1]);
@@ -803,16 +852,15 @@ void image_scene::prepare()
         {
             if(image>=0 && (bg.target!=image || bg.target_variant!=variant) && bg.cursor==bg.bytes)
             {
-                if(begin_background(plane,entity,image,variant)){pending=true;continue;}
+                if(begin_background(plane,entity,image,variant)){bg.publish=true;pending=true;continue;}
             }
             if(bg.target>=0 && bg.decoded<bg.bytes)
             {
                 const auto& data=graphic_assets[bg.target].variants[bg.target_variant];
-                // Reuse the existing 16KiB staging buffer as a ring for larger dictionaries.
-                int start=bg.decoded%16384;
-                int end=bn::min(bg.bytes,bn::min(bg.decoded+2048,bg.cursor+16384));
-                end=bn::min(end,bg.decoded+16384-start);
-                auto* destination=reinterpret_cast<uint32_t*>(bg_pixels[plane])+start/4;
+                // Keep both complete target dictionaries in the shared 32 KiB staging area.
+                int start=bg.decoded;
+                int end=bg.bytes;
+                auto* destination=reinterpret_cast<uint32_t*>(scenery_pixels(plane))+start/4;
                 for(int tile=bg.decoded/64;tile<end/64;++tile)
                 {
                     unsigned reference=data.tiles[tile];
@@ -829,6 +877,7 @@ void image_scene::prepare()
                     }
                 }
                 bg.decoded=end;
+                bg.publish=true;
             }
             pending|=image>=0;
         }
@@ -863,11 +912,11 @@ void image_scene::prepare()
         clip_keys[slot]=keys.clip;viewport_keys[slot]=keys.viewport;
     }
     select_actor_cache(actor_images,viewport_keys);
-    // Retire every obsolete image/block before any actor can allocate. Returning
-    // yields a core update so Butano also reclaims its deferred VRAM blocks.
+    // Retire every obsolete image/block before any actor allocates.
+    // Reclaim allocator records while the previous hardware frame remains visible.
     bool retired=false;
     for(int slot=0;slot<3;++slot)retired|=retire_actor(slot,actor_images[slot],viewport_keys[slot]);
-    if(retired){_loading=true;_ready=false;return;}
+    if(retired){video_upload::reclaim();_loading=true;_ready=false;return;}
     for(int slot=0;slot<3;++slot)
     {
         int image=actor_images[slot];prepare_actor(slot,image,clip_keys[slot],viewport_keys[slot]);
@@ -875,10 +924,11 @@ void image_scene::prepare()
         if(image>=0)
         {
             int bytes=0;for(const auto& p:_actors[slot].tiles)bytes+=p.tiles_count()*32;
-            pending|=_actors[slot].allocating || _actors[slot].cursor<bytes;
+            pending|=_actors[slot].allocating || _actors[slot].decoded<bytes;
         }
     }
-    _loading=_loading && pending;_ready=!_loading;
+    for(const auto& bg:_backgrounds)pending|=bg.publish || bg.decoded<bg.bytes;
+    _loading=_loading && pending;_ready=!pending;
 }
 void image_scene::positions()
 {
@@ -1014,13 +1064,12 @@ void image_scene::render(const text_canvas&)
     if(! _visible || ! _bank || _frame<0 || _allocate_delay)return;
     unsigned start=unsigned(bn::core::current_cpu_ticks());
     if(!_prepared)allocate();
-    else
+    do
     {
-        _allocation_budget=4;_decode_budget=_loading ? 32 : 64;
-        for(const auto& actor:_actors)if(actor.cursor<actor.decoded)_decode_budget=0;
-        if(_decode_budget)_scratch_used=0;
-        prepare();positions();
-    }
+        _allocation_budget=1024;_decode_budget=1024;
+        prepare();update(0);
+    }while(!_ready);
+    positions();commit(65536);
     graphics_performance.loading=_loading;graphics_performance.clock=_player.clock();
     unsigned ticks=unsigned(bn::core::current_cpu_ticks())-start;
     graphics_performance.cpu_ticks=ticks;if(ticks>graphics_performance.max_cpu_ticks)graphics_performance.max_cpu_ticks=ticks;
@@ -1053,75 +1102,25 @@ int image_scene::commit(int bytes)
     for(int plane=0;plane<2;++plane)
     {
         auto& bg=_backgrounds[plane];
-        if(bg.regular && bg.map_pending && bytes>=2048)
+        if(bg.cursor<bg.bytes)
         {
-            auto owner=bg.regular->map();auto map=owner.vram().value();
-            const auto* cells=plane ? reinterpret_cast<const uint16_t*>(top_cells) : lower_cells;
-            bn::memory::copy(cells[0],1024,map[0]);bytes-=2048;bg.map_pending=false;
+            auto target=bg.regular ? bg.regular_tiles->vram().value() : bg.affine_tiles[bg.front]->vram().value();
+            video_upload::upload(scenery_pixels(plane)[0],bg.bytes/32,target[0]);
+            bg.cursor=bg.bytes;
         }
-        if(!plane && bg.target>=0 && (graphic_assets[bg.target].kind==graphic_kind::mask || graphic_assets[bg.target].kind==graphic_kind::solid) && bg.cursor<bg.bytes)
+        if(bg.map_pending)
         {
-            bool columns=graphic_assets[bg.target].kind==graphic_kind::mask && !graphic_assets[bg.target].variants[bg.target_variant].map;
-            bool same_columns=columns && bg.image==bg.target && !graphic_assets[bg.image].variants[bg.variant].map;
-            int map_bytes=same_columns ? 0 : 2048;
-            if(bg.decoded<bg.bytes || bytes<bg.bytes+map_bytes)continue;
-            auto destination=bg.regular_tiles->vram().value();
-            if(same_columns)
-            {
-                const auto* previous=graphic_assets[bg.image].variants[bg.variant].tiles;
-                const auto* next=graphic_assets[bg.target].variants[bg.target_variant].tiles;
-                for(int tile=0;tile<bg.bytes/64;++tile)if(previous[tile]!=next[tile])
-                {bn::memory::copy(bg_pixels[0][tile*2],2,destination[tile*2]);bytes-=64;}
-            }
-            else {bn::memory::copy(bg_pixels[0][0],bg.bytes/32,destination[0]);bytes-=bg.bytes;}
-            if(graphic_assets[bg.target].kind==graphic_kind::solid)
-            {
-                std::memset(lower_cells,0,sizeof(lower_cells));
-                if(bg.entity!=stage_overlay)for(int y=6;y<26;++y)for(int x=1;x<31;++x)lower_cells[y*32+x]=1;
-            }
-            else if(columns && !same_columns)
-            {
-                std::memset(lower_cells,0,sizeof(lower_cells));
-                for(int y=0;y<20;++y)for(int x=0;x<30;++x)lower_cells[y*32+x]=x+1;
-            }
-            else if(!columns)
-            {
-                const auto& variant=graphic_assets[bg.target].variants[bg.target_variant];
-                std::memcpy(lower_cells,variant.map,sizeof(lower_cells));
-            }
-            if(map_bytes)
+            if(bg.regular)
             {
                 auto owner=bg.regular->map();auto map=owner.vram().value();
-                bn::memory::copy(lower_cells[0],1024,map[0]);bytes-=2048;
+                video_upload::upload(plane ? *reinterpret_cast<const uint16_t*>(top_cells) : lower_cells[0],1024,map[0]);
             }
-            bg.cursor=bg.bytes;bg.image=bg.target;bg.variant=bg.target_variant;
-            continue;
-        }
-        int available=bn::min(bytes/32,(bg.decoded-bg.cursor)/32);
-        available=bn::min(available,(16384-bg.cursor%16384)/32);
-        if(available>0)
-        {
-            auto destination=bg.regular ? bg.regular_tiles->vram().value() : bg.affine_tiles[bg.front^1]->vram().value();
-            bn::memory::copy(bg_pixels[plane][(bg.cursor%16384)/32],available,destination[bg.cursor/32]);
-            bg.cursor+=available*32;bytes-=available*32;
-            if(bg.cursor==bg.bytes)bg.publish=true;
-        }
-    }
-    for(int slot=0;slot<3;++slot)
-    {
-        auto& actor=_actors[slot];if(actor.allocating || actor.cursor>=actor.decoded)continue;int offset=0;
-        for(int part=0;part<actor.tiles.size();++part)
-        {
-            int size=actor.tiles[part].tiles_count()*32;
-            if(actor.cursor<offset+size && actor.cursor<actor.decoded && bytes>=32)
+            else
             {
-                int begin=bn::max(actor.cursor-offset,0);int count=bn::min(bytes/32,bn::min(size-begin,actor.decoded-actor.cursor)/32);
-                auto destination=actor.tiles[part].vram().value();
-                bn::memory::copy(actor_pixels[actor.scratch_offset+(offset+begin)/32-actor.scratch_first],count,destination[begin/32]);
-                actor.cursor=offset+begin+count*32;bytes-=count*32;
+                auto owner=bg.affine->map();auto map=owner.vram().value();
+                video_upload::upload(top_cells[0],4096,map[0]);
             }
-            offset+=size;
-            if(actor.cursor>=offset)actor.published_parts=bn::max(actor.published_parts,part+1);
+            bg.map_pending=false;
         }
     }
     return bytes;

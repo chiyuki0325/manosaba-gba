@@ -32,7 +32,7 @@ def extract():
                 timing=dict(voice_gap_frames=0,fallback_seconds_per_character=.15,fallback_base_seconds=.6),
                 provenance=dict(wait='GameAssembly.dll CalculateWaitTime RVA 0x323330: voice length when present; no unconditional extra gap',
                     fallback='CalculateWaitTimeFromMessage RVA 0x3234E0: stripped length * 0.15 + 0.6',
-                    hp='resources.assets MasterData last fields: defaultHp=10; retail Damage.Execute RVA 0x325700 is a no-op. Port enables 1 HP per Damage as requested.'))
+                    hp='resources.assets MasterData last fields: defaultHp=10; retail Damage.Execute RVA 0x325700 is a no-op. Port preserves this no-op; failure is driven by the trial timer.'))
     write_changed(GBA/'assets/source-metadata/trial.json',json.dumps(result,ensure_ascii=False,sort_keys=True)+'\n')
     print('trial voice metadata:',len(voices),'clips,',count,'bundles',flush=True)
     return result

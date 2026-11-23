@@ -10,6 +10,7 @@ public:
     void open(bool forced,bool normal);
     void archive(save_archive& data,bool active);
     void close();
+    void reset_view(){close();_floor=_floor_count=_count=_mode=0;_restore_floor=-1;for(auto& i:_positions)i=0;}
     bool yielded() const {return _yield;}
     int update(bool action,bool ready); // -1 close, 1 submit
     void draw(text_canvas& canvas,uint8_t* block,const uint8_t* shared,uint8_t* cache);

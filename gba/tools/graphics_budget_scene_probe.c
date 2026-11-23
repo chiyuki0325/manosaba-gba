@@ -7,13 +7,53 @@
 #include <mgba/internal/gba/renderers/video-software.h>
 #include <string.h>
 #include "obj_bounds_probe.h"
+#include "../src/execution_runtime.h"
+#include "../src/save_runtime.h"
 
 static unsigned profile;
 static void (*native_scanline)(struct GBAVideoRenderer*,int);
 static unsigned char object_override[1024+32768+512];
 static int override_unlimited;
 static unsigned metric(int i){return core->busRead32(core,profile+4*i);}
+static void expect_cg_background(void){
+    expect(core->busRead16(core,0x04000000)&1024,"single-view CG uses the affine scenery background");
+    unsigned assets=elf_symbol("_ZN8manosaba14graphic_assetsE");
+    unsigned images=elf_symbol("_ZN8manosaba22graphic_regular_imagesE");
+    unsigned count=core->busRead32(core,elf_symbol("_ZN8manosaba21graphic_regular_countE"));
+    for(unsigned i=0;i<count;++i){
+        unsigned image=core->busRead16(core,images+i*12+4);
+        unsigned palette=core->busRead32(core,assets+image*36+8),matches=0;
+        for(unsigned c=1;c<112;++c)matches+=core->busRead16(core,palette+c*2)==core->busRead16(core,0x05000000+(112+c)*2);
+        if(matches==111)return;
+    }
+    expect(0,"the full CG stays on the main scenery layer behind the side actor");
+}
 static void tap(unsigned k){core->setKeys(core,k);frames(2);core->setKeys(core,0);frames(24);}
+static save_runtime_profile save_state(unsigned address){
+    save_runtime_profile p;for(unsigned i=0;i<sizeof(p)/4;++i)((uint32_t*)&p)[i]=core->busRead32(core,address+i*4);return p;
+}
+static void wait_save(unsigned address,int view){
+    for(int i=0;i<1800;++i){frames(1);save_runtime_profile p=save_state(address);
+        if((int)p.view==view && !p.busy && (view<0 ? !p.restoring : p.paint==6)){frames(220);return;}}
+    expect(0,"scene save/load UI settles");
+}
+static void restore_scene(const char* directory,const char* name){
+    frames(220);unsigned image=frame_hash(),bank=metric(4),event=metric(5);
+    static const unsigned open[]={KEY_START,KEY_SELECT,KEY_L},close[]={KEY_B,KEY_SELECT,KEY_B};
+    for(int i=0;i<3;++i){
+        tap(open[i]);frames(150);tap(close[i]);frames(240);
+        expect(metric(4)==bank && metric(5)==event && frame_hash()==image,"pause/book/history returns preserve exact scene pixels");
+    }
+    unsigned save=elf_symbol("save_runtime");tap(KEY_START);wait_save(save,2);
+    tap(KEY_DOWN);tap(KEY_A);wait_save(save,0);tap(KEY_A);wait_save(save,0);
+    if(save_state(save).confirm){tap(KEY_RIGHT);tap(KEY_A);wait_save(save,0);}
+    unsigned slot=save_state(save).selected;tap(KEY_R);wait_save(save,1);
+    while(save_state(save).selected!=slot+1){tap(KEY_DOWN);wait_save(save,1);}
+    tap(KEY_A);wait_save(save,1);tap(KEY_RIGHT);tap(KEY_A);wait_save(save,-1);
+    if(frame_hash()!=image)screenshot(directory,"scene-restore-failure");
+    expect(metric(4)==bank && metric(5)==event && frame_hash()==image,"Flash load reconstructs the same complete scene");
+    printf("restore=%s pause/book/history/Flash exact pixels\n",name);
+}
 static void unlimited_scanline(struct GBAVideoRenderer* base,int y){
     struct GBAVideoSoftwareRenderer* r=(struct GBAVideoSoftwareRenderer*)base;
     if(r->oamDirty){r->oamMax=GBAVideoRendererCleanOAM(r->d.oam->obj,r->sprites,r->objOffsetY);r->oamDirty=false;}
@@ -100,18 +140,23 @@ int main(int argc,char** argv){
     FILE* plan=fopen(argv[4],"r");expect(plan!=NULL,"open scene plan");
     unsigned bank,event,offset;char name[80],row[256];
     while(fgets(row,sizeof(row),plan)){
-        unsigned ordinal;
-        int fields=sscanf(row,"%79s %u %u %u %u",name,&bank,&event,&offset,&ordinal);
-        expect(fields==4 || fields==5,"scene plan has bank, event, offset and optional script ordinal");
+        unsigned ordinal,witness=0;
+        int fields=sscanf(row,"%79s %u %u %u %u %u",name,&bank,&event,&offset,&ordinal,&witness);
+        expect(fields>=4 && fields<=6,"scene plan has bank, event, offset, optional script ordinal and CG witness");
         if(fields==4)ordinal=bank;
-        debug_boot();tap(KEY_DOWN);tap(KEY_A);
-        for(unsigned i=0;i<ordinal/6;++i)tap(KEY_RIGHT);
-        for(unsigned i=0;i<ordinal%6;++i)tap(KEY_DOWN);
-        tap(KEY_A);
-        int reached=0,cooldown=140;
+        if(metric(4)!=bank || metric(5)>=event){
+            debug_boot();tap(KEY_DOWN);tap(KEY_A);
+            for(unsigned i=0;i<ordinal/6;++i)tap(KEY_RIGHT);
+            for(unsigned i=0;i<ordinal%6;++i)tap(KEY_DOWN);
+            tap(KEY_A);
+        }
+        int reached=0,cooldown=140;unsigned execution=elf_symbol("execution_runtime");
         for(unsigned frame=0;frame<100000;++frame){
             if(metric(4)==bank && metric(5)==event){reached=1;break;}
-            if(!cooldown){core->setKeys(core,KEY_A);cooldown=166;}
+            if(core->busRead32(core,execution+offsetof(execution_runtime_profile,active)) &&
+               core->busRead32(core,execution+offsetof(execution_runtime_profile,ready)))
+            {core->setKeys(core,KEY_A);cooldown=166;}
+            else if(!cooldown){core->setKeys(core,KEY_A);cooldown=166;}
             else if(cooldown==164)core->setKeys(core,0);
             --cooldown;frames(1);
         }
@@ -119,8 +164,9 @@ int main(int argc,char** argv){
         if(!reached){printf("UNREACHED scene=%s bank=%u event=%u last_bank=%u last_event=%u\n",name,bank,event,metric(4),metric(5));fflush(stdout);expect(0,"planned source scene is reached");}
         unsigned start=metric(12);
         for(unsigned guard=0;guard<3000 && (metric(11) || metric(12)<start+offset);++guard)frames(1);
-        frames(2);compare(argv[2],name);
+        frames(2);compare(argv[2],name);if(witness&1)expect_cg_background();
         frames(90);char later[100];snprintf(later,sizeof(later),"%s-settled",name);compare(argv[2],later);
+        if(witness&2)restore_scene(argv[2],name);
     }
     fclose(plan);mCoreConfigDeinit(&core->config);core->deinit(core);mLogSetDefaultLogger(NULL);mStandardLoggerDeinit(&logger);return 0;
 }

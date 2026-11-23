@@ -59256,7 +59256,7 @@
     }
   ],
   "rom": {
-    "assets": 1185,
+    "assets": 1190,
     "chapter_program_bytes": {
       "Act01_Chapter01/Act01_Chapter01_Adv01": 1250,
       "Act01_Chapter01/Act01_Chapter01_Adv02": 5250,
@@ -59543,15 +59543,15 @@
     },
     "chapters": 282,
     "directory_estimate_bytes": 2463828,
-    "graphics_bytes": 13464982,
-    "payload_bytes": 9361656,
+    "graphics_bytes": 13497886,
+    "payload_bytes": 9384952,
     "program_bytes": 1613206,
-    "projected_total_bytes": 23950742,
+    "projected_total_bytes": 23983646,
     "reserved_audio_bytes": 8388608,
     "reserved_other_bytes": 2097152,
     "rom_limit_bytes": 33554432,
     "shared_blobs": 141764,
-    "actor_cache_bytes": 128724,
-    "cached_variants": 12
+    "actor_cache_bytes": 161628,
+    "cached_variants": 17
   }
 }

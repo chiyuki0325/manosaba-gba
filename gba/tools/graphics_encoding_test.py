@@ -28,7 +28,8 @@ class EncodingTest(unittest.TestCase):
                     x=p['x']+i%(p['width']//8)*8;y=p['y']+i//(p['width']//8)*8
                     target=image[y:y+8,x:x+8];take=unpacked!=0;target[take]=unpacked[take]
             return image
-        for scale,phase,matrix in ((230,0,(4034,700,279,49,-50,279)),(307,51,(4034,700,209,37,-38,209))):
+        for scale,phase,matrix in ((230,0,(4034,700,279,49,-50,279)),(307,51,(4034,700,209,37,-38,209)),
+                                   (614,0,(4045,-641,105,-17,17,105))):
             for viewport in (None,(-24,-32,24,32)):
                 a=pixels(bake(whole,scale,2560,phase,0,matrix,payload,offsets,viewport))
                 b=pixels(bake(split,scale,2560,phase,0,matrix,payload,offsets,viewport))
@@ -48,6 +49,21 @@ class EncodingTest(unittest.TestCase):
         self.assertFalse(cached_entry_angles(program,{'actor':7},[]))
         program['commands'][3][-1]=127
         self.assertFalse(cached_entry_angles(program,{'actor':7},cached))
+
+    def test_large_portrait_turn_keeps_position_and_fade_but_limits_affine_entrance(self):
+        from actor_cache import large_tilt_fallbacks
+        keys=[[614,21,3,0],[-2304,21,3,0],[120,21,3,0],[256,21,3,0]]
+        commands=[[0,0,0,0,0,0,0]]+[[0,i,1,1,0,p,0] for i,p in enumerate((2,3,0,4))]
+        program=dict(resources=['actor'],keys=keys,commands=commands,events=[[0,5,0]])
+        assets={'actor':dict(parts=[dict(width=32,height=32)])};ids={'actor':7}
+        self.assertEqual(large_tilt_fallbacks(program,assets,ids,[]),{1:(512,21,3,0),2:(0,0,3,0)})
+        keys[0][0]=486
+        self.assertEqual(large_tilt_fallbacks(program,assets,ids,[]),{2:(0,0,3,0)})
+        self.assertFalse(large_tilt_fallbacks(program,assets,ids,[dict(base=7,scale=486,angle=-2304,clipped=True)]))
+        keys[0][0]=358
+        self.assertFalse(large_tilt_fallbacks(program,assets,ids,[]))
+        keys[0][0]=614;keys[0][3]=1
+        self.assertFalse(large_tilt_fallbacks(program,assets,ids,[]))
 
     def test_tall_obj_split_retains_pixels_palette_and_sparse_coverage(self):
         from obj_parts import split_tall_parts

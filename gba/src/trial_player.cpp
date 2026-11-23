@@ -1,3 +1,4 @@
+#include "video_upload.h"
 #include "trial_player.h"
 #include "trial_ui_data.h"
 #include "trial_title_data.h"
@@ -14,6 +15,7 @@
 #include "trial_special_runtime.h"
 extern "C" {BN_DATA_EWRAM_BSS trial_runtime_profile trial_runtime={};}
 namespace manosaba {
+
 namespace {
 int lines(const char* text){int count=1;for(;*text;++text)count+=*text=='\n';return count;}
 int width(const char* first,const char* last)
@@ -44,7 +46,8 @@ void trial_player::reset()
     _prepared=_preview_ready=false;_full=_hud=true;_exited=false;_dialogue.reset();_advance.reset();
     _canvas_blank=_keep_canvas=_pause_repaint=_choice_loading=_base_prepared=false;
     _title_frame=_title_change=_title_stage=0;
-    _reenact_started=false;_reenact_wait=0;
+    _reenact_started=_settled_reenact=false;_reenact_wait=0;
+    _return_page={};
     _map_settle=false;_pictures=_picture_canvas=false;_picture_bank=_picture_event=-1;
 }
 void trial_player::archive(save_archive& a)
@@ -55,6 +58,12 @@ void trial_player::archive(save_archive& a)
     if(a.reading())_pictures=_images.has_content();
     a.field(_choice);a.field(_first_choice);a.field(_observed_evidence);a.field(_preview);
     _dialogue.archive(a,_vm.text());_return_page.archive(a,_vm.text());
+}
+void trial_player::restored()
+{
+    _picture_bank=_vm.graphical_bank();_picture_event=_vm.state()==story_state::stage ? _vm.stage_event() : -1;_pictures=_images.has_content();_map_settle=true;
+    _settled_reenact=_reenact_started=true;_reenact_wait=0;
+    _dialogue.begin(_vm.text(),layout());_dialogue.finish();
 }
 bool trial_player::show_pictures() const
 {
@@ -96,7 +105,7 @@ void trial_player::suspend()
 }
 void trial_player::progressed()
 {
-    _reenact_started=false;_reenact_wait=0;
+    _reenact_started=_settled_reenact=false;_reenact_wait=0;
     _resume_movie=0;_base_prepared=false;
     _title_frame=_title_change=_title_stage=0;
     _choice=_first_choice=_selector_row=0;_prepared=_choice_loading=false;_dialogue.reset();_full=_hud=true;_keep_canvas=false;_bar=_seconds=-1;_advance.reset();
@@ -174,7 +183,7 @@ bool trial_player::update(bool display_ready)
     {
         bool readable=display_ready && _preview_ready;
         trial_runtime.interaction_ready=readable;
-        bool action=_advance.update(bn::keypad::a_held(),readable);
+        bool action=_advance.update(bn::keypad::a_held(),readable,1+bn::core::last_missed_frames());
         if(readable && (action || bn::keypad::b_pressed()))
         {
             _preview=0;_preview_ready=false;
@@ -243,7 +252,7 @@ bool trial_player::update(bool display_ready)
     bool readable=display_ready && (!show_pictures() || _images.ready()) && (!_scene.active() || _scene.ready()) && (!_map_stage.active() || _map_stage.ready()) && (!_vm.reenact() || _vm.reenact_scene()<0 || _reenact_stage.ready()) && _prepared;
     trial_runtime.interaction_ready=readable;
     _dialogue.frame(readable);
-    bool action=_advance.update(bn::keypad::a_held(),readable);
+    bool action=_advance.update(bn::keypad::a_held(),readable,1+bn::core::last_missed_frames());
     if(!readable)return _full;
     if(_full && _canvas_blank)return true;
     if(_vm.state()==story_state::failure || _vm.state()==story_state::end)
@@ -306,7 +315,7 @@ void trial_player::dialogue(text_canvas& canvas)
 }
 void trial_player::render(text_canvas& canvas)
 {
-    if(show_pictures()){if(bn::core::current_cpu_ticks()<2100)_images.render(canvas);_images.tint(_vm.screen_color());}
+    if(show_pictures()){if(video_upload::finishing || bn::core::current_cpu_ticks()<2100)_images.render(canvas);_images.tint(_vm.screen_color());}
     _scene.heat(_vm.court_fire() && !_vm.reenact() && !_preview && _vm.state()!=story_state::menu && _vm.state()!=story_state::inventory,
                 _prepared && !_full);
     auto effect=_vm.screen_color();
@@ -413,7 +422,7 @@ void trial_player::draw(text_canvas& canvas)
     _dialogue.speed(_vm.state()==story_state::debate ? 1 : _dialogue_speed);
     // A VM cache miss can decode 4 KiB before this pass. Leave enough time
     // for the bounded UI step and VBlank uploads; retry with the canvas intact.
-    if((_full || !_prepared) && bn::core::current_cpu_ticks()>1400)return;
+    if(!video_upload::finishing && (_full || !_prepared) && bn::core::current_cpu_ticks()>1400)return;
     if(!show_pictures()){_images.set_visible(false);_picture_canvas=false;}
     if(_vm.map_segment()>=0 || _map_stage.active() || _vm.state()==story_state::map)
     {
@@ -427,7 +436,7 @@ void trial_player::draw(text_canvas& canvas)
             if(!_map_stage.ready())return;
         }
         if(_vm.state()==story_state::map){_prepared=true;_full=false;return;}
-        if(!_prepared){_dialogue.begin(_vm.text(),layout());_prepared=true;}
+        if(!_prepared){if(!_dialogue.prepared())_dialogue.begin(_vm.text(),layout());_prepared=true;}
         if(_full)canvas.decoration(story_ui_tiles);
         dialogue_presenter::speaker(canvas,_vm.speaker());dialogue(canvas);
         if(!_dialogue.redrawing())_full=false;
@@ -439,14 +448,15 @@ void trial_player::draw(text_canvas& canvas)
         if(!_scene.release() || !_movie.release() || !_reenact_stage.release())return;
         const auto* image=proof(_preview);
         if(!canvas.picture(*image))return;
-        canvas.text(12,1,story_items[_preview].label,text_canvas::white,228,14);_preview_ready=true;_full=false;return;
+        if(*story_items[_preview].label)canvas.text(12,1,story_items[_preview].label,text_canvas::white,228,14);
+        _preview_ready=true;_full=false;return;
     }
     if(_vm.state()==story_state::title)
     {
         if(!_movie.release())return;
         if(!_scene.active())
         {
-            canvas.release();bn::core::update();_scene.init();
+            canvas.release();video_upload::reclaim();_scene.init();
             _scene.request(_vm.trial_actor(),_vm.trial_view(),story_scripts[_vm.script()].mode==2,_vm.trial_layout(),_vm.trial_poses());
         }
         _scene.visible(true);
@@ -467,7 +477,7 @@ void trial_player::draw(text_canvas& canvas)
         {
             if(!_movie.release())return;
             if(!_scene.active())
-            {canvas.release();bn::core::update();_scene.init();canvas.trial_screen();_canvas_blank=true;}
+            {canvas.release();video_upload::reclaim();_scene.init();canvas.trial_screen();_canvas_blank=true;}
             _scene.request_background(_vm.trial_view(),story_scripts[_vm.script()].mode==2,_vm.trial_layout());
             _scene.visible(true);
             if(!_scene.release_actors() || !_scene.ready())return;
@@ -487,7 +497,7 @@ void trial_player::draw(text_canvas& canvas)
         if(!_picture_canvas){canvas.release();canvas.trial_screen();_picture_canvas=true;return;}
         _images.set_visible(true);
         if(!_images.ready())return;
-        if(!_prepared){_dialogue.begin(_vm.text(),layout());_prepared=true;}
+        if(!_prepared){if(!_dialogue.prepared())_dialogue.begin(_vm.text(),layout());_prepared=true;}
         if(_full && !_base_prepared)
         {
             canvas.trial_screen();
@@ -499,14 +509,14 @@ void trial_player::draw(text_canvas& canvas)
         dialogue(canvas);if(!_dialogue.redrawing()){hud(canvas);_full=_base_prepared=false;}
         return;
     }
-    if(_vm.reenact() && (_vm.state()==story_state::text || _vm.state()==story_state::pause || _vm.state()==story_state::reenact || _vm.state()==story_state::screen))
+    if(_vm.reenact() && (_vm.state()==story_state::text || _vm.state()==story_state::pause || _vm.state()==story_state::reenact || _vm.state()==story_state::screen || _vm.state()==story_state::running))
     {
         if(!_scene.release())return;
         if(!_base_prepared && _full)
         {canvas.clear(true);_base_prepared=true;_canvas_blank=false;}
         if(_vm.reenact_scene()>=0)
         {
-            _reenact_stage.request(_vm.reenact_scene(),_vm.state()!=story_state::reenact);
+            _reenact_stage.request(_vm.reenact_scene(),_settled_reenact || _vm.state()!=story_state::reenact,_settled_reenact && _vm.reenact_closed());
             _reenact_stage.visible(true);
             if(_reenact_stage.scene()!=_vm.reenact_scene() || !_reenact_stage.ready())return;
         }
@@ -539,7 +549,7 @@ void trial_player::draw(text_canvas& canvas)
     }
     bool fresh=!_scene.active();
     if(fresh)
-    {canvas.release();bn::core::update();unsigned begin=unsigned(bn::core::current_cpu_ticks());_scene.init();trial_runtime.scene_init=unsigned(bn::core::current_cpu_ticks())-begin;canvas.trial_screen();_canvas_blank=true;_full=true;}
+    {canvas.release();video_upload::reclaim();unsigned begin=unsigned(bn::core::current_cpu_ticks());_scene.init();trial_runtime.scene_init=unsigned(bn::core::current_cpu_ticks())-begin;canvas.trial_screen();_canvas_blank=true;_full=true;}
     if(_vm.trial_camera()>=0)_scene.request_pan(_vm.trial_camera(),_vm.camera_frame(),_vm.witch_hiro(),_vm.trial_poses(),_vm.trial_actor());
     else _scene.request(_vm.trial_actor(),_vm.trial_view(),story_scripts[_vm.script()].mode==2,_vm.trial_layout(),_vm.trial_poses());
     _scene.visible(true);
@@ -551,8 +561,8 @@ void trial_player::draw(text_canvas& canvas)
     {
         if(!_dialogue.prepared())
         {
-            if(_vm.restored_debate()){_dialogue.restore(_return_page);}
-            else _dialogue.begin(_vm.text(),layout());
+            if(_vm.restored_debate() && _return_page.end())_dialogue.restore(_return_page);
+            else {_dialogue.begin(_vm.text(),layout());if(_vm.restored_debate())_dialogue.finish();}
         }
         else _dialogue.repaint();
         if(_vm.state()==story_state::screen)_dialogue.finish();

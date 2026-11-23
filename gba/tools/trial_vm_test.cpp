@@ -76,9 +76,8 @@ int main(){
     correct.object(0);correct.choose(0);
     assert(correct.state()==story_state::cutin && correct.cutin_kind()==0 && correct.cutin_variant()==1);
     correct.advance();assert(correct.state()==story_state::text);
-    wrong_objection(vm);assert(vm.hp()==9 && vm.state()==story_state::debate);
-    for(int n=0;n<9;++n)wrong_objection(vm);
-    assert(vm.hp()==0 && vm.script()==story_common_bad_scripts[0] && !vm.bad_end());
+    for(int n=0;n<12;++n)wrong_objection(vm);
+    assert(vm.hp()==10 && vm.script()==first && vm.state()==story_state::debate && !vm.bad_end());
     vm.start(first);until_point(vm);
     int failed_script=vm.script();
     for(int i=0;i<3000 && !(vm.state()==story_state::title && vm.cutin_kind()==2);++i)
@@ -107,5 +106,5 @@ int main(){
     assert(loaded.state()==story_state::debate && loaded.debate_stopped() && !loaded.statement_left() && loaded.trial_left()==held.trial_left());
     held.object(0);assert(held.state()==story_state::menu);
     held.choose(0);assert(held.state()!=story_state::pause);
-    std::puts("PASS: timed trials, cancellation, hidden penalties/expiry enter original dialogue, all 13 common endings, Hiro phase inheritance and final BAD END");
+    std::puts("PASS: timed trials, cancellation, wrong objections retain HP and return to debate; expiry enters original dialogue, all 13 common endings, Hiro phase inheritance and final BAD END");
 }

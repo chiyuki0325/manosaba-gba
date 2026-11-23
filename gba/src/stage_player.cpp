@@ -10,22 +10,7 @@ void stage_player::archive(save_archive& a)
         auto& e=_entities[id];
         for(int property=0;property<int(stage_property::count);++property)
         {
-            int value=e.values[property];
-            if(!a.reading())
-            {
-                const auto& track=_tracks[id][property];
-                if(track.active)
-                {
-                    value=track.loops ? track.initial : track.from;
-                    for(int key=track.loops ? 0 : track.key;key<track.count;++key)
-                    {
-                        const auto& k=_keys[track.first+key];
-                        int target=presentation_value(k.value,id,property,k.relative,track.snap_scale);
-                        value=k.relative ? value+target : target;
-                    }
-                }
-                else if(property<2)value-=property ? _emotes[id].y : _emotes[id].x;
-            }
+            int value=a.reading() ? 0 : saved_value(id,property);
             a.field(value);if(a.reading())e.values[property]=value;
         }
         a.field(e.image);a.field(e.previous);a.field(e.order);a.field(e.mask);
@@ -41,6 +26,51 @@ void stage_player::archive(save_archive& a)
         _clock=0;_wait=0;_wait_input=_wait_tracks=false;
     }
 }
+
+int stage_player::saved_value(int id,int property) const
+{
+    int value=_entities[id].values[property];const auto& track=_tracks[id][property];
+    if(track.active)
+    {
+        value=track.loops ? track.initial : track.from;
+        for(int key=track.loops ? 0 : track.key;key<track.count;++key)
+        {
+            const auto& k=_keys[track.first+key];
+            int target=presentation_value(k.value,id,property,k.relative,track.snap_scale);
+            value=k.relative ? value+target : target;
+        }
+    }
+    else if(property<2)value-=property ? _emotes[id].y : _emotes[id].x;
+    return value;
+}
+void stage_player::settle()
+{
+    for(int id=0;id<stage_entity_count;++id)
+        for(int p=0;p<int(stage_property::count);++p)_entities[id].values[p]=saved_value(id,p);
+    for(auto& row:_tracks)for(auto& track:row)track={};
+    for(auto& emote:_emotes)emote={};
+    _clock=0;_wait=0;_wait_input=_wait_tracks=false;
+}
+void stage_player::checkpoint(save_archive& a)
+{
+    for(int id=0;id<stage_entity_count;++id)
+    {
+        auto& e=_entities[id];
+        for(int p=0;p<int(stage_property::count);++p)
+        {int32_t value=a.reading() ? 0 : saved_value(id,p);a.fixed(value);if(a.reading())e.values[p]=value;}
+        a.fixed(e.image);a.fixed(e.order);a.fixed(e.mask);
+        uint8_t presentation=uint8_t(e.maskable)|(uint8_t(e.regular_cg)<<1);a.fixed(presentation);
+        if(a.reading()){e.previous=-1;e.maskable=presentation&1;e.regular_cg=presentation&2;}
+    }
+    a.fixed(_printer);
+    if(a.reading())
+    {
+        for(auto& row:_tracks)for(auto& track:row)track={};
+        for(auto& emote:_emotes)emote={};
+        _clock=0;_wait=0;_wait_input=_wait_tracks=false;
+    }
+}
+
 namespace
 {
 int presentation_value(int value,int target,int property,bool relative=false,bool snap_scale=true)

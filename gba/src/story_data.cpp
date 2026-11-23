@@ -62646,10 +62646,10 @@ extern const story_item story_items[] = {
 {"PrisonEntrance","牢狱入口",2},
 {"Wall","围墙",2},
 {"FlowerFields","花田",2},
-{"1-13","1-13",0},
-{"1-14","1-14",0},
-{"5-19","5-19",0},
-{"10-2","10-2",0},
+{"1-13","",0},
+{"1-14","",0},
+{"5-19","",0},
+{"10-2","",0},
 };
 extern const int story_item_count=170;
 const uint16_t story_common_bad_scripts[13]={398,399,400,401,402,403,404,405,406,407,408,409,410};

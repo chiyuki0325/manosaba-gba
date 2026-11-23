@@ -11,6 +11,7 @@
 #include "sfx_ui.h"
 #include "trial_runtime.h"
 #include "save_archive.h"
+#include "save_checkpoint.h"
 #include "save_runtime.h"
 #include "book_theme.h"
 #include "bn_string_view.h"
@@ -41,49 +42,49 @@ story_scene::story_scene()
 }
 
 bool story_scene::hiro() const {return hiro_book_theme(_vm);}
-int story_scene::snapshot(uint8_t* destination,int size,bool retry)
+void story_scene::published(bool ready)
 {
-    save_archive a(destination,size,false);unsigned kind=retry ? (_vm.trial() ? 1 : 2) : 0;a.field(kind);
-    _vm.archive(a);
-    if(kind==2)_images.archive(a);
-    if(!retry)
-    {
-        if(!_vm.trial()){_images.archive(a);_dialogue.archive(a,_vm.text());}
-        else _trial.archive(a);
-        _book.archive(a);_history.archive(a);
-        a.field(_active_stage);a.field(_choice);a.field(_first_choice);a.field(_first_script);a.field(_script_count);a.field(_play_frames);
-    }
-    auto music=music_player::checkpoint();music.archive(a);sfx_player::archive(a);
-    return a.good() ? a.size() : -1;
+    _saves.observe(*this,ready);_book.observe(_paused,ready);_history.observe(ready);
+    save_runtime.pc=_vm.position();save_runtime.restoring=unsigned(_restoring);
+}
+int story_scene::snapshot(uint8_t* destination,int size,bool)
+{
+    save_archive a(destination,size,false);
+    uint8_t flags=_vm.state()==story_state::stage && (_vm.trial() ? _trial.stage_pending() : _active_stage<0) ? save_stage_pending : 0;
+    _vm.checkpoint(a,flags);
+    _images.checkpoint(a,_vm.graphical_bank(),_vm.trial() ? 0 : _vm.visual_frame(),!_vm.trial());
+    auto music=_restoring ? _saved_music : music_player::checkpoint();music.archive(a);
+    auto sounds=_restoring ? _saved_sfx : sfx_player::checkpoint();sounds.archive(a);
+    return a.good() && a.size()==save_checkpoint_bytes ? a.size() : -1;
 }
 bool story_scene::restore_snapshot(uint8_t* source,int size)
 {
     _book.close();_history.close();_images.reset();_trial.reset();_dialogue.reset();_credits.suspend();_execution.suspend();
-    save_archive a(source,size,true);unsigned kind=0;a.field(kind);if(kind>2)return false;
-    _vm.archive(a);
-    if(kind==2)_images.archive(a);
-    if(!kind)
-    {
-        if(!_vm.trial()){_images.archive(a);_dialogue.archive(a,_vm.text());}
-        else _trial.archive(a);
-        _book.archive(a);_history.archive(a);
-        a.field(_active_stage);a.field(_choice);a.field(_first_choice);a.field(_first_script);a.field(_script_count);a.field(_play_frames);
-    }
-    else
-    {_active_stage=-1;_choice=_first_choice=0;_first_script=_vm.trial() ? story_trial_first : 0;_script_count=_vm.trial() ? story_trial_count : story_selectable_count;}
-    _saved_music.archive(a);sfx_player::archive(a);
+    uint8_t flags=0;
+    save_archive a(source,size,true);
+    if(size!=save_checkpoint_bytes)return false;
+    flags=_vm.checkpoint(a);
+    if(!a.good())return false;
+    _images.checkpoint(a,_vm.graphical_bank(),_vm.trial() ? 0 : _vm.visual_frame(),!_vm.trial());
+    _saved_music.archive(a);_saved_sfx.archive(a);
     if(!a.good() || a.size()!=size)return false;
+    if((flags&save_stage_pending) && _vm.stage_event()>=0)
+    {_images.apply(_vm.stage_event());_images.settle();}
+    _active_stage=_vm.state()==story_state::stage ? _vm.stage_event() : -1;_choice=_first_choice=0;
+    _first_script=_vm.trial() ? story_trial_first : 0;_script_count=_vm.trial() ? story_trial_count : story_selectable_count;
+    _book.reset_view();_history.close();
+    _dialogue.original_breaks(_saves.original_line_breaks());_trial.original_breaks(_saves.original_line_breaks());
+    _dialogue.begin(_vm.text(),layout());_dialogue.finish();_trial.restored();
     if(_vm.state()==story_state::credits)_credits.begin(_vm.credits_act(),true);
     if(_vm.state()==story_state::execution)_execution.begin();
     _selecting=_paused=false;_overlay_suspended=_overlay_opening=false;_advance.reset();
     _restoring=_restore_canvas=true;
-    if(_book.active() || _history.active())suspend_overlay();
     return true;
 }
 save_metadata story_scene::save_info() const
 {
     save_metadata info;info.script=uint16_t(_vm.script());info.hero=uint8_t(hiro());info.trial=uint8_t(_vm.trial());
-    info.play_frames=_play_frames;info.trial_left=_vm.trial_left();
+    info.trial_left=_vm.trial_left();
     if(_vm.reenact() && _vm.reenact_scene()>=0)info.preview=uint16_t(0x8000|_vm.reenact_scene());
     else if(_vm.trial())info.preview=uint16_t(0x4000|(_vm.trial_layout()!=0));
     else
@@ -115,12 +116,12 @@ bool story_scene::retry_identity(int& script,unsigned& pc) const
     bool trial=_vm.state()==story_state::title && _vm.cutin_kind()==0 && story_scripts[_vm.script()].mode==1;
     bool choice=!_vm.trial() && _vm.state()==story_state::menu && !_vm.map_menu();
     if(!trial && !choice)return false;
-    script=_vm.script();pc=_vm.position();return true;
+    script=_vm.script();pc=_vm.source_position();return true;
 }
 
 void story_scene::reset()
 {
-    _saves.new_story();_restoring=_restore_canvas=false;_play_frames=0;
+    _saves.new_story();_restoring=_restore_canvas=false;
     music_player::reset();sfx_player::reset();
     _book.close();_history.close();_paused=_overlay_suspended=_overlay_released=_overlay_opening=false;
     _images.reset();
@@ -252,10 +253,9 @@ bool story_scene::update(bool display_ready)
         else if(_vm.visual_frame()>=0 && _vm.state()!=story_state::menu)
         {_images.update(0);redraw|=_dialogue.redrawing();ready=ready && _images.ready() && !_dialogue.redrawing();}
         if(ready && !bn::keypad::a_held() && !bn::keypad::b_held() && !bn::keypad::start_held())
-        {music_player::restore(_saved_music);_restoring=false;_advance.reset();}
+        {music_player::restore(_saved_music);sfx_player::restore(_saved_sfx);_restoring=false;_advance.reset();}
         return redraw;
     }
-    if(!_selecting && !overlay())_play_frames+=unsigned(1+bn::core::last_missed_frames());
     trial_runtime.pc=_vm.position();trial_runtime.vm_state=unsigned(_vm.state());
     trial_runtime.vm_script=unsigned(_vm.script());trial_runtime.vm_hp=unsigned(_vm.hp());
     _book.observe(_paused,display_ready);
@@ -361,7 +361,7 @@ bool story_scene::update(bool display_ready)
     bool loading = ! _selecting && !_vm.bad_end() && _vm.state()!=story_state::menu && _vm.visual_frame() >= 0 && ! _images.ready();
     bool readable = _selecting || _vm.bad_end() || _vm.state() == story_state::menu || _dialogue.prepared();
     _dialogue.frame(display_ready && !loading);
-    bool advance = _advance.update(bn::keypad::a_held(),display_ready && ! loading && readable);
+    bool advance = _advance.update(bn::keypad::a_held(),display_ready && ! loading && readable,1+bn::core::last_missed_frames());
     if(_selecting)
     {
         int previous = _selected;
@@ -383,7 +383,7 @@ bool story_scene::update(bool display_ready)
         }
         if(advance)
         {
-            _saves.new_story();_play_frames=0;
+            _saves.new_story();
             _active_stage=-1;
             music_player::reset();sfx_player::reset();
             if(_test_music)music_player::play_test_track();
@@ -452,6 +452,12 @@ bool story_scene::update(bool display_ready)
     return false;
 }
 
+bool story_scene::painting() const
+{
+    if(overlay())return !_overlay_released || (_paused ? _saves.painting() : _history.active() ? _history.painting() : _book.painting());
+    if(!_selecting && _vm.trial())return _trial.painting();
+    return _dialogue.changed() || _dialogue.redrawing();
+}
 void story_scene::draw(text_canvas& canvas)
 {
     if(_restore_canvas){canvas.release();_restore_canvas=false;}
@@ -460,8 +466,9 @@ void story_scene::draw(text_canvas& canvas)
     set_visible(_visible);
     if(overlay())
     {
-        if(_overlay_opening){_overlay_opening=false;return;}
-        if(!_overlay_released){if(_trial.release())_overlay_released=true;return;}
+        _book.observe(_paused,false);_history.observe(false);
+        _overlay_opening=false;
+        if(!_overlay_released){if(!_trial.release())return;_overlay_released=true;}
         if(_paused)
         {
             _saves.draw(canvas,*this);canvas.present();

@@ -94,7 +94,9 @@ int main(int argc,char** argv)
         }
     }
     // The Trial player shares the same collection path (Trial01 starts Bgm007).
-    debug_hotkey();tap(KEY_START);tap(KEY_DOWN);tap(KEY_DOWN);tap(KEY_A);tap(KEY_DOWN);tap(KEY_A);run(600);
+    cold();debug_hotkey();tap(KEY_START);tap(KEY_DOWN);tap(KEY_DOWN);tap(KEY_A);tap(KEY_DOWN);tap(KEY_A);run(600);
+    for(int i=0;i<1800 && core->busRead32(core,save_address+28);++i)run(1);
+    run(4);
     cold();open_room();expect(room().unlocked>0,"actual Trial playback collects music");
     select_track(6);tap(KEY_A);ready();expect(room().playing==7,"Trial's Bgm007 is available after cold reset");screenshot(output,"trial-collected");
     free(flash);printf("PASS: collected-track formal room, real script unlock, global Flash migration92/112->120, old-signature options/gallery, cold reset, audition isolation and full HirO; peak_ticks=%u room_frames=%u missed=%u PCM=%u\n",peak,room_frames,missed,pcm);

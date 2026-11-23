@@ -1,4 +1,5 @@
 DEBUG_MENU ?= 1
+SAVE_BACKEND ?= flash
 
 ifeq ($(BUTANO_BUILD),1)
 include $(dir $(lastword $(MAKEFILE_LIST)))Butano.mk
@@ -6,7 +7,7 @@ else
 .DEFAULT_GOAL := all
 PYTHON ?= python3
 BUTANO ?= vendor/butano/butano
-TARGET ?= $(if $(filter 0,$(DEBUG_MENU)),manosaba-release,manosaba)
+TARGET ?= $(if $(filter 0,$(DEBUG_MENU)),manosaba-release,manosaba)$(if $(filter sram,$(SAVE_BACKEND)),-sram)
 .PHONY: save-assets save-test
 .PHONY: trial-screen-test
 trial-screen-test: all
@@ -30,7 +31,8 @@ prepare-assets:
 	$(PYTHON) tools/check_prepared_assets.py
 
 .PHONY: prepare-code
-prepare-code: warning-assets music-room-assets home-assets gallery-assets trial-map-assets execution-assets ending-assets sfx-assets nameplates story-ui toast-assets reenact-assets trial-resources choice-assets book-assets book-map-assets save-assets font story music-cues
+prepare-code: warning-assets music-room-assets home-assets gallery-assets trial-map-assets execution-assets ending-assets sfx-assets nameplates story-ui toast-assets reenact-assets trial-resources choice-assets book-assets book-map-assets font story music-cues
+	$(MAKE) save-assets
 
 
 .PHONY: release release-menu-test
@@ -113,7 +115,7 @@ src/toast_data.cpp: tools/toast_assets.py tools/font.py tools/image_encoding.py 
 	../python_workspace/.venv/bin/python tools/toast_assets.py
 
 save-assets: src/save_ui_data.cpp src/save_ui_bytes.s assets/save-ui.bin
-src/save_ui_data.cpp src/save_ui_bytes.s assets/save-ui.bin &: tools/save_load_assets.py tools/save_load_mockups.py tools/witch_book_icons.py src/story_data.cpp src/graphics_data.cpp src/trial_data.cpp assets/graphics-cache/linked/graphics.json assets/graphics-cache/linked/graphics.bin $(wildcard ../manosaba-web/public/UI_SaveLoad/*.png) assets/unifont-17.0.03.hex.gz
+src/save_ui_data.cpp src/save_ui_bytes.s assets/save-ui.bin &: tools/save_load_assets.py tools/save_converter_assets.py tools/save_load_mockups.py tools/witch_book_icons.py src/story_data.cpp src/graphics_data.cpp src/trial_data.cpp assets/graphics-cache/linked/graphics.json assets/graphics-cache/linked/graphics.bin $(wildcard ../manosaba-web/public/UI_SaveLoad/*.png) assets/unifont-17.0.03.hex.gz
 	../python_workspace/.venv/bin/python tools/save_load_assets.py
 
 choice-assets: src/choice_ui_data.cpp src/choice_ui_data.h

@@ -9,7 +9,7 @@ static unsigned metric(int i){return core->busRead32(core,profile+i*4);}
 static save_runtime_profile saved(void){save_runtime_profile p;for(unsigned i=0;i<sizeof(p)/4;++i)((uint32_t*)&p)[i]=core->busRead32(core,save_address+4*i);return p;}
 static void tap(unsigned key){core->setKeys(core,key);frames(3);core->setKeys(core,0);frames(40);}
 static void select_script(int script){debug_boot();tap(KEY_DOWN);tap(KEY_A);for(int i=0;i<script/6;++i)tap(KEY_RIGHT);for(int i=0;i<script%6;++i)tap(KEY_DOWN);tap(KEY_A);frames(600);}
-static void wait_ui(int view){for(int i=0;i<1800;++i){frames(1);save_runtime_profile p=saved();if((int)p.view==view && p.paint==6 && !p.busy){frames(4);return;}}screenshot(output,"save-timeout");expect(0,"save UI settles");}
+static void wait_ui(int view){for(int i=0;i<1800;++i){frames(1);save_runtime_profile p=saved();if((int)p.view==view && p.paint==6 && !p.busy){frames(4);return;}}screenshot(output,"save-timeout");save_runtime_profile last=saved();fprintf(stderr,"SAVE_TIMEOUT wanted=%d view=%u paint=%u busy=%u operation=%u selected=%u confirm=%u progress=%u\n",view,last.view,last.paint,last.busy,last.operation,last.selected,last.confirm,last.progress);expect(0,"save UI settles");}
 static void wait_game(void){for(int i=0;i<1800;++i){frames(1);if((int)saved().view==-1 && !saved().restoring){frames(220);return;}}expect(0,"CG restore finishes");}
 int main(int argc,char** argv){
  expect(argc==6,"ROM output profile clear_script blur_script");output=argv[2];profile=strtoul(argv[3],0,16);

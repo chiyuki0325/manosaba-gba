@@ -15,6 +15,7 @@ public:
     void open(bool forced);
     void archive(save_archive& data);
     void close(){_maps.close();if(_canvas)_canvas->reader_close();_open=false;}
+    void reset_view(){close();_tab=_mode=_scroll=0;for(auto& i:_selected)i=0;for(auto& i:_first)i=0;_maps.reset_view();}
     bool active() const {return _open;}
     bool forced() const {return _forced;}
     int source() const {return _tab==2 ? _maps.source() : _sources[_selected[_tab]];}
@@ -22,6 +23,7 @@ public:
     void draw(text_canvas& canvas);
     void repaint();
     void observe(bool paused,bool ready) const;
+    bool painting() const {return _tab==2 ? _maps.dirty() && _maps.paint()!=620 : dirty() && !_reader.moving();}
     bool dirty() const {return _tab==2 ? _maps.dirty() : _paint!=611;}
     int tab() const {return _tab;}
     int count() const {return _tab==2 ? _maps.count() : _count;}
@@ -45,7 +47,7 @@ private:
     text_reader _reader;
     int _text_total=0;
     bool _reader_started=false,_yield=false,_reader_footer=false;
-    int _tab=0,_count=0,_mode=0,_selected[4]={},_first[4]={};
+    int _tab=0,_count=0,_mode=0,_selected[5]={},_first[5]={};
     int _paint=0,_line=0,_scroll=0,_image_offset=38400,_stamp_row=0,_decode_row=-1;
     int _width=0,_height=0,_preview_x=0,_preview_y=0;
     bool _open=false,_forced=false,_map=false,_native_image=false,_heading_done=false,_partial_list=false;
@@ -71,6 +73,7 @@ private:
     void tabs(text_canvas& canvas,int first);
     void heading(text_canvas& canvas);
     void footer(text_canvas& canvas,int part);
+    void note_row(text_canvas& canvas,int row);
     void stamp(text_canvas& canvas,int x,int y,int index);
     void key(text_canvas& canvas,int x,int y,int index,const char* label=nullptr);
     void initial(text_canvas& canvas,int x,int y,const char*& text,text_canvas::ink color);

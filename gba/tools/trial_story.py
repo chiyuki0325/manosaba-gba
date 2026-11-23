@@ -82,7 +82,7 @@ class TrialCatalog:
 
     def item(self,key,label=None,kind=0):
         if key not in self.ids:
-            self.ids[key]=len(self.items)+1;self.items.append(dict(id=key,label=label or key,kind=kind))
+            self.ids[key]=len(self.items)+1;self.items.append(dict(id=key,label=label or '',kind=kind))
         return self.ids[key]
 
     def expression(self,expr):

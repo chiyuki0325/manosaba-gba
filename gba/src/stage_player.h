@@ -18,6 +18,8 @@ public:
     stage_player(const stage_key* keys=stage_keys,const stage_command* commands=stage_commands) : _keys(keys),_commands(commands) {}
     void reset(const stage_key* keys=stage_keys,const stage_command* commands=stage_commands);
     void archive(save_archive& data);
+    void checkpoint(save_archive& data);
+    void settle();
     void set_program(const stage_key* keys,const stage_command* commands) { _keys=keys;_commands=commands; }
     void apply(const stage_event& event);
     void apply(const stage_command& command);
@@ -51,6 +53,7 @@ private:
     void start(const stage_command& command,uint8_t scale_policy);
     void apply_command(const stage_command& command,uint8_t scale_policy);
     uint8_t scale_policy(const stage_event* event=nullptr) const;
+    int saved_value(int id,int property) const;
 };
 int stage_interpolate(int from, int to, int elapsed, int duration, stage_ease ease);
 }

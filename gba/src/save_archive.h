@@ -13,6 +13,17 @@ public:
     bool good() const {return _good;}
     int size() const {return _position;}
     void reject(){_good=false;}
+    void skip(int count)
+    {if(count<0 || _position+count>_size)_good=false;else _position+=count;}
+    // v5 uses explicit little-endian widths; field()/text() below read legacy v3.
+    template<class T> void fixed(T& value)
+    {
+        using U=std::conditional_t<(sizeof(T)>4),uint64_t,uint32_t>;
+        uint8_t data[sizeof(T)]={};U bits=0;
+        if(!_reading){bits=U(value);for(unsigned i=0;i<sizeof(T);++i)data[i]=uint8_t(bits>>(8*i));}
+        bytes(data,sizeof(data));
+        if(_reading){for(unsigned i=0;i<sizeof(T);++i)bits|=U(data[i])<<(8*i);value=T(bits);}
+    }
     template<class T> void field(T& value)
     {
         uint32_t encoded=0;

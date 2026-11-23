@@ -11,11 +11,13 @@ class save_system;
 class gallery
 {
 public:
+    void protect() const;
     void open(bool demo=false);
     void suspend();
     bool update(bool ready,const save_system& progress);
     void draw(text_canvas& canvas,const save_system& progress);
     int commit(int bytes);
+    bool painting() const {return _paint<3 || (!_mode && _cell<6);}
     bool done() const {return _done;}
 private:
     bn::optional<bn::affine_bg_ptr> _bg;

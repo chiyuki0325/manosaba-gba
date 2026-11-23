@@ -34,7 +34,22 @@ int main()
     }
     sfx_player::reset();play("Sfx_154");assert(count()==1 && voices[next-1].volume==0);tick(60);assert(voices[next-1].volume==1024);tick(sfx_cues[sfx_player::find("Sfx_154")].duration);assert(count()==0);
     play("Ambi_11_1",true,60);tick(29);assert(voices[next-1].volume>400 && voices[next-1].volume<600);
-    uint8_t bytes[1024];save_archive out(bytes,sizeof(bytes),false);sfx_player::archive(out);assert(out.good());sfx_player::reset();save_archive in(bytes,out.size(),true);sfx_player::archive(in);assert(in.good() && in.size()==out.size());assert(count()==1);tick(40);assert(voices[next-1].volume==1024);
+    uint8_t bytes[18];auto saved=sfx_player::checkpoint();save_archive out(bytes,sizeof(bytes),false);saved.archive(out);assert(out.good() && out.size()==18);
+    sfx_player::reset();sfx_checkpoint restored;save_archive in(bytes,out.size(),true);restored.archive(in);sfx_player::restore(restored);
+    assert(in.good() && in.size()==out.size() && count()==1 && voices[next-1].volume==1024);
+    sfx_player::reset();play("Ambi_4_1",true);play("Ambi_8_1",true);play("Sfx_Common_1");play("Sfx_Common_2");
+    saved=sfx_player::checkpoint();assert(saved.sounds[0].cue>=0 && saved.sounds[1].cue>=0);
+    for(const auto& s:saved.sounds)assert(sfx_cues[s.cue].ambient);
+    sfx_player::restore(saved);assert(count()==2);
+    uint8_t legacy[128];save_archive old(legacy,sizeof(legacy),false);
+    for(const char* name:{"Sfx_Common_1","Sfx_Common_2","Ambi_4_1", "", "", ""})
+    {
+        int cue=*name ? sfx_player::find(name) : -1;old.field(cue);if(cue<0)continue;
+        int gain=800,left=0,target=800;bool loop=true,stopping=false;
+        old.field(gain);old.field(loop);old.field(left);old.field(target);old.field(stopping);
+    }
+    save_archive old_reader(legacy,old.size(),true);restored.legacy_archive(old_reader);assert(old_reader.good());
+    for(const auto& sound:restored.sounds)assert(sound.cue>=0 && !sfx_cues[sound.cue].ambient);
     sfx_player::reset();play("Ambi_1_1",true);assert(sfx_player::find("Sfx_87")==-1);assert(count()==0);
     play("Sfx_System_Move_001");assert(!sfx_player::foreground_active());
     sfx_player::reset();play("Sfx_Common_1");assert(sfx_player::foreground_active());

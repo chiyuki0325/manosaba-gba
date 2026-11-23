@@ -14,9 +14,10 @@ namespace manosaba {
 class reenact_scene
 {
 public:
+    void protect() const;
     void reset();
     bool release();
-    void request(int scene,bool settled=false);
+    void request(int scene,bool settled=false,bool closed=false);
     void visible(bool enabled);
     void tint(palette_effect effect);
     void prepare();

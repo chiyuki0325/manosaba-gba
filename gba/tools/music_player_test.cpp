@@ -165,18 +165,18 @@ int main()
     // The ringtone temporarily owns the single music bus. Replay the original
     // cue only after this VM batch had the chance to select a new track.
     p::reset();c={};c.path="Bgm_5_1";c.parameters=music_has_path|music_has_volume|music_has_loop;
-    c.volume=600;c.loop=false;p::execute(c);int prior_gain=gain;
+    c.volume=600;c.loop=false;p::execute(c);int prior_gain=gain;auto saved_bgm=p::checkpoint();
     c={};c.path="Ambi_3_1";c.parameters=music_has_path|music_has_loop;c.loop=true;
     assert(p::execute(c)==music_result::started);auto saved_ring=p::checkpoint();
-    assert(saved_ring.return_key && saved_ring.return_volume==600 && !saved_ring.return_loop);
+    assert(saved_ring.key==saved_bgm.key && saved_ring.volume==600 && !saved_ring.loop);
     int ringtone_starts=starts;c.stop=true;p::execute(c);assert(!p::playing() && starts==ringtone_starts);
     p::update();assert(p::playing() && starts==ringtone_starts+1 && gain==prior_gain && !loop_enabled);
     c={};c.path="Ambi_3_1";c.parameters=music_has_path;p::execute(c);c.stop=true;p::execute(c);
     c={};c.path="Bgm_13_1_Loop";c.parameters=music_has_path;p::execute(c);int new_starts=starts;
-    p::update();assert(starts==new_starts && !p::checkpoint().return_key);
-    p::restore(saved_ring);assert(p::checkpoint().return_key==saved_ring.return_key);
+    p::update();assert(starts==new_starts && p::checkpoint().key!=saved_bgm.key);
+    p::restore(saved_ring);assert(p::checkpoint().key==saved_bgm.key && gain==prior_gain && !loop_enabled);
     c={};c.path="Ambi_3_1";c.parameters=music_has_path;c.stop=true;p::execute(c);p::update();
-    assert(gain==prior_gain && !loop_enabled && !p::checkpoint().return_key);
+    assert(gain==prior_gain && !loop_enabled && p::checkpoint().key==saved_bgm.key);
     // Saving music retains its cue/settings; loading always starts fresh.
     for(const char* alias:{"Bgm_6_1","Bgm_2_1_Intro"})
     {
@@ -201,7 +201,7 @@ int main()
     assert(!p::busy() && p::checkpoint().volume==512 && gain==480*724/1024);
     for(int i=0;i<23;++i)p::update(false);
     assert(gain==480);
-    c.stop=true;c.duration_frames=3;p::execute(c);for(int i=0;i<3;++i)p::update(true);
+    c.stop=true;c.duration_frames=3;p::execute(c);assert(!p::checkpoint().key);for(int i=0;i<3;++i)p::update(true);
     assert(!p::playing() && !p::busy());for(int i=0;i<23;++i)p::update(false);
     std::puts("Music player passed: exact cue/version, Intro/Loop entry, in-place modification, zero-volume retention, fade/pause/master gain, targeted stop and unmade reporting");
 }

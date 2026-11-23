@@ -1,11 +1,15 @@
 # Butano 21.10.0; override BUTANO to use a separately installed checkout.
 MANOSABA_GBA_ROOT := $(abspath $(dir $(lastword $(MAKEFILE_LIST))))
 DEBUG_MENU ?= 1
+SAVE_BACKEND ?= flash
+ifeq ($(filter $(SAVE_BACKEND),flash sram),)
+$(error SAVE_BACKEND must be flash or sram)
+endif
 ifeq ($(filter $(DEBUG_MENU),0 1),)
 $(error DEBUG_MENU must be 0 or 1)
 endif
-TARGET := $(if $(filter 0,$(DEBUG_MENU)),manosaba-release,manosaba)
-BUILD := $(if $(filter 0,$(DEBUG_MENU)),build-release,build-butano)
+TARGET := $(if $(filter 0,$(DEBUG_MENU)),manosaba-release,manosaba)$(if $(filter sram,$(SAVE_BACKEND)),-sram)
+BUILD := $(if $(filter sram,$(SAVE_BACKEND)),build-sram$(if $(filter 0,$(DEBUG_MENU)),-release),$(if $(filter 0,$(DEBUG_MENU)),build-release,build-butano))
 LIBBUTANO := $(BUTANO)
 PYTHON ?= python3
 SOURCES := src
@@ -21,6 +25,7 @@ ROMTITLE := MANOSABA
 ROMCODE := MSBA
 USERFLAGS := -DMM_MMUTIL_DEVKITPRO_COMPAT -DBN_CFG_AUDIO_MAX_MUSIC_CHANNELS=16 -DBN_CFG_AUDIO_MAX_SOUND_CHANNELS=2
 USERFLAGS += -DMANOSABA_DEBUG_MENU=$(DEBUG_MENU)
+USERFLAGS += -DMANOSABA_SAVE_SRAM=$(if $(filter sram,$(SAVE_BACKEND)),1,0)
 USERCXXFLAGS := -iquote $(abspath $(BUTANO))/hw/3rd_party/maxmod/src/core -iquote $(abspath $(BUTANO))/hw/include
 USERASFLAGS :=
 # Story portraits use ordinary OBJ at 1x. Keep control/prototype builds explicit.
