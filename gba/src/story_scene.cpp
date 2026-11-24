@@ -84,7 +84,7 @@ bool story_scene::restore_snapshot(uint8_t* source,int size)
 save_metadata story_scene::save_info() const
 {
     save_metadata info;info.script=uint16_t(_vm.script());info.hero=uint8_t(hiro());info.trial=uint8_t(_vm.trial());
-    info.trial_left=_vm.trial_left();
+    info.play_frames=_play_frames;info.trial_left=_vm.trial_left();
     if(_vm.reenact() && _vm.reenact_scene()>=0)info.preview=uint16_t(0x8000|_vm.reenact_scene());
     else if(_vm.trial())info.preview=uint16_t(0x4000|(_vm.trial_layout()!=0));
     else
@@ -121,7 +121,7 @@ bool story_scene::retry_identity(int& script,unsigned& pc) const
 
 void story_scene::reset()
 {
-    _saves.new_story();_restoring=_restore_canvas=false;
+    _saves.new_story();_restoring=_restore_canvas=false;_play_frames=0;
     music_player::reset();sfx_player::reset();
     _book.close();_history.close();_paused=_overlay_suspended=_overlay_released=_overlay_opening=false;
     _images.reset();
@@ -206,13 +206,22 @@ const dialogue_layout& story_scene::layout() const
 void story_scene::prepare_page()
 {
     _dialogue.original_breaks(_saves.original_line_breaks());
-    _dialogue.speed(_saves.dialogue_speed());
+    _dialogue.speed(fast_forward() ? 2 : _saves.dialogue_speed());
     _dialogue.begin(_vm.text(),layout());
     _advance.reset();
 }
 
+bool story_scene::fast_forward() const
+{
+    return !_selecting && !_restoring && _vm.state()==story_state::text && bn::keypad::r_held();
+}
+
 void story_scene::render(text_canvas& canvas)
 {
+    int fast=0;
+    if(_visible && !_selecting && !_restoring && !overlay())
+        fast=_vm.trial() ? _trial.fast_forward_icon() : fast_forward() ? 216 : 0;
+    canvas.fast_forward(fast);
     if(!_selecting && _vm.state()==story_state::credits){canvas.toast(0);return;}
     if(!_selecting && !overlay() && _vm.state()==story_state::execution)
     {
@@ -234,10 +243,15 @@ void story_scene::render(text_canvas& canvas)
 bool story_scene::update(bool display_ready)
 {
     _dialogue.original_breaks(_saves.original_line_breaks());
-    _dialogue.speed(_saves.dialogue_speed());_trial.dialogue_speed(_saves.dialogue_speed());_trial.original_breaks(_saves.original_line_breaks());
+    _trial.dialogue_speed(_saves.dialogue_speed());_trial.original_breaks(_saves.original_line_breaks());
     if(!_selecting && !_restoring && !_test_music && story_scripts[_vm.script()].mode<2)
         _saves.unlock_music(music_player::collection_key());
-    if(!_selecting && !_restoring && !overlay() && display_ready)_vm.tick_toast(1+bn::core::last_missed_frames());
+    if(!_selecting && !_restoring && !overlay())
+    {
+        int frames=1+bn::core::last_missed_frames();
+        if(!_vm.bad_end())_play_frames+=unsigned(frames);
+        if(display_ready)_vm.tick_toast(frames);
+    }
     _saves.tick(*this);
     save_runtime.pc=_vm.position();save_runtime.restoring=unsigned(_restoring);
     if(_restoring)
@@ -360,8 +374,12 @@ bool story_scene::update(bool display_ready)
     if(_dialogue.redrawing())return true;
     bool loading = ! _selecting && !_vm.bad_end() && _vm.state()!=story_state::menu && _vm.visual_frame() >= 0 && ! _images.ready();
     bool readable = _selecting || _vm.bad_end() || _vm.state() == story_state::menu || _dialogue.prepared();
+    bool fast=fast_forward();
+    if(!fast)_dialogue.reset_fast_forward();
+    if(_dialogue.speed(fast ? 2 : _saves.dialogue_speed()) && !_selecting && _vm.state()==story_state::text)return true;
+    int frames=1+bn::core::last_missed_frames();
     _dialogue.frame(display_ready && !loading);
-    bool advance = _advance.update(bn::keypad::a_held(),display_ready && ! loading && readable,1+bn::core::last_missed_frames());
+    bool advance = _advance.update(bn::keypad::a_held(),display_ready && ! loading && readable,frames);
     if(_selecting)
     {
         int previous = _selected;
@@ -383,7 +401,7 @@ bool story_scene::update(bool display_ready)
         }
         if(advance)
         {
-            _saves.new_story();
+            _saves.new_story();_play_frames=0;
             _active_stage=-1;
             music_player::reset();sfx_player::reset();
             if(_test_music)music_player::play_test_track();
@@ -424,6 +442,12 @@ bool story_scene::update(bool display_ready)
             return true;
         }
         return previous != _choice;
+    }
+    if(fast && readable && display_ready && !loading && _dialogue.fast_forward(frames))
+    {
+        _vm.advance();
+        progressed();
+        return true;
     }
     if(advance)
     {

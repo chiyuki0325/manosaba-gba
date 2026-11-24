@@ -132,7 +132,7 @@ const SaveConverter=(()=>{
     const at=first+copy*(sram?256:4096);
     v.setUint32(at,0x56534e4d,true);v.setUint32(at+4,(source.sequence+copy)>>>0,true);v.setUint32(at+8,source.signature,true);
     v.setUint16(at+16,5,true);v.setUint16(at+18,state.length,true);v.setUint16(at+20,seed.length,true);output[at+22]=logical;output[at+23]=0;output[at+63]=0xa5;
-    if(!global&&!retry){output.set(source.metadata,at+64);output.fill(0,at+64,at+68);}
+    if(!global&&!retry)output.set(source.metadata,at+64);
     output.set(state,at+prefix);output.set(seed,at+prefix+state.length);
     v.setUint32(at+12,crc(output.subarray(at+64,at+prefix+state.length+seed.length)),true);v.setUint32(at+24,crc(output.subarray(at,at+24)),true);
    }

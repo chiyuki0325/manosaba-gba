@@ -14,7 +14,7 @@ class dialogue_presenter
 public:
     void archive(save_archive& data,const char* text);
     void reset(){_prepared=false;_guard.restart();repaint();}
-    void repaint(){_step=reveal_step::none;_redrawing=false;_drawn=_page.start();}
+    void repaint(){_step=reveal_step::none;_redrawing=false;_drawn=_page.start();_fast_frames=0;}
     void begin(const char* text,const dialogue_layout& box,int offset=0);
     void restore(const dialogue_page& page){_page=page;_prepared=true;_guard.restart();repaint();}
     const dialogue_page& page() const {return _page;}
@@ -23,7 +23,19 @@ public:
     bool redrawing() const {return _redrawing;}
     bool changed() const {return _step!=reveal_step::none;}
     bool original_breaks(bool value){if(value==_original_breaks)return false;_original_breaks=value;reset();return true;}
-    void speed(int value){if(value!=_speed){_speed=value;_delay=0;}if(_speed==2 && _prepared && !complete())finish();}
+    bool speed(int value)
+    {
+        if(value!=_speed){_speed=value;_delay=0;}
+        if(_speed!=2 || !_prepared || complete())return false;
+        finish();return true;
+    }
+    void reset_fast_forward(){_fast_frames=0;}
+    bool fast_forward(int frames)
+    {
+        if(!complete() || !can_advance())return false;
+        _fast_frames+=frames;
+        return _fast_frames>=48;
+    }
     bool tick(){if(_speed==0 && (++_delay&1))return false;_step=_page.tick();return changed();}
     void finish(){_page.finish();_guard.restart();repaint();}
     void frame(bool ready){if(ready && _prepared)_guard.tick();}
@@ -39,6 +51,7 @@ private:
     sentence_guard _guard;
     text_canvas::cursor _cursor{},_last_cursor{};
     int _speed=1,_delay=0;
+    int _fast_frames=0;
     int _drawn=0,_last_begin=0,_last_end=0;
     reveal_step _step=reveal_step::none;
     bool _prepared=false,_redrawing=false,_original_breaks=true;

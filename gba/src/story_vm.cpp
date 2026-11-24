@@ -363,13 +363,13 @@ void story_vm::fail()
     {music_command command;command.stop=true;command.duration_frames=21;_music_sink(_music_context,command);}
 }
 
-bool story_vm::tick_debate(int frames)
+bool story_vm::tick_debate(int frames,bool autoplay)
 {
     unsigned elapsed=_line_left ? (unsigned(frames)<_line_left ? unsigned(frames) : _line_left) : unsigned(frames);
     if(_line_left)_line_left-=elapsed;
     if(elapsed>=_total_left){fail();return true;}
     _total_left-=elapsed;
-    if(!_line_left && !debate_stopped()){advance();return true;}
+    if(!_line_left && autoplay && !debate_stopped()){advance();return true;}
     return false;
 }
 

@@ -41,9 +41,10 @@ void chapter(char* out,int size,const save_metadata& metadata,bool short_form=fa
     segment+=*segment=='T' ? 5 : 3;int index=(segment[0]-'0')*10+segment[1]-'0';
     copy(out,size,bn::format<48>("第{}章 {}{}",number,label,digits(unsigned(index))));
 }
-bn::string<32> saved_at(const save_timestamp& date)
+bn::string<32> saved_at(const save_metadata& meta)
 {
-    if(!date.valid)return bn::string<32>("未记录时间");
+    const auto& date=meta.timestamp;
+    if(!date.valid)return bn::format<32>("游玩 {}:{}",digits(meta.play_frames/216000),digits(meta.play_frames/3600%60));
     return bn::format<32>("{}-{}-{} {}:{}",2000+date.year,digits(date.month),digits(date.day),digits(date.hour),digits(date.minute));
 }
 text_canvas::ink ink(int color){return text_canvas::ink(color);}
@@ -181,7 +182,6 @@ void save_system::tick(story_scene& scene,bool gameplay)
             {
                 unsigned length=_store.length(),seed=_store.seed_length();save_metadata metadata{};
                 failed=(_compact_slot!=save_retry_slot && !_store.metadata(_compact_slot,metadata)) || !convert_loaded_record(length,seed);
-                metadata.legacy_frames=0;
                 if(!failed && _store.begin_write(_compact_slot,_buffer,length,seed,metadata))
                 {_operation=compact_write;return;}
                 failed=true;
@@ -254,6 +254,9 @@ save_ui_result save_system::update(story_scene& scene,bool ready)
 #endif
         if(!good || (seed && seed!=save_checkpoint_bytes) || !scene.restore_snapshot(_buffer+save_payload_offset,int(length)))
         {mark("记录损坏");_confirm=0;list(true);return save_ui_result::none;}
+        save_metadata metadata;
+        _store.metadata(selected_slot(),metadata);
+        scene.restore_play_time(metadata.play_frames);
         _seed_size=seed;
         if(seed)std::memcpy(_seed,_buffer+save_payload_offset+length,seed);
         if(_seed_size)
@@ -403,8 +406,8 @@ bool save_system::row(text_canvas& canvas,int row)
     {chapter(label,sizeof(label),meta);if(row_text(canvas,y+5,label,text_canvas::white))_row_line=3;return false;}
     if(_row_line==3)
     {if(row_text(canvas,y+19,meta.summary,text_canvas::white))_row_line=4;return false;}
-    auto stamp=saved_at(meta.timestamp);
-    if(meta.trial)copy(label,sizeof(label),bn::format<48>("{} 余{}:{}",stamp,digits(unsigned(meta.trial_left/3600)),digits(unsigned(meta.trial_left/60%60))));
+    auto stamp=saved_at(meta);
+    if(meta.timestamp.valid && meta.trial)copy(label,sizeof(label),bn::format<48>("{} 余{}:{}",stamp,digits(unsigned(meta.trial_left/3600)),digits(unsigned(meta.trial_left/60%60))));
     else copy(label,sizeof(label),stamp);
     if(!row_text(canvas,y+32,label,text_canvas::muted))return false;
     _preview_row=row;_preview_line=0;_row_line=0;return true;
@@ -505,7 +508,7 @@ void save_system::draw(text_canvas& canvas,story_scene& scene)
             }
             else if(_confirm_stage==1)
             {
-                auto stamp=saved_at(old.timestamp);
+                auto stamp=saved_at(old);
                 canvas.text(63,34,stamp.c_str(),text_canvas::muted,224,48);
             }
             else if(_confirm_stage==2)

@@ -16,7 +16,7 @@ enum class save_slot_status:uint8_t {empty,valid,corrupt,incompatible};
 struct save_timestamp {uint8_t year,month,day,hour,minute,second,weekday,valid;};
 struct save_metadata
 {
-    uint32_t legacy_frames=0,trial_left=0;
+    uint32_t play_frames=0,trial_left=0;
     uint16_t script=0,preview=65535;
     uint8_t hero=0,trial=0;
     save_timestamp timestamp{};

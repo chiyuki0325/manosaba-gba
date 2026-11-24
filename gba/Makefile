@@ -34,6 +34,9 @@ prepare-assets:
 prepare-code: warning-assets music-room-assets home-assets gallery-assets trial-map-assets execution-assets ending-assets sfx-assets nameplates story-ui toast-assets reenact-assets trial-resources choice-assets book-assets book-map-assets font story music-cues
 	$(MAKE) save-assets
 
+.PHONY: trial-alignment-assets
+trial-alignment-assets:
+	OPENBLAS_NUM_THREADS=1 ../python_workspace/.venv/bin/python tools/trial_alignment.py
 
 .PHONY: release release-menu-test
 
@@ -139,6 +142,7 @@ src/choice_ui_data.cpp src/choice_ui_data.h &: tools/choice_ui.py tools/story_la
 	../python_workspace/.venv/bin/python tools/choice_ui.py
 
 trial-resources: src/trial_data.cpp src/trial_ui_data.cpp src/trial_cutin_data.cpp src/trial_title_data.cpp src/trial_title_bytes.s src/trial_bytes.s src/trial_ui_bytes.s src/trial_cutin_bytes.s assets/trial/court.bin assets/trial/poses.json assets/trial/ui.bin assets/trial/cutins.bin assets/trial/titles.bin assets/trial/camera/Court/expected.bin assets/trial/camera/Court_Final/expected.bin assets/source-metadata/trial.json
+	$(MAKE) trial-alignment-assets
 
 .PHONY: trial-title-test
 trial-title-test: hiro-test-rom

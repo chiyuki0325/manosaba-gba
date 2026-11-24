@@ -154,7 +154,7 @@ void application::draw()
     else draw_scene(_canvas, _menu.scene());
 #endif
     if(!_menu.open() && story_page() && !overlay) _story.render(_canvas);
-    else _canvas.toast(0);
+    else {_canvas.toast(0);_canvas.fast_forward(0);}
     graphics_performance.ui_ticks=unsigned(bn::core::current_cpu_ticks())-begin;
 }
 void application::commit()

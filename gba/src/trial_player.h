@@ -26,6 +26,7 @@ public:
     void external_progress(){progressed();}
     bool release() {return _scene.release() && _movie.release() && _reenact_stage.release();}
     bool update(bool display_ready);
+    int fast_forward_icon() const;
     void draw(text_canvas& canvas);
     bool painting() const {return _preview && !_preview_ready;}
     void render(text_canvas& canvas);
@@ -58,6 +59,7 @@ private:
     bool _keep_canvas=false,_pause_repaint=false;
     bool _choice_loading=false;
     bool show_pictures() const;
+    bool fast_forward() const;
     void progressed();
     const dialogue_layout& layout() const;
     void dialogue(text_canvas& canvas);

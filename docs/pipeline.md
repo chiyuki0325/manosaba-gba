@@ -42,6 +42,8 @@ make -C gba prepare-assets
 
 `prepare-assets` 先导入和链接全章图形，再生成法庭、UI、图鉴、剧本和裁剪字库。选择的审判姿态会补入同一图像归档。输出的 C/C++ 描述、汇编 `.incbin` 和二进制共同构成准备好的 GBA 资产，需一起保留；无需把大量原始 PNG 再交给 ROM 构建。
 
+法庭固定镜位的 OBJ 拼块偏移由 `trial_alignment.py` 从准备好的立绘、镜位和裁切线生成，随 `trial-resources` 更新。只调整拼块位置，复用贴图和原倍率；无法在保持下缘及扫描线预算的前提下改善的镜位保留原位。可以单独运行 `make -C gba trial-alignment-assets`，无需原始素材。
+
 ### 人工调整在哪里
 
 | 输入 | 用途 |

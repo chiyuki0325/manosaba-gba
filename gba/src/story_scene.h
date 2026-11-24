@@ -43,6 +43,7 @@ public:
     void test_music(bool enabled) {_test_music=enabled;}
     int snapshot(uint8_t* destination,int size,bool retry=false);
     bool restore_snapshot(uint8_t* source,int size);
+    void restore_play_time(uint32_t frames){_play_frames=frames;}
     save_metadata save_info() const;
     bool auto_save_ready() const;
     bool retry_identity(int& script,unsigned& pc) const;
@@ -68,6 +69,7 @@ private:
     bool _settings_requested=false;
     bool _restoring=false,_restore_canvas=false;
     int _active_stage = -1;
+    uint32_t _play_frames=0;
     int _selected = 0;
     int _first_script=0,_script_count=0;
     int _choice = 0, _first_choice=0;
@@ -82,6 +84,7 @@ private:
     void progressed();
     void select_current_script();
     const dialogue_layout& layout() const;
+    bool fast_forward() const;
     void prepare_page();
     bool overlay() const {return _paused || _book.active() || _history.active();}
     void suspend_overlay();

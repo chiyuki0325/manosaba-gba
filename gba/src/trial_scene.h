@@ -16,7 +16,7 @@ public:
     void request_background(int view,bool demo=false,int layout=0);
     void visible(bool enabled);
     bool active() const {return _bg.has_value();}
-    void request(int actor,int view,bool demo=false,int layout=0,const uint16_t* poses=nullptr,int reserve_scale=256,int source_row=1,bool horizontal=false);
+    void request(int actor,int view,bool demo=false,int layout=0,const uint16_t* poses=nullptr,int reserve_scale=256,int source_row=1,bool horizontal=false,bool zooming=false);
     void request_pan(int motion,unsigned frame,bool witch_hiro,const uint16_t* poses=nullptr,int actor=0);
     int scroll() const {return _tracking ? _track_x : _x;}
     int window_x() const {return _x;}

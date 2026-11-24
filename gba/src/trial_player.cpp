@@ -115,9 +115,19 @@ void trial_player::progressed()
     }
 }
 const dialogue_layout& trial_player::layout() const {return _vm.state()==story_state::debate ? _vm.debate_layout() : graphical_dialogue;}
+bool trial_player::fast_forward() const
+{
+    auto state=_vm.state();
+    return !_preview && (state==story_state::text || state==story_state::debate) && bn::keypad::r_held();
+}
+int trial_player::fast_forward_icon() const
+{
+    if(!fast_forward())return 0;
+    return _vm.trial_left() && !_vm.reenact() && _vm.map_segment()<0 && !_map_stage.active() ? 152 : 216;
+}
 bool trial_player::update(bool display_ready)
 {
-    _dialogue.speed(_vm.state()==story_state::debate ? 1 : _dialogue_speed);
+    if(!fast_forward())_dialogue.reset_fast_forward();
     int frames=1+bn::core::last_missed_frames();
     if(_picture_bank!=_vm.graphical_bank())
     {_images.reset();_picture_bank=_vm.graphical_bank();_picture_event=-1;_pictures=false;_images.set_bank(_picture_bank,false);_images.request(0);}
@@ -249,6 +259,9 @@ bool trial_player::update(bool display_ready)
     // text pass even when A already completed the typewriter and tick is idle.
     if(_map_stage.active() && !_map_stage.ready())return true;
     if(_dialogue.redrawing() || _full){trial_runtime.interaction_ready=0;return true;}
+    bool fast=fast_forward();
+    if(_dialogue.speed(fast ? 2 : _vm.state()==story_state::debate ? 1 : _dialogue_speed))
+    {trial_runtime.interaction_ready=0;_full=_keep_canvas=true;return true;}
     bool readable=display_ready && (!show_pictures() || _images.ready()) && (!_scene.active() || _scene.ready()) && (!_map_stage.active() || _map_stage.ready()) && (!_vm.reenact() || _vm.reenact_scene()<0 || _reenact_stage.ready()) && _prepared;
     trial_runtime.interaction_ready=readable;
     _dialogue.frame(readable);
@@ -280,7 +293,9 @@ bool trial_player::update(bool display_ready)
         return _choice!=before;
     }
     if(action && _dialogue.complete() && !_dialogue.can_advance())action=false;
-    if(_vm.state()==story_state::debate)
+    bool debate=_vm.state()==story_state::debate;
+    bool skip=fast && (!debate || !_vm.debate_stopped()) && _dialogue.fast_forward(frames);
+    if(debate)
     {
         for(int point=0;point<_vm.link_count();++point)
         {
@@ -288,17 +303,18 @@ bool trial_player::update(bool display_ready)
             if(pressed && _vm.link(point).first>=_dialogue.page().start() && _vm.link(point).last<=_dialogue.page().visible())
             {_return_page=_dialogue.page();_vm.object(point);progressed();return true;}
         }
-        if(action && _dialogue.complete())
+        if(skip || (action && _dialogue.complete()))
         {
             if(!_vm.debate_stopped()){_vm.skip_debate();progressed();return true;}
             action=false;
         }
-        if(_vm.tick_debate(1+bn::core::last_missed_frames())){progressed();return true;}
+        if(_vm.tick_debate(frames,!fast)){progressed();return true;}
         if(action){_dialogue.finish();_full=_keep_canvas=true;return true;}
         int bar=int(_vm.statement_left()*240/_vm.statement_duration()),seconds=int((_vm.trial_left()+59)/60);
         _hud=_hud || bar!=_bar || seconds!=_seconds;
-        if(_dialogue.complete() && _vm.text()[_dialogue.page().end()]){_dialogue.next_page(_vm.text(),layout());_full=true;return true;}
+        if(!fast && _dialogue.complete() && _vm.text()[_dialogue.page().end()]){_dialogue.next_page(_vm.text(),layout());_full=true;return true;}
     }
+    else if(skip){_vm.advance();progressed();return true;}
     else if(action)
     {
         auto result=_dialogue.advance(_vm.text(),layout());
@@ -419,7 +435,8 @@ void trial_player::choices(text_canvas& canvas)
 }
 void trial_player::draw(text_canvas& canvas)
 {
-    _dialogue.speed(_vm.state()==story_state::debate ? 1 : _dialogue_speed);
+    if(_dialogue.speed(fast_forward() ? 2 : _vm.state()==story_state::debate ? 1 : _dialogue_speed))
+    {_full=_keep_canvas=true;}
     // A VM cache miss can decode 4 KiB before this pass. Leave enough time
     // for the bounded UI step and VBlank uploads; retry with the canvas intact.
     if(!video_upload::finishing && (_full || !_prepared) && bn::core::current_cpu_ticks()>1400)return;

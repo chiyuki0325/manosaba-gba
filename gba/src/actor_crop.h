@@ -29,6 +29,7 @@ struct trial_actor_placement
     int16_t x,y;
     uint16_t scale,count;
     int16_t limit=32767;
+    uint16_t alignment=0;
     int cutoff(int column) const {return bottom ? bottom[column] : limit;}
 };
 }

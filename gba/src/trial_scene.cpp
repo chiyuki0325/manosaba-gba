@@ -1,5 +1,6 @@
 #include "video_upload.h"
 #include "trial_scene.h"
+#include "trial_alignment.h"
 #include "trial_data.h"
 #include "bn_regular_bg_map_ptr.h"
 #include "bn_bg_palette_item.h"
@@ -19,6 +20,20 @@ alignas(4) BN_DATA_EWRAM_BSS uint16_t heat_rows[2][160];
 constexpr int rows=20,column_bytes=rows*32,view_bytes=32*column_bytes;
 int rounded(int value,int divisor){return value>=0 ? (value+divisor/2)/divisor : -((-value+divisor/2)/divisor);}
 int image(int actor,const uint16_t* poses){return poses && poses[actor]!=65535 ? poses[actor] : trial_actor_images[actor];}
+uint16_t alignment(int image,int scale,int limit)
+{
+    int first=0,last=trial_alignment_count;
+    while(first<last)
+    {
+        int mid=(first+last)/2;
+        const auto& entry=trial_alignment_entries[mid];
+        if(entry.image==image && entry.scale==scale && entry.limit==limit)return entry.offset;
+        bool below=entry.image<image || (entry.image==image &&
+            (entry.scale<scale || (entry.scale==scale && entry.limit<limit)));
+        if(below)first=mid+1;else last=mid;
+    }
+    return 0;
+}
 }
 void trial_scene::init()
 {
@@ -116,14 +131,14 @@ void trial_scene::placement(int slot,const trial_actor_placement& value)
         }
     }
 }
-void trial_scene::request(int actor,int view,bool demo,int layout,const uint16_t* poses,int reserve_scale,int source_row,bool horizontal)
+void trial_scene::request(int actor,int view,bool demo,int layout,const uint16_t* poses,int reserve_scale,int source_row,bool horizontal,bool zooming)
 {
     if(!_cast){_cast.emplace(_assets,graphics_bytes);_key=_published=-1;}
     bool was_pan=_pan;
     _background_only=_pan=_pan_reload=_compound=_tracking=false;_motion=-1;_vertical=_offset_x=_offset_y=0;_scale=256;
     int actor_image=actor==255 ? trial_actor_images[0] : image(actor,poses);
-    int style=int(actor==255)|int(reserve_scale!=256)<<1|int(source_row==2)<<2|int(horizontal)<<3;
-    int key=demo ? 100+view : 1000000+(actor_image+graphic_asset_count*(view+13*layout))*16+style;
+    int style=int(actor==255)|int(reserve_scale!=256)<<1|int(source_row==2)<<2|int(horizontal)<<3|int(zooming)<<4;
+    int key=demo ? 100+view : 1000000+(actor_image+graphic_asset_count*(view+13*layout))*32+style;
     if(!was_pan && key==_key)return;
     _key=key;_demo=demo;
     int stage=trial_camera_layouts[layout].background-7;
@@ -152,6 +167,11 @@ void trial_scene::request(int actor,int view,bool demo,int layout,const uint16_t
         {
             auto source=trial_actor_positions[actor][view];const auto& base=graphic_assets[trial_actor_images[actor]];
             source.limit=source.bottom[base.width/2]+_assets[0].pivot_y-base.pivot_y;source.bottom=nullptr;placement(0,source);
+        }
+        if(actor!=255 && (view>=4 || poses) && !horizontal && !zooming)
+        {
+            auto& position=positions[0];
+            position.alignment=alignment(actor_image,position.scale,bn::min(int(_assets[0].height),int(position.limit)));
         }
         for(int a=1;a<3;++a){_assets[a]=graphic_assets[trial_demo_images[a]];positions[a]=trial_empty_position;}
     }
@@ -182,7 +202,7 @@ void trial_scene::request_pan(int motion,unsigned frame,bool witch_hiro,const ui
         int stage=layout.background-7;
         const auto& from=trial_view_positions[stage][camera.start_view-4];const auto& to=trial_view_positions[stage][camera.end_view-4];
         int end_scale=to.scale*256/from.scale;
-        request(actor,camera.start_view,false,camera.layout,poses,bn::min(256,end_scale),camera.rise<0 ? 2 : 1);
+        request(actor,camera.start_view,false,camera.layout,poses,bn::min(256,end_scale),camera.rise<0 ? 2 : 1,false,true);
         _compound=true;int progress=int(frame)*4096/camera.frames;
         // SmoothStep is the inexpensive approximation of the source sine easing.
         progress=progress*progress/4096*(12288-2*progress)/4096;

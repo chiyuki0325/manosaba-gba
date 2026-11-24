@@ -22,7 +22,7 @@ struct copy_job {const uint16_t* source;uint16_t* target;uint16_t bytes,offset;}
 struct protected_range {uintptr_t first,last;};
 BN_DATA_EWRAM_BSS bn::vector<copy_job,128> jobs;
 BN_DATA_EWRAM_BSS bn::vector<protected_range,32> protected_ranges;
-BN_DATA_EWRAM_BSS bn::tile toast_pixels[36];
+BN_DATA_EWRAM_BSS bn::tile overlay_pixels[36+9]; // Toast and fast-forward icon.
 int toast_count=0;
 bool recording=false,preloaded=false;
 void write(const copy_job& job,int first,int bytes)
@@ -65,7 +65,7 @@ void protect(const bn::affine_bg_ptr& bg)
     const auto& tiles=bg.tiles();protect(reinterpret_cast<const void*>(0x06000000+tiles.id()*2048),tiles.tiles_count()*32);
     auto owner=bg.map();protect(reinterpret_cast<const void*>(0x06000000+owner.id()*2048),owner.dimensions().width()*owner.dimensions().height());
 }
-const bn::tile& stable_tile(const bn::tile& tile){auto& result=toast_pixels[toast_count++];result=tile;return result;}
+const bn::tile& stable_tile(const bn::tile& tile){auto& result=overlay_pixels[toast_count++];result=tile;return result;}
 void prepare()
 {
     unsigned bytes=0;for(const auto& job:jobs)bytes+=job.bytes;

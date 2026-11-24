@@ -3,7 +3,7 @@ from pathlib import Path
 import re
 GBA=Path(__file__).resolve().parents[1]
 SOURCES=('font_data.c','story_data.cpp','story_layout.h','graphics_data.cpp','stage_data.cpp',
-         'trial_data.cpp','trial_ui_data.cpp','trial_cutin_data.cpp','witch_book_art.cpp',
+         'trial_data.cpp','trial_alignment_data.cpp','trial_ui_data.cpp','trial_cutin_data.cpp','witch_book_art.cpp',
          'book_map_data.cpp','reenact_data.cpp','credits_data.cpp','execution_data.cpp',
          'trial_map_data.cpp','home_art.cpp','music_room_data.cpp','warning_screen_data.cpp',
          'story_ui_data.cpp','choice_ui_data.cpp','nameplate_data.cpp','save_ui_data.cpp','sfx_data.cpp','save_legacy_data.h')

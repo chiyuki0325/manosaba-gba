@@ -1,4 +1,5 @@
 #include "trial_cast.h"
+#include "trial_alignment.h"
 #include "bn_sprite_builder.h"
 #include "bn_sprite_shape_size.h"
 #include "bn_sprite_palette_item.h"
@@ -141,9 +142,16 @@ void trial_cast::position(int scroll,int count)
         auto piece=front.pieces[i];const auto& asset=front.assets[piece.actor];const auto& placement=front.placement[piece.actor];
         const auto& shape=placement.pieces[piece.index];const auto& p=asset.parts[shape.part];
         int scale=placement.scale*_scale/256;
+        int x=placement.x+_offset_x+(p.x+shape.x*8+shape.width*4-asset.pivot_x)*scale/256-scroll-120;
+        int y=placement.y+_offset_y+(p.y+shape.y*8+shape.height*4-asset.pivot_y)*scale/256-80;
+        if(placement.alignment && _scale==256)
+        {
+            unsigned shift=trial_alignment_offsets[placement.alignment+piece.index];
+            x+=int(shift&7)-2;
+            y+=int(shift>>3)-2;
+        }
         front.sprites[i].set_visible(piece.actor<count);
-        front.sprites[i].set_position(placement.x+_offset_x+(p.x+shape.x*8+shape.width*4-asset.pivot_x)*scale/256-scroll-120,
-            placement.y+_offset_y+(p.y+shape.y*8+shape.height*4-asset.pivot_y)*scale/256-80);
+        front.sprites[i].set_position(x,y);
     }
 }
 int trial_cast::tile_bytes() const

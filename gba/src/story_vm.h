@@ -37,7 +37,7 @@ public:
     void advance();
     void choose(int index);
     void object(int index);
-    bool tick_debate(int frames);
+    bool tick_debate(int frames,bool autoplay=true);
     void skip_debate();
     void choose_item(int index);
     void cancel_inventory();

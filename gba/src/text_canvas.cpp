@@ -97,6 +97,31 @@ constexpr int toast_index(int logical)
     int x=logical%30-toast_left/8,y=logical/30-toast_top/8;
     return x>=0 && x<toast_width/8 && y>=0 && y<toast_height/8 ? y*(toast_width/8)+x : -1;
 }
+constexpr int fast_icon_index(int logical,int column)
+{
+    int x=logical%30-column,y=logical/30;
+    return y<3 && x>=0 && x<3 ? y*3+x : -1;
+}
+struct fast_icon_art {bn::tile ink[9]{},mask[9]{};};
+constexpr fast_icon_art make_fast_icon()
+{
+    fast_icon_art art;
+    for(int y=2;y<19;++y)for(int x=4;x<21;++x)
+    {
+        int tile=y/8*3+x/8,shift=x%8*4;
+        auto arrow=[](int px,int py)
+        {
+            int dx=px-5;
+            if(dx>=7)dx-=7;
+            return dx>=0 && dx<5 && py>=5+dx && py<=13-dx;
+        };
+        unsigned color=arrow(x,y) ? 1 : arrow(x-1,y-1) ? 4 : 0;
+        art.ink[tile].data[y%8]|=color<<shift;
+        art.mask[tile].data[y%8]|=15u<<shift;
+    }
+    return art;
+}
+constexpr auto fast_icon=make_fast_icon();
 constexpr int compact_index(int logical)
 {
 
@@ -882,6 +907,18 @@ void text_canvas::toast(int id)
         for(int x=toast_left/8;x<(toast_left+toast_width)/8;++x)dirty(y*30+x);
 }
 
+void text_canvas::fast_forward(int x)
+{
+    int column=_bg && !_choice_ui ? x/8 : 0;
+    if(column==_fast_column)return;
+    for(int y=0;y<3;++y)for(int i=0;i<3;++i)
+    {
+        if(_fast_column)dirty(y*30+_fast_column+i);
+        if(column)dirty(y*30+column+i);
+    }
+    _fast_column=uint8_t(column);
+}
+
 #ifdef __arm__
 __attribute__((section(".iwram"),target("arm")))
 #endif
@@ -1051,6 +1088,15 @@ int text_canvas::commit(int bytes)
         if(!_dirty[index]){++index;continue;}
         int physical=_execution_ui ? execution_index(index) : _graphical ? compact_index(index) : index*units;
         if(_graphical && !physical){_dirty[index++]=false;--_dirty_count;continue;}
+        int fast=_fast_column && !_choice_ui ? fast_icon_index(index,_fast_column) : -1;
+        if(fast>=0)
+        {
+            bn::tile tile;
+            for(int row=0;row<8;++row)
+                tile.data[row]=(canvas_tiles[index].data[row]&~fast_icon.mask[fast].data[row])|fast_icon.ink[fast].data[row];
+            video_upload::upload(video_upload::stable_tile(tile),1,vram[physical]);
+            _dirty[index++]=false;--_dirty_count;bytes-=32;continue;
+        }
         int toast=_toast ? toast_index(index) : -1;
         if(toast>=0)
         {
@@ -1068,6 +1114,7 @@ int text_canvas::commit(int bytes)
         int count=1,limit=bn::min(bytes/tile_bytes,600-index);
         while(count<limit && _dirty[index+count] &&
               (!_toast || toast_index(index+count)<0) &&
+              (!_fast_column || fast_icon_index(index+count,_fast_column)<0) &&
               (!_graphical || (_execution_ui ? execution_index(index+count) : compact_index(index+count))==physical+count))++count;
         video_upload::upload(canvas_tiles[index*units],count*units,vram[physical]);
         for(int i=0;i<count;++i)_dirty[index+i]=false;
