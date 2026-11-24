@@ -415,8 +415,8 @@ bool save_system::row(text_canvas& canvas,int row)
 void save_system::thumbnail(text_canvas&,int row,const save_metadata& meta)
 {
     work_timer timer{save_runtime.thumb_work};
-    if(!buffer() || meta.preview==65535){_preview_row=-1;return;}
-    auto* pixels=_buffer+4096;auto* palette=reinterpret_cast<uint16_t*>(_buffer+5120);
+    if(meta.preview==65535){_preview_row=-1;return;}
+    auto* pixels=reinterpret_cast<uint8_t*>(thumbnail_pixels[row]);
     const save_preview_colors* colors=nullptr;bool court=(meta.preview&0xc000)==0x4000,reenact=(meta.preview&0xc000)==0x8000;
     const reenact_pose* pose=nullptr;
     if(reenact){const auto& asset=reenact_assets[meta.preview&0x3fff];pose=&asset.poses[asset.pose_count-1];}
@@ -425,8 +425,7 @@ void save_system::thumbnail(text_canvas&,int row,const save_metadata& meta)
         for(int i=0;i<save_background_count;++i)if(save_background_colors[i].image==meta.preview){colors=&save_background_colors[i];break;}
         if(!colors){_preview_row=-1;return;}
     }
-    if(!_preview_line)
-    {std::memset(pixels,0,1024);std::memcpy(palette,reenact ? reenact_palette : court ? save_court_thumbs[meta.preview&1].palette : colors->palette,32);}
+    if(!_preview_line)std::memset(thumbnail_pixels[row],0,sizeof(thumbnail_pixels[row]));
     if(_preview_line<24)
     {
         for(int y=_preview_line;y<_preview_line+4;++y)
@@ -466,9 +465,9 @@ void save_system::thumbnail(text_canvas&,int row,const save_metadata& meta)
         _preview_line+=4;return;
     }
     auto shape=bn::sprite_shape_size(64,32);
+    const auto* palette=reenact ? reenact_palette : court ? save_court_thumbs[meta.preview&1].palette : colors->palette;
     _thumb_palettes[row]=bn::sprite_palette_ptr::create_new(bn::sprite_palette_item(bn::span<const bn::color>(reinterpret_cast<const bn::color*>(palette),16),bn::bpp_mode::BPP_4));
     _thumb_tiles[row]=bn::sprite_tiles_ptr::allocate(32,bn::bpp_mode::BPP_4);
-    std::memcpy(thumbnail_pixels[row],pixels,1024);
     video_upload::copy(thumbnail_pixels[row],_thumb_tiles[row]->vram()->data(),1024);
     _thumbs[row]=bn::sprite_ptr::create(-71,34+row*54+20+16-80,shape,*_thumb_tiles[row],*_thumb_palettes[row]);
     _thumbs[row]->set_bg_priority(0);_preview_row=-1;_preview_line=0;

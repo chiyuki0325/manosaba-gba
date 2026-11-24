@@ -30,7 +30,8 @@ uint32_t save_crc32(const void* data,unsigned size,uint32_t initial)
 }
 #if !MANOSABA_SAVE_SRAM
 unsigned save_store::address(int slot,int page) const
-{return slot==save_global_slot ? 120*1024+unsigned(page)*4096 : unsigned(page)*save_page_size;}
+{// The global journal is a two-sector ring; keep a stale page inside it.
+ return slot==save_global_slot ? 120*1024+(unsigned(page)&1u)*4096 : unsigned(page)*save_page_size;}
 bool save_store::mount(uint32_t signature)
 {
     _signature=signature;_phase=idle;_failed=_pending=_pending_erase=false;_watchdog=0;_sequence=0;_next_page=0;

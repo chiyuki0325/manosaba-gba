@@ -6,12 +6,12 @@
 #include <cstring>
 using namespace manosaba;
 static std::array<uint8_t,131072> flash;
-static unsigned operations=0;
+static unsigned operations=0,last_erase=~0u;
 namespace manosaba::flash_driver {
 bool detect(){return true;}
 void read(unsigned address,void* destination,unsigned size){assert(address+size<=flash.size());std::memcpy(destination,flash.data()+address,size);}
 void program(unsigned address,uint8_t value){assert(address<flash.size());flash[address]&=value;++operations;}
-void erase(unsigned address){assert(address%4096==0 && address+4096<=flash.size());std::memset(flash.data()+address,255,4096);++operations;}
+void erase(unsigned address){assert(address%4096==0 && address+4096<=flash.size());last_erase=address;std::memset(flash.data()+address,255,4096);++operations;}
 bool ready(){return true;}
 }
 static void finish(save_store& store)
@@ -92,6 +92,29 @@ int main()
         uint8_t expected=reboot.version()==3 ? 0x44 : 0x35;for(unsigned i=0;i<reboot.length();++i)assert(page[256+i]==expected);
         assert(reboot.status(save_auto_slot)==save_slot_status::valid && reboot.status(save_retry_slot)==save_slot_status::valid);
     }
+    // A stale global journal page must never address bank 2 and erase a record sector.
+    flash.fill(255);
+    auto v5=[&](unsigned sector,int slot,uint32_t sequence,unsigned size,uint8_t value)
+    {
+        auto* target=flash.data()+sector*4096;std::memset(target+256,value,size);
+        old_header h{};h.magic=0x56534e4d;h.sequence=sequence;h.signature=signature;h.version=5;h.length=uint16_t(size);h.slot=uint8_t(slot);h.commit=0xa5;
+        h.crc=save_crc32(target+64,192+size);h.header_crc=save_crc32(&h,24);std::memcpy(target,&h,sizeof(h));
+    };
+    v5(14,7,5000,800,0x5c);
+    save_store guarded;assert(guarded.mount(signature));assert(guarded.status(7)==save_slot_status::valid);
+    uint8_t record_copy[4096];std::memcpy(record_copy,flash.data()+14*4096,sizeof(record_copy));
+    guarded.test_page(save_global_slot,16);
+    for(int round=0;round<2;++round)
+    {
+        std::memset(page,0xff,save_buffer_size);std::memset(page+save_payload_offset,0x77,120);
+        assert(guarded.begin_write(save_global_slot,page,120,0,meta));finish(guarded);
+        assert(last_erase==120*1024 || last_erase==124*1024);
+    }
+    assert(!std::memcmp(record_copy,flash.data()+14*4096,sizeof(record_copy)));
+    save_store recovered;assert(recovered.mount(signature));
+    assert(recovered.begin_read(7,page));finish(recovered);assert(page[save_payload_offset]==0x5c);
+    assert(recovered.begin_read(save_global_slot,page));finish(recovered);assert(page[save_payload_offset]==0x77);
+
     std::printf("PASS: 27 manual + auto/retry, one-sector v5, legacy auto/retry mapping and %u legacy migration power cuts\n",migrate_cuts+1);
     std::printf("PASS: 128KiB banks, all slots/globals, %u power-cut prefixes, page reuse, compatibility and CRC damage\n",cuts);
 }

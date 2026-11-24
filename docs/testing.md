@@ -111,7 +111,7 @@ SRAM试作沿用同一native存读档见证：`run_save_test.py ROM OUTPUT --sra
 
 2026-11-23：正式写入1254B正文；8手动槽SRAM与27手动槽Flash均通过宿主断电、实际RTC／冷读档／讨论HP与时钟／异议返回／TimeIsUp／独立重试见证。VM往返为49707个ADV＋9714个Trial检查点。读档从ROM锚点重建文本与候选，覆盖界面关闭、第一页完整显示；不再恢复记录／图鉴的窗口位置或逐字动画，前述旧格式记录位置测试仅为历史证据。
 
-`run_save_migration_test.py FLASH_ROM SRAM_ROM INPUT_SAV OUTPUT` 使用实际旧Flash档，直接载入Flash和HTML转换后载入SRAM，正常保存后冷启动再读；同一入口可接网页反向转换的Flash输入。设置 `MANOSABA_EXPAND_LEGACY=1` 在满旧目录上继续写入新增槽位，检查当前剧情锚点不变及实际PCM输出。完整旧目录由真实旧存档合成到build目录，不作为构建输入。两种后端各自的断电测试保护旧有效记录，Flash旧记录的两个扇区都参与所有权判定。
+`run_save_migration_test.py FLASH_ROM SRAM_ROM INPUT_SAV OUTPUT` 使用实际旧Flash档，直接载入Flash和HTML转换后载入SRAM，正常保存后冷启动再读；同一入口可接网页反向转换的Flash输入。设置 `MANOSABA_EXPAND_LEGACY=1` 在满旧目录上继续写入新增槽位，检查当前剧情锚点不变及实际PCM输出。完整旧目录由真实旧存档合成到build目录，不作为构建输入。两种后端各自的断电测试保护旧有效记录，Flash旧记录的两个扇区都参与所有权判定。`save_store_test`／`sram_store_test` 另把全局日志页号改成16后执行读写，断言 Flash 只擦 0x1E000／0x1F000、SRAM 只读 0x7E00／0x7F00，且记录区数据不变；去掉取址掩码时两处断言都会失败。
 
 转换页额外检查旧／新Flash、32 KiB及128 KiB填充SRAM、两种方向、重复选择禁用和下载扩展名；C++／JS独立解析33份真实旧正文／重试输出一致。320px手机和1280px电脑布局无横向溢出，用户界面不显示内部存储版本。文件只在本地处理。
 

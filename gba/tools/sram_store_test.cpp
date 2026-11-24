@@ -23,4 +23,6 @@ auto baseline=ram;for(int target: {3,9,10}){
  printf("power cuts slot=%d bytes=%u PASS\n",target,count);
 }
 ram=baseline;save_store r;r.mount(17);write_record(r,2,55,2816);assert(r.begin_read(2,data));finish(r);assert(data[256]==55);
-assert(!r.begin_write(0,data,2817,0,{}));assert(!r.begin_write(9,data,1281,0,{}));save_store incompatible;incompatible.mount(18);assert(incompatible.status(0)==save_slot_status::incompatible);assert(incompatible.status(10)==save_slot_status::valid);puts("PASS: 32768B SRAM, all ten slots, full 3KiB records, compact global pages, scratch recovery at every write byte, and size limits");}
+// A stale global page index must stay inside the two 256 B global copies.
+write_record(r,save_global_slot,0x66,120);r.test_page(save_global_slot,16);assert(r.begin_read(save_global_slot,data));finish(r);assert(data[256]==0x66);
+assert(!r.begin_write(0,data,2817,0,{}));assert(!r.begin_write(9,data,1281,0,{}));save_store incompatible;incompatible.mount(18);assert(incompatible.status(0)==save_slot_status::incompatible);assert(incompatible.status(10)==save_slot_status::valid);puts("PASS: 32768B SRAM, all ten slots, full 3KiB records, compact global pages, scratch recovery at every write byte, stale global page and size limits");}

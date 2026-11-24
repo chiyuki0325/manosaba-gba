@@ -46,6 +46,9 @@ public:
     unsigned length() const {return _length;}
     unsigned seed_length() const {return _seed_length;}
     int version() const {return _version;}
+#ifdef MANOSABA_SAVE_TEST
+    void test_page(int slot,uint8_t page){_slots[slot].page=page;}
+#endif
 private:
     struct record {uint32_t sequence=0;uint16_t length=0,seed=0;uint8_t page=255,version=0;save_slot_status status=save_slot_status::empty;};
     record _slots[save_global_slot+1];

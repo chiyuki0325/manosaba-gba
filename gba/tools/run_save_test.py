@@ -8,7 +8,7 @@ from host_test_cache import GBA,build
 def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('rom',type=Path);parser.add_argument('output',type=Path);parser.add_argument('--ui-only',action='store_true');parser.add_argument('--sram',action='store_true');args=parser.parse_args()
     out=args.output.resolve();out.mkdir(parents=True,exist_ok=True);rom=args.rom.resolve()
-    flags=('-std=c++17','-O1','-g','-Wall','-Wextra','-fsanitize=address,undefined','-I'+str(GBA/'src'),'-DMANOSABA_SAVE_SRAM='+str(int(args.sram)))
+    flags=('-std=c++17','-O1','-g','-Wall','-Wextra','-fsanitize=address,undefined','-I'+str(GBA/'src'),'-DMANOSABA_SAVE_SRAM='+str(int(args.sram)),'-DMANOSABA_SAVE_TEST=1')
     def host(spec):
         name,sources=spec;test=build(name,[GBA/p for p in sources],compiler='g++',flags=flags,libraries=())
         run=subprocess.run([str(test)],capture_output=True,text=True);(out/(name+'.log')).write_text(run.stdout+run.stderr)

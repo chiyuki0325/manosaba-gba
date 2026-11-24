@@ -17,7 +17,8 @@ struct page_header {
 };
 static_assert(sizeof(page_header)==64);
 unsigned location(unsigned page)
-{return page<9 ? page*3072 : page==9 ? retry_address : page==scratch_page ? scratch_address : global_address+(page-global_first)*256;}
+{// The global journal is a two-page ring; keep a stale page inside it.
+ return page<9 ? page*3072 : page==9 ? retry_address : page==scratch_page ? scratch_address : global_address+((page-global_first)&1u)*256;}
 unsigned prefix(int slot){return slot>=save_retry_slot ? 64 : save_payload_offset;}
 unsigned capacity(int slot){return slot==save_global_slot ? 256 : slot==save_retry_slot ? 1536 : 3072;}
 bool valid(const page_header& h)
