@@ -48,10 +48,6 @@ make -C gba release SAVE_BACKEND=sram -j12  # SRAM兼容正式版：gba/manosaba
 
 ## 维护文档
 
-魔女图鉴已补全「记录」：18条资料随剧情更新版本，文字列表与全宽滚动阅读；兼容已有存档。
-
-放大旋转立绘按OBJ实际输出框降级，保留平移淡入；CG侧边分屏采用主CG单镜位，修复Adv35及同类场景的缺块。
-
 - [管线、准备资产与外部音乐输入](docs/pipeline.md)
 - [架构、状态和存档](docs/architecture.md)
 - [测试入口与精简审计](docs/testing.md)
@@ -61,5 +57,3 @@ make -C gba release SAVE_BACKEND=sram -j12  # SRAM兼容正式版：gba/manosaba
 发布 Flash ROM 为 30,034,992 B，距离 32 MiB 上限还剩 3,519,440 B。原作安装、完整解包媒体、开发环境、缓存和测试输出不纳入版本控制。
 
 Flash版提供27个手动槽，SRAM兼容版提供8个手动槽；两版另有自动档和重试。正文固定1254B，详见[存档容量](docs/save-capacity.md)。使用[存档转换工具](https://imgsrc.chyk.ink/manosaba-gba-save-converter.html)在两版之间迁移，支持电脑／手机及.sav／.srm。
-
-审判错误指摘按原作不扣血，保留原反馈；计时耗尽仍会失败。界面和CG加载期间保留旧画面，取消额外加载黑屏，接受必要的加载长帧。
