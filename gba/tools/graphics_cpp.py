@@ -109,9 +109,9 @@ def emit(cache_root=None,output=None):
                             event_lines=program['event_lines'],source_lines=[e['line'] for e in json.loads((cache.root/'chapters'/(path+'.json')).read_text())['events'] if e['op']=='PrintTextModified']))
     array('graphics_bank','graphics_banks',banks)
     lines.append(f'const int graphics_bank_count={len(paths)},graphic_asset_count={len(ids)+len(cached)};\n}}')
-    write_changed(GBA/'src/graphics_data.cpp','#ifdef MANOSABA_ACTOR_BAKED\n#include "../build-actor-baked/graphics_data.inc"\n#else\n'+'\n'.join(lines)+'\n#endif\n')
+    write_changed(GBA/'src/graphics_data.cpp','\n'.join(lines)+'\n')
     write_changed(GBA/'assets/graphics/graphics.bin',payload)
-    write_changed(GBA/'src/graphics_bytes.s','// Payload SHA256: '+digest(payload)+'\n.section .rodata.graphics_bytes,"a",%progbits\n.balign 4\n.global _ZN8manosaba14graphics_bytesE\n_ZN8manosaba14graphics_bytesE:\n.ifdef MANOSABA_ACTOR_BAKED\n.incbin "../build-actor-baked/graphics.bin"\n.else\n.incbin "../assets/graphics/graphics.bin"\n.endif\n')
+    write_changed(GBA/'src/graphics_bytes.s','// Payload SHA256: '+digest(payload)+'\n.section .rodata.graphics_bytes,"a",%progbits\n.balign 4\n.global _ZN8manosaba14graphics_bytesE\n_ZN8manosaba14graphics_bytesE:\n.incbin "../assets/graphics/graphics.bin"\n')
     cache_bytes=cache_report['payload_bytes']+cache_report['directory_bytes']
     final_report=dict(linked['report'],**check_budget(linked['report']['graphics_bytes']+cache_bytes))
     final_report.update(payload_bytes=len(payload),assets=len(ids)+len(cached),actor_cache_bytes=cache_bytes,cached_variants=len(cached))

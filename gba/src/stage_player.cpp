@@ -118,11 +118,9 @@ namespace
 {
 int presentation_value(int value, int target, int property, bool relative = false, bool snap_scale = true)
 {
-#if defined(MANOSABA_CLOSEUP_LIMIT) || defined(MANOSABA_ACTOR_SCALE_SNAP)
+#ifdef MANOSABA_ACTOR_SCALE_SNAP
     if (snap_scale && target < stage_actor_count && property == int(stage_property::scale) && !relative && value > 512)
         return 512;
-#endif
-#ifdef MANOSABA_ACTOR_SCALE_SNAP
     bool common = value == 282;
 #ifdef MANOSABA_ACTOR_SCALE_SNAP_115
     common |= value == 294;

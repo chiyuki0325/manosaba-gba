@@ -28,22 +28,8 @@ USERFLAGS += -DMANOSABA_DEBUG_MENU=$(DEBUG_MENU)
 USERFLAGS += -DMANOSABA_SAVE_SRAM=$(if $(filter sram,$(SAVE_BACKEND)),1,0)
 USERCXXFLAGS := -iquote $(abspath $(BUTANO))/hw/3rd_party/maxmod/src/core -iquote $(abspath $(BUTANO))/hw/include
 USERASFLAGS :=
-# Story portraits use ordinary OBJ at 1x. Keep control/prototype builds explicit.
-ACTOR_PRESENTATION ?= snap115
-ifeq ($(ACTOR_PRESENTATION),closeup)
-USERFLAGS += -DMANOSABA_ACTOR_SCALE_SNAP -DMANOSABA_ACTOR_SCALE_SNAP_115 -DMANOSABA_CLOSEUP_LIMIT
-else ifeq ($(ACTOR_PRESENTATION),snap115)
+# Story portraits use ordinary OBJ at 1x; host budget scans can still compare scale policies.
 USERFLAGS += -DMANOSABA_ACTOR_SCALE_SNAP -DMANOSABA_ACTOR_SCALE_SNAP_115
-else ifeq ($(ACTOR_PRESENTATION),snap)
-USERFLAGS += -DMANOSABA_ACTOR_SCALE_SNAP
-else ifeq ($(ACTOR_PRESENTATION),regular)
-USERFLAGS += -DMANOSABA_ACTOR_REGULAR
-else ifeq ($(ACTOR_PRESENTATION),baked)
-USERFLAGS += -DMANOSABA_ACTOR_BAKED
-USERASFLAGS += -Wa,--defsym,MANOSABA_ACTOR_BAKED=1
-else ifneq ($(ACTOR_PRESENTATION),baseline)
-$(error Unknown ACTOR_PRESENTATION: $(ACTOR_PRESENTATION))
-endif
 USERLDFLAGS :=
 USERLIBDIRS :=
 USERLIBS :=

@@ -23,9 +23,6 @@
 #include "bn_utility.h"
 #include "bn_tile.h"
 #include <cstring>
-#ifdef MANOSABA_ACTOR_BAKED
-#include "../build-actor-baked/actor_variant_map.h"
-#endif
 namespace manosaba
 {
 void image_scene::protect() const
@@ -646,10 +643,6 @@ int image_scene::image_for(int entity) const
         const auto& animation = graphic_assets[image];
         image = animation.frames[(_player.clock() * animation.fps / 60) % animation.frame_count];
     }
-#ifdef MANOSABA_ACTOR_BAKED
-    if (entity < stage_actor_count)
-        image = actor_bake::image(image);
-#endif
     return image;
 }
 void image_scene::apply(int event)
@@ -871,11 +864,7 @@ void image_scene::prepare_actor(int slot, int image, uint32_t clip_key, uint32_t
         }
         auto placement =
             transform(_player.entity(entity), _player.entity(stage_camera), asset.nominal_scale, int16_t(asset.color));
-#if defined(MANOSABA_ACTOR_REGULAR) || defined(MANOSABA_ACTOR_SCALE_SNAP) || defined(MANOSABA_ACTOR_BAKED)
         bool affine = placement.c != 256 || placement.s != 0;
-#else
-        constexpr bool affine = true;
-#endif
         source_clip clipping{};
         if (clip >= 0)
             clipping =
@@ -1077,10 +1066,6 @@ void image_scene::clip_background(int plane, int entity)
 // Geometry admission is cold work: keep it out of the IWRAM pixel path.
 __attribute__((noinline)) void image_scene::select_actor_cache(int* images, const uint32_t* viewport_keys)
 {
-#if defined(MANOSABA_DISABLE_PORTRAIT_CACHE) ||                                                                        \
-    !(defined(MANOSABA_ACTOR_REGULAR) || defined(MANOSABA_ACTOR_SCALE_SNAP) || defined(MANOSABA_ACTOR_BAKED))
-    return;
-#endif
     uint32_t selection = 2166136261u;
     for (int slot = 0; slot < 3; ++slot)
     {
@@ -1462,15 +1447,12 @@ void image_scene::positions()
         if (asset.nominal_scale != 256)
             scale = scale * 256 / asset.nominal_scale;
         int angle = entity.get(stage_property::angle) + camera.get(stage_property::angle) - int16_t(asset.color);
-#if defined(MANOSABA_ACTOR_REGULAR) || defined(MANOSABA_ACTOR_SCALE_SNAP) || defined(MANOSABA_ACTOR_BAKED)
         bool affine = scale != 256 || angle % (360 * 256) != 0;
-#endif
         actor.matrix->set_scale(fx(bn::max(1, scale)));
         actor.matrix->set_rotation_angle_safe(-fx(angle));
         auto placement = transform(entity, camera, asset.nominal_scale, int16_t(asset.color));
         for (int i = 0; i < actor.sprites.size(); ++i)
         {
-#if defined(MANOSABA_ACTOR_REGULAR) || defined(MANOSABA_ACTOR_SCALE_SNAP) || defined(MANOSABA_ACTOR_BAKED)
             if (affine)
             {
                 if (!actor.sprites[i].affine_mat())
@@ -1478,7 +1460,6 @@ void image_scene::positions()
             }
             else if (actor.sprites[i].affine_mat())
                 actor.sprites[i].remove_affine_mat();
-#endif
             auto point = placement.part(asset, asset.parts[actor.part_indices[i]]);
             actor.sprites[i].set_position(fx(point.x - 120 * 256), fx(point.y - 80 * 256));
             int priority = top_order > entity.order ? 3 : (_scene_proxy ? 1 : 2);

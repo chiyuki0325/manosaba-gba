@@ -22,8 +22,7 @@ def main():
     flags={'baseline':[],'regular-obj':['-DMANOSABA_ACTOR_REGULAR'],'scale-snap':['-DMANOSABA_ACTOR_SCALE_SNAP'],
            'part-crop':['-DMANOSABA_ACTOR_SCALE_SNAP','-DMANOSABA_ACTOR_PART_CROP'],
            'silhouette-share':['-DMANOSABA_ACTOR_SCALE_SNAP','-DMANOSABA_ACTOR_SILHOUETTE_SHARE'],
-           'scale-snap115':['-DMANOSABA_ACTOR_SCALE_SNAP','-DMANOSABA_ACTOR_SCALE_SNAP_115','-DMANOSABA_ACTOR_SILHOUETTE_SHARE'],
-           'closeup-limit':['-DMANOSABA_ACTOR_SCALE_SNAP','-DMANOSABA_ACTOR_SCALE_SNAP_115','-DMANOSABA_ACTOR_SILHOUETTE_SHARE','-DMANOSABA_CLOSEUP_LIMIT']}[variant]
+           'scale-snap115':['-DMANOSABA_ACTOR_SCALE_SNAP','-DMANOSABA_ACTOR_SCALE_SNAP_115','-DMANOSABA_ACTOR_SILHOUETTE_SHARE']}[variant]
     footprint='--footprint' in sys.argv
     suffix=variant+('-footprint' if footprint else '')
     if footprint:flags=flags+['-DMANOSABA_AFFINE_FOOTPRINT']
@@ -50,7 +49,7 @@ def main():
         ints(KINDS[a['kind']],w,h,px,py,a.get('fps',0))
         sequence([ids[k] for k in a.get('obj_frames',a.get('frames',[]) if a['kind']=='animation' else [])])
         parts=a.get('parts',[]);ints(len(parts))
-        groups=silhouette_groups(parts,payload,offsets,alpha_tiles) if variant in ('silhouette-share','scale-snap115','closeup-limit') else []
+        groups=silhouette_groups(parts,payload,offsets,alpha_tiles) if variant in ('silhouette-share','scale-snap115') else []
         for i,p in enumerate(parts):
             ints(p['x'],p['y'],p['width'],p['height'])
             if groups:ints(groups[i])
