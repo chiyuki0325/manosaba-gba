@@ -14,5 +14,5 @@ extern const nameplate nameplates[];
 extern const int nameplate_count;
 extern const uint32_t nameplate_diamond[384];
 extern const uint16_t nameplate_diamond_colors[4];
-}
+} // namespace manosaba
 #endif

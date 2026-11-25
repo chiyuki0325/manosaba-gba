@@ -8,29 +8,36 @@ struct actor_crop
 {
     const int16_t* bottom;
     int width;
-    int limit=32767;
-    int at(int x) const {return bottom ? bottom[x] : limit;}
-    unsigned mask(int x,int y) const
+    int limit = 32767;
+    int at(int x) const
     {
-        unsigned result=0;
-        for(int i=0;i<8 && x+i<width;++i)
-            if(y<at(x+i))result|=15u<<(i*4);
+        return bottom ? bottom[x] : limit;
+    }
+    unsigned mask(int x, int y) const
+    {
+        unsigned result = 0;
+        for (int i = 0; i < 8 && x + i < width; ++i)
+            if (y < at(x + i))
+                result |= 15u << (i * 4);
         return result;
     }
 };
 struct trial_actor_piece
 {
-    uint8_t part,x,y,width,height;
+    uint8_t part, x, y, width, height;
 };
 struct trial_actor_placement
 {
     const int16_t* bottom;
     const trial_actor_piece* pieces;
-    int16_t x,y;
-    uint16_t scale,count;
-    int16_t limit=32767;
-    uint16_t alignment=0;
-    int cutoff(int column) const {return bottom ? bottom[column] : limit;}
+    int16_t x, y;
+    uint16_t scale, count;
+    int16_t limit = 32767;
+    uint16_t alignment = 0;
+    int cutoff(int column) const
+    {
+        return bottom ? bottom[column] : limit;
+    }
 };
-}
+} // namespace manosaba
 #endif

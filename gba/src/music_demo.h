@@ -5,13 +5,14 @@ namespace manosaba
 class text_canvas;
 class music_demo
 {
-public:
+  public:
     void reset();
     bool update();
     void draw(text_canvas& canvas) const;
-private:
+
+  private:
     int _selected = 0;
     int _playing = -1;
 };
-}
+} // namespace manosaba
 #endif

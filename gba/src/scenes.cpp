@@ -18,4 +18,4 @@ void draw_scene(text_canvas& canvas, scene_id scene)
     canvas.present();
 }
 
-}
+} // namespace manosaba

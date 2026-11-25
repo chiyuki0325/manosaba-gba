@@ -12,5 +12,5 @@ void pause();
 void resume();
 bool playing();
 bool looping();
-}
+} // namespace manosaba::music_backend
 #endif

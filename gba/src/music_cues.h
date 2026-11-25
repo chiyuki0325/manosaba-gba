@@ -19,6 +19,6 @@ extern const music_cue music_cues[];
 extern const int music_cue_count;
 extern const int music_hiro_index;
 const music_cue* find_music_cue(unsigned key);
-int music_intro_order(unsigned key,unsigned intro);
-}
+int music_intro_order(unsigned key, unsigned intro);
+} // namespace manosaba
 #endif

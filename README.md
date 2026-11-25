@@ -49,6 +49,15 @@ make -C gba release SAVE_BACKEND=sram -j12  # SRAM兼容正式版：gba/manosaba
 
 ## 维护文档
 
+在仓库根目录运行以下命令格式化手写 C/C++ 源码与测试（需安装 `uv`）：
+
+```sh
+git ls-files -z --cached --others --exclude-standard -- '*.c' '*.cpp' '*.h' '*.hpp' |
+  xargs -0 -r uv tool run --from clang-format==21.1.8 clang-format -i
+```
+
+只检查格式时，将 `-i` 换成 `--dry-run --Werror`。生成资源和固定数据表由 `.clang-format-ignore` 排除。
+
 - [管线、准备资产与外部音乐输入](docs/pipeline.md)
 - [架构、状态和存档](docs/architecture.md)
 - [测试入口与精简审计](docs/testing.md)

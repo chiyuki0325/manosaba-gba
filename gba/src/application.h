@@ -15,11 +15,12 @@ namespace manosaba
 {
 class application
 {
-public:
+  public:
     application();
     void update();
     void commit();
-private:
+
+  private:
     text_canvas _canvas;
     debug_menu _menu;
     story_scene _story;
@@ -33,13 +34,13 @@ private:
     home_screen _home;
     warning_screen _warning;
 #if MANOSABA_DEBUG_MENU
-    int _stress_choice=0;
+    int _stress_choice = 0;
 #endif
-    bool _redraw=false;
-    bool _home_started=false,_home_load=false,_pause_settings=false;
-    bool _debug_origin=false,_debug_from_home=false;
-    int _home_confirm=0;
-    bool _confirm_ok=false;
+    bool _redraw = false;
+    bool _home_started = false, _home_load = false, _pause_settings = false;
+    bool _debug_origin = false, _debug_from_home = false;
+    int _home_confirm = 0;
+    bool _confirm_ok = false;
     void draw();
     void draw_home_confirm();
     void update_home_confirm();
@@ -48,5 +49,5 @@ private:
     void handle_home(home_action action);
     void close_settings();
 };
-}
+} // namespace manosaba
 #endif

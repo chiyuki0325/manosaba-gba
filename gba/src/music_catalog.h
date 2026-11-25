@@ -7,7 +7,7 @@ struct music_entry
     const char* label;
     const char* description;
     int module_id; // -1: not made yet
-    int volume; // 0..1024
+    int volume;    // 0..1024
     bool loop;
     int start_order;
     const char* alias;
@@ -15,5 +15,5 @@ struct music_entry
 extern const music_entry music_catalog[];
 extern const int music_count;
 extern const int music_default_index;
-}
+} // namespace manosaba
 #endif

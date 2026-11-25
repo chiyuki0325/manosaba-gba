@@ -28,5 +28,5 @@ struct music_command
     bool wait = false;
     bool stop = false;
 };
-}
+} // namespace manosaba
 #endif
