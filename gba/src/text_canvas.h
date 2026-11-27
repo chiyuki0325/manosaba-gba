@@ -108,7 +108,7 @@ class text_canvas
     void present();
     void decoration(const uint32_t* tiles);
     void toast(int id);
-    void fast_forward(int x);
+    void playback_icon(int x, bool single = false);
     void name_label(const label_art* art, uint16_t color);
     void category_label(int x, int y, const label_art& art, const uint8_t* inks, int color);
     void clock(int seconds, const label_art& frame, const uint8_t* inks);
@@ -157,7 +157,8 @@ class text_canvas
     int _save_bytes = 0;
     const uint32_t* _decoration = nullptr;
     uint8_t _toast = 0;
-    uint8_t _fast_column = 0;
+    uint8_t _playback_column = 0;
+    bool _playback_single = false;
     int _picture_bytes = 38400;
     alignas(4) uint16_t _colors[16];
     void allocate();

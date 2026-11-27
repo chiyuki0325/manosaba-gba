@@ -83,6 +83,7 @@ int story_scene::snapshot(uint8_t* destination, int size, bool)
 }
 bool story_scene::restore_snapshot(uint8_t* source, int size)
 {
+    _playback.reset();
     _book.close();
     _history.close();
     _images.reset();
@@ -202,6 +203,7 @@ bool story_scene::retry_identity(int& script, unsigned& pc) const
 
 void story_scene::reset()
 {
+    _playback.reset();
     _saves.new_story();
     _restoring = _restore_canvas = false;
     _play_frames = 0;
@@ -232,6 +234,7 @@ void story_scene::new_game()
 }
 void story_scene::open_chapters()
 {
+    _playback.reset();
     _book.close();
     _history.close();
     _paused = false;
@@ -269,6 +272,7 @@ void story_scene::set_visible(bool visible)
             _advance.reset();
         else
         {
+            _playback.reset();
             _trial.suspend();
             _credits.suspend();
             _execution.suspend();
@@ -284,6 +288,7 @@ void story_scene::suspend_overlay()
 {
     if (_overlay_suspended)
         return;
+    _playback.reset();
     _images.set_visible(false);
     _trial.suspend();
     _credits.suspend();
@@ -343,22 +348,29 @@ const dialogue_layout& story_scene::layout() const
 void story_scene::prepare_page()
 {
     _dialogue.original_breaks(_saves.original_line_breaks());
-    _dialogue.speed(fast_forward() ? 2 : _saves.dialogue_speed());
+    _dialogue.speed(playback() != dialogue_playback_mode::normal ? 2 : _saves.dialogue_speed());
     _dialogue.begin(_vm.text(), layout());
     _advance.reset();
 }
 
-bool story_scene::fast_forward() const
+dialogue_playback_mode story_scene::playback() const
 {
-    return !_selecting && !_restoring && _vm.state() == story_state::text && bn::keypad::r_held();
+    if (_selecting || _restoring || _vm.state() != story_state::text)
+        return dialogue_playback_mode::normal;
+    return _playback.mode(bn::keypad::r_held(), true);
 }
 
 void story_scene::render(text_canvas& canvas)
 {
-    int fast = 0;
+    int icon = 0;
+    auto mode = dialogue_playback_mode::normal;
     if (_visible && !_selecting && !_restoring && !overlay())
-        fast = _vm.trial() ? _trial.fast_forward_icon() : fast_forward() ? 216 : 0;
-    canvas.fast_forward(fast);
+    {
+        mode = _vm.trial() ? _trial.playback() : playback();
+        if (mode != dialogue_playback_mode::normal)
+            icon = _vm.trial() ? _trial.playback_icon_x() : 216;
+    }
+    canvas.playback_icon(icon, mode == dialogue_playback_mode::automatic);
     if (!_selecting && _vm.state() == story_state::credits)
     {
         canvas.toast(0);
@@ -392,6 +404,16 @@ void story_scene::render(text_canvas& canvas)
 
 bool story_scene::update(bool display_ready)
 {
+    int frames = 1 + bn::core::last_missed_frames();
+    if (_selecting || _restoring || overlay() || _vm.state() == story_state::debate)
+        _playback.reset();
+    else
+    {
+        bool dialogue = _vm.trial() ? _trial.autoplay_available() : _vm.state() == story_state::text;
+        _playback.update(dialogue, bn::keypad::r_pressed(), bn::keypad::r_released(), frames);
+    }
+    auto mode = _vm.trial() ? dialogue_playback_mode::normal : playback();
+    _dialogue.playback(mode);
     _dialogue.original_breaks(_saves.original_line_breaks());
     _trial.dialogue_speed(_saves.dialogue_speed());
     _trial.original_breaks(_saves.original_line_breaks());
@@ -399,7 +421,6 @@ bool story_scene::update(bool display_ready)
         _saves.unlock_music(music_player::collection_key());
     if (!_selecting && !_restoring && !overlay())
     {
-        int frames = 1 + bn::core::last_missed_frames();
         if (!_vm.bad_end())
             _play_frames += unsigned(frames);
         if (display_ready)
@@ -640,12 +661,9 @@ bool story_scene::update(bool display_ready)
     bool loading = !_selecting && !_vm.bad_end() && _vm.state() != story_state::menu && _vm.visual_frame() >= 0 &&
                    !_images.ready();
     bool readable = _selecting || _vm.bad_end() || _vm.state() == story_state::menu || _dialogue.prepared();
-    bool fast = fast_forward();
-    if (!fast)
-        _dialogue.reset_fast_forward();
-    if (_dialogue.speed(fast ? 2 : _saves.dialogue_speed()) && !_selecting && _vm.state() == story_state::text)
+    if (_dialogue.speed(mode != dialogue_playback_mode::normal ? 2 : _saves.dialogue_speed()) && !_selecting &&
+        _vm.state() == story_state::text)
         return true;
-    int frames = 1 + bn::core::last_missed_frames();
     _dialogue.frame(display_ready && !loading);
     bool advance = _advance.update(bn::keypad::a_held(), display_ready && !loading && readable, frames);
     if (_selecting)
@@ -721,15 +739,10 @@ bool story_scene::update(bool display_ready)
         }
         return previous != _choice;
     }
-    if (fast && readable && display_ready && !loading && _dialogue.fast_forward(frames))
+    bool timed = readable && display_ready && !loading && _dialogue.timed_advance(frames);
+    if (advance || timed)
     {
-        _vm.advance();
-        progressed();
-        return true;
-    }
-    if (advance)
-    {
-        auto result = _dialogue.advance(_vm.text(), layout());
+        auto result = _dialogue.advance(_vm.text(), layout(), timed);
         if (result == dialogue_advance::wait)
             return false;
         if (result == dialogue_advance::page)

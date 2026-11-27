@@ -14,6 +14,7 @@ void dialogue_presenter::archive(save_archive& a, const char* text)
     _page.archive(a, text);
     if (a.reading())
     {
+        _short_second_page = false;
         _guard.restart();
         repaint();
     }
@@ -21,6 +22,7 @@ void dialogue_presenter::archive(save_archive& a, const char* text)
 void dialogue_presenter::begin(const char* text, const dialogue_layout& box, int offset)
 {
     _page.begin(text, offset, box, _original_breaks);
+    _short_second_page = false;
     if (_speed == 2)
         _page.finish();
     _delay = 0;
@@ -29,8 +31,10 @@ void dialogue_presenter::begin(const char* text, const dialogue_layout& box, int
     repaint();
 }
 
-dialogue_advance dialogue_presenter::advance(const char* text, const dialogue_layout& box)
+dialogue_advance dialogue_presenter::advance(const char* text, const dialogue_layout& box, bool timed)
 {
+    if (timed && _playback == dialogue_playback_mode::fast)
+        return dialogue_advance::script;
     if (!complete())
     {
         finish();

@@ -48,6 +48,10 @@ class dialogue_page
     {
         return _visible == _end && !_fading;
     }
+    bool single_line() const
+    {
+        return _single_line;
+    }
     bool fading() const
     {
         return _fading;
@@ -72,7 +76,7 @@ class dialogue_page
   private:
     const char* _text = nullptr;
     int _start = 0, _end = 0, _visible = 0, _glyph_begin = 0;
-    bool _fading = false;
+    bool _fading = false, _single_line = false;
 };
 
 // One action per physical press, with release qualification across page changes.

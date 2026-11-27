@@ -12,7 +12,10 @@ void dialogue_page::archive(save_archive& a, const char* text)
     a.field(_glyph_begin);
     a.field(_fading);
     if (a.reading())
+    {
         _text = text;
+        _single_line = false;
+    }
 }
 namespace
 {
@@ -28,7 +31,7 @@ void dialogue_page::begin(const char* text, int offset, const dialogue_layout& b
     _text = text;
     _start = _visible = _glyph_begin = offset;
     _fading = false;
-    int x = box.left, y = box.top, at = offset;
+    int x = box.left, y = box.top, at = offset, last_y = box.top - dialogue_line_height;
     while (text[at])
     {
         if (text[at] == '\r' && !original_breaks)
@@ -58,10 +61,12 @@ void dialogue_page::begin(const char* text, int offset, const dialogue_layout& b
         }
         if (y + 12 > box.bottom)
             break;
+        last_y = y;
         x += width;
         at = next_character(text, at);
     }
     _end = at;
+    _single_line = last_y == box.top;
 }
 
 reveal_step dialogue_page::tick()

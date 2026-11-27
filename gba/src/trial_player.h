@@ -18,7 +18,8 @@ class trial_player
         _scene.protect();
         _reenact_stage.protect();
     }
-    trial_player(story_vm& vm, image_scene& images) : _vm(vm), _images(images)
+    trial_player(story_vm& vm, image_scene& images, const dialogue_playback& playback)
+        : _vm(vm), _images(images), _playback(playback)
     {
     }
     void reset();
@@ -52,7 +53,12 @@ class trial_player
         return _scene.release() && _movie.release() && _reenact_stage.release();
     }
     bool update(bool display_ready);
-    int fast_forward_icon() const;
+    bool autoplay_available() const
+    {
+        return !_preview && _vm.state() == story_state::text;
+    }
+    dialogue_playback_mode playback() const;
+    int playback_icon_x() const;
     void draw(text_canvas& canvas);
     bool painting() const
     {
@@ -68,6 +74,7 @@ class trial_player
   private:
     story_vm& _vm;
     image_scene& _images;
+    const dialogue_playback& _playback;
     int _picture_bank = -1, _picture_event = -1;
     bool _pictures = false, _picture_canvas = false;
     trial_scene _scene;
@@ -92,7 +99,6 @@ class trial_player
     bool _keep_canvas = false, _pause_repaint = false;
     bool _choice_loading = false;
     bool show_pictures() const;
-    bool fast_forward() const;
     void progressed();
     const dialogue_layout& layout() const;
     void dialogue(text_canvas& canvas);

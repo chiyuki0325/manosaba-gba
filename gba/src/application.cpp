@@ -256,7 +256,7 @@ void application::draw()
     else
     {
         _canvas.toast(0);
-        _canvas.fast_forward(0);
+        _canvas.playback_icon(0);
     }
     graphics_performance.ui_ticks = unsigned(bn::core::current_cpu_ticks()) - begin;
 }

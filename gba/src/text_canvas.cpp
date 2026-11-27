@@ -109,26 +109,26 @@ constexpr int toast_index(int logical)
     int x = logical % 30 - toast_left / 8, y = logical / 30 - toast_top / 8;
     return x >= 0 && x < toast_width / 8 && y >= 0 && y < toast_height / 8 ? y * (toast_width / 8) + x : -1;
 }
-constexpr int fast_icon_index(int logical, int column)
+constexpr int playback_icon_index(int logical, int column)
 {
     int x = logical % 30 - column, y = logical / 30;
     return y < 3 && x >= 0 && x < 3 ? y * 3 + x : -1;
 }
-struct fast_icon_art
+struct playback_icon_art
 {
     bn::tile ink[9]{}, mask[9]{};
 };
-constexpr fast_icon_art make_fast_icon()
+constexpr playback_icon_art make_playback_icon(bool single)
 {
-    fast_icon_art art;
+    playback_icon_art art;
     for (int y = 2; y < 19; ++y)
         for (int x = 4; x < 21; ++x)
         {
             int tile = y / 8 * 3 + x / 8, shift = x % 8 * 4;
-            auto arrow = [](int px, int py)
+            auto arrow = [single](int px, int py)
             {
-                int dx = px - 5;
-                if (dx >= 7)
+                int dx = px - (single ? 9 : 5);
+                if (!single && dx >= 7)
                     dx -= 7;
                 return dx >= 0 && dx < 5 && py >= 5 + dx && py <= 13 - dx;
             };
@@ -138,7 +138,8 @@ constexpr fast_icon_art make_fast_icon()
         }
     return art;
 }
-constexpr auto fast_icon = make_fast_icon();
+constexpr auto fast_icon = make_playback_icon(false);
+constexpr auto auto_icon = make_playback_icon(true);
 constexpr int compact_index(int logical)
 {
 
@@ -1286,20 +1287,21 @@ void text_canvas::toast(int id)
             dirty(y * 30 + x);
 }
 
-void text_canvas::fast_forward(int x)
+void text_canvas::playback_icon(int x, bool single)
 {
     int column = _bg && !_choice_ui ? x / 8 : 0;
-    if (column == _fast_column)
+    if (column == _playback_column && (!column || single == _playback_single))
         return;
     for (int y = 0; y < 3; ++y)
         for (int i = 0; i < 3; ++i)
         {
-            if (_fast_column)
-                dirty(y * 30 + _fast_column + i);
+            if (_playback_column && _playback_column != column)
+                dirty(y * 30 + _playback_column + i);
             if (column)
                 dirty(y * 30 + column + i);
         }
-    _fast_column = uint8_t(column);
+    _playback_column = uint8_t(column);
+    _playback_single = single;
 }
 
 #ifdef __arm__
@@ -1550,13 +1552,13 @@ int text_canvas::commit(int bytes)
             --_dirty_count;
             continue;
         }
-        int fast = _fast_column && !_choice_ui ? fast_icon_index(index, _fast_column) : -1;
-        if (fast >= 0)
+        int icon = _playback_column && !_choice_ui ? playback_icon_index(index, _playback_column) : -1;
+        if (icon >= 0)
         {
+            const auto& art = _playback_single ? auto_icon : fast_icon;
             bn::tile tile;
             for (int row = 0; row < 8; ++row)
-                tile.data[row] =
-                    (canvas_tiles[index].data[row] & ~fast_icon.mask[fast].data[row]) | fast_icon.ink[fast].data[row];
+                tile.data[row] = (canvas_tiles[index].data[row] & ~art.mask[icon].data[row]) | art.ink[icon].data[row];
             video_upload::upload(video_upload::stable_tile(tile), 1, vram[physical]);
             _dirty[index++] = false;
             --_dirty_count;
@@ -1582,7 +1584,7 @@ int text_canvas::commit(int bytes)
         }
         int count = 1, limit = bn::min(bytes / tile_bytes, 600 - index);
         while (count < limit && _dirty[index + count] && (!_toast || toast_index(index + count) < 0) &&
-               (!_fast_column || fast_icon_index(index + count, _fast_column) < 0) &&
+               (!_playback_column || playback_icon_index(index + count, _playback_column) < 0) &&
                (!_graphical ||
                 (_execution_ui ? execution_index(index + count) : compact_index(index + count)) == physical + count))
             ++count;

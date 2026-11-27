@@ -16,6 +16,9 @@
 | 故事／审判 | Select 魔女图鉴；Start 打开菜单 |
 | 审判讨论 | A 推进当前句；上／左／右 进行异议 |
 | 快进 | 故事、审判对话及讨论中长按 R 即时显示，每 0.8 秒前进一句 |
+| 自动播放 | 故事、审判对话中，0.8 秒内按下并松开 R 两次；再次按 R、手动打开菜单或进入讨论时取消 |
+
+自动播放时右上角显示单箭头，每 1.6 秒翻页或推进。同一句对话的第二页如果只有一行，只停留 0.8 秒。
 
 ## 编译
 
@@ -64,6 +67,6 @@ git ls-files -z --cached --others --exclude-standard -- '*.c' '*.cpp' '*.h' '*.h
 - [已知问题与最近一次全量验证](docs/known-issues.md)
 - [中文剧本格式](story/README.md) · [校字记录](story/typo-corrections.md)
 
-发布 Flash ROM 为 30,040,780 B，距离 32 MiB 上限还剩 3,513,652 B。原作安装、完整解包媒体、开发环境、缓存和测试输出不纳入版本控制。
+发布 Flash ROM 为 30,042,420 B，距离 32 MiB 上限还剩 3,512,012 B。原作安装、完整解包媒体、开发环境、缓存和测试输出不纳入版本控制。
 
 Flash版提供27个手动槽，SRAM兼容版提供8个手动槽；两版另有自动档和重试。正文固定1254B，详见[存档容量](docs/save-capacity.md)。使用[存档转换工具](https://imgsrc.chyk.ink/manosaba-gba-save-converter.html)在两版之间迁移，支持电脑／手机及.sav／.srm。

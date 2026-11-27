@@ -1,6 +1,7 @@
 #ifndef DIALOGUE_PRESENTER_H
 #define DIALOGUE_PRESENTER_H
 #include "dialogue_page.h"
+#include "dialogue_playback.h"
 #include "text_canvas.h"
 
 namespace manosaba
@@ -30,13 +31,14 @@ class dialogue_presenter
         _step = reveal_step::none;
         _redrawing = false;
         _drawn = _page.start();
-        _fast_frames = 0;
+        _playback_frames = 0;
     }
     void begin(const char* text, const dialogue_layout& box, int offset = 0);
     void restore(const dialogue_page& page)
     {
         _page = page;
         _prepared = true;
+        _short_second_page = false;
         _guard.restart();
         repaint();
     }
@@ -80,16 +82,21 @@ class dialogue_presenter
         finish();
         return true;
     }
-    void reset_fast_forward()
+    void playback(dialogue_playback_mode mode)
     {
-        _fast_frames = 0;
+        if (mode != _playback)
+        {
+            _playback = mode;
+            _playback_frames = 0;
+        }
     }
-    bool fast_forward(int frames)
+    bool timed_advance(int frames)
     {
-        if (!complete() || !can_advance())
+        if (_playback == dialogue_playback_mode::normal || !complete() || !can_advance())
             return false;
-        _fast_frames += frames;
-        return _fast_frames >= 48;
+        _playback_frames += frames;
+        int interval = _short_second_page ? int(dialogue_playback_mode::fast) : int(_playback);
+        return _playback_frames >= interval;
     }
     bool tick()
     {
@@ -116,9 +123,11 @@ class dialogue_presenter
     }
     void next_page(const char* text, const dialogue_layout& box)
     {
+        bool second = _page.start() == 0;
         begin(text, box, _page.end());
+        _short_second_page = second && _page.single_line();
     }
-    dialogue_advance advance(const char* text, const dialogue_layout& box);
+    dialogue_advance advance(const char* text, const dialogue_layout& box, bool timed);
     void draw(text_canvas& canvas, const char* text, const dialogue_layout& box, bool full, int budget = 0,
               const story_link* links = nullptr, int count = 0, const story_text_style* style = nullptr);
     void prompt(text_canvas& canvas, const char* text) const;
@@ -129,10 +138,11 @@ class dialogue_presenter
     sentence_guard _guard;
     text_canvas::cursor _cursor{}, _last_cursor{};
     int _speed = 1, _delay = 0;
-    int _fast_frames = 0;
+    int _playback_frames = 0;
+    dialogue_playback_mode _playback = dialogue_playback_mode::normal;
     int _drawn = 0, _last_begin = 0, _last_end = 0;
     reveal_step _step = reveal_step::none;
-    bool _prepared = false, _redrawing = false, _original_breaks = true;
+    bool _prepared = false, _redrawing = false, _original_breaks = true, _short_second_page = false;
     static void range(text_canvas& canvas, text_canvas::cursor& cursor, const char* text, const dialogue_layout& box,
                       int first, int last, text_canvas::ink ink, const story_link* links, int count,
                       const story_text_style* style, bool original_breaks);

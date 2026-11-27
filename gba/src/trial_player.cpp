@@ -214,21 +214,21 @@ const dialogue_layout& trial_player::layout() const
 {
     return _vm.state() == story_state::debate ? _vm.debate_layout() : graphical_dialogue;
 }
-bool trial_player::fast_forward() const
+dialogue_playback_mode trial_player::playback() const
 {
     auto state = _vm.state();
-    return !_preview && (state == story_state::text || state == story_state::debate) && bn::keypad::r_held();
+    if (_preview || (state != story_state::text && state != story_state::debate))
+        return dialogue_playback_mode::normal;
+    return _playback.mode(bn::keypad::r_held(), state == story_state::text);
 }
-int trial_player::fast_forward_icon() const
+int trial_player::playback_icon_x() const
 {
-    if (!fast_forward())
-        return 0;
     return _vm.trial_left() && !_vm.reenact() && _vm.map_segment() < 0 && !_map_stage.active() ? 152 : 216;
 }
 bool trial_player::update(bool display_ready)
 {
-    if (!fast_forward())
-        _dialogue.reset_fast_forward();
+    auto mode = playback();
+    _dialogue.playback(mode);
     int frames = 1 + bn::core::last_missed_frames();
     if (_picture_bank != _vm.graphical_bank())
     {
@@ -473,8 +473,8 @@ bool trial_player::update(bool display_ready)
         trial_runtime.interaction_ready = 0;
         return true;
     }
-    bool fast = fast_forward();
-    if (_dialogue.speed(fast ? 2 : _vm.state() == story_state::debate ? 1 : _dialogue_speed))
+    bool accelerated = mode != dialogue_playback_mode::normal;
+    if (_dialogue.speed(accelerated ? 2 : _vm.state() == story_state::debate ? 1 : _dialogue_speed))
     {
         trial_runtime.interaction_ready = 0;
         _full = _keep_canvas = true;
@@ -537,7 +537,7 @@ bool trial_player::update(bool display_ready)
     if (action && _dialogue.complete() && !_dialogue.can_advance())
         action = false;
     bool debate = _vm.state() == story_state::debate;
-    bool skip = fast && (!debate || !_vm.debate_stopped()) && _dialogue.fast_forward(frames);
+    bool skip = accelerated && (!debate || !_vm.debate_stopped()) && _dialogue.timed_advance(frames);
     if (debate)
     {
         for (int point = 0; point < _vm.link_count(); ++point)
@@ -564,7 +564,7 @@ bool trial_player::update(bool display_ready)
             }
             action = false;
         }
-        if (_vm.tick_debate(frames, !fast))
+        if (_vm.tick_debate(frames, !accelerated))
         {
             progressed();
             return true;
@@ -578,22 +578,16 @@ bool trial_player::update(bool display_ready)
         int bar = int(_vm.statement_left() * 240 / _vm.statement_duration()),
             seconds = int((_vm.trial_left() + 59) / 60);
         _hud = _hud || bar != _bar || seconds != _seconds;
-        if (!fast && _dialogue.complete() && _vm.text()[_dialogue.page().end()])
+        if (!accelerated && _dialogue.complete() && _vm.text()[_dialogue.page().end()])
         {
             _dialogue.next_page(_vm.text(), layout());
             _full = true;
             return true;
         }
     }
-    else if (skip)
+    else if (skip || action)
     {
-        _vm.advance();
-        progressed();
-        return true;
-    }
-    else if (action)
-    {
-        auto result = _dialogue.advance(_vm.text(), layout());
+        auto result = _dialogue.advance(_vm.text(), layout(), skip);
         if (result == dialogue_advance::script)
         {
             _vm.advance();
@@ -796,7 +790,8 @@ void trial_player::choices(text_canvas& canvas)
 }
 void trial_player::draw(text_canvas& canvas)
 {
-    if (_dialogue.speed(fast_forward() ? 2 : _vm.state() == story_state::debate ? 1 : _dialogue_speed))
+    bool accelerated = playback() != dialogue_playback_mode::normal;
+    if (_dialogue.speed(accelerated ? 2 : _vm.state() == story_state::debate ? 1 : _dialogue_speed))
     {
         _full = _keep_canvas = true;
     }

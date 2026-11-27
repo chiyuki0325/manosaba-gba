@@ -23,6 +23,7 @@ int main()
     const char* text = "甲乙丙\n丁戊己\n庚辛";
     page.begin(text, 0, graphical_dialogue);
     expect(page.visible() == 0 && !page.complete(), "page begins unrevealed");
+    expect(!page.single_line(), "the two text rows on the first page are not a short page");
     expect(page.end() == int(std::strstr(text, "庚") - text), "measure the complete page before drawing");
     expect(page.tick() == reveal_step::append && page.visible() == 3 && page.fading(),
            "one full UTF-8 character appears");
@@ -33,6 +34,7 @@ int main()
     int next = page.end();
     page.begin(text, next, graphical_dialogue);
     expect(page.start() == next && page.end() == int(std::strlen(text)), "next page starts exactly at its boundary");
+    expect(page.single_line(), "the remaining text occupies a single row");
     int previous = page.visible();
     for (int frame = 0; !page.complete(); ++frame)
     {
@@ -59,6 +61,10 @@ int main()
     expect(page.end() == 8, "forced short-line emphasis still paginates with source breaks disabled");
     page.begin("ab\rcd", 0, dialogue_layout{0, 0, 24, 12}, false);
     expect(page.end() == 4, "Latin words retain a separating space when soft breaks fold");
+    page.begin("abcde", 0, dialogue_layout{0, 0, 24, 28});
+    expect(!page.single_line(), "automatic wrapping counts a second text row");
+    page.begin("ab\rc\n", 0, dialogue_layout{0, 0, 24, 28}, false);
+    expect(page.single_line(), "a folded soft break and a trailing newline do not add a text row");
 
     advance_button button;
     sentence_guard guard;

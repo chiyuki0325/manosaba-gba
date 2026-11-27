@@ -23,6 +23,14 @@ static unsigned pc(void)
 {
     return core->busRead32(core, save_address + 12 * 4);
 }
+static uint32_t dialogue_pixels(void)
+{
+    uint32_t hash = 2166136261u;
+    for (int y = 123; y < 155; ++y)
+        for (int x = 26; x < 224; ++x)
+            hash = (hash ^ (pixels[y * 240 + x] & 0xffffffu)) * 16777619u;
+    return hash;
+}
 static void options(void)
 {
     for (int i = 0; i < 4; ++i)
@@ -117,9 +125,12 @@ int main(int argc, char** argv)
     tap(KEY_B);
     frames(180);
     expect(pc() == sentence, "changing layout keeps the current VM sentence");
+    uint32_t first_page = dialogue_pixels();
     screenshot(argv[2], "sentence-original");
     tap(KEY_A);
     expect(pc() == sentence, "original layout still has the final short page");
+    uint32_t second_page = dialogue_pixels();
+    expect(second_page != first_page, "manual pagination shows a different second page");
     screenshot(argv[2], "sentence-original-last-page");
     tap(KEY_A);
     expect(pc() != sentence, "one more page action advances exactly once");
@@ -142,6 +153,19 @@ int main(int argc, char** argv)
     tap(KEY_A);
     frames(240);
     expect(pc() > 0, "confirming new game still enters the story");
+    tap(KEY_A);
+    tap(KEY_A);
+    expect(pc() == sentence && dialogue_pixels() == first_page, "replay reaches the same two-page sentence");
+    double_tap_r();
+    frames(88);
+    expect(pc() == sentence && dialogue_pixels() == first_page, "autoplay keeps the first page for 1.6 seconds");
+    for (int i = 0; i < 14 && dialogue_pixels() == first_page; ++i)
+        frames(1);
+    expect(pc() == sentence && dialogue_pixels() == second_page, "autoplay shows the same second page as A");
+    frames(42);
+    expect(pc() == sentence && dialogue_pixels() == second_page, "the one-line second page stays readable");
+    frames(14);
+    expect(pc() != sentence, "autoplay advances after the second page's 0.8-second wait");
     puts("PASS: warning/cancel/confirm pixels, global Flash, pause return, folded two-line sentence and original final "
          "page");
     mCoreConfigDeinit(&core->config);

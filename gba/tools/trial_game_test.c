@@ -511,15 +511,18 @@ int main(int argc, char** argv)
     frames(140);
     no_legs();
     screenshot(directory, "trial-formal-speaker");
-    for (int i = 0; i < 40 && metric().script == 230; ++i)
-        next_text();
-    expect(metric().script == 231, "formal Trial00 continues into Trial01");
+    double_tap_r();
+    expect(playback_arrows(216) + playback_arrows(152) == 1, "trial dialogue shows the autoplay arrow");
+    for (int i = 0; i < 4800 && metric().script == 230; ++i)
+        frames(1);
+    expect(metric().script == 231, "trial dialogue autoplays into Trial01");
     if (metric().state == 3)
     {
         wait_for(3, -1, 1);
         tap(KEY_A);
     }
     wait_for(6, -1, 1);
+    expect(!playback_arrows(152), "entering discussion hides the autoplay arrow");
     expect(metric().links == 0, "formal first discussion statement has no objection point");
     reveal_debate();
     screenshot(directory, "trial-formal-discussion");
@@ -529,6 +532,14 @@ int main(int argc, char** argv)
     expect(metric().total_left <= ordinary_total - ordinary_left &&
                ordinary_total - ordinary_left - metric().total_left < 80,
            "second A advances a completed ordinary statement and charges its remaining time");
+    for (int i = 0; i < 3800 && metric().state != 1; ++i)
+    {
+        frames(1);
+        if (metric().preview && metric().interaction_ready)
+            tap(KEY_B);
+    }
+    wait_for(1, -1, 1);
+    expect(!playback_arrows(216) && !playback_arrows(152), "autoplay does not resume after leaving discussion");
     if (getenv("MANOSABA_TRIAL_QUICK"))
     {
         int result = finish(1);
@@ -601,6 +612,11 @@ int main(int argc, char** argv)
     frames(30);
     expect(total - metric().total_left == 30 && left - metric().line_left == 30,
            "line and global timers tick together");
+    double_tap_r();
+    expect(!playback_arrows(152), "double-tapping R in discussion leaves normal playback");
+    key_frames(KEY_R, 4);
+    expect(playback_arrows(152) == 2, "holding R in discussion still shows fast-forward");
+    key_frames(0, 4);
     const unsigned old_keys[] = {KEY_B, KEY_R};
     for (int i = 0; i < 2; ++i)
     {

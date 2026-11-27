@@ -112,7 +112,8 @@ class story_scene
   private:
     story_vm _vm;
     image_scene _images;
-    trial_player _trial{_vm, _images};
+    dialogue_playback _playback;
+    trial_player _trial{_vm, _images, _playback};
     witch_book _book{_vm};
     dialogue_history_view _history{_vm};
     dialogue_presenter _dialogue;
@@ -140,7 +141,7 @@ class story_scene
     void progressed();
     void select_current_script();
     const dialogue_layout& layout() const;
-    bool fast_forward() const;
+    dialogue_playback_mode playback() const;
     void prepare_page();
     bool overlay() const
     {

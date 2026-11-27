@@ -187,6 +187,37 @@ static uint32_t frame_hash(void)
     return hash;
 }
 
+static TEST_UNUSED void key_frames(unsigned key, int count)
+{
+    core->setKeys(core, key);
+    frames(count);
+}
+
+static TEST_UNUSED int playback_arrows(int x)
+{
+    const int offsets[] = {5, 9, 12};
+    int count = 0;
+    for (int i = 0; i < 3; ++i)
+    {
+        int white = 0;
+        for (int y = 5; y <= 13; ++y)
+        {
+            unsigned pixel = pixels[y * 240 + x + offsets[i]];
+            white += (pixel & 255) >= 240 && ((pixel >> 8) & 255) >= 240 && ((pixel >> 16) & 255) >= 230;
+        }
+        count += white == 9;
+    }
+    return count;
+}
+
+static TEST_UNUSED void double_tap_r(void)
+{
+    key_frames(KEY_R, 4);
+    key_frames(0, 4);
+    key_frames(KEY_R, 4);
+    key_frames(0, 4);
+}
+
 static void screenshot(const char* directory, const char* name)
 {
     char path[512];
@@ -296,7 +327,33 @@ int main(int argc, char** argv)
     press(KEY_START);
     press(KEY_B);
     expect(frame_hash() == graphic_first, "graphical story pauses and resumes without reloading");
-    press(KEY_A);
+    key_frames(KEY_R, 4);
+    expect(playback_arrows(216) == 2, "R shows two fast-forward arrows while held");
+    key_frames(0, 36);
+    key_frames(KEY_R, 12);
+    key_frames(0, 48);
+    expect(frame_hash() == graphic_first, "a second R press inside the window does not count if released too late");
+    double_tap_r();
+    expect(playback_arrows(216) == 1, "quick R taps switch to one autoplay arrow on the second release");
+    press(KEY_START);
+    press(KEY_B);
+    expect(frame_hash() == graphic_first, "closing the pause menu does not resume autoplay");
+    double_tap_r();
+    key_frames(KEY_R, 4);
+    expect(playback_arrows(216) == 2, "R interrupts autoplay and shows fast-forward immediately");
+    key_frames(0, 4);
+    expect(frame_hash() == graphic_first, "releasing the interrupting R leaves normal playback");
+    key_frames(KEY_R, 4);
+    key_frames(0, 120);
+    expect(frame_hash() == graphic_first, "the interrupting R does not count toward another double-tap");
+    double_tap_r();
+    uint32_t auto_first = frame_hash();
+    frames(90);
+    expect(frame_hash() == auto_first, "autoplay does not use the 48-frame fast-forward interval");
+    frames(30);
+    expect(frame_hash() != auto_first && playback_arrows(216) == 1, "autoplay advances without R held");
+    key_frames(KEY_R, 4);
+    key_frames(0, 120);
     uint32_t graphic_second = frame_hash();
     press(KEY_A);
     uint32_t graphic_third = frame_hash();
