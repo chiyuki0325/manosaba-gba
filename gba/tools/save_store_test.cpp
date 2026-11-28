@@ -7,8 +7,14 @@
 using namespace manosaba;
 static std::array<uint8_t, 131072> flash;
 static unsigned operations = 0, last_erase = ~0u;
+static bool hide_first_page, mirror_reads;
+static int noisy_page = -1;
+static unsigned noise;
 namespace manosaba::flash_driver
 {
+void forget_bank()
+{
+}
 bool detect()
 {
     return true;
@@ -16,7 +22,13 @@ bool detect()
 void read(unsigned address, void* destination, unsigned size)
 {
     assert(address + size <= flash.size());
+    if (mirror_reads)
+        address &= 65535;
     std::memcpy(destination, flash.data() + address, size);
+    if (!address && hide_first_page)
+        std::memset(destination, 255, size);
+    if (int(address / 4096) == noisy_page && !(address % 4096) && size == 64)
+        static_cast<uint8_t*>(destination)[24] ^= ++noise & 1;
 }
 void program(unsigned address, uint8_t value)
 {
@@ -59,6 +71,88 @@ int main()
         finish(store);
     }
     const auto original = flash;
+    // Leave multiple sectors free. A failed verification must not replace either prior record.
+    flash.fill(255);
+    assert(store.mount(signature));
+    for (int slot : {0, save_auto_slot})
+    {
+        std::memset(page + save_payload_offset, 0x12, 1254);
+        assert(store.begin_write(slot, page, 1254, 0, meta));
+        finish(store);
+    }
+    for (int slot : {0, save_auto_slot})
+    {
+        std::memset(page + save_payload_offset, 0x24, 1254);
+        assert(store.begin_write(slot, page, 1254, 0, meta));
+        while (store.progress() != 95 && store.busy())
+            store.step();
+        assert(store.progress() == 95);
+        unsigned bad_sector = last_erase;
+        flash[last_erase + save_payload_offset] ^= 1;
+        finish(store);
+        assert(last_erase != bad_sector);
+    }
+    save_store after_errors;
+    assert(after_errors.mount(signature));
+    for (int slot : {0, save_auto_slot})
+    {
+        assert(after_errors.begin_read(slot, page));
+        finish(after_errors);
+        assert(page[save_payload_offset] == 0x24);
+    }
+    flash = original;
+    assert(store.mount(signature));
+    assert(store.begin_write(save_auto_slot, page, 400, 112, meta));
+    finish(store);
+    assert(last_erase == 29 * 4096);
+    hide_first_page = true;
+    assert(store.mount(signature));
+    assert(store.status(0) == save_slot_status::empty);
+    hide_first_page = false;
+    assert(store.begin_write(save_auto_slot, page, 400, 112, meta));
+    finish(store);
+    assert(store.mount(signature) && store.begin_read(0, page));
+    finish(store);
+    assert(page[save_payload_offset] == 1);
+
+    flash = original;
+    assert(store.mount(signature));
+    unsigned before_noise = operations;
+    noisy_page = 29; // Sole spare when all slots are occupied.
+    assert(!store.begin_write(1, page, 400, 112, meta));
+    noisy_page = -1;
+    assert(store.writes_paused());
+    for (int slot : {0, save_auto_slot, save_retry_slot, save_global_slot})
+        assert(!store.begin_write(slot, page, 400, 112, meta));
+    assert(operations == before_noise && flash == original);
+    assert(store.begin_read(0, page));
+    finish(store);
+    assert(store.mount(signature));
+    mirror_reads = true;
+    assert(store.begin_read(16, page));
+    while (store.busy())
+        store.step();
+    assert(store.failed() && store.writes_paused());
+    mirror_reads = false;
+
+    // A false-success header or commit byte must not displace the only good page.
+    for (bool after_commit : {false, true})
+    {
+        flash = original;
+        assert(store.mount(signature));
+        assert(store.begin_write(0, page, 400, 112, meta));
+        while (store.progress() != 99)
+            store.step();
+        if (after_commit)
+            store.step();
+        flash[last_erase + 24] ^= 1;
+        while (store.busy())
+            store.step();
+        assert(store.failed() && store.writes_paused() == after_commit);
+        assert(store.mount(signature) && store.begin_read(0, page));
+        finish(store);
+        assert(page[save_payload_offset] == 1);
+    }
     // Every possible interruption of an overwrite: both erase operations, header,
     // body, verification and final commit. The old record must stay readable.
     flash = original;

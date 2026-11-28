@@ -156,7 +156,7 @@ void save_system::setting(int index, int value)
 void save_system::new_story()
 {
     _seed_size = 0;
-    _seed_script = _auto_script = -1;
+    _seed_script = _auto_script = _auto_attempt = -1;
     _seed_pc = 0;
     _seed_dirty = false;
     close();
@@ -235,10 +235,16 @@ bool save_system::write(story_scene& scene, int slot, operation kind)
     metadata.timestamp = save_rtc_now();
     if (!_store.begin_write(slot, _buffer, unsigned(size), _seed_size, metadata))
     {
-        mark("存储不可用");
+        if (kind == manual_write)
+            list(true);
+        mark("保存失败，本次进度未保存");
+        if (kind == manual_write)
+            _paint = 0;
         return false;
     }
     _operation = kind;
+    if (kind == auto_write)
+        _auto_attempt = scene.script();
     _last_progress = -1;
     return true;
 }
@@ -442,22 +448,26 @@ void save_system::tick(story_scene& scene, bool gameplay)
             ++_gallery_revision;
             ++_music_revision;
         }
+        if (_operation == auto_write && !failed)
+            _auto_script = _auto_attempt;
         if (_operation == manual_write)
         {
             if (!failed)
                 play_ui_sound(ui_sound::save);
             _confirm = 0;
             list(true);
-            mark(failed ? "保存失败" : "已保存");
+            mark(failed ? "保存失败，本次进度未保存" : "已保存");
             _paint = 1;
         }
         _operation = none;
         if (_view < 0 || _view == 2)
             free_buffer();
     }
-    if (!_store.available() || _operation != none)
+    if (!_store.available() || _store.writes_paused() || _operation != none)
         return;
-    if (gameplay && scene.script() != _auto_script && scene.auto_save_ready())
+    if (gameplay && scene.script() != _auto_attempt)
+        _auto_attempt = -1;
+    if (gameplay && scene.script() != _auto_script && scene.script() != _auto_attempt && scene.auto_save_ready())
     {
         unsigned id = unsigned(scene.script());
         if (id < 512)
@@ -466,8 +476,8 @@ void save_system::tick(story_scene& scene, bool gameplay)
             _global.scripts[id / 8] |= uint8_t(bit);
             _global_dirty = true;
         }
-        if (write(scene, save_auto_slot, auto_write))
-            _auto_script = scene.script();
+        _auto_attempt = scene.script();
+        write(scene, save_auto_slot, auto_write);
     }
     else if (gameplay && _seed_dirty && buffer())
     {
@@ -533,13 +543,13 @@ save_ui_result save_system::update(story_scene& scene, bool ready)
         if (!good || (seed && seed != save_checkpoint_bytes) ||
             !scene.restore_snapshot(_buffer + save_payload_offset, int(length)))
         {
-            mark("记录损坏");
+            mark(_store.writes_paused() ? "读取失败" : "记录损坏");
             _confirm = 0;
             list(true);
             return save_ui_result::none;
         }
         save_metadata metadata;
-        _store.metadata(selected_slot(), metadata);
+        std::memcpy(&metadata, _buffer + 64, sizeof(metadata));
         scene.restore_play_time(metadata.play_frames);
         _seed_size = seed;
         if (seed)
@@ -560,8 +570,35 @@ save_ui_result save_system::update(story_scene& scene, bool ready)
         }
         play_ui_sound(ui_sound::load);
         _auto_script = scene.script();
+        _auto_attempt = -1;
         close();
         return save_ui_result::loaded;
+    }
+    if (warning_pending())
+    {
+        _warning_seen = _warning_open = true;
+        _confirm = _notice = 0;
+        _paint = 0;
+        _preview_row = -1;
+        _advance.reset();
+    }
+    if (_warning_open)
+    {
+        if (_advance.update(bn::keypad::a_held(), ready && _paint == 6, 1 + bn::core::last_missed_frames()))
+        {
+            _warning_open = false;
+            if (_warning_resume)
+            {
+                _warning_resume = false;
+                close();
+                return save_ui_result::resume;
+            }
+            if (_view < 2)
+                list(true);
+            _clear_panel = true;
+            _paint = 0;
+        }
+        return save_ui_result::none;
     }
     bool locked =
         (_store.busy() || _operation != none) && (_view < 2 || _operation == manual_write || _operation == load_record);
@@ -681,12 +718,15 @@ save_ui_result save_system::update(story_scene& scene, bool ready)
             _thumb_palettes[i].reset();
         }
         _view = 2;
+        _clear_panel = !_store.available();
         _paint = 0;
         _preview_row = -1;
         _preview_line = 0;
         _advance.reset();
         return save_ui_result::none;
     }
+    if (!_store.available())
+        return save_ui_result::none;
     if (!_load_only && !_failure && (bn::keypad::l_pressed() || bn::keypad::r_pressed()))
     {
         _view ^= 1;
@@ -707,13 +747,13 @@ save_ui_result save_system::update(story_scene& scene, bool ready)
     {
         int slot = selected_slot();
         auto status = _store.status(slot);
-        if (!_store.available())
-        {
-            mark("存储不可用");
-            return save_ui_result::none;
-        }
         if (!_view)
         {
+            if (_store.writes_paused())
+            {
+                mark("本次游戏已暂停存档");
+                return save_ui_result::none;
+            }
             if (!scene.save_allowed())
             {
                 mark("此场景不可保存");
@@ -740,7 +780,7 @@ save_ui_result save_system::update(story_scene& scene, bool ready)
             _advance.reset();
         }
         else
-            mark(status == save_slot_status::empty          ? "空白记录"
+            mark(status == save_slot_status::empty          ? (_store.writes_paused() ? "无法确认记录" : "空白记录")
                  : status == save_slot_status::incompatible ? "版本不兼容"
                                                             : "记录损坏");
     }
@@ -847,7 +887,8 @@ bool save_system::row(text_canvas& canvas, int row)
         auto status = _store.status(slot);
         if (status != save_slot_status::valid || !_store.metadata(slot, _rows[row]))
         {
-            const char* name = status == save_slot_status::empty          ? "空白记录"
+            const char* name = status == save_slot_status::empty
+                                   ? (_store.writes_paused() ? "无法确认记录" : "空白记录")
                                : status == save_slot_status::incompatible ? "版本不兼容"
                                                                           : "记录损坏";
             canvas.text(81, y + 15, name, text_canvas::muted, 225, y + 29);
@@ -1024,9 +1065,36 @@ void save_system::draw(text_canvas& canvas, story_scene& scene)
         _header_restored = false;
         _paint = 1;
     }
-    int background = (_view == 2 || _confirm) ? 0 : 1;
+    int background = (_view == 2 || _confirm || _warning_open || !_store.available()) ? 0 : 1;
     if (!canvas.save_page(save_ui_backgrounds[background], save_ui_palette))
         return;
+    if (_clear_panel)
+    {
+        canvas.restore(0, 0, 240, 160);
+        _clear_panel = false;
+    }
+    if (_warning_open || (!_store.available() && _view < 2))
+    {
+        if (_paint != 6)
+        {
+            canvas.restore(0, 0, 240, 160);
+            if (_warning_open)
+            {
+                canvas.text(90, 36, "已暂停存档", text_canvas::accent, 222, 51);
+                canvas.text(42, 62, "无法确认存档信息。", text_canvas::white, 225, 77);
+                canvas.text(42, 80, "为保护旧档，已停止写入。", text_canvas::white, 225, 95);
+                canvas.text(42, 98, "本次游戏不会自动保存。", text_canvas::white, 225, 113);
+                key(canvas, 98, 144, 0, "确认");
+            }
+            else
+            {
+                canvas.text(66, 70, "未识别到存档设备", text_canvas::white, 228, 85);
+                key(canvas, 98, 144, 1, "返回");
+            }
+            _paint = 6;
+        }
+        return;
+    }
     if (_paint == 1)
     {
         if (!_header_restored)

@@ -480,9 +480,13 @@ bool story_scene::update(bool display_ready)
     trial_runtime.vm_hp = unsigned(_vm.hp());
     _book.observe(_paused, display_ready);
     _history.observe(display_ready);
-    if (!_selecting && !_paused && bn::keypad::start_pressed())
+    bool save_warning = _saves.warning_pending();
+    if (!_selecting && !_paused && (bn::keypad::start_pressed() || save_warning))
     {
-        play_ui_sound(ui_sound::confirm);
+        if (save_warning)
+            _saves.return_after_warning();
+        else
+            play_ui_sound(ui_sound::confirm);
         _paused = true;
         _saves.open_pause(_vm.bad_end());
         suspend_overlay();

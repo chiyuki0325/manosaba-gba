@@ -4,6 +4,7 @@
 namespace manosaba::flash_driver
 {
 bool detect();
+void forget_bank();
 void read(unsigned address, void* destination, unsigned length);
 void erase(unsigned address);
 void program(unsigned address, uint8_t value);

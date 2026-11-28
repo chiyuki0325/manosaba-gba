@@ -537,6 +537,11 @@ int main(int argc, char** argv)
     printf("TimeIsUp: frames=%u changes=%u peak=%u ticks\n", timeup_frames, timeup_changes, timeup_peak);
     void* failed_state = malloc(core->stateSize(core));
     expect(failed_state && core->saveState(core, failed_state), "retain failure fixture for both actions");
+    // mCore savestates rewind the directory in RAM, not its backing cartridge bytes.
+    size_t save_bytes = MANOSABA_TEST_SRAM ? 32768 : 131072;
+    uint8_t* failed_save = malloc(save_bytes);
+    expect(failed_save != NULL, "retain matching cartridge for the failure fixture");
+    memcpy(failed_save, ((struct GBA*)core->board)->memory.savedata.data, save_bytes);
     tap(KEY_START);
     wait_ui(2);
     expect(state().selected == 0, "Start opens the same failure actions as A");
@@ -558,6 +563,8 @@ int main(int argc, char** argv)
     expect(state().script == round_script && trial().hp == hp && trial().total_left > 0,
            "loading from failure restores saved trial clocks and HP");
     expect(core->loadState(core, failed_state), "restore failure fixture");
+    memcpy(((struct GBA*)core->board)->memory.savedata.data, failed_save, save_bytes);
+    free(failed_save);
     free(failed_state);
     tap(KEY_A);
     wait_ui(2);

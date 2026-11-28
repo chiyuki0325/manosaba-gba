@@ -27,6 +27,34 @@ bool header_valid(const page_header& h)
     return h.magic == magic && h.commit == 0xa5 && h.header_crc == save_crc32(&h, 24) &&
            h.length + h.seed <= (h.version == 3 ? 8192 : save_page_size) - prefix(h.slot, h.version);
 }
+int logical_slot(const page_header& h, int sector)
+{
+    int slot = h.slot;
+    if (h.version == 3)
+    {
+        if (slot > 14 || (sector < record_pages && (sector & 1)))
+            return -1;
+        if (slot >= 12)
+            slot = slot == 12 ? save_auto_slot : slot == 13 ? save_retry_slot : save_global_slot;
+    }
+    if (slot > save_global_slot || (sector < record_pages) != (slot < save_global_slot) ||
+        (sector >= record_pages && h.length + h.seed > 4096 - save_payload_offset))
+        return -1;
+    return slot;
+}
+bool stable_header(int sector, page_header& h)
+{
+    page_header other;
+    unsigned addr = unsigned(sector) * save_page_size;
+    flash_driver::read(addr, &h, sizeof(h));
+    flash_driver::forget_bank();
+    flash_driver::read(addr, &other, sizeof(other));
+    if (!std::memcmp(&h, &other, sizeof(h)))
+        return true;
+    flash_driver::forget_bank();
+    flash_driver::read(addr, &h, sizeof(h));
+    return !std::memcmp(&h, &other, sizeof(h));
+}
 } // namespace
 #endif
 uint32_t save_crc32(const void* data, unsigned size, uint32_t initial)
@@ -57,37 +85,46 @@ bool save_store::mount(uint32_t signature)
     _watchdog = 0;
     _sequence = 0;
     _next_page = 0;
+    _writes_paused = false;
     for (auto& s : _slots)
         s = {};
     _available = flash_driver::detect();
     if (!_available)
         return false;
+    _writes_paused = !scan(-1, 0);
+    return true;
+}
+bool save_store::scan(int witness, uint32_t expected_header)
+{
+    bool stable = true;
     for (int p = 0; p < 32; ++p)
     {
         page_header h{};
-        flash_driver::read(unsigned(p) * 4096, &h, sizeof(h));
+        if (!stable_header(p, h) || (p == witness && (!header_valid(h) || h.header_crc != expected_header)))
+        {
+            stable = false;
+            continue;
+        }
         if (!header_valid(h))
             continue;
-        int slot = h.slot;
-        if (h.version == 3)
+        int slot = logical_slot(h, p);
+        if (slot < 0)
         {
-            if (slot > 14 || (p < record_pages && (p & 1)))
-                continue;
-            if (slot >= 12)
-                slot = slot == 12 ? save_auto_slot : slot == 13 ? save_retry_slot : save_global_slot;
-        }
-        if (slot > save_global_slot || (p < record_pages) != (slot < save_global_slot) ||
-            (p >= record_pages && h.length + h.seed > 4096 - save_payload_offset))
+            stable = false;
             continue;
+        }
         auto& s = _slots[slot];
+        int page = p < record_pages ? p : p - record_pages;
+        if (s.sequence == h.sequence && s.page != 255 && s.page != page)
+            stable = false;
         if (s.page != 255 && int32_t(h.sequence - s.sequence) <= 0)
             continue;
         s.sequence = h.sequence;
         s.length = h.length;
         s.seed = h.seed;
         s.version = uint8_t(h.version);
-        s.page = uint8_t(p < record_pages ? p : p - record_pages);
-        s.status = (h.version == format || h.version == 3) && (slot == save_global_slot || h.signature == signature)
+        s.page = uint8_t(page);
+        s.status = (h.version == format || h.version == 3) && (slot == save_global_slot || h.signature == _signature)
                        ? save_slot_status::valid
                        : save_slot_status::incompatible;
         if (int32_t(h.sequence - _sequence) > 0)
@@ -97,7 +134,7 @@ bool save_store::mount(uint32_t signature)
                 _next_page = unsigned(p + 1) % record_pages;
         }
     }
-    return true;
+    return stable;
 }
 bool save_store::metadata(int slot, save_metadata& value) const
 {
@@ -130,37 +167,89 @@ int save_store::legacy_slot() const
             return slot;
     return -1;
 }
+int save_store::spare(int slot, uint32_t excluded) const
+{
+    if (slot == save_global_slot)
+    {
+        int page = _slots[slot].page == 255 ? int(excluded & 1) : (_slots[slot].page ^ 1) & 1;
+        return excluded & (1u << page) ? -1 : page;
+    }
+    for (unsigned i = 0; i < record_pages; ++i)
+    {
+        unsigned candidate = (_next_page + i) % record_pages;
+        bool owned = false;
+        for (int s = 0; s < save_global_slot; ++s)
+        {
+            const auto& owner = _slots[s];
+            owned |= owner.page == candidate || (owner.version == 3 && unsigned(owner.page) + 1 == candidate);
+        }
+        if (!owned && !(excluded & (1u << candidate)))
+            return int(candidate);
+    }
+    return -1;
+}
+bool save_store::choose_spare(int slot, int avoid)
+{
+    uint32_t excluded = avoid < 0 ? 0 : 1u << avoid;
+    bool rescanned = false;
+    while (true)
+    {
+        _page = spare(slot, excluded);
+        if (_page < 0 || needs_compaction(slot))
+            return false;
+        _address = address(slot, _page);
+        int sector = int(_address / save_page_size);
+        // An odd record sector might be the tail of an unindexed v3 record.
+        int first = sector < record_pages ? sector & ~1 : sector;
+        bool reclaimed = true;
+        for (int p = first; p <= sector; ++p)
+        {
+            page_header h;
+            if (!stable_header(p, h))
+            {
+                _writes_paused = true;
+                return false;
+            }
+            if (!header_valid(h))
+            {
+                if (h.magic == magic && h.commit == 0xa5 && (p == sector || h.version != format))
+                {
+                    // Never reuse a recognisable committed record whose ownership is unknown.
+                    excluded |= 1u << _page;
+                    reclaimed = false;
+                    break;
+                }
+                continue;
+            }
+            if (p != sector && h.version != 3)
+                continue;
+            int owner = logical_slot(h, p);
+            if (owner >= 0 && _slots[owner].page != 255 && int32_t(_slots[owner].sequence - h.sequence) > 0)
+                continue; // Superseded by a newer indexed record.
+            if (rescanned || owner < 0 || !scan(p, h.header_crc))
+            {
+                _writes_paused = true;
+                return false;
+            }
+            if (owner == slot && slot < save_auto_slot)
+                return false; // Redisplay the newly found manual save before allowing an overwrite.
+            rescanned = true;
+            reclaimed = false;
+            break;
+        }
+        if (reclaimed)
+            return true;
+    }
+}
 bool save_store::begin_write(int slot, uint8_t* page, unsigned size, unsigned seed_size, const save_metadata& metadata)
 {
-    if (!_available || busy() || needs_compaction(slot) || size > save_state_limit || seed_size > save_seed_limit ||
-        size + seed_size > save_page_size - save_payload_offset)
+    if (!_available || _writes_paused || busy() || size > save_state_limit || seed_size > save_seed_limit ||
+        size + seed_size > save_page_size - save_payload_offset || !choose_spare(slot, -1))
         return false;
     _slot = slot;
-    _page = -1;
-    if (slot == save_global_slot)
-        _page = _slots[slot].page == 255 ? 0 : _slots[slot].page ^ 1;
-    else
-        for (unsigned i = 0; i < record_pages; ++i)
-        {
-            unsigned candidate = (_next_page + i) % record_pages;
-            bool owned = false;
-            for (int s = 0; s < save_global_slot; ++s)
-            {
-                const auto& owner = _slots[s];
-                owned |= owner.page == candidate || (owner.version == 3 && unsigned(owner.page) + 1 == candidate);
-            }
-            if (!owned)
-            {
-                _page = int(candidate);
-                break;
-            }
-        }
-    if (_page < 0)
-        return false;
     _buffer = page;
     _length = size;
     _seed_length = seed_size;
-    _address = address(slot, _page);
     _version = format;
     _used = prefix(slot, _version) + size + seed_size;
     if (slot == save_global_slot && _used > 4096)
@@ -185,6 +274,7 @@ bool save_store::begin_write(int slot, uint8_t* page, unsigned size, unsigned se
     _failed = _pending = _pending_erase = false;
     _watchdog = 0;
     _phase = prepare_data;
+    _retried = false;
     return true;
 }
 bool save_store::begin_read(int slot, uint8_t* page)
@@ -204,6 +294,7 @@ bool save_store::begin_read(int slot, uint8_t* page)
     _failed = _pending = _pending_erase = false;
     _watchdog = 0;
     _phase = read_data;
+    _retried = false;
     return true;
 }
 void save_store::complete()
@@ -226,6 +317,24 @@ unsigned save_store::progress() const
            : _phase == program_data || _phase == read_data  ? _cursor * 90 / _used
            : _phase == verify_data                          ? 95
                                                             : 0;
+}
+void save_store::verify_failed()
+{
+    int previous = _page;
+    if (_slot < save_global_slot)
+        _next_page = unsigned(previous + 1) % record_pages;
+    if (!_retried && !_writes_paused && choose_spare(_slot, previous))
+    {
+        _retried = true;
+        auto& h = *reinterpret_cast<page_header*>(_buffer);
+        h.sequence = ++_sequence;
+        h.header_crc = save_crc32(&h, 24);
+        _cursor = 0;
+        _phase = erase_first;
+        return;
+    }
+    _failed = true;
+    _phase = idle;
 }
 void save_store::step()
 {
@@ -279,6 +388,8 @@ void save_store::step()
         break;
     case verify_data:
     {
+        if (_cursor == 64)
+            flash_driver::forget_bank();
         uint8_t bytes[32];
         unsigned count = _used - _cursor;
         if (count > sizeof(bytes))
@@ -289,26 +400,45 @@ void save_store::step()
         if (_cursor == _used)
         {
             if (_crc != reinterpret_cast<page_header*>(_buffer)->crc)
-            {
-                _failed = true;
-                _phase = idle;
-            }
+                verify_failed();
             else
                 _phase = commit_data;
         }
         break;
     }
     case commit_data:
+    {
+        page_header h;
+        flash_driver::read(_address, &h, sizeof(h));
+        if (h.commit != 255 || std::memcmp(&h, _buffer, 63))
+        {
+            if (h.commit != 255)
+                _writes_paused = true;
+            verify_failed();
+            break;
+        }
         flash_driver::program(_address + 63, 0xa5);
         _pending = true;
         _pending_erase = false;
         _phase = commit_wait;
         break;
+    }
     case commit_wait:
+    {
+        page_header h;
+        if (!stable_header(int(_address / save_page_size), h) || std::memcmp(&h, _buffer, sizeof(h)))
+        {
+            _writes_paused = _failed = true;
+            _phase = idle;
+            break;
+        }
         complete();
         break;
+    }
     case read_data:
     {
+        if (!_cursor)
+            flash_driver::forget_bank();
         unsigned count = _used - _cursor;
         if (count > 64)
             count = 64;
@@ -319,9 +449,26 @@ void save_store::step()
         if (_cursor == _used)
         {
             auto& h = *reinterpret_cast<page_header*>(_buffer);
-            _failed = !header_valid(h) || h.crc != _crc;
+            bool valid = header_valid(h);
+            bool identity = valid && logical_slot(h, int(_address / save_page_size)) == _slot &&
+                            h.sequence == _slots[_slot].sequence && h.version == _version && h.length == _length &&
+                            h.seed == _seed_length && (_slot == save_global_slot || h.signature == _signature);
+            _failed = !identity || h.crc != _crc;
             if (_failed)
-                _slots[_slot].status = save_slot_status::corrupt;
+            {
+                uint32_t fingerprint = save_crc32(&h, sizeof(h), _crc);
+                if (!_retried)
+                {
+                    _retried = true;
+                    _first_read_crc = fingerprint;
+                    _cursor = _crc = 0;
+                    break;
+                }
+                if ((valid && !identity) || _first_read_crc != fingerprint)
+                    _writes_paused = true;
+                else
+                    _slots[_slot].status = save_slot_status::corrupt;
+            }
             else if (prefix(_slot, _version) == 64)
                 std::memmove(_buffer + save_payload_offset, _buffer + 64, _length + _seed_length);
             _phase = idle;

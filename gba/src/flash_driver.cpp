@@ -27,6 +27,10 @@ void select(unsigned address)
     bank = target;
 }
 } // namespace
+void forget_bank()
+{
+    bank = -1;
+}
 __attribute__((section(".ewram"), noinline)) bool detect()
 {
     *reinterpret_cast<volatile uint16_t*>(0x04000204) |= 3;

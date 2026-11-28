@@ -96,6 +96,13 @@ static bool search(story_vm& vm, int depth = 0)
             break;
         if (route.size() > longest)
             longest = unsigned(route.size());
+        if (vm.state() == story_state::debate && !vm.link_count())
+        {
+            // A statement without an objection has no branch to search.
+            record(vm, skip_action);
+            vm.skip_debate();
+            continue;
+        }
         if (vm.state() == story_state::debate || vm.state() == story_state::menu ||
             vm.state() == story_state::inventory)
         {

@@ -75,6 +75,14 @@ class save_system
     {
         return _view >= 0;
     }
+    bool warning_pending() const
+    {
+        return _store.writes_paused() && !_warning_seen && !busy();
+    }
+    void return_after_warning()
+    {
+        _warning_resume = true;
+    }
     bool busy() const
     {
         return _store.busy() || _operation != none;
@@ -121,7 +129,7 @@ class save_system
     uint8_t* _buffer = nullptr;
     uint8_t _seed[save_seed_limit];
     unsigned _seed_size = 0, _seed_pc = 0;
-    int _seed_script = -1, _auto_script = -1;
+    int _seed_script = -1, _auto_script = -1, _auto_attempt = -1;
     enum operation
     {
         none,
@@ -157,6 +165,7 @@ class save_system
     bn::optional<bn::sprite_tiles_ptr> _thumb_tiles[2];
     bn::optional<bn::sprite_palette_ptr> _thumb_palettes[2];
     bool _global_checked = false, _load_ready = false;
+    bool _warning_open = false, _warning_seen = false, _warning_resume = false, _clear_panel = false;
     int _preview_row = -1, _preview_line = 0, _row_line = 0;
     int _line_offset = 0, _line_x = 78;
     int _painted_pause = -1;

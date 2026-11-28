@@ -67,6 +67,6 @@ git ls-files -z --cached --others --exclude-standard -- '*.c' '*.cpp' '*.h' '*.h
 - [已知问题与最近一次全量验证](docs/known-issues.md)
 - [中文剧本格式](story/README.md) · [校字记录](story/typo-corrections.md)
 
-发布 Flash ROM 为 30,042,420 B，距离 32 MiB 上限还剩 3,512,012 B。原作安装、完整解包媒体、开发环境、缓存和测试输出不纳入版本控制。
+1.1.5 发布 Flash ROM 为 30,044,796 B，距离 32 MiB 上限还剩 3,509,636 B。原作安装、完整解包媒体、开发环境、缓存和测试输出不纳入版本控制。
 
 Flash版提供27个手动槽，SRAM兼容版提供8个手动槽；两版另有自动档和重试。正文固定1254B，详见[存档容量](docs/save-capacity.md)。使用[存档转换工具](https://imgsrc.chyk.ink/manosaba-gba-save-converter.html)在两版之间迁移，支持电脑／手机及.sav／.srm。

@@ -398,6 +398,13 @@ void application::update()
                     _redraw = true;
                 }
             }
+            else if (!_home_load && _story.progress().warning_pending())
+            {
+                _story.progress().open_load();
+                _story.progress().return_after_warning();
+                _home_load = true;
+                _redraw = true;
+            }
             else if (_home_load)
             {
                 auto result = _story.progress().update(_story, _canvas.ready());

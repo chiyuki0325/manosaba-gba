@@ -67,6 +67,10 @@ class save_store
     {
         return _available;
     }
+    bool writes_paused() const
+    {
+        return _writes_paused;
+    }
     unsigned progress() const;
     unsigned length() const
     {
@@ -115,9 +119,17 @@ class save_store
     int _version = 5;
     int _slot = 0, _page = 0, _watchdog = 0;
     bool _available = false, _failed = false, _pending = false, _pending_erase = false;
+    bool _writes_paused = false;
 #if MANOSABA_SAVE_SRAM
     int _repair_slot = -1;
     unsigned _repair_used = 0;
+#else
+    bool _retried = false;
+    uint32_t _first_read_crc = 0;
+    bool scan(int witness, uint32_t expected_header);
+    int spare(int slot, uint32_t excluded) const;
+    bool choose_spare(int slot, int avoid);
+    void verify_failed();
 #endif
     unsigned address(int slot, int page) const;
     void complete();
