@@ -37,6 +37,54 @@ static void top_palette(unsigned assets, unsigned image, const char* message)
     fprintf(stderr, "top image=%u palette_matches=%d/111\n", image, matches);
     expect(matches == 111, message);
 }
+static unsigned stage_player_at(unsigned bank)
+{
+    unsigned commands = core->busRead32(core, bank + 4), keys = core->busRead32(core, bank + 8);
+    for (unsigned at = 0x02000000; at < 0x0203fff8; at += 4)
+        if (core->busRead32(core, at) == keys && core->busRead32(core, at + 4) == commands)
+            return at;
+    expect(0, "locate stage player");
+    return 0;
+}
+static void adv27_cutins(unsigned banks, const char* directory)
+{
+    debug_boot();
+    press(KEY_DOWN);
+    press(KEY_A);
+    for (int i = 0; i < 101 / 6; ++i)
+        press(KEY_RIGHT);
+    for (int i = 0; i < 101 % 6; ++i)
+        press(KEY_DOWN);
+    press(KEY_A);
+    expect(metric(4) == 109, "enter chapter 3 ADV27");
+    unsigned bank = banks + 109 * 24, events = core->busRead32(core, bank + 12);
+    unsigned stage = stage_player_at(bank), front, mask;
+    image_command(bank, 163, &front);
+    image_command(bank, 162, &mask);
+    unsigned front_entity = stage + 8 + 60 * front, mask_entity = stage + 8 + 60 * mask;
+    const unsigned stops[] = {170, 195, 219, 299, 314, 326};
+    for (unsigned i = 0; i < sizeof stops / sizeof *stops; ++i)
+    {
+        unsigned line = core->busRead16(core, events + 6 * metric(5) + 4);
+        for (int presses = 0; presses < 100 && line < stops[i]; ++presses)
+        {
+            if (line == 232)
+                key_frames(KEY_A, 500); // Charge the execution button before returning to dialogue.
+            press(KEY_A);
+            line = core->busRead16(core, events + 6 * metric(5) + 4);
+        }
+        expect(line == stops[i], "reach cut-in or following dialogue");
+        int split = line == 170 || line == 299 || line == 314;
+        expect(core->busRead32(core, front_entity + 16) == (split ? 256u : 0u),
+               "court foreground visible only during a split shot");
+        expect(core->busRead32(core, mask_entity + 16) == (split ? 256u : 0u) &&
+                   (!split || core->busRead16(core, mask_entity + 52) + 1 == core->busRead16(core, front_entity + 52)),
+               "window clips the foreground, not the main background");
+        char name[32];
+        snprintf(name, sizeof name, "adv27-line-%u", line);
+        screenshot(directory, name);
+    }
+}
 int main(int argc, char** argv)
 {
     expect(argc == 4, "ROM output graphics_profile");
@@ -67,14 +115,7 @@ int main(int argc, char** argv)
     unsigned bank = banks + 24;
     unsigned room_slot, cg_slot, room = image_command(bank, 75, &room_slot), cg = image_command(bank, 28, &cg_slot);
     top_palette(assets, room, "new prison background replaces the old CG");
-    unsigned commands = core->busRead32(core, bank + 4), keys = core->busRead32(core, bank + 8), stage = 0;
-    for (unsigned at = 0x02000000; at < 0x0203fff8; at += 4)
-        if (core->busRead32(core, at) == keys && core->busRead32(core, at + 4) == commands)
-        {
-            expect(!stage, "unique stage player");
-            stage = at;
-        }
-    expect(stage, "locate stage player");
+    unsigned stage = stage_player_at(bank);
     // Hide only the covering background; the old CG must still be recoverable.
     core->busWrite32(core, stage + 8 + room_slot * 60 + 16, 0);
     frames(180);
@@ -89,6 +130,8 @@ int main(int argc, char** argv)
     press(KEY_B);
     expect(frame_hash() == restored, "pause return preserves the corrected background and dialogue");
     puts("PASS: real ADV02 background switch, covered-layer recovery and re-cover");
+    adv27_cutins(banks, argv[2]);
+    puts("PASS: ADV27 court cut-ins, picnic and Warden");
     mCoreConfigDeinit(&core->config);
     core->deinit(core);
     mLogSetDefaultLogger(NULL);

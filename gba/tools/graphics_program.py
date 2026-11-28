@@ -6,11 +6,20 @@ from graphics_project import digest
 from export_gba_stage import compile_stage
 
 
-def presentation_events(events):
-    """Keep flight timing and sound cues, omit the expensive tilted bird OBJ."""
+def presentation_events(events, path=''):
+    """Adapt authored shots to GBA planes without adding VM event anchors."""
     out=[]
-    for event in events:
+    court_cutins=path=='Act01_Chapter03/Act01_Chapter03_Adv27'
+    for i,event in enumerate(events):
         p=event.get('params',{})
+        if court_cutins:
+            if event['op'] in ('SpawnExtended','DestroySpawnedExtended') and p.get('Path')=='MaskingRectangle':
+                event=dict(event,params=dict(p,SubId='Front'))
+            elif event['op']=='HideActors' and i+1<len(events):
+                following=events[i+1]
+                if following['op']=='DestroySpawnedExtended' and following['params'].get('Path')=='MaskingRectangle':
+                    # Without its window the GBA would draw this cut-in across the main shot.
+                    event=dict(event,params=dict(p,ActorIds=[*p['ActorIds'],'MainBackground-Front']))
         rotation=p.get('Rotation',[0,0,0])
         flight=(event['op']=='ModifyCharacterExtended' and
                 p.get('IdAndAppearance','').split('.',1)[0]=='Warden' and
@@ -63,7 +72,7 @@ def compile_program(chapter, assets, cache, mask_assets=None):
                     compiler=cache.file_key(Path(__file__).resolve().parents[2]/'python_workspace/export_gba_stage.py'),masks=mask_assets or {}))
     result=cache.get_json(key)
     if result is None:
-        result=compile_stage(presentation_events(chapter['events']),{v:v for v in mapping.values()},backgrounds,rectangles,white,black,mapping,script_path=chapter['path'],instant_actor_hide='_Trial' in chapter['path'])
+        result=compile_stage(presentation_events(chapter['events'],chapter['path']),{v:v for v in mapping.values()},backgrounds,rectangles,white,black,mapping,script_path=chapter['path'],instant_actor_hide='_Trial' in chapter['path'])
         mask_names=('AngleGradient','HorizontalRects','VerticalBlindConcurrently','Diamonds60','VerticalBlindGradually','HorizontalLinearGradient','Diamonds15','VerticalRects')
         result.update(id=key,path=chapter['path'],resources=refs,mask_resources={str(mask_names.index(name)):mask_assets[name] for name in chapter['masks']} if mask_assets else {})
         cache.put_json(key,result)
